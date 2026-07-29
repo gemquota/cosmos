@@ -1,0 +1,11 @@
+{
+  "name": "cosmos",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "cd dashboard && npx vite",
+    "build": "cd dashboard && npx vite build",
+    "preview": "cd dashboard && npx vite preview"
+  }
+}
