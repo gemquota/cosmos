@@ -24,6 +24,8 @@ h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradi
 .btn-launch:hover{background:rgba(0,255,159,.2)}
 .btn-gh{background:rgba(255,255,255,.04);color:#666;border:1px solid rgba(255,255,255,.08)}
 .btn-gh:hover{background:rgba(255,255,255,.08);color:#888}
+.btn-stop{background:rgba(255,68,68,.08);color:#ff4444;border:1px solid rgba(255,68,68,.15);cursor:pointer;font-size:.5rem;padding:3px 10px;border-radius:6px;font-weight:600}
+.btn-stop:hover{background:rgba(255,68,68,.15)}
 
 /* Project cards */
 .proj-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.35rem}
@@ -35,14 +37,14 @@ h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradi
 .proj-meta{font-size:.5rem;color:#555;margin-bottom:.15rem}
 .status-badge{font-size:.45rem;padding:1px 6px;border-radius:6px;font-weight:600;display:inline-block}
 
-/* Stats */
+/* Stats grid */
 .stat-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:.3rem}
 @media(max-width:500px){.stat-grid{grid-template-columns:1fr 1fr}}
 .stat-cell{text-align:center;background:rgba(255,255,255,.03);border-radius:8px;padding:.4rem .15rem}
 .stat-big{font-size:1rem;font-weight:800;color:#e0e0e0;display:block}
 .stat-sm{font-size:.5rem;color:#777;display:block;margin-top:1px}
 
-/* Donut row */
+/* Donuts */
 .donut-row{display:grid;grid-template-columns:1fr 1fr;gap:.35rem;margin-bottom:.4rem}
 @media(max-width:500px){.donut-row{grid-template-columns:1fr}}
 .donut-card{background:#161822;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.45rem}
@@ -55,7 +57,7 @@ h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradi
 .donut-legend .cnt{color:#555;margin-left:auto}
 .donut-legend .pct{color:#444;width:28px;text-align:right}
 
-/* Stacked horizontal bars */
+/* Stacked bars */
 .stacked-bar-wrap{padding:.15rem 0;width:100%}
 .stacked-bar{display:flex;height:22px;border-radius:5px;overflow:hidden;background:rgba(255,255,255,.03)}
 .stacked-bar .seg{height:100%;transition:width .4s;min-width:2px}
@@ -66,34 +68,36 @@ h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradi
 .stacked-legend .leg-swatch{width:6px;height:6px;border-radius:2px;flex-shrink:0}
 .bar-label{font-size:.55rem;color:#888;margin-bottom:.1rem;display:flex;justify-content:space-between}
 .bar-label .bar-val{color:#555}
-.sep-bar{height:16px;border-radius:4px;background:rgba(255,255,255,.03);margin-bottom:.15rem;overflow:hidden;display:flex}
-.sep-bar .seg{height:100%;transition:width .4s;min-width:2px}
-.sep-bar .seg:first-child{border-radius:4px 0 0 4px}
-.sep-bar .seg:last-child{border-radius:0 4px 4px 0}
-
-/* Toggle */
 .chart-toggle{font-size:.48rem;padding:2px 8px;border-radius:6px;cursor:pointer;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#888;margin-left:auto;transition:all .2s;font-weight:600;letter-spacing:.3px}
 .chart-toggle:hover{border-color:rgba(123,47,255,.3);color:#aaa;background:rgba(123,47,255,.08)}
 .chart-toggle.active{background:rgba(0,255,159,.1);border-color:rgba(0,255,159,.25);color:#00ff9f}
 .chart-view{transition:opacity .2s}
 .chart-view.hidden{display:none!important}
-
-/* Per-project bars */
-.perproj-label{font-size:.55rem;color:#777;margin:.25rem 0 .1rem 0;font-weight:600}
 .perproj-row{display:flex;align-items:center;gap:.25rem;margin-bottom:.08rem}
 .perproj-row .pp-name{width:48px;text-align:right;color:#888;font-size:.5rem;flex-shrink:0}
 .perproj-row .pp-bar{flex:1;height:14px;background:rgba(255,255,255,.03);border-radius:3px;overflow:hidden;display:flex}
 .perproj-row .pp-bar .seg{height:100%;transition:width .4s;min-width:2px}
 .perproj-row .pp-val{color:#555;font-size:.5rem;width:32px;text-align:right}
 
+/* Control panel */
+.ctrl-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.35rem}
+@media(max-width:600px){.ctrl-grid{grid-template-columns:1fr}}
+.ctrl-card{background:#161822;border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:.45rem}
+.ctrl-header{font-size:.6rem;font-weight:600;margin-bottom:.2rem;display:flex;align-items:center;gap:.25rem;justify-content:space-between}
+.ctrl-status{font-size:.45rem;padding:1px 6px;border-radius:4px;font-weight:600}
+.ctrl-status.on{background:rgba(0,255,159,.12);color:#00ff9f}
+.ctrl-status.off{background:rgba(255,68,68,.08);color:#ff4444}
+.ctrl-status.unknown{background:rgba(255,255,255,.04);color:#888}
+.ctrl-url{font-size:.5rem;color:#555;margin-bottom:.15rem;word-break:break-all}
+.ctrl-url a{color:#7b2fff;text-decoration:none}
+.ctrl-url a:hover{color:#a855f7}
+.ctrl-cmd{font-size:.45rem;color:#444;background:rgba(255,255,255,.02);padding:3px 6px;border-radius:4px;font-family:monospace;word-break:break-all;margin-bottom:.2rem}
+
 .footer{text-align:center;font-size:.5rem;color:#444;padding:.5rem 0;border-top:1px solid rgba(255,255,255,.04);margin-top:.4rem}
 .footer a{color:#555;text-decoration:none}
 .footer a:hover{color:#7b2fff}
-
-/* Version timeline */
 .timeline{font-size:.55rem;color:#999;line-height:1.6}
 .timeline b{color:#ccc}
-.timeline .tag{display:inline-block;padding:0 5px;border-radius:3px;font-size:.45rem;margin-right:2px}
 </style>
 </head>
 <body>
@@ -105,48 +109,81 @@ h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradi
 <div class="module-label"><span class="icon">🧩</span> COSMOS Components</div>
 <div class="proj-grid">
 
-<!-- SPACE -->
 <div class="proj-card" style="border-left:2.5px solid #3b82f6">
   <div class="proj-name" style="color:#3b82f6">🚀 SPACE</div>
   <div class="proj-desc">Superb Prompt Automatic Creation Engine — 326-probe spec generation via structured prompt elicitation. TypeScript CLI with 7 LLM providers, 6 export formats.</div>
   <div class="proj-meta">333 files · 8.0MB · ~69k LOC · TypeScript</div>
-  <div style="margin-bottom:.2rem"><span class="status-badge" style="background:rgba(0,255,159,.12);color:#00ff9f;border:1px solid rgba(0,255,159,.2)">● STABLE</span> <span class="status-badge" style="background:rgba(59,130,246,.1);color:#60a5fa;border:1px solid rgba(59,130,246,.15)">v2.1.0</span></div>
+  <div style="margin-bottom:.15rem"><span class="status-badge" style="background:rgba(0,255,159,.12);color:#00ff9f;border:1px solid rgba(0,255,159,.2)">● STABLE</span> <span class="status-badge" style="background:rgba(59,130,246,.1);color:#60a5fa;border:1px solid rgba(59,130,246,.15)">v2.1.0</span></div>
   <div class="btn-row">
     <a href="https://gemquota.github.io/hub/space.html" target="_blank" class="btn btn-dash">📊 Dashboard</a>
-    <button class="btn-launch" onclick="copyCmd('space')">▶ Launch</button>
+    <button class="btn-launch" onclick="openService('space')">▶ Launch</button>
     <a href="https://github.com/gemquota/space" target="_blank" class="btn btn-gh">GitHub</a>
   </div>
 </div>
 
-<!-- MyKB -->
 <div class="proj-card" style="border-left:2.5px solid #a855f7">
   <div class="proj-name" style="color:#a855f7">📚 MyKB</div>
   <div class="proj-desc">Knowledge OS — Obsidian wiki with 48 domains, 2,360+ wiki files, TF-IDF search, temporal engine, link enrichment, session tracking.</div>
   <div class="proj-meta">2,436 files · 58MB · ~103k LOC · Python + Markdown</div>
-  <div style="margin-bottom:.2rem"><span class="status-badge" style="background:rgba(0,255,159,.12);color:#00ff9f;border:1px solid rgba(0,255,159,.2)">● LIVE</span></div>
+  <div style="margin-bottom:.15rem"><span class="status-badge" style="background:rgba(0,255,159,.12);color:#00ff9f;border:1px solid rgba(0,255,159,.2)">● LIVE</span></div>
   <div class="btn-row">
     <a href="https://gemquota.github.io/hub/mykb.html" target="_blank" class="btn btn-dash">📊 Dashboard</a>
-    <button class="btn-launch" onclick="copyCmd('mykb')">▶ Launch</button>
+    <button class="btn-launch" onclick="openService('mykb')">▶ Launch</button>
     <a href="https://github.com/gemquota/cosmos" target="_blank" class="btn btn-gh">GitHub</a>
   </div>
 </div>
 
-<!-- RSIS3 -->
 <div class="proj-card" style="border-left:2.5px solid #ff8c00">
   <div class="proj-name" style="color:#ff8c00">🔄 RSIS3</div>
   <div class="proj-desc">Recursive Self-Improvement System — three-loop architecture (L1/L2/L3) with RRP protocol, knowledge graph integration, telemetry, evaluator.</div>
   <div class="proj-meta">112 files · 4.1MB · ~67k LOC · Python + JavaScript</div>
-  <div style="margin-bottom:.2rem"><span class="status-badge" style="background:rgba(0,255,159,.12);color:#00ff9f;border:1px solid rgba(0,255,159,.2)">● LIVE</span> <span class="status-badge" style="background:rgba(255,140,0,.1);color:#ffa500;border:1px solid rgba(255,140,0,.15)">Active Triad</span></div>
+  <div style="margin-bottom:.15rem"><span class="status-badge" style="background:rgba(0,255,159,.12);color:#00ff9f;border:1px solid rgba(0,255,159,.2)">● LIVE</span> <span class="status-badge" style="background:rgba(255,140,0,.1);color:#ffa500;border:1px solid rgba(255,140,0,.15)">Active Triad</span></div>
   <div class="btn-row">
     <a href="https://gemquota.github.io/hub/rsis3.html" target="_blank" class="btn btn-dash">📊 Dashboard</a>
-    <button class="btn-launch" onclick="copyCmd('rsis3')">▶ Launch</button>
+    <button class="btn-launch" onclick="openService('rsis3')">▶ Launch</button>
     <a href="https://github.com/gemquota/cosmos" target="_blank" class="btn btn-gh">GitHub</a>
   </div>
 </div>
 
 </div>
 
-<!-- MODULE 2: Ecosystem Stats -->
+<!-- MODULE 2: Service Controls -->
+<div class="module-label"><span class="icon">🎛️</span> Service Controls</div>
+<div class="ctrl-grid" id="ctrl-grid">
+
+<div class="ctrl-card" id="ctrl-space">
+  <div class="ctrl-header"><span style="color:#3b82f6">🚀 SPACE</span><span class="ctrl-status unknown" id="status-space">checking</span></div>
+  <div class="ctrl-url">URL: <a href="#" id="url-space" target="_blank">localhost:3000</a></div>
+  <div class="ctrl-cmd" id="cmd-space">cd components/space && npx tsx src/cli/index.ts</div>
+  <div class="btn-row">
+    <button class="btn-launch" onclick="openService('space')">▶ Open</button>
+    <button class="btn-stop" onclick="copyCmd('space')">📋 Copy Cmd</button>
+  </div>
+</div>
+
+<div class="ctrl-card" id="ctrl-mykb">
+  <div class="ctrl-header"><span style="color:#a855f7">📚 MyKB</span><span class="ctrl-status unknown" id="status-mykb">checking</span></div>
+  <div class="ctrl-url">URL: <a href="#" id="url-mykb" target="_blank">localhost:8765</a></div>
+  <div class="ctrl-cmd" id="cmd-mykb">cd components/mykb && python3 server.py</div>
+  <div class="btn-row">
+    <button class="btn-launch" onclick="openService('mykb')">▶ Open</button>
+    <button class="btn-stop" onclick="copyCmd('mykb')">📋 Copy Cmd</button>
+  </div>
+</div>
+
+<div class="ctrl-card" id="ctrl-rsis3">
+  <div class="ctrl-header"><span style="color:#ff8c00">🔄 RSIS3</span><span class="ctrl-status unknown" id="status-rsis3">checking</span></div>
+  <div class="ctrl-url">URL: <a href="#" id="url-rsis3" target="_blank">localhost:8080</a></div>
+  <div class="ctrl-cmd" id="cmd-rsis3">cd components/rsis3 && python3 -m rsis</div>
+  <div class="btn-row">
+    <button class="btn-launch" onclick="openService('rsis3')">▶ Open</button>
+    <button class="btn-stop" onclick="copyCmd('rsis3')">📋 Copy Cmd</button>
+  </div>
+</div>
+
+</div>
+
+<!-- MODULE 3: Ecosystem Stats -->
 <div class="module-label"><span class="icon">📊</span> Ecosystem Stats</div>
 <div class="card">
 <div class="stat-grid">
@@ -161,13 +198,12 @@ h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradi
 </div>
 </div>
 
-<!-- MODULE 3: Charts -->
+<!-- MODULE 4: Charts -->
 <div class="module-label"><span class="icon">📈</span> Charts</div>
 
 <!-- Donuts row -->
 <div class="donut-row">
 
-<!-- Donut 1: File Distribution -->
 <div class="donut-card">
 <div class="card-header"><span class="icon">🥧</span> File Distribution</div>
 <div class="donut-flex">
@@ -183,7 +219,6 @@ h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradi
   <div class="row"><span class="swatch" style="background:#ff8c00"></span><span class="lbl">RSIS3</span><span class="pct">3.9%</span><span class="cnt">112 files</span></div>
 </div></div></div>
 
-<!-- Donut 2: Disk Distribution -->
 <div class="donut-card">
 <div class="card-header"><span class="icon">🥧</span> Disk Distribution</div>
 <div class="donut-flex">
@@ -201,53 +236,41 @@ h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradi
 
 </div>
 
-<!-- Bar charts module -->
+<!-- Bar charts -->
 <div class="card">
 <div class="card-header"><span class="icon">📊</span> Stacked Bar Charts <span class="hdr-sub">click toggle for separate view</span>
 <button class="chart-toggle" onclick="toggleAllBars()" id="all-bar-toggle">▤ Separate All</button>
 </div>
 
-<!-- Bar 1: Code LOC by Component -->
 <div style="margin:.25rem 0">
 <div class="bar-label">Code LOC <span class="bar-val">Code files (TS/PY/JS) per component</span></div>
-<div id="code-stacked" class="chart-view">
-  <div class="stacked-bar-wrap">
-    <div class="stacked-bar">
-      <div class="seg" style="width:88.2%;background:#a855f7" title="MyKB: 2,377"></div>
-      <div class="seg" style="width:9.0%;background:#3b82f6" title="SPACE: 9,768"></div>
-      <div class="seg" style="width:2.8%;background:#ff8c00" title="RSIS3: 24,881"></div>
-    </div>
-    <div class="stacked-legend">
-      <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 2,377</span>
-      <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 9,768</span>
-      <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 24,881</span>
-    </div>
-  </div>
-</div>
+<div id="code-stacked" class="chart-view"><div class="stacked-bar-wrap"><div class="stacked-bar">
+  <div class="seg" style="width:67.3%;background:#ff8c00" title="RSIS3: 24,881"></div>
+  <div class="seg" style="width:26.4%;background:#3b82f6" title="SPACE: 9,768"></div>
+  <div class="seg" style="width:6.4%;background:#a855f7" title="MyKB: 2,377"></div>
+</div><div class="stacked-legend">
+  <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 24,881</span>
+  <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 9,768</span>
+  <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 2,377</span>
+</div></div></div>
 <div id="code-grouped" class="chart-view hidden">
-  <div class="perproj-row"><span class="pp-name" style="color:#a855f7">MyKB</span><div class="pp-bar"><div class="seg" style="width:100%;background:#a855f7"></div></div><span class="pp-val">2,377</span></div>
-  <div class="perproj-row"><span class="pp-name" style="color:#3b82f6">SPACE</span><div class="pp-bar"><div class="seg" style="width:39.3%;background:#3b82f6"></div></div><span class="pp-val">9,768</span></div>
   <div class="perproj-row"><span class="pp-name" style="color:#ff8c00">RSIS3</span><div class="pp-bar"><div class="seg" style="width:100%;background:#ff8c00"></div></div><span class="pp-val">24,881</span></div>
+  <div class="perproj-row"><span class="pp-name" style="color:#3b82f6">SPACE</span><div class="pp-bar"><div class="seg" style="width:39.3%;background:#3b82f6"></div></div><span class="pp-val">9,768</span></div>
+  <div class="perproj-row"><span class="pp-name" style="color:#a855f7">MyKB</span><div class="pp-bar"><div class="seg" style="width:9.6%;background:#a855f7"></div></div><span class="pp-val">2,377</span></div>
 </div>
 </div>
 
-<!-- Bar 2: Total LOC (all files) -->
 <div style="margin:.25rem 0">
 <div class="bar-label">Total LOC <span class="bar-val">All file types per component</span></div>
-<div id="totalloc-stacked" class="chart-view">
-  <div class="stacked-bar-wrap">
-    <div class="stacked-bar">
-      <div class="seg" style="width:42.9%;background:#a855f7" title="MyKB: 102,951"></div>
-      <div class="seg" style="width:28.9%;background:#3b82f6" title="SPACE: 69,357"></div>
-      <div class="seg" style="width:27.9%;background:#ff8c00" title="RSIS3: 66,956"></div>
-    </div>
-    <div class="stacked-legend">
-      <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 102,951</span>
-      <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 69,357</span>
-      <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 66,956</span>
-    </div>
-  </div>
-</div>
+<div id="totalloc-stacked" class="chart-view"><div class="stacked-bar-wrap"><div class="stacked-bar">
+  <div class="seg" style="width:42.9%;background:#a855f7" title="MyKB: 102,951"></div>
+  <div class="seg" style="width:28.9%;background:#3b82f6" title="SPACE: 69,357"></div>
+  <div class="seg" style="width:27.9%;background:#ff8c00" title="RSIS3: 66,956"></div>
+</div><div class="stacked-legend">
+  <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 102,951</span>
+  <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 69,357</span>
+  <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 66,956</span>
+</div></div></div>
 <div id="totalloc-grouped" class="chart-view hidden">
   <div class="perproj-row"><span class="pp-name" style="color:#a855f7">MyKB</span><div class="pp-bar"><div class="seg" style="width:100%;background:#a855f7"></div></div><span class="pp-val">102,951</span></div>
   <div class="perproj-row"><span class="pp-name" style="color:#3b82f6">SPACE</span><div class="pp-bar"><div class="seg" style="width:67.4%;background:#3b82f6"></div></div><span class="pp-val">69,357</span></div>
@@ -255,23 +278,17 @@ h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradi
 </div>
 </div>
 
-<!-- Bar 3: Disk Usage -->
 <div style="margin:.25rem 0">
 <div class="bar-label">Disk Usage <span class="bar-val">Storage per component</span></div>
-<div id="disk-stacked" class="chart-view">
-  <div class="stacked-bar-wrap">
-    <div class="stacked-bar">
-      <div class="seg" style="width:82.8%;background:#a855f7" title="MyKB: 58MB"></div>
-      <div class="seg" style="width:11.4%;background:#3b82f6" title="SPACE: 8MB"></div>
-      <div class="seg" style="width:5.9%;background:#ff8c00" title="RSIS3: 4.1MB"></div>
-    </div>
-    <div class="stacked-legend">
-      <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 58 MB</span>
-      <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 8 MB</span>
-      <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 4.1 MB</span>
-    </div>
-  </div>
-</div>
+<div id="disk-stacked" class="chart-view"><div class="stacked-bar-wrap"><div class="stacked-bar">
+  <div class="seg" style="width:82.8%;background:#a855f7" title="MyKB: 58MB"></div>
+  <div class="seg" style="width:11.4%;background:#3b82f6" title="SPACE: 8MB"></div>
+  <div class="seg" style="width:5.9%;background:#ff8c00" title="RSIS3: 4.1MB"></div>
+</div><div class="stacked-legend">
+  <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 58 MB</span>
+  <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 8 MB</span>
+  <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 4.1 MB</span>
+</div></div></div>
 <div id="disk-grouped" class="chart-view hidden">
   <div class="perproj-row"><span class="pp-name" style="color:#a855f7">MyKB</span><div class="pp-bar"><div class="seg" style="width:100%;background:#a855f7"></div></div><span class="pp-val">58 MB</span></div>
   <div class="perproj-row"><span class="pp-name" style="color:#3b82f6">SPACE</span><div class="pp-bar"><div class="seg" style="width:13.8%;background:#3b82f6"></div></div><span class="pp-val">8 MB</span></div>
@@ -279,23 +296,17 @@ h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradi
 </div>
 </div>
 
-<!-- Bar 4: File Count -->
 <div style="margin:.25rem 0">
 <div class="bar-label">File Count <span class="bar-val">Files per component</span></div>
-<div id="files-stacked" class="chart-view">
-  <div class="stacked-bar-wrap">
-    <div class="stacked-bar">
-      <div class="seg" style="width:84.6%;background:#a855f7" title="MyKB: 2,436"></div>
-      <div class="seg" style="width:11.6%;background:#3b82f6" title="SPACE: 333"></div>
-      <div class="seg" style="width:3.9%;background:#ff8c00" title="RSIS3: 112"></div>
-    </div>
-    <div class="stacked-legend">
-      <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 2,436</span>
-      <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 333</span>
-      <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 112</span>
-    </div>
-  </div>
-</div>
+<div id="files-stacked" class="chart-view"><div class="stacked-bar-wrap"><div class="stacked-bar">
+  <div class="seg" style="width:84.6%;background:#a855f7" title="MyKB: 2,436"></div>
+  <div class="seg" style="width:11.6%;background:#3b82f6" title="SPACE: 333"></div>
+  <div class="seg" style="width:3.9%;background:#ff8c00" title="RSIS3: 112"></div>
+</div><div class="stacked-legend">
+  <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 2,436</span>
+  <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 333</span>
+  <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 112</span>
+</div></div></div>
 <div id="files-grouped" class="chart-view hidden">
   <div class="perproj-row"><span class="pp-name" style="color:#a855f7">MyKB</span><div class="pp-bar"><div class="seg" style="width:100%;background:#a855f7"></div></div><span class="pp-val">2,436</span></div>
   <div class="perproj-row"><span class="pp-name" style="color:#3b82f6">SPACE</span><div class="pp-bar"><div class="seg" style="width:13.7%;background:#3b82f6"></div></div><span class="pp-val">333</span></div>
@@ -303,23 +314,17 @@ h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradi
 </div>
 </div>
 
-<!-- Bar 5: Directory Count -->
 <div style="margin:.25rem 0">
 <div class="bar-label">Directory Count <span class="bar-val">Subdirectories per component</span></div>
-<div id="dirs-stacked" class="chart-view">
-  <div class="stacked-bar-wrap">
-    <div class="stacked-bar">
-      <div class="seg" style="width:69.4%;background:#a855f7" title="MyKB: 163"></div>
-      <div class="seg" style="width:21.7%;background:#3b82f6" title="SPACE: 51"></div>
-      <div class="seg" style="width:8.9%;background:#ff8c00" title="RSIS3: 21"></div>
-    </div>
-    <div class="stacked-legend">
-      <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 163</span>
-      <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 51</span>
-      <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 21</span>
-    </div>
-  </div>
-</div>
+<div id="dirs-stacked" class="chart-view"><div class="stacked-bar-wrap"><div class="stacked-bar">
+  <div class="seg" style="width:69.4%;background:#a855f7" title="MyKB: 163"></div>
+  <div class="seg" style="width:21.7%;background:#3b82f6" title="SPACE: 51"></div>
+  <div class="seg" style="width:8.9%;background:#ff8c00" title="RSIS3: 21"></div>
+</div><div class="stacked-legend">
+  <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 163</span>
+  <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 51</span>
+  <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 21</span>
+</div></div></div>
 <div id="dirs-grouped" class="chart-view hidden">
   <div class="perproj-row"><span class="pp-name" style="color:#a855f7">MyKB</span><div class="pp-bar"><div class="seg" style="width:100%;background:#a855f7"></div></div><span class="pp-val">163</span></div>
   <div class="perproj-row"><span class="pp-name" style="color:#3b82f6">SPACE</span><div class="pp-bar"><div class="seg" style="width:31.3%;background:#3b82f6"></div></div><span class="pp-val">51</span></div>
@@ -329,7 +334,7 @@ h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradi
 
 </div>
 
-<!-- MODULE 4: Version History -->
+<!-- MODULE 5: History -->
 <div class="module-label"><span class="icon">📜</span> History</div>
 <div class="card">
 <div class="timeline">
@@ -352,17 +357,74 @@ h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradi
 </div>
 
 <script>
-const cmds = {
-  space: 'cd /dev/cosmos/components/space && npx tsx src/cli/index.ts',
-  mykb: 'cd /dev/cosmos/components/mykb && python3 server.py',
-  rsis3: 'cd /dev/cosmos/components/rsis3 && python3 -m rsis',
+// Service configurations
+var SERVICES = {
+  space: { name: 'SPACE', port: 3000, cmd: 'cd /dev/cosmos/components/space && npx tsx src/cli/index.ts', label: '🚀 SPACE' },
+  mykb: { name: 'MyKB', port: 8765, cmd: 'cd /dev/cosmos/components/mykb && python3 server.py', label: '📚 MyKB' },
+  rsis3: { name: 'RSIS3', port: 8080, cmd: 'cd /dev/cosmos/components/rsis3 && python3 -m rsis', label: '🔄 RSIS3' },
 };
-function copyCmd(name) {
-  navigator.clipboard.writeText(cmds[name] || '').then(() => {
-    const btns = document.querySelectorAll('.btn-launch');
+
+// Check if running locally
+var isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
+
+// Initialize service controls
+function initControls() {
+  Object.keys(SERVICES).forEach(function(key) {
+    var svc = SERVICES[key];
+    var urlEl = document.getElementById('url-' + key);
+    var statusEl = document.getElementById('status-' + key);
+    var cmdEl = document.getElementById('cmd-' + key);
+
+    if (isLocal) {
+      urlEl.href = 'http://localhost:' + svc.port;
+      urlEl.textContent = 'http://localhost:' + svc.port;
+      // Try to reach the service
+      fetch('http://localhost:' + svc.port + '/', { mode: 'no-cors', signal: AbortSignal.timeout(2000) })
+        .then(function() {
+          statusEl.textContent = '● ONLINE';
+          statusEl.className = 'ctrl-status on';
+        })
+        .catch(function() {
+          statusEl.textContent = '○ OFFLINE';
+          statusEl.className = 'ctrl-status off';
+        });
+    } else {
+      urlEl.href = '#';
+      urlEl.textContent = 'local only';
+      statusEl.textContent = '⚡ GH PAGES';
+      statusEl.className = 'ctrl-status unknown';
+      cmdEl.textContent = svc.cmd;
+    }
+  });
+}
+
+function openService(key) {
+  var svc = SERVICES[key];
+  if (!svc) return;
+  if (isLocal) {
+    window.open('http://localhost:' + svc.port, '_blank');
+  } else {
+    navigator.clipboard.writeText(svc.cmd).then(function() {
+      var btns = document.querySelectorAll('.btn-launch');
+      btns.forEach(function(b) {
+        var orig = b.textContent;
+        if (orig.includes('Launch') || orig.includes('Open')) {
+          b.textContent = '✓ Copied!';
+          setTimeout(function(){ b.textContent = orig; }, 1500);
+        }
+      });
+    });
+  }
+}
+
+function copyCmd(key) {
+  var svc = SERVICES[key];
+  if (!svc) return;
+  navigator.clipboard.writeText(svc.cmd).then(function() {
+    var btns = document.querySelectorAll('.btn-stop');
     btns.forEach(function(b) {
       var orig = b.textContent;
-      if (orig.includes('Launch')) {
+      if (orig.includes('Cmd')) {
         b.textContent = '✓ Copied!';
         setTimeout(function(){ b.textContent = orig; }, 1500);
       }
@@ -370,23 +432,9 @@ function copyCmd(name) {
   });
 }
 
-// Track bar states per chart
+// Bar chart toggles
 var barStates = {};
 function initBarState(id) { if (!barStates[id]) barStates[id] = 'stacked'; }
-function toggleBar(id) {
-  initBarState(id);
-  var s = document.getElementById(id+'-stacked');
-  var g = document.getElementById(id+'-grouped');
-  if (!s || !g) return;
-  if (barStates[id] === 'stacked') {
-    s.classList.add('hidden'); g.classList.remove('hidden');
-    barStates[id] = 'grouped';
-  } else {
-    g.classList.add('hidden'); s.classList.remove('hidden');
-    barStates[id] = 'stacked';
-  }
-  updateAllToggleText();
-}
 function toggleAllBars() {
   var allGrouped = true;
   var ids = ['code','totalloc','disk','files','dirs'];
@@ -406,14 +454,6 @@ function toggleAllBars() {
       barStates[id] = 'grouped';
     }
   });
-  updateAllToggleText();
-}
-function updateAllToggleText() {
-  var allGrouped = true;
-  var ids = ['code','totalloc','disk','files','dirs'];
-  ids.forEach(function(id) {
-    if (barStates[id] !== 'grouped') allGrouped = false;
-  });
   var btn = document.getElementById('all-bar-toggle');
   if (!btn) return;
   if (allGrouped) {
@@ -424,6 +464,9 @@ function updateAllToggleText() {
     btn.classList.add('active');
   }
 }
+
+// Initialize on load
+window.addEventListener('DOMContentLoaded', initControls);
 </script>
 </body>
 </html>
