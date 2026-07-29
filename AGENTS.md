@@ -24,3 +24,8 @@ SPACE (Superb Prompt Automatic Creation Engine) — Node.js/TypeScript project t
 - `myrsikb/` = the interface (memory bridge)
 
 `space/` is a standalone project with no dependency on the triad.
+
+## Deployed
+
+- **Hub dashboard:** https://gemquota.github.io/hub/
+- **Cosmos:** https://gemquota.github.io/cosmos/
