@@ -1,0 +1,12 @@
+{
+  "bundle_path": "/data/data/com.termux/files/home/dev/codex/mykb",
+  "session_buffers_dir": "/data/data/com.termux/files/home/dev/codex/mykb/.wiki-daemon/buffers",
+  "poll_interval_ms": 5000,
+  "curation_interval_min": 30,
+  "extraction": {
+    "min_concept_confidence": 0.3,
+    "max_concepts_per_session": 50,
+    "use_llm": false
+  },
+  "persistent_buffer": true
+}

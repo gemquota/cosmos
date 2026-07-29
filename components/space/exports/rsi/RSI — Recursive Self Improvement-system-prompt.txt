@@ -1,0 +1,48 @@
+You are a development specification for "RSI — Recursive Self Improvement".
+
+This specification was generated through a structured elicitation process covering domain analysis, entity modeling, relationship mapping, procedural design, technical requirements, methodology, and operations.
+
+## Domain & Audience
+Primary domain: Recursive Self Improvement (RSI) sits at the intersection of meta-learning, optimization theory, and AI alignment. It concerns itself with building systems that can analyze their own performance, identify weaknesses, and autonomously modify their strategies, prompts, architectures, or training data to achieve progressively better outcomes. Core sub-disciplines include: self-modifying code, evolutionary algorithms, automated prompt engineering, self-play, constitutional AI, and recursive reward modeling.
+Audience level: Experts / researchers — people who work in this domain daily
+Terminology: Standard industry terminology — use common terms precisely
+Scaffolding: Progressive — scaffold from simple foundations to advanced topics
+
+## Entities & Structure
+The domain contains the following entities:
+Core entities: ImprovementLoop (the recursive cycle), Evaluator (scores performance), Modifier (generates improvements), Artifact (the thing being improved — prompts, code, configs, strategies), EvaluationCriteria (what "better" means), SafetyGuard (prevents dangerous modifications), History (log of all modifications and their effects), and ConvergenceDetector (determines when further recursion yields diminishing returns).
+
+Categories: A single flat list — no meaningful sub-groupings
+Lifecycles: Versioned lifecycle — entities have history, revisions, or snapshots
+Constraints: Minimal constraints — entities have few invariants beyond uniqueness
+
+## Relationships
+Hierarchy: No hierarchy — all entities are peers with no containment structure
+Dependencies: Branching dependencies — a DAG of ordered entity relationships
+Causality: Event-driven — state changes propagate as events through the network
+
+## Procedures
+Steps: 5–8 steps — moderate complexity with clear waypoints
+Decisions: Moderate branching — multiple decision points with varying path counts
+Error handling: Retry-based — failed steps can be retried with backoff
+
+## Technical Requirements
+Hardware: Dual architecture — e.g., x86-64 + ARM
+Software: Two languages — e.g., backend + frontend split
+Performance: Moderate traffic — 100–10K req/s, sub-second latency, hundreds concurrent
+Security: Standard — OAuth2/MFA, encryption at rest, audit logging
+Scalability: Vertical — scale up a single node as needed
+
+## Development Process
+Cadence: Sprint-based agile (Scrum) — fixed-length iterations with formal ceremonies
+Team: Small team — 3–6 people with distinct roles (dev, design, PM)
+Quality: Standard — mandatory reviews, unit + integration tests, CI gates
+Communication: Async-first — written docs, Slack/Teams, minimal meetings
+
+## Operations
+Deployment: Standard — dev, staging, production with automated test suite
+Monitoring: Standard — structured logging, metrics dashboard, alert on errors
+Maintenance: Regular maintenance — scheduled patch cycles, dependency updates
+Stewardship: Build-and-run — the same team owns development and operations
+
+## Additional Details

@@ -1,0 +1,966 @@
+#!/usr/bin/env python3
+"""Build the telemetry dashboard from pulse data."""
+
+import json, os, sys
+
+PULSES_DIR = os.path.join(os.path.dirname(__file__), 'pulses')
+DATA_FILE = os.path.join(PULSES_DIR, 'dashboard-data.json')
+DASHBOARD_FILE = os.path.join(os.path.dirname(__file__), 'telemetry-dashboard.html')
+
+def load_data():
+    """Load all pulse JSONs and compile into dashboard data."""
+    all_pulses = []
+    all_goals = []
+    score_history = {}
+    telemetry_aggregates = {}
+    constraint_counts = {}
+    total_pass = total_hold = total_fail = total_impl = 0
+
+    for fname in sorted(os.listdir(PULSES_DIR)):
+        if not (fname.endswith('.json') and fname.startswith('pulse-')):
+            continue
+        with open(os.path.join(PULSES_DIR, fname)) as f:
+            p = json.load(f)
+        
+        pid = str(p['pulse'])
+        post = p.get('post_state', {}) or {}
+        scores = post.get('scores', {})
+        score_history[pid] = scores
+        pulse_goals = p.get('goals', [])
+        rrp_tel = p.get('rrp_telemetry_aggregate', {})
+        telemetry_aggregates[pid] = rrp_tel
+        
+        impl_count = sum(1 for g in pulse_goals if g.get('type', '') == 'implementation' or 
+                         g.get('rrp_evaluation', {}).get('trace', {}).get('goal_analysis', {}).get('goal_type') == 'implementation')
+        total_impl += impl_count
+        
+        approved = sum(1 for g in pulse_goals if g.get('rrp_evaluation', {}).get('decision') == 'PASS')
+        
+        all_pulses.append({
+            'id': pid,
+            'ts_start': p.get('timestamp_start', ''),
+            'ts_end': p.get('timestamp_end', ''),
+            'goals_count': len(pulse_goals),
+            'approved': approved,
+            'duration': p.get('summary', {}).get('duration_seconds', 0),
+            'scores': scores,
+            'type': p.get('type', 'standard'),
+            'num_goals': p.get('summary', {}).get('goals_generated', len(pulse_goals)),
+            'implementation_count': impl_count,
+            'telemetry': rrp_tel,
+            'avg_confidence': rrp_tel.get('avg_quality_index', 0) or 
+                round(sum(g.get('rrp_evaluation', {}).get('confidence', 0) for g in pulse_goals) / max(len(pulse_goals), 1), 3),
+        })
+        
+        for g in pulse_goals:
+            ev = g.get('rrp_evaluation', {})
+            dec = ev.get('decision', 'UNKNOWN')
+            if dec == 'PASS':
+                total_pass += 1
+            elif dec in ('HOLD',):
+                total_hold += 1
+            elif dec in ('FAIL', 'DISMISS'):
+                total_fail += 1
+            
+            constraints = ev.get('trace', {}).get('constraint_extraction', {}).get('constraints', {})
+            for cname, ctype in constraints.items():
+                if cname not in constraint_counts:
+                    constraint_counts[cname] = {'freq': 0, 'locked': 0}
+                constraint_counts[cname]['freq'] += 1
+                if ctype in ('LOCKED', 'REQUIRED'):
+                    constraint_counts[cname]['locked'] += 1
+            
+            conversation = ev.get('conversation', [])
+            rrp_tel_g = ev.get('rrp_telemetry', {})
+            
+            all_goals.append({
+                'p': pid,
+                'd': g.get('description', ''),
+                'dec': dec,
+                'conf': ev.get('confidence', 0),
+                'file': g.get('file', ''),
+                'func': g.get('function', ''),
+                'type': g.get('type', ev.get('trace', {}).get('goal_analysis', {}).get('goal_type', 'implementation')),
+                'conversation': [{'q': c.get('question', ''), 'a': c.get('answer', ''), 'r': c.get('round', 1)} for c in conversation],
+                'constraints': constraints,
+                'telemetry': rrp_tel_g,
+                'contradictions': ev.get('contradictions', []),
+            })
+    
+    summary = {
+        'tot': total_pass + total_hold + total_fail,
+        'pass': total_pass,
+        'hold': total_hold,
+        'fail': total_fail,
+        'impl_count': total_impl,
+        'ca': round(sum(g['conf'] for g in all_goals) / max(len(all_goals), 1), 3),
+        'pulse_count': len(all_pulses),
+        'cd': constraint_counts,
+    }
+    
+    data = {
+        'pulses': all_pulses,
+        'goals': all_goals,
+        'score_history': score_history,
+        'telemetry_aggregates': telemetry_aggregates,
+        'summary': summary,
+    }
+    
+    with open(DATA_FILE, 'w') as f:
+        json.dump(data, f, indent=2)
+    
+    return data
+
+
+def generate_html(data):
+    """Generate the dashboard HTML from data."""
+    pulses_json = json.dumps(data['pulses'])
+    goals_json = json.dumps(data['goals'])
+    scores_json = json.dumps(data['score_history'])
+    summary_json = json.dumps(data['summary'])
+    tel_agg_json = json.dumps(data.get('telemetry_aggregates', {}))
+    
+    html = f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RSIS Pulse Dashboard — RRP v2 Telemetry</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+  [v-cloak] {{ display: none; }}
+  .chart-box {{ height: 200px !important; position: relative; overflow: hidden; }}
+  .chart-box-lg {{ height: 260px !important; position: relative; overflow: hidden; }}
+  .pulse-expand-enter-active, .pulse-expand-leave-active {{ transition: all 0.25s ease; max-height: 2000px; }}
+  .pulse-expand-enter-from, .pulse-expand-leave-to {{ opacity: 0; max-height: 0; overflow: hidden; }}
+  ::-webkit-scrollbar {{ width: 6px; }}
+  ::-webkit-scrollbar-track {{ background: #0f172a; }}
+  ::-webkit-scrollbar-thumb {{ background: #334155; border-radius: 3px; }}
+  .goal-row:hover {{ background: rgba(99,102,241,0.08); }}
+  .telemetry-badge {{ font-size: 9px; padding: 1px 5px; border-radius: 4px; font-family: monospace; }}
+</style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen">
+
+<div id="app" class="max-w-7xl mx-auto px-4 py-6" v-cloak>
+
+  <!-- HEADER -->
+  <header class="bg-slate-800/80 border border-slate-700/50 rounded-2xl p-5 mb-6 shadow-xl">
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+          <span class="text-xs font-semibold text-indigo-400">RSIS &middot; {{ s.pulse_count }} pulses &middot; RRP v2</span>
+          <span class="text-xs text-slate-500">v0.0.14</span>
+          <span class="text-xs text-slate-600 mx-1">|</span>
+          <span class="text-xs text-slate-400">{{ s.tot }} goals &middot; {{ s.pass }} PASS &middot; {{ (s.ca * 100).toFixed(0) }}% avg conf</span>
+        </div>
+        <h1 class="text-2xl font-bold tracking-tight">Pulse Telemetry <span class="text-base font-normal text-slate-400">&mdash; RRP v2 full protocol + telemetry</span></h1>
+      </div>
+      <div class="flex gap-2 flex-wrap">
+        <button @click="activeTab='overview'" :class="activeTab==='overview'?'bg-indigo-500 shadow-lg shadow-indigo-500/20':'bg-slate-700 hover:bg-slate-600'" class="px-3 py-1.5 text-xs rounded-lg transition-all font-medium">Overview</button>
+        <button @click="activeTab='telemetry'" :class="activeTab==='telemetry'?'bg-indigo-500 shadow-lg shadow-indigo-500/20':'bg-slate-700 hover:bg-slate-600'" class="px-3 py-1.5 text-xs rounded-lg transition-all font-medium">Telemetry</button>
+        <button @click="activeTab='pulses'" :class="activeTab==='pulses'?'bg-indigo-500 shadow-lg shadow-indigo-500/20':'bg-slate-700 hover:bg-slate-600'" class="px-3 py-1.5 text-xs rounded-lg transition-all font-medium">Pulses</button>
+        <button @click="activeTab='goals'" :class="activeTab==='goals'?'bg-indigo-500 shadow-lg shadow-indigo-500/20':'bg-slate-700 hover:bg-slate-600'" class="px-3 py-1.5 text-xs rounded-lg transition-all font-medium">Goals</button>
+        <button @click="activeTab='kg'" :class="activeTab==='kg'?'bg-indigo-500 shadow-lg shadow-indigo-500/20':'bg-slate-700 hover:bg-slate-600'" class="px-3 py-1.5 text-xs rounded-lg transition-all font-medium">Graph</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- OVERVIEW TAB -->
+  <div v-if="activeTab==='overview'" class="space-y-5">
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+      <div class="lg:col-span-3 bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-sm font-semibold">Score Trend</h3>
+          <div class="flex gap-2 flex-wrap">
+            <button v-for="l in trendLayers" :key="l" @click="toggleTrendLayer(l)"
+              :class="trendActive.includes(l)?'bg-indigo-500/30 text-indigo-300 border-indigo-500/40':'bg-slate-700/50 text-slate-500 border-slate-600/30'"
+              class="px-2 py-0.5 text-[10px] font-mono rounded border transition-all">{{ l }}</button>
+          </div>
+        </div>
+        <div class="chart-box-lg"><canvas ref="trendChart"></canvas></div>
+      </div>
+      <div class="space-y-3">
+        <div class="bg-slate-800 rounded-xl border border-slate-700 p-3 text-center">
+          <div class="text-xs text-slate-400">Pass Rate</div>
+          <div class="text-xl font-bold text-emerald-400">{{ (s.pass/s.tot*100).toFixed(1) }}%</div>
+          <div class="text-[10px] text-slate-500"><span class="text-emerald-400">{{ s.pass }}</span>/{{ s.tot }}</div>
+        </div>
+        <div class="bg-slate-800 rounded-xl border border-slate-700 p-3 text-center">
+          <div class="text-xs text-slate-400">Score &Delta; L3</div>
+          <div class="text-xl font-bold text-indigo-400">+{{ l3delta.toFixed(1) }}</div>
+          <div class="text-[10px] text-slate-500">over {{ pids.length }} pulses</div>
+        </div>
+        <div class="bg-slate-800 rounded-xl border border-slate-700 p-3 text-center">
+          <div class="text-xs text-slate-400">Avg Confidence</div>
+          <div class="text-xl font-bold text-amber-400">{{ s.ca.toFixed(3) }}</div>
+          <div class="text-[10px] text-slate-500">RRP v2 confidence</div>
+        </div>
+        <div class="bg-slate-800 rounded-xl border border-slate-700 p-3 text-center">
+          <div class="text-xs text-slate-400">RRP Traces</div>
+          <div class="text-xl font-bold text-purple-400">{{ goalsWithConv() }}</div>
+          <div class="text-[10px] text-slate-500">of {{ s.tot }} goals</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl">
+        <h4 class="text-xs font-semibold text-slate-400 uppercase mb-2">Decision Distribution</h4>
+        <div class="chart-box"><canvas ref="decChart"></canvas></div>
+      </div>
+      <div class="bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl">
+        <h4 class="text-xs font-semibold text-slate-400 uppercase mb-2">Goal Type Breakdown</h4>
+        <div class="chart-box"><canvas ref="typeChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl">
+        <h4 class="text-xs font-semibold text-slate-400 uppercase mb-2">Constraint Frequency</h4>
+        <p class="text-[10px] text-slate-500 mb-2">Amber = high lock rate</p>
+        <div class="chart-box"><canvas ref="consChart"></canvas></div>
+      </div>
+      <div class="bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl overflow-y-auto max-h-[300px]">
+        <h4 class="text-xs font-semibold text-slate-400 uppercase mb-2">Constraint Details</h4>
+        <table class="w-full text-xs">
+          <thead><tr class="text-slate-500 border-b border-slate-700"><th class="text-left pb-1">Constraint</th><th class="text-right pb-1">Freq</th><th class="text-right pb-1">Locked</th><th class="text-right pb-1">Lock %</th></tr></thead>
+          <tbody>
+            <tr v-for="c in consList" :key="c.name" class="border-b border-slate-800/50 hover:bg-slate-700/20">
+              <td class="py-1 text-slate-300">{{ c.name }}</td>
+              <td class="py-1 text-right font-mono text-slate-400">{{ c.freq }}</td>
+              <td class="py-1 text-right font-mono" :class="c.locked > 0 ? 'text-amber-400' : 'text-slate-500'">{{ c.locked }}</td>
+              <td class="py-1 text-right font-mono" :class="c.lr > 50 ? 'text-amber-400' : 'text-slate-500'">{{ c.lr.toFixed(0) }}%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl">
+        <h4 class="text-xs font-semibold text-slate-400 uppercase mb-2">RRP Telemetry Quality &amp; Satisfaction</h4>
+        <div class="chart-box"><canvas ref="qualityChart"></canvas></div>
+      </div>
+      <div class="bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl">
+        <h4 class="text-xs font-semibold text-slate-400 uppercase mb-2">Goals &amp; Rounds per Pulse</h4>
+        <div class="chart-box"><canvas ref="goalsPerPulseChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl overflow-x-auto">
+      <h4 class="text-xs font-semibold text-slate-400 uppercase mb-3">All Layer Scores per Pulse</h4>
+      <table class="w-full text-xs">
+        <thead><tr class="text-slate-500 border-b border-slate-700">
+          <th class="text-left pb-1 pr-2">Pulse</th>
+          <th v-for="l in layers" :key="l" class="text-right pb-1 px-1 font-mono">{{ l }}</th>
+        </tr></thead>
+        <tbody>
+          <tr v-for="p in pulses" :key="p.id" class="border-b border-slate-800/50 hover:bg-slate-700/20">
+            <td class="py-1 pr-2 font-mono text-indigo-400">{{ p.id }}</td>
+            <td v-for="l in layers" :key="l" class="py-1 px-1 text-right font-mono" :class="getScoreColor(getScore(p, l))">{{ getScoreDisplay(p, l) }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TELEMETRY TAB -->
+  <div v-if="activeTab==='telemetry'" class="space-y-5">
+    <div class="flex items-center justify-between mb-2">
+      <h2 class="text-lg font-bold">RRP v2 Telemetry</h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+      <div v-for="(val, key) in telemetrySummary" :key="key" class="bg-slate-800 rounded-xl border border-slate-700 p-3 text-center">
+        <div class="text-[10px] text-slate-400 uppercase">{{ key }}</div>
+        <div class="text-lg font-bold text-indigo-400">{{ val }}</div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div class="bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl">
+        <h4 class="text-xs font-semibold text-slate-400 uppercase mb-2">Ambiguity Radar &mdash; Latest Goals</h4>
+        <p class="text-[10px] text-slate-500 mb-2">4-dimension ambiguity vector per goal (0=clear, 1=maximally ambiguous)</p>
+        <div class="chart-box-lg"><canvas ref="ambRadarChart"></canvas></div>
+      </div>
+      <div class="bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl">
+        <h4 class="text-xs font-semibold text-slate-400 uppercase mb-2">Topic Coverage per Goal</h4>
+        <p class="text-[10px] text-slate-500 mb-2">8-bit topic mask (ARCH, SEC, DATA, PERF, SCAL, TEST, DEPL, UX)</p>
+        <div class="chart-box"><canvas ref="topicChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div class="bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl">
+        <h4 class="text-xs font-semibold text-slate-400 uppercase mb-2">Budget Saturation</h4>
+        <p class="text-[10px] text-slate-500 mb-2">Session token budget usage across goals</p>
+        <div class="chart-box"><canvas ref="budgetChart"></canvas></div>
+      </div>
+      <div class="bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl">
+        <h4 class="text-xs font-semibold text-slate-400 uppercase mb-2">Satisfaction Trend</h4>
+        <p class="text-[10px] text-slate-500 mb-2">Per-round user satisfaction with trend direction</p>
+        <div class="chart-box"><canvas ref="satChart"></canvas></div>
+      </div>
+      <div class="bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl">
+        <h4 class="text-xs font-semibold text-slate-400 uppercase mb-2">Ledger &amp; Checkpoints</h4>
+        <p class="text-[10px] text-slate-500 mb-2">Transaction ledger entries and checkpoint count per pulse</p>
+        <div class="chart-box"><canvas ref="ledgerChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl overflow-y-auto max-h-80">
+      <h4 class="text-xs font-semibold text-slate-400 uppercase mb-2">Recent Transaction Ledger</h4>
+      <table class="w-full text-xs">
+        <thead><tr class="text-slate-500 border-b border-slate-700">
+          <th class="text-left pb-1">Round</th><th class="text-left pb-1">Phase</th>
+          <th class="text-left pb-1">Description</th><th class="text-right pb-1">Ambiguity</th>
+          <th class="text-right pb-1">Constraints</th><th class="text-right pb-1">Topics</th>
+        </tr></thead>
+        <tbody>
+          <tr v-for="(entry, ei) in ledgerEntries" :key="ei" class="border-b border-slate-800/50">
+            <td class="py-1 font-mono text-slate-400">{{ entry.round }}</td>
+            <td class="py-1"><span :class="phaseClass(entry.phase)" class="px-1 py-0.5 rounded text-[9px] font-mono">{{ entry.phase }}</span></td>
+            <td class="py-1 text-slate-300 max-w-xs truncate">{{ entry.description }}</td>
+            <td class="py-1 text-right font-mono">{{ (entry.ambiguity_before?.avg || 0).toFixed(2) }}</td>
+            <td class="py-1 text-right font-mono text-amber-400">{{ (entry.constraints_locked || []).length }}</td>
+            <td class="py-1 text-right font-mono text-indigo-400">{{ entry.topics_covered || 0 }}</td>
+          </tr>
+          <tr v-if="ledgerEntries.length === 0"><td colspan="6" class="py-4 text-center text-slate-500 italic">No ledger data from pre-v2 pulses</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- PULSES TAB -->
+  <div v-if="activeTab==='pulses'" class="space-y-4">
+    <div class="flex items-center justify-between mb-2">
+      <h2 class="text-lg font-bold">Pulse Timeline</h2>
+      <div class="flex gap-2">
+        <button @click="expandAllPulses" class="px-3 py-1 text-xs bg-slate-700 hover:bg-slate-600 rounded-lg transition-all">Expand All</button>
+        <button @click="collapseAllPulses" class="px-3 py-1 text-xs bg-slate-700 hover:bg-slate-600 rounded-lg transition-all">Collapse All</button>
+      </div>
+    </div>
+
+    <div v-for="pulse in sortedPulses" :key="pulse.id"
+      class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden shadow-xl transition-all hover:border-slate-600/80">
+      <div @click="togglePulse(pulse.id)" class="p-4 cursor-pointer flex flex-wrap items-center justify-between gap-3 bg-slate-800/80 hover:bg-slate-700/30 transition-colors select-none">
+        <div class="flex items-center gap-3">
+          <span class="text-lg">{{ pulseExpandIcon(pulse.id) }}</span>
+          <span class="px-2 py-0.5 bg-slate-900 font-mono text-xs font-bold rounded text-indigo-400 border border-slate-700">#{{ pulse.id }}</span>
+          <div>
+            <span class="text-sm font-semibold text-slate-200">{{ pulse.goals_count }} goals &middot; {{ pulse.approved }} approved</span>
+            <span class="text-[10px] text-slate-500 ml-2">{{ formatTime(pulse.ts_start) }} &middot; {{ pulse.type.slice(0,15) }}{{ pulse.type.length > 15 ? '\u2026' : '' }}</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-[10px] text-slate-400">{{ pulse.duration.toFixed(1) }}s</span>
+          <div class="w-20 bg-slate-700 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-emerald-400 h-full rounded-full" :style="{width: (pulse.approved / Math.max(pulse.goals_count,1) * 100) + '%'}"></div>
+          </div>
+          <span class="text-xs font-mono text-emerald-400">{{ (pulse.approved / Math.max(pulse.goals_count,1) * 100).toFixed(0) }}%</span>
+        </div>
+      </div>
+
+      <transition name="pulse-expand">
+        <div v-show="expandedPulses[pulse.id]" class="border-t border-slate-700 p-4 bg-slate-900/40 space-y-4">
+          <div v-if="hasScores(pulse)" class="grid grid-cols-9 gap-1">
+            <div v-for="l in layers" :key="l" class="text-center p-1.5 bg-slate-800/60 rounded border border-slate-700/50">
+              <div class="text-[10px] text-slate-500">{{ l }}</div>
+              <div class="text-sm font-bold font-mono" :class="getScoreColor(getScore(pulse, l))">{{ getScoreDisplay(pulse, l) }}</div>
+            </div>
+          </div>
+
+          <div v-if="pulse.telemetry && pulse.telemetry.total_questions"
+            class="grid grid-cols-4 md:grid-cols-8 gap-2">
+            <div class="bg-slate-800/60 rounded border border-slate-700/50 p-1.5 text-center">
+              <div class="text-[9px] text-slate-500">Questions</div><div class="text-xs font-bold text-indigo-300">{{ pulse.telemetry.total_questions }}</div></div>
+            <div class="bg-slate-800/60 rounded border border-slate-700/50 p-1.5 text-center">
+              <div class="text-[9px] text-slate-500">Rounds</div><div class="text-xs font-bold text-slate-200">{{ pulse.telemetry.total_rounds }}</div></div>
+            <div class="bg-slate-800/60 rounded border border-slate-700/50 p-1.5 text-center">
+              <div class="text-[9px] text-slate-500">Quality</div><div class="text-xs font-bold text-emerald-400">{{ pulse.telemetry.avg_quality_index ? pulse.telemetry.avg_quality_index.toFixed(2) : '\u2014' }}</div></div>
+            <div class="bg-slate-800/60 rounded border border-slate-700/50 p-1.5 text-center">
+              <div class="text-[9px] text-slate-500">Satisfaction</div><div class="text-xs font-bold text-amber-400">{{ pulse.telemetry.avg_satisfaction ? pulse.telemetry.avg_satisfaction.toFixed(2) : '\u2014' }}</div></div>
+            <div class="bg-slate-800/60 rounded border border-slate-700/50 p-1.5 text-center">
+              <div class="text-[9px] text-slate-500">Budget</div><div class="text-xs font-bold text-cyan-400">{{ pulse.telemetry.avg_budget_saturation ? pulse.telemetry.avg_budget_saturation + '%' : '\u2014' }}</div></div>
+            <div class="bg-slate-800/60 rounded border border-slate-700/50 p-1.5 text-center">
+              <div class="text-[9px] text-slate-500">Ledger</div><div class="text-xs font-bold text-purple-400">{{ pulse.telemetry.total_ledger_entries || 0 }}</div></div>
+            <div class="bg-slate-800/60 rounded border border-slate-700/50 p-1.5 text-center">
+              <div class="text-[9px] text-slate-500">Checkpoints</div><div class="text-xs font-bold text-rose-400">{{ pulse.telemetry.total_checkpoints || 0 }}</div></div>
+          </div>
+
+          <div v-for="goal in getPulseGoals(pulse.id)" :key="goal.d"
+            class="bg-slate-800/40 border border-slate-700/40 rounded-xl p-3 hover:border-slate-600/60 transition-all">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-1">
+                  <span :class="goal.dec==='PASS'?'bg-emerald-500/10 text-emerald-400 border-emerald-500/20':'bg-amber-500/10 text-amber-400 border-amber-500/20'"
+                    class="px-2 py-0.5 text-[10px] font-bold rounded border">{{ goal.dec }}</span>
+                  <span class="text-[10px] text-slate-500 font-mono">{{ goal.file || '?' }} &rarr; {{ goal.func || '?' }}</span>
+                </div>
+                <div class="text-xs text-slate-200">{{ goal.d }}</div>
+                <div v-if="goal.telemetry && goal.telemetry.ambiguity" class="flex flex-wrap gap-1 mt-1">
+                  <span class="telemetry-badge bg-indigo-900/40 text-indigo-300 border border-indigo-800/30"
+                    :title="'Ambiguity: req=' + goal.telemetry.ambiguity.requirements + ' data=' + goal.telemetry.ambiguity.data_model + ' edge=' + goal.telemetry.ambiguity.edge_case + ' det=' + goal.telemetry.ambiguity.determinism">
+                    A:{{ goal.telemetry.ambiguity.avg.toFixed(2) }}</span>
+                  <span v-if="goal.telemetry.topic_coverage" class="telemetry-badge bg-cyan-900/40 text-cyan-300 border border-cyan-800/30"
+                    :title="'Topics: ' + (goal.telemetry.topic_coverage.topics || []).join(', ')">
+                    T:{{ (goal.telemetry.topic_coverage.topics || []).length }}</span>
+                  <span v-if="goal.telemetry.quality_index" class="telemetry-badge bg-emerald-900/40 text-emerald-300 border border-emerald-800/30">Q:{{ goal.telemetry.quality_index.average.toFixed(2) }}</span>
+                  <span v-if="goal.telemetry.satisfaction" class="telemetry-badge bg-amber-900/40 text-amber-300 border border-amber-800/30">S:{{ goal.telemetry.satisfaction.cumulative.toFixed(2) }}</span>
+                  <span v-if="goal.telemetry.budget" class="telemetry-badge bg-rose-900/40 text-rose-300 border border-rose-800/30">B:{{ goal.telemetry.budget.saturation_pct }}%</span>
+                </div>
+              </div>
+              <div class="text-right flex-shrink-0">
+                <div class="text-xs font-mono text-indigo-300">{{ (goal.conf * 100).toFixed(0) }}%</div>
+                <div class="text-[10px] text-slate-500">conf</div>
+              </div>
+            </div>
+
+            <div v-if="Object.keys(goal.constraints).length > 0" class="flex flex-wrap gap-1 mb-2">
+              <span v-for="(ct, cn) in goal.constraints" :key="cn"
+                :class="ct==='LOCKED'||ct==='REQUIRED'?'bg-amber-500/10 text-amber-400 border-amber-500/30':'bg-slate-700/50 text-slate-400 border-slate-600/30'"
+                class="px-1.5 py-0.5 text-[9px] font-mono rounded border">{{ cn }}:{{ ct }}</span>
+            </div>
+
+            <div v-if="goal.conversation && goal.conversation.length > 0">
+              <button @click.stop="togglePulseGoalConv(pulse.id, goal.d.substring(0,20))"
+                class="text-[10px] text-indigo-400 hover:text-indigo-300 transition-colors">
+                {{ activeConvs[pulse.id + '-' + goal.d.substring(0,20)] ? '\u25BC' : '\u25B6' }} RRP Conversation ({{ goal.conversation.length }} turns)
+              </button>
+              <div v-show="activeConvs[pulse.id + '-' + goal.d.substring(0,20)]" class="mt-2 space-y-1.5 max-h-48 overflow-y-auto">
+                <div v-for="(turn, ti) in goal.conversation" :key="ti"
+                  class="text-[10px] p-1.5 rounded" :class="ti % 2 === 0 ? 'bg-indigo-900/20 border-l-2 border-indigo-500' : 'bg-emerald-900/20 border-l-2 border-emerald-500'">
+                  <span class="font-semibold text-slate-400">{{ ti % 2 === 0 ? 'Q:' : 'A:' }}</span>
+                  <span class="text-slate-300">{{ turn.q || turn.a }}</span>
+                  <span v-if="turn.r" class="text-slate-500 ml-1">(r{{ turn.r }})</span>
+                </div>
+              </div>
+            </div>
+
+            <div v-if="goal.contradictions && goal.contradictions.length > 0" class="mt-1">
+              <div v-for="(c, ci) in goal.contradictions" :key="ci"
+                class="text-[10px] text-rose-400 bg-rose-900/10 border border-rose-800/30 rounded p-1">
+                &nbsp;&#9888; Contradiction: {{ c }}</div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+  </div>
+
+  <!-- GOALS TAB -->
+  <div v-if="activeTab==='goals'" class="space-y-4">
+    <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+      <h2 class="text-lg font-bold">All Goals</h2>
+      <div class="flex flex-wrap gap-2">
+        <select v-model="gf" class="bg-slate-700 border border-slate-600 rounded-lg px-2 py-1 text-xs text-slate-300">
+          <option value="all">All Decisions</option>
+          <option value="PASS">PASS</option>
+          <option value="HOLD">HOLD</option>
+          <option value="FAIL">FAIL</option>
+        </select>
+        <select v-model="pf" class="bg-slate-700 border border-slate-600 rounded-lg px-2 py-1 text-xs text-slate-300">
+          <option value="all">All Pulses</option>
+          <option v-for="p in pulses" :key="p.id" :value="p.id">Pulse #{{ p.id }}</option>
+        </select>
+        <span class="text-xs text-slate-400 self-center">{{ filteredGoals.length }} goals</span>
+      </div>
+    </div>
+
+    <div v-for="goal in filteredGoals" :key="goal.d + goal.p"
+      class="goal-row bg-slate-800 rounded-xl border border-slate-700/60 p-3 transition-all cursor-pointer"
+      @click="toggleGoalDetail(goal.d + goal.p)">
+      <div class="flex items-start justify-between gap-3">
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-1">
+            <span :class="goal.dec==='PASS'?'bg-emerald-500/10 text-emerald-400 border-emerald-500/20':'bg-amber-500/10 text-amber-400 border-amber-500/20'"
+              class="px-2 py-0.5 text-[10px] font-bold rounded border">{{ goal.dec }}</span>
+            <span class="text-[10px] text-indigo-400 font-mono">#{{ goal.p }}</span>
+            <span class="text-[10px] text-slate-500 font-mono">{{ goal.file || '?' }} &rarr; {{ goal.func || '?' }}</span>
+          </div>
+          <div class="text-sm text-slate-200 truncate">{{ goal.d }}</div>
+          <div v-if="goal.telemetry && goal.telemetry.ambiguity" class="flex flex-wrap gap-1 mt-1">
+            <span class="telemetry-badge bg-indigo-900/40 text-indigo-300">A:{{ goal.telemetry.ambiguity.avg.toFixed(2) }}</span>
+            <span v-if="goal.telemetry.topic_coverage" class="telemetry-badge bg-cyan-900/40 text-cyan-300">T:{{ (goal.telemetry.topic_coverage.topics || []).length }}</span>
+          </div>
+        </div>
+        <div class="text-right flex-shrink-0">
+          <div class="text-sm font-mono text-indigo-300">{{ (goal.conf * 100).toFixed(0) }}%</div>
+          <div class="text-[10px] text-slate-500">{{ goal.type }}</div>
+        </div>
+      </div>
+      <div v-show="expandedGoals[goal.d + goal.p]" class="mt-3 pt-3 border-t border-slate-700/50 space-y-2">
+        <div class="flex flex-wrap gap-1">
+          <span v-for="(ct, cn) in goal.constraints" :key="cn"
+            :class="ct==='LOCKED'||ct==='REQUIRED'?'bg-amber-500/10 text-amber-400 border-amber-500/30':'bg-slate-700/50 text-slate-400 border-slate-600/30'"
+            class="px-1.5 py-0.5 text-[9px] font-mono rounded border">{{ cn }}:{{ ct }}</span>
+        </div>
+        <div v-if="goal.telemetry && goal.telemetry.ambiguity" class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
+          <div class="bg-slate-900/40 rounded p-1.5 border border-slate-700/30">
+            <div class="text-[9px] text-slate-500">Ambiguity</div>
+            <div class="text-xs font-mono">r:{{ goal.telemetry.ambiguity.requirements.toFixed(2) }} d:{{ goal.telemetry.ambiguity.data_model.toFixed(2) }}</div>
+            <div class="text-xs font-mono">e:{{ goal.telemetry.ambiguity.edge_case.toFixed(2) }} det:{{ goal.telemetry.ambiguity.determinism.toFixed(2) }}</div>
+          </div>
+          <div v-if="goal.telemetry.budget" class="bg-slate-900/40 rounded p-1.5 border border-slate-700/30">
+            <div class="text-[9px] text-slate-500">Budget</div>
+            <div class="text-xs font-mono text-rose-300">{{ goal.telemetry.budget.saturation_pct }}% used</div>
+            <div class="text-xs font-mono text-slate-400">{{ goal.telemetry.budget.session_used }}/{{ goal.telemetry.budget.session_limit }} tokens</div>
+          </div>
+          <div v-if="goal.telemetry.quality_index" class="bg-slate-900/40 rounded p-1.5 border border-slate-700/30">
+            <div class="text-[9px] text-slate-500">Quality Index</div>
+            <div class="text-sm font-bold text-emerald-400">{{ goal.telemetry.quality_index.average.toFixed(2) }}</div>
+            <div class="text-[10px] text-slate-500">{{ goal.telemetry.quality_index.count }} rounds</div>
+          </div>
+          <div v-if="goal.telemetry.timing" class="bg-slate-900/40 rounded p-1.5 border border-slate-700/30">
+            <div class="text-[9px] text-slate-500">Timing</div>
+            <div class="text-xs font-mono">{{ goal.telemetry.timing.total_duration_s }}s total</div>
+            <div class="text-xs font-mono text-slate-400">{{ goal.telemetry.timing.round_count }} rounds</div>
+          </div>
+        </div>
+
+        <div v-if="goal.telemetry && goal.telemetry.topic_coverage" class="flex flex-wrap gap-1">
+          <span v-for="topic in allTopics" :key="topic.name"
+            :class="(goal.telemetry.topic_coverage.bitmask & topic.bit) ? 'bg-emerald-900/30 text-emerald-400 border-emerald-700/40' : 'bg-slate-800/50 text-slate-600 border-slate-700/30'"
+            class="px-1.5 py-0.5 text-[9px] font-mono rounded border">{{ topic.name }}</span>
+        </div>
+
+        <div v-if="goal.conversation && goal.conversation.length > 0" class="space-y-1.5 max-h-64 overflow-y-auto mt-2">
+          <div class="text-[10px] font-semibold text-slate-400 mb-1">RRP Conversation:</div>
+          <div v-for="(turn, ti) in goal.conversation" :key="ti"
+            class="text-[10px] p-1.5 rounded" :class="ti % 2 === 0 ? 'bg-indigo-900/20 border-l-2 border-indigo-500' : 'bg-emerald-900/20 border-l-2 border-emerald-500'">
+            <span class="font-semibold text-slate-400">{{ ti % 2 === 0 ? 'Q:' : 'A:' }}</span>
+            <span class="text-slate-300">{{ turn.q || turn.a }}</span>
+          </div>
+        </div>
+        <div v-else class="text-[10px] text-slate-500 italic">No RRP conversation recorded.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KG TAB -->
+  <div v-if="activeTab==='kg'" class="space-y-4">
+    <div class="bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl">
+      <h3 class="text-sm font-semibold mb-3">Knowledge Graph &mdash; 9-Layer Architecture</h3>
+      <p class="text-xs text-slate-400 mb-4">Tap a node for details. Arrows show influence direction.</p>
+      <div class="relative bg-slate-900/60 rounded-xl border border-slate-700/50 p-4" style="height:500px;">
+        <canvas ref="kgCanvas" style="width:100%;height:100%;"></canvas>
+        <div v-if="selectedNode" class="absolute top-4 right-4 bg-slate-800 border border-slate-600 rounded-xl p-3 shadow-2xl max-w-xs z-10">
+          <div class="flex items-center justify-between mb-1">
+            <span class="font-bold text-sm" :style="{color: selectedNode.color}">{{ selectedNode.label }}</span>
+            <button @click="selectedNode=null" class="text-slate-500 hover:text-slate-300 text-xs">&times;</button>
+          </div>
+          <div class="text-[10px] text-slate-400 mb-1">{{ selectedNode.purpose }}</div>
+          <div class="text-[10px] text-slate-500">Timescale: {{ selectedNode.timescale }}</div>
+          <div class="mt-2">
+            <div class="text-[10px] font-semibold text-slate-400 mb-1">Influences:</div>
+            <div v-for="edge in selectedNode.edges" :key="edge" class="text-[10px] text-slate-500">&rarr; {{ edge }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const {{ createApp, ref, computed, onMounted, nextTick, watch }} = Vue;
+
+const PULSES_DATA = {pulses_json};
+const GOALS_DATA_RAW = {goals_json};
+const SCORE_HISTORY_RAW = {scores_json};
+const SUMMARY = {summary_json};
+const TELEMETRY_AGG = {tel_agg_json};
+
+createApp({{
+  setup() {{
+    const pulses = ref(PULSES_DATA);
+    const goals = ref(GOALS_DATA_RAW);
+    const scoreHistory = ref(SCORE_HISTORY_RAW);
+    const s = ref(SUMMARY);
+    const telAgg = ref(TELEMETRY_AGG);
+
+    const activeTab = ref('overview');
+    const expandedPulses = ref({{}});
+    const expandedGoals = ref({{}});
+    const activeConvs = ref({{}});
+    const gf = ref('all');
+    const pf = ref('all');
+    const selectedNode = ref(null);
+    const trendActive = ref(['L1', 'L3', 'L4', 'L9']);
+
+    const layers = ['L1','L2','L3','L4','L5','L6','L7','L8','L9'];
+    const trendLayers = ['L1','L2','L3','L4','L5','L6','L7','L8','L9'];
+
+    const allTopics = [
+      {{ name: 'ARCH', bit: 1 }}, {{ name: 'SEC', bit: 2 }}, {{ name: 'DATA', bit: 4 }},
+      {{ name: 'PERF', bit: 8 }}, {{ name: 'SCAL', bit: 16 }}, {{ name: 'TEST', bit: 32 }},
+      {{ name: 'DEPL', bit: 64 }}, {{ name: 'UX', bit: 128 }}
+    ];
+
+    const pids = computed(() => pulses.value.map(p => p.id));
+    const l3delta = computed(() => {{
+      const vals = pids.value.map(pid => scoreHistory.value[pid]?.L3 || 0);
+      return vals.length > 1 ? vals[vals.length - 1] - vals[0] : 0;
+    }});
+    const consList = computed(() => {{
+      return Object.entries(s.value.cd || {{}}).map(([k, v]) => ({{
+        name: k, freq: v.freq, locked: v.locked,
+        lr: v.freq > 0 ? (v.locked / v.freq * 100) : 0
+      }})).sort((a, b) => b.freq - a.freq);
+    }});
+    const sortedPulses = computed(() => {{
+      return [...pulses.value].sort((a, b) => parseInt(a.id) - parseInt(b.id));
+    }});
+    const filteredGoals = computed(() => {{
+      let g = goals.value;
+      if (gf.value !== 'all') g = g.filter(x => x.dec === gf.value);
+      if (pf.value !== 'all') g = g.filter(x => x.p === pf.value);
+      return g;
+    }});
+    const telemetrySummary = computed(() => {{
+      const at = [...pulses.value].filter(p => p.telemetry && p.telemetry.total_questions);
+      if (at.length === 0) return {{ 'No Data': '\u2014' }};
+      return {{
+        'Pulses': at.length,
+        'Questions': at.reduce((s, p) => s + (p.telemetry.total_questions || 0), 0),
+        'Rounds': at.reduce((s, p) => s + (p.telemetry.total_rounds || 0), 0),
+        'Avg Quality': Number(at.reduce((s, p) => s + (p.telemetry.avg_quality_index || 0), 0) / at.length).toFixed(2),
+        'Avg Satisf.': Number(at.reduce((s, p) => s + (p.telemetry.avg_satisfaction || 0), 0) / at.length).toFixed(2),
+        'Ledger': at.reduce((s, p) => s + (p.telemetry.total_ledger_entries || 0), 0),
+      }};
+    }});
+    const ledgerEntries = computed(() => {{
+      return [];
+    }});
+
+    function getPulseGoals(pid) {{ return goals.value.filter(g => g.p === pid); }}
+    function getScore(pulse, layer) {{ return scoreHistory.value[pulse.id]?.[layer] ?? pulse.scores?.[layer] ?? null; }}
+    function getScoreDisplay(pulse, layer) {{ const v = getScore(pulse, layer); return v !== null ? v.toFixed(1) : '\u2014'; }}
+    function getScoreColor(v) {{ if (v === null) return 'text-slate-600'; if (v >= 80) return 'text-emerald-400'; if (v >= 60) return 'text-indigo-400'; if (v >= 40) return 'text-amber-400'; return 'text-rose-400'; }}
+    function hasScores(pulse) {{ return Object.keys(pulse.scores || {{}}).length > 0 || Object.keys(scoreHistory.value[pulse.id] || {{}}).length > 0; }}
+    function goalsWithConv() {{ return goals.value.filter(g => g.conversation && g.conversation.length > 0).length; }}
+    function formatTime(ts) {{ if (!ts) return '\u2014'; try {{ return new Date(ts).toLocaleTimeString([], {{hour:'2-digit',minute:'2-digit'}}); }} catch(e) {{ return ts; }} }}
+    function togglePulse(pid) {{ expandedPulses.value[pid] = !expandedPulses.value[pid]; }}
+    function toggleGoalDetail(key) {{ expandedGoals.value[key] = !expandedGoals.value[key]; }}
+    function togglePulseGoalConv(pid, key) {{ activeConvs.value[pid + '-' + key] = !activeConvs.value[pid + '-' + key]; }}
+    function pulseExpandIcon(pid) {{ return expandedPulses.value[pid] ? '\u25BC' : '\u25B6'; }}
+    function expandAllPulses() {{ pulses.value.forEach(p => {{ expandedPulses.value[p.id] = true; }}); }}
+    function collapseAllPulses() {{ pulses.value.forEach(p => {{ expandedPulses.value[p.id] = false; }}); }}
+    function toggleTrendLayer(l) {{ const idx = trendActive.value.indexOf(l); if (idx >= 0) {{ if (trendActive.value.length > 1) trendActive.value.splice(idx, 1); }} else {{ trendActive.value.push(l); }} renderCharts(); }}
+
+    // Chart refs
+    const trendChart = ref(null);
+    const decChart = ref(null);
+    const typeChart = ref(null);
+    const consChart = ref(null);
+    const goalsPerPulseChart = ref(null);
+    const qualityChart = ref(null);
+    const ambRadarChart = ref(null);
+    const topicChart = ref(null);
+    const budgetChart = ref(null);
+    const satChart = ref(null);
+    const ledgerChart = ref(null);
+    const kgCanvas = ref(null);
+    let charts = {{}};
+
+    function destroyCharts() {{ Object.values(charts).forEach(c => {{ if (c) c.destroy(); }}); charts = {{}}; }}
+
+    function renderCharts() {{
+      destroyCharts();
+      nextTick(() => {{
+        const nc = (el, opts) => {{ if (el) {{ const chart = new Chart(el, opts); charts[opts.id || 'c'] = chart; }} }};
+
+        // Trend
+        if (trendChart.value) {{
+          const colors = ['#6366f1','#a855f7','#06b6d4','#84cc16','#f59e0b','#ef4444','#ec4899','#14b8a6','#f97316'];
+          nc(trendChart.value, {{ id:'trend', type:'line', data:{{
+            labels: pids.value,
+            datasets: trendActive.value.map((l, i) => ({{
+              label: l, data: pids.value.map(pid => scoreHistory.value[pid]?.[l] ?? null),
+              borderColor: colors[i], tension: 0.35, pointRadius: 3, borderWidth: 2, fill: false, spanGaps: true
+            }}))
+          }}, options:{{
+            responsive: true, maintainAspectRatio: false, animation: {{ duration: 300 }},
+            plugins: {{ legend: {{ labels: {{ color: '#94a3b8', font: {{ size: 10 }}, usePointStyle: true }} }} }},
+            scales: {{ y: {{ min: 30, max: 105, grid: {{ color: '#1e293b' }}, ticks: {{ color: '#64748b', font: {{ size: 9 }} }} }},
+                       x: {{ grid: {{ display: false }}, ticks: {{ color: '#64748b', font: {{ size: 9 }} }} }} }}
+          }}}});
+        }}
+
+        // Decision doughnut
+        if (decChart.value) {{
+          const pass = s.value.pass||0, hold = s.value.hold||0, fail = s.value.fail||0;
+          const hd = pass+hold+fail > 0;
+          nc(decChart.value, {{ id:'dec', type:'doughnut', data:{{
+            labels: ['PASS','HOLD','FAIL'],
+            datasets: [{{ data: hd ? [pass,hold,fail] : [1], backgroundColor: hd ? ['#10b981','#f59e0b','#ef4444'] : ['#334155'], borderWidth: 0 }}]
+          }}, options:{{ responsive: true, maintainAspectRatio: false, cutout: '62%',
+            plugins: {{ legend: {{ position: 'bottom', labels: {{ color: '#94a3b8', font: {{ size: 9 }}, usePointStyle: true }} }} }} }}
+          }});
+        }}
+
+        // Type doughnut
+        if (typeChart.value) {{
+          const impl = s.value.impl_count||0, other = (s.value.tot||0)-impl;
+          const hd = impl+other > 0;
+          nc(typeChart.value, {{ id:'type', type:'doughnut', data:{{
+            labels: ['Implementation','Improvement'],
+            datasets: [{{ data: hd ? [impl,other] : [1], backgroundColor: hd ? ['#8b5cf6','#06b6d4'] : ['#334155'], borderWidth: 0 }}]
+          }}, options:{{ responsive: true, maintainAspectRatio: false, cutout: '62%',
+            plugins: {{ legend: {{ position: 'bottom', labels: {{ color: '#94a3b8', font: {{ size: 9 }}, usePointStyle: true }} }} }} }}
+          }});
+        }}
+
+        // Constraint bars
+        if (consChart.value) {{
+          const cd = Object.entries(s.value.cd||{{}}).sort((a,b) => b[1].freq - a[1].freq);
+          nc(consChart.value, {{ id:'cons', type:'bar', data:{{
+            labels: cd.map(c => c[0]),
+            datasets: [{{ data: cd.map(c => c[1].freq),
+              backgroundColor: cd.map(c => c[1].freq>0 && (c[1].locked/c[1].freq)>0.5 ? 'rgba(245,158,11,0.7)' : 'rgba(99,102,241,0.7)'),
+              borderRadius: 4 }}]
+          }}, options:{{ responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+            plugins: {{ legend: {{ display: false }} }},
+            scales: {{ x: {{ grid: {{ color: '#1e293b' }}, ticks: {{ color: '#64748b', font: {{ size: 9 }} }} }},
+                       y: {{ grid: {{ display: false }}, ticks: {{ color: '#94a3b8', font: {{ size: 9 }} }} }} }}
+          }});
+        }}
+
+        // Goals per pulse
+        if (goalsPerPulseChart.value) {{
+          nc(goalsPerPulseChart.value, {{ id:'gpp', type:'bar', data:{{
+            labels: sortedPulses.value.map(p => '#'+p.id),
+            datasets: [
+              {{ label:'Goals', data: sortedPulses.value.map(p => p.goals_count), backgroundColor: 'rgba(99,102,241,0.6)', borderRadius: 3 }},
+              {{ label:'Approved', data: sortedPulses.value.map(p => p.approved), backgroundColor: 'rgba(16,185,129,0.5)', borderRadius: 3 }}
+            ]
+          }}, options:{{ responsive: true, maintainAspectRatio: false,
+            plugins: {{ legend: {{ labels: {{ color: '#94a3b8', font: {{ size: 9 }}, usePointStyle: true }} }} }},
+            scales: {{ y: {{ grid: {{ color: '#1e293b' }}, ticks: {{ color: '#64748b', font: {{ size: 9 }} }} }},
+                       x: {{ grid: {{ display: false }}, ticks: {{ color: '#64748b', font: {{ size: 9 }} }} }} }}
+          }});
+        }}
+
+        // Quality & satisfaction
+        if (qualityChart.value) {{
+          const v2 = sortedPulses.value.filter(p => p.telemetry && p.telemetry.avg_quality_index);
+          if (v2.length > 0) {{
+            nc(qualityChart.value, {{ id:'qual', type:'line', data:{{
+              labels: v2.map(p => '#'+p.id),
+              datasets: [
+                {{ label:'Quality', data: v2.map(p => p.telemetry.avg_quality_index||0), borderColor:'#10b981', tension:0.3, pointRadius:4, fill:false, borderWidth:2 }},
+                {{ label:'Satisfaction', data: v2.map(p => p.telemetry.avg_satisfaction||0), borderColor:'#f59e0b', tension:0.3, pointRadius:4, fill:false, borderWidth:2, borderDash:[5,3] }}
+              ]
+            }}, options:{{ responsive: true, maintainAspectRatio: false,
+              plugins: {{ legend: {{ labels: {{ color: '#94a3b8', font: {{ size: 9 }}, usePointStyle: true }} }} }},
+              scales: {{ y: {{ min: 0, max: 1, grid: {{ color: '#1e293b' }}, ticks: {{ color: '#64748b', font: {{ size: 9 }} }} }},
+                         x: {{ grid: {{ display: false }}, ticks: {{ color: '#64748b', font: {{ size: 9 }} }} }} }}
+            }});
+          }}
+        }}
+
+        // Ambiguity radar
+        if (ambRadarChart.value) {{
+          const latest = sortedPulses.value[sortedPulses.value.length-1];
+          const lg = goals.value.filter(g => g.p === latest?.id && g.telemetry?.ambiguity);
+          const labs = ['requirements','data_model','edge_case','determinism'];
+          nc(ambRadarChart.value, {{ id:'amb', type:'radar', data:{{
+            labels: labs,
+            datasets: lg.length > 0 ? lg.slice(0,4).map((g,i) => ({{
+              label: 'Goal '+(i+1),
+              data: labs.map(l => g.telemetry.ambiguity[l] || 0),
+              borderColor: ['#6366f1','#10b981','#f59e0b','#ec4899'][i],
+              backgroundColor: (['#6366f1','#10b981','#f59e0b','#ec4899'][i])+'15',
+              pointRadius: 3, borderWidth: 2
+            }})) : [{{ label:'No v2 data', data:[0,0,0,0], borderColor:'#334155', pointRadius:0 }}]
+          }}, options:{{ responsive: true, maintainAspectRatio: false,
+            plugins: {{ legend: {{ labels: {{ color: '#94a3b8', font: {{ size: 9 }}, usePointStyle: true }} }} }},
+            scales: {{ r: {{ min: 0, max: 1, grid: {{ color: '#1e293b' }}, ticks: {{ color: '#64748b', font: {{ size: 8 }}, stepSize: 0.2 }},
+                       pointLabels: {{ color: '#94a3b8', font: {{ size: 9 }} }} }} }}
+          }});
+        }}
+
+        // Topic coverage
+        if (topicChart.value) {{
+          const topics = ['ARCH','SEC','DATA','PERF','SCAL','TEST','DEPL','UX'];
+          const latest = sortedPulses.value[sortedPulses.value.length-1];
+          const lg = goals.value.filter(g => g.p === latest?.id && g.telemetry?.topic_coverage);
+          if (lg.length > 0) {{
+            nc(topicChart.value, {{ id:'topic', type:'bar', data:{{
+              labels: topics,
+              datasets: lg.slice(0,4).map((g,i) => ({{
+                label:'Goal '+(i+1),
+                data: topics.map((_,bi) => (g.telemetry.topic_coverage.bitmask & (1<<bi)) ? 1 : 0),
+                backgroundColor: ['rgba(99,102,241,0.6)','rgba(16,185,129,0.6)','rgba(245,158,11,0.6)','rgba(236,72,153,0.6)'][i],
+                borderRadius: 2
+              }}))
+            }}, options:{{ responsive: true, maintainAspectRatio: false,
+              plugins: {{ legend: {{ labels: {{ color: '#94a3b8', font: {{ size: 9 }}, usePointStyle: true }} }} }},
+              scales: {{ y: {{ min:0, max:1.2, grid:{{ color:'#1e293b' }}, ticks:{{ color:'#64748b', font:{{ size:9 }}, stepSize:1 }} }},
+                         x: {{ grid:{{ display:false }}, ticks:{{ color:'#94a3b8', font:{{ size:9 }} }} }} }} }});
+          }}
+        }}
+
+        // Budget
+        if (budgetChart.value) {{
+          const v2 = sortedPulses.value.filter(p => p.telemetry && p.telemetry.avg_budget_saturation);
+          if (v2.length > 0) {{
+            nc(budgetChart.value, {{ id:'budget', type:'bar', data:{{
+              labels: v2.map(p => '#'+p.id),
+              datasets: [{{ label:'Budget %', data: v2.map(p => p.telemetry.avg_budget_saturation||0),
+                backgroundColor: 'rgba(244,63,94,0.6)', borderRadius: 3 }}]
+            }}, options:{{ responsive: true, maintainAspectRatio: false,
+              plugins: {{ legend: {{ display: false }} }},
+              scales: {{ y: {{ grid:{{ color:'#1e293b' }}, ticks:{{ color:'#64748b', font:{{ size:9 }} }} }},
+                         x: {{ grid:{{ display:false }}, ticks:{{ color:'#64748b', font:{{ size:9 }} }} }} }}
+            }});
+          }}
+        }}
+
+        // Satisfaction line
+        if (satChart.value) {{
+          const v2 = sortedPulses.value.filter(p => p.telemetry && p.telemetry.avg_satisfaction);
+          if (v2.length > 0) {{
+            nc(satChart.value, {{ id:'sat', type:'line', data:{{
+              labels: v2.map(p => '#'+p.id),
+              datasets: [{{ label:'Satisfaction', data: v2.map(p => p.telemetry.avg_satisfaction||0),
+                borderColor:'#f59e0b', backgroundColor:'rgba(245,158,11,0.1)', fill:true, tension:0.3, pointRadius:4, borderWidth:2 }}]
+            }}, options:{{ responsive: true, maintainAspectRatio: false,
+              plugins: {{ legend: {{ display: false }} }},
+              scales: {{ y: {{ min:0, max:1, grid:{{ color:'#1e293b' }}, ticks:{{ color:'#64748b', font:{{ size:9 }} }} }},
+                         x: {{ grid:{{ display:false }}, ticks:{{ color:'#64748b', font:{{ size:9 }} }} }} }}
+            }});
+          }}
+        }}
+
+        // Ledger
+        if (ledgerChart.value) {{
+          const v2 = sortedPulses.value.filter(p => p.telemetry && p.telemetry.total_ledger_entries);
+          if (v2.length > 0) {{
+            nc(ledgerChart.value, {{ id:'ldg', type:'bar', data:{{
+              labels: v2.map(p => '#'+p.id),
+              datasets: [
+                {{ label:'Ledger', data: v2.map(p => p.telemetry.total_ledger_entries||0), backgroundColor:'rgba(168,85,247,0.6)', borderRadius: 3 }},
+                {{ label:'Checkpoints', data: v2.map(p => p.telemetry.total_checkpoints||0), backgroundColor:'rgba(244,63,94,0.6)', borderRadius: 3 }}
+              ]
+            }}, options:{{ responsive: true, maintainAspectRatio: false,
+              plugins: {{ legend: {{ labels: {{ color: '#94a3b8', font: {{ size: 9 }}, usePointStyle: true }} }} }},
+              scales: {{ y: {{ grid:{{ color:'#1e293b' }}, ticks:{{ color:'#64748b', font:{{ size:9 }} }} }},
+                         x: {{ grid:{{ display:false }}, ticks:{{ color:'#64748b', font:{{ size:9 }} }} }} }}
+            }});
+          }}
+        }}
+
+        // KG
+        if (kgCanvas.value && !charts.kg) renderKG();
+      }});
+    }}
+
+    function renderKG() {{
+      const canvas = kgCanvas.value; if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const rect = canvas.parentElement.getBoundingClientRect();
+      canvas.width = rect.width; canvas.height = rect.height;
+      const W = canvas.width, H = canvas.height;
+      ctx.clearRect(0, 0, W, H);
+
+      const nodes = [
+        {{ id:'L9', label:'L9 MMM', purpose:'Third-order self-awareness, self-transcendence', timescale:'Daily', x:W*0.5, y:H*0.04, color:'#f97316', r:18 }},
+        {{ id:'L8', label:'L8 Meta-Meta', purpose:'Second-order reflection on meta-cognition', timescale:'Daily', x:W*0.5, y:H*0.13, color:'#ec4899', r:18 }},
+        {{ id:'L7', label:'L7 Meta-Cognition', purpose:'Reflects on improvement process, super-goals', timescale:'Daily', x:W*0.5, y:H*0.22, color:'#14b8a6', r:18 }},
+        {{ id:'L6', label:'L6 Identity', purpose:'Self-model, values, capability tracking, snapshots', timescale:'4-6 hr', x:W*0.5, y:H*0.33, color:'#a855f7', r:22 }},
+        {{ id:'L5', label:'L5 Evolution', purpose:'Cross-session consolidation, pattern detection', timescale:'2-3 hr', x:W*0.3, y:H*0.44, color:'#84cc16', r:22 }},
+        {{ id:'L4', label:'L4 Optimizer', purpose:'A/B testing, param tuning, experimentation', timescale:'0.5-1 hr', x:W*0.7, y:H*0.44, color:'#06b6d4', r:22 }},
+        {{ id:'L3', label:'L3 Self-Direction', purpose:'Signal detection, goal generation, queue mgmt', timescale:'5-15 min', x:W*0.5, y:H*0.56, color:'#f59e0b', r:24 }},
+        {{ id:'L2', label:'L2 Planning', purpose:'Goal analysis, codegen, eval, apply, verify', timescale:'Minutes', x:W*0.5, y:H*0.71, color:'#6366f1', r:28 }},
+        {{ id:'L1', label:'L1 Execution', purpose:'Pure execution &mdash; commands, git, tests', timescale:'Seconds', x:W*0.5, y:H*0.88, color:'#10b981', r:30 }}
+      ];
+
+      const edges = [
+        ['L9','L8'],['L8','L7'],['L7','L6'],['L6','L5'],['L6','L4'],
+        ['L5','L4'],['L5','L3'],['L4','L3'],['L3','L2'],['L2','L1'],
+        ['L7','L3'],['L6','L3'],['L5','L2'],['L4','L2'],['L7','L2']
+      ];
+
+      ctx.lineWidth = 2;
+      edges.forEach(([from, to]) => {{
+        const src = nodes.find(n => n.id===from), dst = nodes.find(n => n.id===to);
+        if (!src||!dst) return;
+        ctx.beginPath(); ctx.moveTo(src.x,src.y); ctx.lineTo(dst.x,dst.y);
+        ctx.strokeStyle = 'rgba(100,116,139,0.5)'; ctx.stroke();
+        const angle = Math.atan2(dst.y-src.y, dst.x-src.x);
+        const ax = dst.x-Math.cos(angle)*(dst.r+4), ay = dst.y-Math.sin(angle)*(dst.r+4);
+        ctx.beginPath(); ctx.moveTo(ax,ay); ctx.lineTo(ax+8*Math.cos(angle-2.5),ay+8*Math.sin(angle-2.5));
+        ctx.moveTo(ax,ay); ctx.lineTo(ax+8*Math.cos(angle+2.5),ay+8*Math.sin(angle+2.5));
+        ctx.strokeStyle = 'rgba(148,163,184,0.6)'; ctx.stroke();
+      }});
+
+      nodes.forEach(n => {{
+        const g = ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r*2.5);
+        g.addColorStop(0,n.color+'30'); g.addColorStop(1,'transparent');
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(n.x,n.y,n.r*2.5,0,Math.PI*2); ctx.fill();
+        ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+        ctx.fillStyle = n.color+'30'; ctx.fill();
+        ctx.strokeStyle = n.color; ctx.lineWidth = 2.5; ctx.stroke();
+        ctx.fillStyle = '#e2e8f0'; ctx.font = 'bold 11px monospace';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(n.label,n.x,n.y);
+      }});
+
+      canvas.onclick = function(e) {{
+        const r = canvas.getBoundingClientRect();
+        const cx = (e.clientX-r.left)*(canvas.width/r.width);
+        const cy = (e.clientY-r.top)*(canvas.height/r.height);
+        let found = null;
+        for (const n of nodes) {{ const dx=cx-n.x,dy=cy-n.y; if(dx*dx+dy*dy<=(n.r+8)*(n.r+8)){{found=n;break;}} }}
+        if (found) {{ selectedNode.value = {{...found, edges: edges.filter(e=>e[0]===found.id).map(e=>e[1]) }}; }}
+        else {{ selectedNode.value = null; }}
+      }};
+    }}
+
+    onMounted(() => renderCharts());
+    watch(activeTab, () => nextTick(() => renderCharts()));
+
+    return {{
+      pulses, goals, scoreHistory, s, telAgg,
+      activeTab, expandedPulses, expandedGoals, activeConvs, gf, pf, selectedNode, trendActive,
+      layers, trendLayers, allTopics, pids, l3delta, consList, sortedPulses, filteredGoals,
+      telemetrySummary, ledgerEntries,
+      getPulseGoals, getScore, getScoreDisplay, getScoreColor, hasScores,
+      goalsWithConv, formatTime, togglePulse, toggleGoalDetail, togglePulseGoalConv,
+      pulseExpandIcon, expandAllPulses, collapseAllPulses, toggleTrendLayer,
+      trendChart, decChart, typeChart, consChart, goalsPerPulseChart, qualityChart,
+      ambRadarChart, topicChart, budgetChart, satChart, ledgerChart, kgCanvas,
+      renderCharts
+    }};
+  }}
+}}).mount('#app');
+</script>
+</body>
+</html>'''
+    
+    with open(DASHBOARD_FILE, 'w') as f:
+        f.write(html)
+    
+    return len(html)
+
+
+if __name__ == '__main__':
+    print("Loading pulse data...")
+    data = load_data()
+    print(f"  {len(data['pulses'])} pulses, {len(data['goals'])} goals")
+    
+    v2 = [p for p in data['pulses'] if p.get('telemetry') and p['telemetry'].get('total_questions')]
+    print(f"  {len(v2)} RRP v2 pulses with telemetry")
+    for p in v2:
+        topics = p.get('telemetry', {}).get('all_topics', [])
+        print(f"    #{p['id']}: {p['goals_count']} goals, {len(topics)} topics")
+    
+    print("Generating dashboard...")
+    size = generate_html(data)
+    print(f"  Dashboard: {size/1024:.1f} KB")
+    print("Done.")

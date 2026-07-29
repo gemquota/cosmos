@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPACE</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        brand: { 50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81' },
+      }
+    }
+  }
+}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+body { font-family: 'Inter', system-ui, sans-serif; }
+.fade-in { animation: fadeIn .2s ease; }
+@keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
+.progress-bar { transition: width .4s ease; }
+textarea:focus, input:focus, select:focus { outline: none; box-shadow: 0 0 0 2px rgba(99,102,241,.4); }
+</style>
+</head>
+<body class="h-full bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100">
+
+<div id="app" class="h-full flex flex-col">
+
+<!-- ═══ Top Bar ═══ -->
+<header class="flex items-center justify-between px-4 md:px-6 h-14 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shrink-0">
+  <div class="flex items-center gap-3">
+    <button onclick="toggleSidebar()" class="md:hidden p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <h1 class="text-lg font-bold tracking-tight">
+      <span class="text-brand-600 dark:text-brand-400">SPACE</span>
+      <span class="text-gray-400 dark:text-gray-600 font-normal text-sm ml-2 hidden sm:inline">Superb Prompt Automatic Creation Engine</span>
+    </h1>
+  </div>
+  <div class="flex items-center gap-2">
+    <span id="session-badge" class="hidden px-2.5 py-0.5 text-xs font-medium rounded-full bg-brand-100 dark:bg-brand-900 text-brand-700 dark:text-brand-300"></span>
+    <button onclick="toggleTheme()" class="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" title="Toggle theme">
+      <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+      <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="flex flex-1 overflow-hidden">
+
+<!-- ═══ Sidebar ═══ -->
+<aside id="sidebar" class="w-64 shrink-0 border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex flex-col overflow-y-auto hidden md:flex">
+  <nav class="flex-1 p-3 space-y-1">
+    <a href="#" onclick="showView('dashboard')" class="nav-link flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition" data-view="dashboard">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      Dashboard
+    </a>
+    <a href="#" onclick="showView('projects')" class="nav-link flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition" data-view="projects">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+      Projects
+    </a>
+    <a href="#" onclick="showView('run')" class="nav-link flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition" data-view="run">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Run Session
+    </a>
+    <a href="#" onclick="showView('export')" class="nav-link flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition" data-view="export">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      Export
+    </a>
+    <a href="#" onclick="showView('framework')" class="nav-link flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition" data-view="framework">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      Framework
+    </a>
+  </nav>
+  <div class="p-3 border-t border-gray-200 dark:border-gray-800 text-xs text-gray-400 dark:text-gray-600">
+    v2.1.0 · 326 probes · 7 series
+  </div>
+</aside>
+
+<!-- ═══ Main Content ═══ -->
+<main id="main" class="flex-1 overflow-y-auto">
+  <div id="view-container" class="max-w-4xl mx-auto p-4 md:p-8"></div>
+</main>
+
+</div>
+</div>
+
+<script>
+const API = '';
+let currentView = 'dashboard';
+let currentSession = null;
+let currentProject = null;
+let framework = null;
+let projects = [];
+
+// ── Theme ──
+if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark');
+}
+function toggleTheme() {
+  document.documentElement.classList.toggle('dark');
+  localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+}
+
+// ── Sidebar ──
+function toggleSidebar() {
+  const sb = document.getElementById('sidebar');
+  sb.classList.toggle('hidden');
+  sb.classList.toggle('flex');
+  sb.classList.toggle('absolute');
+  sb.classList.toggle('inset-y-14');
+  sb.classList.toggle('z-50');
+  sb.classList.toggle('shadow-xl');
+}
+
+// ── Navigation ──
+function showView(view) {
+  currentView = view;
+  document.querySelectorAll('.nav-link').forEach(el => {
+    el.classList.toggle('bg-brand-50', el.dataset.view === view);
+    el.classList.toggle('dark:bg-brand-950', el.dataset.view === view);
+    el.classList.toggle('text-brand-700', el.dataset.view === view);
+    el.classList.toggle('dark:text-brand-300', el.dataset.view === view);
+  });
+  // Close mobile sidebar
+  const sb = document.getElementById('sidebar');
+  if (window.innerWidth < 768) { sb.classList.add('hidden'); sb.classList.remove('flex','absolute','z-50','shadow-xl'); }
+  
+  const renderers = { dashboard: renderDashboard, projects: renderProjects, run: renderRun, export: renderExport, framework: renderFramework };
+  (renderers[view] || renderDashboard)();
+}
+
+// ── API helpers ──
+async function api(path, opts = {}) {
+  const res = await fetch(API + path, {
+    method: opts.method || 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    body: opts.body ? JSON.stringify(opts.body) : undefined,
+  });
+  return res.json();
+}
+
+// ═══════════════════════════════════════
+// DASHBOARD
+// ═══════════════════════════════════════
+async function renderDashboard() {
+  const c = document.getElementById('view-container');
+  c.innerHTML = '<div class="animate-pulse space-y-4"><div class="h-32 bg-gray-200 dark:bg-gray-800 rounded-xl"></div><div class="h-48 bg-gray-200 dark:bg-gray-800 rounded-xl"></div></div>';
+  
+  const [fw, projList] = await Promise.all([api('/api/framework'), api('/api/projects')]);
+  framework = fw;
+  projects = projList;
+  
+  c.innerHTML = `
+    <div class="fade-in space-y-6">
+      <div>
+        <h2 class="text-2xl font-bold mb-1">Welcome to SPACE</h2>
+        <p class="text-gray-500 dark:text-gray-400">Superb Prompt Automatic Creation Engine — ${fw.meta.total_open_ended} structured probes across ${fw.meta.total_series} progressive series.</p>
+      </div>
+      
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-4">
+          <div class="text-2xl font-bold text-brand-600 dark:text-brand-400">${fw.meta.total_series}</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">Series</div>
+        </div>
+        <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-4">
+          <div class="text-2xl font-bold text-brand-600 dark:text-brand-400">${fw.meta.total_open_ended}</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">Questions</div>
+        </div>
+        <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-4">
+          <div class="text-2xl font-bold text-brand-600 dark:text-brand-400">${projects.length}</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">Projects</div>
+        </div>
+        <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-4">
+          <div class="text-2xl font-bold text-brand-600 dark:text-brand-400">${fw.meta.total_open_ended + fw.meta.total_multi_choice}</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">Total Probes</div>
+        </div>
+      </div>
+      
+      <!-- Series overview -->
+      <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+        <div class="px-5 py-3 border-b border-gray-200 dark:border-gray-800 font-semibold text-sm">Series Overview</div>
+        <div class="divide-y divide-gray-100 dark:divide-gray-800">
+          ${fw.series.map(s => `
+            <div class="px-5 py-3 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-800/50 transition">
+              <div class="flex items-center gap-3">
+                <span class="w-7 h-7 rounded-lg bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xs font-bold">${s.id}</span>
+                <div>
+                  <div class="text-sm font-medium">${s.name}</div>
+                  <div class="text-xs text-gray-400 dark:text-gray-500">${s.description}</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 text-xs text-gray-400 dark:text-gray-500">
+                <span>${s.rounds} rounds</span>
+                <span>${s.total_open_ended} Q</span>
+                ${s.depends_on.length ? `<span class="px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-800">→${s.depends_on.join(',')}</span>` : ''}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      
+      <!-- Quick actions -->
+      <div class="flex gap-3 flex-wrap">
+        <button onclick="showView('projects');setTimeout(()=>document.getElementById('create-modal')?.classList.remove('hidden'),100)" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-lg text-sm font-medium transition">
+          + New Project
+        </button>
+        <button onclick="showView('framework')" class="px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+          View Framework
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+// ═══════════════════════════════════════
+// PROJECTS
+// ═══════════════════════════════════════
+async function renderProjects() {
+  const c = document.getElementById('view-container');
+  c.innerHTML = '<div class="animate-pulse h-48 bg-gray-200 dark:bg-gray-800 rounded-xl"></div>';
+  
+  projects = await api('/api/projects');
+  
+  c.innerHTML = `
+    <div class="fade-in space-y-6">
+      <div class="flex items-center justify-between">
+        <h2 class="text-2xl font-bold">Projects</h2>
+        <button onclick="document.getElementById('create-modal').classList.remove('hidden')" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-lg text-sm font-medium transition">
+          + New Project
+        </button>
+      </div>
+      
+      ${projects.length === 0 ? `
+        <div class="text-center py-16 text-gray-400">
+          <svg class="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          <p class="text-sm">No projects yet. Create one to get started.</p>
+        </div>
+      ` : `
+        <div class="grid gap-3">
+          ${projects.map(p => `
+            <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-5 hover:border-brand-300 dark:hover:border-brand-700 transition cursor-pointer" onclick="selectProject('${p.name}')">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="font-semibold text-lg">${p.name}</h3>
+                  <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">${p.description || 'No description'}</p>
+                </div>
+                <button onclick="event.stopPropagation();deleteProject('${p.name}')" class="p-1.5 rounded-lg hover:bg-red-50 dark:hover:bg-red-950 text-gray-400 hover:text-red-500 transition" title="Delete">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                </button>
+              </div>
+              <div class="flex items-center gap-4 mt-3 text-xs text-gray-400 dark:text-gray-500">
+                <span>${p.session_count} session${p.session_count !== 1 ? 's' : ''}</span>
+                <span>${p.completed_sessions} completed</span>
+                <span>${new Date(p.created_at).toLocaleDateString()}</span>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `}
+    </div>
+    
+    <!-- Create modal -->
+    <div id="create-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-2xl w-full max-w-md mx-4 p-6">
+        <h3 class="text-lg font-bold mb-4">New Project</h3>
+        <input id="new-project-name" type="text" placeholder="Project name" class="w-full px-3 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 text-sm mb-3">
+        <textarea id="new-project-desc" placeholder="Description (optional)" rows="2" class="w-full px-3 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 text-sm mb-4 resize-none"></textarea>
+        <div class="flex justify-end gap-2">
+          <button onclick="document.getElementById('create-modal').classList.add('hidden')" class="px-4 py-2 text-sm rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">Cancel</button>
+          <button onclick="createProject()" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-lg transition">Create</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+async function createProject() {
+  const name = document.getElementById('new-project-name').value.trim();
+  const desc = document.getElementById('new-project-desc').value.trim();
+  if (!name) return;
+  await api('/api/projects', { method: 'POST', body: { name, description: desc } });
+  document.getElementById('create-modal').classList.add('hidden');
+  renderProjects();
+}
+
+async function deleteProject(name) {
+  if (!confirm(`Delete project "${name}"?`)) return;
+  await api(`/api/projects/${name}`, { method: 'DELETE' });
+  renderProjects();
+}
+
+async function selectProject(name) {
+  currentProject = name;
+  showView('run');
+}
+
+// ═══════════════════════════════════════
+// RUN SESSION
+// ═══════════════════════════════════════
+async function renderRun() {
+  const c = document.getElementById('view-container');
+  
+  // If no project selected, show project picker
+  if (!currentProject) {
+    if (projects.length === 0) projects = await api('/api/projects');
+    if (projects.length === 0) {
+      c.innerHTML = `<div class="fade-in text-center py-16"><p class="text-gray-400 mb-4">Create a project first.</p><button onclick="showView('projects')" class="px-4 py-2 bg-brand-600 text-white rounded-lg text-sm">Go to Projects</button></div>`;
+      return;
+    }
+    c.innerHTML = `
+      <div class="fade-in space-y-6">
+        <h2 class="text-2xl font-bold">Select Project</h2>
+        <div class="grid gap-2">
+          ${projects.map(p => `
+            <button onclick="currentProject='${p.name}';renderRun()" class="text-left px-4 py-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl hover:border-brand-300 dark:hover:border-brand-700 transition">
+              <div class="font-medium">${p.name}</div>
+              <div class="text-xs text-gray-400">${p.session_count} sessions</div>
+            </button>
+          `).join('')}
+        </div>
+      </div>
+    `;
+    return;
+  }
+  
+  // Start or resume session
+  if (!currentSession) {
+    c.innerHTML = `
+      <div class="fade-in space-y-6">
+        <div>
+          <button onclick="currentProject=null;renderRun()" class="text-sm text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 mb-2 inline-flex items-center gap-1">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            Back
+          </button>
+          <h2 class="text-2xl font-bold">${currentProject}</h2>
+        </div>
+        <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6 text-center space-y-4">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-brand-50 dark:bg-brand-950 flex items-center justify-center">
+            <svg class="w-8 h-8 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <p class="text-gray-500 dark:text-gray-400">Start a new elicitation session with 326 structured probes across 7 progressive series.</p>
+          <div class="flex gap-3 justify-center">
+          <button onclick="startSession()" class="px-6 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-lg text-sm font-medium transition">
+            Start Session
+          </button>
+          <button onclick="startSessionAndAutofill()" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-medium transition">
+            ⚡ Autofill Session
+          </button>
+        </div>
+        </div>
+      </div>
+    `;
+    return;
+  }
+  
+  // Show current question
+  await renderQuestion();
+}
+
+async function startSession() {
+  const c = document.getElementById('view-container');
+  c.innerHTML = '<div class="animate-pulse h-64 bg-gray-200 dark:bg-gray-800 rounded-xl"></div>';
+  
+  const data = await api(`/api/projects/${currentProject}/sessions`, { method: 'POST', body: {} });
+  currentSession = { id: data.session_id, projectName: currentProject };
+  document.getElementById('session-badge').textContent = currentSession.id.slice(0, 12);
+  document.getElementById('session-badge').classList.remove('hidden');
+  
+  await renderQuestion();
+}
+
+async function startSessionAndAutofill() {
+  await startSession();
+  if (currentSession?.id) await autofillSession();
+}
+
+async function renderQuestion() {
+  const c = document.getElementById('view-container');
+  if (!currentSession?.id) return showView('run');
+  
+  c.innerHTML = '<div class="animate-pulse space-y-4"><div class="h-8 bg-gray-200 dark:bg-gray-800 rounded-lg w-48"></div><div class="h-64 bg-gray-200 dark:bg-gray-800 rounded-xl"></div></div>';
+  
+  const data = await api(`/api/sessions/${currentSession.id}/question`);
+  
+  if (data.complete || !data.question) {
+    c.innerHTML = `
+      <div class="fade-in text-center py-16 space-y-4">
+        <div class="w-16 h-16 mx-auto rounded-full bg-green-50 dark:bg-green-950 flex items-center justify-center">
+          <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h2 class="text-2xl font-bold">Session Complete!</h2>
+        <p class="text-gray-500 dark:text-gray-400">All ${data.progress?.overall?.total_questions || 326} questions answered.</p>
+        <div class="flex gap-3 justify-center mt-4">
+          <button onclick="showView('export')" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-lg text-sm font-medium transition">Export Spec</button>
+          <button onclick="currentSession=null;currentProject=null;showView('run')" class="px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition">New Session</button>
+        </div>
+      </div>
+    `;
+    return;
+  }
+  
+  const q = data.question;
+  const progress = data.progress?.overall;
+  const pct = progress?.completion_pct || 0;
+  const answered = progress?.answered || 0;
+  const total = progress?.total_questions || 326;
+  const seriesProgress = data.progress?.by_series?.find(s => s.series_id === q.series_id);
+  
+  c.innerHTML = `
+    <div class="fade-in space-y-6">
+      <!-- Back + progress -->
+      <div class="flex items-center justify-between">
+        <button onclick="currentSession=null;renderRun()" class="text-sm text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 inline-flex items-center gap-1">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Exit
+        </button>
+        <div class="text-xs text-gray-400 dark:text-gray-500">${answered}/${total} · ${Math.round(pct)}%</div>
+      </div>
+      
+      <!-- Progress bar -->
+      <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5">
+        <div class="bg-brand-600 dark:bg-brand-400 h-1.5 rounded-full progress-bar" style="width:${pct}%"></div>
+      </div>
+      
+      <!-- Series badge -->
+      <div class="flex items-center gap-2">
+        <span class="px-2.5 py-1 bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300 rounded-lg text-xs font-semibold">
+          Series ${q.series_id}
+        </span>
+        <span class="text-sm font-medium text-gray-600 dark:text-gray-300">${q.series_name}</span>
+        <span class="text-xs text-gray-400 dark:text-gray-500">· Round ${q.round}/${q.total_rounds}</span>
+        ${seriesProgress ? `<span class="text-xs text-gray-400 dark:text-gray-500">· ${seriesProgress.answered}/${seriesProgress.total_questions}</span>` : ''}
+      </div>
+      
+      <!-- Question card -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-100 dark:border-gray-800">
+          <div class="text-xs text-gray-400 dark:text-gray-500 mb-1">Q ${q.question.id} — ${q.round_focus}</div>
+          <h3 class="text-lg font-semibold leading-snug">${q.question.text}</h3>
+        </div>
+        
+        <div class="p-6 space-y-5">
+          <!-- Open-ended answer -->
+          <div>
+            <label class="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">Your answer</label>
+            <textarea id="answer-text" rows="4" placeholder="Type your answer…" class="w-full px-3 py-2.5 border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-50 dark:bg-gray-800 text-sm resize-none focus:ring-0"></textarea>
+          </div>
+          
+          <!-- Multi-choice -->
+          <div>
+            <label class="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">Classification</label>
+            <div class="space-y-2">
+              ${q.question.follow_up_choices.map((c, i) => `
+                <label class="flex items-start gap-3 p-3 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-brand-300 dark:hover:border-brand-700 cursor-pointer transition has-[:checked]:border-brand-500 dark:has-[:checked]:border-brand-400 has-[:checked]:bg-brand-50 dark:has-[:checked]:bg-brand-950">
+                  <input type="radio" name="choice" value="${c.id}" ${i === 0 ? 'checked' : ''} class="mt-0.5 accent-brand-600">
+                  <span class="text-sm">${c.text}</span>
+                </label>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+        
+        <!-- Actions -->
+        <div class="px-6 py-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between bg-gray-50/50 dark:bg-gray-800/30">
+          <button onclick="skipQuestion()" class="text-sm text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition">
+            Skip
+          </button>
+          <button onclick="submitAnswer()" class="px-5 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-lg text-sm font-medium transition flex items-center gap-2">
+            Submit
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  document.getElementById('answer-text').focus();
+}
+
+async function submitAnswer() {
+  if (!currentSession?.id) return;
+  const text = document.getElementById('answer-text').value.trim();
+  if (!text) { document.getElementById('answer-text').classList.add('ring-2','ring-red-300'); return; }
+  
+  const choice = document.querySelector('input[name="choice"]:checked');
+  const choiceId = choice ? choice.value : '';
+  
+  const data = await api(`/api/sessions/${currentSession.id}/answer`, {
+    method: 'POST',
+    body: { question_id: currentSession.currentQuestionId || '', open_ended: text, choice_id: choiceId },
+  });
+  
+  if (data.session_completed) {
+    currentSession = { ...currentSession, complete: true };
+    renderQuestion();
+    return;
+  }
+  
+  await renderQuestion();
+}
+
+async function skipQuestion() {
+  if (!currentSession?.id) return;
+  const qid = document.querySelector('.text-xs.text-gray-400')?.textContent?.match(/Q ([\d.]+)/)?.[1];
+  if (qid) {
+    await api(`/api/sessions/${currentSession.id}/skip`, {
+      method: 'POST',
+      body: { question_id: qid, reason: 'skipped by user' },
+    });
+  }
+  await renderQuestion();
+}
+
+// ═══════════════════════════════════════
+// EXPORT
+// ═══════════════════════════════════════
+async function renderExport() {
+  const c = document.getElementById('view-container');
+  
+  if (!currentSession?.id) {
+    c.innerHTML = `
+      <div class="fade-in space-y-6">
+        <h2 class="text-2xl font-bold">Export</h2>
+        <p class="text-gray-500 dark:text-gray-400 text-sm">Run a session first, then export the generated specification.</p>
+        <button onclick="showView('run')" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-lg text-sm font-medium transition">Go to Run</button>
+      </div>
+    `;
+    return;
+  }
+  
+  c.innerHTML = `
+    <div class="fade-in space-y-6">
+      <h2 class="text-2xl font-bold">Export Specification</h2>
+      <p class="text-sm text-gray-500 dark:text-gray-400">Session: ${currentSession.id}</p>
+      
+      <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6 space-y-4">
+        <h3 class="font-semibold">Formats</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+          ${['markdown','json','yaml','html','prompt'].map(f => `
+            <label class="flex items-center gap-2 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-300 dark:hover:border-brand-700 cursor-pointer transition has-[:checked]:border-brand-500 has-[:checked]:bg-brand-50 dark:has-[:checked]:bg-brand-950">
+              <input type="checkbox" value="${f}" ${f === 'markdown' || f === 'json' ? 'checked' : ''} class="accent-brand-600 rounded">
+              <span class="text-sm font-medium capitalize">${f}</span>
+            </label>
+          `).join('')}
+        </div>
+        
+        <button onclick="runExport()" id="export-btn" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-lg text-sm font-medium transition">
+          Generate Export
+        </button>
+      </div>
+      
+      <div id="export-results" class="space-y-3"></div>
+    </div>
+  `;
+}
+
+async function runExport() {
+  const formats = [...document.querySelectorAll('input[type="checkbox"]:checked')].map(c => c.value);
+  if (!formats.length) return;
+  
+  const btn = document.getElementById('export-btn');
+  btn.disabled = true;
+  btn.textContent = 'Generating…';
+  
+  const data = await api(`/api/sessions/${currentSession.id}/export`, {
+    method: 'POST',
+    body: { formats, project_name: currentProject || 'export' },
+  });
+  
+  btn.disabled = false;
+  btn.textContent = 'Generate Export';
+  
+  const container = document.getElementById('export-results');
+  container.innerHTML = data.exports.map(exp => `
+    <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+      <div class="px-5 py-3 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
+        <div>
+          <span class="font-semibold text-sm capitalize">${exp.format}</span>
+          <span class="text-xs text-gray-400 ml-2">${(exp.size_bytes / 1024).toFixed(1)} KB</span>
+        </div>
+        <button onclick="downloadExport('${exp.format}', this)" class="px-3 py-1 text-xs font-medium bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300 rounded-lg hover:bg-brand-100 dark:hover:bg-brand-900 transition">
+          Download
+        </button>
+      </div>
+      <pre class="p-4 text-xs text-gray-600 dark:text-gray-400 overflow-x-auto max-h-64 overflow-y-auto bg-gray-50 dark:bg-gray-800/50"><code>${escapeHtml(exp.content.slice(0, 2000))}${exp.content.length > 2000 ? '\n…' : ''}</code></pre>
+    </div>
+  `).join('');
+  
+  // Store for download
+  window._exportData = {};
+  data.exports.forEach(exp => { window._exportData[exp.format] = exp; });
+}
+
+function downloadExport(format) {
+  const exp = window._exportData?.[format];
+  if (!exp) return;
+  const blob = new Blob([exp.content], { type: exp.mime_type });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = exp.filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ═══════════════════════════════════════
+// FRAMEWORK
+// ═══════════════════════════════════════
+async function renderFramework() {
+  const c = document.getElementById('view-container');
+  c.innerHTML = '<div class="animate-pulse space-y-3"><div class="h-8 bg-gray-200 dark:bg-gray-800 rounded-lg w-48"></div><div class="h-64 bg-gray-200 dark:bg-gray-800 rounded-xl"></div></div>';
+  
+  const fw = await api('/api/framework/full');
+  
+  c.innerHTML = `
+    <div class="fade-in space-y-6">
+      <h2 class="text-2xl font-bold">Framework</h2>
+      <p class="text-sm text-gray-500 dark:text-gray-400">${fw.meta.description}</p>
+      
+      <div class="grid grid-cols-3 gap-3 text-center">
+        <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-3">
+          <div class="text-xl font-bold text-brand-600 dark:text-brand-400">${fw.meta.total_series}</div>
+          <div class="text-xs text-gray-400">Series</div>
+        </div>
+        <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-3">
+          <div class="text-xl font-bold text-brand-600 dark:text-brand-400">${fw.meta.total_open_ended}</div>
+          <div class="text-xs text-gray-400">Questions</div>
+        </div>
+        <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-3">
+          <div class="text-xl font-bold text-brand-600 dark:text-brand-400">${fw.meta.total_rounds}</div>
+          <div class="text-xs text-gray-400">Rounds</div>
+        </div>
+      </div>
+      
+      <div class="space-y-4">
+        ${fw.series.map(s => `
+          <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+            <button onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('.chevron').classList.toggle('rotate-90')" class="w-full px-5 py-3 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-800/50 transition text-left">
+              <div class="flex items-center gap-3">
+                <span class="w-7 h-7 rounded-lg bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xs font-bold">${s.id}</span>
+                <div>
+                  <div class="font-semibold text-sm">${s.name}</div>
+                  <div class="text-xs text-gray-400">${s.description}</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="text-xs text-gray-400">${s.rounds.length} rounds · ${s.total_open_ended} Q</span>
+                <svg class="chevron w-4 h-4 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+            </button>
+            <div class="hidden border-t border-gray-100 dark:border-gray-800">
+              ${s.rounds.map(r => `
+                <div class="px-5 py-3">
+                  <div class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-2">Round ${r.round}: ${r.focus}</div>
+                  <div class="space-y-1.5">
+                    ${r.open_ended.map(q => `
+                      <div class="pl-4 text-sm text-gray-600 dark:text-gray-300">
+                        <span class="text-xs text-gray-400 font-mono">${q.id}</span> ${q.text}
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+// ── Helpers ──
+function escapeHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+
+// ── Autofill ──
+const AUTO_ANSWERS = {
+  '1.1.1': { text: 'SPACE (Superb Prompt Automatic Creation Engine) is a programmable specification engine that transforms structured elicitation probes into development specifications. It sits at the intersection of prompt engineering, software specification, and developer tooling.', choice: '1.1.1.b' },
+  '1.1.2': { text: 'The primary audience is software developers and technical leads building LLM-powered applications or complex systems who need structured specifications. They understand TypeScript/Node.js and are comfortable with JSON/YAML.', choice: '1.1.2.a' },
+  '1.2.1': { text: 'Assumed: CLI tools, npm/Node.js, basic TypeScript, JSON/YAML, REST APIs. Must explain: 7-series elicitation methodology, dependency chains, artifact extraction, and how 326 probes produce a coherent spec.', choice: '1.2.1.b' },
+  '1.2.2': { text: 'Mixed approach — architecture diagrams for the dependency graph, then concrete code examples from the TypeScript engine showing question flow through router, answer recording, artifact extraction, and export.', choice: '1.2.2.b' },
+  '1.3.1': { text: 'Standard software engineering terms (session, artifact, framework, series, round). SPACE-specific: probe (elicitation question), artifact (extracted data), series (themed rounds), round (batch of questions).', choice: '1.3.1.a' },
+  '1.3.2': { text: 'Progressive — start with simple question-asking, layer in dependencies, artifact accumulation, multi-format export, then intelligence layer. Each layer builds on previous.', choice: '1.3.2.b' },
+  '2.1.1': { text: 'Core: Framework (326-probe set), Session (interaction instance), Project (session container), Artifact (extracted data), Series (themed rounds), Round (2 questions + follow-ups), Question (open-ended probe), Export (spec documents), User, Engine (orchestration).', choice: '2.1.1.b' },
+  '2.1.2': { text: '3-5 attributes per entity. Framework: version, total_series, dependency_graph. Session: id, status, answers map, artifacts. Artifact: value, source_question_id, confidence. Series: id, name, depends_on, provides.', choice: '2.1.2.b' },
+  '2.1.3': { text: 'Three categories: (1) Structural (Framework, Series, Round, Question) — probe taxonomy. (2) Runtime (Session, Engine, User) — execution. (3) Output (Artifact, Export) — derived data.', choice: '2.1.3.b' },
+  '2.2.1': { text: 'Core: Framework, Session, Question, Artifact, Engine. Peripheral: Project (wrapper), User (implicit), Export (derived). System works with just core set; peripherals add organization and delivery.', choice: '2.2.1.b' },
+  '2.2.2': { text: 'Moderate — Questions fine-grained (326 unique), Rounds/Series moderate groupings, Artifacts fine-grained per-question but aggregate into dictionary. Balance keeps entity count manageable.', choice: '2.2.2.b' },
+  '2.2.3': { text: 'Shared attributes by category. Runtime entities share lifecycle pattern. Structural entities share naming convention (dot-separated IDs). Artifacts share interface but content varies by source series.', choice: '2.2.3.b' },
+  '2.3.1': { text: 'Tightly bounded — generates specs, does not implement/deploy them. Boundary: input = answers to 326 probes, output = structured spec documents.', choice: '2.3.1.a' },
+  '2.3.2': { text: '3 actors: (1) Human user — provides domain knowledge. (2) LLM (optional) — auto-answer or refine. (3) File system — persists sessions. System works without external services.', choice: '2.3.2.b' },
+  '2.3.3': { text: 'Stateful with versioned artifacts. Sessions: created → in_progress → completed. Questions: locked → available → answered. Supports snapshot/resume.', choice: '2.3.3.b' },
+  '2.4.1': { text: 'No major gaps. One addition: "Configuration" entity for runtime settings (LLM provider, export formats). Currently embedded in Engine config.', choice: '2.4.1.a' },
+  '2.4.2': { text: 'No merges or splits needed. Boundaries are clean. "User" could split into Respondent/Consumer but adds complexity without benefit at current scale.', choice: '2.4.2.a' },
+  '2.4.3': { text: '(1) Framework immutable after loading. (2) Answers append-only during session. (3) Artifacts derived, recomputed from answers. (4) Series dependencies strict.', choice: '2.4.3.b' },
+  '2.5.1': { text: 'Edge cases: empty project, corrupted session JSON (validation on load), missing framework (fallback defaults), concurrent sessions (allowed but uncoordinated), long answers (>10KB accepted).', choice: '2.5.1.b' },
+  '2.5.2': { text: 'Hierarchical composition: Framework→Series→Round→Question. Sessions contain Answers and Artifacts. Projects contain Sessions. Dependency graph creates cross-series composition.', choice: '2.5.2.b' },
+  '2.5.3': { text: 'Framework 1:N Series, Series 1:N Rounds (always 2 questions), Project 1:N Sessions, Session N:M Questions via answers, Session 1:N Artifacts, Series N:M via dependency graph.', choice: '2.5.3.b' },
+  '3.1.1': { text: 'Framework CONTAINS Series, Series CONTAINS Rounds, Round CONTAINS Questions, Session ANSWERS Questions (many:many), Session EXTRACTS Artifacts, Project OWNS Sessions, Export FROM Session+Artifacts.', choice: '3.1.1.b' },
+  '3.1.2': { text: 'Composition dominates — whole-part relationships. Exception: dependency graph between Series (DAG of artifact consumption). Answers map is association table linking Questions to responses.', choice: '3.1.2.b' },
+  '3.2.1': { text: 'Hierarchical containment with flat dependency layer. Framework→Series→Round→Question is strict containment. Dependencies are flat (Series reference by ID). Artifacts float across hierarchy.', choice: '3.2.1.a' },
+  '3.2.2': { text: 'Composition primarily — Artifacts composed into Session, not inherited. Exception: Export hierarchy shares interface (content+filename+mime_type) with different serialization strategies.', choice: '3.2.2.a' },
+  '3.3.1': { text: 'Sequential causation with parallel-reads. Answering 1.1.1 enables downstream Series. Within Rounds, both Questions can be answered in any order. DAG — no cycles.', choice: '3.3.1.a' },
+  '3.3.2': { text: 'DAG with 7 nodes, ~10 edges. Critical path: S1→S2→S3→S4→S5→S6→S7. Branching where S5 depends on both S1 and S4.', choice: '3.3.2.b' },
+  '3.4.1': { text: 'Mostly immutable — answers append-only, editing allowed before completion. Artifacts recomputed from answers. Session status transitions one-way.', choice: '3.4.1.b' },
+  '3.4.2': { text: 'Two junction entities: (1) Answers map — question_id to AnswerEntry with text, choice, timestamps. (2) Artifacts dictionary — artifact keys to ArtifactValue with provenance and confidence.', choice: '3.4.2.b' },
+  '4.1.1': { text: 'Primary: elicitation session (create project → answer questions → extract artifacts → generate exports). Secondary: save/resume, artifact accumulation, progress tracking.', choice: '4.1.1.a' },
+  '4.1.2': { text: '5 phases: (1) Init — create project, load framework. (2) Elicitation — 67 questions, 25 rounds. (3) Extraction — 66 artifacts via mapping. (4) Validation — contradictions, gaps. (5) Export — multi-format docs.', choice: '4.1.2.b' },
+  '4.2.1': { text: '8-10 steps per question: router selects → display question → user answers → user classifies → validate → record → extract artifacts → check round → check series → advance.', choice: '4.2.1.b' },
+  '4.2.2': { text: '2-3 sub-actions per step. "Display" checks dependencies, formats context, shows progress. "Submit" validates text, records timestamp, updates map, recomputes artifacts, checks completion.', choice: '4.2.2.a' },
+  '4.3.1': { text: 'Three decision points: (1) Question routing — dependency graph + completion state. (2) Answer validation — non-empty, valid choice. (3) Completion detection — round/series/session.', choice: '4.3.1.a' },
+  '4.3.2': { text: 'Main: dependencies met → show question, else → skip. Secondary: valid → record, else → re-prompt. Tertiary: round complete → check series → check session → generate exports.', choice: '4.3.2.b' },
+  '5.1.1': { text: 'TypeScript/Node.js for engine, CLI, storage. Python for web server. Single HTML+Tailwind for web UI. No external runtime dependencies beyond Node.js built-ins.', choice: '5.1.1.b' },
+  '5.1.2': { text: 'Minimum: Node.js 18+, 512MB RAM, 100MB disk. Recommended: Node.js 20+, 2GB RAM, 1GB disk. ~3500 LOC TypeScript, 36KB HTML UI, ~10KB per session.', choice: '5.1.2.a' },
+  '5.1.3': { text: 'Offline-first — zero network access for core. LLM integration optional (needs internet). Web UI served locally. No bandwidth/latency requirements.', choice: '5.1.3.a' },
+  '5.1.4': { text: 'JSON files on local filesystem. SQLite adapter exists for future scaling but not integrated. No databases, object storage, or caching needed.', choice: '5.1.4.a' },
+  '5.1.5': { text: 'Local development only. No cloud/on-premise/hybrid. Runs on developers machine. Web server binds to localhost. CLI installed via npm.', choice: '5.1.5.a' },
+  '5.2.1': { text: 'TypeScript for business logic. Python for web server. HTML+Tailwind via CDN for web UI. No frontend build step. Compiles to ES2022 JavaScript.', choice: '5.2.1.b' },
+  '5.2.2': { text: 'Cross-platform: macOS, Linux, Windows. Tested on Node.js 18/20/22. Platform-independent paths. Modern browsers for web UI.', choice: '5.2.2.b' },
+  '5.2.3': { text: 'Runtime: commander, chalk, inquirer, ora, js-yaml, sql.js. Dev: vitest, tsx, typescript. Optional: openai, anthropic SDKs. No databases, message queues, external services.', choice: '5.2.3.a' },
+  '5.2.4': { text: 'Semantic versioning (v2.1.0). Framework format versioned separately (v1→v2 migration built in). Backward compatible — old sessions load in new versions.', choice: '5.2.4.a' },
+  '5.2.5': { text: 'npm for packages/distribution. tsc for build. Vitest for testing. No CI/CD yet — manual builds. prepublishOnly runs build+test. No Docker/K8s/cloud.', choice: '5.2.5.a' },
+  '5.3.1': { text: 'Single-user interactive. Session: <100ms. Routing: <10ms. Submit: <50ms. Extract: <20ms. Export: <500ms. All under 1 second. No concurrency.', choice: '5.3.1.a' },
+  '5.3.2': { text: '326 questions, ~66 artifacts/session, ~10KB/session file. 5-10 sessions per project. ~500KB total per project. Designed for hundreds of projects.', choice: '5.3.2.a' },
+  '5.3.3': { text: 'Not applicable — local dev tool. No SLA/uptime. Works offline. Completes in <1 second. Data durability via filesystem + optional git.', choice: '5.3.3.a' },
+  '5.3.4': { text: 'Single-process, single-user. No horizontal scaling. Web server handles one request at a time. No load balancing/caching/CDN.', choice: '5.3.4.a' },
+  '5.3.5': { text: 'Standard dev tool practices. API keys in env vars. Local JSON files. No encryption/auth/audit logging needed for development tool.', choice: '5.3.5.a' },
+  '5.4.1': { text: '5 LLM providers: OpenAI, Anthropic, Gemini, Mistral, Ollama. Unified LLMProvider interface. File system for storage. npm for distribution. Works without LLM (template provider).', choice: '5.4.1.b' },
+  '5.4.2': { text: 'File system API for persistence. LLM providers use native REST APIs via SDK. Web server uses HTTP REST. No gRPC/WebSocket/message queues. All synchronous.', choice: '5.4.2.a' },
+  '5.4.3': { text: 'Phase 1 (done): Engine+CLI. Phase 2: Web UI. Phase 3: LLM providers. Phase 4: Export. Phase 5: Persistence. Phase 6: Intelligence. Phase 7: npm publish. ~4 weeks development.', choice: '5.4.3.b' },
+  '5.4.4': { text: 'TDD with 142 tests across 13 files. Phase-specific test files. Integration tests for session flows. Snapshot tests for exports. Manual web UI testing.', choice: '5.4.4.b' },
+  '5.4.5': { text: 'npm package with README, LICENSE, TypeScript declarations. CLI help for every command. Inline JSDoc. Meta directory with specs/dev plans/audits. Self-documenting web UI.', choice: '5.4.5.b' },
+  '6.1.1': { text: 'Iterative in 7 phases: Foundation → Engine → LLM → Export → UI → Persistence → Intelligence. Each phase independently testable. ~3500 LOC total.', choice: '6.1.1.b' },
+  '6.1.2': { text: 'Solo developer — all roles (architecture, implementation, testing, docs). Small enough for full context. No coordination overhead. Fast decisions.', choice: '6.1.2.a' },
+  '6.2.1': { text: 'TypeScript strict mode. 142 tests/13 files. Snapshot tests for exports. Integration tests for flows. No code review (solo). TypeScript catches type errors.', choice: '6.2.1.b' },
+  '6.2.2': { text: 'Boy scout rule — clean while building. Refactor when it helps new features. No dedicated refactoring phases. Main debt: web UI lacks tests, SQLite not integrated.', choice: '6.2.2.a' },
+  '6.3.1': { text: 'Solo dev — self-documentation. Architecture in meta/specs/ markdown. Code is primary docs. TypeScript types self-describing. No meetings/formal comms.', choice: '6.3.1.a' },
+  '6.3.2': { text: 'BDFL — one person decides. No RFC/ADR reviews. Decisions made quickly, documented after. Framework JSON is source of truth for question taxonomy.', choice: '6.3.2.a' },
+  '7.1.1': { text: 'npm publish as space-cli. Global install via npm install -g. Web UI bundled but local — clone repo, run server. No separate distribution.', choice: '7.1.1.b' },
+  '7.1.2': { text: 'npm for distribution, GitHub for source. No Docker — Node.js CLI runs anywhere. Web UI zero-dependency (single HTML + Python server). No cloud deployment.', choice: '7.1.2.b' },
+  '7.2.1': { text: 'Not applicable — dev tool, not production service. No logging/monitoring/alerting. Closest: session progress tracking and artifact quality scores.', choice: '7.2.1.a' },
+  '7.2.2': { text: 'Config via CLI flags and env vars. No feature flags/runtime config. Framework JSON is primary config. LLM settings are env vars. Minimal configuration by design.', choice: '7.2.2.a' },
+  '7.3.1': { text: 'Solo developer handles everything. GitHub issues for tracking. No SLA/response times. Open source, self-service. Updates as npm versions.', choice: '7.3.1.a' },
+  '7.3.2': { text: 'Actively maintained by original author. Semantic versioning. Breaking changes require major bump. Framework format versioned separately. Stable tool with feature additions.', choice: '7.3.2.b' },
+};
+
+async function autofillSession() {
+  if (!currentSession?.id) return;
+  const btn = document.getElementById('autofill-btn');
+  if (btn) { btn.disabled = true; btn.textContent = 'Filling...'; }
+  
+  let count = 0;
+  for (const [qid, ans] of Object.entries(AUTO_ANSWERS)) {
+    const data = await api(`/api/sessions/${currentSession.id}/answer`, {
+      method: 'POST',
+      body: { question_id: qid, open_ended: ans.text, choice_id: ans.choice },
+    });
+    if (data.accepted) count++;
+    if (data.session_completed) break;
+  }
+  
+  if (btn) { btn.disabled = false; btn.textContent = 'Autofill All'; }
+  await renderQuestion();
+}
+
+// ── Init ──
+showView('dashboard');
+</script>
+</body>
+</html>

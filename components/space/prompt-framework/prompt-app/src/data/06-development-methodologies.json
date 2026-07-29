@@ -1,0 +1,87 @@
+{
+  "series": {
+    "id": 6,
+    "name": "Development Methodologies",
+    "description": "Determines workflow cadence, quality practices, and collaboration patterns aligned with procedural scope and tech constraints.",
+    "x_rounds": 3,
+    "y_open_ended_per_round": 2,
+    "z_multi_choice_per_open": 3,
+    "depends_on": [4, 5],
+    "consumes": ["procedure_complexity", "tech_stack", "performance_targets", "timeline"],
+    "provides": ["development_cadence", "quality_practices", "team_composition", "communication_patterns"]
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "focus": "Process and Cadence",
+      "open_ended": [
+        {
+          "id": "6.1.1",
+          "text": "What development process or methodology best fits this project? How should work be planned and tracked?",
+          "follow_up_choices": [
+            {"id": "6.1.1.a", "text": "Sprint-based agile (Scrum) — fixed-length iterations with formal ceremonies"},
+            {"id": "6.1.1.b", "text": "Continuous flow (Kanban) — pull-based with WIP limits, no fixed iterations"},
+            {"id": "6.1.1.c", "text": "Lean/startup — build-measure-learn cycles, just-in-time planning"}
+          ]
+        },
+        {
+          "id": "6.1.2",
+          "text": "What is the expected team size, composition, and structure?",
+          "follow_up_choices": [
+            {"id": "6.1.2.a", "text": "Solo or pair — 1–2 people, all roles combined"},
+            {"id": "6.1.2.b", "text": "Small team — 3–6 people with distinct roles (dev, design, PM)"},
+            {"id": "6.1.2.c", "text": "Multiple teams — 7+ people across 2+ squads with coordination overhead"}
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "focus": "Quality and Review Practices",
+      "open_ended": [
+        {
+          "id": "6.2.1",
+          "text": "What code review, testing, and quality assurance practices should be followed?",
+          "follow_up_choices": [
+            {"id": "6.2.1.a", "text": "Light — ad-hoc reviews, manual testing, minimal automation"},
+            {"id": "6.2.1.b", "text": "Standard — mandatory reviews, unit + integration tests, CI gates"},
+            {"id": "6.2.1.c", "text": "Rigorous — pair programming, TDD, property-based testing, full automation"}
+          ]
+        },
+        {
+          "id": "6.2.2",
+          "text": "How should the team handle technical debt, refactoring, and code quality?",
+          "follow_up_choices": [
+            {"id": "6.2.2.a", "text": "Opportunistic — clean as you go, no formal tracking"},
+            {"id": "6.2.2.b", "text": "Budgeted — allocate X% of each sprint to debt reduction"},
+            {"id": "6.2.2.c", "text": "Formal — tracked backlog with dedicated quality improvement cycles"}
+          ]
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "focus": "Communication and Collaboration",
+      "open_ended": [
+        {
+          "id": "6.3.1",
+          "text": "How should the team communicate, share knowledge, and manage decisions?",
+          "follow_up_choices": [
+            {"id": "6.3.1.a", "text": "Async-first — written docs, Slack/Teams, minimal meetings"},
+            {"id": "6.3.1.b", "text": "Balanced — regular standups, weekly syncs, supplemented by async"},
+            {"id": "6.3.1.c", "text": "Sync-heavy — daily standups, frequent pairing, co-located or synchronous remote"}
+          ]
+        },
+        {
+          "id": "6.3.2",
+          "text": "What is the decision-making and escalation process? How are architectural choices made?",
+          "follow_up_choices": [
+            {"id": "6.3.2.a", "text": "BDFL — one person makes final decisions with input"},
+            {"id": "6.3.2.b", "text": "Consensus-driven — team agrees, with escalation to lead if deadlocked"},
+            {"id": "6.3.2.c", "text": "ADR-based — proposals, reviews, and recorded Architecture Decision Records"}
+          ]
+        }
+      ]
+    }
+  ]
+}

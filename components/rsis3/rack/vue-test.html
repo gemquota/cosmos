@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Vue3 Test</title>
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body>
+<div id="app">
+  <h1>{{ message }}</h1>
+  <p>Pulses loaded: {{ pulses.length }}</p>
+  <ul>
+    <li v-for="p in pulses" :key="p.id">Pulse #{{ p.id }} - {{ p.goals_count }} goals</li>
+  </ul>
+</div>
+<script>
+const { createApp, ref, computed, watch, onMounted, nextTick } = Vue;
+console.log('Vue available:', !!createApp);
+console.log('watch available:', !!watch);
+
+const app = createApp({
+  setup() {
+    const message = ref('RSIS Dashboard Test');
+    const pulses = ref([{id:'001',goals_count:5},{id:'002',goals_count:3}]);
+    return { message, pulses };
+  }
+});
+app.mount('#app');
+console.log('Mounted successfully');
+</script>
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SPACE — Meta Documents</title>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<style>
+:root{--bg:#0c0e14;--bg-subtle:#12141e;--surface:#181b27;--surface-hover:#1e2233;--border:rgba(255,255,255,.06);--border-hover:rgba(255,255,255,.12);--text:#e8eaf0;--text-secondary:#8b90a3;--text-muted:#5a5f72;--primary:#6c8cff;--primary-bright:#8aa8ff;--primary-glow:rgba(108,140,255,.15);--accent:#a78bfa;--green:#34d399;--amber:#fbbf24;--red:#f87171;--radius:12px;--radius-sm:8px;--font:system-ui,-apple-system,sans-serif;--mono:'JetBrains Mono',monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;font-size:15px}
+
+/* Layout */
+.app{display:flex;min-height:100vh}
+.sidebar{width:280px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;height:100vh;position:sticky;top:0;z-index:10}
+.sidebar-header{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-size:17px;font-weight:700;background:linear-gradient(135deg,var(--primary-bright),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sidebar-sub{font-size:11px;color:var(--text-muted);margin-top:2px}
+.doc-nav{flex:1;padding:8px;overflow-y:auto}
+.doc-nav::-webkit-scrollbar{width:4px}
+.doc-nav::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.nav-group{margin-bottom:6px}
+.nav-group-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--text-muted);padding:8px 10px 4px}
+.nav-item{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:var(--radius-sm);cursor:pointer;transition:all .15s;font-size:12.5px;border:1px solid transparent;color:var(--text-secondary)}
+.nav-item:hover{background:var(--surface-hover);border-color:var(--border-hover);color:var(--text)}
+.nav-item.active{border-color:var(--primary);background:var(--primary-glow);color:var(--text)}
+.nav-item .icon{width:20px;text-align:center;flex-shrink:0;font-size:13px}
+.sidebar-footer{padding:10px 18px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);display:flex;justify-content:space-between}
+
+/* Main */
+.main{flex:1;min-width:0;padding:0}
+.toolbar{position:sticky;top:0;z-index:9;background:var(--bg);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;gap:12px;backdrop-filter:blur(8px)}
+.toolbar h2{font-size:15px;font-weight:600;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toolbar .badge{font-size:10px;padding:2px 8px;border-radius:99px;background:var(--surface);border:1px solid var(--border);color:var(--text-muted)}
+.content{padding:32px 40px;max-width:960px}
+
+/* Markdown styles */
+.content h1{font-size:28px;font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--text),var(--primary-bright));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.3}
+.content h2{font-size:20px;font-weight:700;margin:32px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);color:var(--text)}
+.content h3{font-size:16px;font-weight:700;margin:24px 0 8px;color:var(--text)}
+.content h4{font-size:14px;font-weight:600;margin:16px 0 6px;color:var(--text-secondary)}
+.content p{margin:0 0 12px;color:var(--text-secondary)}
+.content strong{color:var(--text);font-weight:600}
+.content a{color:var(--primary);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+.content a:hover{border-bottom-color:var(--primary)}
+.content ul,.content ol{padding-left:24px;margin:0 0 12px}
+.content li{margin:4px 0;color:var(--text-secondary)}
+.content li strong{color:var(--text)}
+.content blockquote{margin:12px 0;padding:12px 16px;background:var(--surface);border-left:3px solid var(--primary);border-radius:0 var(--radius-sm) var(--radius-sm) 0;color:var(--text-secondary)}
+.content blockquote strong{color:var(--text)}
+.content code{font-family:var(--mono);background:var(--bg-subtle);padding:2px 6px;border-radius:4px;font-size:13px;color:var(--accent)}
+.content pre{background:var(--bg-subtle);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;overflow-x:auto;margin:12px 0}
+.content pre code{background:none;padding:0;color:var(--text)}
+.content table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px}
+.content th,.content td{text-align:left;padding:8px 12px;border:1px solid var(--border)}
+.content th{background:var(--surface);font-weight:600;color:var(--text)}
+.content td{color:var(--text-secondary)}
+.content tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.content hr{margin:24px 0;border:none;border-top:1px solid var(--border)}
+.content img{max-width:100%;border-radius:var(--radius-sm)}
+.content .alert{padding:12px 16px;border-radius:var(--radius-sm);margin:12px 0;font-size:13px}
+.content .alert-tip{background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2);color:var(--green)}
+.content .alert-warn{background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.2);color:var(--amber)}
+.content .alert-error{background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.2);color:var(--red)}
+
+/* Loading */
+.loading{display:flex;align-items:center;justify-content:center;height:60vh;flex-direction:column;gap:12px}
+.loading-spinner{width:24px;height:24px;border:2px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{font-size:13px;color:var(--text-muted)}
+
+/* Mobile */
+.toggle-btn{display:none;background:none;border:none;color:var(--text);font-size:20px;cursor:pointer;padding:4px}
+@media(max-width:768px){
+  .sidebar{position:fixed;left:-280px;transition:left .25s;z-index:20}
+  .sidebar.open{left:0}
+  .toggle-btn{display:block}
+  .toolbar{padding:12px 16px}
+  .content{padding:20px 16px}
+  .toolbar h2{font-size:13px}
+  .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:15}
+  .overlay.show{display:block}
+}
+
+
+.toggle-container{display:flex;align-items:center;gap:8px;padding:4px 8px 8px;margin:0 8px}
+.toggle-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--text-muted);cursor:pointer;user-select:none}
+.toggle-label.active{color:var(--primary)}
+.toggle-switch{position:relative;width:32px;height:18px;background:var(--bg-subtle);border:1px solid var(--border);border-radius:99px;cursor:pointer;transition:all .2s;flex-shrink:0}
+.toggle-switch.active{background:var(--primary-glow);border-color:var(--primary)}
+.toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:12px;height:12px;background:var(--text-secondary);border-radius:50%;transition:all .2s}
+.toggle-switch.active::after{background:var(--primary);transform:translateX(14px)}
+
+
+/* Collapsible & super-section groups */
+.nav-group-header{display:flex;align-items:center;gap:4px;padding:8px 10px 4px;cursor:pointer;user-select:none;transition:color .15s;border-radius:6px}
+.nav-group-header:hover{background:var(--surface-hover)}
+.nav-group-header .collapse-icon{font-size:8px;color:var(--text-muted);transition:transform .2s;width:12px;text-align:center;flex-shrink:0}
+.nav-group-header .collapse-icon.collapsed{transform:rotate(-90deg)}
+.nav-group-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--text-muted);margin:0}
+.nav-group-header:hover .nav-group-title{color:var(--text-secondary)}
+.nav-group-content{overflow:hidden;transition:max-height .25s ease}
+.nav-group-content.collapsed{max-height:0 !important}
+.super-group-header{display:flex;align-items:center;gap:4px;padding:10px 10px 4px;cursor:pointer;user-select:none;transition:color .15s;border-radius:6px;margin-top:4px}
+.super-group-header:hover{background:var(--surface-hover)}
+.super-group-header .collapse-icon{font-size:10px;color:var(--text-secondary);transition:transform .2s;width:14px;text-align:center;flex-shrink:0}
+.super-group-header .collapse-icon.collapsed{transform:rotate(-90deg)}
+.super-group-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--text);margin:0}
+.super-group-header:hover .super-group-title{color:var(--primary)}
+.super-group-content{overflow:hidden;transition:max-height .25s ease}
+.super-group-content.collapsed{max-height:0 !important}
+
+/* Search */
+.search-box{margin:0 8px 8px;position:relative}
+.search-box input{width:100%;background:var(--bg-subtle);border:1px solid var(--border);border-radius:var(--radius-sm);padding:7px 10px 7px 28px;color:var(--text);font-size:12px;outline:none;transition:border-color .15s}
+.search-box input:focus{border-color:var(--primary)}
+.search-box .search-icon{position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--text-muted);pointer-events:none}
+
+/* Status indicators */
+.nav-item .status-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.status-dot.audit{background:var(--primary)}
+.status-dot.roadmap{background:var(--amber)}
+.status-dot.review{background:var(--green)}
+.status-dot.spec{background:var(--accent)}
+.status-dot.dev{background:var(--text-muted)}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">📄 SPACE Meta</div>
+      <div class="sidebar-sub">Cycle audit reports &amp; docs</div>
+    </div>
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search" placeholder="Filter documents..." oninput="filterDocs(this.value)">
+    </div>
+    <div class="toggle-container" id="toggleContainer">
+      <span class="toggle-label active" id="toggleAllLabel" onclick="setFilterMode('all')">All</span>
+      <div class="toggle-switch" id="modeToggle" onclick="toggleFilterMode()"></div>
+      <span class="toggle-label" id="toggleLatestLabel" onclick="setFilterMode('latest')">Latest</span>
+    </div>
+    <nav class="doc-nav" id="docNav"></nav>
+    <div class="sidebar-footer">
+      <span id="docCount"></span>
+      <span>v2.6.0</span>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="toolbar">
+      <button class="toggle-btn" onclick="toggleSidebar()" aria-label="Toggle sidebar">☰</button>
+      <h2 id="docTitle">Select a document</h2>
+      <span class="badge" id="docBadge"></span>
+    </div>
+    <div class="content" id="content">
+      <div class="loading">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading documents...</div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+const DOCUMENTS = [
+  // Reports (Audits, Roadmaps, Reviews)
+    { file:'CYCLES-OVERVIEW.md', title:'Cycles Overview', group:'__cycles_overview__', icon:'📊', cat:'overview' },
+  { file:'CYCLE-001-AUDIT.md', title:'Cycle 001 Audit', group:'Cycle 001', icon:'🔍', cat:'audit' },
+  { file:'CYCLE-001-ROADMAP.md', title:'Cycle 001 Roadmap', group:'Cycle 001', icon:'🗺️', cat:'roadmap' },
+  { file:'CYCLE-001-REVIEW.md', title:'Cycle 001 Review', group:'Cycle 001', icon:'✅', cat:'review' },
+  { file:'CYCLE-001-COMPLETION.md', title:'Cycle 001 Completion', group:'Cycle 001', icon:'📋', cat:'review' },
+  { file:'CYCLE-002-AUDIT.md', title:'Cycle 002 Audit', group:'Cycle 002', icon:'🔍', cat:'audit' },
+  { file:'CYCLE-003-AUDIT.md', title:'Cycle 003 Audit', group:'Cycle 003', icon:'🔍', cat:'audit' },
+  { file:'CYCLE-002-ROADMAP.md', title:'Cycle 002 Roadmap', group:'Cycle 002', icon:'🗺️', cat:'roadmap' },
+  { file:'CYCLE-002-REVIEW.md', title:'Cycle 002 Review', group:'Cycle 002', icon:'✅', cat:'review' },
+  { file:'CYCLE-002-COMPLETION.md', title:'Cycle 002 Completion', group:'Cycle 002', icon:'✅', cat:'review' },
+  { file:'CYCLE-003-ROADMAP.md', title:'Cycle 003 Roadmap', group:'Cycle 003', icon:'🗺️', cat:'roadmap' },
+    { file:'CYCLE-003-REVIEW.md', title:'Cycle 003 Review', group:'Cycle 003', icon:'✅', cat:'review' },
+  { file:'CYCLE-003-COMPLETION.md', title:'Cycle 003 Completion', group:'Cycle 003', icon:'📋', cat:'review' },
+    { file:'CYCLE-004-AUDIT.md', title:'Cycle 004 Audit', group:'Cycle 004', icon:'🔍', cat:'audit' },
+  { file:'CYCLE-004-ROADMAP.md', title:'Cycle 004 Roadmap', group:'Cycle 004', icon:'🗺️', cat:'roadmap' },
+    { file:'CYCLE-004-REVIEW.md', title:'Cycle 004 Review', group:'Cycle 004', icon:'✅', cat:'review' },
+  { file:'CYCLE-004-COMPLETION.md', title:'Cycle 004 Completion', group:'Cycle 004', icon:'📋', cat:'review' },
+
+  // Dev Docs
+  { file:'project-status.md', title:'Project Status', group:'Development', icon:'📊', cat:'dev' },
+  { file:'dev/README.md', title:'Dev Docs Overview', group:'Development', icon:'📋', cat:'dev' },
+  { file:'dev/phase-0-foundation.md', title:'Phase 0: Foundation', group:'Development', icon:'🔧', cat:'dev' },
+  { file:'dev/phase-1-execution-engine.md', title:'Phase 1: Execution Engine', group:'Development', icon:'⚙️', cat:'dev' },
+  { file:'dev/phase-2-llm-integration.md', title:'Phase 2: LLM Integration', group:'Development', icon:'🤖', cat:'dev' },
+  { file:'dev/phase-3-export-pipeline.md', title:'Phase 3: Export Pipeline', group:'Development', icon:'📤', cat:'dev' },
+  { file:'dev/phase-4-interactive-ui.md', title:'Phase 4: Interactive UI', group:'Development', icon:'🎨', cat:'dev' },
+  { file:'dev/phase-5-persistence.md', title:'Phase 5: Persistence', group:'Development', icon:'💾', cat:'dev' },
+  { file:'dev/phase-6-intelligence.md', title:'Phase 6: Intelligence', group:'Development', icon:'🧠', cat:'dev' },
+
+  // Specs
+  { file:'specs/README.md', title:'Specs Overview', group:'Specifications', icon:'📐', cat:'spec' },
+  { file:'specs/01-data-schema.md', title:'01 — Data Schema', group:'Specifications', icon:'📐', cat:'spec' },
+  { file:'specs/02-architecture.md', title:'02 — Architecture', group:'Specifications', icon:'📐', cat:'spec' },
+  { file:'specs/03-export-pipeline.md', title:'03 — Export Pipeline', group:'Specifications', icon:'📐', cat:'spec' },
+  { file:'specs/04-api-design.md', title:'04 — API Design', group:'Specifications', icon:'📐', cat:'spec' },
+  { file:'specs/05-execution-engine.md', title:'05 — Execution Engine', group:'Specifications', icon:'📐', cat:'spec' },
+  { file:'specs/06-llm-integration.md', title:'06 — LLM Integration', group:'Specifications', icon:'📐', cat:'spec' },
+  { file:'specs/07-ui-design.md', title:'07 — UI Design', group:'Specifications', icon:'📐', cat:'spec' },
+  { file:'specs/08-persistence.md', title:'08 — Persistence', group:'Specifications', icon:'📐', cat:'spec' },
+  { file:'specs/09-intelligence.md', title:'09 — Intelligence', group:'Specifications', icon:'📐', cat:'spec' },
+];
+
+let currentDoc = null;
+const contentEl = document.getElementById('content');
+const docTitle = document.getElementById('docTitle');
+const docBadge = document.getElementById('docBadge');
+const docNav = document.getElementById('docNav');
+const docCount = document.getElementById('docCount');
+
+let filterMode = 'all';
+
+function setFilterMode(mode) {
+  filterMode = mode;
+  document.getElementById('toggleAllLabel').classList.toggle('active', mode === 'all');
+  document.getElementById('toggleLatestLabel').classList.toggle('active', mode === 'latest');
+  document.getElementById('modeToggle').classList.toggle('active', mode === 'latest');
+  buildSidebar(document.getElementById('search').value);
+}
+
+function toggleFilterMode() {
+  setFilterMode(filterMode === 'all' ? 'latest' : 'all');
+}
+
+// Build sidebar
+// Group collapse state
+const groupCollapse = {};
+
+function loadCollapseState() {
+  try {
+    const saved = localStorage.getItem('space-group-collapse');
+    if (saved) Object.assign(groupCollapse, JSON.parse(saved));
+  } catch(e) {}
+}
+
+function saveCollapseState() {
+  try {
+    localStorage.setItem('space-group-collapse', JSON.stringify(groupCollapse));
+  } catch(e) {}
+}
+
+function toggleGroup(group) {
+  groupCollapse[group] = !groupCollapse[group];
+  saveCollapseState();
+  buildSidebar(document.getElementById('search').value);
+  if (currentDoc) {
+    const el = document.querySelector(`.nav-item[data-file="${currentDoc.file}"]`);
+    if (el) el.classList.add('active');
+  }
+}
+
+// Build sidebar
+function buildSidebar(filter='') {
+  loadCollapseState();
+  const q = filter.toLowerCase();
+  const groups = {};
+  for (const d of DOCUMENTS) {
+    if (q && !d.title.toLowerCase().includes(q) && !d.group.toLowerCase().includes(q)) continue;
+    // Latest mode: only show CYCLE-004 docs
+    if (filterMode === 'latest' && !d.file.includes('CYCLE-004')) continue;
+    if (!groups[d.group]) groups[d.group] = [];
+    groups[d.group].push(d);
+  }
+  // Group order: super-section 'Cycles' wraps 001-004, then dev, then specs
+  const cycleGroups = ['Cycle 001', 'Cycle 002', 'Cycle 003', 'Cycle 004'].filter(g => groups[g]);
+  const otherGroups = ['Development', 'Specifications'].filter(g => groups[g]);
+  let html = '';
+  let total = 0;
+  // Render cycle super-section
+  if (cycleGroups.length > 0) {
+    const cyclesCollapsed = groupCollapse['__cycles__'] === true;
+    html += '<div class="nav-group">';
+    html += `<div class="super-group-header" onclick="toggleGroup('__cycles__')">`;
+    html += `<span class="collapse-icon ${cyclesCollapsed ? 'collapsed' : ''}">\u25bc</span>`;
+    html += `<div class="super-group-title">Cycles</div>`;
+    html += '</div>';
+    html += `<div class="super-group-content ${cyclesCollapsed ? 'collapsed' : ''}">`;
+    // Render cycles overview doc at the top if present
+    const overviewDocs = groups['__cycles_overview__'] || [];
+    for (const d of overviewDocs) {
+      const active = currentDoc && currentDoc.file === d.file ? ' active' : '';
+      html += `<div class="nav-item${active}" data-file="${d.file}" onclick="loadDoc('${d.file}','${d.title}','${d.cat}')" title="${d.title}"><span class="icon" style="opacity:0.7">${d.icon}</span>${d.title}</div>`;
+      total++;
+    }
+    for (const group of cycleGroups) {
+      const docs = groups[group];
+      const isCollapsed = groupCollapse[group] === true;
+      html += '<div class="nav-group">';
+      html += `<div class="nav-group-header" onclick="event.stopPropagation();toggleGroup('${group}')">`;
+      html += `<span class="collapse-icon ${isCollapsed ? 'collapsed' : ''}">\u25bc</span>`;
+      html += `<div class="nav-group-title">${group}</div>`;
+      html += '</div>';
+      html += `<div class="nav-group-content ${isCollapsed ? 'collapsed' : ''}">`;
+      for (const d of docs) {
+        const active = currentDoc && currentDoc.file === d.file ? ' active' : '';
+        const dot = `<span class="status-dot ${d.cat}"></span>`;
+        html += `<div class="nav-item${active}" data-file="${d.file}" onclick="loadDoc('${d.file}','${d.title}','${d.cat}')" title="${d.title}">${dot}<span class="icon">${d.icon}</span>${d.title}</div>`;
+        total++;
+      }
+      html += '</div></div>';
+    }
+    html += '</div></div>';
+  }
+  // Render other groups
+  for (const group of otherGroups) {
+    const docs = groups[group];
+    const isCollapsed = groupCollapse[group] === true;
+    html += '<div class="nav-group">';
+    html += `<div class="nav-group-header" onclick="toggleGroup('${group}')">`;
+    html += `<span class="collapse-icon ${isCollapsed ? 'collapsed' : ''}">\u25bc</span>`;
+    html += `<div class="nav-group-title">${group}</div>`;
+    html += '</div>';
+    html += `<div class="nav-group-content ${isCollapsed ? 'collapsed' : ''}">`;
+    for (const d of docs) {
+      const active = currentDoc && currentDoc.file === d.file ? ' active' : '';
+      const dot = `<span class="status-dot ${d.cat}"></span>`;
+      html += `<div class="nav-item${active}" data-file="${d.file}" onclick="loadDoc('${d.file}','${d.title}','${d.cat}')" title="${d.title}">${dot}<span class="icon">${d.icon}</span>${d.title}</div>`;
+      total++;
+    }
+    html += '</div></div>';
+  }
+  docNav.innerHTML = html;
+  docCount.textContent = `${total} documents${filterMode === 'latest' ? ' (latest)' : ''}`;
+  saveCollapseState();
+}
+
+function filterDocs(val) { buildSidebar(val); }
+
+// Load a markdown file
+async function loadDoc(file, title, cat) {
+  currentDoc = { file, title, cat };
+  // Auto-expand group containing this doc
+  const doc = DOCUMENTS.find(d => d.file === file);
+  if (doc) {
+    if (groupCollapse['__cycles__'] === true) {
+      groupCollapse['__cycles__'] = false;
+    }
+    if (groupCollapse[doc.group] === true) {
+      groupCollapse[doc.group] = false;
+    }
+    saveCollapseState();
+  }
+  buildSidebar();
+  
+  docTitle.textContent = title;
+  docBadge.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+  contentEl.innerHTML = '<div class="loading"><div class="loading-spinner"></div><div class="loading-text">Loading...</div></div>';
+  
+  closeSidebar();
+  
+  try {
+    const resp = await fetch('meta/' + file);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const md = await resp.text();
+    
+    // Configure marked for safe rendering
+    marked.setOptions({
+      breaks: true,
+      gfm: true,
+    });
+    
+    const html = marked.parse(md);
+    
+    // Process the HTML: make internal links work
+    const processed = html.replace(/href="([^"]+)"/g, (m, href) => {
+      // Keep external links, handle internal anchors
+      if (href.startsWith('http') || href.startsWith('#')) return m;
+      // Try to match a document file
+      const doc = DOCUMENTS.find(d => d.file === href || d.file.endsWith('/' + href));
+      if (doc) {
+        return `href="javascript:loadDoc('${doc.file}','${doc.title}','${doc.cat}')"`;
+      }
+      return `href="${href}" target="_blank" rel="noopener"`;
+    });
+    
+    contentEl.innerHTML = processed;
+    
+    // Update URL hash
+    history.replaceState(null, '', '#' + file);
+  } catch (e) {
+    contentEl.innerHTML = `
+      <div style="text-align:center;padding:60px 20px">
+        <div style="font-size:40px;margin-bottom:16px">📄</div>
+        <h2 style="margin-bottom:8px">Could not load document</h2>
+        <p style="color:var(--text-muted)">${e.message}</p>
+        <p style="color:var(--text-muted);font-size:13px;margin-top:8px">Make sure the viewer is served from the project root.</p>
+      </div>`;
+  }
+}
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('show');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
+}
+
+// Load from hash on startup
+function loadFromHash() {
+  const hash = location.hash.slice(1);
+  if (hash) {
+    const doc = DOCUMENTS.find(d => d.file === hash);
+    if (doc) {
+      loadDoc(doc.file, doc.title, doc.cat);
+      return true;
+    }
+  }
+  return false;
+}
+
+// Initial render
+buildSidebar();
+if (!loadFromHash()) {
+  // Show welcome
+  contentEl.innerHTML = `
+    <div style="text-align:center;padding:60px 20px;max-width:500px;margin:0 auto">
+      <div style="font-size:48px;margin-bottom:16px">📖</div>
+      <h1 style="font-size:24px;margin-bottom:8px">SPACE Meta Documents</h1>
+      <p style="color:var(--text-secondary);margin-bottom:20px">Browse cycle audit reports, improvement roadmaps, development phase guides, and technical specifications.</p>
+      <div style="display:flex;flex-direction:column;gap:8px;text-align:left">
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('CYCLE-004-AUDIT.md','Cycle 004 Audit','audit')">
+          <span style="font-size:20px">🔍</span>
+          <div><div style="font-weight:600;font-size:13px">Latest Audit</div><div style="font-size:11px;color:var(--text-muted)">Cycle 004 — 13 production readiness improvements</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('CYCLE-004-REVIEW.md','Cycle 004 Review','review')">
+          <span style="font-size:20px">✅</span>
+          <div><div style="font-weight:600;font-size:13px">Latest Completion Review</div><div style="font-size:11px;color:var(--text-muted)">Cycle 004 — 150 tests, ESLint, Prettier, README, CLI tests</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('specs/01-data-schema.md','01 — Data Schema','spec')">
+          <span style="font-size:20px">📐</span>
+          <div><div style="font-weight:600;font-size:13px">Data Schema Spec</div><div style="font-size:11px;color:var(--text-muted)">Framework, Session, Project type definitions</div></div>
+        </div>
+      </div>
+      <p style="color:var(--text-muted);font-size:12px;margin-top:24px">Select a document from the sidebar or use the search filter.</p>
+    </div>`;
+}
+</script>
+</body>
+</html>

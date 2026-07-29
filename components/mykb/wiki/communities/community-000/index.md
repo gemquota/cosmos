@@ -1,0 +1,90 @@
+# Community 1
+
+84 entities.
+
+## Entities
+
+- **abc** (abc-2) — connected to adr, all, al, agent, add
+- **ach** (ach-2) — connected to ast
+- **add** (add-10) — connected to abc, adr, all, al, agent
+- **adr** (adr-2) — connected to abc, all, al, agent, add
+- **aec** (aec-2) — connected to geminiclient, tokencounter, freetier, conversationhistory, telemetrymanager
+- **agent** (agent-2) — connected to abc, adr, all, al, add
+- **ai** (ai-10) — connected to toolcall, benchmarkharness, ci, all, api
+- **al** (al-2) — connected to abc, adr, all, agent, add
+- **all** (all-10) — connected to api, toolcall, basemodel, memorymanager, toolregistry
+- **allow** (allow-2) — connected to toolexecutor, all, webgeminiclient, autohealer, conversationhistory
+- **ansi** (ansi-2) — connected to toolexecutor, cid, geminiclient, telemetrymanager, promptsession
+- **any** (any-10) — connected to ast, api, memorymanager, ai, ascii
+- **api** (api-10) — connected to all, toolcall, benchmarkharness, ci, tracestep
+- **approvalpolicy** (approvalpolicy-2) — connected to telemetrymanager, promptsession, cwd, cid, keybindings
+- **asc** (asc-10) — connected to toolcall, toolexecutor, sessiondatabase, readfileargs, all
+- **ascii** (ascii-10) — connected to asc, memoryevent, ansi, any
+- **ast** (ast-10) — connected to toolexecutor, asc, sessiondatabase, any, all
+- **autohealer** (autohealer-10) — connected to toolcall, allow, toolexecutor, asc, sessiondatabase
+- **basemodel** (basemodel-10) — connected to toolcall, benchmarkharness, tracestep, executiontrace, all
+- **basesettings** (basesettings-2) — connected to tokencounter, telemetrymanager, settingsconfigdict
+- **benchmarkharness** (benchmarkharness-2) — connected to toolcall, ci, tracestep, executiontrace, gemmaharness
+- **benchmarkjudge** (benchmarkjudge-2) — connected to toolcall, benchmarkharness, dag, intentrouter, asc
+- **benchmarkresult** (benchmarkresult-2) — connected to benchmarkharness, memoryevent, asc, gemmaoutlinesagent, tracestep
+- **bridgecontext** (bridgecontext-2) — connected to abc, adr, all, al, agent
+- **checkpointmanager** (checkpointmanager-10) — connected to ast, memorymanager, approvalpolicy, tokencounter, permissionmanager
+- **ci** (ci-2) — connected to toolcall, benchmarkharness, tracestep, executiontrace, gemmaharness
+- **cid** (cid-2) — connected to ansi, toolexecutor, geminiclient, full, telemetrymanager
+- **circulardependencyerror** (circulardependencyerror-2) — connected to checkpointmanager, gemini web, tool assignment, pyvis, memorygraph
+- **cjubyojquycmhf91ltqxe** (cjubyojquycmhf91ltqxe-2) — connected to geminiclient
+- **cli** (cli-10) — connected to api, ai, toolcall, benchmarkharness, dag
+- **conn error** (conn-error-2) — connected to telemetrymanager, stream suspended, silent abort, toolexecutor, promptsession
+- **conversationhistory** (conversationhistory-10) — connected to toolcall, allow, toolexecutor, asc, all
+- **cwd** (cwd-2) — connected to toolexecutor, repomapper, telemetrymanager, permissionlevel, approvalpolicy
+- **dag** (dag-10) — connected to toolcall, benchmarkharness, intentrouter, listdirargs, tracestep
+- **db** (db-10) — connected to dag, pcg, intentrouter, memoryevent, listdirargs
+- **devops** (devops-2) — connected to db, langchain
+- **diffengine** (diffengine-2) — connected to approvalpolicy, localchat, permissionmanager, promptsession, lm
+- **executiontrace** (executiontrace-2) — connected to toolcall, benchmarkharness, ci, tracestep, gemmaharness
+- **first** (first-2) — connected to telemetrymanager, stream suspended, silent abort, toolexecutor, promptsession
+- **freetier** (freetier-2) — connected to tokencounter, conversationhistory, telemetrymanager, aec
+- **from** (from-10) — connected to toolcall, dag, intentrouter, memoryevent, listdirargs
+- **fsm** (fsm-2) — connected to toolcall, benchmarkharness, dag, intentrouter, listdirargs
+- **full** (full-2) — connected to toolexecutor, cid, geminiclient
+- **gemini web** (gemini-web-2) — connected to dag, tokencounter, webgeminiclient, cli, from
+- **geminiclient** (geminiclient-10) — connected to webgeminiclient, basemodel, aec, ansi, cjubyojquycmhf91ltqxe
+- **gemmaharness** (gemmaharness-10) — connected to toolcall, benchmarkharness, ci, tracestep, executiontrace
+- **gemmaoutlinesagent** (gemmaoutlinesagent-10) — connected to toolcall, benchmarkharness, ci, tracestep, executiontrace
+- **gitargs** (gitargs-2) — connected to dag, intentrouter, listdirargs, asc, gemmaoutlinesagent
+- **intentrouter** (intentrouter-10) — connected to toolcall, benchmarkharness, dag, listdirargs, tracestep
+- **keybindings** (keybindings-2) — connected to approvalpolicy, telemetrymanager, promptsession, conversationhistory
+- **langchain** (langchain-2) — connected to devops, db
+- **last** (last-2) — connected to intentrouter, raw output, benchmarkjudge, gemmaharness
+- **listdirargs** (listdirargs-2) — connected to toolcall, dag, intentrouter, tracestep, fsm
+- **lm** (lm-2) — connected to repomapper, approvalpolicy, localchat, permissionmanager, diffengine
+- **localchat** (localchat-2) — connected to approvalpolicy, permissionmanager, diffengine, promptsession, lm
+- **memoryevent** (memoryevent-2) — connected to toolcall, toolexecutor, asc, sessiondatabase, readfileargs
+- **memorygraph** (memorygraph-2) — connected to tracestep, executiontrace, checkpointmanager, gemini web, tool assignment
+- **memorymanager** (memorymanager-10) — connected to toolcall, benchmarkharness, tracestep, executiontrace, all
+- **pathspec** (pathspec-2) — connected to telemetrymanager, stream suspended, silent abort, toolexecutor, promptsession
+- **pcg** (pcg-2) — connected to dag, intentrouter, memoryevent, asc, gemmaoutlinesagent
+- **permissionlevel** (permissionlevel-2) — connected to allow, abc, toolexecutor, adr, all
+- **permissionmanager** (permissionmanager-2) — connected to allow, abc, adr, all, al
+- **promptsession** (promptsession-2) — connected to telemetrymanager, stream suspended, silent abort, ansi, toolexecutor
+- **ptstyle** (ptstyle-2) — connected to approvalpolicy, checkpointmanager, tokencounter, permissionmanager, diffengine
+- **pyvis** (pyvis-2) — connected to checkpointmanager, gemini web, tool assignment, memorygraph, circulardependencyerror
+- **raw output** (raw-output-2) — connected to last, intentrouter, benchmarkjudge, gemmaharness
+- **readfileargs** (readfileargs-10) — connected to toolcall, asc, memoryevent, basemodel, memorymanager
+- **repomapper** (repomapper-10) — connected to toolexecutor, tokencounter, webgeminiclient, autohealer, conversationhistory
+- **sessiondatabase** (sessiondatabase-2) — connected to toolexecutor, asc, all, memoryevent, ast
+- **settingsconfigdict** (settingsconfigdict-2) — connected to basesettings, tokencounter, telemetrymanager
+- **shellexecargs** (shellexecargs-2) — connected to dag, intentrouter, memoryevent, writefileargs, gitargs
+- **silent abort** (silent-abort-2) — connected to telemetrymanager, stream suspended, toolexecutor, promptsession, pathspec
+- **stream suspended** (stream-suspended-2) — connected to telemetrymanager, silent abort, toolexecutor, promptsession, pathspec
+- **swa** (swa-2) — connected to gemmaharness, listdirargs, shellexecargs
+- **telemetrymanager** (telemetrymanager-10) — connected to allow, abc, toolexecutor, adr, all
+- **tokencounter** (tokencounter-10) — connected to allow, abc, toolexecutor, adr, all
+- **tool assignment** (tool-assignment-2) — connected to checkpointmanager, gemini web, pyvis, memorygraph, circulardependencyerror
+- **toolcall** (toolcall-10) — connected to benchmarkharness, ci, tracestep, executiontrace, all
+- **toolexecutor** (toolexecutor-2) — connected to allow, asc, sessiondatabase, all, memoryevent
+- **toolregistry** (toolregistry-10) — connected to toolcall, benchmarkharness, all, gemmaharness, api
+- **tracestep** (tracestep-2) — connected to toolcall, benchmarkharness, ci, executiontrace, gemmaharness
+- **updatescratchpadargs** (updatescratchpadargs-2) — connected to dag, intentrouter, memoryevent, writefileargs, listdirargs
+- **webgeminiclient** (webgeminiclient-10) — connected to toolcall, allow, toolexecutor, asc, sessiondatabase
+- **writefileargs** (writefileargs-2) — connected to dag, listdirargs, fsm, updatescratchpadargs, shellexecargs

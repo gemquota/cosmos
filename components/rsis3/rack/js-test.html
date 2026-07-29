@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS Test</title>
+<style>
+body{background:#0f172a;color:#e2e8f0;font-family:sans-serif;margin:40px;text-align:center}
+h1{color:#10b981}
+</style>
+</head>
+<body>
+<h1>JavaScript Works!</h1>
+<p id="status">Loading...</p>
+<script>
+document.getElementById('status').textContent = 'Inline JS executed at: ' + new Date().toLocaleTimeString();
+console.log('Inline JS test: OK');
+console.log('Vue available:', typeof Vue !== 'undefined');
+console.log('Navigator:', navigator.userAgent);
+</script>
+</body>
+</html>

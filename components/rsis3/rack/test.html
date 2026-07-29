@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>Vue+Plotly Test</title>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+<style>
+body{background:#0d1117;color:#c9d1d9;font-family:sans-serif;padding:20px}
+[v-cloak]{display:none!important}
+.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;margin:10px 0}
+.plot{width:100%;height:200px}
+</style>
+</head><body>
+<div id="app" v-cloak>
+  <h1>{{ msg }}</h1>
+  <p>Counter: {{ count }} <button @click="count++">+1</button></p>
+  <p>Items: <span v-for="(v,k) in items" :key="k">{{ k }}={{ v }} </span></p>
+  <div class="card"><div class="plot" id="mychart"></div></div>
+</div>
+<script>
+const {ref,computed,nextTick}=Vue;
+Vue.createApp({setup(){
+  var msg=ref('Dashboard Test - Vue 3 + Plotly');
+  var count=ref(42);
+  var items=ref({L1:85,L2:62,L3:47,L4:69,L5:100,L6:100});
+  nextTick(function(){setTimeout(function(){
+    if(typeof Plotly!=='undefined'){
+      var el=document.getElementById('mychart');
+      Plotly.newPlot(el,[{labels:['L1','L2','L3','L4','L5','L6'],values:[85,62,47,69,100,100],type:'pie',marker:{colors:['#58a6ff','#bc8cff','#3fb950','#d29922','#f0883e','#f85149']}}],
+        {paper_bgcolor:'rgba(0,0,0,0)',plot_bgcolor:'rgba(0,0,0,0)',font:{color:'#8b949e',size:10},height:180});
+    }
+  },500);});
+  return {msg,count,items};
+}}).mount('#app');
+</script></body></html>

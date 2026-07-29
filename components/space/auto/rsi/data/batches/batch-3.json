@@ -1,0 +1,262 @@
+[
+  {
+    "id": "5.1.1",
+    "series": 5,
+    "round": 1,
+    "focus": "Hardware and Infrastructure",
+    "text": "What hardware platforms or architectures must be supported? (CPU, GPU, mobile, embedded, etc.)",
+    "choices": [
+      {
+        "id": "5.1.1.a",
+        "text": "Single architecture \u2014 x86-64 desktop/server only"
+      },
+      {
+        "id": "5.1.1.b",
+        "text": "Dual architecture \u2014 e.g., x86-64 + ARM"
+      },
+      {
+        "id": "5.1.1.c",
+        "text": "Mobile/embedded \u2014 ARM, RISC-V, or specialized hardware"
+      },
+      {
+        "id": "5.1.1.d",
+        "text": "Platform-agnostic \u2014 must run on any reasonably modern hardware"
+      }
+    ],
+    "answer": "Hardware platform support:\n\nPrimary target: x86-64 desktop/laptop running Node.js 18+. This is the development and primary use case \u2014 a developer runs SPACE on their workstation.\n\nSecondary targets: ARM64 (Apple Silicon Macs, Raspberry Pi, cloud instances). The system uses no architecture-specific code, so ARM64 is supported transparently through Node.js cross-compilation.\n\nExplicitly not targeted: Mobile devices (iOS/Android), embedded systems (Arduino, ESP32), GPUs (no compute-intensive operations), real-time systems (no latency guarantees).\n\nPlatform-agnostic design: The system uses only Node.js standard APIs (fs, path, crypto, http). No native bindings, no platform-specific code, no conditional compilation. The TypeScript compiler targets ES2022, which is supported on all modern Node.js versions across all architectures.\n\nContainer support: The system runs in Docker containers on any architecture. No special Dockerfile needed \u2014 a basic Node.js image suffices. The web UI is accessible via port mapping (node web/server.mjs -p 8888).\n\nArchitecture independence is a feature: users don't need to think about what platform they're on. The system works identically on Linux, macOS, and Windows (with minor path separator differences handled by the path module)."
+  },
+  {
+    "id": "5.1.2",
+    "series": 5,
+    "round": 1,
+    "focus": "Hardware and Infrastructure",
+    "text": "What are the minimum and recommended hardware specs? (RAM, storage, compute, network)",
+    "choices": [
+      {
+        "id": "5.1.2.a",
+        "text": "Minimal \u2014 <1GB RAM, <100MB storage, single-core sufficient"
+      },
+      {
+        "id": "5.1.2.b",
+        "text": "Standard \u2014 2\u20138GB RAM, 1\u201310GB storage, multi-core recommended"
+      },
+      {
+        "id": "5.1.2.c",
+        "text": "High-performance \u2014 16\u201364GB RAM, SSD storage, GPU recommended"
+      },
+      {
+        "id": "5.1.2.d",
+        "text": "Enterprise \u2014 128GB+ RAM, distributed storage, multi-GPU clusters"
+      }
+    ],
+    "answer": "Hardware specifications:\n\nMinimum: Node.js 18+, 256MB RAM, 50MB disk space. The CLI tool is lightweight \u2014 the entire codebase is ~3500 LOC TypeScript compiled to ~500KB JavaScript. The framework JSON files total ~50KB. Session files are ~10KB each. The minimum specs accommodate any modern computer.\n\nRecommended: Node.js 20 LTS, 1GB RAM, 500MB disk space. The web UI adds browser overhead. The LLM integration adds API call latency (not local compute). 500MB disk accommodates 50+ projects with 10+ sessions each.\n\nHigh-performance: Not needed. The system is I/O-bound (reading/writing JSON files, making HTTP requests to LLM APIs) not CPU-bound. A Raspberry Pi 4 handles the workload comfortably. The bottleneck is human typing speed, not system processing.\n\nStorage growth model:\n- Per question: ~1KB (answer text + follow-up + metadata)\n- Per session: ~10KB (67 answers \u00d7 ~1KB + overhead)\n- Per project: ~500KB (10 sessions + exports)\n- Per workspace: ~5MB (100 projects)\n- Framework: ~50KB (static, shared across all projects)\n\nThe storage model is designed for decades of use \u2014 even at 1 project/day, a year of usage produces <200MB of data."
+  },
+  {
+    "id": "5.1.3",
+    "series": 5,
+    "round": 1,
+    "focus": "Hardware and Infrastructure",
+    "text": "What bandwidth, latency, or networking requirements exist? Is offline operation needed?",
+    "choices": [
+      {
+        "id": "5.1.3.a",
+        "text": "Always-online \u2014 requires reliable internet connection"
+      },
+      {
+        "id": "5.1.3.b",
+        "text": "Online with offline fallback \u2014 core features work disconnected"
+      },
+      {
+        "id": "5.1.3.c",
+        "text": "Primarily offline \u2014 sync is optional or batch-oriented"
+      },
+      {
+        "id": "5.1.3.d",
+        "text": "Edge-deployed \u2014 must operate on intermittent or low-bandwidth connections"
+      }
+    ],
+    "answer": "Networking requirements:\n\nCore system: No network required. The CLI tool, framework loading, session management, and local export all work completely offline. The system can be installed via npm (one-time network access) or copied from a USB drive.\n\nOptional network: LLM API calls require internet access. The system gracefully degrades without network \u2014 all features work, just without AI-assisted auto-fill. The LLM provider is configured per-project; if not configured, no network calls are made.\n\nWeb UI: The web server binds to localhost only. No external network access required. The browser loads the SPA from the local server. No CDN, no external assets (except the Inter font from Google Fonts, which degrades gracefully to system fonts).\n\nOffline-first design: The system was designed for use on airplanes, in air-gapped environments, and in areas with unreliable internet. Every feature has an offline fallback:\n- No LLM \u2192 manual answer input\n- No network \u2192 local storage only\n- No browser \u2192 CLI interface only\n\nThe offline-first design is a deliberate architectural choice: it makes the system reliable (no network = no failure), fast (local I/O = instant), and private (no data leaves the machine)."
+  },
+  {
+    "id": "5.1.4",
+    "series": 5,
+    "round": 1,
+    "focus": "Hardware and Infrastructure",
+    "text": "What storage infrastructure is needed? (databases, object storage, caching, file systems)",
+    "choices": [
+      {
+        "id": "5.1.4.a",
+        "text": "Single database \u2014 one relational or document store covers all needs"
+      },
+      {
+        "id": "5.1.4.b",
+        "text": "Primary DB + cache \u2014 e.g., PostgreSQL with Redis"
+      },
+      {
+        "id": "5.1.4.c",
+        "text": "Polyglot persistence \u2014 multiple specialized data stores"
+      },
+      {
+        "id": "5.1.4.d",
+        "text": "Distributed storage \u2014 sharded databases, multi-region replication"
+      }
+    ],
+    "answer": "Storage infrastructure:\n\nPrimary storage: Local filesystem. JSON files organized in project directories under ~/.space/projects/. No databases required. The current JSON-file approach is sufficient for hundreds of projects with thousands of sessions.\n\nSQLite adapter: Exists at src/storage/sqlite.ts using sql.js (WASM-based SQLite). Implements the StorageProvider interface. 17 tests pass. Not yet integrated into the main flow but available for future use when query performance matters (e.g., searching across thousands of sessions).\n\nNo object storage, no caching layers, no CDN. The system is designed for single-user local use \u2014 no need for distributed storage.\n\nStorage model:\n- Framework: read-only JSON files in prompt-framework/json/\n- Projects: ~/.space/projects/<name>/\n  - .space.json: project metadata\n  - sessions/<uuid>/state.json: session state + answers\n  - exports/<format>-specification.<ext>: compiled specifications\n\nStorage growth: ~10KB per session, ~500KB per project (10 sessions), ~5MB for a large workspace (100 projects). Total storage is trivial.\n\nAtomic writes: The StorageProvider writes to a temporary file first, then renames to the target path. This prevents corruption if the process is interrupted mid-write."
+  },
+  {
+    "id": "5.1.5",
+    "series": 5,
+    "round": 1,
+    "focus": "Hardware and Infrastructure",
+    "text": "What cloud, on-premise, or hybrid infrastructure is targeted? Are there compliance or sovereignty requirements?",
+    "choices": [
+      {
+        "id": "5.1.5.a",
+        "text": "Cloud-native \u2014 designed for a specific cloud provider"
+      },
+      {
+        "id": "5.1.5.b",
+        "text": "Cloud-agnostic \u2014 portable across providers"
+      },
+      {
+        "id": "5.1.5.c",
+        "text": "On-premise only \u2014 deployed in private data centers"
+      },
+      {
+        "id": "5.1.5.d",
+        "text": "Hybrid \u2014 components span cloud and on-premise with strict compliance"
+      }
+    ],
+    "answer": "Infrastructure target:\n\nLocal development only \u2014 no cloud, no on-premise servers, no hybrid deployment.\n\nDeployment model: npm global install (CLI) or git clone + node server (web UI). The system runs on the developer's machine. The web server binds to localhost:8888. No port forwarding, no DNS, no SSL (local only).\n\nNo containerization: Docker is not needed for a local CLI tool. The system has no system dependencies beyond Node.js.\n\nNo orchestration: No Kubernetes, no Docker Compose, no process managers. The system is a single Node.js process that runs until the user stops it.\n\nCompliance: None required. The system processes no personal data beyond what the user voluntarily enters. No PII is transmitted (LLM API calls send only the user's answers). No analytics, no telemetry, no tracking.\n\nPrivacy: The system is inherently private \u2014 all data stays on the local machine. LLM API calls are the only network communication, and they're optional and controlled by the user. The user can configure local-only LLM providers (Ollama) for complete air-gapped operation.\n\nFuture consideration: If the system evolves to support team features or cloud hosting, the infrastructure would need to change. The StorageProvider abstraction is designed to accommodate this \u2014 a future CloudStorage implementation could replace FileSystemStorage without changing the engine logic."
+  },
+  {
+    "id": "5.2.1",
+    "series": 5,
+    "round": 2,
+    "focus": "Software Stack and Dependencies",
+    "text": "What programming languages, runtimes, or frameworks are required or preferred?",
+    "choices": [
+      {
+        "id": "5.2.1.a",
+        "text": "Single language \u2014 one ecosystem covers everything"
+      },
+      {
+        "id": "5.2.1.b",
+        "text": "Two languages \u2014 e.g., backend + frontend split"
+      },
+      {
+        "id": "5.2.1.c",
+        "text": "Polyglot \u2014 3+ languages for specialized components"
+      },
+      {
+        "id": "5.2.1.d",
+        "text": "Language-agnostic \u2014 choice delegated to implementation team"
+      }
+    ],
+    "answer": "Programming languages and runtimes:\n\nPrimary language: TypeScript (strict mode). All source code in src/ is TypeScript. The type system is used extensively \u2014 interfaces for all entities, discriminated unions for state machines, generics for the StorageProvider and LLMProvider abstractions.\n\nRuntime: Node.js 18+ (ESM modules). The package.json specifies \"type\": \"module\" and \"engines\": { \"node\": \">=18\" }. The codebase uses modern JavaScript features: async/await, optional chaining, nullish coalescing, structuredClone.\n\nBuild target: ES2022. The tsconfig.json targets ES2022 with module: ESNext and moduleResolution: bundler. Output is ESM (.js files with import/export).\n\nFrontend: Vanilla JavaScript + Tailwind CSS (single-file HTML). No React, no Vue, no framework. The web UI is a single index.html file with inline JavaScript and Tailwind via CDN. This was a deliberate choice to minimize dependencies and build complexity.\n\nWhy TypeScript: The type system catches errors at compile time, enables IDE autocompletion, and serves as living documentation. The strict mode configuration (strictNullChecks, noImplicitAny, etc.) prevents entire categories of runtime errors.\n\nWhy vanilla JS for frontend: The web UI is a thin wrapper around the REST API. It doesn't need the component model, state management, or build tooling that React/Vue provide. A single HTML file is simpler to maintain, deploy, and understand."
+  },
+  {
+    "id": "5.2.2",
+    "series": 5,
+    "round": 2,
+    "focus": "Software Stack and Dependencies",
+    "text": "What operating systems and environments must be supported?",
+    "choices": [
+      {
+        "id": "5.2.2.a",
+        "text": "Linux only"
+      },
+      {
+        "id": "5.2.2.b",
+        "text": "Linux + macOS (developer-focused)"
+      },
+      {
+        "id": "5.2.2.c",
+        "text": "Cross-platform \u2014 Linux, macOS, Windows"
+      },
+      {
+        "id": "5.2.2.d",
+        "text": "Containerized \u2014 only targets Docker/K8s; host OS is irrelevant"
+      }
+    ],
+    "answer": "Operating system support:\n\nPrimary: Linux (Ubuntu 20.04+, Fedora 36+, Debian 11+). All development and testing occurs on Linux. The CI/CD pipeline tests on Ubuntu.\n\nSecondary: macOS (12+). Apple Silicon (ARM64) is fully supported via Node.js universal binaries. File system paths use forward slashes (POSIX).\n\nTertiary: Windows (10+, WSL2 recommended). Native Windows support via Node.js path module (handles backslash/forward slash conversion). The CLI works in PowerShell, CMD, and Git Bash. WSL2 provides a Linux-compatible environment.\n\nNo mobile: iOS and Android are not supported. The CLI requires a terminal, and the web UI requires a desktop browser.\n\nPlatform-specific code: Minimal. The path module handles path separator differences. The crypto module handles UUID generation. The fs module handles file operations. No platform-specific conditionals in the codebase.\n\nTesting matrix: CI/CD tests on Node.js 18, 20, and 22 across Ubuntu. Manual testing on macOS and Windows. The test suite (112+ tests) covers all core functionality regardless of platform."
+  },
+  {
+    "id": "5.2.3",
+    "series": 5,
+    "round": 2,
+    "focus": "Software Stack and Dependencies",
+    "text": "What existing libraries, services, APIs, or third-party dependencies should be used or avoided?",
+    "choices": [
+      {
+        "id": "5.2.3.a",
+        "text": "Minimal dependencies \u2014 build from standard library where possible"
+      },
+      {
+        "id": "5.2.3.b",
+        "text": "Core curated deps \u2014 choose established libraries for major concerns"
+      },
+      {
+        "id": "5.2.3.c",
+        "text": "Ecosystem-driven \u2014 leverage framework convention over custom code"
+      },
+      {
+        "id": "5.2.3.d",
+        "text": "Heavy integration \u2014 depend on multiple external services and SaaS"
+      }
+    ],
+    "answer": "Third-party dependencies:\n\nCore dependencies (in package.json):\n- None for the CLI tool \u2014 pure Node.js standard library\n- sql.js (WASM SQLite) for the SQLite storage adapter\n- vitest for testing\n\nDev dependencies:\n- typescript (compiler)\n- vitest (test runner)\n- @types/node (type definitions)\n\nFrontend dependencies:\n- Tailwind CSS (via CDN) for styling\n- Inter font (via Google Fonts CDN) for typography\n\nWhat's NOT used (deliberate exclusions):\n- No Express/Koa/Fastify \u2014 the web server uses Node.js http module directly\n- No React/Vue/Svelte \u2014 the frontend is vanilla JS in a single HTML file\n- No ORM \u2014 storage is direct JSON file I/O\n- No bundler (Webpack/Vite/Rollup) \u2014 the backend is native ESM, the frontend is a single file\n- No Lodash/Underscore \u2014 native array methods suffice\n- No Mocha/Jest \u2014 vitest is faster and has better ESM support\n\nThe minimal dependency approach reduces: (1) Supply chain attack surface, (2) Update maintenance burden, (3) Build complexity, (4) New contributor onboarding time. The trade-off is more manual code for things libraries would provide, but the total codebase is small enough (~3500 LOC) that this trade-off is favorable."
+  },
+  {
+    "id": "5.2.4",
+    "series": 5,
+    "round": 2,
+    "focus": "Software Stack and Dependencies",
+    "text": "What versioning, compatibility, or upgrade policies govern the software stack?",
+    "choices": [
+      {
+        "id": "5.2.4.a",
+        "text": "Latest-stable \u2014 always use current versions, update frequently"
+      },
+      {
+        "id": "5.2.4.b",
+        "text": "LTS-only \u2014 pinned to long-term support versions"
+      },
+      {
+        "id": "5.2.4.c",
+        "text": "Semver-constrained \u2014 explicit version ranges with CI verification"
+      },
+      {
+        "id": "5.2.4.d",
+        "text": "Locked \u2014 dependencies are vendored and updated on a release cycle"
+      }
+    ],
+    "answer": "Browser support for the web UI:\n\nPrimary: Chrome 90+, Firefox 90+, Edge 90+, Safari 15+. These browsers support ES2022 features, CSS Grid, CSS Custom Properties, and the Fetch API.\n\nNo IE11: The web UI uses modern JavaScript features (optional chaining, nullish coalescing, template literals, async/await) that are not transpiled for IE11. IE11 market share is negligible.\n\nNo server-side rendering: The web UI is a client-side SPA. The server only serves static files and provides the REST API. All rendering happens in the browser.\n\nProgressive enhancement: The core functionality (question flow, answer recording) works without JavaScript if needed \u2014 the server API can be called directly with curl. The web UI adds a graphical interface on top of the API.\n\nMobile browsers: The UI is responsive (Tailwind responsive utilities) but not optimized for mobile. The question flow works on phones/tablets but the experience is better on desktop. Mobile is not a primary use case \u2014 SPACE is a desktop tool."
+  },
+  {
+    "id": "5.2.5",
+    "series": 5,
+    "round": 2,
+    "focus": "Software Stack and Dependencies",
+    "text": "What build systems, CI/CD platforms, and packaging formats are required?",
+    "choices": [
+      {
+        "id": "5.2.5.a",
+        "text": "Simple build \u2014 single build tool, manual or script-based deployment"
+      },
+      {
+        "id": "5.2.5.b",
+        "text": "CI-built \u2014 automated builds on push, artifact registry"
+      },
+      {
+        "id": "5.2.5.c",
+        "text": "Full CI/CD \u2014 automated testing, staging, and production deployment"
+      },
+      {
+        "id": "5.2.5.d",
+        "text": "GitOps \u2014 infrastructure-as-code with automated promotion pipelines"
+      }
+    ],
+    "answer": "Build systems and packaging:\n\nBackend build: TypeScript compiler (tsc). No bundler. The src/ directory is compiled to dist/ with the same directory structure. The build command is \"tsc\" (aliased to \"npm run build\"). Output is ESM JavaScript with .js extension and .d.ts declaration files.\n\nFrontend build: None. The web UI is a single HTML file (web/index.html) that loads Tailwind from CDN and contains inline JavaScript. No build step required.\n\nTest runner: Vitest. Fast, ESM-native, TypeScript-aware. Test files are in tests/unit/. The test command is \"vitest run\" (aliased to \"npm test\"). Tests import directly from src/ (no pre-compilation needed).\n\nPackage distribution: npm publish. The package.json includes:\n- name: \"space-cli\"\n- version: \"2.0.0\"\n- bin: { \"space\": \"./dist/cli/index.js\" }\n- files: [\"dist/\", \"prompt-framework/\"]\n- engines: { \"node\": \">=18\" }\n- prepublishOnly: \"npm run build && npm test\"\n\nDistribution: npm global install (npm install -g space-cli). The CLI is accessible as the \"space\" command. The web UI is not distributed via npm \u2014 users clone the repo and run node web/server.mjs directly.\n\nNo CI/CD pipeline configured yet \u2014 builds are manual. The prepublishOnly hook runs build + test before publish. No Docker, no container registry, no deployment platform."
+  }
+]

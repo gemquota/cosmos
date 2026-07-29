@@ -1,0 +1,86 @@
+# Community 3
+
+80 entities.
+
+## Entities
+
+- **abbreviated activity history** (abbreviated-activity-history-2) — connected to management status, aud, target coin, filehandler, aest
+- **ace** (ace-10) — connected to insecurerequestwarning, webwright, invalid login, dataframe, csv
+- **acp** (acp-2) — connected to ace
+- **ad** (ad-2) — connected to valueerror
+- **aest** (aest-10) — connected to websocket, apk, management status, aud, target coin
+- **aff** (aff-2) — connected to insecurerequestwarning, invalid login, aud, threadpoolexecutor, invalid captcha
+- **apk** (apk-2) — connected to aest, py version, proxy pool, bomdwriw, bonus scraper engine
+- **applewebkit** (applewebkit-10) — connected to insecurerequestwarning, invalid login, blob, begin, threadpoolexecutor
+- **asyncclient** (asyncclient-2) — connected to insecurerequestwarning, webwright, invalid login, dataframe, csv
+- **au** (au-2) — connected to py version, proxy pool, bomdwriw, aest, bonus scraper engine
+- **aud** (aud-2) — connected to threadpoolexecutor, nameresolutionerror, blob, dictwriter, management status
+- **auth user** (auth-user-2) — connected to py version, proxy pool, bonus scraper engine, dayne bonuses, free
+- **beautifulsoup** (beautifulsoup-2) — connected to insecurerequestwarning, dataframe
+- **beautifulsoup4** (beautifulsoup4-2) — connected to insecurerequestwarning, webwright, invalid login, dataframe, csv
+- **begin** (begin-2) — connected to group, proxy pool, sequencematcher, bonus scraper engine, dictwriter
+- **blob** (blob-10) — connected to valueerror, aud, threadpoolexecutor, websocket, dictreader
+- **bomdwriw** (bomdwriw-2) — connected to py version, proxy pool, aest, bonus scraper engine, auth user
+- **bonus scraper engine** (bonus-scraper-engine-2) — connected to py version, proxy pool, dayne bonuses, auth user, free
+- **btc** (btc-2) — connected to raw balances response summary, requestexception, ltc, monitor running, aud
+- **client error** (client-error-2) — connected to raw balances response summary, requestexception, ltc, monitor running, aud
+- **coinspot** (coinspot-2) — connected to management status, aud, target coin, filehandler, raw balances response summary
+- **cols** (cols-2) — connected to typeerror
+- **configparser** (configparser-10) — connected to desc, nameresolutionerror, nt, dictreader, csv
+- **connecterror** (connecterror-2) — connected to webwright, csv, asyncclient
+- **connection error** (connection-error-2) — connected to insecurerequestwarning, invalid login, nameresolutionerror, login failed, server offline
+- **csa** (csa-2) — connected to management status, aud, target coin, filehandler, raw balances response summary
+- **csrf** (csrf-2) — connected to dataframe, csv
+- **csv** (csv-10) — connected to insecurerequestwarning, webwright, invalid login, dataframe, csrf
+- **cwr6cl1x** (cwr6cl1x-2) — connected to py version, proxy pool, bomdwriw, aest, bonus scraper engine
+- **dataframe** (dataframe-2) — connected to insecurerequestwarning, webwright, invalid login, csv, csrf
+- **dayne bonuses** (dayne-bonuses-2) — connected to configparser, sarah bonuses, dictreader, csv, py version
+- **debug** (debug-2) — connected to configparser, websocketdisconnect, invalid access, nameresolutionerror, applewebkit
+- **desc** (desc-2) — connected to fastapi, csv, nameresolutionerror, websocket, dictwriter
+- **dictreader** (dictreader-2) — connected to fastapi, valueerror, threadpoolexecutor, nameresolutionerror, websocket
+- **dictwriter** (dictwriter-10) — connected to fastapi, valueerror, aud, threadpoolexecutor, nameresolutionerror
+- **dns** (dns-2) — connected to management status, net error, aud, abbreviated activity history, coinspot
+- **fastapi** (fastapi-10) — connected to desc, valueerror, threadpoolexecutor, nameresolutionerror, websocket
+- **filehandler** (filehandler-2) — connected to management status, aud, target coin, raw balances response summary, not
+- **filereader** (filereader-2) — connected to py version, proxy pool, bomdwriw, aest, bonus scraper engine
+- **fira code** (fira-code-2) — connected to py version, proxy pool, bomdwriw, aest, bonus scraper engine
+- **free** (free-2) — connected to py version, proxy pool, bonus scraper engine, auth user, dictwriter
+- **github** (github-10) — connected to websocket, ace
+- **group** (group-2) — connected to sequencematcher, begin, dictwriter, configparser, websocketdisconnect
+- **in** (in-2) — connected to dictwriter, dictreader, threadpoolexecutor
+- **insecurerequestwarning** (insecurerequestwarning-2) — connected to webwright, invalid login, dataframe, csv, ace
+- **invalid access** (invalid-access-2) — connected to debug
+- **invalid captcha** (invalid-captcha-2) — connected to insecurerequestwarning, invalid login, dataframe, aud, threadpoolexecutor
+- **invalid login** (invalid-login-2) — connected to insecurerequestwarning, webwright, dataframe, csv, ace
+- **login failed** (login-failed-2) — connected to insecurerequestwarning, connection error, invalid login, nameresolutionerror, server offline
+- **ltc** (ltc-2) — connected to aud, filehandler, raw balances response summary, not, testing endpoint
+- **management status** (management-status-2) — connected to aud, target coin, filehandler, abbreviated activity history, aest
+- **monitor running** (monitor-running-2) — connected to raw balances response summary, requestexception, ltc, aud, btc
+- **nameresolutionerror** (nameresolutionerror-10) — connected to fastapi, valueerror, aud, threadpoolexecutor, websocket
+- **net error** (net-error-2) — connected to management status, dns, aud, abbreviated activity history, coinspot
+- **not** (not-2) — connected to aud, filehandler, raw balances response summary, ltc, requestexception
+- **nt** (nt-2) — connected to desc, configparser, nameresolutionerror, dictreader, websocket
+- **parklogic** (parklogic-2) — connected to threadpoolexecutor
+- **press ctrl** (press-ctrl-2) — connected to aud
+- **proxy logic** (proxy-logic-2) — connected to proxy pool, auth user
+- **proxy pool** (proxy-pool-2) — connected to py version, bonus scraper engine, dayne bonuses, auth user, free
+- **py version** (py-version-2) — connected to proxy pool, bonus scraper engine, dayne bonuses, auth user, free
+- **pylvxxxxvvvddddvvv1111vvx** (pylvxxxxvvvddddvvv1111vvx-2) — connected to fastapi, valueerror, threadpoolexecutor, nameresolutionerror, websocket
+- **pypxxxxvvvddddvvv1111vvxxfxvr** (pypxxxxvvvddddvvv1111vvxxfxvr-2) — connected to fastapi, valueerror, threadpoolexecutor, nameresolutionerror, websocket
+- **raw balances response summary** (raw-balances-response-summary-2) — connected to aud, filehandler, not, testing endpoint, ltc
+- **request** (request-2) — connected to set, threadpoolexecutor
+- **requestexception** (requestexception-2) — connected to management status, aud, target coin, filehandler, raw balances response summary
+- **sarah bonuses** (sarah-bonuses-2) — connected to dictreader, dayne bonuses, py version, proxy pool, bomdwriw
+- **sequencematcher** (sequencematcher-2) — connected to group, begin, dictwriter, configparser, websocketdisconnect
+- **server offline** (server-offline-2) — connected to insecurerequestwarning, connection error, invalid login, nameresolutionerror, login failed
+- **set** (set-2) — connected to nt, applewebkit, configparser, threadpoolexecutor, request
+- **significant events** (significant-events-2) — connected to management status, aud, filehandler, abbreviated activity history, csa
+- **target coin** (target-coin-2) — connected to management status, aud, filehandler, abbreviated activity history, aest
+- **testing endpoint** (testing-endpoint-2) — connected to aud, filehandler, raw balances response summary, ltc, requestexception
+- **threadpoolexecutor** (threadpoolexecutor-10) — connected to fastapi, valueerror, aud, nameresolutionerror, websocket
+- **typeerror** (typeerror-2) — connected to cols, fastapi, valueerror, threadpoolexecutor, nameresolutionerror
+- **user agent identity** (user-agent-identity-2) — connected to proxy pool, auth user
+- **valueerror** (valueerror-10) — connected to fastapi, threadpoolexecutor, nameresolutionerror, websocket, pypxxxxvvvddddvvv1111vvxxfxvr
+- **websocket** (websocket-10) — connected to github, aest, fastapi, valueerror, threadpoolexecutor
+- **websocketdisconnect** (websocketdisconnect-2) — connected to group, sequencematcher, begin, dictwriter, configparser
+- **webwright** (webwright-2) — connected to insecurerequestwarning, invalid login, dataframe, csv, ace

@@ -1,0 +1,30 @@
+{
+  "workflow_patterns": {
+    "version_control": {
+      "count": 19,
+      "entities": [
+        "Overseer",
+        "FractalDecor",
+        "PlayerController",
+        "StratumCounter",
+        "AJAX",
+        "God",
+        "CLAIM",
+        "DEMO",
+        "PIL",
+        "Coverage",
+        "Texture",
+        "ITEMS",
+        "ADC",
+        "ALTER",
+        "MongoDB",
+        "COGN",
+        "TelemetryRepository",
+        "Jul",
+        "Nah"
+      ]
+    }
+  },
+  "entity_families": {},
+  "total_entities": 1701
+}

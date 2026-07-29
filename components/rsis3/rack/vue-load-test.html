@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Vue Load Test</title>
+<style>
+body{background:#0f172a;color:#e2e8f0;font-family:sans-serif;margin:40px}
+h1{color:#10b981}
+.pass{color:#10b981;font-weight:bold}
+.fail{color:#f43f5e;font-weight:bold}
+</style>
+</head>
+<body>
+<h1>Vue.js Load Test</h1>
+<div id="status">Testing...</div>
+<script src="/rack/vue.global.js" onload="onVueLoaded()" onerror="onVueError()"></script>
+<script>
+function onVueLoaded() {
+  document.getElementById('status').innerHTML = 
+    '<h2 class="pass">Vue.js LOADED SUCCESSFULLY</h2>' +
+    '<p>createApp: <span class="pass">' + (typeof Vue.createApp !== 'undefined') + '</span></p>' +
+    '<p>ref: <span class="pass">' + (typeof Vue.ref !== 'undefined') + '</span></p>';
+}
+function onVueError() {
+  document.getElementById('status').innerHTML = '<h2 class="fail">Vue.js FAILED TO LOAD</h2>';
+}
+</script>
+</body>
+</html>

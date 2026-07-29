@@ -1,0 +1,926 @@
+{
+  "artifacts": {
+    "domain": {
+      "value": "Recursive Self Improvement (RSI) sits at the intersection of meta-learning, optimization theory, and AI alignment. It concerns itself with building systems that can analyze their own performance, identify weaknesses, and autonomously modify their strategies, prompts, architectures, or training data to achieve progressively better outcomes. Core sub-disciplines include: self-modifying code, evolutionary algorithms, automated prompt engineering, self-play, constitutional AI, and recursive reward modeling.",
+      "source_question_id": "1.1.1",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.022Z",
+      "derived_from": []
+    },
+    "audience_level": {
+      "value": "Experts / researchers — people who work in this domain daily",
+      "source_question_id": "1.1.2",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.029Z",
+      "derived_from": []
+    },
+    "terminology_preferences": {
+      "value": "Standard industry terminology — use common terms precisely",
+      "source_question_id": "1.3.1",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.044Z",
+      "derived_from": []
+    },
+    "scaffolding_preference": {
+      "value": "Progressive — scaffold from simple foundations to advanced topics",
+      "source_question_id": "1.3.2",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.045Z",
+      "derived_from": []
+    },
+    "abstraction_level": {
+      "value": "Mixed — conceptual frameworks illustrated with examples",
+      "source_question_id": "1.2.2",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.042Z",
+      "derived_from": []
+    },
+    "assumption_level": {
+      "value": "Core fundamentals assumed; edge cases and advanced topics explained",
+      "source_question_id": "1.2.1",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.040Z",
+      "derived_from": []
+    },
+    "entity_list": {
+      "value": "Core entities: ImprovementLoop (the recursive cycle), Evaluator (scores performance), Modifier (generates improvements), Artifact (the thing being improved — prompts, code, configs, strategies), EvaluationCriteria (what \"better\" means), SafetyGuard (prevents dangerous modifications), History (log of all modifications and their effects), and ConvergenceDetector (determines when further recursion yields diminishing returns).",
+      "source_question_id": "2.1.1",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.046Z",
+      "derived_from": []
+    },
+    "entity_attributes": {
+      "value": "Each entity needs typed properties with constraints. Evaluator has: scoring_function (callable), confidence_threshold (0-1), evaluation_depth (how many future states it considers). Modifier has: modification_type (prompt/code/strategy), granularity (fine/coarse), safety_level (what changes are permitted). Artifact has: version_chain (linked list of versions), parent_id, diff_summary, performance_delta.",
+      "source_question_id": "2.1.2",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.047Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_categories": {
+      "value": "A single flat list — no meaningful sub-groupings",
+      "source_question_id": "2.1.3",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.047Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_core_peripheral": {
+      "value": "Most entities are core — the domain has little extraneous surface area",
+      "source_question_id": "2.2.1",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.048Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_granularity": {
+      "value": "Fine-grained — every meaningful distinction yields a separate entity",
+      "source_question_id": "2.2.2",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.048Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_attribute_sharing": {
+      "value": "Shared attributes grouped by category — entities in same category share a profile",
+      "source_question_id": "2.2.3",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.049Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "systemic_boundaries": {
+      "value": "Tightly bounded — scope is narrow and well-defined",
+      "source_question_id": "2.3.1",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.050Z",
+      "derived_from": []
+    },
+    "external_actors": {
+      "value": "4–7 external actors with distinct interaction patterns",
+      "source_question_id": "2.3.2",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.050Z",
+      "derived_from": []
+    },
+    "entity_lifecycles": {
+      "value": "Versioned lifecycle — entities have history, revisions, or snapshots",
+      "source_question_id": "2.3.3",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.052Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_gaps": {
+      "value": "No gaps — the current entity list is comprehensive",
+      "source_question_id": "2.4.1",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.055Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_reclassification": {
+      "value": "1–2 entities need merging or splitting",
+      "source_question_id": "2.4.2",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.055Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_constraints": {
+      "value": "Minimal constraints — entities have few invariants beyond uniqueness",
+      "source_question_id": "2.4.3",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.056Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "edge_cases": {
+      "value": "Few edge cases — the model is robust to real-world variation",
+      "source_question_id": "2.5.1",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.057Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_composition": {
+      "value": "Nested composition — entities form trees or recursive structures",
+      "source_question_id": "2.5.2",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.058Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_cardinality": {
+      "value": "One-to-many — common pattern with one parent referencing multiple children",
+      "source_question_id": "2.5.3",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.058Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "direct_associations": {
+      "value": "Sparse — fewer associations than entities; most entities are isolated",
+      "source_question_id": "3.1.1",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.062Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "association_types": {
+      "value": "Single type — all associations are of the same nature",
+      "source_question_id": "3.1.2",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.065Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "hierarchy_structure": {
+      "value": "No hierarchy — all entities are peers with no containment structure",
+      "source_question_id": "3.2.1",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.066Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "inheritance_model": {
+      "value": "Polymorphic hierarchy — entities can serve as multiple types simultaneously",
+      "source_question_id": "3.2.2",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.066Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "causal_relationships": {
+      "value": "Event-driven — state changes propagate as events through the network",
+      "source_question_id": "3.3.1",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.067Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "dependency_chains": {
+      "value": "Branching dependencies — a DAG of ordered entity relationships",
+      "source_question_id": "3.3.2",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.068Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "relationship_mutability": {
+      "value": "State-gated — relationships can only change when entities are in certain states",
+      "source_question_id": "3.4.1",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.069Z",
+      "derived_from": []
+    },
+    "relationship_composition": {
+      "value": "Transitive — some relationship types imply transitive chains",
+      "source_question_id": "3.4.2",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.069Z",
+      "derived_from": []
+    },
+    "procedure_scope": {
+      "value": "Broad — a multi-phase workflow spanning distinct sub-processes",
+      "source_question_id": "4.1.1",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.073Z",
+      "derived_from": [
+        "entity_list",
+        "dependency_chains",
+        "hierarchy_structure"
+      ]
+    },
+    "procedure_steps": {
+      "value": "5–8 steps — moderate complexity with clear waypoints",
+      "source_question_id": "4.1.2",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.074Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "decision_points": {
+      "value": "Moderate branching — multiple decision points with varying path counts",
+      "source_question_id": "4.2.1",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.076Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
+    },
+    "io_contracts": {
+      "value": "Network I/O — steps pass data through a shared context rather than direct handoffs",
+      "source_question_id": "4.2.2",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.077Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
+    },
+    "error_handling": {
+      "value": "Retry-based — failed steps can be retried with backoff",
+      "source_question_id": "4.3.1",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.077Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
+    },
+    "step_granularity": {
+      "value": "Coarse — each step is a meaningful phase (2–5 sub-actions per step)",
+      "source_question_id": "4.3.2",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.078Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
+    },
+    "hardware_requirements": {
+      "value": "Dual architecture — e.g., x86-64 + ARM",
+      "source_question_id": "5.1.1",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.080Z",
+      "derived_from": [
+        "domain",
+        "audience_level"
+      ]
+    },
+    "hardware_specs": {
+      "value": "High-performance — 16–64GB RAM, SSD storage, GPU recommended",
+      "source_question_id": "5.1.2",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.081Z",
+      "derived_from": [
+        "hardware_requirements"
+      ]
+    },
+    "network_requirements": {
+      "value": "Always-online — requires reliable internet connection",
+      "source_question_id": "5.1.3",
+      "source_series_id": 5,
+      "confidence": 0.8,
+      "last_updated": "2026-07-25T14:46:56.082Z",
+      "derived_from": [
+        "hardware_requirements"
+      ]
+    },
+    "storage_requirements": {
+      "value": "Single database — one relational or document store covers all needs",
+      "source_question_id": "5.1.4",
+      "source_series_id": 5,
+      "confidence": 0.8,
+      "last_updated": "2026-07-25T14:46:56.082Z",
+      "derived_from": [
+        "hardware_requirements"
+      ]
+    },
+    "infrastructure_target": {
+      "value": "Cloud-native — designed for a specific cloud provider",
+      "source_question_id": "5.1.5",
+      "source_series_id": 5,
+      "confidence": 0.8,
+      "last_updated": "2026-07-25T14:46:56.083Z",
+      "derived_from": [
+        "hardware_requirements"
+      ]
+    },
+    "software_stack": {
+      "value": "Two languages — e.g., backend + frontend split",
+      "source_question_id": "5.2.1",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.084Z",
+      "derived_from": [
+        "domain",
+        "procedure_steps"
+      ]
+    },
+    "os_requirements": {
+      "value": "Cross-platform — Linux, macOS, Windows",
+      "source_question_id": "5.2.2",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.085Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "dependency_management": {
+      "value": "Minimal dependencies — build from standard library where possible",
+      "source_question_id": "5.2.3",
+      "source_series_id": 5,
+      "confidence": 0.8,
+      "last_updated": "2026-07-25T14:46:56.085Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "versioning_policy": {
+      "value": "Latest-stable — always use current versions, update frequently",
+      "source_question_id": "5.2.4",
+      "source_series_id": 5,
+      "confidence": 0.8,
+      "last_updated": "2026-07-25T14:46:56.085Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "build_system": {
+      "value": "Simple build — single build tool, manual or script-based deployment",
+      "source_question_id": "5.2.5",
+      "source_series_id": 5,
+      "confidence": 0.8,
+      "last_updated": "2026-07-25T14:46:56.086Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "performance_targets": {
+      "value": "Moderate traffic — 100–10K req/s, sub-second latency, hundreds concurrent",
+      "source_question_id": "5.3.1",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.087Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
+    },
+    "data_volume": {
+      "value": "Small — <10GB data, slow growth, single-node viable",
+      "source_question_id": "5.3.2",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.089Z",
+      "derived_from": [
+        "performance_targets"
+      ]
+    },
+    "availability_targets": {
+      "value": "High — 99.99% uptime, multi-region redundancy, automated failover",
+      "source_question_id": "5.3.3",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.090Z",
+      "derived_from": [
+        "performance_targets"
+      ]
+    },
+    "scalability_model": {
+      "value": "Vertical — scale up a single node as needed",
+      "source_question_id": "5.3.4",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.090Z",
+      "derived_from": [
+        "performance_targets"
+      ]
+    },
+    "security_requirements": {
+      "value": "Standard — OAuth2/MFA, encryption at rest, audit logging",
+      "source_question_id": "5.3.5",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.091Z",
+      "derived_from": [
+        "performance_targets"
+      ]
+    },
+    "integration_targets": {
+      "value": "1–2 integrations — limited surface area for interoperability",
+      "source_question_id": "5.4.1",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.091Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "integration_protocols": {
+      "value": "REST/JSON only — simple HTTP-based communication",
+      "source_question_id": "5.4.2",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.092Z",
+      "derived_from": [
+        "integration_targets"
+      ]
+    },
+    "timeline": {
+      "value": "Standard — phased delivery over 3–9 months",
+      "source_question_id": "5.4.3",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.093Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
+    },
+    "deployment_strategy": {
+      "value": "Standard — dev, staging, production with automated test suite",
+      "source_question_id": "5.4.4",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.093Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "documentation_requirements": {
+      "value": "Standard — API docs, architecture decision records, setup guide",
+      "source_question_id": "5.4.5",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.094Z",
+      "derived_from": []
+    },
+    "development_cadence": {
+      "value": "Sprint-based agile (Scrum) — fixed-length iterations with formal ceremonies",
+      "source_question_id": "6.1.1",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.094Z",
+      "derived_from": [
+        "procedure_steps",
+        "software_stack"
+      ]
+    },
+    "team_composition": {
+      "value": "Small team — 3–6 people with distinct roles (dev, design, PM)",
+      "source_question_id": "6.1.2",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.095Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
+    },
+    "quality_practices": {
+      "value": "Standard — mandatory reviews, unit + integration tests, CI gates",
+      "source_question_id": "6.2.1",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.095Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "debt_management": {
+      "value": "Budgeted — allocate X% of each sprint to debt reduction",
+      "source_question_id": "6.2.2",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.096Z",
+      "derived_from": [
+        "quality_practices"
+      ]
+    },
+    "communication_patterns": {
+      "value": "Async-first — written docs, Slack/Teams, minimal meetings",
+      "source_question_id": "6.3.1",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.098Z",
+      "derived_from": [
+        "team_composition"
+      ]
+    },
+    "decision_making": {
+      "value": "BDFL — one person makes final decisions with input",
+      "source_question_id": "6.3.2",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.099Z",
+      "derived_from": [
+        "team_composition"
+      ]
+    },
+    "deployment_process": {
+      "value": "Automated CI/CD — merged to main triggers build + deploy pipeline",
+      "source_question_id": "7.1.1",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.100Z",
+      "derived_from": [
+        "software_stack",
+        "deployment_strategy"
+      ]
+    },
+    "environment_management": {
+      "value": "Dev / staging / production — standard promotion pipeline",
+      "source_question_id": "7.1.2",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.100Z",
+      "derived_from": [
+        "deployment_process"
+      ]
+    },
+    "monitoring_plan": {
+      "value": "Standard — structured logging, metrics dashboard, alert on errors",
+      "source_question_id": "7.2.1",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.101Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "runtime_configuration": {
+      "value": "Dynamic config — runtime-reloadable config without redeploy",
+      "source_question_id": "7.2.2",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.101Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "maintenance_policy": {
+      "value": "Regular maintenance — scheduled patch cycles, dependency updates",
+      "source_question_id": "7.3.1",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.104Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "stewardship_plan": {
+      "value": "Build-and-run — the same team owns development and operations",
+      "source_question_id": "7.3.2",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-07-25T14:46:56.104Z",
+      "derived_from": [
+        "team_composition"
+      ]
+    }
+  },
+  "answers": {
+    "1.1.1": {
+      "text": "Recursive Self Improvement (RSI) sits at the intersection of meta-learning, optimization theory, and AI alignment. It concerns itself with building systems that can analyze their own performance, identify weaknesses, and autonomously modify their strategies, prompts, architectures, or training data to achieve progressively better outcomes. Core sub-disciplines include: self-modifying code, evolutionary algorithms, automated prompt engineering, self-play, constitutional AI, and recursive reward modeling.",
+      "choice": "An interdisciplinary space spanning 2-3 domains"
+    },
+    "1.1.2": {
+      "text": "The primary audience is AI researchers and ML engineers working on alignment and capability amplification. Secondary audience includes software architects building autonomous agent systems. They understand transformer architectures, reinforcement learning from human feedback, and have familiarity with concepts like utility functions and mesa-optimization.",
+      "choice": "Experts / researchers — people who work in this domain daily"
+    },
+    "1.2.1": {
+      "text": "Assumed: transformer architecture basics, RLHF/RLAIF concepts, prompt engineering fundamentals, Python/TypeScript proficiency, basic understanding of gradient descent and loss landscapes. Must explain from scratch: the specific RSI feedback loop architecture we propose, our novel approach to self-evaluation without reward hacking, and the recursive depth limiting mechanism that prevents infinite regress.",
+      "choice": "Core fundamentals assumed; edge cases and advanced topics explained"
+    },
+    "1.2.2": {
+      "text": "Mixed approach — present the RSI theoretical framework with clear diagrams showing the recursive loops, then ground each concept with concrete code examples showing the self-improvement cycle in action. For instance, show a prompt that evaluates itself, modifies itself, then re-evaluates, with actual output at each stage.",
+      "choice": "Mixed — conceptual frameworks illustrated with examples"
+    },
+    "1.3.1": {
+      "text": "Use standard ML terminology (loss, gradient, reward, policy) consistently. Avoid anthropomorphizing the system — it \"optimizes\" rather than \"wants.\" Use \"self-modification\" not \"self-awareness.\" Introduce RSI-specific terms with definitions: improvement depth, evaluation horizon, modification granularity, and convergence criteria.",
+      "choice": "Standard industry terminology — use common terms precisely"
+    },
+    "1.3.2": {
+      "text": "Progressive scaffolding — start with simple single-loop self-improvement (evaluate → modify → re-evaluate), then layer in nested recursive loops, then multi-objective optimization, then safety constraints. Each layer builds on the previous and introduces one new complexity.",
+      "choice": "Progressive — scaffold from simple foundations to advanced topics"
+    },
+    "2.1.1": {
+      "text": "Core entities: ImprovementLoop (the recursive cycle), Evaluator (scores performance), Modifier (generates improvements), Artifact (the thing being improved — prompts, code, configs, strategies), EvaluationCriteria (what \"better\" means), SafetyGuard (prevents dangerous modifications), History (log of all modifications and their effects), and ConvergenceDetector (determines when further recursion yields diminishing returns).",
+      "choice": "Fewer than 5 core entities — the domain is compact and well-bounded"
+    },
+    "2.1.2": {
+      "text": "Each entity needs typed properties with constraints. Evaluator has: scoring_function (callable), confidence_threshold (0-1), evaluation_depth (how many future states it considers). Modifier has: modification_type (prompt/code/strategy), granularity (fine/coarse), safety_level (what changes are permitted). Artifact has: version_chain (linked list of versions), parent_id, diff_summary, performance_delta.",
+      "choice": "1–2 key attributes per entity — simple identifiers suffice"
+    },
+    "2.1.3": {
+      "text": "By functional role in the improvement loop: Controller entities (Evaluator, SafetyGuard, ConvergenceDetector), Worker entities (Modifier, Artifact), and Infrastructure entities (History, EvaluationCriteria). This maps naturally to the architecture — controllers orchestrate, workers execute, infrastructure persists.",
+      "choice": "A single flat list — no meaningful sub-groupings"
+    },
+    "2.2.1": {
+      "text": "Clear distinction: Evaluator and SafetyGuard are core — if either fails, the entire system is compromised. Modifier is core but more tolerant of imperfection (bad modifications get caught by Evaluator). History is peripheral but important for analysis. EvaluationCriteria is core because it defines the objective function itself.",
+      "choice": "Most entities are core — the domain has little extraneous surface area"
+    },
+    "2.2.2": {
+      "text": "Fine-grained for Evaluator and SafetyGuard (every property matters, deep type constraints), coarse-grained for History and EvaluationCriteria initially. Modifier starts coarse but refines as we understand which modification parameters matter most. Progressive refinement based on empirical results.",
+      "choice": "Fine-grained — every meaningful distinction yields a separate entity"
+    },
+    "2.2.3": {
+      "text": "Composition primarily — Modifier composes an Artifact with new properties. Evaluator composes EvaluationCriteria with scoring functions. Inheritance only for the Artifact hierarchy where PromptArtifact, CodeArtifact, and StrategyArtifact share a base interface but differ in modification mechanics.",
+      "choice": "Shared attributes grouped by category — entities in same category share a profile"
+    },
+    "2.3.1": {
+      "text": "Clear boundary: the RSI system operates within a defined sandbox. Inputs come from a fixed evaluation dataset or benchmark. Outputs are modified artifacts that stay within version control. External LLM APIs are called but the system never directly modifies its own training weights — only its prompts, configurations, and meta-strategies.",
+      "choice": "Tightly bounded — scope is narrow and well-defined"
+    },
+    "2.3.2": {
+      "text": "Three external actors: (1) Human operators who set initial EvaluationCriteria and can intervene/pause the improvement loop, (2) LLM APIs that power the Modifier and Evaluator, (3) Benchmark datasets that provide ground-truth evaluation signals. The system cannot autonomously change which benchmarks it uses.",
+      "choice": "4–7 external actors with distinct interaction patterns"
+    },
+    "2.3.3": {
+      "text": "State machine driven — artifacts progress through states: Draft → Evaluated → ModificationProposed → SafetyReviewed → Applied → ReEvaluated. If re-evaluation shows regression, the artifact can revert to its previous version. This creates a DAG of artifact versions with performance annotations on each edge.",
+      "choice": "Versioned lifecycle — entities have history, revisions, or snapshots"
+    },
+    "2.4.1": {
+      "text": "Missing temporal entities: the system currently lacks a concept of improvement velocity (how fast are we converging?) and improvement trajectory (are we accelerating or decelerating?). These are derived from History but should be first-class entities with their own prediction models.",
+      "choice": "No gaps — the current entity list is comprehensive"
+    },
+    "2.4.2": {
+      "text": "SafetyGuard should be split into two entities: StaticGuard (prevents known dangerous patterns — hardcoded rules) and DynamicGuard (learns from history what kinds of modifications led to degradation). Currently they are conflated. Also, EvaluationCriteria should be an aggregate of multiple sub-criteria with weighted importance.",
+      "choice": "1–2 entities need merging or splitting"
+    },
+    "2.4.3": {
+      "text": "Cardinality: each ImprovementLoop has exactly one Evaluator and one Modifier but can have multiple Artifacts. Temporal: modifications cannot be older than the current version (no time-travel edits). Business rules: no modification can increase latency by more than 10% or decrease accuracy by more than 2% on any benchmark — these are hard constraints.",
+      "choice": "Minimal constraints — entities have few invariants beyond uniqueness"
+    },
+    "2.5.1": {
+      "text": "Concurrent modification: if two improvement loops run in parallel on the same artifact, modifications must be merged or one must take priority. Cascade: a modification to EvaluationCriteria can invalidate all previously-evaluated artifacts, triggering re-evaluation. Orphaned: if an Evaluator is modified, its historical scores become suspect.",
+      "choice": "Few edge cases — the model is robust to real-world variation"
+    },
+    "2.5.2": {
+      "text": "Aggregation for the History entity — it is composed of many individual ModificationRecords but each record exists independently and can be queried. Composition for ImprovementLoop — it owns its Evaluator and Modifier; if the loop is destroyed, so are they.",
+      "choice": "Nested composition — entities form trees or recursive structures"
+    },
+    "2.5.3": {
+      "text": "One-to-many: one ImprovementLoop to many Artifacts (a single loop can improve prompts, configs, and strategies in sequence). Many-to-many: Artifacts share EvaluationCriteria (same criteria evaluate different artifact types). One-to-one: each ImprovementLoop has one Evaluator instance.",
+      "choice": "One-to-many — common pattern with one parent referencing multiple children"
+    },
+    "3.1.1": {
+      "text": "Transactional: Modifier \"produces\" Artifact (creates a new version). Evaluator \"scores\" Artifact (attaches a performance rating). SafetyGuard \"approves\" or \"rejects\" ModificationProposals. Hierarchical: ImprovementLoop \"contains\" Evaluator, Modifier, and SafetyGuard. Peer-to-peer: multiple ImprovementLoops can \"observe\" each other's History for transfer learning.",
+      "choice": "Sparse — fewer associations than entities; most entities are isolated"
+    },
+    "3.1.2": {
+      "text": "By verb — the action semantics matter enormously here. \"Proposes\" vs \"applies\" vs \"reverts\" are distinct operations with different safety implications. \"Evaluates\" vs \"validates\" vs \"certifies\" represent increasing levels of confidence. The verb taxonomy directly maps to the API design.",
+      "choice": "Single type — all associations are of the same nature"
+    },
+    "3.2.1": {
+      "text": "Tree hierarchy for artifact versioning — each version has one parent but can have multiple children (branching modifications). The trunk represents the best-performing lineage. DAG for dependency tracking — an artifact might depend on evaluation results from multiple other artifacts.",
+      "choice": "No hierarchy — all entities are peers with no containment structure"
+    },
+    "3.2.2": {
+      "text": "Composition only — PromptArtifact, ConfigArtifact, and StrategyArtifact do not inherit from a common abstract base. Instead, they implement a shared interface but their modification mechanics are fundamentally different. Prompt modification is text surgery, config modification is parameter tuning, strategy modification is algorithmic redesign.",
+      "choice": "Polymorphic hierarchy — entities can serve as multiple types simultaneously"
+    },
+    "3.3.1": {
+      "text": "Direct causation: a modification to the Modifier's own prompt template directly causes changes in all subsequent modifications it proposes. Correlation: multiple small improvements across independent artifacts sometimes correlate with sudden jumps in overall performance (emergent capability). Feedback loops: when the Evaluator's scoring function is itself improved by an RSI loop, this creates a positive feedback loop that must be carefully bounded.",
+      "choice": "Event-driven — state changes propagate as events through the network"
+    },
+    "3.3.2": {
+      "text": "Complex dependency graphs — improving the Evaluator may require first improving the benchmark dataset, which requires improving data generation prompts, which requires improving the generation Evaluator. This creates chains of 4-5 dependencies that must be resolved in topological order.",
+      "choice": "Branching dependencies — a DAG of ordered entity relationships"
+    },
+    "3.4.1": {
+      "text": "Mutable with versioning — all modifications are tracked in History. Previous versions are never deleted, only deprecated. The system can always roll back to any historical version. However, rolled-back versions are marked as \"regressed\" to prevent the Modifier from rediscovering the same failed approach.",
+      "choice": "State-gated — relationships can only change when entities are in certain states"
+    },
+    "3.4.2": {
+      "text": "Junction entities — ModificationProposal is a junction between Modifier and Artifact, carrying the proposed change, safety review status, and expected impact. EvaluationResult is a junction between Evaluator and Artifact, carrying scores, confidence levels, and evaluation metadata.",
+      "choice": "Transitive — some relationship types imply transitive chains"
+    },
+    "4.1.1": {
+      "text": "All operational processes including edge case handling. The RSI loop must handle: normal improvement, plateaus, regressions, safety violations, evaluation disagreements (multiple evaluators disagree), resource exhaustion (API rate limits), and adversarial inputs (someone trying to trick the modifier into making dangerous changes).",
+      "choice": "Broad — a multi-phase workflow spanning distinct sub-processes"
+    },
+    "4.1.2": {
+      "text": "The core improvement cycle has 8 steps: (1) Select artifact to improve, (2) Analyze current performance, (3) Generate modification hypothesis, (4) Safety review, (5) Apply modification, (6) Evaluate result, (7) Compare to baseline, (8) Decide: accept, revert, or iterate. Each step can branch into sub-processes.",
+      "choice": "5–8 steps — moderate complexity with clear waypoints"
+    },
+    "4.2.1": {
+      "text": "Throughout the workflow — every step has decision points. But critical junctures are: the safety review (go/no-go before applying modification), the evaluation comparison (accept/revert/iterate), and the convergence check (continue or stop the entire loop). These three gates control the most consequential outcomes.",
+      "choice": "Moderate branching — multiple decision points with varying path counts"
+    },
+    "4.2.2": {
+      "text": "Hybrid — rule-based for safety checks (hard constraints that are never violated), ML-based for modification generation (the Modifier uses an LLM to propose changes), and human-in-the-loop for EvaluationCriteria changes (only humans can redefine what \"better\" means). This three-tier decision architecture prevents the system from optimizing for the wrong objective.",
+      "choice": "Network I/O — steps pass data through a shared context rather than direct handoffs"
+    },
+    "4.3.1": {
+      "text": "Graceful degradation with bounded fallback. If the Modifier fails to generate a valid proposal, fall back to simpler modification strategies (parameter perturbation instead of prompt rewrite). If the Evaluator times out, use cached scores from the most recent valid evaluation. If the SafetyGuard blocks all proposals, pause the loop and alert the human operator.",
+      "choice": "Retry-based — failed steps can be retried with backoff"
+    },
+    "4.3.2": {
+      "text": "Automatic rollback is the primary mechanism — if post-modification evaluation shows regression beyond a threshold, the artifact reverts to its last known good state within 100ms. Dead letter queue for failed modifications that need human review. No manual intervention for routine failures; manual only for novel safety concerns.",
+      "choice": "Coarse — each step is a meaningful phase (2–5 sub-actions per step)"
+    },
+    "5.1.1": {
+      "text": "Medium traffic — the system processes 100-500 improvement evaluations per day, not real-time. Each evaluation involves 3-5 LLM API calls (modifier proposal, safety check, evaluator scoring, comparison). Latency target is minutes per improvement cycle, not milliseconds. Compute needs are bursty — concentrated during active improvement loops, idle between loops.",
+      "choice": "Dual architecture — e.g., x86-64 + ARM"
+    },
+    "5.1.2": {
+      "text": "I/O-bound — the system spends most of its time waiting for LLM API responses. The modifier and evaluator are LLM-powered. Local compute is minimal (hash comparisons, score arithmetic, state machine transitions). Network reliability and API throughput are the bottlenecks, not CPU or memory.",
+      "choice": "High-performance — 16–64GB RAM, SSD storage, GPU recommended"
+    },
+    "5.1.3": {
+      "text": "Automated response for question 5.1.3",
+      "choice": "Always-online — requires reliable internet connection"
+    },
+    "5.1.4": {
+      "text": "Automated response for question 5.1.4",
+      "choice": "Single database — one relational or document store covers all needs"
+    },
+    "5.1.5": {
+      "text": "Automated response for question 5.1.5",
+      "choice": "Cloud-native — designed for a specific cloud provider"
+    },
+    "5.2.1": {
+      "text": "TypeScript as primary language for the engine, coordination, and state management. Python for the LLM integration layer (openai/anthropic SDKs are most mature there). The two communicate via JSON over a simple IPC boundary. TypeScript handles the loop control, safety checks, and history; Python handles the LLM calls and prompt construction.",
+      "choice": "Two languages — e.g., backend + frontend split"
+    },
+    "5.2.2": {
+      "text": "Hybrid — SQLite for structured metadata (session state, modification history, evaluation scores, convergence metrics) because it is zero-config and embeddable. JSON files for artifact storage (full prompt text, strategy definitions, config snapshots) because they are human-readable and diff-friendly. The two are linked by artifact IDs.",
+      "choice": "Cross-platform — Linux, macOS, Windows"
+    },
+    "5.2.3": {
+      "text": "Automated response for question 5.2.3",
+      "choice": "Minimal dependencies — build from standard library where possible"
+    },
+    "5.2.4": {
+      "text": "Automated response for question 5.2.4",
+      "choice": "Latest-stable — always use current versions, update frequently"
+    },
+    "5.2.5": {
+      "text": "Automated response for question 5.2.5",
+      "choice": "Simple build — single build tool, manual or script-based deployment"
+    },
+    "5.3.1": {
+      "text": "Sub-1s response time for internal operations (state transitions, score lookups, safety checks). LLM-dependent operations (modification generation, evaluation) target sub-30s end-to-end. The system does not need real-time performance — a 2-minute improvement cycle is acceptable. But dashboard queries should be sub-100ms for interactive use.",
+      "choice": "Moderate traffic — 100–10K req/s, sub-second latency, hundreds concurrent"
+    },
+    "5.3.2": {
+      "text": "Small — the core data is under 1GB: ~10K artifact versions at ~50KB each (prompts, configs), ~100K evaluation records at ~1KB each, metadata and indexes. However, this grows linearly with improvement iterations. After 10K improvement cycles, we need archival strategy for old versions.",
+      "choice": "Small — <10GB data, slow growth, single-node viable"
+    },
+    "5.3.3": {
+      "text": "Business hours only — the RSI system is a development/research tool, not a production service. It is acceptable for it to be unavailable at night or on weekends. However, active improvement loops that are mid-cycle should complete gracefully even if the system is being shut down.",
+      "choice": "High — 99.99% uptime, multi-region redundancy, automated failover"
+    },
+    "5.3.4": {
+      "text": "Vertical scaling initially — single machine running the improvement loop is simplest and most debuggable. The bottleneck is LLM API throughput, not local compute. When we need parallel improvement loops (improving multiple artifacts simultaneously), horizontal scaling of the evaluation workers, with the coordination engine remaining on one node.",
+      "choice": "Vertical — scale up a single node as needed"
+    },
+    "5.3.5": {
+      "text": "OAuth2/JWT for API access — the system calls LLM APIs that require authentication. Internal API keys are stored in environment variables, never in code or config files. The safety guard enforces that no modification can exfiltrate API keys or credentials. Audit logs track all external API calls for security review.",
+      "choice": "Standard — OAuth2/MFA, encryption at rest, audit logging"
+    },
+    "5.4.1": {
+      "text": "1-3 API integrations: OpenAI API (GPT-4o for modifier and evaluator), Anthropic API (Claude as alternative/fallback evaluator for cross-validation), and a local Ollama instance for rapid prototyping without API costs. The abstraction layer allows swapping providers without code changes.",
+      "choice": "1–2 integrations — limited surface area for interoperability"
+    },
+    "5.4.2": {
+      "text": "REST APIs for LLM providers — both OpenAI and Anthropic expose REST interfaces. gRPC is unnecessary at this scale. Internal communication between TypeScript and Python components uses stdio JSON pipes (simple, debuggable, no port management).",
+      "choice": "REST/JSON only — simple HTTP-based communication"
+    },
+    "5.4.3": {
+      "text": "Standard timeline (1-3 months) — the core loop is implementable in 2 weeks, safety mechanisms take another 2 weeks, evaluation framework and benchmarking takes 2 weeks, hardening, edge cases, and documentation take 2-4 weeks. Total: 8-12 weeks to production-ready.",
+      "choice": "Standard — phased delivery over 3–9 months"
+    },
+    "5.4.4": {
+      "text": "Canary releases for the improvement engine itself — when we modify the Modifier or Evaluator, we run the new version on a small subset of artifacts first. If results are comparable or better after 50 improvement cycles, we promote to full. Blue/green for the API endpoints since downtime is unacceptable during active improvement loops.",
+      "choice": "Standard — dev, staging, production with automated test suite"
+    },
+    "5.4.5": {
+      "text": "API + architecture docs — every public function has JSDoc/docstrings, the architecture is documented with component diagrams, and there is a detailed \"How RSI Works\" guide for users. No formal academic papers yet, but the design decisions are documented as ADRs (Architecture Decision Records) in the repo.",
+      "choice": "Standard — API docs, architecture decision records, setup guide"
+    },
+    "6.1.1": {
+      "text": "Continuous (CI/CD) — every commit triggers TypeScript compilation checks and unit tests. The improvement engine itself is tested via self-improvement integration tests (run the RSI loop on a toy problem and verify convergence). Nightly builds run the full benchmark suite to detect performance regressions.",
+      "choice": "Sprint-based agile (Scrum) — fixed-length iterations with formal ceremonies"
+    },
+    "6.1.2": {
+      "text": "Small team (2-3 people) — one systems engineer for the core loop and safety mechanisms, one ML engineer for the LLM integration and evaluation framework, one part-time for infrastructure and monitoring. Decision-making is fast with this team size; we favor shipping over perfection.",
+      "choice": "Small team — 3–6 people with distinct roles (dev, design, PM)"
+    },
+    "6.2.1": {
+      "text": "Unit + integration tests — unit tests for every module (evaluator, modifier, safety guard, convergence detector). Integration tests that run full improvement loops on small benchmarks (5-10 artifacts, 20-30 cycles) and verify convergence properties. No end-to-end UI tests needed (CLI/API only initially).",
+      "choice": "Standard — mandatory reviews, unit + integration tests, CI gates"
+    },
+    "6.2.2": {
+      "text": "Boy scout rule — every time we touch a module for feature work, we clean up any tech debt we encounter. The RSI domain evolves fast; trying to batch-refactor risks falling behind. Small, continuous improvements to code quality mirror the recursive improvement philosophy of the system itself.",
+      "choice": "Budgeted — allocate X% of each sprint to debt reduction"
+    },
+    "6.3.1": {
+      "text": "Async-first — the team works across time zones. Design decisions are documented as ADRs in the repo, discussed in async threads, and only escalated to synchronous calls for contentious or high-impact decisions. Demo sessions are synchronous (weekly) to maintain shared context on improvement progress.",
+      "choice": "Async-first — written docs, Slack/Teams, minimal meetings"
+    },
+    "6.3.2": {
+      "text": "RFC/ADR process for architectural decisions — when modifying the core improvement loop, safety mechanisms, or evaluation framework, we write a brief RFC document. For smaller decisions (API design, naming conventions), the implementing developer has authority. Consensus is the goal; escalation to lead is the fallback.",
+      "choice": "BDFL — one person makes final decisions with input"
+    },
+    "7.1.1": {
+      "text": "CI/CD pipeline — GitHub Actions runs on push: lint, typecheck, unit tests, integration tests. On merge to main: build and publish. On tag: release to npm. The improvement engine itself is deployed via Docker container for reproducibility. Local development uses tsx for rapid iteration.",
+      "choice": "Automated CI/CD — merged to main triggers build + deploy pipeline"
+    },
+    "7.1.2": {
+      "text": "Dev + production — two environments. Dev is the local machine where we iterate rapidly. Production is a deployed instance where stable improvement loops run overnight or on scheduled benchmarks. No staging — the improvement loops are their own validation (improvement quality is measured by outcomes, not by matching a staging expectation).",
+      "choice": "Dev / staging / production — standard promotion pipeline"
+    },
+    "7.2.1": {
+      "text": "Logging + metrics — structured JSON logs for every improvement cycle (what was modified, before/after scores, safety decisions). Metrics via Prometheus: improvement velocity, convergence rate, safety rejection rate, API latency/throughput. Dashboard via Grafana for real-time monitoring of active improvement loops.",
+      "choice": "Standard — structured logging, metrics dashboard, alert on errors"
+    },
+    "7.2.2": {
+      "text": "Environment variables for secrets (API keys, database URLs). Config files (YAML) for runtime parameters (max improvement depth, evaluation thresholds, safety rules). No feature flags needed yet — the system is too small for gradual rollouts. Configuration is immutable per improvement session (changes take effect in new sessions only).",
+      "choice": "Dynamic config — runtime-reloadable config without redeploy"
+    },
+    "7.3.1": {
+      "text": "Business hours support — the team monitors active improvement loops during work hours via the Grafana dashboard. Alerts fire on: safety rejections > 5 in an hour, evaluation scores dropping across artifacts, API errors exceeding 5% rate. Off-hours: automated alerting to Slack, human response next business day.",
+      "choice": "Regular maintenance — scheduled patch cycles, dependency updates"
+    },
+    "7.3.2": {
+      "text": "Automated backups with retention — SQLite database backed up every 6 hours to cloud storage. Artifact JSON files versioned in git (each improvement commit is atomic). 90-day retention for full backups, 30-day for incremental. Data lifecycle management added later when volume warrants it.",
+      "choice": "Build-and-run — the same team owns development and operations"
+    }
+  }
+}

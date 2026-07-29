@@ -1,0 +1,26 @@
+[
+  {
+    "name": "COSMOS Dashboard",
+    "port": 9000,
+    "path": "/",
+    "startCmd": "node",
+    "startArgs": ["serve-dashboard.mjs", "9000"],
+    "cwd": "/data/data/com.termux/files/home/dev/cosmos"
+  },
+  {
+    "name": "SPACE Meta Viewer",
+    "port": 8899,
+    "path": "/",
+    "startCmd": "node",
+    "startArgs": ["serve-meta.mjs", "8899"],
+    "cwd": "/data/data/com.termux/files/home/dev/cosmos/components/space"
+  },
+  {
+    "name": "SPACE Web UI",
+    "port": 8888,
+    "path": "/",
+    "startCmd": "node",
+    "startArgs": ["serve-ui.mjs", "8888"],
+    "cwd": "/data/data/com.termux/files/home/dev/cosmos/components/space"
+  }
+]

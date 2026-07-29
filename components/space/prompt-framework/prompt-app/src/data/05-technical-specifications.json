@@ -1,0 +1,239 @@
+{
+  "series": {
+    "id": 5,
+    "name": "Technical Specifications",
+    "description": "Captures hardware, software, performance, integration, and timeline constraints for the build.",
+    "x_rounds": 4,
+    "y_open_ended_per_round": 5,
+    "z_multi_choice_per_open": 4,
+    "depends_on": [1, 4],
+    "consumes": ["domain", "audience_level", "procedure_steps", "branching_complexity"],
+    "provides": ["hardware_requirements", "software_stack", "performance_targets", "integration_contracts", "timeline"]
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "focus": "Hardware and Infrastructure",
+      "open_ended": [
+        {
+          "id": "5.1.1",
+          "text": "What hardware platforms or architectures must be supported? (CPU, GPU, mobile, embedded, etc.)",
+          "follow_up_choices": [
+            {"id": "5.1.1.a", "text": "Single architecture — x86-64 desktop/server only"},
+            {"id": "5.1.1.b", "text": "Dual architecture — e.g., x86-64 + ARM"},
+            {"id": "5.1.1.c", "text": "Mobile/embedded — ARM, RISC-V, or specialized hardware"},
+            {"id": "5.1.1.d", "text": "Platform-agnostic — must run on any reasonably modern hardware"}
+          ]
+        },
+        {
+          "id": "5.1.2",
+          "text": "What are the minimum and recommended hardware specs? (RAM, storage, compute, network)",
+          "follow_up_choices": [
+            {"id": "5.1.2.a", "text": "Minimal — <1GB RAM, <100MB storage, single-core sufficient"},
+            {"id": "5.1.2.b", "text": "Standard — 2–8GB RAM, 1–10GB storage, multi-core recommended"},
+            {"id": "5.1.2.c", "text": "High-performance — 16–64GB RAM, SSD storage, GPU recommended"},
+            {"id": "5.1.2.d", "text": "Enterprise — 128GB+ RAM, distributed storage, multi-GPU clusters"}
+          ]
+        },
+        {
+          "id": "5.1.3",
+          "text": "What bandwidth, latency, or networking requirements exist? Is offline operation needed?",
+          "follow_up_choices": [
+            {"id": "5.1.3.a", "text": "Always-online — requires reliable internet connection"},
+            {"id": "5.1.3.b", "text": "Online with offline fallback — core features work disconnected"},
+            {"id": "5.1.3.c", "text": "Primarily offline — sync is optional or batch-oriented"},
+            {"id": "5.1.3.d", "text": "Edge-deployed — must operate on intermittent or low-bandwidth connections"}
+          ]
+        },
+        {
+          "id": "5.1.4",
+          "text": "What storage infrastructure is needed? (databases, object storage, caching, file systems)",
+          "follow_up_choices": [
+            {"id": "5.1.4.a", "text": "Single database — one relational or document store covers all needs"},
+            {"id": "5.1.4.b", "text": "Primary DB + cache — e.g., PostgreSQL with Redis"},
+            {"id": "5.1.4.c", "text": "Polyglot persistence — multiple specialized data stores"},
+            {"id": "5.1.4.d", "text": "Distributed storage — sharded databases, multi-region replication"}
+          ]
+        },
+        {
+          "id": "5.1.5",
+          "text": "What cloud, on-premise, or hybrid infrastructure is targeted? Are there compliance or sovereignty requirements?",
+          "follow_up_choices": [
+            {"id": "5.1.5.a", "text": "Cloud-native — designed for a specific cloud provider"},
+            {"id": "5.1.5.b", "text": "Cloud-agnostic — portable across providers"},
+            {"id": "5.1.5.c", "text": "On-premise only — deployed in private data centers"},
+            {"id": "5.1.5.d", "text": "Hybrid — components span cloud and on-premise with strict compliance"}
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "focus": "Software Stack and Dependencies",
+      "open_ended": [
+        {
+          "id": "5.2.1",
+          "text": "What programming languages, runtimes, or frameworks are required or preferred?",
+          "follow_up_choices": [
+            {"id": "5.2.1.a", "text": "Single language — one ecosystem covers everything"},
+            {"id": "5.2.1.b", "text": "Two languages — e.g., backend + frontend split"},
+            {"id": "5.2.1.c", "text": "Polyglot — 3+ languages for specialized components"},
+            {"id": "5.2.1.d", "text": "Language-agnostic — choice delegated to implementation team"}
+          ]
+        },
+        {
+          "id": "5.2.2",
+          "text": "What operating systems and environments must be supported?",
+          "follow_up_choices": [
+            {"id": "5.2.2.a", "text": "Linux only"},
+            {"id": "5.2.2.b", "text": "Linux + macOS (developer-focused)"},
+            {"id": "5.2.2.c", "text": "Cross-platform — Linux, macOS, Windows"},
+            {"id": "5.2.2.d", "text": "Containerized — only targets Docker/K8s; host OS is irrelevant"}
+          ]
+        },
+        {
+          "id": "5.2.3",
+          "text": "What existing libraries, services, APIs, or third-party dependencies should be used or avoided?",
+          "follow_up_choices": [
+            {"id": "5.2.3.a", "text": "Minimal dependencies — build from standard library where possible"},
+            {"id": "5.2.3.b", "text": "Core curated deps — choose established libraries for major concerns"},
+            {"id": "5.2.3.c", "text": "Ecosystem-driven — leverage framework convention over custom code"},
+            {"id": "5.2.3.d", "text": "Heavy integration — depend on multiple external services and SaaS"}
+          ]
+        },
+        {
+          "id": "5.2.4",
+          "text": "What versioning, compatibility, or upgrade policies govern the software stack?",
+          "follow_up_choices": [
+            {"id": "5.2.4.a", "text": "Latest-stable — always use current versions, update frequently"},
+            {"id": "5.2.4.b", "text": "LTS-only — pinned to long-term support versions"},
+            {"id": "5.2.4.c", "text": "Semver-constrained — explicit version ranges with CI verification"},
+            {"id": "5.2.4.d", "text": "Locked — dependencies are vendored and updated on a release cycle"}
+          ]
+        },
+        {
+          "id": "5.2.5",
+          "text": "What build systems, CI/CD platforms, and packaging formats are required?",
+          "follow_up_choices": [
+            {"id": "5.2.5.a", "text": "Simple build — single build tool, manual or script-based deployment"},
+            {"id": "5.2.5.b", "text": "CI-built — automated builds on push, artifact registry"},
+            {"id": "5.2.5.c", "text": "Full CI/CD — automated testing, staging, and production deployment"},
+            {"id": "5.2.5.d", "text": "GitOps — infrastructure-as-code with automated promotion pipelines"}
+          ]
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "focus": "Performance and Scalability",
+      "open_ended": [
+        {
+          "id": "5.3.1",
+          "text": "What are the throughput, latency, and concurrency requirements? (requests/sec, response time, simultaneous users)",
+          "follow_up_choices": [
+            {"id": "5.3.1.a", "text": "Low traffic — <100 req/s, seconds of latency, single-digit concurrency"},
+            {"id": "5.3.1.b", "text": "Moderate traffic — 100–10K req/s, sub-second latency, hundreds concurrent"},
+            {"id": "5.3.1.c", "text": "High traffic — 10K–100K req/s, low-latency targets, thousands concurrent"},
+            {"id": "5.3.1.d", "text": "Internet scale — 100K+ req/s, strict SLOs, global distribution"}
+          ]
+        },
+        {
+          "id": "5.3.2",
+          "text": "What data volume and growth rate is expected? (storage size, records, throughput)",
+          "follow_up_choices": [
+            {"id": "5.3.2.a", "text": "Small — <10GB data, slow growth, single-node viable"},
+            {"id": "5.3.2.b", "text": "Medium — 10GB–1TB, moderate growth, needs partitioning"},
+            {"id": "5.3.2.c", "text": "Large — 1TB–100TB, rapid growth, requires distributed architecture"},
+            {"id": "5.3.2.d", "text": "Massive — 100TB+, petabyte-scale, data lifecycle management needed"}
+          ]
+        },
+        {
+          "id": "5.3.3",
+          "text": "What availability, uptime, and disaster recovery targets are required?",
+          "follow_up_choices": [
+            {"id": "5.3.3.a", "text": "Best-effort — no formal SLA, occasional downtime acceptable"},
+            {"id": "5.3.3.b", "text": "Standard — 99.9% uptime, daily backups, basic DR plan"},
+            {"id": "5.3.3.c", "text": "High — 99.99% uptime, multi-region redundancy, automated failover"},
+            {"id": "5.3.3.d", "text": "Critical — 99.999%+ uptime, active-active, zero-data-loss DR"}
+          ]
+        },
+        {
+          "id": "5.3.4",
+          "text": "What scalability model is required? (vertical, horizontal, elastic, serverless)",
+          "follow_up_choices": [
+            {"id": "5.3.4.a", "text": "Vertical — scale up a single node as needed"},
+            {"id": "5.3.4.b", "text": "Horizontal — add/remove nodes with load balancer"},
+            {"id": "5.3.4.c", "text": "Elastic — auto-scale based on metrics"},
+            {"id": "5.3.4.d", "text": "Serverless — event-driven scale managed by platform"}
+          ]
+        },
+        {
+          "id": "5.3.5",
+          "text": "What security and compliance standards must be met? (auth, encryption, audit, regulations)",
+          "follow_up_choices": [
+            {"id": "5.3.5.a", "text": "Basic — password auth, TLS, no formal compliance requirements"},
+            {"id": "5.3.5.b", "text": "Standard — OAuth2/MFA, encryption at rest, audit logging"},
+            {"id": "5.3.5.c", "text": "Regulated — SOC2, HIPAA, GDPR, or PCI-DSS requirements"},
+            {"id": "5.3.5.d", "text": "High-security — air-gapped, FIPS, zero-trust architecture"}
+          ]
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "focus": "Integration and Timeline",
+      "open_ended": [
+        {
+          "id": "5.4.1",
+          "text": "What external systems, APIs, or services must this system integrate with?",
+          "follow_up_choices": [
+            {"id": "5.4.1.a", "text": "No integrations — fully standalone system"},
+            {"id": "5.4.1.b", "text": "1–2 integrations — limited surface area for interoperability"},
+            {"id": "5.4.1.c", "text": "3–7 integrations — multiple external touchpoints"},
+            {"id": "5.4.1.d", "text": "8+ integrations — integration-heavy, requiring an API gateway or ESB"}
+          ]
+        },
+        {
+          "id": "5.4.2",
+          "text": "What integration protocols, data formats, or standards must be supported?",
+          "follow_up_choices": [
+            {"id": "5.4.2.a", "text": "REST/JSON only — simple HTTP-based communication"},
+            {"id": "5.4.2.b", "text": "REST + events — REST APIs plus message queue or event stream"},
+            {"id": "5.4.2.c", "text": "gRPC + protobuf — type-safe, high-performance contracts"},
+            {"id": "5.4.2.d", "text": "Multiple protocols — REST, gRPC, GraphQL, file-based, and binary formats"}
+          ]
+        },
+        {
+          "id": "5.4.3",
+          "text": "What is the expected timeline, milestones, and delivery cadence?",
+          "follow_up_choices": [
+            {"id": "5.4.3.a", "text": "Quick — prototype in weeks, production in 1–3 months"},
+            {"id": "5.4.3.b", "text": "Standard — phased delivery over 3–9 months"},
+            {"id": "5.4.3.c", "text": "Ambitious — 9–18 months with multiple major releases"},
+            {"id": "5.4.3.d", "text": "Large program — 18+ months with distinct workstreams"}
+          ]
+        },
+        {
+          "id": "5.4.4",
+          "text": "What testing, staging, and rollout strategy is required?",
+          "follow_up_choices": [
+            {"id": "5.4.4.a", "text": "Basic — dev + production environments, manual testing"},
+            {"id": "5.4.4.b", "text": "Standard — dev, staging, production with automated test suite"},
+            {"id": "5.4.4.c", "text": "Robust — preview deployments, canary releases, feature flags"},
+            {"id": "5.4.4.d", "text": "Enterprise — full deployment matrix, blue-green, chaos engineering"}
+          ]
+        },
+        {
+          "id": "5.4.5",
+          "text": "What documentation, training, or knowledge transfer outputs are expected alongside the system?",
+          "follow_up_choices": [
+            {"id": "5.4.5.a", "text": "Minimal — inline comments and a README"},
+            {"id": "5.4.5.b", "text": "Standard — API docs, architecture decision records, setup guide"},
+            {"id": "5.4.5.c", "text": "Comprehensive — full technical docs, runbooks, user manuals"},
+            {"id": "5.4.5.d", "text": "Certification-level — training materials, compliance documentation, formal specs"}
+          ]
+        }
+      ]
+    }
+  ]
+}
