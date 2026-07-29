@@ -2,26 +2,428 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COSMOS Ecosystem</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>COSMOS — Component Dashboard</title>
 <style>
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f1118;color:#e0e0e0;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:2rem;text-align:center}
-h1{font-size:2rem;margin-bottom:.5rem;background:linear-gradient(90deg,#7b2fff,#ff8c00,#00ff9f);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-p{color:#888;margin-bottom:1.5rem;font-size:.9rem}
-.links{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
-.links a{padding:.5rem 1.5rem;border-radius:12px;font-size:.85rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#ccc;transition:all .2s}
-.links a:hover{border-color:rgba(123,47,255,.3);color:#fff;background:rgba(123,47,255,.08)}
-.sub{color:#555;font-size:.65rem;margin-top:1rem}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#0f1118;color:#e0e0e0;padding:.6rem}
+h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradient(90deg,#7b2fff,#ff8c00,#00ff9f);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitle{color:#666;font-size:.65rem;margin-bottom:.4rem}
+.module-label{font-size:.75rem;font-weight:700;color:#ccc;margin:.6rem 0 .35rem 0;padding-bottom:.15rem;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:.3rem}
+.module-label .icon{font-size:.85rem}
+.card{background:#161822;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.55rem;width:100%;margin-bottom:.4rem}
+.card-header{font-size:.7rem;font-weight:600;color:#ccc;margin-bottom:.3rem;display:flex;align-items:center;gap:.35rem;flex-wrap:wrap}
+.card-header .icon{font-size:.8rem}
+.hdr-sub{font-weight:400;font-size:.58rem;color:#666;margin-left:.3rem}
+.btn-row{display:flex;gap:.25rem;margin-top:.3rem;flex-wrap:wrap}
+.btn{font-size:.5rem;padding:3px 10px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:.2rem}
+.btn-dash{background:rgba(255,255,255,.06);color:#888;border:1px solid rgba(255,255,255,.1)}
+.btn-dash:hover{background:rgba(123,47,255,.1);color:#a855f7}
+.btn-launch{background:rgba(0,255,159,.1);color:#00ff9f;border:1px solid rgba(0,255,159,.2);cursor:pointer;font-size:.5rem;padding:3px 10px;border-radius:6px;font-weight:600;display:inline-flex;align-items:center;gap:.2rem}
+.btn-launch:hover{background:rgba(0,255,159,.2)}
+.btn-gh{background:rgba(255,255,255,.04);color:#666;border:1px solid rgba(255,255,255,.08)}
+.btn-gh:hover{background:rgba(255,255,255,.08);color:#888}
+
+/* Project cards */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.35rem}
+@media(max-width:600px){.proj-grid{grid-template-columns:1fr}}
+.proj-card{background:#161822;border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:.45rem;text-decoration:none;color:inherit;transition:border-color .2s;display:block}
+.proj-card:hover{border-color:rgba(123,47,255,.3)}
+.proj-name{font-weight:700;font-size:.75rem;display:flex;align-items:center;gap:.25rem}
+.proj-desc{font-size:.55rem;color:#777;margin:.1rem 0}
+.proj-meta{font-size:.5rem;color:#555;margin-bottom:.15rem}
+.status-badge{font-size:.45rem;padding:1px 6px;border-radius:6px;font-weight:600;display:inline-block}
+
+/* Stats */
+.stat-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:.3rem}
+@media(max-width:500px){.stat-grid{grid-template-columns:1fr 1fr}}
+.stat-cell{text-align:center;background:rgba(255,255,255,.03);border-radius:8px;padding:.4rem .15rem}
+.stat-big{font-size:1rem;font-weight:800;color:#e0e0e0;display:block}
+.stat-sm{font-size:.5rem;color:#777;display:block;margin-top:1px}
+
+/* Donut row */
+.donut-row{display:grid;grid-template-columns:1fr 1fr;gap:.35rem;margin-bottom:.4rem}
+@media(max-width:500px){.donut-row{grid-template-columns:1fr}}
+.donut-card{background:#161822;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.45rem}
+.donut-flex{display:flex;align-items:center;gap:.5rem}
+.donut{width:85px;height:85px;border-radius:50%;flex-shrink:0}
+.donut-legend{font-size:.52rem;flex:1;min-width:0}
+.donut-legend .row{display:flex;align-items:center;gap:.2rem;margin-bottom:1px}
+.donut-legend .swatch{width:6px;height:6px;border-radius:2px;flex-shrink:0}
+.donut-legend .lbl{color:#999}
+.donut-legend .cnt{color:#555;margin-left:auto}
+.donut-legend .pct{color:#444;width:28px;text-align:right}
+
+/* Stacked horizontal bars */
+.stacked-bar-wrap{padding:.15rem 0;width:100%}
+.stacked-bar{display:flex;height:22px;border-radius:5px;overflow:hidden;background:rgba(255,255,255,.03)}
+.stacked-bar .seg{height:100%;transition:width .4s;min-width:2px}
+.stacked-bar .seg:first-child{border-radius:5px 0 0 5px}
+.stacked-bar .seg:last-child{border-radius:0 5px 5px 0}
+.stacked-legend{display:flex;flex-wrap:wrap;gap:.15rem .4rem;margin-top:.25rem;font-size:.5rem}
+.stacked-legend .leg-item{display:flex;align-items:center;gap:.15rem;color:#999}
+.stacked-legend .leg-swatch{width:6px;height:6px;border-radius:2px;flex-shrink:0}
+.bar-label{font-size:.55rem;color:#888;margin-bottom:.1rem;display:flex;justify-content:space-between}
+.bar-label .bar-val{color:#555}
+.sep-bar{height:16px;border-radius:4px;background:rgba(255,255,255,.03);margin-bottom:.15rem;overflow:hidden;display:flex}
+.sep-bar .seg{height:100%;transition:width .4s;min-width:2px}
+.sep-bar .seg:first-child{border-radius:4px 0 0 4px}
+.sep-bar .seg:last-child{border-radius:0 4px 4px 0}
+
+/* Toggle */
+.chart-toggle{font-size:.48rem;padding:2px 8px;border-radius:6px;cursor:pointer;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#888;margin-left:auto;transition:all .2s;font-weight:600;letter-spacing:.3px}
+.chart-toggle:hover{border-color:rgba(123,47,255,.3);color:#aaa;background:rgba(123,47,255,.08)}
+.chart-toggle.active{background:rgba(0,255,159,.1);border-color:rgba(0,255,159,.25);color:#00ff9f}
+.chart-view{transition:opacity .2s}
+.chart-view.hidden{display:none!important}
+
+/* Per-project bars */
+.perproj-label{font-size:.55rem;color:#777;margin:.25rem 0 .1rem 0;font-weight:600}
+.perproj-row{display:flex;align-items:center;gap:.25rem;margin-bottom:.08rem}
+.perproj-row .pp-name{width:48px;text-align:right;color:#888;font-size:.5rem;flex-shrink:0}
+.perproj-row .pp-bar{flex:1;height:14px;background:rgba(255,255,255,.03);border-radius:3px;overflow:hidden;display:flex}
+.perproj-row .pp-bar .seg{height:100%;transition:width .4s;min-width:2px}
+.perproj-row .pp-val{color:#555;font-size:.5rem;width:32px;text-align:right}
+
+.footer{text-align:center;font-size:.5rem;color:#444;padding:.5rem 0;border-top:1px solid rgba(255,255,255,.04);margin-top:.4rem}
+.footer a{color:#555;text-decoration:none}
+.footer a:hover{color:#7b2fff}
+
+/* Version timeline */
+.timeline{font-size:.55rem;color:#999;line-height:1.6}
+.timeline b{color:#ccc}
+.timeline .tag{display:inline-block;padding:0 5px;border-radius:3px;font-size:.45rem;margin-right:2px}
 </style>
 </head>
 <body>
-<h1>🌌 COSMOS</h1>
-<p>Comprehensive Ontological System for Meta-cognitive Orchestration &amp; Synthesis</p>
-<div class="links">
-  <a href="https://gemquota.github.io/hub/">📊 Hub Dashboard</a>
-  <a href="https://github.com/gemquota/cosmos">GitHub</a>
-  <a href="https://github.com/gemquota/cosmos-ts">TypeScript Repo</a>
+
+<h1>✦ COSMOS Dashboard</h1>
+<div class="subtitle">3 components · Comprehensive Ontological System for Meta-cognitive Orchestration & Synthesis</div>
+
+<!-- MODULE 1: COSMOS Components -->
+<div class="module-label"><span class="icon">🧩</span> COSMOS Components</div>
+<div class="proj-grid">
+
+<!-- SPACE -->
+<div class="proj-card" style="border-left:2.5px solid #3b82f6">
+  <div class="proj-name" style="color:#3b82f6">🚀 SPACE</div>
+  <div class="proj-desc">Superb Prompt Automatic Creation Engine — 326-probe spec generation via structured prompt elicitation. TypeScript CLI with 7 LLM providers, 6 export formats.</div>
+  <div class="proj-meta">333 files · 8.0MB · ~69k LOC · TypeScript</div>
+  <div style="margin-bottom:.2rem"><span class="status-badge" style="background:rgba(0,255,159,.12);color:#00ff9f;border:1px solid rgba(0,255,159,.2)">● STABLE</span> <span class="status-badge" style="background:rgba(59,130,246,.1);color:#60a5fa;border:1px solid rgba(59,130,246,.15)">v2.1.0</span></div>
+  <div class="btn-row">
+    <a href="https://gemquota.github.io/hub/space.html" target="_blank" class="btn btn-dash">📊 Dashboard</a>
+    <button class="btn-launch" onclick="copyCmd('space')">▶ Launch</button>
+    <a href="https://github.com/gemquota/space" target="_blank" class="btn btn-gh">GitHub</a>
+  </div>
 </div>
-<div class="sub">4 components · active triad: rsis3 + mykb + myrsikb</div>
+
+<!-- MyKB -->
+<div class="proj-card" style="border-left:2.5px solid #a855f7">
+  <div class="proj-name" style="color:#a855f7">📚 MyKB</div>
+  <div class="proj-desc">Knowledge OS — Obsidian wiki with 48 domains, 2,360+ wiki files, TF-IDF search, temporal engine, link enrichment, session tracking.</div>
+  <div class="proj-meta">2,436 files · 58MB · ~103k LOC · Python + Markdown</div>
+  <div style="margin-bottom:.2rem"><span class="status-badge" style="background:rgba(0,255,159,.12);color:#00ff9f;border:1px solid rgba(0,255,159,.2)">● LIVE</span></div>
+  <div class="btn-row">
+    <a href="https://gemquota.github.io/hub/mykb.html" target="_blank" class="btn btn-dash">📊 Dashboard</a>
+    <button class="btn-launch" onclick="copyCmd('mykb')">▶ Launch</button>
+    <a href="https://github.com/gemquota/cosmos" target="_blank" class="btn btn-gh">GitHub</a>
+  </div>
+</div>
+
+<!-- RSIS3 -->
+<div class="proj-card" style="border-left:2.5px solid #ff8c00">
+  <div class="proj-name" style="color:#ff8c00">🔄 RSIS3</div>
+  <div class="proj-desc">Recursive Self-Improvement System — three-loop architecture (L1/L2/L3) with RRP protocol, knowledge graph integration, telemetry, evaluator.</div>
+  <div class="proj-meta">112 files · 4.1MB · ~67k LOC · Python + JavaScript</div>
+  <div style="margin-bottom:.2rem"><span class="status-badge" style="background:rgba(0,255,159,.12);color:#00ff9f;border:1px solid rgba(0,255,159,.2)">● LIVE</span> <span class="status-badge" style="background:rgba(255,140,0,.1);color:#ffa500;border:1px solid rgba(255,140,0,.15)">Active Triad</span></div>
+  <div class="btn-row">
+    <a href="https://gemquota.github.io/hub/rsis3.html" target="_blank" class="btn btn-dash">📊 Dashboard</a>
+    <button class="btn-launch" onclick="copyCmd('rsis3')">▶ Launch</button>
+    <a href="https://github.com/gemquota/cosmos" target="_blank" class="btn btn-gh">GitHub</a>
+  </div>
+</div>
+
+</div>
+
+<!-- MODULE 2: Ecosystem Stats -->
+<div class="module-label"><span class="icon">📊</span> Ecosystem Stats</div>
+<div class="card">
+<div class="stat-grid">
+  <div class="stat-cell"><span class="stat-big" style="color:#a855f7">3</span><span class="stat-sm">Components</span></div>
+  <div class="stat-cell"><span class="stat-big" style="color:#00ff9f">2,881</span><span class="stat-sm">Total Files</span></div>
+  <div class="stat-cell"><span class="stat-big" style="color:#eab308">~70MB</span><span class="stat-sm">Total Disk</span></div>
+  <div class="stat-cell"><span class="stat-big" style="color:#3b82f6">239k</span><span class="stat-sm">Total LOC</span></div>
+  <div class="stat-cell"><span class="stat-big" style="color:#ff8c00">3</span><span class="stat-sm">Active Triad</span></div>
+  <div class="stat-cell"><span class="stat-big" style="color:#00d4ff">3</span><span class="stat-sm">Languages</span></div>
+  <div class="stat-cell"><span class="stat-big" style="color:#22c55e">235</span><span class="stat-sm">Directories</span></div>
+  <div class="stat-cell"><span class="stat-big" style="color:#f472b6">2</span><span class="stat-sm">Git Repos</span></div>
+</div>
+</div>
+
+<!-- MODULE 3: Charts -->
+<div class="module-label"><span class="icon">📈</span> Charts</div>
+
+<!-- Donuts row -->
+<div class="donut-row">
+
+<!-- Donut 1: File Distribution -->
+<div class="donut-card">
+<div class="card-header"><span class="icon">🥧</span> File Distribution</div>
+<div class="donut-flex">
+<svg class="donut" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,.04)" stroke-width="15"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="15" stroke-dasharray="41.6 209.0" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#a855f7" stroke-width="15" stroke-dasharray="304.5 0" stroke-dashoffset="-41.6" transform="rotate(-90 50 50)"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#ff8c00" stroke-width="15" stroke-dasharray="14.0 235.5" stroke-dashoffset="-346.1" transform="rotate(-90 50 50)"/>
+</svg>
+<div class="donut-legend">
+  <div class="row"><span class="swatch" style="background:#a855f7"></span><span class="lbl">MyKB</span><span class="pct">84.6%</span><span class="cnt">2,436 files</span></div>
+  <div class="row"><span class="swatch" style="background:#3b82f6"></span><span class="lbl">SPACE</span><span class="pct">11.6%</span><span class="cnt">333 files</span></div>
+  <div class="row"><span class="swatch" style="background:#ff8c00"></span><span class="lbl">RSIS3</span><span class="pct">3.9%</span><span class="cnt">112 files</span></div>
+</div></div></div>
+
+<!-- Donut 2: Disk Distribution -->
+<div class="donut-card">
+<div class="card-header"><span class="icon">🥧</span> Disk Distribution</div>
+<div class="donut-flex">
+<svg class="donut" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,.04)" stroke-width="15"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#a855f7" stroke-width="15" stroke-dasharray="298.1 0" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="15" stroke-dasharray="41.1 207.5" stroke-dashoffset="-298.1" transform="rotate(-90 50 50)"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#ff8c00" stroke-width="15" stroke-dasharray="21.1 227.5" stroke-dashoffset="-339.2" transform="rotate(-90 50 50)"/>
+</svg>
+<div class="donut-legend">
+  <div class="row"><span class="swatch" style="background:#a855f7"></span><span class="lbl">MyKB</span><span class="pct">82.8%</span><span class="cnt">58 MB</span></div>
+  <div class="row"><span class="swatch" style="background:#3b82f6"></span><span class="lbl">SPACE</span><span class="pct">11.4%</span><span class="cnt">8 MB</span></div>
+  <div class="row"><span class="swatch" style="background:#ff8c00"></span><span class="lbl">RSIS3</span><span class="pct">5.9%</span><span class="cnt">4.1 MB</span></div>
+</div></div></div>
+
+</div>
+
+<!-- Bar charts module -->
+<div class="card">
+<div class="card-header"><span class="icon">📊</span> Stacked Bar Charts <span class="hdr-sub">click toggle for separate view</span>
+<button class="chart-toggle" onclick="toggleAllBars()" id="all-bar-toggle">▤ Separate All</button>
+</div>
+
+<!-- Bar 1: Code LOC by Component -->
+<div style="margin:.25rem 0">
+<div class="bar-label">Code LOC <span class="bar-val">Code files (TS/PY/JS) per component</span></div>
+<div id="code-stacked" class="chart-view">
+  <div class="stacked-bar-wrap">
+    <div class="stacked-bar">
+      <div class="seg" style="width:88.2%;background:#a855f7" title="MyKB: 2,377"></div>
+      <div class="seg" style="width:9.0%;background:#3b82f6" title="SPACE: 9,768"></div>
+      <div class="seg" style="width:2.8%;background:#ff8c00" title="RSIS3: 24,881"></div>
+    </div>
+    <div class="stacked-legend">
+      <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 2,377</span>
+      <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 9,768</span>
+      <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 24,881</span>
+    </div>
+  </div>
+</div>
+<div id="code-grouped" class="chart-view hidden">
+  <div class="perproj-row"><span class="pp-name" style="color:#a855f7">MyKB</span><div class="pp-bar"><div class="seg" style="width:100%;background:#a855f7"></div></div><span class="pp-val">2,377</span></div>
+  <div class="perproj-row"><span class="pp-name" style="color:#3b82f6">SPACE</span><div class="pp-bar"><div class="seg" style="width:39.3%;background:#3b82f6"></div></div><span class="pp-val">9,768</span></div>
+  <div class="perproj-row"><span class="pp-name" style="color:#ff8c00">RSIS3</span><div class="pp-bar"><div class="seg" style="width:100%;background:#ff8c00"></div></div><span class="pp-val">24,881</span></div>
+</div>
+</div>
+
+<!-- Bar 2: Total LOC (all files) -->
+<div style="margin:.25rem 0">
+<div class="bar-label">Total LOC <span class="bar-val">All file types per component</span></div>
+<div id="totalloc-stacked" class="chart-view">
+  <div class="stacked-bar-wrap">
+    <div class="stacked-bar">
+      <div class="seg" style="width:42.9%;background:#a855f7" title="MyKB: 102,951"></div>
+      <div class="seg" style="width:28.9%;background:#3b82f6" title="SPACE: 69,357"></div>
+      <div class="seg" style="width:27.9%;background:#ff8c00" title="RSIS3: 66,956"></div>
+    </div>
+    <div class="stacked-legend">
+      <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 102,951</span>
+      <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 69,357</span>
+      <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 66,956</span>
+    </div>
+  </div>
+</div>
+<div id="totalloc-grouped" class="chart-view hidden">
+  <div class="perproj-row"><span class="pp-name" style="color:#a855f7">MyKB</span><div class="pp-bar"><div class="seg" style="width:100%;background:#a855f7"></div></div><span class="pp-val">102,951</span></div>
+  <div class="perproj-row"><span class="pp-name" style="color:#3b82f6">SPACE</span><div class="pp-bar"><div class="seg" style="width:67.4%;background:#3b82f6"></div></div><span class="pp-val">69,357</span></div>
+  <div class="perproj-row"><span class="pp-name" style="color:#ff8c00">RSIS3</span><div class="pp-bar"><div class="seg" style="width:65.0%;background:#ff8c00"></div></div><span class="pp-val">66,956</span></div>
+</div>
+</div>
+
+<!-- Bar 3: Disk Usage -->
+<div style="margin:.25rem 0">
+<div class="bar-label">Disk Usage <span class="bar-val">Storage per component</span></div>
+<div id="disk-stacked" class="chart-view">
+  <div class="stacked-bar-wrap">
+    <div class="stacked-bar">
+      <div class="seg" style="width:82.8%;background:#a855f7" title="MyKB: 58MB"></div>
+      <div class="seg" style="width:11.4%;background:#3b82f6" title="SPACE: 8MB"></div>
+      <div class="seg" style="width:5.9%;background:#ff8c00" title="RSIS3: 4.1MB"></div>
+    </div>
+    <div class="stacked-legend">
+      <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 58 MB</span>
+      <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 8 MB</span>
+      <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 4.1 MB</span>
+    </div>
+  </div>
+</div>
+<div id="disk-grouped" class="chart-view hidden">
+  <div class="perproj-row"><span class="pp-name" style="color:#a855f7">MyKB</span><div class="pp-bar"><div class="seg" style="width:100%;background:#a855f7"></div></div><span class="pp-val">58 MB</span></div>
+  <div class="perproj-row"><span class="pp-name" style="color:#3b82f6">SPACE</span><div class="pp-bar"><div class="seg" style="width:13.8%;background:#3b82f6"></div></div><span class="pp-val">8 MB</span></div>
+  <div class="perproj-row"><span class="pp-name" style="color:#ff8c00">RSIS3</span><div class="pp-bar"><div class="seg" style="width:7.1%;background:#ff8c00"></div></div><span class="pp-val">4.1 MB</span></div>
+</div>
+</div>
+
+<!-- Bar 4: File Count -->
+<div style="margin:.25rem 0">
+<div class="bar-label">File Count <span class="bar-val">Files per component</span></div>
+<div id="files-stacked" class="chart-view">
+  <div class="stacked-bar-wrap">
+    <div class="stacked-bar">
+      <div class="seg" style="width:84.6%;background:#a855f7" title="MyKB: 2,436"></div>
+      <div class="seg" style="width:11.6%;background:#3b82f6" title="SPACE: 333"></div>
+      <div class="seg" style="width:3.9%;background:#ff8c00" title="RSIS3: 112"></div>
+    </div>
+    <div class="stacked-legend">
+      <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 2,436</span>
+      <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 333</span>
+      <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 112</span>
+    </div>
+  </div>
+</div>
+<div id="files-grouped" class="chart-view hidden">
+  <div class="perproj-row"><span class="pp-name" style="color:#a855f7">MyKB</span><div class="pp-bar"><div class="seg" style="width:100%;background:#a855f7"></div></div><span class="pp-val">2,436</span></div>
+  <div class="perproj-row"><span class="pp-name" style="color:#3b82f6">SPACE</span><div class="pp-bar"><div class="seg" style="width:13.7%;background:#3b82f6"></div></div><span class="pp-val">333</span></div>
+  <div class="perproj-row"><span class="pp-name" style="color:#ff8c00">RSIS3</span><div class="pp-bar"><div class="seg" style="width:4.6%;background:#ff8c00"></div></div><span class="pp-val">112</span></div>
+</div>
+</div>
+
+<!-- Bar 5: Directory Count -->
+<div style="margin:.25rem 0">
+<div class="bar-label">Directory Count <span class="bar-val">Subdirectories per component</span></div>
+<div id="dirs-stacked" class="chart-view">
+  <div class="stacked-bar-wrap">
+    <div class="stacked-bar">
+      <div class="seg" style="width:69.4%;background:#a855f7" title="MyKB: 163"></div>
+      <div class="seg" style="width:21.7%;background:#3b82f6" title="SPACE: 51"></div>
+      <div class="seg" style="width:8.9%;background:#ff8c00" title="RSIS3: 21"></div>
+    </div>
+    <div class="stacked-legend">
+      <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 163</span>
+      <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 51</span>
+      <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 21</span>
+    </div>
+  </div>
+</div>
+<div id="dirs-grouped" class="chart-view hidden">
+  <div class="perproj-row"><span class="pp-name" style="color:#a855f7">MyKB</span><div class="pp-bar"><div class="seg" style="width:100%;background:#a855f7"></div></div><span class="pp-val">163</span></div>
+  <div class="perproj-row"><span class="pp-name" style="color:#3b82f6">SPACE</span><div class="pp-bar"><div class="seg" style="width:31.3%;background:#3b82f6"></div></div><span class="pp-val">51</span></div>
+  <div class="perproj-row"><span class="pp-name" style="color:#ff8c00">RSIS3</span><div class="pp-bar"><div class="seg" style="width:12.9%;background:#ff8c00"></div></div><span class="pp-val">21</span></div>
+</div>
+</div>
+
+</div>
+
+<!-- MODULE 4: Version History -->
+<div class="module-label"><span class="icon">📜</span> History</div>
+<div class="card">
+<div class="timeline">
+<b style="color:#ff8c00">RSIS:</b> v1 (rrpis) → v2 (rsisb, modular) → <b>v3</b> (rsis3, current three-loop)<br>
+<b style="color:#a855f7">MyKB:</b> Python wiki daemon with Obsidian backend, TF-IDF search, temporal engine, 48 domain categories<br>
+<b style="color:#3b82f6">SPACE:</b> v2.1.0 · TypeScript · <a href="https://github.com/gemquota/space" style="color:#666">github.com/gemquota/space</a><br>
+<b style="color:#555">COSMOS:</b> Monorepo with 3 active components · <a href="https://github.com/gemquota/cosmos" style="color:#666">github.com/gemquota/cosmos</a>
+</div>
+</div>
+
+<div class="footer">
+<a href="https://github.com/gemquota/cosmos">cosmos</a> · 
+<a href="https://gemquota.github.io/hub/">hub dashboard</a> · 
+<a href="https://gemquota.github.io/hub/vepa.html">vepa2</a> · 
+<a href="https://gemquota.github.io/hub/hmxot.html">hmxot</a> · 
+<a href="https://gemquota.github.io/hub/golf.html">golf</a> · 
+<a href="https://gemquota.github.io/hub/gog.html">gog</a> · 
+<a href="https://gemquota.github.io/hub/ww.html">ww</a> · 
+<a href="https://gemquota.github.io/hub/ace.html">ace</a>
+</div>
+
+<script>
+const cmds = {
+  space: 'cd /dev/cosmos/components/space && npx tsx src/cli/index.ts',
+  mykb: 'cd /dev/cosmos/components/mykb && python3 server.py',
+  rsis3: 'cd /dev/cosmos/components/rsis3 && python3 -m rsis',
+};
+function copyCmd(name) {
+  navigator.clipboard.writeText(cmds[name] || '').then(() => {
+    const btns = document.querySelectorAll('.btn-launch');
+    btns.forEach(function(b) {
+      var orig = b.textContent;
+      if (orig.includes('Launch')) {
+        b.textContent = '✓ Copied!';
+        setTimeout(function(){ b.textContent = orig; }, 1500);
+      }
+    });
+  });
+}
+
+// Track bar states per chart
+var barStates = {};
+function initBarState(id) { if (!barStates[id]) barStates[id] = 'stacked'; }
+function toggleBar(id) {
+  initBarState(id);
+  var s = document.getElementById(id+'-stacked');
+  var g = document.getElementById(id+'-grouped');
+  if (!s || !g) return;
+  if (barStates[id] === 'stacked') {
+    s.classList.add('hidden'); g.classList.remove('hidden');
+    barStates[id] = 'grouped';
+  } else {
+    g.classList.add('hidden'); s.classList.remove('hidden');
+    barStates[id] = 'stacked';
+  }
+  updateAllToggleText();
+}
+function toggleAllBars() {
+  var allGrouped = true;
+  var ids = ['code','totalloc','disk','files','dirs'];
+  ids.forEach(function(id) {
+    initBarState(id);
+    if (barStates[id] !== 'grouped') allGrouped = false;
+  });
+  ids.forEach(function(id) {
+    var s = document.getElementById(id+'-stacked');
+    var g = document.getElementById(id+'-grouped');
+    if (!s || !g) return;
+    if (allGrouped) {
+      g.classList.add('hidden'); s.classList.remove('hidden');
+      barStates[id] = 'stacked';
+    } else {
+      s.classList.add('hidden'); g.classList.remove('hidden');
+      barStates[id] = 'grouped';
+    }
+  });
+  updateAllToggleText();
+}
+function updateAllToggleText() {
+  var allGrouped = true;
+  var ids = ['code','totalloc','disk','files','dirs'];
+  ids.forEach(function(id) {
+    if (barStates[id] !== 'grouped') allGrouped = false;
+  });
+  var btn = document.getElementById('all-bar-toggle');
+  if (!btn) return;
+  if (allGrouped) {
+    btn.textContent = '\u25A4 Stacked All';
+    btn.classList.remove('active');
+  } else {
+    btn.textContent = '\u25A4 Separate All';
+    btn.classList.add('active');
+  }
+}
+</script>
 </body>
 </html>
