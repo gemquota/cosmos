@@ -1,0 +1,2460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>md — documents</title>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --sidebar-width: 270px;
+  --bg: #fefcf5;
+  --sidebar-bg: #f7f5ee;
+  --text: #1d1b16;
+  --text-soft: #78736a;
+  --text-muted: #a39e95;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft: #dbeafe;
+  --border: #e3dfd6;
+  --code-bg: #f0ede5;
+  --code-text: #2a2825;
+  --hover-bg: #efede4;
+  --active-bg: #e7e4da;
+  --quote-border: #d4cfc4;
+  --quote-bg: #f8f6f0;
+  --hr-color: #e3dfd6;
+  --selection: #d4e4ff;
+  --search-bg: #ffffff;
+  --search-border: #d4cfc4;
+  --search-focus: #2563eb;
+  --toggle-bg: #e3dfd6;
+  --toggle-knob: #ffffff;
+  --overlay-bg: rgba(0,0,0,0.3);
+}
+
+[data-theme="amoled"] {
+  --bg: #000000;
+  --sidebar-bg: #000000;
+  --text: #e0e0e0;
+  --text-soft: #888888;
+  --text-muted: #555555;
+  --accent: #6b9aff;
+  --accent-hover: #8baeff;
+  --accent-soft: #0a1a3a;
+  --border: #1a1a1a;
+  --code-bg: #0a0a0a;
+  --code-text: #d4d0c8;
+  --hover-bg: #111111;
+  --active-bg: #1a1a1a;
+  --quote-border: #222222;
+  --quote-bg: #0a0a0a;
+  --hr-color: #1a1a1a;
+  --selection: #1a3a6a;
+  --search-bg: #0a0a0a;
+  --search-border: #222222;
+  --search-focus: #6b9aff;
+  --toggle-bg: #222222;
+  --toggle-knob: #e0e0e0;
+  --overlay-bg: rgba(0,0,0,0.8);
+}
+
+[data-theme="dark"] {
+  --bg: #1a1a1e;
+  --sidebar-bg: #141416;
+  --text: #e8e6e3;
+  --text-soft: #9c9a94;
+  --text-muted: #6b6a65;
+  --accent: #6b9aff;
+  --accent-hover: #8baeff;
+  --accent-soft: #1e2a4a;
+  --border: #2a2a30;
+  --code-bg: #1e1e24;
+  --code-text: #d4d0c8;
+  --hover-bg: #222228;
+  --active-bg: #282830;
+  --quote-border: #33333c;
+  --quote-bg: #1e1e24;
+  --hr-color: #2a2a30;
+  --selection: #2a4a7a;
+  --search-bg: #1e1e24;
+  --search-border: #33333c;
+  --search-focus: #6b9aff;
+  --toggle-bg: #3a3a44;
+  --toggle-knob: #e8e6e3;
+  --overlay-bg: rgba(0,0,0,0.6);
+}
+
+::selection { background: var(--selection); }
+
+html, body { height: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 15px;
+  display: flex;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* ── Sidebar ── */
+#sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: width 0.25s ease, min-width 0.25s ease, background 0.2s;
+}
+
+#sidebar.collapsed {
+  width: 0 !important;
+  min-width: 0 !important;
+  overflow: hidden;
+  border-right: none;
+  padding: 0;
+}
+
+/* ── Content Views ── */
+.content-view {
+  width: 100%;
+  height: 100%;
+}
+
+#content {
+  position: relative;
+  overflow: hidden;
+}
+
+#content-graph {
+  background: var(--sidebar-bg);
+}
+
+#content-actions .markdown-body {
+  max-width: 800px;
+}
+
+#lint-display {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+#stats-display {
+  white-space: pre-wrap;
+}
+
+/* ── Topology toolbar ── */
+#topology-root:focus, #topology-depth:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* ── Sidebar header clickable ── */
+#sidebar-header-title h1 {
+  font-size: 18px;
+  margin: 0;
+}
+#sidebar-header-title .subtitle {
+  font-size: 11px;
+  color: var(--text-muted);
+  display: block;
+}
+#sidebar-header-title:hover .subtitle {
+  color: var(--accent);
+}
+
+#sidebar-overlay { display: none; }
+
+.sidebar-header {
+  padding: 20px 16px 12px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-header-title {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.sidebar-header-title:hover h1 { color: var(--accent); }
+
+.sidebar-header h1 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.sidebar-header .subtitle {
+  font-size: 12px;
+  color: var(--text-soft);
+  font-weight: 400;
+}
+
+/* ── Sidebar toggle button ── */
+#sidebar-toggle {
+  position: fixed;
+  top: 12px;
+  left: 270px;
+  z-index: 20;
+  width: 24px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sidebar-bg);
+  border: 1px solid var(--border);
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 10px;
+  transition: left 0.25s ease, background 0.2s, color 0.2s;
+  padding: 0;
+  line-height: 1;
+}
+
+#sidebar-toggle:hover {
+  color: var(--accent);
+  background: var(--hover-bg);
+}
+
+#sidebar-toggle .chevron {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+#sidebar.collapsed ~ #sidebar-toggle { left: 0; }
+
+#sidebar.collapsed ~ #sidebar-toggle .chevron { transform: rotate(180deg); }
+
+/* ── Hamburger (mobile) ── */
+#hamburger {
+  display: none;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 20;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--text);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* ── Dark mode toggle ── */
+.toggle-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.toggle-label {
+  font-size: 13px;
+  color: var(--text-soft);
+  cursor: pointer;
+}
+
+.toggle-switch {
+  width: 36px;
+  height: 20px;
+  background: var(--toggle-bg);
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--toggle-knob);
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+
+
+[data-theme="dark"] .toggle-switch::after { transform: translateX(16px); }
+
+/* ── Search ── */
+#search-wrap {
+  padding: 8px 12px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+#search-input {
+  width: 100%;
+  padding: 7px 10px 7px 30px;
+  border: 1px solid var(--search-border);
+  border-radius: 6px;
+  font-size: 13px;
+  background: var(--search-bg);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s;
+  font-family: inherit;
+}
+
+#search-input:focus { border-color: var(--search-focus); }
+
+#search-wrap::before {
+  content: '\1F50D';
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+#search-results {
+  display: none;
+  padding: 4px 0;
+  max-height: 200px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+#search-results.visible { display: block; }
+
+.search-result {
+  padding: 4px 16px;
+  font-size: 12.5px;
+  cursor: pointer;
+  color: var(--text-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-result:hover { background: var(--hover-bg); color: var(--accent); }
+.search-result .file-label { font-weight: 500; color: var(--text); }
+.search-result .match { background: var(--accent-soft); border-radius: 2px; padding: 0 2px; }
+
+/* ── File list ── */
+#file-list { padding: 4px 0; flex: 1; overflow-y: auto; }
+
+.file-entry {
+  display: block;
+  padding: 5px 16px;
+  font-size: 13px;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  transition: background 0.1s, border-color 0.1s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-entry:hover { background: var(--hover-bg); }
+.file-entry.active {
+  background: var(--active-bg);
+  border-left-color: var(--accent);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.file-entry .icon { margin-right: 6px; opacity: 0.4; font-size: 12px; }
+
+.home-entry { font-weight: 600; border-bottom: 1px solid var(--border); margin-bottom: 4px; }
+
+/* ── Accordion ── */
+.file-entry-wrap { }
+
+.file-entry-main {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 5px 16px 5px 12px;
+  font-size: 13px;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  transition: background 0.1s, border-color 0.1s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-entry-main:hover { background: var(--hover-bg); }
+.file-entry-main.active {
+  background: var(--active-bg);
+  border-left-color: var(--accent);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.file-entry-main .icon { margin-right: 6px; opacity: 0.4; font-size: 12px; }
+
+.file-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 8px;
+  color: var(--text-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  border-radius: 3px;
+  user-select: none;
+}
+
+.file-arrow:hover { background: var(--hover-bg); color: var(--accent); }
+.file-arrow.expanded { transform: rotate(90deg); }
+
+.file-headings { overflow: hidden; }
+
+.file-heading {
+  display: block;
+  padding: 2px 16px 2px 34px;
+  font-size: 12px;
+  color: var(--text-soft);
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.1s;
+  border-left: 2px solid transparent;
+}
+
+.file-heading:hover { color: var(--accent); background: var(--hover-bg); }
+.file-heading.level-3 { padding-left: 44px; font-size: 11.5px; }
+.file-heading.level-4 { padding-left: 54px; font-size: 11px; }
+.file-heading.level-5, .file-heading.level-6 { padding-left: 64px; font-size: 10.5px; }
+
+/* ── Sidebar section label ── */
+.sidebar-section {
+  padding: 8px 16px 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.15s;
+}
+.sidebar-section:hover { color: var(--text); }
+.sidebar-section .dir-arrow {
+  display: inline-block;
+  font-size: 7px;
+  transition: transform 0.15s;
+  width: 10px;
+  text-align: center;
+  color: var(--text-muted);
+}
+.sidebar-section .dir-arrow.collapsed {
+  transform: rotate(-90deg);
+}
+.sidebar-section .dir-count {
+  font-size: 9px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+.dir-entries {
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}
+.dir-entries.collapsed {
+  max-height: 0 !important;
+}
+
+/* ── Main Content ── */
+#content {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+}
+
+.markdown-body {
+  max-width: 760px;
+  padding: 40px 48px 100px;
+  margin: 0 auto;
+}
+
+.loading {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-soft);
+}
+
+.welcome {
+  padding: 80px 48px;
+  text-align: center;
+}
+
+.welcome h1 { font-size: 26px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.03em; }
+.welcome p { color: var(--text-soft); font-size: 15px; max-width: 380px; margin: 0 auto; }
+
+/* ── Frontmatter Header Strip ── */
+.fm-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin-bottom: 24px;
+  background: var(--sidebar-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+}
+.fm-badge {
+  font-size: 9.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  line-height: 1.4;
+}
+.fm-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+.fm-status {
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 8px;
+  background: var(--border);
+  color: var(--text-soft);
+  font-weight: 500;
+  line-height: 1.4;
+}
+.fm-status.seed { background: #fef3c7; color: #92400e; }
+.fm-status.growing { background: #dbeafe; color: #1e40af; }
+.fm-status.stable { background: #d1fae5; color: #065f46; }
+.fm-status.archive { background: #e5e7eb; color: #4b5563; }
+.fm-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-left: auto;
+}
+.fm-tags span {
+  font-size: 9.5px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: var(--code-bg);
+  color: var(--text-soft);
+  line-height: 1.4;
+}
+.fm-created {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+
+/* ── Markdown Typography ── */
+.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
+  font-weight: 600; line-height: 1.3; color: var(--text); position: relative;
+}
+.markdown-body h1 { font-size: 1.9em; margin: 0 0 0.35em; letter-spacing: -0.03em; font-weight: 700; padding-bottom: 0.25em; border-bottom: 1px solid var(--border); }
+.markdown-body h2 { font-size: 1.4em; margin: 1.5em 0 0.35em; letter-spacing: -0.02em; }
+.markdown-body h3 { font-size: 1.15em; margin: 1.3em 0 0.3em; }
+.markdown-body h4 { font-size: 1em; margin: 1.1em 0 0.2em; font-weight: 600; }
+.markdown-body h5, .markdown-body h6 { font-size: 0.85em; margin: 1em 0 0.2em; text-transform: uppercase; letter-spacing: 0.03em; }
+
+.markdown-body p { margin: 0 0 1em; }
+.markdown-body a { color: var(--accent); text-decoration: none; }
+.markdown-body a:hover { text-decoration: underline; }
+.markdown-body strong { font-weight: 600; }
+.markdown-body em { font-style: italic; }
+.markdown-body ul, .markdown-body ol { margin: 0 0 1em; padding-left: 1.6em; }
+.markdown-body li { margin: 0.25em 0; }
+.markdown-body li > ul, .markdown-body li > ol { margin: 0.25em 0; }
+
+.markdown-body code {
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.markdown-body pre {
+  margin: 0 0 1em;
+  padding: 14px 16px;
+  background: var(--code-bg);
+  border-radius: 6px;
+  overflow-x: auto;
+  line-height: 1.5;
+  font-size: 13.5px;
+}
+
+.markdown-body pre code { background: none; padding: 0; border-radius: 0; font-size: inherit; }
+
+.markdown-body blockquote {
+  margin: 0 0 1em;
+  padding: 8px 16px;
+  border-left: 3px solid var(--quote-border);
+  background: var(--quote-bg);
+  border-radius: 0 4px 4px 0;
+  color: var(--text-soft);
+}
+
+.markdown-body blockquote p:last-child { margin: 0; }
+.markdown-body hr { border: none; height: 1px; background: var(--hr-color); margin: 1.5em 0; }
+
+.markdown-body table { border-collapse: collapse; width: 100%; margin: 0 0 1em; font-size: 13.5px; }
+.markdown-body th, .markdown-body td { border: 1px solid var(--border); padding: 6px 10px; text-align: left; }
+.markdown-body th { background: var(--sidebar-bg); font-weight: 600; }
+.markdown-body tr:nth-child(even) { background: rgba(0,0,0,0.015); }
+[data-theme="dark"] .markdown-body tr:nth-child(even) { background: rgba(255,255,255,0.015); }
+.markdown-body img { max-width: 100%; border-radius: 4px; }
+
+/* Heading anchors */
+.markdown-body h1 .anchor, .markdown-body h2 .anchor, .markdown-body h3 .anchor,
+.markdown-body h4 .anchor, .markdown-body h5 .anchor, .markdown-body h6 .anchor {
+  display: inline-block;
+  margin-left: -1em;
+  padding-right: 0.3em;
+  color: var(--text-muted);
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+  font-size: 0.85em;
+  font-weight: 400;
+  width: 1em;
+}
+
+.markdown-body h1:hover .anchor, .markdown-body h2:hover .anchor, .markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor, .markdown-body h5:hover .anchor, .markdown-body h6:hover .anchor { opacity: 1; }
+
+.keyhint {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--sidebar-bg);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  opacity: 0.6;
+  z-index: 5;
+}
+
+/* ── Responsive ── */
+
+/* Group selector */
+.group-selector {
+  display: flex;
+  gap: 2px;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.group-btn {
+  flex: 1;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-family: inherit;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: all .15s;
+}
+.group-btn.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.group-btn:hover:not(.active) {
+  background: var(--sidebar-bg);
+  color: var(--text);
+}
+
+/* Type sections in sidebar */
+.type-section {
+  margin-bottom: 2px;
+}
+.type-section-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-soft);
+  border-radius: 4px;
+  transition: background .15s;
+  user-select: none;
+}
+.type-section-header:hover {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+.type-section-header .type-arrow {
+  font-size: 9px;
+  transition: transform .15s;
+  color: var(--text-muted);
+}
+.type-section-header .type-arrow.collapsed {
+  transform: rotate(-90deg);
+}
+.type-section-header .type-count {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+.type-entries {
+  overflow: hidden;
+  transition: max-height .2s ease;
+}
+.type-entries.collapsed {
+  max-height: 0 !important;
+}
+/* File entry tweaks for tighter display */
+.type-entries .file-entry-wrap { }
+.type-entries .file-entry-main {
+  padding: 3px 12px 3px 24px;
+}
+
+@media (max-width: 820px) {
+  #sidebar-toggle { display: none; }
+  #hamburger { display: flex; }
+
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 270px;
+    min-width: 270px;
+    transform: translateX(-105%);
+    z-index: 15;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+    transition: transform 0.25s ease, background 0.2s;
+  }
+
+  #sidebar.open { transform: translateX(0); }
+  #sidebar.collapsed { width: 270px; min-width: 270px; overflow-y: auto; border-right: 1px solid var(--border); }
+
+  #sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--overlay-bg);
+    z-index: 14;
+  }
+
+  #sidebar-overlay.visible { display: block; }
+  .markdown-body { padding: 24px 20px 80px; }
+  .welcome { padding: 60px 20px; }
+}
+
+@media (max-width: 480px) {
+  .markdown-body { padding: 16px 14px 60px; font-size: 14px; }
+  .markdown-body h1 { font-size: 1.5em; }
+  .markdown-body h2 { font-size: 1.2em; }
+  .markdown-body pre { font-size: 12.5px; padding: 10px 12px; }
+}
+
+@media print {
+  #sidebar, #hamburger, .keyhint, #sidebar-overlay, #sidebar-toggle { display: none !important; }
+  body { display: block; }
+  #content { overflow: visible; }
+  .markdown-body { max-width: none; padding: 0; }
+}
+</style>
+</head>
+<body>
+
+<button id="hamburger" aria-label="Toggle sidebar">&#9776;</button>
+<div id="sidebar-overlay"></div>
+
+<button id="sidebar-toggle" aria-label="Toggle sidebar" title="Collapse sidebar (Ctrl+B)"><span class="chevron">&#9664;</span></button>
+
+<div id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-tabs">
+      <button class="sidebar-tab active" data-tab="docs" title="Browse files">Docs</button>
+      <button class="sidebar-tab" data-tab="compositions" title="Instruction sets">Compositions</button>
+      <button class="sidebar-tab" data-tab="search" title="Search entities">Search</button>
+      <button class="sidebar-tab" data-tab="actions" title="Health, lint, build">Actions</button>
+    </div>
+    <a href="#" id="sidebar-header-title" class="sidebar-header-title" onclick="switchContentView('doc')" style="cursor:pointer;">
+      <h1>mykb</h1>
+      <span class="subtitle" id="header-subtitle">wiki</span>
+    </a>
+    <div class="toggle-wrap">
+      <span class="toggle-label" id="theme-label">&#9681;</span>
+      <div class="toggle-switch" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle dark mode"></div>
+    </div>
+  </div>
+
+  <div id="search-wrap">
+    <input id="search-input" type="text" placeholder="Search documents&hellip;" spellcheck="false">
+  </div>
+  <div id="search-results"></div>
+
+  <div class="group-selector" id="group-selector">
+    <button class="group-btn active" data-mode="type" id="group-type">By Type</button>
+    <button class="group-btn" data-mode="dir" id="group-dir">By Folder</button>
+  </div>
+  <div id="compositions-container" style="display:none;padding:4px;">
+    <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;padding:0 4px;">Knowledge compositions — grouped entity patterns</div>
+    <div id="compositions-list"></div>
+  </div>
+  <div id="search-container" style="display:none;padding:8px;">
+    <input id="entity-search-input" type="text" placeholder="Search entities..." style="width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:4px;background:var(--search-bg);color:var(--text);font-size:12px;">
+    <div id="entity-search-results" style="margin-top:6px;font-size:12px;"></div>
+  </div>
+
+  <div class="sidebar-section" id="files-section-label">Documents</div>
+  <div id="file-list"></div>
+
+
+</div>
+
+<div id="content">
+  <!-- Document viewer (default) -->
+  <div id="content-doc" class="content-view">
+    <div class="markdown-body">
+      <div class="welcome">
+        <h1>mykb</h1>
+        <p>Select a document from the sidebar.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Graph viewer (full-size) -->
+  <div id="content-graph" class="content-view" style="display:none;position:relative;width:100%;height:100%;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;z-index:10;padding:8px 12px;background:var(--bg);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+      <span id="graph-info" style="font-size:11px;color:var(--text-soft);flex:1;">Loading graph...</span>
+      <input id="topology-root" type="text" placeholder="Subgraph root node" style="width:140px;padding:3px 6px;font-size:11px;border:1px solid var(--border);border-radius:3px;background:var(--search-bg);color:var(--text);">
+      <input id="topology-depth" type="number" value="2" min="1" max="5" style="width:50px;padding:3px 6px;font-size:11px;border:1px solid var(--border);border-radius:3px;background:var(--search-bg);color:var(--text);">
+      <button id="topology-go" style="padding:3px 10px;font-size:11px;border:1px solid var(--accent);border-radius:3px;background:var(--accent);color:#fff;cursor:pointer;">Filter</button>
+      <button id="graph-rerender" style="padding:3px 10px;font-size:11px;border:1px solid var(--border);border-radius:3px;background:var(--bg);color:var(--text);cursor:pointer;display:none;">↻ Re-layout</button>
+    </div>
+    <canvas id="graph-canvas" style="display:block;position:absolute;top:40px;left:0;right:0;bottom:0;width:100%;background:var(--sidebar-bg);cursor:grab;"></canvas>
+  </div>
+  
+  <!-- Actions panel (health, lint, build) -->
+  <div id="content-actions" class="content-view" style="display:none;padding:24px;max-width:800px;">
+    <div class="markdown-body">
+      <h1>Actions &amp; Health</h1>
+      
+      <h2>System Stats</h2>
+      <div id="stats-display" style="background:var(--code-bg);padding:12px;border-radius:6px;font-size:13px;line-height:1.7;white-space:pre-wrap;"></div>
+      <p style="margin-top:4px;"><button id="refresh-stats" style="padding:4px 12px;font-size:12px;border:1px solid var(--border);border-radius:3px;background:var(--bg);color:var(--text);cursor:pointer;">↻ Refresh</button></p>
+      
+      <h2>Linter Report</h2>
+      <div id="lint-display" style="background:var(--code-bg);padding:12px;border-radius:6px;font-size:12px;line-height:1.6;max-height:300px;overflow-y:auto;"></div>
+      <p style="margin-top:4px;"><button id="run-lint" style="padding:4px 12px;font-size:12px;border:1px solid var(--accent);border-radius:3px;background:var(--accent);color:#fff;cursor:pointer;">🔍 Run Linter</button></p>
+      
+      <h2>Search Index</h2>
+      <p>Chunks: <span id="index-chunks">?</span> | Last built: <span id="index-built">?</span></p>
+      <p><button id="rebuild-index" style="padding:4px 12px;font-size:12px;border:1px solid var(--accent);border-radius:3px;background:var(--accent);color:#fff;cursor:pointer;">🔨 Rebuild Search Index</button></p>
+      
+      <h2>Graph &amp; Entity Tools</h2>
+      <p><button id="enrich-entities" style="padding:4px 12px;font-size:12px;border:1px solid var(--border);border-radius:3px;background:var(--bg);color:var(--text);cursor:pointer;">📝 Enrich Entity Descriptions</button></p>
+      
+      <h2>Reports</h2>
+      <p><a href="/ops/reports/audit-report.json" target="_blank" style="color:var(--accent);font-size:13px;">📊 Audit Report (JSON)</a></p>
+      <p><a href="/ops/reports/semantic_composition.md" target="_blank" style="color:var(--accent);font-size:13px;">🔬 Semantic Composition Report</a></p>
+      <p><a href="/ops/reports/entity_questionnaire.md" target="_blank" style="color:var(--accent);font-size:13px;">📋 Entity Questionnaire</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="keyhint">Ctrl+K search &middot; Ctrl+B sidebar &middot; T theme &middot; G graph &middot; H health</div>
+
+<script>
+(function(){
+/* ═══════════════════════════════════════════
+   Markdown Parser
+   ═══════════════════════════════════════════ */
+
+function escapeHtml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function slugify(text) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'section';
+}
+
+function parseMarkdown(md) {
+  var headings = [];
+  var frontmatter = null;
+  var lines = md.split('\n');
+  var html = '';
+  var i = 0;
+
+  // Parse YAML frontmatter
+  if (lines.length > 0 && lines[0].trim() === '---') {
+    var fmEnd = -1;
+    for (var j = 1; j < lines.length; j++) {
+      if (lines[j].trim() === '---') { fmEnd = j; break; }
+    }
+    if (fmEnd > 0) {
+      frontmatter = {};
+      for (var j = 1; j < fmEnd; j++) {
+        var fmLine = lines[j];
+        var colonIdx = fmLine.indexOf(':');
+        if (colonIdx > 0) {
+          var key = fmLine.slice(0, colonIdx).trim();
+          var val = fmLine.slice(colonIdx + 1).trim();
+          if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+            val = val.slice(1, -1);
+          }
+          frontmatter[key] = val;
+        }
+      }
+      lines.splice(0, fmEnd + 1);
+    }
+  }
+
+  while (i < lines.length) {
+    var line = lines[i];
+    var trimmed = line.trim();
+
+    if (trimmed.startsWith('```')) {
+      var lang = trimmed.slice(3).trim();
+      var codeLines = [];
+      i++;
+      while (i < lines.length && !lines[i].trim().startsWith('```')) {
+        codeLines.push(lines[i]);
+        i++;
+      }
+      i++;
+      var code = escapeHtml(codeLines.join('\n'));
+      html += '<pre' + (lang ? ' data-lang="' + escapeHtml(lang) + '"' : '') + '><code>' + code + '</code></pre>\n';
+      continue;
+    }
+
+    var hMatch = trimmed.match(/^(#{1,6})\s+(.+?)(?:\s+\{#([^}]+)\})?\s*$/);
+    if (hMatch) {
+      var level = hMatch[1].length;
+      var text = hMatch[2];
+      var explicitSlug = hMatch[3];
+      var slug = explicitSlug || slugify(text);
+      var plainText = text.replace(/<[^>]*>/g, '').replace(/\*\*|__/g, '').replace(/\*|_/g, '');
+      headings.push({ level: level, text: plainText, slug: slug });
+      html += '<h' + level + ' id="' + slug + '">' +
+        '<a class="anchor" href="#' + slug + '" aria-hidden="true">#</a>' + text +
+        '</h' + level + '>\n';
+      i++;
+      continue;
+    }
+
+    if (/^[-*_]{3,}\s*$/.test(trimmed) && trimmed.length >= 3) {
+      html += '<hr>\n'; i++; continue;
+    }
+
+    if (trimmed.startsWith('> ')) {
+      var quoteLines = [];
+      while (i < lines.length && lines[i].trim().startsWith('> ')) {
+        quoteLines.push(lines[i].trim().slice(2));
+        i++;
+      }
+      html += '<blockquote><p>' + renderInline(quoteLines.join('\n')) + '</p></blockquote>\n';
+      continue;
+    }
+
+    if (trimmed.includes('|') && i + 1 < lines.length && /^\|[-:| ]+\|$/.test(lines[i+1].trim())) {
+      var tableHtml = '<table>\n';
+      var headerCells = trimmed.split('|').slice(1, -1).map(function(c) { return '<th>' + renderInline(c.trim()) + '</th>'; });
+      tableHtml += '<tr>' + headerCells.join('') + '</tr>\n';
+      i += 2;
+      while (i < lines.length && lines[i].trim().startsWith('|')) {
+        var cells = lines[i].trim().split('|').slice(1, -1).map(function(c) { return '<td>' + renderInline(c.trim()) + '</td>'; });
+        tableHtml += '<tr>' + cells.join('') + '</tr>\n';
+        i++;
+      }
+      tableHtml += '</table>\n';
+      html += tableHtml;
+      continue;
+    }
+
+    if (/^[-*+]\s/.test(trimmed)) {
+      var listLines = [];
+      while (i < lines.length && /^[-*+]\s/.test(lines[i].trim())) {
+        listLines.push('<li>' + renderInline(lines[i].trim().replace(/^[-*+]\s+/, '')) + '</li>');
+        i++;
+      }
+      html += '<ul>' + listLines.join('') + '</ul>\n';
+      continue;
+    }
+
+    if (/^\d+\.\s/.test(trimmed)) {
+      var oLines = [];
+      while (i < lines.length && /^\d+\.\s/.test(lines[i].trim())) {
+        oLines.push('<li>' + renderInline(lines[i].trim().replace(/^\d+\.\s+/, '')) + '</li>');
+        i++;
+      }
+      html += '<ol>' + oLines.join('') + '</ol>\n';
+      continue;
+    }
+
+    if (trimmed === '') { i++; continue; }
+
+    var paraLines = [];
+    while (i < lines.length && lines[i].trim() !== '') {
+      paraLines.push(lines[i]);
+      i++;
+    }
+    html += '<p>' + renderInline(paraLines.join('\n')) + '</p>\n';
+  }
+
+  // Build frontmatter header strip
+  if (frontmatter) {
+    var fmHtml = '<div class="fm-header">';
+    if (frontmatter.type)
+      fmHtml += '<span class="fm-badge">' + escapeHtml(frontmatter.type) + '</span>';
+    if (frontmatter.title)
+      fmHtml += '<span class="fm-title">' + escapeHtml(frontmatter.title) + '</span>';
+    if (frontmatter.status)
+      fmHtml += '<span class="fm-status ' + escapeHtml(frontmatter.status) + '">' + escapeHtml(frontmatter.status) + '</span>';
+    if (frontmatter.tags) {
+      var tagsStr = frontmatter.tags;
+      var tags = tagsStr.replace(/^\[|\]$/g, '').split(',').map(function(t) { return t.trim(); }).filter(function(t) { return t; });
+      if (tags.length > 0) {
+        fmHtml += '<div class="fm-tags">';
+        for (var t = 0; t < tags.length; t++) fmHtml += '<span>' + escapeHtml(tags[t]) + '</span>';
+        fmHtml += '</div>';
+      }
+    }
+    if (frontmatter.created)
+      fmHtml += '<span class="fm-created">' + escapeHtml(frontmatter.created) + '</span>';
+    fmHtml += '</div>';
+    html = fmHtml + '\n' + html;
+  }
+
+  return { html: html, headings: headings, frontmatter: frontmatter };
+}
+
+function renderInline(text) {
+  var s = escapeHtml(text);
+  s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">');
+  s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+  // Obsidian [[wikilinks]] - pipe variant first, then simple
+  s = s.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '<a class="wikilink" data-target="$1" href="javascript:void(0)">$2</a>');
+  s = s.replace(/\[\[([^\]]+)\]\]/g, '<a class="wikilink" data-target="$1" href="javascript:void(0)">$1</a>');
+  s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
+  s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  s = s.replace(/__([^_]+)__/g, '<strong>$1</strong>');
+  s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+  s = s.replace(/(?<!_)_([^_]+)_(?!_)/g, '<em>$1</em>');
+  s = s.replace(/~~([^~]+)~~/g, '<del>$1</del>');
+  s = s.replace(/  $/gm, '<br>');
+  return s;
+}
+
+
+// ── Compositions ──
+function loadCompositions() {
+  var list = document.getElementById('compositions-list');
+  if (!list) return;
+  list.innerHTML = '<div style="color:var(--text-muted);font-size:11px;padding:4px;">Loading...</div>';
+  
+  fetch('/files.json')
+    .then(function(r) { return r.json(); })
+    .then(function(files) {
+      // Find composition files
+      var compFiles = files.filter(function(f) { return f.indexOf('wiki/compositions/') === 0; });
+      var html = '';
+      compFiles.sort().forEach(function(f) {
+        var name = f.replace('wiki/compositions/', '').replace('.md', '');
+        var displayName = name.replace(/-/g, ' ').replace(/\w/g, function(l) { return l.toUpperCase(); });
+        html += '<div class="composition-item" data-path="' + f + '" style="padding:6px 8px;cursor:pointer;border-radius:3px;font-size:12px;margin:2px 0;border:1px solid var(--border);">';
+        html += '<div style="font-weight:600;color:var(--accent);">' + displayName + '</div>';
+        html += '<div style="font-size:10px;color:var(--text-muted);">' + name + '</div>';
+        html += '</div>';
+      });
+      if (!html) html = '<div style="color:var(--text-muted);font-size:11px;padding:4px;">No compositions found</div>';
+      list.innerHTML = html;
+      
+      // Wire clicks
+      list.querySelectorAll('.composition-item').forEach(function(el) {
+        el.addEventListener('click', function() {
+          navigateTo(el.getAttribute('data-path'));
+          closeSidebar();
+        });
+      });
+    })
+    .catch(function() { list.innerHTML = '<div style="color:var(--text-muted);font-size:11px;padding:4px;">Error loading compositions</div>'; });
+}
+
+// ── Stats & Health ──
+function loadStats() {
+  var display = document.getElementById('stats-display');
+  if (!display) return;
+  display.textContent = 'Loading stats...';
+  fetch('/api/stats')
+    .then(function(r) { return r.json(); })
+    .then(function(s) {
+      var lines = [];
+      lines.push('Files: ' + s.files.total + ' (' + s.files.entities + ' entities, ' + s.files.sessions + ' sessions)');
+      lines.push('Size: ' + s.sizes.total_mb + ' MB');
+      if (s.files.largest) lines.push('Largest: ' + s.files.largest.path + ' (' + s.files.largest.size_kb + ' KB)');
+      if (s.files.smallest) lines.push('Smallest: ' + s.files.smallest.path + ' (' + s.files.smallest.size_kb + ' KB)');
+      lines.push('Graph: ' + s.graph.nodes + ' nodes, ' + s.graph.edges + ' edges');
+      lines.push('');
+      lines.push('Top Domains:');
+      for (var d in s.domains) {
+        lines.push('  ' + d + ': ' + s.domains[d] + ' entities');
+      }
+      lines.push('');
+      lines.push('Top Tags:');
+      for (var t in s.tags) {
+        lines.push('  ' + t + ': ' + s.tags[t]);
+      }
+      display.textContent = lines.join('\n');
+    })
+    .catch(function() { display.textContent = 'Failed to load stats'; });
+}
+
+function loadIndexInfo() {
+  fetch('/api/v2/search/hybrid?q=test')
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      var el = document.getElementById('index-chunks');
+      if (el && d.total) el.textContent = d.total;
+    })
+    .catch(function() {});
+}
+
+function setupActions() {
+  // Refresh stats
+  var rs = document.getElementById('refresh-stats');
+  if (rs) rs.addEventListener('click', loadStats);
+  
+  // Run linter
+  var rl = document.getElementById('run-lint');
+  if (rl) rl.addEventListener('click', function() {
+    var display = document.getElementById('lint-display');
+    if (!display) return;
+    display.innerHTML = '<em>Running linter...</em>';
+    fetch('/api/v2/health/lint')
+      .then(function(r) { return r.json(); })
+      .then(function(l) {
+        var lines = [];
+        var s = l.summary || l;
+        lines.push('<strong>Files scanned:</strong> ' + (s.total_files || s.files_checked || '?'));
+        lines.push('<strong>Total wikilinks:</strong> ' + (s.total_links || s.total_wikilinks || '?'));
+        lines.push('<strong>Broken links:</strong> ' + (s.broken_links || s.broken_count || 0));
+        lines.push('<strong>Orphan notes:</strong> ' + (s.orphan_notes || s.orphan_count || 0));
+        // Broken links (object format: file -> [links])
+        var bl = l.broken_links;
+        if (bl && typeof bl === 'object' && Object.keys(bl).length > 0) {
+          lines.push('');
+          lines.push('<strong>Broken Links:</strong>');
+          for (var file in bl) {
+            bl[file].forEach(function(link) {
+              lines.push('<span style="color:#e74c3c;">  ' + escapeHtml(file) + ' → ' + escapeHtml(link) + '</span>');
+            });
+          }
+        }
+        // Array format
+        if (bl && Array.isArray(bl) && bl.length > 0) {
+          lines.push('');
+          lines.push('<strong>Broken Links:</strong>');
+          bl.forEach(function(b) {
+            lines.push('<span style="color:#e74c3c;">  ' + (b.file || b) + '</span>');
+          });
+        }
+        // Orphans (array)
+        var orp = l.orphans || l.orphan_notes;
+        if (orp && Array.isArray(orp) && orp.length > 0) {
+          lines.push('');
+          var show = orp.slice(0, 30);
+          lines.push('<strong>Orphans (' + orp.length + '):</strong> ' + show.join(', ') + (orp.length > 30 ? ', ...' : ''));
+        }
+        display.innerHTML = lines.join('<br>');
+      })
+      .catch(function() { display.innerHTML = '<span style="color:#e74c3c;">Error running linter</span>'; });
+  });
+  
+  // Rebuild search index
+  var bi = document.getElementById('rebuild-index');
+  if (bi) bi.addEventListener('click', function() {
+    if (!confirm('Rebuild search index? This takes ~30s.')) return;
+    bi.disabled = true;
+    bi.textContent = 'Building...';
+    fetch('/api/v2/search/build')
+      .then(function(r) { return r.json(); })
+      .then(function(d) {
+        bi.textContent = '✅ Done';
+        setTimeout(function() { bi.textContent = '🔨 Rebuild Search Index'; bi.disabled = false; }, 2000);
+      })
+      .catch(function() {
+        bi.textContent = '❌ Failed';
+        setTimeout(function() { bi.textContent = '🔨 Rebuild Search Index'; bi.disabled = false; }, 2000);
+      });
+  });
+  
+  // Enrich entities
+  var ee = document.getElementById('enrich-entities');
+  if (ee) ee.addEventListener('click', function() {
+    if (!confirm('Run entity enrichment? This modifies files.')) return;
+    ee.disabled = true;
+    ee.textContent = 'Running...';
+    fetch('/api/v2/search/build')
+      .then(function(r) { return r.json(); })
+      .then(function() {
+        ee.textContent = '✅ Done';
+        setTimeout(function() { ee.textContent = '📝 Enrich Entity Descriptions'; ee.disabled = false; }, 2000);
+      })
+      .catch(function() {
+        ee.textContent = '❌ Not available from web (run python3 .wiki-daemon/enrich_entities.py --apply)';
+        setTimeout(function() { ee.textContent = '📝 Enrich Entity Descriptions'; ee.disabled = false; }, 4000);
+      });
+  });
+}
+
+function setupTopology() {
+  var go = document.getElementById('topology-go');
+  var rootInput = document.getElementById('topology-root');
+  var depthInput = document.getElementById('topology-depth');
+  if (!go || !rootInput) return;
+  
+  function fetchTopology() {
+    var root = rootInput.value.trim();
+    var depth = depthInput ? depthInput.value : 2;
+    if (!root) { location.reload(); return; }
+    var url = '/api/v2/graph/topology?root=' + encodeURIComponent(root) + '&depth=' + depth;
+    fetch(url)
+      .then(function(r) { return r.json(); })
+      .then(function(g) {
+        // Replace the graph data and reload
+        if (g.nodes && g.nodes.length > 0) {
+          // Store filtered graph in session + reload
+          try { sessionStorage.setItem('topology_graph', JSON.stringify(g)); } catch(e) {}
+          // Re-trigger graph load with the stored topology
+          var canvas = document.getElementById('graph-canvas');
+          if (canvas) {
+            // Override graph.json fetch by setting a flag
+            sessionStorage.setItem('use_topology', '1');
+            location.reload();
+          }
+        } else {
+          alert('No nodes found for root: ' + root);
+        }
+      })
+      .catch(function() { alert('Error fetching topology'); });
+  }
+  
+  go.addEventListener('click', fetchTopology);
+  rootInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') fetchTopology(); });
+}
+
+function setupKeyboardShortcuts() {
+  document.addEventListener('keydown', function(e) {
+    // Ctrl+G -> Graph
+    if ((e.ctrlKey || e.metaKey) && e.key === 'g') {
+      e.preventDefault();
+      switchContentView('graph');
+      // Also activate graph sidebar tab
+      document.querySelectorAll('.sidebar-tab').forEach(function(t) { t.classList.remove('active'); });
+      var gt = document.querySelector('.sidebar-tab[data-tab="graph"]');
+      if (gt) { gt.classList.add('active'); state.currentTab = 'graph'; }
+      document.getElementById('file-list').style.display = 'none';
+      var sc = document.getElementById('search-container');
+      if (sc) sc.style.display = 'none';
+    }
+    // Ctrl+H -> Health
+    if ((e.ctrlKey || e.metaKey) && e.key === 'h') {
+      e.preventDefault();
+      switchContentView('actions');
+      document.querySelectorAll('.sidebar-tab').forEach(function(t) { t.classList.remove('active'); });
+      var at = document.querySelector('.sidebar-tab[data-tab="actions"]');
+      if (at) { at.classList.add('active'); state.currentTab = 'actions'; }
+      document.getElementById('file-list').style.display = 'none';
+      var sc = document.getElementById('search-container');
+      if (sc) sc.style.display = 'none';
+    }
+  });
+}
+
+// ── Intercept wikilink clicks for SPA navigation ──
+document.addEventListener('click', function(e) {
+  var target = e.target;
+  while (target && target.tagName !== 'A') target = target.parentNode;
+  if (!target) return;
+  var href = target.getAttribute('href');
+  if (!href) return;
+  if (href.endsWith('.md')) {
+    e.preventDefault();
+    navigateTo(href);
+    return;
+  }
+  if (!href.match(/^[a-z]+:\/\//i) && !href.startsWith('#') && state.files.indexOf(href) !== -1) {
+    e.preventDefault();
+    navigateTo(href);
+    return;
+  }
+});
+
+/* ═══════════════════════════════════════════
+   State & DOM refs
+   ═══════════════════════════════════════════ */
+
+function switchContentView(viewName) {
+  // viewName: 'doc' | 'graph' | 'actions'
+  document.querySelectorAll('.content-view').forEach(function(v) { v.style.display = 'none'; });
+  var target = document.getElementById('content-' + viewName);
+  if (target) { target.style.display = ''; }
+  // Update sidebar header subtitle
+  var sub = document.getElementById('header-subtitle');
+  if (sub) sub.textContent = viewName;
+  // If switching to graph, re-draw
+  if (viewName === 'graph') {
+    // Small delay to let DOM settle
+    setTimeout(loadGraph, 50);
+  }
+  if (viewName === 'actions') {
+    loadStats();
+    loadIndexInfo();
+  }
+}
+
+var state = {
+  files: [],          // array of strings OR array of {path, type?, title?, tags?}
+  meta: {},           // path -> {type, title, tags} lookup when enriched format
+  currentFile: '',
+  fileContents: {},
+  searchIndex: {},
+  fileHeadings: {},
+  accordionExpanded: {},
+  dirCollapsed: {},
+  typeCollapsed: {},  // collapse state for type groups
+  groupMode: "type",  // "type" or "dir"
+};
+
+// ── Tab switching for sidebar (Docs / Graph / Search) ──
+state.currentTab = 'docs';
+
+document.addEventListener('DOMContentLoaded', function() {
+  var tabs = document.querySelectorAll('.sidebar-tab');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var tabName = tab.getAttribute('data-tab');
+      state.currentTab = tabName;
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      document.getElementById('file-list').style.display = tabName === 'docs' ? '' : 'none';
+      var sc = document.getElementById('search-container');
+      if (sc) sc.style.display = tabName === 'search' ? '' : 'none';
+      var cc = document.getElementById('compositions-container');
+      if (cc) cc.style.display = tabName === 'compositions' ? '' : 'none';
+      if (tabName === 'compositions') loadCompositions();
+      // Switch content view based on tab
+      if (tabName === 'docs') switchContentView('doc');
+      else if (tabName === 'graph') switchContentView('graph');
+      else if (tabName === 'actions') switchContentView('actions');
+    });
+  });
+  // Wire up entity search
+  var esInput = document.getElementById('entity-search-input');
+  if (esInput) {
+    esInput.addEventListener('input', function() {
+      entitySearch(this.value);
+    });
+  }
+  // Wire up actions buttons
+  setupActions();
+  // Wire up topology
+  setupTopology();
+  // Keyboard shortcuts
+  setupKeyboardShortcuts();
+});
+
+function entitySearch(q) {
+  var resultsDiv = document.getElementById('entity-search-results');
+  if (!resultsDiv) return;
+  if (!q || q.length < 2) { resultsDiv.innerHTML = ''; return; }
+  var url = '/search?q=' + encodeURIComponent(q);
+  fetch(url)
+    .then(function(r) { return r.json(); })
+    .then(function(results) {
+      if (!results || results.length === 0) {
+        resultsDiv.innerHTML = '<div style="color:var(--text-muted);padding:8px;">No results</div>';
+        return;
+      }
+      var h = '';
+      results.forEach(function(r) {
+        h += '<div class="search-result-item" data-path="' + r.path + '" style="padding:4px 6px;cursor:pointer;border-radius:3px;">';
+        h += '<div style="font-weight:600;font-size:12px;">' + escapeHtml(r.title) + '</div>';
+        h += '<div style="font-size:10px;color:var(--text-muted);">' + escapeHtml(r.path) + ' <span style="float:right;">' + r.score + '</span></div>';
+        h += '</div>';
+      });
+      resultsDiv.innerHTML = h;
+      resultsDiv.querySelectorAll('.search-result-item').forEach(function(el) {
+        el.addEventListener('click', function() {
+          navigateTo(el.getAttribute('data-path'));
+          closeSidebar();
+        });
+      });
+    })
+    .catch(function() { resultsDiv.innerHTML = '<div style="color:var(--text-muted);padding:8px;">Search error</div>'; });
+}
+
+function loadGraph() {
+  var canvas = document.getElementById('graph-canvas');
+  var info = document.getElementById('graph-info');
+  if (!canvas || !info) return;
+  // Graph re-renders on every tab switch (data-loaded guard removed)
+  
+  info.textContent = 'Loading graph data...';
+  fetch('/graph.json')
+    .then(function(r) { return r.json(); })
+    .then(function(g) {
+      if (!g || !g.nodes) { info.textContent = 'No graph data'; return; }
+      // Wait for canvas to be visible so dimensions are correct
+      requestAnimationFrame(function() {
+        var ctx = canvas.getContext('2d');
+        // Force visible dimensions for accurate sizing
+        var container = document.getElementById('content-graph');
+        var W = (container && container.offsetWidth) ? container.offsetWidth - 4 : window.innerWidth - 300;
+        var H = (container && container.offsetHeight) ? container.offsetHeight - 44 : window.innerHeight - 44;
+        // Ensure sane minimum
+        if (W < 200) W = 800;
+        if (H < 200) H = 500;
+        canvas.width = W; canvas.height = H;
+        
+        info.textContent = g.nodes.length + ' nodes, ' + (g.edges ? g.edges.length : 0) + ' edges — rendering...';
+        
+        // Build nodes with random starting positions (scattered across a larger area)
+        var layoutKey = 'graph_layout_' + g.nodes.length;
+        var cachedLayout = null;
+        try { cachedLayout = JSON.parse(sessionStorage.getItem(layoutKey)); } catch(e) {}
+        
+        var nodes = g.nodes.map(function(n) {
+          var id = n.id || n;
+          var cached = cachedLayout ? cachedLayout[id] : null;
+          return {
+            id: id,
+            title: n.title || n.id || n,
+            x: cached ? cached.x : (Math.random() - 0.5) * Math.max(W, H) * 1.2,
+            y: cached ? cached.y : (Math.random() - 0.5) * Math.max(W, H) * 1.2,
+            vx: 0, vy: 0
+          };
+        });
+        var nodeMap = {};
+        nodes.forEach(function(n) { nodeMap[n.id] = n; });
+        
+        // Only include edges where both endpoints exist
+        var edges = (g.edges || []).filter(function(e) {
+          return nodeMap[e.source] && nodeMap[e.target];
+        });
+        
+        // Spatial grid for O(n) repulsion instead of O(n^2)
+        var gridSize = 80;
+        var G = 500;
+        var DAMPING = 0.8;
+        var ATTRACTION = 0.0003;
+        
+        function simulateStep() {
+          // Build spatial grid
+          var grid = {};
+          nodes.forEach(function(n) {
+            var cx = Math.floor(n.x / gridSize);
+            var cy = Math.floor(n.y / gridSize);
+            var key = cx + ',' + cy;
+            if (!grid[key]) grid[key] = [];
+            grid[key].push(n);
+          });
+          
+          // Repulsion: only check nodes in same or adjacent grid cells
+          nodes.forEach(function(n) {
+            var cx = Math.floor(n.x / gridSize);
+            var cy = Math.floor(n.y / gridSize);
+            for (var dx = -1; dx <= 1; dx++) {
+              for (var dy = -1; dy <= 1; dy++) {
+                var key = (cx+dx) + ',' + (cy+dy);
+                var cell = grid[key];
+                if (!cell) continue;
+                cell.forEach(function(other) {
+                  if (n === other) return;
+                  var dx2 = other.x - n.x;
+                  var dy2 = other.y - n.y;
+                  var dist = Math.sqrt(dx2*dx2 + dy2*dy2);
+                  if (dist < 1) dist = 1;
+                  if (dist > gridSize * 3) return;  // skip far nodes
+                  var force = G / (dist * dist);
+                  n.vx -= force * dx2 / dist;
+                  n.vy -= force * dy2 / dist;
+                });
+              }
+            }
+          });
+          
+          // Attraction along edges
+          edges.forEach(function(e) {
+            var s = nodeMap[e.source], t = nodeMap[e.target];
+            if (!s || !t) return;
+            var dx2 = t.x - s.x, dy2 = t.y - s.y;
+            var dist = Math.sqrt(dx2*dx2 + dy2*dy2);
+            if (dist < 1) dist = 1;
+            var force2 = dist * ATTRACTION;
+            s.vx += force2 * dx2;
+            s.vy += force2 * dy2;
+            t.vx -= force2 * dx2;
+            t.vy -= force2 * dy2;
+          });
+          
+          // Apply velocity + damping
+          nodes.forEach(function(n) {
+            n.x += n.vx;
+            n.y += n.vy;
+            n.vx *= DAMPING;
+            n.vy *= DAMPING;
+          });
+        }
+        
+        // Camera state
+        var camX = 0, camY = 0, camZoom = 1;
+        var isDragging = false, dragStartX, dragStartY, camStartX, camStartY;
+        
+        function drawGraph() {
+          ctx.clearRect(0, 0, W, H);
+          ctx.save();
+          ctx.translate(W/2 + camX, H/2 + camY);
+          ctx.scale(camZoom, camZoom);
+          
+          // Draw edges
+          ctx.strokeStyle = 'rgba(0,0,0,0.04)';
+          ctx.lineWidth = 0.5 / camZoom;
+          edges.forEach(function(e) {
+            var s = nodeMap[e.source], t = nodeMap[e.target];
+            if (!s || !t) return;
+            ctx.beginPath();
+            ctx.moveTo(s.x, s.y);
+            ctx.lineTo(t.x, t.y);
+            ctx.stroke();
+          });
+          
+          // Draw nodes (only those visible)
+          var nodeRadius = Math.max(2, 4 / camZoom);
+          ctx.fillStyle = 'rgba(37,99,235,0.6)';
+          ctx.strokeStyle = '#fff';
+          ctx.lineWidth = 0.5 / camZoom;
+          
+          nodes.forEach(function(n) {
+            var sx = n.x * camZoom + W/2 + camX;
+            var sy = n.y * camZoom + H/2 + camY;
+            // Skip offscreen nodes
+            if (sx < -20 || sx > W + 20 || sy < -20 || sy > H + 20) return;
+            
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, nodeRadius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+          });
+          
+          ctx.restore();
+        }
+        
+        // Mouse interaction
+        var mouseX, mouseY;
+        canvas.addEventListener('mousedown', function(e) {
+          isDragging = true;
+          dragStartX = e.clientX;
+          dragStartY = e.clientY;
+          camStartX = camX;
+          camStartY = camY;
+        });
+        window.addEventListener('mousemove', function(e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          if (isDragging) {
+            camX = camStartX + (e.clientX - dragStartX);
+            camY = camStartY + (e.clientY - dragStartY);
+            drawGraph();
+          }
+        });
+        window.addEventListener('mouseup', function() { isDragging = false; });
+        canvas.addEventListener('wheel', function(e) {
+          e.preventDefault();
+          var delta = e.deltaY > 0 ? 0.9 : 1.1;
+          camZoom *= delta;
+          camZoom = Math.max(0.1, Math.min(10, camZoom));
+          drawGraph();
+        }, {passive: false});
+        
+        // Run physics in chunks via requestAnimationFrame
+        var totalSteps = cachedLayout ? 15 : 60;
+        var step = 0;
+        function runPhysics() {
+          if (step >= totalSteps) {
+            drawGraph();
+            // Cache final layout
+            try {
+              var layoutOut = {};
+              nodes.forEach(function(n) { layoutOut[n.id] = { x: Math.round(n.x*10)/10, y: Math.round(n.y*10)/10 }; });
+              sessionStorage.setItem(layoutKey, JSON.stringify(layoutOut));
+            } catch(e) {}
+            info.textContent = nodes.length + ' nodes, ' + edges.length + ' edges — drag to pan, scroll to zoom';
+            var rbtn = document.getElementById('graph-rerender');
+            if (rbtn) { rbtn.style.display = ''; rbtn.onclick = function() { sessionStorage.removeItem(layoutKey); location.reload(); }; }
+            return;
+          }
+          simulateStep();
+          step++;
+          if (step % 5 === 0) {
+            drawGraph();
+          }
+          requestAnimationFrame(runPhysics);
+        }
+        
+        runPhysics();
+      });
+    })
+    .catch(function() { info.textContent = 'Failed to load graph'; });
+}
+
+
+
+var content = document.getElementById('content');
+var contentDoc = document.getElementById('content-doc');
+var sidebar = document.getElementById('sidebar');
+var fileList = document.getElementById('file-list');
+var searchInput = document.getElementById('search-input');
+var searchResults = document.getElementById('search-results');
+var hamburger = document.getElementById('hamburger');
+var overlay = document.getElementById('sidebar-overlay');
+var themeToggle = document.getElementById('theme-toggle');
+var themeLabel = document.getElementById('theme-label');
+var sidebarToggle = document.getElementById('sidebar-toggle');
+var sidebarHeaderTitle = document.getElementById('sidebar-header-title');
+
+/* ═══════════════════════════════════════════
+   Theme
+   ═══════════════════════════════════════════ */
+
+var currentTheme = localStorage.getItem('md-theme') || 'light';
+document.documentElement.setAttribute('data-theme', currentTheme);
+updateThemeLabel();
+
+function toggleTheme() {
+  var themes = ['light', 'dark', 'amoled'];
+  var idx = themes.indexOf(currentTheme);
+  currentTheme = themes[(idx + 1) % themes.length];
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  localStorage.setItem('md-theme', currentTheme);
+  updateThemeLabel();
+}
+
+function updateThemeLabel() {
+  themeLabel.textContent = currentTheme === 'light' ? '\u2600' : currentTheme === 'dark' ? '\u263E' : '\u25CF';
+}
+
+themeToggle.addEventListener('click', toggleTheme);
+themeToggle.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleTheme(); }
+});
+
+/* ═══════════════════════════════════════════
+   File Loading
+   ═══════════════════════════════════════════ */
+
+function loadFileList() {
+  // Three-layer auto-discovery: 1) /files.json, 2) index.json (plain or enriched), 3) parallel probe
+  function probeFiles() {
+    var probes = [];
+    for (var i = 0; i <= 99; i++) {
+      probes.push(String(i).padStart(2, '0'));
+    }
+    probes.push('000');
+    var extras = ['README', 'quick-reference', 'presentation-outline', 'comparison-frameworks',
+                  'terminology_inventory', 'canonical_vocabulary', 'deprecated_terms',
+                  'notation_reference', 'rewrite_map', 'manuscript_terminology_update',
+                  'index', 'glossary', 'abstract', 'introduction-map'];
+    
+    var allNames = [];
+    probes.forEach(function(p) { allNames.push(p + '-*.md'); });
+    extras.forEach(function(e) { allNames.push(e + '.md'); });
+    probes.forEach(function(p) { allNames.push(p + '.md'); });
+    
+    var seen = {};
+    var unique = [];
+    allNames.forEach(function(n) {
+      n = n.replace('*', '');
+      if (!seen[n]) { seen[n] = true; unique.push(n); }
+    });
+    
+    var found = [];
+    var remaining = unique.length;
+    if (remaining === 0) { state.files = found; renderSidebar(); resolveRoute(); return; }
+    unique.forEach(function(name) {
+      fetch(getBaseUrl() + '/' + encodeURIComponent(name))
+        .then(function(r) {
+          if (r.ok && name.endsWith('.md')) found.push(name);
+        })
+        .catch(function() {})
+        .then(function() {
+          remaining--;
+          if (remaining === 0) {
+            found.sort();
+            state.files = found;
+            buildCombinedSearchIndex();
+            renderSidebar();
+            resolveRoute();
+          }
+        });
+    });
+  }
+
+  function loadIndex(data) {
+    // Enriched format: array of objects with path, type?, title?, tags?
+    if (Array.isArray(data) && data.length > 0 && typeof data[0] === 'object') {
+      state.meta = {};
+      var paths = [];
+      data.forEach(function(entry) {
+        if (entry && entry.path) {
+          paths.push(entry.path);
+          state.meta[entry.path] = entry;
+        }
+      });
+      state.files = paths;
+      buildCombinedSearchIndex();
+      renderSidebar();
+      resolveRoute();
+      return;
+    }
+    // Plain format: array of strings
+    if (Array.isArray(data)) {
+      state.files = data;
+      state.meta = {};
+      buildCombinedSearchIndex();
+      renderSidebar();
+      resolveRoute();
+      return;
+    }
+    // Object format: {files: [...], meta: {...}}
+    if (typeof data === 'object' && data.files) {
+      state.files = data.files;
+      state.meta = data.meta || {};
+      buildCombinedSearchIndex();
+      renderSidebar();
+      resolveRoute();
+      return;
+    }
+    // Fallback
+    probeFiles();
+  }
+
+  // Try /files.json first (from server.py)
+  fetch('/files.json')
+    .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+    .then(loadIndex)
+    .catch(function() {
+      // Fallback to static index.json
+      fetch('index.json')
+        .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+        .then(loadIndex)
+        .catch(function() {
+          // Pure HTML fallback: parallel probe
+          probeFiles();
+        });
+    });
+}
+
+function buildCombinedSearchIndex() {
+  // Process in batches to avoid blocking UI
+  state.searchIndex = {};
+  var batchSize = 100;
+  var i = 0;
+  var files = state.files;
+  
+  function processBatch() {
+    var end = Math.min(i + batchSize, files.length);
+    for (; i < end; i++) {
+      var f = files[i];
+      state.searchIndex[f] = [];
+      var title = state.meta[f] && state.meta[f].title;
+      var name = f;
+      var slash = f.lastIndexOf('/');
+      if (slash !== -1) name = f.slice(slash + 1);
+      name = name.replace(/\.md$/i, '');
+      var tokens = [];
+      if (title) tokens.push(title);
+      tokens.push(name);
+      f.split('/').forEach(function(part) {
+        tokens.push(part.replace(/\.md$/i, ''));
+      });
+      var tags = state.meta[f] && state.meta[f].tags;
+      if (tags) tokens = tokens.concat(tags);
+      var type = state.meta[f] && state.meta[f].type;
+      if (type) tokens.push(type);
+      var text = tokens.join(' ').toLowerCase();
+      text.split(/\s+/).forEach(function(word) {
+        if (word.length < 2) return;
+        if (!state.searchIndex[f]) state.searchIndex[f] = [];
+        state.searchIndex[f].push(word);
+      });
+    }
+    if (i < files.length) {
+      setTimeout(processBatch, 0);
+    }
+  }
+  processBatch();
+}
+function buildSearchIndex(filename, md) {
+  var lines = md.split('\n');
+  var index = [];
+  lines.forEach(function(line, i) {
+    var trimmed = line.trim();
+    if (trimmed.length > 10) {
+      index.push({ line: i + 1, text: trimmed });
+    }
+  });
+  state.searchIndex[filename] = index;
+}
+
+/* ═══════════════════════════════════════════
+   Search
+   ═══════════════════════════════════════════ */
+
+var searchTimeout = null;
+
+searchInput.addEventListener('input', function() {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(performSearch, 150);
+});
+
+searchInput.addEventListener('focus', function() {
+  if (searchInput.value) performSearch();
+});
+
+function performSearch() {
+  var query = searchInput.value.trim().toLowerCase();
+  if (query.length < 2) {
+    searchResults.classList.remove('visible');
+    searchResults.innerHTML = '';
+    return;
+  }
+
+  var results = [];
+  var queryWords = query.split(/\s+/).filter(function(w) { return w.length > 0; });
+  
+  state.files.forEach(function(f) {
+    var title = state.meta[f] && state.meta[f].title;
+    var type = state.meta[f] && state.meta[f].type;
+    var tags = state.meta[f] && state.meta[f].tags;
+    
+    var name = f;
+    var slash = f.lastIndexOf('/');
+    if (slash !== -1) name = f.slice(slash + 1);
+    name = name.replace(/\.md$/i, '');
+    
+    var searchText = (title || name) + ' ' + f + ' ' + (type || '');
+    if (tags) searchText += ' ' + tags.join(' ');
+    searchText = searchText.toLowerCase();
+
+    var match = queryWords.every(function(w) { return searchText.indexOf(w) !== -1; });
+    if (!match) return;
+
+    var score = 0;
+    var lowerName = name.toLowerCase();
+    var lowerTitle = (title || '').toLowerCase();
+    if (lowerTitle.indexOf(query) !== -1) score += 10;
+    else if (lowerName.indexOf(query) !== -1) score += 5;
+    else if (f.toLowerCase().indexOf(query) !== -1) score += 3;
+    if (type && type.indexOf(query) !== -1) score += 2;
+    results.push({ file: f, score: score, title: title || name, type: type });
+  });
+
+  results.sort(function(a, b) { return b.score - a.score; });
+  results = results.slice(0, 50);
+
+  if (results.length === 0) {
+    searchResults.innerHTML = '<div class="search-result-item" style="padding:12px;color:var(--text-muted);font-size:13px;">No matches</div>';
+    searchResults.classList.add('visible');
+    return;
+  }
+
+  var frag = document.createDocumentFragment();
+  results.forEach(function(r) {
+    var el = document.createElement('a');
+    el.className = 'search-result-item';
+    var label = escapeHtml(r.title);
+    if (r.type) label += ' <span class="search-result-type">' + escapeHtml(r.type) + '</span>';
+    el.innerHTML = label;
+    el.href = '#' + encodeURIComponent(r.file);
+    (function(f) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        searchInput.value = '';
+        searchResults.classList.remove('visible');
+        closeSidebar();
+        navigateTo(f);
+      });
+    })(r.file);
+    frag.appendChild(el);
+  });
+  searchResults.innerHTML = '';
+  searchResults.appendChild(frag);
+  searchResults.classList.add('visible');
+}
+function renderSidebar() {
+  fileList.innerHTML = '';
+
+  // Home entry
+  var home = document.createElement('a');
+  home.className = 'file-entry home-entry';
+  home.innerHTML = '<span class="icon">⌂</span> All Documents';
+  home.href = '#';
+  home.addEventListener('click', function(e) {
+    e.preventDefault();
+    closeSidebar();
+    navigateHome();
+  });
+  if (!state.currentFile) home.classList.add('active');
+  fileList.appendChild(home);
+
+  var count = state.files.length;
+  var sectionLabel = document.getElementById('files-section-label');
+  if (sectionLabel) sectionLabel.textContent = 'Documents (' + count + ')';
+
+  // Limit rendering for performance - max 300 files
+  var MAX_RENDER = 300;
+  var fileSubset = state.files.slice(0, MAX_RENDER);
+
+  // ---- Group By Type ----
+  if (state.groupMode === 'type') {
+    // Build type groups from metadata
+    var typeGroups = {};
+    var noMeta = [];
+    fileSubset.forEach(function(f) {
+      var entry = state.meta[f];
+      var t = (entry && entry.type) || 'other';
+      if (!typeGroups[t]) typeGroups[t] = [];
+      typeGroups[t].push(f);
+    });
+
+    // Sort: largest groups first
+    var sortedTypes = Object.keys(typeGroups).sort(function(a, b) {
+      return typeGroups[b].length - typeGroups[a].length;
+    });
+
+    sortedTypes.forEach(function(typeName) {
+      var entries = typeGroups[typeName];
+      var typeLabel = typeName.charAt(0).toUpperCase() + typeName.slice(1);
+
+      var section = document.createElement('div');
+      section.className = 'type-section';
+
+      var header = document.createElement('div');
+      header.className = 'type-section-header';
+
+      var arrow = document.createElement('span');
+      arrow.className = 'type-arrow' + (state.typeCollapsed[typeName] ? ' collapsed' : '');
+      arrow.textContent = '▼';
+      header.appendChild(arrow);
+
+      var label = document.createElement('span');
+      label.textContent = typeLabel;
+      header.appendChild(label);
+
+      var ec = document.createElement('span');
+      ec.className = 'type-count';
+      ec.textContent = entries.length;
+      header.appendChild(ec);
+
+      (function(t) {
+        header.addEventListener('click', function(e) {
+          state.typeCollapsed[t] = !state.typeCollapsed[t];
+          renderSidebar();
+        });
+      })(typeName);
+
+      section.appendChild(header);
+
+      var container = document.createElement('div');
+      container.className = 'type-entries' + (state.typeCollapsed[typeName] ? ' collapsed' : '');
+      
+      // Sort entries within type: by title if available, else by filename
+      var sorted = entries.slice().sort(function(a, b) {
+        var ta = state.meta[a] && state.meta[a].title;
+        var tb = state.meta[b] && state.meta[b].title;
+        if (ta && tb) return ta.localeCompare(tb);
+        if (ta) return -1;
+        if (tb) return 1;
+        return a.localeCompare(b);
+      });
+
+      sorted.forEach(function(f) {
+        var wrap = renderFileEntry(f);
+        container.appendChild(wrap);
+      });
+
+      section.appendChild(container);
+      fileList.appendChild(section);
+    });
+    return;
+  }
+
+  // ---- Group By Directory (existing behavior) ----
+  var groups = {};
+  fileSubset.forEach(function(f) {
+    if (f === 'complete.md') return;
+    var dir = '';
+    var name = f;
+    var slash = f.lastIndexOf('/');
+    if (slash !== -1) {
+      dir = f.slice(0, slash);
+      name = f.slice(slash + 1);
+    }
+    if (!groups[dir]) groups[dir] = [];
+    groups[dir].push({ full: f, name: name });
+  });
+
+  var dirs = Object.keys(groups).sort(function(a, b) {
+    if (a === '') return -1;
+    if (b === '') return 1;
+    return a.localeCompare(b);
+  });
+
+  if (sectionLabel) {
+    sectionLabel.textContent = dirs.length > 1
+      ? 'Documents (' + count + ' in ' + dirs.length + ' dirs)'
+      : 'Documents (' + count + ')';
+  }
+
+  dirs.forEach(function(dir) {
+    var entries = groups[dir];
+    if (dir !== '') {
+      var header = document.createElement('div');
+      header.className = 'sidebar-section';
+      var arrow = document.createElement('span');
+      arrow.className = 'dir-arrow' + (state.dirCollapsed[dir] ? ' collapsed' : '');
+      arrow.textContent = '▼';
+      header.appendChild(arrow);
+      var label = document.createElement('span');
+      label.textContent = dir;
+      header.appendChild(label);
+      var ec = document.createElement('span');
+      ec.className = 'dir-count';
+      ec.textContent = entries.length;
+      header.appendChild(ec);
+      (function(d) {
+        header.addEventListener('click', function(e) {
+          state.dirCollapsed[d] = !state.dirCollapsed[d];
+          renderSidebar();
+        });
+      })(dir);
+      fileList.appendChild(header);
+    }
+    var entriesContainer = document.createElement('div');
+    entriesContainer.className = 'dir-entries' + (dir !== '' && state.dirCollapsed[dir] ? ' collapsed' : '');
+    fileList.appendChild(entriesContainer);
+    entries.forEach(function(entry) {
+      var wrap = renderFileEntry(entry.full);
+      entriesContainer.appendChild(wrap);
+    });
+  });
+}
+
+function renderFileEntry(filename) {
+  var wrap = document.createElement('div');
+  wrap.className = 'file-entry-wrap';
+
+  var main = document.createElement('a');
+  main.className = 'file-entry-main';
+  if (state.currentFile === filename) main.classList.add('active');
+
+  var meta = state.meta[filename] || {};
+  var title = meta.title || '';
+  
+  var cleanName = filename;
+  var slash = filename.lastIndexOf('/');
+  if (slash !== -1) cleanName = filename.slice(slash + 1);
+  cleanName = cleanName.replace(/\.md$/i, '');
+
+  var displayName = title || cleanName;
+  var iconChar = '\u2022';
+
+  var arrow = document.createElement('span');
+  arrow.className = 'file-arrow';
+  arrow.textContent = '\u25B6';
+  if (state.accordionExpanded[filename]) arrow.classList.add('expanded');
+
+  (function(fn) {
+    arrow.addEventListener('click', function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      var h = state.fileHeadings[fn] || [];
+      var dh = h.filter(function(x) { return x.level <= 4; });
+      if (dh.length === 0) return;
+      state.accordionExpanded[fn] = !state.accordionExpanded[fn];
+      renderSidebar();
+    });
+  })(filename);
+
+  var label = document.createElement('span');
+  label.innerHTML = '<span class="icon">' + iconChar + '</span>' + escapeHtml(displayName);
+  if (!title && displayName !== cleanName) {
+    // Show subtitle if we have a title different from filename
+    var sub = document.createElement('span');
+    sub.style.cssText = 'display:block;font-size:10px;color:var(--text-muted);font-weight:400;margin-left:22px;margin-top:-1px;';
+    sub.textContent = cleanName;
+    label.appendChild(sub);
+  }
+
+  main.appendChild(arrow);
+  main.appendChild(label);
+  main.href = '#' + encodeURIComponent(filename);
+
+  (function(fn) {
+    main.addEventListener('click', function(e) {
+      e.preventDefault();
+      closeSidebar();
+      navigateTo(fn);
+    });
+  })(filename);
+
+  wrap.appendChild(main);
+
+  // Headings sub-list
+  var hList = state.fileHeadings[filename] || [];
+  var dhList = hList.filter(function(x) { return x.level <= 4; });
+
+  if (state.accordionExpanded[filename] && dhList.length > 0) {
+    var sub = document.createElement('div');
+    sub.className = 'file-headings';
+    dhList.forEach(function(h) {
+      var hEl = document.createElement('a');
+      hEl.className = 'file-heading level-' + h.level;
+      hEl.textContent = h.text;
+      hEl.href = '#' + encodeURIComponent(filename) + '#' + h.slug;
+      (function(slug) {
+        hEl.addEventListener('click', function(e) {
+          e.preventDefault();
+          closeSidebar();
+          navigateTo(filename, slug);
+        });
+      })(h.slug);
+      sub.appendChild(hEl);
+    });
+    wrap.appendChild(sub);
+  }
+
+  return wrap;
+}
+function navigateTo(filename, anchor) {
+  if (!filename) return;
+  switchContentView('doc');
+
+  // Normalize: strip .md, then re-add for consistent lookup
+  var bareName = filename.replace(/\.md$/i, '');
+  var mdName = bareName + '.md';
+  if (state.files.indexOf(mdName) !== -1 && filename !== mdName) {
+    filename = mdName;
+  } else if (state.files.indexOf(bareName) !== -1) {
+    filename = bareName;
+  }
+
+  // If already viewing this file with an anchor, just scroll
+  if (filename === state.currentFile && anchor) {
+    history.replaceState(null, '', '#' + encodeURIComponent(filename) + '#' + anchor);
+    var el = document.getElementById(anchor);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
+
+  state.currentFile = filename;
+  history.replaceState(null, '', '#' + encodeURIComponent(filename) + (anchor ? '#' + anchor : ''));
+  renderSidebar();
+
+  function afterRender() {
+    if (anchor) {
+      setTimeout(function() {
+        var el = document.getElementById(anchor);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }
+
+  if (state.fileContents[filename]) {
+    renderContent(filename, state.fileContents[filename]);
+    afterRender();
+    return;
+  }
+
+  contentDoc.innerHTML = '<div class="markdown-body"><div class="loading">Loading&hellip;</div></div>';
+
+  fetch('/api/file?path=' + encodeURIComponent(filename))
+    .then(function(r) {
+      if (!r.ok) throw new Error('Not found');
+      return r.text();
+    })
+    .then(function(md) {
+      state.fileContents[filename] = md;
+      buildSearchIndex(filename, md);
+      renderContent(filename, md);
+      afterRender();
+    })
+    .catch(function() {
+      contentDoc.innerHTML = '<div class="markdown-body"><div class="welcome"><h1>Error</h1><p>Could not load <strong>' + escapeHtml(filename) + '</strong>.</p><p style="font-size:12px;color:var(--text-muted);">Path: ' + escapeHtml(filename) + '</p></div></div>';
+    });
+}
+
+function renderContent(filename, md) {
+  var result = parseMarkdown(md);
+  contentDoc.innerHTML = '<div class="markdown-body">' + result.html + '</div>';
+  state.fileHeadings[filename] = result.headings;
+  renderSidebar();
+  document.title = filename.replace(/\.md$/i, '') + ' — md';
+  document.documentElement.scrollTop = 0;
+  closeSidebar();
+}
+
+function resolveRoute() {
+  var hash = window.location.hash.slice(1);
+  if (!hash) {
+    if (state.files.length > 0 && !state.currentFile) { navigateTo(state.files[0]); }
+    return;
+  }
+  var parts = hash.split('#');
+  var file = decodeURIComponent(parts[0]);
+  var anchor = parts.slice(1).join('#');
+
+  // If the hash is a known file, navigate to it
+  if (state.files.indexOf(file) !== -1) {
+    navigateTo(file, anchor || null);
+    return;
+  }
+
+  // If viewing a file and hash is a heading ID in it, just scroll
+  if (state.currentFile) {
+    var el = document.getElementById(hash);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+  }
+
+  // Unknown hash with no current file: navigate to first file
+  if (state.files.length > 0 && !state.currentFile) {
+    navigateTo(state.files[0]);
+  }
+}
+
+window.addEventListener('hashchange', function() {
+  resolveRoute();
+});
+
+/* ═══════════════════════════════════════════
+   Sidebar collapse (desktop)
+   ═══════════════════════════════════════════ */
+
+var sidebarCollapsed = localStorage.getItem('md-sidebar-collapsed') === 'true';
+
+function applySidebarState() {
+  if (window.innerWidth < 820) return;
+  sidebar.classList.toggle('collapsed', sidebarCollapsed);
+  sidebarToggle.setAttribute('title', (sidebarCollapsed ? 'Expand' : 'Collapse') + ' sidebar (Ctrl+B)');
+}
+
+function toggleSidebar() {
+  if (window.innerWidth < 820) return;
+  sidebarCollapsed = !sidebarCollapsed;
+  localStorage.setItem('md-sidebar-collapsed', sidebarCollapsed);
+  applySidebarState();
+}
+
+sidebarToggle.addEventListener('click', toggleSidebar);
+
+window.addEventListener('resize', function() {
+  if (window.innerWidth < 820) {
+    sidebar.classList.remove('collapsed');
+  } else {
+    applySidebarState();
+  }
+});
+
+/* ═══════════════════════════════════════════
+   Home
+   ═══════════════════════════════════════════ */
+
+function navigateHome() {
+  state.currentFile = '';
+  history.replaceState(null, '', '#');
+  renderSidebar();
+  document.title = 'md — documents';
+  contentDoc.innerHTML = '' +
+    '<div class="markdown-body">' +
+    '<div class="welcome">' +
+    '<h1>mykb</h1>' +
+    '<p>Select a document from the sidebar to view it here.</p>' +
+    '</div>' +
+    '</div>';
+}
+
+sidebarHeaderTitle.addEventListener('click', function(e) {
+  e.preventDefault();
+  closeSidebar();
+  navigateHome();
+});
+
+/* ═══════════════════════════════════════════
+   Mobile sidebar
+   ═══════════════════════════════════════════ */
+
+function openSidebar() { sidebar.classList.add('open'); overlay.classList.add('visible'); }
+function closeSidebar() { sidebar.classList.remove('open'); overlay.classList.remove('visible'); }
+
+hamburger.addEventListener('click', function() {
+  if (sidebar.classList.contains('open')) { closeSidebar(); }
+  else { openSidebar(); }
+});
+
+overlay.addEventListener('click', closeSidebar);
+
+var touchStartX = 0;
+document.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; });
+document.addEventListener('touchend', function(e) {
+  if (sidebar.classList.contains('open') && e.changedTouches[0].screenX - touchStartX < -50) { closeSidebar(); }
+});
+
+/* ═══════════════════════════════════════════
+   Keyboard shortcuts
+   ═══════════════════════════════════════════ */
+
+document.addEventListener('keydown', function(e) {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+    e.preventDefault();
+    searchInput.focus();
+    return;
+  }
+  if ((e.ctrlKey || e.metaKey) && e.key === 'b') {
+    e.preventDefault();
+    toggleSidebar();
+    return;
+  }
+  if (e.key === 'Escape') {
+    if (document.activeElement === searchInput) {
+      searchInput.blur();
+      searchResults.classList.remove('visible');
+    }
+    return;
+  }
+  if (e.key === 't' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+    var tag = document.activeElement ? document.activeElement.tagName : '';
+    if (tag !== 'INPUT' && tag !== 'TEXTAREA' && tag !== 'SELECT') {
+      toggleTheme();
+    }
+  }
+});
+
+/* ═══════════════════════════════════════════
+   Internal heading link handling
+   ═══════════════════════════════════════════ */
+
+// Intercept heading anchor clicks and .md links for internal navigation
+content.addEventListener('click', function(e) {
+  var target = e.target;
+  // Wikilink with data-target
+  if (target.classList && target.classList.contains('wikilink')) {
+    e.preventDefault();
+    var t = target.getAttribute('data-target');
+    if (t) navigateTo(t + '.md');
+    return;
+  }
+  if (target.tagName === 'A' && target.getAttribute('href')) {
+    var href = target.getAttribute('href');
+    // Internal .md link -> navigate within viewer
+    if (href.match(/\.md$/i)) {
+      e.preventDefault();
+      navigateTo(href);
+      return;
+    }
+    // Heading anchor -> smooth scroll
+    if (href.charAt(0) === '#') {
+      var id = href.slice(1);
+      var el = document.getElementById(id);
+      if (el && state.currentFile) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth' });
+        history.replaceState(null, '', '#' + encodeURIComponent(state.currentFile) + '#' + id);
+      }
+    }
+  }
+});
+
+/* ═══════════════════════════════════════════
+   Group selector
+   ═══════════════════════════════════════════ */
+
+var groupSelector = document.getElementById('group-selector');
+if (groupSelector) {
+  groupSelector.addEventListener('click', function(e) {
+    var btn = e.target.closest('.group-btn');
+    if (!btn) return;
+    var mode = btn.getAttribute('data-mode');
+    if (mode === state.groupMode) return;
+    state.groupMode = mode;
+    groupSelector.querySelectorAll('.group-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    // Reset collapse states when switching
+    state.typeCollapsed = {};
+    renderSidebar();
+  });
+}
+
+/* ═══════════════════════════════════════════
+   Init
+   ═══════════════════════════════════════════ */
+
+loadFileList();
+applySidebarState();
+
+})();
+</script>
+</body>
+</html>

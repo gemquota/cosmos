@@ -1,0 +1,69 @@
+[
+  {
+    "name": "Meta Viewer",
+    "port": 8899,
+    "path": "/",
+    "startCmd": "node",
+    "startArgs": [
+      "serve-meta.mjs",
+      "8899"
+    ],
+    "cwd": "/data/data/com.termux/files/home/dev/space"
+  },
+  {
+    "name": "Web UI",
+    "port": 8888,
+    "path": "/",
+    "startCmd": "node",
+    "startArgs": [
+      "serve-ui.mjs",
+      "8888"
+    ],
+    "cwd": "/data/data/com.termux/files/home/dev/space"
+  },
+  {
+    "name": "mykb Dashboard",
+    "port": 8826,
+    "path": "/",
+    "startCmd": "python3",
+    "startArgs": [
+      "server.py",
+      "8826"
+    ],
+    "cwd": "/data/data/com.termux/files/home/dev/codex/mykb"
+  },
+  {
+    "name": "mykb Graph",
+    "port": 8808,
+    "path": "/",
+    "startCmd": "okf",
+    "startArgs": [
+      "server",
+      "/data/data/com.termux/files/home/dev/codex/mykb",
+      "-p",
+      "8808",
+      "--title",
+      "mykb"
+    ],
+    "cwd": "/data/data/com.termux/files/home/dev/codex/mykb"
+  },
+  {
+    "name": "myrsikb",
+    "port": 8877,
+    "path": "/",
+    "startCmd": "python3",
+    "startArgs": [
+      "-m",
+      "http.server",
+      "8877",
+      "-d",
+      "/data/data/com.termux/files/home/dev/codex/myrsikb"
+    ],
+    "cwd": "/tmp"
+  },
+  {
+    "name": "rsis3",
+    "port": 8080,
+    "path": "/"
+  }
+]

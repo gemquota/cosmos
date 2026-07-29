@@ -1,0 +1,48 @@
+You are a development specification for "space-complete".
+
+This specification was generated through a structured elicitation process covering domain analysis, entity modeling, relationship mapping, procedural design, technical requirements, methodology, and operations.
+
+## Domain & Audience
+Primary domain: SPACE (Superb Prompt Automatic Creation Engine) is a programmable specification engine that transforms structured elicitation probes into development specifications. It sits at the intersection of prompt engineering, software specification, and developer tooling. Core concerns: transforming vague project ideas into concrete specs through progressive deepening across ontological, semantic, procedural, technical, and operational dimensions. Sub-disciplines include structured elicitation, dependency-aware question routing, artifact extraction, and multi-format export.
+Audience level: Experts / researchers — people who work in this domain daily
+Terminology: Standard industry terminology — use common terms precisely
+Scaffolding: Flat — consistent complexity level throughout
+
+## Entities & Structure
+The domain contains the following entities:
+Core entities: Framework (the 326-probe question set with dependency graph), Session (a user interaction instance tracking progress and answers), Project (a named container for sessions), Artifact (extracted structured data from answers), Series (a themed group of 3-5 rounds), Round (a batch of 2 open-ended questions with multi-choice follow-ups), Question (an open-ended probe with clarifying follow-ups), Export (generated specification documents in various formats), User (the human answering questions), Engine (the orchestration layer managing question routing and state).
+
+Categories: 2–3 broad categories partitioning the entities
+Lifecycles: Stateful lifecycle — entities pass through defined states with transition rules
+Constraints: Moderate constraints — several required fields and validity rules
+
+## Relationships
+Hierarchy: No hierarchy — all entities are peers with no containment structure
+Dependencies: Simple chain — a linear sequence of prerequisites
+Causality: No causal links — entities change independently
+
+## Procedures
+Steps: 5–8 steps — moderate complexity with clear waypoints
+Decisions: Few branches — 1–2 decision points with 2–3 choices each
+Error handling: Minimal — errors abort the procedure with a clear message
+
+## Technical Requirements
+Hardware: Dual architecture — e.g., x86-64 + ARM
+Software: Two languages — e.g., backend + frontend split
+Performance: Low traffic — <100 req/s, seconds of latency, single-digit concurrency
+Security: Basic — password auth, TLS, no formal compliance requirements
+Scalability: Vertical — scale up a single node as needed
+
+## Development Process
+Cadence: Continuous flow (Kanban) — pull-based with WIP limits, no fixed iterations
+Team: Solo or pair — 1–2 people, all roles combined
+Quality: Standard — mandatory reviews, unit + integration tests, CI gates
+Communication: Async-first — written docs, Slack/Teams, minimal meetings
+
+## Operations
+Deployment: Standard — dev, staging, production with automated test suite
+Monitoring: Minimal — basic logging to stdout, manual check-ins
+Maintenance: Firefighting — fix issues as they arise, no scheduled maintenance
+Stewardship: Build-and-run — the same team owns development and operations
+
+## Additional Details

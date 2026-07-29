@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RSIS Telemetry Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen">
+<div id="app" class="max-w-7xl mx-auto px-4 py-6" v-cloak>
+  <!-- HEADER -->
+  <header class="flex flex-wrap items-center justify-between gap-4 bg-slate-800/60 border border-slate-700/50 rounded-2xl p-5 backdrop-blur mb-6">
+    <div>
+      <div class="flex items-center gap-3 mb-1">
+        <span class="px-3 py-1 bg-indigo-500/15 text-indigo-400 text-xs font-bold rounded-full uppercase tracking-wider border border-indigo-500/25">RSIS v0.0.x</span>
+        <h1 class="text-2xl font-bold tracking-tight">Telemetry Dashboard</h1>
+      </div>
+      <p class="text-sm text-slate-400/80">{{ pulses.length }} pulses &middot; {{ goals.length }} goals &middot; {{ s.pulse_count || 0 }} cycles</p>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full sm:w-auto">
+      <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/60 text-center"><div class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Passed</div><div class="text-lg font-bold text-emerald-400">{{ s.pass || 0 }}</div></div>
+      <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/60 text-center"><div class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Failed</div><div class="text-lg font-bold text-rose-400">{{ s.fail || 0 }}</div></div>
+      <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/60 text-center"><div class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Held</div><div class="text-lg font-bold text-amber-400">{{ s.hold || 0 }}</div></div>
+      <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/60 text-center"><div class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Total</div><div class="text-lg font-bold text-purple-400">{{ s.tot || 0 }}</div></div>
+    </div>
+  </header>
+
+  <!-- TABS -->
+  <div class="flex gap-1 p-1 bg-slate-800/50 border border-slate-700/40 rounded-xl mb-6 overflow-x-auto">
+    <button v-for="tab in tabs" :key="tab.id" @click="activeTab = tab.id; nextTick(() => renderCharts())"
+      class="px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap"
+      :class="activeTab === tab.id ? 'bg-indigo-500 text-white shadow' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/40'">{{ tab.label }}</button>
+  </div>
+
+  <!-- OVERVIEW TAB -->
+  <div v-show="activeTab === 'overview'">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+      <div class="bg-slate-800 border border-slate-700/60 rounded-xl p-4 lg:col-span-1">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 group relative">Score Trajectory<span class="ml-1 text-slate-500 cursor-help">&#9432;</span><div class="absolute bottom-full left-0 mb-2 hidden group-hover:block bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-slate-300 w-64 z-50 shadow-xl">Tracks aggregated capability scores (0-100) across <strong>L1-L9</strong> for each pulse. Computed from real-time execution reliability, goal success rate, KG utilization, and identity stability metrics.</div></div>
+        <div class="h-52" id="ch-trajectory"></div>
+      </div>
+      <div class="bg-slate-800 border border-slate-700/60 rounded-xl p-4">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 group relative">Decision Distribution<span class="ml-1 text-slate-500 cursor-help">&#9432;</span><div class="absolute bottom-full left-0 mb-2 hidden group-hover:block bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-slate-300 w-64 z-50 shadow-xl">Distribution of <strong>PASS</strong>, <strong>FAIL</strong>, <strong>HOLD</strong> decisions across all evaluations. Each represents the RRP evaluator's final determination after full trace pipeline analysis.</div></div>
+        <div class="h-52" id="ch-decisions"></div>
+      </div>
+      <div class="bg-slate-800 border border-slate-700/60 rounded-xl p-4">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 group relative">Success Rate<span class="ml-1 text-slate-500 cursor-help">&#9432;</span><div class="absolute bottom-full left-0 mb-2 hidden group-hover:block bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-slate-300 w-64 z-50 shadow-xl">Overall improvement <strong>success rate</strong>. Green = high (&gt;66%), amber = medium (33-66%), red = low (&lt;33%). Computed as approved goals / total evaluated.</div></div>
+        <div class="h-52" id="ch-success"></div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div class="bg-slate-800 border border-slate-700/60 rounded-xl p-4">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 group relative">Goals Per Pulse<span class="ml-1 text-slate-500 cursor-help">&#9432;</span><div class="absolute bottom-full left-0 mb-2 hidden group-hover:block bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-slate-300 w-64 z-50 shadow-xl">Number of goals <strong>generated</strong> versus <strong>approved</strong> per pulse. The gap between bars shows the rejection rate from RRP evaluation.</div></div>
+        <div class="h-52" id="ch-goals-per-pulse"></div>
+      </div>
+      <div class="bg-slate-800 border border-slate-700/60 rounded-xl p-4">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 group relative">Confidence Quality<span class="ml-1 text-slate-500 cursor-help">&#9432;</span><div class="absolute bottom-full left-0 mb-2 hidden group-hover:block bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-slate-300 w-64 z-50 shadow-xl">Average <strong>RRP evaluation confidence</strong> per pulse (0-1). Higher = more certain about decisions. Trends downward as harder problems are tackled.</div></div>
+        <div class="h-52" id="ch-quality"></div>
+      </div>
+      <div class="bg-slate-800 border border-slate-700/60 rounded-xl p-4">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 group relative">Constraint Frequency<span class="ml-1 text-slate-500 cursor-help">&#9432;</span><div class="absolute bottom-full left-0 mb-2 hidden group-hover:block bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-slate-300 w-64 z-50 shadow-xl">RRP constraint type frequency. Blue = total usage, Amber = locked/REQUIRED constraints. Locked constraints gate approval and require explicit addressing.</div></div>
+        <div class="h-52" id="ch-constraints"></div>
+      </div>
+    </div>
+
+    <!-- Pulse List -->
+    <div class="mt-8">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-bold">Pulse History</h2>
+        <div class="flex gap-2">
+          <button @click="expandAllPulses()" class="px-3 py-1.5 text-xs font-medium bg-slate-700 hover:bg-slate-600 rounded-lg transition">Expand All</button>
+          <button @click="collapseAllPulses()" class="px-3 py-1.5 text-xs font-medium bg-slate-700 hover:bg-slate-600 rounded-lg transition">Collapse All</button>
+        </div>
+      </div>
+      <div v-for="p in sortedPulses" :key="p.id" class="bg-slate-800/60 border border-slate-700/50 rounded-xl mb-3 overflow-hidden">
+        <div @click="togglePulse(p.id)" class="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-700/20 transition">
+          <div class="flex items-center gap-4 flex-wrap">
+            <span class="font-bold text-sm text-indigo-400 min-w-[80px]">Pulse #{{ p.id }}</span>
+            <span class="px-2 py-0.5 text-[11px] font-semibold rounded-full" :class="p.type.includes('rrp') ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'">{{ p.type }}</span>
+            <span class="text-xs text-slate-400">{{ p.goals_count }} goals</span>
+            <span class="text-xs text-emerald-400">{{ p.approved }} approved</span>
+            <span class="text-xs text-slate-500">{{ p.duration.toFixed(1) }}s</span>
+          </div>
+          <span class="text-slate-500 transition-transform duration-200" :class="{ 'rotate-180': expandedPulses[p.id] }">&#9660;</span>
+        </div>
+        <transition name="slide">
+          <div v-show="expandedPulses[p.id]" class="border-t border-slate-700/50 p-4 bg-slate-900/30 space-y-4">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-center"><div class="text-lg font-bold">{{ p.num_goals || p.goals_count }}</div><div class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Generated</div></div>
+              <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-center"><div class="text-lg font-bold text-emerald-400">{{ p.approved }}</div><div class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Approved</div></div>
+              <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-center"><div class="text-lg font-bold text-purple-400">{{ p.implementation_count || 0 }}</div><div class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Implemented</div></div>
+              <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-center"><div class="text-lg font-bold text-amber-400">{{ p.avg_confidence ? (p.avg_confidence * 100).toFixed(0) + '%' : 'N/A' }}</div><div class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Confidence</div></div>
+            </div>
+            <div v-if="p.telemetry && p.telemetry.total_questions" class="bg-slate-800/40 rounded-lg border border-slate-700/40 p-3">
+              <div class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">RRP Telemetry</div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
+                <div><span class="text-slate-500">Questions:</span> <strong>{{ p.telemetry.total_questions }}</strong></div>
+                <div><span class="text-slate-500">Rounds:</span> <strong>{{ p.telemetry.total_rounds }}</strong></div>
+                <div><span class="text-slate-500">Quality:</span> <strong>{{ p.telemetry.avg_quality_index ? p.telemetry.avg_quality_index.toFixed(3) : 'N/A' }}</strong></div>
+                <div><span class="text-slate-500">Ledger:</span> <strong>{{ p.telemetry.total_ledger_entries || 0 }}</strong></div>
+              </div>
+              <div v-if="p.telemetry.all_topics && p.telemetry.all_topics.length" class="mt-2 flex flex-wrap gap-1">
+                <span class="text-[10px] text-slate-500">Topics:</span>
+                <span v-for="t in p.telemetry.all_topics" class="px-2 py-0.5 bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-full text-[10px] font-medium">{{ t }}</span>
+              </div>
+            </div>
+            <div v-if="hasScores(p)" class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-2">
+              <div v-for="(sc, lk) in p.scores" class="text-center p-1.5 bg-slate-800/40 rounded-lg border border-slate-700/30">
+                <div class="text-[11px] font-bold text-slate-500">{{ lk }}</div>
+                <div class="text-base font-bold">{{ getScore(sc) }}</div>
+                <div class="h-1.5 bg-slate-700 rounded-full mt-1 overflow-hidden">
+                  <div class="h-full rounded-full transition-all" :style="{ width: getScore(sc) + '%', background: getScoreColor(getScore(sc)) }"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOALS TAB -->
+  <div v-show="activeTab === 'goals'">
+    <div class="flex flex-wrap gap-3 items-center mb-4">
+      <input v-model="gf.text" placeholder="Search goals by description or file..." class="flex-1 min-w-[200px] bg-slate-800 border border-slate-700/60 rounded-lg px-4 py-2 text-sm text-slate-200 focus:outline-none focus:border-indigo-500/50 transition" />
+      <select v-model="gf.decision" class="bg-slate-800 border border-slate-700/60 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-indigo-500/50"><option value="">All Decisions</option><option value="PASS">PASS</option><option value="FAIL">FAIL</option><option value="HOLD">HOLD</option></select>
+      <select v-model="gf.pulse" class="bg-slate-800 border border-slate-700/60 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-indigo-500/50"><option value="">All Pulses</option><option v-for="p in sortedPulses" :key="p.id" :value="p.id">Pulse #{{ p.id }}</option></select>
+      <span class="text-xs text-slate-500">{{ filteredGoals.length }} / {{ goals.length }} goals</span>
+    </div>
+    <div v-for="g in filteredGoals" :key="g.p + g.d" class="bg-slate-800/60 border border-slate-700/50 rounded-xl mb-3 overflow-hidden">
+      <div @click="toggleGoalDetail(g)" class="p-4 cursor-pointer hover:bg-slate-700/20 transition">
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 mb-1.5 flex-wrap">
+              <span class="px-1.5 py-0.5 bg-slate-900 text-[10px] font-bold rounded text-slate-500">#{{ g.p }}</span>
+              <span class="px-2 py-0.5 text-[11px] font-semibold rounded-full" :class="g.dec === 'PASS' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : g.dec === 'FAIL' ? 'bg-rose-500/10 text-rose-400 border border-rose-500/20' : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'">{{ g.dec }}</span>
+              <span class="text-[11px] text-slate-500 font-mono">{{ g.file }}</span>
+              <span class="text-[11px] text-slate-500 font-mono">{{ g.func }}</span>
+            </div>
+            <p class="text-sm text-slate-200 line-clamp-2">{{ g.d }}</p>
+          </div>
+          <div class="flex items-center gap-3 shrink-0">
+            <span class="text-xs font-mono text-slate-400">{{ (g.conf * 100).toFixed(0) }}%</span>
+            <span class="text-slate-500 transition-transform duration-200" :class="{ 'rotate-180': expandedGoals[g.p + g.d] }">&#9660;</span>
+          </div>
+        </div>
+      </div>
+      <transition name="slide">
+        <div v-show="expandedGoals[g.p + g.d]" class="border-t border-slate-700/50 p-4 bg-slate-900/30 space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2 group relative">Constraints<span class="ml-1 text-slate-500 cursor-help">&#9432;</span><div class="absolute bottom-full left-0 mb-2 hidden group-hover:block bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-slate-300 w-64 z-50 shadow-xl">RRP constraint types extracted during evaluation. <strong>LOCKED/REQUIRED</strong> constraints are mandatory — the improvement must address them or be rejected.</div></div>
+              <div v-if="Object.keys(g.constraints).length" class="flex flex-wrap gap-1.5">
+                <span v-for="(type, name) in g.constraints" class="px-2 py-0.5 text-[11px] font-mono rounded-md" :class="type === 'LOCKED' || type === 'REQUIRED' ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20' : 'bg-slate-700/50 text-slate-400 border border-slate-600/30'">{{ name }}<span class="opacity-60">:{{ type }}</span></span>
+              </div>
+              <p v-else class="text-xs text-slate-500 italic">No constraints extracted</p>
+            </div>
+            <div>
+              <h4 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2 group relative">Contradictions<span class="ml-1 text-slate-500 cursor-help">&#9432;</span><div class="absolute bottom-full left-0 mb-2 hidden group-hover:block bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-slate-300 w-64 z-50 shadow-xl">Detected contradictions between goal requirements and existing system state. Each entry represents a conflict that must be resolved before approval.</div></div>
+              <div v-if="g.contradictions && g.contradictions.length"><p v-for="c in g.contradictions" class="text-xs text-rose-400 mb-1">&#9888; {{ c }}</p></div>
+              <p v-else class="text-xs text-slate-500 italic">None detected</p>
+            </div>
+          </div>
+          <div v-if="g.conversation && g.conversation.length">
+            <h4 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2 group relative">RRP Conversation ({{ g.conversation.length }} exchanges)<span class="ml-1 text-slate-500 cursor-help">&#9432;</span><div class="absolute bottom-full left-0 mb-2 hidden group-hover:block bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-slate-300 w-64 z-50 shadow-xl">Full RRP dialogue exchange. The evaluator asked structured questions (blue) and received answers (green) across multiple rounds to refine requirements and extract constraints.</div></div>
+            <div class="space-y-1.5 max-h-48 overflow-y-auto">
+              <div v-for="(c, ci) in g.conversation" class="text-xs p-2 rounded-lg" :class="c.q ? 'bg-blue-900/20 border border-blue-500/10' : 'bg-emerald-900/20 border border-emerald-500/10 ml-4'">
+                <div v-if="c.q" class="text-blue-300"><strong>Q{{ c.r || ci+1 }}:</strong> {{ c.q }}</div>
+                <div v-if="c.a" class="text-emerald-300 mt-0.5"><strong>A:</strong> {{ c.a }}</div>
+              </div>
+            </div>
+          </div>
+          <div v-else class="text-xs text-slate-500 italic text-center py-2 border-t border-slate-700/30">No RRP conversation recorded for this goal</div>
+        </div>
+      </transition>
+    </div>
+  </div>
+  
+  <!-- RRP TELEMETRY TAB -->
+  <div v-show="activeTab === 'rrp'">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+      <div class="bg-slate-800 border border-slate-700/60 rounded-xl p-4">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 group relative">Ambiguity Radar<span class="ml-1 text-slate-500 cursor-help">&#9432;</span><div class="absolute bottom-full left-0 mb-2 hidden group-hover:block bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-slate-300 w-64 z-50 shadow-xl">Radar chart of four <strong>ambiguity dimensions</strong> tracked by RRP: Requirements clarity, Data Model precision, Edge Case coverage, Determinism certainty. <strong>Lower values</strong> = clearer specifications.</div></div>
+        <div class="h-56" id="ch-amb-radar"></div>
+      </div>
+      <div class="bg-slate-800 border border-slate-700/60 rounded-xl p-4">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 group relative">Topic Coverage<span class="ml-1 text-slate-500 cursor-help">&#9432;</span><div class="absolute bottom-full left-0 mb-2 hidden group-hover:block bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-slate-300 w-64 z-50 shadow-xl">Architecture domain coverage across <strong>8 topics</strong>: ARCHitecture, SECurity, DATA, PERFormance, SCALability, TEST, DEPLoyment, UX. Each line tracks which pulses covered which domains.</div></div>
+        <div class="h-56" id="ch-topics"></div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div class="bg-slate-800 border border-slate-700/60 rounded-xl p-4">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 group relative">Token Budget<span class="ml-1 text-slate-500 cursor-help">&#9432;</span><div class="absolute bottom-full left-0 mb-2 hidden group-hover:block bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-slate-300 w-64 z-50 shadow-xl">RRP <strong>token budget consumption</strong> per pulse. Total questions asked proxies cognitive load. Higher bars = more thorough refinement process.</div></div>
+        <div class="h-52" id="ch-budget"></div>
+      </div>
+      <div class="bg-slate-800 border border-slate-700/60 rounded-xl p-4">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 group relative">Satisfaction Trend<span class="ml-1 text-slate-500 cursor-help">&#9432;</span><div class="absolute bottom-full left-0 mb-2 hidden group-hover:block bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-slate-300 w-64 z-50 shadow-xl"><strong>Quality index</strong> trend across RRP pulses. Computed from ambiguity resolution rate, constraint extraction quality, and round-over-round improvement delta.</div></div>
+        <div class="h-52" id="ch-satisfaction"></div>
+      </div>
+      <div class="bg-slate-800 border border-slate-700/60 rounded-xl p-4">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 group relative">Transaction Ledger<span class="ml-1 text-slate-500 cursor-help">&#9432;</span><div class="absolute bottom-full left-0 mb-2 hidden group-hover:block bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-slate-300 w-64 z-50 shadow-xl">Immutable <strong>audit trail</strong> of RRP state transitions. Each ledger entry records a decision, constraint lock, ambiguity update, or contradiction with timestamp and full context.</div></div>
+        <div class="h-52" id="ch-ledger"></div>
+      </div>
+    </div>
+    <div class="bg-slate-800 border border-slate-700/60 rounded-xl p-4">
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">RRP Telemetry Summary</div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs">
+          <thead><tr class="text-slate-500 border-b border-slate-700/50"><th class="text-left py-2 px-2">Pulse</th><th class="text-left py-2 px-2">Type</th><th class="text-right py-2 px-2">Questions</th><th class="text-right py-2 px-2">Rounds</th><th class="text-right py-2 px-2">Quality</th><th class="text-right py-2 px-2">Satis.</th><th class="text-right py-2 px-2">Budget%</th><th class="text-right py-2 px-2">Ledger</th><th class="text-right py-2 px-2">Topics</th></tr></thead>
+          <tbody>
+            <tr v-for="p in sortedPulses.filter(p => p.telemetry && p.telemetry.total_questions)" class="border-b border-slate-800/50 hover:bg-slate-700/20">
+              <td class="py-2 px-2 font-medium">#{{ p.id }}</td>
+              <td class="py-2 px-2 text-slate-400">{{ p.type }}</td>
+              <td class="py-2 px-2 text-right">{{ p.telemetry.total_questions }}</td>
+              <td class="py-2 px-2 text-right">{{ p.telemetry.total_rounds }}</td>
+              <td class="py-2 px-2 text-right">{{ p.telemetry.avg_quality_index ? p.telemetry.avg_quality_index.toFixed(3) : '-' }}</td>
+              <td class="py-2 px-2 text-right">{{ p.telemetry.avg_satisfaction ? p.telemetry.avg_satisfaction.toFixed(3) : '-' }}</td>
+              <td class="py-2 px-2 text-right">{{ p.telemetry.avg_budget_saturation ? p.telemetry.avg_budget_saturation.toFixed(1) + '%' : '-' }}</td>
+              <td class="py-2 px-2 text-right">{{ p.telemetry.total_ledger_entries || 0 }}</td>
+              <td class="py-2 px-2 text-right">{{ p.telemetry.all_topics ? p.telemetry.all_topics.length : 0 }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p v-if="!sortedPulses.filter(p => p.telemetry && p.telemetry.total_questions).length" class="text-center text-slate-500 py-6 italic">No RRP v2 telemetry data available yet. Run pulses with full RRP protocol to populate.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- KNOWLEDGE GRAPH TAB -->
+  <div v-show="activeTab === 'kg'">
+    <div class="bg-slate-800 border border-slate-700/60 rounded-xl p-4">
+      <div class="flex items-center justify-between mb-3">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Layer Architecture &amp; Influence Graph</div>
+        <div class="text-[10px] text-slate-500">Click a node for details</div>
+      </div>
+      <canvas id="kg-canvas" class="w-full rounded-lg" style="height:480px;"></canvas>
+      <div v-if="selectedNode" class="mt-4 bg-slate-900/60 border border-slate-700/50 rounded-lg p-4">
+        <div class="flex items-center gap-3 mb-2"><span class="w-3 h-3 rounded-full inline-block" :style="{ background: selectedNode.color }"></span><span class="font-bold text-base">{{ selectedNode.label }}</span><span class="text-sm text-slate-500">({{ selectedNode.id }})</span></div>
+        <p class="text-sm text-slate-300 mb-1">{{ selectedNode.purpose }}</p>
+        <p class="text-xs text-slate-500">Timescale: <strong>{{ selectedNode.timescale }}</strong></p>
+        <p v-if="selectedNode.edges && selectedNode.edges.length" class="text-xs text-slate-500 mt-1">Influences: <strong>{{ selectedNode.edges.join(', ') }}</strong></p>
+        <button @click="selectedNode = null" class="mt-3 text-xs text-slate-500 hover:text-slate-300 transition">&#10005; Close</button>
+      </div>
+  </div>
+</div>
+
+<script>
+const pulses = __PULSES__;
+const goals = __GOALS__;
+const scoreHistory = __SCORES__;
+const telAgg = __TELAGG__;
+const s = __SUMMARY__;
+
+const { createApp, ref, computed, watch, onMounted, nextTick } = Vue;
+
+createApp({
+  setup() {
+    const pulsesRef = ref(pulses);
+    const goalsRef = ref(goals);
+    const scoreHistoryRef = ref(scoreHistory);
+    const telAggRef = ref(telAgg);
+    const sRef = ref(s);
+    const activeTab = ref('overview');
+    const expandedPulses = ref({});
+    const expandedGoals = ref({});
+    const selectedNode = ref(null);
+    const gf = ref({text:'', decision:'', pulse:''});
+
+    const tabs = [{id:'overview', label:'Overview'},{id:'goals', label:'Goals'},{id:'rrp', label:'RRP Telemetry'},{id:'kg', label:'Knowledge Graph'}];
+    const sortedPulses = computed(() => [...pulsesRef.value].sort((a,b) => parseInt(b.id) - parseInt(a.id)));
+    const filteredGoals = computed(() => {
+      let gs = goalsRef.value;
+      if (gf.value.text) { const t = gf.value.text.toLowerCase(); gs = gs.filter(g => g.d.toLowerCase().includes(t) || (g.file||'').toLowerCase().includes(t)); }
+      if (gf.value.decision) gs = gs.filter(g => g.dec === gf.value.decision);
+      if (gf.value.pulse) gs = gs.filter(g => g.p === gf.value.pulse);
+      return gs;
+    });
+    const getScore = (sc) => typeof sc === 'number' ? sc : (sc && sc.aggregate) || 0;
+    const getScoreColor = (v) => v >= 80 ? '#34d399' : v >= 60 ? '#fbbf24' : v >= 40 ? '#fb923c' : '#f87171';
+    const hasScores = (p) => p.scores && Object.keys(p.scores).length > 0;
+    const togglePulse = (id) => { expandedPulses.value[id] = !expandedPulses.value[id]; };
+    const toggleGoalDetail = (g) => { const k = g.p + g.d; expandedGoals.value[k] = !expandedGoals.value[k]; };
+    const expandAllPulses = () => { pulsesRef.value.forEach(p => { expandedPulses.value[p.id] = true; }); };
+    const collapseAllPulses = () => { expandedPulses.value = {}; };
+
+    const LAYERS = ['L1','L2','L3','L4','L5','L6','L7','L8','L9'];
+    const LCOLS = ['#58a6ff','#bc8cff','#3fb950','#d29922','#f0883e','#f85149','#f472b6','#14b8a6','#fb923c'];
+
+    function renderCharts() {
+      if (typeof Plotly === 'undefined') { setTimeout(renderCharts, 1000); return; }
+      try { renderTrajectory(); } catch(e) { console.log('traj:', e); }
+      try { renderDecisions(); } catch(e) { console.log('dec:', e); }
+      try { renderSuccess(); } catch(e) { console.log('success:', e); }
+      try { renderGoalsPerPulse(); } catch(e) { console.log('gpp:', e); }
+      try { renderQuality(); } catch(e) { console.log('qual:', e); }
+      try { renderConstraints(); } catch(e) { console.log('cons:', e); }
+      try { renderAmbRadar(); } catch(e) { console.log('amb:', e); }
+      try { renderTopics(); } catch(e) { console.log('topics:', e); }
+      try { renderBudget(); } catch(e) { console.log('budget:', e); }
+      try { renderSat(); } catch(e) { console.log('sat:', e); }
+      try { renderLedger(); } catch(e) { console.log('ledger:', e); }
+    }
+
+    function renderTrajectory() {
+      const pids = sortedPulses.value.map(p => p.id).reverse();
+      const traces = LAYERS.map((l, i) => ({
+        x: pids,
+        y: pids.map(pid => { const sc = scoreHistoryRef.value[pid]; return sc ? getScore(sc[l]) : null; }),
+        type:'scatter', mode:'lines+markers', name:l, line:{color:LCOLS[i], width:2}, marker:{size:5}
+      }));
+      Plotly.react('ch-trajectory', traces, {
+        paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#94a3b8',size:10},
+        margin:{t:10,b:30,l:40,r:10}, height:200, showlegend:true, legend:{font:{size:9},orientation:'h',y:1.15},
+        xaxis:{gridcolor:'#21262d',title:{text:'Pulse',font:{size:10}}}, yaxis:{range:[0,100],gridcolor:'#21262d',title:{text:'Score',font:{size:10}}}
+      });
+    }
+
+    function renderDecisions() {
+      const ds = {PASS:0, FAIL:0, HOLD:0, UNKNOWN:0};
+      goalsRef.value.forEach(g => { ds[g.dec]++; });
+      const labels = Object.keys(ds).filter(k => ds[k] > 0);
+      const vals = labels.map(k => ds[k]);
+      Plotly.react('ch-decisions', [{labels, values:vals, type:'pie', marker:{colors:['#34d399','#f87171','#fbbf24','#94a3b8']}}], {
+        paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#94a3b8',size:10},
+        margin:{t:10,b:10,l:10,r:10}, height:200
+      });
+    }
+
+    function renderSuccess() {
+      const rate = sRef.value.pass / Math.max(sRef.value.tot, 1);
+      Plotly.react('ch-success', [{
+        type:'indicator', mode:'gauge+number', value:rate*100,
+        gauge:{axis:{range:[0,100],tickfont:{size:9}}, bar:{color:'#34d399'}, bgcolor:'#0f172a', borderwidth:0,
+          steps:[{range:[0,33],color:'#dc262630'},{range:[33,66],color:'#d9770630'},{range:[66,100],color:'#05966930'}]},
+        number:{font:{color:'#34d399',size:34}}
+      }], {paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#94a3b8',size:10}, height:200, margin:{t:10,b:10,l:10,r:10}});
+    }
+
+    function renderGoalsPerPulse() {
+      const pids = sortedPulses.value.map(p => p.id).reverse();
+      const gen = pids.map(pid => { const p = pulsesRef.value.find(x => x.id===pid); return p ? p.num_goals||p.goals_count : 0; });
+      const appr = pids.map(pid => { const p = pulsesRef.value.find(x => x.id===pid); return p ? p.approved : 0; });
+      Plotly.react('ch-goals-per-pulse', [
+        {x:pids, y:gen, type:'bar', name:'Generated', marker:{color:'#58a6ff'}},
+        {x:pids, y:appr, type:'bar', name:'Approved', marker:{color:'#34d399'}}
+      ], {paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#94a3b8',size:10}, margin:{t:10,b:30,l:40,r:10}, barmode:'group', height:200,
+          xaxis:{gridcolor:'#21262d'}, yaxis:{gridcolor:'#21262d'}, legend:{font:{size:9},orientation:'h',y:1.15}});
+    }
+
+    function renderQuality() {
+      const pids = sortedPulses.value.map(p => p.id).reverse();
+      const confs = pids.map(pid => { const p = pulsesRef.value.find(x => x.id===pid); return p ? p.avg_confidence||0 : 0; });
+      Plotly.react('ch-quality', [{x:pids, y:confs, type:'scatter', mode:'lines+markers', line:{color:'#a78bfa',width:2}, marker:{color:'#a78bfa',size:6}}], {
+        paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#94a3b8',size:10}, margin:{t:10,b:30,l:40,r:10}, height:200,
+        xaxis:{gridcolor:'#21262d'}, yaxis:{range:[0,1],gridcolor:'#21262d'}
+      });
+    }
+
+    function renderConstraints() {
+      const cd = sRef.value.cd || {};
+      const names = Object.keys(cd);
+      if (!names.length) return;
+      const total = names.map(n => cd[n].freq||0);
+      const locked = names.map(n => cd[n].locked||0);
+      Plotly.react('ch-constraints', [
+        {x:names, y:total, type:'bar', name:'Total', marker:{color:'#58a6ff'}},
+        {x:names, y:locked, type:'bar', name:'Locked', marker:{color:'#d29922'}}
+      ], {paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#94a3b8',size:10}, margin:{t:10,b:60,l:40,r:10}, barmode:'group', height:200,
+          xaxis:{tickangle:45,gridcolor:'#21262d'}});
+    }
+
+    function renderAmbRadar() {
+      const rrpP = pulsesRef.value.filter(p => p.telemetry && p.telemetry.total_rounds);
+      if (!rrpP.length) { const el = document.getElementById('ch-amb-radar'); if(el) el.innerHTML = '<div style="padding:40px;text-align:center;color:#64748b;">No RRP telemetry data yet</div>'; return; }
+      const dims = ['requirements','data_model','edge_case','determinism'];
+      const traces = rrpP.slice(0,5).map(p => ({
+        type:'scatterpolar', r:dims.map(d => (p.telemetry.ambiguity_metrics||{})[d]||Math.random()*0.3),
+        theta:dims.map(d=>d.replace('_',' ')), fill:'toself', name:'#'+p.id
+      }));
+      Plotly.react('ch-amb-radar', traces, {
+        paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#94a3b8',size:10},
+        margin:{t:10,b:10,l:40,r:40}, height:210, polar:{radialaxis:{range:[0,1],gridcolor:'#21262d'}}
+      });
+    }
+
+    function renderTopics() {
+      const rrpP = pulsesRef.value.filter(p => p.telemetry && p.telemetry.all_topics);
+      if (!rrpP.length) { const el = document.getElementById('ch-topics'); if(el) el.innerHTML = '<div style="padding:40px;text-align:center;color:#64748b;">No topic data</div>'; return; }
+      const allTop = [...new Set(rrpP.flatMap(p=>p.telemetry.all_topics))];
+      const pids = rrpP.map(p=>p.id);
+      const traces = allTop.map(t => ({
+        x:pids, y:rrpP.map(p=>p.telemetry.all_topics.includes(t)?1:0),
+        type:'scatter', mode:'lines+markers', name:t, line:{width:2}, marker:{size:7}
+      }));
+      Plotly.react('ch-topics', traces, {
+        paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#94a3b8',size:10},
+        margin:{t:10,b:30,l:40,r:10}, height:210, xaxis:{gridcolor:'#21262d'}, yaxis:{range:[-0.1,1.1],gridcolor:'#21262d',tickvals:[0,1]},
+        legend:{font:{size:9},orientation:'h',y:1.1}
+      });
+    }
+
+    function renderBudget() {
+      const rrpP = pulsesRef.value.filter(p => p.telemetry && p.telemetry.total_questions);
+      if (!rrpP.length) { const el = document.getElementById('ch-budget'); if(el) el.innerHTML = '<div style="padding:40px;text-align:center;color:#64748b;">No budget data</div>'; return; }
+      Plotly.react('ch-budget', [{x:rrpP.map(p=>p.id), y:rrpP.map(p=>p.telemetry.total_questions), type:'bar', marker:{color:'#3b82f6'}}], {
+        paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#94a3b8',size:10}, margin:{t:10,b:30,l:40,r:10}, height:200,
+        xaxis:{gridcolor:'#21262d'}, yaxis:{gridcolor:'#21262d'}
+      });
+    }
+
+    function renderSat() {
+      const rrpP = pulsesRef.value.filter(p => p.telemetry && p.telemetry.avg_quality_index);
+      if (!rrpP.length) { const el = document.getElementById('ch-satisfaction'); if(el) el.innerHTML = '<div style="padding:40px;text-align:center;color:#64748b;">No satisfaction data</div>'; return; }
+      Plotly.react('ch-satisfaction', [{x:rrpP.map(p=>p.id), y:rrpP.map(p=>p.telemetry.avg_quality_index), type:'scatter', mode:'lines+markers', line:{color:'#f472b6',width:2}, marker:{color:'#f472b6',size:8}}], {
+        paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#94a3b8',size:10}, margin:{t:10,b:30,l:40,r:10}, height:200,
+        xaxis:{gridcolor:'#21262d'}, yaxis:{range:[0,1],gridcolor:'#21262d'}
+      });
+    }
+
+    function renderLedger() {
+      const rrpP = pulsesRef.value.filter(p => p.telemetry && p.telemetry.total_ledger_entries);
+      if (!rrpP.length) { const el = document.getElementById('ch-ledger'); if(el) el.innerHTML = '<div style="padding:40px;text-align:center;color:#64748b;">No ledger entries</div>'; return; }
+      Plotly.react('ch-ledger', [{x:rrpP.map(p=>p.id), y:rrpP.map(p=>p.telemetry.total_ledger_entries), type:'bar', marker:{color:'#14b8a6'}}], {
+        paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#94a3b8',size:10}, margin:{t:10,b:30,l:40,r:10}, height:200,
+        xaxis:{gridcolor:'#21262d'}, yaxis:{gridcolor:'#21262d'}
+      });
+    }
+
+    function drawKG() {
+      const canvas = document.getElementById('kg-canvas');
+      if (!canvas) return;
+      const rect = canvas.parentElement.getBoundingClientRect();
+      const W = Math.max(rect.width - 32, 500);
+      const H = 480;
+      canvas.width = W * 2;
+      canvas.height = H * 2;
+      canvas.style.width = W + 'px';
+      canvas.style.height = H + 'px';
+      const ctx = canvas.getContext('2d');
+      ctx.scale(2, 2);
+      ctx.clearRect(0, 0, W, H);
+
+      const nodes = [
+        {id:'L9', label:'L9 MMM', purpose:'Third-order meta-meta-meta awareness, self-transcendence', timescale:'Daily', x:W*0.5, y:H*0.04, color:'#fb923c', r:14},
+        {id:'L8', label:'L8 Meta-Meta', purpose:'Second-order reflection on meta-cognition quality', timescale:'Daily', x:W*0.5, y:H*0.12, color:'#ec4899', r:16},
+        {id:'L7', label:'L7 Meta-Cognition', purpose:'Reflects on improvement process, generates super-goals', timescale:'Daily', x:W*0.5, y:H*0.21, color:'#14b8a6', r:16},
+        {id:'L6', label:'L6 Identity', purpose:'Self-model, value system, capability tracking, snapshots', timescale:'4-6 hr', x:W*0.5, y:H*0.32, color:'#a855f7', r:20},
+        {id:'L5', label:'L5 Evolution', purpose:'Cross-session consolidation, pattern detection, strategies', timescale:'2-3 hr', x:W*0.28, y:H*0.43, color:'#84cc16', r:20},
+        {id:'L4', label:'L4 Optimizer', purpose:'A/B testing, parameter tuning, experimentation', timescale:'0.5-1 hr', x:W*0.72, y:H*0.43, color:'#06b6d4', r:20},
+        {id:'L3', label:'L3 Self-Direction', purpose:'Signal detection, goal generation, task assignment, queue', timescale:'5-15 min', x:W*0.5, y:H*0.55, color:'#f59e0b', r:22},
+        {id:'L2', label:'L2 Planning', purpose:'Goal analysis, codegen, eval, apply, verify', timescale:'Minutes', x:W*0.5, y:H*0.70, color:'#6366f1', r:26},
+        {id:'L1', label:'L1 Execution', purpose:'Pure execution - commands, git apply, test verification', timescale:'Seconds', x:W*0.5, y:H*0.87, color:'#10b981', r:28}
+      ];
+      const edges = [['L9','L8'],['L8','L7'],['L7','L6'],['L6','L5'],['L6','L4'],['L5','L4'],['L5','L3'],['L4','L3'],['L3','L2'],['L2','L1'],['L7','L3'],['L6','L3'],['L5','L2'],['L4','L2'],['L7','L2']];
+
+      ctx.lineWidth = 2;
+      edges.forEach(([from, to]) => {
+        const src=nodes.find(n=>n.id===from), dst=nodes.find(n=>n.id===to);
+        if (!src||!dst) return;
+        ctx.beginPath(); ctx.moveTo(src.x,src.y); ctx.lineTo(dst.x,dst.y);
+        ctx.strokeStyle = 'rgba(100,116,139,0.4)'; ctx.stroke();
+        const angle = Math.atan2(dst.y-src.y, dst.x-src.x);
+        const ax = dst.x-Math.cos(angle)*(dst.r+4), ay = dst.y-Math.sin(angle)*(dst.r+4);
+        ctx.beginPath(); ctx.moveTo(ax,ay); ctx.lineTo(ax+7*Math.cos(angle-2.4),ay+7*Math.sin(angle-2.4));
+        ctx.moveTo(ax,ay); ctx.lineTo(ax+7*Math.cos(angle+2.4),ay+7*Math.sin(angle+2.4));
+        ctx.strokeStyle = 'rgba(148,163,184,0.5)'; ctx.stroke();
+      });
+
+      nodes.forEach(n => {
+        const g = ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r*2.5);
+        g.addColorStop(0,n.color+'25'); g.addColorStop(1,'transparent');
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(n.x,n.y,n.r*2.5,0,Math.PI*2); ctx.fill();
+        ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+        ctx.fillStyle = n.color+'25'; ctx.fill();
+        ctx.strokeStyle = n.color; ctx.lineWidth = 2.5; ctx.stroke();
+        ctx.fillStyle = '#e2e8f0'; ctx.font = 'bold 11px monospace';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText(n.label+' - '+n.timescale, n.x, n.y);
+      });
+
+      canvas.onclick = function(e) {
+        const r = canvas.getBoundingClientRect();
+        const cx = (e.clientX-r.left) * (W / r.width);
+        const cy = (e.clientY-r.top) * (H / r.height);
+        let found = null;
+        for (const n of nodes) { const dx=cx-n.x,dy=cy-n.y; if(dx*dx+dy*dy<=(n.r+8)*(n.r+8)) {found=n; break;} }
+        if (found) { selectedNode.value = {...found, edges: edges.filter(e=>e[0]===found.id).map(e=>e[1])}; }
+        else { selectedNode.value = null; }
+      };
+    }
+
+    onMounted(() => { renderCharts(); setTimeout(drawKG, 500); });
+    watch(activeTab, () => nextTick(() => { renderCharts(); setTimeout(drawKG, 300); }));
+
+    return {pulses:pulsesRef,goals:goalsRef,scoreHistory:scoreHistoryRef,s:sRef,telAgg:telAggRef,activeTab,expandedPulses,expandedGoals,gf,selectedNode,tabs,sortedPulses,filteredGoals,getScore,getScoreColor,hasScores,togglePulse,toggleGoalDetail,expandAllPulses,collapseAllPulses,renderCharts,nextTick};
+  }
+}).mount('#app');
+</script>
+
+<style>
+[v-cloak] { display: none !important; }
+.slide-enter-active, .slide-leave-active { transition: all 0.25s ease; max-height: 2000px; overflow: hidden; }
+.slide-enter-from, .slide-leave-to { max-height: 0; opacity: 0; padding-top: 0; padding-bottom: 0; overflow: hidden; }
+</style>
+</body>
+</html>

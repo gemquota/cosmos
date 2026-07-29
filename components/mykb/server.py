@@ -1,0 +1,386 @@
+"""Recursive markdown documentation server.
+
+Usage:  python3 server.py [port]
+        python3 server.py 8080
+
+Serves .md files from all subdirectories with auto-discovery,
+syntax highlighting, dark mode, and search.
+"""
+
+import os, sys, json, http.server, socketserver, urllib.parse, re
+import subprocess
+import math
+
+PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8765
+DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Load search index at startup
+SEARCH_INDEX = None
+SEARCH_DIR = os.path.join(DIR, '.wiki-daemon')
+SEARCH_PATH = os.path.join(SEARCH_DIR, 'search_index.json')
+if os.path.exists(SEARCH_PATH):
+    try:
+        import math
+        with open(SEARCH_PATH) as f:
+            SEARCH_INDEX = json.load(f)
+        print(f"   Search index: {len(SEARCH_INDEX['paths'])} docs")
+    except Exception as e:
+        print(f"   Search index: failed to load ({e})")
+
+def search_query(q, limit=20):
+    if not SEARCH_INDEX or not q.strip():
+        return []
+    q = q.lower().strip()
+    query_words = set(re.findall(r'[a-z0-9]+', q))
+    if not query_words:
+        return []
+    
+    # Score each document by TF-IDF cosine similarity
+    scores = []
+    for i, doc in enumerate(SEARCH_INDEX['docs']):
+        doc_words = doc.split()
+        score = 0
+        for w in query_words:
+            if w in SEARCH_INDEX['idf']:
+                tf = doc_words.count(w) / max(len(doc_words), 1)
+                score += tf * SEARCH_INDEX['idf'][w]
+        if score > 0:
+            scores.append((score, i))
+    
+    scores.sort(key=lambda x: -x[0])
+    results = []
+    for score, i in scores[:limit]:
+        # Get relative path
+        full = SEARCH_INDEX['paths'][i]
+        rel = os.path.relpath(full, DIR)
+        # Get title from frontmatter
+        with open(full) as f:
+            first = f.read(300)
+        m = re.search(r'title:\s*"?([^"\n]+)"?', first)
+        title = m.group(1) if m else os.path.basename(full).replace('.md', '')
+        results.append({
+            'path': rel,
+            'title': title,
+            'score': round(score, 3)
+        })
+    return results
+
+
+def get_system_stats():
+    """Gather system statistics about the wiki bundle."""
+    from collections import Counter
+    
+    stats = {
+        'files': {'total': 0, 'entities': 0, 'sessions': 0, 'domains': 0},
+        'sizes': {'total_bytes': 0, 'smallest': None, 'largest': None},
+        'graph': {'nodes': 0, 'edges': 0},
+        'domains': {},
+        'tags': {},
+    }
+    
+    entity_count = 0
+    domain_counts = Counter()
+    tag_counts = Counter()
+    
+    for root, dirs, files in os.walk(DIR):
+        for fn in files:
+            if not fn.endswith('.md'):
+                continue
+            fpath = os.path.join(root, fn)
+            sz = os.path.getsize(fpath)
+            stats['files']['total'] += 1
+            stats['sizes']['total_bytes'] += sz
+            
+            if 'supercategories' in root:
+                entity_count += 1
+                if fn not in ('index.md', 'overview.md'):
+                    parts = root.split(os.sep)
+                    if 'domains' in parts:
+                        didx = parts.index('domains')
+                        if didx + 1 < len(parts):
+                            domain_counts[parts[didx + 1]] += 1
+                    # Read tags
+                    try:
+                        with open(fpath) as fh:
+                            first = fh.read(300)
+                        tm = re.search(r'tags:\s*\[(.*?)\]', first)
+                        if tm:
+                            tags = [t.strip().strip("\"'") for t in tm.group(1).split(',') if t.strip()]
+                            for t in tags:
+                                if t not in ('entity', 'ast', 'acronym'):
+                                    tag_counts[t] += 1
+                    except:
+                        pass
+            
+            if stats['sizes']['smallest'] is None or sz < stats['sizes']['smallest']['size']:
+                rel = os.path.relpath(fpath, DIR)
+                stats['sizes']['smallest'] = {'path': rel, 'size': sz}
+            if stats['sizes']['largest'] is None or sz > stats['sizes']['largest']['size']:
+                rel = os.path.relpath(fpath, DIR)
+                stats['sizes']['largest'] = {'path': rel, 'size': sz}
+    
+    # Session count
+    session_dir = os.path.join(DIR, 'wiki', 'sessions')
+    if os.path.isdir(session_dir):
+        stats['files']['sessions'] = len([f for f in os.listdir(session_dir) if f.endswith('.md')])
+    
+    stats['files']['entities'] = entity_count
+    stats['domains'] = dict(domain_counts.most_common())
+    stats['tags'] = dict(tag_counts.most_common(20))
+    
+    # Graph stats
+    graph_path = os.path.join(DIR, '.wiki-daemon', 'graph.json')
+    if os.path.exists(graph_path):
+        try:
+            with open(graph_path) as f:
+                g = json.load(f)
+            stats['graph']['nodes'] = len(g.get('nodes', []))
+            stats['graph']['edges'] = len(g.get('edges', []))
+        except:
+            pass
+    
+    stats['sizes']['total_mb'] = round(stats['sizes']['total_bytes'] / 1024 / 1024, 1)
+    stats['sizes']['smallest']['size_kb'] = round(stats['sizes']['smallest']['size'] / 1024, 2)
+    stats['sizes']['largest']['size_kb'] = round(stats['sizes']['largest']['size'] / 1024, 2)
+    
+    return stats
+
+class Handler(http.server.SimpleHTTPRequestHandler):
+    def send_json(self, data):
+        """Send JSON response with CORS headers."""
+        self.send_response(200)
+        self.send_header('Content-Type', 'application/json')
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Cache-Control', 'no-cache')
+        self.end_headers()
+        self.wfile.write(json.dumps(data).encode())
+
+    def do_GET(self):
+        parsed = urllib.parse.urlparse(self.path)
+        params = urllib.parse.parse_qs(parsed.query)
+        
+        if parsed.path == '/graph.json':
+            graph_path = os.path.join(DIR, '.wiki-daemon', 'graph.json')
+            if os.path.exists(graph_path):
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.send_header('Cache-Control', 'no-cache')
+                self.end_headers()
+                with open(graph_path) as f:
+                    self.wfile.write(f.read().encode())
+            else:
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json')
+                self.end_headers()
+                self.wfile.write(b'{"nodes":[],"edges":[]}')
+            return
+        
+        if parsed.path == '/search':
+            q = params.get('q', [''])[0]
+            results = search_query(q)
+            self.send_json(results)
+            return
+        
+        if parsed.path == '/api/stats':
+            stats = get_system_stats()
+            self.send_json(stats)
+            return
+        
+
+        # ── Hybrid Search API ──
+        if parsed.path == '/api/v2/search/hybrid':
+            q = params.get('q', [''])[0]
+            if not q:
+                self.send_json({'query': '', 'results': [], 'total': 0})
+                return
+            try:
+                import importlib.util
+                sf_path = os.path.join(DIR, '.wiki-daemon', 'search_fusion.py')
+                spec = importlib.util.spec_from_file_location('sf_module', sf_path)
+                sf = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(sf)
+                index = sf.load_index()
+                if not index:
+                    self.send_json({'error': 'Search index not built. Run: python3 .wiki-daemon/search_fusion.py build-index'})
+                    return
+                results = sf.search_query(index, q)
+                self.send_json({'query': q, 'results': results, 'total': len(results)})
+            except Exception as e:
+                self.send_json({'error': str(e)})
+            return
+        
+        # ── Graph Topology API ──
+        if parsed.path == '/api/v2/graph/topology':
+            try:
+                graph_path = os.path.join(DIR, '.wiki-daemon', 'graph.json')
+                root_id = params.get('root', [None])[0]
+                depth = int(params.get('depth', ['2'])[0])
+                with open(graph_path) as f:
+                    g = json.load(f)
+                if root_id:
+                    # Build adjacency list
+                    adj = {}
+                    for e in g.get('edges', []):
+                        adj.setdefault(e['source'], set()).add(e['target'])
+                        adj.setdefault(e['target'], set()).add(e['source'])
+                    # BFS from root
+                    visited = set([root_id])
+                    queue = [(root_id, 0)]
+                    while queue:
+                        node, d = queue.pop(0)
+                        if d >= depth: continue
+                        for neighbor in adj.get(node, set()):
+                            if neighbor not in visited:
+                                visited.add(neighbor)
+                                queue.append((neighbor, d + 1))
+                    # Filter nodes and edges
+                    node_map = {n['id']: n for n in g.get('nodes', [])}
+                    filtered_nodes = [node_map[nid] for nid in visited if nid in node_map]
+                    filtered_edges = [e for e in g.get('edges', []) 
+                                      if e['source'] in visited and e['target'] in visited]
+                    self.send_json({
+                        'nodes': filtered_nodes,
+                        'edges': filtered_edges,
+                        'root': root_id,
+                        'depth': depth,
+                        'total_nodes': len(g.get('nodes', [])),
+                        'total_edges': len(g.get('edges', []))
+                    })
+                else:
+                    self.send_json(g)
+            except Exception as e:
+                self.send_json({'error': str(e)})
+            return
+        
+        # ── Linter Health API ──
+        if parsed.path == '/api/v2/health/lint':
+            try:
+                import importlib.util
+                kl_path = os.path.join(DIR, '.wiki-daemon', 'kb_linter.py')
+                spec = importlib.util.spec_from_file_location('kl_module', kl_path)
+                kl = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(kl)
+                report = kl.lint(return_json=True)
+                self.send_json(report)
+            except Exception as e:
+                self.send_json({'error': str(e)})
+            return
+        
+        # ── Temporal History: file change log ──
+        if parsed.path.startswith('/api/v2/history/log/'):
+            filepath = parsed.path.replace('/api/v2/history/log/', '', 1)
+            try:
+                eng = os.path.join(DIR, '.wiki-daemon', 'temporal_engine.py')
+                result = subprocess.run([sys.executable, eng, 'history', filepath],
+                    capture_output=True, text=True, timeout=10)
+                data = json.loads(result.stdout) if result.stdout else []
+                self.send_json(data)
+            except Exception as e:
+                self.send_json({'error': str(e)})
+            return
+        
+        # ── Temporal History: time-travel snapshot ──
+        if parsed.path.startswith('/api/v2/history/snapshot'):
+            filepath = params.get('path', [''])[0]
+            timestamp = params.get('ts', [''])[0]
+            if not filepath or not timestamp:
+                self.send_json({'error': 'Required: path=<filepath>&ts=<timestamp>'})
+                return
+            try:
+                eng = os.path.join(DIR, '.wiki-daemon', 'temporal_engine.py')
+                result = subprocess.run([sys.executable, eng, 'snapshot', filepath, timestamp],
+                    capture_output=True, text=True, timeout=10)
+                data = json.loads(result.stdout) if result.stdout else {'error': 'No data'}
+                self.send_json(data)
+            except Exception as e:
+                self.send_json({'error': str(e)})
+            return
+        
+        # ── Build search index ──
+        if parsed.path == '/api/v2/search/build':
+            try:
+                result = subprocess.run([sys.executable, os.path.join(DIR, '.wiki-daemon', 'search_fusion.py'), 'build-index'],
+                    capture_output=True, text=True, timeout=120)
+                self.send_json({'status': 'ok' if result.returncode == 0 else 'error', 'output': result.stdout})
+            except Exception as e:
+                self.send_json({'error': str(e)})
+            return
+        
+
+        # ── Serve individual file content ──
+        if parsed.path == '/api/file':
+            filepath = params.get('path', [''])[0]
+            if not filepath:
+                self.send_json({'error': 'Missing path parameter'})
+                return
+            safe = os.path.normpath(os.path.join(DIR, filepath))
+            if not safe.startswith(DIR):
+                self.send_json({'error': 'Path traversal blocked'})
+                return
+            if not os.path.isfile(safe):
+                self.send_response(404)
+                self.send_header('Content-Type', 'application/json')
+                self.end_headers()
+                self.wfile.write(json.dumps({'error': 'File not found: ' + filepath}).encode())
+                return
+            try:
+                with open(safe, 'r', encoding='utf-8', errors='replace') as fh:
+                    md = fh.read()
+                self.send_response(200)
+                self.send_header('Content-Type', 'text/plain; charset=utf-8')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.send_header('Cache-Control', 'no-cache')
+                self.end_headers()
+                self.wfile.write(md.encode('utf-8'))
+            except Exception as e:
+                self.send_json({'error': str(e)})
+            return
+
+        # ── List all .md files ──
+        if self.path == '/files.json':
+            # Recursively find all .md files, return relative paths
+            md_files = []
+            for root, dirs, files in os.walk(DIR):
+                dirs[:] = [d for d in dirs if not d.startswith('.') and d != '__pycache__']
+                for f in sorted(files):
+                    if f.endswith('.md'):
+                        full = os.path.join(root, f)
+                        rel = os.path.relpath(full, DIR)
+                        md_files.append(rel)
+            self.send_json(md_files)
+            return
+        
+        # Fall through to default file server for everything else
+        return super().do_GET()
+
+    def log_message(self, format, *args):
+        print(f"  {args[0]} {args[1]} {args[2]}")
+
+if __name__ == '__main__':
+    # Check daemon buffer directory health
+    buffer_dir = os.path.join(DIR, '.wiki-daemon', 'buffers')
+    if not os.path.isdir(buffer_dir):
+        print(f"   ⚠ Buffer dir missing: {buffer_dir}")
+        print(f"     Run: mkdir -p {buffer_dir}")
+    else:
+        buffer_count = len(os.listdir(buffer_dir))
+        print(f"   Daemon buffers: {buffer_dir} ({buffer_count} files)")
+        signals_dir = os.path.join(buffer_dir, 'signals')
+        if os.path.isdir(signals_dir):
+            sig_count = len(os.listdir(signals_dir))
+            print(f"   Pending signals: {sig_count}")
+    
+    # Count .md files
+    count = sum(1 for root, dirs, files in os.walk(DIR) 
+                for f in files if f.endswith('.md')
+                if not any(d.startswith('.') for d in root.split(os.sep)))
+    print(f"📄 md — Self-Contained Documentation Viewer")
+    print(f"   Serving: {DIR}")
+    print(f"   .md files: {count}")
+    print(f"   URL: http://localhost:{PORT}")
+    print(f"   Auto-discovers files recursively from all subdirectories")
+    class ReuseAddrTCPServer(socketserver.TCPServer):
+        allow_reuse_address = True
+    with ReuseAddrTCPServer(('', PORT), Handler) as httpd:
+        httpd.serve_forever()

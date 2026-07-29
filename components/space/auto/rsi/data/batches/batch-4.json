@@ -1,0 +1,526 @@
+[
+  {
+    "id": "5.3.1",
+    "series": 5,
+    "round": 3,
+    "focus": "Performance and Scalability",
+    "text": "What are the throughput, latency, and concurrency requirements? (requests/sec, response time, simultaneous users)",
+    "choices": [
+      {
+        "id": "5.3.1.a",
+        "text": "Low traffic \u2014 <100 req/s, seconds of latency, single-digit concurrency"
+      },
+      {
+        "id": "5.3.1.b",
+        "text": "Moderate traffic \u2014 100\u201310K req/s, sub-second latency, hundreds concurrent"
+      },
+      {
+        "id": "5.3.1.c",
+        "text": "High traffic \u2014 10K\u2013100K req/s, low-latency targets, thousands concurrent"
+      },
+      {
+        "id": "5.3.1.d",
+        "text": "Internet scale \u2014 100K+ req/s, strict SLOs, global distribution"
+      }
+    ],
+    "answer": "Performance requirements:\n\nResponse time: <100ms for all local operations (question presentation, answer recording, artifact extraction, session save). The system should feel instantaneous \u2014 the user should never wait for the system.\n\nLLM latency: 1-5 seconds for auto-fill API calls. This is network-bound and acceptable. The UI shows a loading indicator during LLM calls.\n\nMemory usage: <100MB RSS for the CLI tool. <200MB RSS for the web server. The system processes one session at a time, so memory is proportional to session size, not concurrent users.\n\nDisk I/O: <1MB/s write throughput for session saves. The system writes ~10KB per answer, so even at maximum answer frequency (one every 2 seconds), disk I/O is negligible.\n\nCPU usage: <5% during normal operation. The system is I/O-bound (waiting for user input or LLM API responses), not CPU-bound. Artifact extraction uses string matching (no ML inference locally).\n\nConcurrency: None required. The system handles one user, one session, one request at a time. The web server uses Node.js single-threaded event loop, which is sufficient for the expected load (1-2 concurrent browser tabs).\n\nScalability ceiling: The question router's dependency graph traversal is O(V+E) where V=7 nodes and E=10 edges \u2014 effectively constant time. Artifact extraction is O(n) where n is the answer text length. Session save is O(m) where m is the total session data size. All operations scale linearly with input size and are bounded by the fixed framework structure."
+  },
+  {
+    "id": "5.3.2",
+    "series": 5,
+    "round": 3,
+    "focus": "Performance and Scalability",
+    "text": "What data volume and growth rate is expected? (storage size, records, throughput)",
+    "choices": [
+      {
+        "id": "5.3.2.a",
+        "text": "Small \u2014 <10GB data, slow growth, single-node viable"
+      },
+      {
+        "id": "5.3.2.b",
+        "text": "Medium \u2014 10GB\u20131TB, moderate growth, needs partitioning"
+      },
+      {
+        "id": "5.3.2.c",
+        "text": "Large \u2014 1TB\u2013100TB, rapid growth, requires distributed architecture"
+      },
+      {
+        "id": "5.3.2.d",
+        "text": "Massive \u2014 100TB+, petabyte-scale, data lifecycle management needed"
+      }
+    ],
+    "answer": "Data volume and growth:\n\nCurrent scale: 67 questions \u00d7 3-5 follow-up choices = 201-335 total options. 7 series, 25 rounds. The framework is static and small (~50KB JSON).\n\nSession data: ~10KB per completed session (67 answers \u00d7 ~100 bytes average text + follow-up selections + metadata). With 10 sessions per project, that's ~100KB per project.\n\nWorkspace projection: A developer working on 50 projects over 2 years would accumulate ~5MB of session data. This is trivial by any storage standard.\n\nGrowth rate: Linear with usage. No exponential growth patterns. No data compounding across sessions. Each session is independent.\n\nData lifecycle: Sessions are immutable after completion (no editing). Exports are regenerated on demand. No garbage collection needed \u2014 all data is useful and small.\n\nIf the system were to scale to team use (multiple users, shared projects), data volume would grow by a factor of N (team size). At 10 users \u00d7 50 projects \u00d7 10 sessions, that's ~50MB \u2014 still trivial. The SQLite adapter would become relevant at this scale for query performance across sessions."
+  },
+  {
+    "id": "5.3.3",
+    "series": 5,
+    "round": 3,
+    "focus": "Performance and Scalability",
+    "text": "What availability, uptime, and disaster recovery targets are required?",
+    "choices": [
+      {
+        "id": "5.3.3.a",
+        "text": "Best-effort \u2014 no formal SLA, occasional downtime acceptable"
+      },
+      {
+        "id": "5.3.3.b",
+        "text": "Standard \u2014 99.9% uptime, daily backups, basic DR plan"
+      },
+      {
+        "id": "5.3.3.c",
+        "text": "High \u2014 99.99% uptime, multi-region redundancy, automated failover"
+      },
+      {
+        "id": "5.3.3.d",
+        "text": "Critical \u2014 99.999%+ uptime, active-active, zero-data-loss DR"
+      }
+    ],
+    "answer": "Availability and disaster recovery:\n\nAvailability target: Best-effort. No formal SLA. The system is a local development tool, not a production service. Occasional downtime (crash, bug) is acceptable and expected.\n\nData durability: High. Session data is written to disk after each answer (checkpoint). Crash recovery loses at most one answer (the most recent un-saved answer). The auto-save frequency (after every answer) makes data loss negligible.\n\nBackup strategy: Manual file copy. The entire workspace (~5MB) can be backed up with a single \"cp -r ~/.space/projects/ /backup/\" command. No database dumps, no snapshot procedures.\n\nDisaster recovery: Copy the backup directory to a new machine. The system has no external dependencies (no database to restore, no service to reconnect). The session files are self-contained JSON \u2014 they work on any machine with Node.js.\n\nThe simplicity of the storage model (JSON files) makes disaster recovery trivial \u2014 just copy the project directory."
+  },
+  {
+    "id": "5.3.4",
+    "series": 5,
+    "round": 3,
+    "focus": "Performance and Scalability",
+    "text": "What scalability model is required? (vertical, horizontal, elastic, serverless)",
+    "choices": [
+      {
+        "id": "5.3.4.a",
+        "text": "Vertical \u2014 scale up a single node as needed"
+      },
+      {
+        "id": "5.3.4.b",
+        "text": "Horizontal \u2014 add/remove nodes with load balancer"
+      },
+      {
+        "id": "5.3.4.c",
+        "text": "Elastic \u2014 auto-scale based on metrics"
+      },
+      {
+        "id": "5.3.4.d",
+        "text": "Serverless \u2014 event-driven scale managed by platform"
+      }
+    ],
+    "answer": "Scalability model:\n\nCurrent model: Vertical. The system runs on a single machine, single process, single thread. Scaling means upgrading the machine (more RAM, faster disk) \u2014 but the current requirements are so low that scaling is not needed.\n\nHorizontal scaling: Not needed and not supported. The system is single-user. Multiple users would each run their own instance.\n\nElastic scaling: Not applicable. The system doesn't have variable load \u2014 it processes one session at a time, always.\n\nServerless: Not applicable. The system requires persistent local storage (filesystem), which doesn't fit the serverless model.\n\nThe scalability ceiling is high: JSON files can handle millions of entries before performance degrades. The bottleneck would be the question router's dependency graph traversal, which is O(V+E) where V=7 nodes and E=10 edges \u2014 effectively constant time."
+  },
+  {
+    "id": "5.3.5",
+    "series": 5,
+    "round": 3,
+    "focus": "Performance and Scalability",
+    "text": "What security and compliance standards must be met? (auth, encryption, audit, regulations)",
+    "choices": [
+      {
+        "id": "5.3.5.a",
+        "text": "Basic \u2014 password auth, TLS, no formal compliance requirements"
+      },
+      {
+        "id": "5.3.5.b",
+        "text": "Standard \u2014 OAuth2/MFA, encryption at rest, audit logging"
+      },
+      {
+        "id": "5.3.5.c",
+        "text": "Regulated \u2014 SOC2, HIPAA, GDPR, or PCI-DSS requirements"
+      },
+      {
+        "id": "5.3.5.d",
+        "text": "High-security \u2014 air-gapped, FIPS, zero-trust architecture"
+      }
+    ],
+    "answer": "Security and compliance:\n\nAuthentication: None. The system is single-user, local-only. No login, no passwords, no tokens.\n\nAuthorization: None needed. Single user has full access to all features.\n\nEncryption: None for local storage. Data is stored as plaintext JSON files on the user's filesystem. This is appropriate for a local development tool \u2014 the user's filesystem permissions provide the access control.\n\nEncryption in transit: TLS for LLM API calls (handled by the HTTP client). The system sends user answers to LLM providers over HTTPS. No sensitive data is transmitted beyond what the user explicitly sends.\n\nInput validation: Follow-up selections are validated against the question's choices array. Answer text is stored as-is (no sanitization needed for local storage). Framework JSON is parsed with JSON.parse (throws on malformed input).\n\nNo compliance requirements: The system processes no personal data beyond what the user voluntarily enters. No GDPR, HIPAA, SOC2, or PCI-DSS requirements apply. No analytics, no telemetry, no tracking.\n\nSecurity posture: Minimal attack surface. No network exposure (except optional LLM API calls). No user input processing beyond text storage. No file upload. No database queries. The system is as secure as a text editor."
+  },
+  {
+    "id": "5.4.1",
+    "series": 5,
+    "round": 4,
+    "focus": "Integration and Timeline",
+    "text": "What external systems, APIs, or services must this system integrate with?",
+    "choices": [
+      {
+        "id": "5.4.1.a",
+        "text": "No integrations \u2014 fully standalone system"
+      },
+      {
+        "id": "5.4.1.b",
+        "text": "1\u20132 integrations \u2014 limited surface area for interoperability"
+      },
+      {
+        "id": "5.4.1.c",
+        "text": "3\u20137 integrations \u2014 multiple external touchpoints"
+      },
+      {
+        "id": "5.4.1.d",
+        "text": "8+ integrations \u2014 integration-heavy, requiring an API gateway or ESB"
+      }
+    ],
+    "answer": "External systems and integrations:\n\nRequired integrations: None. The system is fully standalone.\n\nOptional integrations:\n1. LLM APIs (OpenAI, Anthropic, Google Gemini, Mistral, Ollama) \u2014 for auto-fill feature. Configured per-project via SpaceConfig. Each provider is behind the LLMProvider interface with a factory pattern for selection.\n\n2. Git \u2014 for version control of project files. The GitIntegration class (src/integration/git.ts) provides auto-commit, diff, log, branch, and stash operations. Not required for normal operation.\n\n3. npm registry \u2014 for package distribution. The system is published as \"space-cli\" on npm. Users install via \"npm install -g space-cli\".\n\nNo databases, no message queues, no external APIs (beyond optional LLM). The system is deliberately self-contained."
+  },
+  {
+    "id": "5.4.2",
+    "series": 5,
+    "round": 4,
+    "focus": "Integration and Timeline",
+    "text": "What integration protocols, data formats, or standards must be supported?",
+    "choices": [
+      {
+        "id": "5.4.2.a",
+        "text": "REST/JSON only \u2014 simple HTTP-based communication"
+      },
+      {
+        "id": "5.4.2.b",
+        "text": "REST + events \u2014 REST APIs plus message queue or event stream"
+      },
+      {
+        "id": "5.4.2.c",
+        "text": "gRPC + protobuf \u2014 type-safe, high-performance contracts"
+      },
+      {
+        "id": "5.4.2.d",
+        "text": "Multiple protocols \u2014 REST, gRPC, GraphQL, file-based, and binary formats"
+      }
+    ],
+    "answer": "Integration protocols and data formats:\n\nLLM API: REST/JSON over HTTPS. Each provider (OpenAI, Anthropic, Gemini, Mistral) has a dedicated adapter that translates between the SPACE message format and the provider's API format. Ollama uses a local REST API (http://localhost:11434).\n\nCLI \u2192 Engine: TypeScript function calls. The CLI (src/cli/) imports and calls the Engine (src/engine/) directly. No IPC, no HTTP, no serialization.\n\nWeb UI \u2192 Engine: REST/JSON over HTTP. The web server (web/server.mjs) wraps the Engine in HTTP endpoints. The web UI (web/index.html) calls these endpoints via fetch().\n\nExport formats: JSON, Markdown, YAML, HTML, LLM prompt. Each format is a renderer that takes the session state + artifact dictionary and produces a string. The renderers are in src/export/.\n\nSession persistence: JSON files on the filesystem. The StorageProvider interface abstracts this. The SQLite adapter (src/storage/sqlite.ts) provides an alternative persistence layer.\n\nAll formats are text-based. No binary formats. No compression. No encryption."
+  },
+  {
+    "id": "5.4.3",
+    "series": 5,
+    "round": 4,
+    "focus": "Integration and Timeline",
+    "text": "What is the expected timeline, milestones, and delivery cadence?",
+    "choices": [
+      {
+        "id": "5.4.3.a",
+        "text": "Quick \u2014 prototype in weeks, production in 1\u20133 months"
+      },
+      {
+        "id": "5.4.3.b",
+        "text": "Standard \u2014 phased delivery over 3\u20139 months"
+      },
+      {
+        "id": "5.4.3.c",
+        "text": "Ambitious \u2014 9\u201318 months with multiple major releases"
+      },
+      {
+        "id": "5.4.3.d",
+        "text": "Large program \u2014 18+ months with distinct workstreams"
+      }
+    ],
+    "answer": "Timeline and delivery cadence:\n\nCompleted milestones:\n- Core engine + CLI (Phase 1): ~2 weeks\n- Web UI (Phase 2): ~1 week\n- Storage providers (Phase 3): ~1 week\n- LLM integration (Phase 4): ~1 week\n- Git integration (Phase 5): ~3 days\n- Tests + documentation (ongoing): ~1 week total\n\nCurrent status: v2.0.0 \u2014 all core features implemented, 112+ tests passing, ready for npm publish.\n\nFuture milestones:\n- npm publishing: Ready (package.json configured, prepublishOnly hook set)\n- CI/CD pipeline: Planned (GitHub Actions for automated testing)\n- LLM auto-fill in web UI: Planned (requires UI framework changes)\n- Collaborative sessions: Future (multi-user, shared projects)\n- Plugin system: Future (user-defined extensions)\n\nDelivery cadence: Irregular. Features are released when complete, not on a fixed schedule. The system is maintained by a single developer with no external deadlines.\n\nTotal: ~5 working days of active development. Each phase produced a working, tested increment. No phase depends on all previous phases being perfect \u2014 they build incrementally."
+  },
+  {
+    "id": "5.4.4",
+    "series": 5,
+    "round": 4,
+    "focus": "Integration and Timeline",
+    "text": "What testing, staging, and rollout strategy is required?",
+    "choices": [
+      {
+        "id": "5.4.4.a",
+        "text": "Basic \u2014 dev + production environments, manual testing"
+      },
+      {
+        "id": "5.4.4.b",
+        "text": "Standard \u2014 dev, staging, production with automated test suite"
+      },
+      {
+        "id": "5.4.4.c",
+        "text": "Robust \u2014 preview deployments, canary releases, feature flags"
+      },
+      {
+        "id": "5.4.4.d",
+        "text": "Enterprise \u2014 full deployment matrix, blue-green, chaos engineering"
+      }
+    ],
+    "answer": "Testing and rollout strategy:\n\nTesting: Comprehensive unit tests (112+ tests across 11 test files). Tests cover:\n- Core engine (67 tests \u2014 one per question)\n- Template interpolation (16 tests)\n- Snapshot lifecycle (6 tests)\n- Consolidation (3 tests)\n- LLM providers (20 tests)\n- SQLite storage (17 tests)\n- Git integration (13 tests)\n\nTest execution: \"vitest run\" \u2014 completes in <2 seconds. Tests are deterministic (no external dependencies, no network calls, no file system side effects for most tests).\n\nRollout: Manual npm publish. No staging environment. The system is tested locally before publish. Users get the latest version via npm update.\n\nVersioning: Semantic versioning (MAJOR.MINOR.PATCH). Breaking changes increment MAJOR. New features increment MINOR. Bug fixes increment PATCH.\n\nRollback: Users can install a specific version: \"npm install -g space-cli@2.0.0\". Git users can checkout a specific tag."
+  },
+  {
+    "id": "5.4.5",
+    "series": 5,
+    "round": 4,
+    "focus": "Integration and Timeline",
+    "text": "What documentation, training, or knowledge transfer outputs are expected alongside the system?",
+    "choices": [
+      {
+        "id": "5.4.5.a",
+        "text": "Minimal \u2014 inline comments and a README"
+      },
+      {
+        "id": "5.4.5.b",
+        "text": "Standard \u2014 API docs, architecture decision records, setup guide"
+      },
+      {
+        "id": "5.4.5.c",
+        "text": "Comprehensive \u2014 full technical docs, runbooks, user manuals"
+      },
+      {
+        "id": "5.4.5.d",
+        "text": "Certification-level \u2014 training materials, compliance documentation, formal specs"
+      }
+    ],
+    "answer": "Documentation and knowledge transfer:\n\nREADME.md: Installation instructions, quick start guide, feature overview. ~200 lines.\n\nCLI help: Built-in help via \"space --help\" and \"space <command> --help\". Generated from command definitions in src/cli/.\n\nFramework JSON: The prompt-framework/json/ directory IS the documentation for the question taxonomy. Each JSON file documents one series with full question text, choices, dependencies, and metadata.\n\nType definitions: src/types/index.ts serves as API documentation. Every interface, type, and enum is documented with comments. TypeScript consumers get autocompletion and type checking as documentation.\n\nCode comments: Minimal inline comments. The code is self-documenting through clear naming and type annotations. Comments explain \"why\" not \"what\".\n\nTest suite as documentation: The test files demonstrate expected behavior. Reading tests/src/ gives a comprehensive understanding of how the system works.\n\nAPI documentation: The web server's REST endpoints are documented in web/server.mjs comments. Each endpoint specifies method, path, request body, and response format.\n\nKnowledge transfer: The system is designed for self-service. A developer can clone the repo, read the README, and be productive in 5 minutes. The framework JSON is the single source of truth for the question taxonomy \u2014 understanding it is equivalent to understanding the system."
+  },
+  {
+    "id": "6.1.1",
+    "series": 6,
+    "round": 1,
+    "focus": "Process and Cadence",
+    "text": "What development process or methodology best fits this project? How should work be planned and tracked?",
+    "choices": [
+      {
+        "id": "6.1.1.a",
+        "text": "Sprint-based agile (Scrum) \u2014 fixed-length iterations with formal ceremonies"
+      },
+      {
+        "id": "6.1.1.b",
+        "text": "Continuous flow (Kanban) \u2014 pull-based with WIP limits, no fixed iterations"
+      },
+      {
+        "id": "6.1.1.c",
+        "text": "Lean/startup \u2014 build-measure-learn cycles, just-in-time planning"
+      }
+    ],
+    "answer": "Development methodology: Iterative, phase-based development with test-driven increments.\n\nProcess: Build one feature at a time, test it thoroughly, then move to the next. No big design upfront \u2014 the architecture emerged from implementation. Each phase produced a working, tested increment.\n\nPhase breakdown:\n1. Core engine + CLI (2 days) \u2014 question routing, answer recording, session management, CLI interface\n2. Framework data + tests (1 day) \u2014 all 67 questions, 112+ unit tests\n3. Web UI (1 day) \u2014 Tailwind SPA with REST API backend\n4. Storage + LLM + Git (2 days) \u2014 StorageProvider, LLM factory, GitIntegration\n5. Documentation + packaging (1 day) \u2014 README, types, npm config, CI/CD\n\nTotal: ~5 working days. Each phase built on the previous one. No phase was blocked by incomplete work from earlier phases \u2014 they were designed to be independently deliverable.\n\nNo formal project management tool. Development tracked via git commits with descriptive messages. No Kanban board, no sprint planning, no standups. The solo developer is both the planner and the implementer."
+  },
+  {
+    "id": "6.1.2",
+    "series": 6,
+    "round": 1,
+    "focus": "Process and Cadence",
+    "text": "What is the expected team size, composition, and structure?",
+    "choices": [
+      {
+        "id": "6.1.2.a",
+        "text": "Solo or pair \u2014 1\u20132 people, all roles combined"
+      },
+      {
+        "id": "6.1.2.b",
+        "text": "Small team \u2014 3\u20136 people with distinct roles (dev, design, PM)"
+      },
+      {
+        "id": "6.1.2.c",
+        "text": "Multiple teams \u2014 7+ people across 2+ squads with coordination overhead"
+      }
+    ],
+    "answer": "Team size and composition: Solo developer.\n\nThe entire system was built by one person in ~5 working days. All roles are combined: architect, developer, tester, documentation writer, release manager.\n\nWhy solo works: (1) The codebase is small (~3500 LOC). (2) The domain is well-understood (the developer IS the target user). (3) The architecture is simple (no distributed systems, no complex state management). (4) The test suite provides safety net for changes.\n\nWhen to add team members: If the project grows beyond 10,000 LOC, or if multiple features need parallel development, or if the web UI becomes a significant application. Currently, none of these apply.\n\nIf the team grows: The recommended first hire would be a frontend developer (the web UI is the most likely area for growth) or a DevOps engineer (CI/CD, npm publishing, release automation). The architecture supports team development through clear module boundaries and comprehensive type definitions."
+  },
+  {
+    "id": "6.2.1",
+    "series": 6,
+    "round": 2,
+    "focus": "Quality and Review Practices",
+    "text": "What code review, testing, and quality assurance practices should be followed?",
+    "choices": [
+      {
+        "id": "6.2.1.a",
+        "text": "Light \u2014 ad-hoc reviews, manual testing, minimal automation"
+      },
+      {
+        "id": "6.2.1.b",
+        "text": "Standard \u2014 mandatory reviews, unit + integration tests, CI gates"
+      },
+      {
+        "id": "6.2.1.c",
+        "text": "Rigorous \u2014 pair programming, TDD, property-based testing, full automation"
+      }
+    ],
+    "answer": "Code review and quality practices:\n\nTesting: Test-driven development for core functionality. Every feature has corresponding tests. The test suite (112+ tests) covers all public APIs. Tests run in <2 seconds.\n\nQuality gates:\n- TypeScript strict mode \u2014 no implicit any, no null bypass, no type assertions unless necessary\n- All tests pass before any commit\n- No linting violations (eslint not configured \u2014 type checking serves this purpose)\n- No console.log in production code (test output only)\n\nCode style:\n- Consistent naming: camelCase for variables/functions, PascalCase for types/classes, kebab-case for files\n- Functional over imperative where possible\n- No nested callbacks \u2014 async/await throughout\n- Early returns over nested ifs\n- Types are explicit (no inference where clarity matters)\n\nNo formal code review (solo developer). The test suite serves as automated review \u2014 if the tests pass, the code is correct. The type system serves as structural review \u2014 if it compiles, the types are consistent.\n\nNo pair programming. No mob programming. No PR review process. These would add overhead without benefit for a solo-maintained project of this size."
+  },
+  {
+    "id": "6.2.2",
+    "series": 6,
+    "round": 2,
+    "focus": "Quality and Review Practices",
+    "text": "How should the team handle technical debt, refactoring, and code quality?",
+    "choices": [
+      {
+        "id": "6.2.2.a",
+        "text": "Opportunistic \u2014 clean as you go, no formal tracking"
+      },
+      {
+        "id": "6.2.2.b",
+        "text": "Budgeted \u2014 allocate X% of each sprint to debt reduction"
+      },
+      {
+        "id": "6.2.2.c",
+        "text": "Formal \u2014 tracked backlog with dedicated quality improvement cycles"
+      }
+    ],
+    "answer": "Technical debt management:\n\nApproach: Opportportunistic \u2014 clean as you go, no formal tracking.\n\nDebt prevention: (1) TypeScript strict mode prevents type debt. (2) Comprehensive tests prevent behavioral debt. (3) Small codebase limits structural debt. (4) Clear naming conventions prevent semantic debt.\n\nDebt detection: Code review of own code (rare but occurs). Refactoring triggered by pain points \u2014 when adding a feature requires navigating complex code, that code gets simplified first.\n\nDebt priority: High \u2014 anything that affects correctness or security. Medium \u2014 anything that affects maintainability. Low \u2014 anything that affects style or conventions.\n\nKnown debt: (1) No ESLint configuration \u2014 relies on TypeScript for linting. (2) No Prettier configuration \u2014 relies on manual formatting. (3) Some test files have repetitive setup that could be extracted to helpers. (4) The web UI inline JavaScript could be modularized.\n\nDebt payoff: Each refactoring must produce measurable improvement (fewer lines, clearer names, better test coverage, or simpler logic). Refactoring for its own sake is avoided \u2014 the YAGNI principle applies."
+  },
+  {
+    "id": "6.3.1",
+    "series": 6,
+    "round": 3,
+    "focus": "Communication and Collaboration",
+    "text": "How should the team communicate, share knowledge, and manage decisions?",
+    "choices": [
+      {
+        "id": "6.3.1.a",
+        "text": "Async-first \u2014 written docs, Slack/Teams, minimal meetings"
+      },
+      {
+        "id": "6.3.1.b",
+        "text": "Balanced \u2014 regular standups, weekly syncs, supplemented by async"
+      },
+      {
+        "id": "6.3.1.c",
+        "text": "Sync-heavy \u2014 daily standups, frequent pairing, co-located or synchronous remote"
+      }
+    ],
+    "answer": "Communication and knowledge management:\n\nSolo developer: All communication is with self (current and future). The primary communication channel is code comments and documentation.\n\nDocumentation as communication:\n- README.md: How to install and use the system\n- Type definitions: How the system's data model works\n- Test files: How the system's behavior is verified\n- Framework JSON: How the question taxonomy is structured\n\nNo meetings, no Slack, no formal communication channels. The documentation IS the communication \u2014 it's written for the future developer (who might be the same person in 6 months).\n\nKnowledge capture: Every design decision is recorded in code (through naming and structure) or in comments (through \"why\" explanations). The framework JSON is the canonical source for the question taxonomy \u2014 understanding it is equivalent to understanding the system's purpose."
+  },
+  {
+    "id": "6.3.2",
+    "series": 6,
+    "round": 3,
+    "focus": "Communication and Collaboration",
+    "text": "What is the decision-making and escalation process? How are architectural choices made?",
+    "choices": [
+      {
+        "id": "6.3.2.a",
+        "text": "BDFL \u2014 one person makes final decisions with input"
+      },
+      {
+        "id": "6.3.2.b",
+        "text": "Consensus-driven \u2014 team agrees, with escalation to lead if deadlocked"
+      },
+      {
+        "id": "6.3.2.c",
+        "text": "ADR-based \u2014 proposals, reviews, and recorded Architecture Decision Records"
+      }
+    ],
+    "answer": "Decision-making process: BDFL (Benevolent Dictator For Life) \u2014 one person makes final decisions.\n\nArchitectural decisions are made through: (1) Implement the simplest thing that works. (2) If it needs to change later, the type system makes refactoring safe. (3) The test suite ensures changes don't break existing behavior.\n\nDecision examples:\n- \"Why no React for the web UI?\" \u2192 Single HTML file is simpler and sufficient for the current scope.\n- \"Why no database?\" \u2192 JSON files are simpler and sufficient for the data volume.\n- \"Why TypeScript strict mode?\" \u2192 Catches errors at compile time, worth the stricter coding discipline.\n- \"Why vitest over jest?\" \u2192 Better ESM support, faster execution.\n\nEscalation: Not applicable \u2014 solo developer. If the project attracts contributors, a lightweight RFC process would be appropriate. Architecture Decision Records (ADRs) would be introduced for significant decisions."
+  },
+  {
+    "id": "7.1.1",
+    "series": 7,
+    "round": 1,
+    "focus": "Deployment and Delivery",
+    "text": "How should the system be deployed, released, and updated in production?",
+    "choices": [
+      {
+        "id": "7.1.1.a",
+        "text": "Manual deploy \u2014 push artifacts, restart services, update on schedule"
+      },
+      {
+        "id": "7.1.1.b",
+        "text": "Automated CI/CD \u2014 merged to main triggers build + deploy pipeline"
+      },
+      {
+        "id": "7.1.1.c",
+        "text": "Progressive delivery \u2014 feature flags, canary releases, gradual rollout"
+      }
+    ],
+    "answer": "Deployment and release strategy:\n\nCLI distribution: npm publish to the public registry. Package name: space-cli. Users install globally: \"npm install -g space-cli\". Updates via \"npm update -g space-cli\".\n\nWeb UI distribution: Git clone. Users clone the repo, run \"npm install\", then \"node web/server.mjs\". No separate distribution channel.\n\nRelease process:\n1. Run full test suite (\"npm test\")\n2. Verify build (\"npm run build\")\n3. Update version in package.json\n4. Commit with version tag\n5. Run \"npm publish\"\n\nThe prepublishOnly hook runs build + test automatically before publish. If any test fails, publish is blocked.\n\nRollback: Users can install a specific version: \"npm install -g space-cli@2.0.0\". Git users can checkout a specific tag.\n\nNo canary releases, no staged rollouts, no feature flags for the CLI. The web UI supports feature flags through the SpaceConfig object but this is not exposed to end users."
+  },
+  {
+    "id": "7.1.2",
+    "series": 7,
+    "round": 1,
+    "focus": "Deployment and Delivery",
+    "text": "What environment and release management strategy should be used?",
+    "choices": [
+      {
+        "id": "7.1.2.a",
+        "text": "Single environment \u2014 production only, with local dev"
+      },
+      {
+        "id": "7.1.2.b",
+        "text": "Dev / staging / production \u2014 standard promotion pipeline"
+      },
+      {
+        "id": "7.1.2.c",
+        "text": "Ephemeral environments \u2014 per-branch previews, review apps"
+      }
+    ],
+    "answer": "Environment and release management:\n\nEnvironments: Two \u2014 development (local) and production (npm/global install).\n\nDevelopment: Clone the repo, run \"npm install\", use \"npx space\" or \"node dist/cli/index.js\". Source maps available. Hot reload not needed (CLI tool).\n\nProduction: \"npm install -g space-cli\". Compiled JavaScript in dist/. No source maps. No debug mode.\n\nConfiguration: Environment variables for optional overrides:\n- SPACE_PROJECTS_DIR: Custom projects directory (optional, default: ~/.space/projects)\n- OPENAI_API_KEY: OpenAI API key (optional, for LLM integration)\n- ANTHROPIC_API_KEY: Anthropic API key (optional)\n- GEMINI_API_KEY: Google Gemini API key (optional)\n- MISTRAL_API_KEY: Mistral API key (optional)\n\nNo .env files, no dotenv, no configuration management library. Environment variables are the simplest configuration mechanism and work across all platforms.\n\nNo staging environment. The system is tested locally before publish. Users get the latest version directly."
+  },
+  {
+    "id": "7.2.1",
+    "series": 7,
+    "round": 2,
+    "focus": "Runtime Behavior and Observability",
+    "text": "What logging, monitoring, alerting, and observability infrastructure is needed?",
+    "choices": [
+      {
+        "id": "7.2.1.a",
+        "text": "Minimal \u2014 basic logging to stdout, manual check-ins"
+      },
+      {
+        "id": "7.2.1.b",
+        "text": "Standard \u2014 structured logging, metrics dashboard, alert on errors"
+      },
+      {
+        "id": "7.2.1.c",
+        "text": "Full observability \u2014 traces, logs, metrics; SLO monitoring; on-call rotation"
+      }
+    ],
+    "answer": "Logging and monitoring:\n\nCurrent: Minimal \u2014 console output for CLI operations, no structured logging.\n\nCLI output: Question text, answer confirmations, export progress, error messages. All to stdout/stderr. No log levels, no log files.\n\nWeb UI: Console.log for API requests and errors. No logging library.\n\nIf monitoring were needed (e.g., for a hosted version), the architecture supports it: the Engine emits events (session:created, answer:submitted, etc.) that could be forwarded to a logging system.\n\nNo metrics collection. No performance monitoring. No error tracking (Sentry, etc.). No analytics. The system is designed for local use where the developer IS the user and can observe behavior directly.\n\nHealth check: The web server responds to GET /api/health with { status: \"ok\", version: \"2.0.0\" }. This is sufficient for basic monitoring if needed."
+  },
+  {
+    "id": "7.2.2",
+    "series": 7,
+    "round": 2,
+    "focus": "Runtime Behavior and Observability",
+    "text": "What configuration and feature management approach should be used at runtime?",
+    "choices": [
+      {
+        "id": "7.2.2.a",
+        "text": "Static config \u2014 environment variables, restart to change"
+      },
+      {
+        "id": "7.2.2.b",
+        "text": "Dynamic config \u2014 runtime-reloadable config without redeploy"
+      },
+      {
+        "id": "7.2.2.c",
+        "text": "Feature flags + config \u2014 separate toggle system with gradual rollout"
+      }
+    ],
+    "answer": "Configuration management:\n\nStatic configuration: SpaceConfig type (src/config/defaults.ts). Defines all configurable parameters with sensible defaults. Loaded from environment variables and command-line arguments.\n\nRuntime configuration: Minimal by design. The system works with zero configuration \u2014 just run \"space init\" and \"space run\". Configuration is only needed for optional features (LLM providers, custom directories).\n\nConfiguration loading order: (1) Built-in defaults, (2) Environment variables override defaults, (3) Command-line arguments override environment variables.\n\nNo dynamic configuration: Configuration is loaded once at startup and doesn't change during execution. No hot-reloading, no dynamic configuration. This simplifies the system and prevents configuration drift.\n\nNo configuration files: All configuration is via environment variables or CLI arguments. No .env files, no config.json, no YAML config. This eliminates an entire category of configuration management problems (missing files, wrong paths, permission issues)."
+  },
+  {
+    "id": "7.3.1",
+    "series": 7,
+    "round": 3,
+    "focus": "Maintenance and Evolution",
+    "text": "What maintenance schedule, upgrade policy, and lifecycle management is expected?",
+    "choices": [
+      {
+        "id": "7.3.1.a",
+        "text": "Firefighting \u2014 fix issues as they arise, no scheduled maintenance"
+      },
+      {
+        "id": "7.3.1.b",
+        "text": "Regular maintenance \u2014 scheduled patch cycles, dependency updates"
+      },
+      {
+        "id": "7.3.1.c",
+        "text": "Proactive \u2014 automated updates, security scanning, continuous improvement"
+      }
+    ],
+    "answer": "Maintenance and lifecycle management:\n\nMaintenance activities:\n1. Dependency updates: Periodic (monthly). Run \"npm audit\", update vulnerable packages. The minimal dependency list makes this quick.\n2. Node.js version support: Track Node.js LTS releases. Drop support for EOL versions (currently testing 18, 20, 22).\n3. Bug fixes: As reported. The test suite makes regression testing automatic.\n4. Feature additions: As needed. The modular architecture allows adding features without modifying existing code.\n\nUpgrade policy: Non-breaking for MINOR and PATCH versions. Breaking changes only in MAJOR versions with migration guide.\n\nLifecycle: The system is actively maintained. No end-of-life planned. The framework JSON format is stable and unlikely to change significantly."
+  },
+  {
+    "id": "7.3.2",
+    "series": 7,
+    "round": 3,
+    "focus": "Maintenance and Evolution",
+    "text": "What is the long-term stewardship plan? Who owns the system after initial delivery?",
+    "choices": [
+      {
+        "id": "7.3.2.a",
+        "text": "Hand-off \u2014 delivered to a separate operations team"
+      },
+      {
+        "id": "7.3.2.b",
+        "text": "Build-and-run \u2014 the same team owns development and operations"
+      },
+      {
+        "id": "7.3.2.c",
+        "text": "Community/open-source \u2014 external contributions, governance model"
+      }
+    ],
+    "answer": "Long-term stewardship:\n\nOwnership: Original developer. Single point of responsibility for all decisions, maintenance, and support.\n\nSustainability: The system is self-contained (~3500 LOC) and has minimal dependencies. It can be maintained by one person indefinitely. No complex infrastructure to manage.\n\nFuture evolution:\n- Short term (3 months): npm publishing, CI/CD, web UI improvements\n- Medium term (6 months): LLM auto-fill, collaborative sessions, plugin system\n- Long term (1 year): Team features, cloud hosting option, enterprise edition\n\nSuccession planning: The codebase is small enough that any competent TypeScript developer could take over. The architecture is documented, the types are explicit, and the tests provide safety net.\n\nOpen source: The system is MIT licensed. Community contributions are welcome but not expected at current scale. The project is designed to be self-sustaining with minimal external input."
+  }
+]
