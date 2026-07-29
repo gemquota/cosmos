@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Project Ecosystem Progress Dashboard</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#0f1118;color:#e0e0e0;padding:.6rem}
+.container{width:100%}
+h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradient(90deg,#7b2fff,#ff8c00,#00ff9f);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitle{color:#666;font-size:.65rem;margin-bottom:.3rem}
+.filter-bar{display:flex;gap:.3rem;margin-bottom:.4rem;flex-wrap:wrap}
+.filter-btn{padding:3px 16px;border-radius:12px;font-size:.7rem;font-weight:600;cursor:pointer;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#888;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:.3rem}
+.filter-btn:hover{border-color:rgba(123,47,255,.3);color:#ccc}
+.filter-btn.active{background:rgba(123,47,255,.15);border-color:#7b2fff;color:#a855f7}
+.card{background:#161822;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.6rem;width:100%;margin-bottom:.5rem}
+.card-header{font-size:.7rem;font-weight:600;color:#ccc;margin-bottom:.3rem;display:flex;align-items:center;gap:.35rem;flex-wrap:wrap}
+.card-header .icon{font-size:.8rem}
+.hdr-sub{font-weight:400;font-size:.6rem;color:#666;margin-left:.4rem}
+.chart-toggle{font-size:.5rem;padding:1px 8px;border-radius:8px;cursor:pointer;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#888;margin-left:auto;transition:all .2s;font-weight:600;letter-spacing:.3px;text-transform:uppercase}
+.chart-toggle:hover{border-color:rgba(123,47,255,.3);color:#aaa;background:rgba(123,47,255,.08)}
+.chart-toggle.active{background:rgba(0,255,159,.1);border-color:rgba(0,255,159,.25);color:#00ff9f}
+.stacked-bar-wrap{padding:.2rem 0;width:100%}
+.stacked-bar{display:flex;height:28px;border-radius:6px;overflow:hidden;background:rgba(255,255,255,.03)}
+.stacked-bar .seg{height:100%;transition:width .5s;min-width:2px}
+.stacked-bar .seg:first-child{border-radius:6px 0 0 6px}
+.stacked-bar .seg:last-child{border-radius:0 6px 6px 0}
+.stacked-legend{display:flex;flex-wrap:wrap;gap:.2rem .5rem;margin-top:.35rem;font-size:.55rem}
+.stacked-legend .leg-item{display:flex;align-items:center;gap:.2rem;color:#999}
+.stacked-legend .leg-swatch{width:7px;height:7px;border-radius:2px;flex-shrink:0}
+.comp-row{display:flex;align-items:center;gap:.25rem;margin-bottom:.15rem;font-size:.6rem}
+.comp-row .lbl{width:50px;text-align:right;color:#888;flex-shrink:0}
+.comp-row .track{flex:1;height:8px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden}
+.comp-row .fill{height:100%;border-radius:4px;transition:width .5s}
+.comp-row .pct{color:#555;font-size:.55rem;width:36px;text-align:right}
+.donut-wrap{display:flex;align-items:center;gap:.5rem}
+.donut{width:90px;height:90px;border-radius:50%;flex-shrink:0;overflow:hidden}
+.donut-legend{font-size:.55rem;flex:1;min-width:0}
+.donut-legend .row{display:flex;align-items:center;gap:.25rem;margin-bottom:1px}
+.donut-legend .swatch{width:7px;height:7px;border-radius:2px;flex-shrink:0}
+.donut-legend .lbl{color:#999}
+.donut-legend .cnt{color:#555;margin-left:auto}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.4rem}
+.stat-cell{text-align:center;background:rgba(255,255,255,.03);border-radius:8px;padding:.5rem .2rem}
+.stat-big{font-size:1.1rem;font-weight:800;color:#e0e0e0;display:block}
+.stat-sm{font-size:.55rem;color:#777;display:block;margin-top:1px}
+.donut-row{display:flex;gap:.5rem;width:100%;margin-bottom:.5rem}
+.donut-row .donut-card{flex:1 1 calc(50% - .25rem);background:#161822;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.6rem;min-width:280px}
+.footer{text-align:center;color:#222;font-size:.5rem;margin-top:.5rem}
+.module-label .icon{font-size:.9rem}
+.chart-view.hidden{display:none!important}
+.stat-flex{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.5rem}
+.stat-card{flex:1 1 calc(50% - .25rem);background:#161822;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.6rem;min-width:280px}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
+.proj-card{background:#161822;border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:.4rem .5rem;text-decoration:none;color:inherit;transition:border-color .2s;cursor:pointer;display:block}
+.mini-stack-row{display:flex;flex-wrap:wrap;gap:.5rem;padding:.2rem 0}
+.mini-stack{flex:1 1 calc(33% - .35rem);min-width:160px;background:rgba(255,255,255,.02);border-radius:6px;padding:.3rem}
+.mini-stack .ms-title{font-size:.55rem;color:#999;margin-bottom:2px}
+.mini-stack .ms-bar{display:flex;height:16px;border-radius:4px;overflow:hidden;background:rgba(255,255,255,.03)}
+.mini-stack .ms-bar .seg{height:100%;min-width:2px}
+.mini-stack .ms-leg{font-size:.5rem;color:#777;margin-top:1px}
+@media(max-width:500px){.proj-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="filter-bar">
+<span class="filter-btn active" onclick="filterView('all')">All</span>
+<span class="filter-btn" onclick="filterView('more')">📋 More</span>
+</div>
+<h1>🌌 COSMOS Ecosystem</h1>
+<div class="subtitle">4 components · comprehensive overview</div>
+
+<!-- MODULE: Cosmos Components -->
+<div class="module-label"><span class="icon">🌌</span> Cosmos Components</div>
+<div class="card"><div class="proj-grid">
+<a href="https://github.com/gemquota/cosmos/tree/main/components/mykb" class="proj-card" style="border-left:3px solid #a855f7">
+<div class="p-row"><span style="font-weight:700;font-size:.8rem;color:#a855f7">MyKB</span>
+<span class="p-badge stable" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(168,85,247,.15);color:#a855f7;border:1px solid rgba(168,85,247,.25);font-weight:600;letter-spacing:.3px">STABLE</span></div>
+<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Knowledge OS — OKF/Obsidian wiki knowledge system with full-text search, knowledge graph, session capture</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Python</span>
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Wiki</span>
+</div></a>
+<a href="https://github.com/gemquota/cosmos/tree/main/components/mykb" class="proj-card" style="border-left:3px solid #22c55e">
+<div class="p-row"><span style="font-weight:700;font-size:.8rem;color:#22c55e">MyRSIKB</span>
+<span class="p-badge merged" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(34,197,94,.15);color:#22c55e;border:1px solid rgba(34,197,94,.25);font-weight:600;letter-spacing:.3px">MERGED</span></div>
+<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Memory Bridge — Integration bridge between RSIS3 and MyKB, consolidated into RSIS3</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Python</span>
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Bridge</span>
+</div></a>
+<a href="https://github.com/gemquota/cosmos/tree/main/components/rsis3" class="proj-card" style="border-left:3px solid #ff8c00">
+<div class="p-row"><span style="font-weight:700;font-size:.8rem;color:#ff8c00">RSIS3</span>
+<span class="p-badge stable" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(168,85,247,.15);color:#a855f7;border:1px solid rgba(168,85,247,.25);font-weight:600;letter-spacing:.3px">STABLE</span></div>
+<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Cognitive Engine — 3-loop self-improvement (L1-L3), memory consolidation, telemetry, CLI entry point</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Python</span>
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">CLI</span>
+</div></a>
+<a href="https://github.com/gemquota/cosmos/tree/main/components/space" class="proj-card" style="border-left:3px solid #3b82f6">
+<div class="p-row"><span style="font-weight:700;font-size:.8rem;color:#3b82f6">SPACE</span>
+<span class="p-badge stable" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(168,85,247,.15);color:#a855f7;border:1px solid rgba(168,85,247,.25);font-weight:600;letter-spacing:.3px">STABLE</span></div>
+<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Prompt Engineering Tool — Superb Prompt Automatic Creation Engine, multi-probe spec generation</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">TS</span>
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Prompts</span>
+</div></a>
+</div></div>
+
+
+<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Game/simulation — 90 entities with physics, scoring, gameplay</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">TS</span>
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Game</span>
+</div></a>
+<a href="gog.html" class="proj-card" style="border-left:3px solid #84cc16">
+<span class="p-badge dev" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.25);font-weight:600;letter-spacing:.3px">DEV</span></div>
+<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Gemini on Gemini — docs, ideas, Gemini-based tooling experiments</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Python</span>
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Gemini</span>
+</div></a>
+<a href="ww.html" class="proj-card" style="border-left:3px solid #ec4899">
+<span class="p-badge dev" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.25);font-weight:600;letter-spacing:.3px">DEV</span></div>
+<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Web Wrapper — Gemini-powered web context manager, agent bridge</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Python</span>
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Web</span>
+</div></a>
+<a href="ace.html" class="proj-card" style="border-left:3px solid #06b6d4">
+<span class="p-badge dev" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.25);font-weight:600;letter-spacing:.3px">DEV</span></div>
+<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Agentic Context Engineering — sovereign primes, capability sandbox</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Python</span>
+<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Agents</span>
+</div></a>
+</div></div>
+
+
+</div><!-- end proj-grid -->
+</div><!-- end card -->
+
+
+<div class=card><div class=proj-grid>
+
+</div></div>
+
+<!-- MODULE: Stats & Activity -->
+<div class="module-label"><span class="icon">📈</span> Stats &amp; Activity <span class="hdr-sub">small cards + donuts</span></div>
+<div class="stat-flex">
+<div class="stat-card"><div class="card-header"><span class="icon">📊</span> Git Activity</div><div class="stat-grid">
+</div></div>
+<div class="stat-card"><div class="card-header"><span class="icon">📈</span> Stats Snapshot</div><div class="stat-grid">
+<div class="stat-cell"><span class="stat-big" style="color:#a855f7">10</span><span class="stat-sm">Projects</span></div>
+<div class="stat-cell"><span class="stat-big" style="color:#3b82f6">~35k</span><span class="stat-sm">Total Files</span></div>
+<div class="stat-cell"><span class="stat-big" style="color:#eab308">~3M</span><span class="stat-sm">Lines of Code</span></div>
+<div class="stat-cell"><span class="stat-big" style="color:#00d4ff">~5k</span><span class="stat-sm">Entities</span></div>
+<div class="stat-cell"><span class="stat-big" style="color:#ff8c00">~2G</span><span class="stat-sm">Disk Usage</span></div>
+<div class="stat-cell"><span class="stat-big" style="color:#22c55e">3</span><span class="stat-sm">Active Today</span></div>
+</div></div>
+<div class="stat-card"><div class="card-header"><span class="icon">🧩</span> Entity Stats</div><div class="stat-grid">
+</div></div>
+</div>
+<div class="donut-row">
+<div class="donut-card"><div class="card-header"><span class="icon">🥧</span> Entity Distribution</div><div class="donut-wrap">
+<svg class="donut" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,.04)" stroke-width="16"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#a855f7" stroke-width="16" stroke-dasharray="148 251" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#ef4444" stroke-width="16" stroke-dasharray="41 251" stroke-dashoffset="-148" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="16" stroke-dasharray="25 251" stroke-dashoffset="-189" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#00d4ff" stroke-width="16" stroke-dasharray="19 251" stroke-dashoffset="-214" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#ff8c00" stroke-width="16" stroke-dasharray="11 251" stroke-dashoffset="-233" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#eab308" stroke-width="16" stroke-dasharray="5 251" stroke-dashoffset="-244" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#22c55e" stroke-width="16" stroke-dasharray="1 251" stroke-dashoffset="-249" transform="rotate(-90 50 50)"/>
+</svg><div class="donut-legend">
+</div></div></div>
+<div class="donut-card"><div class="card-header"><span class="icon">📏</span> Code Breakdown</div><div class="donut-wrap">
+<svg class="donut" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,.04)" stroke-width="16"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#eab308" stroke-width="16" stroke-dasharray="99 251" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="16" stroke-dasharray="81 251" stroke-dashoffset="-99" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#a855f7" stroke-width="16" stroke-dasharray="71 251" stroke-dashoffset="-180" transform="rotate(-90 50 50)"/>
+</svg><div class="donut-legend">
+<div class="row"><span class="swatch" style="background:#eab308"></span><span class="lbl">JS/TS</span><span class="cnt">1.4M</span></div>
+<div class="row"><span class="swatch" style="background:#3b82f6"></span><span class="lbl">Python</span><span class="cnt">425k</span></div>
+<div class="row"><span class="swatch" style="background:#a855f7"></span><span class="lbl">Markdown</span><span class="cnt">310k</span></div>
+<div class="row"><span class="swatch" style="background:rgba(255,255,255,.08)"></span><span class="lbl">Other</span><span class="cnt">~50k</span></div>
+<div class="row" style="margin-top:4px;font-size:.5rem;color:#555"><span class="lbl">Total ~2.5M lines</span></div></div></div></div>
+</div>
+
+<!-- MODULE: Charts -->
+<div class="module-label"><span class="icon">📊</span> Charts <span class="hdr-sub">all stacked · click toggle for separate horizontal bars</span></div>
+<div class="card">
+<div class="card-header">
+<span class="icon">💾</span> Disk Usage <span class="hdr-sub">per project</span>
+<span class="chart-toggle" data-target="disk-usage" onclick="toggleChart('disk-usage')">▤ Separate</span>
+</div>
+<div id="disk-usage-stacked" class="chart-view">
+<div class="stacked-bar-wrap"><div class="stacked-bar">
+</div><div class="stacked-legend">
+</div></div></div>
+<div id="disk-usage-grouped" class="chart-view hidden">
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<span class="icon">📦</span> Entity Count
+<span class="chart-toggle" data-target="entity-count" onclick="toggleChart('entity-count')">▤ Separate</span>
+</div>
+<div id="entity-count-stacked" class="chart-view">
+<div class="stacked-bar-wrap"><div class="stacked-bar">
+</div><div class="stacked-legend">
+</div></div></div>
+<div id="entity-count-grouped" class="chart-view hidden">
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<span class="icon">📄</span> File Count
+<span class="chart-toggle" data-target="file-count" onclick="toggleChart('file-count')">▤ Separate</span>
+</div>
+<div id="file-count-stacked" class="chart-view">
+<div class="stacked-bar-wrap"><div class="stacked-bar">
+</div><div class="stacked-legend">
+</div></div></div>
+<div id="file-count-grouped" class="chart-view hidden">
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<span class="icon">⚡</span> Lines of Code
+<span class="chart-toggle" data-target="loc" onclick="toggleChart('loc')">▤ Separate</span>
+</div>
+<div id="loc-stacked" class="chart-view">
+<div class="stacked-bar-wrap"><div class="stacked-bar">
+</div><div class="stacked-legend">
+</div></div></div>
+<div id="loc-grouped" class="chart-view hidden">
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<span class="icon">🔀</span> Code vs Data <span class="hdr-sub">3 views</span>
+<span class="chart-toggle" data-target="code-data" onclick="toggleChart3('code-data')">▤ Separate</span>
+</div>
+<div class="chart-view" id="code-data-stacked">
+  <div style="font-size:.55rem;color:#888;margin:.2rem 0 .1rem;display:flex;align-items:center;gap:.3rem">
+    <span style="width:36px;font-weight:600;color:#a855f7">Code</span>
+ <div class="stacked-bar" style="flex:1;height:24px"><div class="seg" style="width:73.0%;background:#a855f7" title="MyKB Code: 73%"></div><div class="seg" style="width:62.0%;background:#3b82f6" title="SPACE Code: 62%"></div><div class="seg" style="width:91.0%;background:#ff8c00" title="RSIS3 Code: 91%"></div><div class="seg" style="width:58.0%;background:#22c55e" title="MyRSIKB Code: 58%"></div></div>
+  </div>
+  <div style="font-size:.55rem;color:#888;margin:.1rem 0;display:flex;align-items:center;gap:.3rem">
+    <span style="width:36px;font-weight:600;color:rgba(255,255,255,.3)">Data</span>
+ <div class="stacked-bar" style="flex:1;height:24px"><div class="seg" style="width:27.0%;background:rgba(168,85,247,.3)" title="MyKB Data: 27%"></div><div class="seg" style="width:38.0%;background:rgba(59,130,246,.3)" title="SPACE Data: 38%"></div><div class="seg" style="width:9.0%;background:rgba(255,140,0,.3)" title="RSIS3 Data: 9%"></div><div class="seg" style="width:42.0%;background:rgba(34,197,94,.3)" title="MyRSIKB Data: 42%"></div></div>
+  </div>
+  <div class="stacked-legend" style="margin-top:.2rem">
+  </div>
+</div>
+<div class="chart-view hidden" id="code-data-grouped">
+  <div style="display:flex;align-items:center;gap:.25rem;margin-bottom:.1rem;font-size:.6rem">
+  <span style="width:60px;text-align:right;color:#888;flex-shrink:0">MyKB</span>
+  <div style="flex:1;display:flex;flex-direction:column;gap:2px">
+    <div style="display:flex;align-items:center;gap:.2rem">
+      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
+        <div class="fill" style="height:100%;width:73%;border-radius:4px;background:#a855f7"></div>
+      </div>
+      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">73%</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:.2rem">
+      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
+        <div class="fill" style="height:100%;width:27%;border-radius:4px;background:rgba(168,85,247,.3)"></div>
+      </div>
+      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">27%</span>
+    </div>
+  </div>
+</div> <div style="display:flex;align-items:center;gap:.25rem;margin-bottom:.1rem;font-size:.6rem">
+  <div style="flex:1;display:flex;flex-direction:column;gap:2px">
+    <div style="display:flex;align-items:center;gap:.2rem">
+      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
+        <div class="fill" style="height:100%;width:89%;border-radius:4px;background:#ef4444"></div>
+      </div>
+      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">89%</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:.2rem">
+      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
+        <div class="fill" style="height:100%;width:11%;border-radius:4px;background:rgba(239,68,68,.3)"></div>
+      </div>
+      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">11%</span>
+    </div>
+  </div>
+</div> <div style="display:flex;align-items:center;gap:.25rem;margin-bottom:.1rem;font-size:.6rem">
+  <span style="width:60px;text-align:right;color:#888;flex-shrink:0">SPACE</span>
+  <div style="flex:1;display:flex;flex-direction:column;gap:2px">
+    <div style="display:flex;align-items:center;gap:.2rem">
+      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
+        <div class="fill" style="height:100%;width:62%;border-radius:4px;background:#3b82f6"></div>
+      </div>
+      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">62%</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:.2rem">
+      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
+        <div class="fill" style="height:100%;width:38%;border-radius:4px;background:rgba(59,130,246,.3)"></div>
+      </div>
+      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">38%</span>
+    </div>
+  </div>
+</div> <div style="display:flex;align-items:center;gap:.25rem;margin-bottom:.1rem;font-size:.6rem">
+  <div style="flex:1;display:flex;flex-direction:column;gap:2px">
+    <div style="display:flex;align-items:center;gap:.2rem">
+      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
+        <div class="fill" style="height:100%;width:78%;border-radius:4px;background:#00d4ff"></div>
+      </div>
+      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">78%</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:.2rem">
+      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
+        <div class="fill" style="height:100%;width:22%;border-radius:4px;background:rgba(0,212,255,.3)"></div>
+      </div>
+      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">22%</span>
+    </div>
+  </div>
+</div> <div style="display:flex;align-items:center;gap:.25rem;margin-bottom:.1rem;font-size:.6rem">
+  <span style="width:60px;text-align:right;color:#888;flex-shrink:0">RSIS3</span>
+  <div style="flex:1;display:flex;flex-direction:column;gap:2px">
+    <div style="display:flex;align-items:center;gap:.2rem">
+      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
+        <div class="fill" style="height:100%;width:91%;border-radius:4px;background:#ff8c00"></div>
+      </div>
+      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">91%</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:.2rem">
+      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
+        <div class="fill" style="height:100%;width:9%;border-radius:4px;background:rgba(255,140,0,.3)"></div>
+      </div>
+      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">9%</span>
+    </div>
+  </div>
+</div> <div style="display:flex;align-items:center;gap:.25rem;margin-bottom:.1rem;font-size:.6rem">
+  <div style="flex:1;display:flex;flex-direction:column;gap:2px">
+    <div style="display:flex;align-items:center;gap:.2rem">
+      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
+        <div class="fill" style="height:100%;width:67%;border-radius:4px;background:#eab308"></div>
+      </div>
+      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">67%</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:.2rem">
+      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
+        <div class="fill" style="height:100%;width:33%;border-radius:4px;background:rgba(234,179,8,.3)"></div>
+      </div>
+      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">33%</span>
+    </div>
+  </div>
+</div> <div style="display:flex;align-items:center;gap:.25rem;margin-bottom:.1rem;font-size:.6rem">
+  <span style="width:60px;text-align:right;color:#888;flex-shrink:0">MyRSIKB</span>
+  <div style="flex:1;display:flex;flex-direction:column;gap:2px">
+    <div style="display:flex;align-items:center;gap:.2rem">
+      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
+        <div class="fill" style="height:100%;width:58%;border-radius:4px;background:#22c55e"></div>
+      </div>
+      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">58%</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:.2rem">
+      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
+        <div class="fill" style="height:100%;width:42%;border-radius:4px;background:rgba(34,197,94,.3)"></div>
+      </div>
+      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">42%</span>
+    </div>
+  </div>
+</div>
+</div>
+<div class="chart-view hidden" id="code-data-perproj">
+  <div class="ms-bar"><div class="seg" style="width:73%;background:#a855f7"></div><div class="seg" style="width:27%;background:rgba(168,85,247,.3)"></div></div>
+  <div class="ms-bar"><div class="seg" style="width:89%;background:#ef4444"></div><div class="seg" style="width:11%;background:rgba(239,68,68,.3)"></div></div>
+  <div class="ms-bar"><div class="seg" style="width:62%;background:#3b82f6"></div><div class="seg" style="width:38%;background:rgba(59,130,246,.3)"></div></div>
+  <div class="ms-bar"><div class="seg" style="width:78%;background:#00d4ff"></div><div class="seg" style="width:22%;background:rgba(0,212,255,.3)"></div></div>
+  <div class="ms-bar"><div class="seg" style="width:91%;background:#ff8c00"></div><div class="seg" style="width:9%;background:rgba(255,140,0,.3)"></div></div>
+  <div class="ms-bar"><div class="seg" style="width:67%;background:#eab308"></div><div class="seg" style="width:33%;background:rgba(234,179,8,.3)"></div></div>
+  <div class="ms-bar"><div class="seg" style="width:58%;background:#22c55e"></div><div class="seg" style="width:42%;background:rgba(34,197,94,.3)"></div></div>
+  <div class="ms-leg">C:58% D:42%</div></div></div>
+</div></div>
+</div>
+<div class="card">
+<div class="card-header">
+<span class="icon">🔤</span> Language Mix
+<span class="chart-toggle" data-target="lang-mix" onclick="toggleChart('lang-mix')">▤ Separate</span>
+</div>
+<div id="lang-mix-stacked" class="chart-view">
+<div class="stacked-bar-wrap"><div class="stacked-bar">
+<div class="seg" style="width:66%;background:#eab308" title="JS/TS: 66%"></div>
+<div class="seg" style="width:12%;background:#22c55e" title="Markdown: 12%"></div>
+<div class="seg" style="width:8%;background:#3b82f6" title="JSON: 8%"></div>
+<div class="seg" style="width:7%;background:#ef4444" title="HTML: 7%"></div>
+<div class="seg" style="width:4%;background:#a855f7" title="Images: 4%"></div>
+<div class="seg" style="width:2%;background:#ff8c00" title="Python: 2%"></div>
+<div class="seg" style="width:1%;background:#00d4ff" title="Other: 1%"></div>
+</div><div class="stacked-legend">
+<span class="leg-item"><span class="leg-swatch" style="background:#eab308"></span> JS/TS: 66%</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#22c55e"></span> Markdown: 12%</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> JSON: 8%</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#ef4444"></span> HTML: 7%</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> Images: 4%</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> Python: 2%</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#00d4ff"></span> Other: 1%</span>
+</div></div></div>
+<div id="lang-mix-grouped" class="chart-view hidden">
+<div class="comp-row"><span class="lbl">JS/TS</span><div class="track"><div class="fill" style="width:100%;background:#eab308"></div></div><span class="pct">66%</span></div>
+<div class="comp-row"><span class="lbl">Markdown</span><div class="track"><div class="fill" style="width:18%;background:#22c55e"></div></div><span class="pct">12%</span></div>
+<div class="comp-row"><span class="lbl">JSON</span><div class="track"><div class="fill" style="width:12%;background:#3b82f6"></div></div><span class="pct">8%</span></div>
+<div class="comp-row"><span class="lbl">HTML</span><div class="track"><div class="fill" style="width:11%;background:#ef4444"></div></div><span class="pct">7%</span></div>
+<div class="comp-row"><span class="lbl">Images</span><div class="track"><div class="fill" style="width:6%;background:#a855f7"></div></div><span class="pct">4%</span></div>
+<div class="comp-row"><span class="lbl">Python</span><div class="track"><div class="fill" style="width:3%;background:#ff8c00"></div></div><span class="pct">2%</span></div>
+<div class="comp-row"><span class="lbl">Other</span><div class="track"><div class="fill" style="width:2%;background:#00d4ff"></div></div><span class="pct">1%</span></div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<span class="icon">✅</span> Completion Status
+<span class="chart-toggle" data-target="completion" onclick="toggleChart('completion')">▤ Separate</span>
+</div>
+<div id="completion-stacked" class="chart-view">
+<div class="stacked-bar-wrap"><div class="stacked-bar">
+<div class="seg" style="width:14%;background:#a855f7" title="Stable"></div>
+<div class="seg" style="width:29%;background:#00ff9f" title="Live"></div>
+<div class="seg" style="width:29%;background:#ffa500" title="Beta"></div>
+<div class="seg" style="width:29%;background:#60a5fa" title="Dev"></div>
+</div><div class="stacked-legend">
+<span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> Stable: </span>
+<span class="leg-item"><span class="leg-swatch" style="background:#00ff9f"></span> Live: </span>
+<span class="leg-item"><span class="leg-swatch" style="background:#ffa500"></span> Beta: </span>
+<span class="leg-item"><span class="leg-swatch" style="background:#60a5fa"></span> Dev: </span>
+</div></div></div>
+<div id="completion-grouped" class="chart-view hidden">
+<div class="comp-row"><span class="lbl">Stable</span><div class="track"><div class="fill" style="width:48%;background:#a855f7"></div></div><span class="pct">14%</span></div>
+<div class="comp-row"><span class="lbl">Live</span><div class="track"><div class="fill" style="width:100%;background:#00ff9f"></div></div><span class="pct">29%</span></div>
+<div class="comp-row"><span class="lbl">Beta</span><div class="track"><div class="fill" style="width:100%;background:#ffa500"></div></div><span class="pct">29%</span></div>
+<div class="comp-row"><span class="lbl">Dev</span><div class="track"><div class="fill" style="width:100%;background:#60a5fa"></div></div><span class="pct">29%</span></div>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<span class="icon">🕐</span> Last Activity
+<span class="chart-toggle" data-target="activity" onclick="toggleChart('activity')">▤ Separate</span>
+</div>
+<div id="activity-stacked" class="chart-view">
+<div class="stacked-bar-wrap"><div class="stacked-bar">
+</div><div class="stacked-legend">
+</div></div></div>
+<div id="activity-grouped" class="chart-view hidden">
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<span class="icon">📏</span> Project Size (LOC)
+<span class="chart-toggle" data-target="size" onclick="toggleChart('size')">▤ Separate</span>
+</div>
+<div id="size-stacked" class="chart-view">
+<div class="stacked-bar-wrap"><div class="stacked-bar">
+</div><div class="stacked-legend">
+</div></div></div>
+<div id="size-grouped" class="chart-view hidden">
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<span class="icon">🧠</span> Entity Density <span class="hdr-sub">per 100 files</span>
+<span class="chart-toggle" data-target="density" onclick="toggleChart('density')">▤ Separate</span>
+</div>
+<div id="density-stacked" class="chart-view">
+<div class="stacked-bar-wrap"><div class="stacked-bar">
+</div><div class="stacked-legend">
+</div></div></div>
+<div id="density-grouped" class="chart-view hidden">
+</div>
+</div>
+</div>
+
+<div class="footer">Generated 2026-07-29 · <a href="https://gemquota.github.io/hub/">Hub Dashboard</a> · <a href="https://github.com/gemquota/cosmos">GitHub</a> · 4 projects tracked</div>
+</div>
+<script>
+function filterView(v) {
+  document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelector('.filter-btn[onclick="filterView(\'' + v + '\')"]').classList.add('active');
+  document.querySelectorAll('.filter-view').forEach(function(el) {
+    if (v === 'all') { el.style.display = ''; }
+    else { el.style.display = el.getAttribute('data-view') === v ? '' : 'none'; }
+  });
+}
+</script>
+<script>
+function toggleChart(n){var s=document.getElementById(n+"-stacked"),g=document.getElementById(n+"-grouped"),b=document.querySelector('.chart-toggle[data-target="'+n+'"]');if(!s||!g||!b)return;s.classList.contains("hidden")?(g.classList.add("hidden"),s.classList.remove("hidden"),b.textContent="\u25A4 Separate",b.classList.remove("active")):(s.classList.add("hidden"),g.classList.remove("hidden"),b.textContent="\u25A6 Stacked",b.classList.add("active"))}
+function toggleChart3(n){var s=document.getElementById(n+"-stacked"),g=document.getElementById(n+"-grouped"),p=document.getElementById(n+"-perproj"),b=document.querySelector('.chart-toggle[data-target="'+n+'"]');if(!s||!g||!p||!b)return;if(!s.classList.contains("hidden")){s.classList.add("hidden");g.classList.remove("hidden");b.textContent="\u25A6 By-Project";b.classList.add("active")}else if(!g.classList.contains("hidden")){g.classList.add("hidden");p.classList.remove("hidden");b.textContent="\u25A4 Stacked";b.classList.remove("active")}else{p.classList.add("hidden");s.classList.remove("hidden");b.textContent="\u25A4 Separate";b.classList.remove("active")}}
+</script>
+</body>
+</html>
