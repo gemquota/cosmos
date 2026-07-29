@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>COSMOS Ecosystem Dashboard</title>
+<title>COSMOS Dashboard — Project Ecosystem</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;max-width:100%;overflow-x:hidden}
@@ -11,10 +11,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;b
 .container{width:100%}
 h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradient(90deg,#7b2fff,#ff8c00,#00ff9f);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .subtitle{color:#666;font-size:.65rem;margin-bottom:.3rem}
-.filter-bar{display:flex;gap:.3rem;margin-bottom:.4rem;flex-wrap:wrap}
-.filter-btn{padding:3px 16px;border-radius:12px;font-size:.7rem;font-weight:600;cursor:pointer;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#888;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:.3rem}
-.filter-btn:hover{border-color:rgba(123,47,255,.3);color:#ccc}
-.filter-btn.active{background:rgba(123,47,255,.15);border-color:#7b2fff;color:#a855f7}
 .card{background:#161822;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.6rem;width:100%;margin-bottom:.5rem}
 .card-header{font-size:.7rem;font-weight:600;color:#ccc;margin-bottom:.3rem;display:flex;align-items:center;gap:.35rem;flex-wrap:wrap}
 .card-header .icon{font-size:.8rem}
@@ -56,660 +52,225 @@ h1{font-size:1.3rem;font-weight:700;margin-bottom:.05rem;background:linear-gradi
 .stat-card{flex:1 1 calc(50% - .25rem);background:#161822;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.6rem;min-width:280px}
 .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
 .proj-card{background:#161822;border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:.4rem .5rem;text-decoration:none;color:inherit;transition:border-color .2s;cursor:pointer;display:block}
-.mini-stack-row{display:flex;flex-wrap:wrap;gap:.5rem;padding:.2rem 0}
-.mini-stack{flex:1 1 calc(33% - .35rem);min-width:160px;background:rgba(255,255,255,.02);border-radius:6px;padding:.3rem}
-.mini-stack .ms-title{font-size:.55rem;color:#999;margin-bottom:2px}
-.mini-stack .ms-bar{display:flex;height:16px;border-radius:4px;overflow:hidden;background:rgba(255,255,255,.03)}
-.mini-stack .ms-bar .seg{height:100%;min-width:2px}
-.mini-stack .ms-leg{font-size:.5rem;color:#777;margin-top:1px}
 @media(max-width:500px){.proj-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
 <div class="container">
-<div class="filter-bar">
-<span class="filter-btn active" onclick="filterView('all')">All</span>
-<span class="filter-btn" onclick="filterView('cosmos')">🌌 COSMOS</span>
-<span class="filter-btn" onclick="filterView('more')">📋 More</span>
+<h1>✦ COSMOS Ecosystem Dashboard</h1>
+<div class="subtitle">COSMOS projects · comprehensive overview</div>
 
-</div>
-<h1>✦ Project Ecosystem Dashboard</h1>
-<div class="subtitle">4 components · comprehensive overview</div>
-
-<div class="filter-view" data-view="cosmos">
-<!-- MODULE: COSMOS Ecosystem & Project Families -->
-<div class="module-label"><span class="icon">🌌</span> COSMOS Ecosystem <span class="hdr-sub">v0.1.0 · <a href="https://github.com/gemquota/cosmos" style="color:#888;text-decoration:none">gemquota/cosmos</a></span></div>
+<div class="module-label"><span class="icon">🌌</span> COSMOS Ecosystem <span class="hdr-sub">v0.1.0 &middot; <a href="https://github.com/gemquota/cosmos" style="color:#888;text-decoration:none">gemquota/cosmos</a></span></div>
 <div class="card" style="background:linear-gradient(135deg,#161822 0%,#1a1030 50%,#161822 100%);border-color:rgba(123,47,255,.15)">
 <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem;flex-wrap:wrap">
 <span style="font-size:1.5rem">🌌</span>
 <div><div style="font-size:.9rem;font-weight:700;color:#e0e0e0">Comprehensive Ontological System for Meta-cognitive Orchestration &amp; Synthesis</div>
-<div style="font-size:.6rem;color:#666;margin-top:1px"><span style="color:#a855f7">4 components</span> · <span style="color:#3b82f6">26.7k files</span> · <span style="color:#00ff9f">2.1M LOC</span> · <span style="color:#ffa500">~1.1G disk</span></div></div>
+<div style="font-size:.6rem;color:#666;margin-top:1px"><span style="color:#a855f7">4 components</span> &middot; <span style="color:#3b82f6">{_fmt_num(sum(p["files"] for p in projects))} files</span> &middot; <span style="color:#00ff9f">{_fmt_compact(sum(p["loc"] for p in projects))} LOC</span> &middot; <span style="color:#ffa500">~{_fmt_compact(sum(p["disk"] for p in projects))}MB disk</span></div></div>
 <div style="margin-left:auto;display:flex;gap:.3rem;flex-wrap:wrap">
 <a href="https://gemquota.github.io/cosmos/" target="_blank" style="padding:3px 12px;border-radius:8px;font-size:.6rem;font-weight:600;border:1px solid rgba(123,47,255,.3);color:#a855f7;text-decoration:none;background:rgba(123,47,255,.08)">🌌 Cosmos</a>
 <a href="https://github.com/gemquota/cosmos" target="_blank" style="padding:3px 12px;border-radius:8px;font-size:.6rem;font-weight:600;border:1px solid rgba(255,255,255,.1);color:#888;text-decoration:none">GitHub</a>
 </div></div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.4rem;margin-bottom:.5rem">
-<a href="https://github.com/gemquota/cosmos/tree/main/components/mykb" style="display:block;background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.15);border-radius:8px;padding:.4rem .5rem;text-decoration:none;transition:all .15s">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.15rem"><span style="font-weight:700;font-size:.7rem;color:#a855f7">📚 myKB</span><span style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(0,255,159,.15);color:#00ff9f;border:1px solid rgba(0,255,159,.25);font-weight:600">LIVE</span></div>
-<div style="font-size:.55rem;color:#999;margin-bottom:.1rem">Knowledge OS · 2,442 entities · 3,351 files</div><div style="font-size:.5rem;color:#666">Memory layer. Obsidian wiki with search, graph, Git history</div></a>
-<a href="https://github.com/gemquota/cosmos/tree/main/components/mykb" style="display:block;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.15);border-radius:8px;padding:.4rem .5rem;text-decoration:none;transition:all .15s">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.15rem"><span style="font-weight:700;font-size:.7rem;color:#22c55e">🧠 myRSIKB</span><span style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.25);font-weight:600">DEV</span></div>
-<div style="font-size:.55rem;color:#999;margin-bottom:.1rem">Memory Bridge · 15 entities · 44 files</div><div style="font-size:.5rem;color:#666">Interface layer. Audit reports, memory consolidation pipelines</div></a>
-<a href="https://github.com/gemquota/cosmos/tree/main/components/rsis3" style="display:block;background:rgba(255,140,0,.08);border:1px solid rgba(255,140,0,.15);border-radius:8px;padding:.4rem .5rem;text-decoration:none;transition:all .15s">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.15rem"><span style="font-weight:700;font-size:.7rem;color:#ff8c00">🔄 RSIS3</span><span style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.25);font-weight:600">DEV</span> <a href="https://github.com/gemquota/cosmos/tree/main/components/rsis3" style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(139,92,246,.2);color:#a78bfa;border:1px solid rgba(139,92,246,.3);font-weight:600;text-decoration:none;display:inline-block">📜 v1→v3</a></div>
-<div style="font-size:.55rem;color:#999;margin-bottom:.1rem">Cognitive Engine · 180 entities · 627 files</div><div style="font-size:.5rem;color:#666">Mind layer. 3-loop RSI</div></a>
-<a href="https://github.com/gemquota/cosmos/tree/main/components/space" style="display:block;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.15);border-radius:8px;padding:.4rem .5rem;text-decoration:none;transition:all .15s">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.15rem"><span style="font-weight:700;font-size:.7rem;color:#3b82f6">🚀 SPACE</span><span style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(0,255,159,.15);color:#00ff9f;border:1px solid rgba(0,255,159,.25);font-weight:600">LIVE</span></div>
-<div style="font-size:.55rem;color:#999;margin-bottom:.1rem">Prompt Engine · 420 entities · 9,901 files</div><div style="font-size:.5rem;color:#666">Tool layer. 326-probe spec generation</div></a>
+<div class="card"><div class="proj-grid"><a href="mykb.html" class="proj-card" style="border-left:3px solid #a855f7">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.1rem"><span style="font-weight:700;font-size:.8rem;color:#a855f7"><span style="margin-right:.2rem">📚</span>MyKB</span><span style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(0,255,159,.15);color:#00ff9f;border:1px solid rgba(0,255,159,.25);font-weight:600;letter-spacing:.3px">LIVE</span></div>
+<div style="font-size:.55rem;color:#999;margin-bottom:.1rem">2,442 entities · 3,351 files</div><div style="font-size:.6rem;color:#777;margin-bottom:.2rem">Knowledge OS — Memory layer. Obsidian wiki with search, graph, Git history</div><div style="display:flex;flex-wrap:wrap;gap:.2rem"><span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Python</span><span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Wiki</span></div></a>
+<a href="myrsikb.html" class="proj-card" style="border-left:3px solid #22c55e">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.1rem"><span style="font-weight:700;font-size:.8rem;color:#22c55e"><span style="margin-right:.2rem">🧠</span>MyRSIKB</span><span style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.25);font-weight:600;letter-spacing:.3px">DEV</span></div>
+<div style="font-size:.55rem;color:#999;margin-bottom:.1rem">15 entities · 44 files</div><div style="font-size:.6rem;color:#777;margin-bottom:.2rem">Memory Bridge — Interface layer. Audit reports, memory consolidation pipelines</div><div style="display:flex;flex-wrap:wrap;gap:.2rem"><span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Python</span><span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Bridge</span></div></a>
+<a href="rsis3.html" class="proj-card" style="border-left:3px solid #ff8c00">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.1rem"><span style="font-weight:700;font-size:.8rem;color:#ff8c00"><span style="margin-right:.2rem">🔄</span>RSIS3</span><span style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.25);font-weight:600;letter-spacing:.3px">DEV</span></div>
+<div style="font-size:.55rem;color:#999;margin-bottom:.1rem">180 entities · 627 files</div><div style="font-size:.6rem;color:#777;margin-bottom:.2rem">Cognitive Engine — Mind layer. 3-loop RSI</div><div style="display:flex;flex-wrap:wrap;gap:.2rem"><span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Python</span><span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Agents</span></div></a>
+<a href="space.html" class="proj-card" style="border-left:3px solid #3b82f6">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.1rem"><span style="font-weight:700;font-size:.8rem;color:#3b82f6"><span style="margin-right:.2rem">🚀</span>SPACE</span><span style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(0,255,159,.15);color:#00ff9f;border:1px solid rgba(0,255,159,.25);font-weight:600;letter-spacing:.3px">LIVE</span></div>
+<div style="font-size:.55rem;color:#999;margin-bottom:.1rem">420 entities · 9,901 files</div><div style="font-size:.6rem;color:#777;margin-bottom:.2rem">Prompt Engine — Tool layer. 326-probe spec generation</div><div style="display:flex;flex-wrap:wrap;gap:.2rem"><span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">TS</span><span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Node</span></div></a></div></div>
 </div>
-<div style="display:flex;align-items:center;gap:.3rem;font-size:.6rem;color:#666;padding-top:.3rem;border-top:1px solid rgba(255,255,255,.04)">
-<span>🔗 Active Triad:</span><span style="color:#ff8c00;font-weight:600">rsis3</span><span style="color:#555">+</span><span style="color:#a855f7;font-weight:600">mykb</span><span style="color:#555">+</span><span style="color:#22c55e;font-weight:600">myrsikb</span>
-<span style="margin-left:auto;color:#555">Updated 2026-07-29</span>
-</div></div>
-</div>
-
-<div class="filter-view" data-view="more">
-<div class="module-label"><span class="icon">🗂️</span> Other Projects</div>
-<div class="card"><div class="proj-grid">
-<a href="vepa.html" class="proj-card" style="border-left:3px solid #ef4444">
-<div class="p-row"><span style="font-weight:700;font-size:.8rem;color:#ef4444">VEPA2</span>
-<span class="p-badge beta" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(255,165,0,.15);color:#ffa500;border:1px solid rgba(255,165,0,.25);font-weight:600;letter-spacing:.3px">BETA</span></div>
-<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Multi-agent orchestration — 680 agents, delegation, batch processing</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">TS</span>
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Agents</span>
-</div></a>
-<a href="hmxot.html" class="proj-card" style="border-left:3px solid #00d4ff">
-<div class="p-row"><span style="font-weight:700;font-size:.8rem;color:#00d4ff">HMXOT</span>
-<span class="p-badge stable" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(168,85,247,.15);color:#a855f7;border:1px solid rgba(168,85,247,.25);font-weight:600;letter-spacing:.3px">STABLE</span></div>
-<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Org toolkit — 320 entities across tools, templates, automation</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">TS</span>
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Auto</span>
-</div></a>
-<a href="golf.html" class="proj-card" style="border-left:3px solid #eab308">
-<div class="p-row"><span style="font-weight:700;font-size:.8rem;color:#eab308">GOLF</span>
-<span class="p-badge beta" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(255,165,0,.15);color:#ffa500;border:1px solid rgba(255,165,0,.25);font-weight:600;letter-spacing:.3px">BETA</span></div>
-<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Game/simulation — 90 entities with physics, scoring, gameplay</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">TS</span>
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Game</span>
-</div></a>
-<a href="gog.html" class="proj-card" style="border-left:3px solid #84cc16">
-<div class="p-row"><span style="font-weight:700;font-size:.8rem;color:#84cc16">GOG</span>
-<span class="p-badge dev" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.25);font-weight:600;letter-spacing:.3px">DEV</span></div>
-<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Gemini on Gemini — docs, ideas, Gemini-based tooling experiments</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Python</span>
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Gemini</span>
-</div></a>
-<a href="ww.html" class="proj-card" style="border-left:3px solid #ec4899">
-<div class="p-row"><span style="font-weight:700;font-size:.8rem;color:#ec4899">WW</span>
-<span class="p-badge dev" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.25);font-weight:600;letter-spacing:.3px">DEV</span></div>
-<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Web Wrapper — Gemini-powered web context manager, agent bridge</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Python</span>
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Web</span>
-</div></a>
-<a href="ace.html" class="proj-card" style="border-left:3px solid #06b6d4">
-<div class="p-row"><span style="font-weight:700;font-size:.8rem;color:#06b6d4">ACE</span>
-<span class="p-badge dev" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.25);font-weight:600;letter-spacing:.3px">DEV</span></div>
-<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Agentic Context Engineering — sovereign primes, capability sandbox</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Python</span>
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Agents</span>
-</div></a>
-</div></div>
-
-
-</div><!-- end proj-grid -->
-</div><!-- end card -->
-
-<!-- NEW CARDS: cosmos-ts, rsis-dash, slotrpg -->
-<div class=card><div class=proj-grid>
-<a href="cosmos-ts.html" class="proj-card" style="border-left:3px solid #7b2fff">
-<div class="p-row"><span style="font-weight:700;font-size:.8rem;color:#7b2fff">COSMOS-TS</span>
-<span class="p-badge dev" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.25);font-weight:600;letter-spacing:.3px">DEV</span></div>
-<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">TypeScript monorepo — 4,687 files, 5 packages (core, space, mykb, rsis3, dashboard)</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">TS</span>
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Monorepo</span>
-</div></a>
-<a href="rsis-dash.html" class="proj-card" style="border-left:3px solid #ff8c00">
-<div class="p-row"><span style="font-weight:700;font-size:.8rem;color:#ff8c00">RSIS-DASH</span>
-<span class="p-badge dev" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.25);font-weight:600;letter-spacing:.3px">DEV</span></div>
-<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Standalone dashboard frontend — 22 files, RSIS3 visualization layer</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">JS</span>
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Dash</span>
-</div></a>
-<a href="projects/slotrpg.html" class="proj-card" style="border-left:3px solid #f97316">
-<div class="p-row"><span style="font-weight:700;font-size:.8rem;color:#f97316">SLOTRPG</span>
-<span class="p-badge dev" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(168,85,247,.15);color:#a855f7;border:1px solid rgba(168,85,247,.25);font-weight:600;letter-spacing:.3px">v1.0.0</span></div>
-<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Game simulation — SLOT-RPG system with 2 active versions</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">TS</span>
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(139,92,246,.2);color:#a78bfa;border:1px solid rgba(139,92,246,.3);font-weight:600">v3</span>
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(139,92,246,.2);color:#a78bfa;border:1px solid rgba(139,92,246,.3);font-weight:600">v7</span>
-</div></a>
-<a href="https://github.com/gemquota/cosmos/tree/main/components/rsis3" class="proj-card" style="border-left:3px solid #ff8c00">
-<div class="p-row"><span style="font-weight:700;font-size:.8rem;color:#ff8c00">RSIS</span>
-<span class="p-badge dev" style="font-size:.5rem;padding:1px 8px;border-radius:8px;background:rgba(168,85,247,.15);color:#a855f7;border:1px solid rgba(168,85,247,.25);font-weight:600;letter-spacing:.3px">v1→v3</span></div>
-<div style="font-size:.6rem;color:#777;margin:.1rem 0 .2rem">Recursive Self-Improvement System — 4 versions, 708 files, 3-loop architecture</div><div style="display:flex;flex-wrap:wrap;gap:.2rem">
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(255,255,255,.06);color:#999;border:1px solid rgba(255,255,255,.04)">Python</span>
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(139,92,246,.2);color:#a78bfa;border:1px solid rgba(139,92,246,.3);font-weight:600">v1</span>
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(139,92,246,.2);color:#a78bfa;border:1px solid rgba(139,92,246,.3);font-weight:600">v2</span>
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(139,92,246,.2);color:#a78bfa;border:1px solid rgba(139,92,246,.3);font-weight:600">v3</span>
-<span style="font-size:.5rem;padding:1px 6px;border-radius:8px;background:rgba(49,120,198,.2);color:#60a5fa;border:1px solid rgba(49,120,198,.3);font-weight:600">TS</span>
-</div></a>
-</div></div>
-
-<!-- MODULE: Stats & Activity -->
-<div class="module-label"><span class="icon">📈</span> Stats &amp; Activity <span class="hdr-sub">small cards + donuts</span></div>
-<div class="stat-flex">
-<div class="stat-card"><div class="card-header"><span class="icon">📊</span> Git Activity</div><div class="stat-grid">
-<div class="stat-cell"><span class="stat-big" style="color:#00d4ff">17</span><span class="stat-sm">HMXOT</span></div>
-<div class="stat-cell"><span class="stat-big" style="color:#a855f7">10</span><span class="stat-sm">MyKB</span></div>
-<div class="stat-cell"><span class="stat-big" style="color:#3b82f6">6</span><span class="stat-sm">SPACE</span></div>
-<div class="stat-cell"><span class="stat-big" style="color:#ff8c00">5</span><span class="stat-sm">RSIS3</span></div>
-<div class="stat-cell"><span class="stat-big" style="color:#ef4444">3</span><span class="stat-sm">VEPA2</span></div>
-<div class="stat-cell"><span class="stat-big" style="color:#555">0</span><span class="stat-sm">GOLF/MyRSIKB</span></div>
-</div></div>
-<div class="stat-card"><div class="card-header"><span class="icon">📈</span> Stats Snapshot</div><div class="stat-grid">
-<div class="stat-cell"><span class="stat-big" style="color:#a855f7">10</span><span class="stat-sm">Projects</span></div>
-<div class="stat-cell"><span class="stat-big" style="color:#3b82f6">~35k</span><span class="stat-sm">Total Files</span></div>
-<div class="stat-cell"><span class="stat-big" style="color:#eab308">~3M</span><span class="stat-sm">Lines of Code</span></div>
-<div class="stat-cell"><span class="stat-big" style="color:#00d4ff">~5k</span><span class="stat-sm">Entities</span></div>
-<div class="stat-cell"><span class="stat-big" style="color:#ff8c00">~2G</span><span class="stat-sm">Disk Usage</span></div>
-<div class="stat-cell"><span class="stat-big" style="color:#22c55e">3</span><span class="stat-sm">Active Today</span></div>
-</div></div>
-<div class="stat-card"><div class="card-header"><span class="icon">🧩</span> Entity Stats</div><div class="stat-grid">
-<div class="stat-cell"><span class="stat-big" style="color:#a855f7">2,442</span><span class="stat-sm">MyKB</span></div>
-<div class="stat-cell"><span class="stat-big" style="color:#ef4444">680</span><span class="stat-sm">VEPA2</span></div>
+<div class="module-label"><span class="icon">📈</span> Stats &amp; Activity <span class="hdr-sub">overview cards</span></div>
+<div class="stat-flex"><div class="stat-card"><div class="card-header"><span class="icon">📈</span> Stats Snapshot</div><div class="stat-grid">
+<div class="stat-cell"><span class="stat-big" style="color:#a855f7">4</span><span class="stat-sm">Projects</span></div>
+<div class="stat-cell"><span class="stat-big" style="color:#3b82f6">13.9k</span><span class="stat-sm">Total Files</span></div>
+<div class="stat-cell"><span class="stat-big" style="color:#eab308">329</span><span class="stat-sm">Lines of Code</span></div>
+<div class="stat-cell"><span class="stat-big" style="color:#00d4ff">3,057</span><span class="stat-sm">Entities</span></div>
+<div class="stat-cell"><span class="stat-big" style="color:#ff8c00">766MB</span><span class="stat-sm">Disk Usage</span></div>
+<div class="stat-cell"><span class="stat-big" style="color:#22c55e">-</span><span class="stat-sm">Active Today</span></div>
+</div></div><div class="stat-card"><div class="card-header"><span class="icon">🧩</span> Entity Stats</div><div class="stat-grid"><div class="stat-cell"><span class="stat-big" style="color:#a855f7">2,442</span><span class="stat-sm">MyKB</span></div>
 <div class="stat-cell"><span class="stat-big" style="color:#3b82f6">420</span><span class="stat-sm">SPACE</span></div>
-<div class="stat-cell"><span class="stat-big" style="color:#00d4ff">320</span><span class="stat-sm">HMXOT</span></div>
 <div class="stat-cell"><span class="stat-big" style="color:#ff8c00">180</span><span class="stat-sm">RSIS3</span></div>
-<div class="stat-cell"><span class="stat-big" style="color:#eab308">90</span><span class="stat-sm">GOLF</span></div>
-<div class="stat-cell"><span class="stat-big" style="color:#22c55e">15</span><span class="stat-sm">MyRSIKB</span></div>
-</div></div>
-</div>
-<div class="donut-row">
-<div class="donut-card"><div class="card-header"><span class="icon">🥧</span> Entity Distribution</div><div class="donut-wrap">
+<div class="stat-cell"><span class="stat-big" style="color:#22c55e">15</span><span class="stat-sm">MyRSIKB</span></div></div></div></div>
+<div class="donut-row"><div class="donut-card"><div class="card-header"><span class="icon">🥧</span> Entity Distribution</div>
+<div class="donut-wrap">
 <svg class="donut" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,.04)" stroke-width="16"/>
-<circle cx="50" cy="50" r="40" fill="none" stroke="#a855f7" stroke-width="16" stroke-dasharray="148 251" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
-<circle cx="50" cy="50" r="40" fill="none" stroke="#ef4444" stroke-width="16" stroke-dasharray="41 251" stroke-dashoffset="-148" transform="rotate(-90 50 50)"/>
-<circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="16" stroke-dasharray="25 251" stroke-dashoffset="-189" transform="rotate(-90 50 50)"/>
-<circle cx="50" cy="50" r="40" fill="none" stroke="#00d4ff" stroke-width="16" stroke-dasharray="19 251" stroke-dashoffset="-214" transform="rotate(-90 50 50)"/>
-<circle cx="50" cy="50" r="40" fill="none" stroke="#ff8c00" stroke-width="16" stroke-dasharray="11 251" stroke-dashoffset="-233" transform="rotate(-90 50 50)"/>
-<circle cx="50" cy="50" r="40" fill="none" stroke="#eab308" stroke-width="16" stroke-dasharray="5 251" stroke-dashoffset="-244" transform="rotate(-90 50 50)"/>
-<circle cx="50" cy="50" r="40" fill="none" stroke="#22c55e" stroke-width="16" stroke-dasharray="1 251" stroke-dashoffset="-249" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#a855f7" stroke-width="16" stroke-dasharray="201 251" stroke-dashoffset="-0" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="16" stroke-dasharray="34 251" stroke-dashoffset="-201" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#ff8c00" stroke-width="16" stroke-dasharray="15 251" stroke-dashoffset="-235" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#22c55e" stroke-width="16" stroke-dasharray="1 251" stroke-dashoffset="-250" transform="rotate(-90 50 50)"/>
 </svg><div class="donut-legend">
 <div class="row"><span class="swatch" style="background:#a855f7"></span><span class="lbl">MyKB</span><span class="cnt">2,442</span></div>
-<div class="row"><span class="swatch" style="background:#ef4444"></span><span class="lbl">VEPA2</span><span class="cnt">680</span></div>
 <div class="row"><span class="swatch" style="background:#3b82f6"></span><span class="lbl">SPACE</span><span class="cnt">420</span></div>
-<div class="row"><span class="swatch" style="background:#00d4ff"></span><span class="lbl">HMXOT</span><span class="cnt">320</span></div>
 <div class="row"><span class="swatch" style="background:#ff8c00"></span><span class="lbl">RSIS3</span><span class="cnt">180</span></div>
-<div class="row"><span class="swatch" style="background:#eab308"></span><span class="lbl">GOLF</span><span class="cnt">90</span></div>
 <div class="row"><span class="swatch" style="background:#22c55e"></span><span class="lbl">MyRSIKB</span><span class="cnt">15</span></div>
-</div></div></div>
-<div class="donut-card"><div class="card-header"><span class="icon">📏</span> Code Breakdown</div><div class="donut-wrap">
+</div></div></div><div class="donut-card"><div class="card-header"><span class="icon">🥧</span> Code Breakdown</div>
+<div class="donut-wrap">
 <svg class="donut" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,.04)" stroke-width="16"/>
-<circle cx="50" cy="50" r="40" fill="none" stroke="#eab308" stroke-width="16" stroke-dasharray="99 251" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
-<circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="16" stroke-dasharray="81 251" stroke-dashoffset="-99" transform="rotate(-90 50 50)"/>
-<circle cx="50" cy="50" r="40" fill="none" stroke="#a855f7" stroke-width="16" stroke-dasharray="71 251" stroke-dashoffset="-180" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#eab308" stroke-width="16" stroke-dasharray="161 251" stroke-dashoffset="-0" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="16" stroke-dasharray="49 251" stroke-dashoffset="-161" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#a855f7" stroke-width="16" stroke-dasharray="36 251" stroke-dashoffset="-210" transform="rotate(-90 50 50)"/>
+<circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="16" stroke-dasharray="6 251" stroke-dashoffset="-246" transform="rotate(-90 50 50)"/>
 </svg><div class="donut-legend">
-<div class="row"><span class="swatch" style="background:#eab308"></span><span class="lbl">JS/TS</span><span class="cnt">1.4M</span></div>
-<div class="row"><span class="swatch" style="background:#3b82f6"></span><span class="lbl">Python</span><span class="cnt">425k</span></div>
-<div class="row"><span class="swatch" style="background:#a855f7"></span><span class="lbl">Markdown</span><span class="cnt">310k</span></div>
-<div class="row"><span class="swatch" style="background:rgba(255,255,255,.08)"></span><span class="lbl">Other</span><span class="cnt">~50k</span></div>
-<div class="row" style="margin-top:4px;font-size:.5rem;color:#555"><span class="lbl">Total ~2.5M lines</span></div></div></div></div>
-</div>
-
-<!-- MODULE: Charts -->
-<div class="module-label"><span class="icon">📊</span> Charts <span class="hdr-sub">all stacked · click toggle for separate horizontal bars</span></div>
+<div class="row"><span class="swatch" style="background:#eab308"></span><span class="lbl">JS/TS</span><span class="cnt">1,400</span></div>
+<div class="row"><span class="swatch" style="background:#3b82f6"></span><span class="lbl">Python</span><span class="cnt">425</span></div>
+<div class="row"><span class="swatch" style="background:#a855f7"></span><span class="lbl">Markdown</span><span class="cnt">310</span></div>
+<div class="row"><span class="swatch" style="background:rgba(255,255,255,.08)"></span><span class="lbl">Other</span><span class="cnt">50</span></div>
+</div></div></div></div>
+<div class="module-label"><span class="icon">📊</span> Charts <span class="hdr-sub">stacked · click toggle for separate bars</span></div>
 <div class="card">
-<div class="card-header">
-<span class="icon">💾</span> Disk Usage <span class="hdr-sub">per project</span>
+<div class="card-header"><span class="icon">💾</span> Disk Usage <span class="hdr-sub">per project</span>
 <span class="chart-toggle" data-target="disk-usage" onclick="toggleChart('disk-usage')">▤ Separate</span>
 </div>
-<div id="disk-usage-stacked" class="chart-view">
-<div class="stacked-bar-wrap"><div class="stacked-bar">
-<div class="seg" style="width:46.5%;background:#3b82f6" title="SPACE: 512MB"></div>
-<div class="seg" style="width:31.6%;background:#ef4444" title="VEPA2: 348MB"></div>
-<div class="seg" style="width:19.5%;background:#a855f7" title="MyKB: 215MB"></div>
-<div class="seg" style="width:14.5%;background:#00d4ff" title="HMXOT: 160MB"></div>
-<div class="seg" style="width:8.4%;background:#eab308" title="GOLF: 92MB"></div>
-<div class="seg" style="width:2.8%;background:#ff8c00" title="RSIS3: 31MB"></div>
-<div class="seg" style="width:0.7%;background:#22c55e" title="MyRSIKB: 8MB"></div>
-</div><div class="stacked-legend">
-<span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 512MB</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#ef4444"></span> VEPA2: 348MB</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 215MB</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#00d4ff"></span> HMXOT: 160MB</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#eab308"></span> GOLF: 92MB</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 31MB</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#22c55e"></span> MyRSIKB: 8MB</span>
+<div id="disk-usage-stacked" class="chart-view"><div class="stacked-bar-wrap"><div class="stacked-bar">
+<div class="seg" style="width:66.8%;background:#3b82f6" title="SPACE: 512"></div>
+<div class="seg" style="width:28.1%;background:#a855f7" title="MyKB: 215"></div>
+<div class="seg" style="width:4.0%;background:#ff8c00" title="RSIS3: 31"></div>
+<div class="seg" style="width:1.0%;background:#22c55e" title="MyRSIKB: 8"></div>
+</div><div class="stacked-legend"><span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 512</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 215</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 31</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#22c55e"></span> MyRSIKB: 8</span>
 </div></div></div>
-<div id="disk-usage-grouped" class="chart-view hidden">
-<div class="comp-row"><span class="lbl">SPACE</span><div class="track"><div class="fill" style="width:100%;background:#3b82f6"></div></div><span class="pct">512MB</span></div>
-<div class="comp-row"><span class="lbl">VEPA2</span><div class="track"><div class="fill" style="width:68%;background:#ef4444"></div></div><span class="pct">348MB</span></div>
-<div class="comp-row"><span class="lbl">MyKB</span><div class="track"><div class="fill" style="width:42%;background:#a855f7"></div></div><span class="pct">215MB</span></div>
-<div class="comp-row"><span class="lbl">HMXOT</span><div class="track"><div class="fill" style="width:31%;background:#00d4ff"></div></div><span class="pct">160MB</span></div>
-<div class="comp-row"><span class="lbl">GOLF</span><div class="track"><div class="fill" style="width:18%;background:#eab308"></div></div><span class="pct">92MB</span></div>
-<div class="comp-row"><span class="lbl">RSIS3</span><div class="track"><div class="fill" style="width:6%;background:#ff8c00"></div></div><span class="pct">31MB</span></div>
-<div class="comp-row"><span class="lbl">MyRSIKB</span><div class="track"><div class="fill" style="width:2%;background:#22c55e"></div></div><span class="pct">8MB</span></div>
+<div id="disk-usage-grouped" class="chart-view hidden"><div class="comp-row"><span class="lbl">SPACE</span><div class="track"><div class="fill" style="width:100%;background:#3b82f6"></div></div><span class="pct">512</span></div>
+<div class="comp-row"><span class="lbl">MyKB</span><div class="track"><div class="fill" style="width:42%;background:#a855f7"></div></div><span class="pct">215</span></div>
+<div class="comp-row"><span class="lbl">RSIS3</span><div class="track"><div class="fill" style="width:6%;background:#ff8c00"></div></div><span class="pct">31</span></div>
+<div class="comp-row"><span class="lbl">MyRSIKB</span><div class="track"><div class="fill" style="width:2%;background:#22c55e"></div></div><span class="pct">8</span></div>
 </div>
 </div>
 <div class="card">
-<div class="card-header">
-<span class="icon">📦</span> Entity Count <span class="hdr-sub">(excl. MyKB)</span>
+<div class="card-header"><span class="icon">📦</span> Entity Count <span class="hdr-sub"></span>
 <span class="chart-toggle" data-target="entity-count" onclick="toggleChart('entity-count')">▤ Separate</span>
 </div>
-<div id="entity-count-stacked" class="chart-view">
-<div class="stacked-bar-wrap"><div class="stacked-bar">
-<div class="seg" style="width:39.9%;background:#ef4444" title="VEPA2: 680"></div>
-<div class="seg" style="width:24.6%;background:#3b82f6" title="SPACE: 420"></div>
-<div class="seg" style="width:18.8%;background:#00d4ff" title="HMXOT: 320"></div>
-<div class="seg" style="width:10.6%;background:#ff8c00" title="RSIS3: 180"></div>
-<div class="seg" style="width:5.3%;background:#eab308" title="GOLF: 90"></div>
-<div class="seg" style="width:0.9%;background:#22c55e" title="MyRSIKB: 15"></div>
-</div><div class="stacked-legend">
-<span class="leg-item"><span class="leg-swatch" style="background:#ef4444"></span> VEPA2: 680</span>
+<div id="entity-count-stacked" class="chart-view"><div class="stacked-bar-wrap"><div class="stacked-bar">
+<div class="seg" style="width:79.9%;background:#a855f7" title="MyKB: 2.4k"></div>
+<div class="seg" style="width:13.7%;background:#3b82f6" title="SPACE: 420"></div>
+<div class="seg" style="width:5.9%;background:#ff8c00" title="RSIS3: 180"></div>
+<div class="seg" style="width:0.5%;background:#22c55e" title="MyRSIKB: 15"></div>
+</div><div class="stacked-legend"><span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 2.4k</span>
 <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 420</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#00d4ff"></span> HMXOT: 320</span>
 <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 180</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#eab308"></span> GOLF: 90</span>
 <span class="leg-item"><span class="leg-swatch" style="background:#22c55e"></span> MyRSIKB: 15</span>
 </div></div></div>
-<div id="entity-count-grouped" class="chart-view hidden">
-<div class="comp-row"><span class="lbl">VEPA2</span><div class="track"><div class="fill" style="width:100%;background:#ef4444"></div></div><span class="pct">680</span></div>
-<div class="comp-row"><span class="lbl">SPACE</span><div class="track"><div class="fill" style="width:61.8%;background:#3b82f6"></div></div><span class="pct">420</span></div>
-<div class="comp-row"><span class="lbl">HMXOT</span><div class="track"><div class="fill" style="width:47.1%;background:#00d4ff"></div></div><span class="pct">320</span></div>
-<div class="comp-row"><span class="lbl">RSIS3</span><div class="track"><div class="fill" style="width:26.5%;background:#ff8c00"></div></div><span class="pct">180</span></div>
-<div class="comp-row"><span class="lbl">GOLF</span><div class="track"><div class="fill" style="width:13.2%;background:#eab308"></div></div><span class="pct">90</span></div>
-<div class="comp-row"><span class="lbl">MyRSIKB</span><div class="track"><div class="fill" style="width:2.2%;background:#22c55e"></div></div><span class="pct">15</span></div>
+<div id="entity-count-grouped" class="chart-view hidden"><div class="comp-row"><span class="lbl">MyKB</span><div class="track"><div class="fill" style="width:100%;background:#a855f7"></div></div><span class="pct">2.4k</span></div>
+<div class="comp-row"><span class="lbl">SPACE</span><div class="track"><div class="fill" style="width:17%;background:#3b82f6"></div></div><span class="pct">420</span></div>
+<div class="comp-row"><span class="lbl">RSIS3</span><div class="track"><div class="fill" style="width:7%;background:#ff8c00"></div></div><span class="pct">180</span></div>
+<div class="comp-row"><span class="lbl">MyRSIKB</span><div class="track"><div class="fill" style="width:1%;background:#22c55e"></div></div><span class="pct">15</span></div>
 </div>
 </div>
 <div class="card">
-<div class="card-header">
-<span class="icon">📄</span> File Count
+<div class="card-header"><span class="icon">📄</span> File Count <span class="hdr-sub"></span>
 <span class="chart-toggle" data-target="file-count" onclick="toggleChart('file-count')">▤ Separate</span>
 </div>
-<div id="file-count-stacked" class="chart-view">
-<div class="stacked-bar-wrap"><div class="stacked-bar">
-<div class="seg" style="width:37.0%;background:#3b82f6" title="SPACE: 9,901"></div>
-<div class="seg" style="width:33.6%;background:#ef4444" title="VEPA2: 8,982"></div>
-<div class="seg" style="width:12.5%;background:#a855f7" title="MyKB: 3,351"></div>
-<div class="seg" style="width:9.6%;background:#eab308" title="GOLF: 2,579"></div>
-<div class="seg" style="width:4.7%;background:#00d4ff" title="HMXOT: 1,269"></div>
-<div class="seg" style="width:2.3%;background:#ff8c00" title="RSIS3: 627"></div>
-<div class="seg" style="width:0.1%;background:#22c55e" title="MyRSIKB: 37"></div>
-</div><div class="stacked-legend">
-<span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 9,901</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#ef4444"></span> VEPA2: 8,982</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 3,351</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#eab308"></span> GOLF: 2,579</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#00d4ff"></span> HMXOT: 1,269</span>
+<div id="file-count-stacked" class="chart-view"><div class="stacked-bar-wrap"><div class="stacked-bar">
+<div class="seg" style="width:71.1%;background:#3b82f6" title="SPACE: 9.9k"></div>
+<div class="seg" style="width:24.1%;background:#a855f7" title="MyKB: 3.4k"></div>
+<div class="seg" style="width:4.5%;background:#ff8c00" title="RSIS3: 627"></div>
+<div class="seg" style="width:0.3%;background:#22c55e" title="MyRSIKB: 44"></div>
+</div><div class="stacked-legend"><span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 9.9k</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 3.4k</span>
 <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 627</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#22c55e"></span> MyRSIKB: 37</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#22c55e"></span> MyRSIKB: 44</span>
 </div></div></div>
-<div id="file-count-grouped" class="chart-view hidden">
-<div class="comp-row"><span class="lbl">SPACE</span><div class="track"><div class="fill" style="width:100%;background:#3b82f6"></div></div><span class="pct">9,901</span></div>
-<div class="comp-row"><span class="lbl">VEPA2</span><div class="track"><div class="fill" style="width:90.7%;background:#ef4444"></div></div><span class="pct">8,982</span></div>
-<div class="comp-row"><span class="lbl">MyKB</span><div class="track"><div class="fill" style="width:33.8%;background:#a855f7"></div></div><span class="pct">3,351</span></div>
-<div class="comp-row"><span class="lbl">GOLF</span><div class="track"><div class="fill" style="width:26.0%;background:#eab308"></div></div><span class="pct">2,579</span></div>
-<div class="comp-row"><span class="lbl">HMXOT</span><div class="track"><div class="fill" style="width:12.8%;background:#00d4ff"></div></div><span class="pct">1,269</span></div>
-<div class="comp-row"><span class="lbl">RSIS3</span><div class="track"><div class="fill" style="width:6.3%;background:#ff8c00"></div></div><span class="pct">627</span></div>
-<div class="comp-row"><span class="lbl">MyRSIKB</span><div class="track"><div class="fill" style="width:0.4%;background:#22c55e"></div></div><span class="pct">37</span></div>
+<div id="file-count-grouped" class="chart-view hidden"><div class="comp-row"><span class="lbl">SPACE</span><div class="track"><div class="fill" style="width:100%;background:#3b82f6"></div></div><span class="pct">9.9k</span></div>
+<div class="comp-row"><span class="lbl">MyKB</span><div class="track"><div class="fill" style="width:34%;background:#a855f7"></div></div><span class="pct">3.4k</span></div>
+<div class="comp-row"><span class="lbl">RSIS3</span><div class="track"><div class="fill" style="width:6%;background:#ff8c00"></div></div><span class="pct">627</span></div>
+<div class="comp-row"><span class="lbl">MyRSIKB</span><div class="track"><div class="fill" style="width:0%;background:#22c55e"></div></div><span class="pct">44</span></div>
 </div>
 </div>
 <div class="card">
-<div class="card-header">
-<span class="icon">⚡</span> Lines of Code
+<div class="card-header"><span class="icon">⚡</span> Lines of Code <span class="hdr-sub"></span>
 <span class="chart-toggle" data-target="loc" onclick="toggleChart('loc')">▤ Separate</span>
 </div>
-<div id="loc-stacked" class="chart-view">
-<div class="stacked-bar-wrap"><div class="stacked-bar">
-<div class="seg" style="width:45.1%;background:#00d4ff" title="HMXOT: 952k"></div>
-<div class="seg" style="width:25.2%;background:#ef4444" title="VEPA2: 532k"></div>
-<div class="seg" style="width:14.1%;background:#eab308" title="GOLF: 297k"></div>
-<div class="seg" style="width:9.9%;background:#3b82f6" title="SPACE: 209k"></div>
-<div class="seg" style="width:3.2%;background:#a855f7" title="MyKB: 68k"></div>
-<div class="seg" style="width:2.0%;background:#ff8c00" title="RSIS3: 42k"></div>
-<div class="seg" style="width:0.5%;background:#22c55e" title="MyRSIKB: 10k"></div>
-</div><div class="stacked-legend">
-<span class="leg-item"><span class="leg-swatch" style="background:#00d4ff"></span> HMXOT: 952k</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#ef4444"></span> VEPA2: 532k</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#eab308"></span> GOLF: 297k</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 209k</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 68k</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 42k</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#22c55e"></span> MyRSIKB: 10k</span>
+<div id="loc-stacked" class="chart-view"><div class="stacked-bar-wrap"><div class="stacked-bar">
+<div class="seg" style="width:63.5%;background:#3b82f6" title="SPACE: 209"></div>
+<div class="seg" style="width:20.7%;background:#a855f7" title="MyKB: 68"></div>
+<div class="seg" style="width:12.8%;background:#ff8c00" title="RSIS3: 42"></div>
+<div class="seg" style="width:3.0%;background:#22c55e" title="MyRSIKB: 10"></div>
+</div><div class="stacked-legend"><span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 209</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 68</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 42</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#22c55e"></span> MyRSIKB: 10</span>
 </div></div></div>
-<div id="loc-grouped" class="chart-view hidden">
-<div class="comp-row"><span class="lbl">HMXOT</span><div class="track"><div class="fill" style="width:100%;background:#00d4ff"></div></div><span class="pct">952k</span></div>
-<div class="comp-row"><span class="lbl">VEPA2</span><div class="track"><div class="fill" style="width:56%;background:#ef4444"></div></div><span class="pct">532k</span></div>
-<div class="comp-row"><span class="lbl">GOLF</span><div class="track"><div class="fill" style="width:31%;background:#eab308"></div></div><span class="pct">297k</span></div>
-<div class="comp-row"><span class="lbl">SPACE</span><div class="track"><div class="fill" style="width:22%;background:#3b82f6"></div></div><span class="pct">209k</span></div>
-<div class="comp-row"><span class="lbl">MyKB</span><div class="track"><div class="fill" style="width:7%;background:#a855f7"></div></div><span class="pct">68k</span></div>
-<div class="comp-row"><span class="lbl">RSIS3</span><div class="track"><div class="fill" style="width:4%;background:#ff8c00"></div></div><span class="pct">42k</span></div>
-<div class="comp-row"><span class="lbl">MyRSIKB</span><div class="track"><div class="fill" style="width:1%;background:#22c55e"></div></div><span class="pct">10k</span></div>
+<div id="loc-grouped" class="chart-view hidden"><div class="comp-row"><span class="lbl">SPACE</span><div class="track"><div class="fill" style="width:100%;background:#3b82f6"></div></div><span class="pct">209</span></div>
+<div class="comp-row"><span class="lbl">MyKB</span><div class="track"><div class="fill" style="width:33%;background:#a855f7"></div></div><span class="pct">68</span></div>
+<div class="comp-row"><span class="lbl">RSIS3</span><div class="track"><div class="fill" style="width:20%;background:#ff8c00"></div></div><span class="pct">42</span></div>
+<div class="comp-row"><span class="lbl">MyRSIKB</span><div class="track"><div class="fill" style="width:5%;background:#22c55e"></div></div><span class="pct">10</span></div>
 </div>
 </div>
 <div class="card">
-<div class="card-header">
-<span class="icon">🔀</span> Code vs Data <span class="hdr-sub">3 views</span>
-<span class="chart-toggle" data-target="code-data" onclick="toggleChart3('code-data')">▤ Separate</span>
-</div>
-<div class="chart-view" id="code-data-stacked">
-  <div style="font-size:.55rem;color:#888;margin:.2rem 0 .1rem;display:flex;align-items:center;gap:.3rem">
-    <span style="width:36px;font-weight:600;color:#a855f7">Code</span>
-    <div class="stacked-bar" style="flex:1;height:24px"><div class="seg" style="width:73.0%;background:#a855f7" title="MyKB Code: 73%"></div><div class="seg" style="width:89.0%;background:#ef4444" title="VEPA2 Code: 89%"></div><div class="seg" style="width:62.0%;background:#3b82f6" title="SPACE Code: 62%"></div><div class="seg" style="width:78.0%;background:#00d4ff" title="HMXOT Code: 78%"></div><div class="seg" style="width:91.0%;background:#ff8c00" title="RSIS3 Code: 91%"></div><div class="seg" style="width:67.0%;background:#eab308" title="GOLF Code: 67%"></div><div class="seg" style="width:58.0%;background:#22c55e" title="MyRSIKB Code: 58%"></div></div>
-  </div>
-  <div style="font-size:.55rem;color:#888;margin:.1rem 0;display:flex;align-items:center;gap:.3rem">
-    <span style="width:36px;font-weight:600;color:rgba(255,255,255,.3)">Data</span>
-    <div class="stacked-bar" style="flex:1;height:24px"><div class="seg" style="width:27.0%;background:rgba(168,85,247,.3)" title="MyKB Data: 27%"></div><div class="seg" style="width:11.0%;background:rgba(239,68,68,.3)" title="VEPA2 Data: 11%"></div><div class="seg" style="width:38.0%;background:rgba(59,130,246,.3)" title="SPACE Data: 38%"></div><div class="seg" style="width:22.0%;background:rgba(0,212,255,.3)" title="HMXOT Data: 22%"></div><div class="seg" style="width:9.0%;background:rgba(255,140,0,.3)" title="RSIS3 Data: 9%"></div><div class="seg" style="width:33.0%;background:rgba(234,179,8,.3)" title="GOLF Data: 33%"></div><div class="seg" style="width:42.0%;background:rgba(34,197,94,.3)" title="MyRSIKB Data: 42%"></div></div>
-  </div>
-  <div class="stacked-legend" style="margin-top:.2rem">
-    <span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB</span><span class="leg-item"><span class="leg-swatch" style="background:#ef4444"></span> VEPA2</span><span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE</span><span class="leg-item"><span class="leg-swatch" style="background:#00d4ff"></span> HMXOT</span><span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3</span><span class="leg-item"><span class="leg-swatch" style="background:#eab308"></span> GOLF</span><span class="leg-item"><span class="leg-swatch" style="background:#22c55e"></span> MyRSIKB</span>
-  </div>
-</div>
-<div class="chart-view hidden" id="code-data-grouped">
-  <div style="display:flex;align-items:center;gap:.25rem;margin-bottom:.1rem;font-size:.6rem">
-  <span style="width:60px;text-align:right;color:#888;flex-shrink:0">MyKB</span>
-  <div style="flex:1;display:flex;flex-direction:column;gap:2px">
-    <div style="display:flex;align-items:center;gap:.2rem">
-      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
-        <div class="fill" style="height:100%;width:73%;border-radius:4px;background:#a855f7"></div>
-      </div>
-      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">73%</span>
-    </div>
-    <div style="display:flex;align-items:center;gap:.2rem">
-      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
-        <div class="fill" style="height:100%;width:27%;border-radius:4px;background:rgba(168,85,247,.3)"></div>
-      </div>
-      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">27%</span>
-    </div>
-  </div>
-</div> <div style="display:flex;align-items:center;gap:.25rem;margin-bottom:.1rem;font-size:.6rem">
-  <span style="width:60px;text-align:right;color:#888;flex-shrink:0">VEPA2</span>
-  <div style="flex:1;display:flex;flex-direction:column;gap:2px">
-    <div style="display:flex;align-items:center;gap:.2rem">
-      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
-        <div class="fill" style="height:100%;width:89%;border-radius:4px;background:#ef4444"></div>
-      </div>
-      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">89%</span>
-    </div>
-    <div style="display:flex;align-items:center;gap:.2rem">
-      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
-        <div class="fill" style="height:100%;width:11%;border-radius:4px;background:rgba(239,68,68,.3)"></div>
-      </div>
-      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">11%</span>
-    </div>
-  </div>
-</div> <div style="display:flex;align-items:center;gap:.25rem;margin-bottom:.1rem;font-size:.6rem">
-  <span style="width:60px;text-align:right;color:#888;flex-shrink:0">SPACE</span>
-  <div style="flex:1;display:flex;flex-direction:column;gap:2px">
-    <div style="display:flex;align-items:center;gap:.2rem">
-      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
-        <div class="fill" style="height:100%;width:62%;border-radius:4px;background:#3b82f6"></div>
-      </div>
-      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">62%</span>
-    </div>
-    <div style="display:flex;align-items:center;gap:.2rem">
-      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
-        <div class="fill" style="height:100%;width:38%;border-radius:4px;background:rgba(59,130,246,.3)"></div>
-      </div>
-      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">38%</span>
-    </div>
-  </div>
-</div> <div style="display:flex;align-items:center;gap:.25rem;margin-bottom:.1rem;font-size:.6rem">
-  <span style="width:60px;text-align:right;color:#888;flex-shrink:0">HMXOT</span>
-  <div style="flex:1;display:flex;flex-direction:column;gap:2px">
-    <div style="display:flex;align-items:center;gap:.2rem">
-      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
-        <div class="fill" style="height:100%;width:78%;border-radius:4px;background:#00d4ff"></div>
-      </div>
-      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">78%</span>
-    </div>
-    <div style="display:flex;align-items:center;gap:.2rem">
-      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
-        <div class="fill" style="height:100%;width:22%;border-radius:4px;background:rgba(0,212,255,.3)"></div>
-      </div>
-      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">22%</span>
-    </div>
-  </div>
-</div> <div style="display:flex;align-items:center;gap:.25rem;margin-bottom:.1rem;font-size:.6rem">
-  <span style="width:60px;text-align:right;color:#888;flex-shrink:0">RSIS3</span>
-  <div style="flex:1;display:flex;flex-direction:column;gap:2px">
-    <div style="display:flex;align-items:center;gap:.2rem">
-      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
-        <div class="fill" style="height:100%;width:91%;border-radius:4px;background:#ff8c00"></div>
-      </div>
-      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">91%</span>
-    </div>
-    <div style="display:flex;align-items:center;gap:.2rem">
-      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
-        <div class="fill" style="height:100%;width:9%;border-radius:4px;background:rgba(255,140,0,.3)"></div>
-      </div>
-      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">9%</span>
-    </div>
-  </div>
-</div> <div style="display:flex;align-items:center;gap:.25rem;margin-bottom:.1rem;font-size:.6rem">
-  <span style="width:60px;text-align:right;color:#888;flex-shrink:0">GOLF</span>
-  <div style="flex:1;display:flex;flex-direction:column;gap:2px">
-    <div style="display:flex;align-items:center;gap:.2rem">
-      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
-        <div class="fill" style="height:100%;width:67%;border-radius:4px;background:#eab308"></div>
-      </div>
-      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">67%</span>
-    </div>
-    <div style="display:flex;align-items:center;gap:.2rem">
-      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
-        <div class="fill" style="height:100%;width:33%;border-radius:4px;background:rgba(234,179,8,.3)"></div>
-      </div>
-      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">33%</span>
-    </div>
-  </div>
-</div> <div style="display:flex;align-items:center;gap:.25rem;margin-bottom:.1rem;font-size:.6rem">
-  <span style="width:60px;text-align:right;color:#888;flex-shrink:0">MyRSIKB</span>
-  <div style="flex:1;display:flex;flex-direction:column;gap:2px">
-    <div style="display:flex;align-items:center;gap:.2rem">
-      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
-        <div class="fill" style="height:100%;width:58%;border-radius:4px;background:#22c55e"></div>
-      </div>
-      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">58%</span>
-    </div>
-    <div style="display:flex;align-items:center;gap:.2rem">
-      <div class="track" style="flex:1;height:7px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden">
-        <div class="fill" style="height:100%;width:42%;border-radius:4px;background:rgba(34,197,94,.3)"></div>
-      </div>
-      <span style="color:#555;font-size:.5rem;width:30px;text-align:right">42%</span>
-    </div>
-  </div>
-</div>
-</div>
-<div class="chart-view hidden" id="code-data-perproj">
-  <div class="mini-stack-row"><div class="mini-stack"><div class="ms-title">MyKB</div>
-  <div class="ms-bar"><div class="seg" style="width:73%;background:#a855f7"></div><div class="seg" style="width:27%;background:rgba(168,85,247,.3)"></div></div>
-  <div class="ms-leg">C:73% D:27%</div></div><div class="mini-stack"><div class="ms-title">VEPA2</div>
-  <div class="ms-bar"><div class="seg" style="width:89%;background:#ef4444"></div><div class="seg" style="width:11%;background:rgba(239,68,68,.3)"></div></div>
-  <div class="ms-leg">C:89% D:11%</div></div><div class="mini-stack"><div class="ms-title">SPACE</div>
-  <div class="ms-bar"><div class="seg" style="width:62%;background:#3b82f6"></div><div class="seg" style="width:38%;background:rgba(59,130,246,.3)"></div></div>
-  <div class="ms-leg">C:62% D:38%</div></div><div class="mini-stack"><div class="ms-title">HMXOT</div>
-  <div class="ms-bar"><div class="seg" style="width:78%;background:#00d4ff"></div><div class="seg" style="width:22%;background:rgba(0,212,255,.3)"></div></div>
-  <div class="ms-leg">C:78% D:22%</div></div><div class="mini-stack"><div class="ms-title">RSIS3</div>
-  <div class="ms-bar"><div class="seg" style="width:91%;background:#ff8c00"></div><div class="seg" style="width:9%;background:rgba(255,140,0,.3)"></div></div>
-  <div class="ms-leg">C:91% D:9%</div></div><div class="mini-stack"><div class="ms-title">GOLF</div>
-  <div class="ms-bar"><div class="seg" style="width:67%;background:#eab308"></div><div class="seg" style="width:33%;background:rgba(234,179,8,.3)"></div></div>
-  <div class="ms-leg">C:67% D:33%</div></div><div class="mini-stack"><div class="ms-title">MyRSIKB</div>
-  <div class="ms-bar"><div class="seg" style="width:58%;background:#22c55e"></div><div class="seg" style="width:42%;background:rgba(34,197,94,.3)"></div></div>
-  <div class="ms-leg">C:58% D:42%</div></div></div>
-</div></div>
-</div>
-<div class="card">
-<div class="card-header">
-<span class="icon">🔤</span> Language Mix
+<div class="card-header"><span class="icon">🔤</span> Language Mix
 <span class="chart-toggle" data-target="lang-mix" onclick="toggleChart('lang-mix')">▤ Separate</span>
 </div>
-<div id="lang-mix-stacked" class="chart-view">
-<div class="stacked-bar-wrap"><div class="stacked-bar">
-<div class="seg" style="width:66%;background:#eab308" title="JS/TS: 66%"></div>
-<div class="seg" style="width:12%;background:#22c55e" title="Markdown: 12%"></div>
-<div class="seg" style="width:8%;background:#3b82f6" title="JSON: 8%"></div>
-<div class="seg" style="width:7%;background:#ef4444" title="HTML: 7%"></div>
-<div class="seg" style="width:4%;background:#a855f7" title="Images: 4%"></div>
-<div class="seg" style="width:2%;background:#ff8c00" title="Python: 2%"></div>
-<div class="seg" style="width:1%;background:#00d4ff" title="Other: 1%"></div>
-</div><div class="stacked-legend">
-<span class="leg-item"><span class="leg-swatch" style="background:#eab308"></span> JS/TS: 66%</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#22c55e"></span> Markdown: 12%</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> JSON: 8%</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#ef4444"></span> HTML: 7%</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> Images: 4%</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> Python: 2%</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#00d4ff"></span> Other: 1%</span>
+<div id="lang-mix-stacked" class="chart-view"><div class="stacked-bar-wrap"><div class="stacked-bar">
+<div class="seg" style="width:66.0%;background:#eab308" title="JS/TS: 66"></div>
+<div class="seg" style="width:12.0%;background:#22c55e" title="Markdown: 12"></div>
+<div class="seg" style="width:8.0%;background:#3b82f6" title="JSON: 8"></div>
+<div class="seg" style="width:7.0%;background:#ef4444" title="HTML: 7"></div>
+<div class="seg" style="width:4.0%;background:#a855f7" title="Images: 4"></div>
+<div class="seg" style="width:2.0%;background:#ff8c00" title="Python: 2"></div>
+<div class="seg" style="width:1.0%;background:#00d4ff" title="Other: 1"></div>
+</div><div class="stacked-legend"><span class="leg-item"><span class="leg-swatch" style="background:#eab308"></span> JS/TS: 66</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#22c55e"></span> Markdown: 12</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> JSON: 8</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#ef4444"></span> HTML: 7</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> Images: 4</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> Python: 2</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#00d4ff"></span> Other: 1</span>
 </div></div></div>
-<div id="lang-mix-grouped" class="chart-view hidden">
-<div class="comp-row"><span class="lbl">JS/TS</span><div class="track"><div class="fill" style="width:100%;background:#eab308"></div></div><span class="pct">66%</span></div>
-<div class="comp-row"><span class="lbl">Markdown</span><div class="track"><div class="fill" style="width:18%;background:#22c55e"></div></div><span class="pct">12%</span></div>
-<div class="comp-row"><span class="lbl">JSON</span><div class="track"><div class="fill" style="width:12%;background:#3b82f6"></div></div><span class="pct">8%</span></div>
-<div class="comp-row"><span class="lbl">HTML</span><div class="track"><div class="fill" style="width:11%;background:#ef4444"></div></div><span class="pct">7%</span></div>
-<div class="comp-row"><span class="lbl">Images</span><div class="track"><div class="fill" style="width:6%;background:#a855f7"></div></div><span class="pct">4%</span></div>
-<div class="comp-row"><span class="lbl">Python</span><div class="track"><div class="fill" style="width:3%;background:#ff8c00"></div></div><span class="pct">2%</span></div>
-<div class="comp-row"><span class="lbl">Other</span><div class="track"><div class="fill" style="width:2%;background:#00d4ff"></div></div><span class="pct">1%</span></div>
+<div id="lang-mix-grouped" class="chart-view hidden"><div class="comp-row"><span class="lbl">JS/TS</span><div class="track"><div class="fill" style="width:100%;background:#eab308"></div></div><span class="pct">66</span></div>
+<div class="comp-row"><span class="lbl">Markdown</span><div class="track"><div class="fill" style="width:18%;background:#22c55e"></div></div><span class="pct">12</span></div>
+<div class="comp-row"><span class="lbl">JSON</span><div class="track"><div class="fill" style="width:12%;background:#3b82f6"></div></div><span class="pct">8</span></div>
+<div class="comp-row"><span class="lbl">HTML</span><div class="track"><div class="fill" style="width:11%;background:#ef4444"></div></div><span class="pct">7</span></div>
+<div class="comp-row"><span class="lbl">Images</span><div class="track"><div class="fill" style="width:6%;background:#a855f7"></div></div><span class="pct">4</span></div>
+<div class="comp-row"><span class="lbl">Python</span><div class="track"><div class="fill" style="width:3%;background:#ff8c00"></div></div><span class="pct">2</span></div>
+<div class="comp-row"><span class="lbl">Other</span><div class="track"><div class="fill" style="width:2%;background:#00d4ff"></div></div><span class="pct">1</span></div>
 </div>
 </div>
 <div class="card">
-<div class="card-header">
-<span class="icon">✅</span> Completion Status
+<div class="card-header"><span class="icon">✅</span> Completion Status
 <span class="chart-toggle" data-target="completion" onclick="toggleChart('completion')">▤ Separate</span>
 </div>
-<div id="completion-stacked" class="chart-view">
-<div class="stacked-bar-wrap"><div class="stacked-bar">
-<div class="seg" style="width:14%;background:#a855f7" title="Stable"></div>
-<div class="seg" style="width:29%;background:#00ff9f" title="Live"></div>
-<div class="seg" style="width:29%;background:#ffa500" title="Beta"></div>
-<div class="seg" style="width:29%;background:#60a5fa" title="Dev"></div>
-</div><div class="stacked-legend">
-<span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> Stable: </span>
-<span class="leg-item"><span class="leg-swatch" style="background:#00ff9f"></span> Live: </span>
-<span class="leg-item"><span class="leg-swatch" style="background:#ffa500"></span> Beta: </span>
-<span class="leg-item"><span class="leg-swatch" style="background:#60a5fa"></span> Dev: </span>
+<div id="completion-stacked" class="chart-view"><div class="stacked-bar-wrap"><div class="stacked-bar">
+<div class="seg" style="width:50.0%;background:#00ff9f" title="Live: 2"></div>
+<div class="seg" style="width:50.0%;background:#60a5fa" title="Dev: 2"></div>
+</div><div class="stacked-legend"><span class="leg-item"><span class="leg-swatch" style="background:#00ff9f"></span> Live: 2</span>
+<span class="leg-item"><span class="leg-swatch" style="background:#60a5fa"></span> Dev: 2</span>
 </div></div></div>
-<div id="completion-grouped" class="chart-view hidden">
-<div class="comp-row"><span class="lbl">Stable</span><div class="track"><div class="fill" style="width:48%;background:#a855f7"></div></div><span class="pct">14%</span></div>
-<div class="comp-row"><span class="lbl">Live</span><div class="track"><div class="fill" style="width:100%;background:#00ff9f"></div></div><span class="pct">29%</span></div>
-<div class="comp-row"><span class="lbl">Beta</span><div class="track"><div class="fill" style="width:100%;background:#ffa500"></div></div><span class="pct">29%</span></div>
-<div class="comp-row"><span class="lbl">Dev</span><div class="track"><div class="fill" style="width:100%;background:#60a5fa"></div></div><span class="pct">29%</span></div>
+<div id="completion-grouped" class="chart-view hidden"><div class="comp-row"><span class="lbl">Live</span><div class="track"><div class="fill" style="width:100%;background:#00ff9f"></div></div><span class="pct">2</span></div>
+<div class="comp-row"><span class="lbl">Dev</span><div class="track"><div class="fill" style="width:100%;background:#60a5fa"></div></div><span class="pct">2</span></div>
 </div>
 </div>
 <div class="card">
-<div class="card-header">
-<span class="icon">🕐</span> Last Activity
-<span class="chart-toggle" data-target="activity" onclick="toggleChart('activity')">▤ Separate</span>
-</div>
-<div id="activity-stacked" class="chart-view">
-<div class="stacked-bar-wrap"><div class="stacked-bar">
-<div class="seg" style="width:25.6%;background:#00d4ff" title="HMXOT: Today"></div>
-<div class="seg" style="width:25.6%;background:#a855f7" title="MyKB: Today"></div>
-<div class="seg" style="width:25.6%;background:#eab308" title="GOLF: Today"></div>
-<div class="seg" style="width:7.7%;background:#3b82f6" title="SPACE: 1d"></div>
-<div class="seg" style="width:7.7%;background:#22c55e" title="MyRSIKB: 2d"></div>
-<div class="seg" style="width:5.1%;background:#ff8c00" title="RSIS3: 8d"></div>
-<div class="seg" style="width:2.6%;background:#ef4444" title="VEPA2: 12d"></div>
-</div><div class="stacked-legend">
-<span class="leg-item"><span class="leg-swatch" style="background:#00d4ff"></span> HMXOT: Today</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: Today</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#eab308"></span> GOLF: Today</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 1d</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#22c55e"></span> MyRSIKB: 2d</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 8d</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#ef4444"></span> VEPA2: 12d</span>
-</div></div></div>
-<div id="activity-grouped" class="chart-view hidden">
-<div class="comp-row"><span class="lbl">HMXOT</span><div class="track"><div class="fill" style="width:100%;background:#00d4ff"></div></div><span class="pct">Today</span></div>
-<div class="comp-row"><span class="lbl">MyKB</span><div class="track"><div class="fill" style="width:100%;background:#a855f7"></div></div><span class="pct">Today</span></div>
-<div class="comp-row"><span class="lbl">GOLF</span><div class="track"><div class="fill" style="width:100%;background:#eab308"></div></div><span class="pct">Today</span></div>
-<div class="comp-row"><span class="lbl">SPACE</span><div class="track"><div class="fill" style="width:95%;background:#3b82f6"></div></div><span class="pct">1d ago</span></div>
-<div class="comp-row"><span class="lbl">MyRSIKB</span><div class="track"><div class="fill" style="width:90%;background:#22c55e"></div></div><span class="pct">2d ago</span></div>
-<div class="comp-row"><span class="lbl">RSIS3</span><div class="track"><div class="fill" style="width:68%;background:#ff8c00"></div></div><span class="pct">8d ago</span></div>
-<div class="comp-row"><span class="lbl">VEPA2</span><div class="track"><div class="fill" style="width:58%;background:#ef4444"></div></div><span class="pct">12d ago</span></div>
-</div>
-</div>
-<div class="card">
-<div class="card-header">
-<span class="icon">📏</span> Project Size (LOC)
-<span class="chart-toggle" data-target="size" onclick="toggleChart('size')">▤ Separate</span>
-</div>
-<div id="size-stacked" class="chart-view">
-<div class="stacked-bar-wrap"><div class="stacked-bar">
-<div class="seg" style="width:45.1%;background:#00d4ff" title="HMXOT: 952k"></div>
-<div class="seg" style="width:25.2%;background:#ef4444" title="VEPA2: 532k"></div>
-<div class="seg" style="width:14.1%;background:#eab308" title="GOLF: 297k"></div>
-<div class="seg" style="width:9.9%;background:#3b82f6" title="SPACE: 209k"></div>
-<div class="seg" style="width:3.2%;background:#a855f7" title="MyKB: 68k"></div>
-<div class="seg" style="width:2.0%;background:#ff8c00" title="RSIS3: 42k"></div>
-<div class="seg" style="width:0.5%;background:#22c55e" title="MyRSIKB: 10k"></div>
-</div><div class="stacked-legend">
-<span class="leg-item"><span class="leg-swatch" style="background:#00d4ff"></span> HMXOT: 952k</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#ef4444"></span> VEPA2: 532k</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#eab308"></span> GOLF: 297k</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 209k</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 68k</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 42k</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#22c55e"></span> MyRSIKB: 10k</span>
-</div></div></div>
-<div id="size-grouped" class="chart-view hidden">
-<div class="comp-row"><span class="lbl">HMXOT</span><div class="track"><div class="fill" style="width:100%;background:#00d4ff"></div></div><span class="pct">952k</span></div>
-<div class="comp-row"><span class="lbl">VEPA2</span><div class="track"><div class="fill" style="width:56%;background:#ef4444"></div></div><span class="pct">532k</span></div>
-<div class="comp-row"><span class="lbl">GOLF</span><div class="track"><div class="fill" style="width:31%;background:#eab308"></div></div><span class="pct">297k</span></div>
-<div class="comp-row"><span class="lbl">SPACE</span><div class="track"><div class="fill" style="width:22%;background:#3b82f6"></div></div><span class="pct">209k</span></div>
-<div class="comp-row"><span class="lbl">MyKB</span><div class="track"><div class="fill" style="width:7%;background:#a855f7"></div></div><span class="pct">68k</span></div>
-<div class="comp-row"><span class="lbl">RSIS3</span><div class="track"><div class="fill" style="width:4%;background:#ff8c00"></div></div><span class="pct">42k</span></div>
-<div class="comp-row"><span class="lbl">MyRSIKB</span><div class="track"><div class="fill" style="width:1%;background:#22c55e"></div></div><span class="pct">10k</span></div>
-</div>
-</div>
-<div class="card">
-<div class="card-header">
-<span class="icon">🧠</span> Entity Density <span class="hdr-sub">per 100 files</span>
+<div class="card-header"><span class="icon">🧠</span> Entity Density <span class="hdr-sub">per 100 files</span>
 <span class="chart-toggle" data-target="density" onclick="toggleChart('density')">▤ Separate</span>
 </div>
-<div id="density-stacked" class="chart-view">
-<div class="stacked-bar-wrap"><div class="stacked-bar">
-<div class="seg" style="width:33.5%;background:#a855f7" title="MyKB: 72.9"></div>
-<div class="seg" style="width:15.7%;background:#22c55e" title="MyRSIKB: 34.1"></div>
-<div class="seg" style="width:13.2%;background:#ff8c00" title="RSIS3: 28.7"></div>
-<div class="seg" style="width:11.6%;background:#00d4ff" title="HMXOT: 25.2"></div>
-<div class="seg" style="width:3.5%;background:#ef4444" title="VEPA2: 7.6"></div>
-<div class="seg" style="width:1.9%;background:#3b82f6" title="SPACE: 4.2"></div>
-<div class="seg" style="width:1.6%;background:#eab308" title="GOLF: 3.5"></div>
-</div><div class="stacked-legend">
-<span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 72.9</span>
+<div id="density-stacked" class="chart-view"><div class="stacked-bar-wrap"><div class="stacked-bar">
+<div class="seg" style="width:52.1%;background:#a855f7" title="MyKB: 72.9"></div>
+<div class="seg" style="width:24.4%;background:#22c55e" title="MyRSIKB: 34.1"></div>
+<div class="seg" style="width:20.5%;background:#ff8c00" title="RSIS3: 28.7"></div>
+<div class="seg" style="width:3.0%;background:#3b82f6" title="SPACE: 4.2"></div>
+</div><div class="stacked-legend"><span class="leg-item"><span class="leg-swatch" style="background:#a855f7"></span> MyKB: 72.9</span>
 <span class="leg-item"><span class="leg-swatch" style="background:#22c55e"></span> MyRSIKB: 34.1</span>
 <span class="leg-item"><span class="leg-swatch" style="background:#ff8c00"></span> RSIS3: 28.7</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#00d4ff"></span> HMXOT: 25.2</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#ef4444"></span> VEPA2: 7.6</span>
 <span class="leg-item"><span class="leg-swatch" style="background:#3b82f6"></span> SPACE: 4.2</span>
-<span class="leg-item"><span class="leg-swatch" style="background:#eab308"></span> GOLF: 3.5</span>
 </div></div></div>
-<div id="density-grouped" class="chart-view hidden">
-<div class="comp-row"><span class="lbl">MyKB</span><div class="track"><div class="fill" style="width:100%;background:#a855f7"></div></div><span class="pct">72.9</span></div>
+<div id="density-grouped" class="chart-view hidden"><div class="comp-row"><span class="lbl">MyKB</span><div class="track"><div class="fill" style="width:100%;background:#a855f7"></div></div><span class="pct">72.9</span></div>
 <div class="comp-row"><span class="lbl">MyRSIKB</span><div class="track"><div class="fill" style="width:47%;background:#22c55e"></div></div><span class="pct">34.1</span></div>
 <div class="comp-row"><span class="lbl">RSIS3</span><div class="track"><div class="fill" style="width:39%;background:#ff8c00"></div></div><span class="pct">28.7</span></div>
-<div class="comp-row"><span class="lbl">HMXOT</span><div class="track"><div class="fill" style="width:35%;background:#00d4ff"></div></div><span class="pct">25.2</span></div>
-<div class="comp-row"><span class="lbl">VEPA2</span><div class="track"><div class="fill" style="width:10%;background:#ef4444"></div></div><span class="pct">7.6</span></div>
 <div class="comp-row"><span class="lbl">SPACE</span><div class="track"><div class="fill" style="width:6%;background:#3b82f6"></div></div><span class="pct">4.2</span></div>
-<div class="comp-row"><span class="lbl">GOLF</span><div class="track"><div class="fill" style="width:5%;background:#eab308"></div></div><span class="pct">3.5</span></div>
 </div>
 </div>
+<div class="footer">Generated 2026-07-29 &middot; <a href="https://gemquota.github.io/hub/">Hub Dashboard</a> &middot; <a href="https://github.com/gemquota/hub">GitHub</a> &middot; 4 projects tracked</div>
 </div>
-
-<div class="footer">Generated 2026-07-29 · <a href="https://gemquota.github.io/cosmos/">Cosmos Dashboard</a> · <a href="https://github.com/gemquota/cosmos">GitHub</a> · 4 projects tracked</div>
-</div>
-<script>
-function filterView(v) {
-  document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
-  document.querySelector('.filter-btn[onclick="filterView(\'' + v + '\')"]').classList.add('active');
-  document.querySelectorAll('.filter-view').forEach(function(el) {
-    if (v === 'all') { el.style.display = ''; }
-    else { el.style.display = el.getAttribute('data-view') === v ? '' : 'none'; }
-  });
-}
-</script>
 <script>
 function toggleChart(n){var s=document.getElementById(n+"-stacked"),g=document.getElementById(n+"-grouped"),b=document.querySelector('.chart-toggle[data-target="'+n+'"]');if(!s||!g||!b)return;s.classList.contains("hidden")?(g.classList.add("hidden"),s.classList.remove("hidden"),b.textContent="\u25A4 Separate",b.classList.remove("active")):(s.classList.add("hidden"),g.classList.remove("hidden"),b.textContent="\u25A6 Stacked",b.classList.add("active"))}
+</script>
+<script>
 function toggleChart3(n){var s=document.getElementById(n+"-stacked"),g=document.getElementById(n+"-grouped"),p=document.getElementById(n+"-perproj"),b=document.querySelector('.chart-toggle[data-target="'+n+'"]');if(!s||!g||!p||!b)return;if(!s.classList.contains("hidden")){s.classList.add("hidden");g.classList.remove("hidden");b.textContent="\u25A6 By-Project";b.classList.add("active")}else if(!g.classList.contains("hidden")){g.classList.add("hidden");p.classList.remove("hidden");b.textContent="\u25A4 Stacked";b.classList.remove("active")}else{p.classList.add("hidden");s.classList.remove("hidden");b.textContent="\u25A4 Separate";b.classList.remove("active")}}
 </script>
 </body>
