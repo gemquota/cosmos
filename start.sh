@@ -33,9 +33,28 @@ stop_all() {
 }
 trap stop_all SIGINT SIGTERM
 
+# Kill any stale processes on our ports
+kill_port() {
+  local port=$1 name=$2
+  local pid=$(fuser "$port/tcp" 2>/dev/null)
+  if [ -n "$pid" ]; then
+    echo "  Killing stale $name on port $port (PID $pid)"
+    fuser -k "$port/tcp" 2>/dev/null
+    sleep 0.5
+  fi
+}
+
 echo "╔══════════════════════════════════════╗"
 echo "║        🌌 COSMOS — Launch Suite      ║"
 echo "╚══════════════════════════════════════╝"
+echo ""
+
+# Clean stale ports
+echo "🧹 Cleaning stale processes..."
+kill_port $DASH_PORT "dashboard"
+kill_port $MYBK_PORT "mykb"
+kill_port $RSIS_PORT "rsis3"
+kill_port $SPACE_PORT "space"
 echo ""
 
 # ── Dashboard ──
@@ -47,40 +66,51 @@ echo "  ✅ Dashboard → http://localhost:$DASH_PORT"
 
 if ! $START_SERVICES; then
   echo ""; echo "🌌 Dashboard running (no services). Ctrl+C to stop."
-  echo "   http://localhost:$DASH_PORT"
   command -v termux-open-url &>/dev/null && termux-open-url "http://localhost:$DASH_PORT" 2>/dev/null &
   wait; exit 0
 fi
+
+sleep 0.5
 
 # ── MyKB ──
 echo ""; echo "📚 Starting MyKB Wiki Server..."
 if [ -f "$DIR/components/mykb/server.py" ]; then
   nohup python3 "$DIR/components/mykb/server.py" "$MYBK_PORT" >> "$LOG" 2>&1 &
   echo $! > "$PID_DIR/mykb.pid"
-  echo "  ✅ MyKB → http://localhost:$MYBK_PORT"
-else
-  echo "  ⚠ mykb/server.py not found"
+  sleep 0.5
+  if kill -0 $(cat "$PID_DIR/mykb.pid") 2>/dev/null; then
+    echo "  ✅ MyKB → http://localhost:$MYBK_PORT"
+  else
+    echo "  ❌ MyKB failed to start"
+  fi
 fi
 
-# ── RSIS3 (serve static files from rsis3 dir) ──
+# ── RSIS3 ──
 echo ""; echo "🔄 Starting RSIS3 Dashboard..."
 if [ -d "$DIR/components/rsis3" ]; then
   cd "$DIR/components/rsis3"
   nohup python3 -m http.server "$RSIS_PORT" --bind 0.0.0.0 > /dev/null 2>&1 &
   echo $! > "$PID_DIR/rsis3.pid"
-  local_url="http://localhost:$RSIS_PORT/dashboard/"
-  echo "  ✅ RSIS3 → $local_url"
+  sleep 0.5
+  if kill -0 $(cat "$PID_DIR/rsis3.pid") 2>/dev/null; then
+    echo "  ✅ RSIS3 → http://localhost:$RSIS_PORT/dashboard/"
+  else
+    echo "  ❌ RSIS3 failed to start"
+  fi
 fi
 
-# ── SPACE (serve static files from space dir, since dist/ isn't built) ──
+# ── SPACE ──
 echo ""; echo "🚀 Starting SPACE Static Server..."
 if [ -d "$DIR/components/space" ]; then
   cd "$DIR/components/space"
   nohup python3 -m http.server "$SPACE_PORT" --bind 0.0.0.0 > /dev/null 2>&1 &
   echo $! > "$PID_DIR/space.pid"
-  echo "  ✅ SPACE → http://localhost:$SPACE_PORT/web/"
-  echo "     Spec Viewer → http://localhost:$SPACE_PORT/meta-viewer.html"
-  echo "     Prompt App → http://localhost:$SPACE_PORT/prompt-framework/prompt-app/"
+  sleep 0.5
+  if kill -0 $(cat "$PID_DIR/space.pid") 2>/dev/null; then
+    echo "  ✅ SPACE → http://localhost:$SPACE_PORT/web/"
+  else
+    echo "  ❌ SPACE failed to start"
+  fi
 fi
 
 cd "$DIR"
