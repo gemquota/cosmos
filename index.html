@@ -291,7 +291,7 @@ h1{font-size:1.6rem;font-weight:700;background:linear-gradient(90deg,#7b2fff,#ff
         <button class="btn btn-stop" onclick="copyCmd('space')">📋 Copy CLI Command</button>
         <a href="https://github.com/gemquota/space" target="_blank" class="btn btn-gh">📦 GitHub</a>
       </div>
-      <div style="font-size:.65rem;color:#555;margin-top:.15rem">Web UI: <span id="space-url-display">localhost:8888/web/</span> · SPACE includes a React prompt-app and a spec HTML viewer</div>
+      <div style="font-size:.65rem;color:#555;margin-top:.15rem">Web UI: <span id="space-url-display">/components/space/web/</span> · SPACE includes a React prompt-app and a spec HTML viewer</div>
     </div>
     <iframe id="space-ui-frame" style="display:none" src="" loading="lazy"></iframe>
     <iframe id="space-prompt-frame" style="display:none" src="" loading="lazy"></iframe>
@@ -345,7 +345,7 @@ h1{font-size:1.6rem;font-weight:700;background:linear-gradient(90deg,#7b2fff,#ff
         <button class="btn btn-stop" onclick="copyCmd('rsis3')">📋 Copy Command</button>
         <a href="https://gemquota.github.io/hub/rsis3.html" target="_blank" class="btn btn-view">📊 Hub Dashboard</a>
       </div>
-      <div style="font-size:.65rem;color:#555;margin-top:.15rem">Dashboard: <span id="rsis3-url-display">localhost:8080/dashboard/</span> · Telemetry at /rack/telemetry-dashboard.html</div>
+      <div style="font-size:.65rem;color:#555;margin-top:.15rem">Dashboard: <span id="rsis3-url-display">/components/rsis3/dashboard/</span> · Telemetry at /rack/telemetry-dashboard.html</div>
     </div>
     <iframe id="rsis3-dash-frame" style="display:none" src="" loading="lazy"></iframe>
     <iframe id="rsis3-telemetry-frame" style="display:none" src="" loading="lazy"></iframe>
@@ -357,11 +357,11 @@ h1{font-size:1.6rem;font-weight:700;background:linear-gradient(90deg,#7b2fff,#ff
 // ── Service config ──
 var SERVICES = {
   space: {
-    name: 'SPACE', port: 8888,
+    name: 'SPACE', port: 0,
     cmd: 'cd /dev/cosmos/components/space && npx tsx src/cli/index.ts',
-    webui: 'http://localhost:8888/web/',
-    prompt: 'http://localhost:8888/prompt-framework/prompt-app/',
-    specs: 'http://localhost:8888/meta-viewer.html',
+    webui: '/components/space/web/',
+    prompt: '/components/space/prompt-framework/prompt-app/',
+    specs: '/components/space/meta-viewer.html',
     color: '#3b82f6'
   },
   mykb: {
@@ -373,11 +373,11 @@ var SERVICES = {
     color: '#a855f7'
   },
   rsis3: {
-    name: 'RSIS3', port: 8080,
+    name: 'RSIS3', port: 0,
     cmd: 'cd /dev/cosmos/components/rsis3 && python3 -m rsis',
-    dashboard: 'http://localhost:8080/dashboard/',
-    telemetry: 'http://localhost:8080/rack/telemetry-dashboard.html',
-    rack: 'http://localhost:8080/',
+    dashboard: '/components/rsis3/dashboard/',
+    telemetry: '/components/rsis3/rack/telemetry-dashboard.html',
+    rack: '/components/rsis3/rack/',
     color: '#ff8c00'
   }
 };
@@ -482,8 +482,8 @@ function openService(key) {
   if (!svc) return;
   if (isLocal) {
     // Open the web UI
-    if (key === 'space') window.open('http://localhost:8888/web/', '_blank');
-    else if (key === 'rsis3') window.open('http://localhost:8080/dashboard/', '_blank');
+    if (key === 'space') window.open('/components/space/web/', '_blank');
+    else if (key === 'rsis3') window.open('/components/rsis3/dashboard/', '_blank');
     else window.open('http://localhost:' + svc.port, '_blank');
   } else {
     navigator.clipboard.writeText(svc.cmd).then(function() {
