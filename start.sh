@@ -1,128 +1,83 @@
 #!/bin/bash
 # COSMOS — Unified Launch Script
-# Usage: ./start.sh [--no-services] [--port 9000]
+# Serves dashboard + all components from a single port (static)
+# Only MyKB gets its own port for the wiki daemon
+# Usage: ./start.sh [--port 9000]
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DASH_PORT=9000
+PORT=9000
 MYBK_PORT=8765
-RSIS_PORT=8080
-SPACE_PORT=8888
-START_SERVICES=true
 PID_DIR="$DIR/.cosmos-pids"
 LOG="$PID_DIR/cosmos.log"
-
 mkdir -p "$PID_DIR"
 
 for arg in "$@"; do
   case "$arg" in
-    --no-services) START_SERVICES=false ;;
-    --port=*) DASH_PORT="${arg#*=}" ;;
-    --help) echo "Usage: $0 [--no-services] [--port PORT]"; exit 0 ;;
+    --port=*) PORT="${arg#*=}" ;;
+    --help) echo "Usage: $0 [--port PORT]"; exit 0 ;;
   esac
 done
 
 stop_all() {
-  echo ""; echo "⏹ Stopping COSMOS services..."
+  echo ""; echo "⏹ Stopping COSMOS..."
   for pidfile in "$PID_DIR"/*.pid; do
     [ -f "$pidfile" ] || continue
     pid=$(cat "$pidfile" 2>/dev/null); name=$(basename "$pidfile" .pid)
-    if kill -0 "$pid" 2>/dev/null; then echo "  Stopping $name (PID $pid)"; kill "$pid" 2>/dev/null; fi
+    if kill -0 "$pid" 2>/dev/null; then echo "  Stopping $name"; kill "$pid" 2>/dev/null; fi
     rm -f "$pidfile"
   done
   echo "  Done."; exit 0
 }
 trap stop_all SIGINT SIGTERM
 
-# Kill any stale processes on our ports
-kill_port() {
-  local port=$1 name=$2
-  local pid=$(fuser "$port/tcp" 2>/dev/null)
-  if [ -n "$pid" ]; then
-    echo "  Killing stale $name on port $port (PID $pid)"
-    fuser -k "$port/tcp" 2>/dev/null
-    sleep 0.5
-  fi
-}
+# Kill stale processes
+for p in $PORT $MYBK_PORT; do
+  fuser -k "$p/tcp" 2>/dev/null && echo "  Freed port $p" || true
+done
 
 echo "╔══════════════════════════════════════╗"
-echo "║        🌌 COSMOS — Launch Suite      ║"
+echo "║     🌌 COSMOS — One Port to Rule     ║"
 echo "╚══════════════════════════════════════╝"
 echo ""
 
-# Clean stale ports
-echo "🧹 Cleaning stale processes..."
-kill_port $DASH_PORT "dashboard"
-kill_port $MYBK_PORT "mykb"
-kill_port $RSIS_PORT "rsis3"
-kill_port $SPACE_PORT "space"
+# ── Main server: serves everything from cosmos root ──
+echo "📡 Starting main server..."
+cd "$DIR"
+nohup python3 -m http.server "$PORT" --bind 0.0.0.0 > "$LOG" 2>&1 &
+echo $! > "$PID_DIR/main.pid"
+echo "  ✅ Dashboard  → http://localhost:$PORT/"
+echo "  ✅ SPACE      → http://localhost:$PORT/components/space/web/"
+echo "  ✅ RSIS3      → http://localhost:$PORT/components/rsis3/dashboard/"
 echo ""
 
-# ── Dashboard ──
-echo "📊 Starting Dashboard..."
-cd "$DIR"
-nohup python3 -m http.server "$DASH_PORT" --bind 0.0.0.0 > "$LOG" 2>&1 &
-echo $! > "$PID_DIR/dashboard.pid"
-echo "  ✅ Dashboard → http://localhost:$DASH_PORT"
-
-if ! $START_SERVICES; then
-  echo ""; echo "🌌 Dashboard running (no services). Ctrl+C to stop."
-  command -v termux-open-url &>/dev/null && termux-open-url "http://localhost:$DASH_PORT" 2>/dev/null &
-  wait; exit 0
-fi
-
-sleep 0.5
-
-# ── MyKB ──
-echo ""; echo "📚 Starting MyKB Wiki Server..."
+# ── MyKB (needs its own port — custom Python server) ──
+echo "📚 Starting MyKB Wiki Server..."
 if [ -f "$DIR/components/mykb/server.py" ]; then
   nohup python3 "$DIR/components/mykb/server.py" "$MYBK_PORT" >> "$LOG" 2>&1 &
   echo $! > "$PID_DIR/mykb.pid"
   sleep 0.5
   if kill -0 $(cat "$PID_DIR/mykb.pid") 2>/dev/null; then
-    echo "  ✅ MyKB → http://localhost:$MYBK_PORT"
+    echo "  ✅ MyKB → http://localhost:$MYBK_PORT/"
   else
     echo "  ❌ MyKB failed to start"
   fi
+else
+  echo "  ⚠ mykb/server.py not found"
 fi
 
-# ── RSIS3 ──
-echo ""; echo "🔄 Starting RSIS3 Dashboard..."
-if [ -d "$DIR/components/rsis3" ]; then
-  cd "$DIR/components/rsis3"
-  nohup python3 -m http.server "$RSIS_PORT" --bind 0.0.0.0 > /dev/null 2>&1 &
-  echo $! > "$PID_DIR/rsis3.pid"
-  sleep 0.5
-  if kill -0 $(cat "$PID_DIR/rsis3.pid") 2>/dev/null; then
-    echo "  ✅ RSIS3 → http://localhost:$RSIS_PORT/dashboard/"
-  else
-    echo "  ❌ RSIS3 failed to start"
-  fi
-fi
-
-# ── SPACE ──
-echo ""; echo "🚀 Starting SPACE Static Server..."
-if [ -d "$DIR/components/space" ]; then
-  cd "$DIR/components/space"
-  nohup python3 -m http.server "$SPACE_PORT" --bind 0.0.0.0 > /dev/null 2>&1 &
-  echo $! > "$PID_DIR/space.pid"
-  sleep 0.5
-  if kill -0 $(cat "$PID_DIR/space.pid") 2>/dev/null; then
-    echo "  ✅ SPACE → http://localhost:$SPACE_PORT/web/"
-  else
-    echo "  ❌ SPACE failed to start"
-  fi
-fi
-
-cd "$DIR"
-
-echo ""; echo "╔══════════════════════════════════════╗"
-echo "║  🌌 COSMOS is running                     ║"
-echo "║  Dashboard → localhost:$DASH_PORT          ║"
-echo "║  MyKB      → localhost:$MYBK_PORT          ║"
-echo "║  RSIS3     → localhost:$RSIS_PORT/dashboard/║"
-echo "║  SPACE     → localhost:$SPACE_PORT/web/    ║"
-echo "║  Press Ctrl+C to stop all                  ║"
+echo ""
+echo "╔══════════════════════════════════════╗"
+echo "║  🌌 COSMOS is running                ║"
+echo "║                                     ║"
+echo "║  All static → localhost:$PORT/        ║"
+echo "║    Dashboard: /                      ║"
+echo "║    SPACE:     /components/space/web/ ║"
+echo "║    RSIS3:     /components/rsis3/dashboard/║"
+echo "║                                     ║"
+echo "║  MyKB → localhost:$MYBK_PORT/        ║"
+echo "║                                     ║"
+echo "║  Press Ctrl+C to stop everything     ║"
 echo "╚══════════════════════════════════════╝"
 
-command -v termux-open-url &>/dev/null && sleep 2 && termux-open-url "http://localhost:$DASH_PORT" 2>/dev/null &
+command -v termux-open-url &>/dev/null && sleep 2 && termux-open-url "http://localhost:$PORT/" 2>/dev/null &
 wait
