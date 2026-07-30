@@ -47,53 +47,69 @@ echo "╚═══════════════════════�
 echo ""
 
 # ── Start Dashboard ──
-echo "📊 Starting Dashboard on http://localhost:$DASH_PORT"
-if command -v python3 &>/dev/null; then
-  cd "$DIR"
-  nohup python3 -m http.server "$DASH_PORT" --bind 0.0.0.0 > "$LOG" 2>&1 &
-  echo $! > "$PID_DIR/dashboard.pid"
-  echo "  ✅ Dashboard → http://localhost:$DASH_PORT"
-else
-  echo "  ⚠ python3 not found, dashboard not started"
+echo "📊 Starting Dashboard..."
+cd "$DIR"
+nohup python3 -m http.server "$DASH_PORT" --bind 0.0.0.0 > "$LOG" 2>&1 &
+echo $! > "$PID_DIR/dashboard.pid"
+echo "  ✅ Dashboard → http://localhost:$DASH_PORT"
+
+if ! $START_SERVICES; then
+  echo ""
+  echo "🌌 Dashboard running (no services). Ctrl+C to stop."
+  echo "   http://localhost:$DASH_PORT"
+  if command -v termux-open-url &>/dev/null; then
+    termux-open-url "http://localhost:$DASH_PORT" 2>/dev/null &
+  fi
+  wait
+  exit 0
 fi
 
 # ── Start MyKB ──
-if $START_SERVICES; then
-  echo ""
-  echo "📚 Starting MyKB Wiki Server..."
-  if [ -f "$DIR/components/mykb/server.py" ]; then
-    nohup python3 "$DIR/components/mykb/server.py" "$MYBK_PORT" >> "$LOG" 2>&1 &
-    echo $! > "$PID_DIR/mykb.pid"
-    echo "  ✅ MyKB → http://localhost:$MYBK_PORT"
-  else
-    echo "  ⚠ mykb/server.py not found"
-  fi
-  
-  # ── Start RSIS3 Dashboard ──
-  echo ""
-  echo "🔄 Starting RSIS3 Dashboard..."
-  if [ -d "$DIR/components/rsis3" ]; then
-    cd "$DIR/components/rsis3"
-    nohup python3 -m http.server "$RSIS_PORT" --bind 0.0.0.0 > /dev/null 2>&1 &
-    echo $! > "$PID_DIR/rsis3.pid"
-    echo "  ✅ RSIS3 Dashboard → http://localhost:$RSIS_PORT"
-    echo "     Telemetry: http://localhost:$RSIS_PORT/rack/telemetry-dashboard.html"
-  else
-    echo "  ⚠ rsis3/ not found"
-  fi
-  
-  # ── Start SPACE UI (optional, requires Node) ──
-  echo ""
-  echo "🚀 Starting SPACE UI..."
-  if [ -f "$DIR/components/space/ui/package.json" ] && command -v npx &>/dev/null; then
-    cd "$DIR/components/space/ui"
-    nohup # Using web/server.mjs instead of Vite dev server
-  nohup node components/space/web/server.mjs "$SPACE_PORT" > /dev/null 2>&1 &
-    echo $! > "$PID_DIR/space.pid"
-    echo "  ✅ SPACE Web UI → http://localhost:$SPACE_PORT"
-  else
-    echo "  ⚠ space/web/server.mjs not found"
-  fi
+echo ""
+echo "📚 Starting MyKB Wiki Server..."
+if [ -f "$DIR/components/mykb/server.py" ]; then
+  nohup python3 "$DIR/components/mykb/server.py" "$MYBK_PORT" >> "$LOG" 2>&1 &
+  echo $! > "$PID_DIR/mykb.pid"
+  echo "  ✅ MyKB → http://localhost:$MYBK_PORT"
+else
+  echo "  ⚠ mykb/server.py not found"
+fi
+
+# ── Start RSIS3 Dashboard ──
+echo ""
+echo "🔄 Starting RSIS3 Dashboard..."
+if [ -d "$DIR/components/rsis3" ]; then
+  cd "$DIR/components/rsis3"
+  nohup python3 -m http.server "$RSIS_PORT" --bind 0.0.0.0 > /dev/null 2>&1 &
+  echo $! > "$PID_DIR/rsis3.pid"
+  echo "  ✅ RSIS3 Dashboard → http://localhost:$RSIS_PORT/dashboard/"
+  echo "     Telemetry: http://localhost:$RSIS_PORT/rack/telemetry-dashboard.html"
+else
+  echo "  ⚠ rsis3/ not found"
+fi
+
+# ── Start SPACE Web Server ──
+echo ""
+echo "🚀 Starting SPACE Web Server..."
+if [ -f "$DIR/components/space/web/server.mjs" ]; then
+  cd "$DIR/components/space"
+  nohup node web/server.mjs "$SPACE_PORT" > /dev/null 2>&1 &
+  echo $! > "$PID_DIR/space.pid"
+  echo "  ✅ SPACE Web UI → http://localhost:$SPACE_PORT"
+elif [ -f "$DIR/components/space/ui/package.json" ]; then
+  cd "$DIR/components/space/ui"
+  nohup npx vite --port "$SPACE_PORT" --host > /dev/null 2>&1 &
+  echo $! > "$PID_DIR/space.pid"
+  echo "  ✅ SPACE Vite Dev Server → http://localhost:$SPACE_PORT"
+else
+  echo "  ⚠ SPACE web server not found"
+fi
+
+# ── Start SPACE Meta Viewer (for specs) ──
+if [ -f "$DIR/components/space/serve-meta.mjs" ]; then
+  echo "     Meta Viewer → http://localhost:8899"
+  nohup node "$DIR/components/space/serve-meta.mjs" 8899 > /dev/null 2>&1 &
+  echo $! > "$PID_DIR/space-meta.pid"
 fi
 
 cd "$DIR"
@@ -103,9 +119,9 @@ echo "╔═══════════════════════�
 echo "║  🌌 COSMOS is running                ║"
 echo "║                                     ║"
 echo "║  Dashboard → localhost:$DASH_PORT    ║"
-echo "║  MyKB      → localhost:$MYBK_PORT     ║"
-echo "║  RSIS3     → localhost:$RSIS_PORT     ║"
-echo "║  SPACE UI  → localhost:$SPACE_PORT    ║"
+echo "║  MyKB      → localhost:$MYBK_PORT    ║"
+echo "║  RSIS3     → localhost:$RSIS_PORT    ║"
+echo "║  SPACE     → localhost:$SPACE_PORT   ║"
 echo "║                                     ║"
 echo "║  Press Ctrl+C to stop all services   ║"
 echo "╚══════════════════════════════════════╝"
@@ -113,8 +129,10 @@ echo ""
 
 # Open browser if available
 if command -v termux-open-url &>/dev/null; then
+  sleep 2
   termux-open-url "http://localhost:$DASH_PORT" 2>/dev/null &
 elif command -v xdg-open &>/dev/null; then
+  sleep 2
   xdg-open "http://localhost:$DASH_PORT" 2>/dev/null &
 fi
 
