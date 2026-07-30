@@ -7,7 +7,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DASH_PORT=9000
 MYBK_PORT=8765
 RSIS_PORT=8080
-SPACE_PORT=3000
+SPACE_PORT=8888
 START_SERVICES=true
 PID_DIR="$DIR/.cosmos-pids"
 LOG="$PID_DIR/cosmos.log"
@@ -87,11 +87,12 @@ if $START_SERVICES; then
   echo "🚀 Starting SPACE UI..."
   if [ -f "$DIR/components/space/ui/package.json" ] && command -v npx &>/dev/null; then
     cd "$DIR/components/space/ui"
-    nohup npx vite --port "$SPACE_PORT" --host > /dev/null 2>&1 &
+    nohup # Using web/server.mjs instead of Vite dev server
+  nohup node components/space/web/server.mjs "$SPACE_PORT" > /dev/null 2>&1 &
     echo $! > "$PID_DIR/space.pid"
-    echo "  ✅ SPACE UI → http://localhost:$SPACE_PORT"
+    echo "  ✅ SPACE Web UI → http://localhost:$SPACE_PORT"
   else
-    echo "  ⚠ space/ui not ready (npm install required) or npx not found"
+    echo "  ⚠ space/web/server.mjs not found"
   fi
 fi
 
