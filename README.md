@@ -1,24 +1,60 @@
 # 🌌 COSMOS
 
-**C**omprehensive **O**ntological **S**ystem for **M**eta-cognitive **O**rchestration & **S**ynthesis
+**C**ognitive **O**rchestration **S**ystem for **M**eta-cognitive **O**rchestration & **S**ynthesis
 
-A unified architecture integrating SPACE, myKB, myRSIKB, RSIS3, and myRSISKB into
-a coherent RSI ecosystem.
+RSIS3 (core) + MyKB (memory) + SPACE (ideation) — unified under one dashboard.
 
----
+## Architecture
+
+```
+RSIS3 ─── core cognitive engine, 3-loop self-improvement
+  ├── MyKB  ─── long-term persistent memory store
+  └── SPACE ─── RRP prompt engine for ideation cycles
+```
+
+## Quick Start
+
+```bash
+cosmos dashboard          # Launch dashboard + all services
+# or
+./start.sh                # Same thing
+# then open http://localhost:9000
+```
 
 ## Components
 
-| Project | Location | Role | Language |
-|---------|----------|------|:--------:|
-| **SPACE** | `~/dev/space/` | Prompt engine, spec generation | TypeScript |
-| **myKB** | `~/dev/codex/mykb/` | Daily knowledge base (Obsidian wiki) | Markdown |
-| **myRSIKB** | `~/dev/codex/myrsikb/` | RSI knowledge base, audit reports | Python |
-| **RSIS3** | `~/dev/codex/rrp+/rsis/` | 3-loop RSI system | Python |
-| **myRSISKB** | `~/dev/codex/rrp+/rsisb/` | RSI pulse engine, telemetry | Python |
+| Component | Role | Language | Files |
+|-----------|------|:--------:|:-----:|
+| **RSIS3** | Core cognitive engine (3-loop RSI) | Python + JS | 112 |
+| **MyKB** | Long-term memory for RSIS3 | Python | 2,436 |
+| **SPACE** | RRP ideation engine | TypeScript | 333 |
 
----
+## Deployed
 
-## Status
+- **Cosmos:** https://gemquota.github.io/cosmos/
+- **Hub:** https://gemquota.github.io/hub/ (all non-COSMOS projects)
 
-🚧 **Bootstrapping** — Initial unification in progress.
+## Commands
+
+```bash
+cosmos dashboard   # Launch web dashboard + services
+cosmos status      # Show component status
+cosmos start       # Start component servers
+cosmos stop        # Stop component servers
+cosmos logs        # Tail service logs
+```
+
+## Structure
+
+```
+cosmos/
+├── index.html          # Unified dashboard (single HTML file)
+├── start.sh            # One-command launcher
+├── cli/cosmos          # CLI entry point
+├── AGENTS.md           # Agent instructions
+├── ARCHITECTURE.md     # Full architecture docs
+└── components/
+    ├── rsis3/          # Core cognitive engine (Python)
+    ├── mykb/           # Long-term memory (Python + wiki)
+    └── space/          # RRP ideation engine (TypeScript)
+```

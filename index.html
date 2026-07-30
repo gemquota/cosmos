@@ -109,15 +109,15 @@ h1{font-size:1.6rem;font-weight:700;background:linear-gradient(90deg,#7b2fff,#ff
 
 <div style="display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;margin-bottom:.1rem">
   <h1>✦ COSMOS</h1>
-  <span class="subtitle" style="margin-bottom:0">Unified Control · 3 Components · ~239k LOC</span>
+  <span class="subtitle" style="margin-bottom:0">RSIS3 · MyKB · SPACE — <b style="color:#ff8c00">RSIS3</b> core with memory &amp; ideation subsystems</span>
 </div>
 
 <!-- Tab bar -->
 <div class="tab-bar">
   <button class="tab-btn active" onclick="switchTab('overview')" id="t-overview">📊 Overview</button>
-  <button class="tab-btn" onclick="switchTab('space')" id="t-space">🚀 SPACE</button>
-  <button class="tab-btn" onclick="switchTab('mykb')" id="t-mykb">📚 MyKB</button>
   <button class="tab-btn" onclick="switchTab('rsis3')" id="t-rsis3">🔄 RSIS3</button>
+  <button class="tab-btn" onclick="switchTab('mykb')" id="t-mykb">📚 MyKB</button>
+  <button class="tab-btn" onclick="switchTab('space')" id="t-space">🚀 SPACE</button>
 </div>
 
 <!-- ===== TAB: Overview ===== -->
@@ -135,17 +135,17 @@ h1{font-size:1.6rem;font-weight:700;background:linear-gradient(90deg,#7b2fff,#ff
 
   <!-- Proj chips -->
   <div class="proj-row">
-    <div class="proj-chip" onclick="switchTab('space')" style="border-left:2px solid #3b82f6">
-      <div class="proj-chip-name"><span style="color:#3b82f6">🚀 SPACE</span><span class="proj-chip-status" style="background:rgba(0,255,159,.1);color:#00ff9f">STABLE</span></div>
-      <div class="proj-chip-desc">326-probe spec generation · 333 files · TypeScript</div>
+    <div class="proj-chip" onclick="switchTab('rsis3')" style="border-left:2px solid #ff8c00">
+      <div class="proj-chip-name"><span style="color:#ff8c00">🔄 RSIS3</span><span class="proj-chip-status" style="background:rgba(0,255,159,.1);color:#00ff9f">CORE</span></div>
+      <div class="proj-chip-desc">Cognitive Engine · 3-loop self-improvement · 112 files</div>
     </div>
     <div class="proj-chip" onclick="switchTab('mykb')" style="border-left:2px solid #a855f7">
-      <div class="proj-chip-name"><span style="color:#a855f7">📚 MyKB</span><span class="proj-chip-status" style="background:rgba(0,255,159,.1);color:#00ff9f">LIVE</span></div>
-      <div class="proj-chip-desc">Knowledge OS · 2,436 files · Python wiki daemon</div>
+      <div class="proj-chip-name"><span style="color:#a855f7">📚 MyKB</span><span class="proj-chip-status" style="background:rgba(0,255,159,.1);color:#00ff9f">MEMORY</span></div>
+      <div class="proj-chip-desc">Long-term memory for RSIS3 · 2,436 files · wiki daemon</div>
     </div>
-    <div class="proj-chip" onclick="switchTab('rsis3')" style="border-left:2px solid #ff8c00">
-      <div class="proj-chip-name"><span style="color:#ff8c00">🔄 RSIS3</span><span class="proj-chip-status" style="background:rgba(0,255,159,.1);color:#00ff9f">LIVE</span></div>
-      <div class="proj-chip-desc">Self-Improvement Engine · 112 files · 3-loop</div>
+    <div class="proj-chip" onclick="switchTab('space')" style="border-left:2px solid #3b82f6">
+      <div class="proj-chip-name"><span style="color:#3b82f6">🚀 SPACE</span><span class="proj-chip-status" style="background:rgba(0,255,159,.1);color:#00ff9f">IDEATION</span></div>
+      <div class="proj-chip-desc">RRP prompt engine for RSIS3 cycles · 333 files · TypeScript</div>
     </div>
   </div>
 
