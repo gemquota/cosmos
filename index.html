@@ -291,7 +291,7 @@ h1{font-size:1.3rem;font-weight:700;background:linear-gradient(90deg,#7b2fff,#ff
         <button class="btn btn-stop" onclick="copyCmd('space')">📋 Copy CLI Command</button>
         <a href="https://github.com/gemquota/space" target="_blank" class="btn btn-gh">📦 GitHub</a>
       </div>
-      <div style="font-size:.45rem;color:#555;margin-top:.15rem">Web UI: <span id="space-url-display">localhost:8888</span> · SPACE includes a React prompt-app and a spec HTML viewer</div>
+      <div style="font-size:.45rem;color:#555;margin-top:.15rem">Web UI: <span id="space-url-display">localhost:8888/web/</span> · SPACE includes a React prompt-app and a spec HTML viewer</div>
     </div>
     <iframe id="space-ui-frame" style="display:none" src="" loading="lazy"></iframe>
     <iframe id="space-prompt-frame" style="display:none" src="" loading="lazy"></iframe>
@@ -359,9 +359,9 @@ var SERVICES = {
   space: {
     name: 'SPACE', port: 8888,
     cmd: 'cd /dev/cosmos/components/space && npx tsx src/cli/index.ts',
-    webui: 'http://localhost:8888/',
-    prompt: 'http://localhost:8899/prompt-framework/prompt-app/',
-    specs: 'http://localhost:8899/',
+    webui: 'http://localhost:8888/web/',
+    prompt: 'http://localhost:8888/prompt-framework/prompt-app/',
+    specs: 'http://localhost:8888/meta-viewer.html',
     color: '#3b82f6'
   },
   mykb: {
@@ -482,7 +482,7 @@ function openService(key) {
   if (!svc) return;
   if (isLocal) {
     // Open the web UI
-    if (key === 'space') window.open('http://localhost:8888/', '_blank');
+    if (key === 'space') window.open('http://localhost:8888/web/', '_blank');
     else if (key === 'rsis3') window.open('http://localhost:8080/dashboard/', '_blank');
     else window.open('http://localhost:' + svc.port, '_blank');
   } else {
