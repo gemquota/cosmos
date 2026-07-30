@@ -1,35 +1,45 @@
 # Cosmos — Agent Instructions
 
-This repo contains four component projects organized under `components/`.
+This repo integrates three component projects under `components/`.
+
+## Architecture (RSIS3-Centric)
+
+```
+┌─────────────────────────────────────┐
+│           RSIS3 (core)              │
+│  Recursive Self-Improvement System  │
+│  3-loop architecture (L1/L2/L3)     │
+│  with RRP protocol                  │
+└────────┬────────────┬───────────────┘
+         │            │
+         ▼            ▼
+┌─────────────────┐  ┌────────────────────┐
+│  MyKB (memory)  │  │  SPACE (ideation)  │
+│  Persistent     │  │  RRP prompt engine │
+│  knowledge      │  │  for self-improve- │
+│  store for      │  │  ment cycles —     │
+│  RSIS3          │  │  ideation & theory │
+└─────────────────┘  └────────────────────┘
+```
 
 ## Components
 
-### `mykb/` — Knowledge OS
-OKF/Obsidian wiki knowledge system with a `.wiki-daemon` server, full-text search, knowledge graph, and session capture hooks. The persistent memory layer.
+### `rsis3/` — Core Cognitive Engine (Python)
+Three-loop recursive self-improvement system. The central component.
+- L1: Per-task action loop (tool calls, observations, retries)
+- L2: Per-session improvement (code gen, prompt tuning)
+- L3: Cross-session evolution (memory consolidation, strategy evolution)
 
-### `myrsikb/` — Memory Bridge
-Integration bridge between `rsis3` and `mykb`. Audit/inventory tools, context checkpoint handoffs, and memory consolidation pipelines.
+### `mykb/` — Long-term Memory (Python + Markdown)
+RSIS3's persistent memory layer. Obsidian wiki with TF-IDF search, temporal engine,
+knowledge graph, and session capture hooks. `.wiki-daemon` server for API access.
 
-### `rsis3/` — Cognitive Engine
-Recursive Self-Improvement System — a three-loop architecture (L1-L3) for automated self-improvement, memory consolidation, telemetry, and recovery. Python package with CLI entry point.
-
-### `space/` — Prompt Engineering Tool
-SPACE (Superb Prompt Automatic Creation Engine) — Node.js/TypeScript project that generates structured specification documents via a multi-probe question framework.
-
-## Active Triad
-
-`rsis3/` + `mykb/` + `myrsikb/` form a working triad:
-- `rsis3/` = the mind (cognitive engine)
-- `mykb/` = the memory (knowledge OS)
-- `myrsikb/` = the interface (memory bridge)
-
-`space/` is a standalone project with no dependency on the triad.
+### `space/` — RRP Ideation Engine (TypeScript)
+SPACE generates structured prompt specifications via the Recursive Refinement Protocol.
+Used during RSIS3's self-improvement cycles for initial ideation and theory-crafting.
+326-probe question framework across 7 series with 6 export formats.
 
 ## Deployed
 
-- **Hub dashboard:** https://gemquota.github.io/hub/
-- **Cosmos:** https://gemquota.github.io/cosmos/
-
-## Status
-
-> `cosmos-ts` TypeScript monorepo has been **deprecated**. The HTML dashboard at `dashboard.html` is the active version, deployed via GitHub Pages.
+- **Hub dashboard:** https://gemquota.github.io/hub/ (all non-COSMOS projects)
+- **Cosmos:** https://gemquota.github.io/cosmos/ (RSIS3 + MyKB + SPACE)
