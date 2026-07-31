@@ -904,9 +904,9 @@ body {
       <p><button id="enrich-entities" style="padding:4px 12px;font-size:12px;border:1px solid var(--border);border-radius:3px;background:var(--bg);color:var(--text);cursor:pointer;">📝 Enrich Entity Descriptions</button></p>
       
       <h2>Reports</h2>
-      <p><a href="/ops/reports/audit-report.json" target="_blank" style="color:var(--accent);font-size:13px;">📊 Audit Report (JSON)</a></p>
-      <p><a href="/ops/reports/semantic_composition.md" target="_blank" style="color:var(--accent);font-size:13px;">🔬 Semantic Composition Report</a></p>
-      <p><a href="/ops/reports/entity_questionnaire.md" target="_blank" style="color:var(--accent);font-size:13px;">📋 Entity Questionnaire</a></p>
+      <p><a href="ops/reports/audit-report.json" target="_blank" style="color:var(--accent);font-size:13px;">📊 Audit Report (JSON)</a></p>
+      <p><a href="ops/reports/semantic_composition.md" target="_blank" style="color:var(--accent);font-size:13px;">🔬 Semantic Composition Report</a></p>
+      <p><a href="ops/reports/entity_questionnaire.md" target="_blank" style="color:var(--accent);font-size:13px;">📋 Entity Questionnaire</a></p>
     </div>
   </div>
 </div>
@@ -914,6 +914,15 @@ body {
 <div class="keyhint">Ctrl+K search &middot; Ctrl+B sidebar &middot; T theme &middot; G graph &middot; H health</div>
 
 <script>
+// Base URL for this page's directory — works under the local wiki daemon (root)
+// and under GitHub Pages subpaths (e.g. /cosmos/components/mykb/).
+var KB_BASE = (function () {
+  var parts = location.pathname.split('/');
+  parts.pop();
+  return parts.join('/') + '/';
+})();
+function getBaseUrl() { return KB_BASE; }
+
 (function(){
 /* ═══════════════════════════════════════════
    Markdown Parser
@@ -1101,7 +1110,7 @@ function loadCompositions() {
   if (!list) return;
   list.innerHTML = '<div style="color:var(--text-muted);font-size:11px;padding:4px;">Loading...</div>';
   
-  fetch('/files.json')
+  fetch(KB_BASE + 'files.json')
     .then(function(r) { return r.json(); })
     .then(function(files) {
       // Find composition files
@@ -1134,7 +1143,7 @@ function loadStats() {
   var display = document.getElementById('stats-display');
   if (!display) return;
   display.textContent = 'Loading stats...';
-  fetch('/api/stats')
+  fetch(KB_BASE + 'api/stats')
     .then(function(r) { return r.json(); })
     .then(function(s) {
       var lines = [];
@@ -1155,11 +1164,11 @@ function loadStats() {
       }
       display.textContent = lines.join('\n');
     })
-    .catch(function() { display.textContent = 'Failed to load stats'; });
+    .catch(function() { display.textContent = 'Live stats need the wiki daemon — run `cosmos` locally.'; });
 }
 
 function loadIndexInfo() {
-  fetch('/api/v2/search/hybrid?q=test')
+  fetch(KB_BASE + 'api/v2/search/hybrid?q=test')
     .then(function(r) { return r.json(); })
     .then(function(d) {
       var el = document.getElementById('index-chunks');
@@ -1179,7 +1188,7 @@ function setupActions() {
     var display = document.getElementById('lint-display');
     if (!display) return;
     display.innerHTML = '<em>Running linter...</em>';
-    fetch('/api/v2/health/lint')
+    fetch(KB_BASE + 'api/v2/health/lint')
       .then(function(r) { return r.json(); })
       .then(function(l) {
         var lines = [];
@@ -1225,7 +1234,7 @@ function setupActions() {
     if (!confirm('Rebuild search index? This takes ~30s.')) return;
     bi.disabled = true;
     bi.textContent = 'Building...';
-    fetch('/api/v2/search/build')
+    fetch(KB_BASE + 'api/v2/search/build')
       .then(function(r) { return r.json(); })
       .then(function(d) {
         bi.textContent = '✅ Done';
@@ -1243,7 +1252,7 @@ function setupActions() {
     if (!confirm('Run entity enrichment? This modifies files.')) return;
     ee.disabled = true;
     ee.textContent = 'Running...';
-    fetch('/api/v2/search/build')
+    fetch(KB_BASE + 'api/v2/search/build')
       .then(function(r) { return r.json(); })
       .then(function() {
         ee.textContent = '✅ Done';
@@ -1417,7 +1426,7 @@ function entitySearch(q) {
   var resultsDiv = document.getElementById('entity-search-results');
   if (!resultsDiv) return;
   if (!q || q.length < 2) { resultsDiv.innerHTML = ''; return; }
-  var url = '/search?q=' + encodeURIComponent(q);
+  var url = KB_BASE + 'search?q=' + encodeURIComponent(q);
   fetch(url)
     .then(function(r) { return r.json(); })
     .then(function(results) {
@@ -1450,7 +1459,7 @@ function loadGraph() {
   // Graph re-renders on every tab switch (data-loaded guard removed)
   
   info.textContent = 'Loading graph data...';
-  fetch('/graph.json')
+  fetch(KB_BASE + 'graph.json')
     .then(function(r) { return r.json(); })
     .then(function(g) {
       if (!g || !g.nodes) { info.textContent = 'No graph data'; return; }
@@ -1654,7 +1663,7 @@ function loadGraph() {
         runPhysics();
       });
     })
-    .catch(function() { info.textContent = 'Failed to load graph'; });
+    .catch(function() { info.textContent = 'Graph data unavailable here — use the 🕸️ Knowledge Graph sub-view or run `cosmos` locally.'; });
 }
 
 
@@ -1789,12 +1798,12 @@ function loadFileList() {
   }
 
   // Try /files.json first (from server.py)
-  fetch('/files.json')
+  fetch(KB_BASE + 'files.json')
     .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
     .then(loadIndex)
     .catch(function() {
       // Fallback to static index.json
-      fetch('index.json')
+      fetch(KB_BASE + 'index.json')
         .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
         .then(loadIndex)
         .catch(function() {
@@ -2228,10 +2237,17 @@ function navigateTo(filename, anchor) {
 
   contentDoc.innerHTML = '<div class="markdown-body"><div class="loading">Loading&hellip;</div></div>';
 
-  fetch('/api/file?path=' + encodeURIComponent(filename))
+  fetch(KB_BASE + encodeURIComponent(filename))
     .then(function(r) {
       if (!r.ok) throw new Error('Not found');
       return r.text();
+    })
+    .catch(function() {
+      // Fall back to the wiki daemon's file endpoint (local mode)
+      return fetch(KB_BASE + 'api/file?path=' + encodeURIComponent(filename)).then(function(r) {
+        if (!r.ok) throw new Error('Not found');
+        return r.text();
+      });
     })
     .then(function(md) {
       state.fileContents[filename] = md;
