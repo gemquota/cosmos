@@ -21,10 +21,29 @@
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="kg" data-tt="tab:kg" onclick="sw('kg')">KG</button>
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="graphs" data-tt="tab:graphs" onclick="sw('graphs')">Graphs</button>
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="constraints" data-tt="tab:constraints" onclick="sw('constraints')">Constraints</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="mykb" data-tt="tab:mykb" onclick="sw('mykb')">📚 MyKB</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="space" data-tt="tab:space" onclick="sw('space')">🚀 SPACE</button>
 </div>
 
 <!-- OVERVIEW TAB -->
 <div class="tab-body" id="b-overview">
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+    <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-3 sm:p-4 cursor-pointer hover:border-purple-400/40 transition" onclick="sw('mykb')">
+      <div class="flex items-center gap-2 mb-1"><span class="text-lg">📚</span><h2 class="text-sm font-bold text-purple-300">MyKB</h2></div>
+      <p class="text-[11px] text-slate-400 mb-2">Knowledge OS · 2,436 files · wiki + graph</p>
+      <span class="text-[10px] font-semibold text-purple-300 bg-purple-400/10 border border-purple-400/20 rounded-lg px-2 py-1">Open →</span>
+    </div>
+    <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-3 sm:p-4 cursor-pointer hover:border-blue-400/40 transition" onclick="sw('space')">
+      <div class="flex items-center gap-2 mb-1"><span class="text-lg">🚀</span><h2 class="text-sm font-bold text-blue-300">SPACE</h2></div>
+      <p class="text-[11px] text-slate-400 mb-2">Prompt Engine · 333 files · web UI + spec viewer</p>
+      <span class="text-[10px] font-semibold text-blue-300 bg-blue-400/10 border border-blue-400/20 rounded-lg px-2 py-1">Open →</span>
+    </div>
+    <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-3 sm:p-4 cursor-pointer hover:border-orange-400/40 transition" onclick="sw('overview')">
+      <div class="flex items-center gap-2 mb-1"><span class="text-lg">🔄</span><h2 class="text-sm font-bold text-orange-300">RSIS3</h2></div>
+      <p class="text-[11px] text-slate-400 mb-2">Self-Improvement · 112 files · telemetry below</p>
+      <span class="text-[10px] font-semibold text-orange-300 bg-orange-400/10 border border-orange-400/20 rounded-lg px-2 py-1">Active ↓</span>
+    </div>
+  </div>
   <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 bg-slate-800/60 border border-slate-700/50 rounded-2xl p-4 sm:p-5 mb-4">
     <div>
       <div class="flex items-center gap-2 mb-0.5">
@@ -98,9 +117,77 @@
   </div>
 </div>
 
+<!-- MYKB TAB -->
+<div class="tab-body hide" id="b-mykb">
+  <div class="flex flex-wrap gap-2 mb-3">
+    <button class="csb px-3 py-1.5 text-xs font-semibold rounded-lg bg-purple-500 text-white shadow" data-c="mykb" data-v="wiki" onclick="cs('mykb','wiki')">📖 Wiki Browser</button>
+    <button class="csb px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-c="mykb" data-v="graph" onclick="cs('mykb','graph')">🕸️ Knowledge Graph</button>
+  </div>
+  <div id="v-mykb-wiki" class="cst">
+    <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
+      <iframe data-src="../../mykb/index.html" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#fefcf5"></iframe>
+    </div>
+  </div>
+  <div id="v-mykb-graph" class="cst hide">
+    <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
+      <iframe data-src="../../mykb/okf-graph.html" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#0b1120"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- SPACE TAB -->
+<div class="tab-body hide" id="b-space">
+  <div class="flex flex-wrap gap-2 mb-3">
+    <button class="csb px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-500 text-white shadow" data-c="space" data-v="web" onclick="cs('space','web')">🖥️ Web UI</button>
+    <button class="csb px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-c="space" data-v="specs" onclick="cs('space','specs')">📄 Spec Viewer</button>
+  </div>
+  <div id="v-space-web" class="cst">
+    <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
+      <iframe data-src="../../space/web/index.html" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#f9fafb"></iframe>
+    </div>
+  </div>
+  <div id="v-space-specs" class="cst hide">
+    <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
+      <iframe data-src="../../space/meta-viewer.html" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#0b1120"></iframe>
+    </div>
+  </div>
+</div>
+
 </div>
 
 
 <script src="app.js"></script>
+<script>
+// COSMOS component tab views (MyKB + SPACE)
+function cs(comp, view) {
+  var activeBg = (comp === 'mykb') ? 'bg-purple-500' : 'bg-blue-500';
+  document.querySelectorAll('#b-'+comp+' .csb').forEach(function(b){
+    b.classList.remove('bg-purple-500','bg-blue-500','text-white','shadow');
+    b.classList.add('text-slate-400','hover:text-slate-200','hover:bg-slate-700/40');
+  });
+  document.querySelectorAll('#b-'+comp+' .csb[data-v="'+view+'"]').forEach(function(b){
+    b.classList.remove('text-slate-400','hover:text-slate-200','hover:bg-slate-700/40');
+    b.classList.add(activeBg,'text-white','shadow');
+  });
+  document.querySelectorAll('#b-'+comp+' .cst').forEach(function(b){ b.classList.add('hide'); });
+  var el = document.getElementById('v-'+comp+'-'+view);
+  if (el) el.classList.remove('hide');
+  var fr = el ? el.querySelector('iframe') : null;
+  if (fr && !fr.src && fr.getAttribute('data-src')) { fr.src = fr.getAttribute('data-src'); }
+}
+// Lazy-load component iframes when their tab opens
+var _swOrig = sw;
+sw = function(n){
+  _swOrig(n);
+  if (n === 'mykb') {
+    var w = document.getElementById('v-mykb-wiki').querySelector('iframe');
+    if (w && !w.src && w.getAttribute('data-src')) w.src = w.getAttribute('data-src');
+  }
+  if (n === 'space') {
+    var s = document.getElementById('v-space-web').querySelector('iframe');
+    if (s && !s.src && s.getAttribute('data-src')) s.src = s.getAttribute('data-src');
+  }
+};
+</script>
 </body>
 </html>

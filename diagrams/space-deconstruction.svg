@@ -1,0 +1,296 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" fill="none">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1a1410"/><stop offset="100%" stop-color="#0b1120"/>
+    </radialGradient>
+    <linearGradient id="a1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+    <linearGradient id="a2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+    <linearGradient id="a3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#10b981"/></linearGradient>
+    <linearGradient id="a4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+    <linearGradient id="a5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity=".5"/></filter>
+  </defs>
+
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+
+  <text x="800" y="42" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">SPACE — Source Deconstruction</text>
+  <text x="800" y="64" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="13">components/space/ — TypeScript prompt/spec engine • 7 LLM providers • 6 export formats • 326-probe framework</text>
+  <line x1="100" y1="78" x2="1500" y2="78" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Stats bar -->
+  <rect x="100" y="92" width="1400" height="32" rx="8" fill="#0f172a" stroke="#1e293b"/>
+  <text x="280" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">📁 35+ TypeScript source files</text>
+  <text x="480" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">🔧 7 engines/modules</text>
+  <text x="660" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">🤖 7 LLM providers</text>
+  <text x="840" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">📦 6 export formatters</text>
+  <text x="1020" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">🧪 150 tests (14 suites)</text>
+  <text x="1200" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">📐 7 series × 326 probes</text>
+
+  <!-- ===== ROW 1: CLI + Entry ===== -->
+  <rect x="100" y="145" width="360" height="310" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="100" y="145" width="360" height="34" rx="10" fill="url(#a1)" opacity=".2"/>
+  <rect x="100" y="167" width="360" height="12" fill="url(#a1)" opacity=".15"/>
+  <text x="280" y="170" text-anchor="middle" fill="#fde68a" font-family="system-ui,sans-serif" font-size="14" font-weight="700">src/cli/ — CLI Interface</text>
+  <text x="280" y="188" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Commander-based CLI • v2.1.0</text>
+
+  <text x="120" y="212" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">index.ts — Entry Point</text>
+  <text x="120" y="232" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="10">🔹 import: Commander, chalk</text>
+  <text x="120" y="248" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">🔹 Loads env config, validates at startup</text>
+  <text x="120" y="264" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">🔹 program = new Command()</text>
+
+  <text x="120" y="290" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Commands</text>
+  <text x="120" y="310" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">space init &lt;name&gt;</text>
+  <text x="240" y="310" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Create project scaffold</text>
+  <text x="120" y="328" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">space run &lt;project&gt;</text>
+  <text x="240" y="328" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Run session → delegates to runCommand()</text>
+  <text x="120" y="346" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">space export &lt;project&gt;</text>
+  <text x="240" y="346" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Export → delegates to exportCommand()</text>
+  <text x="120" y="364" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">space list [project]</text>
+  <text x="240" y="364" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">List projects / sessions</text>
+  <text x="120" y="382" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">space config</text>
+  <text x="240" y="382" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Show/set configuration</text>
+  <text x="120" y="400" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">space serve</text>
+  <text x="240" y="400" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Start web servers</text>
+  <text x="120" y="418" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">space status</text>
+  <text x="240" y="418" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Show system status</text>
+
+  <text x="120" y="442" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">commands/</text>
+  <text x="120" y="460" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">run.ts → runCommand() — full session lifecycle</text>
+  <text x="120" y="476" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">export.ts → exportCommand() — multi-format export</text>
+
+  <!-- Config box -->
+  <rect x="485" y="145" width="330" height="160" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="485" y="145" width="330" height="30" rx="10" fill="#475569" opacity=".15"/>
+  <text x="650" y="167" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="12" font-weight="600">src/config/ — Configuration</text>
+
+  <text x="505" y="192" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">defaults.ts — DEFAULT_CONFIG</text>
+  <text x="505" y="210" fill="#475569" font-family="system-ui,sans-serif" font-size="10">projects_dir, llm provider config</text>
+
+  <text x="505" y="234" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">validation.ts — config validation</text>
+  <text x="505" y="252" fill="#475569" font-family="system-ui,sans-serif" font-size="10">configFromEnv(), assertValidConfig(), listEnvVars()</text>
+
+  <text x="505" y="280" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">Loads from env vars at startup</text>
+
+  <!-- Data layer -->
+  <rect x="485" y="325" width="330" height="130" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="485" y="325" width="330" height="30" rx="10" fill="#475569" opacity=".15"/>
+  <text x="650" y="347" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="12" font-weight="600">src/data/ — Data Layer</text>
+
+  <text x="505" y="372" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">framework-loader.ts</text>
+  <text x="505" y="388" fill="#475569" font-family="system-ui,sans-serif" font-size="10">loadFrameworkFromV1(), validateFramework()</text>
+
+  <text x="505" y="412" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">artifact-extractor.ts, artifact-keys.ts</text>
+  <text x="505" y="428" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">artifact-mapping.ts, artifact-tracker.ts</text>
+  <text x="505" y="444" fill="#475569" font-family="system-ui,sans-serif" font-size="10">Artifact tracking and key management</text>
+
+  <!-- Types box -->
+  <rect x="485" y="475" width="330" height="100" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="485" y="475" width="330" height="28" rx="10" fill="#475569" opacity=".15"/>
+  <text x="650" y="495" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="12" font-weight="600">src/types/ + src/index.ts</text>
+
+  <text x="505" y="518" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">types/index.ts — All shared TypeScript types</text>
+  <text x="505" y="536" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">index.ts — Module barrel exports</text>
+  <text x="505" y="554" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">sql.js.d.ts — SQLite type declarations</text>
+
+  <!-- ===== ROW 1 RIGHT: Engine ===== -->
+  <rect x="840" y="145" width="660" height="240" rx="10" fill="#0f172a" stroke="#818cf8" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="840" y="145" width="660" height="34" rx="10" fill="url(#a4)" opacity=".15"/>
+  <rect x="840" y="167" width="660" height="12" fill="url(#a4)" opacity=".1"/>
+  <text x="1170" y="170" text-anchor="middle" fill="#c7d2fe" font-family="system-ui,sans-serif" font-size="14" font-weight="700">src/engine/ — Core Engine</text>
+
+  <text x="860" y="200" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Core Module Functions</text>
+
+  <text x="860" y="220" fill="#818cf8" font-family="system-ui,sans-serif" font-size="10">core.ts</text>
+  <text x="920" y="220" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">createSpace(config?) → SpaceInstance</text>
+  <text x="920" y="238" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">SpaceConfig, SpaceInstance, SpaceEvent interfaces</text>
+
+  <text x="860" y="262" fill="#818cf8" font-family="system-ui,sans-serif" font-size="10">session-manager.ts</text>
+  <text x="920" y="262" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">createSession(), updateSessionTimestamp()</text>
+  <text x="920" y="280" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">markSessionRunning/Completed/Paused()</text>
+  <text x="920" y="298" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">setAnswer(), isRoundComplete(), isSeriesComplete()</text>
+  <text x="920" y="316" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">completeRound(), completeSeries(), computeCompletionPct()</text>
+  <text x="920" y="334" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">serializeSession(), deserializeSession()</text>
+
+  <text x="860" y="358" fill="#818cf8" font-family="system-ui,sans-serif" font-size="10">question-router.ts</text>
+  <text x="920" y="358" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">getCurrentQuestion(), advanceToNextQuestion()</text>
+  <text x="920" y="376" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">goToPreviousQuestion()</text>
+
+  <!-- Right column sub-engines -->
+  <g transform="translate(840, 400)">
+    <rect x="0" y="0" width="330" height="180" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="165" y="22" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">More Engine Modules</text>
+    <text x="15" y="44" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">dependency-resolver.ts</text>
+    <text x="15" y="60" fill="#475569" font-family="system-ui,sans-serif" font-size="9">Resolves question dependencies</text>
+    <text x="15" y="80" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">progress.ts</text>
+    <text x="15" y="96" fill="#475569" font-family="system-ui,sans-serif" font-size="9">Session progress tracking</text>
+    <text x="15" y="116" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">snapshot-manager.ts</text>
+    <text x="15" y="132" fill="#475569" font-family="system-ui,sans-serif" font-size="9">Session snapshot/restore</text>
+    <text x="15" y="152" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">validator.ts</text>
+    <text x="15" y="168" fill="#475569" font-family="system-ui,sans-serif" font-size="9">Response validation</text>
+  </g>
+
+  <!-- ===== ROW 2: LLM Providers + Intelligence ===== -->
+  <rect x="100" y="475" width="360" height="280" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="100" y="475" width="360" height="34" rx="10" fill="url(#a1)" opacity=".2"/>
+  <rect x="100" y="497" width="360" height="12" fill="url(#a1)" opacity=".15"/>
+  <text x="280" y="500" text-anchor="middle" fill="#fde68a" font-family="system-ui,sans-serif" font-size="14" font-weight="700">src/llm/ — LLM Integration</text>
+
+  <text x="120" y="526" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Types</text>
+  <text x="120" y="544" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">LLMProvider, CompletionParams, CompletionResult</text>
+
+  <text x="120" y="568" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Factory</text>
+  <text x="120" y="586" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="10">factory.ts</text>
+  <text x="190" y="586" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">createProvider(config) → LLMProvider</text>
+  <text x="120" y="602" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">createTemplateProvider() → TemplateProvider</text>
+
+  <text x="120" y="626" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Providers (7)</text>
+
+  <g transform="translate(120, 646)">
+    <text x="0" y="0" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">openai-provider.ts</text>
+    <text x="160" y="0" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">OpenAI GPT-4o/GPT-4o-mini</text>
+    <text x="0" y="18" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">anthropic-provider.ts</text>
+    <text x="160" y="18" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Anthropic Claude</text>
+    <text x="0" y="36" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">gemini-provider.ts</text>
+    <text x="160" y="36" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Google Gemini</text>
+    <text x="0" y="54" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">mistral-provider.ts</text>
+    <text x="160" y="54" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Mistral AI</text>
+    <text x="0" y="72" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">ollama-provider.ts</text>
+    <text x="160" y="72" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Local Ollama models</text>
+    <text x="0" y="90" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">null-provider.ts</text>
+    <text x="160" y="90" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Null/test provider (no-op)</text>
+    <text x="0" y="108" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">template-provider.ts</text>
+    <text x="160" y="108" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Template-based responses</text>
+  </g>
+
+  <!-- Intelligence -->
+  <rect x="485" y="475" width="330" height="280" rx="10" fill="#0f172a" stroke="#f472b6" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="485" y="475" width="330" height="34" rx="10" fill="url(#a2)" opacity=".2"/>
+  <rect x="485" y="497" width="330" height="12" fill="url(#a2)" opacity=".15"/>
+  <text x="650" y="500" text-anchor="middle" fill="#fbcfe8" font-family="system-ui,sans-serif" font-size="14" font-weight="700">src/intelligence/ — AI Layer</text>
+
+  <text x="505" y="526" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Barrel (index.ts)</text>
+  <text x="505" y="544" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">IntelligenceReport interface</text>
+  <text x="505" y="560" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">getIntelligenceReport(session, artifacts)</text>
+
+  <text x="505" y="586" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Modules</text>
+  <text x="505" y="604" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10">analytics.ts</text>
+  <text x="505" y="620" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">SessionMetrics interface</text>
+  <text x="505" y="636" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">computeSessionMetrics(session) → SessionMetrics</text>
+
+  <text x="505" y="660" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10">completeness-scorer.ts</text>
+  <text x="505" y="676" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">scoreCompleteness() — response coverage scoring</text>
+
+  <text x="505" y="700" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10">contradiction-detector.ts</text>
+  <text x="505" y="716" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">detectContradictions() — finds conflicting answers</text>
+
+  <text x="505" y="740" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10">recommendations.ts</text>
+  <text x="505" y="756" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">generateRecommendations()</text>
+  <text x="505" y="772" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10">adaptive-router.ts</text>
+  <text x="505" y="788" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">analyzeRouting(), shouldSkipQuestion()</text>
+
+  <!-- ===== ROW 2 RIGHT: Export + Storage ===== -->
+  <rect x="840" y="600" width="320" height="155" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="840" y="600" width="320" height="30" rx="10" fill="url(#a3)" opacity=".15"/>
+  <rect x="840" y="618" width="320" height="12" fill="url(#a3)" opacity=".1"/>
+  <text x="1000" y="622" text-anchor="middle" fill="#a7f3d0" font-family="system-ui,sans-serif" font-size="13" font-weight="700">src/export/ — 6 Formats</text>
+  <text x="860" y="648" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">ExportResult, ExportMeta, ExportStaleness</text>
+
+  <g transform="translate(860, 670)">
+    <text x="0" y="0" fill="#34d399" font-family="system-ui,sans-serif" font-size="10">json-exporter.ts</text>
+    <text x="140" y="0" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">JSON format</text>
+    <text x="0" y="18" fill="#34d399" font-family="system-ui,sans-serif" font-size="10">markdown-exporter.ts</text>
+    <text x="140" y="18" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Markdown format</text>
+    <text x="0" y="36" fill="#34d399" font-family="system-ui,sans-serif" font-size="10">yaml-exporter.ts</text>
+    <text x="140" y="36" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">YAML format</text>
+    <text x="0" y="54" fill="#34d399" font-family="system-ui,sans-serif" font-size="10">html-exporter.ts</text>
+    <text x="140" y="54" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">HTML format</text>
+    <text x="0" y="72" fill="#34d399" font-family="system-ui,sans-serif" font-size="10">prompt-exporter.ts</text>
+    <text x="140" y="72" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">LLM prompt format</text>
+    <text x="0" y="90" fill="#34d399" font-family="system-ui,sans-serif" font-size="10">diff-exporter.ts</text>
+    <text x="140" y="90" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Git diff format</text>
+  </g>
+
+  <!-- Storage -->
+  <rect x="1180" y="600" width="320" height="155" rx="10" fill="#0f172a" stroke="#22d3ee" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="1180" y="600" width="320" height="30" rx="10" fill="url(#a5)" opacity=".15"/>
+  <rect x="1180" y="618" width="320" height="12" fill="url(#a5)" opacity=".1"/>
+  <text x="1340" y="622" text-anchor="middle" fill="#a5f3fc" font-family="system-ui,sans-serif" font-size="13" font-weight="700">src/storage/ + src/template/</text>
+
+  <text x="1200" y="650" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">StorageProvider interface</text>
+  <text x="1200" y="668" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">filesystem.ts</text>
+  <text x="1280" y="668" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">FileSystemStorage (class)</text>
+  <text x="1280" y="684" fill="#475569" font-family="system-ui,sans-serif" font-size="10">read, write, list, delete operations</text>
+  <text x="1200" y="702" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">sqlite.ts</text>
+  <text x="1280" y="702" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">SQLite storage backend</text>
+  <text x="1200" y="720" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">AutoSaveManager (class)</text>
+  <text x="1280" y="720" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Auto-save sessions periodically</text>
+
+  <text x="1200" y="742" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">template/ — Template engine</text>
+  <text x="1200" y="758" fill="#475569" font-family="system-ui,sans-serif" font-size="10">index.ts, patterns.ts, resolver.ts</text>
+
+  <!-- ===== ROW 3: Framework + Misc ===== -->
+  <rect x="100" y="780" width="700" height="280" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="100" y="780" width="700" height="30" rx="10" fill="#1e293b"/>
+  <text x="450" y="802" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="13" font-weight="700">📐 prompt-framework/ — 326-Probe Question Framework</text>
+
+  <g transform="translate(120, 820)">
+    <text x="0" y="0" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="10" font-weight="600">7 Series</text>
+    <text x="0" y="20" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">Series 1: Purpose &amp; Problem Definition — questions 1-46</text>
+    <text x="0" y="36" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">Series 2: Goal Clarification &amp; Ambiguity Resolution — questions 47-92</text>
+    <text x="0" y="52" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">Series 3: Functionality Planning — questions 93-138</text>
+    <text x="0" y="68" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">Series 4: Architecture &amp; Technology Stack — questions 139-184</text>
+    <text x="0" y="84" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">Series 5: User Experience &amp; Interface — questions 185-230</text>
+    <text x="0" y="100" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">Series 6: Constraints, Risks &amp; Validation — questions 231-276</text>
+    <text x="0" y="116" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">Series 7: Implementation Strategy &amp; Roadmap — questions 277-326</text>
+  </g>
+
+  <g transform="translate(500, 820)">
+    <text x="0" y="0" fill="#10b981" font-family="system-ui,sans-serif" font-size="10" font-weight="600">25 Rounds per Session</text>
+    <text x="0" y="20" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">Round 1-3: Open questions (free response)</text>
+    <text x="0" y="36" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">Round 4-20: Mixed open + choice questions</text>
+    <text x="0" y="52" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">Round 21-25: Choice questions (clarification)</text>
+    <text x="0" y="72" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-weight="600">RRP Protocol</text>
+    <text x="0" y="92" fill="#475569" font-family="system-ui,sans-serif" font-size="9">Recursive Refinement Protocol</text>
+    <text x="0" y="108" fill="#475569" font-family="system-ui,sans-serif" font-size="9">11 locked decisions, 0 contradictions</text>
+    <text x="0" y="124" fill="#475569" font-family="system-ui,sans-serif" font-size="9">Ambiguity vectors, token budgets</text>
+  </g>
+
+  <g transform="translate(120, 960)">
+    <text x="0" y="0" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">framework.json — Full framework definition</text>
+    <text x="0" y="18" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">FRAMEWORK.md — Human-readable documentation</text>
+    <text x="0" y="36" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">md/ — Per-series markdown exports</text>
+    <text x="0" y="54" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">json/ — Machine-readable framework JSON</text>
+  </g>
+
+  <!-- Misc right -->
+  <rect x="820" y="780" width="680" height="280" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="820" y="780" width="680" height="30" rx="10" fill="#1e293b"/>
+  <text x="1160" y="802" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="13" font-weight="700">⚙️ Other Modules &amp; Infrastructure</text>
+
+  <g transform="translate(840, 825)">
+    <text x="0" y="0" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Integration &amp; Servers</text>
+    <text x="0" y="20" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">src/integration/git.ts — Git integration</text>
+    <text x="0" y="40" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">docs-server.py — Python docs HTTP server</text>
+    <text x="0" y="60" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">serve-meta.mjs — Node.js meta viewer server (port 8899)</text>
+    <text x="0" y="80" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">serve-ui.mjs — Node.js Web UI server (port 8888)</text>
+    <text x="0" y="100" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">docs-viewer.html — Documentation browser</text>
+  </g>
+
+  <g transform="translate(840, 945)">
+    <text x="0" y="0" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Tests</text>
+    <text x="0" y="20" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">tests/ — 150 passing tests (14 suites)</text>
+    <text x="0" y="38" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">vitest.config.ts — Vitest configuration</text>
+  </g>
+
+  <g transform="translate(1100, 825)">
+    <text x="0" y="0" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Monitoring &amp; Config</text>
+    <text x="0" y="20" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">heartbeat.mjs — Sentry integration</text>
+    <text x="0" y="40" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">watches.json — Service definitions</text>
+    <text x="0" y="60" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">package.json — Dependencies + scripts</text>
+    <text x="0" y="80" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">tsconfig.json — TypeScript configuration</text>
+    <text x="0" y="100" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">eslint.config.js — ESLint config</text>
+    <text x="0" y="120" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">i18n/ — English, Spanish, French locales</text>
+  </g>
+
+  <text x="800" y="1180" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="10">components/space/ — 35+ TS src files, 7 LLM providers, 6 export formatters, 326 probes across 7 series • 333 total files</text>
+</svg>
