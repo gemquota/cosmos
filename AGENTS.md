@@ -38,9 +38,10 @@ The repo root `index.html` redirects to the dashboard. No other standalone dashb
 
 ### `rsis3/` — Core Cognitive Engine (Python)
 Three-loop recursive self-improvement system. The central component.
-- L1: Per-task action loop (tool calls, observations, retries)
-- L2: Per-session improvement (code gen, prompt tuning)
-- L3: Cross-session evolution (memory consolidation, strategy evolution)
+- L1–L3: core loops (action, improvement, cross-session evolution)
+- L4: meta-parameter optimizer (`python -m rsis optimize`)
+- L5: strategy evolution (`python -m rsis strategies`)
+- L6–L9: hypothetical (Identity, Meta-Cog, Meta-Meta, MMM) — spec §1.1
 - Dashboard: `dashboard/index.html` (Tailwind + Chart.js, reads `rack/pulses/dashboard-data.json` via `config.js`)
 
 ### `mykb/` — Long-term Memory (Python + Markdown)

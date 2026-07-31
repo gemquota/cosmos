@@ -47,3 +47,8 @@ title: "Bundle Log"
   verification-first external gates
 - **Knowledge graph regenerated** via `.wiki-daemon/build_graph.py` (static +
   daemon copies)
+- **L4/L5 loops implemented**: `loop_l4.py` (meta-parameter Optimizer,
+  `python -m rsis optimize`) and `loop_l5.py` (strategy Evolution,
+  `python -m rsis strategies`) added to RSIS3; spec §1.1 documents the full
+  nine-loop hierarchy (L1–L5 implemented, L6–L9 hypothetical); concept note
+  `wiki/concepts/nine-loop-hierarchy.md` added

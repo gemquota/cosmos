@@ -5,6 +5,8 @@ Usage:
     python -m rsis init              # Initialise workspace
     python -m rsis run --goal X      # Improvement session
     python -m rsis evolve            # L3 evolution cycle
+    python -m rsis optimize          # L4 meta-parameter optimization
+    python -m rsis strategies        # L5 strategy evolution cycle
     python -m rsis dashboard         # Start web dashboard
     python -m rsis status            # System overview
     python -m rsis check             # Check resource limits
@@ -24,6 +26,8 @@ from rsis.evaluator import EvaluatorClient
 from rsis.loop_l1 import L1ActionLoop
 from rsis.loop_l2 import L2ImprovementLoop
 from rsis.loop_l3 import L3EvolutionLoop
+from rsis.loop_l4 import OptimizerLoop
+from rsis.loop_l5 import EvolutionLoop
 from rsis.memory import MemoryManager
 from rsis.recovery import FailureInjector, RecoveryManager
 from rsis.resource_monitor import ResourceEnforcer, ResourceSeverity
@@ -183,6 +187,92 @@ def cmd_evolve(args: argparse.Namespace) -> int:
 
     except TimeoutError as e:
         print(f"  ✗ Evolution timed out: {e}")
+        return 1
+    finally:
+        telemetry.stop()
+        enforcer.stop()
+
+    return 0
+
+
+def cmd_optimize(args: argparse.Namespace) -> int:
+    telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    enforcer.start()
+    telemetry.start()
+
+    try:
+        l4 = OptimizerLoop(
+            telemetry=telemetry, memory=memory, evaluator=evaluator,
+            checkpoint_mgr=checkpoint,
+        )
+        budget = Budget(
+            max_iterations=1, max_time_s=CONFIG.l4.cycle_timeout_s,
+            label="L4 optimizer",
+        )
+
+        with deadline(CONFIG.l4.cycle_timeout_s, "L4 optimizer"):
+            result = l4.run_cycle(budget=budget)
+
+        if result.skipped:
+            print(f"  ℹ Not enough outcomes yet "
+                  f"({result.outcome_stats.get('count', 0)} < "
+                  f"{CONFIG.l4.min_outcomes}) — run more L2 sessions first")
+        elif result.success and result.changed:
+            print("  ✓ Parameters tuned:")
+            for k, v in sorted(result.deltas.items()):
+                print(f"    {k}: {v:+.1f}")
+            print(f"  Outcome stats: {result.outcome_stats}")
+        elif result.success:
+            print("  ℹ No parameter changes proposed "
+                  f"(success_rate={result.outcome_stats.get('success_rate', 0):.2f})")
+        else:
+            print(f"  ✗ Optimizer failed: {result.error}")
+            return 1
+
+    except TimeoutError as e:
+        print(f"  ✗ Optimizer timed out: {e}")
+        return 1
+    finally:
+        telemetry.stop()
+        enforcer.stop()
+
+    return 0
+
+
+def cmd_strategies(args: argparse.Namespace) -> int:
+    telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    enforcer.start()
+    telemetry.start()
+
+    try:
+        l5 = EvolutionLoop(
+            telemetry=telemetry, memory=memory, evaluator=evaluator,
+            checkpoint_mgr=checkpoint,
+        )
+        budget = Budget(
+            max_iterations=1, max_time_s=CONFIG.l5.cycle_timeout_s,
+            label="L5 evolution",
+        )
+
+        with deadline(CONFIG.l5.cycle_timeout_s, "L5 evolution"):
+            result = l5.run_cycle(budget=budget)
+
+        if result.success:
+            print(f"  ✓ Strategy evolution complete")
+            print(f"  Generation: {result.generation}")
+            print(f"  Population: {result.population_size} "
+                  f"(elites kept: {result.elites_kept}, "
+                  f"variants generated: {result.variants_generated})")
+            print(f"  Avg fitness: {result.avg_fitness:.3f}")
+            if result.best_strategy:
+                print(f"  Best: {result.best_strategy['id']} "
+                      f"(fitness={result.best_strategy['fitness']:.3f})")
+        else:
+            print(f"  ✗ Strategy evolution failed: {result.error}")
+            return 1
+
+    except TimeoutError as e:
+        print(f"  ✗ Strategy evolution timed out: {e}")
         return 1
     finally:
         telemetry.stop()
@@ -382,6 +472,12 @@ def main() -> int:
 
     p_evolve = sub.add_parser("evolve", help="Run L3 evolution cycle")
     p_evolve.set_defaults(func=cmd_evolve)
+
+    p_optimize = sub.add_parser("optimize", help="Run L4 meta-parameter optimization")
+    p_optimize.set_defaults(func=cmd_optimize)
+
+    p_strategies = sub.add_parser("strategies", help="Run L5 strategy evolution cycle")
+    p_strategies.set_defaults(func=cmd_strategies)
 
     p_dash = sub.add_parser("dashboard", help="Start web dashboard")
     p_dash.add_argument("--host", default="127.0.0.1")

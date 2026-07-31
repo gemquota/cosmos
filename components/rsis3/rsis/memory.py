@@ -295,6 +295,11 @@ class MemoryManager:
         self.kg = KnowledgeGraph()
         self.vectors = VectorStore()
 
+    def save(self) -> None:
+        """Persist both memory tiers to disk."""
+        self.kg.save()
+        self.vectors.save()
+
     def record_improvement(
         self,
         description: str,
@@ -329,6 +334,7 @@ class MemoryManager:
         )
 
         logger.info("Recorded %s — %s", node_id, outcome)
+        self.save()
         return node_id
 
     def get_relevant_patterns(self, goal: str, limit: int = 5) -> list[dict]:

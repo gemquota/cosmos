@@ -6,6 +6,14 @@ defined by an RRP session (11 locked decisions, 0 contradictions).
 ## Architecture
 
 ```
+L5 ─ Strategy Evolution (days)
+  ├─ Population-based strategy selection + mutation
+  └─ Seeded from L3 KG strategies, evaluator-gated
+
+L4 ─ Meta-Parameter Optimizer (hours)
+  ├─ Fast-feedback tuning of bounded meta-parameters
+  └─ Evaluator-gated, checkpointed, persisted state
+
 L3 ─ Cross-Session Evolution (hours/days)
   ├─ Memory consolidation (git → KG → vectors)
   ├─ Strategy & meta-parameter evolution
@@ -21,6 +29,16 @@ L1 ─ Per-Task Action Loop (seconds)
   ├─ Workspace telemetry collection
   └─ Checkpoint rollback on failure
 ```
+
+## Loop Status
+
+The engine was conceived as **nine nested loops** (L1–L9). L1–L3 are the
+original three-loop stack (`loop_l1.py` … `loop_l3.py`); L4 (`loop_l4.py`)
+and L5 (`loop_l5.py`) are implemented as bounded, evaluator-gated cycles.
+L6–L9 (Identity, Meta-Cog, Meta-Meta, MMM) remain hypothetical — see
+`RSIS_SPEC.md` §1.1 for the full hierarchy.
+
+Run them with `python -m rsis optimize` (L4) and `python -m rsis strategies` (L5).
 
 ## Key Invariants
 
