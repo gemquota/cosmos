@@ -52,3 +52,7 @@ title: "Bundle Log"
   `python -m rsis strategies`) added to RSIS3; spec §1.1 documents the full
   nine-loop hierarchy (L1–L5 implemented, L6–L9 hypothetical); concept note
   `wiki/concepts/nine-loop-hierarchy.md` added
+- **Topology + startup wiring**: L4/L5 ownership partition (L4 → L1 params,
+  L5 → L2 params) and `load_config()` startup injection documented in
+  `RSIS_SPEC.md` §1.4; concept note `wiki/concepts/nine-loop-hierarchy.md`
+  extended with nested/parallel/overlapping analysis

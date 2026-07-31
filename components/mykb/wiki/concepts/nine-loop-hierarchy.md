@@ -31,6 +31,20 @@ evaluator-gated cycles; L6–L9 remain hypothetical labels.
 | L8 | Meta-Meta | hypothetical | Meta-strategy over strategy evolution |
 | L9 | MMM | hypothetical | Meta-meta-meta steering (unbounded recursion guard) |
 
+## Topology: Nested, Parallel, Overlapping
+
+The nine loops are not one topology:
+
+- **Nested** — L1 ⊂ L2 ⊂ L3 spawn/promote stack; L5 seeds from L3's KG
+  strategies (one-way); L7–L9 would nest above L5.
+- **Parallel** — L4 (`.rsis/optimizer_state.json`) and L5
+  (`.rsis/strategies.json`) run with disjoint state; L6 (Meta-Cog) would be a
+  parallel observer.
+- **Overlapping** — shared reads (telemetry/KG: safe) and shared config
+  writes (arbitrated by ownership partition: L4 owns `l1.*`, L5 owns
+  `l2.max_attempts`). Startup `load_config()` is the single injection point
+  where tuned state reaches L1/L2.
+
 ## Invariants (apply to every implemented loop)
 
 - Evaluator is immutable — never in-scope for self-improvement

@@ -58,8 +58,8 @@ telemetry).
 | L1 | Execution | implemented | Per-task action loop: plan → tool calls → observe → retry |
 | L2 | Planning / Improvement | implemented | Per-session improvement candidates, immutable-evaluator gate |
 | L3 | Self-Direction / Evolution | implemented | Cross-session memory consolidation, strategy derivation, pruning |
-| L4 | Optimizer | implemented | Fast-feedback tuning of bounded meta-parameters from outcomes |
-| L5 | Evolution | implemented | Population-based strategy evolution (selection + mutation) |
+| L4 | Optimizer | implemented | Fast-feedback tuning of **L1 execution params** from outcomes |
+| L5 | Evolution | implemented | Population-based evolution of **L2 improvement params** + focus |
 | L6 | Identity | hypothetical | Self-model / identity snapshot maintenance |
 | L7 | Meta-Cog | hypothetical | Reflection on the loops' own behavior |
 | L8 | Meta-Meta | hypothetical | Meta-strategy over strategy evolution |
@@ -67,7 +67,10 @@ telemetry).
 
 L4 and L5 follow the same invariants as the lower loops: checkpoint before
 mutation, bounded budgets, immutable evaluator gate, telemetry, and failure
-cascades up to the next level.
+cascades up to the next level. Persisted tuning is injected at startup:
+`load_config()` applies the L4 optimizer state and the L5 best strategy to
+`CONFIG` before any loop constructs, so L1/L2 consume the tuned values
+without extra plumbing.
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -84,7 +87,7 @@ cascades up to the next level.
 │                L4 — Optimizer Loop (meta-params)             │
 │  Frequency: hours  │  Fast-feedback parameter tuning         │
 │  - Aggregate recent L1/L2/L3 outcomes                        │
-│  - Propose clamped deltas (retries / tool calls / attempts)  │
+│  - Propose clamped deltas (retries / tool calls)            │
 │  - Evaluator gate → checkpoint → persist optimizer state     │
 └───────────────────────────┬──────────────────────────────────┘
                             │ promotes
@@ -126,6 +129,47 @@ Each loop level **spawns** the level below it and **evaluates** its output befor
 - L5 plateau (no fitness gain across generations) → L6 would re-evaluate identity
 
 ---
+
+### 1.4 Loop Topology: Nested, Parallel, Overlapping
+
+The nine loops are **not one topology**. The conception mixes three, and the
+conflicts that matter come from the overlapping ones:
+
+- **Nested** — a loop spawns the level below and promotes its output
+  upward. L1 ⊂ L2 ⊂ L3 is the implemented stack; L5 is seeded from L3's KG
+  strategies (a one-way nesting edge); L7–L9 would nest above L5.
+- **Parallel** — loops with disjoint state that can run concurrently. L4
+  (writes `.rsis/optimizer_state.json`) and L5 (writes `.rsis/strategies.json`)
+  are parallel by design; multiple L1 action loops run in parallel per task.
+  L6 (Meta-Cog) would be a parallel observer over the whole stack.
+- **Overlapping** — loops that share state or feedback and therefore need
+  arbitration. The overlaps that exist today:
+  - *Shared reads*: L3, L4, L5 all read the same outcome telemetry / KG.
+    Read-sharing is safe and intended.
+  - *Shared config writes*: L4 and L5 both tune loop budgets. Resolved by a
+    strict **ownership partition** — L4 owns `l1.*`, L5 owns
+    `l2.max_attempts` (registry in `config.py`, `L1_TUNABLES` /
+    `L2_TUNABLES`). No two loops write the same key.
+  - *Seeding*: L5 reads L3's strategy nodes (write→read, one-way, safe).
+
+**Arbitration rules**
+
+| State slice | Owner | Others |
+|---|---|---|
+| `.rsis/knowledge_graph.json`, vectors | L3 | L4/L5 read-only |
+| `.rsis/optimizer_state.json` | L4 | startup loader reads |
+| `.rsis/strategies.json` | L5 | startup loader reads |
+| `CONFIG` (runtime) | startup loader writes; L4/L5 mirror in-process | L1/L2 read |
+
+**Concurrency guardrail**: the ownership table gives file-level disjointness,
+but two concurrent runs of the *same* loop (e.g., two L5 cycles) would race on
+their own state file. Loop execution is therefore serialized by the CLI; a
+parallel scheduler must hold a lock per state file before a cycle.
+
+**Deliberate non-overlaps** (documented so they stay that way):
+- The evaluator is immutable and owned by no loop.
+- L4 never writes L2 params; L5 never writes L1 params.
+- L6+ must not write `.rsis/*.json` state owned by L1–L5 without a spec change.
 
 ## 2. Memory Hierarchy
 

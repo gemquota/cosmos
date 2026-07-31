@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Optional
 
 from rsis.checkpoint import CheckpointManager
-from rsis.config import CONFIG
+from rsis.config import CONFIG, L1_TUNABLES
 from rsis.evaluator import EvaluatorClient
 from rsis.memory import MemoryManager
 from rsis.telemetry import TelemetryCollector, TelemetryEvent
@@ -24,12 +24,8 @@ from rsis.timeout import Budget, TimeoutError
 
 logger = logging.getLogger(__name__)
 
-# name -> (min, max, step, CONFIG attribute path)
-_TUNABLES = {
-    "l1.max_retries": (1, 8, 1, ("l1", "max_retries")),
-    "l1.max_tool_calls": (5, 25, 1, ("l1", "max_tool_calls_per_step")),
-    "l2.max_attempts": (2, 10, 1, ("l2", "max_improvement_attempts")),
-}
+# L4 owns the L1 execution params (see RSIS_SPEC §1.4 — no overlap with L5).
+_TUNABLES = {name: (lo, hi, 1, path) for name, (lo, hi, path) in L1_TUNABLES.items()}
 
 
 @dataclass
