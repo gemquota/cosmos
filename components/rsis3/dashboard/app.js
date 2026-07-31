@@ -1,7 +1,4 @@
 
-var AD,PD,g,pu,sh,ch={};
-
-// Data loaded from telemetry directory
 var AD, PD, g, pu, sh, ch = {};
 
 function loadData() {
@@ -20,7 +17,7 @@ function loadData() {
       sh = AD.score_history || {};
       document.getElementById('load').style.display = 'none';
       document.getElementById('app').style.display = 'block';
-      loadData();
+      renderAll();
     })
     .catch(function(e) {
       document.getElementById('load').innerHTML = '<div class="text-red-400 text-center mt-10">Error loading data: ' + e.message + '<br><br><button onclick="location.reload()" style="background:#6366f1;color:white;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;font-size:14px">Retry</button></div>';
@@ -354,3 +351,6 @@ function getTabInfo(name){
   return '<h4>'+name.charAt(0).toUpperCase()+name.slice(1)+' Tab</h4><p>'+(d[name]||'Dashboard tab.')+'</p>';
 }
 
+// ── Initialize ────────────────────────────────────────────────
+
+loadData();

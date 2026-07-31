@@ -1,0 +1,504 @@
+{
+ "meta": {
+  "name": "Structured Prompt Creation Framework",
+  "version": "1.0.0",
+  "description": "A multi-series, multi-round prompt elicitation framework that alternates open-ended and multi-choice questions to produce a complete development specification.",
+  "total_series": 7,
+  "total_rounds": 25,
+  "total_open_ended": 67,
+  "total_multi_choice": 259,
+  "total_open_ended_questions": 67,
+  "total_multi_choice_followups": 259,
+  "estimated_completion_time": "45-75 minutes"
+ },
+ "series": [
+  {
+   "id": 1,
+   "name": "Conceptual Depth",
+   "description": "Calibrates the register, audience sophistication, vocabulary, and complexity scaffolding for the entire specification.",
+   "depends_on": [],
+   "rounds": [
+    {
+     "round": 1,
+     "focus": "Domain and Audience",
+     "open_ended": [
+      {
+       "id": "1.1.1",
+       "text": "What is the primary domain or field this prompt or project addresses? Describe its scope, core concerns, and any relevant sub-disciplines."
+      },
+      {
+       "id": "1.1.2",
+       "text": "Who is the intended audience for the generated output? What is their baseline familiarity with this domain?"
+      }
+     ]
+    },
+    {
+     "round": 2,
+     "focus": "Assumptions and Abstraction",
+     "open_ended": [
+      {
+       "id": "1.2.1",
+       "text": "What foundational concepts, theorems, or prior art can the output take for granted? What must be explained from scratch?"
+      },
+      {
+       "id": "1.2.2",
+       "text": "At what level of abstraction should the output operate? Should it be concrete and example-driven, or formal and general?"
+      }
+     ]
+    },
+    {
+     "round": 3,
+     "focus": "Terminology and Scaffolding",
+     "open_ended": [
+      {
+       "id": "1.3.1",
+       "text": "What vocabulary, jargon, or notation should be used or deliberately avoided? Are there established standards the output should follow?"
+      },
+      {
+       "id": "1.3.2",
+       "text": "How should complexity be distributed across the output? Should it start simple and deepen, or maintain a consistent level throughout?"
+      }
+     ]
+    }
+   ],
+   "total_open_ended": 6,
+   "total_multi_choice": 18
+  },
+  {
+   "id": 2,
+   "name": "Ontological Characteristics",
+   "description": "Discovers, classifies, refines, and validates the entities, categories, attributes, and boundaries of the domain.",
+   "depends_on": [],
+   "rounds": [
+    {
+     "round": 1,
+     "focus": "Entity Discovery",
+     "open_ended": [
+      {
+       "id": "2.1.1",
+       "text": "What are the primary entities, objects, concepts, or actors that exist in this domain? List them with brief descriptions."
+      },
+      {
+       "id": "2.1.2",
+       "text": "What attributes, properties, or state define each entity? How do entities differ from one another?"
+      },
+      {
+       "id": "2.1.3",
+       "text": "What natural categories, types, or groupings organize these entities? Are there clear taxonomies or classification schemes?"
+      }
+     ]
+    },
+    {
+     "round": 2,
+     "focus": "Classification and Core vs. Peripheral",
+     "open_ended": [
+      {
+       "id": "2.2.1",
+       "text": "Of the entities listed, which are absolutely essential (core) and which are optional, derivative, or contextual (peripheral)?"
+      },
+      {
+       "id": "2.2.2",
+       "text": "At what level of granularity should entities be modeled? Should fine distinctions be separate entities or attributes of coarser ones?"
+      },
+      {
+       "id": "2.2.3",
+       "text": "How do entities relate to each other in terms of sharing, inheriting, or differentiating attributes?"
+      }
+     ]
+    },
+    {
+     "round": 3,
+     "focus": "Boundaries and Lifecycles",
+     "open_ended": [
+      {
+       "id": "2.3.1",
+       "text": "What are the systemic boundaries of this domain? What is explicitly in scope vs. out of scope?"
+      },
+      {
+       "id": "2.3.2",
+       "text": "What external entities, systems, or actors interact with this domain but are not part of it?"
+      },
+      {
+       "id": "2.3.3",
+       "text": "What is the lifecycle of each entity? How are they created, modified, combined, retired?"
+      }
+     ]
+    },
+    {
+     "round": 4,
+     "focus": "Refinement and Constraints",
+     "open_ended": [
+      {
+       "id": "2.4.1",
+       "text": "Are there entities that are missing from the model so far? What gaps exist in the current entity list?"
+      },
+      {
+       "id": "2.4.2",
+       "text": "Which entities should be merged, split, or reclassified? Are there boundary cases where entity distinctions break down?"
+      },
+      {
+       "id": "2.4.3",
+       "text": "What constraints, invariants, or business rules apply to entity instances? What must always be true?"
+      }
+     ]
+    },
+    {
+     "round": 5,
+     "focus": "Validation and Composition",
+     "open_ended": [
+      {
+       "id": "2.5.1",
+       "text": "What edge cases, exceptions, or degenerate cases could break the entity model? How should they be handled?"
+      },
+      {
+       "id": "2.5.2",
+       "text": "How do entities compose or aggregate into larger structures? Can entities contain or be composed of other entities?"
+      },
+      {
+       "id": "2.5.3",
+       "text": "What are the cardinality and multiplicity relationships between entity types? Can an entity have zero, one, or many of another?"
+      }
+     ]
+    }
+   ],
+   "total_open_ended": 15,
+   "total_multi_choice": 75
+  },
+  {
+   "id": 3,
+   "name": "Semantic Relationships",
+   "description": "Maps direct, hierarchical, causal, and dynamic connections between entities identified in Series 2.",
+   "depends_on": [],
+   "rounds": [
+    {
+     "round": 1,
+     "focus": "Direct Associations",
+     "open_ended": [
+      {
+       "id": "3.1.1",
+       "text": "What direct associations exist between entities? Which entities reference, point to, or are linked to which others?"
+      },
+      {
+       "id": "3.1.2",
+       "text": "What is the nature or type of each association? Is it a use, creation, ownership, or communication link?"
+      }
+     ]
+    },
+    {
+     "round": 2,
+     "focus": "Hierarchical and Containment Relationships",
+     "open_ended": [
+      {
+       "id": "3.2.1",
+       "text": "What parent-child, containment, or hierarchical relationships exist? Which entities are within, belong to, or are part of others?"
+      },
+      {
+       "id": "3.2.2",
+       "text": "What inheritance, specialization, or generalization relationships exist? Which entities are kinds of other entities?"
+      }
+     ]
+    },
+    {
+     "round": 3,
+     "focus": "Causal and Dynamic Relationships",
+     "open_ended": [
+      {
+       "id": "3.3.1",
+       "text": "What causal, temporal, or triggering relationships exist? Which entities cause changes in, or are triggered by, others?"
+      },
+      {
+       "id": "3.3.2",
+       "text": "What dependency chains, prerequisites, or ordering constraints exist? Must some entities exist before others can be created or used?"
+      }
+     ]
+    },
+    {
+     "round": 4,
+     "focus": "Composition and Constraints",
+     "open_ended": [
+      {
+       "id": "3.4.1",
+       "text": "What rules govern how relationships can change? Can associations be created, deleted, or modified at any time, or are there restrictions?"
+      },
+      {
+       "id": "3.4.2",
+       "text": "How do relationships compose or chain across entities? Can indirect relationships be inferred from direct ones?"
+      }
+     ]
+    }
+   ],
+   "total_open_ended": 8,
+   "total_multi_choice": 32
+  },
+  {
+   "id": 4,
+   "name": "Procedural Breadth",
+   "description": "Scopes the workflow, decision branching, and step granularity informed by the entity model and relationship graph.",
+   "depends_on": [],
+   "rounds": [
+    {
+     "round": 1,
+     "focus": "Scope and Step Count",
+     "open_ended": [
+      {
+       "id": "4.1.1",
+       "text": "What is the overall scope of the procedure or workflow? What does it start from and what is its end state?"
+      },
+      {
+       "id": "4.1.2",
+       "text": "How many distinct steps, stages, or phases should the procedure contain? What is the natural breakdown?"
+      }
+     ]
+    },
+    {
+     "round": 2,
+     "focus": "Decision Points and Inputs/Outputs",
+     "open_ended": [
+      {
+       "id": "4.2.1",
+       "text": "Where are the key decision points, branches, or conditional paths? At which steps must a choice be made that affects the rest of the flow?"
+      },
+      {
+       "id": "4.2.2",
+       "text": "What are the expected inputs and outputs at each stage? What data or artifacts flow between steps?"
+      }
+     ]
+    },
+    {
+     "round": 3,
+     "focus": "Error Handling and Granularity",
+     "open_ended": [
+      {
+       "id": "4.3.1",
+       "text": "What fallback paths, error handling, or recovery procedures should be included for when things go wrong?"
+      },
+      {
+       "id": "4.3.2",
+       "text": "How granular should each procedural step be? Should steps be coarse (several actions) or fine (one action per step)?"
+      }
+     ]
+    }
+   ],
+   "total_open_ended": 6,
+   "total_multi_choice": 18
+  },
+  {
+   "id": 5,
+   "name": "Technical Specifications",
+   "description": "Captures hardware, software, performance, integration, and timeline constraints for the build.",
+   "depends_on": [],
+   "rounds": [
+    {
+     "round": 1,
+     "focus": "Hardware and Infrastructure",
+     "open_ended": [
+      {
+       "id": "5.1.1",
+       "text": "What hardware platforms or architectures must be supported? (CPU, GPU, mobile, embedded, etc.)"
+      },
+      {
+       "id": "5.1.2",
+       "text": "What are the minimum and recommended hardware specs? (RAM, storage, compute, network)"
+      },
+      {
+       "id": "5.1.3",
+       "text": "What bandwidth, latency, or networking requirements exist? Is offline operation needed?"
+      },
+      {
+       "id": "5.1.4",
+       "text": "What storage infrastructure is needed? (databases, object storage, caching, file systems)"
+      },
+      {
+       "id": "5.1.5",
+       "text": "What cloud, on-premise, or hybrid infrastructure is targeted? Are there compliance or sovereignty requirements?"
+      }
+     ]
+    },
+    {
+     "round": 2,
+     "focus": "Software Stack and Dependencies",
+     "open_ended": [
+      {
+       "id": "5.2.1",
+       "text": "What programming languages, runtimes, or frameworks are required or preferred?"
+      },
+      {
+       "id": "5.2.2",
+       "text": "What operating systems and environments must be supported?"
+      },
+      {
+       "id": "5.2.3",
+       "text": "What existing libraries, services, APIs, or third-party dependencies should be used or avoided?"
+      },
+      {
+       "id": "5.2.4",
+       "text": "What versioning, compatibility, or upgrade policies govern the software stack?"
+      },
+      {
+       "id": "5.2.5",
+       "text": "What build systems, CI/CD platforms, and packaging formats are required?"
+      }
+     ]
+    },
+    {
+     "round": 3,
+     "focus": "Performance and Scalability",
+     "open_ended": [
+      {
+       "id": "5.3.1",
+       "text": "What are the throughput, latency, and concurrency requirements? (requests/sec, response time, simultaneous users)"
+      },
+      {
+       "id": "5.3.2",
+       "text": "What data volume and growth rate is expected? (storage size, records, throughput)"
+      },
+      {
+       "id": "5.3.3",
+       "text": "What availability, uptime, and disaster recovery targets are required?"
+      },
+      {
+       "id": "5.3.4",
+       "text": "What scalability model is required? (vertical, horizontal, elastic, serverless)"
+      },
+      {
+       "id": "5.3.5",
+       "text": "What security and compliance standards must be met? (auth, encryption, audit, regulations)"
+      }
+     ]
+    },
+    {
+     "round": 4,
+     "focus": "Integration and Timeline",
+     "open_ended": [
+      {
+       "id": "5.4.1",
+       "text": "What external systems, APIs, or services must this system integrate with?"
+      },
+      {
+       "id": "5.4.2",
+       "text": "What integration protocols, data formats, or standards must be supported?"
+      },
+      {
+       "id": "5.4.3",
+       "text": "What is the expected timeline, milestones, and delivery cadence?"
+      },
+      {
+       "id": "5.4.4",
+       "text": "What testing, staging, and rollout strategy is required?"
+      },
+      {
+       "id": "5.4.5",
+       "text": "What documentation, training, or knowledge transfer outputs are expected alongside the system?"
+      }
+     ]
+    }
+   ],
+   "total_open_ended": 20,
+   "total_multi_choice": 80
+  },
+  {
+   "id": 6,
+   "name": "Development Methodologies",
+   "description": "Determines workflow cadence, quality practices, and collaboration patterns aligned with procedural scope and tech constraints.",
+   "depends_on": [],
+   "rounds": [
+    {
+     "round": 1,
+     "focus": "Process and Cadence",
+     "open_ended": [
+      {
+       "id": "6.1.1",
+       "text": "What development process or methodology best fits this project? How should work be planned and tracked?"
+      },
+      {
+       "id": "6.1.2",
+       "text": "What is the expected team size, composition, and structure?"
+      }
+     ]
+    },
+    {
+     "round": 2,
+     "focus": "Quality and Review Practices",
+     "open_ended": [
+      {
+       "id": "6.2.1",
+       "text": "What code review, testing, and quality assurance practices should be followed?"
+      },
+      {
+       "id": "6.2.2",
+       "text": "How should the team handle technical debt, refactoring, and code quality?"
+      }
+     ]
+    },
+    {
+     "round": 3,
+     "focus": "Communication and Collaboration",
+     "open_ended": [
+      {
+       "id": "6.3.1",
+       "text": "How should the team communicate, share knowledge, and manage decisions?"
+      },
+      {
+       "id": "6.3.2",
+       "text": "What is the decision-making and escalation process? How are architectural choices made?"
+      }
+     ]
+    }
+   ],
+   "total_open_ended": 6,
+   "total_multi_choice": 18
+  },
+  {
+   "id": 7,
+   "name": "Operational / Functional Preferences",
+   "description": "Defines deployment, runtime behavior, monitoring, and maintenance preferences informed by tech spec and methodology.",
+   "depends_on": [],
+   "rounds": [
+    {
+     "round": 1,
+     "focus": "Deployment and Delivery",
+     "open_ended": [
+      {
+       "id": "7.1.1",
+       "text": "How should the system be deployed, released, and updated in production?"
+      },
+      {
+       "id": "7.1.2",
+       "text": "What environment and release management strategy should be used?"
+      }
+     ]
+    },
+    {
+     "round": 2,
+     "focus": "Runtime Behavior and Observability",
+     "open_ended": [
+      {
+       "id": "7.2.1",
+       "text": "What logging, monitoring, alerting, and observability infrastructure is needed?"
+      },
+      {
+       "id": "7.2.2",
+       "text": "What configuration and feature management approach should be used at runtime?"
+      }
+     ]
+    },
+    {
+     "round": 3,
+     "focus": "Maintenance and Evolution",
+     "open_ended": [
+      {
+       "id": "7.3.1",
+       "text": "What maintenance schedule, upgrade policy, and lifecycle management is expected?"
+      },
+      {
+       "id": "7.3.2",
+       "text": "What is the long-term stewardship plan? Who owns the system after initial delivery?"
+      }
+     ]
+    }
+   ],
+   "total_open_ended": 6,
+   "total_multi_choice": 18
+  }
+ ]
+}

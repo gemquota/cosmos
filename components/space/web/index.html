@@ -135,13 +135,36 @@ function showView(view) {
 }
 
 // ── API helpers ──
+const STATIC_API = {
+  '/api/framework': 'framework-summary.json',
+  '/api/framework/full': 'framework-full.json',
+  '/api/projects': 'projects.json',
+};
+
 async function api(path, opts = {}) {
-  const res = await fetch(API + path, {
-    method: opts.method || 'GET',
-    headers: { 'Content-Type': 'application/json' },
-    body: opts.body ? JSON.stringify(opts.body) : undefined,
-  });
-  return res.json();
+  try {
+    const res = await fetch(API + path, {
+      method: opts.method || 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      body: opts.body ? JSON.stringify(opts.body) : undefined,
+    });
+    if (res.ok) return res.json();
+    throw new Error('HTTP ' + res.status);
+  } catch (e) {
+    const sp = STATIC_API[path];
+    if (sp) {
+      const sr = await fetch(sp);
+      if (sr.ok) return sr.json();
+    }
+    return { error: 'offline', path };
+  }
+}
+
+function offlineNotice(c) {
+  c.innerHTML = '<div class="fade-in rounded-xl border border-amber-200 dark:border-amber-900 bg-amber-50 dark:bg-amber-950 p-6 text-sm">' +
+    '<h2 class="font-semibold mb-1">SPACE engine offline</h2>' +
+    '<p class="text-gray-600 dark:text-gray-400">This view needs the SPACE server. Run <code class="font-mono text-xs">cosmos</code> locally for the full engine — the 📄 Spec Viewer and 🕸️ Knowledge Graph tabs still work statically.</p>' +
+    '</div>';
 }
 
 // ═══════════════════════════════════════
@@ -152,6 +175,7 @@ async function renderDashboard() {
   c.innerHTML = '<div class="animate-pulse space-y-4"><div class="h-32 bg-gray-200 dark:bg-gray-800 rounded-xl"></div><div class="h-48 bg-gray-200 dark:bg-gray-800 rounded-xl"></div></div>';
   
   const [fw, projList] = await Promise.all([api('/api/framework'), api('/api/projects')]);
+  if (fw && fw.error) { offlineNotice(c); return; }
   framework = fw;
   projects = projList;
   
@@ -617,6 +641,7 @@ async function renderFramework() {
   c.innerHTML = '<div class="animate-pulse space-y-3"><div class="h-8 bg-gray-200 dark:bg-gray-800 rounded-lg w-48"></div><div class="h-64 bg-gray-200 dark:bg-gray-800 rounded-xl"></div></div>';
   
   const fw = await api('/api/framework/full');
+  if (fw && fw.error) { offlineNotice(c); return; }
   
   c.innerHTML = `
     <div class="fade-in space-y-6">
