@@ -26,10 +26,19 @@ evaluator-gated cycles; L6–L9 remain hypothetical labels.
 | L3 | Self-Direction / Evolution | implemented | Cross-session memory consolidation, strategy derivation, pruning |
 | L4 | Optimizer | implemented | Fast-feedback tuning of bounded meta-parameters from outcomes |
 | L5 | Evolution | implemented | Population-based strategy evolution (selection + mutation) |
-| L6 | Identity | hypothetical | Self-model / identity snapshot maintenance |
-| L7 | Meta-Cog | hypothetical | Reflection on the loops' own behavior |
-| L8 | Meta-Meta | hypothetical | Meta-strategy over strategy evolution |
-| L9 | MMM | hypothetical | Meta-meta-meta steering (unbounded recursion guard) |
+| L6 | Identity | hypothetical | Tunes L3 evolution params (patience / timeout) |
+| L7 | Meta-Cog | hypothetical | Tunes L4 optimizer params (window / thresholds) |
+| L8 | Meta-Meta | hypothetical | Tunes L5 strategy params (population / mutation) |
+| L9 | MMM | hypothetical | Tunes L6 identity params (the recursion guard) |
+
+## Tuning Ownership: the +3 Diagonal
+
+Loop *k*+3 tunes loop *k*: L4→L1, L5→L2, L6→L3, L7→L4, L8→L5, L9→L6.
+Each loop tunes exactly one target — no two loops write the same key. L7–L9
+are themselves untuned (no L10+), so the top three are fixed points: the
+unbounded-recursion guard. Modification depth is exactly three meta-levels
+(core L1–L3 → tuners L4–L6 → meta-tuners L7–L9), matching the max-3
+self-modification depth limit in SPACE's recursive-depth analysis.
 
 ## Topology: Nested, Parallel, Overlapping
 

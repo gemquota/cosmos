@@ -1,4 +1,16 @@
 
+## [0.2.2] — 2026-07-31
+
+### Changed
+- Tuning ownership generalized to the **+3 diagonal**: loop k+3 tunes loop k
+  (L4→L1, L5→L2, L6→L3, L7→L4, L8→L5, L9→L6). L6–L9 roles redefined from
+  vague meta-labels to concrete tuner slots in RSIS_SPEC §1.1/§1.4
+- Top three loops (L7–L9) are untuned fixed points — bounded modification
+  depth of 3, matching the SPACE recursive-depth analysis
+
+### Unchanged
+- L4/L5 implementations still own l1.* / l2.max_attempts respectively
+
 ## [0.2.1] — 2026-07-31
 
 ### Added

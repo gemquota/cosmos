@@ -50,8 +50,16 @@
 The RSIS engine was conceived as **nine nested loops**. Three are fully
 implemented (`loop_l1.py` … `loop_l3.py`); L4 (`loop_l4.py`, Optimizer) and
 L5 (`loop_l5.py`, Evolution) are implemented as bounded, evaluator-gated
-cycles; L6–L9 remain hypothetical (labels + score axes only in dashboard
-telemetry).
+cycles; L6–L9 are hypothetical.
+
+**Tuning ownership follows a +3 diagonal: loop k+3 tunes loop k.**
+L4→L1, L5→L2, L6→L3, L7→L4, L8→L5, L9→L6. Each loop tunes exactly one
+target, so no two loops ever write the same parameter key. L7–L9 are
+themselves untuned (no L10+), making the top three fixed points — the
+unbounded-recursion guard. This yields a modification depth of exactly
+three meta-levels: core (L1–L3) → tuners (L4–L6) → meta-tuners (L7–L9),
+which matches the max-3-self-modification depth limit in the SPACE
+recursive-depth analysis.
 
 | Loop | Name | Status | Responsibility |
 |------|------|--------|----------------|
@@ -60,10 +68,10 @@ telemetry).
 | L3 | Self-Direction / Evolution | implemented | Cross-session memory consolidation, strategy derivation, pruning |
 | L4 | Optimizer | implemented | Fast-feedback tuning of **L1 execution params** from outcomes |
 | L5 | Evolution | implemented | Population-based evolution of **L2 improvement params** + focus |
-| L6 | Identity | hypothetical | Self-model / identity snapshot maintenance |
-| L7 | Meta-Cog | hypothetical | Reflection on the loops' own behavior |
-| L8 | Meta-Meta | hypothetical | Meta-strategy over strategy evolution |
-| L9 | MMM | hypothetical | Meta-meta-meta steering (unbounded recursion guard) |
+| L6 | Identity | hypothetical | Tunes **L3 evolution params** (patience / timeout) |
+| L7 | Meta-Cog | hypothetical | Tunes **L4 optimizer params** (window / thresholds) |
+| L8 | Meta-Meta | hypothetical | Tunes **L5 strategy params** (population / mutation) |
+| L9 | MMM | hypothetical | Tunes **L6 identity params** (the recursion guard) |
 
 L4 and L5 follow the same invariants as the lower loops: checkpoint before
 mutation, bounded budgets, immutable evaluator gate, telemetry, and failure
@@ -137,7 +145,7 @@ conflicts that matter come from the overlapping ones:
 
 - **Nested** — a loop spawns the level below and promotes its output
   upward. L1 ⊂ L2 ⊂ L3 is the implemented stack; L5 is seeded from L3's KG
-  strategies (a one-way nesting edge); L7–L9 would nest above L5.
+  strategies (a one-way nesting edge); L7–L9 nest above L5 as its tuners.
 - **Parallel** — loops with disjoint state that can run concurrently. L4
   (writes `.rsis/optimizer_state.json`) and L5 (writes `.rsis/strategies.json`)
   are parallel by design; multiple L1 action loops run in parallel per task.
@@ -146,10 +154,10 @@ conflicts that matter come from the overlapping ones:
   arbitration. The overlaps that exist today:
   - *Shared reads*: L3, L4, L5 all read the same outcome telemetry / KG.
     Read-sharing is safe and intended.
-  - *Shared config writes*: L4 and L5 both tune loop budgets. Resolved by a
-    strict **ownership partition** — L4 owns `l1.*`, L5 owns
-    `l2.max_attempts` (registry in `config.py`, `L1_TUNABLES` /
-    `L2_TUNABLES`). No two loops write the same key.
+  - *Shared config writes*: tuning loops adjust other loops' budgets.
+    Resolved by the strict **+3 ownership diagonal** — L4 owns `l1.*`,
+    L5 owns `l2.max_attempts`, L6 would own `l3.*`, L7 `l4.*`, L8 `l5.*`,
+    L9 `l6.*` (registry in `config.py`). No two loops write the same key.
   - *Seeding*: L5 reads L3's strategy nodes (write→read, one-way, safe).
 
 **Arbitration rules**
@@ -159,6 +167,8 @@ conflicts that matter come from the overlapping ones:
 | `.rsis/knowledge_graph.json`, vectors | L3 | L4/L5 read-only |
 | `.rsis/optimizer_state.json` | L4 | startup loader reads |
 | `.rsis/strategies.json` | L5 | startup loader reads |
+| `.rsis/identity_state.json` (future) | L6 | startup loader reads |
+| `.rsis/metacog_state.json` (future) | L7 | startup loader reads |
 | `CONFIG` (runtime) | startup loader writes; L4/L5 mirror in-process | L1/L2 read |
 
 **Concurrency guardrail**: the ownership table gives file-level disjointness,
@@ -168,8 +178,10 @@ parallel scheduler must hold a lock per state file before a cycle.
 
 **Deliberate non-overlaps** (documented so they stay that way):
 - The evaluator is immutable and owned by no loop.
-- L4 never writes L2 params; L5 never writes L1 params.
-- L6+ must not write `.rsis/*.json` state owned by L1–L5 without a spec change.
+- A loop writes only its +3 target's params (L4→L1, L5→L2, L6→L3, L7→L4,
+  L8→L5, L9→L6) and never any other loop's keys.
+- L7–L9 are untuned fixed points; adding an L10+ would change the recursion
+  guard and requires a spec change.
 
 ## 2. Memory Hierarchy
 
