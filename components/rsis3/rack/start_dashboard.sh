@@ -8,7 +8,7 @@ if [ -f "$PID_FILE" ]; then
     OLD_PID=$(cat "$PID_FILE")
     if kill -0 "$OLD_PID" 2>/dev/null; then
         echo "Dashboard server already running (PID $OLD_PID)"
-        echo "  http://127.0.0.1:8765/rack/telemetry-dashboard.html"
+        echo "  http://127.0.0.1:8765/dashboard/"
         exit 0
     fi
 fi
@@ -25,7 +25,7 @@ sleep 2
 
 if kill -0 "$PID" 2>/dev/null; then
     echo "Dashboard server started (PID $PID)"
-    echo "  http://127.0.0.1:8765/rack/telemetry-dashboard.html"
+    echo "  http://127.0.0.1:8765/dashboard/"
 else
     echo "ERROR: Server failed to start"
     rm -f "$PID_FILE"

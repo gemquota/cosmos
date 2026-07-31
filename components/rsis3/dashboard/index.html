@@ -10,7 +10,6 @@
 <script src="config.js"></script>
 </head>
 <body>
-<body>
 <div id="load" class="loading"><div class="spinner"></div></div>
 <div id="app" class="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6" style="display:none">
 
@@ -30,17 +29,17 @@
   <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
     <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-3 sm:p-4 cursor-pointer hover:border-purple-400/40 transition" onclick="sw('mykb')">
       <div class="flex items-center gap-2 mb-1"><span class="text-lg">📚</span><h2 class="text-sm font-bold text-purple-300">MyKB</h2></div>
-      <p class="text-[11px] text-slate-400 mb-2">Knowledge OS · 2,436 files · wiki + graph</p>
+      <p class="text-[11px] text-slate-400 mb-2">Knowledge OS · <span id="ec-mykb">–</span> wiki files · wiki + graph</p>
       <span class="text-[10px] font-semibold text-purple-300 bg-purple-400/10 border border-purple-400/20 rounded-lg px-2 py-1">Open →</span>
     </div>
     <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-3 sm:p-4 cursor-pointer hover:border-blue-400/40 transition" onclick="sw('space')">
       <div class="flex items-center gap-2 mb-1"><span class="text-lg">🚀</span><h2 class="text-sm font-bold text-blue-300">SPACE</h2></div>
-      <p class="text-[11px] text-slate-400 mb-2">Prompt Engine · 333 files · web UI + spec viewer</p>
+      <p class="text-[11px] text-slate-400 mb-2">Prompt Engine · <span id="ec-space">–</span> files · web UI + spec viewer</p>
       <span class="text-[10px] font-semibold text-blue-300 bg-blue-400/10 border border-blue-400/20 rounded-lg px-2 py-1">Open →</span>
     </div>
     <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-3 sm:p-4 cursor-pointer hover:border-orange-400/40 transition" onclick="sw('overview')">
       <div class="flex items-center gap-2 mb-1"><span class="text-lg">🔄</span><h2 class="text-sm font-bold text-orange-300">RSIS3</h2></div>
-      <p class="text-[11px] text-slate-400 mb-2">Self-Improvement · 112 files · telemetry below</p>
+      <p class="text-[11px] text-slate-400 mb-2">Self-Improvement · <span id="ec-rsis3">–</span> files · telemetry below</p>
       <span class="text-[10px] font-semibold text-orange-300 bg-orange-400/10 border border-orange-400/20 rounded-lg px-2 py-1">Active ↓</span>
     </div>
   </div>
@@ -50,19 +49,19 @@
         <span class="px-2 py-0.5 bg-indigo-500/15 text-indigo-400 text-[10px] sm:text-xs font-bold rounded-full uppercase border border-indigo-500/25">RSIS</span>
         <h1 class="text-lg sm:text-2xl font-bold">Telemetry Dashboard</h1>
       </div>
-      <p class="text-xs sm:text-sm text-slate-400/80">20 pulses &middot; 77 goals &middot; 37 improvements</p>
+      <p class="text-xs sm:text-sm text-slate-400/80" id="hdr-stats">loading…</p>
     </div>
     <div class="grid grid-cols-5 gap-2 w-full sm:w-auto">
-      <div class="bg-slate-800/80 p-2 sm:p-3 rounded-xl border border-slate-700/60 text-center" data-tt="summary:pass"><div class="text-base sm:text-lg font-bold text-emerald-400">77</div><div class="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase">Passed</div></div>
-      <div class="bg-slate-800/80 p-2 sm:p-3 rounded-xl border border-slate-700/60 text-center" data-tt="summary:fail"><div class="text-base sm:text-lg font-bold text-rose-400">0</div><div class="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase">Failed</div></div>
-      <div class="bg-slate-800/80 p-2 sm:p-3 rounded-xl border border-slate-700/60 text-center" data-tt="summary:hold"><div class="text-base sm:text-lg font-bold text-amber-400">0</div><div class="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase">Held</div></div>
-      <div class="bg-slate-800/80 p-2 sm:p-3 rounded-xl border border-slate-700/60 text-center" data-tt="summary:tot"><div class="text-base sm:text-lg font-bold text-purple-400">77</div><div class="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase">Total</div></div>
-      <div class="bg-slate-800/80 p-2 sm:p-3 rounded-xl border border-slate-700/60 text-center" data-tt="summary:pulse_count"><div class="text-base sm:text-lg font-bold text-indigo-400">20</div><div class="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase">Pulses</div></div>
+      <div class="bg-slate-800/80 p-2 sm:p-3 rounded-xl border border-slate-700/60 text-center" data-tt="summary:pass"><div id="s-pass" class="text-base sm:text-lg font-bold text-emerald-400">–</div><div class="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase">Passed</div></div>
+      <div class="bg-slate-800/80 p-2 sm:p-3 rounded-xl border border-slate-700/60 text-center" data-tt="summary:fail"><div id="s-fail" class="text-base sm:text-lg font-bold text-rose-400">–</div><div class="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase">Failed</div></div>
+      <div class="bg-slate-800/80 p-2 sm:p-3 rounded-xl border border-slate-700/60 text-center" data-tt="summary:hold"><div id="s-hold" class="text-base sm:text-lg font-bold text-amber-400">–</div><div class="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase">Held</div></div>
+      <div class="bg-slate-800/80 p-2 sm:p-3 rounded-xl border border-slate-700/60 text-center" data-tt="summary:tot"><div id="s-tot" class="text-base sm:text-lg font-bold text-purple-400">–</div><div class="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase">Total</div></div>
+      <div class="bg-slate-800/80 p-2 sm:p-3 rounded-xl border border-slate-700/60 text-center" data-tt="summary:pulse_count"><div id="s-pulses" class="text-base sm:text-lg font-bold text-indigo-400">–</div><div class="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase">Pulses</div></div>
     </div>
   </div>
   <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-3 sm:p-4 mb-4">
-    <div class="flex justify-between mb-1.5"><div class="text-xs sm:text-sm font-semibold text-slate-300">Overall Success Rate</div><div class="text-xs sm:text-sm font-bold text-emerald-400">77/77 (100.0%)</div></div>
-    <div class="h-2.5 sm:h-3 bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full" style="width:100.0%"></div></div>
+    <div class="flex justify-between mb-1.5"><div class="text-xs sm:text-sm font-semibold text-slate-300">Overall Success Rate</div><div id="srate-txt" class="text-xs sm:text-sm font-bold text-emerald-400">–</div></div>
+    <div class="h-2.5 sm:h-3 bg-slate-700 rounded-full overflow-hidden"><div id="srate-bar" class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full" style="width:0%"></div></div>
   </div>
   <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-3 sm:p-4 mb-4">
     <div class="flex justify-between mb-3"><h2 class="text-sm sm:text-base font-bold text-slate-200">Layer Scores</h2><span class="text-[10px] sm:text-xs text-slate-400">Latest</span></div>
@@ -122,6 +121,10 @@
   <div class="flex flex-wrap gap-2 mb-3">
     <button class="csb px-3 py-1.5 text-xs font-semibold rounded-lg bg-purple-500 text-white shadow" data-c="mykb" data-v="wiki" onclick="cs('mykb','wiki')">📖 Wiki Browser</button>
     <button class="csb px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-c="mykb" data-v="graph" onclick="cs('mykb','graph')">🕸️ Knowledge Graph</button>
+    <span class="flex items-center gap-2 ml-auto text-[10px] text-slate-400">
+      <a href="../../mykb/index.html" target="_blank" rel="noopener" class="hover:text-purple-300">Wiki ↗</a>
+      <a href="../../mykb/okf-graph.html" target="_blank" rel="noopener" class="hover:text-purple-300">Graph ↗</a>
+    </span>
   </div>
   <div id="v-mykb-wiki" class="cst">
     <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
@@ -140,6 +143,10 @@
   <div class="flex flex-wrap gap-2 mb-3">
     <button class="csb px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-500 text-white shadow" data-c="space" data-v="web" onclick="cs('space','web')">🖥️ Web UI</button>
     <button class="csb px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-c="space" data-v="specs" onclick="cs('space','specs')">📄 Spec Viewer</button>
+    <span class="flex items-center gap-2 ml-auto text-[10px] text-slate-400">
+      <a href="../../space/web/index.html" target="_blank" rel="noopener" class="hover:text-blue-300">Web UI ↗</a>
+      <a href="../../space/meta-viewer.html" target="_blank" rel="noopener" class="hover:text-blue-300">Specs ↗</a>
+    </span>
   </div>
   <div id="v-space-web" class="cst">
     <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
@@ -152,6 +159,8 @@
     </div>
   </div>
 </div>
+
+<div class="mt-6 text-center text-[10px] text-slate-500" id="dash-footer">loading ecosystem…</div>
 
 </div>
 
@@ -174,11 +183,14 @@ function cs(comp, view) {
   if (el) el.classList.remove('hide');
   var fr = el ? el.querySelector('iframe') : null;
   if (fr && !fr.src && fr.getAttribute('data-src')) { fr.src = fr.getAttribute('data-src'); }
+  try { history.replaceState(null, '', '#' + comp + ':' + view); } catch(e) {}
 }
 // Lazy-load component iframes when their tab opens
 var _swOrig = sw;
+var __booted = false;
 sw = function(n){
   _swOrig(n);
+  if (__booted) { try { history.replaceState(null, '', '#' + n); } catch(e) {} }
   if (n === 'mykb') {
     var w = document.getElementById('v-mykb-wiki').querySelector('iframe');
     if (w && !w.src && w.getAttribute('data-src')) w.src = w.getAttribute('data-src');
@@ -188,6 +200,24 @@ sw = function(n){
     if (s && !s.src && s.getAttribute('data-src')) s.src = s.getAttribute('data-src');
   }
 };
+// Deep-linking: #tab or #tab:subview (e.g. #mykb:graph)
+function applyHash(){
+  var h = (location.hash || '').replace(/^#/, '');
+  if (!h) return;
+  var p = h.split(':'), tab = p[0], sub = p[1];
+  if (document.querySelector('.tb[data-t="' + tab + '"]')) sw(tab);
+  if (sub && (tab === 'mykb' || tab === 'space') && document.querySelector('.csb[data-v="' + sub + '"]')) cs(tab, sub);
+}
+window.addEventListener('hashchange', applyHash);
+loadEcosystem();
+var _bootTimer = setInterval(function(){
+  var app = document.getElementById('app');
+  if (app && app.style.display === 'block') {
+    __booted = true;
+    clearInterval(_bootTimer);
+    applyHash();
+  }
+}, 200);
 </script>
 </body>
 </html>
