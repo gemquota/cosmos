@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>COSMOS — Source Deconstruction</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0b1120; --surface: #0f172a; --surface2: #131c31;
+    --border: #1e293b; --border2: #334155;
+    --text: #e2e8f0; --text2: #94a3b8; --text3: #64748b; --text4: #475569;
+    --accent: #818cf8; --accent2: #22d3ee; --accent3: #f59e0b; --accent4: #10b981;
+    --radius: 12px;
+  }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #0f172a, #1a1a3e, #0f172a);
+    border-bottom: 1px solid var(--border);
+    padding: 28px 16px 20px; text-align: center; position: relative; overflow: hidden;
+  }
+  .header::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(99,102,241,.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 30%, rgba(34,211,238,.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .header h1 {
+    font-size: clamp(20px,5vw,28px); font-weight: 700;
+    background: linear-gradient(135deg, #a5b4fc, #818cf8, #a5f3fc);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; letter-spacing: .5px; position: relative;
+  }
+  .header .subtitle {
+    color: var(--text3); font-size: clamp(12px,3vw,14px); margin-top: 6px; position: relative;
+  }
+  .header .badge {
+    display: inline-block; background: rgba(99,102,241,.12); color: #a5b4fc;
+    border: 1px solid rgba(99,102,241,.25); padding: 4px 12px; border-radius: 20px;
+    font-size: 11px; margin-top: 10px; position: relative;
+  }
+
+  /* Legend */
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 10px; padding: 10px 14px;
+    margin: 12px; background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; color: var(--text2); font-size: 11px; }
+  .legend-swatch { width: 11px; height: 11px; border-radius: 3px; flex-shrink: 0; }
+
+  /* Nav */
+  .nav {
+    display: flex; gap: 2px; padding: 8px 12px;
+    background: rgba(15,23,42,.95); border-bottom: 1px solid var(--border);
+    overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a {
+    text-decoration: none; color: var(--text3); font-size: 11px; font-weight: 500;
+    padding: 6px 12px; border-radius: 8px; white-space: nowrap; transition: all .2s;
+    border: 1px solid transparent; flex-shrink: 0; -webkit-tap-highlight-color: transparent;
+  }
+  .nav a:hover, .nav a:focus-visible {
+    color: var(--text); background: rgba(99,102,241,.1); border-color: rgba(99,102,241,.2);
+  }
+  .nav a.active {
+    color: #a5b4fc; background: rgba(99,102,241,.15); border-color: rgba(99,102,241,.3);
+  }
+
+  /* Content */
+  .content { max-width: 100%; padding: 12px; }
+
+  .diagram-section { margin-bottom: 28px; scroll-margin-top: 8px; }
+  .diagram-section h2 {
+    font-size: clamp(15px,4vw,19px); font-weight: 600; color: var(--text);
+    margin-bottom: 4px; padding: 0 4px;
+  }
+  .diagram-section .desc {
+    color: var(--text3); font-size: clamp(11px,2.6vw,12px); margin-bottom: 10px;
+    border-left: 3px solid var(--accent); padding-left: 10px;
+  }
+
+  .diagram-frame {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.3); width: 100%;
+  }
+  .diagram-frame img {
+    display: block; width: 100%; height: auto; border-radius: 6px;
+    background: var(--surface2);
+  }
+
+  .diagram-meta {
+    display: flex; flex-direction: column; gap: 4px; margin-top: 8px; padding: 0 4px;
+  }
+  .diagram-meta .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .diagram-meta .tag {
+    color: var(--text4); font-size: 10px; background: rgba(255,255,255,.04);
+    padding: 2px 8px; border-radius: 4px; white-space: nowrap;
+  }
+  .tag-core { color: var(--accent) !important; background: rgba(99,102,241,.1) !important; }
+  .tag-memory { color: var(--accent2) !important; background: rgba(34,211,238,.1) !important; }
+  .tag-ideation { color: var(--accent3) !important; background: rgba(245,158,11,.1) !important; }
+
+  .download-btn {
+    display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px;
+    background: rgba(99,102,241,.1); color: #a5b4fc;
+    border: 1px solid rgba(99,102,241,.25); border-radius: 8px; font-size: 11px;
+    text-decoration: none; transition: all .2s; align-self: flex-start; margin-top: 4px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .download-btn:hover, .download-btn:active {
+    background: rgba(99,102,241,.2); border-color: rgba(99,102,241,.4);
+  }
+
+  .footer {
+    text-align: center; padding: 20px 16px; border-top: 1px solid var(--border);
+    color: var(--text4); font-size: 11px; line-height: 1.8;
+  }
+  .footer a { color: var(--text3); text-decoration: none; }
+  .footer a:hover { color: #a5b4fc; }
+
+  html { scroll-behavior: smooth; }
+
+  @media (min-width: 480px) {
+    .header { padding: 32px 24px 24px; }
+    .content { padding: 16px 20px; }
+    .legend { margin: 12px 20px; }
+    .diagram-frame { padding: 12px; }
+    .nav a { font-size: 12px; padding: 7px 13px; }
+  }
+  @media (min-width: 768px) {
+    .content { max-width: 900px; margin: 0 auto; padding: 24px 32px; }
+    .legend { margin: 12px 32px; max-width: 900px; margin-left: auto; margin-right: auto; }
+    .diagram-section { margin-bottom: 36px; }
+    .diagram-frame { padding: 16px; }
+    .diagram-meta { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+    .download-btn { margin-top: 0; }
+  }
+  @media (min-width: 1024px) {
+    .content { max-width: 1100px; }
+    .legend { max-width: 1100px; }
+    .diagram-frame { border-radius: 14px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .diagram-frame, .nav a, .download-btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🔬 COSMOS Source Deconstruction</h1>
+  <p class="subtitle">Every class, function, variable, and module deconstructed from source</p>
+  <span class="badge">3 components &middot; SVG &middot; Dark theme</span>
+</div>
+
+<nav class="nav" role="tablist">
+  <a href="#rel" class="active" role="tab">0. Relationships</a>
+  <a href="#s1" role="tab">1. RSIS3</a>
+  <a href="#s2" role="tab">2. MyKB</a>
+  <a href="#s3" role="tab">3. SPACE</a>
+</nav>
+
+<div class="legend">
+  <span class="legend-item"><span class="legend-swatch" style="background:#818cf8"></span> RSIS3 (Python)</span>
+  <span class="legend-item"><span class="legend-swatch" style="background:#22d3ee"></span> MyKB (Python/MD)</span>
+  <span class="legend-item"><span class="legend-swatch" style="background:#f59e0b"></span> SPACE (TypeScript)</span>
+</div>
+
+<div class="content">
+
+  <!-- ─── 0. RELATIONSHIPS ─── -->
+  <section class="diagram-section" id="rel">
+    <h2>0. Component Relationships</h2>
+    <p class="desc">How RSIS3, MyKB, and SPACE actually interact — data flows, HTTP ports, file formats, and orchestration paths.</p>
+    <div class="diagram-frame">
+      <img src="relationship-diagram.svg" alt="Component Relationship Diagram" loading="lazy">
+    </div>
+    <div class="diagram-meta">
+      <div class="tags">
+        <span class="tag tag-core">SPACE → RSIS3: RRP specs</span>
+        <span class="tag tag-memory">RSIS3 → MyKB: improvements</span>
+        <span class="tag tag-memory">MyKB → RSIS3: knowledge</span>
+        <span class="tag tag-ideation">SPACE → MyKB: spec exports</span>
+        <span class="tag">Shared filesystem</span>
+      </div>
+      <a class="download-btn" href="relationship-diagram.svg" download>⬇ SVG</a>
+    </div>
+  </section>
+
+  <!-- ─── 1. RSIS3 ─── -->
+  <section class="diagram-section" id="s1">
+    <h2>1. RSIS3 — Core Cognitive Engine</h2>
+    <p class="desc">12 Python modules, 8 classes, 7 dataclasses, 50+ functions. Three-loop architecture with L1 (action), L2 (improvement), L3 (evolution) plus support modules for telemetry, evaluator, memory, checkpointing, recovery, resource monitoring, timeout, and extrapolation.</p>
+    <div class="diagram-frame">
+      <img src="rsis3-deconstruction.svg" alt="RSIS3 Source Deconstruction" loading="lazy">
+    </div>
+    <div class="diagram-meta">
+      <div class="tags">
+        <span class="tag tag-core">main.py: 8 commands</span>
+        <span class="tag tag-core">config.py: 7 dataclasses</span>
+        <span class="tag tag-core">3 loops</span>
+        <span class="tag tag-core">8 support modules</span>
+      </div>
+      <a class="download-btn" href="rsis3-deconstruction.svg" download>⬇ SVG</a>
+    </div>
+  </section>
+
+  <!-- ─── 2. MyKB ─── -->
+  <section class="diagram-section" id="s2">
+    <h2>2. MyKB — Long-Term Memory</h2>
+    <p class="desc">5 Python scripts, 4 wiki-daemon backend modules, 2,360+ wiki markdown pages across 48 domains. HTTP server with TF-IDF search, temporal time-travel engine, knowledge graph enrichment, and quality linter.</p>
+    <div class="diagram-frame">
+      <img src="mykb-deconstruction.svg" alt="MyKB Source Deconstruction" loading="lazy">
+    </div>
+    <div class="diagram-meta">
+      <div class="tags">
+        <span class="tag tag-memory">server.py: port 8765</span>
+        <span class="tag tag-memory">search_fusion: TF-IDF + RRF</span>
+        <span class="tag tag-memory">temporal_engine: git time-travel</span>
+        <span class="tag tag-memory">48 wiki domains</span>
+      </div>
+      <a class="download-btn" href="mykb-deconstruction.svg" download>⬇ SVG</a>
+    </div>
+  </section>
+
+  <!-- ─── 3. SPACE ─── -->
+  <section class="diagram-section" id="s3">
+    <h2>3. SPACE — RRP Ideation Engine</h2>
+    <p class="desc">35+ TypeScript source files across 10 modules: CLI (7 commands), Core Engine (6 modules), LLM integration (7 providers), Intelligence layer (5 modules), Export (6 formatters), Storage (2 backends), Template engine, i18n (3 locales), and a 326-probe question framework across 7 series.</p>
+    <div class="diagram-frame">
+      <img src="space-deconstruction.svg" alt="SPACE Source Deconstruction" loading="lazy">
+    </div>
+    <div class="diagram-meta">
+      <div class="tags">
+        <span class="tag tag-ideation">7 CLI commands</span>
+        <span class="tag tag-ideation">7 LLM providers</span>
+        <span class="tag tag-ideation">6 export formats</span>
+        <span class="tag tag-ideation">7 series / 326 probes</span>
+        <span class="tag tag-ideation">150 tests</span>
+      </div>
+      <a class="download-btn" href="space-deconstruction.svg" download>⬇ SVG</a>
+    </div>
+  </section>
+
+</div>
+
+<div class="footer">
+  <p><strong>COSMOS</strong> — Cognitive Orchestration System for Meta-cognitive Orchestration &amp; Synthesis</p>
+  <p>Diagrams generated from actual source code analysis of <code>components/rsis3/</code>, <code>components/mykb/</code>, and <code>components/space/</code></p>
+  <p style="margin-top:4px">SVG diagrams &mdash; scalable &amp; dark-theme optimized</p>
+</div>
+
+<script>
+  (function() {
+    const sections = document.querySelectorAll('.diagram-section');
+    const navLinks = document.querySelectorAll('.nav a');
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            const a = document.querySelector(`.nav a[href="#${e.target.id}"]`);
+            if (a) a.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      sections.forEach(s => obs.observe(s));
+    }
+  })();
+</script>
+</body>
+</html>

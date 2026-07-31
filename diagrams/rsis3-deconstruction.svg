@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" fill="none">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#131c31"/><stop offset="100%" stop-color="#0b1120"/>
+    </radialGradient>
+    <linearGradient id="accent1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+    <linearGradient id="accent2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#10b981"/></linearGradient>
+    <linearGradient id="accent3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient>
+    <linearGradient id="accent4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+    <linearGradient id="accent5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity=".5"/></filter>
+  </defs>
+
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="800" y="42" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">RSIS3 — Source Deconstruction</text>
+  <text x="800" y="64" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="13">components/rsis3/rsis/ — Python modules, classes, functions, and key variables</text>
+  <line x1="100" y1="78" x2="1500" y2="78" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Package stats -->
+  <rect x="100" y="92" width="1400" height="32" rx="8" fill="#0f172a" stroke="#1e293b"/>
+  <text x="300" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">📁 12 Python modules</text>
+  <text x="500" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">📦 8 dataclasses</text>
+  <text x="680" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">🔧 8 classes</text>
+  <text x="860" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">⚙️ 48+ functions/methods</text>
+  <text x="1060" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">🧬 3 loops (L1/L2/L3)</text>
+  <text x="1260" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">🔒 IMMUTABLE evaluator</text>
+
+  <!-- ===== Row 1: Entry Point + Config ===== -->
+  <rect x="100" y="140" width="320" height="200" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="100" y="140" width="320" height="30" rx="10" fill="url(#accent1)" opacity=".2"/>
+  <rect x="100" y="158" width="320" height="12" fill="url(#accent1)" opacity=".15"/>
+  <text x="260" y="161" text-anchor="middle" fill="#c7d2fe" font-family="system-ui,sans-serif" font-size="13" font-weight="700">main.py — Entry Point</text>
+  <text x="120" y="184" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Functions</text>
+  <text x="120" y="200" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">setup_logging() → None</text>
+  <text x="120" y="216" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">_init_subsystems() → tuple</text>
+  <text x="120" y="232" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">cmd_init(args) → int</text>
+  <text x="120" y="248" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">cmd_run(args) → int</text>
+  <text x="120" y="264" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">cmd_evolve(args) → int</text>
+  <text x="120" y="280" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">cmd_dashboard(args) → int</text>
+  <text x="120" y="296" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">cmd_status(args) → int</text>
+  <text x="120" y="312" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">cmd_check(args) → int</text>
+  <text x="120" y="328" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">cmd_recovery_test(args) → int</text>
+
+  <rect x="440" y="140" width="320" height="200" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="440" y="140" width="320" height="30" rx="10" fill="url(#accent5)" opacity=".2"/>
+  <rect x="440" y="158" width="320" height="12" fill="url(#accent5)" opacity=".15"/>
+  <text x="600" y="161" text-anchor="middle" fill="#a5f3fc" font-family="system-ui,sans-serif" font-size="13" font-weight="700">config.py — Configuration</text>
+  <text x="460" y="184" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Dataclasses</text>
+  <text x="460" y="202" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">L1Config</text>
+  <text x="530" y="202" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">max_tool_calls_per_step, step_timeout_s, max_retries</text>
+  <text x="460" y="220" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">L2Config</text>
+  <text x="530" y="220" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">max_improvement_attempts, session_timeout_s</text>
+  <text x="460" y="238" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">L3Config</text>
+  <text x="530" y="238" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">plateau_sessions, plateau_timeout_s</text>
+  <text x="460" y="256" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">ResourceLimits</text>
+  <text x="530" y="256" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">disk_usage_pct, max_memory_rss_mb, max_cpu_cores</text>
+  <text x="460" y="274" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">MemoryConfig</text>
+  <text x="530" y="274" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">repo_root, git_branch, knowledge_graph_path</text>
+  <text x="460" y="292" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">EvaluatorConfig</text>
+  <text x="530" y="292" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">evaluator_path, model, read_only_mount</text>
+  <text x="460" y="310" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">RSISConfig</text>
+  <text x="530" y="310" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">l1, l2, l3, resources, memory, evaluator, workspace_dir</text>
+  <text x="460" y="332" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">load_config() → RSISConfig</text>
+
+  <rect x="780" y="140" width="320" height="200" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="780" y="140" width="320" height="30" rx="10" fill="url(#accent2)" opacity=".2"/>
+  <rect x="780" y="158" width="320" height="12" fill="url(#accent2)" opacity=".15"/>
+  <text x="940" y="161" text-anchor="middle" fill="#a7f3d0" font-family="system-ui,sans-serif" font-size="13" font-weight="700">__init__.py + __main__.py</text>
+  <text x="800" y="184" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Module Interface</text>
+  <text x="800" y="202" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">__version__ = "0.1.0"</text>
+  <text x="800" y="224" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">__main__.py enables:</text>
+  <text x="800" y="242" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">python -m rsis init</text>
+  <text x="800" y="258" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">python -m rsis run --goal X</text>
+  <text x="800" y="274" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">python -m rsis evolve</text>
+  <text x="800" y="290" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">python -m rsis dashboard</text>
+  <text x="800" y="306" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">python -m rsis status</text>
+
+  <!-- Package __init__ / __main__ to main.py arrow -->
+  <line x1="940" y1="340" x2="260" y2="340" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arw)"/>
+
+  <defs>
+    <marker id="arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 L1.5,3Z" fill="#475569"/></marker>
+    <marker id="arwAccent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 L1.5,3Z" fill="#818cf8"/></marker>
+  </defs>
+
+  <!-- ===== Row 2: Three Loops ===== -->
+  <rect x="100" y="360" width="380" height="350" rx="10" fill="#0f172a" stroke="#818cf8" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="100" y="360" width="380" height="34" rx="10" fill="url(#accent1)" opacity=".2"/>
+  <rect x="100" y="382" width="380" height="12" fill="url(#accent1)" opacity=".15"/>
+  <text x="290" y="384" text-anchor="middle" fill="#c7d2fe" font-family="system-ui,sans-serif" font-size="14" font-weight="700">L1 — loop_l1.py</text>
+  <text x="290" y="400" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Per-Task Action Loop (seconds)</text>
+
+  <text x="120" y="422" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Dataclasses</text>
+  <text x="120" y="440" fill="#818cf8" font-family="system-ui,sans-serif" font-size="10">ToolCall</text>
+  <text x="190" y="440" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">name, arguments, result, error, duration_ms</text>
+  <text x="120" y="458" fill="#818cf8" font-family="system-ui,sans-serif" font-size="10">L1Result</text>
+  <text x="190" y="458" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">success, steps_taken, tool_calls, error, final_output</text>
+
+  <text x="120" y="482" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Class</text>
+  <text x="120" y="500" fill="#a5b4fc" font-family="system-ui,sans-serif" font-size="11">L1ActionLoop</text>
+
+  <text x="135" y="520" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">__init__(telemetry, checkpoint_mgr?, tools?)</text>
+  <text x="135" y="536" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">execute(task, context?) → L1Result</text>
+  <text x="135" y="556" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">_plan_next_action(task, context, previous_calls) → tool</text>
+  <text x="135" y="576" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">_execute_tool(name, args) → ToolCall</text>
+
+  <text x="120" y="600" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Key Variables</text>
+  <text x="120" y="618" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">self.config, self.tools, self._task_description</text>
+  <text x="120" y="636" fill="#475569" font-family="system-ui,sans-serif" font-size="10">max 10 tool calls per step, 120s timeout, 3 retries</text>
+  <text x="120" y="656" fill="#475569" font-family="system-ui,sans-serif" font-size="10">checkpoints before destructive operations</text>
+
+  <!-- L2 box -->
+  <rect x="510" y="360" width="380" height="350" rx="10" fill="#0f172a" stroke="#818cf8" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="510" y="360" width="380" height="34" rx="10" fill="url(#accent1)" opacity=".2"/>
+  <rect x="510" y="382" width="380" height="12" fill="url(#accent1)" opacity=".15"/>
+  <text x="700" y="384" text-anchor="middle" fill="#c7d2fe" font-family="system-ui,sans-serif" font-size="14" font-weight="700">L2 — loop_l2.py</text>
+  <text x="700" y="400" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Per-Session Improvement Loop (minutes)</text>
+
+  <text x="530" y="422" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Dataclasses</text>
+  <text x="530" y="440" fill="#818cf8" font-family="system-ui,sans-serif" font-size="10">ImprovementCandidate</text>
+  <text x="660" y="440" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">description, target_files, diff_or_code, rationale</text>
+  <text x="530" y="458" fill="#818cf8" font-family="system-ui,sans-serif" font-size="10">L2Result</text>
+  <text x="660" y="458" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">success, attempts, eval_results, candidates, applied, error</text>
+
+  <text x="530" y="482" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Class</text>
+  <text x="530" y="500" fill="#a5b4fc" font-family="system-ui,sans-serif" font-size="11">L2ImprovementLoop</text>
+
+  <text x="545" y="520" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">__init__(telemetry, evaluator?, checkpoint_mgr?, l1?, recovery?)</text>
+  <text x="545" y="540" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">run_session(goal, budget?) → L2Result</text>
+  <text x="545" y="560" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">_generate_candidate(goal, context?) → ImprovementCandidate</text>
+  <text x="545" y="580" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">_apply_improvement(candidate) → None</text>
+
+  <text x="530" y="604" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Key Variables</text>
+  <text x="530" y="622" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">self.evaluator, self.checkpoint, self.recovery</text>
+  <text x="530" y="640" fill="#475569" font-family="system-ui,sans-serif" font-size="10">max 5 attempts per session, 30min timeout</text>
+  <text x="530" y="658" fill="#475569" font-family="system-ui,sans-serif" font-size="10">gate: EvaluatorClient.evaluate() → PASS/FAIL</text>
+
+  <!-- L3 box -->
+  <rect x="920" y="360" width="380" height="350" rx="10" fill="#0f172a" stroke="#818cf8" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="920" y="360" width="380" height="34" rx="10" fill="url(#accent1)" opacity=".2"/>
+  <rect x="920" y="382" width="380" height="12" fill="url(#accent1)" opacity=".15"/>
+  <text x="1110" y="384" text-anchor="middle" fill="#c7d2fe" font-family="system-ui,sans-serif" font-size="14" font-weight="700">L3 — loop_l3.py</text>
+  <text x="1110" y="400" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Cross-Session Evolution (hours/days)</text>
+
+  <text x="940" y="422" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Dataclass</text>
+  <text x="940" y="440" fill="#818cf8" font-family="system-ui,sans-serif" font-size="10">L3Result</text>
+  <text x="1010" y="440" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">success, sessions_analysed, insights_added</text>
+  <text x="1010" y="458" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">strategies_evolved, redundancies_pruned, trends_detected</text>
+
+  <text x="940" y="482" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Class</text>
+  <text x="940" y="500" fill="#a5b4fc" font-family="system-ui,sans-serif" font-size="11">L3EvolutionLoop</text>
+
+  <text x="955" y="520" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">__init__(telemetry, memory?)</text>
+  <text x="955" y="540" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">run_cycle(budget?) → L3Result</text>
+  <text x="955" y="560" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">_detect_trends() → list[dict]</text>
+  <text x="955" y="580" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">_consolidate_memory(trends) → int</text>
+  <text x="955" y="600" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">_evolve_strategies(insights, trends) → list[str]</text>
+  <text x="955" y="620" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">_refine_redundancies() → int</text>
+
+  <text x="940" y="644" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Key Variables</text>
+  <text x="940" y="662" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">self.memory (MemoryManager), self.extrapolator</text>
+  <text x="940" y="680" fill="#475569" font-family="system-ui,sans-serif" font-size="10">self._cycle_count, plateau 20 sessions / 24h</text>
+
+  <!-- ===== Row 3: Support Modules ===== -->
+  <rect x="100" y="735" width="250" height="210" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="100" y="735" width="250" height="30" rx="10" fill="url(#accent4)" opacity=".15"/>
+  <rect x="100" y="753" width="250" height="12" fill="url(#accent4)" opacity=".1"/>
+  <text x="225" y="757" text-anchor="middle" fill="#fbcfe8" font-family="system-ui,sans-serif" font-size="12" font-weight="600">telemetry.py</text>
+  <text x="120" y="780" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">TelemetryEvent (dataclass)</text>
+  <text x="120" y="796" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">  event_type, path, duration_ms</text>
+  <text x="120" y="812" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">TelemetryCollector (class)</text>
+  <text x="120" y="828" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  start(), stop(), record(), flush()</text>
+  <text x="120" y="848" fill="#475569" font-family="system-ui,sans-serif" font-size="10" font-style="italic">Buffer flush every 5s, threaded</text>
+  <text x="120" y="868" fill="#475569" font-family="system-ui,sans-serif" font-size="10" font-style="italic">Session UUID, JSONL output</text>
+
+  <rect x="370" y="735" width="250" height="210" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="370" y="735" width="250" height="30" rx="10" fill="url(#accent2)" opacity=".15"/>
+  <rect x="370" y="753" width="250" height="12" fill="url(#accent2)" opacity=".1"/>
+  <text x="495" y="757" text-anchor="middle" fill="#a7f3d0" font-family="system-ui,sans-serif" font-size="12" font-weight="600">evaluator.py</text>
+  <text x="390" y="780" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">EvalResult (dataclass)</text>
+  <text x="390" y="796" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  decision, scores, rationale</text>
+  <text x="390" y="812" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">  passed → bool</text>
+  <text x="390" y="828" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">  score_avg → float</text>
+  <text x="390" y="848" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">EvaluatorClient (class)</text>
+  <text x="390" y="864" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  verify_integrity() → SHA256 digest</text>
+  <text x="390" y="880" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  evaluate(candidate) → EvalResult</text>
+  <text x="390" y="900" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  reads evaluator prompt at startup</text>
+
+  <rect x="640" y="735" width="250" height="210" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="640" y="735" width="250" height="30" rx="10" fill="url(#accent5)" opacity=".15"/>
+  <rect x="640" y="753" width="250" height="12" fill="url(#accent5)" opacity=".1"/>
+  <text x="765" y="757" text-anchor="middle" fill="#a5f3fc" font-family="system-ui,sans-serif" font-size="12" font-weight="600">memory.py</text>
+  <text x="660" y="780" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">NGramVectorizer (class)</text>
+  <text x="660" y="796" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  _ngrams(), embed() → np.ndarray</text>
+  <text x="660" y="812" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">VectorStore (class)</text>
+  <text x="660" y="828" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  add(), search(), save(), _load()</text>
+  <text x="660" y="848" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">KnowledgeGraph (class)</text>
+  <text x="660" y="864" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  add_node(), add_edge(), query()</text>
+  <text x="660" y="880" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">MemoryManager (class)</text>
+  <text x="660" y="896" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  record, search, get_recent</text>
+  <text x="660" y="912" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  manages KG + vectors + fs tiers</text>
+
+  <rect x="910" y="735" width="250" height="210" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="910" y="735" width="250" height="30" rx="10" fill="url(#accent3)" opacity=".15"/>
+  <rect x="910" y="753" width="250" height="12" fill="url(#accent3)" opacity=".1"/>
+  <text x="1035" y="757" text-anchor="middle" fill="#fde68a" font-family="system-ui,sans-serif" font-size="12" font-weight="600">checkpoint.py</text>
+  <text x="930" y="780" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">CheckpointManager (class)</text>
+  <text x="930" y="798" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  _git(), ensure_repo()</text>
+  <text x="930" y="816" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  has_changes() → bool</text>
+  <text x="930" y="834" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  checkpoint(msg) → commit hash</text>
+  <text x="930" y="852" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  rollback(commit_hash) → bool</text>
+  <text x="930" y="870" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  latest_checkpoint() → str</text>
+  <text x="930" y="888" fill="#475569" font-family="system-ui,sans-serif" font-size="10">  sha256_digest(path) → str</text>
+  <text x="930" y="912" fill="#475569" font-family="system-ui,sans-serif" font-size="10" font-style="italic">Git-based, subprocess calls</text>
+
+  <!-- Row 4: More support -->
+  <rect x="100" y="965" width="340" height="120" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="100" y="965" width="340" height="28" rx="10" fill="#475569" opacity=".15"/>
+  <text x="270" y="984" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="12" font-weight="600">recovery.py</text>
+  <text x="120" y="1004" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">RecoveryTestResult, RecoveryManager (classes)</text>
+  <text x="120" y="1020" fill="#475569" font-family="system-ui,sans-serif" font-size="10">rollback_on_failure() → request_human_review() → execute_via_fallback()</text>
+  <text x="120" y="1036" fill="#475569" font-family="system-ui,sans-serif" font-size="10">Triple recovery pattern: checkpoint → HITL → fallback interpreter</text>
+  <text x="120" y="1052" fill="#475569" font-family="system-ui,sans-serif" font-size="10">Max 3 cascading failures before system halt</text>
+  <text x="120" y="1068" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-style="italic">FailureInjector for automated recovery testing</text>
+
+  <rect x="460" y="965" width="340" height="120" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="460" y="965" width="340" height="28" rx="10" fill="#475569" opacity=".15"/>
+  <text x="630" y="984" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="12" font-weight="600">resource_monitor.py + timeout.py</text>
+  <text x="480" y="1004" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">ResourceSeverity(Enum), ResourceAlert, ResourceEnforcer</text>
+  <text x="480" y="1020" fill="#475569" font-family="system-ui,sans-serif" font-size="10">Monitors: disk, memory, CPU, API call rates</text>
+  <text x="480" y="1036" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">TimeoutError, Budget, deadline()</text>
+  <text x="480" y="1052" fill="#475569" font-family="system-ui,sans-serif" font-size="10">SIGALRM-based deadline enforcement</text>
+  <text x="480" y="1068" fill="#475569" font-family="system-ui,sans-serif" font-size="10">Halt / throttle callbacks on limit breach</text>
+
+  <rect x="820" y="965" width="340" height="120" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="820" y="965" width="340" height="28" rx="10" fill="#475569" opacity=".15"/>
+  <text x="990" y="984" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="12" font-weight="600">extrapolation.py</text>
+  <text x="840" y="1004" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">TelemetryExtrapolator (class)</text>
+  <text x="840" y="1022" fill="#475569" font-family="system-ui,sans-serif" font-size="10">load_events(), get_sessions()</text>
+  <text x="840" y="1040" fill="#475569" font-family="system-ui,sans-serif" font-size="10">predict_optimal_iterations() → int</text>
+  <text x="840" y="1058" fill="#475569" font-family="system-ui,sans-serif" font-size="10">detect_regression_trends() → list[dict]</text>
+  <text x="840" y="1076" fill="#475569" font-family="system-ui,sans-serif" font-size="10">find_redundancy_candidates()</text>
+  <text x="840" y="1092" fill="#475569" font-family="system-ui,sans-serif" font-size="10">generate_velocity_report() → dict</text>
+
+  <text x="800" y="1175" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="10">components/rsis3/rsis/ — 12 Python modules, 8 classes, 7 dataclasses, 50+ functions • 112 files total in component</text>
+</svg>

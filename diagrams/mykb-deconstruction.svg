@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" fill="none">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0a1628"/><stop offset="100%" stop-color="#0b1120"/>
+    </radialGradient>
+    <linearGradient id="c1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+    <linearGradient id="c2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#10b981"/></linearGradient>
+    <linearGradient id="c3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+    <linearGradient id="c4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity=".5"/></filter>
+  </defs>
+
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+
+  <text x="800" y="42" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">MyKB — Source Deconstruction</text>
+  <text x="800" y="64" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="13">components/mykb/ — Python scripts, wiki-daemon modules, and content structure</text>
+  <line x1="100" y1="78" x2="1500" y2="78" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Stats bar -->
+  <rect x="100" y="92" width="1400" height="32" rx="8" fill="#0f172a" stroke="#1e293b"/>
+  <text x="300" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">📁 5 Python scripts</text>
+  <text x="520" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">🔧 4 wiki-daemon modules</text>
+  <text x="740" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">📓 2,360+ wiki .md files</text>
+  <text x="960" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">🧠 48 content domains</text>
+  <text x="1160" y="113" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">🔗 Knowledge graph</text>
+
+  <!-- ===== ROW 1: server.py ===== -->
+  <rect x="100" y="145" width="460" height="340" rx="10" fill="#0f172a" stroke="#22d3ee" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="100" y="145" width="460" height="34" rx="10" fill="url(#c1)" opacity=".2"/>
+  <rect x="100" y="167" width="460" height="12" fill="url(#c1)" opacity=".15"/>
+  <text x="330" y="169" text-anchor="middle" fill="#a5f3fc" font-family="system-ui,sans-serif" font-size="14" font-weight="700">server.py — HTTP Server</text>
+  <text x="330" y="187" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">port 8765 • Recursive markdown documentation server</text>
+
+  <text x="120" y="210" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Module-Level Variables</text>
+  <text x="120" y="228" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">PORT = int(sys.argv[1]) if len(sys.argv) &gt; 1 else 8765</text>
+  <text x="120" y="244" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">DIR = os.path.dirname(os.path.abspath(__file__))</text>
+  <text x="120" y="260" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">SEARCH_INDEX, SEARCH_DIR, SEARCH_PATH</text>
+
+  <text x="120" y="284" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Functions</text>
+  <text x="120" y="302" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">search_query(q, limit=20)</text>
+  <text x="120" y="318" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">TF-IDF scoring over wiki content</text>
+  <text x="120" y="334" fill="#475569" font-family="system-ui,sans-serif" font-size="10">Tokenizes query → scores by idf × tf → returns top results</text>
+
+  <text x="120" y="358" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">get_system_stats()</text>
+  <text x="120" y="374" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">File counts, sizes, domain/tag distribution</text>
+  <text x="120" y="390" fill="#475569" font-family="system-ui,sans-serif" font-size="10">Uses OS walk + Counter for live aggregation</text>
+
+  <text x="120" y="414" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Class</text>
+  <text x="120" y="432" fill="#a5f3fc" font-family="system-ui,sans-serif" font-size="11">Handler(http.server.SimpleHTTPRequestHandler)</text>
+  <text x="135" y="452" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">do_GET() — serves .md → HTML with dark mode + syntax highlighting</text>
+  <text x="135" y="470" fill="#475569" font-family="system-ui,sans-serif" font-size="10">Endpoints: /, /files.json, /api/file, /api/search, /api/v2/*</text>
+
+  <!-- Endpoints table -->
+  <rect x="120" y="490" width="420" height="72" rx="6" fill="#0a1628" stroke="#1e293b" stroke-width="1"/>
+  <text x="135" y="508" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-weight="600">API Surface</text>
+  <text x="135" y="524" fill="#475569" font-family="system-ui,sans-serif" font-size="9">GET / → serve .md as HTML</text>
+  <text x="135" y="538" fill="#475569" font-family="system-ui,sans-serif" font-size="9">GET /api/v2/search?q= → enhanced TF-IDF</text>
+  <text x="135" y="552" font-family="system-ui,sans-serif" font-size="9">
+    <tspan fill="#475569">GET /api/v2/info → system stats</tspan>
+    <tspan fill="#475569" dx="10">GET /api/v2/history/snapshot? → temporal</tspan>
+  </text>
+
+  <!-- ===== ROW 1 RIGHT: Build & Export Scripts ===== -->
+  <rect x="585" y="145" width="430" height="170" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="585" y="145" width="430" height="30" rx="10" fill="url(#c2)" opacity=".15"/>
+  <rect x="585" y="163" width="430" height="12" fill="url(#c2)" opacity=".1"/>
+  <text x="800" y="167" text-anchor="middle" fill="#a7f3d0" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Build &amp; Export Scripts</text>
+
+  <text x="605" y="192" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">build-export.py</text>
+  <text x="605" y="210" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">classify_file(rel_path), format_size(), fmt_header()</text>
+  <text x="605" y="226" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">build_export(), write_section(), main()</text>
+  <text x="605" y="244" fill="#475569" font-family="system-ui,sans-serif" font-size="10">Generates mykb-code.md + mykb-content.md</text>
+
+  <text x="605" y="268" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">build-index.py</text>
+  <text x="605" y="286" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">No classes/functions — generates index.md</text>
+
+  <text x="830" y="192" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">build-tree.py</text>
+  <text x="830" y="210" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">extract_frontmatter(text), count_files()</text>
+  <text x="830" y="226" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">walk_tree(dir_path) — recursive directory tree</text>
+
+  <rect x="585" y="335" width="430" height="150" rx="10" fill="#0f172a" stroke="#f472b6" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="585" y="335" width="430" height="30" rx="10" fill="url(#c3)" opacity=".15"/>
+  <rect x="585" y="353" width="430" height="12" fill="url(#c3)" opacity=".1"/>
+  <text x="800" y="357" text-anchor="middle" fill="#fbcfe8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Content Structure (wiki/)</text>
+
+  <text x="605" y="382" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">48 Domain Categories</text>
+  <text x="605" y="400" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">agent-systems, ai-ml, android-core, api-protocols,</text>
+  <text x="605" y="416" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">api-services, cloud-infra, concepts, development,</text>
+  <text x="605" y="432" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">frontend, llm-agents, meta-learning, prompt-engineering,</text>
+  <text x="605" y="448" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">security, api, rsi ...</text>
+
+  <text x="605" y="470" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10" font-weight="600">Key Subdirs</text>
+  <text x="605" y="486" fill="#475569" font-family="system-ui,sans-serif" font-size="9">daily/ (daily notes) • raw/ (inbox) • templates/ • hooks/ • ops/</text>
+
+  <!-- ===== ROW 2: wiki-daemon ===== -->
+  <rect x="100" y="510" width="1410" height="30" rx="6" fill="#0f172a" stroke="#1e293b"/>
+  <text x="800" y="531" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="14" font-weight="700">🔮 .wiki-daemon/ — Backend Services</text>
+
+  <rect x="100" y="555" width="430" height="280" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="100" y="555" width="430" height="32" rx="10" fill="url(#c4)" opacity=".2"/>
+  <rect x="100" y="575" width="430" height="12" fill="url(#c4)" opacity=".15"/>
+  <text x="315" y="578" text-anchor="middle" fill="#fde68a" font-family="system-ui,sans-serif" font-size="13" font-weight="700">search_fusion.py — Search Engine</text>
+
+  <text x="120" y="604" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Functions</text>
+  <text x="120" y="622" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">chunk_markdown(text, source_path)</text>
+  <text x="120" y="638" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Splits .md into chunks by headers</text>
+
+  <text x="120" y="658" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">extract_signatures(code_blocks)</text>
+  <text x="120" y="674" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Parses code blocks for function/class signatures</text>
+
+  <text x="120" y="694" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">build_chunks_from_wiki()</text>
+  <text x="120" y="710" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Walks wiki/ and chunks all .md files</text>
+
+  <text x="120" y="730" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">build_indices(chunks)</text>
+  <text x="120" y="746" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">TF-IDF vectorizer → term-doc matrix + IDF</text>
+
+  <text x="120" y="766" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">rrf_fusion(dense, sparse, k, top_n)</text>
+  <text x="120" y="782" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Reciprocal Rank Fusion for hybrid search</text>
+
+  <text x="120" y="802" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10">search_query(index, query_text, top_n)</text>
+  <text x="120" y="818" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Main search entry point</text>
+
+  <rect x="550" y="555" width="430" height="280" rx="10" fill="#0f172a" stroke="#22d3ee" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="550" y="555" width="430" height="32" rx="10" fill="url(#c1)" opacity=".15"/>
+  <rect x="550" y="575" width="430" height="12" fill="url(#c1)" opacity=".1"/>
+  <text x="765" y="578" text-anchor="middle" fill="#a5f3fc" font-family="system-ui,sans-serif" font-size="13" font-weight="700">temporal_engine.py — Time-Travel</text>
+
+  <text x="570" y="604" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Functions</text>
+  <text x="570" y="624" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">get_repo()</text>
+  <text x="570" y="640" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Returns git repo root</text>
+
+  <text x="570" y="660" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">cmd_status()</text>
+  <text x="570" y="676" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Git status wrapper</text>
+
+  <text x="570" y="696" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">cmd_commit(target_path=None)</text>
+  <text x="570" y="712" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Commits wiki changes with structured messages</text>
+
+  <text x="570" y="732" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">cmd_history(filepath)</text>
+  <text x="570" y="748" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Shows file revision history</text>
+
+  <text x="570" y="768" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">cmd_snapshot(filepath, timestamp)</text>
+  <text x="570" y="784" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Time-travel: retrieve file at specific timestamp</text>
+
+  <text x="570" y="804" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10">cmd_diff(filepath=None)</text>
+  <text x="570" y="820" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Shows git diff</text>
+
+  <rect x="1000" y="555" width="510" height="280" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="1000" y="555" width="510" height="32" rx="10" fill="url(#c2)" opacity=".15"/>
+  <rect x="1000" y="575" width="510" height="12" fill="url(#c2)" opacity=".1"/>
+  <text x="1255" y="578" text-anchor="middle" fill="#a7f3d0" font-family="system-ui,sans-serif" font-size="13" font-weight="700">enrich_links.py + kb_linter.py</text>
+
+  <text x="1020" y="604" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">enrich_links.py — Knowledge Graph</text>
+  <text x="1020" y="624" fill="#34d399" font-family="system-ui,sans-serif" font-size="10">get_domain(filepath)</text>
+  <text x="1020" y="640" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">Extracts domain from wiki path structure</text>
+  <text x="1020" y="658" fill="#34d399" font-family="system-ui,sans-serif" font-size="10">is_index(filepath), count_entities_in_dir(dirpath)</text>
+  <text x="1020" y="676" fill="#34d399" font-family="system-ui,sans-serif" font-size="10">get_children_dirs(dirpath), list_entities_in_dir(dirpath)</text>
+  <text x="1020" y="694" fill="#34d399" font-family="system-ui,sans-serif" font-size="10">frontmatter_block(tags, extra)</text>
+  <text x="1020" y="710" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">Generates YAML frontmatter for wiki pages</text>
+
+  <text x="1020" y="738" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">kb_linter.py — Quality Checks</text>
+  <text x="1020" y="758" fill="#34d399" font-family="system-ui,sans-serif" font-size="10">find_all_md_files(base)</text>
+  <text x="1020" y="776" fill="#34d399" font-family="system-ui,sans-serif" font-size="10">extract_wikilinks(text), extract_tags(text)</text>
+  <text x="1020" y="794" fill="#34d399" font-family="system-ui,sans-serif" font-size="10">lint(return_json=False)</text>
+  <text x="1020" y="812" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">Validates wiki links, tags, and structure</text>
+
+  <!-- ===== ROW 3: Architecture overview ===== -->
+  <rect x="100" y="860" width="1410" height="200" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="100" y="860" width="1410" height="30" rx="10" fill="#1e293b"/>
+  <text x="800" y="881" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="14" font-weight="700">📂 Complete File Layout</text>
+
+  <g transform="translate(120, 900)">
+    <text x="0" y="0" fill="#94a3b8" font-family="monospace" font-size="10" font-weight="600">mykb/</text>
+    <text x="20" y="20" fill="#64748b" font-family="monospace" font-size="10">├── server.py               # HTTP server (port 8765)</text>
+    <text x="20" y="36" fill="#64748b" font-family="monospace" font-size="10">├── build-export.py          # Wiki export generator</text>
+    <text x="20" y="52" fill="#64748b" font-family="monospace" font-size="10">├── build-index.py           # Index builder</text>
+    <text x="20" y="68" fill="#64748b" font-family="monospace" font-size="10">├── build-tree.py            # Directory tree walker</text>
+    <text x="20" y="84" fill="#64748b" font-family="monospace" font-size="10">├── wiki/                    # 2,360+ .md files (48 domains)</text>
+    <text x="20" y="100" fill="#64748b" font-family="monospace" font-size="10">├── .wiki-daemon/            # Backend services</text>
+    <text x="40" y="116" fill="#475569" font-family="monospace" font-size="9">├── search_fusion.py     # TF-IDF + RRF search</text>
+    <text x="40" y="130" fill="#475569" font-family="monospace" font-size="9">├── temporal_engine.py    # Git time-travel</text>
+    <text x="40" y="144" fill="#475569" font-family="monospace" font-size="9">├── enrich_links.py       # Knowledge graph</text>
+    <text x="40" y="158" fill="#475569" font-family="monospace" font-size="9">├── kb_linter.py          # Quality linter</text>
+    <text x="40" y="172" fill="#475569" font-family="monospace" font-size="9">├── search_index.json     # Built search index</text>
+    <text x="40" y="186" fill="#475569" font-family="monospace" font-size="9">├── graph.json            # KG adjacency data</text>
+    <text x="40" y="200" fill="#475569" font-family="monospace" font-size="9">├── config.json           # Daemon config</text>
+  </g>
+
+  <text x="800" y="1180" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="10">components/mykb/ — 5 Python scripts, 4 daemon modules, 2,360+ wiki pages, 48 domains • 2,436 total files</text>
+</svg>
