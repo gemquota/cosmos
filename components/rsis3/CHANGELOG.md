@@ -1,4 +1,26 @@
 
+## [0.3.0] — 2026-07-31
+
+### Added
+- L6 Identity loop (`rsis/loop_l6.py`, `python -m rsis identity`): tunes
+  `l3.plateau_timeout_s` from outcome stats + regression trends (shrink on
+  regression/low success, grow on stability), evaluator-gated, persisted to
+  `.rsis/identity_state.json`
+- L7 Meta-Cog loop (`rsis/loop_l7.py`, `python -m rsis metacog`): observes
+  L4's tuning history and widens the success deadband on oscillation /
+  narrows it on stall, persisted to `.rsis/metacog_state.json`
+- Tunable registry now supports float kinds; `L3_TUNABLES` (L6 target) and
+  `L4_TUNABLES` (L7 target) added; startup `load_config()` applies L6/L7 state
+
+### Changed
+- RSIS_SPEC §1.1/§1.4: L6/L7 marked implemented (L8–L9 hypothetical)
+
+### Verified
+- L6: success 0.4 → plateau timeout 86400 → 82800s (shrink), state + startup
+  injection confirmed
+- L7: oscillating L4 history → deadband [0.5, 0.85] → [0.45, 0.90] (widen),
+  state + startup injection confirmed
+
 ## [0.2.3] — 2026-07-31
 
 ### Changed

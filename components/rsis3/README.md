@@ -33,12 +33,14 @@ L1 ─ Per-Task Action Loop (seconds)
 ## Loop Status
 
 The engine was conceived as **nine nested loops** (L1–L9). L1–L3 are the
-original three-loop stack (`loop_l1.py` … `loop_l3.py`); L4 (`loop_l4.py`)
-and L5 (`loop_l5.py`) are implemented as bounded, evaluator-gated cycles.
-L6–L9 (Identity, Meta-Cog, Meta-Meta, MMM) remain hypothetical — see
-`RSIS_SPEC.md` §1.1 for the full hierarchy.
+original three-loop stack (`loop_l1.py` … `loop_l3.py`); L4–L7 are
+implemented as bounded, evaluator-gated cycles — L4 (`loop_l4.py`,
+Optimizer), L5 (`loop_l5.py`, Evolution), L6 (`loop_l6.py`, Identity),
+L7 (`loop_l7.py`, Meta-Cog). L8–L9 (Meta-Meta, MMM) remain hypothetical —
+see `RSIS_SPEC.md` §1.1 for the full hierarchy.
 
-Run them with `python -m rsis optimize` (L4) and `python -m rsis strategies` (L5).
+Run them with `python -m rsis optimize` (L4), `python -m rsis strategies` (L5),
+`python -m rsis identity` (L6) and `python -m rsis metacog` (L7).
 Persisted tuning is applied at startup by `load_config()`, so L1/L2 consume it
 automatically. Topology (nested / parallel / overlapping) and the ownership
 partition are specified in `RSIS_SPEC.md` §1.4.

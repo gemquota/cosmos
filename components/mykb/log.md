@@ -62,3 +62,7 @@ title: "Bundle Log"
 - **L0 + consumer clarification**: L0 defined as the workspace substrate (not
   a loop); L1/L2 documented as pure consumers of tuned params with no tuning
   targets (spec §1.1, concept note updated)
+- **L6/L7 loops implemented**: `loop_l6.py` (Identity, `python -m rsis
+  identity` — tunes `l3.plateau_timeout_s`) and `loop_l7.py` (Meta-Cog,
+  `python -m rsis metacog` — widens/narrows L4 deadband from L4 history);
+  spec §1.1/§1.4 now marks L8–L9 as the only hypothetical loops

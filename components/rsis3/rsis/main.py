@@ -7,6 +7,8 @@ Usage:
     python -m rsis evolve            # L3 evolution cycle
     python -m rsis optimize          # L4 meta-parameter optimization
     python -m rsis strategies        # L5 strategy evolution cycle
+    python -m rsis identity          # L6 identity loop (tunes L3 params)
+    python -m rsis metacog           # L7 meta-cog loop (tunes L4 params)
     python -m rsis dashboard         # Start web dashboard
     python -m rsis status            # System overview
     python -m rsis check             # Check resource limits
@@ -28,6 +30,8 @@ from rsis.loop_l2 import L2ImprovementLoop
 from rsis.loop_l3 import L3EvolutionLoop
 from rsis.loop_l4 import OptimizerLoop
 from rsis.loop_l5 import EvolutionLoop
+from rsis.loop_l6 import IdentityLoop
+from rsis.loop_l7 import MetaCogLoop
 from rsis.memory import MemoryManager
 from rsis.recovery import FailureInjector, RecoveryManager
 from rsis.resource_monitor import ResourceEnforcer, ResourceSeverity
@@ -281,6 +285,80 @@ def cmd_strategies(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_identity(args: argparse.Namespace) -> int:
+    telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    enforcer.start()
+    telemetry.start()
+
+    try:
+        l6 = IdentityLoop(
+            telemetry=telemetry, memory=memory, evaluator=evaluator,
+            checkpoint_mgr=checkpoint,
+        )
+        budget = Budget(
+            max_iterations=1, max_time_s=CONFIG.l6.cycle_timeout_s,
+            label="L6 identity",
+        )
+
+        with deadline(CONFIG.l6.cycle_timeout_s, "L6 identity"):
+            result = l6.run_cycle(budget=budget)
+
+        if result.success and result.changed:
+            print(f"  \u2713 L3 plateau timeout tuned ({result.signal}): "
+                  f"{result.deltas}")
+        elif result.success:
+            print(f"  \u2139 No change ({result.signal or 'no signal'})")
+        else:
+            print(f"  \u2717 Identity loop failed: {result.error}")
+            return 1
+
+    except TimeoutError as e:
+        print(f"  \u2717 Identity loop timed out: {e}")
+        return 1
+    finally:
+        telemetry.stop()
+        enforcer.stop()
+
+    return 0
+
+
+def cmd_metacog(args: argparse.Namespace) -> int:
+    telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    enforcer.start()
+    telemetry.start()
+
+    try:
+        l7 = MetaCogLoop(
+            telemetry=telemetry, memory=memory, evaluator=evaluator,
+            checkpoint_mgr=checkpoint,
+        )
+        budget = Budget(
+            max_iterations=1, max_time_s=CONFIG.l7.cycle_timeout_s,
+            label="L7 meta-cog",
+        )
+
+        with deadline(CONFIG.l7.cycle_timeout_s, "L7 meta-cog"):
+            result = l7.run_cycle(budget=budget)
+
+        if result.success and result.changed:
+            print(f"  \u2713 L4 deadband tuned ({result.signal}): "
+                  f"{result.deltas}")
+        elif result.success:
+            print(f"  \u2139 No change ({result.signal or 'no signal'})")
+        else:
+            print(f"  \u2717 Meta-cog loop failed: {result.error}")
+            return 1
+
+    except TimeoutError as e:
+        print(f"  \u2717 Meta-cog loop timed out: {e}")
+        return 1
+    finally:
+        telemetry.stop()
+        enforcer.stop()
+
+    return 0
+
+
 def cmd_dashboard(args: argparse.Namespace) -> int:
     host, port = args.host, args.port
     print(f"RSIS v{__version__} \u2014 Dashboard at http://{host}:{port}")
@@ -478,6 +556,12 @@ def main() -> int:
 
     p_strategies = sub.add_parser("strategies", help="Run L5 strategy evolution cycle")
     p_strategies.set_defaults(func=cmd_strategies)
+
+    p_identity = sub.add_parser("identity", help="Run L6 identity loop (tunes L3 params)")
+    p_identity.set_defaults(func=cmd_identity)
+
+    p_metacog = sub.add_parser("metacog", help="Run L7 meta-cog loop (tunes L4 params)")
+    p_metacog.set_defaults(func=cmd_metacog)
 
     p_dash = sub.add_parser("dashboard", help="Start web dashboard")
     p_dash.add_argument("--host", default="127.0.0.1")

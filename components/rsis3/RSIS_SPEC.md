@@ -48,9 +48,10 @@
 ```
 
 The RSIS engine was conceived as **nine nested loops**. Three are fully
-implemented (`loop_l1.py` … `loop_l3.py`); L4 (`loop_l4.py`, Optimizer) and
-L5 (`loop_l5.py`, Evolution) are implemented as bounded, evaluator-gated
-cycles; L6–L9 are hypothetical.
+implemented (`loop_l1.py` … `loop_l3.py`); L4 (`loop_l4.py`, Optimizer),
+L5 (`loop_l5.py`, Evolution), L6 (`loop_l6.py`, Identity) and L7
+(`loop_l7.py`, Meta-Cog) are implemented as bounded, evaluator-gated
+cycles; L8–L9 are hypothetical.
 
 **Tuning ownership follows a +3 diagonal: loop k+3 tunes loop k.**
 L4→L1, L5→L2, L6→L3, L7→L4, L8→L5, L9→L6. Each loop tunes exactly one
@@ -82,8 +83,8 @@ most directly curates the substrate.
 | L3 | Self-Direction / Evolution | implemented | Cross-session memory consolidation, strategy derivation, pruning |
 | L4 | Optimizer | implemented | Fast-feedback tuning of **L1 execution params** from outcomes |
 | L5 | Evolution | implemented | Population-based evolution of **L2 improvement params** + focus |
-| L6 | Identity | hypothetical | Tunes **L3 evolution params** (patience / timeout) |
-| L7 | Meta-Cog | hypothetical | Tunes **L4 optimizer params** (window / thresholds) |
+| L6 | Identity | implemented | Tunes **L3 evolution params** (plateau timeout) |
+| L7 | Meta-Cog | implemented | Tunes **L4 optimizer params** (window / thresholds) |
 | L8 | Meta-Meta | hypothetical | Tunes **L5 strategy params** (population / mutation) |
 | L9 | MMM | hypothetical | Tunes **L6 identity params** (the recursion guard) |
 
@@ -139,6 +140,8 @@ without extra plumbing.
 | L3 | Plateau detection (no gains in N sessions) OR scheduled | 20 sessions | 24h |
 | L4 | No deltas proposed OR evaluator rejection OR budget | 1 cycle | 5min |
 | L5 | Generation complete OR evaluator rejection OR budget | 1 generation | 10min |
+| L6 | No signal OR at bounds OR evaluator rejection OR budget | 1 cycle | 10min |
+| L7 | No signal OR deadband gap OR evaluator rejection OR budget | 1 cycle | 10min |
 
 ### 1.3 Stacking Semantics
 
@@ -181,8 +184,8 @@ conflicts that matter come from the overlapping ones:
 | `.rsis/knowledge_graph.json`, vectors | L3 | L4/L5 read-only |
 | `.rsis/optimizer_state.json` | L4 | startup loader reads |
 | `.rsis/strategies.json` | L5 | startup loader reads |
-| `.rsis/identity_state.json` (future) | L6 | startup loader reads |
-| `.rsis/metacog_state.json` (future) | L7 | startup loader reads |
+| `.rsis/identity_state.json` | L6 | startup loader reads |
+| `.rsis/metacog_state.json` | L7 | startup loader reads |
 | `CONFIG` (runtime) | startup loader writes; L4/L5 mirror in-process | L1/L2 read |
 
 **Concurrency guardrail**: the ownership table gives file-level disjointness,

@@ -41,7 +41,9 @@ Three-loop recursive self-improvement system. The central component.
 - L1–L3: core loops (action, improvement, cross-session evolution)
 - L4: meta-parameter optimizer (`python -m rsis optimize`)
 - L5: strategy evolution (`python -m rsis strategies`)
-- L6–L9: hypothetical (Identity, Meta-Cog, Meta-Meta, MMM) — spec §1.1
+- L6: identity loop, tunes L3 params (`python -m rsis identity`)
+- L7: meta-cog loop, tunes L4 params (`python -m rsis metacog`)
+- L8–L9: hypothetical (Meta-Meta, MMM) — spec §1.1
 - Dashboard: `dashboard/index.html` (Tailwind + Chart.js, reads `rack/pulses/dashboard-data.json` via `config.js`)
 
 ### `mykb/` — Long-term Memory (Python + Markdown)

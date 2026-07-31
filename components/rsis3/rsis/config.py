@@ -10,16 +10,28 @@ from typing import List, Optional
 logger = logging.getLogger(__name__)
 
 
-# ── Tunable Parameter Registry (L4/L5 ownership partition) ────────────────
-# L4 (Optimizer) owns these L1 execution params.
+# ── Tunable Parameter Registry (+3 diagonal ownership) ────────────────────
+# Entries: name -> (min, max, CONFIG attr path, kind)
+# L4 (Optimizer) owns L1 execution params; L5 (Evolution) owns L2 params;
+# L6 (Identity) owns L3 params; L7 (Meta-Cog) owns L4 params.
 L1_TUNABLES = {
-    "l1.max_retries": (1, 8, ("l1", "max_retries")),
-    "l1.max_tool_calls": (5, 25, ("l1", "max_tool_calls_per_step")),
+    "l1.max_retries": (1, 8, ("l1", "max_retries"), "int"),
+    "l1.max_tool_calls": (5, 25, ("l1", "max_tool_calls_per_step"), "int"),
 }
 
-# L5 (Evolution) owns these L2 improvement params.
 L2_TUNABLES = {
-    "l2.max_attempts": (2, 10, ("l2", "max_improvement_attempts")),
+    "l2.max_attempts": (2, 10, ("l2", "max_improvement_attempts"), "int"),
+}
+
+L3_TUNABLES = {
+    "l3.plateau_timeout_s": (3600, 172800, ("l3", "plateau_timeout_s"), "int"),
+}
+
+L4_TUNABLES = {
+    "l4.outcome_window": (5, 50, ("l4", "outcome_window"), "int"),
+    "l4.min_outcomes": (2, 20, ("l4", "min_outcomes"), "int"),
+    "l4.target_success_low": (0.3, 0.7, ("l4", "target_success_low"), "float"),
+    "l4.target_success_high": (0.7, 0.95, ("l4", "target_success_high"), "float"),
 }
 
 
@@ -70,6 +82,26 @@ class L5Config:
     state_path: str = ".rsis/strategies.json"
 
 
+@dataclass
+class L6Config:
+    """Identity Loop — tunes L3 evolution params (+3 diagonal)."""
+    shrink_below: float = 0.5
+    grow_above: float = 0.8
+    timeout_step_s: int = 3600  # 1 h
+    cycle_timeout_s: int = 600  # 10 min
+    state_path: str = ".rsis/identity_state.json"
+
+
+@dataclass
+class L7Config:
+    """Meta-Cog Loop — tunes L4 optimizer params (+3 diagonal)."""
+    oscillation_window: int = 4
+    stall_window: int = 3
+    deadband_step: float = 0.05
+    cycle_timeout_s: int = 600  # 10 min
+    state_path: str = ".rsis/metacog_state.json"
+
+
 # ── Resource Limits ───────────────────────────────────────────────────────
 
 @dataclass
@@ -114,6 +146,8 @@ class RSISConfig:
     l3: L3Config = field(default_factory=L3Config)
     l4: L4Config = field(default_factory=L4Config)
     l5: L5Config = field(default_factory=L5Config)
+    l6: L6Config = field(default_factory=L6Config)
+    l7: L7Config = field(default_factory=L7Config)
     resources: ResourceLimits = field(default_factory=ResourceLimits)
     memory: MemoryConfig = field(default_factory=MemoryConfig)
     evaluator: EvaluatorConfig = field(default_factory=EvaluatorConfig)
@@ -138,36 +172,37 @@ def _clamp(value: float, lo: float, hi: float) -> float:
 
 
 def _apply_tuned_state(cfg: RSISConfig) -> RSISConfig:
-    """Override config defaults with persisted L4/L5 state at startup.
+    """Override config defaults with persisted L4–L7 state at startup.
 
-    Single injection point: L1/L2 consume the tuned values automatically
-    because they read CONFIG at construction time. Corrupt/missing state
-    files fall back to defaults.
+    Single injection point: the tuned values reach every loop because they
+    read CONFIG at construction time. Corrupt/missing state files fall back
+    to defaults.
     """
-    def _apply(path_parts, name, value):
-        lo, hi, attr_path = cfg_lookup[name]
+    cfg_lookup = {}
+    for reg in (L1_TUNABLES, L2_TUNABLES, L3_TUNABLES, L4_TUNABLES):
+        for name, (lo, hi, attr_path, kind) in reg.items():
+            cfg_lookup[name] = (lo, hi, attr_path, kind)
+
+    def _apply(name, value):
+        lo, hi, attr_path, kind = cfg_lookup[name]
         obj = cfg
         for part in attr_path[:-1]:
             obj = getattr(obj, part)
-        setattr(obj, attr_path[-1], int(round(_clamp(value, lo, hi))))
+        v = _clamp(value, lo, hi)
+        setattr(obj, attr_path[-1], int(round(v)) if kind == "int" else float(v))
 
-    cfg_lookup = {}
-    for reg in (L1_TUNABLES, L2_TUNABLES):
-        for name, (lo, hi, attr_path) in reg.items():
-            cfg_lookup[name] = (lo, hi, attr_path)
-
-    # L4 optimizer state
+    # L4 optimizer state (owns l1.*)
     l4_path = Path(cfg.workspace_dir) / cfg.l4.state_path
     if l4_path.exists():
         try:
             state = json.loads(l4_path.read_text())
             for name, value in state.get("params", {}).items():
                 if name in cfg_lookup:
-                    _apply(name, name, value)
+                    _apply(name, value)
         except Exception as e:
             logger.warning("Ignoring L4 state %s: %s", l4_path, e)
 
-    # L5 best strategy
+    # L5 best strategy (owns l2.*)
     l5_path = Path(cfg.workspace_dir) / cfg.l5.state_path
     if l5_path.exists():
         try:
@@ -176,9 +211,31 @@ def _apply_tuned_state(cfg: RSISConfig) -> RSISConfig:
             if population:
                 best = max(population, key=lambda s: s.get("fitness", 0.0))
                 attempts = best.get("params", {}).get("l2_attempts", 5)
-                _apply("l2.max_attempts", "l2.max_attempts", attempts)
+                _apply("l2.max_attempts", attempts)
         except Exception as e:
             logger.warning("Ignoring L5 state %s: %s", l5_path, e)
+
+    # L6 identity state (owns l3.*)
+    l6_path = Path(cfg.workspace_dir) / cfg.l6.state_path
+    if l6_path.exists():
+        try:
+            state = json.loads(l6_path.read_text())
+            for name, value in state.get("params", {}).items():
+                if name in cfg_lookup:
+                    _apply(name, value)
+        except Exception as e:
+            logger.warning("Ignoring L6 state %s: %s", l6_path, e)
+
+    # L7 meta-cog state (owns l4.*)
+    l7_path = Path(cfg.workspace_dir) / cfg.l7.state_path
+    if l7_path.exists():
+        try:
+            state = json.loads(l7_path.read_text())
+            for name, value in state.get("params", {}).items():
+                if name in cfg_lookup:
+                    _apply(name, value)
+        except Exception as e:
+            logger.warning("Ignoring L7 state %s: %s", l7_path, e)
 
     return cfg
 
