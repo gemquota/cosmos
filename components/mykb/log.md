@@ -38,3 +38,12 @@ title: "Bundle Log"
 
 - **Agent components & acronyms**: 55 more entities enriched — 64 ACE agent components (Overseer, GoalQueue, MemoryManager, etc.) and common acronyms (AES, AGI, ADSR, ACID, APK, BFS, BOM, BTC, etc.)
 - **Total enriched**: ~450 entities (26%) with real content
+
+## 2026-07-31
+- **L3 consolidation (RSIRRP xxl + 4xl)**: new synthesis note
+  `wiki/syntheses/cosmos-dashboard-mykb-integration.md` capturing durable
+  patterns — bounded client-side search, repo-relative snapshots + read-only
+  `--check`, level-local hide rules, `../` link resolution, iframe lazy-loading,
+  verification-first external gates
+- **Knowledge graph regenerated** via `.wiki-daemon/build_graph.py` (static +
+  daemon copies)

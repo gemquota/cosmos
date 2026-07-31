@@ -56,6 +56,22 @@ Used during RSIS3's self-improvement cycles for initial ideation and theory-craf
 - Web UI: `web/index.html` (self-contained SPA)
 - Spec viewer: `meta-viewer.html`
 
+## L3 Memory Consolidation (standing practice)
+
+After every RSIRRP/Rv pass (or any significant change session) over repo code,
+consolidate the durable conclusions into MyKB so future sessions inherit them:
+
+1. Write distilled findings to `components/mykb/wiki/syntheses/` as an OKF
+   `synthesis` note (frontmatter: `type`, `title`, `description`, `tags`,
+   `timestamp`, `status`) — patterns and rules, not session trivia.
+2. Cross-link existing wiki pages with `[[wikilinks]]`; update
+   `components/mykb/log.md` with a dated entry.
+3. Regenerate snapshots: `python3 components/mykb/.wiki-daemon/build_graph.py`
+   (graph), then `python3 gen-static-data.py` (files.json/ecosystem.json), and
+   verify with `python3 gen-static-data.py --check`.
+4. Never touch the user's uncommitted wiki edits; commit only files related to
+   the change.
+
 ## Deployed
 
 - **Hub dashboard:** https://gemquota.github.io/hub/ (all non-COSMOS projects)
