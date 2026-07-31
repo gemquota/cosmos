@@ -383,7 +383,7 @@ function getGraphInfo(name){
 }
 
 function getTabInfo(name){
-  var d={overview:'Summary stats, success rate, layer scores.',pulses:'20 pulses with embedded goals, conversations, and evaluation results.',kg:'Interactive knowledge graph.',graphs:'Full chart suite: decisions, trends, durations, constraints, radar.',constraints:'Constraint frequency and lock rate analysis.'};
+  var d={overview:'Summary stats, success rate, layer scores.',pulses:'20 pulses with embedded goals, conversations, and evaluation results.',kg:'Interactive knowledge graph.',graphs:'Full chart suite: decisions, trends, durations, constraints, radar.',constraints:'Constraint frequency and lock rate analysis.',mykb:'Wiki browser + knowledge graph (lazy-loaded iframes).',space:'SPACE web UI + spec viewer (lazy-loaded iframes).'};
   return '<h4>'+name.charAt(0).toUpperCase()+name.slice(1)+' Tab</h4><p>'+(d[name]||'Dashboard tab.')+'</p>';
 }
 

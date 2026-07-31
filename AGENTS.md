@@ -41,7 +41,7 @@ Three-loop recursive self-improvement system. The central component.
 - L1: Per-task action loop (tool calls, observations, retries)
 - L2: Per-session improvement (code gen, prompt tuning)
 - L3: Cross-session evolution (memory consolidation, strategy evolution)
-- Dashboard: `dashboard/index.html` (Tailwind + Chart.js, reads `dashboard/data.json`)
+- Dashboard: `dashboard/index.html` (Tailwind + Chart.js, reads `rack/pulses/dashboard-data.json` via `config.js`)
 
 ### `mykb/` — Long-term Memory (Python + Markdown)
 RSIS3's persistent memory layer. Obsidian wiki with TF-IDF search, temporal engine,

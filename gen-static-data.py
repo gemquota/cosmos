@@ -6,7 +6,7 @@ exists on the deployed site. Run from the repo root, then commit.
 
     python3 gen-static-data.py
 """
-import json, subprocess, datetime
+import json, os, subprocess, sys, datetime
 
 def tracked(prefix=None):
     args = ['git', 'ls-files']
@@ -17,10 +17,13 @@ def tracked(prefix=None):
 def visible(path):
     return not any(seg.startswith('.') for seg in path.split('/'))
 
-md = sorted(p for p in tracked('components/mykb') if p.endswith('.md') and visible(p))
+prefix = 'components/mykb/'
+md = sorted((p[len(prefix):] if p.startswith(prefix) else p)
+            for p in tracked('components/mykb')
+            if p.endswith('.md') and visible(p) and os.path.exists(p))
 json.dump(md, open('components/mykb/files.json', 'w'), indent=1)
 
-allf = [p for p in tracked() if visible(p)]
+allf = [p for p in tracked() if visible(p) and os.path.exists(p)]
 def count(prefix):
     return len([p for p in allf if p.startswith(prefix + '/')])
 
@@ -52,3 +55,13 @@ json.dump(eco, open('components/rsis3/dashboard/ecosystem.json', 'w'), indent=1)
 
 print(f'files.json: {len(md)} md files')
 print(f'ecosystem.json: {json.dumps(eco["components"])}')
+
+# Validation mode for CI/deploy: exit non-zero if the snapshot is inconsistent.
+if '--check' in sys.argv:
+    d = json.load(open('components/mykb/files.json'))
+    bad = [p for p in d if p.startswith('components/') or not os.path.exists('components/mykb/' + p)]
+    eco2 = json.load(open('components/rsis3/dashboard/ecosystem.json'))
+    counts_match = eco2['components']['mykb']['md'] == len(d)
+    ok = not bad and counts_match
+    print('check:', 'OK' if ok else 'FAIL', f'({len(d)} entries, {len(bad)} bad)')
+    sys.exit(0 if ok else 1)
