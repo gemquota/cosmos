@@ -86,6 +86,9 @@ class L3EvolutionLoop:
             # Phase 4: Redundancy refinement
             redundancies = self._refine_redundancies()
 
+            # Persist consolidated memory (KG + vectors)
+            self.memory.save()
+
             logger.info(
                 "L3 cycle complete: %d insights, %d strategies, %d redundancies",
                 insights_added, len(strategies), redundancies,

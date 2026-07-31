@@ -29,6 +29,29 @@ class L3Config:
     plateau_timeout_s: int = 86400  # 24 h
 
 
+@dataclass
+class L4Config:
+    """Meta-Parameter Optimizer Loop (fast feedback tuning)."""
+    outcome_window: int = 20
+    min_outcomes: int = 5
+    target_success_low: float = 0.5
+    target_success_high: float = 0.85
+    cycle_timeout_s: int = 300  # 5 min
+    state_path: str = ".rsis/optimizer_state.json"
+
+
+@dataclass
+class L5Config:
+    """Strategy Evolution Loop (population-based, slow feedback)."""
+    population_size: int = 8
+    elite_fraction: float = 0.5
+    mutation_rate: float = 0.2
+    seed: int = 42
+    generations_per_cycle: int = 1
+    cycle_timeout_s: int = 600  # 10 min
+    state_path: str = ".rsis/strategies.json"
+
+
 # ── Resource Limits ───────────────────────────────────────────────────────
 
 @dataclass
@@ -71,6 +94,8 @@ class RSISConfig:
     l1: L1Config = field(default_factory=L1Config)
     l2: L2Config = field(default_factory=L2Config)
     l3: L3Config = field(default_factory=L3Config)
+    l4: L4Config = field(default_factory=L4Config)
+    l5: L5Config = field(default_factory=L5Config)
     resources: ResourceLimits = field(default_factory=ResourceLimits)
     memory: MemoryConfig = field(default_factory=MemoryConfig)
     evaluator: EvaluatorConfig = field(default_factory=EvaluatorConfig)

@@ -1,0 +1,46 @@
+---
+type: concept
+title: "Nine-Loop Hierarchy"
+description: "RSIS3's original nine nested self-improvement loops — L1–L5 implemented, L6–L9 hypothetical"
+tags: [concept, rsis3, architecture, loops, self-improvement]
+timestamp: "2026-07-31T00:00:00Z"
+status: stable
+source: []
+---
+
+# Nine-Loop Hierarchy
+
+## Summary
+
+RSIS3 was conceived as **nine nested recursion loops**. The dashboard radar
+and pulse scores (L1–L9) are this hierarchy, not RRP question-series axes.
+Three loops are the original engine; L4 and L5 were added as bounded,
+evaluator-gated cycles; L6–L9 remain hypothetical labels.
+
+## The Loops
+
+| Loop | Name | Status | Responsibility |
+|------|------|--------|----------------|
+| L1 | Execution | implemented | Per-task action loop: plan → tool calls → observe → retry |
+| L2 | Planning / Improvement | implemented | Per-session improvement candidates, immutable-evaluator gate |
+| L3 | Self-Direction / Evolution | implemented | Cross-session memory consolidation, strategy derivation, pruning |
+| L4 | Optimizer | implemented | Fast-feedback tuning of bounded meta-parameters from outcomes |
+| L5 | Evolution | implemented | Population-based strategy evolution (selection + mutation) |
+| L6 | Identity | hypothetical | Self-model / identity snapshot maintenance |
+| L7 | Meta-Cog | hypothetical | Reflection on the loops' own behavior |
+| L8 | Meta-Meta | hypothetical | Meta-strategy over strategy evolution |
+| L9 | MMM | hypothetical | Meta-meta-meta steering (unbounded recursion guard) |
+
+## Invariants (apply to every implemented loop)
+
+- Evaluator is immutable — never in-scope for self-improvement
+- Checkpoint before every mutation; rollback always possible
+- Loops terminate — bounded budgets at every level
+- Failures cascade up: L1 → L2 → L3 → L4 → L5
+- Memory is hierarchical: git (truth) → KG (insight) → vectors (retrieval)
+
+## Related
+
+- [[wiki/concepts/triad-architecture|Triad Architecture]]
+- [[wiki/syntheses/cosmos-dashboard-mykb-integration|Dashboard & MyKB Integration Patterns]]
+- [[wiki/index|Wiki Index]]

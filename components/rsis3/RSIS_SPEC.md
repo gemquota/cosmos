@@ -8,7 +8,7 @@
 
 ## 1. System Architecture
 
-### 1.1 Three-Loop Stack
+### 1.1 Loop Stack (nine-level hierarchy)
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -47,6 +47,64 @@
 └──────────────────────────────────────────────────────────────┘
 ```
 
+The RSIS engine was conceived as **nine nested loops**. Three are fully
+implemented (`loop_l1.py` … `loop_l3.py`); L4 (`loop_l4.py`, Optimizer) and
+L5 (`loop_l5.py`, Evolution) are implemented as bounded, evaluator-gated
+cycles; L6–L9 remain hypothetical (labels + score axes only in dashboard
+telemetry).
+
+| Loop | Name | Status | Responsibility |
+|------|------|--------|----------------|
+| L1 | Execution | implemented | Per-task action loop: plan → tool calls → observe → retry |
+| L2 | Planning / Improvement | implemented | Per-session improvement candidates, immutable-evaluator gate |
+| L3 | Self-Direction / Evolution | implemented | Cross-session memory consolidation, strategy derivation, pruning |
+| L4 | Optimizer | implemented | Fast-feedback tuning of bounded meta-parameters from outcomes |
+| L5 | Evolution | implemented | Population-based strategy evolution (selection + mutation) |
+| L6 | Identity | hypothetical | Self-model / identity snapshot maintenance |
+| L7 | Meta-Cog | hypothetical | Reflection on the loops' own behavior |
+| L8 | Meta-Meta | hypothetical | Meta-strategy over strategy evolution |
+| L9 | MMM | hypothetical | Meta-meta-meta steering (unbounded recursion guard) |
+
+L4 and L5 follow the same invariants as the lower loops: checkpoint before
+mutation, bounded budgets, immutable evaluator gate, telemetry, and failure
+cascades up to the next level.
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                L5 — Evolution Loop (strategies)               │
+│  Frequency: days  │  Population selection + mutation         │
+│  - Seed from L3 KG strategies                                │
+│  - Score fitness from outcome telemetry                      │
+│  - Elitism + mutate/recombine → next generation              │
+│  - Evaluator gate on each generation                         │
+└───────────────────────────┬──────────────────────────────────┘
+                            │ tunes strategy space
+                            ▼
+┌──────────────────────────────────────────────────────────────┐
+│                L4 — Optimizer Loop (meta-params)             │
+│  Frequency: hours  │  Fast-feedback parameter tuning         │
+│  - Aggregate recent L1/L2/L3 outcomes                        │
+│  - Propose clamped deltas (retries / tool calls / attempts)  │
+│  - Evaluator gate → checkpoint → persist optimizer state     │
+└───────────────────────────┬──────────────────────────────────┘
+                            │ promotes
+                            ▼
+┌──────────────────────────────────────────────────────────────┐
+│                    L3 — Evolution Loop                        │
+│  Frequency: hours/days  │  Trigger: cross-session interval   │
+└───────────────────────────┬──────────────────────────────────┘
+                            │ promotes
+                            ▼
+┌──────────────────────────────────────────────────────────────┐
+│                    L2 — Improvement Loop                      │
+└───────────────────────────┬──────────────────────────────────┘
+                            │ spawns
+                            ▼
+┌──────────────────────────────────────────────────────────────┐
+│                    L1 — Action Loop                           │
+└──────────────────────────────────────────────────────────────┘
+```
+
 ### 1.2 Loop Termination (per LangChain stacked-loop pattern)
 
 | Loop | Termination Signal | Budget | Timeout |
@@ -54,6 +112,8 @@
 | L1 | Task completion OR max retries exceeded | 10 tool calls per step | 120s |
 | L2 | Evaluator approval OR iteration budget exhausted | 5 improvement attempts | 30min |
 | L3 | Plateau detection (no gains in N sessions) OR scheduled | 20 sessions | 24h |
+| L4 | No deltas proposed OR evaluator rejection OR budget | 1 cycle | 5min |
+| L5 | Generation complete OR evaluator rejection OR budget | 1 generation | 10min |
 
 ### 1.3 Stacking Semantics
 
@@ -61,6 +121,9 @@ Each loop level **spawns** the level below it and **evaluates** its output befor
 - L1 failure → L2 retries with different approach
 - L2 failure (evaluator rejection x3) → L3 flags strategy for evolution
 - L3 plateau → triggers redundancy refinement
+- L3 strategies → seed L5 population
+- L4 tuning failure → L5 evolves the strategy space
+- L5 plateau (no fitness gain across generations) → L6 would re-evaluate identity
 
 ---
 
