@@ -25,7 +25,7 @@ from rsis.timeout import Budget, TimeoutError
 logger = logging.getLogger(__name__)
 
 # L4 owns the L1 execution params (see RSIS_SPEC §1.4 — no overlap with L5).
-_TUNABLES = {name: (lo, hi, 1, path) for name, (lo, hi, path) in L1_TUNABLES.items()}
+_TUNABLES = {name: (lo, hi, 1, path) for name, (lo, hi, path, _k) in L1_TUNABLES.items()}
 
 
 @dataclass

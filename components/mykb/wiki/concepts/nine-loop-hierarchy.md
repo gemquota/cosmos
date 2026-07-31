@@ -27,8 +27,8 @@ evaluator-gated cycles; L6–L9 remain hypothetical labels.
 | L3 | Self-Direction / Evolution | implemented | Cross-session memory consolidation, strategy derivation, pruning |
 | L4 | Optimizer | implemented | Fast-feedback tuning of bounded meta-parameters from outcomes |
 | L5 | Evolution | implemented | Population-based strategy evolution (selection + mutation) |
-| L6 | Identity | hypothetical | Tunes L3 evolution params (patience / timeout) |
-| L7 | Meta-Cog | hypothetical | Tunes L4 optimizer params (window / thresholds) |
+| L6 | Identity | implemented | Tunes L3 evolution params (plateau timeout) |
+| L7 | Meta-Cog | implemented | Tunes L4 optimizer params (window / thresholds) |
 | L8 | Meta-Meta | hypothetical | Tunes L5 strategy params (population / mutation) |
 | L9 | MMM | hypothetical | Tunes L6 identity params (the recursion guard) |
 
