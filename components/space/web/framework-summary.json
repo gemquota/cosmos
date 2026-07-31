@@ -1,0 +1,79 @@
+{
+ "meta": {
+  "name": "Structured Prompt Creation Framework",
+  "version": "1.0.0",
+  "description": "A multi-series, multi-round prompt elicitation framework that alternates open-ended and multi-choice questions to produce a complete development specification.",
+  "total_series": 7,
+  "total_rounds": 25,
+  "total_open_ended": 67,
+  "total_multi_choice": 259,
+  "total_open_ended_questions": 67,
+  "total_multi_choice_followups": 259,
+  "estimated_completion_time": "45-75 minutes"
+ },
+ "series": [
+  {
+   "id": 1,
+   "name": "Conceptual Depth",
+   "description": "Calibrates the register, audience sophistication, vocabulary, and complexity scaffolding for the entire specification.",
+   "depends_on": [],
+   "rounds": 3,
+   "total_open_ended": 6,
+   "total_multi_choice": 18
+  },
+  {
+   "id": 2,
+   "name": "Ontological Characteristics",
+   "description": "Discovers, classifies, refines, and validates the entities, categories, attributes, and boundaries of the domain.",
+   "depends_on": [],
+   "rounds": 5,
+   "total_open_ended": 15,
+   "total_multi_choice": 75
+  },
+  {
+   "id": 3,
+   "name": "Semantic Relationships",
+   "description": "Maps direct, hierarchical, causal, and dynamic connections between entities identified in Series 2.",
+   "depends_on": [],
+   "rounds": 4,
+   "total_open_ended": 8,
+   "total_multi_choice": 32
+  },
+  {
+   "id": 4,
+   "name": "Procedural Breadth",
+   "description": "Scopes the workflow, decision branching, and step granularity informed by the entity model and relationship graph.",
+   "depends_on": [],
+   "rounds": 3,
+   "total_open_ended": 6,
+   "total_multi_choice": 18
+  },
+  {
+   "id": 5,
+   "name": "Technical Specifications",
+   "description": "Captures hardware, software, performance, integration, and timeline constraints for the build.",
+   "depends_on": [],
+   "rounds": 4,
+   "total_open_ended": 20,
+   "total_multi_choice": 80
+  },
+  {
+   "id": 6,
+   "name": "Development Methodologies",
+   "description": "Determines workflow cadence, quality practices, and collaboration patterns aligned with procedural scope and tech constraints.",
+   "depends_on": [],
+   "rounds": 3,
+   "total_open_ended": 6,
+   "total_multi_choice": 18
+  },
+  {
+   "id": 7,
+   "name": "Operational / Functional Preferences",
+   "description": "Defines deployment, runtime behavior, monitoring, and maintenance preferences informed by tech spec and methodology.",
+   "depends_on": [],
+   "rounds": 3,
+   "total_open_ended": 6,
+   "total_multi_choice": 18
+  }
+ ]
+}
