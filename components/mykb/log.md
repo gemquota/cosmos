@@ -56,3 +56,6 @@ title: "Bundle Log"
   L5 → L2 params) and `load_config()` startup injection documented in
   `RSIS_SPEC.md` §1.4; concept note `wiki/concepts/nine-loop-hierarchy.md`
   extended with nested/parallel/overlapping analysis
+- **+3 diagonal**: tuning ownership generalized — loop k+3 tunes loop k
+  (L6→L3, L7→L4, L8→L5, L9→L6); top three loops are untuned fixed points
+  (spec §1.1/§1.4, concept note updated)
