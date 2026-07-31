@@ -14,14 +14,14 @@
 <div id="app" class="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6" style="display:none">
 
 <!-- TAB BAR -->
-<div class="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-6 border-b border-slate-700/50 pb-2">
-  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg bg-indigo-500 text-white shadow" data-t="overview" data-tt="tab:overview" onclick="sw('overview')">Overview</button>
-  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="pulses" data-tt="tab:pulses" onclick="sw('pulses')">Pulses</button>
-  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="kg" data-tt="tab:kg" onclick="sw('kg')">KG</button>
-  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="graphs" data-tt="tab:graphs" onclick="sw('graphs')">Graphs</button>
-  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="constraints" data-tt="tab:constraints" onclick="sw('constraints')">Constraints</button>
-  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="mykb" data-tt="tab:mykb" onclick="sw('mykb')">📚 MyKB</button>
-  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="space" data-tt="tab:space" onclick="sw('space')">🚀 SPACE</button>
+<div class="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-6 border-b border-slate-700/50 pb-2" role="tablist" aria-label="Dashboard sections">
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg bg-indigo-500 text-white shadow" data-t="overview" data-tt="tab:overview" role="tab" aria-selected="true" onclick="sw('overview')">Overview</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="pulses" data-tt="tab:pulses" role="tab" aria-selected="false" onclick="sw('pulses')">Pulses</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="kg" data-tt="tab:kg" role="tab" aria-selected="false" onclick="sw('kg')">KG</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="graphs" data-tt="tab:graphs" role="tab" aria-selected="false" onclick="sw('graphs')">Graphs</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="constraints" data-tt="tab:constraints" role="tab" aria-selected="false" onclick="sw('constraints')">Constraints</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="mykb" data-tt="tab:mykb" role="tab" aria-selected="false" onclick="sw('mykb')">📚 MyKB</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="space" data-tt="tab:space" role="tab" aria-selected="false" onclick="sw('space')">🚀 SPACE</button>
 </div>
 
 <!-- OVERVIEW TAB -->
