@@ -61,8 +61,22 @@ three meta-levels: core (L1–L3) → tuners (L4–L6) → meta-tuners (L7–L9)
 which matches the max-3-self-modification depth limit in the SPACE
 recursive-depth analysis.
 
+**L1 and L2 tune nothing.** They are pure consumers of tuned params
+(L4→L1, L5→L2) and never write a parameter key. Their intra-cycle
+adaptation — L1 retry/adapt, L2 candidate refinement after evaluator
+rejection — is self-adaptation inside a task, not cross-loop tuning.
+L2 *spawns* L1 action loops (instantiation), which is also not tuning.
+
+**L0 is the substrate, not a loop.** It is the workspace/artifact layer
+(files, config, `.rsis` state) that the loops mutate. Nothing parameterizes
+it; L1–L3 mutate it directly (tool calls, code application, memory
+consolidation). The diagonal therefore terminates at L1:
+L9 → L6 → L3 → substrate, with L3's consolidation/pruning as the loop that
+most directly curates the substrate.
+
 | Loop | Name | Status | Responsibility |
 |------|------|--------|----------------|
+| L0 | Substrate | n/a (not a loop) | The artifact/workspace layer loops mutate — files, config, `.rsis` state |
 | L1 | Execution | implemented | Per-task action loop: plan → tool calls → observe → retry |
 | L2 | Planning / Improvement | implemented | Per-session improvement candidates, immutable-evaluator gate |
 | L3 | Self-Direction / Evolution | implemented | Cross-session memory consolidation, strategy derivation, pruning |
@@ -177,6 +191,7 @@ their own state file. Loop execution is therefore serialized by the CLI; a
 parallel scheduler must hold a lock per state file before a cycle.
 
 **Deliberate non-overlaps** (documented so they stay that way):
+- L0 is the shared substrate, not a tunable loop — no loop owns L0 keys.
 - The evaluator is immutable and owned by no loop.
 - A loop writes only its +3 target's params (L4→L1, L5→L2, L6→L3, L7→L4,
   L8→L5, L9→L6) and never any other loop's keys.

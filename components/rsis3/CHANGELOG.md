@@ -1,4 +1,12 @@
 
+## [0.2.3] — 2026-07-31
+
+### Changed
+- L0 defined as the workspace substrate (not a loop); nothing tunes it — the
+  +3 diagonal terminates at L1 (L9 → L6 → L3 → substrate)
+- L1/L2 documented as pure consumers of tuned params with no tuning targets;
+  intra-cycle retry/refinement is self-adaptation, not cross-loop tuning
+
 ## [0.2.2] — 2026-07-31
 
 ### Changed

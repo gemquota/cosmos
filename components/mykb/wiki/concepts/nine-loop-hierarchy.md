@@ -21,6 +21,7 @@ evaluator-gated cycles; L6–L9 remain hypothetical labels.
 
 | Loop | Name | Status | Responsibility |
 |------|------|--------|----------------|
+| L0 | Substrate | n/a | Workspace/artifact layer loops mutate — files, config, `.rsis` state |
 | L1 | Execution | implemented | Per-task action loop: plan → tool calls → observe → retry |
 | L2 | Planning / Improvement | implemented | Per-session improvement candidates, immutable-evaluator gate |
 | L3 | Self-Direction / Evolution | implemented | Cross-session memory consolidation, strategy derivation, pruning |
@@ -34,7 +35,9 @@ evaluator-gated cycles; L6–L9 remain hypothetical labels.
 ## Tuning Ownership: the +3 Diagonal
 
 Loop *k*+3 tunes loop *k*: L4→L1, L5→L2, L6→L3, L7→L4, L8→L5, L9→L6.
-Each loop tunes exactly one target — no two loops write the same key. L7–L9
+L1 and L2 tune nothing (pure consumers; their retry/refinement is
+self-adaptation, not tuning). Each loop tunes exactly one target — no two
+loops write the same key. L0 is the shared substrate, not a loop. L7–L9
 are themselves untuned (no L10+), so the top three are fixed points: the
 unbounded-recursion guard. Modification depth is exactly three meta-levels
 (core L1–L3 → tuners L4–L6 → meta-tuners L7–L9), matching the max-3
