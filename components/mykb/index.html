@@ -203,6 +203,40 @@ body {
   font-weight: 400;
 }
 
+
+/* ── Sidebar header tabs ── */
+.sidebar-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.sidebar-tab {
+  flex: 1 1 auto;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: all .15s;
+  white-space: nowrap;
+}
+.sidebar-tab:hover {
+  background: var(--hover-bg);
+  color: var(--text);
+  border-color: var(--accent);
+}
+.sidebar-tab.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
 /* ── Sidebar toggle button ── */
 #sidebar-toggle {
   position: fixed;
@@ -826,9 +860,9 @@ body {
       <button class="sidebar-tab" data-tab="search" title="Search entities">Search</button>
       <button class="sidebar-tab" data-tab="actions" title="Health, lint, build">Actions</button>
     </div>
-    <a href="#" id="sidebar-header-title" class="sidebar-header-title" onclick="switchContentView('doc')" style="cursor:pointer;">
+    <a href="#" id="sidebar-header-title" class="sidebar-header-title" style="cursor:pointer;">
       <h1>mykb</h1>
-      <span class="subtitle" id="header-subtitle">wiki</span>
+      <span class="subtitle" id="header-subtitle">RSIS3 memory &middot; wiki</span>
     </a>
     <div class="toggle-wrap">
       <span class="toggle-label" id="theme-label">&#9681;</span>
@@ -866,7 +900,8 @@ body {
     <div class="markdown-body">
       <div class="welcome">
         <h1>mykb</h1>
-        <p>Select a document from the sidebar.</p>
+        <p>RSIS3 long-term memory &mdash; semantic knowledge database for the cognitive engine.</p>
+        <p style="font-size:13px;color:var(--text-soft);">Select a document from the sidebar to read it here. Graph view renders the wiki link graph from <code>graph.json</code>.</p>
       </div>
     </div>
   </div>
@@ -994,7 +1029,7 @@ function parseMarkdown(md) {
       var plainText = text.replace(/<[^>]*>/g, '').replace(/\*\*|__/g, '').replace(/\*|_/g, '');
       headings.push({ level: level, text: plainText, slug: slug });
       html += '<h' + level + ' id="' + slug + '">' +
-        '<a class="anchor" href="#' + slug + '" aria-hidden="true">#</a>' + text +
+        '<a class="anchor" href="#' + slug + '" aria-hidden="true">#</a>' + escapeHtml(text) +
         '</h' + level + '>\n';
       i++;
       continue;
@@ -1088,8 +1123,8 @@ function parseMarkdown(md) {
 
 function renderInline(text) {
   var s = escapeHtml(text);
-  s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">');
-  s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+  s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, function(m, alt, url){ return '<img src="' + safeUrl(url) + '" alt="' + alt + '">'; });
+  s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function(m, txt, url){ return '<a href="' + safeUrl(url) + '">' + txt + '</a>'; });
   // Obsidian [[wikilinks]] - pipe variant first, then simple
   s = s.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '<a class="wikilink" data-target="$1" href="javascript:void(0)">$2</a>');
   s = s.replace(/\[\[([^\]]+)\]\]/g, '<a class="wikilink" data-target="$1" href="javascript:void(0)">$1</a>');
@@ -1101,6 +1136,12 @@ function renderInline(text) {
   s = s.replace(/~~([^~]+)~~/g, '<del>$1</del>');
   s = s.replace(/  $/gm, '<br>');
   return s;
+}
+
+function safeUrl(u){
+  u = String(u).trim();
+  if (/^(javascript|data|vbscript)\s*:/i.test(u)) return '#';
+  return u;
 }
 
 
@@ -1119,9 +1160,9 @@ function loadCompositions() {
       compFiles.sort().forEach(function(f) {
         var name = f.replace('wiki/compositions/', '').replace('.md', '');
         var displayName = name.replace(/-/g, ' ').replace(/\w/g, function(l) { return l.toUpperCase(); });
-        html += '<div class="composition-item" data-path="' + f + '" style="padding:6px 8px;cursor:pointer;border-radius:3px;font-size:12px;margin:2px 0;border:1px solid var(--border);">';
-        html += '<div style="font-weight:600;color:var(--accent);">' + displayName + '</div>';
-        html += '<div style="font-size:10px;color:var(--text-muted);">' + name + '</div>';
+        html += '<div class="composition-item" data-path="' + escapeHtml(f) + '" style="padding:6px 8px;cursor:pointer;border-radius:3px;font-size:12px;margin:2px 0;border:1px solid var(--border);">';
+        html += '<div style="font-weight:600;color:var(--accent);">' + escapeHtml(displayName) + '</div>';
+        html += '<div style="font-size:10px;color:var(--text-muted);">' + escapeHtml(name) + '</div>';
         html += '</div>';
       });
       if (!html) html = '<div style="color:var(--text-muted);font-size:11px;padding:4px;">No compositions found</div>';
@@ -1275,7 +1316,7 @@ function setupTopology() {
     var root = rootInput.value.trim();
     var depth = depthInput ? depthInput.value : 2;
     if (!root) { location.reload(); return; }
-    var url = '/api/v2/graph/topology?root=' + encodeURIComponent(root) + '&depth=' + depth;
+    var url = KB_BASE + 'api/v2/graph/topology?root=' + encodeURIComponent(root) + '&depth=' + depth;
     fetch(url)
       .then(function(r) { return r.json(); })
       .then(function(g) {
@@ -1294,7 +1335,7 @@ function setupTopology() {
           alert('No nodes found for root: ' + root);
         }
       })
-      .catch(function() { alert('Error fetching topology'); });
+      .catch(function() { alert('Topology API not available on static hosting — run the wiki daemon (`python3 server.py 8765`) for subgraph filtering.'); });
   }
   
   go.addEventListener('click', fetchTopology);
@@ -1452,11 +1493,16 @@ function entitySearch(q) {
     .catch(function() { resultsDiv.innerHTML = '<div style="color:var(--text-muted);padding:8px;">Search error</div>'; });
 }
 
+var graphListenersAttached = false;
+var graphState = null;
+var graphCam = { x: 0, y: 0, zoom: 1 };
+var graphDrag = { active: false, sx: 0, sy: 0, cx: 0, cy: 0 };
+
 function loadGraph() {
   var canvas = document.getElementById('graph-canvas');
   var info = document.getElementById('graph-info');
   if (!canvas || !info) return;
-  // Graph re-renders on every tab switch (data-loaded guard removed)
+  // Re-render on every tab switch, but attach canvas/window listeners only once.
   
   info.textContent = 'Loading graph data...';
   fetch(KB_BASE + 'graph.json')
@@ -1565,19 +1611,15 @@ function loadGraph() {
           });
         }
         
-        // Camera state
-        var camX = 0, camY = 0, camZoom = 1;
-        var isDragging = false, dragStartX, dragStartY, camStartX, camStartY;
-        
         function drawGraph() {
           ctx.clearRect(0, 0, W, H);
           ctx.save();
-          ctx.translate(W/2 + camX, H/2 + camY);
-          ctx.scale(camZoom, camZoom);
+          ctx.translate(W/2 + graphCam.x, H/2 + graphCam.y);
+          ctx.scale(graphCam.zoom, graphCam.zoom);
           
           // Draw edges
           ctx.strokeStyle = 'rgba(0,0,0,0.04)';
-          ctx.lineWidth = 0.5 / camZoom;
+          ctx.lineWidth = 0.5 / graphCam.zoom;
           edges.forEach(function(e) {
             var s = nodeMap[e.source], t = nodeMap[e.target];
             if (!s || !t) return;
@@ -1588,14 +1630,14 @@ function loadGraph() {
           });
           
           // Draw nodes (only those visible)
-          var nodeRadius = Math.max(2, 4 / camZoom);
+          var nodeRadius = Math.max(2, 4 / graphCam.zoom);
           ctx.fillStyle = 'rgba(37,99,235,0.6)';
           ctx.strokeStyle = '#fff';
           ctx.lineWidth = 0.5 / camZoom;
           
           nodes.forEach(function(n) {
-            var sx = n.x * camZoom + W/2 + camX;
-            var sy = n.y * camZoom + H/2 + camY;
+            var sx = n.x * graphCam.zoom + W/2 + graphCam.x;
+            var sy = n.y * graphCam.zoom + H/2 + graphCam.y;
             // Skip offscreen nodes
             if (sx < -20 || sx > W + 20 || sy < -20 || sy > H + 20) return;
             
@@ -1608,32 +1650,33 @@ function loadGraph() {
           ctx.restore();
         }
         
-        // Mouse interaction
-        var mouseX, mouseY;
-        canvas.addEventListener('mousedown', function(e) {
-          isDragging = true;
-          dragStartX = e.clientX;
-          dragStartY = e.clientY;
-          camStartX = camX;
-          camStartY = camY;
-        });
-        window.addEventListener('mousemove', function(e) {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-          if (isDragging) {
-            camX = camStartX + (e.clientX - dragStartX);
-            camY = camStartY + (e.clientY - dragStartY);
-            drawGraph();
-          }
-        });
-        window.addEventListener('mouseup', function() { isDragging = false; });
-        canvas.addEventListener('wheel', function(e) {
-          e.preventDefault();
-          var delta = e.deltaY > 0 ? 0.9 : 1.1;
-          camZoom *= delta;
-          camZoom = Math.max(0.1, Math.min(10, camZoom));
-          drawGraph();
-        }, {passive: false});
+        // Mouse interaction (attached once per page load; draws via graphState.draw)
+        graphState = { canvas: canvas, info: info, draw: drawGraph, nodes: nodes, edges: edges };
+        if (!graphListenersAttached) {
+          graphListenersAttached = true;
+          canvas.addEventListener('mousedown', function(e) {
+            graphDrag.active = true;
+            graphDrag.sx = e.clientX;
+            graphDrag.sy = e.clientY;
+            graphDrag.cx = graphCam.x;
+            graphDrag.cy = graphCam.y;
+          });
+          window.addEventListener('mousemove', function(e) {
+            if (graphDrag.active && graphState) {
+              graphCam.x = graphDrag.cx + (e.clientX - graphDrag.sx);
+              graphCam.y = graphDrag.cy + (e.clientY - graphDrag.sy);
+              graphState.draw();
+            }
+          });
+          window.addEventListener('mouseup', function() { graphDrag.active = false; });
+          canvas.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            var delta = e.deltaY > 0 ? 0.9 : 1.1;
+            graphCam.zoom *= delta;
+            graphCam.zoom = Math.max(0.1, Math.min(10, graphCam.zoom));
+            graphState.draw();
+          }, {passive: false});
+        }
         
         // Run physics in chunks via requestAnimationFrame
         var totalSteps = cachedLayout ? 15 : 60;
@@ -2347,7 +2390,8 @@ function navigateHome() {
     '<div class="markdown-body">' +
     '<div class="welcome">' +
     '<h1>mykb</h1>' +
-    '<p>Select a document from the sidebar to view it here.</p>' +
+    '<p>RSIS3 long-term memory &mdash; semantic knowledge database.</p>' +
+    '<p style="font-size:13px;color:var(--text-soft);">Select a document from the sidebar, or press <strong>Ctrl+G</strong> for the knowledge graph.</p>' +
     '</div>' +
     '</div>';
 }

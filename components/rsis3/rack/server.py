@@ -3,7 +3,7 @@
 import http.server, socketserver, os, sys
 
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8765
-DIR = os.path.dirname(os.path.abspath(__file__))
+DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
@@ -24,6 +24,6 @@ if __name__ == '__main__':
         f.write(str(os.getpid()))
     with socketserver.ThreadingTCPServer(("0.0.0.0", PORT), Handler) as httpd:
         print(f"Dashboard server started (PID {os.getpid()})")
-        print(f"  http://127.0.0.1:{PORT}/rack/telemetry-dashboard.html")
+        print(f"  http://127.0.0.1:{PORT}/dashboard/")
         sys.stdout.flush()
         httpd.serve_forever()
