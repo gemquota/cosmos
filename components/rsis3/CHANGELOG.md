@@ -1,4 +1,22 @@
 
+## [0.2.1] — 2026-07-31
+
+### Added
+- Loop topology spec (RSIS_SPEC §1.4): nested (L1–L3 stack), parallel (L4/L5,
+  disjoint state), overlapping (shared reads + config writes) with an
+  ownership partition and concurrency guardrail
+- `load_config()` now applies persisted L4/L5 state at startup — L1/L2 consume
+  tuned params without extra plumbing
+
+### Changed
+- L4/L5 ownership partition: L4 tunes only `l1.*` (retries, tool calls); L5
+  tunes only `l2.max_attempts` + focus. No shared write keys (resolves the
+  L4↔L5 overlap on `l2.max_attempts`)
+
+### Verified
+- Smoke: L4 tunes L1 params only; L5 seeds population with L2 params; fresh
+  process picks up both from persisted state
+
 ## [0.2.0] — 2026-07-31
 
 ### Added

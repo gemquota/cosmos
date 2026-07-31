@@ -19,7 +19,7 @@ from pathlib import Path
 from typing import Optional
 
 from rsis.checkpoint import CheckpointManager
-from rsis.config import CONFIG
+from rsis.config import CONFIG, L2_TUNABLES
 from rsis.evaluator import EvaluatorClient
 from rsis.loop_l4 import OptimizerLoop
 from rsis.memory import MemoryManager
@@ -28,8 +28,8 @@ from rsis.timeout import Budget, TimeoutError
 
 logger = logging.getLogger(__name__)
 
-# Strategy variant bounds
-_L2_ATTEMPTS = (2, 10)
+# Strategy variant bounds — L5 owns the L2 improvement params (spec §1.4).
+_L2_ATTEMPTS = L2_TUNABLES["l2.max_attempts"][:2]
 _BUDGET_FACTOR = (0.5, 2.0)
 _FOCI = ["general", "regressions", "memory", "speed"]
 
@@ -85,12 +85,12 @@ class EvolutionLoop:
 
     # ── Population helpers ─────────────────────────────────────────
 
-    @staticmethod
-    def _default_variant(suffix: str) -> dict:
+    @classmethod
+    def _default_variant(cls, suffix: str) -> dict:
         return {
             "id": f"strategy-{suffix}",
             "params": {
-                "l2_attempts": 5,
+                "l2_attempts": int(CONFIG.l2.max_improvement_attempts),
                 "budget_factor": 1.0,
                 "focus": "general",
             },
@@ -110,7 +110,7 @@ class EvolutionLoop:
             sid = node.get("id", "strategy-l3")
             if sid in existing_ids:
                 continue
-            variant = self._default_variant(sid.replace("strategy-", ""))
+            variant = EvolutionLoop._default_variant(sid.replace("strategy-", ""))
             focus = "regressions" if "regression" in node.get("description", "") else "general"
             variant["params"]["focus"] = focus
             variant["params"]["l2_attempts"] = max(
@@ -122,7 +122,7 @@ class EvolutionLoop:
             existing_ids.add(sid)
 
         while len(population) < self.config.population_size:
-            variant = self._default_variant(f"seed-{len(population)}")
+            variant = EvolutionLoop._default_variant(f"seed-{len(population)}")
             population.append(variant)
         return population
 
