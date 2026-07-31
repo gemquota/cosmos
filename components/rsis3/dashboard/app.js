@@ -24,6 +24,42 @@ function loadData() {
     });
 }
 
+function esc(s){
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function up(){
+  var sm = (AD && AD.summary) || {};
+  var set = function(id, v){ var el = document.getElementById(id); if (el) el.textContent = v; };
+  set('s-pass', sm.pass || 0);
+  set('s-fail', sm.fail || 0);
+  set('s-hold', sm.hold || 0);
+  set('s-tot', sm.tot || 0);
+  set('s-pulses', sm.pulse_count || (pu ? pu.length : 0));
+  var tot = sm.tot || 0, pass = sm.pass || 0;
+  var rate = tot > 0 ? (pass / tot * 100) : 0;
+  set('srate-txt', pass + '/' + tot + ' (' + rate.toFixed(1) + '%)');
+  var bar = document.getElementById('srate-bar');
+  if (bar) bar.style.width = rate.toFixed(1) + '%';
+  set('hdr-stats', (sm.pulse_count || pu.length) + ' pulses · ' + tot + ' goals · ' + (sm.impl_count || 0) + ' improvements');
+}
+
+function loadEcosystem(){
+  fetch('ecosystem.json')
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(e){
+      if (!e) return;
+      var set = function(id, v){ var el = document.getElementById(id); if (el) el.textContent = v; };
+      var c = e.components || {};
+      set('ec-mykb', (c.mykb && c.mykb.md) ? c.mykb.md : '?');
+      set('ec-space', c.space ? c.space.files : '?');
+      set('ec-rsis3', c.rsis3 ? c.rsis3.files : '?');
+      var f = document.getElementById('dash-footer');
+      if (f) f.textContent = 'Static snapshot · generated ' + (e.generated || 'unknown') + ' · counts from tracked repo files · run `cosmos` locally for live data';
+    })
+    .catch(function(){});
+}
+
 
 function renderAll(){ly();rg();rp();rc();rcb();bk();pf();sw('overview');}
 
@@ -49,9 +85,9 @@ function sw(n){
 
 function fa(a){
   if(!a&&a!==0)return'';
-  if(typeof a==='string')return a;
-  if(typeof a==='object'){try{return JSON.stringify(a);}catch(e){return String(a);}}
-  return String(a);
+  if(typeof a==='string')return esc(a);
+  if(typeof a==='object'){try{return esc(JSON.stringify(a));}catch(e){return esc(String(a));}}
+  return esc(String(a));
 }
 
 function ly(){
@@ -79,7 +115,7 @@ function rg(){
       '<div class="flex-1"><div class="flex gap-2 flex-wrap mb-1"><span class="px-1.5 py-0.5 bg-slate-900 font-mono text-[10px] font-bold rounded text-slate-400">P'+x.p+'</span>'+
       '<span class="'+dc+' px-2 py-0.5 text-[10px] font-semibold rounded-full border">'+x.dec+'</span>'+
       '<span class="text-[10px] text-slate-500 font-mono">'+(x.conf||'')+'</span></div>'+
-      '<p class="text-xs sm:text-sm text-slate-100" style="overflow-wrap:break-word">'+x.d+'</p>'+
+      '<p class="text-xs sm:text-sm text-slate-100" style="overflow-wrap:break-word">'+esc(x.d)+'</p>'+
       '<div class="flex gap-2 mt-1 text-[10px] font-mono text-slate-500"><span>'+(x.file||'')+'</span>'+(x.func?' &middot; '+x.func:'')+(x.type?' &middot; '+x.type:'')+'</div></div>'+
       '<span class="text-xs text-slate-400 arrow">&#x25BC;</span></div>'+
       '<div class="hide border-t border-slate-700/50 p-3 sm:p-4 bg-slate-900/40 space-y-3" id="gd'+i+'">'+
@@ -130,7 +166,7 @@ function rp(){
     cd.className='bg-slate-800/60 border border-slate-700/50 rounded-xl overflow-hidden';
     cd.innerHTML='<div class="p-3 sm:p-4 cursor-pointer flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 hover:bg-slate-700/20" onclick="tp('+i+')">'+
       '<div class="flex items-center gap-3"><span class="px-2 py-1 bg-indigo-500/10 text-indigo-400 text-xs font-bold rounded-full border border-indigo-500/20">#'+p.id+'</span>'+
-      '<div><div class="text-sm font-semibold text-slate-200">'+(p.type||'Pulse')+'</div>'+
+      '<div><div class="text-sm font-semibold text-slate-200">'+esc(p.type||'Pulse')+'</div>'+
       '<div class="text-[10px] text-slate-500 font-mono">'+(p.ts_start?.substring(11,19)||'')+'</div></div></div>'+
       '<div class="flex items-center gap-3"><span class="text-[10px] text-slate-400">'+(p.goals_count||0)+'g</span>'+
       '<span class="text-[10px] text-emerald-400 font-mono">'+(p.duration||'?')+'s</span>'+
@@ -167,7 +203,7 @@ function rc(){
     var d=document.createElement('div');
     d.className='bg-slate-800/60 border border-slate-700/50 rounded-xl p-3 sm:p-4';
     d.innerHTML='<div class="flex items-center gap-2 mb-2"><span class="px-1.5 py-0.5 bg-indigo-500/10 text-indigo-400 text-[10px] font-bold rounded border border-indigo-500/20">P'+g2.p+'</span>'+
-      '<span class="text-xs text-slate-200" style="overflow-wrap:break-word">'+g2.d.substring(0,80)+(g2.d.length>80?'...':'')+'</span></div>'+
+      '<span class="text-xs text-slate-200" style="overflow-wrap:break-word">'+esc(g2.d).substring(0,80)+(g2.d.length>80?'...':'')+'</span></div>'+
       '<div class="space-y-2 max-h-[500px] overflow-y-auto">'+
       c2.map(function(e,ci){return '<div class="bg-slate-900/40 rounded-lg p-2.5 border border-slate-700/30"><div class="text-[10px] text-slate-500 font-mono mb-1">#'+(ci+1)+(e.r?' (R'+e.r+')':'')+'</div>'+
       (e.q?'<div class="text-xs text-slate-300 mb-1" style="overflow-wrap:break-word"><span class="text-indigo-400 font-bold">Q:</span> '+fa(e.q)+'</div>':'')+
