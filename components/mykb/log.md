@@ -59,3 +59,6 @@ title: "Bundle Log"
 - **+3 diagonal**: tuning ownership generalized — loop k+3 tunes loop k
   (L6→L3, L7→L4, L8→L5, L9→L6); top three loops are untuned fixed points
   (spec §1.1/§1.4, concept note updated)
+- **L0 + consumer clarification**: L0 defined as the workspace substrate (not
+  a loop); L1/L2 documented as pure consumers of tuned params with no tuning
+  targets (spec §1.1, concept note updated)
