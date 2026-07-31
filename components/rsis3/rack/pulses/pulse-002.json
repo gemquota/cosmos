@@ -1,0 +1,1095 @@
+{
+  "pulse": "002",
+  "timestamp_start": "2026-07-09T08:52:44.925234+00:00",
+  "timestamp_end": "2026-07-09T08:52:48.377720+00:00",
+  "type": "full_rrp_protocol",
+  "protocol": "RRP 4-Phase: Produce \u2192 Reflect \u2192 Refine \u2192 Check",
+  "pre_state": {
+    "timestamp": "2026-07-09T08:52:44.987675+00:00",
+    "version": "0.0.11",
+    "improvements": {
+      "total": 210,
+      "successful": 44,
+      "rate": 21.0
+    },
+    "scores": {
+      "L1": 85.8,
+      "L2": 62.2,
+      "L3": 47.5,
+      "L4": 70.0,
+      "L5": 100.0,
+      "L6": 100.0,
+      "L7": 98.5,
+      "L8": 92.1,
+      "L9": 78.8
+    },
+    "scores_detail": {
+      "L1": {
+        "aggregate": 85.8,
+        "metrics": {
+          "execution_reliability": 52.6,
+          "failure_recovery": 100.0,
+          "pipeline_activity": 100.0,
+          "crisis_immunity": 100.0
+        }
+      },
+      "L2": {
+        "aggregate": 62.2,
+        "metrics": {
+          "goal_analysis": 41.5,
+          "step_planning": 75.9,
+          "apply_success_rate": 36.8,
+          "stub_resolution": 63.0,
+          "test_stability": 90.0,
+          "iteration_efficiency": 56.4,
+          "pipeline_throughput": 60.3
+        }
+      },
+      "L3": {
+        "aggregate": 47.5,
+        "metrics": {
+          "signal_coverage": 16.1,
+          "goal_generation": 68.3,
+          "goal_execution": 43.0,
+          "goal_diversity": 90.0,
+          "queue_health": 25.0
+        }
+      },
+      "L4": {
+        "aggregate": 70.0,
+        "metrics": {
+          "parameter_tuning": 40.0,
+          "experimentation": 100.0,
+          "kg_utilization": 63.0,
+          "optimization_depth": 62.6,
+          "learning_maturity": 78.0
+        }
+      },
+      "L5": {
+        "aggregate": 100.0,
+        "metrics": {
+          "pattern_detection": 100.0,
+          "strategy_evolution": 100.0,
+          "insight_utilization": 100.0,
+          "redundancy_detection": 100.0,
+          "kg_growth": 100.0
+        }
+      },
+      "L6": {
+        "aggregate": 100.0,
+        "metrics": {
+          "value_definition": 90,
+          "value_adherence": 100.0,
+          "value_reinforcement": 100.0,
+          "identity_stability": 100.0,
+          "self_knowledge": 100.0
+        }
+      },
+      "L7": {
+        "aggregate": 98.5,
+        "metrics": {
+          "meta_reflection_depth": 100.0,
+          "self_critique_quality": 81.5,
+          "improvement_meta_awareness": 100.0
+        }
+      },
+      "L8": {
+        "aggregate": 92.1,
+        "metrics": {
+          "reflection_on_reflection": 96.8,
+          "recursive_insight_depth": 73.9,
+          "meta_meta_awareness": 90.0
+        }
+      },
+      "L9": {
+        "aggregate": 78.8,
+        "metrics": {
+          "meta_mmm_coherence": 67.3,
+          "recursive_synthesis_quality": 64.0,
+          "self_transcendence": 100.0
+        }
+      }
+    },
+    "kg": {
+      "nodes": 800,
+      "edges": 1050,
+      "max_nodes": 1000
+    },
+    "identity": {
+      "snapshots": 93,
+      "anomaly_score": 0.008,
+      "in_crisis": false,
+      "consecutive_failures": 0,
+      "cycle_count": 206
+    },
+    "evaluator_mode": "rrp_4_phase"
+  },
+  "post_state": {
+    "timestamp": "2026-07-09T08:52:48.372919+00:00",
+    "version": "0.0.11",
+    "improvements": {
+      "total": 210,
+      "successful": 44,
+      "rate": 21.0
+    },
+    "scores": {
+      "L1": 85.8,
+      "L2": 62.2,
+      "L3": 47.5,
+      "L4": 70.0,
+      "L5": 100.0,
+      "L6": 100.0,
+      "L7": 98.5,
+      "L8": 92.1,
+      "L9": 78.8
+    },
+    "scores_detail": {
+      "L1": {
+        "aggregate": 85.8,
+        "metrics": {
+          "execution_reliability": 52.6,
+          "failure_recovery": 100.0,
+          "pipeline_activity": 100.0,
+          "crisis_immunity": 100.0
+        }
+      },
+      "L2": {
+        "aggregate": 62.2,
+        "metrics": {
+          "goal_analysis": 41.5,
+          "step_planning": 75.9,
+          "apply_success_rate": 36.8,
+          "stub_resolution": 63.0,
+          "test_stability": 90.0,
+          "iteration_efficiency": 56.4,
+          "pipeline_throughput": 60.3
+        }
+      },
+      "L3": {
+        "aggregate": 47.5,
+        "metrics": {
+          "signal_coverage": 16.1,
+          "goal_generation": 68.3,
+          "goal_execution": 43.0,
+          "goal_diversity": 90.0,
+          "queue_health": 25.0
+        }
+      },
+      "L4": {
+        "aggregate": 70.0,
+        "metrics": {
+          "parameter_tuning": 40.0,
+          "experimentation": 100.0,
+          "kg_utilization": 63.0,
+          "optimization_depth": 62.6,
+          "learning_maturity": 78.0
+        }
+      },
+      "L5": {
+        "aggregate": 100.0,
+        "metrics": {
+          "pattern_detection": 100.0,
+          "strategy_evolution": 100.0,
+          "insight_utilization": 100.0,
+          "redundancy_detection": 100.0,
+          "kg_growth": 100.0
+        }
+      },
+      "L6": {
+        "aggregate": 100.0,
+        "metrics": {
+          "value_definition": 90,
+          "value_adherence": 100.0,
+          "value_reinforcement": 100.0,
+          "identity_stability": 100.0,
+          "self_knowledge": 100.0
+        }
+      },
+      "L7": {
+        "aggregate": 98.5,
+        "metrics": {
+          "meta_reflection_depth": 100.0,
+          "self_critique_quality": 81.5,
+          "improvement_meta_awareness": 100.0
+        }
+      },
+      "L8": {
+        "aggregate": 92.1,
+        "metrics": {
+          "reflection_on_reflection": 96.8,
+          "recursive_insight_depth": 73.9,
+          "meta_meta_awareness": 90.0
+        }
+      },
+      "L9": {
+        "aggregate": 78.8,
+        "metrics": {
+          "meta_mmm_coherence": 67.3,
+          "recursive_synthesis_quality": 64.0,
+          "self_transcendence": 100.0
+        }
+      }
+    },
+    "kg": {
+      "nodes": 800,
+      "edges": 1050,
+      "max_nodes": 1000
+    },
+    "identity": {
+      "snapshots": 93,
+      "anomaly_score": 0.008,
+      "in_crisis": false,
+      "consecutive_failures": 0,
+      "cycle_count": 206
+    },
+    "evaluator_mode": "rrp_4_phase"
+  },
+  "signals": {
+    "total_stubs": 2,
+    "goals_evaluated": 8
+  },
+  "goals": [
+    {
+      "goal_index": 0,
+      "description": "Implement TimeoutError in rsis/timeout.py \u2014 replace stub with production code",
+      "file": "rsis/timeout.py",
+      "function": "rsis/timeout.py",
+      "rrp_refinement": {
+        "constraints": {
+          "error_handling": "LOCKED"
+        },
+        "locked": [
+          "error_handling"
+        ],
+        "recommended": [],
+        "contradictions": false,
+        "trace_count": 3,
+        "trace": [
+          {
+            "step": "constraint_extraction",
+            "detail": "Pattern 'error_handling' matched goal text",
+            "result": "Locked constraint: error_handling"
+          },
+          {
+            "step": "constraint_summary",
+            "detail": "Extracted 1 constraints from goal",
+            "result": "Constraints: error_handling"
+          },
+          {
+            "step": "ambiguity_assessment",
+            "detail": "Ambiguity: req=0.00 dm=1.00 ec=1.00 det=1.00",
+            "result": "Average ambiguity: 1.00"
+          }
+        ]
+      },
+      "rrp_evaluation": {
+        "phase": "full_4_phase",
+        "protocol": "Produce \u2192 Reflect \u2192 Refine \u2192 Check",
+        "decision": "PASS",
+        "confidence": 0.65,
+        "score_avg": 0.7,
+        "scores": {
+          "correctness": 0.7,
+          "safety": 0.8,
+          "efficiency": 0.7,
+          "regression": 0.7
+        },
+        "suggestions": [
+          "Provide the code or diff to evaluate."
+        ],
+        "trace": {
+          "goal_analysis": {
+            "phase": "goal_analysis",
+            "reasoning": "Goal: Implement TimeoutError in rsis/timeout.py \u2014 replace stub with production code | Target files: rsis/timeout.py",
+            "conclusion": "Goal type: implementation affecting 1 file(s)",
+            "goal_type": "implementation"
+          },
+          "constraint_extraction": {
+            "phase": "constraint_extraction",
+            "reasoning": "RRP extracted 1 constraints. Bridge steps: 3",
+            "constraints": {
+              "error_handling": "LOCKED"
+            },
+            "locked": [
+              "error_handling"
+            ],
+            "recommended": [],
+            "contradictions": []
+          },
+          "ambiguity_assessment": {
+            "phase": "ambiguity_assessment",
+            "reasoning": "Ambiguity assessed. Avg: 0.80. Req clarity: 100%. Impl certainty: 50%.",
+            "ambiguity": {
+              "requirements": 0.0,
+              "data_model": 1.0,
+              "edge_case": 1.0,
+              "determinism": 1.0,
+              "average": 1.0
+            },
+            "avg_ambiguity": 0.8
+          },
+          "evaluation": {
+            "phase": "evaluation",
+            "reasoning": "RRP 4-phase evaluation. Constraints: 1. Decision: PASS (conf: 0.65). Locked: ['error_handling'].",
+            "decision": "PASS",
+            "confidence": 0.65,
+            "suggestions": [
+              "Provide the code or diff to evaluate."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "goal_index": 1,
+      "description": "Implement unnamed in rsis/launch.py \u2014 replace stub with production code",
+      "file": "rsis/launch.py",
+      "function": "rsis/launch.py",
+      "rrp_refinement": {
+        "constraints": {},
+        "locked": [],
+        "recommended": [],
+        "contradictions": false,
+        "trace_count": 2,
+        "trace": [
+          {
+            "step": "constraint_extraction",
+            "detail": "No RRP constraints matched this goal",
+            "result": "0 constraints extracted"
+          },
+          {
+            "step": "ambiguity_assessment",
+            "detail": "Ambiguity: req=0.00 dm=1.00 ec=1.00 det=1.00",
+            "result": "Average ambiguity: 1.00"
+          }
+        ]
+      },
+      "rrp_evaluation": {
+        "phase": "full_4_phase",
+        "protocol": "Produce \u2192 Reflect \u2192 Refine \u2192 Check",
+        "decision": "PASS",
+        "confidence": 0.56,
+        "score_avg": 0.7,
+        "scores": {
+          "correctness": 0.7,
+          "safety": 0.8,
+          "efficiency": 0.7,
+          "regression": 0.7
+        },
+        "suggestions": [
+          "Provide the code or diff to evaluate."
+        ],
+        "trace": {
+          "goal_analysis": {
+            "phase": "goal_analysis",
+            "reasoning": "Goal: Implement unnamed in rsis/launch.py \u2014 replace stub with production code | Target files: rsis/launch.py",
+            "conclusion": "Goal type: implementation affecting 1 file(s)",
+            "goal_type": "implementation"
+          },
+          "constraint_extraction": {
+            "phase": "constraint_extraction",
+            "reasoning": "RRP extracted 0 constraints. Bridge steps: 2",
+            "constraints": {},
+            "locked": [],
+            "recommended": [],
+            "contradictions": []
+          },
+          "ambiguity_assessment": {
+            "phase": "ambiguity_assessment",
+            "reasoning": "Ambiguity assessed. Avg: 0.80. Req clarity: 100%. Impl certainty: 50%.",
+            "ambiguity": {
+              "requirements": 0.0,
+              "data_model": 1.0,
+              "edge_case": 1.0,
+              "determinism": 1.0,
+              "average": 1.0
+            },
+            "avg_ambiguity": 0.8
+          },
+          "evaluation": {
+            "phase": "evaluation",
+            "reasoning": "RRP 4-phase evaluation. Constraints: 0. Decision: PASS (conf: 0.56). Locked: [].",
+            "decision": "PASS",
+            "confidence": 0.56,
+            "suggestions": [
+              "Provide the code or diff to evaluate."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "goal_index": 2,
+      "description": "Improve error handling in rsis/timeout.py \u2014 add proper exception types and chaining",
+      "file": "rsis/timeout.py",
+      "function": "rsis/timeout.py",
+      "rrp_refinement": {
+        "constraints": {
+          "error_handling": "LOCKED",
+          "type_safety": "LOCKED"
+        },
+        "locked": [
+          "error_handling",
+          "type_safety"
+        ],
+        "recommended": [],
+        "contradictions": false,
+        "trace_count": 4,
+        "trace": [
+          {
+            "step": "constraint_extraction",
+            "detail": "Pattern 'error_handling' matched goal text",
+            "result": "Locked constraint: error_handling"
+          },
+          {
+            "step": "constraint_extraction",
+            "detail": "Pattern 'type_safety' matched goal text",
+            "result": "Locked constraint: type_safety"
+          },
+          {
+            "step": "constraint_summary",
+            "detail": "Extracted 2 constraints from goal",
+            "result": "Constraints: error_handling, type_safety"
+          },
+          {
+            "step": "ambiguity_assessment",
+            "detail": "Ambiguity: req=0.00 dm=1.00 ec=1.00 det=1.00",
+            "result": "Average ambiguity: 1.00"
+          }
+        ]
+      },
+      "rrp_evaluation": {
+        "phase": "full_4_phase",
+        "protocol": "Produce \u2192 Reflect \u2192 Refine \u2192 Check",
+        "decision": "PASS",
+        "confidence": 0.6,
+        "score_avg": 0.7,
+        "scores": {
+          "correctness": 0.7,
+          "safety": 0.8,
+          "efficiency": 0.7,
+          "regression": 0.7
+        },
+        "suggestions": [
+          "Provide the code or diff to evaluate."
+        ],
+        "trace": {
+          "goal_analysis": {
+            "phase": "goal_analysis",
+            "reasoning": "Goal: Improve error handling in rsis/timeout.py \u2014 add proper exception types and chaining | Target files: rsis/timeout.py",
+            "conclusion": "Goal type: improvement affecting 1 file(s)",
+            "goal_type": "improvement"
+          },
+          "constraint_extraction": {
+            "phase": "constraint_extraction",
+            "reasoning": "RRP extracted 2 constraints. Bridge steps: 4",
+            "constraints": {
+              "error_handling": "LOCKED",
+              "type_safety": "LOCKED"
+            },
+            "locked": [
+              "error_handling",
+              "type_safety"
+            ],
+            "recommended": [],
+            "contradictions": []
+          },
+          "ambiguity_assessment": {
+            "phase": "ambiguity_assessment",
+            "reasoning": "Ambiguity assessed. Avg: 0.80. Req clarity: 100%. Impl certainty: 50%.",
+            "ambiguity": {
+              "requirements": 0.0,
+              "data_model": 1.0,
+              "edge_case": 1.0,
+              "determinism": 1.0,
+              "average": 1.0
+            },
+            "avg_ambiguity": 0.8
+          },
+          "evaluation": {
+            "phase": "evaluation",
+            "reasoning": "RRP 4-phase evaluation. Constraints: 2. Decision: PASS (conf: 0.6). Locked: ['error_handling', 'type_safety'].",
+            "decision": "PASS",
+            "confidence": 0.6,
+            "suggestions": [
+              "Provide the code or diff to evaluate."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "goal_index": 3,
+      "description": "Add type safety in rsis/scoring.py \u2014 add type annotations to all public functions",
+      "file": "rsis/scoring.py",
+      "function": "rsis/scoring.py",
+      "rrp_refinement": {
+        "constraints": {
+          "type_safety": "LOCKED"
+        },
+        "locked": [
+          "type_safety"
+        ],
+        "recommended": [],
+        "contradictions": false,
+        "trace_count": 3,
+        "trace": [
+          {
+            "step": "constraint_extraction",
+            "detail": "Pattern 'type_safety' matched goal text",
+            "result": "Locked constraint: type_safety"
+          },
+          {
+            "step": "constraint_summary",
+            "detail": "Extracted 1 constraints from goal",
+            "result": "Constraints: type_safety"
+          },
+          {
+            "step": "ambiguity_assessment",
+            "detail": "Ambiguity: req=0.00 dm=1.00 ec=1.00 det=1.00",
+            "result": "Average ambiguity: 1.00"
+          }
+        ]
+      },
+      "rrp_evaluation": {
+        "phase": "full_4_phase",
+        "protocol": "Produce \u2192 Reflect \u2192 Refine \u2192 Check",
+        "decision": "PASS",
+        "confidence": 0.65,
+        "score_avg": 0.7,
+        "scores": {
+          "correctness": 0.7,
+          "safety": 0.8,
+          "efficiency": 0.7,
+          "regression": 0.7
+        },
+        "suggestions": [
+          "Provide the code or diff to evaluate."
+        ],
+        "trace": {
+          "goal_analysis": {
+            "phase": "goal_analysis",
+            "reasoning": "Goal: Add type safety in rsis/scoring.py \u2014 add type annotations to all public functions | Target files: rsis/scoring.py",
+            "conclusion": "Goal type: improvement affecting 1 file(s)",
+            "goal_type": "improvement"
+          },
+          "constraint_extraction": {
+            "phase": "constraint_extraction",
+            "reasoning": "RRP extracted 1 constraints. Bridge steps: 3",
+            "constraints": {
+              "type_safety": "LOCKED"
+            },
+            "locked": [
+              "type_safety"
+            ],
+            "recommended": [],
+            "contradictions": []
+          },
+          "ambiguity_assessment": {
+            "phase": "ambiguity_assessment",
+            "reasoning": "Ambiguity assessed. Avg: 0.80. Req clarity: 100%. Impl certainty: 50%.",
+            "ambiguity": {
+              "requirements": 0.0,
+              "data_model": 1.0,
+              "edge_case": 1.0,
+              "determinism": 1.0,
+              "average": 1.0
+            },
+            "avg_ambiguity": 0.8
+          },
+          "evaluation": {
+            "phase": "evaluation",
+            "reasoning": "RRP 4-phase evaluation. Constraints: 1. Decision: PASS (conf: 0.65). Locked: ['type_safety'].",
+            "decision": "PASS",
+            "confidence": 0.65,
+            "suggestions": [
+              "Provide the code or diff to evaluate."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "goal_index": 4,
+      "description": "Improve logging coverage in rsis/loop_l2.py \u2014 add structured logging for debug traceability",
+      "file": "rsis/loop_l2.py",
+      "function": "rsis/loop_l2.py",
+      "rrp_refinement": {
+        "constraints": {
+          "test_coverage": "LOCKED",
+          "logging": "LOCKED"
+        },
+        "locked": [
+          "test_coverage",
+          "logging"
+        ],
+        "recommended": [],
+        "contradictions": false,
+        "trace_count": 4,
+        "trace": [
+          {
+            "step": "constraint_extraction",
+            "detail": "Pattern 'test_coverage' matched goal text",
+            "result": "Locked constraint: test_coverage"
+          },
+          {
+            "step": "constraint_extraction",
+            "detail": "Pattern 'logging' matched goal text",
+            "result": "Locked constraint: logging"
+          },
+          {
+            "step": "constraint_summary",
+            "detail": "Extracted 2 constraints from goal",
+            "result": "Constraints: test_coverage, logging"
+          },
+          {
+            "step": "ambiguity_assessment",
+            "detail": "Ambiguity: req=0.00 dm=1.00 ec=1.00 det=1.00",
+            "result": "Average ambiguity: 1.00"
+          }
+        ]
+      },
+      "rrp_evaluation": {
+        "phase": "full_4_phase",
+        "protocol": "Produce \u2192 Reflect \u2192 Refine \u2192 Check",
+        "decision": "PASS",
+        "confidence": 0.6,
+        "score_avg": 0.7,
+        "scores": {
+          "correctness": 0.7,
+          "safety": 0.8,
+          "efficiency": 0.7,
+          "regression": 0.7
+        },
+        "suggestions": [
+          "Provide the code or diff to evaluate."
+        ],
+        "trace": {
+          "goal_analysis": {
+            "phase": "goal_analysis",
+            "reasoning": "Goal: Improve logging coverage in rsis/loop_l2.py \u2014 add structured logging for debug traceability | Target files: rsis/loop_l2.py",
+            "conclusion": "Goal type: improvement affecting 1 file(s)",
+            "goal_type": "improvement"
+          },
+          "constraint_extraction": {
+            "phase": "constraint_extraction",
+            "reasoning": "RRP extracted 2 constraints. Bridge steps: 4",
+            "constraints": {
+              "test_coverage": "LOCKED",
+              "logging": "LOCKED"
+            },
+            "locked": [
+              "test_coverage",
+              "logging"
+            ],
+            "recommended": [],
+            "contradictions": []
+          },
+          "ambiguity_assessment": {
+            "phase": "ambiguity_assessment",
+            "reasoning": "Ambiguity assessed. Avg: 0.80. Req clarity: 100%. Impl certainty: 50%.",
+            "ambiguity": {
+              "requirements": 0.0,
+              "data_model": 1.0,
+              "edge_case": 1.0,
+              "determinism": 1.0,
+              "average": 1.0
+            },
+            "avg_ambiguity": 0.8
+          },
+          "evaluation": {
+            "phase": "evaluation",
+            "reasoning": "RRP 4-phase evaluation. Constraints: 2. Decision: PASS (conf: 0.6). Locked: ['test_coverage', 'logging'].",
+            "decision": "PASS",
+            "confidence": 0.6,
+            "suggestions": [
+              "Provide the code or diff to evaluate."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "goal_index": 5,
+      "description": "Add input validation in rsis/rrp_bridge.py \u2014 validate all public API parameters",
+      "file": "rsis/rrp_bridge.py",
+      "function": "rsis/rrp_bridge.py",
+      "rrp_refinement": {
+        "constraints": {
+          "error_handling": "LOCKED",
+          "test_coverage": "LOCKED",
+          "input_validation": "LOCKED"
+        },
+        "locked": [
+          "error_handling",
+          "test_coverage",
+          "input_validation"
+        ],
+        "recommended": [],
+        "contradictions": false,
+        "trace_count": 5,
+        "trace": [
+          {
+            "step": "constraint_extraction",
+            "detail": "Pattern 'error_handling' matched goal text",
+            "result": "Locked constraint: error_handling"
+          },
+          {
+            "step": "constraint_extraction",
+            "detail": "Pattern 'test_coverage' matched goal text",
+            "result": "Locked constraint: test_coverage"
+          },
+          {
+            "step": "constraint_extraction",
+            "detail": "Pattern 'input_validation' matched goal text",
+            "result": "Locked constraint: input_validation"
+          },
+          {
+            "step": "constraint_summary",
+            "detail": "Extracted 3 constraints from goal",
+            "result": "Constraints: error_handling, test_coverage, input_validation"
+          },
+          {
+            "step": "ambiguity_assessment",
+            "detail": "Ambiguity: req=0.00 dm=1.00 ec=1.00 det=1.00",
+            "result": "Average ambiguity: 1.00"
+          }
+        ]
+      },
+      "rrp_evaluation": {
+        "phase": "full_4_phase",
+        "protocol": "Produce \u2192 Reflect \u2192 Refine \u2192 Check",
+        "decision": "PASS",
+        "confidence": 0.55,
+        "score_avg": 0.7,
+        "scores": {
+          "correctness": 0.7,
+          "safety": 0.8,
+          "efficiency": 0.7,
+          "regression": 0.7
+        },
+        "suggestions": [
+          "Provide the code or diff to evaluate."
+        ],
+        "trace": {
+          "goal_analysis": {
+            "phase": "goal_analysis",
+            "reasoning": "Goal: Add input validation in rsis/rrp_bridge.py \u2014 validate all public API parameters | Target files: rsis/rrp_bridge.py",
+            "conclusion": "Goal type: improvement affecting 1 file(s)",
+            "goal_type": "improvement"
+          },
+          "constraint_extraction": {
+            "phase": "constraint_extraction",
+            "reasoning": "RRP extracted 3 constraints. Bridge steps: 5",
+            "constraints": {
+              "error_handling": "LOCKED",
+              "test_coverage": "LOCKED",
+              "input_validation": "LOCKED"
+            },
+            "locked": [
+              "error_handling",
+              "test_coverage",
+              "input_validation"
+            ],
+            "recommended": [],
+            "contradictions": []
+          },
+          "ambiguity_assessment": {
+            "phase": "ambiguity_assessment",
+            "reasoning": "Ambiguity assessed. Avg: 0.80. Req clarity: 100%. Impl certainty: 50%.",
+            "ambiguity": {
+              "requirements": 0.0,
+              "data_model": 1.0,
+              "edge_case": 1.0,
+              "determinism": 1.0,
+              "average": 1.0
+            },
+            "avg_ambiguity": 0.8
+          },
+          "evaluation": {
+            "phase": "evaluation",
+            "reasoning": "RRP 4-phase evaluation. Constraints: 3. Decision: PASS (conf: 0.55). Locked: ['error_handling', 'test_coverage', 'input_validation'].",
+            "decision": "PASS",
+            "confidence": 0.55,
+            "suggestions": [
+              "Provide the code or diff to evaluate."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "goal_index": 6,
+      "description": "Reduce complexity in rsis/memory.py \u2014 refactor KG operations for maintainability",
+      "file": "rsis/memory.py",
+      "function": "rsis/memory.py",
+      "rrp_refinement": {
+        "constraints": {
+          "code_quality": "LOCKED",
+          "maintainability": "LOCKED"
+        },
+        "locked": [
+          "code_quality",
+          "maintainability"
+        ],
+        "recommended": [],
+        "contradictions": false,
+        "trace_count": 4,
+        "trace": [
+          {
+            "step": "constraint_extraction",
+            "detail": "Pattern 'code_quality' matched goal text",
+            "result": "Locked constraint: code_quality"
+          },
+          {
+            "step": "constraint_extraction",
+            "detail": "Pattern 'maintainability' matched goal text",
+            "result": "Locked constraint: maintainability"
+          },
+          {
+            "step": "constraint_summary",
+            "detail": "Extracted 2 constraints from goal",
+            "result": "Constraints: code_quality, maintainability"
+          },
+          {
+            "step": "ambiguity_assessment",
+            "detail": "Ambiguity: req=0.00 dm=1.00 ec=1.00 det=1.00",
+            "result": "Average ambiguity: 1.00"
+          }
+        ]
+      },
+      "rrp_evaluation": {
+        "phase": "full_4_phase",
+        "protocol": "Produce \u2192 Reflect \u2192 Refine \u2192 Check",
+        "decision": "PASS",
+        "confidence": 0.6,
+        "score_avg": 0.7,
+        "scores": {
+          "correctness": 0.7,
+          "safety": 0.8,
+          "efficiency": 0.7,
+          "regression": 0.7
+        },
+        "suggestions": [
+          "Provide the code or diff to evaluate."
+        ],
+        "trace": {
+          "goal_analysis": {
+            "phase": "goal_analysis",
+            "reasoning": "Goal: Reduce complexity in rsis/memory.py \u2014 refactor KG operations for maintainability | Target files: rsis/memory.py",
+            "conclusion": "Goal type: improvement affecting 1 file(s)",
+            "goal_type": "improvement"
+          },
+          "constraint_extraction": {
+            "phase": "constraint_extraction",
+            "reasoning": "RRP extracted 2 constraints. Bridge steps: 4",
+            "constraints": {
+              "code_quality": "LOCKED",
+              "maintainability": "LOCKED"
+            },
+            "locked": [
+              "code_quality",
+              "maintainability"
+            ],
+            "recommended": [],
+            "contradictions": []
+          },
+          "ambiguity_assessment": {
+            "phase": "ambiguity_assessment",
+            "reasoning": "Ambiguity assessed. Avg: 0.80. Req clarity: 100%. Impl certainty: 50%.",
+            "ambiguity": {
+              "requirements": 0.0,
+              "data_model": 1.0,
+              "edge_case": 1.0,
+              "determinism": 1.0,
+              "average": 1.0
+            },
+            "avg_ambiguity": 0.8
+          },
+          "evaluation": {
+            "phase": "evaluation",
+            "reasoning": "RRP 4-phase evaluation. Constraints: 2. Decision: PASS (conf: 0.6). Locked: ['code_quality', 'maintainability'].",
+            "decision": "PASS",
+            "confidence": 0.6,
+            "suggestions": [
+              "Provide the code or diff to evaluate."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "goal_index": 7,
+      "description": "Add documentation coverage in rsis/evaluator.py \u2014 add comprehensive docstrings",
+      "file": "rsis/evaluator.py",
+      "function": "rsis/evaluator.py",
+      "rrp_refinement": {
+        "constraints": {
+          "test_coverage": "LOCKED",
+          "documentation": "LOCKED"
+        },
+        "locked": [
+          "test_coverage",
+          "documentation"
+        ],
+        "recommended": [],
+        "contradictions": false,
+        "trace_count": 4,
+        "trace": [
+          {
+            "step": "constraint_extraction",
+            "detail": "Pattern 'test_coverage' matched goal text",
+            "result": "Locked constraint: test_coverage"
+          },
+          {
+            "step": "constraint_extraction",
+            "detail": "Pattern 'documentation' matched goal text",
+            "result": "Locked constraint: documentation"
+          },
+          {
+            "step": "constraint_summary",
+            "detail": "Extracted 2 constraints from goal",
+            "result": "Constraints: test_coverage, documentation"
+          },
+          {
+            "step": "ambiguity_assessment",
+            "detail": "Ambiguity: req=0.00 dm=1.00 ec=1.00 det=1.00",
+            "result": "Average ambiguity: 1.00"
+          }
+        ]
+      },
+      "rrp_evaluation": {
+        "phase": "full_4_phase",
+        "protocol": "Produce \u2192 Reflect \u2192 Refine \u2192 Check",
+        "decision": "PASS",
+        "confidence": 0.6,
+        "score_avg": 0.7,
+        "scores": {
+          "correctness": 0.7,
+          "safety": 0.8,
+          "efficiency": 0.7,
+          "regression": 0.7
+        },
+        "suggestions": [
+          "Provide the code or diff to evaluate."
+        ],
+        "trace": {
+          "goal_analysis": {
+            "phase": "goal_analysis",
+            "reasoning": "Goal: Add documentation coverage in rsis/evaluator.py \u2014 add comprehensive docstrings | Target files: rsis/evaluator.py",
+            "conclusion": "Goal type: improvement affecting 1 file(s)",
+            "goal_type": "improvement"
+          },
+          "constraint_extraction": {
+            "phase": "constraint_extraction",
+            "reasoning": "RRP extracted 2 constraints. Bridge steps: 4",
+            "constraints": {
+              "test_coverage": "LOCKED",
+              "documentation": "LOCKED"
+            },
+            "locked": [
+              "test_coverage",
+              "documentation"
+            ],
+            "recommended": [],
+            "contradictions": []
+          },
+          "ambiguity_assessment": {
+            "phase": "ambiguity_assessment",
+            "reasoning": "Ambiguity assessed. Avg: 0.80. Req clarity: 100%. Impl certainty: 50%.",
+            "ambiguity": {
+              "requirements": 0.0,
+              "data_model": 1.0,
+              "edge_case": 1.0,
+              "determinism": 1.0,
+              "average": 1.0
+            },
+            "avg_ambiguity": 0.8
+          },
+          "evaluation": {
+            "phase": "evaluation",
+            "reasoning": "RRP 4-phase evaluation. Constraints: 2. Decision: PASS (conf: 0.6). Locked: ['test_coverage', 'documentation'].",
+            "decision": "PASS",
+            "confidence": 0.6,
+            "suggestions": [
+              "Provide the code or diff to evaluate."
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "improvements": [
+    {
+      "goal_index": 0,
+      "success": true,
+      "applied": true,
+      "attempts": 1
+    },
+    {
+      "goal_index": 1,
+      "success": true,
+      "applied": true,
+      "attempts": 1
+    },
+    {
+      "goal_index": 2,
+      "success": true,
+      "applied": true,
+      "attempts": 1
+    },
+    {
+      "goal_index": 3,
+      "success": true,
+      "applied": true,
+      "attempts": 1
+    },
+    {
+      "goal_index": 4,
+      "success": true,
+      "applied": true,
+      "attempts": 1
+    },
+    {
+      "goal_index": 5,
+      "success": true,
+      "applied": true,
+      "attempts": 1
+    },
+    {
+      "goal_index": 6,
+      "success": true,
+      "applied": true,
+      "attempts": 1
+    },
+    {
+      "goal_index": 7,
+      "success": true,
+      "applied": true,
+      "attempts": 1
+    }
+  ],
+  "summary": {
+    "goals_generated": 8,
+    "goals_approved": 8,
+    "goals_held": 0,
+    "goals_rejected": 0,
+    "duration_seconds": 3.5,
+    "eval_mode": "rrp_4_phase_direct"
+  },
+  "rrp_stats": {
+    "constraint_types": [
+      "code_quality",
+      "type_safety",
+      "logging",
+      "documentation",
+      "test_coverage",
+      "error_handling",
+      "maintainability",
+      "input_validation"
+    ],
+    "avg_confidence": 0.601,
+    "avg_score": 0.7,
+    "trace_count": 29
+  }
+}

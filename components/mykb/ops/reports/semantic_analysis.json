@@ -1,0 +1,1188 @@
+{
+  "generated": "2026-07-21T21:20:25.995344",
+  "total_entities": 1701,
+  "template_entities": 1628,
+  "real_content_entities": 73,
+  "domain_counts": {
+    "mobile-platform": 796,
+    "web-platforms": 758,
+    "os-shell": 65,
+    "dev-tools": 51,
+    "security-auth": 24,
+    "devops-infra": 7
+  },
+  "semantic_groups": [
+    {
+      "type": "tag_group",
+      "name": "API",
+      "size": 1523,
+      "domains": [
+        "mobile-platform",
+        "web-platforms"
+      ],
+      "entities": [
+        "ImportError",
+        "CSS",
+        "Complete Reference",
+        "Database",
+        "Display",
+        "HTML",
+        "Reference",
+        "DOB",
+        "Telemetry",
+        "Educational Database",
+        "DevOps",
+        "Gesture Harmonics",
+        "Logging",
+        "Harmonic Series",
+        "MCP",
+        "Play Root",
+        "Projects",
+        "Daily Telegram Task",
+        "Harmonica Harmonic Explorer",
+        "Overseer"
+      ],
+      "description": "Entities associated with api"
+    },
+    {
+      "type": "tag_group",
+      "name": "AUTH",
+      "size": 1275,
+      "domains": [
+        "mobile-platform",
+        "web-platforms",
+        "security-auth"
+      ],
+      "entities": [
+        "ImportError",
+        "CSS",
+        "Complete Reference",
+        "Database",
+        "Display",
+        "HTML",
+        "Reference",
+        "DOB",
+        "Educational Database",
+        "DevOps",
+        "Logging",
+        "Projects",
+        "Daily Telegram Task",
+        "Overseer",
+        "Network Type",
+        "Max Withdraw",
+        "Mapping Logging Hooks",
+        "ABOVE",
+        "ACP",
+        "AD"
+      ],
+      "description": "Entities associated with auth"
+    },
+    {
+      "type": "tag_group",
+      "name": "ANDROID",
+      "size": 965,
+      "domains": [
+        "mobile-platform",
+        "web-platforms"
+      ],
+      "entities": [
+        "ImportError",
+        "CSS",
+        "HTML",
+        "AAAA",
+        "AABB",
+        "ABOVE",
+        "ACP",
+        "AD",
+        "ADDR",
+        "ADR",
+        "AREA",
+        "AudioContext",
+        "AutomationManager",
+        "BigQuery",
+        "BLOB",
+        "CAC",
+        "CanvasPool",
+        "CDN",
+        "CLI",
+        "COLS"
+      ],
+      "description": "Entities associated with android"
+    },
+    {
+      "type": "tag_group",
+      "name": "BASH",
+      "size": 675,
+      "domains": [
+        "mobile-platform",
+        "web-platforms",
+        "os-shell",
+        "devops-infra",
+        "security-auth"
+      ],
+      "entities": [
+        "ImportError",
+        "CSS",
+        "Complete Reference",
+        "HTML",
+        "Reference",
+        "Telemetry",
+        "DevOps",
+        "MCP",
+        "FreeRide",
+        "Skills",
+        "AABB",
+        "ACP",
+        "AudioContext",
+        "CanvasPool",
+        "CLI",
+        "KnowledgeGraph",
+        "MemoryManager",
+        "DB",
+        "DirectionalLight",
+        "DOM"
+      ],
+      "description": "Entities associated with bash"
+    },
+    {
+      "type": "tag_group",
+      "name": "AUTHENTICATION",
+      "size": 617,
+      "domains": [
+        "mobile-platform",
+        "web-platforms"
+      ],
+      "entities": [
+        "ImportError",
+        "AD",
+        "AudioContext",
+        "BigQuery",
+        "BLOB",
+        "CLI",
+        "GameState",
+        "GemmaOutlinesAgent",
+        "IntentRouter",
+        "KnowledgeGraph",
+        "MemoryManager",
+        "DB",
+        "DOM",
+        "EvaluatorClient",
+        "JS",
+        "RecoveryManager",
+        "RenderTargetSystem",
+        "SelfModel",
+        "ToolCall",
+        "ToolRegistry"
+      ],
+      "description": "Entities associated with authentication"
+    },
+    {
+      "type": "tag_group",
+      "name": "AWS",
+      "size": 474,
+      "domains": [
+        "mobile-platform",
+        "security-auth",
+        "web-platforms",
+        "devops-infra"
+      ],
+      "entities": [
+        "ImportError",
+        "CSS",
+        "HTML",
+        "AudioContext",
+        "CanvasPool",
+        "CDN",
+        "CLI",
+        "COLS",
+        "GameState",
+        "DirectionalLight",
+        "DOM",
+        "ERROR",
+        "FilterSystem",
+        "HTTP",
+        "RenderTargetSystem",
+        "MeshBasicMaterial",
+        "PerspectiveCamera",
+        "Bond Angle Preference",
+        "TypeScript",
+        "WebGL"
+      ],
+      "description": "Entities associated with aws"
+    },
+    {
+      "type": "tag_group",
+      "name": "BUG",
+      "size": 408,
+      "domains": [
+        "mobile-platform",
+        "web-platforms",
+        "os-shell",
+        "dev-tools",
+        "devops-infra"
+      ],
+      "entities": [
+        "ImportError",
+        "CSS",
+        "Database",
+        "Display",
+        "HTML",
+        "Telemetry",
+        "Educational Database",
+        "Gesture Harmonics",
+        "Logging",
+        "Harmonic Series",
+        "Play Root",
+        "Projects",
+        "Daily Telegram Task",
+        "Harmonica Harmonic Explorer",
+        "Overseer",
+        "Enhancing Harmonica Explorer",
+        "Network Type",
+        "Fluid Interaction",
+        "Max Withdraw",
+        "Mapping Logging Hooks"
+      ],
+      "description": "Entities associated with bug"
+    },
+    {
+      "type": "tag_group",
+      "name": "ANGULAR",
+      "size": 361,
+      "domains": [
+        "mobile-platform",
+        "web-platforms"
+      ],
+      "entities": [
+        "ImportError",
+        "CSS",
+        "AAAA",
+        "AABB",
+        "ABOVE",
+        "ACP",
+        "AD",
+        "ADDR",
+        "ADR",
+        "AREA",
+        "AudioContext",
+        "AutomationManager",
+        "BigQuery",
+        "BLOB",
+        "CAC",
+        "CanvasPool",
+        "CDN",
+        "CLI",
+        "COLS",
+        "CSRF"
+      ],
+      "description": "Entities associated with angular"
+    },
+    {
+      "type": "tag_group",
+      "name": "CLI",
+      "size": 302,
+      "domains": [
+        "mobile-platform",
+        "web-platforms",
+        "os-shell",
+        "dev-tools",
+        "devops-infra"
+      ],
+      "entities": [
+        "ImportError",
+        "CSS",
+        "Database",
+        "Display",
+        "HTML",
+        "DOB",
+        "Telemetry",
+        "Educational Database",
+        "Gesture Harmonics",
+        "Harmonic Series",
+        "Play Root",
+        "Harmonica Harmonic Explorer",
+        "Enhancing Harmonica Explorer",
+        "Fluid Interaction",
+        "Saving Harmonica Explorer",
+        "Hold Mode",
+        "MemoryManager",
+        "DOM",
+        "JS",
+        "ToolCall"
+      ],
+      "description": "Entities associated with cli"
+    },
+    {
+      "type": "tag_group",
+      "name": "AJAX",
+      "size": 215,
+      "domains": [
+        "web-platforms"
+      ],
+      "entities": [
+        "ImportError",
+        "CSS",
+        "HTML",
+        "AAAA",
+        "AABB",
+        "ABOVE",
+        "ACP",
+        "AD",
+        "ADDR",
+        "ADR",
+        "AREA",
+        "AudioContext",
+        "AutomationManager",
+        "BigQuery",
+        "BLOB",
+        "CAC",
+        "CanvasPool",
+        "CDN",
+        "CLI",
+        "COLS"
+      ],
+      "description": "Entities associated with ajax"
+    },
+    {
+      "type": "tag_group",
+      "name": "BACKEND",
+      "size": 211,
+      "domains": [
+        "mobile-platform",
+        "web-platforms"
+      ],
+      "entities": [
+        "CDN",
+        "GemmaOutlinesAgent",
+        "GoalQueue",
+        "IntentRouter",
+        "MemoryManager",
+        "DOM",
+        "EvaluatorClient",
+        "GoalLifecycleManager",
+        "GoalStatus",
+        "HTTP",
+        "JS",
+        "SelfModel",
+        "StubDetector",
+        "ToolCall",
+        "ReadFileArgs",
+        "WebGL",
+        "TypeError",
+        "TelemetryCollector",
+        "Draw Background Grid",
+        "Interaction Locks"
+      ],
+      "description": "Entities associated with backend"
+    },
+    {
+      "type": "tag_group",
+      "name": "BOOTSTRAP",
+      "size": 152,
+      "domains": [
+        "mobile-platform",
+        "os-shell",
+        "web-platforms",
+        "security-auth"
+      ],
+      "entities": [
+        "Complete Reference",
+        "Database",
+        "Display",
+        "HTML",
+        "Reference",
+        "DOB",
+        "Educational Database",
+        "AudioContext",
+        "CanvasPool",
+        "GemmaOutlinesAgent",
+        "IntentRouter",
+        "DOM",
+        "EvaluatorClient",
+        "FilterSystem",
+        "JS",
+        "RenderTargetSystem",
+        "SelfModel",
+        "ToolCall",
+        "ReadFileArgs",
+        "TypeScript"
+      ],
+      "description": "Entities associated with bootstrap"
+    },
+    {
+      "type": "tag_group",
+      "name": "CSS",
+      "size": 114,
+      "domains": [
+        "mobile-platform",
+        "os-shell",
+        "web-platforms",
+        "security-auth"
+      ],
+      "entities": [
+        "ImportError",
+        "CSS",
+        "Complete Reference",
+        "Database",
+        "Display",
+        "HTML",
+        "Reference",
+        "DOB",
+        "Telemetry",
+        "Educational Database",
+        "DevOps",
+        "Gesture Harmonics",
+        "Harmonic Series",
+        "MCP",
+        "Play Root",
+        "Harmonica Harmonic Explorer",
+        "Enhancing Harmonica Explorer",
+        "FreeRide",
+        "Skills",
+        "Fluid Interaction"
+      ],
+      "description": "Entities associated with css"
+    },
+    {
+      "type": "tag_group",
+      "name": "IDE",
+      "size": 99,
+      "domains": [
+        "mobile-platform",
+        "web-platforms",
+        "os-shell",
+        "dev-tools",
+        "security-auth"
+      ],
+      "entities": [
+        "Initialization",
+        "Greeting",
+        "Image",
+        "God",
+        "Engine",
+        "Engine Stderr",
+        "Hybrid Engine Active",
+        "Researching Project Context",
+        "Stderr",
+        "Project",
+        "Inversion",
+        "Constraint",
+        "Wall",
+        "Shift",
+        "Original",
+        "Process",
+        "Invert",
+        "Google",
+        "Intent Distribution Engine",
+        "Session Initialization"
+      ],
+      "description": "Entities associated with ide"
+    },
+    {
+      "type": "tag_group",
+      "name": "BUN",
+      "size": 91,
+      "domains": [
+        "mobile-platform",
+        "os-shell",
+        "web-platforms",
+        "security-auth"
+      ],
+      "entities": [
+        "HTML",
+        "CanvasPool",
+        "FilterSystem",
+        "JS",
+        "RenderTargetSystem",
+        "UI",
+        "RegExp",
+        "WebGLRenderer",
+        "PlantUML",
+        "Audio",
+        "Button Help",
+        "Photon Synth",
+        "NoteDot",
+        "DblTap",
+        "NoteDots",
+        "Synth",
+        "Wall",
+        "Original",
+        "Process",
+        "Breath Play"
+      ],
+      "description": "Entities associated with bun"
+    },
+    {
+      "type": "tag_group",
+      "name": "DOM",
+      "size": 74,
+      "domains": [
+        "mobile-platform",
+        "os-shell",
+        "web-platforms"
+      ],
+      "entities": [
+        "ImportError",
+        "CSS",
+        "Complete Reference",
+        "HTML",
+        "Reference",
+        "Telemetry",
+        "DevOps",
+        "Logging",
+        "Projects",
+        "Daily Telegram Task",
+        "Overseer",
+        "Network Type",
+        "Max Withdraw",
+        "Mapping Logging Hooks",
+        "UI",
+        "Request",
+        "Wall",
+        "Original",
+        "Process",
+        "Iterative"
+      ],
+      "description": "Entities associated with dom"
+    },
+    {
+      "type": "tag_group",
+      "name": "ORM",
+      "size": 53,
+      "domains": [
+        "mobile-platform",
+        "os-shell",
+        "web-platforms",
+        "dev-tools"
+      ],
+      "entities": [
+        "Initialization",
+        "Inversion",
+        "Constraint",
+        "Wall",
+        "Shift",
+        "Original",
+        "Process",
+        "Invert",
+        "Google",
+        "Session Initialization",
+        "Analyzing",
+        "Biological Basis",
+        "Consciousness",
+        "Consciousness Inquiry",
+        "David Chalmers",
+        "Decryption",
+        "Dgsrcgyrd",
+        "Easy Problems",
+        "Experiment",
+        "Experimental Metadata"
+      ],
+      "description": "Entities associated with orm"
+    },
+    {
+      "type": "tag_group",
+      "name": "DOCUMENTATION",
+      "size": 43,
+      "domains": [
+        "mobile-platform",
+        "os-shell",
+        "web-platforms"
+      ],
+      "entities": [
+        "Complete Reference",
+        "Reference",
+        "FreeRide",
+        "Skills",
+        "AudioContext",
+        "Ambiguity System",
+        "Ambiguity",
+        "Compact String",
+        "Model",
+        "Automated Monitor",
+        "Compact",
+        "Coverage",
+        "Destination Tag",
+        "Main Execution Loop",
+        "Wall",
+        "System",
+        "Edge Case",
+        "Press Ctrl",
+        "Transfer Response",
+        "Process"
+      ],
+      "description": "Entities associated with documentation"
+    },
+    {
+      "type": "tag_group",
+      "name": "CDN",
+      "size": 42,
+      "domains": [
+        "mobile-platform",
+        "web-platforms"
+      ],
+      "entities": [
+        "DevOps",
+        "JS",
+        "ACE",
+        "InsecureRequestWarning",
+        "JetBrains",
+        "CSV",
+        "DataFrame",
+        "Invalid Login",
+        "LangChain",
+        "AppleWebKit",
+        "Context Updates",
+        "Self",
+        "MID",
+        "Periodic Interruptions",
+        "Project Tier",
+        "Stack",
+        "Adaptive Agency",
+        "Experimental Framing",
+        "Memory Tiers",
+        "ImageObject"
+      ],
+      "description": "Entities associated with cdn"
+    },
+    {
+      "type": "tag_group",
+      "name": "SPA",
+      "size": 40,
+      "domains": [
+        "mobile-platform",
+        "web-platforms",
+        "os-shell",
+        "dev-tools",
+        "security-auth"
+      ],
+      "entities": [
+        "Request",
+        "Switched",
+        "Initialization",
+        "Greeting",
+        "God",
+        "Inversion",
+        "Constraint",
+        "Wall",
+        "Shift",
+        "Original",
+        "Process",
+        "Google",
+        "Biological Basis",
+        "Consciousness",
+        "David Chalmers",
+        "Decryption",
+        "Dgsrcgyrd",
+        "Easy Problems",
+        "Experimental Metadata",
+        "Explaining Consciousness"
+      ],
+      "description": "Entities associated with spa"
+    }
+  ],
+  "instruction_sets": [
+    {
+      "name": "Setup & Installation",
+      "entities": [
+        "Initialization",
+        "NodeDefinitions",
+        "Getting Started",
+        "Researching Initialization Hang",
+        "Session Initialization",
+        "Engine Initialized",
+        "Setup Scenario",
+        "RestartHandler",
+        "Engine Start",
+        "Core Init",
+        "Enter Acronymefinition",
+        "Functions Setup",
+        "Started",
+        "Server Started",
+        "Species Affinity",
+        "Starting Server",
+        "Startup Timeline",
+        "Workspace Initialization"
+      ],
+      "pattern": "instructions",
+      "description": "Installation and initial setup procedures for tools and frameworks"
+    },
+    {
+      "name": "Development Workflow",
+      "entities": [
+        "BUILD",
+        "GitStore",
+        "Debugging Balance Detection",
+        "ArchiveBuilder",
+        "Bonus Acquisition Debugger",
+        "BuildID",
+        "Git Repository Migration",
+        "GitHub",
+        "GitArgs",
+        "Performing Test",
+        "CompactBuilder",
+        "DEBUG",
+        "PyCompileError",
+        "Test Specifications",
+        "Git Migration Finalized",
+        "Testing Preparation",
+        "Stress Testing",
+        "TestMemoryRecall",
+        "Test Case",
+        "Test Results"
+      ],
+      "pattern": "workflow",
+      "description": "Development lifecycle: version control, building, testing, debugging"
+    },
+    {
+      "name": "API & Integration",
+      "entities": [
+        "PrestigeSystem",
+        "Prestige Particles",
+        "Prestige Bottleneck",
+        "Scraping",
+        "Authentication",
+        "Researching Scraping Breadth",
+        "REST",
+        "Auth System Analysis",
+        "Auth User",
+        "ConvexAuthState",
+        "GraphQL",
+        "Restoring Directories",
+        "FastAPI",
+        "RestartHandler",
+        "API",
+        "HfApi",
+        "Testing Endpoint",
+        "Rest Density"
+      ],
+      "pattern": "reference",
+      "description": "API protocols, authentication, and integration patterns"
+    },
+    {
+      "name": "Data & Storage",
+      "entities": [
+        "Database",
+        "Educational Database",
+        "BigQuery",
+        "PostgreSQL",
+        "Law Codec Database",
+        "CACHE",
+        "Git Repository Migration",
+        "Database Schema Audit",
+        "Git Migration Finalized",
+        "MySQL",
+        "StorageConfig",
+        "DatabaseConnection",
+        "IframeStorageProxy",
+        "SessionDatabase"
+      ],
+      "pattern": "reference",
+      "description": "Database systems, caching strategies, data modeling patterns"
+    },
+    {
+      "name": "Security & Authentication",
+      "entities": [
+        "Security Defense",
+        "Token Util",
+        "TokenBudget",
+        "Concert One",
+        "Authentication",
+        "TokenCounter",
+        "CORS",
+        "Auth System Analysis",
+        "Auth User",
+        "ConvexAuthState",
+        "Language Tokens"
+      ],
+      "pattern": "instructions",
+      "description": "Security protocols, authentication flows, and authorization patterns"
+    },
+    {
+      "name": "DevOps & Deployment",
+      "entities": [
+        "Logging",
+        "Enhancing Harmonica Explorer",
+        "Mapping Logging Hooks",
+        "CDN",
+        "Monitor Head",
+        "Narrative Consciousness",
+        "Species Config",
+        "Trail Opacity",
+        "SocialBias",
+        "Invalid Login",
+        "Login Failed",
+        "SquareLogoURL",
+        "Circular Import Risk",
+        "DecisionType",
+        "Avg Decisions",
+        "Market Scarcity",
+        "Automated Monitor",
+        "Decision Velocity",
+        "Stencil Art Generator",
+        "Frontend Logic"
+      ],
+      "pattern": "workflow",
+      "description": "Containerization, CI/CD pipelines, monitoring, and deployment strategies"
+    },
+    {
+      "name": "Programming Languages",
+      "entities": [
+        "GoalQueue",
+        "GoalLifecycleManager",
+        "GoalStatus",
+        "TypeScript",
+        "SubCategory",
+        "SuperCategory",
+        "God",
+        "SquareLogoURL",
+        "ImprovementGoal",
+        "GoogleSearch",
+        "Google Sans",
+        "Google Search",
+        "Google",
+        "BwVqxgOO",
+        "Functional Instrumental Goals",
+        "GoalType",
+        "MongoDB",
+        "Python",
+        "DebugOverlay",
+        "GoalGenerator"
+      ],
+      "pattern": "reference",
+      "description": "Programming language features, idiomatic patterns, and tooling"
+    }
+  ],
+  "questionnaire_count": 1478,
+  "questionnaire_samples": [
+    {
+      "title": "Complete Reference",
+      "domain": "web-platforms",
+      "tags": [
+        "api",
+        "ast",
+        "auth",
+        "bash",
+        "bootstrap"
+      ]
+    },
+    {
+      "title": "Display",
+      "domain": "web-platforms",
+      "tags": [
+        "api",
+        "ast",
+        "auth",
+        "bootstrap",
+        "bug"
+      ]
+    },
+    {
+      "title": "Reference",
+      "domain": "web-platforms",
+      "tags": [
+        "api",
+        "ast",
+        "auth",
+        "bash",
+        "bootstrap"
+      ]
+    },
+    {
+      "title": "DOB",
+      "domain": "web-platforms",
+      "tags": [
+        "acronym",
+        "api",
+        "ast",
+        "auth",
+        "bootstrap"
+      ]
+    },
+    {
+      "title": "Telemetry",
+      "domain": "web-platforms",
+      "tags": [
+        "api",
+        "ast",
+        "bash",
+        "bug",
+        "ci/cd"
+      ]
+    },
+    {
+      "title": "DevOps",
+      "domain": "web-platforms",
+      "tags": [
+        "api",
+        "ast",
+        "auth",
+        "bash",
+        "cdn"
+      ]
+    },
+    {
+      "title": "Gesture Harmonics",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "api",
+        "ast",
+        "bug",
+        "cli"
+      ]
+    },
+    {
+      "title": "Harmonic Series",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "api",
+        "ast",
+        "bug",
+        "cli"
+      ]
+    },
+    {
+      "title": "MCP",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "acronym",
+        "api",
+        "ast",
+        "bash"
+      ]
+    },
+    {
+      "title": "Play Root",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "api",
+        "ast",
+        "bug",
+        "cli"
+      ]
+    },
+    {
+      "title": "Projects",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "api",
+        "ast",
+        "auth",
+        "bug"
+      ]
+    },
+    {
+      "title": "Daily Telegram Task",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "api",
+        "ast",
+        "auth",
+        "bug"
+      ]
+    },
+    {
+      "title": "Harmonica Harmonic Explorer",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "api",
+        "ast",
+        "bug",
+        "cli"
+      ]
+    },
+    {
+      "title": "Overseer",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "api",
+        "ast",
+        "auth",
+        "bug"
+      ]
+    },
+    {
+      "title": "Enhancing Harmonica Explorer",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "api",
+        "ast",
+        "bug",
+        "cli"
+      ]
+    },
+    {
+      "title": "Network Type",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "api",
+        "ast",
+        "auth",
+        "bug"
+      ]
+    },
+    {
+      "title": "FreeRide",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "api",
+        "ast",
+        "bash",
+        "css"
+      ]
+    },
+    {
+      "title": "Skills",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "api",
+        "ast",
+        "bash",
+        "css"
+      ]
+    },
+    {
+      "title": "Fluid Interaction",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "api",
+        "ast",
+        "bug",
+        "cli"
+      ]
+    },
+    {
+      "title": "Max Withdraw",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "api",
+        "ast",
+        "auth",
+        "bug"
+      ]
+    },
+    {
+      "title": "Saving Harmonica Explorer",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "api",
+        "ast",
+        "bug",
+        "cli"
+      ]
+    },
+    {
+      "title": "Hold Mode",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "api",
+        "ast",
+        "bug",
+        "cli"
+      ]
+    },
+    {
+      "title": "AAAA",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "acronym",
+        "ajax",
+        "android",
+        "angular"
+      ]
+    },
+    {
+      "title": "AABB",
+      "domain": "web-platforms",
+      "tags": [
+        "acronym",
+        "ajax",
+        "android",
+        "angular",
+        "api"
+      ]
+    },
+    {
+      "title": "ABOVE",
+      "domain": "web-platforms",
+      "tags": [
+        "acronym",
+        "ajax",
+        "android",
+        "angular",
+        "api"
+      ]
+    },
+    {
+      "title": "AD",
+      "domain": "web-platforms",
+      "tags": [
+        "acronym",
+        "ajax",
+        "android",
+        "angular",
+        "api"
+      ]
+    },
+    {
+      "title": "ADDR",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "acronym",
+        "ajax",
+        "alpine",
+        "android"
+      ]
+    },
+    {
+      "title": "AREA",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "acronym",
+        "ajax",
+        "alpine",
+        "android"
+      ]
+    },
+    {
+      "title": "AudioContext",
+      "domain": "web-platforms",
+      "tags": [
+        "ajax",
+        "android",
+        "angular",
+        "api",
+        "ast"
+      ]
+    },
+    {
+      "title": "AutomationManager",
+      "domain": "web-platforms",
+      "tags": [
+        "entity",
+        "ajax",
+        "android",
+        "angular",
+        "api"
+      ]
+    }
+  ]
+}

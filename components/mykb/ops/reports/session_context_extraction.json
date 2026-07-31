@@ -1,0 +1,202 @@
+{
+  "high_confidence": [
+    {
+      "title": "ESM",
+      "meaning": "Project: companion-particle-life",
+      "path": "wiki/domains/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/esm-2.md"
+    },
+    {
+      "title": "You",
+      "meaning": "Related: diagnostics, diagnostics, diagnostics",
+      "path": "wiki/domains/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/bootstrap/you-10.md"
+    }
+  ],
+  "medium_confidence": [
+    {
+      "title": "Reference",
+      "sessions": 3,
+      "cmd_samples": [
+        "<environment_context>   <cwd>/data/data/com.termux/files/home/dev/codex/rrp2</cw | {\"cmd\": \"mkdir -p /data/data/com.termux/files/home/.codex/skills/rrp/references\" | 3. **apply_patch**: {\"cmd\": \"apply_patch\\n*** Begin Patch\\n*** Create File: /data/data/com.termux/fi | {\"cmd\": \"cat > /data/data/com.termux/files/home/.codex/skills/rrp/references/dim",
+        "3. **apply_patch**: {\"cmd\": \"apply_patch\\n*** Begin Patch\\n*** Create File: /data/data/com.termux/fi | {\"cmd\": \"cat > /data/data/com.termux/files/home/.codex/skills/rrp/references/dim | {\"cmd\": \"wc -l /data/data/com.termux/files/home/.codex/skills/rrp/references/dim"
+      ]
+    },
+    {
+      "title": "Telemetry",
+      "sessions": 3,
+      "cmd_samples": []
+    },
+    {
+      "title": "ABOVE",
+      "sessions": 3,
+      "cmd_samples": []
+    },
+    {
+      "title": "BigQuery",
+      "sessions": 4,
+      "cmd_samples": []
+    },
+    {
+      "title": "GameState",
+      "sessions": 3,
+      "cmd_samples": []
+    },
+    {
+      "title": "RecoveryManager",
+      "sessions": 4,
+      "cmd_samples": [
+        "{\"plan\": [{\"status\":\"completed\",\"step\":\"Task 1: Create evaluator/evaluator.py wi | {\"cmd\": \"cat > recovery_manager.py << 'ENDOFFILE'\\n\\\"\\\"\\\"RecoveryManager \u2014 git-b | {\"cmd\": \"python3 -c \\\"\\nfrom recovery_manager import RecoveryManager\\nimport sub | {\"cmd\": \"cat > tests/test_recovery.py << 'ENDOFFILE'\\n\\\"\\\"\\\"Tests for the Recove",
+        "{\"cmd\": \"cat > recovery_manager.py << 'ENDOFFILE'\\n\\\"\\\"\\\"RecoveryManager \u2014 git-b | {\"cmd\": \"python3 -c \\\"\\nfrom recovery_manager import RecoveryManager\\nimport sub | {\"cmd\": \"cat > tests/test_recovery.py << 'ENDOFFILE'\\n\\\"\\\"\\\"Tests for the Recove | {\"cmd\": \"python3 -m pytest tests/ -q --tb=short 2>&1\"}"
+      ]
+    },
+    {
+      "title": "SelfModel",
+      "sessions": 8,
+      "cmd_samples": [
+        "{\"cmd\": \"cat > identity/__init__.py << 'ENDOFFILE'\\n\\\"\\\"\\\"Identity Core \u2014 Self-m | {\"cmd\": \"python3 -c \\\"\\nfrom identity.self_model import SelfModel\\nfrom identity | {\"plan\": [{\"status\":\"completed\",\"step\":\"Pillar 1: Enhance identity core (self-mo | {\"cmd\": \"mkdir -p server/static\"}"
+      ]
+    },
+    {
+      "title": "ToolCall",
+      "sessions": 10,
+      "cmd_samples": [
+        "{\"cmd\": \"cat /data/data/com.termux/files/home/dev/codex/2b/core/agent.py | head | {\"cmd\": \"cd /data/data/com.termux/files/home/dev/codex/2b && grep -n \\\"TOOLCALL_ | {\"cmd\": \"cd /data/data/com.termux/files/home/dev/codex/2b && sed -n '27,40p' cor | 408. **apply_patch**: {\"cmd\": \"*** Begin Patch\\n*** Update File: /data/data/com.termux/files/home/dev/",
+        "1038. **write_stdin**: {\"session_id\": 74690, \"yield_time_ms\": 30000} | {\"cmd\": \"cd /data/data/com.termux/files/home/dev/codex/2b && grep -n \\\"TOOLCALL_ | {\"cmd\": \"cd /data/data/com.termux/files/home/dev/codex/2b && sed -n '33,90p' cor | {\"cmd\": \"cd /data/data/com.termux/files/home/dev/codex/2b && timeout 90 python3"
+      ]
+    },
+    {
+      "title": "ToolRegistry",
+      "sessions": 10,
+      "cmd_samples": []
+    },
+    {
+      "title": "TelemetryCollector",
+      "sessions": 7,
+      "cmd_samples": [
+        "{\"cmd\": \"python3 << 'PYFIX6'\\nwith open('docs/command_map.html') as f:\\n    c = | {\"cmd\": \"grep -n \\\"TelemetryCollector\\\\|ScoringEngine\\\" docs/command_map.html\"} | {\"cmd\": \"python3 << 'PYFIX7'\\nwith open('docs/command_map.html') as f:\\n    c = | {\"cmd\": \"python3 << 'PYVAL'\\nwith open('docs/command_map.html') as f:\\n    c = f"
+      ]
+    },
+    {
+      "title": "MatrixGrid",
+      "sessions": 3,
+      "cmd_samples": [
+        "{\"cmd\": \"cat src/components/Slider.jsx\"} | {\"cmd\": \"cat src/components/MatrixGrid.jsx\"} | {\"cmd\": \"cat src/components/Collapsible.jsx\"} | {\"cmd\": \"cat src/components/StatsOverlay.jsx\"}",
+        "{\"cmd\": \"cat src/components/Slider.jsx\"} | {\"cmd\": \"cat src/components/MatrixGrid.jsx\"} | {\"cmd\": \"cat src/components/Collapsible.jsx\"} | {\"cmd\": \"cat src/components/StatsOverlay.jsx\"}"
+      ]
+    },
+    {
+      "title": "JetBrains",
+      "sessions": 11,
+      "cmd_samples": []
+    },
+    {
+      "title": "Invalid Login",
+      "sessions": 7,
+      "cmd_samples": []
+    },
+    {
+      "title": "LangChain",
+      "sessions": 3,
+      "cmd_samples": [
+        "yes | {\"cmd\": \"curl -sL \\\"https://www.langchain.com/blog/the-art-of-loop-engineering\\\" | {\"cmd\": \"curl -sL \\\"https://www.langchain.com/blog/the-art-of-loop-engineering\\\" | 1. https://www.langchain.com/blog/the-art-of-loop-engineering 2. External valida",
+        "{\"cmd\": \"curl -sL \\\"https://www.langchain.com/blog/the-art-of-loop-engineering\\\" | {\"cmd\": \"curl -sL \\\"https://www.langchain.com/blog/the-art-of-loop-engineering\\\" | 1. https://www.langchain.com/blog/the-art-of-loop-engineering 2. External valida | 1. External AI evaluation. 2. Sounds about right. 3. Regular redundancy refineme"
+      ]
+    },
+    {
+      "title": "Request",
+      "sessions": 8,
+      "cmd_samples": []
+    },
+    {
+      "title": "Switched",
+      "sessions": 3,
+      "cmd_samples": []
+    },
+    {
+      "title": "ABC",
+      "sessions": 5,
+      "cmd_samples": [
+        "{\"cmd\": \"grep -n \\\"class.*Repository\\\" src/db/connection.py\", \"workdir\": \"/data/ | {\"cmd\": \"grep -n \\\"class.*Repository\\\\|class.*ABC\\\" src/db/connection.py\", \"work | {\"cmd\": \"cat src/db/connection.py\", \"workdir\": \"/data/data/com.termux/files/home | {\"cmd\": \"cd /data/data/com.termux/files/home/dev/codex/rsis3 && python3 << 'PYEO"
+      ]
+    },
+    {
+      "title": "Initialization",
+      "sessions": 4,
+      "cmd_samples": []
+    },
+    {
+      "title": "RegExp",
+      "sessions": 3,
+      "cmd_samples": []
+    },
+    {
+      "title": "AmbientLight",
+      "sessions": 3,
+      "cmd_samples": [
+        "{\"cmd\": \"# Check for JS errors three.js loading\\ntimeout 15 chromium-browser --h | {\"cmd\": \"# Check if edits took effect\\ngrep -c \\\"AmbientLight\\\\|shadowMap\\\\|Dire | {\"cmd\": \"cat > /data/data/com.termux/files/home/dev/codex/water/index.html << 'E | {\"cmd\": \"timeout 20 chromium-browser --headless --no-sandbox --screenshot=/data/",
+        "{\"cmd\": \"# Check for JS errors three.js loading\\ntimeout 15 chromium-browser --h | {\"cmd\": \"# Check if edits took effect\\ngrep -c \\\"AmbientLight\\\\|shadowMap\\\\|Dire | {\"cmd\": \"cat > /data/data/com.termux/files/home/dev/codex/water/index.html << 'E | {\"cmd\": \"timeout 20 chromium-browser --headless --no-sandbox --screenshot=/data/"
+      ]
+    },
+    {
+      "title": "Image",
+      "sessions": 3,
+      "cmd_samples": [
+        "{\"cmd\": \"mkdir -p static/uploads static/results\"} | {\"cmd\": \"cat > backend/processor.py << 'PYEOF'\\n\\\"\\\"\\\"\\nImage processor: convert | {\"plan\": [{\"status\":\"completed\",\"step\":\"Set up project structure and dependencie | {\"cmd\": \"cat > backend/app.py << 'PYEOF'\\n\\\"\\\"\\\"\\nStencil Art Generator - Flask",
+        "{\"cmd\": \"# Test the API endpoint\\ncurl -s -X POST http://127.0.0.1:5000/api/proc | {\"cmd\": \"curl -s -X POST http://127.0.0.1:5000/api/process \\\\\\n  -F \\\"image=@tes | {\"cmd\": \"# Check if server is running and try again\\nsleep 1\\ncurl -s http://127 | {\"cmd\": \"# Kill any existing Flask processes\\npkill -f \\\"python3 backend/app.py\\"
+      ]
+    },
+    {
+      "title": "FAIL",
+      "sessions": 3,
+      "cmd_samples": []
+    },
+    {
+      "title": "ARP",
+      "sessions": 3,
+      "cmd_samples": [
+        "b. Unresponsive. c. Unresponsive. | {\"cmd\": \"grep -n \\\"freeze\\\\|FREEZE\\\\|frozen\\\\|arp\\\\|ARP\\\\|arpeggiator\\\\|touchsta | {\"cmd\": \"sed -n '290,380p' /data/data/com.termux/files/home/dev/codex/hz/d.html\" | {\"plan\": [{\"status\":\"completed\",\"step\":\"Create analysis_v1 research report\"},{\"s",
+        "{\"cmd\": \"grep -n \\\"SLIDERS\\\\|S\\\\.\\\\|const S=\\\" /data/data/com.termux/files/home/ | {\"cmd\": \"grep -n \\\"SLIDERS\\\\|S = {\\\\|INST = {\\\\|DIMS\\\\|SC =\\\\|ARP_INTERVALS\\\\|NN | {\"cmd\": \"sed -n '256,295p' /data/data/com.termux/files/home/dev/codex/hz/e.html\" | {\"cmd\": \"sed -n '492,510p' /data/data/com.termux/files/home/dev/codex/hz/e.html\""
+      ]
+    },
+    {
+      "title": "NoteDot",
+      "sessions": 3,
+      "cmd_samples": [
+        "{\"plan\": [{\"status\":\"completed\",\"step\":\"Create directory structure\"},{\"status\":\" | {\"cmd\": \"cat > ex/js/dots/dot.js << 'JSEOF'\\n/**\\n * NoteDot model class.\\n */\\n | {\"cmd\": \"cat > ex/js/dots/system.js << 'JSEOF'\\n/**\\n * Dot system \u2014 create, rem | {\"cmd\": \"cat > ex/js/dots/structure.js << 'JSEOF'\\n/**\\n * Structure mode sequen",
+        "{\"plan\": [{\"status\":\"completed\",\"step\":\"Create directory structure\"},{\"status\":\" | {\"cmd\": \"cat > ex/js/dots/dot.js << 'JSEOF'\\n/**\\n * NoteDot model class.\\n */\\n | {\"cmd\": \"cat > ex/js/dots/system.js << 'JSEOF'\\n/**\\n * Dot system \u2014 create, rem | {\"cmd\": \"cat > ex/js/dots/structure.js << 'JSEOF'\\n/**\\n * Structure mode sequen"
+      ]
+    },
+    {
+      "title": "Patch",
+      "sessions": 3,
+      "cmd_samples": [
+        "- **Turns**: 5 | - **Tools**: {\"user\":1,\"exec_command\":3,\"apply_patch\":1} | ## Turn log",
+        "- **Turns**: 14 | - **Tools**: {\"user\":1,\"exec_command\":12,\"apply_patch\":1} | ## Turn log"
+      ]
+    },
+    {
+      "title": "Automatic",
+      "sessions": 11,
+      "cmd_samples": []
+    },
+    {
+      "title": "Emergency Brake",
+      "sessions": 3,
+      "cmd_samples": []
+    },
+    {
+      "title": "Mini Map",
+      "sessions": 3,
+      "cmd_samples": []
+    },
+    {
+      "title": "Profound Humanism",
+      "sessions": 3,
+      "cmd_samples": []
+    },
+    {
+      "title": "Waiting",
+      "sessions": 11,
+      "cmd_samples": []
+    }
+  ]
+}

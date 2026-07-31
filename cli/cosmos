@@ -9,6 +9,7 @@ show_help() {
 Usage: cosmos <command> [options]
 
 Commands:
+  dashboard               Launch the unified web dashboard + all services
   status                  Show status of all COSMOS components
   start [component]       Start a component (or all if omitted)
   stop [component]        Stop a component (or all if omitted)
@@ -22,17 +23,15 @@ Commands:
 Components:
   space        Prompt engine, CLI, spec generation
   mykb         Daily knowledge base (Obsidian wiki)
-  myrsikb      RSI knowledge base
-  myrsiskb     RSI knowledge bridge (RSIS3 ↔ myKB)
   rsis3        3-loop RSI system
   rsisb        Earlier RSIS version (archived)
 
 Examples:
+  cosmos dashboard         # Launch dashboard + all services
   cosmos status            # Check all components
   cosmos start space       # Start SPACE servers
   cosmos logs rsis3        # Tail RSIS3 logs
   cosmos build             # Build all components
-  cosmos test space        # Test SPACE only
 HELP
 }
 
@@ -43,24 +42,24 @@ declare -A COMPONENT_TYPE
 
 COMPONENT_DIR[space]="$COSMOS_DIR/components/space"
 COMPONENT_DIR[mykb]="$COSMOS_DIR/components/mykb"
-COMPONENT_DIR[myrsikb]="$COSMOS_DIR/components/myrsikb"
-COMPONENT_DIR[myrsiskb]="$COSMOS_DIR/components/myrsiskb"
 COMPONENT_DIR[rsis3]="$COSMOS_DIR/components/rsis3"
 COMPONENT_DIR[rsisb]="$COSMOS_DIR/components/rsisb"
 
 COMPONENT_DESC[space]="Prompt engine, CLI, spec generation"
 COMPONENT_DESC[mykb]="Daily knowledge base (Obsidian wiki)"
-COMPONENT_DESC[myrsikb]="RSI knowledge base"
-COMPONENT_DESC[myrsiskb]="RSI knowledge bridge"
 COMPONENT_DESC[rsis3]="3-loop RSI system"
 COMPONENT_DESC[rsisb]="Earlier RSIS version"
 
 COMPONENT_TYPE[space]="typescript"
 COMPONENT_TYPE[mykb]="markdown+python"
-COMPONENT_TYPE[myrsikb]="python"
-COMPONENT_TYPE[myrsiskb]="python"
 COMPONENT_TYPE[rsis3]="python"
 COMPONENT_TYPE[rsisb]="python"
+
+cmd_dashboard() {
+  echo "🌌 Launching COSMOS Dashboard + Services..."
+  cd "$COSMOS_DIR"
+  exec ./start.sh
+}
 
 cmd_status() {
   echo ""
@@ -71,12 +70,11 @@ cmd_status() {
   printf "  %-10s %-12s %-8s %s\n" "Component" "Type" "Status" "Description"
   printf "  %-10s %-12s %-8s %s\n" "─────────" "────" "──────" "───────────"
   
-  for comp in space mykb myrsikb myrsiskb rsis3 rsisb; do
+  for comp in space mykb rsis3 rsisb; do
     local dir="${COMPONENT_DIR[$comp]}"
     local type="${COMPONENT_TYPE[$comp]}"
     local desc="${COMPONENT_DESC[$comp]}"
     if [ -d "$dir" ]; then
-      # Check if any server process is running
       local running=0
       if [ "$comp" = "space" ]; then
         pgrep -f "serve-meta.mjs" >/dev/null 2>&1 && running=1
@@ -91,14 +89,6 @@ cmd_status() {
     fi
   done
   echo ""
-  
-  # Check Sentry
-  if pgrep -f "heartbeat.mjs" >/dev/null 2>&1; then
-    echo "  ❤️  Sentry heartbeat: running"
-  else
-    echo "  ❤️  Sentry heartbeat: stopped"
-  fi
-  echo ""
 }
 
 cmd_list() {
@@ -106,7 +96,7 @@ cmd_list() {
   echo "COSMOS Components"
   echo "═════════════════"
   echo ""
-  for comp in space mykb myrsikb myrsiskb rsis3 rsisb; do
+  for comp in space mykb rsis3 rsisb; do
     local dir="${COMPONENT_DIR[$comp]}"
     local type="${COMPONENT_TYPE[$comp]}"
     local desc="${COMPONENT_DESC[$comp]}"
@@ -124,7 +114,6 @@ cmd_start() {
   local target="${1:-all}"
   if [ "$target" = "all" ]; then
     echo "Starting all COSMOS components..."
-    # Start SPACE servers
     if [ -f "$COSMOS_DIR/components/space/serve-meta.mjs" ]; then
       cd "$COSMOS_DIR/components/space"
       node serve-meta.mjs 8899 > /dev/null 2>&1 &
@@ -135,7 +124,6 @@ cmd_start() {
       node serve-ui.mjs 8888 > /dev/null 2>&1 &
       echo "  🟢 SPACE Web UI → :8888"
     fi
-    # Start heartbeat
     cd "$COSMOS_DIR"
     if [ -f "$COSMOS_DIR/infra/heartbeat/heartbeat.mjs" ]; then
       node "$COSMOS_DIR/infra/heartbeat/heartbeat.mjs" --interval 30 --restart > "$COSMOS_DIR/sentry.log" 2>&1 &
@@ -149,7 +137,6 @@ cmd_start() {
       exit 1
     fi
     echo "Starting $target..."
-    # Component-specific start logic
     case "$target" in
       space)
         cd "$dir"
@@ -203,7 +190,7 @@ cmd_logs() {
 
 cmd_build() {
   local target="${1:-all}"
-  for comp in space mykb myrsikb myrsiskb rsis3 rsisb; do
+  for comp in space mykb rsis3 rsisb; do
     if [ "$target" != "all" ] && [ "$target" != "$comp" ]; then continue; fi
     local dir="${COMPONENT_DIR[$comp]}"
     if [ ! -d "$dir" ]; then continue; fi
@@ -224,7 +211,7 @@ cmd_build() {
 
 cmd_test() {
   local target="${1:-all}"
-  for comp in space mykb myrsikb myrsiskb rsis3 rsisb; do
+  for comp in space mykb rsis3 rsisb; do
     if [ "$target" != "all" ] && [ "$target" != "$comp" ]; then continue; fi
     local dir="${COMPONENT_DIR[$comp]}"
     if [ ! -d "$dir" ]; then continue; fi
@@ -249,10 +236,11 @@ cmd_update() {
   echo "COSMOS components are local copies. To update:"
   echo "  rsync -a ~/dev/space/ components/space/"
   echo "  rsync -a ~/dev/codex/mykb/ components/mykb/"
-  echo "  # etc."
+  echo "  git pull"
 }
 
 case "${1:-help}" in
+  dashboard|dash|gui) cmd_dashboard ;;
   status|st) cmd_status ;;
   list|ls) cmd_list ;;
   start) shift; cmd_start "$@" ;;

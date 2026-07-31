@@ -1,0 +1,1379 @@
+{
+  "session": {
+    "id": "sess_115024d0",
+    "project_id": "recursive-self-improvement",
+    "framework_version": "2.0.0",
+    "created_at": "2026-07-26T17:00:48.090Z",
+    "updated_at": "2026-07-26T17:00:48.192Z",
+    "status": "completed",
+    "estimated_completion_pct": 100,
+    "total_time_ms": 0
+  },
+  "answers": {
+    "1.1.1": {
+      "question_id": "1.1.1",
+      "series_id": 1,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 1.1.1 based on project context.",
+      "multi_choice_id": "1.1.1.a",
+      "multi_choice_text": "A single well-established domain (e.g., machine learning, civil engineering)",
+      "answered_at": "2026-07-26T17:00:48.105Z",
+      "edit_count": 0
+    },
+    "1.1.2": {
+      "question_id": "1.1.2",
+      "series_id": 1,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 1.1.2 based on project context.",
+      "multi_choice_id": "1.1.2.a",
+      "multi_choice_text": "Experts / researchers — people who work in this domain daily",
+      "answered_at": "2026-07-26T17:00:48.107Z",
+      "edit_count": 0
+    },
+    "1.2.1": {
+      "question_id": "1.2.1",
+      "series_id": 1,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 1.2.1 based on project context.",
+      "multi_choice_id": "1.2.1.a",
+      "multi_choice_text": "Full prerequisites assumed — dive straight into advanced material",
+      "answered_at": "2026-07-26T17:00:48.109Z",
+      "edit_count": 0
+    },
+    "1.2.2": {
+      "question_id": "1.2.2",
+      "series_id": 1,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 1.2.2 based on project context.",
+      "multi_choice_id": "1.2.2.a",
+      "multi_choice_text": "Concrete — specific examples, code snippets, case studies",
+      "answered_at": "2026-07-26T17:00:48.110Z",
+      "edit_count": 0
+    },
+    "1.3.1": {
+      "question_id": "1.3.1",
+      "series_id": 1,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 1.3.1 based on project context.",
+      "multi_choice_id": "1.3.1.a",
+      "multi_choice_text": "Standard industry terminology — use common terms precisely",
+      "answered_at": "2026-07-26T17:00:48.111Z",
+      "edit_count": 0
+    },
+    "1.3.2": {
+      "question_id": "1.3.2",
+      "series_id": 1,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 1.3.2 based on project context.",
+      "multi_choice_id": "1.3.2.a",
+      "multi_choice_text": "Progressive — scaffold from simple foundations to advanced topics",
+      "answered_at": "2026-07-26T17:00:48.113Z",
+      "edit_count": 0
+    },
+    "2.1.1": {
+      "question_id": "2.1.1",
+      "series_id": 2,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 2.1.1 based on project context.",
+      "multi_choice_id": "2.1.1.a",
+      "multi_choice_text": "Fewer than 5 core entities — the domain is compact and well-bounded",
+      "answered_at": "2026-07-26T17:00:48.115Z",
+      "edit_count": 0
+    },
+    "2.1.2": {
+      "question_id": "2.1.2",
+      "series_id": 2,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 2.1.2 based on project context.",
+      "multi_choice_id": "2.1.2.a",
+      "multi_choice_text": "1–2 key attributes per entity — simple identifiers suffice",
+      "answered_at": "2026-07-26T17:00:48.116Z",
+      "edit_count": 0
+    },
+    "2.1.3": {
+      "question_id": "2.1.3",
+      "series_id": 2,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 2.1.3 based on project context.",
+      "multi_choice_id": "2.1.3.a",
+      "multi_choice_text": "A single flat list — no meaningful sub-groupings",
+      "answered_at": "2026-07-26T17:00:48.117Z",
+      "edit_count": 0
+    },
+    "2.2.1": {
+      "question_id": "2.2.1",
+      "series_id": 2,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 2.2.1 based on project context.",
+      "multi_choice_id": "2.2.1.a",
+      "multi_choice_text": "Most entities are core — the domain has little extraneous surface area",
+      "answered_at": "2026-07-26T17:00:48.118Z",
+      "edit_count": 0
+    },
+    "2.2.2": {
+      "question_id": "2.2.2",
+      "series_id": 2,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 2.2.2 based on project context.",
+      "multi_choice_id": "2.2.2.a",
+      "multi_choice_text": "Coarse-grained — entities are broad; most variation is captured via attributes",
+      "answered_at": "2026-07-26T17:00:48.120Z",
+      "edit_count": 0
+    },
+    "2.2.3": {
+      "question_id": "2.2.3",
+      "series_id": 2,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 2.2.3 based on project context.",
+      "multi_choice_id": "2.2.3.a",
+      "multi_choice_text": "Mostly independent — entities share few attributes beyond common identifiers",
+      "answered_at": "2026-07-26T17:00:48.121Z",
+      "edit_count": 0
+    },
+    "2.3.1": {
+      "question_id": "2.3.1",
+      "series_id": 2,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 2.3.1 based on project context.",
+      "multi_choice_id": "2.3.1.a",
+      "multi_choice_text": "Tightly bounded — scope is narrow and well-defined",
+      "answered_at": "2026-07-26T17:00:48.122Z",
+      "edit_count": 0
+    },
+    "2.3.2": {
+      "question_id": "2.3.2",
+      "series_id": 2,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 2.3.2 based on project context.",
+      "multi_choice_id": "2.3.2.a",
+      "multi_choice_text": "No external interactions — fully self-contained domain",
+      "answered_at": "2026-07-26T17:00:48.124Z",
+      "edit_count": 0
+    },
+    "2.3.3": {
+      "question_id": "2.3.3",
+      "series_id": 2,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 2.3.3 based on project context.",
+      "multi_choice_id": "2.3.3.a",
+      "multi_choice_text": "Simple lifecycle — create, read, update, delete (CRUD)",
+      "answered_at": "2026-07-26T17:00:48.125Z",
+      "edit_count": 0
+    },
+    "2.4.1": {
+      "question_id": "2.4.1",
+      "series_id": 2,
+      "round": 4,
+      "open_ended_text": "Auto-generated answer for 2.4.1 based on project context.",
+      "multi_choice_id": "2.4.1.a",
+      "multi_choice_text": "No gaps — the current entity list is comprehensive",
+      "answered_at": "2026-07-26T17:00:48.126Z",
+      "edit_count": 0
+    },
+    "2.4.2": {
+      "question_id": "2.4.2",
+      "series_id": 2,
+      "round": 4,
+      "open_ended_text": "Auto-generated answer for 2.4.2 based on project context.",
+      "multi_choice_id": "2.4.2.a",
+      "multi_choice_text": "No changes needed — current classification is sound",
+      "answered_at": "2026-07-26T17:00:48.127Z",
+      "edit_count": 0
+    },
+    "2.4.3": {
+      "question_id": "2.4.3",
+      "series_id": 2,
+      "round": 4,
+      "open_ended_text": "Auto-generated answer for 2.4.3 based on project context.",
+      "multi_choice_id": "2.4.3.a",
+      "multi_choice_text": "Minimal constraints — entities have few invariants beyond uniqueness",
+      "answered_at": "2026-07-26T17:00:48.128Z",
+      "edit_count": 0
+    },
+    "2.5.1": {
+      "question_id": "2.5.1",
+      "series_id": 2,
+      "round": 5,
+      "open_ended_text": "Auto-generated answer for 2.5.1 based on project context.",
+      "multi_choice_id": "2.5.1.a",
+      "multi_choice_text": "Few edge cases — the model is robust to real-world variation",
+      "answered_at": "2026-07-26T17:00:48.129Z",
+      "edit_count": 0
+    },
+    "2.5.2": {
+      "question_id": "2.5.2",
+      "series_id": 2,
+      "round": 5,
+      "open_ended_text": "Auto-generated answer for 2.5.2 based on project context.",
+      "multi_choice_id": "2.5.2.a",
+      "multi_choice_text": "Flat — entities do not compose; all entities are atomic",
+      "answered_at": "2026-07-26T17:00:48.130Z",
+      "edit_count": 0
+    },
+    "2.5.3": {
+      "question_id": "2.5.3",
+      "series_id": 2,
+      "round": 5,
+      "open_ended_text": "Auto-generated answer for 2.5.3 based on project context.",
+      "multi_choice_id": "2.5.3.a",
+      "multi_choice_text": "Mostly one-to-one — entities pair uniquely",
+      "answered_at": "2026-07-26T17:00:48.131Z",
+      "edit_count": 0
+    },
+    "3.1.1": {
+      "question_id": "3.1.1",
+      "series_id": 3,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 3.1.1 based on project context.",
+      "multi_choice_id": "3.1.1.a",
+      "multi_choice_text": "Sparse — fewer associations than entities; most entities are isolated",
+      "answered_at": "2026-07-26T17:00:48.133Z",
+      "edit_count": 0
+    },
+    "3.1.2": {
+      "question_id": "3.1.2",
+      "series_id": 3,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 3.1.2 based on project context.",
+      "multi_choice_id": "3.1.2.a",
+      "multi_choice_text": "Single type — all associations are of the same nature",
+      "answered_at": "2026-07-26T17:00:48.134Z",
+      "edit_count": 0
+    },
+    "3.2.1": {
+      "question_id": "3.2.1",
+      "series_id": 3,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 3.2.1 based on project context.",
+      "multi_choice_id": "3.2.1.a",
+      "multi_choice_text": "No hierarchy — all entities are peers with no containment structure",
+      "answered_at": "2026-07-26T17:00:48.136Z",
+      "edit_count": 0
+    },
+    "3.2.2": {
+      "question_id": "3.2.2",
+      "series_id": 3,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 3.2.2 based on project context.",
+      "multi_choice_id": "3.2.2.a",
+      "multi_choice_text": "No inheritance — each entity is unique in its type",
+      "answered_at": "2026-07-26T17:00:48.137Z",
+      "edit_count": 0
+    },
+    "3.3.1": {
+      "question_id": "3.3.1",
+      "series_id": 3,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 3.3.1 based on project context.",
+      "multi_choice_id": "3.3.1.a",
+      "multi_choice_text": "No causal links — entities change independently",
+      "answered_at": "2026-07-26T17:00:48.138Z",
+      "edit_count": 0
+    },
+    "3.3.2": {
+      "question_id": "3.3.2",
+      "series_id": 3,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 3.3.2 based on project context.",
+      "multi_choice_id": "3.3.2.a",
+      "multi_choice_text": "No ordering constraints — entities are independent",
+      "answered_at": "2026-07-26T17:00:48.139Z",
+      "edit_count": 0
+    },
+    "3.4.1": {
+      "question_id": "3.4.1",
+      "series_id": 3,
+      "round": 4,
+      "open_ended_text": "Auto-generated answer for 3.4.1 based on project context.",
+      "multi_choice_id": "3.4.1.a",
+      "multi_choice_text": "Freely mutable — relationships can change at any time with no restrictions",
+      "answered_at": "2026-07-26T17:00:48.141Z",
+      "edit_count": 0
+    },
+    "3.4.2": {
+      "question_id": "3.4.2",
+      "series_id": 3,
+      "round": 4,
+      "open_ended_text": "Auto-generated answer for 3.4.2 based on project context.",
+      "multi_choice_id": "3.4.2.a",
+      "multi_choice_text": "No composition — only direct relationships matter",
+      "answered_at": "2026-07-26T17:00:48.142Z",
+      "edit_count": 0
+    },
+    "4.1.1": {
+      "question_id": "4.1.1",
+      "series_id": 4,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 4.1.1 based on project context.",
+      "multi_choice_id": "4.1.1.a",
+      "multi_choice_text": "Narrow — a single well-defined task with clear boundaries",
+      "answered_at": "2026-07-26T17:00:48.143Z",
+      "edit_count": 0
+    },
+    "4.1.2": {
+      "question_id": "4.1.2",
+      "series_id": 4,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 4.1.2 based on project context.",
+      "multi_choice_id": "4.1.2.a",
+      "multi_choice_text": "2–4 steps — quick process with few handoffs",
+      "answered_at": "2026-07-26T17:00:48.144Z",
+      "edit_count": 0
+    },
+    "4.2.1": {
+      "question_id": "4.2.1",
+      "series_id": 4,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 4.2.1 based on project context.",
+      "multi_choice_id": "4.2.1.a",
+      "multi_choice_text": "No branching — a single linear path from start to finish",
+      "answered_at": "2026-07-26T17:00:48.146Z",
+      "edit_count": 0
+    },
+    "4.2.2": {
+      "question_id": "4.2.2",
+      "series_id": 4,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 4.2.2 based on project context.",
+      "multi_choice_id": "4.2.2.a",
+      "multi_choice_text": "Simple I/O — each step takes one input and produces one output",
+      "answered_at": "2026-07-26T17:00:48.148Z",
+      "edit_count": 0
+    },
+    "4.3.1": {
+      "question_id": "4.3.1",
+      "series_id": 4,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 4.3.1 based on project context.",
+      "multi_choice_id": "4.3.1.a",
+      "multi_choice_text": "Minimal — errors abort the procedure with a clear message",
+      "answered_at": "2026-07-26T17:00:48.149Z",
+      "edit_count": 0
+    },
+    "4.3.2": {
+      "question_id": "4.3.2",
+      "series_id": 4,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 4.3.2 based on project context.",
+      "multi_choice_id": "4.3.2.a",
+      "multi_choice_text": "Coarse — each step is a meaningful phase (2–5 sub-actions per step)",
+      "answered_at": "2026-07-26T17:00:48.151Z",
+      "edit_count": 0
+    },
+    "5.1.1": {
+      "question_id": "5.1.1",
+      "series_id": 5,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 5.1.1 based on project context.",
+      "multi_choice_id": "5.1.1.a",
+      "multi_choice_text": "Single architecture — x86-64 desktop/server only",
+      "answered_at": "2026-07-26T17:00:48.152Z",
+      "edit_count": 0
+    },
+    "5.1.2": {
+      "question_id": "5.1.2",
+      "series_id": 5,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 5.1.2 based on project context.",
+      "multi_choice_id": "5.1.2.a",
+      "multi_choice_text": "Minimal — <1GB RAM, <100MB storage, single-core sufficient",
+      "answered_at": "2026-07-26T17:00:48.152Z",
+      "edit_count": 0
+    },
+    "5.1.3": {
+      "question_id": "5.1.3",
+      "series_id": 5,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 5.1.3 based on project context.",
+      "multi_choice_id": "5.1.3.a",
+      "multi_choice_text": "Always-online — requires reliable internet connection",
+      "answered_at": "2026-07-26T17:00:48.153Z",
+      "edit_count": 0
+    },
+    "5.1.4": {
+      "question_id": "5.1.4",
+      "series_id": 5,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 5.1.4 based on project context.",
+      "multi_choice_id": "5.1.4.a",
+      "multi_choice_text": "Single database — one relational or document store covers all needs",
+      "answered_at": "2026-07-26T17:00:48.154Z",
+      "edit_count": 0
+    },
+    "5.1.5": {
+      "question_id": "5.1.5",
+      "series_id": 5,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 5.1.5 based on project context.",
+      "multi_choice_id": "5.1.5.a",
+      "multi_choice_text": "Cloud-native — designed for a specific cloud provider",
+      "answered_at": "2026-07-26T17:00:48.155Z",
+      "edit_count": 0
+    },
+    "5.2.1": {
+      "question_id": "5.2.1",
+      "series_id": 5,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 5.2.1 based on project context.",
+      "multi_choice_id": "5.2.1.a",
+      "multi_choice_text": "Single language — one ecosystem covers everything",
+      "answered_at": "2026-07-26T17:00:48.158Z",
+      "edit_count": 0
+    },
+    "5.2.2": {
+      "question_id": "5.2.2",
+      "series_id": 5,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 5.2.2 based on project context.",
+      "multi_choice_id": "5.2.2.a",
+      "multi_choice_text": "Linux only",
+      "answered_at": "2026-07-26T17:00:48.159Z",
+      "edit_count": 0
+    },
+    "5.2.3": {
+      "question_id": "5.2.3",
+      "series_id": 5,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 5.2.3 based on project context.",
+      "multi_choice_id": "5.2.3.a",
+      "multi_choice_text": "Minimal dependencies — build from standard library where possible",
+      "answered_at": "2026-07-26T17:00:48.161Z",
+      "edit_count": 0
+    },
+    "5.2.4": {
+      "question_id": "5.2.4",
+      "series_id": 5,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 5.2.4 based on project context.",
+      "multi_choice_id": "5.2.4.a",
+      "multi_choice_text": "Latest-stable — always use current versions, update frequently",
+      "answered_at": "2026-07-26T17:00:48.162Z",
+      "edit_count": 0
+    },
+    "5.2.5": {
+      "question_id": "5.2.5",
+      "series_id": 5,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 5.2.5 based on project context.",
+      "multi_choice_id": "5.2.5.a",
+      "multi_choice_text": "Simple build — single build tool, manual or script-based deployment",
+      "answered_at": "2026-07-26T17:00:48.163Z",
+      "edit_count": 0
+    },
+    "5.3.1": {
+      "question_id": "5.3.1",
+      "series_id": 5,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 5.3.1 based on project context.",
+      "multi_choice_id": "5.3.1.a",
+      "multi_choice_text": "Low traffic — <100 req/s, seconds of latency, single-digit concurrency",
+      "answered_at": "2026-07-26T17:00:48.165Z",
+      "edit_count": 0
+    },
+    "5.3.2": {
+      "question_id": "5.3.2",
+      "series_id": 5,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 5.3.2 based on project context.",
+      "multi_choice_id": "5.3.2.a",
+      "multi_choice_text": "Small — <10GB data, slow growth, single-node viable",
+      "answered_at": "2026-07-26T17:00:48.166Z",
+      "edit_count": 0
+    },
+    "5.3.3": {
+      "question_id": "5.3.3",
+      "series_id": 5,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 5.3.3 based on project context.",
+      "multi_choice_id": "5.3.3.a",
+      "multi_choice_text": "Best-effort — no formal SLA, occasional downtime acceptable",
+      "answered_at": "2026-07-26T17:00:48.167Z",
+      "edit_count": 0
+    },
+    "5.3.4": {
+      "question_id": "5.3.4",
+      "series_id": 5,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 5.3.4 based on project context.",
+      "multi_choice_id": "5.3.4.a",
+      "multi_choice_text": "Vertical — scale up a single node as needed",
+      "answered_at": "2026-07-26T17:00:48.169Z",
+      "edit_count": 0
+    },
+    "5.3.5": {
+      "question_id": "5.3.5",
+      "series_id": 5,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 5.3.5 based on project context.",
+      "multi_choice_id": "5.3.5.a",
+      "multi_choice_text": "Basic — password auth, TLS, no formal compliance requirements",
+      "answered_at": "2026-07-26T17:00:48.170Z",
+      "edit_count": 0
+    },
+    "5.4.1": {
+      "question_id": "5.4.1",
+      "series_id": 5,
+      "round": 4,
+      "open_ended_text": "Auto-generated answer for 5.4.1 based on project context.",
+      "multi_choice_id": "5.4.1.a",
+      "multi_choice_text": "No integrations — fully standalone system",
+      "answered_at": "2026-07-26T17:00:48.171Z",
+      "edit_count": 0
+    },
+    "5.4.2": {
+      "question_id": "5.4.2",
+      "series_id": 5,
+      "round": 4,
+      "open_ended_text": "Auto-generated answer for 5.4.2 based on project context.",
+      "multi_choice_id": "5.4.2.a",
+      "multi_choice_text": "REST/JSON only — simple HTTP-based communication",
+      "answered_at": "2026-07-26T17:00:48.173Z",
+      "edit_count": 0
+    },
+    "5.4.3": {
+      "question_id": "5.4.3",
+      "series_id": 5,
+      "round": 4,
+      "open_ended_text": "Auto-generated answer for 5.4.3 based on project context.",
+      "multi_choice_id": "5.4.3.a",
+      "multi_choice_text": "Quick — prototype in weeks, production in 1–3 months",
+      "answered_at": "2026-07-26T17:00:48.174Z",
+      "edit_count": 0
+    },
+    "5.4.4": {
+      "question_id": "5.4.4",
+      "series_id": 5,
+      "round": 4,
+      "open_ended_text": "Auto-generated answer for 5.4.4 based on project context.",
+      "multi_choice_id": "5.4.4.a",
+      "multi_choice_text": "Basic — dev + production environments, manual testing",
+      "answered_at": "2026-07-26T17:00:48.175Z",
+      "edit_count": 0
+    },
+    "5.4.5": {
+      "question_id": "5.4.5",
+      "series_id": 5,
+      "round": 4,
+      "open_ended_text": "Auto-generated answer for 5.4.5 based on project context.",
+      "multi_choice_id": "5.4.5.a",
+      "multi_choice_text": "Minimal — inline comments and a README",
+      "answered_at": "2026-07-26T17:00:48.177Z",
+      "edit_count": 0
+    },
+    "6.1.1": {
+      "question_id": "6.1.1",
+      "series_id": 6,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 6.1.1 based on project context.",
+      "multi_choice_id": "6.1.1.a",
+      "multi_choice_text": "Sprint-based agile (Scrum) — fixed-length iterations with formal ceremonies",
+      "answered_at": "2026-07-26T17:00:48.178Z",
+      "edit_count": 0
+    },
+    "6.1.2": {
+      "question_id": "6.1.2",
+      "series_id": 6,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 6.1.2 based on project context.",
+      "multi_choice_id": "6.1.2.a",
+      "multi_choice_text": "Solo or pair — 1–2 people, all roles combined",
+      "answered_at": "2026-07-26T17:00:48.179Z",
+      "edit_count": 0
+    },
+    "6.2.1": {
+      "question_id": "6.2.1",
+      "series_id": 6,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 6.2.1 based on project context.",
+      "multi_choice_id": "6.2.1.a",
+      "multi_choice_text": "Light — ad-hoc reviews, manual testing, minimal automation",
+      "answered_at": "2026-07-26T17:00:48.180Z",
+      "edit_count": 0
+    },
+    "6.2.2": {
+      "question_id": "6.2.2",
+      "series_id": 6,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 6.2.2 based on project context.",
+      "multi_choice_id": "6.2.2.a",
+      "multi_choice_text": "Opportunistic — clean as you go, no formal tracking",
+      "answered_at": "2026-07-26T17:00:48.181Z",
+      "edit_count": 0
+    },
+    "6.3.1": {
+      "question_id": "6.3.1",
+      "series_id": 6,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 6.3.1 based on project context.",
+      "multi_choice_id": "6.3.1.a",
+      "multi_choice_text": "Async-first — written docs, Slack/Teams, minimal meetings",
+      "answered_at": "2026-07-26T17:00:48.182Z",
+      "edit_count": 0
+    },
+    "6.3.2": {
+      "question_id": "6.3.2",
+      "series_id": 6,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 6.3.2 based on project context.",
+      "multi_choice_id": "6.3.2.a",
+      "multi_choice_text": "BDFL — one person makes final decisions with input",
+      "answered_at": "2026-07-26T17:00:48.185Z",
+      "edit_count": 0
+    },
+    "7.1.1": {
+      "question_id": "7.1.1",
+      "series_id": 7,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 7.1.1 based on project context.",
+      "multi_choice_id": "7.1.1.a",
+      "multi_choice_text": "Manual deploy — push artifacts, restart services, update on schedule",
+      "answered_at": "2026-07-26T17:00:48.186Z",
+      "edit_count": 0
+    },
+    "7.1.2": {
+      "question_id": "7.1.2",
+      "series_id": 7,
+      "round": 1,
+      "open_ended_text": "Auto-generated answer for 7.1.2 based on project context.",
+      "multi_choice_id": "7.1.2.a",
+      "multi_choice_text": "Single environment — production only, with local dev",
+      "answered_at": "2026-07-26T17:00:48.187Z",
+      "edit_count": 0
+    },
+    "7.2.1": {
+      "question_id": "7.2.1",
+      "series_id": 7,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 7.2.1 based on project context.",
+      "multi_choice_id": "7.2.1.a",
+      "multi_choice_text": "Minimal — basic logging to stdout, manual check-ins",
+      "answered_at": "2026-07-26T17:00:48.188Z",
+      "edit_count": 0
+    },
+    "7.2.2": {
+      "question_id": "7.2.2",
+      "series_id": 7,
+      "round": 2,
+      "open_ended_text": "Auto-generated answer for 7.2.2 based on project context.",
+      "multi_choice_id": "7.2.2.a",
+      "multi_choice_text": "Static config — environment variables, restart to change",
+      "answered_at": "2026-07-26T17:00:48.190Z",
+      "edit_count": 0
+    },
+    "7.3.1": {
+      "question_id": "7.3.1",
+      "series_id": 7,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 7.3.1 based on project context.",
+      "multi_choice_id": "7.3.1.a",
+      "multi_choice_text": "Firefighting — fix issues as they arise, no scheduled maintenance",
+      "answered_at": "2026-07-26T17:00:48.191Z",
+      "edit_count": 0
+    },
+    "7.3.2": {
+      "question_id": "7.3.2",
+      "series_id": 7,
+      "round": 3,
+      "open_ended_text": "Auto-generated answer for 7.3.2 based on project context.",
+      "multi_choice_id": "7.3.2.a",
+      "multi_choice_text": "Hand-off — delivered to a separate operations team",
+      "answered_at": "2026-07-26T17:00:48.192Z",
+      "edit_count": 0
+    }
+  },
+  "progress": {
+    "completed_rounds": [
+      "1-1",
+      "1-2",
+      "1-3",
+      "2-1",
+      "2-2",
+      "2-3",
+      "2-4",
+      "2-5",
+      "3-1",
+      "3-2",
+      "3-3",
+      "3-4",
+      "4-1",
+      "4-2",
+      "4-3",
+      "5-1",
+      "5-2",
+      "5-3",
+      "5-4",
+      "6-1",
+      "6-2",
+      "6-3",
+      "7-1",
+      "7-2",
+      "7-3"
+    ],
+    "completed_series": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "current_series": 7,
+    "current_round": 3,
+    "blocked_on": []
+  },
+  "artifacts": {
+    "domain": {
+      "value": "Auto-generated answer for 1.1.1 based on project context.",
+      "source_question_id": "1.1.1",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.105Z",
+      "derived_from": []
+    },
+    "audience_level": {
+      "value": "Experts / researchers — people who work in this domain daily",
+      "source_question_id": "1.1.2",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.107Z",
+      "derived_from": []
+    },
+    "terminology_preferences": {
+      "value": "Standard industry terminology — use common terms precisely",
+      "source_question_id": "1.3.1",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.111Z",
+      "derived_from": []
+    },
+    "scaffolding_preference": {
+      "value": "Progressive — scaffold from simple foundations to advanced topics",
+      "source_question_id": "1.3.2",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.113Z",
+      "derived_from": []
+    },
+    "abstraction_level": {
+      "value": "Concrete — specific examples, code snippets, case studies",
+      "source_question_id": "1.2.2",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.110Z",
+      "derived_from": []
+    },
+    "assumption_level": {
+      "value": "Full prerequisites assumed — dive straight into advanced material",
+      "source_question_id": "1.2.1",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.109Z",
+      "derived_from": []
+    },
+    "entity_list": {
+      "value": "Auto-generated answer for 2.1.1 based on project context.",
+      "source_question_id": "2.1.1",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.115Z",
+      "derived_from": []
+    },
+    "entity_attributes": {
+      "value": "Auto-generated answer for 2.1.2 based on project context.",
+      "source_question_id": "2.1.2",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.116Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_categories": {
+      "value": "A single flat list — no meaningful sub-groupings",
+      "source_question_id": "2.1.3",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.117Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_core_peripheral": {
+      "value": "Most entities are core — the domain has little extraneous surface area",
+      "source_question_id": "2.2.1",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.118Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_granularity": {
+      "value": "Coarse-grained — entities are broad; most variation is captured via attributes",
+      "source_question_id": "2.2.2",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.120Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_attribute_sharing": {
+      "value": "Mostly independent — entities share few attributes beyond common identifiers",
+      "source_question_id": "2.2.3",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.121Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "systemic_boundaries": {
+      "value": "Tightly bounded — scope is narrow and well-defined",
+      "source_question_id": "2.3.1",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.122Z",
+      "derived_from": []
+    },
+    "external_actors": {
+      "value": "No external interactions — fully self-contained domain",
+      "source_question_id": "2.3.2",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.124Z",
+      "derived_from": []
+    },
+    "entity_lifecycles": {
+      "value": "Simple lifecycle — create, read, update, delete (CRUD)",
+      "source_question_id": "2.3.3",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.125Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_gaps": {
+      "value": "No gaps — the current entity list is comprehensive",
+      "source_question_id": "2.4.1",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.126Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_reclassification": {
+      "value": "No changes needed — current classification is sound",
+      "source_question_id": "2.4.2",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.127Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_constraints": {
+      "value": "Minimal constraints — entities have few invariants beyond uniqueness",
+      "source_question_id": "2.4.3",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.128Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "edge_cases": {
+      "value": "Few edge cases — the model is robust to real-world variation",
+      "source_question_id": "2.5.1",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.129Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_composition": {
+      "value": "Flat — entities do not compose; all entities are atomic",
+      "source_question_id": "2.5.2",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.130Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "entity_cardinality": {
+      "value": "Mostly one-to-one — entities pair uniquely",
+      "source_question_id": "2.5.3",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.131Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "direct_associations": {
+      "value": "Sparse — fewer associations than entities; most entities are isolated",
+      "source_question_id": "3.1.1",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.133Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "association_types": {
+      "value": "Single type — all associations are of the same nature",
+      "source_question_id": "3.1.2",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.134Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "hierarchy_structure": {
+      "value": "No hierarchy — all entities are peers with no containment structure",
+      "source_question_id": "3.2.1",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.136Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "inheritance_model": {
+      "value": "No inheritance — each entity is unique in its type",
+      "source_question_id": "3.2.2",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.137Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "causal_relationships": {
+      "value": "No causal links — entities change independently",
+      "source_question_id": "3.3.1",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.138Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "dependency_chains": {
+      "value": "No ordering constraints — entities are independent",
+      "source_question_id": "3.3.2",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.139Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "relationship_mutability": {
+      "value": "Freely mutable — relationships can change at any time with no restrictions",
+      "source_question_id": "3.4.1",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.141Z",
+      "derived_from": []
+    },
+    "relationship_composition": {
+      "value": "No composition — only direct relationships matter",
+      "source_question_id": "3.4.2",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.142Z",
+      "derived_from": []
+    },
+    "procedure_scope": {
+      "value": "Narrow — a single well-defined task with clear boundaries",
+      "source_question_id": "4.1.1",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.143Z",
+      "derived_from": [
+        "entity_list",
+        "dependency_chains",
+        "hierarchy_structure"
+      ]
+    },
+    "procedure_steps": {
+      "value": "2–4 steps — quick process with few handoffs",
+      "source_question_id": "4.1.2",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.144Z",
+      "derived_from": [
+        "entity_list"
+      ]
+    },
+    "decision_points": {
+      "value": "No branching — a single linear path from start to finish",
+      "source_question_id": "4.2.1",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.146Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
+    },
+    "io_contracts": {
+      "value": "Simple I/O — each step takes one input and produces one output",
+      "source_question_id": "4.2.2",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.148Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
+    },
+    "error_handling": {
+      "value": "Minimal — errors abort the procedure with a clear message",
+      "source_question_id": "4.3.1",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.149Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
+    },
+    "step_granularity": {
+      "value": "Coarse — each step is a meaningful phase (2–5 sub-actions per step)",
+      "source_question_id": "4.3.2",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.151Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
+    },
+    "hardware_requirements": {
+      "value": "Single architecture — x86-64 desktop/server only",
+      "source_question_id": "5.1.1",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.152Z",
+      "derived_from": [
+        "domain",
+        "audience_level"
+      ]
+    },
+    "hardware_specs": {
+      "value": "Minimal — <1GB RAM, <100MB storage, single-core sufficient",
+      "source_question_id": "5.1.2",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.152Z",
+      "derived_from": [
+        "hardware_requirements"
+      ]
+    },
+    "network_requirements": {
+      "value": "Always-online — requires reliable internet connection",
+      "source_question_id": "5.1.3",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.153Z",
+      "derived_from": [
+        "hardware_requirements"
+      ]
+    },
+    "storage_requirements": {
+      "value": "Single database — one relational or document store covers all needs",
+      "source_question_id": "5.1.4",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.154Z",
+      "derived_from": [
+        "hardware_requirements"
+      ]
+    },
+    "infrastructure_target": {
+      "value": "Cloud-native — designed for a specific cloud provider",
+      "source_question_id": "5.1.5",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.155Z",
+      "derived_from": [
+        "hardware_requirements"
+      ]
+    },
+    "software_stack": {
+      "value": "Single language — one ecosystem covers everything",
+      "source_question_id": "5.2.1",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.158Z",
+      "derived_from": [
+        "domain",
+        "procedure_steps"
+      ]
+    },
+    "os_requirements": {
+      "value": "Linux only",
+      "source_question_id": "5.2.2",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.159Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "dependency_management": {
+      "value": "Minimal dependencies — build from standard library where possible",
+      "source_question_id": "5.2.3",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.161Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "versioning_policy": {
+      "value": "Latest-stable — always use current versions, update frequently",
+      "source_question_id": "5.2.4",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.162Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "build_system": {
+      "value": "Simple build — single build tool, manual or script-based deployment",
+      "source_question_id": "5.2.5",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.163Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "performance_targets": {
+      "value": "Low traffic — <100 req/s, seconds of latency, single-digit concurrency",
+      "source_question_id": "5.3.1",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.165Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
+    },
+    "data_volume": {
+      "value": "Small — <10GB data, slow growth, single-node viable",
+      "source_question_id": "5.3.2",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.166Z",
+      "derived_from": [
+        "performance_targets"
+      ]
+    },
+    "availability_targets": {
+      "value": "Best-effort — no formal SLA, occasional downtime acceptable",
+      "source_question_id": "5.3.3",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.167Z",
+      "derived_from": [
+        "performance_targets"
+      ]
+    },
+    "scalability_model": {
+      "value": "Vertical — scale up a single node as needed",
+      "source_question_id": "5.3.4",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.169Z",
+      "derived_from": [
+        "performance_targets"
+      ]
+    },
+    "security_requirements": {
+      "value": "Basic — password auth, TLS, no formal compliance requirements",
+      "source_question_id": "5.3.5",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.170Z",
+      "derived_from": [
+        "performance_targets"
+      ]
+    },
+    "integration_targets": {
+      "value": "No integrations — fully standalone system",
+      "source_question_id": "5.4.1",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.171Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "integration_protocols": {
+      "value": "REST/JSON only — simple HTTP-based communication",
+      "source_question_id": "5.4.2",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.173Z",
+      "derived_from": [
+        "integration_targets"
+      ]
+    },
+    "timeline": {
+      "value": "Quick — prototype in weeks, production in 1–3 months",
+      "source_question_id": "5.4.3",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.174Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
+    },
+    "deployment_strategy": {
+      "value": "Basic — dev + production environments, manual testing",
+      "source_question_id": "5.4.4",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.175Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "documentation_requirements": {
+      "value": "Minimal — inline comments and a README",
+      "source_question_id": "5.4.5",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.177Z",
+      "derived_from": []
+    },
+    "development_cadence": {
+      "value": "Sprint-based agile (Scrum) — fixed-length iterations with formal ceremonies",
+      "source_question_id": "6.1.1",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.178Z",
+      "derived_from": [
+        "procedure_steps",
+        "software_stack"
+      ]
+    },
+    "team_composition": {
+      "value": "Solo or pair — 1–2 people, all roles combined",
+      "source_question_id": "6.1.2",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.179Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
+    },
+    "quality_practices": {
+      "value": "Light — ad-hoc reviews, manual testing, minimal automation",
+      "source_question_id": "6.2.1",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.180Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "debt_management": {
+      "value": "Opportunistic — clean as you go, no formal tracking",
+      "source_question_id": "6.2.2",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.181Z",
+      "derived_from": [
+        "quality_practices"
+      ]
+    },
+    "communication_patterns": {
+      "value": "Async-first — written docs, Slack/Teams, minimal meetings",
+      "source_question_id": "6.3.1",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.182Z",
+      "derived_from": [
+        "team_composition"
+      ]
+    },
+    "decision_making": {
+      "value": "BDFL — one person makes final decisions with input",
+      "source_question_id": "6.3.2",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.185Z",
+      "derived_from": [
+        "team_composition"
+      ]
+    },
+    "deployment_process": {
+      "value": "Manual deploy — push artifacts, restart services, update on schedule",
+      "source_question_id": "7.1.1",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.186Z",
+      "derived_from": [
+        "software_stack",
+        "deployment_strategy"
+      ]
+    },
+    "environment_management": {
+      "value": "Single environment — production only, with local dev",
+      "source_question_id": "7.1.2",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.187Z",
+      "derived_from": [
+        "deployment_process"
+      ]
+    },
+    "monitoring_plan": {
+      "value": "Minimal — basic logging to stdout, manual check-ins",
+      "source_question_id": "7.2.1",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.188Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "runtime_configuration": {
+      "value": "Static config — environment variables, restart to change",
+      "source_question_id": "7.2.2",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.190Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "maintenance_policy": {
+      "value": "Firefighting — fix issues as they arise, no scheduled maintenance",
+      "source_question_id": "7.3.1",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.191Z",
+      "derived_from": [
+        "software_stack"
+      ]
+    },
+    "stewardship_plan": {
+      "value": "Hand-off — delivered to a separate operations team",
+      "source_question_id": "7.3.2",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-07-26T17:00:48.192Z",
+      "derived_from": [
+        "team_composition"
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "total_entities": 1701,
+  "enriched": 450,
+  "template_remaining": 1251,
+  "domains": {
+    "mobile-platform": 796,
+    "web-platforms": 758,
+    "os-shell": 65,
+    "dev-tools": 51,
+    "security-auth": 24,
+    "devops-infra": 7
+  },
+  "graph_nodes": 1701,
+  "graph_edges": 13068,
+  "compositions": 7,
+  "sessions": 281
+}

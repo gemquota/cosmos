@@ -1,0 +1,1215 @@
+{
+  "export_version": "2.0.0",
+  "exported_at": "2026-07-27T00:49:29.333Z",
+  "session": {
+    "id": "sess_57ae23f4",
+    "project_name": "space-complete",
+    "completion_pct": 100,
+    "total_time_minutes": 0
+  },
+  "framework": {
+    "name": "Structured Prompt Creation Framework",
+    "version": "2.0.0"
+  },
+  "series": [
+    {
+      "id": 1,
+      "name": "Conceptual Depth",
+      "rounds": [
+        {
+          "round": 1,
+          "focus": "Domain and Audience",
+          "questions": [
+            {
+              "id": "1.1.1",
+              "text": "What is the primary domain or field this prompt or project addresses? Describe its scope, core concerns, and any relevant sub-disciplines.",
+              "answer": {
+                "open_ended": "SPACE (Superb Prompt Automatic Creation Engine) is a programmable specification engine that transforms structured elicitation probes into development specifications. It sits at the intersection of prompt engineering, software specification, and developer tooling. Core concerns: transforming vague project ideas into concrete specs through progressive deepening across ontological, semantic, procedural, technical, and operational dimensions. Sub-disciplines include structured elicitation, dependency-aware question routing, artifact extraction, and multi-format export.",
+                "selected_choice": "An interdisciplinary space spanning 2-3 domains",
+                "selected_choice_id": "1.1.1.b",
+                "answered_at": "2026-07-27T00:49:29.290Z"
+              }
+            },
+            {
+              "id": "1.1.2",
+              "text": "Who is the intended audience for the generated output? What is their baseline familiarity with this domain?",
+              "answer": {
+                "open_ended": "The primary audience is software developers and technical leads building LLM-powered applications or complex systems who need structured specifications. Secondary audience includes product managers and architects who need to formalize requirements. They understand TypeScript/Node.js, have experience with CLI tools and web frameworks, and are comfortable with JSON/YAML data structures.",
+                "selected_choice": "Experts / researchers — people who work in this domain daily",
+                "selected_choice_id": "1.1.2.a",
+                "answered_at": "2026-07-27T00:49:29.292Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "focus": "Assumptions and Abstraction",
+          "questions": [
+            {
+              "id": "1.2.1",
+              "text": "What foundational concepts, theorems, or prior art can the output take for granted? What must be explained from scratch?",
+              "answer": {
+                "open_ended": "Assumed: understanding of CLI tools, npm/Node.js ecosystem, basic TypeScript, JSON/YAML formats, REST API concepts, and prompt engineering basics. Must explain from scratch: the specific 7-series progressive elicitation methodology, how dependency chains between series work, how artifacts accumulate across rounds, and how the 326 probes produce a coherent specification.",
+                "selected_choice": "Core fundamentals assumed; edge cases and advanced topics explained",
+                "selected_choice_id": "1.2.1.b",
+                "answered_at": "2026-07-27T00:49:29.293Z"
+              }
+            },
+            {
+              "id": "1.2.2",
+              "text": "At what level of abstraction should the output operate? Should it be concrete and example-driven, or formal and general?",
+              "answer": {
+                "open_ended": "Mixed approach — present the framework architecture with clear diagrams showing the series dependency graph and question flow, then ground each concept with concrete code examples from the TypeScript engine. For instance, show how a question flows through the router, gets answered, produces an artifact, and feeds into downstream series.",
+                "selected_choice": "Mixed — conceptual frameworks illustrated with examples",
+                "selected_choice_id": "1.2.2.b",
+                "answered_at": "2026-07-27T00:49:29.293Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "focus": "Terminology and Scaffolding",
+          "questions": [
+            {
+              "id": "1.3.1",
+              "text": "What vocabulary, jargon, or notation should be used or deliberately avoided? Are there established standards the output should follow?",
+              "answer": {
+                "open_ended": "Use standard software engineering terminology (session, artifact, framework, series, round) consistently. Avoid anthropomorphizing the tool — it \"elicits\" and \"generates\" rather than \"understands.\" Use SPACE-specific terms with definitions: probe (a single elicitation question), artifact (extracted data from answers), series (a themed group of rounds), round (a batch of related questions within a series).",
+                "selected_choice": "Standard industry terminology — use common terms precisely",
+                "selected_choice_id": "1.3.1.a",
+                "answered_at": "2026-07-27T00:49:29.294Z"
+              }
+            },
+            {
+              "id": "1.3.2",
+              "text": "How should complexity be distributed across the output? Should it start simple and deepen, or maintain a consistent level throughout?",
+              "answer": {
+                "open_ended": "Progressive — start with the simple concept of asking questions to generate specs, then layer in the dependency system, artifact accumulation, multi-format export, and finally the intelligence layer (analytics, contradiction detection, recommendations). Each layer builds on the previous.",
+                "selected_choice": "Flat — consistent complexity level throughout",
+                "selected_choice_id": "1.3.2.b",
+                "answered_at": "2026-07-27T00:49:29.294Z"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Ontological Characteristics",
+      "rounds": [
+        {
+          "round": 1,
+          "focus": "Entity Discovery",
+          "questions": [
+            {
+              "id": "2.1.1",
+              "text": "What are the primary entities, objects, concepts, or actors that exist in this domain? List them with brief descriptions.",
+              "answer": {
+                "open_ended": "Core entities: Framework (the 326-probe question set with dependency graph), Session (a user interaction instance tracking progress and answers), Project (a named container for sessions), Artifact (extracted structured data from answers), Series (a themed group of 3-5 rounds), Round (a batch of 2 open-ended questions with multi-choice follow-ups), Question (an open-ended probe with clarifying follow-ups), Export (generated specification documents in various formats), User (the human answering questions), Engine (the orchestration layer managing question routing and state).",
+                "selected_choice": "5–10 entities — moderate complexity with clear boundaries",
+                "selected_choice_id": "2.1.1.b",
+                "answered_at": "2026-07-27T00:49:29.296Z"
+              }
+            },
+            {
+              "id": "2.1.2",
+              "text": "What attributes, properties, or state define each entity? How do entities differ from one another?",
+              "answer": {
+                "open_ended": "Each entity has 3-5 key attributes. Framework: version, total_series, total_rounds, dependency_graph. Session: id, project_id, status, answers map, progress state, artifacts dict. Project: id, name, description, created_at, sessions list. Artifact: value, source_question_id, confidence, derived_from. Series: id, name, depends_on, provides, rounds. Question: id, text, follow_up_choices. Export: content, filename, mime_type.",
+                "selected_choice": "3–5 attributes per entity — moderate descriptive richness",
+                "selected_choice_id": "2.1.2.b",
+                "answered_at": "2026-07-27T00:49:29.296Z"
+              }
+            },
+            {
+              "id": "2.1.3",
+              "text": "What natural categories, types, or groupings organize these entities? Are there clear taxonomies or classification schemes?",
+              "answer": {
+                "open_ended": "Three broad categories: (1) Structural entities (Framework, Series, Round, Question) define the probe taxonomy. (2) Runtime entities (Session, Engine, User) manage execution. (3) Output entities (Artifact, Export) represent derived data. These map naturally to the architecture — structural defines what gets asked, runtime manages asking, output captures results.",
+                "selected_choice": "2–3 broad categories partitioning the entities",
+                "selected_choice_id": "2.1.3.b",
+                "answered_at": "2026-07-27T00:49:29.297Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "focus": "Classification and Core vs. Peripheral",
+          "questions": [
+            {
+              "id": "2.2.1",
+              "text": "Of the entities listed, which are absolutely essential (core) and which are optional, derivative, or contextual (peripheral)?",
+              "answer": {
+                "open_ended": "Core: Framework, Session, Question, Artifact, Engine. Peripheral: Project (convenience wrapper), User (implicit), Export (derived from Session + Artifacts). The system could function with just Framework + Session + Engine + Questions, but Projects provide organization and Exports provide delivery.",
+                "selected_choice": "Roughly equal split between core and peripheral entities",
+                "selected_choice_id": "2.2.1.b",
+                "answered_at": "2026-07-27T00:49:29.297Z"
+              }
+            },
+            {
+              "id": "2.2.2",
+              "text": "At what level of granularity should entities be modeled? Should fine distinctions be separate entities or attributes of coarser ones?",
+              "answer": {
+                "open_ended": "Moderate granularity — key specializations become distinct entities. Questions are fine-grained (each of 326 is unique), but Rounds and Series are moderate groupings. Artifacts are fine-grained per-question but aggregate into a dictionary. This balance keeps the entity count manageable while preserving the granularity needed for the 326-probe structure.",
+                "selected_choice": "Moderate — key specializations become distinct entities",
+                "selected_choice_id": "2.2.2.b",
+                "answered_at": "2026-07-27T00:49:29.298Z"
+              }
+            },
+            {
+              "id": "2.2.3",
+              "text": "How do entities relate to each other in terms of sharing, inheriting, or differentiating attributes?",
+              "answer": {
+                "open_ended": "Shared attributes grouped by category — entities in same category share a profile. All runtime entities share a lifecycle pattern (create → active → complete). All structural entities share a naming convention (dot-separated IDs like 2.3.1). Artifacts share a common interface (value + metadata) but their content varies by source series.",
+                "selected_choice": "Shared attributes grouped by category — entities in same category share a profile",
+                "selected_choice_id": "2.2.3.b",
+                "answered_at": "2026-07-27T00:49:29.298Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "focus": "Boundaries and Lifecycles",
+          "questions": [
+            {
+              "id": "2.3.1",
+              "text": "What are the systemic boundaries of this domain? What is explicitly in scope vs. out of scope?",
+              "answer": {
+                "open_ended": "Tightly bounded — scope is narrow and well-defined. SPACE generates specifications; it does not implement them, deploy them, or manage projects after generation. The boundary is: input = user answers to 326 probes, output = structured specification documents. Everything inside this boundary is in scope; everything outside is explicitly out.",
+                "selected_choice": "Tightly bounded — scope is narrow and well-defined",
+                "selected_choice_id": "2.3.1.a",
+                "answered_at": "2026-07-27T00:49:29.299Z"
+              }
+            },
+            {
+              "id": "2.3.2",
+              "text": "What external entities, systems, or actors interact with this domain but are not part of it?",
+              "answer": {
+                "open_ended": "3 external actors: (1) The human user answering questions — provides the domain knowledge. (2) The LLM (optional) — can auto-answer or refine questions, but the system works without it. (3) The file system / browser storage — persists sessions and exports. The system is deliberately designed to work without external services.",
+                "selected_choice": "1–3 external actors (users, upstream data sources, downstream consumers)",
+                "selected_choice_id": "2.3.2.b",
+                "answered_at": "2026-07-27T00:49:29.299Z"
+              }
+            },
+            {
+              "id": "2.3.3",
+              "text": "What is the lifecycle of each entity? How are they created, modified, combined, retired?",
+              "answer": {
+                "open_ended": "Stateful lifecycle with versioned artifacts. Sessions: created → in_progress → completed. Questions within sessions: locked → available → answered. Artifacts: extracted → accumulated → exported. The system also supports snapshot/resume, so sessions can be paused and resumed with full state preservation.",
+                "selected_choice": "Stateful lifecycle — entities pass through defined states with transition rules",
+                "selected_choice_id": "2.3.3.b",
+                "answered_at": "2026-07-27T00:49:29.299Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "focus": "Refinement and Constraints",
+          "questions": [
+            {
+              "id": "2.4.1",
+              "text": "Are there entities that are missing from the model so far? What gaps exist in the current entity list?",
+              "answer": {
+                "open_ended": "No major gaps — the entity set is comprehensive for the current scope. One potential addition: a \"Configuration\" entity to formalize runtime settings (LLM provider, export formats, quality thresholds). Currently these are embedded in the Engine config rather than being first-class entities.",
+                "selected_choice": "No gaps — the current entity list is comprehensive",
+                "selected_choice_id": "2.4.1.a",
+                "answered_at": "2026-07-27T00:49:29.300Z"
+              }
+            },
+            {
+              "id": "2.4.2",
+              "text": "Which entities should be merged, split, or reclassified? Are there boundary cases where entity distinctions break down?",
+              "answer": {
+                "open_ended": "No merges or splits needed. The entity boundaries are clean. One reclassification candidate: \"User\" could be split into \"Respondent\" (answers questions) and \"Consumer\" (reads exports), but this adds complexity without benefit at current scale.",
+                "selected_choice": "No changes needed — current classification is sound",
+                "selected_choice_id": "2.4.2.a",
+                "answered_at": "2026-07-27T00:49:29.300Z"
+              }
+            },
+            {
+              "id": "2.4.3",
+              "text": "What constraints, invariants, or business rules apply to entity instances? What must always be true?",
+              "answer": {
+                "open_ended": "Key constraints: (1) Framework is immutable after loading — no runtime modifications to the question set. (2) Session answers are append-only during active session — editing allowed before completion, not after. (3) Artifacts are derived, not stored — recomputed from answers on every access. (4) Series dependencies are strict — cannot answer Series N before all dependencies are complete.",
+                "selected_choice": "Moderate constraints — several required fields and validity rules",
+                "selected_choice_id": "2.4.3.b",
+                "answered_at": "2026-07-27T00:49:29.301Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 5,
+          "focus": "Validation and Composition",
+          "questions": [
+            {
+              "id": "2.5.1",
+              "text": "What edge cases, exceptions, or degenerate cases could break the entity model? How should they be handled?",
+              "answer": {
+                "open_ended": "Edge cases: (1) Empty project with no sessions — handled gracefully with \"no sessions\" message. (2) Corrupted session JSON — validation on load, fallback to fresh session. (3) Missing framework files — fallback to bundled defaults. (4) Concurrent sessions in same project — allowed but not coordinated. (5) Very long answers (>10KB) — accepted but may slow export generation.",
+                "selected_choice": "Known edge cases — they are well-understood and can be handled explicitly",
+                "selected_choice_id": "2.5.1.b",
+                "answered_at": "2026-07-27T00:49:29.301Z"
+              }
+            },
+            {
+              "id": "2.5.2",
+              "text": "How do entities compose or aggregate into larger structures? Can entities contain or be composed of other entities?",
+              "answer": {
+                "open_ended": "Entities compose hierarchically: Framework contains Series contains Rounds contains Questions. Sessions contain Answers (keyed by question ID) and Artifacts (keyed by artifact name). Projects contain Sessions. Exports compose from Session + Artifacts + Framework. The dependency graph creates cross-series composition where later Series consume Artifacts from earlier Series.",
+                "selected_choice": "Containment — some entities serve as containers for others (1-level deep)",
+                "selected_choice_id": "2.5.2.b",
+                "answered_at": "2026-07-27T00:49:29.302Z"
+              }
+            },
+            {
+              "id": "2.5.3",
+              "text": "What are the cardinality and multiplicity relationships between entity types? Can an entity have zero, one, or many of another?",
+              "answer": {
+                "open_ended": "Cardinality: Framework 1:N Series, Series 1:N Rounds, Round 1:N Questions (always 2). Project 1:N Sessions. Session N:M Questions (via answers map). Session 1:N Artifacts. Session 1:N Exports. Series N:M Series (via dependency graph). The dominant pattern is one-to-many containment with the answers map as the many-to-many junction.",
+                "selected_choice": "One-to-many — common pattern with one parent referencing multiple children",
+                "selected_choice_id": "2.5.3.b",
+                "answered_at": "2026-07-27T00:49:29.302Z"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Semantic Relationships",
+      "rounds": [
+        {
+          "round": 1,
+          "focus": "Direct Associations",
+          "questions": [
+            {
+              "id": "3.1.1",
+              "text": "What direct associations exist between entities? Which entities reference, point to, or are linked to which others?",
+              "answer": {
+                "open_ended": "Primary associations: Framework CONTAINS Series (1:many), Series CONTAINS Rounds (1:many), Round CONTAINS Questions (1:many), Session ANSWERS Questions (many:many via answers map), Session EXTRACTS Artifacts (1:many), Project OWNS Sessions (1:many), Engine ORCHESTRATES Sessions (1:many), Export PRODUCES_FROM Session+Artifacts (many:1). The dependency graph defines which Series consumes artifacts from which other Series.",
+                "selected_choice": "Moderate — roughly one association per entity on average",
+                "selected_choice_id": "3.1.1.b",
+                "answered_at": "2026-07-27T00:49:29.303Z"
+              }
+            },
+            {
+              "id": "3.1.2",
+              "text": "What is the nature or type of each association? Is it a use, creation, ownership, or communication link?",
+              "answer": {
+                "open_ended": "Composition dominates — most relationships are whole-part (Framework contains Series contains Rounds contains Questions). The exception is the dependency graph between Series, which is a directed acyclic graph of artifact consumption. The answers map in Session is an association table linking Questions to user responses.",
+                "selected_choice": "2–3 distinct relationship types (e.g., owns, produces, references)",
+                "selected_choice_id": "3.1.2.b",
+                "answered_at": "2026-07-27T00:49:29.303Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "focus": "Hierarchical and Containment Relationships",
+          "questions": [
+            {
+              "id": "3.2.1",
+              "text": "What parent-child, containment, or hierarchical relationships exist? Which entities are within, belong to, or are part of others?",
+              "answer": {
+                "open_ended": "Hierarchical containment with a flat dependency layer. The structural hierarchy is: Framework → Series → Round → Question. This is strict containment. The dependency graph is flat — Series reference each other by ID, not by nesting. Artifacts float across this hierarchy, extracted from Questions but consumed by downstream Series.",
+                "selected_choice": "No hierarchy — all entities are peers with no containment structure",
+                "selected_choice_id": "3.2.1.a",
+                "answered_at": "2026-07-27T00:49:29.304Z"
+              }
+            },
+            {
+              "id": "3.2.2",
+              "text": "What inheritance, specialization, or generalization relationships exist? Which entities are kinds of other entities?",
+              "answer": {
+                "open_ended": "Composition primarily — Artifacts are composed into the Session state, not inherited. The exception is the Export hierarchy: JSON, Markdown, YAML, HTML, and Prompt exports all share a common interface (content + filename + mime_type) but implement different serialization strategies. This is strategy pattern, not inheritance.",
+                "selected_choice": "No inheritance — each entity is unique in its type",
+                "selected_choice_id": "3.2.2.a",
+                "answered_at": "2026-07-27T00:49:29.304Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "focus": "Causal and Dynamic Relationships",
+          "questions": [
+            {
+              "id": "3.3.1",
+              "text": "What causal, temporal, or triggering relationships exist? Which entities cause changes in, or are triggered by, others?",
+              "answer": {
+                "open_ended": "Sequential causation with parallel-reads. Answering Question 1.1.1 causes its artifact to become available to downstream Series. However, within a Round, both Questions can be answered in any order. The dependency graph is a DAG — answering earlier Series enables later Series, but there are no cycles.",
+                "selected_choice": "No causal links — entities change independently",
+                "selected_choice_id": "3.3.1.a",
+                "answered_at": "2026-07-27T00:49:29.304Z"
+              }
+            },
+            {
+              "id": "3.3.2",
+              "text": "What dependency chains, prerequisites, or ordering constraints exist? Must some entities exist before others can be created or used?",
+              "answer": {
+                "open_ended": "The dependency chains form a DAG with 7 nodes (Series) and approximately 10 edges. The critical path runs: Series 1 → Series 2 → Series 3 → Series 4 → Series 5 → Series 6 → Series 7. Branching occurs where Series 5 depends on both Series 1 and Series 4, creating a merge point.",
+                "selected_choice": "Simple chain — a linear sequence of prerequisites",
+                "selected_choice_id": "3.3.2.b",
+                "answered_at": "2026-07-27T00:49:29.305Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "focus": "Composition and Constraints",
+          "questions": [
+            {
+              "id": "3.4.1",
+              "text": "What rules govern how relationships can change? Can associations be created, deleted, or modified at any time, or are there restrictions?",
+              "answer": {
+                "open_ended": "Mostly immutable — once an answer is recorded, it is never modified (only appended to). The exception is the \"edit\" capability where users can revise answers before session completion. Artifacts are recomputed from answers, so editing an answer automatically updates its artifact. Session status transitions are one-way (created → in_progress → completed).",
+                "selected_choice": "State-gated — relationships can only change when entities are in certain states",
+                "selected_choice_id": "3.4.1.b",
+                "answered_at": "2026-07-27T00:49:29.305Z"
+              }
+            },
+            {
+              "id": "3.4.2",
+              "text": "How do relationships compose or chain across entities? Can indirect relationships be inferred from direct ones?",
+              "answer": {
+                "open_ended": "Two junction entities mediate the primary relationships: (1) The answers map in Session — a dictionary linking question_id to AnswerEntry, carrying the open-ended text, multi-choice selection, timestamps, and quality scores. (2) The artifacts dictionary — linking artifact keys to ArtifactValue objects with source provenance and confidence scores.",
+                "selected_choice": "Transitive — some relationship types imply transitive chains",
+                "selected_choice_id": "3.4.2.b",
+                "answered_at": "2026-07-27T00:49:29.305Z"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Procedural Breadth",
+      "rounds": [
+        {
+          "round": 1,
+          "focus": "Scope and Step Count",
+          "questions": [
+            {
+              "id": "4.1.1",
+              "text": "What is the overall scope of the procedure or workflow? What does it start from and what is its end state?",
+              "answer": {
+                "open_ended": "The primary procedure is the elicitation session: user creates project → starts session → answers questions series by series → system routes questions respecting dependencies → extracts artifacts from answers → generates exports. Secondary procedures include: session save/resume, artifact accumulation, progress tracking, and export generation.",
+                "selected_choice": "Narrow — a single well-defined task with clear boundaries",
+                "selected_choice_id": "4.1.1.a",
+                "answered_at": "2026-07-27T00:49:29.306Z"
+              }
+            },
+            {
+              "id": "4.1.2",
+              "text": "How many distinct steps, stages, or phases should the procedure contain? What is the natural breakdown?",
+              "answer": {
+                "open_ended": "The session procedure has 5 major phases: (1) Initialization — create project, load framework, validate structure. (2) Elicitation — answer 67 open-ended questions across 25 rounds, each with 3 multi-choice follow-ups. (3) Extraction — accumulate 66 artifacts from answers via mapping registry. (4) Validation — check for contradictions, completeness gaps, quality issues. (5) Export — generate specification documents in multiple formats.",
+                "selected_choice": "5–8 steps — moderate complexity with clear waypoints",
+                "selected_choice_id": "4.1.2.b",
+                "answered_at": "2026-07-27T00:49:29.307Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "focus": "Decision Points and Inputs/Outputs",
+          "questions": [
+            {
+              "id": "4.2.1",
+              "text": "Where are the key decision points, branches, or conditional paths? At which steps must a choice be made that affects the rest of the flow?",
+              "answer": {
+                "open_ended": "The elicitation flow has 8-10 steps per question: router selects next question → displays question text and follow-up choices → user types open-ended answer → user selects classification → system validates answer → system records answer → system extracts artifacts → system checks round completion → system checks series completion → system advances to next question.",
+                "selected_choice": "Few branches — 1–2 decision points with 2–3 choices each",
+                "selected_choice_id": "4.2.1.b",
+                "answered_at": "2026-07-27T00:49:29.307Z"
+              }
+            },
+            {
+              "id": "4.2.2",
+              "text": "What are the expected inputs and outputs at each stage? What data or artifacts flow between steps?",
+              "answer": {
+                "open_ended": "Each step has 2-3 sub-actions. For example, \"display question\" involves: checking dependency gates are met, formatting the question with series context and round focus, showing the progress bar and series indicator. \"Submit answer\" involves: validating non-empty text, recording timestamp, updating answers map, recomputing artifacts, checking if round is complete.",
+                "selected_choice": "Simple I/O — each step takes one input and produces one output",
+                "selected_choice_id": "4.2.2.a",
+                "answered_at": "2026-07-27T00:49:29.308Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "focus": "Error Handling and Granularity",
+          "questions": [
+            {
+              "id": "4.3.1",
+              "text": "What fallback paths, error handling, or recovery procedures should be included for when things go wrong?",
+              "answer": {
+                "open_ended": "Three decision points: (1) Question routing — which question to show next, governed by the dependency graph and completion state. (2) Answer validation — whether the answer meets quality thresholds (non-empty text, valid choice selection). (3) Completion detection — whether a round, series, or session is complete based on all questions answered.",
+                "selected_choice": "Minimal — errors abort the procedure with a clear message",
+                "selected_choice_id": "4.3.1.a",
+                "answered_at": "2026-07-27T00:49:29.308Z"
+              }
+            },
+            {
+              "id": "4.3.2",
+              "text": "How granular should each procedural step be? Should steps be coarse (several actions) or fine (one action per step)?",
+              "answer": {
+                "open_ended": "The main branching path is: if dependencies met → show question, else → skip to next available. Secondary branch: if answer valid → record and advance, else → re-prompt. Tertiary branch: if round complete → check series, if series complete → check session, if session complete → generate exports.",
+                "selected_choice": "Fine — each step is a single atomic action",
+                "selected_choice_id": "4.3.2.b",
+                "answered_at": "2026-07-27T00:49:29.309Z"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Technical Specifications",
+      "rounds": [
+        {
+          "round": 1,
+          "focus": "Hardware and Infrastructure",
+          "questions": [
+            {
+              "id": "5.1.1",
+              "text": "What hardware platforms or architectures must be supported? (CPU, GPU, mobile, embedded, etc.)",
+              "answer": {
+                "open_ended": "TypeScript/Node.js for the engine, CLI, and storage. Python for the web server backend. Single HTML file with Tailwind CSS for the web UI. The engine uses no external runtime dependencies beyond Node.js built-ins — the entire CLI compiles to a single executable via npm link.",
+                "selected_choice": "Dual architecture — e.g., x86-64 + ARM",
+                "selected_choice_id": "5.1.1.b",
+                "answered_at": "2026-07-27T00:49:29.309Z"
+              }
+            },
+            {
+              "id": "5.1.2",
+              "text": "What are the minimum and recommended hardware specs? (RAM, storage, compute, network)",
+              "answer": {
+                "open_ended": "Minimum: Node.js 18+, 512MB RAM, 100MB disk. Recommended: Node.js 20+, 2GB RAM, 1GB disk. The system is lightweight — the entire codebase is ~3500 lines of TypeScript. The web UI is a single 36KB HTML file. Storage grows linearly with sessions (~10KB per session).",
+                "selected_choice": "Minimal — <1GB RAM, <100MB storage, single-core sufficient",
+                "selected_choice_id": "5.1.2.a",
+                "answered_at": "2026-07-27T00:49:29.310Z"
+              }
+            },
+            {
+              "id": "5.1.3",
+              "text": "What bandwidth, latency, or networking requirements exist? Is offline operation needed?",
+              "answer": {
+                "open_ended": "Offline-first — the core system requires zero network access. LLM integration is optional and requires internet for API calls. The web UI is served locally. No bandwidth or latency requirements for core functionality. The system is designed for developers working on their local machine.",
+                "selected_choice": "Always-online — requires reliable internet connection",
+                "selected_choice_id": "5.1.3.a",
+                "answered_at": "2026-07-27T00:49:29.310Z"
+              }
+            },
+            {
+              "id": "5.1.4",
+              "text": "What storage infrastructure is needed? (databases, object storage, caching, file systems)",
+              "answer": {
+                "open_ended": "JSON files on the local filesystem — one .space.json per project, one state.json per session, export files in the exports directory. SQLite adapter exists for future scaling but is not currently integrated. No databases, object storage, or caching infrastructure needed.",
+                "selected_choice": "Single database — one relational or document store covers all needs",
+                "selected_choice_id": "5.1.4.a",
+                "answered_at": "2026-07-27T00:49:29.310Z"
+              }
+            },
+            {
+              "id": "5.1.5",
+              "text": "What cloud, on-premise, or hybrid infrastructure is targeted? Are there compliance or sovereignty requirements?",
+              "answer": {
+                "open_ended": "Local development only — no cloud, no on-premise servers, no hybrid. The system runs on the developers machine. The web server binds to localhost. The CLI is installed globally via npm. No containerization, no orchestration, no deployment pipeline for the tool itself.",
+                "selected_choice": "Cloud-native — designed for a specific cloud provider",
+                "selected_choice_id": "5.1.5.a",
+                "answered_at": "2026-07-27T00:49:29.311Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "focus": "Software Stack and Dependencies",
+          "questions": [
+            {
+              "id": "5.2.1",
+              "text": "What programming languages, runtimes, or frameworks are required or preferred?",
+              "answer": {
+                "open_ended": "TypeScript for all business logic (engine, CLI, LLM providers, export). Python for the lightweight web server. Single HTML file with Tailwind CSS via CDN for the web UI. No frontend build step — the HTML file is served directly. The TypeScript compiles to ES2022 JavaScript.",
+                "selected_choice": "Two languages — e.g., backend + frontend split",
+                "selected_choice_id": "5.2.1.b",
+                "answered_at": "2026-07-27T00:49:29.311Z"
+              }
+            },
+            {
+              "id": "5.2.2",
+              "text": "What operating systems and environments must be supported?",
+              "answer": {
+                "open_ended": "Cross-platform — runs on macOS, Linux, and Windows. Tested on Node.js 18, 20, and 22. The CLI uses platform-independent path handling. The web UI works in any modern browser (Chrome, Firefox, Safari, Edge). No platform-specific code.",
+                "selected_choice": "Linux + macOS (developer-focused)",
+                "selected_choice_id": "5.2.2.b",
+                "answered_at": "2026-07-27T00:49:29.311Z"
+              }
+            },
+            {
+              "id": "5.2.3",
+              "text": "What existing libraries, services, APIs, or third-party dependencies should be used or avoided?",
+              "answer": {
+                "open_ended": "Runtime dependencies: commander (CLI framework), chalk (terminal colors), inquirer (interactive prompts), ora (spinners), js-yaml (YAML), sql.js (SQLite). Dev dependencies: vitest (testing), tsx (dev runner), typescript (compiler). LLM providers: openai, anthropic SDKs (optional). No databases, no message queues, no external services required.",
+                "selected_choice": "Minimal dependencies — build from standard library where possible",
+                "selected_choice_id": "5.2.3.a",
+                "answered_at": "2026-07-27T00:49:29.312Z"
+              }
+            },
+            {
+              "id": "5.2.4",
+              "text": "What versioning, compatibility, or upgrade policies govern the software stack?",
+              "answer": {
+                "open_ended": "Semantic versioning (currently v2.1.0). The framework JSON format is versioned separately (v1 → v2 migration built in). Backward compatibility maintained — old session files load in new versions. Breaking changes require a major version bump.",
+                "selected_choice": "Latest-stable — always use current versions, update frequently",
+                "selected_choice_id": "5.2.4.a",
+                "answered_at": "2026-07-27T00:49:29.312Z"
+              }
+            },
+            {
+              "id": "5.2.5",
+              "text": "What build systems, CI/CD platforms, and packaging formats are required?",
+              "answer": {
+                "open_ended": "npm for package management and distribution. TypeScript compiler (tsc) for build. Vitest for testing. No CI/CD pipeline configured yet — builds are manual. The prepublishOnly hook runs build + test before npm publish. No Docker, no Kubernetes, no cloud deployment.",
+                "selected_choice": "Simple build — single build tool, manual or script-based deployment",
+                "selected_choice_id": "5.2.5.a",
+                "answered_at": "2026-07-27T00:49:29.312Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "focus": "Performance and Scalability",
+          "questions": [
+            {
+              "id": "5.3.1",
+              "text": "What are the throughput, latency, and concurrency requirements? (requests/sec, response time, simultaneous users)",
+              "answer": {
+                "open_ended": "Single-user interactive tool — no throughput requirements. Session creation: <100ms. Question routing: <10ms. Answer submission: <50ms. Artifact extraction: <20ms. Export generation: <500ms. All operations complete in under a second. No concurrency requirements — the system handles one user at a time.",
+                "selected_choice": "Low traffic — <100 req/s, seconds of latency, single-digit concurrency",
+                "selected_choice_id": "5.3.1.a",
+                "answered_at": "2026-07-27T00:49:29.316Z"
+              }
+            },
+            {
+              "id": "5.3.2",
+              "text": "What data volume and growth rate is expected? (storage size, records, throughput)",
+              "answer": {
+                "open_ended": "Current scale: 326 questions, ~66 artifacts per session, ~10KB per session state file. A single project might have 5-10 sessions. Total storage per project: ~500KB. The system is designed for hundreds of projects, not millions. No archival strategy needed at current scale.",
+                "selected_choice": "Small — <10GB data, slow growth, single-node viable",
+                "selected_choice_id": "5.3.2.a",
+                "answered_at": "2026-07-27T00:49:29.317Z"
+              }
+            },
+            {
+              "id": "5.3.3",
+              "text": "What availability, uptime, and disaster recovery targets are required?",
+              "answer": {
+                "open_ended": "Not applicable — this is a local development tool, not a production service. No SLA, no uptime requirement. The system works offline and completes all operations in under a second. Data durability is handled by file system + optional git versioning.",
+                "selected_choice": "Best-effort — no formal SLA, occasional downtime acceptable",
+                "selected_choice_id": "5.3.3.a",
+                "answered_at": "2026-07-27T00:49:29.317Z"
+              }
+            },
+            {
+              "id": "5.3.4",
+              "text": "What scalability model is required? (vertical, horizontal, elastic, serverless)",
+              "answer": {
+                "open_ended": "Single-process, single-user architecture. No horizontal scaling needed. Vertical scaling is irrelevant — the system is lightweight. The web server handles one request at a time, which is fine for a development tool. No load balancing, no caching, no CDN.",
+                "selected_choice": "Vertical — scale up a single node as needed",
+                "selected_choice_id": "5.3.4.a",
+                "answered_at": "2026-07-27T00:49:29.317Z"
+              }
+            },
+            {
+              "id": "5.3.5",
+              "text": "What security and compliance standards must be met? (auth, encryption, audit, regulations)",
+              "answer": {
+                "open_ended": "No specific security requirements beyond standard development tool practices. API keys for LLM providers are stored in environment variables. Session data is local JSON files — no encryption needed for a development tool. No authentication, no authorization, no audit logging.",
+                "selected_choice": "Basic — password auth, TLS, no formal compliance requirements",
+                "selected_choice_id": "5.3.5.a",
+                "answered_at": "2026-07-27T00:49:29.317Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "focus": "Integration and Timeline",
+          "questions": [
+            {
+              "id": "5.4.1",
+              "text": "What external systems, APIs, or services must this system integrate with?",
+              "answer": {
+                "open_ended": "5 LLM providers via unified interface: OpenAI (GPT-4), Anthropic (Claude), Google Gemini, Mistral, Ollama (local). Each implements the same LLMProvider interface. File system for storage. npm for distribution. The system works without any LLM — the template provider generates deterministic responses for offline use.",
+                "selected_choice": "1–2 integrations — limited surface area for interoperability",
+                "selected_choice_id": "5.4.1.b",
+                "answered_at": "2026-07-27T00:49:29.318Z"
+              }
+            },
+            {
+              "id": "5.4.2",
+              "text": "What integration protocols, data formats, or standards must be supported?",
+              "answer": {
+                "open_ended": "File system API for session persistence (JSON read/write). LLM providers use their native REST APIs via SDK packages. The web server uses HTTP REST endpoints. No gRPC, no WebSocket, no message queues. All communication is synchronous and simple.",
+                "selected_choice": "REST/JSON only — simple HTTP-based communication",
+                "selected_choice_id": "5.4.2.a",
+                "answered_at": "2026-07-27T00:49:29.318Z"
+              }
+            },
+            {
+              "id": "5.4.3",
+              "text": "What is the expected timeline, milestones, and delivery cadence?",
+              "answer": {
+                "open_ended": "Phase 1 (done): Core engine + CLI. Phase 2 (done): Web UI. Phase 3 (done): LLM providers. Phase 4 (done): Export pipeline. Phase 5 (done): Persistence + snapshots. Phase 6 (done): Intelligence layer. Phase 7 (current): npm publishing + documentation. The system has been developed incrementally over ~4 weeks.",
+                "selected_choice": "Standard — phased delivery over 3–9 months",
+                "selected_choice_id": "5.4.3.b",
+                "answered_at": "2026-07-27T00:49:29.318Z"
+              }
+            },
+            {
+              "id": "5.4.4",
+              "text": "What testing, staging, and rollout strategy is required?",
+              "answer": {
+                "open_ended": "Test-driven development with 142 tests across 13 test files. Each phase has its own test file. Integration tests for full session flows. Snapshot tests for export formatters. No staging environment needed for a local tool. Manual testing for the web UI.",
+                "selected_choice": "Standard — dev, staging, production with automated test suite",
+                "selected_choice_id": "5.4.4.b",
+                "answered_at": "2026-07-27T00:49:29.319Z"
+              }
+            },
+            {
+              "id": "5.4.5",
+              "text": "What documentation, training, or knowledge transfer outputs are expected alongside the system?",
+              "answer": {
+                "open_ended": "npm package with README, LICENSE, and TypeScript declarations. CLI help text for every command. Inline JSDoc for all public APIs. Meta directory with specs, dev plans, and audit reports. The web UI is self-documenting — the dashboard shows the framework structure.",
+                "selected_choice": "Standard — API docs, architecture decision records, setup guide",
+                "selected_choice_id": "5.4.5.b",
+                "answered_at": "2026-07-27T00:49:29.319Z"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Development Methodologies",
+      "rounds": [
+        {
+          "round": 1,
+          "focus": "Process and Cadence",
+          "questions": [
+            {
+              "id": "6.1.1",
+              "text": "What development process or methodology best fits this project? How should work be planned and tracked?",
+              "answer": {
+                "open_ended": "Iterative development in 7 phases, each adding a distinct capability layer. Phase 0: Foundation (schema, loader, CLI). Phase 1: Execution engine (session lifecycle, routing). Phase 2: LLM integration (providers, refinement). Phase 3: Export pipeline (6 formats). Phase 4: Interactive UI (web + terminal). Phase 5: Persistence (filesystem, snapshots). Phase 6: Intelligence (analytics, contradictions). Each phase is independently testable.",
+                "selected_choice": "Continuous flow (Kanban) — pull-based with WIP limits, no fixed iterations",
+                "selected_choice_id": "6.1.1.b",
+                "answered_at": "2026-07-27T00:49:29.319Z"
+              }
+            },
+            {
+              "id": "6.1.2",
+              "text": "What is the expected team size, composition, and structure?",
+              "answer": {
+                "open_ended": "Solo developer — one person handles all roles (architecture, implementation, testing, documentation). The project is small enough (~3500 LOC) for one person to maintain full context. No team coordination overhead. Decisions are fast and informal.",
+                "selected_choice": "Solo or pair — 1–2 people, all roles combined",
+                "selected_choice_id": "6.1.2.a",
+                "answered_at": "2026-07-27T00:49:29.320Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "focus": "Quality and Review Practices",
+          "questions": [
+            {
+              "id": "6.2.1",
+              "text": "What code review, testing, and quality assurance practices should be followed?",
+              "answer": {
+                "open_ended": "TypeScript strict mode for all source code. Every function has clear input/output types. 142 tests across 13 test files. Snapshot tests for export formatters. Integration tests for full session flows. No code review process (solo developer). No linter configured yet — TypeScript compiler catches type errors.",
+                "selected_choice": "Standard — mandatory reviews, unit + integration tests, CI gates",
+                "selected_choice_id": "6.2.1.b",
+                "answered_at": "2026-07-27T00:49:29.320Z"
+              }
+            },
+            {
+              "id": "6.2.2",
+              "text": "How should the team handle technical debt, refactoring, and code quality?",
+              "answer": {
+                "open_ended": "Boy scout rule — leave code cleaner than you found it. Refactor when adding new features if existing code makes the feature harder. No dedicated refactoring phases. Technical debt is tracked informally. The main debt: web UI lacks automated tests, SQLite adapter not integrated.",
+                "selected_choice": "Opportunistic — clean as you go, no formal tracking",
+                "selected_choice_id": "6.2.2.a",
+                "answered_at": "2026-07-27T00:49:29.320Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "focus": "Communication and Collaboration",
+          "questions": [
+            {
+              "id": "6.3.1",
+              "text": "How should the team communicate, share knowledge, and manage decisions?",
+              "answer": {
+                "open_ended": "Solo developer, so communication is self-documentation. Architecture decisions recorded in meta/specs/ as markdown. Code is the primary documentation — TypeScript types are self-describing. README files explain usage. No meetings, no Slack, no formal communication channels.",
+                "selected_choice": "Async-first — written docs, Slack/Teams, minimal meetings",
+                "selected_choice_id": "6.3.1.a",
+                "answered_at": "2026-07-27T00:49:29.321Z"
+              }
+            },
+            {
+              "id": "6.3.2",
+              "text": "What is the decision-making and escalation process? How are architectural choices made?",
+              "answer": {
+                "open_ended": "BDFL — one person makes all decisions. No RFC process, no ADR reviews. Architecture decisions are made quickly and documented after implementation. The framework JSON format is the single source of truth for the question taxonomy. Changes to the framework require updating both the JSON files and the TypeScript types.",
+                "selected_choice": "BDFL — one person makes final decisions with input",
+                "selected_choice_id": "6.3.2.a",
+                "answered_at": "2026-07-27T00:49:29.321Z"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Operational / Functional Preferences",
+      "rounds": [
+        {
+          "round": 1,
+          "focus": "Deployment and Delivery",
+          "questions": [
+            {
+              "id": "7.1.1",
+              "text": "How should the system be deployed, released, and updated in production?",
+              "answer": {
+                "open_ended": "npm publish for distribution — the package is published to the public npm registry as space-cli. Users install globally with npm install -g space-cli and access the space command. The web UI is bundled but not separately distributed — users clone the repo and run the server locally.",
+                "selected_choice": "Automated CI/CD — merged to main triggers build + deploy pipeline",
+                "selected_choice_id": "7.1.1.b",
+                "answered_at": "2026-07-27T00:49:29.322Z"
+              }
+            },
+            {
+              "id": "7.1.2",
+              "text": "What environment and release management strategy should be used?",
+              "answer": {
+                "open_ended": "npm for distribution, GitHub for source. No Docker images — the system is a Node.js CLI tool that runs anywhere Node.js runs. The web UI is zero-dependency (single HTML file + Python server). No cloud deployment, no container registry, no package manager beyond npm.",
+                "selected_choice": "Dev / staging / production — standard promotion pipeline",
+                "selected_choice_id": "7.1.2.b",
+                "answered_at": "2026-07-27T00:49:29.323Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "focus": "Runtime Behavior and Observability",
+          "questions": [
+            {
+              "id": "7.2.1",
+              "text": "What logging, monitoring, alerting, and observability infrastructure is needed?",
+              "answer": {
+                "open_ended": "Not applicable — this is a development tool, not a production service. No logging infrastructure, no monitoring, no alerting. The closest thing to observability is the session progress tracking and artifact quality scores, which help users understand their specification completeness.",
+                "selected_choice": "Minimal — basic logging to stdout, manual check-ins",
+                "selected_choice_id": "7.2.1.a",
+                "answered_at": "2026-07-27T00:49:29.323Z"
+              }
+            },
+            {
+              "id": "7.2.2",
+              "text": "What configuration and feature management approach should be used at runtime?",
+              "answer": {
+                "open_ended": "Configuration via CLI flags and environment variables. No feature flags, no runtime configuration, no remote config. The framework JSON is the primary configuration — it defines the question taxonomy. LLM provider settings are environment variables (API keys). The system is designed for simplicity — minimal configuration.",
+                "selected_choice": "Static config — environment variables, restart to change",
+                "selected_choice_id": "7.2.2.a",
+                "answered_at": "2026-07-27T00:49:29.324Z"
+              }
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "focus": "Maintenance and Evolution",
+          "questions": [
+            {
+              "id": "7.3.1",
+              "text": "What maintenance schedule, upgrade policy, and lifecycle management is expected?",
+              "answer": {
+                "open_ended": "Solo developer handles everything — no maintenance team, no support process. Issues tracked via GitHub. No SLA, no response time requirements. The system is open source and self-service. Updates are released as npm package versions with changelogs.",
+                "selected_choice": "Firefighting — fix issues as they arise, no scheduled maintenance",
+                "selected_choice_id": "7.3.1.a",
+                "answered_at": "2026-07-27T00:49:29.324Z"
+              }
+            },
+            {
+              "id": "7.3.2",
+              "text": "What is the long-term stewardship plan? Who owns the system after initial delivery?",
+              "answer": {
+                "open_ended": "The system is actively developed and maintained by the original author. Updates are released as npm package versions. Breaking changes are avoided through semantic versioning. The framework format is versioned separately from the engine code. Long-term: the system becomes a stable tool with occasional feature additions.",
+                "selected_choice": "Build-and-run — the same team owns development and operations",
+                "selected_choice_id": "7.3.2.b",
+                "answered_at": "2026-07-27T00:49:29.325Z"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "artifacts": {
+    "domain": {
+      "value": "SPACE (Superb Prompt Automatic Creation Engine) is a programmable specification engine that transforms structured elicitation probes into development specifications. It sits at the intersection of prompt engineering, software specification, and developer tooling. Core concerns: transforming vague project ideas into concrete specs through progressive deepening across ontological, semantic, procedural, technical, and operational dimensions. Sub-disciplines include structured elicitation, dependency-aware question routing, artifact extraction, and multi-format export.",
+      "source": "1.1.1",
+      "confidence": 1
+    },
+    "audience_level": {
+      "value": "Experts / researchers — people who work in this domain daily",
+      "source": "1.1.2",
+      "confidence": 1
+    },
+    "terminology_preferences": {
+      "value": "Standard industry terminology — use common terms precisely",
+      "source": "1.3.1",
+      "confidence": 1
+    },
+    "scaffolding_preference": {
+      "value": "Flat — consistent complexity level throughout",
+      "source": "1.3.2",
+      "confidence": 1
+    },
+    "abstraction_level": {
+      "value": "Mixed — conceptual frameworks illustrated with examples",
+      "source": "1.2.2",
+      "confidence": 1
+    },
+    "assumption_level": {
+      "value": "Core fundamentals assumed; edge cases and advanced topics explained",
+      "source": "1.2.1",
+      "confidence": 1
+    },
+    "entity_list": {
+      "value": "Core entities: Framework (the 326-probe question set with dependency graph), Session (a user interaction instance tracking progress and answers), Project (a named container for sessions), Artifact (extracted structured data from answers), Series (a themed group of 3-5 rounds), Round (a batch of 2 open-ended questions with multi-choice follow-ups), Question (an open-ended probe with clarifying follow-ups), Export (generated specification documents in various formats), User (the human answering questions), Engine (the orchestration layer managing question routing and state).",
+      "source": "2.1.1",
+      "confidence": 1
+    },
+    "entity_attributes": {
+      "value": "Each entity has 3-5 key attributes. Framework: version, total_series, total_rounds, dependency_graph. Session: id, project_id, status, answers map, progress state, artifacts dict. Project: id, name, description, created_at, sessions list. Artifact: value, source_question_id, confidence, derived_from. Series: id, name, depends_on, provides, rounds. Question: id, text, follow_up_choices. Export: content, filename, mime_type.",
+      "source": "2.1.2",
+      "confidence": 1
+    },
+    "entity_categories": {
+      "value": "2–3 broad categories partitioning the entities",
+      "source": "2.1.3",
+      "confidence": 1
+    },
+    "entity_core_peripheral": {
+      "value": "Roughly equal split between core and peripheral entities",
+      "source": "2.2.1",
+      "confidence": 1
+    },
+    "entity_granularity": {
+      "value": "Moderate — key specializations become distinct entities",
+      "source": "2.2.2",
+      "confidence": 1
+    },
+    "entity_attribute_sharing": {
+      "value": "Shared attributes grouped by category — entities in same category share a profile",
+      "source": "2.2.3",
+      "confidence": 1
+    },
+    "systemic_boundaries": {
+      "value": "Tightly bounded — scope is narrow and well-defined",
+      "source": "2.3.1",
+      "confidence": 1
+    },
+    "external_actors": {
+      "value": "1–3 external actors (users, upstream data sources, downstream consumers)",
+      "source": "2.3.2",
+      "confidence": 1
+    },
+    "entity_lifecycles": {
+      "value": "Stateful lifecycle — entities pass through defined states with transition rules",
+      "source": "2.3.3",
+      "confidence": 1
+    },
+    "entity_gaps": {
+      "value": "No gaps — the current entity list is comprehensive",
+      "source": "2.4.1",
+      "confidence": 1
+    },
+    "entity_reclassification": {
+      "value": "No changes needed — current classification is sound",
+      "source": "2.4.2",
+      "confidence": 1
+    },
+    "entity_constraints": {
+      "value": "Moderate constraints — several required fields and validity rules",
+      "source": "2.4.3",
+      "confidence": 1
+    },
+    "edge_cases": {
+      "value": "Known edge cases — they are well-understood and can be handled explicitly",
+      "source": "2.5.1",
+      "confidence": 1
+    },
+    "entity_composition": {
+      "value": "Containment — some entities serve as containers for others (1-level deep)",
+      "source": "2.5.2",
+      "confidence": 1
+    },
+    "entity_cardinality": {
+      "value": "One-to-many — common pattern with one parent referencing multiple children",
+      "source": "2.5.3",
+      "confidence": 1
+    },
+    "direct_associations": {
+      "value": "Moderate — roughly one association per entity on average",
+      "source": "3.1.1",
+      "confidence": 1
+    },
+    "association_types": {
+      "value": "2–3 distinct relationship types (e.g., owns, produces, references)",
+      "source": "3.1.2",
+      "confidence": 1
+    },
+    "hierarchy_structure": {
+      "value": "No hierarchy — all entities are peers with no containment structure",
+      "source": "3.2.1",
+      "confidence": 1
+    },
+    "inheritance_model": {
+      "value": "No inheritance — each entity is unique in its type",
+      "source": "3.2.2",
+      "confidence": 1
+    },
+    "causal_relationships": {
+      "value": "No causal links — entities change independently",
+      "source": "3.3.1",
+      "confidence": 1
+    },
+    "dependency_chains": {
+      "value": "Simple chain — a linear sequence of prerequisites",
+      "source": "3.3.2",
+      "confidence": 1
+    },
+    "relationship_mutability": {
+      "value": "State-gated — relationships can only change when entities are in certain states",
+      "source": "3.4.1",
+      "confidence": 1
+    },
+    "relationship_composition": {
+      "value": "Transitive — some relationship types imply transitive chains",
+      "source": "3.4.2",
+      "confidence": 1
+    },
+    "procedure_scope": {
+      "value": "Narrow — a single well-defined task with clear boundaries",
+      "source": "4.1.1",
+      "confidence": 1
+    },
+    "procedure_steps": {
+      "value": "5–8 steps — moderate complexity with clear waypoints",
+      "source": "4.1.2",
+      "confidence": 1
+    },
+    "decision_points": {
+      "value": "Few branches — 1–2 decision points with 2–3 choices each",
+      "source": "4.2.1",
+      "confidence": 1
+    },
+    "io_contracts": {
+      "value": "Simple I/O — each step takes one input and produces one output",
+      "source": "4.2.2",
+      "confidence": 1
+    },
+    "error_handling": {
+      "value": "Minimal — errors abort the procedure with a clear message",
+      "source": "4.3.1",
+      "confidence": 1
+    },
+    "step_granularity": {
+      "value": "Fine — each step is a single atomic action",
+      "source": "4.3.2",
+      "confidence": 1
+    },
+    "hardware_requirements": {
+      "value": "Dual architecture — e.g., x86-64 + ARM",
+      "source": "5.1.1",
+      "confidence": 1
+    },
+    "hardware_specs": {
+      "value": "Minimal — <1GB RAM, <100MB storage, single-core sufficient",
+      "source": "5.1.2",
+      "confidence": 1
+    },
+    "network_requirements": {
+      "value": "Always-online — requires reliable internet connection",
+      "source": "5.1.3",
+      "confidence": 1
+    },
+    "storage_requirements": {
+      "value": "Single database — one relational or document store covers all needs",
+      "source": "5.1.4",
+      "confidence": 1
+    },
+    "infrastructure_target": {
+      "value": "Cloud-native — designed for a specific cloud provider",
+      "source": "5.1.5",
+      "confidence": 1
+    },
+    "software_stack": {
+      "value": "Two languages — e.g., backend + frontend split",
+      "source": "5.2.1",
+      "confidence": 1
+    },
+    "os_requirements": {
+      "value": "Linux + macOS (developer-focused)",
+      "source": "5.2.2",
+      "confidence": 1
+    },
+    "dependency_management": {
+      "value": "Minimal dependencies — build from standard library where possible",
+      "source": "5.2.3",
+      "confidence": 1
+    },
+    "versioning_policy": {
+      "value": "Latest-stable — always use current versions, update frequently",
+      "source": "5.2.4",
+      "confidence": 1
+    },
+    "build_system": {
+      "value": "Simple build — single build tool, manual or script-based deployment",
+      "source": "5.2.5",
+      "confidence": 1
+    },
+    "performance_targets": {
+      "value": "Low traffic — <100 req/s, seconds of latency, single-digit concurrency",
+      "source": "5.3.1",
+      "confidence": 1
+    },
+    "data_volume": {
+      "value": "Small — <10GB data, slow growth, single-node viable",
+      "source": "5.3.2",
+      "confidence": 1
+    },
+    "availability_targets": {
+      "value": "Best-effort — no formal SLA, occasional downtime acceptable",
+      "source": "5.3.3",
+      "confidence": 1
+    },
+    "scalability_model": {
+      "value": "Vertical — scale up a single node as needed",
+      "source": "5.3.4",
+      "confidence": 1
+    },
+    "security_requirements": {
+      "value": "Basic — password auth, TLS, no formal compliance requirements",
+      "source": "5.3.5",
+      "confidence": 1
+    },
+    "integration_targets": {
+      "value": "1–2 integrations — limited surface area for interoperability",
+      "source": "5.4.1",
+      "confidence": 1
+    },
+    "integration_protocols": {
+      "value": "REST/JSON only — simple HTTP-based communication",
+      "source": "5.4.2",
+      "confidence": 1
+    },
+    "timeline": {
+      "value": "Standard — phased delivery over 3–9 months",
+      "source": "5.4.3",
+      "confidence": 1
+    },
+    "deployment_strategy": {
+      "value": "Standard — dev, staging, production with automated test suite",
+      "source": "5.4.4",
+      "confidence": 1
+    },
+    "documentation_requirements": {
+      "value": "Standard — API docs, architecture decision records, setup guide",
+      "source": "5.4.5",
+      "confidence": 1
+    },
+    "development_cadence": {
+      "value": "Continuous flow (Kanban) — pull-based with WIP limits, no fixed iterations",
+      "source": "6.1.1",
+      "confidence": 1
+    },
+    "team_composition": {
+      "value": "Solo or pair — 1–2 people, all roles combined",
+      "source": "6.1.2",
+      "confidence": 1
+    },
+    "quality_practices": {
+      "value": "Standard — mandatory reviews, unit + integration tests, CI gates",
+      "source": "6.2.1",
+      "confidence": 1
+    },
+    "debt_management": {
+      "value": "Opportunistic — clean as you go, no formal tracking",
+      "source": "6.2.2",
+      "confidence": 1
+    },
+    "communication_patterns": {
+      "value": "Async-first — written docs, Slack/Teams, minimal meetings",
+      "source": "6.3.1",
+      "confidence": 1
+    },
+    "decision_making": {
+      "value": "BDFL — one person makes final decisions with input",
+      "source": "6.3.2",
+      "confidence": 1
+    },
+    "deployment_process": {
+      "value": "Automated CI/CD — merged to main triggers build + deploy pipeline",
+      "source": "7.1.1",
+      "confidence": 1
+    },
+    "environment_management": {
+      "value": "Dev / staging / production — standard promotion pipeline",
+      "source": "7.1.2",
+      "confidence": 1
+    },
+    "monitoring_plan": {
+      "value": "Minimal — basic logging to stdout, manual check-ins",
+      "source": "7.2.1",
+      "confidence": 1
+    },
+    "runtime_configuration": {
+      "value": "Static config — environment variables, restart to change",
+      "source": "7.2.2",
+      "confidence": 1
+    },
+    "maintenance_policy": {
+      "value": "Firefighting — fix issues as they arise, no scheduled maintenance",
+      "source": "7.3.1",
+      "confidence": 1
+    },
+    "stewardship_plan": {
+      "value": "Build-and-run — the same team owns development and operations",
+      "source": "7.3.2",
+      "confidence": 1
+    }
+  }
+}

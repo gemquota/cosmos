@@ -1,0 +1,688 @@
+export_version: 2.0.0
+exported_at: '2026-07-26T17:00:59.301Z'
+session:
+  id: sess_115024d0
+  project_name: recursive-self-improvement
+  completion_pct: 100
+series:
+  - id: 1
+    name: Conceptual Depth
+    rounds:
+      - round: 1
+        focus: Domain and Audience
+        questions:
+          - id: 1.1.1
+            text: >-
+              What is the primary domain or field this prompt or project addresses? Describe its scope, core concerns,
+              and any relevant sub-disciplines.
+            answer:
+              open_ended: Auto-generated answer for 1.1.1 based on project context.
+              choice: A single well-established domain (e.g., machine learning, civil engineering)
+          - id: 1.1.2
+            text: >-
+              Who is the intended audience for the generated output? What is their baseline familiarity with this
+              domain?
+            answer:
+              open_ended: Auto-generated answer for 1.1.2 based on project context.
+              choice: Experts / researchers — people who work in this domain daily
+      - round: 2
+        focus: Assumptions and Abstraction
+        questions:
+          - id: 1.2.1
+            text: >-
+              What foundational concepts, theorems, or prior art can the output take for granted? What must be explained
+              from scratch?
+            answer:
+              open_ended: Auto-generated answer for 1.2.1 based on project context.
+              choice: Full prerequisites assumed — dive straight into advanced material
+          - id: 1.2.2
+            text: >-
+              At what level of abstraction should the output operate? Should it be concrete and example-driven, or
+              formal and general?
+            answer:
+              open_ended: Auto-generated answer for 1.2.2 based on project context.
+              choice: Concrete — specific examples, code snippets, case studies
+      - round: 3
+        focus: Terminology and Scaffolding
+        questions:
+          - id: 1.3.1
+            text: >-
+              What vocabulary, jargon, or notation should be used or deliberately avoided? Are there established
+              standards the output should follow?
+            answer:
+              open_ended: Auto-generated answer for 1.3.1 based on project context.
+              choice: Standard industry terminology — use common terms precisely
+          - id: 1.3.2
+            text: >-
+              How should complexity be distributed across the output? Should it start simple and deepen, or maintain a
+              consistent level throughout?
+            answer:
+              open_ended: Auto-generated answer for 1.3.2 based on project context.
+              choice: Progressive — scaffold from simple foundations to advanced topics
+  - id: 2
+    name: Ontological Characteristics
+    rounds:
+      - round: 1
+        focus: Entity Discovery
+        questions:
+          - id: 2.1.1
+            text: >-
+              What are the primary entities, objects, concepts, or actors that exist in this domain? List them with
+              brief descriptions.
+            answer:
+              open_ended: Auto-generated answer for 2.1.1 based on project context.
+              choice: Fewer than 5 core entities — the domain is compact and well-bounded
+          - id: 2.1.2
+            text: What attributes, properties, or state define each entity? How do entities differ from one another?
+            answer:
+              open_ended: Auto-generated answer for 2.1.2 based on project context.
+              choice: 1–2 key attributes per entity — simple identifiers suffice
+          - id: 2.1.3
+            text: >-
+              What natural categories, types, or groupings organize these entities? Are there clear taxonomies or
+              classification schemes?
+            answer:
+              open_ended: Auto-generated answer for 2.1.3 based on project context.
+              choice: A single flat list — no meaningful sub-groupings
+      - round: 2
+        focus: Classification and Core vs. Peripheral
+        questions:
+          - id: 2.2.1
+            text: >-
+              Of the entities listed, which are absolutely essential (core) and which are optional, derivative, or
+              contextual (peripheral)?
+            answer:
+              open_ended: Auto-generated answer for 2.2.1 based on project context.
+              choice: Most entities are core — the domain has little extraneous surface area
+          - id: 2.2.2
+            text: >-
+              At what level of granularity should entities be modeled? Should fine distinctions be separate entities or
+              attributes of coarser ones?
+            answer:
+              open_ended: Auto-generated answer for 2.2.2 based on project context.
+              choice: Coarse-grained — entities are broad; most variation is captured via attributes
+          - id: 2.2.3
+            text: How do entities relate to each other in terms of sharing, inheriting, or differentiating attributes?
+            answer:
+              open_ended: Auto-generated answer for 2.2.3 based on project context.
+              choice: Mostly independent — entities share few attributes beyond common identifiers
+      - round: 3
+        focus: Boundaries and Lifecycles
+        questions:
+          - id: 2.3.1
+            text: What are the systemic boundaries of this domain? What is explicitly in scope vs. out of scope?
+            answer:
+              open_ended: Auto-generated answer for 2.3.1 based on project context.
+              choice: Tightly bounded — scope is narrow and well-defined
+          - id: 2.3.2
+            text: What external entities, systems, or actors interact with this domain but are not part of it?
+            answer:
+              open_ended: Auto-generated answer for 2.3.2 based on project context.
+              choice: No external interactions — fully self-contained domain
+          - id: 2.3.3
+            text: What is the lifecycle of each entity? How are they created, modified, combined, retired?
+            answer:
+              open_ended: Auto-generated answer for 2.3.3 based on project context.
+              choice: Simple lifecycle — create, read, update, delete (CRUD)
+      - round: 4
+        focus: Refinement and Constraints
+        questions:
+          - id: 2.4.1
+            text: Are there entities that are missing from the model so far? What gaps exist in the current entity list?
+            answer:
+              open_ended: Auto-generated answer for 2.4.1 based on project context.
+              choice: No gaps — the current entity list is comprehensive
+          - id: 2.4.2
+            text: >-
+              Which entities should be merged, split, or reclassified? Are there boundary cases where entity
+              distinctions break down?
+            answer:
+              open_ended: Auto-generated answer for 2.4.2 based on project context.
+              choice: No changes needed — current classification is sound
+          - id: 2.4.3
+            text: What constraints, invariants, or business rules apply to entity instances? What must always be true?
+            answer:
+              open_ended: Auto-generated answer for 2.4.3 based on project context.
+              choice: Minimal constraints — entities have few invariants beyond uniqueness
+      - round: 5
+        focus: Validation and Composition
+        questions:
+          - id: 2.5.1
+            text: What edge cases, exceptions, or degenerate cases could break the entity model? How should they be handled?
+            answer:
+              open_ended: Auto-generated answer for 2.5.1 based on project context.
+              choice: Few edge cases — the model is robust to real-world variation
+          - id: 2.5.2
+            text: >-
+              How do entities compose or aggregate into larger structures? Can entities contain or be composed of other
+              entities?
+            answer:
+              open_ended: Auto-generated answer for 2.5.2 based on project context.
+              choice: Flat — entities do not compose; all entities are atomic
+          - id: 2.5.3
+            text: >-
+              What are the cardinality and multiplicity relationships between entity types? Can an entity have zero,
+              one, or many of another?
+            answer:
+              open_ended: Auto-generated answer for 2.5.3 based on project context.
+              choice: Mostly one-to-one — entities pair uniquely
+  - id: 3
+    name: Semantic Relationships
+    rounds:
+      - round: 1
+        focus: Direct Associations
+        questions:
+          - id: 3.1.1
+            text: >-
+              What direct associations exist between entities? Which entities reference, point to, or are linked to
+              which others?
+            answer:
+              open_ended: Auto-generated answer for 3.1.1 based on project context.
+              choice: Sparse — fewer associations than entities; most entities are isolated
+          - id: 3.1.2
+            text: What is the nature or type of each association? Is it a use, creation, ownership, or communication link?
+            answer:
+              open_ended: Auto-generated answer for 3.1.2 based on project context.
+              choice: Single type — all associations are of the same nature
+      - round: 2
+        focus: Hierarchical and Containment Relationships
+        questions:
+          - id: 3.2.1
+            text: >-
+              What parent-child, containment, or hierarchical relationships exist? Which entities are within, belong to,
+              or are part of others?
+            answer:
+              open_ended: Auto-generated answer for 3.2.1 based on project context.
+              choice: No hierarchy — all entities are peers with no containment structure
+          - id: 3.2.2
+            text: >-
+              What inheritance, specialization, or generalization relationships exist? Which entities are kinds of other
+              entities?
+            answer:
+              open_ended: Auto-generated answer for 3.2.2 based on project context.
+              choice: No inheritance — each entity is unique in its type
+      - round: 3
+        focus: Causal and Dynamic Relationships
+        questions:
+          - id: 3.3.1
+            text: >-
+              What causal, temporal, or triggering relationships exist? Which entities cause changes in, or are
+              triggered by, others?
+            answer:
+              open_ended: Auto-generated answer for 3.3.1 based on project context.
+              choice: No causal links — entities change independently
+          - id: 3.3.2
+            text: >-
+              What dependency chains, prerequisites, or ordering constraints exist? Must some entities exist before
+              others can be created or used?
+            answer:
+              open_ended: Auto-generated answer for 3.3.2 based on project context.
+              choice: No ordering constraints — entities are independent
+      - round: 4
+        focus: Composition and Constraints
+        questions:
+          - id: 3.4.1
+            text: >-
+              What rules govern how relationships can change? Can associations be created, deleted, or modified at any
+              time, or are there restrictions?
+            answer:
+              open_ended: Auto-generated answer for 3.4.1 based on project context.
+              choice: Freely mutable — relationships can change at any time with no restrictions
+          - id: 3.4.2
+            text: >-
+              How do relationships compose or chain across entities? Can indirect relationships be inferred from direct
+              ones?
+            answer:
+              open_ended: Auto-generated answer for 3.4.2 based on project context.
+              choice: No composition — only direct relationships matter
+  - id: 4
+    name: Procedural Breadth
+    rounds:
+      - round: 1
+        focus: Scope and Step Count
+        questions:
+          - id: 4.1.1
+            text: What is the overall scope of the procedure or workflow? What does it start from and what is its end state?
+            answer:
+              open_ended: Auto-generated answer for 4.1.1 based on project context.
+              choice: Narrow — a single well-defined task with clear boundaries
+          - id: 4.1.2
+            text: How many distinct steps, stages, or phases should the procedure contain? What is the natural breakdown?
+            answer:
+              open_ended: Auto-generated answer for 4.1.2 based on project context.
+              choice: 2–4 steps — quick process with few handoffs
+      - round: 2
+        focus: Decision Points and Inputs/Outputs
+        questions:
+          - id: 4.2.1
+            text: >-
+              Where are the key decision points, branches, or conditional paths? At which steps must a choice be made
+              that affects the rest of the flow?
+            answer:
+              open_ended: Auto-generated answer for 4.2.1 based on project context.
+              choice: No branching — a single linear path from start to finish
+          - id: 4.2.2
+            text: What are the expected inputs and outputs at each stage? What data or artifacts flow between steps?
+            answer:
+              open_ended: Auto-generated answer for 4.2.2 based on project context.
+              choice: Simple I/O — each step takes one input and produces one output
+      - round: 3
+        focus: Error Handling and Granularity
+        questions:
+          - id: 4.3.1
+            text: What fallback paths, error handling, or recovery procedures should be included for when things go wrong?
+            answer:
+              open_ended: Auto-generated answer for 4.3.1 based on project context.
+              choice: Minimal — errors abort the procedure with a clear message
+          - id: 4.3.2
+            text: >-
+              How granular should each procedural step be? Should steps be coarse (several actions) or fine (one action
+              per step)?
+            answer:
+              open_ended: Auto-generated answer for 4.3.2 based on project context.
+              choice: Coarse — each step is a meaningful phase (2–5 sub-actions per step)
+  - id: 5
+    name: Technical Specifications
+    rounds:
+      - round: 1
+        focus: Hardware and Infrastructure
+        questions:
+          - id: 5.1.1
+            text: What hardware platforms or architectures must be supported? (CPU, GPU, mobile, embedded, etc.)
+            answer:
+              open_ended: Auto-generated answer for 5.1.1 based on project context.
+              choice: Single architecture — x86-64 desktop/server only
+          - id: 5.1.2
+            text: What are the minimum and recommended hardware specs? (RAM, storage, compute, network)
+            answer:
+              open_ended: Auto-generated answer for 5.1.2 based on project context.
+              choice: Minimal — <1GB RAM, <100MB storage, single-core sufficient
+          - id: 5.1.3
+            text: What bandwidth, latency, or networking requirements exist? Is offline operation needed?
+            answer:
+              open_ended: Auto-generated answer for 5.1.3 based on project context.
+              choice: Always-online — requires reliable internet connection
+          - id: 5.1.4
+            text: What storage infrastructure is needed? (databases, object storage, caching, file systems)
+            answer:
+              open_ended: Auto-generated answer for 5.1.4 based on project context.
+              choice: Single database — one relational or document store covers all needs
+          - id: 5.1.5
+            text: >-
+              What cloud, on-premise, or hybrid infrastructure is targeted? Are there compliance or sovereignty
+              requirements?
+            answer:
+              open_ended: Auto-generated answer for 5.1.5 based on project context.
+              choice: Cloud-native — designed for a specific cloud provider
+      - round: 2
+        focus: Software Stack and Dependencies
+        questions:
+          - id: 5.2.1
+            text: What programming languages, runtimes, or frameworks are required or preferred?
+            answer:
+              open_ended: Auto-generated answer for 5.2.1 based on project context.
+              choice: Single language — one ecosystem covers everything
+          - id: 5.2.2
+            text: What operating systems and environments must be supported?
+            answer:
+              open_ended: Auto-generated answer for 5.2.2 based on project context.
+              choice: Linux only
+          - id: 5.2.3
+            text: What existing libraries, services, APIs, or third-party dependencies should be used or avoided?
+            answer:
+              open_ended: Auto-generated answer for 5.2.3 based on project context.
+              choice: Minimal dependencies — build from standard library where possible
+          - id: 5.2.4
+            text: What versioning, compatibility, or upgrade policies govern the software stack?
+            answer:
+              open_ended: Auto-generated answer for 5.2.4 based on project context.
+              choice: Latest-stable — always use current versions, update frequently
+          - id: 5.2.5
+            text: What build systems, CI/CD platforms, and packaging formats are required?
+            answer:
+              open_ended: Auto-generated answer for 5.2.5 based on project context.
+              choice: Simple build — single build tool, manual or script-based deployment
+      - round: 3
+        focus: Performance and Scalability
+        questions:
+          - id: 5.3.1
+            text: >-
+              What are the throughput, latency, and concurrency requirements? (requests/sec, response time, simultaneous
+              users)
+            answer:
+              open_ended: Auto-generated answer for 5.3.1 based on project context.
+              choice: Low traffic — <100 req/s, seconds of latency, single-digit concurrency
+          - id: 5.3.2
+            text: What data volume and growth rate is expected? (storage size, records, throughput)
+            answer:
+              open_ended: Auto-generated answer for 5.3.2 based on project context.
+              choice: Small — <10GB data, slow growth, single-node viable
+          - id: 5.3.3
+            text: What availability, uptime, and disaster recovery targets are required?
+            answer:
+              open_ended: Auto-generated answer for 5.3.3 based on project context.
+              choice: Best-effort — no formal SLA, occasional downtime acceptable
+          - id: 5.3.4
+            text: What scalability model is required? (vertical, horizontal, elastic, serverless)
+            answer:
+              open_ended: Auto-generated answer for 5.3.4 based on project context.
+              choice: Vertical — scale up a single node as needed
+          - id: 5.3.5
+            text: What security and compliance standards must be met? (auth, encryption, audit, regulations)
+            answer:
+              open_ended: Auto-generated answer for 5.3.5 based on project context.
+              choice: Basic — password auth, TLS, no formal compliance requirements
+      - round: 4
+        focus: Integration and Timeline
+        questions:
+          - id: 5.4.1
+            text: What external systems, APIs, or services must this system integrate with?
+            answer:
+              open_ended: Auto-generated answer for 5.4.1 based on project context.
+              choice: No integrations — fully standalone system
+          - id: 5.4.2
+            text: What integration protocols, data formats, or standards must be supported?
+            answer:
+              open_ended: Auto-generated answer for 5.4.2 based on project context.
+              choice: REST/JSON only — simple HTTP-based communication
+          - id: 5.4.3
+            text: What is the expected timeline, milestones, and delivery cadence?
+            answer:
+              open_ended: Auto-generated answer for 5.4.3 based on project context.
+              choice: Quick — prototype in weeks, production in 1–3 months
+          - id: 5.4.4
+            text: What testing, staging, and rollout strategy is required?
+            answer:
+              open_ended: Auto-generated answer for 5.4.4 based on project context.
+              choice: Basic — dev + production environments, manual testing
+          - id: 5.4.5
+            text: What documentation, training, or knowledge transfer outputs are expected alongside the system?
+            answer:
+              open_ended: Auto-generated answer for 5.4.5 based on project context.
+              choice: Minimal — inline comments and a README
+  - id: 6
+    name: Development Methodologies
+    rounds:
+      - round: 1
+        focus: Process and Cadence
+        questions:
+          - id: 6.1.1
+            text: What development process or methodology best fits this project? How should work be planned and tracked?
+            answer:
+              open_ended: Auto-generated answer for 6.1.1 based on project context.
+              choice: Sprint-based agile (Scrum) — fixed-length iterations with formal ceremonies
+          - id: 6.1.2
+            text: What is the expected team size, composition, and structure?
+            answer:
+              open_ended: Auto-generated answer for 6.1.2 based on project context.
+              choice: Solo or pair — 1–2 people, all roles combined
+      - round: 2
+        focus: Quality and Review Practices
+        questions:
+          - id: 6.2.1
+            text: What code review, testing, and quality assurance practices should be followed?
+            answer:
+              open_ended: Auto-generated answer for 6.2.1 based on project context.
+              choice: Light — ad-hoc reviews, manual testing, minimal automation
+          - id: 6.2.2
+            text: How should the team handle technical debt, refactoring, and code quality?
+            answer:
+              open_ended: Auto-generated answer for 6.2.2 based on project context.
+              choice: Opportunistic — clean as you go, no formal tracking
+      - round: 3
+        focus: Communication and Collaboration
+        questions:
+          - id: 6.3.1
+            text: How should the team communicate, share knowledge, and manage decisions?
+            answer:
+              open_ended: Auto-generated answer for 6.3.1 based on project context.
+              choice: Async-first — written docs, Slack/Teams, minimal meetings
+          - id: 6.3.2
+            text: What is the decision-making and escalation process? How are architectural choices made?
+            answer:
+              open_ended: Auto-generated answer for 6.3.2 based on project context.
+              choice: BDFL — one person makes final decisions with input
+  - id: 7
+    name: Operational / Functional Preferences
+    rounds:
+      - round: 1
+        focus: Deployment and Delivery
+        questions:
+          - id: 7.1.1
+            text: How should the system be deployed, released, and updated in production?
+            answer:
+              open_ended: Auto-generated answer for 7.1.1 based on project context.
+              choice: Manual deploy — push artifacts, restart services, update on schedule
+          - id: 7.1.2
+            text: What environment and release management strategy should be used?
+            answer:
+              open_ended: Auto-generated answer for 7.1.2 based on project context.
+              choice: Single environment — production only, with local dev
+      - round: 2
+        focus: Runtime Behavior and Observability
+        questions:
+          - id: 7.2.1
+            text: What logging, monitoring, alerting, and observability infrastructure is needed?
+            answer:
+              open_ended: Auto-generated answer for 7.2.1 based on project context.
+              choice: Minimal — basic logging to stdout, manual check-ins
+          - id: 7.2.2
+            text: What configuration and feature management approach should be used at runtime?
+            answer:
+              open_ended: Auto-generated answer for 7.2.2 based on project context.
+              choice: Static config — environment variables, restart to change
+      - round: 3
+        focus: Maintenance and Evolution
+        questions:
+          - id: 7.3.1
+            text: What maintenance schedule, upgrade policy, and lifecycle management is expected?
+            answer:
+              open_ended: Auto-generated answer for 7.3.1 based on project context.
+              choice: Firefighting — fix issues as they arise, no scheduled maintenance
+          - id: 7.3.2
+            text: What is the long-term stewardship plan? Who owns the system after initial delivery?
+            answer:
+              open_ended: Auto-generated answer for 7.3.2 based on project context.
+              choice: Hand-off — delivered to a separate operations team
+artifacts:
+  domain:
+    value: Auto-generated answer for 1.1.1 based on project context.
+    source: 1.1.1
+  audience_level:
+    value: Experts / researchers — people who work in this domain daily
+    source: 1.1.2
+  terminology_preferences:
+    value: Standard industry terminology — use common terms precisely
+    source: 1.3.1
+  scaffolding_preference:
+    value: Progressive — scaffold from simple foundations to advanced topics
+    source: 1.3.2
+  abstraction_level:
+    value: Concrete — specific examples, code snippets, case studies
+    source: 1.2.2
+  assumption_level:
+    value: Full prerequisites assumed — dive straight into advanced material
+    source: 1.2.1
+  entity_list:
+    value: Auto-generated answer for 2.1.1 based on project context.
+    source: 2.1.1
+  entity_attributes:
+    value: Auto-generated answer for 2.1.2 based on project context.
+    source: 2.1.2
+  entity_categories:
+    value: A single flat list — no meaningful sub-groupings
+    source: 2.1.3
+  entity_core_peripheral:
+    value: Most entities are core — the domain has little extraneous surface area
+    source: 2.2.1
+  entity_granularity:
+    value: Coarse-grained — entities are broad; most variation is captured via attributes
+    source: 2.2.2
+  entity_attribute_sharing:
+    value: Mostly independent — entities share few attributes beyond common identifiers
+    source: 2.2.3
+  systemic_boundaries:
+    value: Tightly bounded — scope is narrow and well-defined
+    source: 2.3.1
+  external_actors:
+    value: No external interactions — fully self-contained domain
+    source: 2.3.2
+  entity_lifecycles:
+    value: Simple lifecycle — create, read, update, delete (CRUD)
+    source: 2.3.3
+  entity_gaps:
+    value: No gaps — the current entity list is comprehensive
+    source: 2.4.1
+  entity_reclassification:
+    value: No changes needed — current classification is sound
+    source: 2.4.2
+  entity_constraints:
+    value: Minimal constraints — entities have few invariants beyond uniqueness
+    source: 2.4.3
+  edge_cases:
+    value: Few edge cases — the model is robust to real-world variation
+    source: 2.5.1
+  entity_composition:
+    value: Flat — entities do not compose; all entities are atomic
+    source: 2.5.2
+  entity_cardinality:
+    value: Mostly one-to-one — entities pair uniquely
+    source: 2.5.3
+  direct_associations:
+    value: Sparse — fewer associations than entities; most entities are isolated
+    source: 3.1.1
+  association_types:
+    value: Single type — all associations are of the same nature
+    source: 3.1.2
+  hierarchy_structure:
+    value: No hierarchy — all entities are peers with no containment structure
+    source: 3.2.1
+  inheritance_model:
+    value: No inheritance — each entity is unique in its type
+    source: 3.2.2
+  causal_relationships:
+    value: No causal links — entities change independently
+    source: 3.3.1
+  dependency_chains:
+    value: No ordering constraints — entities are independent
+    source: 3.3.2
+  relationship_mutability:
+    value: Freely mutable — relationships can change at any time with no restrictions
+    source: 3.4.1
+  relationship_composition:
+    value: No composition — only direct relationships matter
+    source: 3.4.2
+  procedure_scope:
+    value: Narrow — a single well-defined task with clear boundaries
+    source: 4.1.1
+  procedure_steps:
+    value: 2–4 steps — quick process with few handoffs
+    source: 4.1.2
+  decision_points:
+    value: No branching — a single linear path from start to finish
+    source: 4.2.1
+  io_contracts:
+    value: Simple I/O — each step takes one input and produces one output
+    source: 4.2.2
+  error_handling:
+    value: Minimal — errors abort the procedure with a clear message
+    source: 4.3.1
+  step_granularity:
+    value: Coarse — each step is a meaningful phase (2–5 sub-actions per step)
+    source: 4.3.2
+  hardware_requirements:
+    value: Single architecture — x86-64 desktop/server only
+    source: 5.1.1
+  hardware_specs:
+    value: Minimal — <1GB RAM, <100MB storage, single-core sufficient
+    source: 5.1.2
+  network_requirements:
+    value: Always-online — requires reliable internet connection
+    source: 5.1.3
+  storage_requirements:
+    value: Single database — one relational or document store covers all needs
+    source: 5.1.4
+  infrastructure_target:
+    value: Cloud-native — designed for a specific cloud provider
+    source: 5.1.5
+  software_stack:
+    value: Single language — one ecosystem covers everything
+    source: 5.2.1
+  os_requirements:
+    value: Linux only
+    source: 5.2.2
+  dependency_management:
+    value: Minimal dependencies — build from standard library where possible
+    source: 5.2.3
+  versioning_policy:
+    value: Latest-stable — always use current versions, update frequently
+    source: 5.2.4
+  build_system:
+    value: Simple build — single build tool, manual or script-based deployment
+    source: 5.2.5
+  performance_targets:
+    value: Low traffic — <100 req/s, seconds of latency, single-digit concurrency
+    source: 5.3.1
+  data_volume:
+    value: Small — <10GB data, slow growth, single-node viable
+    source: 5.3.2
+  availability_targets:
+    value: Best-effort — no formal SLA, occasional downtime acceptable
+    source: 5.3.3
+  scalability_model:
+    value: Vertical — scale up a single node as needed
+    source: 5.3.4
+  security_requirements:
+    value: Basic — password auth, TLS, no formal compliance requirements
+    source: 5.3.5
+  integration_targets:
+    value: No integrations — fully standalone system
+    source: 5.4.1
+  integration_protocols:
+    value: REST/JSON only — simple HTTP-based communication
+    source: 5.4.2
+  timeline:
+    value: Quick — prototype in weeks, production in 1–3 months
+    source: 5.4.3
+  deployment_strategy:
+    value: Basic — dev + production environments, manual testing
+    source: 5.4.4
+  documentation_requirements:
+    value: Minimal — inline comments and a README
+    source: 5.4.5
+  development_cadence:
+    value: Sprint-based agile (Scrum) — fixed-length iterations with formal ceremonies
+    source: 6.1.1
+  team_composition:
+    value: Solo or pair — 1–2 people, all roles combined
+    source: 6.1.2
+  quality_practices:
+    value: Light — ad-hoc reviews, manual testing, minimal automation
+    source: 6.2.1
+  debt_management:
+    value: Opportunistic — clean as you go, no formal tracking
+    source: 6.2.2
+  communication_patterns:
+    value: Async-first — written docs, Slack/Teams, minimal meetings
+    source: 6.3.1
+  decision_making:
+    value: BDFL — one person makes final decisions with input
+    source: 6.3.2
+  deployment_process:
+    value: Manual deploy — push artifacts, restart services, update on schedule
+    source: 7.1.1
+  environment_management:
+    value: Single environment — production only, with local dev
+    source: 7.1.2
+  monitoring_plan:
+    value: Minimal — basic logging to stdout, manual check-ins
+    source: 7.2.1
+  runtime_configuration:
+    value: Static config — environment variables, restart to change
+    source: 7.2.2
+  maintenance_policy:
+    value: Firefighting — fix issues as they arise, no scheduled maintenance
+    source: 7.3.1
+  stewardship_plan:
+    value: Hand-off — delivered to a separate operations team
+    source: 7.3.2

@@ -1,0 +1,342 @@
+[
+  {
+    "id": "3.1.1",
+    "series": 3,
+    "round": 1,
+    "focus": "Direct Associations",
+    "text": "What direct associations exist between entities? Which entities reference, point to, or are linked to which others?",
+    "choices": [
+      {
+        "id": "3.1.1.a",
+        "text": "Sparse \u2014 fewer associations than entities; most entities are isolated"
+      },
+      {
+        "id": "3.1.1.b",
+        "text": "Moderate \u2014 roughly one association per entity on average"
+      },
+      {
+        "id": "3.1.1.c",
+        "text": "Dense \u2014 entities form a richly connected web"
+      },
+      {
+        "id": "3.1.1.d",
+        "text": "Clustered \u2014 dense connections within groups, sparse between groups"
+      }
+    ],
+    "answer": "Direct associations between entities:\n\nFramework \u2192 Series: containment (Framework \"has\" Series). Bidirectional: Series knows its parent Framework.\nSeries \u2192 Round: containment (Series \"has\" Rounds). Bidirectional.\nRound \u2192 Question: containment (Round \"has\" Questions). Bidirectional.\nQuestion \u2192 Choice: containment (Question \"has\" Choices). Unidirectional (Choices don't reference back).\n\nSession \u2192 Answer: composition (Session \"produces\" Answers). Session owns Answers; Answers don't exist without Session.\nSession \u2192 Artifact: composition (Session \"extracts\" Artifacts). Artifact dictionary is part of Session state.\nAnswer \u2192 Question: reference (Answer \"responds to\" Question). Weak reference \u2014 Answers can exist without their source Question (if framework changes).\nArtifact \u2192 Question: reference (Artifact \"derived from\" Question). Traces provenance.\nExport \u2192 Session: reference (Export \"compiled from\" Session). Weak reference.\nProject \u2192 Session: composition (Project \"contains\" Sessions).\n\nAssociation density: Moderate \u2014 12 distinct associations across 10 entities. Most entities participate in 2-3 associations. The densest entity is Session (6 associations: contains Answers, contains Artifacts, belongs to Project, referenced by Exports, references current Question, tracks status)."
+  },
+  {
+    "id": "3.1.2",
+    "series": 3,
+    "round": 1,
+    "focus": "Direct Associations",
+    "text": "What is the nature or type of each association? Is it a use, creation, ownership, or communication link?",
+    "choices": [
+      {
+        "id": "3.1.2.a",
+        "text": "Single type \u2014 all associations are of the same nature"
+      },
+      {
+        "id": "3.1.2.b",
+        "text": "2\u20133 distinct relationship types (e.g., owns, produces, references)"
+      },
+      {
+        "id": "3.1.2.c",
+        "text": "4\u20137 distinct relationship types covering different interaction modes"
+      },
+      {
+        "id": "3.1.2.d",
+        "text": "8+ relationship types \u2014 rich relational vocabulary needed"
+      }
+    ],
+    "answer": "Association types and their semantics:\n\n1. CONTAINS \u2014 Parent-to-child structural containment. Framework contains Series. Series contains Rounds. Round contains Questions. Question contains Choices. These are strong ownership relationships \u2014 deleting the parent deletes all children. Implementation: parent holds array of children.\n\n2. REFERENCES \u2014 Weak linking between entities. Answer references Question (by question_id FK). Artifact references Question (by source_question_id FK). Export references Session (by session_id FK). These are weak relationships \u2014 deleting the referenced entity doesn't delete the referencing entity (but may leave orphaned references). Implementation: entity holds ID string of referenced entity.\n\n3. PRODUCES \u2014 Creation relationship. Session produces Answers. Session produces Artifacts. These are stronger than references because the producing entity owns the created entity. Implementation: Session holds arrays/dictionaries of created entities.\n\n4. CONSUMES \u2014 Data flow relationship. Series consumes Artifacts from previous Series. This is the most interesting association type because it creates the dependency graph. Implementation: Series defines \"consumes\" array of artifact keys; the question router checks that these artifacts exist before starting the series.\n\n5. DEPENDS_ON \u2014 Ordering constraint between Series. Series A depends on Series B means A cannot start until B has completed. This is a weaker relationship than CONSUMES \u2014 it's about ordering, not data flow. Implementation: Series defines \"deps\" array of Series IDs."
+  },
+  {
+    "id": "3.2.1",
+    "series": 3,
+    "round": 2,
+    "focus": "Hierarchical and Containment Relationships",
+    "text": "What parent-child, containment, or hierarchical relationships exist? Which entities are within, belong to, or are part of others?",
+    "choices": [
+      {
+        "id": "3.2.1.a",
+        "text": "No hierarchy \u2014 all entities are peers with no containment structure"
+      },
+      {
+        "id": "3.2.1.b",
+        "text": "Shallow hierarchy (1\u20132 levels) \u2014 simple containment chains"
+      },
+      {
+        "id": "3.2.1.c",
+        "text": "Deep hierarchy (3+ levels) \u2014 multi-level nesting"
+      },
+      {
+        "id": "3.2.1.d",
+        "text": "DAG structured \u2014 entities form a directed acyclic graph with multiple parents"
+      }
+    ],
+    "answer": "Hierarchy and containment structure:\n\nThe primary hierarchy is the Framework structure:\nFramework (root)\n  \u2514\u2500\u2500 Series (7 children)\n        \u2514\u2500\u2500 Round (3-5 children per Series)\n              \u2514\u2500\u2500 Question (2-5 children per Round)\n                    \u2514\u2500\u2500 Choice (3-5 children per Question)\n\nThis is a strict tree hierarchy \u2014 no entity has multiple parents at the same level. Maximum depth: 4 levels (Framework \u2192 Series \u2192 Round \u2192 Question \u2192 Choice). Average branching factor: Series=7, Round=3.5, Question=3.5, Choice=3.5.\n\nThe runtime hierarchy is the Project structure:\nProject (root)\n  \u2514\u2500\u2500 Session (0..N children)\n        \u251c\u2500\u2500 Answer (0..326 children)\n        \u251c\u2500\u2500 Artifact (0..~100 key-value pairs)\n        \u2514\u2500\u2500 Export (0..5 children)\n\nThe two hierarchies intersect at the Session level: a Session is both part of a Project hierarchy AND linked to a Framework hierarchy (through its current question pointer and answer references). This intersection is managed by the Engine, which translates between the static Framework hierarchy and the dynamic Session state."
+  },
+  {
+    "id": "3.2.2",
+    "series": 3,
+    "round": 2,
+    "focus": "Hierarchical and Containment Relationships",
+    "text": "What inheritance, specialization, or generalization relationships exist? Which entities are kinds of other entities?",
+    "choices": [
+      {
+        "id": "3.2.2.a",
+        "text": "No inheritance \u2014 each entity is unique in its type"
+      },
+      {
+        "id": "3.2.2.b",
+        "text": "Simple inheritance \u2014 a few parent types with child specializations"
+      },
+      {
+        "id": "3.2.2.c",
+        "text": "Polymorphic hierarchy \u2014 entities can serve as multiple types simultaneously"
+      },
+      {
+        "id": "3.2.2.d",
+        "text": "Trait-based \u2014 entities pick capabilities from a shared set of traits"
+      }
+    ],
+    "answer": "Inheritance and specialization:\n\nThe entity model uses composition over inheritance. No entity inherits from another entity.\n\nWhy no inheritance: The 10 entities are distinct types with different attributes and behaviors. There is no \"base entity\" that others extend. Each entity has its own type definition in src/types/index.ts. The closest thing to inheritance is the StorageProvider interface \u2014 FileSystemStorage and SQLiteStorage both implement the same interface, but this is interface implementation, not entity inheritance.\n\nAlternative considered: A \"BaseEntity\" abstract class with id, created_at, updated_at. Rejected because: (a) not all entities need timestamps (Framework, Series, Round, Question are static), (b) the id types differ (number for Framework/Series, string for Session/Answer/Artifact), (c) it would force uniform structure on heterogeneous entities.\n\nTrait-based approach: Instead of inheritance, the system uses traits (behaviors) that entities opt into: \"storable\" (can be persisted), \"extractable\" (can have data extracted from it), \"exportable\" (can be compiled into output). These are not formal type system constructs but implementation patterns \u2014 a storable entity has a corresponding StorageProvider method, an extractable entity has an artifact extraction handler, an exportable entity has a format compiler."
+  },
+  {
+    "id": "3.3.1",
+    "series": 3,
+    "round": 3,
+    "focus": "Causal and Dynamic Relationships",
+    "text": "What causal, temporal, or triggering relationships exist? Which entities cause changes in, or are triggered by, others?",
+    "choices": [
+      {
+        "id": "3.3.1.a",
+        "text": "No causal links \u2014 entities change independently"
+      },
+      {
+        "id": "3.3.1.b",
+        "text": "Direct causation \u2014 entity A creates or changes entity B in a predictable chain"
+      },
+      {
+        "id": "3.3.1.c",
+        "text": "Event-driven \u2014 state changes propagate as events through the network"
+      },
+      {
+        "id": "3.3.1.d",
+        "text": "Feedback loops \u2014 entities can influence each other in circular patterns"
+      }
+    ],
+    "answer": "Causal and temporal relationships:\n\nDirect causation chains:\n1. User answers Question \u2192 Answer is created \u2192 Artifact extraction runs \u2192 Artifact dictionary is updated. This is a synchronous chain \u2014 each step triggers the next immediately.\n\n2. All Questions in a Round are answered \u2192 Round is marked complete \u2192 Next Round is enabled (if within same series). This is a sequential chain \u2014 rounds within a series execute in order.\n\n3. All Rounds in a Series are answered \u2192 Series is marked complete \u2192 Dependent Series are enabled. This triggers the dependency resolution for downstream series.\n\n4. User requests Export \u2192 Export generation reads Session state + Artifact dictionary \u2192 Compiled document is written to disk. This is a demand-driven chain \u2014 exports happen only when requested.\n\nEvent-driven propagation: The Engine emits events at each transition point: question:presented, answer:submitted, artifact:extracted, round:completed, series:completed, session:completed. These events could be used for logging, analytics, or external integrations (though currently they're only used internally).\n\nNo feedback loops: The causal chains are strictly forward-moving. Answers don't cause questions to change (the framework is immutable). Artifacts don't cause earlier answers to change (extraction is one-way). This simplicity prevents infinite loops and makes the system predictable."
+  },
+  {
+    "id": "3.3.2",
+    "series": 3,
+    "round": 3,
+    "focus": "Causal and Dynamic Relationships",
+    "text": "What dependency chains, prerequisites, or ordering constraints exist? Must some entities exist before others can be created or used?",
+    "choices": [
+      {
+        "id": "3.3.2.a",
+        "text": "No ordering constraints \u2014 entities are independent"
+      },
+      {
+        "id": "3.3.2.b",
+        "text": "Simple chain \u2014 a linear sequence of prerequisites"
+      },
+      {
+        "id": "3.3.2.c",
+        "text": "Branching dependencies \u2014 a DAG of ordered entity relationships"
+      },
+      {
+        "id": "3.3.2.d",
+        "text": "Cyclic dependencies \u2014 entities depend on each other (requires careful management)"
+      }
+    ],
+    "answer": "Dependency chains and ordering constraints:\n\nSeries dependency graph (DAG):\n- Series 1: no dependencies (can start immediately)\n- Series 2: depends on [1] (must wait for Series 1)\n- Series 3: depends on [2] (must wait for Series 2)\n- Series 4: depends on [2, 3] (must wait for both)\n- Series 5: depends on [1, 4] (must wait for both)\n- Series 6: depends on [4, 5] (must wait for both)\n- Series 7: depends on [5, 6] (must wait for both)\n\nThis creates a diamond-shaped DAG with Series 1 at the root and Series 7 at the leaf. The critical path is 1\u21922\u21923\u21924\u21925\u21926\u21927 (7 steps).\n\nWithin each series, rounds execute sequentially (Round 1 before Round 2, etc.). Within each round, questions can execute in any order (no inter-question dependencies within a round).\n\nThe dependency resolution algorithm: When the Engine needs the next question, it (1) identifies the first incomplete series whose dependencies are all met, (2) finds the first incomplete round in that series, (3) selects the first unanswered question in that round. If no series has all dependencies met (e.g., all remaining series are blocked), the session is complete.\n\nPractical implication: A user who answers all of Series 1 can immediately jump to Series 2 (once Series 1 completes). They cannot skip to Series 3 without completing Series 2. This enforced ordering ensures that each series has the context it needs from predecessor series."
+  },
+  {
+    "id": "3.4.1",
+    "series": 3,
+    "round": 4,
+    "focus": "Composition and Constraints",
+    "text": "What rules govern how relationships can change? Can associations be created, deleted, or modified at any time, or are there restrictions?",
+    "choices": [
+      {
+        "id": "3.4.1.a",
+        "text": "Freely mutable \u2014 relationships can change at any time with no restrictions"
+      },
+      {
+        "id": "3.4.1.b",
+        "text": "State-gated \u2014 relationships can only change when entities are in certain states"
+      },
+      {
+        "id": "3.4.1.c",
+        "text": "Immutable after creation \u2014 relationships are set once and cannot change"
+      },
+      {
+        "id": "3.4.1.d",
+        "text": "Versioned \u2014 relationship changes create new versions rather than modifying in place"
+      }
+    ],
+    "answer": "Rules governing relationship changes:\n\nFramework relationships (Series\u2192Round\u2192Question\u2192Choice): Immutable. These are defined in JSON files and never change at runtime. The framework is a read-only reference.\n\nSession relationships: Mutable with constraints.\n- Session\u2192Answer: Answers can be added (new questions answered) or updated (re-answering a question). Cannot be deleted (skipping is recorded as a \"skipped\" answer, not deletion).\n- Session\u2192Artifact: Artifacts can be added (new extraction) or updated (refined extraction). Cannot be deleted (artifacts are append-only with overwrite semantics).\n- Session\u2192Project: Immutable after creation. A session belongs to one project forever.\n\nExport relationships: Regenerated, not modified. When an export is stale (new answers since last export), it's regenerated from scratch, not incrementally updated. The old export is overwritten.\n\nAnswer\u2192Question: Immutable. Once an answer is linked to a question, the link doesn't change. If the framework changes (which it doesn't), orphaned answers would reference non-existent questions \u2014 this is handled by the \"missing question\" edge case (answer preserved but marked as orphaned).\n\nThe immutability of framework relationships is a key design decision: it ensures deterministic behavior. The Engine always sees the same framework structure, regardless of when it was loaded or how many sessions have been created. This eliminates an entire class of bugs related to framework evolution."
+  },
+  {
+    "id": "3.4.2",
+    "series": 3,
+    "round": 4,
+    "focus": "Composition and Constraints",
+    "text": "How do relationships compose or chain across entities? Can indirect relationships be inferred from direct ones?",
+    "choices": [
+      {
+        "id": "3.4.2.a",
+        "text": "No composition \u2014 only direct relationships matter"
+      },
+      {
+        "id": "3.4.2.b",
+        "text": "Transitive \u2014 some relationship types imply transitive chains"
+      },
+      {
+        "id": "3.4.2.c",
+        "text": "Composable \u2014 relationships can be combined according to specific rules"
+      },
+      {
+        "id": "3.4.2.d",
+        "text": "Weighted/typed composition \u2014 chains have strength or type that affects meaning"
+      }
+    ],
+    "answer": "Relationship composition and chaining:\n\nDirect relationships: Framework\u2192Series, Series\u2192Round, Round\u2192Question, Question\u2192Choice. These are the only relationships defined in the framework JSON.\n\nIndirect relationships (derived from direct):\n- Framework\u2192Question: derived through Series and Round. The path is Framework\u2192Series\u2192Round\u2192Question. This path is used for question numbering (the full ID encodes the path: \"2.3.1\" means Series 2, Round 3, Question 1).\n- Framework\u2192Choice: derived through Series, Round, and Question. Used for answer validation (a choice must belong to the correct question).\n- Session\u2192Question: derived through the current_question_id pointer. The session tracks which question it's currently on, creating an implicit relationship.\n\nTransitive chains: The dependency graph creates transitive chains. If Series 4 depends on Series 2 and 3, and Series 3 depends on Series 2, then Series 4 transitively depends on Series 2 through two paths (direct and through Series 3). The dependency resolution algorithm handles this correctly \u2014 it checks direct dependencies, not transitive ones, because the transitive dependencies are already satisfied by the direct ones.\n\nComposable relationships: The artifact consumption pattern composes relationships across series. Series 3 consumes entity_list (produced by Series 2), and Series 4 consumes entity_list + relationship_graph (produced by Series 2 + 3). The composition is additive \u2014 later series consume artifacts from all predecessor series.\n\nWeighted composition: Not applicable in the current system. All relationships are binary (exists/doesn't exist) with no weights or strengths. This is appropriate for a specification tool \u2014 there's no concept of \"weakly related\" or \"strongly associated\" in the question framework."
+  },
+  {
+    "id": "4.1.1",
+    "series": 4,
+    "round": 1,
+    "focus": "Scope and Step Count",
+    "text": "What is the overall scope of the procedure or workflow? What does it start from and what is its end state?",
+    "choices": [
+      {
+        "id": "4.1.1.a",
+        "text": "Narrow \u2014 a single well-defined task with clear boundaries"
+      },
+      {
+        "id": "4.1.1.b",
+        "text": "Moderate \u2014 an end-to-end process with several stages"
+      },
+      {
+        "id": "4.1.1.c",
+        "text": "Broad \u2014 a multi-phase workflow spanning distinct sub-processes"
+      }
+    ],
+    "answer": "Overall procedure scope: End-to-end specification generation spanning 7 phases (one per series).\n\nStart state: User has a project idea or system to specify. No prior documentation, no existing specification, no code. Just a concept in their head.\n\nEnd state: A comprehensive, multi-format specification document that captures domain context, entities, relationships, procedures, technical requirements, methodology, and operational preferences. The specification is machine-readable (JSON/YAML), human-readable (Markdown/HTML), and LLM-consumable (prompt format).\n\nThe procedure is moderate in scope \u2014 it's not a single atomic task (too narrow) and not a multi-phase program (too broad). It's an interactive elicitation session that takes 1-4 hours depending on depth of answers and number of questions answered.\n\nSub-processes: (1) Project initialization \u2014 create project directory, load framework, configure LLM provider. (2) Interactive question flow \u2014 present questions, collect answers, extract artifacts. (3) Artifact accumulation \u2014 build the artifact dictionary across all series. (4) Export compilation \u2014 generate specification documents in requested formats. (5) Session management \u2014 save, resume, abandon sessions.\n\nThe procedure is interactive (requires human input at each step) but structured (the framework determines the question order). The human provides domain knowledge; the system provides structure and extraction."
+  },
+  {
+    "id": "4.1.2",
+    "series": 4,
+    "round": 1,
+    "focus": "Scope and Step Count",
+    "text": "How many distinct steps, stages, or phases should the procedure contain? What is the natural breakdown?",
+    "choices": [
+      {
+        "id": "4.1.2.a",
+        "text": "2\u20134 steps \u2014 quick process with few handoffs"
+      },
+      {
+        "id": "4.1.2.b",
+        "text": "5\u20138 steps \u2014 moderate complexity with clear waypoints"
+      },
+      {
+        "id": "4.1.2.c",
+        "text": "9+ steps \u2014 comprehensive procedure with fine-grained stages"
+      }
+    ],
+    "answer": "Step breakdown: 5-8 distinct stages with clear waypoints.\n\nStage 1: Initialize \u2014 Create project, load framework, verify environment. (CLI: \"space init <name>\")\nStage 2: Series 1 (Conceptual Depth) \u2014 6 questions across 3 rounds. Establishes domain, audience, vocabulary. (~15 min)\nStage 3: Series 2 (Ontological Characteristics) \u2014 15 questions across 5 rounds. Discovers entities, attributes, boundaries. (~30 min)\nStage 4: Series 3 (Semantic Relationships) \u2014 8 questions across 4 rounds. Maps associations, hierarchies, causation. (~20 min)\nStage 5: Series 4 (Procedural Breadth) \u2014 6 questions across 3 rounds. Defines workflows, decisions, error handling. (~15 min)\nStage 6: Series 5 (Technical Specifications) \u2014 20 questions across 4 rounds. Captures hardware, software, performance, security. (~40 min)\nStage 7: Series 6 (Development Methodologies) \u2014 6 questions across 3 rounds. Determines process, quality, communication. (~15 min)\nStage 8: Series 7 (Operational/Functional) \u2014 6 questions across 3 rounds. Covers deployment, monitoring, maintenance. (~15 min)\n\nTotal: 67 questions. Average 2-3 minutes per question (reading, thinking, typing). Estimated session time: 2-3 hours for thorough answers, 30-45 minutes for quick answers.\n\nWaypoints: Each series completion is a natural checkpoint. The session auto-saves after each answer, so any interruption preserves progress. The \"space export\" command can be run at any waypoint to generate a partial specification."
+  },
+  {
+    "id": "4.2.1",
+    "series": 4,
+    "round": 2,
+    "focus": "Decision Points and Inputs/Outputs",
+    "text": "Where are the key decision points, branches, or conditional paths? At which steps must a choice be made that affects the rest of the flow?",
+    "choices": [
+      {
+        "id": "4.2.1.a",
+        "text": "No branching \u2014 a single linear path from start to finish"
+      },
+      {
+        "id": "4.2.1.b",
+        "text": "Few branches \u2014 1\u20132 decision points with 2\u20133 choices each"
+      },
+      {
+        "id": "4.2.1.c",
+        "text": "Moderate branching \u2014 multiple decision points with varying path counts"
+      }
+    ],
+    "answer": "Decision points and branching:\n\nThe primary decision point is the follow-up choice after each open-ended question. Every question has 2-5 follow-up options that classify the answer. This classification drives:\n1. Artifact extraction \u2014 the chosen option determines which artifact keys are populated.\n2. Series routing \u2014 certain choices enable or disable dependent questions.\n3. Export formatting \u2014 choices influence the tone, depth, and structure of exported specifications.\n\nNo branching in question order: The question sequence is deterministic \u2014 it follows the framework definition exactly. There are no \"if answer X, skip to question Y\" paths. This simplification was a deliberate design decision: the framework is designed to ask all 67 questions regardless of answers. The follow-up choices classify answers but don't alter the question flow.\n\nWhy no branching: (1) Branching would make the framework harder to understand and predict. (2) The 326-probe structure is already comprehensive \u2014 there's no need to skip questions. (3) Artifact extraction handles the differentiation \u2014 the same question can produce different artifacts depending on the follow-up choice.\n\nEdge case: If a user skips all questions in a series, downstream series that depend on artifacts from the skipped series will have empty artifacts. This is handled gracefully \u2014 the export will contain placeholder text for missing artifacts."
+  },
+  {
+    "id": "4.2.2",
+    "series": 4,
+    "round": 2,
+    "focus": "Decision Points and Inputs/Outputs",
+    "text": "What are the expected inputs and outputs at each stage? What data or artifacts flow between steps?",
+    "choices": [
+      {
+        "id": "4.2.2.a",
+        "text": "Simple I/O \u2014 each step takes one input and produces one output"
+      },
+      {
+        "id": "4.2.2.b",
+        "text": "Multi-I/O \u2014 some steps consume or produce multiple items"
+      },
+      {
+        "id": "4.2.2.c",
+        "text": "Network I/O \u2014 steps pass data through a shared context rather than direct handoffs"
+      }
+    ],
+    "answer": "Inputs and outputs at each stage:\n\nStage 1 (Initialize): Input \u2014 project name (string), optional config overrides. Output \u2014 project directory, loaded framework, initialized session.\n\nStage 2 (Series 1): Input \u2014 user's free-text answers to 6 questions. Output \u2014 artifacts: domain, audience_level, terminology_preferences, scaffolding_preference. These are string values derived from follow-up choices.\n\nStage 3 (Series 2): Input \u2014 user's free-text answers + Series 1 artifacts (for context). Output \u2014 artifacts: entity_list (array of entity objects), entity_attributes (nested object), entity_categories (category map), entity_hierarchy (tree), entity_constraints (constraint list).\n\nStage 4 (Series 3): Input \u2014 user's answers + Series 1-2 artifacts. Output \u2014 artifacts: relationship_graph (adjacency list), hierarchy_structure (tree), dependency_chains (ordered list), composition_rules (rule set).\n\nStage 5 (Series 4): Input \u2014 user's answers + Series 1-3 artifacts. Output \u2014 artifacts: procedure_steps (step array), decision_points (decision tree), branching_complexity (complexity score), io_contracts (input/output specs).\n\nStage 6 (Series 5): Input \u2014 user's answers + Series 1,4 artifacts. Output \u2014 artifacts: hardware_requirements (specs), software_stack (tech list), performance_targets (targets), integration_contracts (API specs), timeline (milestones).\n\nStage 7 (Series 6): Input \u2014 user's answers + Series 4,5 artifacts. Output \u2014 artifacts: development_cadence, quality_practices, team_composition, communication_patterns.\n\nStage 8 (Series 7): Input \u2014 user's answers + Series 5,6 artifacts. Output \u2014 artifacts: deployment_strategy, runtime_configuration, monitoring_plan, maintenance_policy.\n\nData flow: Artifacts flow forward through the dependency graph. No artifact flows backward. The artifact dictionary grows monotonically throughout the session."
+  },
+  {
+    "id": "4.3.1",
+    "series": 4,
+    "round": 3,
+    "focus": "Error Handling and Granularity",
+    "text": "What fallback paths, error handling, or recovery procedures should be included for when things go wrong?",
+    "choices": [
+      {
+        "id": "4.3.1.a",
+        "text": "Minimal \u2014 errors abort the procedure with a clear message"
+      },
+      {
+        "id": "4.3.1.b",
+        "text": "Retry-based \u2014 failed steps can be retried with backoff"
+      },
+      {
+        "id": "4.3.1.c",
+        "text": "Recovery paths \u2014 dedicated handling for known failure modes with alternative flows"
+      }
+    ],
+    "answer": "Error handling and recovery:\n\nLevel 1 \u2014 Question-level errors:\n- Invalid follow-up selection \u2192 re-prompt with error message and valid options.\n- Empty open-ended answer \u2192 allow (some questions may not need text if the follow-up is sufficient).\n- Answer too long (>10KB) \u2192 warn but accept. Large answers slow artifact extraction.\n\nLevel 2 \u2014 Session-level errors:\n- Corrupted session file \u2192 offer to start new session or load from last good checkpoint.\n- Missing artifact dependency \u2192 log warning, continue with empty artifact for the dependent series.\n- Storage write failure \u2192 retry once, then abort with error message.\n\nLevel 3 \u2014 System-level errors:\n- Framework JSON parse error \u2192 abort with clear error message identifying the malformed file.\n- LLM API failure \u2192 skip auto-fill, continue with manual input. Log the API error.\n- Node.js runtime error \u2192 process exits with stack trace. Session was auto-saved, so resume works.\n\nNo retry-based recovery: The system favors fail-fast over retry. If something is broken (missing framework, corrupted storage), the user should know immediately rather than having the system silently retry and potentially make things worse.\n\nNo rollback: The system doesn't implement undo. If a user answers a question incorrectly, they re-answer it (overwriting the previous answer). This is simpler than rollback and sufficient for the use case \u2014 specification answers aren't mission-critical data."
+  },
+  {
+    "id": "4.3.2",
+    "series": 4,
+    "round": 3,
+    "focus": "Error Handling and Granularity",
+    "text": "How granular should each procedural step be? Should steps be coarse (several actions) or fine (one action per step)?",
+    "choices": [
+      {
+        "id": "4.3.2.a",
+        "text": "Coarse \u2014 each step is a meaningful phase (2\u20135 sub-actions per step)"
+      },
+      {
+        "id": "4.3.2.b",
+        "text": "Fine \u2014 each step is a single atomic action"
+      },
+      {
+        "id": "4.3.2.c",
+        "text": "Mixed \u2014 core steps are fine; well-established procedures are coarser"
+      }
+    ],
+    "answer": "Step granularity: Mixed \u2014 core steps are fine; well-established procedures are coarser.\n\nFine-grained steps (atomic actions):\n- Present a single question to the user\n- Record a single answer (open-ended + follow-up)\n- Extract artifacts from a single answer\n- Save session state to disk\n- Validate a follow-up selection\n\nCoarse-grained steps (multi-action phases):\n- Initialize a project (create directory, load framework, configure LLM, create session)\n- Complete a round (present all questions in the round, collect all answers, mark round complete)\n- Export a specification (compile all formats, write all files, generate index)\n\nThe granularity split reflects the interaction model: fine-grained steps happen frequently (67 questions \u00d7 multiple operations each) and need to be fast and reliable. Coarse-grained steps happen rarely (once per round/series/export) and can tolerate slight latency.\n\nFor error handling, fine-grained steps get immediate feedback (invalid selection \u2192 re-prompt). Coarse-grained steps get batch error reporting (export failure \u2192 list all failed formats).\n\nThe step granularity is implemented in the Engine's method decomposition: askQuestion() is fine-grained, completeRound() is coarse-grained, exportSession() is coarse-grained. Each coarse method calls multiple fine methods internally."
+  }
+]

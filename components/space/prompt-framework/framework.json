@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "name": "Structured Prompt Creation Framework",
+    "version": "1.0.0",
+    "description": "A multi-series, multi-round prompt elicitation framework that alternates open-ended and multi-choice questions to produce a complete development specification.",
+    "total_series": 7,
+    "total_rounds": 25,
+    "total_open_ended_questions": 67,
+    "total_multi_choice_followups": 259,
+    "estimated_completion_time": "45-75 minutes"
+  },
+  "dependency_chain": {
+    "description": "Series are stages in a dev spec plan build. Each series may consume artifacts from previous series to inform its questions. The flow is: register -> model -> process -> environment -> methodology -> operations.",
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "artifacts": [
+          "domain",
+          "audience_level",
+          "terminology_preferences"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "artifacts": [
+          "domain",
+          "abstraction_level"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "artifacts": [
+          "domain",
+          "scaffolding_preference"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "artifacts": [
+          "domain",
+          "audience_level"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "artifacts": [
+          "entity_list",
+          "entity_attributes",
+          "entity_categories"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "artifacts": [
+          "entity_list",
+          "entity_lifecycles",
+          "entity_constraints"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "artifacts": [
+          "relationship_graph",
+          "dependency_chains",
+          "hierarchy_structure"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "artifacts": [
+          "procedure_steps",
+          "decision_points",
+          "branching_complexity"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "artifacts": [
+          "procedure_complexity",
+          "expected_team_size"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "artifacts": [
+          "tech_stack",
+          "platform_constraints",
+          "version_requirements"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 7,
+        "artifacts": [
+          "deployment_target",
+          "scalability_requirements"
+        ]
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "artifacts": [
+          "cadence",
+          "review_process",
+          "team_composition"
+        ]
+      }
+    ]
+  },
+  "series": [
+    {
+      "id": 1,
+      "name": "Conceptual Depth",
+      "path": "json/01-conceptual-depth.json",
+      "x_rounds": 3,
+      "y_open_ended_per_round": 2,
+      "z_multi_choice_per_open": 3,
+      "total_open_ended": 6,
+      "total_multi_choice": 18,
+      "description": "Calibrates the register, audience sophistication, vocabulary, and complexity scaffolding for the entire specification.",
+      "md_path": "md/01-conceptual-depth.md"
+    },
+    {
+      "id": 2,
+      "name": "Ontological Characteristics",
+      "path": "json/02-ontological-characteristics.json",
+      "x_rounds": 5,
+      "y_open_ended_per_round": 3,
+      "z_multi_choice_per_open": 5,
+      "total_open_ended": 15,
+      "total_multi_choice": 75,
+      "description": "Discovers, classifies, refines, and validates the entities, categories, attributes, and boundaries of the domain.",
+      "md_path": "md/02-ontological-characteristics.md"
+    },
+    {
+      "id": 3,
+      "name": "Semantic Relationships",
+      "path": "json/03-semantic-relationships.json",
+      "x_rounds": 4,
+      "y_open_ended_per_round": 2,
+      "z_multi_choice_per_open": 4,
+      "total_open_ended": 8,
+      "total_multi_choice": 32,
+      "description": "Maps direct, hierarchical, causal, and dynamic connections between entities identified in Series 2.",
+      "md_path": "md/03-semantic-relationships.md"
+    },
+    {
+      "id": 4,
+      "name": "Procedural Breadth",
+      "path": "json/04-procedural-breadth.json",
+      "x_rounds": 3,
+      "y_open_ended_per_round": 2,
+      "z_multi_choice_per_open": 3,
+      "total_open_ended": 6,
+      "total_multi_choice": 18,
+      "description": "Scopes the workflow, decision branching, and step granularity informed by the entity model and relationship graph.",
+      "md_path": "md/04-procedural-breadth.md"
+    },
+    {
+      "id": 5,
+      "name": "Technical Specifications",
+      "path": "json/05-technical-specifications.json",
+      "x_rounds": 4,
+      "y_open_ended_per_round": 5,
+      "z_multi_choice_per_open": 4,
+      "total_open_ended": 20,
+      "total_multi_choice": 80,
+      "description": "Captures hardware, software, performance, integration, and timeline constraints for the build.",
+      "md_path": "md/05-technical-specifications.md"
+    },
+    {
+      "id": 6,
+      "name": "Development Methodologies",
+      "path": "json/06-development-methodologies.json",
+      "x_rounds": 3,
+      "y_open_ended_per_round": 2,
+      "z_multi_choice_per_open": 3,
+      "total_open_ended": 6,
+      "total_multi_choice": 18,
+      "description": "Determines workflow cadence, quality practices, and collaboration patterns aligned with procedural scope and tech constraints.",
+      "md_path": "md/06-development-methodologies.md"
+    },
+    {
+      "id": 7,
+      "name": "Operational / Functional Preferences",
+      "path": "json/07-operational-functional.json",
+      "x_rounds": 3,
+      "y_open_ended_per_round": 2,
+      "z_multi_choice_per_open": 3,
+      "total_open_ended": 6,
+      "total_multi_choice": 18,
+      "description": "Defines deployment, runtime behavior, monitoring, and maintenance preferences informed by tech spec and methodology.",
+      "md_path": "md/07-operational-functional.md"
+    }
+  ],
+  "execution_model": {
+    "mode": "sequential_chained",
+    "progression": "Each series must be completed in order. Answers are collected into a growing artifact dictionary. Each series's questions may reference answers from previous series to produce context-aware probes.",
+    "artifact_accumulation": true,
+    "output_formats": [
+      {
+        "format": "json",
+        "description": "Machine-readable series definitions with all questions, choices, and metadata"
+      },
+      {
+        "format": "md",
+        "description": "Human-readable series guides with formatted questions and explanatory context"
+      }
+    ],
+    "prompt_chaining": {
+      "enabled": true,
+      "strategy": "After each round, responses are appended to the session artifact. Subsequent open-ended questions use the artifact to craft personalized probes. Multi-choice options may be filtered or reordered based on prior answers."
+    }
+  }
+}

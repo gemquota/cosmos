@@ -1,0 +1,584 @@
+[
+  {
+    "id": "1.1.1",
+    "series": 1,
+    "round": 1,
+    "focus": "Domain and Audience",
+    "text": "What is the primary domain or field this prompt or project addresses? Describe its scope, core concerns, and any relevant sub-disciplines.",
+    "choices": [
+      {
+        "id": "1.1.1.a",
+        "text": "A single well-established domain (e.g., machine learning, civil engineering)"
+      },
+      {
+        "id": "1.1.1.b",
+        "text": "An interdisciplinary space spanning 2-3 domains"
+      },
+      {
+        "id": "1.1.1.c",
+        "text": "An emerging or niche area with evolving terminology"
+      }
+    ],
+    "answer": "SPACE (Superb Prompt Automatic Creation Engine) is a programmable specification engine that transforms structured elicitation probes into development specifications. It operates at the intersection of prompt engineering, software specification, and developer tooling.\n\nThe primary domain is software specification engineering augmented by LLM capabilities. Core concerns include: (1) Structured elicitation \u2014 systematically extracting domain knowledge from humans through a 326-probe questionnaire organized into 7 progressive series with 25 rounds. (2) Dependency-aware routing \u2014 ensuring questions are asked in an order that respects logical prerequisites, where later questions can reference artifacts from earlier ones. (3) Artifact extraction \u2014 automatically identifying and cataloging key design decisions, entity definitions, and architectural choices from free-text answers. (4) Multi-format export \u2014 generating specification documents in JSON, Markdown, YAML, HTML, and LLM-consumable prompt formats.\n\nSub-disciplines encompassed: structured prompt engineering, dependency graph traversal, artifact mapping, specification generation, and progressive deepening methodologies. The system draws from elicitation techniques used in requirements engineering (specifically the JAD \u2014 Joint Application Development \u2014 facilitation model), ontological modeling from knowledge representation (OWL-style entity classification), and the progressive disclosure pattern from UX design. The domain also intersects with formal methods (the framework produces structured, machine-readable specifications) and knowledge management (the artifact dictionary becomes a living knowledge base for the project)."
+  },
+  {
+    "id": "1.1.2",
+    "series": 1,
+    "round": 1,
+    "focus": "Domain and Audience",
+    "text": "Who is the intended audience for the generated output? What is their baseline familiarity with this domain?",
+    "choices": [
+      {
+        "id": "1.1.2.a",
+        "text": "Experts / researchers \u2014 people who work in this domain daily"
+      },
+      {
+        "id": "1.1.2.b",
+        "text": "Practitioners / professionals \u2014 experienced but may need refreshers"
+      },
+      {
+        "id": "1.1.2.c",
+        "text": "Learners / general audience \u2014 minimal assumed knowledge"
+      }
+    ],
+    "answer": "The primary audience is software developers and technical leads building LLM-powered applications or complex systems who need structured specifications. These are practitioners who understand TypeScript/Node.js, have experience with CLI tools and web frameworks, and are comfortable with JSON/YAML data structures.\n\nSecondary audiences: (1) Product managers who need to formalize requirements for AI-assisted development \u2014 they provide domain context but expect the framework to structure it. (2) Architects designing systems that integrate multiple LLM providers \u2014 they need the framework to capture cross-cutting concerns like provider fallback, cost budgets, and latency targets. (3) Open-source maintainers who want to document their projects systematically \u2014 the framework produces a comprehensive specification that doubles as project documentation. (4) Technical writers who need structured input for generating documentation \u2014 the exported specifications feed directly into documentation pipelines.\n\nBaseline familiarity: respondents understand REST APIs, npm ecosystems, and basic AI/ML concepts. They have likely used at least one LLM API (OpenAI, Anthropic, Google Gemini, Mistral, or Ollama) and understand the difference between system prompts, user prompts, and completion endpoints. They may not be familiar with ontological modeling or dependency graph theory, so the framework explains these concepts progressively through Series 1. The audience profile directly informs the verbosity level (moderate), abstraction level (mixed concrete/formal), and terminology choices (industry standard with definitions for novel terms) across the entire framework."
+  },
+  {
+    "id": "1.2.1",
+    "series": 1,
+    "round": 2,
+    "focus": "Assumptions and Abstraction",
+    "text": "What foundational concepts, theorems, or prior art can the output take for granted? What must be explained from scratch?",
+    "choices": [
+      {
+        "id": "1.2.1.a",
+        "text": "Full prerequisites assumed \u2014 dive straight into advanced material"
+      },
+      {
+        "id": "1.2.1.b",
+        "text": "Core fundamentals assumed; edge cases and advanced topics explained"
+      },
+      {
+        "id": "1.2.1.c",
+        "text": "First-principles treatment \u2014 no prior knowledge assumed"
+      }
+    ],
+    "answer": "Assumed knowledge that the output can take for granted: CLI tool usage (npm install, git clone, running scripts), Node.js/TypeScript basics (import/export, async/await, type annotations, interfaces), JSON/YAML parsing and structure, REST API concepts (endpoints, request/response, status codes), prompt engineering fundamentals (system prompts, few-shot prompting, temperature, top_p), and basic software architecture patterns (MVC, event-driven, plugin systems, dependency injection).\n\nMust be explained from scratch: (1) The specific 7-series progressive elicitation methodology \u2014 how questions build on each other across series in a dependency graph. (2) The dependency chain between series \u2014 why Series 2 (Ontological Characteristics) cannot start until Series 1 (Conceptual Depth) provides domain and audience context, and why Series 7 (Operational/Functional) depends on both Series 5 and 6. (3) How artifacts accumulate \u2014 each answer contributes extracted data (entity lists, relationship graphs, procedure steps, tech stack decisions) that downstream series consume via the artifact dictionary. (4) The 326-probe structure \u2014 67 open-ended questions, each with 3-5 multi-choice follow-ups that classify and clarify the answer, totaling 201+ follow-up choices. (5) How the framework produces a coherent specification from apparently disconnected questions through the artifact dependency graph. (6) The StorageProvider abstraction \u2014 how sessions persist via filesystem or SQLite. (7) The LLM provider factory \u2014 how multiple AI backends (OpenAI, Anthropic, Gemini, Mistral, Ollama) are abstracted behind a unified interface."
+  },
+  {
+    "id": "1.2.2",
+    "series": 1,
+    "round": 2,
+    "focus": "Assumptions and Abstraction",
+    "text": "At what level of abstraction should the output operate? Should it be concrete and example-driven, or formal and general?",
+    "choices": [
+      {
+        "id": "1.2.2.a",
+        "text": "Concrete \u2014 specific examples, code snippets, case studies"
+      },
+      {
+        "id": "1.2.2.b",
+        "text": "Mixed \u2014 conceptual frameworks illustrated with examples"
+      },
+      {
+        "id": "1.2.2.c",
+        "text": "Formal \u2014 definitions, proofs, mathematical notation, first-order logic"
+      }
+    ],
+    "answer": "Mixed approach \u2014 present the SPACE architecture with clear structural diagrams showing the series dependency graph and question flow, then ground each concept with concrete examples from the actual codebase.\n\nFor the structural layer: use dependency graphs (Series 1 feeds Series 2, which feeds Series 3; Series 2+3 feed Series 4; Series 1+4 feed Series 5; Series 4+5 feed Series 6; Series 5+6 feed Series 7) to show the progressive narrowing. Show how each series consumes artifacts from previous series via the artifact dictionary. Show the series/round/question hierarchy with the z_multi_choice_per_open parameter controlling follow-up depth.\n\nFor the concrete layer: show actual TypeScript code snippets from the engine (question-router.ts showing dependency resolution, session-manager.ts showing state transitions, artifact-mapping.ts showing extraction patterns), real JSON examples of session state (with question answers, artifact dictionaries, and completion flags), and actual output from the export pipeline (JSON spec, Markdown doc, YAML config, HTML report, LLM prompt). The abstraction level balances formal definitions (the StorageProvider interface, the LLMProvider interface, the SpaceConfig type) with illustrative examples (actual terminal output from \"space run\", actual JSON artifact entries)."
+  },
+  {
+    "id": "1.3.1",
+    "series": 1,
+    "round": 3,
+    "focus": "Terminology and Scaffolding",
+    "text": "What vocabulary, jargon, or notation should be used or deliberately avoided? Are there established standards the output should follow?",
+    "choices": [
+      {
+        "id": "1.3.1.a",
+        "text": "Standard industry terminology \u2014 use common terms precisely"
+      },
+      {
+        "id": "1.3.1.b",
+        "text": "Plain accessible language \u2014 minimize jargon; explain what is used"
+      },
+      {
+        "id": "1.3.1.c",
+        "text": "Formal academic register \u2014 precise definitions, technical notation"
+      }
+    ],
+    "answer": "Standard software engineering terminology used consistently throughout: session (a user interaction instance with a unique UUID), artifact (extracted structured data from answers, stored in the artifact dictionary), framework (the 326-probe question set defined in JSON), series (a themed group of rounds, 7 total), round (a batch of 2-5 related open-ended questions), probe (a single elicitation question \u2014 open-ended or multi-choice follow-up), dependency (a series that must complete before another can start).\n\nIndustry terms used precisely: dependency injection (for the StorageProvider pattern allowing filesystem or SQLite backends), factory pattern (for LLM provider creation via createLLMProvider()), event emitter (for lifecycle hooks in the session manager), command pattern (for CLI commands in src/cli/commands/), strategy pattern (for export format selection), adapter pattern (for the StorageProvider implementations).\n\nTerms deliberately avoided: \"AI\" or \"intelligent\" for the engine (it routes and extracts deterministically, not \"understands\"), \"user\" for the respondent (use \"respondent\" or \"answerer\" to distinguish from system operators), \"generate\" for the export (use \"compile\" or \"render\" to distinguish from LLM generation), \"smart\" for any feature (avoid marketing language in technical specifications), \"revolutionary\" or \"groundbreaking\" for the methodology (it's a practical engineering tool, not a research paper).\n\nNotation conventions: question IDs use dot notation (e.g., \"2.3.1\" = Series 2, Round 3, Question 1). Artifact keys use snake_case (e.g., \"entity_list\", \"relationship_graph\"). File paths use forward slashes. Code references use backtick formatting."
+  },
+  {
+    "id": "1.3.2",
+    "series": 1,
+    "round": 3,
+    "focus": "Terminology and Scaffolding",
+    "text": "How should complexity be distributed across the output? Should it start simple and deepen, or maintain a consistent level throughout?",
+    "choices": [
+      {
+        "id": "1.3.2.a",
+        "text": "Progressive \u2014 scaffold from simple foundations to advanced topics"
+      },
+      {
+        "id": "1.3.2.b",
+        "text": "Flat \u2014 consistent complexity level throughout"
+      },
+      {
+        "id": "1.3.2.c",
+        "text": "Overview-first \u2014 high-level summary then independent deep dives"
+      }
+    ],
+    "answer": "Progressive scaffolding \u2014 start with the simple concept of asking structured questions to produce specifications, then layer in complexity one dimension at a time:\n\nLayer 1 (Series 1): Question asking \u2014 the basic loop of presenting questions and recording answers. Establish domain, audience, vocabulary, and abstraction level. This is the simplest concept and requires no prerequisite knowledge.\n\nLayer 2 (Series 2): Entity discovery \u2014 identify the primary entities, attributes, categories, and boundaries of the domain. Introduce the concept of ontological modeling (but call it \"entity mapping\" for accessibility). Show how free-text answers are parsed for entity mentions.\n\nLayer 3 (Series 3): Relationship mapping \u2014 connect entities with associations, hierarchies, causal chains, and dependencies. Introduce graph theory concepts (nodes, edges, directed graphs) through concrete examples.\n\nLayer 4 (Series 4): Procedural scoping \u2014 define workflows, decision points, error handling, and step granularity. Connect procedures to entities (procedures operate on entities) and relationships (procedures traverse relationships).\n\nLayer 5 (Series 5): Technical specifications \u2014 hardware, software, performance, security, integrations, and timeline. This is the most concrete layer and grounds all previous abstract concepts in specific technology choices.\n\nLayer 6 (Series 6): Development methodology \u2014 team process, quality practices, communication patterns. Connects technical specifications to human organization.\n\nLayer 7 (Series 7): Operational preferences \u2014 deployment, monitoring, maintenance, stewardship. The final layer that ensures the specification is actionable.\n\nEach layer builds on all previous layers. The complexity distribution is deliberately front-loaded: Series 1-2 introduce the most new concepts, Series 3-4 apply them, Series 5-7 ground them in specifics. This matches the progressive disclosure pattern where users learn the framework by doing, not by reading documentation."
+  },
+  {
+    "id": "2.1.1",
+    "series": 2,
+    "round": 1,
+    "focus": "Entity Discovery",
+    "text": "What are the primary entities, objects, concepts, or actors that exist in this domain? List them with brief descriptions.",
+    "choices": [
+      {
+        "id": "2.1.1.a",
+        "text": "Fewer than 5 core entities \u2014 the domain is compact and well-bounded"
+      },
+      {
+        "id": "2.1.1.b",
+        "text": "5\u201310 entities \u2014 moderate complexity with clear boundaries"
+      },
+      {
+        "id": "2.1.1.c",
+        "text": "10\u201320 entities \u2014 rich domain with distinct sub-areas"
+      },
+      {
+        "id": "2.1.1.d",
+        "text": "20+ entities \u2014 large domain requiring hierarchical organization"
+      },
+      {
+        "id": "2.1.1.e",
+        "text": "Uncertain \u2014 exploration may reveal entities not yet known"
+      }
+    ],
+    "answer": "Core entities identified through systematic domain analysis of the SPACE system:\n\n1. Framework \u2014 The 326-probe question set. Contains 7 series, each with multiple rounds, each round with 2-5 open-ended questions, each question with 3-5 multi-choice follow-ups. Defined in JSON files under prompt-framework/json/. Immutable after creation; the framework is the reference specification.\n\n2. Series \u2014 A themed group of rounds within the framework. 7 series total: Conceptual Depth, Ontological Characteristics, Semantic Relationships, Procedural Breadth, Technical Specifications, Development Methodologies, Operational/Functional. Each series has dependencies (other series that must complete first), consumes (artifacts it needs), and provides (artifacts it produces).\n\n3. Round \u2014 A batch of related open-ended questions within a series. Each round has a focus area (e.g., \"Entity Discovery\", \"System Boundaries\") and contains 2-5 questions that share thematic coherence.\n\n4. Question \u2014 A single elicitation probe. Two types: open-ended (free text response) and multi-choice follow-up (classify the open-ended answer). Each question has a unique ID (e.g., \"2.3.1\"), text (the question prompt), and follow_up_choices (2-5 options).\n\n5. Answer \u2014 A respondent's response to a question. Contains the open-ended text (the free response) and the chosen follow-up option (the classification). Answers are stored in session state.\n\n6. Artifact \u2014 Structured data extracted from answers. Created by the artifact mapping system which parses free-text answers for entity mentions, architectural decisions, technology choices, and constraints. Artifacts accumulate across series and are consumed by downstream series.\n\n7. Session \u2014 A complete interaction instance. Has a UUID, project association, current question pointer, answer history, artifact dictionary, and completion status. Sessions can be resumed from storage.\n\n8. Project \u2014 A named workspace. Contains sessions, exports, and configuration. Stored in ~/.space/projects/<name>/.\n\n9. Export \u2014 A compiled specification document. Multiple formats: JSON, Markdown, YAML, HTML, LLM prompt. Generated on-demand from session state and artifact dictionary.\n\n10. Engine \u2014 The orchestration layer. Manages question routing, answer validation, artifact extraction, and session lifecycle. The core runtime that ties everything together."
+  },
+  {
+    "id": "2.1.2",
+    "series": 2,
+    "round": 1,
+    "focus": "Entity Discovery",
+    "text": "What attributes, properties, or state define each entity? How do entities differ from one another?",
+    "choices": [
+      {
+        "id": "2.1.2.a",
+        "text": "1\u20132 key attributes per entity \u2014 simple identifiers suffice"
+      },
+      {
+        "id": "2.1.2.b",
+        "text": "3\u20135 attributes per entity \u2014 moderate descriptive richness"
+      },
+      {
+        "id": "2.1.2.c",
+        "text": "6\u201310 attributes per entity \u2014 detailed characterization"
+      },
+      {
+        "id": "2.1.2.d",
+        "text": "10+ attributes per entity \u2014 comprehensive with optional fields"
+      },
+      {
+        "id": "2.1.2.e",
+        "text": "Highly variable \u2014 attributes differ significantly across entities"
+      }
+    ],
+    "answer": "Entity attributes with types and constraints:\n\nFramework: id (number, 1-7 range), name (string, 3-50 chars), description (string, 50-200 chars), x_rounds (number), y_open_ended_per_round (number), z_multi_choice_per_open (number), depends_on (number[]), provides (string[]), consumes (string[]).\n\nSeries: id (number, 1-7), name (string), description (string), rounds (Round[]), deps (number[]). Attributes differ from Framework because Series is the runtime representation while Framework is the definition format.\n\nRound: round (number, 1-based within series), focus (string, 2-20 words), questions (Question[]).\n\nQuestion: id (string, dot notation e.g., \"2.3.1\"), text (string, 10-200 chars), follow_up_choices (Choice[]), type (\"open_ended\" | \"multi_choice_follow_up\").\n\nAnswer: question_id (string, FK to Question), open_ended (string, 10-5000 chars), choice_id (string, FK to Choice), timestamp (ISO 8601).\n\nArtifact: key (string, snake_case), value (any \u2014 string, number, array, object), source_question_id (string, FK), series_origin (number), confidence (number, 0-1).\n\nSession: id (UUID string), project_id (string, FK), current_question_id (string | null), answers (Answer[]), artifacts (Record<string, any>), status (\"active\" | \"completed\" | \"paused\"), created_at (ISO 8601), updated_at (ISO 8601).\n\nProject: name (string, kebab-case), description (string), created_at (ISO 8601), sessions (Session[]), exports (Export[]).\n\nExport: session_id (string, FK), format (\"json\" | \"markdown\" | \"yaml\" | \"html\" | \"llm_prompt\"), content (string), filename (string), generated_at (ISO 8601).\n\nEngine: config (SpaceConfig), storage (StorageProvider), llm (LLMProvider | null), state (SessionState)."
+  },
+  {
+    "id": "2.1.3",
+    "series": 2,
+    "round": 1,
+    "focus": "Entity Discovery",
+    "text": "What natural categories, types, or groupings organize these entities? Are there clear taxonomies or classification schemes?",
+    "choices": [
+      {
+        "id": "2.1.3.a",
+        "text": "A single flat list \u2014 no meaningful sub-groupings"
+      },
+      {
+        "id": "2.1.3.b",
+        "text": "2\u20133 broad categories partitioning the entities"
+      },
+      {
+        "id": "2.1.3.c",
+        "text": "A shallow hierarchy (2 levels deep) of types and subtypes"
+      },
+      {
+        "id": "2.1.3.d",
+        "text": "A deep hierarchy (3+ levels) with inheritance"
+      },
+      {
+        "id": "2.1.3.e",
+        "text": "Multiple overlapping classification axes (e.g., by function and by scale)"
+      }
+    ],
+    "answer": "Three natural categories emerge from functional analysis:\n\nCategory 1 \u2014 Structural Entities (define the system's shape): Framework, Series, Round, Question. These are the static definition entities that don't change during a session. They define WHAT gets asked and in what order. The dependency graph lives here \u2014 Series dependencies create a directed acyclic graph (DAG) that determines execution order.\n\nCategory 2 \u2014 Runtime Entities (capture the session's state): Session, Answer, Artifact. These are the dynamic entities that change as the session progresses. They capture WHAT was answered and what was extracted. The artifact dictionary is the central data structure here \u2014 it accumulates across all series.\n\nCategory 3 \u2014 Output Entities (produce the deliverables): Project, Export, Engine. These are the container and delivery entities. Projects hold sessions, Exports hold compiled specifications, and the Engine orchestrates everything.\n\nThe categories map to architectural layers: structural \u2192 data model (JSON schema definitions), runtime \u2192 engine layer (session management, artifact extraction), output \u2192 export layer (format compilation, file I/O). The dependency graph creates cross-category relationships where structural entities (Series) consume output entities (Artifacts) from other structural entities \u2014 this is the key insight that makes the framework self-referential.\n\nThe category boundaries are clean: no entity belongs to multiple categories. This separation enables independent testing (structural entities can be validated without runtime entities) and independent evolution (adding a new export format doesn't affect structural entities)."
+  },
+  {
+    "id": "2.2.1",
+    "series": 2,
+    "round": 2,
+    "focus": "Classification and Core vs. Peripheral",
+    "text": "Of the entities listed, which are absolutely essential (core) and which are optional, derivative, or contextual (peripheral)?",
+    "choices": [
+      {
+        "id": "2.2.1.a",
+        "text": "Most entities are core \u2014 the domain has little extraneous surface area"
+      },
+      {
+        "id": "2.2.1.b",
+        "text": "Roughly equal split between core and peripheral entities"
+      },
+      {
+        "id": "2.2.1.c",
+        "text": "A small core (~20%) with a large periphery of optional or derived entities"
+      },
+      {
+        "id": "2.2.1.d",
+        "text": "Core/peripheral depends on use case \u2014 context-dependent classification"
+      },
+      {
+        "id": "2.2.1.e",
+        "text": "Entities exist on a spectrum of centrality \u2014 no sharp core/peripheral boundary"
+      }
+    ],
+    "answer": "Core entities (system cannot function without): Framework, Session, Question, Artifact, Engine. These five entities are the minimal viable set \u2014 without any one of them, the system cannot ask questions, record answers, or produce output.\n\nFramework defines what to ask. Question defines individual probes. Session captures the interaction. Artifact extracts structured data. Engine orchestrates the flow.\n\nPeripheral entities (system works but is limited without): Series, Round, Answer, Project, Export.\n\nSeries and Round are organizational \u2014 they group Questions but the system could theoretically work with a flat list of Questions. Answer is the data record of a Question response \u2014 without it, the system would lose history, but the extraction could theoretically happen in real-time. Project is a container \u2014 without it, sessions would be unorganized but still functional. Export is a deliverable \u2014 without it, the system produces artifacts but no compiled specifications.\n\nThe core/peripheral split is important for implementation: core entities get first-class type definitions, comprehensive validation, and priority error handling. Peripheral entities get simpler types and can tolerate graceful degradation (e.g., if Export generation fails, the session data is still preserved).\n\nContext-dependent classification: The Engine becomes peripheral if the system is used as a pure data model (just defining the framework without running it). The Project becomes core if multi-project management is a requirement (which it currently is). This context-dependency is why the entity model includes both perspectives."
+  },
+  {
+    "id": "2.2.2",
+    "series": 2,
+    "round": 2,
+    "focus": "Classification and Core vs. Peripheral",
+    "text": "At what level of granularity should entities be modeled? Should fine distinctions be separate entities or attributes of coarser ones?",
+    "choices": [
+      {
+        "id": "2.2.2.a",
+        "text": "Coarse-grained \u2014 entities are broad; most variation is captured via attributes"
+      },
+      {
+        "id": "2.2.2.b",
+        "text": "Moderate \u2014 key specializations become distinct entities"
+      },
+      {
+        "id": "2.2.2.c",
+        "text": "Fine-grained \u2014 every meaningful distinction yields a separate entity"
+      },
+      {
+        "id": "2.2.2.d",
+        "text": "Mixed \u2014 core domains are fine-grained; peripheral domains are coarse"
+      },
+      {
+        "id": "2.2.2.e",
+        "text": "Undecided \u2014 granularity should emerge from relationship analysis"
+      }
+    ],
+    "answer": "Moderate granularity \u2014 key specializations become distinct entities, but trivial variations are collapsed.\n\nExample of appropriate splitting: Session and Answer are separate entities even though Answers live inside Sessions, because Answers have their own lifecycle (they can be edited, skipped, or marked as invalid) and their own relationships (each Answer links to exactly one Question and contributes to specific Artifacts).\n\nExample of appropriate merging: Round and Focus are NOT separate entities. The \"focus\" is just a string attribute of Round. Splitting them would add complexity without enabling new behaviors.\n\nExample of progressive refinement: The initial model had separate \"OpenEndedAnswer\" and \"MultiChoiceAnswer\" entities. These were merged into a single \"Answer\" entity with a choice_id attribute that may be null (for open-ended only) or populated (for follow-up classification). The split wasn't adding value because both types share the same lifecycle and storage.\n\nGranularity decision criteria: An entity should be separate if it (a) has a distinct lifecycle, (b) participates in unique relationships, (c) has attributes not shared with the candidate parent, or (d) is independently addressable (has its own ID). Question passes all four tests. Round passes tests (a) and (d) but not (b) and (c) \u2014 yet it's still separate because it provides essential organizational structure.\n\nThe balance: 10 entity types total. Fine enough to capture all meaningful distinctions in the system. Coarse enough to keep the type system manageable. Each entity has 5-15 attributes. The total attribute count across all entities is approximately 80, which is within the cognitive load limit for a single developer."
+  },
+  {
+    "id": "2.2.3",
+    "series": 2,
+    "round": 2,
+    "focus": "Classification and Core vs. Peripheral",
+    "text": "How do entities relate to each other in terms of sharing, inheriting, or differentiating attributes?",
+    "choices": [
+      {
+        "id": "2.2.3.a",
+        "text": "Mostly independent \u2014 entities share few attributes beyond common identifiers"
+      },
+      {
+        "id": "2.2.3.b",
+        "text": "Shared attributes grouped by category \u2014 entities in same category share a profile"
+      },
+      {
+        "id": "2.2.3.c",
+        "text": "Inheritance hierarchy \u2014 subtypes inherit and extend parent attributes"
+      },
+      {
+        "id": "2.2.3.d",
+        "text": "Mixin / trait composition \u2014 entities compose attribute sets from multiple sources"
+      },
+      {
+        "id": "2.2.3.e",
+        "text": "Dynamic \u2014 attribute sharing depends on entity state or context"
+      }
+    ],
+    "answer": "Shared attributes grouped by functional category:\n\nUniversal attributes (shared by most entities): id (unique identifier), created_at (timestamp), updated_at (timestamp). These are present on Session, Answer, Artifact, Project, and Export. Question and Framework use id but not timestamps (they're static definitions).\n\nStructural attributes (shared by definition entities): name, description, text. Framework has name+description. Series has name+description. Round has focus. Question has text. These are all human-readable strings that describe the entity's purpose.\n\nRelational attributes (shared by entities that reference others): The FK pattern appears on Session (project_id \u2192 Project), Answer (question_id \u2192 Question), Artifact (source_question_id \u2192 Question), Export (session_id \u2192 Session). The consistency of this pattern (always string FKs, always referencing by ID) simplifies the storage layer.\n\nContent attributes (unique to each entity): Framework has depends_on/provides/consumes arrays. Session has answers/artifacts dictionaries. Answer has open_ended/choice_id. Artifact has key/value/confidence. These are the distinguishing attributes that make each entity type necessary.\n\nThe dependency graph between Series creates a cross-cutting concern: Series entities have both structural attributes (name, description, rounds) and dependency attributes (deps, consumes, provides). The consumes/provides arrays use string keys that must match artifact dictionary keys \u2014 this implicit contract is enforced at runtime by the question router, not at compile time. A type-safe artifact key type could improve this."
+  },
+  {
+    "id": "2.3.1",
+    "series": 2,
+    "round": 3,
+    "focus": "Boundaries and Lifecycles",
+    "text": "What are the systemic boundaries of this domain? What is explicitly in scope vs. out of scope?",
+    "choices": [
+      {
+        "id": "2.3.1.a",
+        "text": "Tightly bounded \u2014 scope is narrow and well-defined"
+      },
+      {
+        "id": "2.3.1.b",
+        "text": "Moderately bounded \u2014 clear core with some fuzzy edges"
+      },
+      {
+        "id": "2.3.1.c",
+        "text": "Loosely bounded \u2014 domain bleeds into adjacent areas"
+      },
+      {
+        "id": "2.3.1.d",
+        "text": "Bounded by role/perspective \u2014 different stakeholders draw different boundaries"
+      },
+      {
+        "id": "2.3.1.e",
+        "text": "Boundaries are discovered \u2014 scoping is itself a goal of the process"
+      }
+    ],
+    "answer": "Tightly bounded \u2014 scope is narrow and well-defined.\n\nThe system boundary encompasses: the CLI interface (src/cli/), the core engine (src/engine/), the storage layer (src/storage/), the LLM integration (src/llm/), the export pipeline (src/export/), the web UI (web/), and the test suite (tests/).\n\nOutside the boundary: external LLM APIs (OpenAI, Anthropic, Gemini, Mistral), the user's filesystem (projects directory), and the npm registry (for distribution). The system interacts with these through well-defined interfaces (HTTP for LLM APIs, filesystem API for storage, npm CLI for distribution).\n\nThe boundary is enforced by: the StorageProvider interface (abstracts filesystem access), the LLMProvider interface (abstracts API calls), and the SpaceConfig type (defines all configurable parameters). No entity inside the boundary reaches outside except through these interfaces.\n\nThe tight boundary is a design strength: it makes the system predictable (limited external dependencies), testable (all interfaces can be mocked), and composable (users can integrate SPACE into larger workflows by calling createSpace() programmatically). The system can run fully offline (LLM integration is optional) and has no runtime dependencies beyond Node.js."
+  },
+  {
+    "id": "2.3.2",
+    "series": 2,
+    "round": 3,
+    "focus": "Boundaries and Lifecycles",
+    "text": "What external entities, systems, or actors interact with this domain but are not part of it?",
+    "choices": [
+      {
+        "id": "2.3.2.a",
+        "text": "No external interactions \u2014 fully self-contained domain"
+      },
+      {
+        "id": "2.3.2.b",
+        "text": "1\u20133 external actors (users, upstream data sources, downstream consumers)"
+      },
+      {
+        "id": "2.3.2.c",
+        "text": "4\u20137 external actors with distinct interaction patterns"
+      },
+      {
+        "id": "2.3.2.d",
+        "text": "8+ external actors \u2014 the domain is a hub in a larger ecosystem"
+      },
+      {
+        "id": "2.3.2.e",
+        "text": "External actors are themselves complex systems requiring partial modeling"
+      }
+    ],
+    "answer": "Three external actors with distinct interaction patterns:\n\n1. Human Respondent \u2014 Primary actor. Interacts via CLI (terminal prompts) or Web UI (browser forms). Provides free-text answers to open-ended questions and selections from multi-choice follow-ups. The respondent's primary interaction loop: read question \u2192 formulate answer \u2192 type response \u2192 select classification \u2192 proceed to next question. The system must be responsive to this loop \u2014 no unnecessary friction, clear progress indication, ability to skip and return.\n\n2. LLM API (Optional) \u2014 Secondary actor. Called when auto-fill is requested or when the respondent wants AI-assisted answer formulation. Interaction pattern: send question context + respondent's partial answer \u2192 receive suggested completion. The LLM is a tool, not a co-author \u2014 the respondent always has final say. Fallback: if LLM is unavailable, the system works identically without it.\n\n3. File System / Browser Storage \u2014 Persistence actor. Sessions are saved as JSON files on disk (CLI) or in browser localStorage/IndexedDB (Web UI). The storage layer handles serialization, compression (for large sessions), and atomic writes (to prevent corruption). The system reads from storage on startup (resume session) and writes after each answer (checkpoint). No network storage, no cloud sync \u2014 purely local persistence.\n\nNo other actors interact with the system. There is no authentication, no multi-user support, no API server (the web UI serves static files + local REST API). The three-actor model keeps the system simple, secure, and offline-capable."
+  },
+  {
+    "id": "2.3.3",
+    "series": 2,
+    "round": 3,
+    "focus": "Boundaries and Lifecycles",
+    "text": "What is the lifecycle of each entity? How are they created, modified, combined, retired?",
+    "choices": [
+      {
+        "id": "2.3.3.a",
+        "text": "Simple lifecycle \u2014 create, read, update, delete (CRUD)"
+      },
+      {
+        "id": "2.3.3.b",
+        "text": "Stateful lifecycle \u2014 entities pass through defined states with transition rules"
+      },
+      {
+        "id": "2.3.3.c",
+        "text": "Versioned lifecycle \u2014 entities have history, revisions, or snapshots"
+      },
+      {
+        "id": "2.3.3.d",
+        "text": "Composite lifecycle \u2014 entities are assembled/disassembled from sub-entities"
+      },
+      {
+        "id": "2.3.3.e",
+        "text": "Evolving lifecycle \u2014 entities change type or role over time"
+      }
+    ],
+    "answer": "Stateful lifecycle with well-defined transitions:\n\nSession lifecycle: created \u2192 active \u2192 paused/completed. Created when \"space init\" or \"space run\" is invoked. Active while questions are being answered. Paused when the user exits (auto-saved). Completed when all questions are answered or skipped. Can be resumed from paused state.\n\nQuestion lifecycle: presented \u2192 answered/skipped. Presented when the question router selects it (based on dependency resolution). Answered when the respondent provides both open-ended text and follow-up selection. Skipped when the respondent explicitly skips (with optional reason). Questions can be re-answered (overwriting previous answer).\n\nArtifact lifecycle: extracted \u2192 refined \u2192 finalized. Extracted when an answer is processed (pattern matching, keyword detection). Refined when subsequent answers provide additional context. Finalized when the series completes (no more extraction possible for this artifact key).\n\nExport lifecycle: not_generated \u2192 generated \u2192 stale. Generated on-demand when the user requests export. Stale when new answers have been recorded since the last export. Regeneration overwrites the stale export.\n\nEntity lifecycle summary: Framework and Series are immutable (defined once, never change). Rounds and Questions are immutable (fixed in the framework JSON). Sessions are mutable (answers accumulate). Artifacts are mutable (refined across series). Exports are computed (regenerated from current state). The lifecycle model ensures data integrity: immutable entities provide a stable reference, mutable entities track progress, computed entities reflect current state."
+  },
+  {
+    "id": "2.4.1",
+    "series": 2,
+    "round": 4,
+    "focus": "Refinement and Constraints",
+    "text": "Are there entities that are missing from the model so far? What gaps exist in the current entity list?",
+    "choices": [
+      {
+        "id": "2.4.1.a",
+        "text": "No gaps \u2014 the current entity list is comprehensive"
+      },
+      {
+        "id": "2.4.1.b",
+        "text": "Minor gaps \u2014 1\u20132 entities that were initially overlooked"
+      },
+      {
+        "id": "2.4.1.c",
+        "text": "Moderate gaps \u2014 several entities uncovered during analysis"
+      },
+      {
+        "id": "2.4.1.d",
+        "text": "Uncertain \u2014 the entity list needs validation against real-world instances"
+      },
+      {
+        "id": "2.4.1.e",
+        "text": "Incremental \u2014 entities will be added as the domain is explored further"
+      }
+    ],
+    "answer": "No major entity gaps identified. The entity set is comprehensive for the current scope.\n\nPotential minor gaps: (1) A \"User\" or \"Respondent\" entity could track who is answering \u2014 currently implicit in the Session. This would matter for multi-user scenarios but is explicitly out of scope. (2) A \"Template\" entity could define reusable framework configurations \u2014 currently each framework is hardcoded in JSON files. This would enable user-defined frameworks but adds significant complexity. (3) A \"History\" or \"AuditLog\" entity could track all changes \u2014 currently the Session's answers array serves this purpose but doesn't capture edit history or undo operations.\n\nThe entity set is deliberately minimal \u2014 each entity must justify its existence against the current feature set. Adding entities without corresponding behaviors creates dead weight that complicates the type system, storage layer, and test suite. The current 10-entity model covers all implemented features with no entity serving a purely decorative purpose.\n\nFuture entity candidates: \"User\" (multi-user support), \"Template\" (custom frameworks), \"Webhook\" (event notification), \"Metric\" (usage analytics), \"Plugin\" (extension system). None of these are needed for the current feature set. The entity model should evolve only when new features require it, not speculatively."
+  },
+  {
+    "id": "2.4.2",
+    "series": 2,
+    "round": 4,
+    "focus": "Refinement and Constraints",
+    "text": "Which entities should be merged, split, or reclassified? Are there boundary cases where entity distinctions break down?",
+    "choices": [
+      {
+        "id": "2.4.2.a",
+        "text": "No changes needed \u2014 current classification is sound"
+      },
+      {
+        "id": "2.4.2.b",
+        "text": "1\u20132 entities need merging or splitting"
+      },
+      {
+        "id": "2.4.2.c",
+        "text": "Several entities could be refined, but classification is directionally correct"
+      },
+      {
+        "id": "2.4.2.d",
+        "text": "Significant restructuring needed \u2014 initial classification was exploratory"
+      },
+      {
+        "id": "2.4.2.e",
+        "text": "Ongoing \u2014 classification will stabilize as boundary cases are examined"
+      }
+    ],
+    "answer": "No merges or splits needed. The entity boundaries are clean and well-motivated.\n\nVerification: Each entity passes the four-entity-test: (1) distinct lifecycle \u2014 yes for all 10 entities. (2) unique relationships \u2014 yes (no two entities have identical relationship patterns). (3) non-shared attributes \u2014 yes (each entity has at least 2 attributes not shared with any other entity). (4) independent addressability \u2014 yes (each entity has a unique ID).\n\nThe current 10-entity model is stable and should not change without significant new requirements. Entity changes are expensive: they cascade through the type system, storage schema, API contracts, test suite, and documentation. The cost-benefit ratio only favors changes when new features demand it.\n\nOne observation: the Answer entity currently stores both the open-ended text and the follow-up choice. An alternative design would split these into OpenEndedResponse and FollowUpResponse entities. This was considered and rejected because: (a) every question has both an open-ended and follow-up component (they're always co-created), (b) splitting adds a join requirement for any query that needs both, and (c) the lifecycle is identical (both created/updated together). The current unified Answer entity is the right design."
+  },
+  {
+    "id": "2.4.3",
+    "series": 2,
+    "round": 4,
+    "focus": "Refinement and Constraints",
+    "text": "What constraints, invariants, or business rules apply to entity instances? What must always be true?",
+    "choices": [
+      {
+        "id": "2.4.3.a",
+        "text": "Minimal constraints \u2014 entities have few invariants beyond uniqueness"
+      },
+      {
+        "id": "2.4.3.b",
+        "text": "Moderate constraints \u2014 several required fields and validity rules"
+      },
+      {
+        "id": "2.4.3.c",
+        "text": "Strict constraints \u2014 entities must satisfy complex invariants at all times"
+      },
+      {
+        "id": "2.4.3.d",
+        "text": "Context-dependent \u2014 constraints vary by entity state or relationship"
+      },
+      {
+        "id": "2.4.3.e",
+        "text": "Evolving \u2014 constraints will be discovered through usage patterns"
+      }
+    ],
+    "answer": "Key constraints and invariants:\n\n1. Framework Immutability \u2014 A Framework cannot be modified after creation. The JSON files are read-only at runtime. This ensures consistent question delivery across sessions.\n\n2. Session Uniqueness \u2014 Each Session has a UUID that is unique across all projects. Generated via crypto.randomUUID(). No two sessions can share an ID.\n\n3. Question ID Format \u2014 Question IDs follow the pattern \"S.R.Q\" where S=series (1-7), R=round (1-5), Q=question (1-5). This format is validated on load.\n\n4. Dependency Ordering \u2014 A series cannot start until all its dependency series have completed at least one round. Enforced by the question router's dependency resolution algorithm.\n\n5. Artifact Key Uniqueness \u2014 Each artifact key is unique within a session's artifact dictionary. Overwriting an existing key is allowed (refinement) but logged.\n\n6. Answer Completeness \u2014 A question is considered \"answered\" only when both the open-ended text AND the follow-up choice are provided. Partial answers are stored but don't count toward completion.\n\n7. Export Atomicity \u2014 Export generation is atomic \u2014 either all requested formats succeed or the operation fails cleanly. No partial exports are left on disk.\n\n8. Storage Consistency \u2014 After each answer, the session state is written to disk atomically (write to temp file, then rename). This prevents corruption if the process is interrupted."
+  },
+  {
+    "id": "2.5.1",
+    "series": 2,
+    "round": 5,
+    "focus": "Validation and Composition",
+    "text": "What edge cases, exceptions, or degenerate cases could break the entity model? How should they be handled?",
+    "choices": [
+      {
+        "id": "2.5.1.a",
+        "text": "Few edge cases \u2014 the model is robust to real-world variation"
+      },
+      {
+        "id": "2.5.1.b",
+        "text": "Known edge cases \u2014 they are well-understood and can be handled explicitly"
+      },
+      {
+        "id": "2.5.1.c",
+        "text": "Many edge cases \u2014 the model needs to be flexible to accommodate them"
+      },
+      {
+        "id": "2.5.1.d",
+        "text": "Edge cases are domain-specific \u2014 they vary by deployment or context"
+      },
+      {
+        "id": "2.5.1.e",
+        "text": "Edge cases will emerge \u2014 the model should accommodate undefined unknowns"
+      }
+    ],
+    "answer": "Edge cases and their handling:\n\n1. Empty Session \u2014 User starts a session and immediately exits without answering any questions. Handling: session is saved with zero answers, zero artifacts, status \"paused\". Can be resumed or abandoned.\n\n2. Duplicate Answers \u2014 User re-answers a question that was already answered. Handling: the new answer overwrites the old one. The artifact dictionary is re-extracted from the new answer. The old answer is lost (no version history in current implementation).\n\n3. Very Long Answers \u2014 User provides an answer exceeding 5000 characters. Handling: the answer is stored in full. No truncation. The artifact extraction may be slower due to parsing but remains functional.\n\n4. Invalid Follow-up Selection \u2014 User selects a follow-up choice that doesn't exist in the question's choices array. Handling: validation rejects the selection, returns an error, and re-presents the question.\n\n5. Corrupted Session File \u2014 The session JSON file is manually edited or corrupted. Handling: the StorageProvider catches the parse error, logs a warning, and offers to start a new session. No crash.\n\n6. Missing Framework Files \u2014 The prompt-framework JSON files are deleted or moved. Handling: the engine fails to load the framework and exits with a clear error message. No partial operation.\n\n7. Concurrent Access \u2014 Two processes try to write to the same session file. Handling: not currently handled (single-user system). The last writer wins. This is acceptable for the current scope.\n\n8. All Questions Skipped \u2014 If every question is skipped, the session completes with empty artifacts. The export produces a valid but empty specification. This is a valid edge case (user explored the framework without committing to answers)."
+  },
+  {
+    "id": "2.5.2",
+    "series": 2,
+    "round": 5,
+    "focus": "Validation and Composition",
+    "text": "How do entities compose or aggregate into larger structures? Can entities contain or be composed of other entities?",
+    "choices": [
+      {
+        "id": "2.5.2.a",
+        "text": "Flat \u2014 entities do not compose; all entities are atomic"
+      },
+      {
+        "id": "2.5.2.b",
+        "text": "Containment \u2014 some entities serve as containers for others (1-level deep)"
+      },
+      {
+        "id": "2.5.2.c",
+        "text": "Nested composition \u2014 entities form trees or recursive structures"
+      },
+      {
+        "id": "2.5.2.d",
+        "text": "Cross-cutting aggregation \u2014 entities participate in multiple overlapping groups"
+      },
+      {
+        "id": "2.5.2.e",
+        "text": "Dynamic composition \u2014 composition structure depends on entity state or context"
+      }
+    ],
+    "answer": "Entity composition forms a clear hierarchy:\n\nLevel 0: Framework (root container)\n  Level 1: Series (Framework contains 7 Series)\n    Level 2: Round (Series contains 3-5 Rounds)\n      Level 3: Question (Round contains 2-5 Questions)\n        Level 4: Choice (Question contains 3-5 Choices)\n\nThis is a strict containment hierarchy \u2014 each entity belongs to exactly one parent at each level. No entity participates in multiple containments at the same level.\n\nCross-cutting relationships exist outside the containment hierarchy:\n- Session contains Answers (1:many, Session is the aggregate root)\n- Session contains Artifact dictionary (1:1, the dictionary is a value object)\n- Answer references Question (many:1, FK relationship)\n- Artifact references Question (many:1, FK relationship for source tracking)\n- Export references Session (many:1, FK relationship)\n- Project contains Sessions (1:many, Project is an aggregate root)\n\nThe dependency graph creates cross-series composition where later Series consume Artifacts produced by earlier Series. For example, Series 3 (Semantic Relationships) consumes the entity_list artifact produced by Series 2 (Ontological Characteristics). This is not containment but dependency \u2014 Series 3 doesn't own the entity_list, it reads from it.\n\nThe aggregate roots are Framework (for the question structure) and Project (for the session data). All other entities are reachable through these roots. This simplifies storage: saving a Project saves all its Sessions, which save all their Answers and Artifacts. Loading a Framework loads all its Series, which load all their Rounds, which load all their Questions."
+  },
+  {
+    "id": "2.5.3",
+    "series": 2,
+    "round": 5,
+    "focus": "Validation and Composition",
+    "text": "What are the cardinality and multiplicity relationships between entity types? Can an entity have zero, one, or many of another?",
+    "choices": [
+      {
+        "id": "2.5.3.a",
+        "text": "Mostly one-to-one \u2014 entities pair uniquely"
+      },
+      {
+        "id": "2.5.3.b",
+        "text": "One-to-many \u2014 common pattern with one parent referencing multiple children"
+      },
+      {
+        "id": "2.5.3.c",
+        "text": "Many-to-many \u2014 entities have complex cross-referencing patterns"
+      },
+      {
+        "id": "2.5.3.d",
+        "text": "Mixed \u2014 cardinalities vary significantly across entity pairs"
+      },
+      {
+        "id": "2.5.3.e",
+        "text": "Conditional \u2014 cardinalities depend on entity state or relationship type"
+      }
+    ],
+    "answer": "Cardinality and multiplicity relationships:\n\nFramework \u2192 Series: 1:7 (exactly 7 series per framework, hardcoded)\nFramework \u2192 depends_on: 1:0..5 (a series depends on 0-5 other series)\nSeries \u2192 Round: 1:3..5 (3-5 rounds per series)\nRound \u2192 Question: 1:2..5 (2-5 questions per round)\nQuestion \u2192 Choice: 1:3..5 (3-5 follow-up choices per question)\nSession \u2192 Answer: 1:0..326 (0 to all questions answered)\nSession \u2192 Artifact: 1:0..~100 (0 to many extracted artifacts)\nAnswer \u2192 Question: many:1 (each answer references exactly one question)\nArtifact \u2192 Question: many:1 (each artifact traces to one source question)\nProject \u2192 Session: 1:0..N (0 to many sessions per project)\nExport \u2192 Session: many:1 (multiple export formats per session)\n\nThe dominant pattern is one-to-many containment (Framework\u2192Series\u2192Round\u2192Question). The exceptions are the many-to-one reference patterns (Answer\u2192Question, Artifact\u2192Question) which represent the runtime data flow from questions to answers to artifacts.\n\nNotable: the Framework\u2192depends_on relationship is many-to-many (a series can depend on multiple other series, and a series can be depended upon by multiple other series). This creates the DAG that governs question ordering.\n\nOptional relationships: Session\u2192Answer is optional (session can exist with zero answers). Session\u2192Artifact is optional (no artifacts extracted yet). Export\u2192Session is required (every export must reference a session).\n\nThe cardinality constraints are enforced at different layers: structural constraints (Framework\u2192Series count) are hardcoded in the framework definition. Runtime constraints (Session\u2192Answer count) are enforced by the question router. Storage constraints (FK validity) are enforced by the StorageProvider implementation."
+  }
+]

@@ -1,0 +1,5 @@
+You are a development specification for "RSI Cycle 002 — SPACE Self-Specification".
+
+This specification was generated through a structured elicitation process covering domain analysis, entity modeling, relationship mapping, procedural design, technical requirements, methodology, and operations.
+
+## Additional Details
