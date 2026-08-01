@@ -112,8 +112,8 @@ title: "Bundle Log"
   spec §1.1/§1.4 now marks L8–L9 as the only hypothetical loops
 
 
-## 2026-08-01 (Ω diagrams)
-- **Zoom direction fix**: `zoomAt` in `diagrams/gen/omega.py` corrected from
+## 2026-08-01
+- **Ω diagrams** — zoom direction fix: `zoomAt` in `diagrams/gen/omega.py` corrected from
   `vb.w * f` to `vb.w / f` (f>1 zooms in); `x-plus-plus-omega.html`
   regenerated — scroll-up / pinch-out now zoom in
 - **Nested-loop graph added**: `diagrams/gen/omega_nested.py` →
@@ -127,8 +127,8 @@ title: "Bundle Log"
   rings; snapshots `diagrams/gen/nested_snap_1/4.{svg,png}` committed
 - **New synthesis note**: `wiki/syntheses/nested-loop-graph-and-zoom-fix.md`
 
-## 2026-08-01 (MyKB stats hub)
-- **Stats hub added**: `stats.html` + `.wiki-daemon/build_stats.py` — 7 stat
+## 2026-08-01
+- **Wiki stats hub** — stats hub added: `stats.html` + `.wiki-daemon/build_stats.py` — 7 stat
   tiles and 13 charts (word-count thresholds 300+/400+/500+, length histogram,
   longest notes, status/type/area/tag distributions, monthly + last-60-day
   activity, graph-degree and wikilink distributions, length-vs-links scatter),
@@ -141,3 +141,21 @@ title: "Bundle Log"
   dangling endpoints); current wiki counts: 2,825 md files, 25 notes at 300+,
   14 at 400+, 11 at 500+ words
 - **New synthesis note**: `wiki/syntheses/wiki-stats-hub.md`
+
+## 2026-08-01
+- **Pass 2 acquisition** — second acquisition pass — 4 parallel research workers (specs E–H) added **400 articles (100 full + 300 stubs)** across four new clusters:
+  - Cloud Infrastructure & DevOps — `wiki/cloud-infra/`, `wiki/infrastructure/`, `wiki/devops-infra/`
+  - Software Engineering & Developer Tools — `wiki/software-engineering/`, `wiki/dev-tools/`, `wiki/os-shell/`, `wiki/web-platforms/`
+  - Mobile & Client Platforms — `wiki/mobile-platform/`, `wiki/android-core/`, `wiki/frontend-frameworks/`, `wiki/shell-environment/`
+  - Identity, Security & Governance — `wiki/identity/`, `wiki/security-auth/`, `wiki/api-services/`
+- **Verification**: 168 source URLs verified live (HTTP 200); 14 cross-directory wikilink mismatches fixed; zero broken links across all 400 files; frontmatter + word-count checks green (fulls 150–400w, stubs short)
+- **Snapshots regenerated**: `files.json` 2,825 → 3,225; `graph.json` 2,286 nodes / 13,452 edges → 2,687 / 15,820; `okf-graph.html` 3,125 concepts; 15 area index pages refreshed
+- **Report**: `ops/reports/curation-2026-08-01.md`
+- **Stats hub refresh after Pass 2**: `build_stats.py` re-run over the
+  expanded wiki — 2,687 content files, 370,366 words, 14,525 wikilinks;
+  thresholds 300+/400+/500+ = 54/14/11 (300+ grew 26 → 54 as expected,
+  fulls are capped at 400 words so 400+/500+ unchanged)
+- **Snapshot ordering rule captured**: `gen-static-data.py` counts tracked
+  files only, so files.json must be regenerated *after* staging an
+  acquisition round (synthesis: `wiki/syntheses/acquisition-pass-snapshot-ordering.md`)
+- **Deployed**: full-tree mirror to `gh-pages` with Pass-2 content
