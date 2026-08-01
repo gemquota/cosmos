@@ -1,4 +1,27 @@
 
+## [0.4.1] — 2026-08-01
+
+### Added
+- Usage-practice enforcement: `rsis/practices.py` with 17 checks (the +3
+  ownership diagonal L4→`l1.*` … L9→`l6.*`, disjoint registry keys, top-3
+  loops untuned, disjoint state files, telemetry start+complete coverage,
+  `rsis-checkpoint:` git hygiene), exposed as `python -m rsis check-practices`
+  and `ops/check_practices.py [WORKSPACE]`; exits non-zero on any FAIL
+- `docs/usage-practices.md`: workspace model, loop cadence (incl. L8/L9
+  commands), telemetry expectations, ownership/mutation hygiene, checkpoint
+  practice, dashboard snapshot practice, anti-patterns, and the six
+  invariants the checker verifies
+
+### Changed
+- `rsis` package version bumped to 0.4.1
+- AGENTS.md now points to the usage-practices doc + checker
+
+### Verified
+- Full-loop workspace (`.rsirrp/work/full-loop`): 17/17 checks PASS —
+  registry ownership prefixes, 12 unique keys, 6 disjoint state files,
+  26 `rsis-checkpoint` commits, and per-loop telemetry (L1–L3 1/1,
+  L4 2/2, L5 6/6, L6 3/3, L7–L9 1/1, zero errors)
+
 ## [0.4.0] — 2026-08-01
 
 ### Added

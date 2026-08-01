@@ -29,5 +29,5 @@ An agent loop is the repeating control cycle in which an agent interprets a task
 - [[wiki/concepts/perception-loop|Perception Loop]] — the sensing side of the cycle
 - [[wiki/llm-agents/stop-conditions|Stop Conditions]] — when the loop terminates
 - [[wiki/syntheses/knowledge-system|Knowledge System Overview]] — RSIS3 hosts this loop in the wider ecosystem
-- [[raw/archive/session-artifacts-2026-07/tools/update-plan-1-2|update_plan — the planning tool used inside the loop
-- [[raw/archive/session-artifacts-2026-07/tools/exec-command-1-2|exec_command — a typical loop tool in RSIS3
+- [[raw/archive/session-artifacts-2026-07/tools/update-plan-1-2|update_plan — the planning tool used inside the loop]]
+- [[raw/archive/session-artifacts-2026-07/tools/exec-command-1-2|exec_command — a typical loop tool in RSIS3]]

@@ -13,7 +13,9 @@ knowledge database built on the Open Knowledge Format (OKF) and Obsidian wiki
 conventions. Every article is markdown with YAML frontmatter; links are the
 graph.
 
-Start from [[Home]] or the [[wiki/index|Wiki Index]].
+Start from [[Home]] or the [[wiki/index|Wiki Index]]. New to the
+knowledge base? Read the [[ops/conceptual-guide|mykb for Humans — Conceptual
+Guide]] first: it explains the mental model, the layers, and how to navigate.
 
 ## Roles
 

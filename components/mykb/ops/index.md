@@ -1,5 +1,6 @@
 # Ops — Operating layer
 
+* [Conceptual Guide](conceptual-guide.md) — mykb explained for human readers
 * [Workflows](workflows.md) — Operating workflows
 * [Wiki Schema](wiki-schema.md) — Wiki frontmatter schema
 * [RSIS3 Memory Bridge](rsis3-memory-bridge.md) — read/write contract for RSIS3 long-term memory
