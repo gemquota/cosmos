@@ -273,6 +273,11 @@ OMEGA_CARD = ("Ω", "The Interactive Omega Graph",
     ["Interactive", "27 nodes", "λ slider = 4th axis", "Touch-first"],
     [("space", "SPACE · ideation"), ("rsis", "RSIS3 · execution"), ("mykb", "MYKB · memory"), ("dash", "DASH · telemetry")],
     "x-plus-plus-omega.html")
+NESTED_CARD = ("Ω⊃9", "The Nested-Loop Graph &mdash; Nine Loops, One Ecosystem",
+    "The full 52-node / 64-link ecosystem with the L1&ndash;L9 improvement stack drawn as nine concentric rings at the system's semantic centre &mdash; L1 action &rarr; L2 improvement &rarr; L3 cross-session &rarr; L4 meta-parameter &rarr; L5 strategy &rarr; L6 identity &rarr; L7 meta-cog &rarr; L8 meta-meta &rarr; L9 MMM, the loop that tunes the loop that tunes the loops. The indigo arc L1&rarr;L2&rarr;L3 marks the runtime chain; every other node keeps its omega semantic position outside the bullseye.",
+    ["52 nodes", "9 nested rings", "L1–L9 stack", "λ slider"],
+    [("space", "SPACE · ideation"), ("rsis", "RSIS3 · loops"), ("mykb", "MYKB · memory"), ("dash", "DASH · telemetry")],
+    "x-plus-plus-nested.html")
 
 
 def card(num, title, desc, tags, legend, file):
@@ -322,7 +327,7 @@ def main():
     # 1 · header
     src = src.replace(
         "RSIS3 core engine &middot; MyKB memory &middot; SPACE ideation — 37 new diagrams in three tiers",
-        "RSIS3 core engine &middot; MyKB memory &middot; SPACE ideation — 87 diagrams in five tiers + an interactive &Omega; graph")
+        "RSIS3 core engine &middot; MyKB memory &middot; SPACE ideation — 88 diagrams in five tiers + two interactive &Omega; graphs")
     src = src.replace(
         '<span class="badge">Basic &middot; Advanced &middot; Expert &middot; Mobile-first SVG</span>',
         '<span class="badge">Basic &middot; Advanced &middot; Expert &middot; Expert+ &middot; X++ &middot; Mobile-first SVG</span>')
@@ -331,7 +336,7 @@ def main():
     old_nav = '''<button class="tab-btn" data-tab="expert" role="tab" aria-selected="false">Expert <span class="count">12</span></button>'''
     new_nav = old_nav + '''
   <button class="tab-btn" data-tab="expert-plus" role="tab" aria-selected="false">Expert+ <span class="count">12</span></button>
-  <button class="tab-btn" data-tab="x-plus-plus" role="tab" aria-selected="false">X++ <span class="count">1</span></button>'''
+  <button class="tab-btn" data-tab="x-plus-plus" role="tab" aria-selected="false">X++ <span class="count">2</span></button>'''
     assert old_nav in src
     src = src.replace(old_nav, new_nav)
     # update counts on existing buttons
@@ -353,9 +358,13 @@ def main():
     plus_section = section("EXPERT-PLUS", "Expert+ — cross-cutting systems views",
                            "Diagrams that read across all four runtimes at once: causality, entropy fields, resilience, time-scale separation, feedback topology, dependency lattices, resource flows, stability, phylogeny, and constraint hypergraphs.",
                            PLUS_CARDS)
-    xplus_section = section("X++", "X++ — the interactive omega graph",
-                            "One graph of the whole ecosystem, interactive: 27 real module/artifact nodes on two semantic spectra, size = footprint, colour = component, edges = the six handoffs — with a &lambda; slider as the 4th axis.",
-                            [OMEGA_CARD], extra=xplus_extra)
+    xplus_section = section("X++", "X++ — the interactive ecosystem graphs",
+                            "Two interactive views of the whole ecosystem: the &Omega; graph (27 nodes on two semantic spectra, &lambda; slider as the 4th axis) and the nested-loop graph (all 52 nodes / 64 links with the L1&ndash;L9 stack as nine concentric rings).",
+                            [OMEGA_CARD, NESTED_CARD], extra=xplus_extra)
+
+    # fix x++ panel name (section() lowercases "X++" to "x++")
+    xplus_section = xplus_section.replace('data-panel="x++"', 'data-panel="x-plus-plus"').replace('id="x++"', 'id="x-plus-plus"')
+
 
     marker = "  </section>\n\n</div>"
     assert marker in src
@@ -369,7 +378,7 @@ def main():
     src = src.replace(old_cmt, "// Deep-link: #basic / #advanced / #expert / #expert-plus / #x-plus-plus")
 
     open(HTML, "w").write(src)
-    n = len(BASIC_CARDS) + len(ADVANCED_CARDS) + len(EXPERT_CARDS) + len(PLUS_CARDS) + 1
+    n = len(BASIC_CARDS) + len(ADVANCED_CARDS) + len(EXPERT_CARDS) + len(PLUS_CARDS) + 2
     print(f"index.html updated — {n} new cards, 5 tabs")
 
 
