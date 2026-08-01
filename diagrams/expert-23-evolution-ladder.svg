@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE EVOLUTION LADDER — CLIMBING λ WITH GATES</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Each rung adds a subsystem, each gate is the proof required before the next climb</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<rect x="220" y="128" width="480" height="84" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="220" y="128" width="480" height="30" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="220" y="146" width="480" height="12" fill="#818cf8" opacity=".12"/>
+<text x="460.0" y="147.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">λ₁ · ENGINE</text>
+<text x="232" y="170" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">RSIS3 loops fire</text>
+<text x="740" y="156" text-anchor="start" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8.5">act without memory</text>
+<text x="740" y="174" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">capability</text>
+<path d="M 460 237 L 469 246 L 460 255 L 451 246 Z" fill="#0b1120" stroke="#f472b6" stroke-width="1.8"/>
+<text x="494" y="232" text-anchor="start" fill="#f472b6" font-family="system-ui,sans-serif" font-size="8">retrieval proven</text>
+<text x="494" y="248" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">lessons round-trip via :8765</text>
+<line x1="500" y1="258" x2="500" y2="282" stroke="#475569" stroke-width="2" opacity="0.6" marker-end="url(#arwG)"/>
+<rect x="220" y="318" width="480" height="84" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="220" y="318" width="480" height="30" rx="10" fill="#22d3ee" opacity=".16"/>
+<rect x="220" y="336" width="480" height="12" fill="#22d3ee" opacity=".12"/>
+<text x="460.0" y="337.5" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13" font-weight="700">λ₂ · +MEMORY</text>
+<text x="232" y="360" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">MyKB joins</text>
+<text x="740" y="346" text-anchor="start" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8.5">remember everything</text>
+<text x="740" y="364" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">capability</text>
+<path d="M 460 427 L 469 436 L 460 445 L 451 436 Z" fill="#0b1120" stroke="#f472b6" stroke-width="1.8"/>
+<text x="494" y="422" text-anchor="start" fill="#f472b6" font-family="system-ui,sans-serif" font-size="8">spec quality proven</text>
+<text x="494" y="438" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">specs pass evaluator &gt; threshold</text>
+<line x1="500" y1="448" x2="500" y2="472" stroke="#475569" stroke-width="2" opacity="0.6" marker-end="url(#arwG)"/>
+<rect x="220" y="508" width="480" height="84" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="220" y="508" width="480" height="30" rx="10" fill="#f59e0b" opacity=".16"/>
+<rect x="220" y="526" width="480" height="12" fill="#f59e0b" opacity=".12"/>
+<text x="460.0" y="527.5" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="13" font-weight="700">λ₃ · +IDEATION</text>
+<text x="232" y="550" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">SPACE joins</text>
+<text x="740" y="536" text-anchor="start" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8.5">ideate before acting</text>
+<text x="740" y="554" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">capability</text>
+<path d="M 460 617 L 469 626 L 460 635 L 451 626 Z" fill="#0b1120" stroke="#f472b6" stroke-width="1.8"/>
+<text x="494" y="612" text-anchor="start" fill="#f472b6" font-family="system-ui,sans-serif" font-size="8">embeds proven</text>
+<text x="494" y="628" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">dashboard renders all three iframes</text>
+<line x1="500" y1="638" x2="500" y2="662" stroke="#475569" stroke-width="2" opacity="0.6" marker-end="url(#arwG)"/>
+<rect x="220" y="698" width="480" height="84" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="220" y="698" width="480" height="30" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="220" y="716" width="480" height="12" fill="#10b981" opacity=".12"/>
+<text x="460.0" y="717.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">λ₄ · ECOSYSTEM</text>
+<text x="232" y="740" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">dashboard + hub</text>
+<text x="740" y="726" text-anchor="start" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8.5">observe it all</text>
+<text x="740" y="744" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">capability</text>
+<rect x="60" y="848" width="880" height="100" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="848" width="880" height="32" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="868" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="868.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">WHAT A GATE IS</text>
+<text x="74" y="894" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Each gate is a measured capability, not a code review: retrieval must round-trip, specs must pass the evaluator, embeds must render.</text>
+<text x="74" y="920" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">Failing a gate does not roll back the rung — it holds the ladder until the measurement passes.</text>
+<rect x="60" y="972" width="880" height="80" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="972" width="880" height="32" rx="10" fill="#22d3ee" opacity=".16"/>
+<rect x="60" y="992" width="880" height="12" fill="#22d3ee" opacity=".12"/>
+<text x="500.0" y="992.5" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13" font-weight="700">LINK TO THE OTHER λ DIAGRAMS</text>
+<text x="74" y="1018" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">B-24 showed the λ stages as a timeline; A-13 as bifurcations; this ladder adds the gate each climb must clear.</text>
+<rect x="60" y="1171" width="880" height="93" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1171" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1187" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1189.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE LADDER</text>
+<text x="72" y="1211" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">RUNG COLOUR = the subsystem added at that λ; DIAMONDS = gates with their proof conditions.</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">READ UPWARD: each rung is a strict superset and each gate is a measurable prerequisite for the next.</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">The ladder and the timeline (B-24) tell the same story in two grammars — history and requirements.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">evolution is not automatic here — each rung must earn its gate, and the gates are measurements</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

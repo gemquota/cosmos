@@ -3,7 +3,7 @@ type: index
 title: Wiki Schema
 status: stable
 created: 2026-07-18
-updated: 2026-07-18
+updated: 2026-07-31
 tags: [schema, ops]
 source: []
 ---
@@ -21,9 +21,13 @@ source: []
 | `daily` | Daily note | `daily/` |
 | `index` | Navigation or system entry | root or `ops/` |
 | `log` | Change log | `wiki/log.md` |
+| `decision` | Locked architectural choice | `wiki/decisions/` |
+| `pulse` | RSIS3 pulse outcome record | `wiki/pulses/` |
+| `snapshot` | RSIS3 identity snapshot | `wiki/identity/` |
 
 | status | Meaning |
 | --- | --- |
+| `stub` | Skeleton article queued for expansion (acquisition rounds) |
 | `seed` | Newly created with only basic structure |
 | `growing` | Accumulating material and links |
 | `stable` | Stable enough to use as a reference entry |

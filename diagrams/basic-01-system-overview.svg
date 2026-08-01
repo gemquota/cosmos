@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1200" height="800" fill="url(#bgGrad)"/>
+<text x="600.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">COSMOS — SYSTEM OVERVIEW</text>
+<text x="600.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Cognitive Orchestration System for Meta-cognitive Orchestration &amp; Synthesis</text>
+<line x1="72.0" y1="76" x2="1128.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<rect x="80" y="100" width="1040" height="46" rx="10" fill="#0f172a" stroke="#334155"/>
+<text x="600" y="120" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="12">🌌 COSMOS — one ecosystem, three components, one goal: recursive self-improvement</text>
+<text x="600" y="138" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="10">Hub-and-spoke architecture  •  Shared filesystem  •  GitHub Pages + local servers</text>
+<rect x="180" y="170" width="330" height="210" rx="14" fill="#0f172a" stroke="#818cf8" stroke-width="2" filter="url(#shadow)"/>
+<rect x="180" y="170" width="330" height="40" rx="14" fill="#818cf8" opacity=".18"/>
+<rect x="180" y="198" width="330" height="12" fill="#818cf8" opacity=".14"/>
+<text x="345.0" y="195.0" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="15" font-weight="700">🔄 RSIS3</text>
+<text x="345.0" y="230" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5">Core Cognitive Engine — Python</text>
+<text x="345" y="244" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10.5">Three-loop recursive self-improvement</text>
+<text x="345" y="266" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">L1: per-task action loop (seconds)</text>
+<text x="345" y="288" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">L2: per-session improvement (minutes)</text>
+<text x="345" y="310" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">L3: cross-session evolution (hours/days)</text>
+<text x="345" y="332" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">IMMUTABLE AI evaluator gates changes</text>
+<text x="345" y="354" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">112 files • 67k LOC</text>
+<rect x="510" y="170" width="330" height="210" rx="14" fill="#0f172a" stroke="#22d3ee" stroke-width="2" filter="url(#shadow)"/>
+<rect x="510" y="170" width="330" height="40" rx="14" fill="#22d3ee" opacity=".18"/>
+<rect x="510" y="198" width="330" height="12" fill="#22d3ee" opacity=".14"/>
+<text x="675.0" y="195.0" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="15" font-weight="700">🧠 MyKB</text>
+<text x="675.0" y="230" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5">Long-Term Memory — Python + Markdown</text>
+<text x="675" y="244" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10.5">Obsidian wiki — 2,360+ markdown pages</text>
+<text x="675" y="266" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">TF-IDF search over 48 knowledge domains</text>
+<text x="675" y="288" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Temporal engine: time-travel snapshots</text>
+<text x="675" y="310" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Knowledge graph + session capture hooks</text>
+<text x="675" y="332" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">2,436 files • 58MB</text>
+<rect x="840" y="170" width="330" height="210" rx="14" fill="#0f172a" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+<rect x="840" y="170" width="330" height="40" rx="14" fill="#f59e0b" opacity=".18"/>
+<rect x="840" y="198" width="330" height="12" fill="#f59e0b" opacity=".14"/>
+<text x="1005.0" y="195.0" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="15" font-weight="700">✧ SPACE</text>
+<text x="1005.0" y="230" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5">RRP Ideation Engine — TypeScript</text>
+<text x="1005" y="244" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10.5">Structured prompt/spec generation</text>
+<text x="1005" y="266" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">326-probe framework across 7 series</text>
+<text x="1005" y="288" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">7 LLM providers integrated</text>
+<text x="1005" y="310" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">6 export formats (JSON/MD/YAML/HTML…)  </text>
+<text x="1005" y="332" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">150 tests • 14 suites</text>
+<line x1="510" y1="275" x2="675" y2="275" stroke="#818cf8" stroke-width="2" opacity="0.5" marker-end="url(#arwR)"/>
+<line x1="840" y1="275" x2="1005" y2="275" stroke="#22d3ee" stroke-width="2" opacity="0.5" marker-end="url(#arwM)"/>
+<text x="600" y="265" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9" font-style="italic">memory I/O</text>
+<text x="930" y="265" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9" font-style="italic">specs flow</text>
+<rect x="80" y="420" width="1040" height="180" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="80" y="420" width="1040" height="34" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="80" y="442" width="1040" height="12" fill="#10b981" opacity=".12"/>
+<text x="600.0" y="441.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">HOW THEY WORK TOGETHER</text>
+<text x="94" y="468" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11">1.  SPACE ideates — RRP sessions produce structured specifications (326 probes, 7 series)</text>
+<text x="94" y="494" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11">2.  MyKB stores — specs and session artifacts persist as wiki pages and knowledge graph entries</text>
+<text x="94" y="520" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11">3.  RSIS3 executes — L1 acts, L2 improves (evaluator-gated), L3 evolves strategies across sessions</text>
+<text x="94" y="546" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11">4.  MyKB consolidates — results written back to the knowledge graph for the next cycle</text>
+<text x="94" y="572" fill="#475569" font-family="system-ui,sans-serif" font-size="10">The cycle repeats: ideation → storage → execution → consolidation → better ideation</text>
+<rect x="80" y="620" width="1040" height="120" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="80" y="620" width="1040" height="34" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="80" y="642" width="1040" height="12" fill="#f472b6" opacity=".12"/>
+<text x="600.0" y="641.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">KEY NUMBERS</text>
+<text x="94" y="668" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11">2,881 total files   •   ~239k LOC   •   ~70MB   •   235 directories</text>
+<text x="94" y="698" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11">2 git repos (cosmos + hub)   •   2 GitHub Pages deployments</text>
+<text x="94" y="728" fill="#475569" font-family="system-ui,sans-serif" font-size="10">Ports: 9000 Dashboard  •  8765 MyKB  •  8888/8899 SPACE  •  8080 RSIS3 (static by default)</text>
+<text x="600.0" y="840" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Generated from source analysis</text>
+</svg>

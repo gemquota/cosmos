@@ -15,3 +15,16 @@ Part of [[wiki/web-platforms/index|Web Platforms]]. 299 entities.
 - [[wiki/web-platforms/supercategories/security-auth/index|Security Auth]]
 - [[wiki/web-platforms/supercategories/cloud-infra/index|Cloud Infra]]
 - [[wiki/web-platforms/supercategories/tooling/index|Tooling]]
+
+## Concepts
+
+- [AWS DynamoDB](aws-dynamodb.md) — AWS DynamoDB
+- [AWS Lambda](aws-lambda.md) — AWS Lambda
+- [AWS S3](aws-s3.md) — AWS S3
+- [Edge Functions](edge-functions.md) — Edge Functions
+- [Fly.io](fly-io.md) — Fly.io
+- [Google Cloud Run](google-cloud-run.md) — Google Cloud Run
+- [Netlify](netlify.md) — Netlify
+- [Serverless](serverless.md) — Serverless
+- [Static Site Generation](static-site-generation.md) — Static Site Generation
+- [Vercel](vercel.md) — Vercel

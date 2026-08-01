@@ -23,3 +23,7 @@ Each source page should have:
 ## Related
 
 - [[wiki/sources/codebase-analysis|Codebase Analysis]]
+
+## Concepts
+
+- [Codebase Analysis — RSIS3 + mykb + myrsikb](codebase-analysis.md) — Codebase Analysis — RSIS3 + mykb + myrsikb

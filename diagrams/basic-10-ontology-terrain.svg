@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE ONTOLOGY TERRAIN — A CONTINUOUS FIELD</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">The B-08 Venn, made continuous — components are density hills on shared semantic terrain, not circles with borders</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<defs>
+      <radialGradient id="hillR" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#c7d2fe" stop-opacity=".8"/><stop offset="55%" stop-color="#818cf8" stop-opacity=".38"/><stop offset="100%" stop-color="#818cf8" stop-opacity="0"/></radialGradient>
+      <radialGradient id="hillM" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#a5f3fc" stop-opacity=".8"/><stop offset="55%" stop-color="#22d3ee" stop-opacity=".38"/><stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/></radialGradient>
+      <radialGradient id="hillS" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fde68a" stop-opacity=".8"/><stop offset="55%" stop-color="#f59e0b" stop-opacity=".38"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></radialGradient>
+    </defs>
+<line x1="180" y1="1050" x2="820" y2="1050" stroke="#334155" stroke-width="1.4" marker-end="url(#arwG)" opacity=".9"/>
+<line x1="180" y1="1050" x2="180" y2="200" stroke="#334155" stroke-width="1.4" marker-end="url(#arwG)" opacity=".9"/>
+<text x="820" y="1072" text-anchor="end" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700">LONG-TERM · months</text>
+<text x="180" y="1072" text-anchor="start" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700">REAL-TIME · seconds</text>
+<text x="154" y="625.0" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700" transform="rotate(-90 154 625.0)">EXECUTION ⇄ THEORY</text>
+<line x1="280" y1="1045" x2="280" y2="1055" stroke="#334155" stroke-width="1"/>
+<text x="280" y="1064" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">sec</text>
+<line x1="460" y1="1045" x2="460" y2="1055" stroke="#334155" stroke-width="1"/>
+<text x="460" y="1064" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">min</text>
+<line x1="640" y1="1045" x2="640" y2="1055" stroke="#334155" stroke-width="1"/>
+<text x="640" y="1064" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">hr</text>
+<line x1="800" y1="1045" x2="800" y2="1055" stroke="#334155" stroke-width="1"/>
+<text x="800" y="1064" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">days+</text>
+<line x1="175" y1="330" x2="185" y2="330" stroke="#334155" stroke-width="1"/>
+<text x="168" y="333" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">strategy</text>
+<line x1="175" y1="500" x2="185" y2="500" stroke="#334155" stroke-width="1"/>
+<text x="168" y="503" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">ideation</text>
+<line x1="175" y1="680" x2="185" y2="680" stroke="#334155" stroke-width="1"/>
+<text x="168" y="683" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">action</text>
+<line x1="175" y1="860" x2="185" y2="860" stroke="#334155" stroke-width="1"/>
+<text x="168" y="863" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">tool calls</text>
+<text x="275" y="1030" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9" font-style="italic">ACTION plane</text>
+<text x="720" y="1030" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9" font-style="italic">MEMORY plane</text>
+<text x="275" y="228" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9" font-style="italic">IDEATION plane</text>
+<text x="720" y="228" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9" font-style="italic">STRATEGY plane</text>
+<ellipse cx="450" cy="310" rx="250" ry="215.0" fill="url(#hillS)" style="mix-blend-mode:screen"/>
+<ellipse cx="450" cy="310" rx="130" ry="112" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,7" opacity=".55"/>
+<ellipse cx="450" cy="310" rx="200" ry="172" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,7" opacity=".55"/>
+<circle cx="450" cy="310" r="5" fill="#f59e0b"/>
+<text x="450" y="294" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="13.5" font-weight="800">SPACE · IDEATION</text>
+<text x="450" y="312" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9">69k LOC · 326 probes</text>
+<ellipse cx="280" cy="500" rx="260" ry="223.6" fill="url(#hillR)" style="mix-blend-mode:screen"/>
+<ellipse cx="280" cy="500" rx="135" ry="116" fill="none" stroke="#818cf8" stroke-width="1" stroke-dasharray="4,7" opacity=".55"/>
+<ellipse cx="280" cy="500" rx="208" ry="179" fill="none" stroke="#818cf8" stroke-width="1" stroke-dasharray="4,7" opacity=".55"/>
+<circle cx="280" cy="500" r="5" fill="#818cf8"/>
+<text x="280" y="484" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13.5" font-weight="800">RSIS3 · CORE ENGINE</text>
+<text x="280" y="502" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9">67k LOC · L1→L3</text>
+<ellipse cx="660" cy="560" rx="285" ry="245.1" fill="url(#hillM)" style="mix-blend-mode:screen"/>
+<ellipse cx="660" cy="560" rx="148" ry="127" fill="none" stroke="#22d3ee" stroke-width="1" stroke-dasharray="4,7" opacity=".55"/>
+<ellipse cx="660" cy="560" rx="228" ry="196" fill="none" stroke="#22d3ee" stroke-width="1" stroke-dasharray="4,7" opacity=".55"/>
+<circle cx="660" cy="560" r="5" fill="#22d3ee"/>
+<text x="660" y="544" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13.5" font-weight="800">MYKB · MEMORY</text>
+<text x="660" y="562" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9">103k LOC · 2,360+ pages</text>
+<circle cx="420" cy="800" r="3" fill="#818cf8"/>
+<text x="420" y="792" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">evaluator</text>
+<circle cx="560" cy="640" r="3" fill="#818cf8"/>
+<text x="560" y="632" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">L2 improvement</text>
+<circle cx="720" cy="300" r="3" fill="#818cf8"/>
+<text x="720" y="292" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">L3 evolution</text>
+<circle cx="335" cy="950" r="3" fill="#10b981"/>
+<text x="335" y="942" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">rack pulses</text>
+<circle cx="470" cy="690" r="3" fill="#22d3ee"/>
+<text x="470" y="682" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">TF-IDF index</text>
+<circle cx="620" cy="520" r="3" fill="#22d3ee"/>
+<text x="620" y="512" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">knowledge graph</text>
+<circle cx="650" cy="340" r="3" fill="#22d3ee"/>
+<text x="650" y="332" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">temporal engine</text>
+<circle cx="560" cy="500" r="3" fill="#22d3ee"/>
+<text x="560" y="492" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">session hooks</text>
+<circle cx="350" cy="330" r="3" fill="#f59e0b"/>
+<text x="350" y="322" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">RRP probes</text>
+<circle cx="450" cy="420" r="3" fill="#f59e0b"/>
+<text x="450" y="412" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">spec exports</text>
+<circle cx="290" cy="540" r="3" fill="#f59e0b"/>
+<text x="290" y="532" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">LLM providers</text>
+<circle cx="380" cy="220" r="3" fill="#f59e0b"/>
+<text x="380" y="212" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">prompt framework</text>
+<rect x="378.0" y="416" width="150" height="28" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="453" y="432" text-anchor="middle" fill="#fad3f8" font-family="system-ui,sans-serif" font-size="10" font-weight="700">RSIS3 × SPACE</text>
+<rect x="485.0" y="531" width="150" height="28" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="560" y="547" text-anchor="middle" fill="#92ebff" font-family="system-ui,sans-serif" font-size="10" font-weight="700">RSIS3 × MYKB</text>
+<rect x="525.0" y="366" width="150" height="28" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="600" y="382" text-anchor="middle" fill="#f6eeef" font-family="system-ui,sans-serif" font-size="10" font-weight="700">MYKB × SPACE</text>
+<rect x="380.0" y="646" width="150" height="28" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="455" y="662" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="700">THE COSMOS MIND</text>
+<text x="80" y="1150" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-weight="700">HOW TO READ THE TERRAIN</text>
+<circle cx="90" cy="1174" r="7" fill="#67e8f9" fill-opacity=".8"/>
+<text x="106" y="1178" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">HEIGHT = semantic load — brightest where a component is most itself</text>
+<circle cx="90" cy="1198" r="7" fill="#fbbf24" fill-opacity=".8"/>
+<text x="106" y="1202" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">CONTOURS = equipotential lines — equal semantic density</text>
+<circle cx="90" cy="1222" r="7" fill="#f472b6" fill-opacity=".8"/>
+<text x="106" y="1226" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">ADDITIVE BLEND = shared meaning — overlaps glow brighter, hues mix</text>
+<circle cx="90" cy="1246" r="7" fill="#94a3b8" fill-opacity=".8"/>
+<text x="106" y="1250" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">DOTS = modules — a module is a peak on the terrain, not a circle edge</text>
+<rect x="412.2" y="986" width="175.6" height="28" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="500" y="1002" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="700">DISCRETE → CONTINUOUS</text>
+<rect x="412.2" y="1016" width="175.6" height="24" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="500" y="1030" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8" font-style="italic">the Venn round was a map with borders — this round is the field the borders abstract away</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">sets are an approximation of a continuous space — the terrain is the ontology, the circles were just its census</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 3 · abstract ontology</text>
+</svg>

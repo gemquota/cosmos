@@ -64,3 +64,22 @@ Pulse cycles have a configurable deadline (`RSIS3_MAX_CYCLE_DURATION`, default 4
 - [[wiki/concepts/triad-architecture|Triad Architecture]]
 - [[wiki/concepts/identity-system|Identity System]]
 - [[wiki/concepts/project-lineage|Project Lineage]]
+
+
+## Relation to Agent Loops
+
+The pulse cycle wraps the [[wiki/agent-systems/agent-loop|agent loop]]: each
+phase is a bounded agent loop over reasoning steps, and the whole cycle is one
+episode of [[wiki/agent-systems/recursive-self-improvement|recursive
+self-improvement]]. Decisions are governed by
+[[wiki/agent-systems/constraint-satisfaction|constraint satisfaction]] and
+evaluated with the discipline of [[wiki/testing/llm-evaluation|LLM
+evaluation]] — golden tests, eval sets, and regression suites map onto phase 9.
+
+## Memory Writes
+
+Pulse outcomes land in [[ops/rsis3-memory-bridge|RSIS3 memory]] as typed
+records (pulse, decision, reflection) with full
+[[wiki/memory/provenance|provenance]], and are indexed by the
+[[wiki/data-storage/knowledge-graph|knowledge graph]] for retrieval in later
+cycles.

@@ -1,6 +1,14 @@
 # Wiki Index — mykb knowledge map
 
-This page is the map of the knowledge base. Return here after adding or merging important pages.
+This page is the map of the knowledge base and the semantic database mykb serves
+to RSIS3. Return here after adding or merging important pages.
+
+## Memory Layer (RSIS3)
+
+* [Memory Layer](memory/README.md) — semantic memory index
+* [RSIS3 Memory Bridge](../ops/rsis3-memory-bridge.md) — read/write contract
+* [Knowledge Acquisition](../ops/knowledge-acquisition.md) — research workflow
+* [Wiki Schema](../ops/wiki-schema.md) — frontmatter schema
 
 ## System Pages
 
@@ -8,7 +16,6 @@ This page is the map of the knowledge base. Return here after adding or merging 
 * [Iteration Log](log.md) — Change history
 * [Daily Notes](../daily/README.md) — Daily notes
 * [Workflows](../ops/workflows.md) — Operating workflows
-* [Wiki Schema](../ops/wiki-schema.md) — Wiki frontmatter schema
 
 ## Sources
 
@@ -22,7 +29,7 @@ This page is the map of the knowledge base. Return here after adding or merging 
 
 ## Domains
 
-* `wiki/` — larger topic maps
+* `wiki/` — larger topic maps (agents, AI/ML, prompt engineering, memory, infra)
 * Starting template: [Domain Map Template](../templates/domain-map.md)
 
 ## Projects

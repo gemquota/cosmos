@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE COMPONENT ONTOLOGY VENN</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Three components as overlapping sets in semantic space — position, radius, and hue encode ontological spectra</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<line x1="180" y1="1050" x2="820" y2="1050" stroke="#334155" stroke-width="1.4" marker-end="url(#arwG)" opacity=".9"/>
+<line x1="180" y1="1050" x2="180" y2="200" stroke="#334155" stroke-width="1.4" marker-end="url(#arwG)" opacity=".9"/>
+<text x="820" y="1072" text-anchor="end" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700">LONG-TERM · months</text>
+<text x="180" y="1072" text-anchor="start" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700">REAL-TIME · seconds</text>
+<text x="154" y="625.0" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700" transform="rotate(-90 154 625.0)">EXECUTION ⇄ THEORY</text>
+<line x1="280" y1="1045" x2="280" y2="1055" stroke="#334155" stroke-width="1"/>
+<text x="280" y="1064" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">sec</text>
+<line x1="460" y1="1045" x2="460" y2="1055" stroke="#334155" stroke-width="1"/>
+<text x="460" y="1064" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">min</text>
+<line x1="640" y1="1045" x2="640" y2="1055" stroke="#334155" stroke-width="1"/>
+<text x="640" y="1064" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">hr</text>
+<line x1="800" y1="1045" x2="800" y2="1055" stroke="#334155" stroke-width="1"/>
+<text x="800" y="1064" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">days+</text>
+<line x1="175" y1="330" x2="185" y2="330" stroke="#334155" stroke-width="1"/>
+<text x="168" y="333" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">strategy</text>
+<line x1="175" y1="500" x2="185" y2="500" stroke="#334155" stroke-width="1"/>
+<text x="168" y="503" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">ideation</text>
+<line x1="175" y1="680" x2="185" y2="680" stroke="#334155" stroke-width="1"/>
+<text x="168" y="683" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">action</text>
+<line x1="175" y1="860" x2="185" y2="860" stroke="#334155" stroke-width="1"/>
+<text x="168" y="863" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">tool calls</text>
+<text x="275" y="1030" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9" font-style="italic">ACTION plane</text>
+<text x="720" y="1030" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9" font-style="italic">MEMORY plane</text>
+<text x="275" y="228" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9" font-style="italic">IDEATION plane</text>
+<text x="720" y="228" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9" font-style="italic">STRATEGY plane</text>
+<circle cx="660" cy="560" r="240" fill="#22d3ee" fill-opacity="0.5" stroke="#22d3ee" stroke-width="2" style="mix-blend-mode:screen"/>
+<circle cx="450" cy="310" r="185" fill="#f59e0b" fill-opacity="0.5" stroke="#f59e0b" stroke-width="2" style="mix-blend-mode:screen"/>
+<circle cx="280" cy="500" r="195" fill="#818cf8" fill-opacity="0.5" stroke="#818cf8" stroke-width="2" style="mix-blend-mode:screen"/>
+<circle cx="280" cy="500" r="195" fill="none" stroke="#818cf8" stroke-width="2.4"/>
+<text x="280" y="490" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="14" font-weight="800">RSIS3 · CORE ENGINE</text>
+<text x="280" y="510" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">67k LOC · L1→L3 loops · evaluator · telemetry</text>
+<circle cx="450" cy="310" r="185" fill="none" stroke="#f59e0b" stroke-width="2.4"/>
+<text x="450" y="300" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="14" font-weight="800">SPACE · IDEATION</text>
+<text x="450" y="320" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">69k LOC · 326 probes · 7 series · 6 exports</text>
+<circle cx="660" cy="560" r="240" fill="none" stroke="#22d3ee" stroke-width="2.4"/>
+<text x="660" y="550" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="14" font-weight="800">MYKB · MEMORY</text>
+<text x="660" y="570" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">103k LOC · 2,360+ pages · graph · temporal engine</text>
+<rect x="313" y="379" width="109" height="46" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="367" y="392" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="11" font-weight="600">RRP → L2</text>
+<text x="367" y="406" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9" font-weight="600">ideation feeds</text>
+<text x="367" y="420" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9" font-weight="600">improvement cycles</text>
+<rect x="388" y="504" width="124" height="46" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="450" y="518" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="11" font-weight="600">L3 CONSOLIDATION</text>
+<text x="450" y="532" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9" font-weight="600">lessons → memory</text>
+<text x="450" y="546" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9" font-weight="600">git → graph → vectors</text>
+<rect x="474" y="396" width="134" height="46" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="541" y="410" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="11" font-weight="600">SPEC CAPTURE</text>
+<text x="541" y="424" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9" font-weight="600">exports + session hooks</text>
+<text x="541" y="438" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9" font-weight="600">stored in the wiki</text>
+<rect x="378" y="437" width="153" height="36" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="455" y="452" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="11.5" font-weight="600">THE COSMOS MIND</text>
+<text x="455" y="466" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="9" font-weight="600">recursive self-improvement</text>
+<text x="60" y="1180" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-weight="700">RADIUS ∝ √LOC</text>
+<circle cx="255" cy="1198" r="195" fill="#818cf8" fill-opacity=".45" stroke="#818cf8" stroke-width="1.4"/>
+<text x="466" y="1202" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">RSIS3 · 67k LOC</text>
+<circle cx="298" cy="1238" r="238" fill="#22d3ee" fill-opacity=".45" stroke="#22d3ee" stroke-width="1.4"/>
+<text x="552" y="1242" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">MyKB · 103k LOC</text>
+<circle cx="252" cy="1278" r="192" fill="#f59e0b" fill-opacity=".45" stroke="#f59e0b" stroke-width="1.4"/>
+<text x="460" y="1282" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">SPACE · 69k LOC</text>
+<text x="940" y="1180" text-anchor="end" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-weight="700">OVERLAP = SHARED SEMANTIC TERRITORY</text>
+<circle cx="940" cy="1202" r="7" fill="#fad3f8" fill-opacity=".9"/>
+<text x="926" y="1205.5" text-anchor="end" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">RSIS3 × SPACE</text>
+<circle cx="940" cy="1228" r="7" fill="#92ebff" fill-opacity=".9"/>
+<text x="926" y="1231.5" text-anchor="end" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">RSIS3 × MyKB</text>
+<circle cx="940" cy="1254" r="7" fill="#f6eeef" fill-opacity=".9"/>
+<text x="926" y="1257.5" text-anchor="end" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">SPACE × MyKB</text>
+<circle cx="940" cy="1280" r="7" fill="#fbf7ff" fill-opacity=".9"/>
+<text x="926" y="1283.5" text-anchor="end" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">all three</text>
+<text x="500" y="1260" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">colour = component identity · position = semantic spectra · size = footprint · blends = shared meaning</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Generated from source analysis</text>
+</svg>

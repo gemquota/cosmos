@@ -7,6 +7,23 @@ tags: ["questions", "gap-analysis"]
 
 # Open Questions
 
+
+## Curated Open Questions (2026-07-31)
+
+From the acquisition round, high-value threads to resolve:
+
+- **Automated curation ceiling** — what fraction of dedup, linking, and
+  summarization can be automated before quality degrades? (see
+  [[wiki/memory/knowledge-curation|knowledge curation]])
+- **Provenance decay** — how should evidence age when a source page is edited
+  or deleted? (see [[wiki/syntheses/evidence-and-provenance|evidence and
+  provenance]])
+- **Retrieval quality** — when does hybrid search beat pure semantic search in
+  this corpus? (see [[wiki/data-storage/hybrid-search|hybrid search]])
+- **Agent eval discipline** — which golden tests should gate RSIS3 mutations?
+  (see [[wiki/testing/golden-tests|golden tests]] and
+  [[wiki/agent-systems/agent-evaluation|agent evaluation]])
+
 _Generated: 2026-07-20 03:48 UTC_
 _Total: 40 questions_
 

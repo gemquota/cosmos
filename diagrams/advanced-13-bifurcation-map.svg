@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE BIFURCATION PORTRAIT — STRUCTURE AS λ GROWS</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">λ = integration depth · each milestone is a real subsystem joining — and each joins the portrait as a new attractor</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<line x1="120" y1="150" x2="880" y2="150" stroke="#334155" stroke-width="1.4" marker-end="url(#arwG)" opacity=".9"/>
+<text x="500" y="128" text-anchor="middle" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="10">λ — INTEGRATION DEPTH (control parameter)</text>
+<line x1="186" y1="150" x2="186" y2="166" stroke="#64748b" stroke-width="2"/>
+<text x="186" y="184" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="9.5">λ₁ · ENGINE</text>
+<line x1="378" y1="150" x2="378" y2="166" stroke="#64748b" stroke-width="2"/>
+<text x="378" y="184" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="9.5">λ₂ · +MEMORY</text>
+<line x1="570" y1="150" x2="570" y2="166" stroke="#64748b" stroke-width="2"/>
+<text x="570" y="184" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="9.5">λ₃ · +IDEATION</text>
+<line x1="762" y1="150" x2="762" y2="166" stroke="#64748b" stroke-width="2"/>
+<text x="762" y="184" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="9.5">λ₄ · +TELEMETRY</text>
+<line x1="186" y1="120" x2="186" y2="172" stroke="#f472b6" stroke-width="2.5"><animate attributeName="x1" values="186;762;186" dur="40s" repeatCount="indefinite"/><animate attributeName="x2" values="186;762;186" dur="40s" repeatCount="indefinite"/></line>
+<circle r="7" fill="#f472b6" stroke="#0b1120" stroke-width="1.5"><animate attributeName="cx" values="186;762;186" dur="40s" repeatCount="indefinite"/></circle>
+<text x="760" y="106" text-anchor="end" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="8.5">λ(t) — the cursor sweeps the regimes</text>
+<rect x="96" y="210" width="180" height="330" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+<rect x="96" y="210" width="180" height="30" rx="12" fill="#334155" opacity=".25"/>
+<rect x="96" y="228" width="180" height="12" fill="#475569" opacity=".2"/>
+<text x="186.0" y="230" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="11" font-weight="800">ENGINE ONLY</text>
+<text x="186.0" y="254" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8">1 fixed point</text>
+<circle cx="186" cy="395" r="14" fill="#818cf8" opacity=".92" stroke="#0b1120" stroke-width="1.6"/>
+<text x="186" y="399" text-anchor="middle" fill="#0b1120" font-family="system-ui,sans-serif" font-size="7" font-weight="800">RSIS3</text>
+<g><animateTransform attributeName="transform" type="rotate" from="0 186 395" to="360 186 395" dur="3s" repeatCount="indefinite"/><circle cx="208" cy="395" r="3" fill="#818cf8"/></g>
+<text x="186.0" y="510" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">L1/L2/L3 fire with no external memory</text>
+<rect x="288" y="210" width="180" height="330" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+<rect x="288" y="210" width="180" height="30" rx="12" fill="#334155" opacity=".25"/>
+<rect x="288" y="228" width="180" height="12" fill="#475569" opacity=".2"/>
+<text x="378.0" y="230" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="11" font-weight="800">+ MEMORY</text>
+<text x="378.0" y="254" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8">fixed point + cycle</text>
+<line x1="336.0" y1="395" x2="420.0" y2="395" stroke="#22d3ee" stroke-width="1.2" stroke-dasharray="3,4" opacity=".55"/>
+<circle cx="336" cy="395" r="14" fill="#818cf8" opacity=".92" stroke="#0b1120" stroke-width="1.6"/>
+<text x="336" y="399" text-anchor="middle" fill="#0b1120" font-family="system-ui,sans-serif" font-size="7" font-weight="800">RSIS3</text>
+<g><animateTransform attributeName="transform" type="rotate" from="0 336 395" to="360 336 395" dur="3s" repeatCount="indefinite"/><circle cx="358" cy="395" r="3" fill="#818cf8"/></g>
+<circle cx="420" cy="395" r="14" fill="#22d3ee" opacity=".92" stroke="#0b1120" stroke-width="1.6"/>
+<text x="420" y="399" text-anchor="middle" fill="#0b1120" font-family="system-ui,sans-serif" font-size="7" font-weight="800">MYKB</text>
+<g><animateTransform attributeName="transform" type="rotate" from="0 420 395" to="360 420 395" dur="3s" repeatCount="indefinite"/><circle cx="442" cy="395" r="3" fill="#22d3ee"/></g>
+<text x="378.0" y="510" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">lessons persist · retrieval :8765 feeds L1</text>
+<rect x="480" y="210" width="180" height="330" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+<rect x="480" y="210" width="180" height="30" rx="12" fill="#334155" opacity=".25"/>
+<rect x="480" y="228" width="180" height="12" fill="#475569" opacity=".2"/>
+<text x="570.0" y="230" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="11" font-weight="800">+ IDEATION</text>
+<text x="570.0" y="254" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8">3 basins + separatrix</text>
+<line x1="570.0" y1="343" x2="614.0" y2="433" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="3,4" opacity=".55"/>
+<line x1="614.0" y1="433" x2="526.0" y2="433" stroke="#818cf8" stroke-width="1.2" stroke-dasharray="3,4" opacity=".55"/>
+<line x1="526.0" y1="433" x2="570.0" y2="343" stroke="#22d3ee" stroke-width="1.2" stroke-dasharray="3,4" opacity=".55"/>
+<circle cx="570" cy="343" r="14" fill="#f59e0b" opacity=".92" stroke="#0b1120" stroke-width="1.6"/>
+<text x="570" y="347" text-anchor="middle" fill="#0b1120" font-family="system-ui,sans-serif" font-size="7" font-weight="800">SPACE</text>
+<g><animateTransform attributeName="transform" type="rotate" from="0 570 343" to="360 570 343" dur="3s" repeatCount="indefinite"/><circle cx="592" cy="343" r="3" fill="#f59e0b"/></g>
+<circle cx="614" cy="433" r="14" fill="#818cf8" opacity=".92" stroke="#0b1120" stroke-width="1.6"/>
+<text x="614" y="437" text-anchor="middle" fill="#0b1120" font-family="system-ui,sans-serif" font-size="7" font-weight="800">RSIS3</text>
+<g><animateTransform attributeName="transform" type="rotate" from="0 614 433" to="360 614 433" dur="3s" repeatCount="indefinite"/><circle cx="636" cy="433" r="3" fill="#818cf8"/></g>
+<circle cx="526" cy="433" r="14" fill="#22d3ee" opacity=".92" stroke="#0b1120" stroke-width="1.6"/>
+<text x="526" y="437" text-anchor="middle" fill="#0b1120" font-family="system-ui,sans-serif" font-size="7" font-weight="800">MYKB</text>
+<g><animateTransform attributeName="transform" type="rotate" from="0 526 433" to="360 526 433" dur="3s" repeatCount="indefinite"/><circle cx="548" cy="433" r="3" fill="#22d3ee"/></g>
+<text x="570.0" y="510" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">RRP specs feed L2 · separatrix appears</text>
+<rect x="672" y="210" width="180" height="330" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+<rect x="672" y="210" width="180" height="30" rx="12" fill="#334155" opacity=".25"/>
+<rect x="672" y="228" width="180" height="12" fill="#475569" opacity=".2"/>
+<text x="762.0" y="230" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="11" font-weight="800">+ TELEMETRY</text>
+<text x="762.0" y="254" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8">4 basins, closed loop</text>
+<line x1="762.0" y1="337" x2="718.0" y2="395" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="3,4" opacity=".55"/>
+<line x1="718.0" y1="395" x2="762.0" y2="453" stroke="#818cf8" stroke-width="1.2" stroke-dasharray="3,4" opacity=".55"/>
+<line x1="762.0" y1="453" x2="806.0" y2="395" stroke="#22d3ee" stroke-width="1.2" stroke-dasharray="3,4" opacity=".55"/>
+<line x1="806.0" y1="395" x2="762.0" y2="337" stroke="#10b981" stroke-width="1.2" stroke-dasharray="3,4" opacity=".55"/>
+<circle cx="762" cy="337" r="14" fill="#f59e0b" opacity=".92" stroke="#0b1120" stroke-width="1.6"/>
+<text x="762" y="341" text-anchor="middle" fill="#0b1120" font-family="system-ui,sans-serif" font-size="7" font-weight="800">SPACE</text>
+<g><animateTransform attributeName="transform" type="rotate" from="0 762 337" to="360 762 337" dur="3s" repeatCount="indefinite"/><circle cx="784" cy="337" r="3" fill="#f59e0b"/></g>
+<circle cx="718" cy="395" r="14" fill="#818cf8" opacity=".92" stroke="#0b1120" stroke-width="1.6"/>
+<text x="718" y="399" text-anchor="middle" fill="#0b1120" font-family="system-ui,sans-serif" font-size="7" font-weight="800">RSIS3</text>
+<g><animateTransform attributeName="transform" type="rotate" from="0 718 395" to="360 718 395" dur="3s" repeatCount="indefinite"/><circle cx="740" cy="395" r="3" fill="#818cf8"/></g>
+<circle cx="762" cy="453" r="14" fill="#22d3ee" opacity=".92" stroke="#0b1120" stroke-width="1.6"/>
+<text x="762" y="457" text-anchor="middle" fill="#0b1120" font-family="system-ui,sans-serif" font-size="7" font-weight="800">MYKB</text>
+<g><animateTransform attributeName="transform" type="rotate" from="0 762 453" to="360 762 453" dur="3s" repeatCount="indefinite"/><circle cx="784" cy="453" r="3" fill="#22d3ee"/></g>
+<circle cx="806" cy="395" r="14" fill="#10b981" opacity=".92" stroke="#0b1120" stroke-width="1.6"/>
+<text x="806" y="399" text-anchor="middle" fill="#0b1120" font-family="system-ui,sans-serif" font-size="7" font-weight="800">DASH</text>
+<g><animateTransform attributeName="transform" type="rotate" from="0 806 395" to="360 806 395" dur="3s" repeatCount="indefinite"/><circle cx="828" cy="395" r="3" fill="#10b981"/></g>
+<text x="762.0" y="510" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">success-rate telemetry closes the loop</text>
+<line x1="120" y1="880" x2="880" y2="880" stroke="#334155" stroke-width="1.4"/>
+<text x="500" y="898" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">THE BIFURCATION TREE — every subsystem that joins adds an attractor branch</text>
+<line x1="186" y1="880" x2="186" y2="800" stroke="#818cf8" stroke-width="2" opacity=".8"/>
+<circle cx="186" cy="794" r="6" fill="#818cf8" stroke="#0b1120" stroke-width="1.5"/>
+<text x="186" y="782" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700">RSIS3</text>
+<line x1="348" y1="880" x2="348" y2="800" stroke="#818cf8" stroke-width="2" opacity=".8"/>
+<circle cx="348" cy="794" r="6" fill="#818cf8" stroke="#0b1120" stroke-width="1.5"/>
+<text x="348" y="782" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700">RSIS3</text>
+<line x1="408" y1="880" x2="408" y2="800" stroke="#22d3ee" stroke-width="2" opacity=".8"/>
+<circle cx="408" cy="794" r="6" fill="#22d3ee" stroke="#0b1120" stroke-width="1.5"/>
+<text x="408" y="782" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700">MYKB</text>
+<line x1="524" y1="880" x2="524" y2="800" stroke="#f59e0b" stroke-width="2" opacity=".8"/>
+<circle cx="524" cy="794" r="6" fill="#f59e0b" stroke="#0b1120" stroke-width="1.5"/>
+<text x="524" y="782" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700">SPACE</text>
+<line x1="570" y1="880" x2="570" y2="800" stroke="#818cf8" stroke-width="2" opacity=".8"/>
+<circle cx="570" cy="794" r="6" fill="#818cf8" stroke="#0b1120" stroke-width="1.5"/>
+<text x="570" y="782" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700">RSIS3</text>
+<line x1="616" y1="880" x2="616" y2="800" stroke="#22d3ee" stroke-width="2" opacity=".8"/>
+<circle cx="616" cy="794" r="6" fill="#22d3ee" stroke="#0b1120" stroke-width="1.5"/>
+<text x="616" y="782" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700">MYKB</text>
+<line x1="710" y1="880" x2="710" y2="800" stroke="#f59e0b" stroke-width="2" opacity=".8"/>
+<circle cx="710" cy="794" r="6" fill="#f59e0b" stroke="#0b1120" stroke-width="1.5"/>
+<text x="710" y="782" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700">SPACE</text>
+<line x1="745" y1="880" x2="745" y2="800" stroke="#818cf8" stroke-width="2" opacity=".8"/>
+<circle cx="745" cy="794" r="6" fill="#818cf8" stroke="#0b1120" stroke-width="1.5"/>
+<text x="745" y="782" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700">RSIS3</text>
+<line x1="779" y1="880" x2="779" y2="800" stroke="#22d3ee" stroke-width="2" opacity=".8"/>
+<circle cx="779" cy="794" r="6" fill="#22d3ee" stroke="#0b1120" stroke-width="1.5"/>
+<text x="779" y="782" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700">MYKB</text>
+<line x1="814" y1="880" x2="814" y2="800" stroke="#10b981" stroke-width="2" opacity=".8"/>
+<circle cx="814" cy="794" r="6" fill="#10b981" stroke="#0b1120" stroke-width="1.5"/>
+<text x="814" y="782" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700">DASH</text>
+<text x="500" y="926" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="8.5">1 FIXED POINT · 2 ATTRACTORS · 3 BASINS + SEPARATRIX · 4 BASINS — structure accumulates with λ</text>
+<rect x="96" y="960" width="816" height="200" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="96" y="960" width="816" height="30" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="96" y="978" width="816" height="12" fill="#f472b6" opacity=".12"/>
+<text x="504.0" y="979.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE BIFURCATION PORTRAIT</text>
+<text x="110" y="1004" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">λ = INTEGRATION DEPTH — the control parameter; each milestone is a real subsystem joining the ecosystem.</text>
+<text x="110" y="1022" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">EACH BRANCH = one attractor born into the portrait: fixed point → limit cycle → separatrix → four basins.</text>
+<text x="110" y="1040" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">λ CURSOR sweeps the timeline; inside every panel the loops keep firing at their real cadences (motion = live loops).</text>
+<text x="110" y="1058" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">Regimes match the repo: RSIS3 core → +MyKB memory → +SPACE ideation → +unified-dashboard telemetry.</text>
+<text x="110" y="1076" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">The topology is the point: adding a subsystem does not add a box — it changes the dynamics.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">bifurcation diagrams answer 'what changes when a new component joins?' — here the answer is the phase portrait itself</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 5 · dynamical portraits</text>
+</svg>
