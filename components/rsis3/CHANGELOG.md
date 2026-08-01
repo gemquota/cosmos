@@ -1,4 +1,37 @@
 
+## [0.4.0] — 2026-08-01
+
+### Added
+- L8 Meta-Meta loop (`rsis/loop_l8.py`, `python -m rsis metameta`): observes
+  L5 generation-fitness history (`.rsis/strategies.json`) and raises
+  `l5.mutation_rate` on stagnation / shrinks `l5.population_size` on
+  volatility; persisted to `.rsis/metameta_state.json`
+- L9 MMM loop (`rsis/loop_l9.py`, `python -m rsis mmm`): observes L6 tuning
+  history (`.rsis/identity_state.json`) and widens the
+  `l6.shrink_below`/`l6.grow_above` band on oscillation / narrows it on
+  stall; persisted to `.rsis/mmm_state.json`
+- `L5_TUNABLES` + `L6_TUNABLES` registries; `load_config()` now injects
+  L8/L9 state at startup (all nine loops consume tuned params)
+- L5 records generation-fitness history for L8
+- Dashboard **Loops tab**: `dashboard/loops.json` emitted by
+  `gen-static-data.py` (state + telemetry, graceful never-run defaults),
+  rendered as a nine-loop stack with targets, tuned params, signals, run
+  counts; `--check` validates the snapshot
+
+### Changed
+- RSIS_SPEC §1.1/§1.2/§1.4: L8/L9 marked implemented; termination rows and
+  arbitration table extended; topology text corrected (L7–L9 are parallel
+  observers)
+- `rsis` package version bumped to 0.4.0
+
+### Verified
+- L8: stagnating L5 fitness → `l5.mutation_rate` 0.2 → 0.25 (raise_mutation);
+  oscillating best-fitness → population 8 → 6 (shrink_population)
+- L9: alternating L6 shrink/grow → band [0.5, 0.8] → [0.45, 0.85] (widen);
+  stalled L6 + low success → [0.55, 0.75] (narrow); gap-collapse no-op
+- Fresh-process startup injection of `l5.*`/`l6.*` confirmed
+- Dashboard Loops tab renders 10 cards; MyKB/SPACE integration checks pass
+
 ## [0.3.0] — 2026-07-31
 
 ### Added

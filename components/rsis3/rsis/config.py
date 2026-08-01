@@ -12,8 +12,9 @@ logger = logging.getLogger(__name__)
 
 # ── Tunable Parameter Registry (+3 diagonal ownership) ────────────────────
 # Entries: name -> (min, max, CONFIG attr path, kind)
-# L4 (Optimizer) owns L1 execution params; L5 (Evolution) owns L2 params;
-# L6 (Identity) owns L3 params; L7 (Meta-Cog) owns L4 params.
+# Loop k+3 tunes loop k: L4 (Optimizer) owns L1 execution params; L5
+# (Evolution) owns L2 params; L6 (Identity) owns L3 params; L7 (Meta-Cog)
+# owns L4 params; L8 (Meta-Meta) owns L5 params; L9 (MMM) owns L6 params.
 L1_TUNABLES = {
     "l1.max_retries": (1, 8, ("l1", "max_retries"), "int"),
     "l1.max_tool_calls": (5, 25, ("l1", "max_tool_calls_per_step"), "int"),
@@ -32,6 +33,16 @@ L4_TUNABLES = {
     "l4.min_outcomes": (2, 20, ("l4", "min_outcomes"), "int"),
     "l4.target_success_low": (0.3, 0.7, ("l4", "target_success_low"), "float"),
     "l4.target_success_high": (0.7, 0.95, ("l4", "target_success_high"), "float"),
+}
+
+L5_TUNABLES = {
+    "l5.mutation_rate": (0.05, 0.6, ("l5", "mutation_rate"), "float"),
+    "l5.population_size": (4, 16, ("l5", "population_size"), "int"),
+}
+
+L6_TUNABLES = {
+    "l6.shrink_below": (0.2, 0.6, ("l6", "shrink_below"), "float"),
+    "l6.grow_above": (0.6, 0.95, ("l6", "grow_above"), "float"),
 }
 
 
@@ -102,6 +113,28 @@ class L7Config:
     state_path: str = ".rsis/metacog_state.json"
 
 
+@dataclass
+class L8Config:
+    """Meta-Meta Loop — tunes L5 strategy params (+3 diagonal)."""
+    stagnation_window: int = 3
+    volatility_window: int = 4
+    fitness_epsilon: float = 0.005
+    mutation_step: float = 0.05
+    population_step: int = 2
+    cycle_timeout_s: int = 600  # 10 min
+    state_path: str = ".rsis/metameta_state.json"
+
+
+@dataclass
+class L9Config:
+    """MMM Loop — tunes L6 identity params (+3 diagonal)."""
+    oscillation_window: int = 4
+    stall_window: int = 3
+    band_step: float = 0.05
+    cycle_timeout_s: int = 600  # 10 min
+    state_path: str = ".rsis/mmm_state.json"
+
+
 # ── Resource Limits ───────────────────────────────────────────────────────
 
 @dataclass
@@ -148,6 +181,8 @@ class RSISConfig:
     l5: L5Config = field(default_factory=L5Config)
     l6: L6Config = field(default_factory=L6Config)
     l7: L7Config = field(default_factory=L7Config)
+    l8: L8Config = field(default_factory=L8Config)
+    l9: L9Config = field(default_factory=L9Config)
     resources: ResourceLimits = field(default_factory=ResourceLimits)
     memory: MemoryConfig = field(default_factory=MemoryConfig)
     evaluator: EvaluatorConfig = field(default_factory=EvaluatorConfig)
@@ -179,7 +214,8 @@ def _apply_tuned_state(cfg: RSISConfig) -> RSISConfig:
     to defaults.
     """
     cfg_lookup = {}
-    for reg in (L1_TUNABLES, L2_TUNABLES, L3_TUNABLES, L4_TUNABLES):
+    for reg in (L1_TUNABLES, L2_TUNABLES, L3_TUNABLES, L4_TUNABLES,
+                L5_TUNABLES, L6_TUNABLES):
         for name, (lo, hi, attr_path, kind) in reg.items():
             cfg_lookup[name] = (lo, hi, attr_path, kind)
 
@@ -236,6 +272,28 @@ def _apply_tuned_state(cfg: RSISConfig) -> RSISConfig:
                     _apply(name, value)
         except Exception as e:
             logger.warning("Ignoring L7 state %s: %s", l7_path, e)
+
+    # L8 meta-meta state (owns l5.*)
+    l8_path = Path(cfg.workspace_dir) / cfg.l8.state_path
+    if l8_path.exists():
+        try:
+            state = json.loads(l8_path.read_text())
+            for name, value in state.get("params", {}).items():
+                if name in cfg_lookup:
+                    _apply(name, value)
+        except Exception as e:
+            logger.warning("Ignoring L8 state %s: %s", l8_path, e)
+
+    # L9 MMM state (owns l6.*)
+    l9_path = Path(cfg.workspace_dir) / cfg.l9.state_path
+    if l9_path.exists():
+        try:
+            state = json.loads(l9_path.read_text())
+            for name, value in state.get("params", {}).items():
+                if name in cfg_lookup:
+                    _apply(name, value)
+        except Exception as e:
+            logger.warning("Ignoring L9 state %s: %s", l9_path, e)
 
     return cfg
 
