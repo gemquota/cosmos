@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1400" font-family="system-ui,sans-serif" style="background:#0b1120">
+<line x1="90" y1="1310" x2="1010" y2="1310" stroke="#1e293b" stroke-width="2"/>
+<line x1="90" y1="90" x2="90" y2="1310" stroke="#1e293b" stroke-width="2"/>
+<circle cx="747.3" cy="568.7" r="48" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.26"/>
+<text x="681.3" y="656.7" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" opacity="0.9">L1 · action</text>
+<circle cx="797.6" cy="584.8" r="84" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.26" stroke-dasharray="3,4"/>
+<text x="612.1" y="626.2" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" opacity="0.9">L2 · improvement</text>
+<circle cx="726.9" cy="724.6" r="120" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.26"/>
+<text x="703.1" y="469.7" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" opacity="0.9">L3 · evolution</text>
+<circle cx="781.9" cy="463.7" r="156" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.26" stroke-dasharray="3,4"/>
+<text x="617.8" y="744.7" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" opacity="0.9">L4 · optimizer · tunes L1</text>
+<circle cx="643.2" cy="782.7" r="192" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.26"/>
+<text x="795" y="412.7" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" opacity="0.9">L5 · strategies · tunes L2</text>
+<circle cx="682.1" cy="830.6" r="228" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.26" stroke-dasharray="3,4"/>
+<text x="768.7" y="370.8" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" opacity="0.9">L6 · identity · tunes L3</text>
+<circle cx="700.2" cy="341.6" r="264" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.26"/>
+<text x="732.9" y="884.6" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" opacity="0.9">L7 · meta-cog · tunes L4</text>
+<circle cx="422.7" cy="542.3" r="300" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.26" stroke-dasharray="3,4"/>
+<text x="1025.1" y="671.3" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" opacity="0.9">L8 · meta-meta · tunes L5</text>
+<circle cx="422.2" cy="768" r="336" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.26"/>
+<text x="1023.9" y="434.4" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" opacity="0.9">L9 · MMM · tunes L6</text>
+<path d="M 747.3 568.7 Q 772.5 576.8 797.6 584.8" fill="none" stroke="#a5b4fc" stroke-width="3.2" opacity="0.95"/>
+<text x="772.5" y="600.8" text-anchor="middle" fill="#a5b4fc" font-size="10.5" font-family="ui-monospace,Menlo,monospace" opacity="0.95">runtime chain</text>
+<path d="M 797.6 584.8 Q 762.3 654.7 726.9 724.6" fill="none" stroke="#a5b4fc" stroke-width="3.2" opacity="0.95"/>
+<text x="762.3" y="678.7" text-anchor="middle" fill="#a5b4fc" font-size="10.5" font-family="ui-monospace,Menlo,monospace" opacity="0.95">runtime chain</text>
+<path d="M 797.6 584.8 Q 929.7 624.2 1061.7 735.6" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="929.7" y="618.2" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">candidate</text>
+<path d="M 1061.7 735.6 Q 1036.7 747.0 1011.7 830.5" fill="none" stroke="#f472b6" stroke-width="3" stroke-dasharray="6,4" opacity="0.80"/>
+<text x="1036.7" y="741.0" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">spawn · SHA-256</text>
+<path d="M 1011.7 830.5 Q 904.7 671.6 797.6 584.8" fill="none" stroke="#f472b6" stroke-width="3" stroke-dasharray="6,4" opacity="0.80"/>
+<text x="904.7" y="665.6" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">verdict</text>
+<path d="M 781.9 463.7 Q 764.6 480.2 747.3 568.7" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="764.6" y="474.2" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">tune</text>
+<path d="M 643.2 782.7 Q 720.4 647.8 797.6 584.8" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="720.4" y="641.8" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">tune</text>
+<path d="M 682.1 830.6 Q 704.5 741.6 726.9 724.6" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="704.5" y="735.6" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">tune</text>
+<path d="M 700.2 341.6 Q 741.0 366.6 781.9 463.7" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="741.0" y="360.6" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">tune</text>
+<path d="M 422.7 542.3 Q 533.0 626.5 643.2 782.7" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="533.0" y="620.5" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">tune</text>
+<path d="M 422.2 768.0 Q 552.1 763.3 682.1 830.6" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="552.1" y="757.3" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">tune</text>
+<path d="M 497.1 307.5 Q 612.0 480.0 726.9 724.6" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="612.0" y="474.0" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">projection</text>
+<path d="M 828.4 957.1 Q 805.1 674.4 781.9 463.7" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="805.1" y="668.4" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">checkpoint</text>
+<path d="M 726.9 724.6 Q 652.3 859.3 577.6 1066.0" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="652.3" y="853.3" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">consolidate</text>
+<g opacity="1.00" transform="translate(747.3,568.7)">
+<circle r="31.5" fill="#818cf8" opacity=".1"/>
+<circle r="22.5" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L1 · action</text>
+</g>
+<g opacity="1.00" transform="translate(797.6,584.8)">
+<circle r="33" fill="#818cf8" opacity=".1"/>
+<circle r="24" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L2 · improvement</text>
+</g>
+<g opacity="1.00" transform="translate(726.9,724.6)">
+<circle r="30" fill="#818cf8" opacity=".1"/>
+<circle r="21" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L3 · evolution</text>
+</g>
+<g opacity="1.00" transform="translate(781.9,463.7)">
+<circle r="25.5" fill="#818cf8" opacity=".1"/>
+<circle r="16.5" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L4 · optimizer</text>
+</g>
+<g opacity="1.00" transform="translate(643.2,782.7)">
+<circle r="25.5" fill="#818cf8" opacity=".1"/>
+<circle r="16.5" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L5 · strategies</text>
+</g>
+<g opacity="1.00" transform="translate(682.1,830.6)">
+<circle r="24" fill="#818cf8" opacity=".1"/>
+<circle r="15" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L6 · identity</text>
+</g>
+<g opacity="1.00" transform="translate(700.2,341.6)">
+<circle r="24" fill="#818cf8" opacity=".1"/>
+<circle r="15" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L7 · meta-cog</text>
+</g>
+<g opacity="1.00" transform="translate(422.7,542.3)">
+<circle r="22.5" fill="#818cf8" opacity=".1"/>
+<circle r="13.5" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L8 · meta-meta</text>
+</g>
+<g opacity="1.00" transform="translate(422.2,768.0)">
+<circle r="22.5" fill="#818cf8" opacity=".1"/>
+<circle r="13.5" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="14" font-weight="700">L9 · MMM</text>
+</g>
+<g opacity="1.00" transform="translate(1061.7,735.6)">
+<circle r="24" fill="#818cf8" opacity=".1"/>
+<circle r="15" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">evaluator client</text>
+</g>
+<g opacity="1.00" transform="translate(1011.7,830.5)">
+<circle r="28.5" fill="#f472b6" opacity=".1"/>
+<circle r="19.5" fill="#f472b6" opacity=".22" stroke="#f472b6" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">evaluator · immutable</text>
+</g>
+<g opacity="1.00" transform="translate(577.6,1066.0)">
+<circle r="25.5" fill="#818cf8" opacity=".1"/>
+<circle r="16.5" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">memory manager</text>
+</g>
+<g opacity="1.00" transform="translate(675.2,237.1)">
+<circle r="25.5" fill="#818cf8" opacity=".1"/>
+<circle r="16.5" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="14" font-weight="700">telemetry</text>
+</g>
+<g opacity="1.00" transform="translate(497.1,307.5)">
+<circle r="22.5" fill="#818cf8" opacity=".1"/>
+<circle r="13.5" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">extrapolator</text>
+</g>
+<g opacity="1.00" transform="translate(828.4,957.1)">
+<circle r="22.5" fill="#818cf8" opacity=".1"/>
+<circle r="13.5" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">checkpoint · recovery</text>
+</g>
+</svg>

@@ -9,7 +9,7 @@ the new Expert+ and X++ panels, and the updated tab JS.
 import os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from _index_update import BASIC_CARDS, ADVANCED_CARDS, EXPERT_CARDS, PLUS_CARDS, OMEGA_CARD, card, section
+from _index_update import BASIC_CARDS, ADVANCED_CARDS, EXPERT_CARDS, PLUS_CARDS, OMEGA_CARD, NESTED_CARD, card, section
 
 HTML = os.path.join(os.path.dirname(HERE), "index.html")
 src = open(HTML).read()
@@ -80,9 +80,9 @@ xplus_extra = '''
 plus_section = section("EXPERT-PLUS", "Expert+ — cross-cutting systems views",
                        "Diagrams that read across all four runtimes at once: causality, entropy fields, resilience, time-scale separation, feedback topology, dependency lattices, resource flows, stability, phylogeny, and constraint hypergraphs.",
                        PLUS_CARDS)
-xplus_section = section("X++", "X++ — the interactive omega graph",
-                        "One graph of the whole ecosystem, interactive: 27 real module/artifact nodes on two semantic spectra, size = footprint, colour = component, edges = the six handoffs — with a &lambda; slider as the 4th axis.",
-                        [OMEGA_CARD], extra=xplus_extra)
+xplus_section = section("X++", "X++ — the interactive ecosystem graphs",
+                        "Two interactive views of the whole ecosystem: the &Omega; graph (27 nodes on two semantic spectra, &lambda; slider as the 4th axis) and the nested-loop graph (all 52 nodes / 64 links with the L1&ndash;L9 stack as nine concentric rings).",
+                        [OMEGA_CARD, NESTED_CARD], extra=xplus_extra)
 
 # fix x++ panel name (section() lowercases "X++" to "x++")
 xplus_section = xplus_section.replace('data-panel="x++"', 'data-panel="x-plus-plus"').replace('id="x++"', 'id="x-plus-plus"')
@@ -96,12 +96,12 @@ nav = '''<nav class="tabs" role="tablist" aria-label="Diagram tiers">
   <button class="tab-btn" data-tab="advanced" role="tab" aria-selected="false">Advanced <span class="count">26</span></button>
   <button class="tab-btn" data-tab="expert" role="tab" aria-selected="false">Expert <span class="count">24</span></button>
   <button class="tab-btn" data-tab="expert-plus" role="tab" aria-selected="false">Expert+ <span class="count">12</span></button>
-  <button class="tab-btn" data-tab="x-plus-plus" role="tab" aria-selected="false">X++ <span class="count">1</span></button>
+  <button class="tab-btn" data-tab="x-plus-plus" role="tab" aria-selected="false">X++ <span class="count">2</span></button>
 </nav>'''
 
 # header text
 head = head.replace("RSIS3 core engine &middot; MyKB memory &middot; SPACE ideation — 37 new diagrams in three tiers",
-                    "RSIS3 core engine &middot; MyKB memory &middot; SPACE ideation — 87 diagrams in five tiers + an interactive &Omega; graph")
+                    "RSIS3 core engine &middot; MyKB memory &middot; SPACE ideation — 88 diagrams in five tiers + two interactive &Omega; graphs")
 head = head.replace('<span class="badge">Basic &middot; Advanced &middot; Expert &middot; Mobile-first SVG</span>',
                     '<span class="badge">Basic &middot; Advanced &middot; Expert &middot; Expert+ &middot; X++ &middot; Mobile-first SVG</span>')
 head = re.sub(r'<nav class="tabs".*?</nav>', nav, head, flags=re.S)

@@ -200,7 +200,7 @@ function clientToVB(px, py) {
   return {x: vb.x + (px - r.left) * vb.w / r.width, y: vb.y + (py - r.top) * vb.h / r.height};
 }
 function zoomAt(f, cx, cy) {
-  const nw = Math.max(240, Math.min(3400, vb.w * f));
+  const nw = Math.max(240, Math.min(3400, vb.w / f));
   const nh = nw * VB0.h / VB0.w;
   const k = nw / vb.w;
   vb.x = cx - (cx - vb.x) * k;
