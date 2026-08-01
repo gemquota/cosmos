@@ -56,6 +56,13 @@ title: "Bundle Log"
 - **Verified**: L8 raise_mutation + shrink_population, L9 widen + narrow +
   gap-collapse no-op, fresh-process injection, jsdom Loops tab + MyKB/SPACE
   integration checks
+- **Full-loop run**: single telemetry session ran L1–L9 end-to-end — L2
+  applied an improvement, L3 consolidated, L4 tuned `l1.*` both directions,
+  L5 evolved 6 generations (oscillating fitness), L6 shrink/grow/shrink, L7
+  widened L4 deadband, L8 `shrink_population` (8→6), L9 widened L6 band;
+  audit: 60 events, all loops start+complete, zero errors; session
+  telemetry + 6 state files committed under `components/rsis3/.rsis` and
+  `dashboard/loops.json` regenerated to show the run
 
 ## 2026-07-31
 - **L3 consolidation (RSIRRP xxl + 4xl)**: new synthesis note

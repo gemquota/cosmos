@@ -1,0 +1,18 @@
+{
+  "params": {
+    "l6.shrink_below": 0.45,
+    "l6.grow_above": 0.8500000000000001
+  },
+  "history": [
+    {
+      "cycle": 1,
+      "deltas": {
+        "l6.shrink_below": -0.04999999999999999,
+        "l6.grow_above": 0.050000000000000044
+      },
+      "accepted": true,
+      "signal": "widen"
+    }
+  ],
+  "cycle": 1
+}

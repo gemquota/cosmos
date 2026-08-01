@@ -1,0 +1,35 @@
+{
+  "params": {
+    "l1.max_retries": 3.0,
+    "l1.max_tool_calls": 10.0
+  },
+  "history": [
+    {
+      "cycle": 1,
+      "deltas": {
+        "l1.max_retries": 1,
+        "l1.max_tool_calls": 1
+      },
+      "accepted": true,
+      "stats": {
+        "count": 13,
+        "success_rate": 0.46153846153846156,
+        "avg_score": 0.6634615384615384
+      }
+    },
+    {
+      "cycle": 2,
+      "deltas": {
+        "l1.max_retries": -1,
+        "l1.max_tool_calls": -1
+      },
+      "accepted": true,
+      "stats": {
+        "count": 20,
+        "success_rate": 0.9,
+        "avg_score": 0.9375
+      }
+    }
+  ],
+  "cycle": 2
+}

@@ -1,0 +1,139 @@
+{
+  "generation": 6,
+  "population": [
+    {
+      "id": "strategy-budget-1",
+      "params": {
+        "l2_attempts": 5,
+        "budget_factor": 1.0,
+        "focus": "general"
+      },
+      "fitness": 0.272625,
+      "evals": 6
+    },
+    {
+      "id": "strategy-seed-1",
+      "params": {
+        "l2_attempts": 5,
+        "budget_factor": 1.0,
+        "focus": "general"
+      },
+      "fitness": 0.272625,
+      "evals": 6
+    },
+    {
+      "id": "strategy-seed-2",
+      "params": {
+        "l2_attempts": 5,
+        "budget_factor": 1.0,
+        "focus": "general"
+      },
+      "fitness": 0.272625,
+      "evals": 6
+    },
+    {
+      "id": "strategy-seed-3",
+      "params": {
+        "l2_attempts": 5,
+        "budget_factor": 1.0,
+        "focus": "general"
+      },
+      "fitness": 0.272625,
+      "evals": 6
+    },
+    {
+      "id": "strategy-g6-cross-252",
+      "params": {
+        "l2_attempts": 5,
+        "budget_factor": 1.0,
+        "focus": "general"
+      },
+      "fitness": 0.0,
+      "evals": 0,
+      "lineage": "strategy-seed-3xstrategy-budget-1"
+    },
+    {
+      "id": "strategy-g6-cross-919",
+      "params": {
+        "l2_attempts": 5,
+        "budget_factor": 1.0,
+        "focus": "general"
+      },
+      "fitness": 0.0,
+      "evals": 0,
+      "lineage": "strategy-seed-2xstrategy-seed-3"
+    },
+    {
+      "id": "strategy-g6-cross-141",
+      "params": {
+        "l2_attempts": 5,
+        "budget_factor": 1.0,
+        "focus": "general"
+      },
+      "fitness": 0.0,
+      "evals": 0,
+      "lineage": "strategy-seed-3xstrategy-seed-1"
+    },
+    {
+      "id": "strategy-g6-3-163",
+      "params": {
+        "l2_attempts": 4,
+        "budget_factor": 1.0,
+        "focus": "general"
+      },
+      "fitness": 0.0,
+      "evals": 0,
+      "lineage": "strategy-seed-3"
+    }
+  ],
+  "history": [
+    {
+      "generation": 1,
+      "avg_fitness": 0.1631,
+      "best_fitness": 0.1631,
+      "population": 8,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 2,
+      "avg_fitness": 0.1465,
+      "best_fitness": 0.2113,
+      "population": 8,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 3,
+      "avg_fitness": 0.2571,
+      "best_fitness": 0.3692,
+      "population": 8,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 4,
+      "avg_fitness": 0.1907,
+      "best_fitness": 0.2997,
+      "population": 8,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 5,
+      "avg_fitness": 0.3014,
+      "best_fitness": 0.4578,
+      "population": 8,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 6,
+      "avg_fitness": 0.1772,
+      "best_fitness": 0.2726,
+      "population": 8,
+      "accepted": true,
+      "signal": "evolve"
+    }
+  ]
+}

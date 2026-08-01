@@ -121,14 +121,24 @@ def load_state(rel_path):
     except (json.JSONDecodeError, OSError):
         return None
 
+
+def state_params(meta, state):
+    """Per-loop tuned params; L5's live tuning lives in its best strategy."""
+    sp = (state or {}).get('params') or {}
+    if not sp and meta['id'] == 'L5' and (state or {}).get('population'):
+        best = max(state['population'], key=lambda s: s.get('fitness', 0.0))
+        bp = best.get('params') or {}
+        sp = {
+            'l2.max_attempts': bp.get('l2_attempts', 5),
+            'budget_factor': bp.get('budget_factor', 1.0),
+            'focus': bp.get('focus', 'general'),
+        }
+    return [{"key": k, "value": v} for k, v in sp.items()]
+
 loops_out = []
 for meta in LOOPS:
     state = load_state(meta['state_file'])
-    params = []
-    if state:
-        sp = state.get('params') or {}
-        for key, val in sp.items():
-            params.append({"key": key, "value": val})
+    params = state_params(meta, state)
     if not params:
         params = [{"key": k, "value": v} for k, v in meta['default_params']]
     history = (state or {}).get('history') or []
