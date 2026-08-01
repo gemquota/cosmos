@@ -110,3 +110,19 @@ title: "Bundle Log"
   identity` — tunes `l3.plateau_timeout_s`) and `loop_l7.py` (Meta-Cog,
   `python -m rsis metacog` — widens/narrows L4 deadband from L4 history);
   spec §1.1/§1.4 now marks L8–L9 as the only hypothetical loops
+
+
+## 2026-08-01 (Ω diagrams)
+- **Zoom direction fix**: `zoomAt` in `diagrams/gen/omega.py` corrected from
+  `vb.w * f` to `vb.w / f` (f>1 zooms in); `x-plus-plus-omega.html`
+  regenerated — scroll-up / pinch-out now zoom in
+- **Nested-loop graph added**: `diagrams/gen/omega_nested.py` →
+  `diagrams/x-plus-plus-nested.html` — full 52-node / 64-link model with the
+  L1–L9 stack as nine concentric rings (r1=48…r9=336) at the semantic
+  centroid, min-separated bearings, λ1–λ4 visibility, runtime chain arc
+  L1→L2→L3, same pan/zoom/touch UI
+- **Index wiring**: X++ tab now hosts both graphs (count 1→2, 88 diagrams);
+  `_index_update.py` + `_rebuild_index.py` kept in sync
+- **Verified**: 0 label overlaps at λ1–λ4, 64/64 edges, all L-nodes on their
+  rings; snapshots `diagrams/gen/nested_snap_1/4.{svg,png}` committed
+- **New synthesis note**: `wiki/syntheses/nested-loop-graph-and-zoom-fix.md`
