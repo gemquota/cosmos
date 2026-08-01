@@ -61,5 +61,6 @@ L8/L9 + dashboard-wiring pass; rules here are the durable conclusions.
 ## Related
 
 - [[wiki/concepts/nine-loop-hierarchy|Nine-Loop Hierarchy]]
+- [[wiki/syntheses/nested-loop-graph-and-zoom-fix|Nested-Loop Graph & Zoom Fix]]
 - [[wiki/syntheses/cosmos-dashboard-mykb-integration|Dashboard & MyKB Integration Patterns]]
 - [[wiki/index|Wiki Index]]
