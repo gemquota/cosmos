@@ -1,0 +1,26 @@
+{
+  "params": {
+    "l3.plateau_timeout_s": 82800.0
+  },
+  "history": [
+    {
+      "cycle": 1,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 2,
+      "delta": 3600,
+      "accepted": true,
+      "signal": "grow"
+    },
+    {
+      "cycle": 3,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    }
+  ],
+  "cycle": 3
+}
