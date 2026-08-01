@@ -5,6 +5,12 @@ Usage:
     python -m rsis init              # Initialise workspace
     python -m rsis run --goal X      # Improvement session
     python -m rsis evolve            # L3 evolution cycle
+    python -m rsis optimize          # L4 meta-parameter optimization
+    python -m rsis strategies        # L5 strategy evolution cycle
+    python -m rsis identity          # L6 identity loop (tunes L3 params)
+    python -m rsis metacog           # L7 meta-cog loop (tunes L4 params)
+    python -m rsis metameta          # L8 meta-meta loop (tunes L5 params)
+    python -m rsis mmm               # L9 MMM loop (tunes L6 params)
     python -m rsis dashboard         # Start web dashboard
     python -m rsis status            # System overview
     python -m rsis check             # Check resource limits
@@ -24,7 +30,14 @@ from rsis.evaluator import EvaluatorClient
 from rsis.loop_l1 import L1ActionLoop
 from rsis.loop_l2 import L2ImprovementLoop
 from rsis.loop_l3 import L3EvolutionLoop
+from rsis.loop_l4 import OptimizerLoop
+from rsis.loop_l5 import EvolutionLoop
+from rsis.loop_l6 import IdentityLoop
+from rsis.loop_l7 import MetaCogLoop
+from rsis.loop_l8 import MetaMetaLoop
+from rsis.loop_l9 import MMMLoop
 from rsis.memory import MemoryManager
+from rsis.practices import run_checks as run_practice_checks
 from rsis.recovery import FailureInjector, RecoveryManager
 from rsis.resource_monitor import ResourceEnforcer, ResourceSeverity
 from rsis.telemetry import TelemetryCollector, WorkspaceMonitor
@@ -191,6 +204,240 @@ def cmd_evolve(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_optimize(args: argparse.Namespace) -> int:
+    telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    enforcer.start()
+    telemetry.start()
+
+    try:
+        l4 = OptimizerLoop(
+            telemetry=telemetry, memory=memory, evaluator=evaluator,
+            checkpoint_mgr=checkpoint,
+        )
+        budget = Budget(
+            max_iterations=1, max_time_s=CONFIG.l4.cycle_timeout_s,
+            label="L4 optimizer",
+        )
+
+        with deadline(CONFIG.l4.cycle_timeout_s, "L4 optimizer"):
+            result = l4.run_cycle(budget=budget)
+
+        if result.skipped:
+            print(f"  ℹ Not enough outcomes yet "
+                  f"({result.outcome_stats.get('count', 0)} < "
+                  f"{CONFIG.l4.min_outcomes}) — run more L2 sessions first")
+        elif result.success and result.changed:
+            print("  ✓ Parameters tuned:")
+            for k, v in sorted(result.deltas.items()):
+                print(f"    {k}: {v:+.1f}")
+            print(f"  Outcome stats: {result.outcome_stats}")
+        elif result.success:
+            print("  ℹ No parameter changes proposed "
+                  f"(success_rate={result.outcome_stats.get('success_rate', 0):.2f})")
+        else:
+            print(f"  ✗ Optimizer failed: {result.error}")
+            return 1
+
+    except TimeoutError as e:
+        print(f"  ✗ Optimizer timed out: {e}")
+        return 1
+    finally:
+        telemetry.stop()
+        enforcer.stop()
+
+    return 0
+
+
+def cmd_strategies(args: argparse.Namespace) -> int:
+    telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    enforcer.start()
+    telemetry.start()
+
+    try:
+        l5 = EvolutionLoop(
+            telemetry=telemetry, memory=memory, evaluator=evaluator,
+            checkpoint_mgr=checkpoint,
+        )
+        budget = Budget(
+            max_iterations=1, max_time_s=CONFIG.l5.cycle_timeout_s,
+            label="L5 evolution",
+        )
+
+        with deadline(CONFIG.l5.cycle_timeout_s, "L5 evolution"):
+            result = l5.run_cycle(budget=budget)
+
+        if result.success:
+            print(f"  ✓ Strategy evolution complete")
+            print(f"  Generation: {result.generation}")
+            print(f"  Population: {result.population_size} "
+                  f"(elites kept: {result.elites_kept}, "
+                  f"variants generated: {result.variants_generated})")
+            print(f"  Avg fitness: {result.avg_fitness:.3f}")
+            if result.best_strategy:
+                print(f"  Best: {result.best_strategy['id']} "
+                      f"(fitness={result.best_strategy['fitness']:.3f})")
+        else:
+            print(f"  ✗ Strategy evolution failed: {result.error}")
+            return 1
+
+    except TimeoutError as e:
+        print(f"  ✗ Strategy evolution timed out: {e}")
+        return 1
+    finally:
+        telemetry.stop()
+        enforcer.stop()
+
+    return 0
+
+
+def cmd_identity(args: argparse.Namespace) -> int:
+    telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    enforcer.start()
+    telemetry.start()
+
+    try:
+        l6 = IdentityLoop(
+            telemetry=telemetry, memory=memory, evaluator=evaluator,
+            checkpoint_mgr=checkpoint,
+        )
+        budget = Budget(
+            max_iterations=1, max_time_s=CONFIG.l6.cycle_timeout_s,
+            label="L6 identity",
+        )
+
+        with deadline(CONFIG.l6.cycle_timeout_s, "L6 identity"):
+            result = l6.run_cycle(budget=budget)
+
+        if result.success and result.changed:
+            print(f"  \u2713 L3 plateau timeout tuned ({result.signal}): "
+                  f"{result.deltas}")
+        elif result.success:
+            print(f"  \u2139 No change ({result.signal or 'no signal'})")
+        else:
+            print(f"  \u2717 Identity loop failed: {result.error}")
+            return 1
+
+    except TimeoutError as e:
+        print(f"  \u2717 Identity loop timed out: {e}")
+        return 1
+    finally:
+        telemetry.stop()
+        enforcer.stop()
+
+    return 0
+
+
+def cmd_metacog(args: argparse.Namespace) -> int:
+    telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    enforcer.start()
+    telemetry.start()
+
+    try:
+        l7 = MetaCogLoop(
+            telemetry=telemetry, memory=memory, evaluator=evaluator,
+            checkpoint_mgr=checkpoint,
+        )
+        budget = Budget(
+            max_iterations=1, max_time_s=CONFIG.l7.cycle_timeout_s,
+            label="L7 meta-cog",
+        )
+
+        with deadline(CONFIG.l7.cycle_timeout_s, "L7 meta-cog"):
+            result = l7.run_cycle(budget=budget)
+
+        if result.success and result.changed:
+            print(f"  \u2713 L4 deadband tuned ({result.signal}): "
+                  f"{result.deltas}")
+        elif result.success:
+            print(f"  \u2139 No change ({result.signal or 'no signal'})")
+        else:
+            print(f"  \u2717 Meta-cog loop failed: {result.error}")
+            return 1
+
+    except TimeoutError as e:
+        print(f"  \u2717 Meta-cog loop timed out: {e}")
+        return 1
+    finally:
+        telemetry.stop()
+        enforcer.stop()
+
+    return 0
+
+
+def cmd_metameta(args: argparse.Namespace) -> int:
+    telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    enforcer.start()
+    telemetry.start()
+
+    try:
+        l8 = MetaMetaLoop(
+            telemetry=telemetry, memory=memory, evaluator=evaluator,
+            checkpoint_mgr=checkpoint,
+        )
+        budget = Budget(
+            max_iterations=1, max_time_s=CONFIG.l8.cycle_timeout_s,
+            label="L8 meta-meta",
+        )
+
+        with deadline(CONFIG.l8.cycle_timeout_s, "L8 meta-meta"):
+            result = l8.run_cycle(budget=budget)
+
+        if result.success and result.changed:
+            print(f"  \u2713 L5 strategy params tuned ({result.signal}): "
+                  f"{result.deltas}")
+        elif result.success:
+            print(f"  \u2139 No change ({result.signal or 'no signal'})")
+        else:
+            print(f"  \u2717 Meta-meta loop failed: {result.error}")
+            return 1
+
+    except TimeoutError as e:
+        print(f"  \u2717 Meta-meta loop timed out: {e}")
+        return 1
+    finally:
+        telemetry.stop()
+        enforcer.stop()
+
+    return 0
+
+
+def cmd_mmm(args: argparse.Namespace) -> int:
+    telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    enforcer.start()
+    telemetry.start()
+
+    try:
+        l9 = MMMLoop(
+            telemetry=telemetry, memory=memory, evaluator=evaluator,
+            checkpoint_mgr=checkpoint,
+        )
+        budget = Budget(
+            max_iterations=1, max_time_s=CONFIG.l9.cycle_timeout_s,
+            label="L9 MMM",
+        )
+
+        with deadline(CONFIG.l9.cycle_timeout_s, "L9 MMM"):
+            result = l9.run_cycle(budget=budget)
+
+        if result.success and result.changed:
+            print(f"  \u2713 L6 identity band tuned ({result.signal}): "
+                  f"{result.deltas}")
+        elif result.success:
+            print(f"  \u2139 No change ({result.signal or 'no signal'})")
+        else:
+            print(f"  \u2717 MMM loop failed: {result.error}")
+            return 1
+
+    except TimeoutError as e:
+        print(f"  \u2717 MMM loop timed out: {e}")
+        return 1
+    finally:
+        telemetry.stop()
+        enforcer.stop()
+
+    return 0
+
+
 def cmd_dashboard(args: argparse.Namespace) -> int:
     host, port = args.host, args.port
     print(f"RSIS v{__version__} \u2014 Dashboard at http://{host}:{port}")
@@ -288,6 +535,11 @@ def cmd_check(args: argparse.Namespace) -> int:
     return 0 if all_ok else 1
 
 
+def cmd_check_practices(args: argparse.Namespace) -> int:
+    """Enforce usage practices on the current workspace."""
+    return run_practice_checks()
+
+
 def cmd_recovery_test(args: argparse.Namespace) -> int:
     """Test all recovery mechanisms."""
     print(f"RSIS v{__version__} — Recovery Mechanism Test")
@@ -383,6 +635,24 @@ def main() -> int:
     p_evolve = sub.add_parser("evolve", help="Run L3 evolution cycle")
     p_evolve.set_defaults(func=cmd_evolve)
 
+    p_optimize = sub.add_parser("optimize", help="Run L4 meta-parameter optimization")
+    p_optimize.set_defaults(func=cmd_optimize)
+
+    p_strategies = sub.add_parser("strategies", help="Run L5 strategy evolution cycle")
+    p_strategies.set_defaults(func=cmd_strategies)
+
+    p_identity = sub.add_parser("identity", help="Run L6 identity loop (tunes L3 params)")
+    p_identity.set_defaults(func=cmd_identity)
+
+    p_metacog = sub.add_parser("metacog", help="Run L7 meta-cog loop (tunes L4 params)")
+    p_metacog.set_defaults(func=cmd_metacog)
+
+    p_metameta = sub.add_parser("metameta", help="Run L8 meta-meta loop (tunes L5 params)")
+    p_metameta.set_defaults(func=cmd_metameta)
+
+    p_mmm = sub.add_parser("mmm", help="Run L9 MMM loop (tunes L6 params)")
+    p_mmm.set_defaults(func=cmd_mmm)
+
     p_dash = sub.add_parser("dashboard", help="Start web dashboard")
     p_dash.add_argument("--host", default="127.0.0.1")
     p_dash.add_argument("--port", "-p", type=int, default=8080)
@@ -393,6 +663,11 @@ def main() -> int:
 
     p_check = sub.add_parser("check", help="Check resource limits")
     p_check.set_defaults(func=cmd_check)
+
+    p_practices = sub.add_parser(
+        "check-practices",
+        help="Enforce usage practices on the current workspace")
+    p_practices.set_defaults(func=cmd_check_practices)
 
     p_recovery = sub.add_parser("recovery-test",
                                 help="Test recovery mechanisms")

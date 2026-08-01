@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE 4D ONTOLOGY — EVOLUTION OVER TIME</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Same semantic space, fourth axis = time — watch the components converge on shared territory while memory grows</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<line x1="180" y1="640" x2="820" y2="640" stroke="#334155" stroke-width="1.4" marker-end="url(#arwG)" opacity=".9"/>
+<line x1="180" y1="640" x2="180" y2="130" stroke="#334155" stroke-width="1.4" marker-end="url(#arwG)" opacity=".9"/>
+<text x="820" y="662" text-anchor="end" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700">LONG-TERM</text>
+<text x="180" y="662" text-anchor="start" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700">REAL-TIME</text>
+<text x="154" y="385.0" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700" transform="rotate(-90 154 385.0)">EXECUTION ⇄ THEORY</text>
+<circle fill="#818cf8" fill-opacity=".5" stroke="#818cf8" stroke-width="2" style="mix-blend-mode:screen"><animate attributeName="cx" values="240;280;300" dur="10s" repeatCount="indefinite"/><animate attributeName="cy" values="620;560;510" dur="10s" repeatCount="indefinite"/><animate attributeName="r" values="150;175;195" dur="10s" repeatCount="indefinite"/></circle>
+<text x="240" y="608" fill="#818cf8" font-family="system-ui,sans-serif" font-size="11" font-weight="800">RSIS</text>
+<circle fill="#f59e0b" fill-opacity=".5" stroke="#f59e0b" stroke-width="2" style="mix-blend-mode:screen"><animate attributeName="cx" values="520;470;450" dur="10s" repeatCount="indefinite"/><animate attributeName="cy" values="320;330;310" dur="10s" repeatCount="indefinite"/><animate attributeName="r" values="140;160;185" dur="10s" repeatCount="indefinite"/></circle>
+<text x="520" y="308" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="11" font-weight="800">SPACE</text>
+<circle fill="#22d3ee" fill-opacity=".5" stroke="#22d3ee" stroke-width="2" style="mix-blend-mode:screen"><animate attributeName="cx" values="760;700;660" dur="10s" repeatCount="indefinite"/><animate attributeName="cy" values="700;620;560" dur="10s" repeatCount="indefinite"/><animate attributeName="r" values="170;205;240" dur="10s" repeatCount="indefinite"/></circle>
+<text x="760" y="688" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="11" font-weight="800">MYKB</text>
+<text x="500" y="700" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">animated: circles drift from launch to consolidation — press play is not needed, the SVG animates in the browser</text>
+<rect x="34" y="760" width="212" height="180" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+<text x="140.0" y="780" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10" font-weight="700">T0 · LAUNCH</text>
+<text x="140.0" y="794" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5">separate &amp; small</text>
+<circle cx="130" cy="641" r="11" fill="#818cf8" fill-opacity=".5" stroke="#818cf8" stroke-width="1.4" style="mix-blend-mode:screen"/>
+<circle cx="178" cy="662" r="10" fill="#f59e0b" fill-opacity=".5" stroke="#f59e0b" stroke-width="1.4" style="mix-blend-mode:screen"/>
+<circle cx="225" cy="641" r="14" fill="#22d3ee" fill-opacity=".5" stroke="#22d3ee" stroke-width="1.4" style="mix-blend-mode:screen"/>
+<rect x="262" y="760" width="212" height="180" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+<text x="368.0" y="780" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10" font-weight="700">T1 · INTEGRATION</text>
+<text x="368.0" y="794" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5">first overlaps</text>
+<circle cx="360" cy="648" r="14" fill="#818cf8" fill-opacity=".5" stroke="#818cf8" stroke-width="1.4" style="mix-blend-mode:screen"/>
+<circle cx="401" cy="661" r="12" fill="#f59e0b" fill-opacity=".5" stroke="#f59e0b" stroke-width="1.4" style="mix-blend-mode:screen"/>
+<circle cx="446" cy="648" r="16" fill="#22d3ee" fill-opacity=".5" stroke="#22d3ee" stroke-width="1.4" style="mix-blend-mode:screen"/>
+<rect x="490" y="760" width="212" height="180" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+<text x="596.0" y="780" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10" font-weight="700">T2 · CONSOLIDATION</text>
+<text x="596.0" y="794" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5">shared territory</text>
+<circle cx="591" cy="655" r="15" fill="#818cf8" fill-opacity=".5" stroke="#818cf8" stroke-width="1.4" style="mix-blend-mode:screen"/>
+<circle cx="625" cy="660" r="14" fill="#f59e0b" fill-opacity=".5" stroke="#f59e0b" stroke-width="1.4" style="mix-blend-mode:screen"/>
+<circle cx="668" cy="655" r="19" fill="#22d3ee" fill-opacity=".5" stroke="#22d3ee" stroke-width="1.4" style="mix-blend-mode:screen"/>
+<rect x="718" y="760" width="212" height="180" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+<text x="824.0" y="780" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10" font-weight="700">T3 · CONVERGENCE</text>
+<text x="824.0" y="794" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5">blended mind</text>
+<circle cx="821" cy="660" r="17" fill="#818cf8" fill-opacity=".5" stroke="#818cf8" stroke-width="1.4" style="mix-blend-mode:screen"/>
+<circle cx="849" cy="659" r="16" fill="#f59e0b" fill-opacity=".5" stroke="#f59e0b" stroke-width="1.4" style="mix-blend-mode:screen"/>
+<circle cx="890" cy="660" r="21" fill="#22d3ee" fill-opacity=".5" stroke="#22d3ee" stroke-width="1.4" style="mix-blend-mode:screen"/>
+<line x1="150" y1="1000" x2="850" y2="1000" stroke="#334155" stroke-width="1.6" marker-end="url(#arwG)"/>
+<text x="252" y="1018" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="9.5">T0</text>
+<text x="480" y="1018" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="9.5">T1</text>
+<text x="708" y="1018" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="9.5">T2</text>
+<text x="936" y="1018" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="9.5">T3</text>
+<text x="858" y="992" text-anchor="end" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700">TIME — the 4th axis</text>
+<rect x="319" y="1073" width="363" height="34" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="500" y="1088" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">WHAT CHANGES</text>
+<text x="500" y="1102" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5" font-weight="600">memory grows fastest · overlap increases · hues blend as cycles compound</text>
+<text x="500" y="1260" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">a static frame is one slice of the ontology — the system only fully exists across time</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Generated from source analysis</text>
+</svg>

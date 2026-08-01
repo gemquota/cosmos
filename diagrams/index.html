@@ -3,51 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>COSMOS — Source Deconstruction</title>
+<title>COSMOS — Architecture Diagrams</title>
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
     --bg: #0b1120; --surface: #0f172a; --surface2: #131c31;
     --border: #1e293b; --border2: #334155;
     --text: #e2e8f0; --text2: #94a3b8; --text3: #64748b; --text4: #475569;
-    --accent: #818cf8; --accent2: #22d3ee; --accent3: #f59e0b; --accent4: #10b981;
+    --accent: #818cf8;
+    --rsis: #818cf8; --mykb: #22d3ee; --space: #f59e0b; --dash: #10b981; --ext: #f472b6;
     --radius: 12px;
   }
+  html { scroll-behavior: smooth; }
   body {
     background: var(--bg); color: var(--text);
-    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
+  img { max-width: 100%; }
 
+  /* ── Header ─────────────────────────────────────── */
   .header {
     background: linear-gradient(135deg, #0f172a, #1a1a3e, #0f172a);
     border-bottom: 1px solid var(--border);
-    padding: 28px 16px 20px; text-align: center; position: relative; overflow: hidden;
+    padding: 26px 16px 18px; text-align: center; position: relative; overflow: hidden;
   }
   .header::before {
-    content: ''; position: absolute; inset: 0;
+    content: ""; position: absolute; inset: 0;
     background: radial-gradient(ellipse at 20% 50%, rgba(99,102,241,.08) 0%, transparent 60%),
                 radial-gradient(ellipse at 80% 30%, rgba(34,211,238,.05) 0%, transparent 50%);
     pointer-events: none;
   }
   .header h1 {
-    font-size: clamp(20px,5vw,28px); font-weight: 700;
+    font-size: clamp(20px, 5vw, 28px); font-weight: 700; position: relative;
     background: linear-gradient(135deg, #a5b4fc, #818cf8, #a5f3fc);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    background-clip: text; letter-spacing: .5px; position: relative;
+    background-clip: text; letter-spacing: .5px;
   }
-  .header .subtitle {
-    color: var(--text3); font-size: clamp(12px,3vw,14px); margin-top: 6px; position: relative;
-  }
+  .header .subtitle { color: var(--text3); font-size: clamp(12px, 3vw, 14px); margin-top: 6px; position: relative; }
   .header .badge {
     display: inline-block; background: rgba(99,102,241,.12); color: #a5b4fc;
     border: 1px solid rgba(99,102,241,.25); padding: 4px 12px; border-radius: 20px;
     font-size: 11px; margin-top: 10px; position: relative;
   }
 
-  /* Legend */
+  /* ── Tab bar ────────────────────────────────────── */
+  .tabs {
+    display: flex; gap: 6px; padding: 8px 12px;
+    background: rgba(15,23,42,.95); border-bottom: 1px solid var(--border);
+    overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    appearance: none; border: 1px solid transparent; background: transparent;
+    color: var(--text3); font: 500 11px/1 system-ui, sans-serif;
+    padding: 7px 14px; border-radius: 9px; cursor: pointer; white-space: nowrap;
+    flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;
+    transition: all .2s; -webkit-tap-highlight-color: transparent;
+  }
+  .tab-btn:hover, .tab-btn:focus-visible {
+    color: var(--text); background: rgba(99,102,241,.1); border-color: rgba(99,102,241,.2);
+  }
+  .tab-btn.active {
+    color: #a5b4fc; background: rgba(99,102,241,.15); border-color: rgba(99,102,241,.3);
+  }
+  .tab-btn .count {
+    font-size: 9.5px; color: var(--text4); background: rgba(255,255,255,.05);
+    border: 1px solid var(--border); padding: 1px 6px; border-radius: 10px;
+  }
+  .tab-btn.active .count { color: #a5b4fc; border-color: rgba(99,102,241,.3); }
+
+  /* ── Legend ─────────────────────────────────────── */
   .legend {
     display: flex; flex-wrap: wrap; gap: 10px; padding: 10px 14px;
     margin: 12px; background: var(--surface); border: 1px solid var(--border);
@@ -56,73 +86,78 @@
   .legend-item { display: flex; align-items: center; gap: 6px; color: var(--text2); font-size: 11px; }
   .legend-swatch { width: 11px; height: 11px; border-radius: 3px; flex-shrink: 0; }
 
-  /* Nav */
-  .nav {
-    display: flex; gap: 2px; padding: 8px 12px;
-    background: rgba(15,23,42,.95); border-bottom: 1px solid var(--border);
-    overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; position: sticky; top: 0; z-index: 100;
-    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  }
-  .nav::-webkit-scrollbar { display: none; }
-  .nav a {
-    text-decoration: none; color: var(--text3); font-size: 11px; font-weight: 500;
-    padding: 6px 12px; border-radius: 8px; white-space: nowrap; transition: all .2s;
-    border: 1px solid transparent; flex-shrink: 0; -webkit-tap-highlight-color: transparent;
-  }
-  .nav a:hover, .nav a:focus-visible {
-    color: var(--text); background: rgba(99,102,241,.1); border-color: rgba(99,102,241,.2);
-  }
-  .nav a.active {
-    color: #a5b4fc; background: rgba(99,102,241,.15); border-color: rgba(99,102,241,.3);
-  }
-
-  /* Content */
+  /* ── Panels & cards ─────────────────────────────── */
   .content { max-width: 100%; padding: 12px; }
-
-  .diagram-section { margin-bottom: 28px; scroll-margin-top: 8px; }
-  .diagram-section h2 {
-    font-size: clamp(15px,4vw,19px); font-weight: 600; color: var(--text);
-    margin-bottom: 4px; padding: 0 4px;
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  .panel-head { margin: 4px 4px 14px; }
+  .panel-head h2 {
+    font-size: clamp(16px, 4vw, 20px); font-weight: 650; letter-spacing: .3px;
   }
-  .diagram-section .desc {
-    color: var(--text3); font-size: clamp(11px,2.6vw,12px); margin-bottom: 10px;
+  .panel-head p {
+    color: var(--text3); font-size: clamp(11px, 2.6vw, 12.5px); margin-top: 2px;
     border-left: 3px solid var(--accent); padding-left: 10px;
   }
 
-  .diagram-frame {
+  .diagram-card {
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,.3); width: 100%;
+    border-radius: var(--radius); margin-bottom: 22px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.3); overflow: hidden; width: 100%;
   }
+  .diagram-frame { background: var(--surface2); padding: 8px; }
   .diagram-frame img {
     display: block; width: 100%; height: auto; border-radius: 6px;
     background: var(--surface2);
   }
-
-  .diagram-meta {
-    display: flex; flex-direction: column; gap: 4px; margin-top: 8px; padding: 0 4px;
+  .diagram-meta { display: flex; flex-direction: column; gap: 8px; padding: 12px 14px 14px; }
+  .card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+  .card-head h3 { font-size: clamp(13.5px, 3.4vw, 16px); font-weight: 650; color: var(--text); }
+  .card-num {
+    font: 600 10px/1 ui-monospace, Menlo, monospace; color: var(--text4);
+    background: rgba(255,255,255,.04); border: 1px solid var(--border);
+    padding: 3px 7px; border-radius: 6px; white-space: nowrap; flex-shrink: 0;
   }
-  .diagram-meta .tags { display: flex; flex-wrap: wrap; gap: 5px; }
-  .diagram-meta .tag {
-    color: var(--text4); font-size: 10px; background: rgba(255,255,255,.04);
-    padding: 2px 8px; border-radius: 4px; white-space: nowrap;
+  .card-desc { color: var(--text2); font-size: clamp(11.5px, 2.7vw, 12.5px); }
+  .card-desc code {
+    font-family: ui-monospace, Menlo, monospace; font-size: .92em;
+    color: #a5b4fc; background: rgba(99,102,241,.1); padding: 1px 4px; border-radius: 4px;
   }
-  .tag-core { color: var(--accent) !important; background: rgba(99,102,241,.1) !important; }
-  .tag-memory { color: var(--accent2) !important; background: rgba(34,211,238,.1) !important; }
-  .tag-ideation { color: var(--accent3) !important; background: rgba(245,158,11,.1) !important; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag {
+    color: var(--text3); font-size: 10px; background: rgba(255,255,255,.04);
+    border: 1px solid var(--border); padding: 2px 8px; border-radius: 5px; white-space: nowrap;
+  }
+  .card-foot {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 10px; margin-top: 2px;
+  }
+  .mini-legend { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mini-legend span { display: inline-flex; align-items: center; gap: 5px; color: var(--text3); font-size: 10px; }
+  .mini-legend i { width: 9px; height: 9px; border-radius: 2.5px; display: inline-block; flex-shrink: 0; }
 
   .download-btn {
     display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px;
     background: rgba(99,102,241,.1); color: #a5b4fc;
     border: 1px solid rgba(99,102,241,.25); border-radius: 8px; font-size: 11px;
-    text-decoration: none; transition: all .2s; align-self: flex-start; margin-top: 4px;
+    text-decoration: none; transition: all .2s; white-space: nowrap;
     -webkit-tap-highlight-color: transparent;
   }
   .download-btn:hover, .download-btn:active {
     background: rgba(99,102,241,.2); border-color: rgba(99,102,241,.4);
   }
 
+  /* ── Originals ──────────────────────────────────── */
+  .originals {
+    margin-top: 8px; border-top: 1px solid var(--border);
+    padding: 22px 12px 8px;
+  }
+  .originals .panel-head h2 {
+    font-size: clamp(15px, 3.8vw, 19px); font-weight: 650;
+  }
+  .originals .panel-head p { border-left-color: var(--ext); }
+  .originals .diagram-card { margin-bottom: 22px; }
+
+  /* ── Footer ─────────────────────────────────────── */
   .footer {
     text-align: center; padding: 20px 16px; border-top: 1px solid var(--border);
     color: var(--text4); font-size: 11px; line-height: 1.8;
@@ -130,156 +165,1798 @@
   .footer a { color: var(--text3); text-decoration: none; }
   .footer a:hover { color: #a5b4fc; }
 
-  html { scroll-behavior: smooth; }
-
   @media (min-width: 480px) {
-    .header { padding: 32px 24px 24px; }
+    .header { padding: 30px 24px 22px; }
     .content { padding: 16px 20px; }
     .legend { margin: 12px 20px; }
     .diagram-frame { padding: 12px; }
-    .nav a { font-size: 12px; padding: 7px 13px; }
+    .tab-btn { font-size: 12px; padding: 8px 15px; }
+    .originals { padding: 26px 20px 8px; }
   }
   @media (min-width: 768px) {
-    .content { max-width: 900px; margin: 0 auto; padding: 24px 32px; }
-    .legend { margin: 12px 32px; max-width: 900px; margin-left: auto; margin-right: auto; }
-    .diagram-section { margin-bottom: 36px; }
+    .content { max-width: 980px; margin: 0 auto; padding: 24px 32px; }
+    .legend { margin: 12px auto; max-width: 980px; }
+    .diagram-card { margin-bottom: 30px; }
     .diagram-frame { padding: 16px; }
-    .diagram-meta { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
-    .download-btn { margin-top: 0; }
+    .diagram-meta { padding: 14px 18px 16px; }
+    .originals { max-width: 980px; margin: 8px auto 0; padding: 30px 0 8px; }
   }
-  @media (min-width: 1024px) {
-    .content { max-width: 1100px; }
-    .legend { max-width: 1100px; }
-    .diagram-frame { border-radius: 14px; }
+  @media (min-width: 1100px) {
+    .content { max-width: 1200px; }
+    .legend { max-width: 1200px; }
+    .originals { max-width: 1200px; }
+    .diagram-frame { border-radius: 10px; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .diagram-frame, .nav a, .download-btn { transition: none; }
+    .tab-btn, .download-btn { transition: none; }
   }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>🔬 COSMOS Source Deconstruction</h1>
-  <p class="subtitle">Every class, function, variable, and module deconstructed from source</p>
-  <span class="badge">3 components &middot; SVG &middot; Dark theme</span>
+  <h1>🔬 COSMOS Architecture Diagrams</h1>
+  <p class="subtitle">RSIS3 core engine &middot; MyKB memory &middot; SPACE ideation — 88 diagrams in five tiers + two interactive &Omega; graphs</p>
+  <span class="badge">Basic &middot; Advanced &middot; Expert &middot; Expert+ &middot; X++ &middot; Mobile-first SVG</span>
 </div>
 
-<nav class="nav" role="tablist">
-  <a href="#rel" class="active" role="tab">0. Relationships</a>
-  <a href="#s1" role="tab">1. RSIS3</a>
-  <a href="#s2" role="tab">2. MyKB</a>
-  <a href="#s3" role="tab">3. SPACE</a>
+<nav class="tabs" role="tablist" aria-label="Diagram tiers">
+  <button class="tab-btn active" data-tab="basic" role="tab" aria-selected="true">Basic <span class="count">24</span></button>
+  <button class="tab-btn" data-tab="advanced" role="tab" aria-selected="false">Advanced <span class="count">26</span></button>
+  <button class="tab-btn" data-tab="expert" role="tab" aria-selected="false">Expert <span class="count">24</span></button>
+  <button class="tab-btn" data-tab="expert-plus" role="tab" aria-selected="false">Expert+ <span class="count">12</span></button>
+  <button class="tab-btn" data-tab="x-plus-plus" role="tab" aria-selected="false">X++ <span class="count">2</span></button>
 </nav>
 
 <div class="legend">
-  <span class="legend-item"><span class="legend-swatch" style="background:#818cf8"></span> RSIS3 (Python)</span>
-  <span class="legend-item"><span class="legend-swatch" style="background:#22d3ee"></span> MyKB (Python/MD)</span>
-  <span class="legend-item"><span class="legend-swatch" style="background:#f59e0b"></span> SPACE (TypeScript)</span>
+  <span class="legend-item"><span class="legend-swatch" style="background:var(--rsis)"></span> RSIS3 (Python)</span>
+  <span class="legend-item"><span class="legend-swatch" style="background:var(--mykb)"></span> MyKB (Python/MD)</span>
+  <span class="legend-item"><span class="legend-swatch" style="background:var(--space)"></span> SPACE (TypeScript)</span>
+  <span class="legend-item"><span class="legend-swatch" style="background:var(--dash)"></span> Dashboard / Data</span>
+  <span class="legend-item"><span class="legend-swatch" style="background:var(--ext)"></span> External / DevOps</span>
 </div>
 
 <div class="content">
+<section class="tab-panel active" data-panel="basic" id="basic" role="tabpanel">
+    <div class="panel-head">
+      <h2>Basic — the whole ecosystem at a glance</h2>
+      <p>High-level conceptual views: what the three components are, how they connect, how they improve, and where everything runs.</p>
+    </div>
 
-  <!-- ─── 0. RELATIONSHIPS ─── -->
-  <section class="diagram-section" id="rel">
-    <h2>0. Component Relationships</h2>
-    <p class="desc">How RSIS3, MyKB, and SPACE actually interact — data flows, HTTP ports, file formats, and orchestration paths.</p>
-    <div class="diagram-frame">
-      <img src="relationship-diagram.svg" alt="Component Relationship Diagram" loading="lazy">
-    </div>
-    <div class="diagram-meta">
-      <div class="tags">
-        <span class="tag tag-core">SPACE → RSIS3: RRP specs</span>
-        <span class="tag tag-memory">RSIS3 → MyKB: improvements</span>
-        <span class="tag tag-memory">MyKB → RSIS3: knowledge</span>
-        <span class="tag tag-ideation">SPACE → MyKB: spec exports</span>
-        <span class="tag">Shared filesystem</span>
+
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-01-system-overview.svg" alt="COSMOS System Overview" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>System Overview</h3><span class="card-num">B-01</span></div>
+        <p class="card-desc">Hub-and-spoke view of the whole ecosystem: RSIS3 (core engine), MyKB (memory), SPACE (ideation) — how they work together, key numbers, and the ports each service listens on.</p>
+        <div class="tags">
+          <span class="tag">Ecosystem</span><span class="tag">Hub-and-spoke</span><span class="tag">Key numbers</span><span class="tag">Port map</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3</span>
+            <span><i style="background:var(--mykb)"></i> MyKB</span>
+            <span><i style="background:var(--space)"></i> SPACE</span>
+            <span><i style="background:var(--dash)"></i> Data</span>
+            <span><i style="background:var(--ext)"></i> DevOps</span>
+          </div>
+          <a class="download-btn" href="basic-01-system-overview.svg" download>⬇ SVG</a>
+        </div>
       </div>
-      <a class="download-btn" href="relationship-diagram.svg" download>⬇ SVG</a>
-    </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-02-layer-architecture.svg" alt="Layered Architecture" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>Layered Architecture</h3><span class="card-num">B-02</span></div>
+        <p class="card-desc">Presentation &rarr; Service &rarr; Data: which dashboards and UIs run where, each component&rsquo;s service box, and the persistent storage paths on the shared filesystem.</p>
+        <div class="tags">
+          <span class="tag">Presentation / Service / Data</span><span class="tag">Ports</span><span class="tag">Storage paths</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3</span>
+            <span><i style="background:var(--mykb)"></i> MyKB</span>
+            <span><i style="background:var(--space)"></i> SPACE</span>
+            <span><i style="background:var(--dash)"></i> Data</span>
+          </div>
+          <a class="download-btn" href="basic-02-layer-architecture.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-03-component-relationships.svg" alt="Component Relationships" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>Component Relationships</h3><span class="card-num">B-03</span></div>
+        <p class="card-desc">Who talks to whom: six labeled data flows — knowledge from MyKB to RSIS3, specs from SPACE, goals back, and direct MyKB&harr;SPACE exchanges.</p>
+        <div class="tags">
+          <span class="tag">Data flows</span><span class="tag">Triangle topology</span><span class="tag">Knowledge / specs / goals</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3</span>
+            <span><i style="background:var(--mykb)"></i> MyKB</span>
+            <span><i style="background:var(--space)"></i> SPACE</span>
+            <span><i style="background:var(--dash)"></i> Data</span>
+          </div>
+          <a class="download-btn" href="basic-03-component-relationships.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-04-self-improvement-cycle.svg" alt="Self-Improvement Cycle" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>Self-Improvement Cycle</h3><span class="card-num">B-04</span></div>
+        <p class="card-desc">One full recursive cycle, clockwise: SPACE ideates (326 probes &rarr; spec) &rarr; MyKB stores &rarr; RSIS3 executes (L1 &rarr; L2 &rarr; L3) &rarr; consolidation feeds the next cycle.</p>
+        <div class="tags">
+          <span class="tag">Recursion</span><span class="tag">L1 &rarr; L2 &rarr; L3</span><span class="tag">Ideate &rarr; Store &rarr; Execute &rarr; Consolidate</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> Ideate</span>
+            <span><i style="background:var(--mykb)"></i> Store</span>
+            <span><i style="background:var(--rsis)"></i> Execute</span>
+            <span><i style="background:var(--dash)"></i> Consolidate</span>
+            <span><i style="background:var(--ext)"></i> Timescales</span>
+          </div>
+          <a class="download-btn" href="basic-04-self-improvement-cycle.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-05-deployment.svg" alt="Deployment Model" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>Deployment Model</h3><span class="card-num">B-05</span></div>
+        <p class="card-desc">GitHub Pages (production) and local dev servers, Sentry Heartbeat monitoring, the full port map, and how the shared filesystem is git-tracked.</p>
+        <div class="tags">
+          <span class="tag">GitHub Pages</span><span class="tag">Local dev servers</span><span class="tag">Sentry heartbeat</span><span class="tag">Port map</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--ext)"></i> GitHub / CI</span>
+            <span><i style="background:var(--dash)"></i> Pages</span>
+            <span><i style="background:var(--rsis)"></i> RSIS3</span>
+            <span><i style="background:var(--mykb)"></i> MyKB</span>
+            <span><i style="background:var(--space)"></i> SPACE</span>
+          </div>
+          <a class="download-btn" href="basic-05-deployment.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-06-cosmos-mind.svg" alt="The Cosmos Mind" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Cosmos Mind</h3><span class="card-num">B-06</span></div>
+        <p class="card-desc">One system, three faculties mapped to cognitive time: MyKB remembers the past, RSIS3 reasons in the present, SPACE imagines futures — and the meta-mind watches itself think.</p>
+        <div class="tags">
+          <span class="tag">Mind metaphor</span><span class="tag">Past / present / future</span><span class="tag">Emergence</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--mykb)"></i> Memory &middot; PAST</span>
+            <span><i style="background:var(--rsis)"></i> Reason &middot; PRESENT</span>
+            <span><i style="background:var(--space)"></i> Imagination &middot; FUTURE</span>
+            <span><i style="background:var(--dash)"></i> Meta-mind</span>
+          </div>
+          <a class="download-btn" href="basic-06-cosmos-mind.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-07-improvement-flywheel.svg" alt="The Improvement Flywheel" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Improvement Flywheel</h3><span class="card-num">B-07</span></div>
+        <p class="card-desc">One lap makes the next lap easier: ideate &rarr; execute &rarr; evaluate &rarr; consolidate &rarr; strategize. Each cycle builds momentum like a flywheel.</p>
+        <div class="tags">
+          <span class="tag">Flywheel</span><span class="tag">Compounding</span><span class="tag">5-step cycle</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> Ideate</span>
+            <span><i style="background:var(--rsis)"></i> Execute</span>
+            <span><i style="background:var(--dash)"></i> Evaluate (PASS/FAIL)</span>
+            <span><i style="background:var(--mykb)"></i> Consolidate</span>
+            <span><i style="background:var(--ext)"></i> Strategize</span>
+          </div>
+          <a class="download-btn" href="basic-07-improvement-flywheel.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-08-component-ontology.svg" alt="The Component Ontology Venn" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Component Ontology Venn</h3><span class="card-num">B-08</span></div>
+        <p class="card-desc">Three components as overlapping sets in semantic space: X = real-time &harr; long-term, Y = execution &harr; theory. Radius &prop; &radic;LOC (67k / 103k / 69k), hue = component identity, and each overlap is a real semantic relation — RRP &rarr; L2, L3 consolidation, spec capture — with screen-blended colours.</p>
+        <div class="tags">
+          <span class="tag">Ontology Venn</span><span class="tag">Semantic spectra</span><span class="tag">Radius &prop; &radic;LOC</span><span class="tag">Blend = shared meaning</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3 &middot; core engine</span>
+            <span><i style="background:var(--mykb)"></i> MyKB &middot; memory</span>
+            <span><i style="background:var(--space)"></i> SPACE &middot; ideation</span>
+            <span><i style="background:var(--ext)"></i> Blends &middot; shared territory</span>
+          </div>
+          <a class="download-btn" href="basic-08-component-ontology.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-09-system-spectrum.svg" alt="The System Ontology Field" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The System Ontology Field</h3><span class="card-num">B-09</span></div>
+        <p class="card-desc">Every module mapped onto two spectra: X = observed &harr; hypothesized, Y = per-task &harr; cross-session. 15 nodes (L1/L2/L3, evaluator, telemetry, wiki corpus, knowledge graph, TF-IDF, RRP probes&hellip;) occupy coordinates where distance and overlap <em>are</em> the ontology; dashed trajectories trace L1 &rarr; L2 &rarr; L3 and ideation &rarr; memory.</p>
+        <div class="tags">
+          <span class="tag">Module coordinates</span><span class="tag">Certainty &times; scope</span><span class="tag">Trajectories</span><span class="tag">Radius &prop; footprint</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3 &middot; engine</span>
+            <span><i style="background:var(--mykb)"></i> MyKB &middot; memory</span>
+            <span><i style="background:var(--space)"></i> SPACE &middot; ideation</span>
+            <span><i style="background:var(--dash)"></i> Data &middot; telemetry</span>
+          </div>
+          <a class="download-btn" href="basic-09-system-spectrum.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-10-ontology-terrain.svg" alt="The Ontology Terrain" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Ontology Terrain &mdash; A Continuous Field</h3><span class="card-num">B-10</span></div>
+        <p class="card-desc">Modules become a continuous semantic density field instead of discrete dots: X = execution &harr; theory, Y = real-time &harr; long-term. Twelve real modules (L1/L2/L3, evaluator, telemetry, wiki corpus, TF-IDF, KG, RRP series&hellip;) rise as gradient hills whose height encodes presence and whose screen-blended halos mark shared territory — the action plane overlaps memory and theory wherever ideation feeds execution.</p>
+        <div class="tags">
+          <span class="tag">Semantic density</span><span class="tag">Execution &times; theory</span><span class="tag">Real-time &times; long-term</span><span class="tag">Screen-blended halos</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3 &middot; action plane</span>
+            <span><i style="background:var(--mykb)"></i> MyKB &middot; memory plane</span>
+            <span><i style="background:var(--space)"></i> SPACE &middot; theory plane</span>
+            <span><i style="background:var(--dash)"></i> Overlap &middot; blended terrain</span>
+          </div>
+          <a class="download-btn" href="basic-10-ontology-terrain.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-11-pulse-field.svg" alt="The Pulse Field" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Pulse Field &mdash; Cadence Is the Data</h3><span class="card-num">B-11</span></div>
+        <p class="card-desc">Concentric rings whose radii map the three real cadences: L1 fires every second, RRP every ~12s (25 rounds per spec), L3 every ~60s. Animation is load-bearing here — event shuttles ride the pulses outward to show that cadence depth is part of the ontology, and a cadence register table grounds every period in the actual loop implementation.</p>
+        <div class="tags">
+          <span class="tag">Cadence as data</span><span class="tag">1s / 12s / 60s</span><span class="tag">Animated shuttles</span><span class="tag">Cadence register</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> L1 &middot; 1s action loop</span>
+            <span><i style="background:var(--space)"></i> RRP &middot; 12s ideation</span>
+            <span><i style="background:var(--mykb)"></i> L3 &middot; 60s consolidation</span>
+            <span><i style="background:var(--dash)"></i> Motion &middot; event cadence</span>
+          </div>
+          <a class="download-btn" href="basic-11-pulse-field.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-12-flow-field.svg" alt="The Flow Field Vector Portrait" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Flow Field &mdash; A Vector Portrait</h3><span class="card-num">B-12</span></div>
+        <p class="card-desc">272 sampled states; each arrow is the resultant pull toward whichever loop would consume an artifact born at that point — X = theory &harr; execution, Y = short-term &harr; long-term. Five real comets ride the actual data paths (spec &rarr; implementation through the evaluator gate, lessons &rarr; consolidation, retrieval on :8765, pulses &rarr; dashboard-data.json, dashboard &rarr; launch SPACE web UI) and the contested band between orbs is the separatrix where pull is balanced.</p>
+        <div class="tags">
+          <span class="tag">272 flow vectors</span><span class="tag">Theory &times; execution</span><span class="tag">Pipeline comets</span><span class="tag">Separatrix</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> SPACE &middot; ideation</span>
+            <span><i style="background:var(--rsis)"></i> RSIS3 &middot; execution</span>
+            <span><i style="background:var(--mykb)"></i> MyKB &middot; memory</span>
+            <span><i style="background:var(--dash)"></i> DASH &middot; telemetry</span>
+          </div>
+          <a class="download-btn" href="basic-12-flow-field.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+  
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-13-artifact-lifecycle.svg" alt="The Artifact Lifecycle &mdash; Five States, One Loop" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Artifact Lifecycle &mdash; Five States, One Loop</h3><span class="card-num">B-13</span></div>
+        <p class="card-desc">A ring of the five artifact states &mdash; IDEA (SPACE) &rarr; CANDIDATE (RSIS3) &rarr; PULSE (telemetry) &rarr; LESSON &rarr; KG EDGE (MyKB) &mdash; with the evaluator gate diamond between candidate and pulse, the retrieval return arc (:8765), and a white comet that is one artifact circulating the lifecycle: one lap = one idea matured end-to-end.</p>
+        <div class="tags">
+          <span class="tag">Ring lifecycle</span><span class="tag">Evaluator gate</span><span class="tag">Comet = pipeline</span><span class="tag">12:1 · 25:1</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> IDEA</span><span><i style="background:var(--rsis)"></i> CANDIDATE</span><span><i style="background:var(--dash)"></i> PULSE</span><span><i style="background:var(--mykb)"></i> LESSON · KG</span>
+          </div>
+          <a class="download-btn" href="basic-13-artifact-lifecycle.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-14-ownership-matrix.svg" alt="The Ownership Matrix &mdash; Who Runs What" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Ownership Matrix &mdash; Who Runs What</h3><span class="card-num">B-14</span></div>
+        <p class="card-desc">Six code modules (rsis3 core, rack/pulses, mykb, space, dashboard, evaluator) &times; four runtimes, with OWN / EMBED / READ / WRITE / SERVE / FEED / SPAWN cells. The diagonal is the trunk; the dashboard is the only module embedding all three others; the evaluator is spawned, never imported.</p>
+        <div class="tags">
+          <span class="tag">Module × runtime</span><span class="tag">OWN/EMBED/SPAWN</span><span class="tag">Port clash :8765</span><span class="tag">Dashboard embeds all</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> OWN · RSIS3</span><span><i style="background:var(--mykb)"></i> SERVE · MyKB</span><span><i style="background:var(--space)"></i> FEED · SPACE</span><span><i style="background:#f472b6"></i> SPAWN · evaluator</span>
+          </div>
+          <a class="download-btn" href="basic-14-ownership-matrix.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-15-three-jobs.svg" alt="The Three Jobs &mdash; One Per Loop" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Three Jobs &mdash; One Per Loop</h3><span class="card-num">B-15</span></div>
+        <p class="card-desc">L1 the doer (~1s), L2 the improver (~12s RRP rounds), L3 the evolver (~60s) &mdash; one job per loop with real budgets (10 calls/step, 120s, 3 retries; 25 rounds/spec, &le;5 evals) and the nesting rail L3 &sup; L2 &sup; L1.</p>
+        <div class="tags">
+          <span class="tag">L1/L2/L3</span><span class="tag">Budgets</span><span class="tag">Nested scope</span><span class="tag">12:1 · 25:1</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> L1 · ~1s</span><span><i style="background:var(--space)"></i> L2 · ~12s</span><span><i style="background:var(--mykb)"></i> L3 · ~60s</span><span><i style="background:#f472b6"></i> Budgets</span>
+          </div>
+          <a class="download-btn" href="basic-15-three-jobs.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-16-data-product-map.svg" alt="The Data Product Map &mdash; Everything the System Produces" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Data Product Map &mdash; Everything the System Produces</h3><span class="card-num">B-16</span></div>
+        <p class="card-desc">The eight artifacts that flow between components &mdash; probe answers, spec drafts, improvement candidates, eval verdicts, pulses, lessons, KG edges, dashboard-data.json &mdash; each with producer, consumer, and format contract. JSON is the machine spine, Markdown the human spine.</p>
+        <div class="tags">
+          <span class="tag">8 artifacts</span><span class="tag">Producer → consumer</span><span class="tag">Format contracts</span><span class="tag">JSON/MD spine</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> SPACE products</span><span><i style="background:var(--rsis)"></i> RSIS3 products</span><span><i style="background:var(--mykb)"></i> MyKB products</span><span><i style="background:var(--dash)"></i> Dashboard products</span>
+          </div>
+          <a class="download-btn" href="basic-16-data-product-map.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-17-six-handoffs.svg" alt="The Six Handoffs &mdash; The System's Real Interfaces" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Six Handoffs &mdash; The System's Real Interfaces</h3><span class="card-num">B-17</span></div>
+        <p class="card-desc">Six directional contracts between the four runtimes: spec drafts, candidate JSON (the spawn), pulses, retrieval :8765, session capture, and dashboard &rarr; SPACE launch &mdash; with payload and cadence on each card. Zero shared objects: files and ports only.</p>
+        <div class="tags">
+          <span class="tag">6 interfaces</span><span class="tag">Ports & payloads</span><span class="tag">Spawn vs launch</span><span class="tag">Zero shared objects</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> SPACE → RSIS3</span><span><i style="background:#f472b6"></i> RSIS3 → evaluator</span><span><i style="background:var(--mykb)"></i> MyKB ⇄ RSIS3</span><span><i style="background:var(--dash)"></i> Dashboard ⇄</span>
+          </div>
+          <a class="download-btn" href="basic-17-six-handoffs.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-18-repo-map.svg" alt="The Repo Map &mdash; Where Everything Lives" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Repo Map &mdash; Where Everything Lives</h3><span class="card-num">B-18</span></div>
+        <p class="card-desc">The monorepo tree: cosmos/ root redirect, the three component trees with their real contents (rack/pulses, immutable evaluator, wiki corpus, daemon, web UI, prompt framework), file and LOC counts, and why the shared git-tracked filesystem matters.</p>
+        <div class="tags">
+          <span class="tag">Filesystem tree</span><span class="tag">112 files · 67k LOC</span><span class="tag">2,360+ wiki pages</span><span class="tag">150 tests</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> rsis3/</span><span><i style="background:var(--mykb)"></i> mykb/</span><span><i style="background:var(--space)"></i> space/</span><span><i style="background:var(--dash)"></i> shared FS</span>
+          </div>
+          <a class="download-btn" href="basic-18-repo-map.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-19-runtime-map.svg" alt="The Runtime Map &mdash; What Runs, Where, On Which Port" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Runtime Map &mdash; What Runs, Where, On Which Port</h3><span class="card-num">B-19</span></div>
+        <p class="card-desc">GitHub Pages (cosmos/ + hub/) in the cloud and the four local servers &mdash; dashboard :9000, MyKB daemon :8765 (the only always-on server), SPACE :8888/:8899, RSIS3 :8080 &mdash; plus the documented port conflict where the rack and the daemon both claim :8765.</p>
+        <div class="tags">
+          <span class="tag">GitHub Pages</span><span class="tag">:9000 · :8765 · :8888/8899</span><span class="tag">Port conflict</span><span class="tag">Only daemon always-on</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--dash)"></i> Cloud · Pages</span><span><i style="background:var(--mykb)"></i> :8765 daemon</span><span><i style="background:var(--space)"></i> :8888/:8899</span><span><i style="background:var(--rsis)"></i> :8080 static</span>
+          </div>
+          <a class="download-btn" href="basic-19-runtime-map.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-20-improvement-stack.svg" alt="The Improvement Stack &mdash; One Idea Becomes Memory" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Improvement Stack &mdash; One Idea Becomes Memory</h3><span class="card-num">B-20</span></div>
+        <p class="card-desc">Six rungs &mdash; idea &rarr; spec &rarr; candidate &rarr; pulse &rarr; lesson &rarr; memory &mdash; with the evaluator gate between candidate and pulse and the retrieval return arc (:8765) feeding memory back into the next idea. A stack with a return elevator.</p>
+        <div class="tags">
+          <span class="tag">6 rungs</span><span class="tag">Maturation</span><span class="tag">Evaluator gate</span><span class="tag">Return arc :8765</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> Idea · spec</span><span><i style="background:var(--rsis)"></i> Candidate</span><span><i style="background:var(--dash)"></i> Pulse</span><span><i style="background:var(--mykb)"></i> Lesson · memory</span>
+          </div>
+          <a class="download-btn" href="basic-20-improvement-stack.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-21-loop-roster.svg" alt="The Loop Roster &mdash; All Six Rhythms" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Loop Roster &mdash; All Six Rhythms</h3><span class="card-num">B-21</span></div>
+        <p class="card-desc">Every periodic process &mdash; L1 ~1s, RRP ~12s, L3 ~60s, retrieval on-demand, evaluator &le;5/session, telemetry ~1s &mdash; with triggers, plus the two phase-locking ratios 12:1 (pulses per round) and 25:1 (rounds per spec).</p>
+        <div class="tags">
+          <span class="tag">6 rhythms</span><span class="tag">12:1 · 25:1</span><span class="tag">Phase lock</span><span class="tag">Event-driven exceptions</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> L1 · 1s</span><span><i style="background:var(--space)"></i> RRP · 12s</span><span><i style="background:var(--mykb)"></i> L3 · 60s</span><span><i style="background:var(--dash)"></i> telemetry</span>
+          </div>
+          <a class="download-btn" href="basic-21-loop-roster.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-22-read-write-ledger.svg" alt="The Read/Write Ledger &mdash; Who Touches Which Store" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Read/Write Ledger &mdash; Who Touches Which Store</h3><span class="card-num">B-22</span></div>
+        <p class="card-desc">Six persistent stores (wiki corpus, TF-IDF index, KG edges, spec store, pulses, dashboard-data.json) &times; four components with R / W / RW / BUILD cells &mdash; the dual of the ownership matrix: B-14 asks who runs the code, this asks who touches the data.</p>
+        <div class="tags">
+          <span class="tag">Store × component</span><span class="tag">R/W/RW</span><span class="tag">Derived vs owned</span><span class="tag">Git-tracked stores</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3 reads</span><span><i style="background:var(--mykb)"></i> MyKB owns</span><span><i style="background:var(--space)"></i> SPACE writes</span><span><i style="background:var(--dash)"></i> Dashboard reads</span>
+          </div>
+          <a class="download-btn" href="basic-22-read-write-ledger.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-23-session-journey.svg" alt="The Session Journey &mdash; One Session, Nine Events" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Session Journey &mdash; One Session, Nine Events</h3><span class="card-num">B-23</span></div>
+        <p class="card-desc">The real order of operations from cold start to consolidated memory &mdash; start, L1 runs, retrieval, candidate, eval gate, pulse, capture, consolidate, next &mdash; with the three capture points and the gate as the only step that can send the session backward.</p>
+        <div class="tags">
+          <span class="tag">Event timeline</span><span class="tag">Capture points</span><span class="tag">Eval gate</span><span class="tag">Timing budget</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> engine steps</span><span><i style="background:var(--mykb)"></i> memory steps</span><span><i style="background:var(--dash)"></i> pulse</span><span><i style="background:#f472b6"></i> gate</span>
+          </div>
+          <a class="download-btn" href="basic-23-session-journey.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="basic-24-integration-timeline.svg" alt="The Integration Timeline &mdash; λ1 Engine to λ4 Ecosystem" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Integration Timeline &mdash; λ1 Engine to λ4 Ecosystem</h3><span class="card-num">B-24</span></div>
+        <p class="card-desc">Four integration stages &mdash; engine only, +memory, +ideation, full ecosystem &mdash; each a strict superset of the last and each a bifurcation in the A-13 portrait. &lambda;&#8324; is the system deployed today.</p>
+        <div class="tags">
+          <span class="tag">λ₁ → λ₄</span><span class="tag">Strict supersets</span><span class="tag">Bifurcations</span><span class="tag">Links to A-13</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> λ₁ engine</span><span><i style="background:var(--mykb)"></i> λ₂ +memory</span><span><i style="background:var(--space)"></i> λ₃ +ideation</span><span><i style="background:var(--dash)"></i> λ₄ ecosystem</span>
+          </div>
+          <a class="download-btn" href="basic-24-integration-timeline.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
   </section>
 
-  <!-- ─── 1. RSIS3 ─── -->
-  <section class="diagram-section" id="s1">
-    <h2>1. RSIS3 — Core Cognitive Engine</h2>
-    <p class="desc">12 Python modules, 8 classes, 7 dataclasses, 50+ functions. Three-loop architecture with L1 (action), L2 (improvement), L3 (evolution) plus support modules for telemetry, evaluator, memory, checkpointing, recovery, resource monitoring, timeout, and extrapolation.</p>
-    <div class="diagram-frame">
-      <img src="rsis3-deconstruction.svg" alt="RSIS3 Source Deconstruction" loading="lazy">
+<section class="tab-panel" data-panel="advanced" id="advanced" role="tabpanel" hidden>
+    <div class="panel-head">
+      <h2>Advanced — how each component works</h2>
+      <p>Deeper views of the internals: loops, pipelines, matrices, state machines, and the semantic spaces the components live in.</p>
     </div>
-    <div class="diagram-meta">
-      <div class="tags">
-        <span class="tag tag-core">main.py: 8 commands</span>
-        <span class="tag tag-core">config.py: 7 dataclasses</span>
-        <span class="tag tag-core">3 loops</span>
-        <span class="tag tag-core">8 support modules</span>
+
+
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-01-rsis3-loops.svg" alt="RSIS3 Three-Loop Architecture" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>RSIS3 Three-Loop Architecture</h3><span class="card-num">A-01</span></div>
+        <p class="card-desc">L1 per-task action loop (seconds), L2 evaluator-gated improvement (minutes), L3 cross-session evolution (hours/days) — plus governance, telemetry, and memory support systems.</p>
+        <div class="tags">
+          <span class="tag">L1 / L2 / L3</span><span class="tag">Evaluator gate</span><span class="tag">Budgets &amp; deadlines</span><span class="tag">Telemetry</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3</span>
+            <span><i style="background:var(--mykb)"></i> MyKB</span>
+            <span><i style="background:var(--space)"></i> SPACE</span>
+            <span><i style="background:var(--dash)"></i> Telemetry</span>
+            <span><i style="background:var(--ext)"></i> Governance</span>
+          </div>
+          <a class="download-btn" href="advanced-01-rsis3-loops.svg" download>⬇ SVG</a>
+        </div>
       </div>
-      <a class="download-btn" href="rsis3-deconstruction.svg" download>⬇ SVG</a>
-    </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-02-mykb-search.svg" alt="MyKB Search Pipeline" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>MyKB Search Pipeline</h3><span class="card-num">A-02</span></div>
+        <p class="card-desc">Indexing path (top) and query path (bottom): from 2,360+ markdown pages through TF-IDF + RRF fusion to ranked hybrid results on port 8765.</p>
+        <div class="tags">
+          <span class="tag">TF-IDF</span><span class="tag">RRF fusion</span><span class="tag">Hybrid search</span><span class="tag">Port 8765</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--mykb)"></i> MyKB</span>
+            <span><i style="background:var(--rsis)"></i> RSIS3</span>
+            <span><i style="background:var(--space)"></i> SPACE</span>
+            <span><i style="background:var(--dash)"></i> Index</span>
+            <span><i style="background:var(--ext)"></i> API</span>
+          </div>
+          <a class="download-btn" href="advanced-02-mykb-search.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-03-space-session.svg" alt="SPACE Session Lifecycle" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>SPACE Session Lifecycle</h3><span class="card-num">A-03</span></div>
+        <p class="card-desc">From <code>space init</code> through a 326-probe RRP session (7 series, 25 rounds), provider dispatch, and 6 export formats — with Web UI and Meta Viewer on 8888/8899.</p>
+        <div class="tags">
+          <span class="tag">RRP protocol</span><span class="tag">326 probes</span><span class="tag">7 series</span><span class="tag">6 export formats</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> SPACE</span>
+            <span><i style="background:var(--mykb)"></i> MyKB</span>
+            <span><i style="background:var(--rsis)"></i> RSIS3</span>
+            <span><i style="background:var(--dash)"></i> Storage</span>
+            <span><i style="background:var(--ext)"></i> Exports</span>
+          </div>
+          <a class="download-btn" href="advanced-03-space-session.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-04-memory-hierarchy.svg" alt="Memory Hierarchy" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>Memory Hierarchy</h3><span class="card-num">A-04</span></div>
+        <p class="card-desc">Four tiers from ephemeral runtime state to durable, queryable knowledge — who writes and reads each tier, from JSONL buffers to the wiki and knowledge graph.</p>
+        <div class="tags">
+          <span class="tag">4 tiers</span><span class="tag">Ephemeral &rarr; durable</span><span class="tag">Knowledge graph</span><span class="tag">Wiki pages</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--mykb)"></i> MyKB</span>
+            <span><i style="background:var(--rsis)"></i> RSIS3</span>
+            <span><i style="background:var(--space)"></i> SPACE</span>
+            <span><i style="background:var(--dash)"></i> Data</span>
+            <span><i style="background:var(--ext)"></i> External</span>
+          </div>
+          <a class="download-btn" href="advanced-04-memory-hierarchy.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-05-orchestration.svg" alt="Orchestration and Dashboard" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>Orchestration &amp; Dashboard</h3><span class="card-num">A-05</span></div>
+        <p class="card-desc">How the cosmos CLI, <code>start.sh</code>, the hub dashboard, and the Sentry heartbeat keep all three components running — with the service registry and PID tracking.</p>
+        <div class="tags">
+          <span class="tag">cosmos CLI</span><span class="tag">start.sh</span><span class="tag">Sentry heartbeat</span><span class="tag">Service registry</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--dash)"></i> Dashboard</span>
+            <span><i style="background:var(--rsis)"></i> RSIS3</span>
+            <span><i style="background:var(--mykb)"></i> MyKB</span>
+            <span><i style="background:var(--ext)"></i> Heartbeat</span>
+          </div>
+          <a class="download-btn" href="advanced-05-orchestration.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-06-recursive-generations.svg" alt="Recursive Generations" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>Recursive Generations</h3><span class="card-num">A-06</span></div>
+        <p class="card-desc">Every generation stands on the previous one&rsquo;s shoulders: G0 acts, G1 improves the actor, G2 improves improvement, G3 evolves evolution.</p>
+        <div class="tags">
+          <span class="tag">Recursion depth</span><span class="tag">G0 &rarr; G3</span><span class="tag">Inheritance</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> G0 acts</span>
+            <span><i style="background:var(--space)"></i> G1 improves actor</span>
+            <span><i style="background:var(--dash)"></i> G2 improves improvement</span>
+            <span><i style="background:var(--ext)"></i> G3 evolves evolution</span>
+            <span><i style="background:var(--mykb)"></i> MyKB</span>
+          </div>
+          <a class="download-btn" href="advanced-06-recursive-generations.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-07-cognition-loop.svg" alt="The Cognition Loop" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Cognition Loop</h3><span class="card-num">A-07</span></div>
+        <p class="card-desc">A single decision is where past and future meet: memory supplies context, imagination supplies scenarios, reason acts — and outcomes feed back into both.</p>
+        <div class="tags">
+          <span class="tag">Past / present / future</span><span class="tag">Feedback loops</span><span class="tag">Decision</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--mykb)"></i> Memory &middot; PAST</span>
+            <span><i style="background:var(--rsis)"></i> Reason &middot; PRESENT</span>
+            <span><i style="background:var(--space)"></i> Imagination &middot; FUTURE</span>
+            <span><i style="background:var(--dash)"></i> Memory updated</span>
+            <span><i style="background:var(--ext)"></i> Forecasts recalibrated</span>
+          </div>
+          <a class="download-btn" href="advanced-07-cognition-loop.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-08-mykb-ontology.svg" alt="MyKB Ontology Venn" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>MyKB Ontology Venn</h3><span class="card-num">A-08</span></div>
+        <p class="card-desc">The memory substrate decomposed: X = episodic &harr; semantic, Y = implicit &harr; explicit. Six sets (daily+raw, temporal engine, TF-IDF index, knowledge graph, hooks+ops, wiki corpus) stay in one cyan family where lightness = explicitness; every overlap is a retrieval or capture path — entity links, time-travel, daily &rarr; wiki promotion.</p>
+        <div class="tags">
+          <span class="tag">Episodic &times; semantic</span><span class="tag">Lightness = explicitness</span><span class="tag">One substrate, many surfaces</span><span class="tag">2,360+ pages</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:#67e8f9"></i> Episodic / raw</span>
+            <span><i style="background:var(--mykb)"></i> Processed wiki</span>
+            <span><i style="background:#06b6d4"></i> Semantic graph</span>
+            <span><i style="background:#0e7490"></i> Procedural hooks</span>
+          </div>
+          <a class="download-btn" href="advanced-08-mykb-ontology.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-09-space-ontology.svg" alt="SPACE Framework Ontology" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>SPACE Framework Ontology</h3><span class="card-num">A-09</span></div>
+        <p class="card-desc">The 7 RRP series mapped onto X = what &harr; how and Y = concrete &harr; abstract. 326 probes appear as sampled dots (density &prop; share) inside their series; overlaps pin the real joints — meaning &amp; identity, depth of being, repeatable workflows, implementation contracts, runbooks.</p>
+        <div class="tags">
+          <span class="tag">7 series in space</span><span class="tag">What &times; how</span><span class="tag">326 probes</span><span class="tag">6 export formats</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> Conceptual &middot; ontology</span>
+            <span><i style="background:#fbbf24"></i> Semantics &middot; methodology</span>
+            <span><i style="background:#d97706"></i> Specs &middot; procedures</span>
+            <span><i style="background:#b45309"></i> Operations</span>
+          </div>
+          <a class="download-btn" href="advanced-09-space-ontology.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-10-embedding-space.svg" alt="The Embedding Space" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Embedding Space &mdash; 2,360+ Pages Projected</h3><span class="card-num">A-10</span></div>
+        <p class="card-desc">The entire wiki corpus projected onto a semantic plane: 2,360+ pages collapse into 48 clusters with 26 real domain labels (agent-systems, api-protocols, meta-learning&hellip;). RRF retrieval rings and the query path sit at the centre, and the three component anchors (RSIS3 / MyKB / SPACE) hover where their artefacts land — page-space itself is the ontology.</p>
+        <div class="tags">
+          <span class="tag">2,360+ pages</span><span class="tag">48 clusters</span><span class="tag">26 domains</span><span class="tag">RRF retrieval rings</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--mykb)"></i> Wiki corpus &middot; 48 clusters</span>
+            <span><i style="background:var(--rsis)"></i> RSIS3 &middot; anchor</span>
+            <span><i style="background:var(--space)"></i> SPACE &middot; anchor</span>
+            <span><i style="background:var(--dash)"></i> RRF rings &middot; retrieval</span>
+          </div>
+          <a class="download-btn" href="advanced-10-embedding-space.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-11-probe-constellation.svg" alt="The Probe Constellation" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Probe Constellation &mdash; RRP Dispatch Sequence</h3><span class="card-num">A-11</span></div>
+        <p class="card-desc">All 326 RRP probes laid out as a star field whose spiral sweep is the actual dispatch order: 25 rounds across 7 series, each series a ring sized by probe share (S1 3&rarr;6, S2 5&rarr;15, S3 4&rarr;8, S4 3&rarr;6, S5 4&rarr;20, S6 3&rarr;6, S7 3&rarr;6). The animation encodes sequence — probes brighten only as the cursor reaches them — and a dependency chain runs S1 &rarr; S7, feeding 6 export formats.</p>
+        <div class="tags">
+          <span class="tag">326 probes</span><span class="tag">7 series &times; 25 rounds</span><span class="tag">Dispatch-order sweep</span><span class="tag">6 export formats</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> Probe rings &middot; S1&ndash;S7</span>
+            <span><i style="background:#fbbf24"></i> Sweep &middot; dispatch order</span>
+            <span><i style="background:#d97706"></i> Dependency chain</span>
+            <span><i style="background:var(--dash)"></i> Brighten &middot; active probe</span>
+          </div>
+          <a class="download-btn" href="advanced-11-probe-constellation.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-12-energy-landscape.svg" alt="The Energy Landscape" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Energy Landscape &mdash; Maturation as a Potential Field</h3><span class="card-num">A-12</span></div>
+        <p class="card-desc">Elevation = maturity cost: artifacts roll downhill from cheap, unstable theory toward deep, stable memory. Three real wells — SPACE at alt 85, RSIS3 at alt 22, MyKB at alt 14 — separated by two load-bearing gates: the EVALUATOR barrier (55) that candidates must clear to leave ideation and the CONSOLIDATION barrier (42) before lessons become memory. A comet rides the full maturation cascade (spec &rarr; candidate &rarr; pulse &rarr; lesson &rarr; KG edge) while DASH reads telemetry at alt 15.</p>
+        <div class="tags">
+          <span class="tag">Potential field</span><span class="tag">Gates = barriers 55/42</span><span class="tag">Maturation cascade</span><span class="tag">Elevation &prop; cost</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> SPACE &middot; alt 85</span>
+            <span><i style="background:var(--rsis)"></i> RSIS3 &middot; alt 22</span>
+            <span><i style="background:var(--mykb)"></i> MyKB &middot; alt 14</span>
+            <span><i style="background:var(--dash)"></i> DASH &middot; telemetry</span>
+          </div>
+          <a class="download-btn" href="advanced-12-energy-landscape.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-13-bifurcation-map.svg" alt="The Bifurcation Portrait" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Bifurcation Portrait &mdash; Structure as &lambda; Grows</h3><span class="card-num">A-13</span></div>
+        <p class="card-desc">&lambda; = integration depth, the control parameter; each milestone is a real subsystem joining the ecosystem and entering the portrait as a new attractor. Four regime panels (&lambda;&#8321; engine only &rarr; &lambda;&#8322; +memory &rarr; &lambda;&#8323; +ideation &rarr; &lambda;&#8324; +telemetry) spin loop dots at their true cadences, an animated cursor sweeps the regimes, and the bifurcation tree below branches 1 &rarr; 2 &rarr; 3 &rarr; 4 attractors as integration compounds.</p>
+        <div class="tags">
+          <span class="tag">&lambda; = integration depth</span><span class="tag">4 regime panels</span><span class="tag">Animated cursor</span><span class="tag">Bifurcation tree</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> &lambda;&#8321; &middot; engine</span>
+            <span><i style="background:var(--mykb)"></i> &lambda;&#8322; &middot; +memory</span>
+            <span><i style="background:var(--space)"></i> &lambda;&#8323; &middot; +ideation</span>
+            <span><i style="background:var(--dash)"></i> &lambda;&#8324; &middot; +telemetry</span>
+          </div>
+          <a class="download-btn" href="advanced-13-bifurcation-map.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+  
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-14-probe-cascade.svg" alt="The Probe Cascade &mdash; 326 Questions Become One Spec" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Probe Cascade &mdash; 326 Questions Become One Spec</h3><span class="card-num">A-14</span></div>
+        <p class="card-desc">The seven series (Conceptual Depth &rarr; Operational/Functional) with their per-session probe ranges (3&ndash;6 up to 4&ndash;20), merging through 25 rounds of probe-answer-reflect into one spec draft in six export formats. The framework is a funnel.</p>
+        <div class="tags">
+          <span class="tag">7 series</span><span class="tag">Probe ranges</span><span class="tag">25 rounds</span><span class="tag">6 exports</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> S1–S7 cascade</span><span><i style="background:var(--dash)"></i> spec product</span><span><i style="background:#f472b6"></i> 25:1 ratio</span>
+          </div>
+          <a class="download-btn" href="advanced-14-probe-cascade.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-15-retrieval-path.svg" alt="The Retrieval Path &mdash; From Question to Context" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Retrieval Path &mdash; From Question to Context</h3><span class="card-num">A-15</span></div>
+        <p class="card-desc">One L1 query through five stages inside MyKB &mdash; query, tokenize, TF-IDF score, rank, return &mdash; over HTTP :8765, with why retrieval is the hot path and the read-only contract that keeps the corpus safe.</p>
+        <div class="tags">
+          <span class="tag">TF-IDF pipeline</span><span class="tag">:8765</span><span class="tag">Ranked window</span><span class="tag">Hot path</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> L1 asks</span><span><i style="background:var(--mykb)"></i> daemon scores</span><span><i style="background:var(--dash)"></i> returns ranked</span>
+          </div>
+          <a class="download-btn" href="advanced-15-retrieval-path.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-16-evaluator-day.svg" alt="The Evaluator's Day &mdash; One Verdict, End to End" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Evaluator's Day &mdash; One Verdict, End to End</h3><span class="card-num">A-16</span></div>
+        <p class="card-desc">Candidate JSON &rarr; SHA-256 integrity check &rarr; isolated subprocess (60s cap) &rarr; five scoring dimensions &rarr; verdict on stdout &rarr; apply or retry (&le;5/session). The only code path RSIS3 may not rewrite.</p>
+        <div class="tags">
+          <span class="tag">SHA-256</span><span class="tag">Subprocess isolation</span><span class="tag">5 dimensions</span><span class="tag">≤5/session</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> L2 owns candidate</span><span><i style="background:#f472b6"></i> immutable judge</span><span><i style="background:var(--mykb)"></i> scoring model</span>
+          </div>
+          <a class="download-btn" href="advanced-16-evaluator-day.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-17-memory-write-path.svg" alt="The Memory Write Path &mdash; How a Session Becomes Knowledge" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Memory Write Path &mdash; How a Session Becomes Knowledge</h3><span class="card-num">A-17</span></div>
+        <p class="card-desc">The three capture hooks (retrieval log, eval verdict, session transcript) feeding the L3 consolidation pipeline &mdash; normalize, write wiki page + KG edge, git snapshot, index rebuild. The only way the corpus grows.</p>
+        <div class="tags">
+          <span class="tag">3 capture hooks</span><span class="tag">L3 consolidation</span><span class="tag">Git snapshot</span><span class="tag">Index rebuild</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--mykb)"></i> capture hooks</span><span><i style="background:var(--rsis)"></i> L3 stages</span><span><i style="background:var(--dash)"></i> index rebuild</span>
+          </div>
+          <a class="download-btn" href="advanced-17-memory-write-path.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-18-pulse-anatomy.svg" alt="The Pulse Anatomy &mdash; One Telemetry Event, Dissected" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Pulse Anatomy &mdash; One Telemetry Event, Dissected</h3><span class="card-num">A-18</span></div>
+        <p class="card-desc">The six-field JSON payload of a single pulse (timestamp, loop, step, tool, outcome, duration, retries), the append-only JSONL buffer, and the path to dashboard-data.json, Chart.js, and the extrapolator. Pulses are observability, not memory.</p>
+        <div class="tags">
+          <span class="tag">JSON payload</span><span class="tag">JSONL buffer</span><span class="tag">Append-only</span><span class="tag">Extrapolator</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--dash)"></i> pulse path</span><span><i style="background:var(--rsis)"></i> emitters</span><span><i style="background:#f472b6"></i> forecast</span>
+          </div>
+          <a class="download-btn" href="advanced-18-pulse-anatomy.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-19-spec-journey.svg" alt="The Spec Journey &mdash; Inside One RRP Session" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Spec Journey &mdash; Inside One RRP Session</h3><span class="card-num">A-19</span></div>
+        <p class="card-desc">space init &rarr; 25 rounds across 7 series &rarr; 7-provider dispatch &rarr; draft &rarr; six export formats &mdash; with the two consumers (RSIS3 L2 imports, MyKB archives) and why SPACE stays isolated behind exports.</p>
+        <div class="tags">
+          <span class="tag">RRP session</span><span class="tag">7 providers</span><span class="tag">6 formats</span><span class="tag">Two consumers</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> session stages</span><span><i style="background:var(--rsis)"></i> L2 consumes</span><span><i style="background:var(--mykb)"></i> archive</span>
+          </div>
+          <a class="download-btn" href="advanced-19-spec-journey.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-20-telemetry-graph.svg" alt="The Telemetry Graph &mdash; From Loop to Chart" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Telemetry Graph &mdash; From Loop to Chart</h3><span class="card-num">A-20</span></div>
+        <p class="card-desc">Four collectors (L1/L2/L3/SPACE) &rarr; one JSONL buffer &rarr; dashboard-data.json &rarr; Chart.js views, plus the extrapolator whose forecasts feed L3 strategy. The graph closes on itself: forecasts change strategies, strategies change pulses.</p>
+        <div class="tags">
+          <span class="tag">4 collectors</span><span class="tag">One sink</span><span class="tag">Forecast → strategy</span><span class="tag">Closed loop</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> collectors</span><span><i style="background:var(--dash)"></i> pipeline</span><span><i style="background:#f472b6"></i> extrapolator</span>
+          </div>
+          <a class="download-btn" href="advanced-20-telemetry-graph.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-21-module-topology.svg" alt="The Module Topology &mdash; Each Component From the Inside" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Module Topology &mdash; Each Component From the Inside</h3><span class="card-num">A-21</span></div>
+        <p class="card-desc">Three component graphs of real modules and edges &mdash; RSIS3's loops/evaluator/memory/telemetry structure, MyKB's daemon/search/temporal/KG structure, SPACE's RRP/provider/export structure &mdash; flat by design; depth lives in the loops, not the module tree.</p>
+        <div class="tags">
+          <span class="tag">3 module graphs</span><span class="tag">27 nodes</span><span class="tag">Flat module tree</span><span class="tag">Spawn boundary</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3 graph</span><span><i style="background:var(--mykb)"></i> MyKB graph</span><span><i style="background:var(--space)"></i> SPACE graph</span><span><i style="background:#f472b6"></i> spawn edge</span>
+          </div>
+          <a class="download-btn" href="advanced-21-module-topology.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-22-failure-cascade.svg" alt="The Failure Cascade &mdash; What Degrades, What Survives" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Failure Cascade &mdash; What Degrades, What Survives</h3><span class="card-num">A-22</span></div>
+        <p class="card-desc">Six dependencies with failure modes, degraded modes, and recoveries &mdash; daemon down, evaluator timeout, SPACE UI down, dashboard down, provider outage, wiki corruption &mdash; plus the resilience ladder: degrade gracefully &rarr; retry &rarr; restore from snapshot.</p>
+        <div class="tags">
+          <span class="tag">Failure modes</span><span class="tag">Degraded modes</span><span class="tag">Recovery ladder</span><span class="tag">Nothing fatal</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:#f472b6"></i> trust boundary</span><span><i style="background:var(--space)"></i> SPACE deps</span><span><i style="background:var(--dash)"></i> dashboard</span><span><i style="background:var(--mykb)"></i> memory deps</span>
+          </div>
+          <a class="download-btn" href="advanced-22-failure-cascade.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-23-time-horizon-map.svg" alt="The Time Horizon Map &mdash; Two Spectra, All Six Rhythms" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Time Horizon Map &mdash; Two Spectra, All Six Rhythms</h3><span class="card-num">A-23</span></div>
+        <p class="card-desc">Operation cadence (fast &rarr; slow) and memory persistence (ephemeral &rarr; permanent) as two spectra with every artifact positioned &mdash; revealing the anti-diagonal rule: fast things make ephemeral things; retrieval sits at the join.</p>
+        <div class="tags">
+          <span class="tag">2 spectra</span><span class="tag">Cadence vs persistence</span><span class="tag">Anti-diagonal rule</span><span class="tag">Retrieval at the join</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> cadence</span><span><i style="background:var(--mykb)"></i> persistence</span><span><i style="background:var(--dash)"></i> ephemeral</span><span><i style="background:var(--space)"></i> middle</span>
+          </div>
+          <a class="download-btn" href="advanced-23-time-horizon-map.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-24-semantic-overlap-volume.svg" alt="The Semantic Overlap Volume &mdash; Ontology in 4D" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Semantic Overlap Volume &mdash; Ontology in 4D</h3><span class="card-num">A-24</span></div>
+        <p class="card-desc">Three spheres (SPACE, RSIS3, MyKB) on the theory&harr;execution and short-term&harr;long-term axes &mdash; size = footprint, colour = component, and where they overlap the colours blend into the real interfaces (spec &rarr; candidate, lessons &rarr; memory, retrieval &rarr; ideation). The pulsing &lambda; ring is time, the 4th axis.</p>
+        <div class="tags">
+          <span class="tag">4D spheres</span><span class="tag">Blended overlaps</span><span class="tag">Footprint ∝ size</span><span class="tag">λ morph</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> SPACE · ideation</span><span><i style="background:var(--rsis)"></i> RSIS3 · execution</span><span><i style="background:var(--mykb)"></i> MYKB · memory</span><span><i style="background:#f472b6"></i> λ · time</span>
+          </div>
+          <a class="download-btn" href="advanced-24-semantic-overlap-volume.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-25-interface-contracts.svg" alt="The Interface Contract Table &mdash; The Fine Print" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Interface Contract Table &mdash; The Fine Print</h3><span class="card-num">A-25</span></div>
+        <p class="card-desc">Six interfaces with transport, payload, error mode, and cadence &mdash; the spec-level detail beneath B-17's cards &mdash; including the only bidirectional pair: candidate JSON in and verdict JSON out over one subprocess.</p>
+        <div class="tags">
+          <span class="tag">Transport · payload</span><span class="tag">Error modes</span><span class="tag">Cadence</span><span class="tag">Bidirectional pair</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> SPACE sender</span><span><i style="background:var(--rsis)"></i> RSIS3 sender</span><span><i style="background:var(--mykb)"></i> MyKB sender</span><span><i style="background:#f472b6"></i> spawn pair</span>
+          </div>
+          <a class="download-btn" href="advanced-25-interface-contracts.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="advanced-26-component-state-machine.svg" alt="The Component State Machine &mdash; Three Engines, Three Lives" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Component State Machine &mdash; Three Engines, Three Lives</h3><span class="card-num">A-26</span></div>
+        <p class="card-desc">RSIS3's four states (idle &rarr; acting &rarr; improving &rarr; consolidating), MyKB's three (serving &rarr; indexing &rarr; capturing), SPACE's three (composing &rarr; running &rarr; exporting) &mdash; every transition labelled with the real trigger that fires it.</p>
+        <div class="tags">
+          <span class="tag">3 state machines</span><span class="tag">Real triggers</span><span class="tag">Loop shapes</span><span class="tag">Depth in the engine</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3 machine</span><span><i style="background:var(--mykb)"></i> MyKB machine</span><span><i style="background:var(--space)"></i> SPACE machine</span>
+          </div>
+          <a class="download-btn" href="advanced-26-component-state-machine.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
   </section>
 
-  <!-- ─── 2. MyKB ─── -->
-  <section class="diagram-section" id="s2">
-    <h2>2. MyKB — Long-Term Memory</h2>
-    <p class="desc">5 Python scripts, 4 wiki-daemon backend modules, 2,360+ wiki markdown pages across 48 domains. HTTP server with TF-IDF search, temporal time-travel engine, knowledge graph enrichment, and quality linter.</p>
-    <div class="diagram-frame">
-      <img src="mykb-deconstruction.svg" alt="MyKB Source Deconstruction" loading="lazy">
+<section class="tab-panel" data-panel="expert" id="expert" role="tabpanel" hidden>
+    <div class="panel-head">
+      <h2>Expert — internals, pipelines, meta</h2>
+      <p>Code-level pipelines and systems-theoretic views: entropy, invariants, fault logic, budgets, coupling, and conservation.</p>
     </div>
-    <div class="diagram-meta">
-      <div class="tags">
-        <span class="tag tag-memory">server.py: port 8765</span>
-        <span class="tag tag-memory">search_fusion: TF-IDF + RRF</span>
-        <span class="tag tag-memory">temporal_engine: git time-travel</span>
-        <span class="tag tag-memory">48 wiki domains</span>
+
+
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-01-evaluator-pipeline.svg" alt="RSIS3 Evaluator Pipeline" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>Evaluator Pipeline</h3><span class="card-num">E-01</span></div>
+        <p class="card-desc">How improvements get validated: L2 candidate &rarr; SHA-256 integrity check &rarr; isolated subprocess &rarr; immutable evaluator&rsquo;s PASS/FAIL gate.</p>
+        <div class="tags">
+          <span class="tag">Immutable evaluator</span><span class="tag">SHA-256 digest</span><span class="tag">Subprocess isolation</span><span class="tag">PASS/FAIL gate</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3</span>
+            <span><i style="background:var(--mykb)"></i> Integrity</span>
+            <span><i style="background:var(--space)"></i> Subprocess</span>
+            <span><i style="background:var(--dash)"></i> Result</span>
+            <span><i style="background:var(--ext)"></i> External</span>
+          </div>
+          <a class="download-btn" href="expert-01-evaluator-pipeline.svg" download>⬇ SVG</a>
+        </div>
       </div>
-      <a class="download-btn" href="mykb-deconstruction.svg" download>⬇ SVG</a>
-    </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-02-telemetry-pipeline.svg" alt="RSIS3 Telemetry and Extrapolation" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>Telemetry &amp; Extrapolation</h3><span class="card-num">E-02</span></div>
+        <p class="card-desc">From raw JSONL events through the TelemetryCollector and extrapolator to velocity reports — the strategic insight that drives L3 evolution.</p>
+        <div class="tags">
+          <span class="tag">JSONL events</span><span class="tag">TelemetryCollector</span><span class="tag">Velocity reports</span><span class="tag">L3 evolution</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3</span>
+            <span><i style="background:var(--dash)"></i> Telemetry</span>
+            <span><i style="background:var(--space)"></i> Extrapolator</span>
+            <span><i style="background:var(--mykb)"></i> Memory</span>
+            <span><i style="background:var(--ext)"></i> Outputs</span>
+          </div>
+          <a class="download-btn" href="expert-02-telemetry-pipeline.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-03-llm-providers.svg" alt="SPACE LLM Provider Architecture" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>LLM Provider Architecture</h3><span class="card-num">E-03</span></div>
+        <p class="card-desc">Factory pattern: one <code>LLMProvider</code> interface, 7 providers (OpenAI, Anthropic, Gemini, Groq, Ollama&hellip;), and multiple consumers across the SPACE engine.</p>
+        <div class="tags">
+          <span class="tag">Factory pattern</span><span class="tag">7 providers</span><span class="tag">Single interface</span><span class="tag">Env-based config</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> SPACE</span>
+            <span><i style="background:var(--mykb)"></i> Interface</span>
+            <span><i style="background:var(--dash)"></i> Consumers</span>
+            <span><i style="background:var(--ext)"></i> Providers</span>
+          </div>
+          <a class="download-btn" href="expert-03-llm-providers.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-04-api-map.svg" alt="Full API Map" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>Full API Map</h3><span class="card-num">E-04</span></div>
+        <p class="card-desc">Every HTTP endpoint in the ecosystem: who serves it (RSIS3, MyKB, SPACE, dashboard), the method, the path, and what it does.</p>
+        <div class="tags">
+          <span class="tag">Endpoints</span><span class="tag">8765 MyKB</span><span class="tag">8888 / 8899 SPACE</span><span class="tag">9000 Dashboard</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3</span>
+            <span><i style="background:var(--mykb)"></i> MyKB</span>
+            <span><i style="background:var(--space)"></i> SPACE</span>
+            <span><i style="background:var(--dash)"></i> Dashboard</span>
+            <span><i style="background:var(--ext)"></i> External</span>
+          </div>
+          <a class="download-btn" href="expert-04-api-map.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-05-variation-selection.svg" alt="Variation and Selection" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>Variation &amp; Selection</h3><span class="card-num">E-05</span></div>
+        <p class="card-desc">The evolutionary engine (BVSR): SPACE generates blind variation, the immutable evaluator selects hard, RSIS3 inherits winners, MyKB retains them as memory.</p>
+        <div class="tags">
+          <span class="tag">BVSR</span><span class="tag">2 &times; 2 cycle</span><span class="tag">Evolutionary metaphor</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> Variation</span>
+            <span><i style="background:var(--ext)"></i> Selection (PASS/FAIL)</span>
+            <span><i style="background:var(--rsis)"></i> Inheritance</span>
+            <span><i style="background:var(--mykb)"></i> Retention</span>
+          </div>
+          <a class="download-btn" href="expert-05-variation-selection.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-06-meta-ladder.svg" alt="The Meta-Ladder" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Meta-Ladder</h3><span class="card-num">E-06</span></div>
+        <p class="card-desc">Loops about loops: L1 acts, L2 improves the actor, L3 evolves evolution, and the observer (SPACE probes + immutable evaluator) audits every rung.</p>
+        <div class="tags">
+          <span class="tag">Recursion</span><span class="tag">Meta-cognition</span><span class="tag">L0 &rarr; L3</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> L1 acts</span>
+            <span><i style="background:var(--space)"></i> L2 improves actor</span>
+            <span><i style="background:var(--ext)"></i> L3 evolves evolution</span>
+            <span><i style="background:var(--dash)"></i> Observer / audit</span>
+            <span><i style="background:var(--mykb)"></i> MyKB</span>
+          </div>
+          <a class="download-btn" href="expert-06-meta-ladder.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-07-ontology-spheres.svg" alt="Ontological Spheres 3D" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>Ontological Spheres &mdash; 3D</h3><span class="card-num">E-07</span></div>
+        <p class="card-desc">The ontology lifted into depth: hue = component, radius &prop; &radic;LOC, the floor is the two spectra (real-time &harr; long-term &times; execution &harr; theory), and height is the z-axis of explicitness (450 / 700 / 820). Gradient-lit spheres cast floor shadows, and blended halos mark shared semantic territory.</p>
+        <div class="tags">
+          <span class="tag">3D perspective</span><span class="tag">Z = explicitness</span><span class="tag">Radial light &amp; shadows</span><span class="tag">Blend halos</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3 &middot; execution</span>
+            <span><i style="background:var(--mykb)"></i> MyKB &middot; persistence</span>
+            <span><i style="background:var(--space)"></i> SPACE &middot; theory</span>
+            <span><i style="background:var(--ext)"></i> Halo &middot; blended territory</span>
+          </div>
+          <a class="download-btn" href="expert-07-ontology-spheres.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-08-time-evolution.svg" alt="The 4D Ontology over Time" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The 4D Ontology &mdash; Evolution over Time</h3><span class="card-num">E-08</span></div>
+        <p class="card-desc">The same semantic space with time as the fourth axis: animated circles drift from launch &rarr; integration &rarr; consolidation as radii grow and hues blend, while a static T0&ndash;T3 frame strip shows the convergence — memory grows fastest and overlap increases as cycles compound.</p>
+        <div class="tags">
+          <span class="tag">4th axis = time</span><span class="tag">Animated SVG</span><span class="tag">T0 &rarr; T3 convergence</span><span class="tag">Growth &amp; blending</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3 &middot; converges</span>
+            <span><i style="background:var(--space)"></i> SPACE &middot; converges</span>
+            <span><i style="background:var(--mykb)"></i> MyKB &middot; grows fastest</span>
+            <span><i style="background:var(--dash)"></i> Time axis</span>
+          </div>
+          <a class="download-btn" href="expert-08-time-evolution.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-09-semantic-lattice.svg" alt="The Semantic Lattice" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Semantic Lattice &mdash; A Categorical View</h3><span class="card-num">E-09</span></div>
+        <p class="card-desc">Four conceptual strata (CODE &rarr; RUNTIME &rarr; KNOWLEDGE &rarr; MEANING) crossed with the three component spines. Twelve real artifacts sit at lattice points, joined by eight named morphisms — compile, execute, persist, embed, probe, generate, retrieve, evaluate — with universal constructions (the evaluator gate, the RRP generator) at the joins. The glossary pins every arrow to its actual module.</p>
+        <div class="tags">
+          <span class="tag">4 strata</span><span class="tag">3 component spines</span><span class="tag">12 artifacts</span><span class="tag">8 named morphisms</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3 &middot; engine spine</span>
+            <span><i style="background:var(--mykb)"></i> MyKB &middot; knowledge spine</span>
+            <span><i style="background:var(--space)"></i> SPACE &middot; meaning spine</span>
+            <span><i style="background:var(--ext)"></i> Morphisms &middot; named arrows</span>
+          </div>
+          <a class="download-btn" href="expert-09-semantic-lattice.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-10-attractor-basins.svg" alt="The Attractor Basins" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Attractor Basins &mdash; A Phase-Space Portrait</h3><span class="card-num">E-10</span></div>
+        <p class="card-desc">The ecosystem as a phase space with four attractors — SPACE (ideation), RSIS3 (execution), MyKB (memory), Dashboard (observation). Closed orbits trace maturation circulation (spec &rarr; implementation &rarr; memory), dashed cross-flows are the real interfaces (RRP prompt generation, retrieval, telemetry), and a separatrix marks where pull is balanced. Animation is meaningful: each orbit is a period of the loop it belongs to.</p>
+        <div class="tags">
+          <span class="tag">4 attractors</span><span class="tag">Closed orbits</span><span class="tag">Cross-flows</span><span class="tag">Separatrix</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> SPACE &middot; ideation</span>
+            <span><i style="background:var(--rsis)"></i> RSIS3 &middot; execution</span>
+            <span><i style="background:var(--mykb)"></i> MyKB &middot; memory</span>
+            <span><i style="background:var(--dash)"></i> DASH &middot; observation</span>
+          </div>
+          <a class="download-btn" href="expert-10-attractor-basins.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-11-coupled-oscillators.svg" alt="The Coupled Oscillators" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Coupled Oscillators &mdash; Loop Limit Cycles</h3><span class="card-num">E-11</span></div>
+        <p class="card-desc">Three loops as concentric rotating rings where rotation speed IS the real cadence, time-compressed: L1 action (T = 1s), RRP ideation (T = 12s), L3 consolidation (T = 60s). Coupling arcs and comets mark the actual phase relationships — pulse &rarr; round, round &rarr; consolidation, retrieval &rarr; action — with ratios 12:1 (pulses per RRP round) and 25:1 (rounds per spec), and phase-gauge strips below showing 12 pulses &asymp; 1 round &asymp; the road to 1 consolidation.</p>
+        <div class="tags">
+          <span class="tag">3 loop clocks</span><span class="tag">Ratios 12:1 &middot; 25:1</span><span class="tag">Phase-locked</span><span class="tag">Comets = interfaces</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> L1 &middot; 1s action</span>
+            <span><i style="background:var(--space)"></i> RRP &middot; 12s ideation</span>
+            <span><i style="background:var(--mykb)"></i> L3 &middot; 60s memory</span>
+            <span><i style="background:var(--dash)"></i> Arcs &middot; phase lock</span>
+          </div>
+          <a class="download-btn" href="expert-11-coupled-oscillators.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-12-trajectory-bundle.svg" alt="The Trajectory Bundle" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Trajectory Bundle &mdash; Sessions Converging</h3><span class="card-num">E-12</span></div>
+        <p class="card-desc">A real Lorenz projection drawn honestly, with the three state variables mapped onto the ecosystem: x = context load, y = action frequency, z = memory depth. Seven session trajectories scatter from their initial conditions yet converge onto the same two lobes — execution and memory — and colour carries the 4th axis: success-rate telemetry along each path, pink = transient/contested, green = consolidated. White comet = the live session; cyan echo = retrieval pulling memory back into action.</p>
+        <div class="tags">
+          <span class="tag">3-state phase space</span><span class="tag">Lorenz projection</span><span class="tag">Colour = success over time</span><span class="tag">Converging lobes</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3 &middot; execution lobe</span>
+            <span><i style="background:var(--mykb)"></i> MyKB &middot; memory lobe</span>
+            <span><i style="background:#f472b6"></i> Pink &middot; transient</span>
+            <span><i style="background:#34d399"></i> Green &middot; consolidated</span>
+          </div>
+          <a class="download-btn" href="expert-12-trajectory-bundle.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+  
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-13-information-flow.svg" alt="The Information Flow &mdash; Entropy Along the Lifecycle" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Information Flow &mdash; Entropy Along the Lifecycle</h3><span class="card-num">E-13</span></div>
+        <p class="card-desc">Entropy (uncertainty before reading) as a curve across the artifact lifecycle &mdash; idea &rarr; spec &rarr; candidate &rarr; gate &rarr; pulse &rarr; lesson &rarr; KG edge &mdash; with the evaluator as the only point that can raise entropy. The 25:1 ratio is entropy in disguise.</p>
+        <div class="tags">
+          <span class="tag">Entropy curve</span><span class="tag">25:1 as entropy</span><span class="tag">Gate raises entropy</span><span class="tag">Information spent</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> high entropy</span><span><i style="background:var(--rsis)"></i> mid entropy</span><span><i style="background:var(--mykb)"></i> low entropy</span><span><i style="background:#f472b6"></i> the gate</span>
+          </div>
+          <a class="download-btn" href="expert-13-information-flow.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-14-invariant-ledger.svg" alt="The Invariant Ledger &mdash; What Never Changes" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Invariant Ledger &mdash; What Never Changes</h3><span class="card-num">E-14</span></div>
+        <p class="card-desc">Eight constants &mdash; evaluator immutability, 326 probes / 7 series, 6 formats, 7 providers, the 12:1 and 25:1 ratios, wiki as source of truth, one dashboard, the port map &mdash; each with its enforcement mechanism and its failure clause.</p>
+        <div class="tags">
+          <span class="tag">8 invariants</span><span class="tag">Enforcement</span><span class="tag">Failure clauses</span><span class="tag">Tiebreaker</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:#f472b6"></i> trust invariant</span><span><i style="background:var(--space)"></i> framework invariants</span><span><i style="background:var(--mykb)"></i> memory invariant</span><span><i style="background:var(--dash)"></i> dashboard invariant</span>
+          </div>
+          <a class="download-btn" href="expert-14-invariant-ledger.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-15-fault-tree.svg" alt="The Fault Tree &mdash; How the System Breaks, Top-Down" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Fault Tree &mdash; How the System Breaks, Top-Down</h3><span class="card-num">E-15</span></div>
+        <p class="card-desc">The failure cascade as logic: one top event, five branches, OR-gated leaves &mdash; including the one designed-in leaf (the :8765 port clash) that has no external cause. Two levels deep means every failure is one hop from the dashboard.</p>
+        <div class="tags">
+          <span class="tag">Fault tree</span><span class="tag">OR gates</span><span class="tag">2 levels deep</span><span class="tag">Designed-in leaf</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--mykb)"></i> daemon branch</span><span><i style="background:#f472b6"></i> evaluator branch</span><span><i style="background:var(--space)"></i> provider branch</span><span><i style="background:var(--dash)"></i> port clash</span>
+          </div>
+          <a class="download-btn" href="expert-15-fault-tree.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-16-self-reference-map.svg" alt="The Self-Reference Map &mdash; The System Improving Itself" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Self-Reference Map &mdash; The System Improving Itself</h3><span class="card-num">E-16</span></div>
+        <p class="card-desc">Four levels of recursion &mdash; objects, the engine improving its own code, the meta-loop improving the improver, and the RRP specifying RRP &mdash; with the one forbidden edge: the evaluator may never be rewritten by the system. Recursion is capped exactly at the judge.</p>
+        <div class="tags">
+          <span class="tag">4 recursion levels</span><span class="tag">Forbidden edge</span><span class="tag">Evaluator boundary</span><span class="tag">Well-founded</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> L0 objects</span><span><i style="background:var(--rsis)"></i> L1 engine</span><span><i style="background:var(--mykb)"></i> L2 meta-loop</span><span><i style="background:#f472b6"></i> L3 + forbidden</span>
+          </div>
+          <a class="download-btn" href="expert-16-self-reference-map.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-17-observability-stack.svg" alt="The Observability Stack &mdash; The System Watching Itself" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Observability Stack &mdash; The System Watching Itself</h3><span class="card-num">E-17</span></div>
+        <p class="card-desc">Emit &rarr; buffer &rarr; snapshot &rarr; render &rarr; read &rarr; decide &rarr; return, with every stage's format named (JSONL &rarr; disk &rarr; JSON &rarr; HTML &rarr; eyes &rarr; spec &rarr; loop) and the closing arc that turns telemetry into the next spec. Two readers: the human and L3.</p>
+        <div class="tags">
+          <span class="tag">7 stages</span><span class="tag">Format transitions</span><span class="tag">Two readers</span><span class="tag">Closed loop</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> emit</span><span><i style="background:var(--dash)"></i> buffer·render</span><span><i style="background:#f472b6"></i> read</span><span><i style="background:var(--space)"></i> decide</span>
+          </div>
+          <a class="download-btn" href="expert-17-observability-stack.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-18-thermodynamic-clock.svg" alt="The Thermodynamic Clock &mdash; Cost and Order Around the Loop" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Thermodynamic Clock &mdash; Cost and Order Around the Loop</h3><span class="card-num">E-18</span></div>
+        <p class="card-desc">The cost/order cycle &mdash; cheap chaos in ideation, the evaluator as energy barrier, work in execution, expensive order in consolidation &mdash; with a comet circling as one artifact's thermodynamic journey. The energy landscape (A-12) as a closed path.</p>
+        <div class="tags">
+          <span class="tag">Entropy ↔ cost</span><span class="tag">Barrier</span><span class="tag">Comet = gradient</span><span class="tag">Closed path</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> ideation · T↑</span><span><i style="background:#f472b6"></i> barrier · ΔG</span><span><i style="background:var(--rsis)"></i> execution · W</span><span><i style="background:var(--mykb)"></i> memory · T↓</span>
+          </div>
+          <a class="download-btn" href="expert-18-thermodynamic-clock.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-19-complexity-budget.svg" alt="The Complexity Budget &mdash; Where the Weight Lives" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Complexity Budget &mdash; Where the Weight Lives</h3><span class="card-num">E-19</span></div>
+        <p class="card-desc">Three dimensions drawn to scale &mdash; ~239k LOC across the components, 2,881 files (the wiki corpus dominating), and the six cross-component interfaces &mdash; arguing the real tax is coupling, not line count. Six contracts carry the entire ecosystem.</p>
+        <div class="tags">
+          <span class="tag">239k LOC</span><span class="tag">2,881 files</span><span class="tag">6 interfaces</span><span class="tag">To scale</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> RSIS3 · 67k</span><span><i style="background:var(--space)"></i> SPACE · 69k</span><span><i style="background:var(--mykb)"></i> corpus · 2,360</span><span><i style="background:var(--dash)"></i> interface bar</span>
+          </div>
+          <a class="download-btn" href="expert-19-complexity-budget.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-20-coupling-matrix.svg" alt="The Coupling Matrix &mdash; Who Depends on Whom" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Coupling Matrix &mdash; Who Depends on Whom</h3><span class="card-num">E-20</span></div>
+        <p class="card-desc">A directed dependency heatmap over six modules plus fan-in/fan-out bars &mdash; rsis3 core is the hub (highest in and out), the dashboard is a pure consumer, and the evaluator depends on nothing and is depended on by nothing but the spawn.</p>
+        <div class="tags">
+          <span class="tag">Heatmap</span><span class="tag">Fan-in/fan-out</span><span class="tag">Hub = rsis3</span><span class="tag">Isolated evaluator</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> fan-out</span><span><i style="background:var(--mykb)"></i> fan-in</span><span><i style="background:#f472b6"></i> hot cells</span>
+          </div>
+          <a class="download-btn" href="expert-20-coupling-matrix.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-21-protocol-stack.svg" alt="The Protocol Stack &mdash; The RRP, Layer by Layer" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Protocol Stack &mdash; The RRP, Layer by Layer</h3><span class="card-num">E-21</span></div>
+        <p class="card-desc">The seven RRP layers from probe (326 atoms) to consumption (L2 imports the spec), with the ratios between layers (12:1, 25:1, one spec &rarr; six renderings). The stack narrows because each layer is a purposeful compression.</p>
+        <div class="tags">
+          <span class="tag">7 layers</span><span class="tag">Layer ratios</span><span class="tag">Narrowing stack</span><span class="tag">Lossy compression</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--mykb)"></i> L1 probes</span><span><i style="background:var(--space)"></i> L2–L5 session</span><span><i style="background:var(--dash)"></i> L6 exports</span><span><i style="background:var(--rsis)"></i> L7 consumption</span>
+          </div>
+          <a class="download-btn" href="expert-21-protocol-stack.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-22-latency-budget.svg" alt="The Latency Budget &mdash; Where the Time Goes" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Latency Budget &mdash; Where the Time Goes</h3><span class="card-num">E-22</span></div>
+        <p class="card-desc">Every bounded stage with its cap and typical time &mdash; L1 step 120s, telemetry ~1s, RRP round 12s, retrieval ~8&ndash;15s, evaluation 60s, consolidation 60s &mdash; with the three surprises: evaluation owns the critical path, retrieval taxes L1, and consolidation is async.</p>
+        <div class="tags">
+          <span class="tag">Caps vs typical</span><span class="tag">Eval owns the path</span><span class="tag">Async consolidation</span><span class="tag">~4-min bound</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> L1 cap 120s</span><span><i style="background:#f472b6"></i> eval 60s</span><span><i style="background:var(--mykb)"></i> consolidation</span><span><i style="background:var(--dash)"></i> telemetry</span>
+          </div>
+          <a class="download-btn" href="expert-22-latency-budget.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-23-evolution-ladder.svg" alt="The Evolution Ladder &mdash; Climbing λ With Gates" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Evolution Ladder &mdash; Climbing λ With Gates</h3><span class="card-num">E-23</span></div>
+        <p class="card-desc">The &lambda; stages as rungs, each gate a measured proof &mdash; retrieval must round-trip, specs must pass the evaluator, embeds must render. Failing a gate holds the ladder; it does not roll it back.</p>
+        <div class="tags">
+          <span class="tag">λ₁ → λ₄</span><span class="tag">Gate proofs</span><span class="tag">Measured capabilities</span><span class="tag">Holds not rolls back</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> λ₁ engine</span><span><i style="background:var(--mykb)"></i> λ₂ memory</span><span><i style="background:var(--space)"></i> λ₃ ideation</span><span><i style="background:var(--dash)"></i> λ₄ ecosystem</span>
+          </div>
+          <a class="download-btn" href="expert-23-evolution-ladder.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-24-conservation-laws.svg" alt="The Conservation Laws &mdash; What the System Cannot Lose" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Conservation Laws &mdash; What the System Cannot Lose</h3><span class="card-num">E-24</span></div>
+        <p class="card-desc">Six conserved quantities &mdash; artifact lineage, budget conservation, source-of-truth, append-only telemetry, evaluator constancy, temporal continuity &mdash; each with a testable violation clause. If all six hold, every diagram in this viewer still describes the system.</p>
+        <div class="tags">
+          <span class="tag">6 laws</span><span class="tag">Violation clauses</span><span class="tag">Testable</span><span class="tag">Deepest invariant</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> lineage</span><span><i style="background:var(--rsis)"></i> budgets</span><span><i style="background:var(--mykb)"></i> truth + time</span><span><i style="background:#f472b6"></i> evaluator</span>
+          </div>
+          <a class="download-btn" href="expert-24-conservation-laws.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
   </section>
 
-  <!-- ─── 3. SPACE ─── -->
-  <section class="diagram-section" id="s3">
-    <h2>3. SPACE — RRP Ideation Engine</h2>
-    <p class="desc">35+ TypeScript source files across 10 modules: CLI (7 commands), Core Engine (6 modules), LLM integration (7 providers), Intelligence layer (5 modules), Export (6 formatters), Storage (2 backends), Template engine, i18n (3 locales), and a 326-probe question framework across 7 series.</p>
-    <div class="diagram-frame">
-      <img src="space-deconstruction.svg" alt="SPACE Source Deconstruction" loading="lazy">
+  <!-- ═══ EXPERT-PLUS ═══ -->
+  <section class="tab-panel" data-panel="expert-plus" id="expert-plus" role="tabpanel" hidden>
+    <div class="panel-head">
+      <h2>Expert+ — cross-cutting systems views</h2>
+      <p>Diagrams that read across all four runtimes at once: causality, entropy fields, resilience, time-scale separation, feedback topology, dependency lattices, resource flows, stability, phylogeny, and constraint hypergraphs.</p>
     </div>
-    <div class="diagram-meta">
-      <div class="tags">
-        <span class="tag tag-ideation">7 CLI commands</span>
-        <span class="tag tag-ideation">7 LLM providers</span>
-        <span class="tag tag-ideation">6 export formats</span>
-        <span class="tag tag-ideation">7 series / 326 probes</span>
-        <span class="tag tag-ideation">150 tests</span>
+
+    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-plus-01-causality-graph.svg" alt="The Causality Graph &mdash; What Causes What, With Lag" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Causality Graph &mdash; What Causes What, With Lag</h3><span class="card-num">X+-01</span></div>
+        <p class="card-desc">Nine events and ten causal edges with their lags, containing the four loops &mdash; improvement, memory, telemetry, outer. Causality, not topology, is the architecture: the graph says what makes what happen.</p>
+        <div class="tags">
+          <span class="tag">9 events</span><span class="tag">4 loops</span><span class="tag">Edge lags</span><span class="tag">Recursive heart</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> spec ⇄ retrieval</span><span><i style="background:var(--rsis)"></i> candidate · strategy</span><span><i style="background:#f472b6"></i> verdict</span><span><i style="background:var(--dash)"></i> pulse</span>
+          </div>
+          <a class="download-btn" href="expert-plus-01-causality-graph.svg" download>⬇ SVG</a>
+        </div>
       </div>
-      <a class="download-btn" href="space-deconstruction.svg" download>⬇ SVG</a>
+    </article>    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-plus-02-entropy-field.svg" alt="The Entropy Field &mdash; Uncertainty Across the Whole Plane" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Entropy Field &mdash; Uncertainty Across the Whole Plane</h3><span class="card-num">X+-02</span></div>
+        <p class="card-desc">The E-13 curve promoted to a 2D field over theory&harr;execution &times; short-term&harr;long-term &mdash; a high-entropy ideation zone, a low-entropy memory basin, artifact dots where they live, and a comet rolling down the gradient from probe answer to KG edge.</p>
+        <div class="tags">
+          <span class="tag">2D field</span><span class="tag">Contours</span><span class="tag">Comet = maturation</span><span class="tag">Zones = basins</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> high entropy</span><span><i style="background:var(--rsis)"></i> mid entropy</span><span><i style="background:var(--mykb)"></i> low entropy</span><span><i style="background:#f472b6"></i> comet</span>
+          </div>
+          <a class="download-btn" href="expert-plus-02-entropy-field.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-plus-03-resilience-spectrum.svg" alt="The Resilience Spectrum &mdash; What Survives, What Degrades" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Resilience Spectrum &mdash; What Survives, What Degrades</h3><span class="card-num">X+-03</span></div>
+        <p class="card-desc">Six dependencies ranked brittle &rarr; resilient &mdash; the port clash and evaluator at the brittle end, the SPACE UI at the resilient end &mdash; with the degrade &rarr; retry &rarr; restore ladder and the one dependency (the wiki) that cannot degrade because everything depends on it.</p>
+        <div class="tags">
+          <span class="tag">Brittle → resilient</span><span class="tag">Recovery ladder</span><span class="tag">Wiki cannot degrade</span><span class="tag">Trust-boundary cost</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:#f472b6"></i> brittle end</span><span><i style="background:var(--space)"></i> mid</span><span><i style="background:var(--mykb)"></i> restore path</span><span><i style="background:var(--dash)"></i> resilient end</span>
+          </div>
+          <a class="download-btn" href="expert-plus-03-resilience-spectrum.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-plus-04-time-scale-separation.svg" alt="The Time-Scale Separation &mdash; Four Clocks, One Log Axis" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Time-Scale Separation &mdash; Four Clocks, One Log Axis</h3><span class="card-num">X+-04</span></div>
+        <p class="card-desc">L1 (~1s), RRP (~12s), L3 (~60s), and cross-session (~1hr) drawn as wave trains on one shared axis &mdash; the order-of-magnitude separation is the adiabatic assumption that makes the recursion composable: fast loops see slow ones as frozen.</p>
+        <div class="tags">
+          <span class="tag">4 clocks</span><span class="tag">Log axis</span><span class="tag">Adiabatic</span><span class="tag">Separation not synchrony</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--rsis)"></i> L1 · 1s</span><span><i style="background:var(--space)"></i> RRP · 12s</span><span><i style="background:var(--mykb)"></i> L3 · 60s</span><span><i style="background:var(--dash)"></i> session · 1hr</span>
+          </div>
+          <a class="download-btn" href="expert-plus-04-time-scale-separation.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-plus-05-semantic-hyperplane.svg" alt="The Semantic Hyperplane &mdash; Ontology as Terrain, Projected" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Semantic Hyperplane &mdash; Ontology as Terrain, Projected</h3><span class="card-num">X+-05</span></div>
+        <p class="card-desc">The two semantic axes in isometric projection with elevation = footprint density &mdash; the three components as massifs whose overlapping skirts show shared semantic ground. The venn diagram with altitude.</p>
+        <div class="tags">
+          <span class="tag">Isometric</span><span class="tag">Elevation = density</span><span class="tag">3 massifs</span><span class="tag">Terrain</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> theory massif</span><span><i style="background:var(--rsis)"></i> execution massif</span><span><i style="background:var(--mykb)"></i> memory massif</span>
+          </div>
+          <a class="download-btn" href="expert-plus-05-semantic-hyperplane.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-plus-06-feedback-topology.svg" alt="The Feedback Topology &mdash; Four Loops, Two Signs, One System" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Feedback Topology &mdash; Four Loops, Two Signs, One System</h3><span class="card-num">X+-06</span></div>
+        <p class="card-desc">The improvement loop (negative &mdash; the evaluator brake), the memory loop (positive &mdash; compounding), the telemetry loop (neutral), and the outer loop (positive &mdash; the flywheel). Latency is the gain: slow loops damp themselves by being slow.</p>
+        <div class="tags">
+          <span class="tag">Loop signs</span><span class="tag">− brake + engine</span><span class="tag">Latency = gain</span><span class="tag">Emergent stability</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:#f472b6"></i> − improvement</span><span><i style="background:var(--mykb)"></i> + memory</span><span><i style="background:var(--dash)"></i> 0 telemetry</span><span><i style="background:var(--rsis)"></i> + outer</span>
+          </div>
+          <a class="download-btn" href="expert-plus-06-feedback-topology.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-plus-07-dependency-lattice.svg" alt="The Dependency Lattice &mdash; The Partial Order of Artifacts" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Dependency Lattice &mdash; The Partial Order of Artifacts</h3><span class="card-num">X+-07</span></div>
+        <p class="card-desc">A Hasse diagram of production rules &mdash; space init and probes at the bottom, retrieval at the top &mdash; forbidding skipped ancestors: no candidate without a spec, no KG edge without a lesson. The conservation laws are its enforcement.</p>
+        <div class="tags">
+          <span class="tag">Hasse diagram</span><span class="tag">Partial order</span><span class="tag">Forbidden skips</span><span class="tag">7 ranks</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> probe · spec</span><span><i style="background:var(--rsis)"></i> candidate</span><span><i style="background:#f472b6"></i> verdict</span><span><i style="background:var(--mykb)"></i> KG · retrieval</span>
+          </div>
+          <a class="download-btn" href="expert-plus-07-dependency-lattice.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-plus-08-resource-flow.svg" alt="The Resource Flow &mdash; Tokens, Time, Disk, CPU" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Resource Flow &mdash; Tokens, Time, Disk, CPU</h3><span class="card-num">X+-08</span></div>
+        <p class="card-desc">Four currencies with their sources and sinks &mdash; tokens via 7 providers, time through loop budgets, disk into the wiki/JSONL/index, CPU in the isolated evaluator spawn &mdash; with budget caps as the exchange rates and pulses as nearly free.</p>
+        <div class="tags">
+          <span class="tag">4 currencies</span><span class="tag">Sources → sinks</span><span class="tag">Budget = exchange rate</span><span class="tag">Economy</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> tokens</span><span><i style="background:var(--rsis)"></i> time</span><span><i style="background:var(--mykb)"></i> disk</span><span><i style="background:#f472b6"></i> cpu</span>
+          </div>
+          <a class="download-btn" href="expert-plus-08-resource-flow.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-plus-09-meta-stability-map.svg" alt="The Meta-Stability Map &mdash; Every Loop's Stability Regime" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Meta-Stability Map &mdash; Every Loop's Stability Regime</h3><span class="card-num">X+-09</span></div>
+        <p class="card-desc">A period &times; damping phase plane with three regimes &mdash; damped fast loops, the RRP's limit cycle, quasi-static L3 &mdash; and the evaluator as a burst, not a clock: the brake from the feedback topology, drawn in phase space.</p>
+        <div class="tags">
+          <span class="tag">Phase plane</span><span class="tag">3 regimes</span><span class="tag">Limit cycle</span><span class="tag">Burst node</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--dash)"></i> damped zone</span><span><i style="background:var(--space)"></i> limit cycle</span><span><i style="background:var(--mykb)"></i> quasi-static</span><span><i style="background:#f472b6"></i> burst</span>
+          </div>
+          <a class="download-btn" href="expert-plus-09-meta-stability-map.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-plus-10-origin-phylogeny.svg" alt="The Origin Phylogeny &mdash; Where Everything Came From" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Origin Phylogeny &mdash; Where Everything Came From</h3><span class="card-num">X+-10</span></div>
+        <p class="card-desc">Artifact ancestry, not git history: the RRP origin branching into the spec engine, the improvement loop, and the wiki corpus &mdash; all three lines converging in the dashboard, the ecosystem's single integration node.</p>
+        <div class="tags">
+          <span class="tag">Ancestry tree</span><span class="tag">RRP origin</span><span class="tag">3 lineages</span><span class="tag">Merge at dashboard</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> spec lineage</span><span><i style="background:var(--rsis)"></i> engine lineage</span><span><i style="background:var(--mykb)"></i> memory lineage</span><span><i style="background:var(--dash)"></i> merge</span>
+          </div>
+          <a class="download-btn" href="expert-plus-10-origin-phylogeny.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-plus-11-constraint-hypergraph.svg" alt="The Constraint Hypergraph &mdash; Constraints as Bubbles Over Artifacts" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Constraint Hypergraph &mdash; Constraints as Bubbles Over Artifacts</h3><span class="card-num">X+-11</span></div>
+        <p class="card-desc">Six multi-way constraints &mdash; eval budget, format contract, append-only telemetry, git temporal, single dashboard &mdash; drawn as bubbles enclosing the artifact sets they bind. Constraints are shapes, not lines: rules bind sets, not pairs.</p>
+        <div class="tags">
+          <span class="tag">Hyperedges</span><span class="tag">Multi-way rules</span><span class="tag">Wiki bubble largest</span><span class="tag">Invariants' geometry</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:#f472b6"></i> eval budget</span><span><i style="background:var(--space)"></i> format contract</span><span><i style="background:var(--mykb)"></i> temporal</span><span><i style="background:var(--dash)"></i> append-only</span>
+          </div>
+          <a class="download-btn" href="expert-plus-11-constraint-hypergraph.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>    <article class="diagram-card">
+      <div class="diagram-frame"><img src="expert-plus-12-omega-overview.svg" alt="The Ω Overview &mdash; The Whole System on One Plane" loading="lazy"></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Ω Overview &mdash; The Whole System on One Plane</h3><span class="card-num">X+-12</span></div>
+        <p class="card-desc">The capstone: four runtimes, nine artifact families, and the six handoffs on the two semantic axes &mdash; every other diagram in this viewer is a zoom into this plane. The static sibling of the interactive X++ graph.</p>
+        <div class="tags">
+          <span class="tag">Capstone</span><span class="tag">4 + 9 + 6</span><span class="tag">Static sibling</span><span class="tag">One view</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> SPACE basin</span><span><i style="background:var(--rsis)"></i> RSIS3 basin</span><span><i style="background:var(--mykb)"></i> MYKB basin</span><span><i style="background:var(--dash)"></i> DASH basin</span>
+          </div>
+          <a class="download-btn" href="expert-plus-12-omega-overview.svg" download>⬇ SVG</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ═══ X++ ═══ -->
+  <section class="tab-panel" data-panel="x-plus-plus" id="x-plus-plus" role="tabpanel" hidden>
+    <div class="panel-head">
+      <h2>X++ — the interactive ecosystem graphs</h2>
+      <p>Two interactive views of the whole ecosystem: the &Omega; graph (27 nodes on two semantic spectra, &lambda; slider as the 4th axis) and the nested-loop graph (all 52 nodes / 64 links with the L1&ndash;L9 stack as nine concentric rings).</p>
     </div>
+
+    <div class="diagram-frame" style="margin:0 0 22px;padding:6px;">
+      <iframe src="x-plus-plus-omega.html" title="Interactive omega graph" loading="lazy"
+        style="width:100%;height:min(94vh,1250px);border:0;border-radius:6px;background:var(--surface2);display:block"></iframe>
+    </div>
+    <p style="color:var(--text3);font-size:11px;margin:-8px 4px 18px;line-height:1.7">
+      The single interactive &Omega; graph — one self-contained HTML file, no build step. Hover/tap nodes to pin their readout,
+      drag the &lambda; slider to travel &lambda;&#8321; &rarr; &lambda;&#8324;. The same picture is also available as a static SVG in
+      Expert+ (X+-12) and as the downloadable HTML below.
+    </p>
+    <article class="diagram-card">
+      <div class="diagram-frame"><iframe src="x-plus-plus-omega.html" title="The Interactive Omega Graph" loading="lazy" style="width:100%;height:min(92vh,1200px);border:0;border-radius:6px;background:var(--surface2)"></iframe></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Interactive Omega Graph</h3><span class="card-num">Ω</span></div>
+        <p class="card-desc">The whole ecosystem as one interactive graph &mdash; 27 module/artifact nodes on two semantic spectra (X = theory&harr;execution, Y = short-term&harr;long-term), node size = footprint, node colour = component, edges = the six handoffs plus internal paths. Hover or tap a node to highlight its neighbourhood and pin a detail readout; drag the &lambda; slider &mdash; the 4th axis &mdash; to morph the system from &lambda;&#8321; (engine only) to &lambda;&#8324; (deployed ecosystem): memory grows, the dashboard fades in.</p>
+        <div class="tags">
+          <span class="tag">Interactive</span><span class="tag">27 nodes</span><span class="tag">λ slider = 4th axis</span><span class="tag">Touch-first</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> SPACE · ideation</span><span><i style="background:var(--rsis)"></i> RSIS3 · execution</span><span><i style="background:var(--mykb)"></i> MYKB · memory</span><span><i style="background:var(--dash)"></i> DASH · telemetry</span>
+          </div>
+          <a class="download-btn" href="x-plus-plus-omega.html" download>⬇ HTML</a>
+        </div>
+      </div>
+    </article>
+    <article class="diagram-card">
+      <div class="diagram-frame"><iframe src="x-plus-plus-nested.html" title="The Nested-Loop Graph &mdash; Nine Loops, One Ecosystem" loading="lazy" style="width:100%;height:min(92vh,1200px);border:0;border-radius:6px;background:var(--surface2)"></iframe></div>
+      <div class="diagram-meta">
+        <div class="card-head"><h3>The Nested-Loop Graph &mdash; Nine Loops, One Ecosystem</h3><span class="card-num">Ω⊃9</span></div>
+        <p class="card-desc">The full 52-node / 64-link ecosystem with the L1&ndash;L9 improvement stack drawn as nine concentric rings at the system's semantic centre &mdash; L1 action &rarr; L2 improvement &rarr; L3 cross-session &rarr; L4 meta-parameter &rarr; L5 strategy &rarr; L6 identity &rarr; L7 meta-cog &rarr; L8 meta-meta &rarr; L9 MMM, the loop that tunes the loop that tunes the loops. The indigo arc L1&rarr;L2&rarr;L3 marks the runtime chain; every other node keeps its omega semantic position outside the bullseye.</p>
+        <div class="tags">
+          <span class="tag">52 nodes</span><span class="tag">9 nested rings</span><span class="tag">L1–L9 stack</span><span class="tag">λ slider</span>
+        </div>
+        <div class="card-foot">
+          <div class="mini-legend">
+            <span><i style="background:var(--space)"></i> SPACE · ideation</span><span><i style="background:var(--rsis)"></i> RSIS3 · loops</span><span><i style="background:var(--mykb)"></i> MYKB · memory</span><span><i style="background:var(--dash)"></i> DASH · telemetry</span>
+          </div>
+          <a class="download-btn" href="x-plus-plus-nested.html" download>⬇ HTML</a>
+        </div>
+      </div>
+    </article>
   </section>
 
 </div>
+<!-- ═══ ORIGINALS ═══ -->
+<section class="originals" id="originals">
+  <div class="panel-head">
+    <h2>📦 Source Deconstruction &amp; Relationship Originals</h2>
+    <p>The original deep-dive diagrams: every class, function, and variable deconstructed from source, plus the expanded relationship map.</p>
+  </div>
 
-<div class="footer">
-  <p><strong>COSMOS</strong> — Cognitive Orchestration System for Meta-cognitive Orchestration &amp; Synthesis</p>
-  <p>Diagrams generated from actual source code analysis of <code>components/rsis3/</code>, <code>components/mykb/</code>, and <code>components/space/</code></p>
-  <p style="margin-top:4px">SVG diagrams &mdash; scalable &amp; dark-theme optimized</p>
-</div>
+  <article class="diagram-card">
+    <div class="diagram-frame"><img src="relationship-diagram.svg" alt="Component Relationship Diagram" loading="lazy"></div>
+    <div class="diagram-meta">
+      <div class="card-head"><h3>Component Relationship Diagram</h3><span class="card-num">O-01</span></div>
+      <p class="card-desc">Expanded integration map: all six data flows with real API endpoints, file formats, external actors (User, LLMs, GitHub Pages), the self-improvement cycle, orchestration layer, and shared filesystem.</p>
+      <div class="tags">
+        <span class="tag">6 data flows</span><span class="tag">Real API endpoints</span><span class="tag">External actors</span><span class="tag">Shared filesystem</span>
+      </div>
+      <div class="card-foot">
+        <div class="mini-legend">
+          <span><i style="background:var(--rsis)"></i> RSIS3</span>
+          <span><i style="background:var(--mykb)"></i> MyKB</span>
+          <span><i style="background:var(--space)"></i> SPACE</span>
+          <span><i style="background:var(--dash)"></i> Data</span>
+        </div>
+        <a class="download-btn" href="relationship-diagram.svg" download>⬇ SVG</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="diagram-card">
+    <div class="diagram-frame"><img src="rsis3-deconstruction.svg" alt="RSIS3 Source Deconstruction" loading="lazy"></div>
+    <div class="diagram-meta">
+      <div class="card-head"><h3>RSIS3 — Source Deconstruction</h3><span class="card-num">O-02</span></div>
+      <p class="card-desc">12 Python modules, 8 classes, 7 dataclasses, 50+ functions: the L1/L2/L3 loops plus evaluator, memory, checkpointing, recovery, resource enforcement, telemetry, and extrapolation modules.</p>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">3 loops</span><span class="tag">12 modules</span><span class="tag">8 classes</span><span class="tag">7 dataclasses</span>
+      </div>
+      <div class="card-foot">
+        <div class="mini-legend">
+          <span><i style="background:var(--rsis)"></i> RSIS3</span>
+        </div>
+        <a class="download-btn" href="rsis3-deconstruction.svg" download>⬇ SVG</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="diagram-card">
+    <div class="diagram-frame"><img src="mykb-deconstruction.svg" alt="MyKB Source Deconstruction" loading="lazy"></div>
+    <div class="diagram-meta">
+      <div class="card-head"><h3>MyKB — Source Deconstruction</h3><span class="card-num">O-03</span></div>
+      <p class="card-desc">5 Python scripts and 4 wiki-daemon backend modules: TF-IDF search, temporal time-travel engine, knowledge graph enrichment, and quality linter — serving 2,360+ wiki pages on port 8765.</p>
+      <div class="tags">
+        <span class="tag">Python + Markdown</span><span class="tag">Port 8765</span><span class="tag">TF-IDF + RRF</span><span class="tag">Temporal engine</span>
+      </div>
+      <div class="card-foot">
+        <div class="mini-legend">
+          <span><i style="background:var(--mykb)"></i> MyKB</span>
+          <span><i style="background:var(--ext)"></i> Wiki-daemon</span>
+        </div>
+        <a class="download-btn" href="mykb-deconstruction.svg" download>⬇ SVG</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="diagram-card">
+    <div class="diagram-frame"><img src="space-deconstruction.svg" alt="SPACE Source Deconstruction" loading="lazy"></div>
+    <div class="diagram-meta">
+      <div class="card-head"><h3>SPACE — Source Deconstruction</h3><span class="card-num">O-04</span></div>
+      <p class="card-desc">35+ TypeScript files across 10 modules: CLI (7 commands), core engine, LLM integration (7 providers), intelligence layer, 6 exporters, storage backends, template engine, and i18n.</p>
+      <div class="tags">
+        <span class="tag">TypeScript</span><span class="tag">7 CLI commands</span><span class="tag">7 LLM providers</span><span class="tag">6 export formats</span><span class="tag">326 probes</span>
+      </div>
+      <div class="card-foot">
+        <div class="mini-legend">
+          <span><i style="background:var(--space)"></i> SPACE</span>
+          <span><i style="background:var(--mykb)"></i> Storage</span>
+          <span><i style="background:var(--dash)"></i> Exports</span>
+          <span><i style="background:var(--ext)"></i> LLM</span>
+          <span><i style="background:var(--rsis)"></i> RSIS3</span>
+        </div>
+        <a class="download-btn" href="space-deconstruction.svg" download>⬇ SVG</a>
+      </div>
+    </div>
+  </article>
+
+</section>
+
+<footer class="footer">
+  COSMOS Architecture Diagrams &middot; generated from source analysis<br>
+  <a href="https://gemquota.github.io/cosmos/">Cosmos</a> &middot;
+  <a href="https://gemquota.github.io/hub/">Hub dashboard</a> &middot;
+  All diagrams available as standalone SVG
+</footer>
 
 <script>
-  (function() {
-    const sections = document.querySelectorAll('.diagram-section');
-    const navLinks = document.querySelectorAll('.nav a');
-    if ('IntersectionObserver' in window) {
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            navLinks.forEach(l => l.classList.remove('active'));
-            const a = document.querySelector(`.nav a[href="#${e.target.id}"]`);
-            if (a) a.classList.add('active');
-          }
-        });
-      }, { rootMargin: '-40% 0px -55% 0px' });
-      sections.forEach(s => obs.observe(s));
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.tab-panel'));
+  var NAMES = ['basic', 'advanced', 'expert', 'expert-plus', 'x-plus-plus'];
+
+  function activate(name, pushHash) {
+    tabs.forEach(function (b) {
+      var on = b.getAttribute('data-tab') === name;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    panels.forEach(function (p) {
+      var on = p.getAttribute('data-panel') === name;
+      p.classList.toggle('active', on);
+      if (on) { p.removeAttribute('hidden'); } else { p.setAttribute('hidden', ''); }
+    });
+    if (pushHash && history.replaceState) {
+      history.replaceState(null, '', '#' + name);
     }
-  })();
+  }
+
+  tabs.forEach(function (b) {
+    b.addEventListener('click', function () { activate(b.getAttribute('data-tab'), true); });
+  });
+
+  // Deep-link: #basic / #advanced / #expert / #expert-plus / #x-plus-plus
+  var initial = (location.hash || '').replace('#', '');
+  if (NAMES.indexOf(initial) !== -1) { activate(initial, false); }
+})();
 </script>
 </body>
 </html>

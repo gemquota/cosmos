@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE SEMANTIC OVERLAP VOLUME — ONTOLOGY IN 4D</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Three spheres on two semantic axes — size = footprint, colour = component, and time is the 4th axis (λ₁ → λ₄)</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<line x1="120" y1="890" x2="880" y2="890" stroke="#334155" stroke-width="1.6" marker-end="url(#arwG)" opacity=".9"/>
+<text x="500" y="918" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="10">X — THEORY ←———→ EXECUTION</text>
+<line x1="120" y1="170" x2="120" y2="880" stroke="#334155" stroke-width="1.6" marker-end="url(#arwG)" opacity=".9"/>
+<text x="94" y="530" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="700" transform="rotate(-90 94 530)">Y — SHORT-TERM ↑ · LONG-TERM ↓</text>
+<defs><radialGradient id="spS" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".55"/><stop offset="100%" stop-color="#f59e0b" stop-opacity=".05"/></radialGradient><radialGradient id="spR" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#818cf8" stop-opacity=".55"/><stop offset="100%" stop-color="#818cf8" stop-opacity=".05"/></radialGradient><radialGradient id="spM" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#22d3ee" stop-opacity=".55"/><stop offset="100%" stop-color="#22d3ee" stop-opacity=".05"/></radialGradient></defs>
+<circle cx="340" cy="300" r="150" fill="url(#spS)" style="mix-blend-mode:screen"/>
+<circle cx="340" cy="300" r="150" fill="none" stroke="#f59e0b" stroke-width="1.6" opacity=".8"/>
+<circle cx="660" cy="320" r="165" fill="url(#spR)" style="mix-blend-mode:screen"/>
+<circle cx="660" cy="320" r="165" fill="none" stroke="#818cf8" stroke-width="1.6" opacity=".8"/>
+<circle cx="500" cy="640" r="185" fill="url(#spM)" style="mix-blend-mode:screen"/>
+<circle cx="500" cy="640" r="185" fill="none" stroke="#22d3ee" stroke-width="1.6" opacity=".8"/>
+<text x="480" y="330" text-anchor="middle" fill="#fad3f8" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700">spec → candidate</text>
+<text x="560" y="560" text-anchor="middle" fill="#92ebff" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700">lessons → memory</text>
+<text x="400" y="540" text-anchor="middle" fill="#f6eeef" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700">retrieval → ideation</text>
+<text x="340" y="292" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="14" font-weight="800">SPACE</text>
+<text x="340" y="312" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8">r ∝ footprint</text>
+<text x="660" y="312" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="14" font-weight="800">RSIS3</text>
+<text x="660" y="332" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8">r ∝ footprint</text>
+<text x="500" y="632" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="14" font-weight="800">MYKB</text>
+<text x="500" y="652" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8">r ∝ footprint</text>
+<circle cx="500" cy="740" r="26" fill="none" stroke="#f472b6" stroke-width="1.6" stroke-dasharray="4,4"><animate attributeName="r" values="14;26;14" dur="9s" repeatCount="indefinite"/></circle>
+<text x="500" y="800" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">λ slider — the memory sphere grows with each integration stage (λ₁ → λ₄)</text>
+<rect x="60" y="950" width="880" height="60" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="950" width="880" height="30" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="968" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="969.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">THE 4D READING</text>
+<text x="74" y="994" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">X + Y place each component in semantic space · r = footprint · colour = component · time = λ morph (the pulsing ring).</text>
+<rect x="60" y="1154" width="880" height="110" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1154" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1170" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1172.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE VOLUME</text>
+<text x="72" y="1194" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">OVERLAPS ARE REAL MEANING: blended colour = the interface where two ontologies share semantics (spec, lessons, retrieval).</text>
+<text x="72" y="1211" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">PULSING RING = the 4th axis, time: it marks where MYKB sits at λ₂ and expands to where it sits at λ₄ (the A-13 / B-24 ladder).</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">SIZE = footprint: RSIS3 67k LOC, MyKB 58MB corpus, SPACE 69k LOC — area encodes weight, not importance.</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">The three spheres are the same overlap geometry as the ontology venns (B-08/A-08/A-09), promoted to a continuous volume.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">semantics live in the overlaps — the blended regions are where the ecosystem actually does its work</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

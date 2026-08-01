@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE SESSION JOURNEY — ONE SESSION, NINE EVENTS</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">The real order of operations from cold start to consolidated memory</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<line x1="90" y1="300" x2="910" y2="300" stroke="#334155" stroke-width="1.5"/>
+<circle cx="90" cy="300" r="6.5" fill="#818cf8" stroke="#0b1120" stroke-width="1.5"/>
+<text x="90.0" y="285" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">START</text>
+<text x="90.0" y="325" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">RSIS3 boots · L1/L2/L3 armed</text>
+<circle cx="192" cy="300" r="6.5" fill="#818cf8" stroke="#0b1120" stroke-width="1.5"/>
+<text x="192.5" y="285" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">L1 RUNS</text>
+<text x="192.5" y="325" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">tool calls · obs · retries</text>
+<circle cx="295" cy="300" r="6.5" fill="#22d3ee" stroke="#0b1120" stroke-width="1.5"/>
+<text x="295.0" y="285" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">RETRIEVAL</text>
+<text x="295.0" y="325" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">MyKB :8765 · ranked context</text>
+<circle cx="398" cy="300" r="6.5" fill="#818cf8" stroke="#0b1120" stroke-width="1.5"/>
+<text x="397.5" y="285" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">CANDIDATE</text>
+<text x="397.5" y="325" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">L2 diff/code drafted</text>
+<circle cx="500" cy="300" r="6.5" fill="#f472b6" stroke="#0b1120" stroke-width="1.5"/>
+<text x="500.0" y="285" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">EVAL GATE</text>
+<text x="500.0" y="325" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">SHA-256 · 60s · verdict</text>
+<circle cx="602" cy="300" r="6.5" fill="#10b981" stroke="#0b1120" stroke-width="1.5"/>
+<text x="602.5" y="285" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">PULSE</text>
+<text x="602.5" y="325" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">JSONL → dashboard-data.json</text>
+<circle cx="705" cy="300" r="6.5" fill="#22d3ee" stroke="#0b1120" stroke-width="1.5"/>
+<text x="705.0" y="285" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">CAPTURE</text>
+<text x="705.0" y="325" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">session → wiki pages</text>
+<circle cx="808" cy="300" r="6.5" fill="#22d3ee" stroke="#0b1120" stroke-width="1.5"/>
+<text x="807.5" y="285" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">CONSOLIDATE</text>
+<text x="807.5" y="325" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">L3 · KG edges + index</text>
+<circle cx="910" cy="300" r="6.5" fill="#f59e0b" stroke="#0b1120" stroke-width="1.5"/>
+<text x="910.0" y="285" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">NEXT</text>
+<text x="910.0" y="325" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">retrieval seeds the new session</text>
+<text x="500" y="385" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="9" font-style="italic">one session, left to right — the rail is real time, compressed</text>
+<rect x="60" y="430" width="880" height="42" rx="9" fill="#22d3ee" opacity=".14" stroke="#22d3ee" stroke-width="1" stroke-opacity=".35"/>
+<text x="76" y="455.0" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="12.5" font-weight="700">WHERE THE SESSION LEAVES TRACES</text>
+<text x="924" y="455.0" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">capture hooks</text>
+<rect x="60" y="488" width="880" height="190" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="488" width="880" height="32" rx="10" fill="#22d3ee" opacity=".16"/>
+<rect x="60" y="508" width="880" height="12" fill="#22d3ee" opacity=".12"/>
+<text x="500.0" y="508.5" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13" font-weight="700">THREE CAPTURE POINTS</text>
+<text x="74" y="534" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">1 · RETRIEVAL is logged — what context the session asked for and got becomes a query record.</text>
+<text x="74" y="558" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">2 · EVAL VERDICT is stored with its candidate — the gate's reasoning is part of the artifact's history.</text>
+<text x="74" y="582" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">3 · CAPTURE writes the session transcript as wiki pages + KG edges — the durable copy.</text>
+<text x="74" y="606" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">Pulses are the only trace that is not memory: telemetry is observability, not knowledge.</text>
+<rect x="60" y="700" width="880" height="42" rx="9" fill="#f472b6" opacity=".14" stroke="#f472b6" stroke-width="1" stroke-opacity=".35"/>
+<text x="76" y="725.0" fill="#f472b6" font-family="system-ui,sans-serif" font-size="12.5" font-weight="700">THE GATE IN THE MIDDLE</text>
+<text x="924" y="725.0" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">the only rejection point</text>
+<rect x="60" y="758" width="880" height="160" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="758" width="880" height="32" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="778" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="778.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">WHAT HAPPENS AT THE EVAL GATE</text>
+<text x="74" y="804" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Candidate JSON is piped to the immutable evaluator subprocess — SHA-256 verified at startup, read-only mount.</text>
+<text x="74" y="828" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Verdicts (pass/fail + scores) return on stdout; rejected candidates feed the next attempt, up to 5 per session.</text>
+<text x="74" y="852" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">If the gate fails the session survives — L2 retries with a better candidate; that retry is itself a recorded pulse.</text>
+<rect x="60" y="950" width="880" height="70" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="950" width="880" height="30" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="60" y="968" width="880" height="12" fill="#10b981" opacity=".12"/>
+<text x="500.0" y="969.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">TIMING BUDGET</text>
+<text x="74" y="994" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">L1 ~1s · eval ≤60s · consolidation ~60s — the journey is bounded at every stage by a documented budget.</text>
+<rect x="60" y="1154" width="880" height="110" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1154" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1170" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1172.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE JOURNEY</text>
+<text x="72" y="1194" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">RAIL = one session in time; node colour = the runtime doing that step (indigo RSIS3 · cyan MyKB · green telemetry · pink gate).</text>
+<text x="72" y="1211" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">THE GATE IS THE ONLY STEP THAT CAN SEND THE SESSION BACKWARD — rejected candidates restart the L2 block.</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">CAPTURE → CONSOLIDATE is the only pair that is not instant: it is the L3 cycle, running at its own ~60s cadence.</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">NEXT is SPACE-amber because the journey is a loop — consolidated memory seeds the next idea.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">a session is a pipeline with one feedback loop — the gate — and one exit: memory</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE TELEMETRY GRAPH — FROM LOOP TO CHART</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Four collectors, one buffer, one JSON snapshot, one extrapolator</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<text x="500" y="108" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">every loop emits; the rack buffers; the dashboard renders; the extrapolator forecasts</text>
+<rect x="60" y="140" width="210" height="120" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="140" width="210" height="28" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="60" y="156" width="210" height="12" fill="#818cf8" opacity=".12"/>
+<text x="165.0" y="158.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">L1 COLLECTOR</text>
+<text x="70" y="178" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">tool calls · observations · retries</text>
+<path d="M 165 260 C 165 300, 400 300, 500 320" stroke="#475569" stroke-width="1.8" fill="none" opacity="0.55" marker-end="url(#arwG)"/>
+<rect x="286" y="140" width="210" height="120" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="286" y="140" width="210" height="28" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="286" y="156" width="210" height="12" fill="#818cf8" opacity=".12"/>
+<text x="391.0" y="158.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">L2 COLLECTOR</text>
+<text x="296" y="178" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">candidates · eval verdicts</text>
+<path d="M 391 260 C 391 300, 400 300, 500 320" stroke="#475569" stroke-width="1.8" fill="none" opacity="0.55" marker-end="url(#arwG)"/>
+<rect x="512" y="140" width="210" height="120" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="512" y="140" width="210" height="28" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="512" y="156" width="210" height="12" fill="#818cf8" opacity=".12"/>
+<text x="617.0" y="158.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">L3 COLLECTOR</text>
+<text x="522" y="178" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">consolidation reports</text>
+<path d="M 617 260 C 617 300, 400 300, 500 320" stroke="#475569" stroke-width="1.8" fill="none" opacity="0.55" marker-end="url(#arwG)"/>
+<rect x="738" y="140" width="210" height="120" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="738" y="140" width="210" height="28" rx="10" fill="#f59e0b" opacity=".16"/>
+<rect x="738" y="156" width="210" height="12" fill="#f59e0b" opacity=".12"/>
+<text x="843.0" y="158.5" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="13" font-weight="700">SPACE COLLECTOR</text>
+<text x="748" y="178" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">RRP round progress · exports</text>
+<path d="M 843 260 C 843 300, 400 300, 500 320" stroke="#475569" stroke-width="1.8" fill="none" opacity="0.55" marker-end="url(#arwG)"/>
+<rect x="150" y="330" width="700" height="84" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="150" y="330" width="700" height="28" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="150" y="346" width="700" height="12" fill="#10b981" opacity=".12"/>
+<text x="500.0" y="348.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">RACK — JSONL BUFFER</text>
+<text x="162" y="370" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">rack/pulses/ · append-only events · the single sink for all collectors</text>
+<line x1="500" y1="414" x2="500" y2="440" stroke="#10b981" stroke-width="2.5" opacity="0.8" marker-end="url(#arwD)"/>
+<rect x="150" y="448" width="700" height="84" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="150" y="448" width="700" height="28" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="150" y="464" width="700" height="12" fill="#10b981" opacity=".12"/>
+<text x="500.0" y="466.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">EXTRACT → DASHBOARD-DATA.JSON</text>
+<text x="162" y="488" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">rack summarizes the buffer into the snapshot config.js reads</text>
+<line x1="500" y1="532" x2="500" y2="558" stroke="#10b981" stroke-width="2.5" opacity="0.8" marker-end="url(#arwD)"/>
+<rect x="150" y="566" width="700" height="84" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="150" y="566" width="700" height="28" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="150" y="582" width="700" height="12" fill="#10b981" opacity=".12"/>
+<text x="500.0" y="584.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">CHART.JS VIEWS</text>
+<text x="162" y="606" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">pulses · layers · success rate · 20-pulse window in the dashboard</text>
+<rect x="60" y="700" width="880" height="110" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="700" width="880" height="32" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="720" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="720.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">THE EXTRAPOLATOR — HISTORY BECOMES FORECAST</text>
+<text x="74" y="746" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">TelemetryExtrapolator reads the JSONL trend and projects velocity — feeding L3's trend detection.</text>
+<text x="74" y="772" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Forecasts are telemetry, not memory: they inform strategy but are never written to the corpus.</text>
+<rect x="60" y="840" width="880" height="90" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="840" width="880" height="32" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="60" y="860" width="880" height="12" fill="#818cf8" opacity=".12"/>
+<text x="500.0" y="860.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">THE LOOP BACK</text>
+<text x="74" y="886" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">L3 consumes the forecast → adjusts strategies → next session emits new pulses — the graph closes on itself.</text>
+<rect x="60" y="1171" width="880" height="93" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1171" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1187" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1189.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE GRAPH</text>
+<text x="72" y="1211" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">GREEN = the telemetry pipeline (emit → buffer → snapshot → render); pink = extrapolation; indigo/amber = collectors.</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">ONE SINK: every collector converges on the rack's JSONL — that is why dashboard-data.json can summarize the whole system.</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">THE GRAPH CLOSES: forecasts change strategies, strategies change pulses, pulses change forecasts.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">telemetry is the system watching itself — four collectors, one buffer, one truth</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

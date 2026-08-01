@@ -14,14 +14,15 @@
 <div id="app" class="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6" style="display:none">
 
 <!-- TAB BAR -->
-<div class="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-6 border-b border-slate-700/50 pb-2">
-  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg bg-indigo-500 text-white shadow" data-t="overview" data-tt="tab:overview" onclick="sw('overview')">Overview</button>
-  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="pulses" data-tt="tab:pulses" onclick="sw('pulses')">Pulses</button>
-  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="kg" data-tt="tab:kg" onclick="sw('kg')">KG</button>
-  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="graphs" data-tt="tab:graphs" onclick="sw('graphs')">Graphs</button>
-  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="constraints" data-tt="tab:constraints" onclick="sw('constraints')">Constraints</button>
-  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="mykb" data-tt="tab:mykb" onclick="sw('mykb')">📚 MyKB</button>
-  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="space" data-tt="tab:space" onclick="sw('space')">🚀 SPACE</button>
+<div class="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-6 border-b border-slate-700/50 pb-2" role="tablist" aria-label="Dashboard sections">
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg bg-indigo-500 text-white shadow" data-t="overview" data-tt="tab:overview" role="tab" aria-selected="true" onclick="sw('overview')">Overview</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="pulses" data-tt="tab:pulses" role="tab" aria-selected="false" onclick="sw('pulses')">Pulses</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="kg" data-tt="tab:kg" role="tab" aria-selected="false" onclick="sw('kg')">KG</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="graphs" data-tt="tab:graphs" role="tab" aria-selected="false" onclick="sw('graphs')">Graphs</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="constraints" data-tt="tab:constraints" role="tab" aria-selected="false" onclick="sw('constraints')">Constraints</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="loops" data-tt="tab:loops" role="tab" aria-selected="false" onclick="sw('loops')">🧬 Loops</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="mykb" data-tt="tab:mykb" role="tab" aria-selected="false" onclick="sw('mykb')">📚 MyKB</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="space" data-tt="tab:space" role="tab" aria-selected="false" onclick="sw('space')">🚀 SPACE</button>
 </div>
 
 <!-- OVERVIEW TAB -->
@@ -116,24 +117,45 @@
   </div>
 </div>
 
+<!-- LOOPS TAB -->
+<div class="tab-body hide" id="b-loops">
+  <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 mb-4">
+    <div class="flex flex-wrap items-start sm:items-center justify-between gap-2 mb-2">
+      <div>
+        <h3 class="text-xs font-bold text-slate-400 uppercase">Loop Stack — L1–L9</h3>
+        <p class="text-[11px] text-slate-400 mt-0.5">Nine-level hierarchy · loop k+3 tunes loop k (L4→L1 … L9→L6) · L7–L9 are untuned fixed points (recursion guard).</p>
+      </div>
+      <span class="text-[10px] text-slate-500" id="loops-meta">loading…</span>
+    </div>
+    <div id="loops-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+  </div>
+</div>
+
 <!-- MYKB TAB -->
 <div class="tab-body hide" id="b-mykb">
   <div class="flex flex-wrap gap-2 mb-3">
     <button class="csb px-3 py-1.5 text-xs font-semibold rounded-lg bg-purple-500 text-white shadow" data-c="mykb" data-v="wiki" onclick="cs('mykb','wiki')">📖 Wiki Browser</button>
     <button class="csb px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-c="mykb" data-v="graph" onclick="cs('mykb','graph')">🕸️ Knowledge Graph</button>
+    <button class="csb px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-c="mykb" data-v="stats" onclick="cs('mykb','stats')">📊 Wiki Stats</button>
     <span class="flex items-center gap-2 ml-auto text-[10px] text-slate-400">
       <a href="../../mykb/index.html" target="_blank" rel="noopener" class="hover:text-purple-300">Wiki ↗</a>
       <a href="../../mykb/okf-graph.html" target="_blank" rel="noopener" class="hover:text-purple-300">Graph ↗</a>
+      <a href="../../mykb/stats.html" target="_blank" rel="noopener" class="hover:text-purple-300">Stats ↗</a>
     </span>
   </div>
   <div id="v-mykb-wiki" class="cst">
     <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
-      <iframe data-src="../../mykb/index.html" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#fefcf5"></iframe>
+      <iframe data-src="../../mykb/index.html" title="MyKB wiki browser" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#fefcf5"></iframe>
     </div>
   </div>
   <div id="v-mykb-graph" class="cst hide">
     <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
-      <iframe data-src="../../mykb/okf-graph.html" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#0b1120"></iframe>
+      <iframe data-src="../../mykb/okf-graph.html" title="MyKB knowledge graph" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#0b1120"></iframe>
+    </div>
+  </div>
+  <div id="v-mykb-stats" class="cst hide">
+    <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
+      <iframe data-src="../../mykb/stats.html" title="MyKB wiki stats hub" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#0b1120"></iframe>
     </div>
   </div>
 </div>
@@ -150,12 +172,12 @@
   </div>
   <div id="v-space-web" class="cst">
     <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
-      <iframe data-src="../../space/web/index.html" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#f9fafb"></iframe>
+      <iframe data-src="../../space/web/index.html" title="SPACE web UI" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#f9fafb"></iframe>
     </div>
   </div>
   <div id="v-space-specs" class="cst hide">
     <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
-      <iframe data-src="../../space/meta-viewer.html" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#0b1120"></iframe>
+      <iframe data-src="../../space/meta-viewer.html" title="SPACE spec viewer" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#0b1120"></iframe>
     </div>
   </div>
 </div>
@@ -210,6 +232,7 @@ function applyHash(){
 }
 window.addEventListener('hashchange', applyHash);
 loadEcosystem();
+loadLoops();
 var _bootTimer = setInterval(function(){
   var app = document.getElementById('app');
   if (app && app.style.display === 'block') {

@@ -15,3 +15,8 @@ Part of [[wiki/web-platforms/index|Web Platforms]]. 37 entities.
 - [[wiki/web-platforms/supercategories/api-services/index|Api Services]]
 - [[wiki/web-platforms/supercategories/security-auth/index|Security Auth]]
 - [[wiki/web-platforms/supercategories/cloud-infra/index|Cloud Infra]]
+
+## Concepts
+
+- [Alembic](alembic.md) — Alembic
+- [SQLAlchemy](sqlalchemy.md) — SQLAlchemy

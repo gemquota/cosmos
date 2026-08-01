@@ -15,7 +15,11 @@ This is the daily knowledge entry point for `mykb`. The goal is not to store man
 ## Quick Links
 
 - [[wiki/index|Wiki Index]]
+- [[ops/conceptual-guide|mykb for Humans — Conceptual Guide]]
 - [[wiki/log|Iteration Log]]
+- [[ops/rsis3-memory-bridge|RSIS3 Memory Bridge]]
+- [[ops/knowledge-acquisition|Knowledge Acquisition]]
+- [[wiki/memory/README|Memory Layer]]
 - [[ops/workflows|Workflows]]
 - [[ops/wiki-schema|Wiki Schema]]
 - [[wiki/questions/open-questions|Open Questions]]

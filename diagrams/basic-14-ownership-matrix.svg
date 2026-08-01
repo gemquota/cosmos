@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE OWNERSHIP MATRIX — WHO RUNS WHAT</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Six code modules across four runtimes — every cell is a real read / write / spawn / embed relationship</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<rect x="80" y="130" width="637" height="36" rx="8" fill="#f472b6" opacity=".12" stroke="#334155"/>
+<text x="90" y="152.0" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8.5">module \ component</text>
+<text x="304.0" y="152.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">RSIS3</text>
+<text x="422.0" y="152.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">MYKB</text>
+<text x="540.0" y="152.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">SPACE</text>
+<text x="658.0" y="152.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">DASH</text>
+<rect x="80" y="166" width="637" height="34" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="90" y="186.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">rsis3/ core</text>
+<line x1="245" y1="166" x2="245" y2="200" stroke="#334155" stroke-width="0.7"/>
+<rect x="80" y="200" width="637" height="34" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="90" y="220.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">rack/pulses/</text>
+<line x1="245" y1="200" x2="245" y2="234" stroke="#334155" stroke-width="0.7"/>
+<rect x="80" y="234" width="637" height="34" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="90" y="254.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">mykb/</text>
+<line x1="245" y1="234" x2="245" y2="268" stroke="#334155" stroke-width="0.7"/>
+<rect x="80" y="268" width="637" height="34" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="90" y="288.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">space/</text>
+<line x1="245" y1="268" x2="245" y2="302" stroke="#334155" stroke-width="0.7"/>
+<rect x="80" y="302" width="637" height="34" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="90" y="322.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">dashboard/</text>
+<line x1="245" y1="302" x2="245" y2="336" stroke="#334155" stroke-width="0.7"/>
+<rect x="80" y="336" width="637" height="34" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="90" y="356.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">evaluator/</text>
+<line x1="245" y1="336" x2="245" y2="370" stroke="#334155" stroke-width="0.7"/>
+<text x="304.0" y="186.5" text-anchor="middle" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">OWN</text>
+<text x="422.0" y="186.5" text-anchor="middle" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">EMBED</text>
+<text x="540.0" y="186.5" text-anchor="middle" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">READ</text>
+<text x="658.0" y="186.5" text-anchor="middle" fill="#10b981" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">FEED</text>
+<text x="304.0" y="220.5" text-anchor="middle" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">WRITE</text>
+<text x="658.0" y="220.5" text-anchor="middle" fill="#10b981" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">READ</text>
+<text x="422.0" y="254.5" text-anchor="middle" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">OWN</text>
+<text x="304.0" y="254.5" text-anchor="middle" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">SERVE</text>
+<text x="658.0" y="254.5" text-anchor="middle" fill="#10b981" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">EMBED</text>
+<text x="540.0" y="288.5" text-anchor="middle" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">OWN</text>
+<text x="304.0" y="288.5" text-anchor="middle" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">FEED</text>
+<text x="422.0" y="288.5" text-anchor="middle" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">WRITE</text>
+<text x="658.0" y="288.5" text-anchor="middle" fill="#10b981" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">EMBED</text>
+<text x="658.0" y="322.5" text-anchor="middle" fill="#10b981" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">OWN</text>
+<text x="304.0" y="322.5" text-anchor="middle" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">READ</text>
+<text x="422.0" y="322.5" text-anchor="middle" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">EMBED</text>
+<text x="540.0" y="322.5" text-anchor="middle" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">EMBED</text>
+<text x="304.0" y="356.5" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">SPAWN</text>
+<text x="422.0" y="356.5" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">—</text>
+<text x="60" y="382" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5">OWN owns the code · EMBED is embedded inside · READ consumes · WRITE produces · SERVE answers requests · FEED streams events · SPAWN launches a subprocess</text>
+<rect x="60" y="420" width="880" height="42" rx="9" fill="#818cf8" opacity=".14" stroke="#818cf8" stroke-width="1" stroke-opacity=".35"/>
+<text x="76" y="445.0" fill="#818cf8" font-family="system-ui,sans-serif" font-size="12.5" font-weight="700">WHAT THE GRID SAYS</text>
+<text x="924" y="445.0" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">read the diagonal first</text>
+<rect x="60" y="478" width="880" height="220" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="478" width="880" height="32" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="60" y="498" width="880" height="12" fill="#818cf8" opacity=".12"/>
+<text x="500.0" y="498.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">THE DIAGONAL IS THE TRUNK</text>
+<text x="74" y="524" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Each module's OWN cell is its home runtime — everything else is an interface crossing a boundary.</text>
+<text x="74" y="548" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">The dashboard is the only module that embeds all three others (wiki browser, KG graph, SPACE web UI, meta viewer).</text>
+<text x="74" y="572" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">evaluator/ is the only module that RSIS3 SPAWNS — never imports — so self-improvement can never rewrite its judge.</text>
+<text x="74" y="596" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">Two crossing paths worth remembering: mykb/ SERVE → rsis3/ (retrieval :8765), and space/ FEED → rsis3/ (spec drafts become candidates).</text>
+<rect x="60" y="730" width="880" height="150" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="730" width="880" height="32" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="750" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="750.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">KNOWN CONFLICT THE GRID HIDES</text>
+<text x="74" y="776" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">rack/pulses and mykb/ both claim port :8765 — the MyKB daemon is the only always-on server, and the rack's pulse server must yield.</text>
+<text x="74" y="800" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">The grid shows clean ownership; the runtime map (B-19) shows the one port both modules want.</text>
+<rect x="60" y="1154" width="880" height="110" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1154" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1170" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1172.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE MATRIX</text>
+<text x="72" y="1194" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">COLOUR = the runtime that owns the relationship: indigo RSIS3 · cyan MyKB · amber SPACE · green DASH · pink external.</text>
+<text x="72" y="1211" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">READ THE ROWS as modules (code on disk); read the columns as runtimes (processes that own a lifecycle).</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">A row with many cells is an integration hub (dashboard, space); a row with few is a specialist (evaluator).</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">EMBED cells are the dashboard's iframe mounts — the unified dashboard hosts every component in one page.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">ownership is the first question a reviewer asks: who can change this code, and who only reads its output</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

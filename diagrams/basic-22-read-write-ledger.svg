@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE READ/WRITE LEDGER — WHO TOUCHES WHICH STORE</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Six persistent stores, four components — every access is a real code path</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<rect x="80" y="130" width="637" height="38" rx="8" fill="#f472b6" opacity=".12" stroke="#334155"/>
+<text x="90" y="153.0" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8.5">module \ component</text>
+<text x="304.0" y="153.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">RSIS3</text>
+<text x="422.0" y="153.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">MYKB</text>
+<text x="540.0" y="153.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">SPACE</text>
+<text x="658.0" y="153.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">DASH</text>
+<rect x="80" y="168" width="637" height="40" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="90" y="191.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">wiki corpus</text>
+<line x1="245" y1="168" x2="245" y2="208" stroke="#334155" stroke-width="0.7"/>
+<rect x="80" y="208" width="637" height="40" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="90" y="231.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">TF-IDF index</text>
+<line x1="245" y1="208" x2="245" y2="248" stroke="#334155" stroke-width="0.7"/>
+<rect x="80" y="248" width="637" height="40" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="90" y="271.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">KG edges</text>
+<line x1="245" y1="248" x2="245" y2="288" stroke="#334155" stroke-width="0.7"/>
+<rect x="80" y="288" width="637" height="40" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="90" y="311.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">spec store</text>
+<line x1="245" y1="288" x2="245" y2="328" stroke="#334155" stroke-width="0.7"/>
+<rect x="80" y="328" width="637" height="40" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="90" y="351.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">pulses JSONL</text>
+<line x1="245" y1="328" x2="245" y2="368" stroke="#334155" stroke-width="0.7"/>
+<rect x="80" y="368" width="637" height="40" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="90" y="391.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">dashboard-data.json</text>
+<line x1="245" y1="368" x2="245" y2="408" stroke="#334155" stroke-width="0.7"/>
+<text x="304.0" y="191.5" text-anchor="middle" fill="#10b981" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">R</text>
+<text x="422.0" y="191.5" text-anchor="middle" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">RW</text>
+<text x="658.0" y="191.5" text-anchor="middle" fill="#10b981" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">R</text>
+<text x="304.0" y="231.5" text-anchor="middle" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">R</text>
+<text x="422.0" y="231.5" text-anchor="middle" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">BUILD</text>
+<text x="304.0" y="271.5" text-anchor="middle" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">R</text>
+<text x="422.0" y="271.5" text-anchor="middle" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">W</text>
+<text x="658.0" y="271.5" text-anchor="middle" fill="#10b981" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">R</text>
+<text x="304.0" y="311.5" text-anchor="middle" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">R</text>
+<text x="422.0" y="311.5" text-anchor="middle" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">R</text>
+<text x="540.0" y="311.5" text-anchor="middle" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">W</text>
+<text x="304.0" y="351.5" text-anchor="middle" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">W</text>
+<text x="658.0" y="351.5" text-anchor="middle" fill="#10b981" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">R</text>
+<text x="304.0" y="391.5" text-anchor="middle" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">W</text>
+<text x="658.0" y="391.5" text-anchor="middle" fill="#10b981" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">R</text>
+<text x="60" y="430" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5">R = read · W = write · RW = read+write · BUILD = index build · blank = no access</text>
+<rect x="60" y="470" width="880" height="200" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="470" width="880" height="32" rx="10" fill="#22d3ee" opacity=".16"/>
+<rect x="60" y="490" width="880" height="12" fill="#22d3ee" opacity=".12"/>
+<text x="500.0" y="490.5" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13" font-weight="700">THE THREE STORES THAT MATTER</text>
+<text x="74" y="516" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">WIKI CORPUS is the only RW store — MyKB owns it, RSIS3 reads it (retrieval), the dashboard renders it (embed).</text>
+<text x="74" y="540" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">TF-IDF INDEX is derived state: MyKB builds it from the corpus; RSIS3 only queries it. Nobody writes it directly.</text>
+<text x="74" y="564" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">PULSES and DASHBOARD-DATA are one pipeline: RSIS3 writes, the dashboard reads — the ledger's simplest row.</text>
+<text x="74" y="588" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">The spec store is the odd one: SPACE writes it, but both RSIS3 (consume) and MyKB (archive) read it.</text>
+<rect x="60" y="700" width="880" height="160" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="700" width="880" height="32" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="60" y="720" width="880" height="12" fill="#10b981" opacity=".12"/>
+<text x="500.0" y="720.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">THE TEMPORAL LAYER UNDERNEATH</text>
+<text x="74" y="746" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Every store above is git-tracked — the ledger shows today's access, but time-travel snapshots let any reader restore yesterday's state.</text>
+<text x="74" y="772" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">That is why W cells are safe: a bad write is a git revert, not a data loss.</text>
+<rect x="60" y="1171" width="880" height="93" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1171" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1187" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1189.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE LEDGER</text>
+<text x="72" y="1211" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">COLOUR of a cell = the runtime that holds the access path — the same four-colour palette as the ownership matrix (B-14).</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">B-14 asked WHO RUNS THE CODE; this ledger asks WHO TOUCHES THE DATA — the two matrices are dual views of the same system.</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">Blank cells are contracts too: the dashboard never writes the corpus; SPACE never touches pulses.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">permission is implicit in the topology — there is no auth layer because there is no cross-write path</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

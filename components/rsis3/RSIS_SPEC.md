@@ -8,7 +8,7 @@
 
 ## 1. System Architecture
 
-### 1.1 Three-Loop Stack
+### 1.1 Loop Stack (nine-level hierarchy)
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -47,6 +47,91 @@
 └──────────────────────────────────────────────────────────────┘
 ```
 
+The RSIS engine was conceived as **nine nested loops**. Three are fully
+implemented (`loop_l1.py` … `loop_l3.py`); L4 (`loop_l4.py`, Optimizer),
+L5 (`loop_l5.py`, Evolution), L6 (`loop_l6.py`, Identity), L7
+(`loop_l7.py`, Meta-Cog), L8 (`loop_l8.py`, Meta-Meta) and L9
+(`loop_l9.py`, MMM) are implemented as bounded, evaluator-gated cycles.
+All nine loops are now real.
+
+**Tuning ownership follows a +3 diagonal: loop k+3 tunes loop k.**
+L4→L1, L5→L2, L6→L3, L7→L4, L8→L5, L9→L6. Each loop tunes exactly one
+target, so no two loops ever write the same parameter key. L7–L9 are
+themselves untuned (no L10+), making the top three fixed points — the
+unbounded-recursion guard. This yields a modification depth of exactly
+three meta-levels: core (L1–L3) → tuners (L4–L6) → meta-tuners (L7–L9),
+which matches the max-3-self-modification depth limit in the SPACE
+recursive-depth analysis.
+
+**L1 and L2 tune nothing.** They are pure consumers of tuned params
+(L4→L1, L5→L2) and never write a parameter key. Their intra-cycle
+adaptation — L1 retry/adapt, L2 candidate refinement after evaluator
+rejection — is self-adaptation inside a task, not cross-loop tuning.
+L2 *spawns* L1 action loops (instantiation), which is also not tuning.
+
+**L0 is the substrate, not a loop.** It is the workspace/artifact layer
+(files, config, `.rsis` state) that the loops mutate. Nothing parameterizes
+it; L1–L3 mutate it directly (tool calls, code application, memory
+consolidation). The diagonal therefore terminates at L1:
+L9 → L6 → L3 → substrate, with L3's consolidation/pruning as the loop that
+most directly curates the substrate.
+
+| Loop | Name | Status | Responsibility |
+|------|------|--------|----------------|
+| L0 | Substrate | n/a (not a loop) | The artifact/workspace layer loops mutate — files, config, `.rsis` state |
+| L1 | Execution | implemented | Per-task action loop: plan → tool calls → observe → retry |
+| L2 | Planning / Improvement | implemented | Per-session improvement candidates, immutable-evaluator gate |
+| L3 | Self-Direction / Evolution | implemented | Cross-session memory consolidation, strategy derivation, pruning |
+| L4 | Optimizer | implemented | Fast-feedback tuning of **L1 execution params** from outcomes |
+| L5 | Evolution | implemented | Population-based evolution of **L2 improvement params** + focus |
+| L6 | Identity | implemented | Tunes **L3 evolution params** (plateau timeout) |
+| L7 | Meta-Cog | implemented | Tunes **L4 optimizer params** (window / thresholds) |
+| L8 | Meta-Meta | implemented | Tunes **L5 strategy params** (mutation rate ↑ on stagnation, population ↓ on volatility) |
+| L9 | MMM | implemented | Tunes **L6 identity params** (band widened on oscillation, narrowed on stall) |
+
+L4 and L5 follow the same invariants as the lower loops: checkpoint before
+mutation, bounded budgets, immutable evaluator gate, telemetry, and failure
+cascades up to the next level. Persisted tuning is injected at startup:
+`load_config()` applies the L4 optimizer state and the L5 best strategy to
+`CONFIG` before any loop constructs, so L1/L2 consume the tuned values
+without extra plumbing.
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                L5 — Evolution Loop (strategies)               │
+│  Frequency: days  │  Population selection + mutation         │
+│  - Seed from L3 KG strategies                                │
+│  - Score fitness from outcome telemetry                      │
+│  - Elitism + mutate/recombine → next generation              │
+│  - Evaluator gate on each generation                         │
+└───────────────────────────┬──────────────────────────────────┘
+                            │ tunes strategy space
+                            ▼
+┌──────────────────────────────────────────────────────────────┐
+│                L4 — Optimizer Loop (meta-params)             │
+│  Frequency: hours  │  Fast-feedback parameter tuning         │
+│  - Aggregate recent L1/L2/L3 outcomes                        │
+│  - Propose clamped deltas (retries / tool calls)            │
+│  - Evaluator gate → checkpoint → persist optimizer state     │
+└───────────────────────────┬──────────────────────────────────┘
+                            │ promotes
+                            ▼
+┌──────────────────────────────────────────────────────────────┐
+│                    L3 — Evolution Loop                        │
+│  Frequency: hours/days  │  Trigger: cross-session interval   │
+└───────────────────────────┬──────────────────────────────────┘
+                            │ promotes
+                            ▼
+┌──────────────────────────────────────────────────────────────┐
+│                    L2 — Improvement Loop                      │
+└───────────────────────────┬──────────────────────────────────┘
+                            │ spawns
+                            ▼
+┌──────────────────────────────────────────────────────────────┐
+│                    L1 — Action Loop                           │
+└──────────────────────────────────────────────────────────────┘
+```
+
 ### 1.2 Loop Termination (per LangChain stacked-loop pattern)
 
 | Loop | Termination Signal | Budget | Timeout |
@@ -54,6 +139,12 @@
 | L1 | Task completion OR max retries exceeded | 10 tool calls per step | 120s |
 | L2 | Evaluator approval OR iteration budget exhausted | 5 improvement attempts | 30min |
 | L3 | Plateau detection (no gains in N sessions) OR scheduled | 20 sessions | 24h |
+| L4 | No deltas proposed OR evaluator rejection OR budget | 1 cycle | 5min |
+| L5 | Generation complete OR evaluator rejection OR budget | 1 generation | 10min |
+| L6 | No signal OR at bounds OR evaluator rejection OR budget | 1 cycle | 10min |
+| L7 | No signal OR deadband gap OR evaluator rejection OR budget | 1 cycle | 10min |
+| L8 | No signal OR at bounds OR evaluator rejection OR budget | 1 cycle | 10min |
+| L9 | No signal OR band-gap collapse OR evaluator rejection OR budget | 1 cycle | 10min |
 
 ### 1.3 Stacking Semantics
 
@@ -61,8 +152,73 @@ Each loop level **spawns** the level below it and **evaluates** its output befor
 - L1 failure → L2 retries with different approach
 - L2 failure (evaluator rejection x3) → L3 flags strategy for evolution
 - L3 plateau → triggers redundancy refinement
+- L3 strategies → seed L5 population
+- L4 tuning failure → L5 evolves the strategy space
+- L5 plateau (no fitness gain across generations) → L8 raises L5 mutation rate
+- L5 fitness volatility (oscillating best-fitness) → L8 shrinks L5 population
+- L6 oscillation (alternating shrink/grow) → L9 widens the L6 band
+- L6 stall (no applied tuning while success is low) → L9 narrows the L6 band
 
 ---
+
+### 1.4 Loop Topology: Nested, Parallel, Overlapping
+
+The nine loops are **not one topology**. The conception mixes three, and the
+conflicts that matter come from the overlapping ones:
+
+- **Nested** — a loop spawns the level below and promotes its output
+  upward. L1 ⊂ L2 ⊂ L3 is the implemented stack; L5 is seeded from L3's KG
+  strategies (a one-way nesting edge); L7–L9 nest above L5 as its tuners.
+- **Parallel** — loops with disjoint state that can run concurrently. L4
+  (writes `.rsis/optimizer_state.json`) and L5 (writes `.rsis/strategies.json`)
+  are parallel by design; multiple L1 action loops run in parallel per task.
+  L7 (Meta-Cog), L8 (Meta-Meta) and L9 (MMM) are parallel observers, each
+  with its own disjoint state file.
+- **Overlapping** — loops that share state or feedback and therefore need
+  arbitration. The overlaps that exist today:
+  - *Shared reads*: L3, L4, L5 all read the same outcome telemetry / KG.
+    Read-sharing is safe and intended.
+  - *Shared config writes*: tuning loops adjust other loops' budgets.
+    Resolved by the strict **+3 ownership diagonal** — L4 owns `l1.*`,
+    L5 owns `l2.max_attempts`, L6 owns `l3.*`, L7 owns `l4.*`, L8 owns
+    `l5.*`, L9 owns `l6.*` (registry in `config.py`). No two loops write
+    the same key.
+  - *Seeding*: L5 reads L3's strategy nodes (write→read, one-way, safe).
+
+**Arbitration rules**
+
+| State slice | Owner | Others |
+|---|---|---|
+| `.rsis/knowledge_graph.json`, vectors | L3 | L4/L5 read-only |
+| `.rsis/optimizer_state.json` | L4 | startup loader reads |
+| `.rsis/strategies.json` | L5 | startup loader reads |
+| `.rsis/identity_state.json` | L6 | startup loader reads |
+| `.rsis/metacog_state.json` | L7 | startup loader reads |
+| `.rsis/metameta_state.json` | L8 | startup loader reads |
+| `.rsis/mmm_state.json` | L9 | startup loader reads |
+| `CONFIG` (runtime) | startup loader writes; L4/L5 mirror in-process | L1/L2 read |
+
+**Concurrency guardrail**: the ownership table gives file-level disjointness,
+but two concurrent runs of the *same* loop (e.g., two L5 cycles) would race on
+their own state file. Loop execution is therefore serialized by the CLI; a
+parallel scheduler must hold a lock per state file before a cycle.
+
+**Deliberate non-overlaps** (documented so they stay that way):
+- L0 is the shared substrate, not a tunable loop — no loop owns L0 keys.
+- The evaluator is immutable and owned by no loop.
+- A loop writes only its +3 target's params (L4→L1, L5→L2, L6→L3, L7→L4,
+  L8→L5, L9→L6) and never any other loop's keys.
+- L7–L9 are untuned fixed points; adding an L10+ would change the recursion
+  guard and requires a spec change.
+
+**L8 (Meta-Meta)** reads L5's generation-fitness history
+(`.rsis/strategies.json`) and tunes `l5.mutation_rate` (raise on
+stagnation — gains below ε across `stagnation_window` generations) and
+`l5.population_size` (shrink on volatility — best-fitness oscillation).
+**L9 (MMM)** reads L6's tuning history (`.rsis/identity_state.json`) and
+tunes the `l6.shrink_below`/`l6.grow_above` band (widen on oscillation,
+narrow on stall). Both persist to their own state files and are injected
+at startup like L4–L7.
 
 ## 2. Memory Hierarchy
 

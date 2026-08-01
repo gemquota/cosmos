@@ -1,0 +1,20 @@
+{
+  "params": {
+    "l4.outcome_window": 20.0,
+    "l4.min_outcomes": 5.0,
+    "l4.target_success_low": 0.45,
+    "l4.target_success_high": 0.9
+  },
+  "history": [
+    {
+      "cycle": 1,
+      "deltas": {
+        "l4.target_success_low": -0.04999999999999999,
+        "l4.target_success_high": 0.050000000000000044
+      },
+      "accepted": true,
+      "signal": "widen"
+    }
+  ],
+  "cycle": 1
+}

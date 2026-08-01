@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE PULSE FIELD — CADENCE IS THE DATA</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Three loops, three real rhythms: each ring below takes exactly one loop iteration to expand — L1 seconds, RRP minutes, L3 hours</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<line x1="70" y1="452" x2="70" y2="130" stroke="#334155" stroke-width="1.4" marker-end="url(#arwG)" opacity=".9"/>
+<text x="58" y="340" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" transform="rotate(-90 58 340)">LOOP DEPTH — FASTER ↑ · SLOWER ↓</text>
+<text x="96" y="116" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">L1 (seconds) — shallowest, hottest</text>
+<text x="96" y="236" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">RRP (minutes) — mid-depth, 25 rounds</text>
+<text x="96" y="356" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">L3 (hours) — deepest, rarest</text>
+<rect x="96" y="120" width="816" height="92" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+<rect x="96" y="120" width="816" height="20" rx="14" fill="#818cf8" opacity=".12"/>
+<rect x="96" y="128" width="816" height="12" fill="#818cf8" opacity=".10"/>
+<text x="112" y="153" fill="#818cf8" font-family="system-ui,sans-serif" font-size="12" font-weight="800">L1 · ACTION LOOP</text>
+<text x="112" y="167" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">RSIS3 — tool call → observe → retry</text>
+<circle cx="150" cy="166" r="16" fill="#818cf8" opacity=".9" stroke="#0b1120" stroke-width="2"/>
+<circle cx="150" cy="166" r="16" fill="none" stroke="#818cf8" stroke-width="1" opacity=".5"/>
+<circle cx="150" cy="166" r="30" fill="none" stroke="#818cf8" stroke-width="1" stroke-dasharray="2,5" opacity=".28"/>
+<circle cx="150" cy="166" r="46" fill="none" stroke="#818cf8" stroke-width="1" stroke-dasharray="2,5" opacity=".28"/>
+<circle cx="150" cy="166" r="64" fill="none" stroke="#818cf8" stroke-width="1" stroke-dasharray="2,5" opacity=".28"/>
+<circle cx="150" cy="166" r="12" fill="none" stroke="#818cf8" stroke-width="2.2"><animate attributeName="r" values="12;150" dur="1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="1s" repeatCount="indefinite"/></circle>
+<rect x="812" y="155" width="84" height="22" rx="11" fill="#818cf8" opacity=".15"/>
+<text x="854" y="170" text-anchor="middle" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="700">T = 1s</text>
+<text x="812" y="190" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">≈ 1–2 s real</text>
+<circle cx="300" cy="166" r="4" fill="#818cf8" opacity=".22"/>
+<text x="300" y="186" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">tool call</text>
+<circle cx="170" cy="166" r="5" fill="#ffffff" opacity="0"><animate attributeName="cx" values="170;760" dur="1s" begin="0.00s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.00s" repeatCount="indefinite"/></circle>
+<circle cx="402" cy="166" r="4" fill="#818cf8" opacity=".22"/>
+<text x="402" y="186" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">observe</text>
+<circle cx="170" cy="166" r="5" fill="#ffffff" opacity="0"><animate attributeName="cx" values="170;760" dur="1s" begin="0.20s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.20s" repeatCount="indefinite"/></circle>
+<circle cx="504" cy="166" r="4" fill="#818cf8" opacity=".22"/>
+<text x="504" y="186" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">retry</text>
+<circle cx="170" cy="166" r="5" fill="#ffffff" opacity="0"><animate attributeName="cx" values="170;760" dur="1s" begin="0.40s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.40s" repeatCount="indefinite"/></circle>
+<circle cx="606" cy="166" r="4" fill="#818cf8" opacity=".22"/>
+<text x="606" y="186" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">result</text>
+<circle cx="170" cy="166" r="5" fill="#ffffff" opacity="0"><animate attributeName="cx" values="170;760" dur="1s" begin="0.60s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.60s" repeatCount="indefinite"/></circle>
+<circle cx="708" cy="166" r="4" fill="#818cf8" opacity=".22"/>
+<text x="708" y="186" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">pulse</text>
+<circle cx="170" cy="166" r="5" fill="#ffffff" opacity="0"><animate attributeName="cx" values="170;760" dur="1s" begin="0.80s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.80s" repeatCount="indefinite"/></circle>
+<text x="800" y="150" text-anchor="end" fill="#64748b" font-family="system-ui,sans-serif" font-size="8">→ rack · dashboard-data.json</text>
+<rect x="96" y="240" width="816" height="92" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+<rect x="96" y="240" width="816" height="20" rx="14" fill="#f59e0b" opacity=".12"/>
+<rect x="96" y="248" width="816" height="12" fill="#f59e0b" opacity=".10"/>
+<text x="112" y="273" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="12" font-weight="800">RRP · IDEATION ROUND</text>
+<text x="112" y="287" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">SPACE — probe → answer → artifact</text>
+<circle cx="150" cy="286" r="16" fill="#f59e0b" opacity=".9" stroke="#0b1120" stroke-width="2"/>
+<circle cx="150" cy="286" r="16" fill="none" stroke="#f59e0b" stroke-width="1" opacity=".5"/>
+<circle cx="150" cy="286" r="30" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="2,5" opacity=".28"/>
+<circle cx="150" cy="286" r="46" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="2,5" opacity=".28"/>
+<circle cx="150" cy="286" r="64" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="2,5" opacity=".28"/>
+<circle cx="150" cy="286" r="12" fill="none" stroke="#f59e0b" stroke-width="2.2"><animate attributeName="r" values="12;150" dur="12s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="12s" repeatCount="indefinite"/></circle>
+<rect x="812" y="275" width="84" height="22" rx="11" fill="#f59e0b" opacity=".15"/>
+<text x="854" y="290" text-anchor="middle" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="700">T = 12s</text>
+<text x="812" y="310" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">≈ 1 min real</text>
+<circle cx="300" cy="286" r="4" fill="#f59e0b" opacity=".22"/>
+<text x="300" y="306" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">probe</text>
+<circle cx="170" cy="286" r="5" fill="#ffffff" opacity="0"><animate attributeName="cx" values="170;760" dur="12s" begin="0.00s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="12s" begin="0.00s" repeatCount="indefinite"/></circle>
+<circle cx="402" cy="286" r="4" fill="#f59e0b" opacity=".22"/>
+<text x="402" y="306" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">answer</text>
+<circle cx="170" cy="286" r="5" fill="#ffffff" opacity="0"><animate attributeName="cx" values="170;760" dur="12s" begin="2.40s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="12s" begin="2.40s" repeatCount="indefinite"/></circle>
+<circle cx="504" cy="286" r="4" fill="#f59e0b" opacity=".22"/>
+<text x="504" y="306" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">artifact</text>
+<circle cx="170" cy="286" r="5" fill="#ffffff" opacity="0"><animate attributeName="cx" values="170;760" dur="12s" begin="4.80s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="12s" begin="4.80s" repeatCount="indefinite"/></circle>
+<circle cx="606" cy="286" r="4" fill="#f59e0b" opacity=".22"/>
+<text x="606" y="306" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">validate</text>
+<circle cx="170" cy="286" r="5" fill="#ffffff" opacity="0"><animate attributeName="cx" values="170;760" dur="12s" begin="7.20s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="12s" begin="7.20s" repeatCount="indefinite"/></circle>
+<circle cx="708" cy="286" r="4" fill="#f59e0b" opacity=".22"/>
+<text x="708" y="306" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">export</text>
+<circle cx="170" cy="286" r="5" fill="#ffffff" opacity="0"><animate attributeName="cx" values="170;760" dur="12s" begin="9.60s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="12s" begin="9.60s" repeatCount="indefinite"/></circle>
+<text x="800" y="270" text-anchor="end" fill="#64748b" font-family="system-ui,sans-serif" font-size="8">→ artifacts · 6 formats</text>
+<rect x="96" y="360" width="816" height="92" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+<rect x="96" y="360" width="816" height="20" rx="14" fill="#22d3ee" opacity=".12"/>
+<rect x="96" y="368" width="816" height="12" fill="#22d3ee" opacity=".10"/>
+<text x="112" y="393" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="12" font-weight="800">L3 · CONSOLIDATION</text>
+<text x="112" y="407" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">MYKB — merge → evolve → write memory</text>
+<circle cx="150" cy="406" r="16" fill="#22d3ee" opacity=".9" stroke="#0b1120" stroke-width="2"/>
+<circle cx="150" cy="406" r="16" fill="none" stroke="#22d3ee" stroke-width="1" opacity=".5"/>
+<circle cx="150" cy="406" r="30" fill="none" stroke="#22d3ee" stroke-width="1" stroke-dasharray="2,5" opacity=".28"/>
+<circle cx="150" cy="406" r="46" fill="none" stroke="#22d3ee" stroke-width="1" stroke-dasharray="2,5" opacity=".28"/>
+<circle cx="150" cy="406" r="64" fill="none" stroke="#22d3ee" stroke-width="1" stroke-dasharray="2,5" opacity=".28"/>
+<circle cx="150" cy="406" r="12" fill="none" stroke="#22d3ee" stroke-width="2.2"><animate attributeName="r" values="12;150" dur="60s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="60s" repeatCount="indefinite"/></circle>
+<rect x="812" y="395" width="84" height="22" rx="11" fill="#22d3ee" opacity=".15"/>
+<text x="854" y="410" text-anchor="middle" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="700">T = 60s</text>
+<text x="812" y="430" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">≈ 1 hr real</text>
+<circle cx="300" cy="406" r="4" fill="#22d3ee" opacity=".22"/>
+<text x="300" y="426" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">merge</text>
+<circle cx="170" cy="406" r="5" fill="#ffffff" opacity="0"><animate attributeName="cx" values="170;760" dur="60s" begin="0.00s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="60s" begin="0.00s" repeatCount="indefinite"/></circle>
+<circle cx="402" cy="406" r="4" fill="#22d3ee" opacity=".22"/>
+<text x="402" y="426" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">evolve</text>
+<circle cx="170" cy="406" r="5" fill="#ffffff" opacity="0"><animate attributeName="cx" values="170;760" dur="60s" begin="12.00s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="60s" begin="12.00s" repeatCount="indefinite"/></circle>
+<circle cx="504" cy="406" r="4" fill="#22d3ee" opacity=".22"/>
+<text x="504" y="426" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">consolidate</text>
+<circle cx="170" cy="406" r="5" fill="#ffffff" opacity="0"><animate attributeName="cx" values="170;760" dur="60s" begin="24.00s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="60s" begin="24.00s" repeatCount="indefinite"/></circle>
+<circle cx="606" cy="406" r="4" fill="#22d3ee" opacity=".22"/>
+<text x="606" y="426" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">KG write</text>
+<circle cx="170" cy="406" r="5" fill="#ffffff" opacity="0"><animate attributeName="cx" values="170;760" dur="60s" begin="36.00s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="60s" begin="36.00s" repeatCount="indefinite"/></circle>
+<circle cx="708" cy="406" r="4" fill="#22d3ee" opacity=".22"/>
+<text x="708" y="426" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">index</text>
+<circle cx="170" cy="406" r="5" fill="#ffffff" opacity="0"><animate attributeName="cx" values="170;760" dur="60s" begin="48.00s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="60s" begin="48.00s" repeatCount="indefinite"/></circle>
+<text x="800" y="390" text-anchor="end" fill="#64748b" font-family="system-ui,sans-serif" font-size="8">→ wiki · 2,360+ pages</text>
+<line x1="120" y1="496" x2="880" y2="496" stroke="#334155" stroke-width="1.4" marker-end="url(#arwG)"/>
+<text x="500" y="486" text-anchor="middle" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="10">X = TIME</text>
+<text x="500" y="518" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">each pulse emits one event — the white shuttle is that event flowing right toward the rack, the spec exports, the wiki</text>
+<rect x="96" y="556" width="816" height="128" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="96" y="556" width="816" height="30" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="96" y="574" width="816" height="12" fill="#f472b6" opacity=".12"/>
+<text x="504.0" y="575.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">WHAT THE ANIMATION MEANS — AND WHY THESE THREE RINGS MOVE</text>
+<text x="110" y="600" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">PERIOD = CADENCE — the ring's expansion time IS the loop's real firing interval (1s / 12s / 60s, time-compressed).</text>
+<text x="110" y="619" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">L1 rings every ~1–2s of real runtime · RRP every ~1 min · L3 every ~1 hr — deeper loops fire slower.</text>
+<text x="110" y="638" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">SHUTTLE = the event that pulse emits: L1 writes a rack pulse, RRP writes an artifact, L3 writes consolidated memory.</text>
+<text x="110" y="657" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">Nothing else moves. If a ring were decorative, this diagram would be a screensaver — it isn't.</text>
+<text x="96" y="724" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-weight="700">CADENCE REGISTER — REAL TIMINGS, NOT DECORATION</text>
+<rect x="96" y="736" width="256" height="92" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+<circle cx="116" cy="756" r="6" fill="#818cf8"/>
+<text x="130" y="760" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="10" font-weight="700">L1 · ACTION</text>
+<text x="112" y="782" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">≈ 1–2 s / tool-call round</text>
+<text x="112" y="800" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">hundreds per session</text>
+<text x="112" y="818" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">rack/pulses JSONL → dashboard-data.json</text>
+<rect x="376" y="736" width="256" height="92" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+<circle cx="396" cy="756" r="6" fill="#f59e0b"/>
+<text x="410" y="760" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="10" font-weight="700">RRP · IDEATION</text>
+<text x="392" y="782" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">≈ 1 min / probe round</text>
+<text x="392" y="800" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">25 rounds per spec</text>
+<text x="392" y="818" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">artifacts → 6 export formats</text>
+<rect x="656" y="736" width="256" height="92" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+<circle cx="676" cy="756" r="6" fill="#22d3ee"/>
+<text x="690" y="760" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="10" font-weight="700">L3 · CONSOLIDATION</text>
+<text x="672" y="782" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">≈ 1 hr / consolidation</text>
+<text x="672" y="800" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">per session end</text>
+<text x="672" y="818" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">wiki + KG writes · 2,360+ pages</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">cadence is not a styling choice — it is the system's heartbeat, drawn at its actual rate</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 4 · experimental dynamics</text>
+</svg>

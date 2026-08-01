@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE INFORMATION FLOW — ENTROPY ALONG THE LIFECYCLE</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">How uncertain each artifact is before it is read — and where the gate drops entropy</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<path d="M 130,300 L 240,340 L 355,265 L 470,225 L 585,175 L 700,130 L 815,92 L 900,80" fill="none" stroke="#f472b6" stroke-width="2.5" opacity=".85"/>
+<path d="M 130,300 L 240,340 L 355,265 L 470,225 L 585,175 L 700,130 L 815,92 L 900,80 L 900 400 L 130 400 Z" fill="#f472b6" opacity=".07"/>
+<line x1="100" y1="420" x2="920" y2="420" stroke="#334155" stroke-width="1.5" marker-end="url(#arwG)"/>
+<text x="500" y="448" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="9.5">LIFECYCLE — IDEA → SPEC → CANDIDATE → GATE → PULSE → LESSON → KG EDGE</text>
+<line x1="100" y1="80" x2="100" y2="420" stroke="#334155" stroke-width="1.5" marker-end="url(#arwG)"/>
+<text x="74" y="250" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="700" transform="rotate(-90 74 250)">ENTROPY — UNCERTAINTY BEFORE READING</text>
+<circle cx="130" cy="300" r="9" fill="#f59e0b" stroke="#0b1120" stroke-width="2"/>
+<text x="130" y="278" text-anchor="middle" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="9">IDEA</text>
+<text x="130" y="322" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">many possible answers</text>
+<circle cx="240" cy="340" r="9" fill="#f59e0b" stroke="#0b1120" stroke-width="2"/>
+<text x="240" y="318" text-anchor="middle" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="9">SPEC</text>
+<text x="240" y="362" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">structure imposed</text>
+<circle cx="355" cy="265" r="9" fill="#818cf8" stroke="#0b1120" stroke-width="2"/>
+<text x="355" y="243" text-anchor="middle" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="9">CANDIDATE</text>
+<text x="355" y="287" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">one implementation</text>
+<circle cx="470" cy="225" r="9" fill="#f472b6" stroke="#0b1120" stroke-width="2"/>
+<text x="470" y="203" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9">GATE</text>
+<text x="470" y="247" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">entropy cliff</text>
+<circle cx="585" cy="175" r="9" fill="#10b981" stroke="#0b1120" stroke-width="2"/>
+<text x="585" y="153" text-anchor="middle" fill="#10b981" font-family="ui-monospace,Menlo,monospace" font-size="9">PULSE</text>
+<text x="585" y="197" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">noisy but cheap</text>
+<circle cx="700" cy="130" r="9" fill="#22d3ee" stroke="#0b1120" stroke-width="2"/>
+<text x="700" y="108" text-anchor="middle" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="9">LESSON</text>
+<text x="700" y="152" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">distilled</text>
+<circle cx="815" cy="92" r="9" fill="#22d3ee" stroke="#0b1120" stroke-width="2"/>
+<text x="815" y="70" text-anchor="middle" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="9">KG EDGE</text>
+<text x="815" y="114" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">minimal uncertainty</text>
+<line x1="470" y1="225" x2="470" y2="60" stroke="#f472b6" stroke-width="1" stroke-dasharray="4,4" opacity=".6"/>
+<text x="470" y="52" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="8.5">EVALUATOR — entropy is spent here: rejection is information</text>
+<rect x="60" y="520" width="880" height="150" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="520" width="880" height="32" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="540" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="540.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">WHERE INFORMATION ACTUALLY MOVES</text>
+<text x="74" y="566" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">The cascade loses entropy on purpose: a spec is less surprising than an idea; a KG edge is nearly deterministic.</text>
+<text x="74" y="592" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">The gate is the one place entropy can INCREASE — a rejected candidate reopens the idea space for L2's next attempt.</text>
+<text x="74" y="618" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">Pulses look low-entropy but are high-volume — their information is in the trend, not the event (the extrapolator's job).</text>
+<rect x="60" y="700" width="880" height="130" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="700" width="880" height="32" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="60" y="720" width="880" height="12" fill="#818cf8" opacity=".12"/>
+<text x="500.0" y="720.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">MEASURED, NOT METAPHORICAL</text>
+<text x="74" y="746" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Entropy here ≈ the size of the answer space: probes → 326 answers → 1 spec; candidates → ≤5 verdicts → 1 applied diff.</text>
+<text x="74" y="772" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">The ratios are entropy numbers in disguise — 25:1 means the spec process spends 24 rounds eliminating alternatives.</text>
+<rect x="60" y="1171" width="880" height="93" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1171" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1187" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1189.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE FLOW</text>
+<text x="72" y="1211" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">CURVE = uncertainty before each artifact is read; the downward slope is the system's whole reason to exist.</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">COLOURED DOTS = owning component; the gate is pink because it is the only node that can raise entropy.</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">THE DASHED LINE = the gate's axis: rejection is not failure, it is measured information spent to guide the next candidate.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">the system is an entropy engine — it converts 326 possibilities into one retrievable fact</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

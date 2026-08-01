@@ -1,0 +1,392 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1400" font-family="system-ui,sans-serif" style="background:#0b1120">
+<line x1="90" y1="1310" x2="1010" y2="1310" stroke="#334155" stroke-width="2"/>
+<line x1="90" y1="90" x2="90" y2="1310" stroke="#334155" stroke-width="2"/>
+<path d="M 264.8 687.8 Q 218.8 590.8 172.8 565.8" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="218.8" y="584.8" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">dispatch</text>
+<path d="M 264.8 687.8 Q 310.8 566.4 356.8 517.0" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="310.8" y="560.4" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">ask</text>
+<path d="M 264.8 687.8 Q 287.8 798.2 310.8 980.6" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="287.8" y="792.2" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">persist</text>
+<path d="M 172.8 565.8 Q 292.4 651.8 412.0 809.8" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="292.4" y="645.8" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">answers → spec</text>
+<path d="M 412.0 809.8 Q 444.9 817.4 477.8 897.0" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="444.9" y="811.4" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">render</text>
+<path d="M 264.8 687.8 Q 361.4 468.8 458.0 321.8" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="361.4" y="462.8" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">host</text>
+<path d="M 209.6 456.0 Q 237.2 535.9 264.8 687.8" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="237.2" y="529.9" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">render</text>
+<path d="M 246.4 883.0 Q 278.6 895.8 310.8 980.6" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="278.6" y="889.8" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">analyze</text>
+<path d="M 343.0 382.8 Q 303.9 499.3 264.8 687.8" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="303.9" y="493.3" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">session client</text>
+<path d="M 504.0 224.2 Q 481.0 237.0 458.0 321.8" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="481.0" y="231.0" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">alternative UI</text>
+<path d="M 264.8 687.8 Q 550.0 590.8 835.2 565.8" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="550.0" y="584.8" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">spec drafts</text>
+<path d="M 835.2 565.8 Q 858.2 590.8 881.2 687.8" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="858.2" y="584.8" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">candidate</text>
+<path d="M 881.2 687.8 Q 918.0 731.1 954.8 846.4" fill="none" stroke="#f472b6" stroke-width="3" stroke-dasharray="6,4" opacity="0.80"/>
+<text x="918.0" y="725.1" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">spawn · SHA-256</text>
+<path d="M 954.8 846.4 Q 895.0 670.1 835.2 565.8" fill="none" stroke="#f472b6" stroke-width="3" stroke-dasharray="6,4" opacity="0.80"/>
+<text x="895.0" y="664.1" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">verdict</text>
+<path d="M 800.2 365.1 Q 884.0 255.0 967.7 216.9" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="884.0" y="249.0" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">tune</text>
+<path d="M 701.8 651.2 Q 768.5 572.5 835.2 565.8" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="768.5" y="566.5" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">tune</text>
+<path d="M 623.6 956.2 Q 678.8 993.4 734.0 1102.6" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="678.8" y="987.4" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">tune</text>
+<path d="M 700.4 261.4 Q 750.3 277.3 800.2 365.1" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="750.3" y="271.3" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">tune</text>
+<path d="M 577.6 565.8 Q 639.7 572.5 701.8 651.2" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="639.7" y="566.5" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">tune</text>
+<path d="M 504.0 761.0 Q 563.8 822.6 623.6 956.2" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="563.8" y="816.6" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">tune</text>
+<path d="M 660.4 504.8 Q 697.2 767.7 734.0 1102.6" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="697.2" y="761.7" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">projection</text>
+<path d="M 780.0 870.8 Q 790.1 582.0 800.2 365.1" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="790.1" y="576.0" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">checkpoint</text>
+<path d="M 967.7 216.9 Q 889.9 147.6 812.2 150.4" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="889.9" y="141.6" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">pulse</text>
+<path d="M 690.3 297.4 Q 751.3 187.9 812.2 150.4" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="751.3" y="181.9" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">pulse</text>
+<path d="M 812.2 150.4 Q 784.6 151.0 757.0 223.6" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="784.6" y="145.0" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">extract</text>
+<path d="M 757.0 223.6 Q 689.2 187.9 621.3 224.2" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="689.2" y="181.9" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">read</text>
+<path d="M 621.3 224.2 Q 634.4 153.1 647.5 154.0" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="634.4" y="147.1" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">render</text>
+<path d="M 865.6 333.4 Q 838.9 205.9 812.2 150.4" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="838.9" y="199.9" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">telemetry views</text>
+<path d="M 734.0 1102.6 Q 655.8 1048.3 577.6 1066.0" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="655.8" y="1042.3" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">consolidate</text>
+<path d="M 734.0 1102.6 Q 627.5 992.5 521.0 954.4" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="627.5" y="986.5" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">session capture</text>
+<path d="M 521.0 954.4 Q 485.1 1084.3 449.3 1286.2" fill="none" stroke="#22d3ee" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="485.1" y="1078.3" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">write page</text>
+<path d="M 521.0 954.4 Q 457.1 1034.9 393.1 1187.4" fill="none" stroke="#22d3ee" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="457.1" y="1028.9" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">write edge</text>
+<path d="M 521.0 954.4 Q 535.5 1053.5 550.0 1224.6" fill="none" stroke="#22d3ee" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="535.5" y="1047.5" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">snapshot</text>
+<path d="M 449.3 1286.2 Q 476.6 1170.6 504.0 1127.0" fill="none" stroke="#22d3ee" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="476.6" y="1164.6" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">build</text>
+<path d="M 449.3 1286.2 Q 421.2 1200.8 393.1 1187.4" fill="none" stroke="#22d3ee" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="421.2" y="1194.8" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">derive</text>
+<path d="M 605.2 431.6 Q 554.6 743.3 504.0 1127.0" fill="none" stroke="#22d3ee" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="554.6" y="737.3" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">query</text>
+<path d="M 605.2 431.6 Q 786.4 288.2 967.7 216.9" fill="none" stroke="#22d3ee" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="786.4" y="282.2" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">retrieval :8765</text>
+<path d="M 393.1 1187.4 Q 499.2 773.5 605.2 431.6" fill="none" stroke="#22d3ee" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="499.2" y="767.5" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">serve</text>
+<path d="M 393.1 1187.4 Q 370.4 1096.8 347.6 1078.2" fill="none" stroke="#22d3ee" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="370.4" y="1090.8" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">render</text>
+<path d="M 647.5 154.0 Q 552.8 201.9 458.0 321.8" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="552.8" y="195.9" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">launch :8888</text>
+<path d="M 647.5 154.0 Q 574.8 91.5 502.2 101.0" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="574.8" y="85.5" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">redirect</text>
+<path d="M 647.5 154.0 Q 562.6 489.5 477.8 897.0" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="562.6" y="483.5" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">embed</text>
+<path d="M 647.5 154.0 Q 626.4 256.8 605.2 431.6" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="626.4" y="250.8" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">embed wiki</text>
+<path d="M 647.5 154.0 Q 497.6 580.1 347.6 1078.2" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="497.6" y="574.1" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">embed graph</text>
+<path d="M 743.2 114.4 Q 622.7 71.7 502.2 101.0" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="622.7" y="65.7" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">deploy</text>
+<path d="M 605.2 431.6 Q 527.0 688.4 448.8 1017.2" fill="none" stroke="#22d3ee" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="527.0" y="682.4" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">query v2</text>
+<path d="M 504.0 1127.0 Q 476.4 1036.1 448.8 1017.2" fill="none" stroke="#22d3ee" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="476.4" y="1030.1" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">hybrid index</text>
+<path d="M 449.3 1286.2 Q 370.8 1216.4 292.4 1218.5" fill="none" stroke="#22d3ee" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="370.8" y="1210.4" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">auto-link</text>
+<path d="M 292.4 1218.5 Q 342.8 1166.9 393.1 1187.4" fill="none" stroke="#22d3ee" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="342.8" y="1160.9" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">backlink edges</text>
+<path d="M 449.3 1286.2 Q 338.6 1140.1 228.0 1066.0" fill="none" stroke="#22d3ee" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="338.6" y="1134.1" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">integrity audit</text>
+<path d="M 605.2 431.6 Q 637.4 560.3 669.6 761.0" fill="none" stroke="#22d3ee" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="637.4" y="554.3" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">serve :8765</text>
+<path d="M 647.5 154.0 Q 658.6 421.5 669.6 761.0" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="658.6" y="415.5" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">embed</text>
+<path d="M 264.8 687.8 Q 188.9 490.1 113.0 364.5" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="188.9" y="484.1" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">CLI entry</text>
+<path d="M 113.0 364.5 Q 262.5 551.1 412.0 809.8" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="262.5" y="545.1" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">export cmd</text>
+<path d="M 264.8 687.8 Q 329.2 517.6 393.6 419.4" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="329.2" y="511.6" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">config load</text>
+<path d="M 113.0 364.5 Q 113.0 557.3 113.0 822.0" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="113.0" y="551.3" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">git hooks</text>
+<path d="M 412.0 59.5 Q 529.8 70.8 647.5 154.0" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="529.8" y="64.8" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">serve :9000</text>
+<path d="M 412.0 59.5 Q 361.4 38.7 310.8 90.0" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="361.4" y="32.7" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">invokes</text>
+<path d="M 310.8 90.0 Q 624.1 97.3 937.3 176.6" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="624.1" y="91.3" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">supervise</text>
+<path d="M 937.3 176.6 Q 792.4 129.3 647.5 154.0" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="792.4" y="123.3" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">watch</text>
+<path d="M 937.3 176.6 Q 771.3 268.1 605.2 431.6" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="771.3" y="262.1" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">watch</text>
+<path d="M 937.3 176.6 Q 697.7 213.2 458.0 321.8" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="697.7" y="207.2" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">watch</text>
+<path d="M 412.0 59.5 Q 623.6 20.4 835.2 53.4" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="623.6" y="14.4" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">alternative</text>
+<path d="M 835.2 53.4 Q 741.4 67.7 647.5 154.0" fill="none" stroke="#10b981" stroke-width="2.2" stroke-dasharray="7,5" opacity="0.80"/>
+<text x="741.4" y="61.7" text-anchor="middle" fill="#64748b" font-size="12" font-family="ui-monospace,Menlo,monospace" opacity="0.80">serve</text>
+<g opacity="1.00" transform="translate(967.7,216.9)">
+<circle r="31.5" fill="#818cf8" opacity=".1"/>
+<circle r="22.5" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L1 · action</text>
+</g>
+<g opacity="1.00" transform="translate(835.2,565.8)">
+<circle r="33" fill="#818cf8" opacity=".1"/>
+<circle r="24" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L2 · improvement</text>
+</g>
+<g opacity="1.00" transform="translate(734.0,1102.6)">
+<circle r="33" fill="#818cf8" opacity=".1"/>
+<circle r="24" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L3 · evolution</text>
+</g>
+<g opacity="1.00" transform="translate(800.2,365.1)">
+<circle r="27" fill="#818cf8" opacity=".1"/>
+<circle r="18" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L4 · optimizer</text>
+</g>
+<g opacity="1.00" transform="translate(701.8,651.2)">
+<circle r="27" fill="#818cf8" opacity=".1"/>
+<circle r="18" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L5 · strategies</text>
+</g>
+<g opacity="1.00" transform="translate(623.6,956.2)">
+<circle r="27" fill="#818cf8" opacity=".1"/>
+<circle r="18" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L6 · identity</text>
+</g>
+<g opacity="1.00" transform="translate(700.4,261.4)">
+<circle r="25.5" fill="#818cf8" opacity=".1"/>
+<circle r="16.5" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L7 · meta-cog</text>
+</g>
+<g opacity="1.00" transform="translate(577.6,565.8)">
+<circle r="25.5" fill="#818cf8" opacity=".1"/>
+<circle r="16.5" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">L8 · meta-meta</text>
+</g>
+<g opacity="1.00" transform="translate(504.0,761.0)">
+<circle r="25.5" fill="#818cf8" opacity=".1"/>
+<circle r="16.5" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="14" font-weight="700">L9 · MMM</text>
+</g>
+<g opacity="1.00" transform="translate(881.2,687.8)">
+<circle r="24" fill="#818cf8" opacity=".1"/>
+<circle r="15" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">evaluator client</text>
+</g>
+<g opacity="1.00" transform="translate(954.8,846.4)">
+<circle r="28.5" fill="#f472b6" opacity=".1"/>
+<circle r="19.5" fill="#f472b6" opacity=".22" stroke="#f472b6" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">evaluator · immutable</text>
+</g>
+<g opacity="1.00" transform="translate(577.6,1066.0)">
+<circle r="27" fill="#818cf8" opacity=".1"/>
+<circle r="18" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">memory manager</text>
+</g>
+<g opacity="1.00" transform="translate(690.3,297.4)">
+<circle r="25.5" fill="#818cf8" opacity=".1"/>
+<circle r="16.5" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="14" font-weight="700">telemetry</text>
+</g>
+<g opacity="1.00" transform="translate(660.4,504.8)">
+<circle r="24" fill="#818cf8" opacity=".1"/>
+<circle r="15" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">extrapolator</text>
+</g>
+<g opacity="1.00" transform="translate(780.0,870.8)">
+<circle r="24" fill="#818cf8" opacity=".1"/>
+<circle r="15" fill="#818cf8" opacity=".22" stroke="#818cf8" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">checkpoint · recovery</text>
+</g>
+<g opacity="1.00" transform="translate(521.0,954.4)">
+<circle r="27" fill="#22d3ee" opacity=".1"/>
+<circle r="18" fill="#22d3ee" opacity=".22" stroke="#22d3ee" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">capture hooks</text>
+</g>
+<g opacity="1.00" transform="translate(449.3,1286.2)">
+<circle r="48" fill="#22d3ee" opacity=".1"/>
+<circle r="39" fill="#22d3ee" opacity=".22" stroke="#22d3ee" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">wiki corpus</text>
+</g>
+<g opacity="1.00" transform="translate(504.0,1127.0)">
+<circle r="30" fill="#22d3ee" opacity=".1"/>
+<circle r="21" fill="#22d3ee" opacity=".22" stroke="#22d3ee" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">TF-IDF index</text>
+</g>
+<g opacity="1.00" transform="translate(550.0,1224.6)">
+<circle r="28.5" fill="#22d3ee" opacity=".1"/>
+<circle r="19.5" fill="#22d3ee" opacity=".22" stroke="#22d3ee" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">temporal engine</text>
+</g>
+<g opacity="1.00" transform="translate(393.1,1187.4)">
+<circle r="30" fill="#22d3ee" opacity=".1"/>
+<circle r="21" fill="#22d3ee" opacity=".22" stroke="#22d3ee" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">knowledge graph</text>
+</g>
+<g opacity="1.00" transform="translate(347.6,1078.2)">
+<circle r="25.5" fill="#22d3ee" opacity=".1"/>
+<circle r="16.5" fill="#22d3ee" opacity=".22" stroke="#22d3ee" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">KG graph viewer</text>
+</g>
+<g opacity="1.00" transform="translate(605.2,431.6)">
+<circle r="28.5" fill="#22d3ee" opacity=".1"/>
+<circle r="19.5" fill="#22d3ee" opacity=".22" stroke="#22d3ee" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">MyKB daemon :8765</text>
+</g>
+<g opacity="1.00" transform="translate(448.8,1017.2)">
+<circle r="25.5" fill="#22d3ee" opacity=".1"/>
+<circle r="16.5" fill="#22d3ee" opacity=".22" stroke="#22d3ee" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">search fusion</text>
+</g>
+<g opacity="1.00" transform="translate(292.4,1218.5)">
+<circle r="25.5" fill="#22d3ee" opacity=".1"/>
+<circle r="16.5" fill="#22d3ee" opacity=".22" stroke="#22d3ee" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">link enrichment</text>
+</g>
+<g opacity="1.00" transform="translate(228.0,1066.0)">
+<circle r="24" fill="#22d3ee" opacity=".1"/>
+<circle r="15" fill="#22d3ee" opacity=".22" stroke="#22d3ee" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="14" font-weight="700">KB linter</text>
+</g>
+<g opacity="1.00" transform="translate(669.6,761.0)">
+<circle r="25.5" fill="#22d3ee" opacity=".1"/>
+<circle r="16.5" fill="#22d3ee" opacity=".22" stroke="#22d3ee" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">wiki browser</text>
+</g>
+<g opacity="1.00" transform="translate(264.8,687.8)">
+<circle r="28.5" fill="#f59e0b" opacity=".1"/>
+<circle r="19.5" fill="#f59e0b" opacity=".22" stroke="#f59e0b" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="14" font-weight="700">RRP engine</text>
+</g>
+<g opacity="1.00" transform="translate(172.8,565.8)">
+<circle r="34.5" fill="#f59e0b" opacity=".1"/>
+<circle r="25.5" fill="#f59e0b" opacity=".22" stroke="#f59e0b" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">probe framework</text>
+</g>
+<g opacity="1.00" transform="translate(356.8,517.0)">
+<circle r="25.5" fill="#f59e0b" opacity=".1"/>
+<circle r="16.5" fill="#f59e0b" opacity=".22" stroke="#f59e0b" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">provider factory</text>
+</g>
+<g opacity="1.00" transform="translate(412.0,809.8)">
+<circle r="27" fill="#f59e0b" opacity=".1"/>
+<circle r="18" fill="#f59e0b" opacity=".22" stroke="#f59e0b" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">exports · 6 formats</text>
+</g>
+<g opacity="1.00" transform="translate(458.0,321.8)">
+<circle r="27" fill="#f59e0b" opacity=".1"/>
+<circle r="18" fill="#f59e0b" opacity=".22" stroke="#f59e0b" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">SPACE web UI :8888</text>
+</g>
+<g opacity="1.00" transform="translate(477.8,897.0)">
+<circle r="24" fill="#f59e0b" opacity=".1"/>
+<circle r="15" fill="#f59e0b" opacity=".22" stroke="#f59e0b" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">meta viewer :8899</text>
+</g>
+<g opacity="1.00" transform="translate(310.8,980.6)">
+<circle r="24" fill="#f59e0b" opacity=".1"/>
+<circle r="15" fill="#f59e0b" opacity=".22" stroke="#f59e0b" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">session store · SQLite</text>
+</g>
+<g opacity="1.00" transform="translate(246.4,883.0)">
+<circle r="24" fill="#f59e0b" opacity=".1"/>
+<circle r="15" fill="#f59e0b" opacity=".22" stroke="#f59e0b" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">intelligence</text>
+</g>
+<g opacity="1.00" transform="translate(209.6,456.0)">
+<circle r="24" fill="#f59e0b" opacity=".1"/>
+<circle r="15" fill="#f59e0b" opacity=".22" stroke="#f59e0b" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">template engine</text>
+</g>
+<g opacity="1.00" transform="translate(343.0,382.8)">
+<circle r="25.5" fill="#f59e0b" opacity=".1"/>
+<circle r="16.5" fill="#f59e0b" opacity=".22" stroke="#f59e0b" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">prompt-app · React</text>
+</g>
+<g opacity="1.00" transform="translate(504.0,224.2)">
+<circle r="24" fill="#f59e0b" opacity=".1"/>
+<circle r="15" fill="#f59e0b" opacity=".22" stroke="#f59e0b" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">Vite UI · :3000</text>
+</g>
+<g opacity="1.00" transform="translate(113.0,364.5)">
+<circle r="25.5" fill="#f59e0b" opacity=".1"/>
+<circle r="16.5" fill="#f59e0b" opacity=".22" stroke="#f59e0b" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="14" font-weight="700">SPACE CLI</text>
+</g>
+<g opacity="1.00" transform="translate(393.6,419.4)">
+<circle r="22.5" fill="#f59e0b" opacity=".1"/>
+<circle r="13.5" fill="#f59e0b" opacity=".22" stroke="#f59e0b" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">config module</text>
+</g>
+<g opacity="1.00" transform="translate(113.0,822.0)">
+<circle r="22.5" fill="#f59e0b" opacity=".1"/>
+<circle r="13.5" fill="#f59e0b" opacity=".22" stroke="#f59e0b" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">git integration</text>
+</g>
+<g opacity="1.00" transform="translate(812.2,150.4)">
+<circle r="27" fill="#10b981" opacity=".1"/>
+<circle r="18" fill="#10b981" opacity=".22" stroke="#10b981" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">rack · pulses</text>
+</g>
+<g opacity="1.00" transform="translate(647.5,154.0)">
+<circle r="34.5" fill="#10b981" opacity=".1"/>
+<circle r="25.5" fill="#10b981" opacity=".22" stroke="#10b981" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">unified dashboard :9000</text>
+</g>
+<g opacity="1.00" transform="translate(757.0,223.6)">
+<circle r="28.5" fill="#10b981" opacity=".1"/>
+<circle r="19.5" fill="#10b981" opacity=".22" stroke="#10b981" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">dashboard-data.json</text>
+</g>
+<g opacity="1.00" transform="translate(621.3,224.2)">
+<circle r="22.5" fill="#10b981" opacity=".1"/>
+<circle r="13.5" fill="#10b981" opacity=".22" stroke="#10b981" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="14" font-weight="700">config.js</text>
+</g>
+<g opacity="1.00" transform="translate(865.6,333.4)">
+<circle r="25.5" fill="#10b981" opacity=".1"/>
+<circle r="16.5" fill="#10b981" opacity=".22" stroke="#10b981" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">telemetry dashboard</text>
+</g>
+<g opacity="1.00" transform="translate(502.2,101.0)">
+<circle r="25.5" fill="#10b981" opacity=".1"/>
+<circle r="16.5" fill="#10b981" opacity=".22" stroke="#10b981" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">GH Pages · cosmos</text>
+</g>
+<g opacity="1.00" transform="translate(671.4,83.3)">
+<circle r="22.5" fill="#10b981" opacity=".1"/>
+<circle r="13.5" fill="#10b981" opacity=".22" stroke="#10b981" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">GH Pages · hub</text>
+</g>
+<g opacity="1.00" transform="translate(743.2,114.4)">
+<circle r="22.5" fill="#10b981" opacity=".1"/>
+<circle r="13.5" fill="#10b981" opacity=".22" stroke="#10b981" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">vercel-deploy</text>
+</g>
+<g opacity="1.00" transform="translate(412.0,59.5)">
+<circle r="24" fill="#10b981" opacity=".1"/>
+<circle r="15" fill="#10b981" opacity=".22" stroke="#10b981" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">start.sh launcher</text>
+</g>
+<g opacity="1.00" transform="translate(310.8,90.0)">
+<circle r="24" fill="#10b981" opacity=".1"/>
+<circle r="15" fill="#10b981" opacity=".22" stroke="#10b981" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="14" font-weight="700">cosmos CLI</text>
+</g>
+<g opacity="1.00" transform="translate(937.3,176.6)">
+<circle r="24" fill="#10b981" opacity=".1"/>
+<circle r="15" fill="#10b981" opacity=".22" stroke="#10b981" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">heartbeat · sentry</text>
+</g>
+<g opacity="1.00" transform="translate(835.2,53.4)">
+<circle r="22.5" fill="#10b981" opacity=".1"/>
+<circle r="13.5" fill="#10b981" opacity=".22" stroke="#10b981" stroke-width="2"/>
+<text text-anchor="middle" dy="3" fill="#e2e8f0" font-size="12" font-weight="700">serve-dashboard.mjs</text>
+</g>
+</svg>

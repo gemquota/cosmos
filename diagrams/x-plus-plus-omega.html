@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>COSMOS — The Ω Graph (interactive)</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg:#0b1120; --panel:#0f172a; --border:#1e293b; --border2:#334155;
+    --text:#e2e8f0; --text2:#94a3b8; --text3:#64748b; --text4:#475569;
+    --rsis:#818cf8; --mykb:#22d3ee; --space:#f59e0b; --dash:#10b981; --ext:#f472b6;
+  }
+  body { background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; min-height:100vh; display:flex; flex-direction:column; }
+  .wrap { max-width:1000px; margin:0 auto; width:100%; padding:14px; flex:1; display:flex; flex-direction:column; gap:12px; }
+  .head h1 { font-size:clamp(18px,4.6vw,24px); font-weight:700; letter-spacing:.4px;
+    background:linear-gradient(135deg,#a5b4fc,#818cf8,#a5f3fc); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .head p { color:var(--text3); font-size:clamp(11px,2.8vw,13px); margin-top:4px; }
+  .stage { display:flex; align-items:center; gap:10px; background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:10px 14px; }
+  .stage label { font:700 11px ui-monospace,Menlo,monospace; color:var(--text2); white-space:nowrap; }
+  input[type=range] { flex:1; accent-color:var(--rsis); min-height:28px; touch-action:pan-x; }
+  .stage .lv { font:700 12px ui-monospace,Menlo,monospace; color:#a5b4fc; min-width:120px; text-align:right; }
+  .frame { position:relative; background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:6px; }
+  svg { display:block; width:100%; height:auto; touch-action:none; cursor:grab; user-select:none; -webkit-user-select:none; }
+  svg.panning { cursor:grabbing; }
+  .zoom-ctl { position:absolute; top:16px; right:16px; display:flex; gap:6px; z-index:5; }
+  .zoom-ctl button { width:34px; height:34px; border-radius:9px; border:1px solid var(--border2); background:rgba(15,23,42,.88); color:var(--text); font:700 16px system-ui; cursor:pointer; user-select:none; -webkit-user-select:none; }
+  .zoom-ctl button:active { background:var(--border2); }
+  .readout { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:12px 14px; min-height:86px; }
+  .readout h2 { font-size:14px; font-weight:700; color:var(--text); }
+  .readout .facts { color:var(--text2); font-size:12px; margin-top:4px; line-height:1.55; }
+  .readout .meta { color:var(--text4); font-size:10.5px; margin-top:5px; font-family:ui-monospace,Menlo,monospace; }
+  .legend { display:flex; flex-wrap:wrap; gap:8px; color:var(--text3); font-size:10.5px; background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:10px 12px; }
+  .legend span { display:inline-flex; align-items:center; gap:6px; }
+  .legend i { width:10px; height:10px; border-radius:3px; display:inline-block; }
+  .axis-note { color:var(--text4); font-size:10px; text-align:center; }
+  @media (min-width:768px) { .wrap { padding:22px; } }
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; animation:none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1>Ω — THE INTERACTIVE OMEGA GRAPH</h1>
+    <p>The whole ecosystem on two semantic spectra — pan &amp; zoom the canvas, hover/tap a node to pin its readout, drag λ to watch the system assemble: engine → memory → ideation → dashboard.</p>
+  </div>
+  <div class="stage">
+    <label>λ &middot; TIME</label>
+    <input type="range" id="lambda" min="1" max="4" step="0.01" value="4" aria-label="integration stage λ">
+    <span class="lv" id="lambdaLabel">λ₄ · full ecosystem</span>
+  </div>
+  <div class="frame">
+    <svg id="omega" viewBox="0 0 1100 1400" role="img" aria-label="Omega graph of the COSMOS ecosystem"></svg>
+    <div class="zoom-ctl">
+      <button id="zIn" title="Zoom in" aria-label="Zoom in">+</button>
+      <button id="zOut" title="Zoom out" aria-label="Zoom out">−</button>
+      <button id="zReset" title="Reset view" aria-label="Reset view">⤾</button>
+    </div>
+  </div>
+  <div class="axis-note">X — THEORY ⇄ EXECUTION &nbsp;·&nbsp; Y — SHORT-TERM ↑ ⇄ LONG-TERM ↓ &nbsp;·&nbsp; r ∝ FOOTPRINT &nbsp;·&nbsp; λ = 4TH AXIS (drag to assemble)</div>
+  <div class="readout" id="readout">
+    <h2 id="roTitle">Ω — COSMOS</h2>
+    <div class="facts" id="roFacts">52 nodes · 64 real edges · 5 colour groups. Pick a node to inspect it; drag λ to age the system from λ₁ (engine only) to λ₄ (deployed ecosystem).</div>
+    <div class="meta" id="roMeta">x: theory⇄execution · y: short-term↑⇄long-term↓ · r: footprint · drag the canvas or pinch to pan/zoom</div>
+  </div>
+  <div class="legend">
+    <span><i style="background:var(--space)"></i> SPACE · ideation</span>
+    <span><i style="background:var(--rsis)"></i> RSIS3 · execution</span>
+    <span><i style="background:var(--mykb)"></i> MyKB · memory</span>
+    <span><i style="background:var(--dash)"></i> Dashboard · telemetry</span>
+    <span><i style="background:var(--ext)"></i> Evaluator · trust boundary</span>
+    <span style="margin-left:auto">edges coloured by performing component · λ assembles: 1 engine → 2 memory → 3 ideation → 4 dash</span>
+  </div>
+</div>
+<script>
+const PALETTE = {"rsis": "#818cf8", "mykb": "#22d3ee", "space": "#f59e0b", "dash": "#10b981", "ext": "#f472b6"};
+const NODES = [{"id": "l1", "label": "L1 \u00b7 action", "group": "rsis", "x": 0.908, "y": 0.792, "r0": 15, "r1": 15, "facts": "tool calls \u00b7 observations \u00b7 retries \u00b7 ~1s", "st": 1, "src": "l1", "sx": 0.908, "sy": 0.792}, {"id": "l2", "label": "L2 \u00b7 improvement", "group": "rsis", "x": 0.62, "y": 0.22, "r0": 16, "r1": 16, "facts": "candidates \u00b7 25 rounds \u00b7 evaluator-gated", "st": 1, "src": "l1", "sx": 0.908, "sy": 0.792}, {"id": "l3", "label": "L3 \u00b7 evolution", "group": "rsis", "x": 0.4, "y": -0.66, "r0": 14, "r1": 16, "facts": "consolidation \u00b7 strategies \u00b7 ~60s cycle", "st": 1, "src": "l2", "sx": 0.62, "sy": 0.22}, {"id": "l4", "label": "L4 \u00b7 optimizer", "group": "rsis", "x": 0.544, "y": 0.549, "r0": 11, "r1": 12, "facts": "meta-parameter deltas \u00b7 tunes L1 \u00b7 checkpointed", "st": 1, "src": "l1", "sx": 0.908, "sy": 0.792}, {"id": "l5", "label": "L5 \u00b7 strategies", "group": "rsis", "x": 0.33, "y": 0.08, "r0": 11, "r1": 12, "facts": "population evolution \u00b7 tunes L2 \u00b7 evaluator-gated", "st": 1, "src": "l2", "sx": 0.62, "sy": 0.22}, {"id": "l6", "label": "L6 \u00b7 identity", "group": "rsis", "x": 0.16, "y": -0.42, "r0": 10, "r1": 12, "facts": "tunes L3 plateau timeout \u00b7 identity band", "st": 1, "src": "l3", "sx": 0.4, "sy": -0.66}, {"id": "l7", "label": "L7 \u00b7 meta-cog", "group": "rsis", "x": 0.327, "y": 0.719, "r0": 10, "r1": 11, "facts": "tunes L4 window / thresholds", "st": 1, "src": "l4", "sx": 0.544, "sy": 0.549}, {"id": "l8", "label": "L8 \u00b7 meta-meta", "group": "rsis", "x": 0.06, "y": 0.22, "r0": 9, "r1": 11, "facts": "tunes L5 on stagnation / volatility", "st": 1, "src": "l5", "sx": 0.33, "sy": 0.08}, {"id": "l9", "label": "L9 \u00b7 MMM", "group": "rsis", "x": -0.1, "y": -0.1, "r0": 9, "r1": 11, "facts": "tunes L6 identity band on oscillation", "st": 1, "src": "l6", "sx": 0.16, "sy": -0.42}, {"id": "evalc", "label": "evaluator client", "group": "rsis", "x": 0.72, "y": 0.02, "r0": 10, "r1": 10, "facts": "SHA-256 verify \u00b7 spawns the judge", "st": 1, "src": "l2", "sx": 0.62, "sy": 0.22}, {"id": "eval", "label": "evaluator \u00b7 immutable", "group": "ext", "x": 0.88, "y": -0.24, "r0": 13, "r1": 13, "facts": "subprocess \u00b7 60s cap \u00b7 \u22645/session \u00b7 read-only", "st": 1, "src": "evalc", "sx": 0.72, "sy": 0.02}, {"id": "memmgr", "label": "memory manager", "group": "rsis", "x": 0.06, "y": -0.6, "r0": 11, "r1": 12, "facts": "KG + vectors \u00b7 .rsis/knowledge_graph.json", "st": 1, "src": "l3", "sx": 0.4, "sy": -0.66}, {"id": "tele", "label": "telemetry", "group": "rsis", "x": 0.305, "y": 0.66, "r0": 11, "r1": 11, "facts": "JSONL events \u00b7 extrapolator feeds L3", "st": 1, "src": "l1", "sx": 0.908, "sy": 0.792}, {"id": "extrap", "label": "extrapolator", "group": "rsis", "x": 0.24, "y": 0.32, "r0": 9, "r1": 10, "facts": "trend fit on telemetry \u2192 L3 projections", "st": 1, "src": "tele", "sx": 0.305, "sy": 0.66}, {"id": "ckpt", "label": "checkpoint \u00b7 recovery", "group": "rsis", "x": 0.5, "y": -0.28, "r0": 9, "r1": 10, "facts": "crash-safe state \u00b7 checkpoint before mutation", "st": 1, "src": "l4", "sx": 0.544, "sy": 0.549}, {"id": "capture", "label": "capture hooks", "group": "mykb", "x": -0.063, "y": -0.417, "r0": 10, "r1": 12, "facts": "session \u2192 wiki pages + KG edges + snapshot", "st": 2, "src": "l3", "sx": 0.4, "sy": -0.66}, {"id": "wiki", "label": "wiki corpus", "group": "mykb", "x": -0.219, "y": -0.961, "r0": 20, "r1": 26, "facts": "2,360+ pages \u00b7 48 domains \u00b7 source of truth", "st": 2, "src": "capture", "sx": -0.063, "sy": -0.417}, {"id": "tfidf", "label": "TF-IDF index", "group": "mykb", "x": -0.1, "y": -0.7, "r0": 12, "r1": 14, "facts": "search_index.json \u00b7 built from corpus", "st": 2, "src": "wiki", "sx": -0.219, "sy": -0.961}, {"id": "temporal", "label": "temporal engine", "group": "mykb", "x": 0.0, "y": -0.86, "r0": 11, "r1": 13, "facts": "git snapshots \u00b7 time-travel queries", "st": 2, "src": "capture", "sx": -0.063, "sy": -0.417}, {"id": "kg", "label": "knowledge graph", "group": "mykb", "x": -0.341, "y": -0.799, "r0": 12, "r1": 14, "facts": "graph.json \u00b7 edges = consolidated lessons", "st": 2, "src": "wiki", "sx": -0.219, "sy": -0.961}, {"id": "kgview", "label": "KG graph viewer", "group": "mykb", "x": -0.44, "y": -0.62, "r0": 9, "r1": 11, "facts": "okf-graph.html \u00b7 embedded in dashboard", "st": 2, "src": "kg", "sx": -0.341, "sy": -0.799}, {"id": "daemon", "label": "MyKB daemon :8765", "group": "mykb", "x": 0.12, "y": 0.44, "r0": 12, "r1": 13, "facts": "only always-on server \u00b7 search + retrieval", "st": 2, "src": "l1", "sx": 0.908, "sy": 0.792}, {"id": "fusion", "label": "search fusion", "group": "mykb", "x": -0.22, "y": -0.52, "r0": 9, "r1": 11, "facts": "search_fusion.py \u00b7 enhanced TF-IDF \u00b7 hybrid rerank", "st": 2, "src": "tfidf", "sx": -0.1, "sy": -0.7}, {"id": "enrich", "label": "link enrichment", "group": "mykb", "x": -0.56, "y": -0.85, "r0": 9, "r1": 11, "facts": "enrich_links.py \u00b7 auto-links + backlinks", "st": 2, "src": "wiki", "sx": -0.219, "sy": -0.961}, {"id": "linter", "label": "KB linter", "group": "mykb", "x": -0.7, "y": -0.6, "r0": 8, "r1": 10, "facts": "kb_linter.py \u00b7 link_check.py \u00b7 integrity audits", "st": 2, "src": "wiki", "sx": -0.219, "sy": -0.961}, {"id": "wikibrowse", "label": "wiki browser", "group": "mykb", "x": 0.26, "y": -0.1, "r0": 9, "r1": 11, "facts": "mykb/index.html \u00b7 Obsidian-style reader \u00b7 embedded", "st": 2, "src": "daemon", "sx": 0.12, "sy": 0.44}, {"id": "rrp", "label": "RRP engine", "group": "space", "x": -0.62, "y": 0.02, "r0": 13, "r1": 13, "facts": "recursive refinement protocol \u00b7 25 rounds/spec", "st": 3, "src": "rrp", "sx": -0.62, "sy": 0.02}, {"id": "probe", "label": "probe framework", "group": "space", "x": -0.82, "y": 0.22, "r0": 17, "r1": 17, "facts": "326 probes \u00b7 7 series \u00b7 S1\u2192S7 dependency chain", "st": 3, "src": "rrp", "sx": -0.62, "sy": 0.02}, {"id": "provider", "label": "provider factory", "group": "space", "x": -0.42, "y": 0.3, "r0": 11, "r1": 11, "facts": "7 LLM providers \u00b7 failover by construction", "st": 3, "src": "rrp", "sx": -0.62, "sy": 0.02}, {"id": "export", "label": "exports \u00b7 6 formats", "group": "space", "x": -0.3, "y": -0.18, "r0": 10, "r1": 12, "facts": "MD / JSON / YAML / HTML / XML / TXT", "st": 3, "src": "probe", "sx": -0.82, "sy": 0.22}, {"id": "webui", "label": "SPACE web UI :8888", "group": "space", "x": -0.2, "y": 0.62, "r0": 12, "r1": 12, "facts": "self-contained SPA \u00b7 launched from dashboard", "st": 3, "src": "rrp", "sx": -0.62, "sy": 0.02}, {"id": "metaview", "label": "meta viewer :8899", "group": "space", "x": -0.157, "y": -0.323, "r0": 10, "r1": 10, "facts": "spec viewer for exports", "st": 3, "src": "export", "sx": -0.3, "sy": -0.18}, {"id": "sstore", "label": "session store \u00b7 SQLite", "group": "space", "x": -0.52, "y": -0.46, "r0": 10, "r1": 10, "facts": "session state + artifact persistence", "st": 3, "src": "rrp", "sx": -0.62, "sy": 0.02}, {"id": "intel", "label": "intelligence", "group": "space", "x": -0.66, "y": -0.3, "r0": 9, "r1": 10, "facts": "analytics \u00b7 contradiction detection on sessions", "st": 3, "src": "sstore", "sx": -0.52, "sy": -0.46}, {"id": "templ", "label": "template engine", "group": "space", "x": -0.74, "y": 0.4, "r0": 9, "r1": 10, "facts": "renders RRP prompt templates", "st": 3, "src": "rrp", "sx": -0.62, "sy": 0.02}, {"id": "promptapp", "label": "prompt-app \u00b7 React", "group": "space", "x": -0.45, "y": 0.52, "r0": 10, "r1": 11, "facts": "React client for RRP sessions", "st": 3, "src": "rrp", "sx": -0.62, "sy": 0.02}, {"id": "vitespa", "label": "Vite UI \u00b7 :3000", "group": "space", "x": -0.1, "y": 0.78, "r0": 9, "r1": 10, "facts": "alternative React SPA", "st": 3, "src": "webui", "sx": -0.2, "sy": 0.62}, {"id": "spcli", "label": "SPACE CLI", "group": "space", "x": -0.95, "y": 0.55, "r0": 10, "r1": 11, "facts": "src/cli \u00b7 commander \u00b7 init/run/export/serve \u00b7 TUI", "st": 3, "src": "rrp", "sx": -0.62, "sy": 0.02}, {"id": "sconfig", "label": "config module", "group": "space", "x": -0.34, "y": 0.46, "r0": 8, "r1": 9, "facts": "src/config \u00b7 defaults + validation", "st": 3, "src": "rrp", "sx": -0.62, "sy": 0.02}, {"id": "sint", "label": "git integration", "group": "space", "x": -0.95, "y": -0.2, "r0": 8, "r1": 9, "facts": "src/integration/git.ts \u00b7 external hooks", "st": 3, "src": "spcli", "sx": -0.95, "sy": 0.55}, {"id": "rack", "label": "rack \u00b7 pulses", "group": "dash", "x": 0.57, "y": 0.901, "r0": 11, "r1": 12, "facts": "JSONL buffer \u2192 dashboard-data.json \u00b7 ~1s", "st": 4, "src": "tele", "sx": 0.305, "sy": 0.66}, {"id": "dash", "label": "unified dashboard :9000", "group": "dash", "x": 0.212, "y": 0.895, "r0": 15, "r1": 17, "facts": "embeds wiki, KG graph, SPACE UI, meta viewer", "st": 4, "src": "config", "sx": 0.155, "sy": 0.78}, {"id": "dd", "label": "dashboard-data.json", "group": "dash", "x": 0.45, "y": 0.781, "r0": 12, "r1": 13, "facts": "rack snapshot \u00b7 read via config.js", "st": 4, "src": "rack", "sx": 0.57, "sy": 0.901}, {"id": "config", "label": "config.js", "group": "dash", "x": 0.155, "y": 0.78, "r0": 8, "r1": 9, "facts": "dashboard reader \u00b7 Chart.js + Tailwind", "st": 4, "src": "dd", "sx": 0.45, "sy": 0.781}, {"id": "teldash", "label": "telemetry dashboard", "group": "dash", "x": 0.686, "y": 0.601, "r0": 10, "r1": 11, "facts": "Flask-style backend + 20-pulse telemetry view", "st": 4, "src": "rack", "sx": 0.57, "sy": 0.901}, {"id": "gcosmos", "label": "GH Pages \u00b7 cosmos", "group": "dash", "x": -0.104, "y": 0.982, "r0": 9, "r1": 11, "facts": "root redirect \u2192 unified dashboard", "st": 4, "src": "dash", "sx": 0.212, "sy": 0.895}, {"id": "ghub", "label": "GH Pages \u00b7 hub", "group": "dash", "x": 0.264, "y": 1.011, "r0": 8, "r1": 9, "facts": "all non-COSMOS projects", "st": 4, "src": "dash", "sx": 0.212, "sy": 0.895}, {"id": "vercel", "label": "vercel-deploy", "group": "dash", "x": 0.42, "y": 0.96, "r0": 8, "r1": 9, "facts": "Vercel deployment config", "st": 4, "src": "gcosmos", "sx": -0.104, "sy": 0.982}, {"id": "launcher", "label": "start.sh launcher", "group": "dash", "x": -0.3, "y": 1.05, "r0": 9, "r1": 10, "facts": "boots dashboard + all services \u00b7 one command", "st": 4, "src": "dash", "sx": 0.212, "sy": 0.895}, {"id": "orchestrator", "label": "cosmos CLI", "group": "dash", "x": -0.52, "y": 1.0, "r0": 9, "r1": 10, "facts": "cli/cosmos \u00b7 status / start / stop / logs", "st": 4, "src": "launcher", "sx": -0.3, "sy": 1.05}, {"id": "heartbeat", "label": "heartbeat \u00b7 sentry", "group": "dash", "x": 0.842, "y": 0.858, "r0": 9, "r1": 10, "facts": "infra/heartbeat \u00b7 watches.json \u00b7 auto-restart", "st": 4, "src": "dash", "sx": 0.212, "sy": 0.895}, {"id": "srv", "label": "serve-dashboard.mjs", "group": "dash", "x": 0.62, "y": 1.06, "r0": 8, "r1": 9, "facts": "Node server \u00b7 alternative launcher", "st": 4, "src": "launcher", "sx": -0.3, "sy": 1.05}];
+const LINKS = [{"a": "rrp", "b": "probe", "c": "space", "label": "dispatch"}, {"a": "rrp", "b": "provider", "c": "space", "label": "ask"}, {"a": "rrp", "b": "sstore", "c": "space", "label": "persist"}, {"a": "probe", "b": "export", "c": "space", "label": "answers \u2192 spec"}, {"a": "export", "b": "metaview", "c": "space", "label": "render"}, {"a": "rrp", "b": "webui", "c": "space", "label": "host"}, {"a": "templ", "b": "rrp", "c": "space", "label": "render"}, {"a": "intel", "b": "sstore", "c": "space", "label": "analyze"}, {"a": "promptapp", "b": "rrp", "c": "space", "label": "session client"}, {"a": "vitespa", "b": "webui", "c": "space", "label": "alternative UI"}, {"a": "rrp", "b": "l2", "c": "space", "label": "spec drafts"}, {"a": "l2", "b": "evalc", "c": "rsis", "label": "candidate"}, {"a": "evalc", "b": "eval", "c": "ext", "label": "spawn \u00b7 SHA-256"}, {"a": "eval", "b": "l2", "c": "ext", "label": "verdict"}, {"a": "l4", "b": "l1", "c": "rsis", "label": "tune"}, {"a": "l5", "b": "l2", "c": "rsis", "label": "tune"}, {"a": "l6", "b": "l3", "c": "rsis", "label": "tune"}, {"a": "l7", "b": "l4", "c": "rsis", "label": "tune"}, {"a": "l8", "b": "l5", "c": "rsis", "label": "tune"}, {"a": "l9", "b": "l6", "c": "rsis", "label": "tune"}, {"a": "extrap", "b": "l3", "c": "rsis", "label": "projection"}, {"a": "ckpt", "b": "l4", "c": "rsis", "label": "checkpoint"}, {"a": "l1", "b": "rack", "c": "rsis", "label": "pulse"}, {"a": "tele", "b": "rack", "c": "rsis", "label": "pulse"}, {"a": "rack", "b": "dd", "c": "dash", "label": "extract"}, {"a": "dd", "b": "config", "c": "dash", "label": "read"}, {"a": "config", "b": "dash", "c": "dash", "label": "render"}, {"a": "teldash", "b": "rack", "c": "dash", "label": "telemetry views"}, {"a": "l3", "b": "memmgr", "c": "rsis", "label": "consolidate"}, {"a": "l3", "b": "capture", "c": "rsis", "label": "session capture"}, {"a": "capture", "b": "wiki", "c": "mykb", "label": "write page"}, {"a": "capture", "b": "kg", "c": "mykb", "label": "write edge"}, {"a": "capture", "b": "temporal", "c": "mykb", "label": "snapshot"}, {"a": "wiki", "b": "tfidf", "c": "mykb", "label": "build"}, {"a": "wiki", "b": "kg", "c": "mykb", "label": "derive"}, {"a": "daemon", "b": "tfidf", "c": "mykb", "label": "query"}, {"a": "daemon", "b": "l1", "c": "mykb", "label": "retrieval :8765"}, {"a": "kg", "b": "daemon", "c": "mykb", "label": "serve"}, {"a": "kg", "b": "kgview", "c": "mykb", "label": "render"}, {"a": "dash", "b": "webui", "c": "dash", "label": "launch :8888"}, {"a": "dash", "b": "gcosmos", "c": "dash", "label": "redirect"}, {"a": "dash", "b": "metaview", "c": "dash", "label": "embed"}, {"a": "dash", "b": "daemon", "c": "dash", "label": "embed wiki"}, {"a": "dash", "b": "kgview", "c": "dash", "label": "embed graph"}, {"a": "vercel", "b": "gcosmos", "c": "dash", "label": "deploy"}, {"a": "daemon", "b": "fusion", "c": "mykb", "label": "query v2"}, {"a": "tfidf", "b": "fusion", "c": "mykb", "label": "hybrid index"}, {"a": "wiki", "b": "enrich", "c": "mykb", "label": "auto-link"}, {"a": "enrich", "b": "kg", "c": "mykb", "label": "backlink edges"}, {"a": "wiki", "b": "linter", "c": "mykb", "label": "integrity audit"}, {"a": "daemon", "b": "wikibrowse", "c": "mykb", "label": "serve :8765"}, {"a": "dash", "b": "wikibrowse", "c": "dash", "label": "embed"}, {"a": "rrp", "b": "spcli", "c": "space", "label": "CLI entry"}, {"a": "spcli", "b": "export", "c": "space", "label": "export cmd"}, {"a": "rrp", "b": "sconfig", "c": "space", "label": "config load"}, {"a": "spcli", "b": "sint", "c": "space", "label": "git hooks"}, {"a": "launcher", "b": "dash", "c": "dash", "label": "serve :9000"}, {"a": "launcher", "b": "orchestrator", "c": "dash", "label": "invokes"}, {"a": "orchestrator", "b": "heartbeat", "c": "dash", "label": "supervise"}, {"a": "heartbeat", "b": "dash", "c": "dash", "label": "watch"}, {"a": "heartbeat", "b": "daemon", "c": "dash", "label": "watch"}, {"a": "heartbeat", "b": "webui", "c": "dash", "label": "watch"}, {"a": "launcher", "b": "srv", "c": "dash", "label": "alternative"}, {"a": "srv", "b": "dash", "c": "dash", "label": "serve"}];
+const GROUPS = {"space": ["SPACE \u00b7 ideation", "#f59e0b"], "rsis": ["RSIS3 \u00b7 execution", "#818cf8"], "mykb": ["MYKB \u00b7 memory", "#22d3ee"], "dash": ["Dashboard \u00b7 telemetry", "#10b981"], "ext": ["Evaluator \u00b7 trust boundary", "#f472b6"]};
+const LAMBDA = document.getElementById('lambda');
+const LABEL = document.getElementById('lambdaLabel');
+const READOUT = document.getElementById('readout');
+const SVG = document.getElementById('omega');
+const NS = 'http://www.w3.org/2000/svg';
+const AX = [[90, 90], [1010, 1310]];       // plot area inside the 1100×1400 viewBox
+const VB0 = {x:0, y:0, w:1100, h:1400};
+const STAGE_NAMES = ['λ₁ · engine only', 'λ₂ · + memory', 'λ₃ · + ideation', 'λ₄ · full ecosystem'];
+let vb = {x:VB0.x, y:VB0.y, w:VB0.w, h:VB0.h};
+let pinned = null;
+
+/* ── λ model: every node is born at n.st and assembles out of n.src ── */
+function appear(n, lam) {
+  const a = (lam - (n.st - 0.6)) / 0.6;
+  return Math.max(0, Math.min(1, a));
+}
+function pos(n, lam) {
+  const a = appear(n, lam);
+  const t = (lam - 1) / 3;
+  const e = a * a * (3 - 2 * a);            // smoothstep: fly-in + fade-in
+  const nx = n.sx + (n.x - n.sx) * e;       // interpolate in -1..1 spectra space
+  const ny = n.sy + (n.y - n.sy) * e;
+  const x = (nx + 1) / 2 * (AX[1][0] - AX[0][0]) + AX[0][0];
+  const y = (1 - ny) / 2 * (AX[1][1] - AX[0][1]) + AX[0][1];
+  const r = (n.r0 + (n.r1 - n.r0) * t) * 1.5;
+  return {x:x, y:y, r:r, a:a};
+}
+
+function el(tag, attrs, text) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (text) e.textContent = text;
+  return e;
+}
+
+function draw() {
+  SVG.textContent = '';
+  const lam = parseFloat(LAMBDA.value);
+  const si = Math.min(3, Math.max(0, Math.floor(lam - 1)));
+  LABEL.textContent = STAGE_NAMES[si] + ' · λ=' + lam.toFixed(2);
+  // axes
+  SVG.appendChild(el('line', {x1:AX[0][0], y1:AX[1][1], x2:AX[1][0], y2:AX[1][1], stroke:'#334155', 'stroke-width':2}));
+  SVG.appendChild(el('line', {x1:AX[0][0], y1:AX[0][1], x2:AX[0][0], y2:AX[1][1], stroke:'#334155', 'stroke-width':2}));
+  // links under nodes
+  for (const l of LINKS) {
+    const a = NODES.find(n => n.id === l.a), b = NODES.find(n => n.id === l.b);
+    const pa = pos(a, lam), pb = pos(b, lam);
+    const op = Math.min(pa.a, pb.a) * 0.8;
+    if (op <= 0.02) continue;
+    const col = PALETTE[l.c];
+    const d = 'M '+pa.x+' '+pa.y+' Q '+(pa.x+pb.x)/2+' '+((pa.y+pb.y)/2-36)+' '+pb.x+' '+pb.y;
+    const line = el('path', {d:d, fill:'none', stroke:col, 'stroke-width':l.c==='ext'?3:2.2,
+      'stroke-dasharray':l.c==='ext'?'6,4':'7,5', opacity:op, 'data-a':l.a, 'data-b':l.b});
+    line.classList.add('edge');
+    line.dataset.op = op;
+    SVG.appendChild(line);
+    const tl = el('text', {x:(pa.x+pb.x)/2, y:(pa.y+pb.y)/2-42, 'text-anchor':'middle',
+      fill:'#64748b', 'font-size':12, 'font-family':'ui-monospace,Menlo,monospace', opacity:op}, l.label);
+    tl.classList.add('elabel');
+    SVG.appendChild(tl);
+  }
+  // nodes
+  for (const n of NODES) {
+    const p = pos(n, lam);
+    if (p.a <= 0.02) continue;
+    const col = PALETTE[n.group];
+    const g = el('g', {'data-id':n.id, transform:'translate('+p.x+','+p.y+')'});
+    g.classList.add('node');
+    g.dataset.op = p.a;
+    const halo = el('circle', {r:p.r+9, fill:col, opacity:.1});
+    const disc = el('circle', {r:p.r, fill:col, opacity:.22, stroke:col, 'stroke-width':2});
+    const fs = n.label.length > 10 ? 12 : 14;
+    const txt = el('text', {'text-anchor':'middle', dy:3, fill:'#e2e8f0', 'font-size':fs,
+      'font-weight':700, 'font-family':'system-ui,sans-serif'}, n.label);
+    g.appendChild(halo); g.appendChild(disc); g.appendChild(txt);
+    SVG.appendChild(g);
+  }
+  highlight(pinned);
+  applyVB();
+}
+
+function neighbors(id) {
+  const set = new Set([id]);
+  for (const l of LINKS) {
+    if (l.a === id) set.add(l.b);
+    if (l.b === id) set.add(l.a);
+  }
+  return set;
+}
+
+function showReadout(n) {
+  const g = GROUPS[n.group];
+  document.getElementById('roTitle').textContent = n.label + ' — ' + g[0];
+  document.getElementById('roTitle').style.color = g[1];
+  document.getElementById('roFacts').textContent = n.facts;
+  document.getElementById('roMeta').textContent =
+    'x ' + n.x.toFixed(2) + ' (theory⇄execution) · y ' + n.y.toFixed(2) + ' (short↑⇄long↓) · footprint r0→r1 ' + n.r0 + '→' + n.r1 +
+    ' · born at λ' + n.st + ' · assembles from ' + n.src;
+}
+
+function highlight(id) {
+  const near = id ? neighbors(id) : null;
+  SVG.querySelectorAll('.node').forEach(g => {
+    const base = parseFloat(g.dataset.op || '1');
+    g.style.opacity = !near || near.has(g.dataset.id) ? base : base * 0.14;
+  });
+  SVG.querySelectorAll('.edge').forEach(e => {
+    const base = parseFloat(e.dataset.op || '0.8');
+    e.style.opacity = !near || (near.has(e.dataset.a) && near.has(e.dataset.b)) ? base : base * 0.08;
+  });
+}
+
+/* ── pan & zoom (viewBox transform) ── */
+function applyVB() {
+  SVG.setAttribute('viewBox', vb.x + ' ' + vb.y + ' ' + vb.w + ' ' + vb.h);
+  const hide = vb.w > VB0.w * 1.12;         // zoomed out past the default → drop edge labels
+  SVG.querySelectorAll('.elabel').forEach(t => t.style.display = hide ? 'none' : '');
+}
+function clientToVB(px, py) {
+  const r = SVG.getBoundingClientRect();
+  return {x: vb.x + (px - r.left) * vb.w / r.width, y: vb.y + (py - r.top) * vb.h / r.height};
+}
+function zoomAt(f, cx, cy) {
+  const nw = Math.max(240, Math.min(3400, vb.w / f));
+  const nh = nw * VB0.h / VB0.w;
+  const k = nw / vb.w;
+  vb.x = cx - (cx - vb.x) * k;
+  vb.y = cy - (cy - vb.y) * k;
+  vb.w = nw; vb.h = nh;
+  applyVB();
+}
+function resetView() { vb = {x:VB0.x, y:VB0.y, w:VB0.w, h:VB0.h}; applyVB(); }
+
+const pointers = new Map();
+let panStart = null, panMoved = false, pinch = null;
+
+SVG.addEventListener('pointerdown', function (ev) {
+  const g = ev.target.closest ? ev.target.closest('.node') : null;
+  if (g) {
+    const n = NODES.find(x => x.id === g.dataset.id);
+    pinned = pinned === n.id ? null : n.id;
+    if (pinned) showReadout(n);
+    highlight(pinned);
+    return;
+  }
+  ev.preventDefault();
+  SVG.classList.add('panning');
+  SVG.setPointerCapture(ev.pointerId);
+  pointers.set(ev.pointerId, {x: ev.clientX, y: ev.clientY});
+  panStart = {x: vb.x, y: vb.y, px: ev.clientX, py: ev.clientY};
+  panMoved = false;
+  if (pointers.size === 2) {
+    const p = [...pointers.values()];
+    pinch = {d: Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y), c: {x: (p[0].x + p[1].x) / 2, y: (p[0].y + p[1].y) / 2}};
+  }
+});
+
+SVG.addEventListener('pointermove', function (ev) {
+  if (!pointers.has(ev.pointerId)) {
+    if (pointers.size === 0 && !pinned && !panMoved) {
+      const g = ev.target.closest ? ev.target.closest('.node') : null;
+      if (g) { const n = NODES.find(x => x.id === g.dataset.id); showReadout(n); highlight(n.id); }
+      else highlight(null);
+    }
+    return;
+  }
+  pointers.set(ev.pointerId, {x: ev.clientX, y: ev.clientY});
+  if (pointers.size === 2 && pinch) {
+    const p = [...pointers.values()];
+    const d = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+    const c = {x: (p[0].x + p[1].x) / 2, y: (p[0].y + p[1].y) / 2};
+    const v = clientToVB(c.x, c.y);
+    zoomAt(d / pinch.d, v.x, v.y);
+    const r = SVG.getBoundingClientRect();
+    vb.x -= (c.x - pinch.c.x) * vb.w / r.width;
+    vb.y -= (c.y - pinch.c.y) * vb.h / r.height;
+    applyVB();
+    pinch.d = d; pinch.c = c;
+    panMoved = true;
+    return;
+  }
+  const r = SVG.getBoundingClientRect();
+  const dx = (ev.clientX - panStart.px) * vb.w / r.width;
+  const dy = (ev.clientY - panStart.py) * vb.h / r.height;
+  if (Math.abs(ev.clientX - panStart.px) + Math.abs(ev.clientY - panStart.py) > 4) panMoved = true;
+  vb.x = panStart.x - dx;
+  vb.y = panStart.y - dy;
+  applyVB();
+});
+
+function endPointer(ev) {
+  if (!pointers.has(ev.pointerId)) return;
+  const wasPan = panMoved;
+  pointers.delete(ev.pointerId);
+  if (pointers.size < 2) pinch = null;
+  if (pointers.size === 1) {
+    const p = [...pointers.values()][0];
+    panStart = {x: vb.x, y: vb.y, px: p.x, py: p.y};
+  }
+  if (pointers.size === 0) {
+    SVG.classList.remove('panning');
+    panMoved = false;
+    if (!wasPan && ev.type === 'pointerup') { pinned = null; highlight(null); }
+  }
+}
+SVG.addEventListener('pointerup', endPointer);
+SVG.addEventListener('pointercancel', endPointer);
+
+SVG.addEventListener('wheel', function (ev) {
+  ev.preventDefault();
+  const v = clientToVB(ev.clientX, ev.clientY);
+  zoomAt(Math.exp(-ev.deltaY * 0.0014), v.x, v.y);
+}, {passive:false});
+
+SVG.addEventListener('dblclick', function (ev) { ev.preventDefault(); resetView(); });
+document.getElementById('zIn').addEventListener('click', function () { zoomAt(1.4, vb.x + vb.w / 2, vb.y + vb.h / 2); });
+document.getElementById('zOut').addEventListener('click', function () { zoomAt(1 / 1.4, vb.x + vb.w / 2, vb.y + vb.h / 2); });
+document.getElementById('zReset').addEventListener('click', resetView);
+
+LAMBDA.addEventListener('input', draw);
+draw();
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE RUNTIME MAP — WHAT RUNS, WHERE, ON WHICH PORT</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">GitHub Pages in the cloud · three local servers · one dashboard · one known port conflict</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<rect x="60" y="120" width="880" height="42" rx="9" fill="#10b981" opacity=".14" stroke="#10b981" stroke-width="1" stroke-opacity=".35"/>
+<text x="76" y="145.0" fill="#10b981" font-family="system-ui,sans-serif" font-size="12.5" font-weight="700">CLOUD — GITHUB PAGES</text>
+<text x="924" y="145.0" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">always on, static</text>
+<rect x="60" y="178" width="880" height="150" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="178" width="880" height="32" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="60" y="198" width="880" height="12" fill="#10b981" opacity=".12"/>
+<text x="500.0" y="198.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">github.io — THE STATIC FRONT DOOR</text>
+<text x="74" y="224" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">https://gemquota.github.io/cosmos/ — the cosmos entry point (redirects to the unified dashboard)</text>
+<text x="74" y="250" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">https://gemquota.github.io/hub/ — every non-COSMOS project's dashboard</text>
+<text x="74" y="276" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">Two repos, two Pages deployments, one redirect — the whole cloud surface is static HTML.</text>
+<line x1="500" y1="330" x2="500" y2="360" stroke="#475569" stroke-width="2" opacity="0.6" marker-end="url(#arwG)"/>
+<rect x="60" y="368" width="880" height="42" rx="9" fill="#818cf8" opacity=".14" stroke="#818cf8" stroke-width="1" stroke-opacity=".35"/>
+<text x="76" y="393.0" fill="#818cf8" font-family="system-ui,sans-serif" font-size="12.5" font-weight="700">LOCAL — THE FOUR SERVERS</text>
+<text x="924" y="393.0" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">ports are the API</text>
+<rect x="60" y="426" width="880" height="116" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="426" width="880" height="32" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="60" y="446" width="880" height="12" fill="#10b981" opacity=".12"/>
+<text x="500.0" y="446.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">UNIFIED DASHBOARD — :9000</text>
+<text x="74" y="472" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">rsis3/dashboard/index.html · Tailwind + Chart.js</text>
+<text x="74" y="494" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">reads rack/pulses/dashboard-data.json via config.js</text>
+<rect x="60" y="556" width="880" height="116" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="556" width="880" height="32" rx="10" fill="#22d3ee" opacity=".16"/>
+<rect x="60" y="576" width="880" height="12" fill="#22d3ee" opacity=".12"/>
+<text x="500.0" y="576.5" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13" font-weight="700">MYKB DAEMON — :8765</text>
+<text x="74" y="602" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">.wiki-daemon/server.py · the only always-on server</text>
+<text x="74" y="624" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">serves search + retrieval to RSIS3, wiki pages to the dashboard</text>
+<rect x="60" y="686" width="880" height="116" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="686" width="880" height="32" rx="10" fill="#f59e0b" opacity=".16"/>
+<rect x="60" y="706" width="880" height="12" fill="#f59e0b" opacity=".12"/>
+<text x="500.0" y="706.5" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="13" font-weight="700">SPACE WEB UI + META VIEWER — :8888 / :8899</text>
+<text x="74" y="732" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">web/index.html (SPA) + meta-viewer.html</text>
+<text x="74" y="754" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">RRP sessions and spec rendering, user-driven</text>
+<rect x="60" y="816" width="880" height="116" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="816" width="880" height="32" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="60" y="836" width="880" height="12" fill="#818cf8" opacity=".12"/>
+<text x="500.0" y="836.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">RSIS3 (STATIC BY DEFAULT) — :8080</text>
+<text x="74" y="862" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">telemetry + dashboard assets</text>
+<text x="74" y="884" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">static file serving unless the rack binds</text>
+<rect x="60" y="962" width="880" height="120" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="962" width="880" height="32" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="982" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="982.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">THE PORT CONFLICT — :8765</text>
+<text x="74" y="1008" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">The MyKB daemon and the RSIS3 rack both want :8765. The daemon is the always-on owner; the rack yields unless it wins the bind.</text>
+<text x="74" y="1034" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">It is the only resource collision in the ecosystem — and it is a known, documented one, not a discovery.</text>
+<rect x="60" y="1171" width="880" height="93" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1171" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1187" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1189.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE RUNTIME MAP</text>
+<text x="72" y="1211" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">COLOUR = owning runtime — the same palette as every other diagram: RSIS3 indigo, MyKB cyan, SPACE amber, dashboard green.</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">CLOUD band is static and read-only; LOCAL band is dynamic — every port above is a contract a client can depend on.</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">Only one server is always on (:8765); the rest are demand-driven — that asymmetry is why the daemon owns the port.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">where a thing runs is part of its contract — ports are the ecosystem's addressable surface</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

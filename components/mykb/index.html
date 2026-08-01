@@ -1132,7 +1132,9 @@ function renderInline(text) {
   s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   s = s.replace(/__([^_]+)__/g, '<strong>$1</strong>');
   s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
-  s = s.replace(/(?<!_)_([^_]+)_(?!_)/g, '<em>$1</em>');
+  // Lookbehind is unsupported in older engines and would otherwise be a
+  // parse-time SyntaxError; degrade gracefully to no-italic instead.
+  try { s = s.replace(new RegExp('(?<!_)_([^_]+)_(?!_)', 'g'), '<em>$1</em>'); } catch (e) {}
   s = s.replace(/~~([^~]+)~~/g, '<del>$1</del>');
   s = s.replace(/  $/gm, '<br>');
   return s;
@@ -1154,6 +1156,7 @@ function loadCompositions() {
   fetch(KB_BASE + 'files.json')
     .then(function(r) { return r.json(); })
     .then(function(files) {
+      files = (files || []).map(function(f) { return String(f).replace(/^components\/mykb\//, ''); });
       // Find composition files
       var compFiles = files.filter(function(f) { return f.indexOf('wiki/compositions/') === 0; });
       var html = '';
@@ -1377,9 +1380,15 @@ document.addEventListener('click', function(e) {
   if (!target) return;
   var href = target.getAttribute('href');
   if (!href) return;
-  if (href.endsWith('.md')) {
+  // Skip anchors that already carry their own navigation (sidebar file entries
+  // use "#" + encoded filename). Without this, a file click triggers this
+  // interceptor with the raw "#..." href and navigates to a broken path.
+  var hrefParts = href.split('#');
+  var hrefBase = hrefParts[0];
+  var hrefAnchor = hrefParts.length > 1 ? hrefParts.slice(1).join('#') : null;
+  if (hrefBase.endsWith('.md') && href.charAt(0) !== '#') {
     e.preventDefault();
-    navigateTo(href);
+    navigateTo(hrefBase, hrefAnchor || undefined);
     return;
   }
   if (!href.match(/^[a-z]+:\/\//i) && !href.startsWith('#') && state.files.indexOf(href) !== -1) {
@@ -1400,7 +1409,10 @@ function switchContentView(viewName) {
   if (target) { target.style.display = ''; }
   // Update sidebar header subtitle
   var sub = document.getElementById('header-subtitle');
-  if (sub) sub.textContent = viewName;
+  if (sub) {
+    var labels = { doc: 'RSIS3 memory \u00b7 wiki', graph: 'knowledge graph', actions: 'health & actions' };
+    sub.textContent = labels[viewName] || 'RSIS3 memory \u00b7 wiki';
+  }
   // If switching to graph, re-draw
   if (viewName === 'graph') {
     // Small delay to let DOM settle
@@ -1448,11 +1460,28 @@ document.addEventListener('DOMContentLoaded', function() {
       else if (tabName === 'actions') switchContentView('actions');
     });
   });
-  // Wire up entity search
+  // Wire up entity search (debounced: the static fallback scans files.json
+  // on every keystroke, which is a per-keystroke O(n) pass on static hosting).
   var esInput = document.getElementById('entity-search-input');
   if (esInput) {
+    var esTimeout = null;
     esInput.addEventListener('input', function() {
-      entitySearch(this.value);
+      clearTimeout(esTimeout);
+      esTimeout = setTimeout(function() { entitySearch(esInput.value); }, 150);
+    });
+    esInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        clearTimeout(esTimeout);
+        entitySearch(esInput.value);
+        var first = document.querySelector('#entity-search-results .search-result-item');
+        if (first) {
+          navigateTo(first.getAttribute('data-path'));
+          closeSidebar();
+        }
+      } else if (e.key === 'Escape') {
+        esInput.value = '';
+        entitySearch('');
+      }
     });
   }
   // Wire up actions buttons
@@ -1467,30 +1496,44 @@ function entitySearch(q) {
   var resultsDiv = document.getElementById('entity-search-results');
   if (!resultsDiv) return;
   if (!q || q.length < 2) { resultsDiv.innerHTML = ''; return; }
+  function render(arr) {
+    if (!arr || arr.length === 0) {
+      resultsDiv.innerHTML = '<div style="color:var(--text-muted);padding:8px;">No results</div>';
+      return;
+    }
+    var h = '';
+    arr.slice(0, 50).forEach(function(r) {
+      h += '<div class="search-result-item" data-path="' + escapeHtml(r.path) + '" style="padding:4px 6px;cursor:pointer;border-radius:3px;">';
+      h += '<div style="font-weight:600;font-size:12px;">' + escapeHtml(r.title || r.path) + '</div>';
+      h += '<div style="font-size:10px;color:var(--text-muted);">' + escapeHtml(r.path) + (r.score ? ' <span style="float:right;">' + escapeHtml(r.score) + '</span>' : '') + '</div>';
+      h += '</div>';
+    });
+    resultsDiv.innerHTML = h;
+    resultsDiv.querySelectorAll('.search-result-item').forEach(function(el) {
+      el.addEventListener('click', function() {
+        navigateTo(el.getAttribute('data-path'));
+        closeSidebar();
+      });
+    });
+  }
   var url = KB_BASE + 'search?q=' + encodeURIComponent(q);
   fetch(url)
-    .then(function(r) { return r.json(); })
-    .then(function(results) {
-      if (!results || results.length === 0) {
-        resultsDiv.innerHTML = '<div style="color:var(--text-muted);padding:8px;">No results</div>';
-        return;
+    .then(function(r) { if (!r.ok) throw new Error('no daemon'); return r.json(); })
+    .then(function(results) { render(results); })
+    .catch(function() {
+      // Static hosting (no wiki daemon): client-side match over file names.
+      var ql = q.toLowerCase();
+      var out = [];
+      for (var i = 0; i < state.files.length && out.length < 50; i++) {
+        var f = state.files[i];
+        var name = String(f).replace(/\.md$/i, '');
+        var base = name.split('/').pop();
+        if (name.toLowerCase().indexOf(ql) !== -1 || base.toLowerCase().indexOf(ql) !== -1) {
+          out.push({ path: f, title: base, score: 'client' });
+        }
       }
-      var h = '';
-      results.forEach(function(r) {
-        h += '<div class="search-result-item" data-path="' + r.path + '" style="padding:4px 6px;cursor:pointer;border-radius:3px;">';
-        h += '<div style="font-weight:600;font-size:12px;">' + escapeHtml(r.title) + '</div>';
-        h += '<div style="font-size:10px;color:var(--text-muted);">' + escapeHtml(r.path) + ' <span style="float:right;">' + r.score + '</span></div>';
-        h += '</div>';
-      });
-      resultsDiv.innerHTML = h;
-      resultsDiv.querySelectorAll('.search-result-item').forEach(function(el) {
-        el.addEventListener('click', function() {
-          navigateTo(el.getAttribute('data-path'));
-          closeSidebar();
-        });
-      });
-    })
-    .catch(function() { resultsDiv.innerHTML = '<div style="color:var(--text-muted);padding:8px;">Search error</div>'; });
+      render(out);
+    });
 }
 
 var graphListenersAttached = false;
@@ -1783,7 +1826,7 @@ function loadFileList() {
     var remaining = unique.length;
     if (remaining === 0) { state.files = found; renderSidebar(); resolveRoute(); return; }
     unique.forEach(function(name) {
-      fetch(getBaseUrl() + '/' + encodeURIComponent(name))
+      fetch(KB_BASE + encodeURIComponent(name))
         .then(function(r) {
           if (r.ok && name.endsWith('.md')) found.push(name);
         })
@@ -1802,14 +1845,21 @@ function loadFileList() {
   }
 
   function loadIndex(data) {
+    // Normalize stale repo-root-prefixed paths (e.g. "components/mykb/Home.md")
+    // produced by older static snapshots — the wiki resolves files relative to
+    // its own directory.
+    function normPath(p) {
+      return String(p).replace(/^components\/mykb\//, '');
+    }
     // Enriched format: array of objects with path, type?, title?, tags?
     if (Array.isArray(data) && data.length > 0 && typeof data[0] === 'object') {
       state.meta = {};
       var paths = [];
       data.forEach(function(entry) {
         if (entry && entry.path) {
-          paths.push(entry.path);
-          state.meta[entry.path] = entry;
+          var p = normPath(entry.path);
+          paths.push(p);
+          state.meta[p] = entry;
         }
       });
       state.files = paths;
@@ -1820,7 +1870,7 @@ function loadFileList() {
     }
     // Plain format: array of strings
     if (Array.isArray(data)) {
-      state.files = data;
+      state.files = data.map(normPath);
       state.meta = {};
       buildCombinedSearchIndex();
       renderSidebar();
@@ -1829,7 +1879,7 @@ function loadFileList() {
     }
     // Object format: {files: [...], meta: {...}}
     if (typeof data === 'object' && data.files) {
-      state.files = data.files;
+      state.files = (data.files || []).map(normPath);
       state.meta = data.meta || {};
       buildCombinedSearchIndex();
       renderSidebar();
@@ -2011,10 +2061,10 @@ function renderSidebar() {
 
   var count = state.files.length;
   var sectionLabel = document.getElementById('files-section-label');
-  if (sectionLabel) sectionLabel.textContent = 'Documents (' + count + ')';
 
   // Limit rendering for performance - max 300 files
   var MAX_RENDER = 300;
+  if (sectionLabel) sectionLabel.textContent = 'Documents (' + count + ')' + (count > MAX_RENDER ? ' · showing first ' + MAX_RENDER : '');
   var fileSubset = state.files.slice(0, MAX_RENDER);
 
   // ---- Group By Type ----
@@ -2242,6 +2292,13 @@ function navigateTo(filename, anchor) {
   if (!filename) return;
   switchContentView('doc');
 
+  // Resolve parent-relative paths against the wiki root when possible
+  // (../topics/foo.md -> topics/foo.md); the wiki daemon handles real paths.
+  if (filename.indexOf('../') !== -1) {
+    var resolved = filename.replace(/(?:^|\/)\.\.\//g, '');
+    if (state.files.indexOf(resolved) !== -1) filename = resolved;
+  }
+
   // Normalize: strip .md, then re-add for consistent lookup
   var bareName = filename.replace(/\.md$/i, '');
   var mdName = bareName + '.md';
@@ -2299,7 +2356,9 @@ function navigateTo(filename, anchor) {
       afterRender();
     })
     .catch(function() {
-      contentDoc.innerHTML = '<div class="markdown-body"><div class="welcome"><h1>Error</h1><p>Could not load <strong>' + escapeHtml(filename) + '</strong>.</p><p style="font-size:12px;color:var(--text-muted);">Path: ' + escapeHtml(filename) + '</p></div></div>';
+      contentDoc.innerHTML = '<div class="markdown-body"><div class="welcome"><h1>Error</h1><p>Could not load <strong>' + escapeHtml(filename) + '</strong>.</p><p style="font-size:12px;color:var(--text-muted);">Path: ' + escapeHtml(filename) + '</p><p><a href="#" id="err-home" style="color:var(--accent);">← Back to all documents</a></p></div></div>';
+      var errHome = contentDoc.querySelector('#err-home');
+      if (errHome) errHome.addEventListener('click', function(e) { e.preventDefault(); navigateHome(); });
     });
 }
 
@@ -2386,6 +2445,8 @@ function navigateHome() {
   history.replaceState(null, '', '#');
   renderSidebar();
   document.title = 'md — documents';
+  var sub = document.getElementById('header-subtitle');
+  if (sub) sub.textContent = 'RSIS3 memory \u00b7 wiki';
   contentDoc.innerHTML = '' +
     '<div class="markdown-body">' +
     '<div class="welcome">' +

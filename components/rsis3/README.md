@@ -6,6 +6,14 @@ defined by an RRP session (11 locked decisions, 0 contradictions).
 ## Architecture
 
 ```
+L5 ─ Strategy Evolution (days)
+  ├─ Population-based evolution of L2 improvement params + focus
+  └─ Seeded from L3 KG strategies, evaluator-gated
+
+L4 ─ Meta-Parameter Optimizer (hours)
+  ├─ Fast-feedback tuning of L1 execution params (retries, tool calls)
+  └─ Evaluator-gated, checkpointed, persisted state
+
 L3 ─ Cross-Session Evolution (hours/days)
   ├─ Memory consolidation (git → KG → vectors)
   ├─ Strategy & meta-parameter evolution
@@ -21,6 +29,22 @@ L1 ─ Per-Task Action Loop (seconds)
   ├─ Workspace telemetry collection
   └─ Checkpoint rollback on failure
 ```
+
+## Loop Status
+
+The engine was conceived as **nine nested loops** (L1–L9), all of which are
+now implemented as bounded, evaluator-gated cycles: L1–L3 are the original
+three-loop stack (`loop_l1.py` … `loop_l3.py`); L4 (`loop_l4.py`, Optimizer),
+L5 (`loop_l5.py`, Evolution), L6 (`loop_l6.py`, Identity), L7 (`loop_l7.py`,
+Meta-Cog), L8 (`loop_l8.py`, Meta-Meta) and L9 (`loop_l9.py`, MMM). See
+`RSIS_SPEC.md` §1.1 for the full hierarchy.
+
+Run them with `python -m rsis optimize` (L4), `python -m rsis strategies` (L5),
+`python -m rsis identity` (L6), `python -m rsis metacog` (L7),
+`python -m rsis metameta` (L8) and `python -m rsis mmm` (L9).
+Persisted tuning is applied at startup by `load_config()`, so L1/L2 consume it
+automatically. Topology (nested / parallel / overlapping) and the ownership
+partition are specified in `RSIS_SPEC.md` §1.4.
 
 ## Key Invariants
 

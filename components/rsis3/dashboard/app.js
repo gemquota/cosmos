@@ -61,6 +61,50 @@ function loadEcosystem(){
 }
 
 
+var LOOPS_META = {
+  L0:['L0','Substrate','#64748b'],L1:['L1','Execution','#10b981'],L2:['L2','Improvement','#6366f1'],
+  L3:['L3','Evolution','#f59e0b'],L4:['L4','Optimizer','#ec4899'],L5:['L5','Evolution','#8b5cf6'],
+  L6:['L6','Identity','#14b8a6'],L7:['L7','Meta-Cog','#f97316'],L8:['L8','Meta-Meta','#06b6d4'],
+  L9:['L9','MMM','#84cc16']
+};
+function loadLoops(){
+  fetch('loops.json')
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){ if (d) renderLoops(d); })
+    .catch(function(){});
+}
+function renderLoops(d){
+  var grid = document.getElementById('loops-grid');
+  if (!grid) return;
+  var meta = document.getElementById('loops-meta');
+  if (meta) meta.textContent = 'static snapshot · ' + (d.generated || 'unknown');
+  var html = '';
+  for (var i = 0; i < d.loops.length; i++) {
+    var l = d.loops[i], meta = LOOPS_META[l.id] || [l.id, l.name, '#64748b'];
+    var color = meta[2];
+    var status = l.status === 'implemented'
+      ? '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/25">ACTIVE</span>'
+      : '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-600/20 text-slate-400 border border-slate-500/30">' + esc(l.status) + '</span>';
+    var params = (l.params || []).map(function(p){
+      return '<div class="flex justify-between text-[11px]"><span class="font-mono text-slate-400">'+esc(p.key)+'</span><span class="font-mono font-semibold" style="color:'+color+'">'+esc(p.value)+'</span></div>';
+    }).join('') || '<div class="text-[11px] text-slate-500">—</div>';
+    var signal = l.last_signal ? esc(l.last_signal) : '—';
+    var last = l.last_run ? String(l.last_run).substring(0,16).replace('T',' ') : 'never';
+    var metaLine = 'runs ' + (l.runs||0) + ' · cycle ' + (l.cycle||0) + ' · signal ' + signal;
+    html += '<div class="bg-slate-900/40 rounded-xl p-3 border border-slate-700/30">' +
+      '<div class="flex items-center justify-between mb-1.5">' +
+        '<div class="flex items-center gap-2"><span class="text-xs sm:text-sm font-bold font-mono" style="color:'+color+'">'+meta[0]+'</span>' +
+        '<span class="text-xs font-bold text-slate-200">'+esc(meta[1])+'</span></div>' + status +
+      '</div>' +
+      '<p class="text-[10px] text-slate-400 mb-2">'+esc(l.target)+'</p>' +
+      '<div class="space-y-0.5 mb-2">'+params+'</div>' +
+      '<div class="flex justify-between text-[10px] text-slate-500 border-t border-slate-700/30 pt-1.5">' +
+        '<span>'+metaLine+'</span><span>last '+last+'</span>' +
+      '</div></div>';
+  }
+  grid.innerHTML = html;
+}
+
 function renderAll(){ly();rg();rp();rc();rcb();bk();pf();sw('overview');}
 
 var _chartsInited = false;
@@ -383,7 +427,7 @@ function getGraphInfo(name){
 }
 
 function getTabInfo(name){
-  var d={overview:'Summary stats, success rate, layer scores.',pulses:'20 pulses with embedded goals, conversations, and evaluation results.',kg:'Interactive knowledge graph.',graphs:'Full chart suite: decisions, trends, durations, constraints, radar.',constraints:'Constraint frequency and lock rate analysis.'};
+  var d={overview:'Summary stats, success rate, layer scores.',pulses:'20 pulses with embedded goals, conversations, and evaluation results.',kg:'Interactive knowledge graph.',graphs:'Full chart suite: decisions, trends, durations, constraints, radar.',constraints:'Constraint frequency and lock rate analysis.',loops:'Nine-loop stack: targets, tuned params, last signal, run counts (static snapshot from loops.json).',mykb:'Wiki browser + knowledge graph (lazy-loaded iframes).',space:'SPACE web UI + spec viewer (lazy-loaded iframes).'};
   return '<h4>'+name.charAt(0).toUpperCase()+name.slice(1)+' Tab</h4><p>'+(d[name]||'Dashboard tab.')+'</p>';
 }
 

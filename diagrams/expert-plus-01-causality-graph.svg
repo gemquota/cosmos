@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE CAUSALITY GRAPH — WHAT CAUSES WHAT, WITH LAG</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Nine events, ten causal edges, four loops — the ecosystem as a directed graph of consequences</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<circle cx="200" cy="210" r="30" fill="#f59e0b" opacity=".16" stroke="#f59e0b" stroke-width="1.8"/>
+<text x="200" y="210" text-anchor="middle" dominant-baseline="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="8.5" font-weight="800">SPEC</text>
+<circle cx="460" cy="190" r="30" fill="#818cf8" opacity=".16" stroke="#818cf8" stroke-width="1.8"/>
+<text x="460" y="190" text-anchor="middle" dominant-baseline="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="8.5" font-weight="800">CANDIDATE</text>
+<circle cx="740" cy="190" r="30" fill="#f472b6" opacity=".16" stroke="#f472b6" stroke-width="1.8"/>
+<text x="740" y="190" text-anchor="middle" dominant-baseline="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="8.5" font-weight="800">VERDICT</text>
+<circle cx="620" cy="330" r="30" fill="#10b981" opacity=".16" stroke="#10b981" stroke-width="1.8"/>
+<text x="620" y="330" text-anchor="middle" dominant-baseline="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="8.5" font-weight="800">PULSE</text>
+<circle cx="300" cy="340" r="30" fill="#22d3ee" opacity=".16" stroke="#22d3ee" stroke-width="1.8"/>
+<text x="300" y="340" text-anchor="middle" dominant-baseline="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="8.5" font-weight="800">LESSON</text>
+<circle cx="130" cy="440" r="30" fill="#22d3ee" opacity=".16" stroke="#22d3ee" stroke-width="1.8"/>
+<text x="130" y="440" text-anchor="middle" dominant-baseline="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="8.5" font-weight="800">KG EDGE</text>
+<circle cx="420" cy="480" r="30" fill="#22d3ee" opacity=".16" stroke="#22d3ee" stroke-width="1.8"/>
+<text x="420" y="480" text-anchor="middle" dominant-baseline="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="8.5" font-weight="800">RETRIEVAL</text>
+<circle cx="760" cy="480" r="30" fill="#818cf8" opacity=".16" stroke="#818cf8" stroke-width="1.8"/>
+<text x="760" y="480" text-anchor="middle" dominant-baseline="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="8.5" font-weight="800">STRATEGY</text>
+<circle cx="850" cy="340" r="30" fill="#10b981" opacity=".16" stroke="#10b981" stroke-width="1.8"/>
+<text x="850" y="340" text-anchor="middle" dominant-baseline="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="8.5" font-weight="800">DASHBOARD</text>
+<path d="M 200 210 Q 330.0 166.0 460 190" fill="none" stroke="#818cf8" stroke-width="1.6" opacity=".75" marker-end="url(#arwG)"/>
+<text x="330.0" y="160.0" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7">L2 consumes</text>
+<path d="M 460 190 Q 600.0 156.0 740 190" fill="none" stroke="#f472b6" stroke-width="1.6" opacity=".75" marker-end="url(#arwG)"/>
+<text x="600.0" y="150.0" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7">spawn · 60s</text>
+<path d="M 740 190 Q 680.0 226.0 620 330" fill="none" stroke="#10b981" stroke-width="1.6" opacity=".75" marker-end="url(#arwG)"/>
+<text x="680.0" y="220.0" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7">recorded</text>
+<path d="M 740 190 Q 750.0 301.0 760 480" fill="none" stroke="#818cf8" stroke-width="1.6" opacity=".75" marker-end="url(#arwG)"/>
+<text x="750.0" y="295.0" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7">fail → retry path</text>
+<path d="M 620 330 Q 735.0 301.0 850 340" fill="none" stroke="#10b981" stroke-width="1.6" opacity=".75" marker-end="url(#arwG)"/>
+<text x="735.0" y="295.0" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7">JSONL → snapshot</text>
+<path d="M 620 330 Q 690.0 371.0 760 480" fill="none" stroke="#818cf8" stroke-width="1.6" opacity=".75" marker-end="url(#arwG)"/>
+<text x="690.0" y="365.0" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7">trends feed L3</text>
+<path d="M 300 340 Q 215.0 356.0 130 440" fill="none" stroke="#22d3ee" stroke-width="1.6" opacity=".75" marker-end="url(#arwG)"/>
+<text x="215.0" y="350.0" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7">L3 consolidates</text>
+<path d="M 130 440 Q 275.0 426.0 420 480" fill="none" stroke="#22d3ee" stroke-width="1.6" opacity=".75" marker-end="url(#arwG)"/>
+<text x="275.0" y="420.0" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7">indexed · :8765</text>
+<path d="M 420 480 Q 310.0 311.0 200 210" fill="none" stroke="#f59e0b" stroke-width="1.6" opacity=".75" marker-end="url(#arwG)"/>
+<text x="310.0" y="305.0" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7">context seeds ideation</text>
+<path d="M 760 480 Q 610.0 301.0 460 190" fill="none" stroke="#818cf8" stroke-width="1.6" opacity=".75" marker-end="url(#arwG)"/>
+<text x="610.0" y="295.0" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7">next session's goals</text>
+<path d="M 850 340 Q 525.0 241.0 200 210" fill="none" stroke="#f59e0b" stroke-width="1.6" opacity=".75" marker-end="url(#arwG)"/>
+<text x="525.0" y="235.0" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7">human reads → writes</text>
+<rect x="60" y="560" width="880" height="130" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="560" width="880" height="32" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="580" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="580.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">THE FOUR LOOPS THE GRAPH CONTAINS</text>
+<text x="74" y="606" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">IMPROVEMENT — SPEC → CANDIDATE → VERDICT → STRATEGY → CANDIDATE (the gate in the middle)</text>
+<text x="74" y="629" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">MEMORY — LESSON → KG EDGE → RETRIEVAL → SPEC (consolidation + retrieval)</text>
+<text x="74" y="652" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">TELEMETRY — PULSE → DASHBOARD → SPEC (human in the loop) and PULSE → STRATEGY (no human)</text>
+<text x="74" y="675" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">Every loop is a cycle in the graph — causality is what makes the architecture recursive.</text>
+<rect x="60" y="720" width="880" height="100" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="720" width="880" height="32" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="60" y="740" width="880" height="12" fill="#10b981" opacity=".12"/>
+<text x="500.0" y="740.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">EDGE LAGS ARE THE CADENCES</text>
+<text x="74" y="766" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">VERDICT → PULSE is ~instant; LESSON → KG EDGE is the L3 cycle; RETRIEVAL → SPEC is on-demand.</text>
+<text x="74" y="790" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">The B-21 roster lists the periods; this graph shows which edges they belong to.</text>
+<rect x="60" y="1171" width="880" height="93" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1171" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1187" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1189.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE GRAPH</text>
+<text x="72" y="1211" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">NODE COLOUR = owning component; EDGE COLOUR = the component that performs the causation.</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">READ AN EDGE AS 'A causes B after some lag' — the lag is labelled (spawn, L3 cycle, JSONL flush, on-demand).</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">THE FOUR LOOPS are the system's recursive heart — every diagram in this viewer sits inside one of them.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">causality, not topology, is the architecture — the graph says what makes what happen</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE SYSTEM ONTOLOGY FIELD</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Every module mapped onto two spectra — certainty (observed ⇄ hypothesized) and scope (per-task ⇄ cross-session)</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<line x1="170" y1="1060" x2="830" y2="1060" stroke="#334155" stroke-width="1.4" marker-end="url(#arwG)" opacity=".9"/>
+<line x1="170" y1="1060" x2="170" y2="180" stroke="#334155" stroke-width="1.4" marker-end="url(#arwG)" opacity=".9"/>
+<text x="830" y="1082" text-anchor="end" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700">HYPOTHESIZED · possibilities</text>
+<text x="170" y="1082" text-anchor="start" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700">OBSERVED · facts</text>
+<text x="144" y="620.0" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700" transform="rotate(-90 144 620.0)">PER-TASK ⇄ CROSS-SESSION</text>
+<line x1="335" y1="1055" x2="335" y2="1065" stroke="#334155" stroke-width="1"/>
+<text x="335" y="1074" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">measured</text>
+<line x1="665" y1="1055" x2="665" y2="1065" stroke="#334155" stroke-width="1"/>
+<text x="665" y="1074" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">inferred</text>
+<line x1="165" y1="400" x2="175" y2="400" stroke="#334155" stroke-width="1"/>
+<text x="158" y="403" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">session+</text>
+<line x1="165" y1="640" x2="175" y2="640" stroke="#334155" stroke-width="1"/>
+<text x="158" y="643" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">task</text>
+<line x1="165" y1="880" x2="175" y2="880" stroke="#334155" stroke-width="1"/>
+<text x="158" y="883" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">real-time</text>
+<text x="275" y="1038" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">EXECUTION · observed facts</text>
+<text x="725" y="1038" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">GENERATION · candidate actions</text>
+<text x="275" y="206" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">MEMORY · accumulated knowledge</text>
+<text x="725" y="206" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">EVOLUTION · strategy &amp; theory</text>
+<line x1="500" y1="180" x2="500" y2="1060" stroke="#1e293b" stroke-width="1" stroke-dasharray="3,6"/>
+<line x1="170" y1="620" x2="830" y2="620" stroke="#1e293b" stroke-width="1" stroke-dasharray="3,6"/>
+<path d="M 260 900 C 380 800, 480 720, 560 640" fill="none" stroke="#818cf8" stroke-width="2" stroke-dasharray="5,5" opacity=".7" marker-end="url(#arwR)"/>
+<path d="M 560 640 C 630 500, 680 400, 720 300" fill="none" stroke="#818cf8" stroke-width="2" stroke-dasharray="5,5" opacity=".7" marker-end="url(#arwR)"/>
+<path d="M 350 330 C 400 380, 430 400, 450 420" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,6" opacity=".7" marker-end="url(#arwS)"/>
+<path d="M 450 420 C 500 450, 530 470, 560 500" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,6" opacity=".7" marker-end="url(#arwS)"/>
+<circle cx="260" cy="900" r="30" fill="#818cf8" fill-opacity=".28" stroke="#818cf8" stroke-width="2" filter="url(#shadow)"/>
+<circle cx="260" cy="900" r="3" fill="#818cf8"/>
+<text x="260" y="863" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">L1 action loop</text>
+<circle cx="230" cy="760" r="22" fill="#10b981" fill-opacity=".28" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+<circle cx="230" cy="760" r="3" fill="#10b981"/>
+<text x="230" y="731" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">telemetry</text>
+<circle cx="335" cy="950" r="17" fill="#818cf8" fill-opacity=".28" stroke="#818cf8" stroke-width="2" filter="url(#shadow)"/>
+<circle cx="335" cy="950" r="3" fill="#818cf8"/>
+<text x="335" y="926" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">rack pulses</text>
+<circle cx="420" cy="800" r="26" fill="#818cf8" fill-opacity=".28" stroke="#818cf8" stroke-width="2" filter="url(#shadow)"/>
+<circle cx="420" cy="800" r="3" fill="#818cf8"/>
+<text x="420" y="767" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">evaluator</text>
+<circle cx="560" cy="640" r="34" fill="#818cf8" fill-opacity=".28" stroke="#818cf8" stroke-width="2" filter="url(#shadow)"/>
+<circle cx="560" cy="640" r="3" fill="#818cf8"/>
+<text x="560" y="599" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">L2 improvement</text>
+<circle cx="720" cy="300" r="38" fill="#818cf8" fill-opacity=".28" stroke="#818cf8" stroke-width="2" filter="url(#shadow)"/>
+<circle cx="720" cy="300" r="3" fill="#818cf8"/>
+<text x="720" y="255" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">L3 evolution</text>
+<circle cx="700" cy="430" r="44" fill="#22d3ee" fill-opacity=".28" stroke="#22d3ee" stroke-width="2" filter="url(#shadow)"/>
+<circle cx="700" cy="430" r="3" fill="#22d3ee"/>
+<text x="700" y="379" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">wiki corpus</text>
+<circle cx="620" cy="520" r="32" fill="#22d3ee" fill-opacity=".28" stroke="#22d3ee" stroke-width="2" filter="url(#shadow)"/>
+<circle cx="620" cy="520" r="3" fill="#22d3ee"/>
+<text x="620" y="481" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">knowledge graph</text>
+<circle cx="470" cy="690" r="26" fill="#22d3ee" fill-opacity=".28" stroke="#22d3ee" stroke-width="2" filter="url(#shadow)"/>
+<circle cx="470" cy="690" r="3" fill="#22d3ee"/>
+<text x="470" y="657" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">TF-IDF index</text>
+<circle cx="650" cy="340" r="24" fill="#22d3ee" fill-opacity=".28" stroke="#22d3ee" stroke-width="2" filter="url(#shadow)"/>
+<circle cx="650" cy="340" r="3" fill="#22d3ee"/>
+<text x="650" y="309" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">temporal engine</text>
+<circle cx="560" cy="500" r="20" fill="#22d3ee" fill-opacity=".28" stroke="#22d3ee" stroke-width="2" filter="url(#shadow)"/>
+<circle cx="560" cy="500" r="3" fill="#22d3ee"/>
+<text x="560" y="473" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">session hooks</text>
+<circle cx="350" cy="330" r="34" fill="#f59e0b" fill-opacity=".28" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+<circle cx="350" cy="330" r="3" fill="#f59e0b"/>
+<text x="350" y="289" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">RRP probes</text>
+<circle cx="450" cy="420" r="26" fill="#f59e0b" fill-opacity=".28" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+<circle cx="450" cy="420" r="3" fill="#f59e0b"/>
+<text x="450" y="387" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">spec exports</text>
+<circle cx="290" cy="540" r="22" fill="#f59e0b" fill-opacity=".28" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+<circle cx="290" cy="540" r="3" fill="#f59e0b"/>
+<text x="290" y="511" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">LLM providers</text>
+<circle cx="380" cy="220" r="30" fill="#f59e0b" fill-opacity=".28" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+<circle cx="380" cy="220" r="3" fill="#f59e0b"/>
+<text x="380" y="183" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="10" font-weight="600">prompt framework</text>
+<rect x="560" y="414" width="189" height="32" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="655" y="428" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600">IMPROVEMENT TRAJECTORY</text>
+<text x="655" y="442" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5" font-weight="600">L1 → L2 → L3 · facts become strategy</text>
+<rect x="367" y="356" width="123" height="32" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="428" y="370" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="9.5" font-weight="600">IDEATION → MEMORY</text>
+<text x="428" y="384" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5" font-weight="600">probes → specs → hooks</text>
+<text x="60" y="1180" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-weight="700">HUE = COMPONENT</text>
+<circle cx="69" cy="1202" r="8" fill="#818cf8" fill-opacity=".8"/>
+<text x="86" y="1205.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">RSIS3 — engine</text>
+<circle cx="69" cy="1226" r="8" fill="#22d3ee" fill-opacity=".8"/>
+<text x="86" y="1229.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">MyKB — memory</text>
+<circle cx="69" cy="1250" r="8" fill="#f59e0b" fill-opacity=".8"/>
+<text x="86" y="1253.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">SPACE — ideation</text>
+<circle cx="69" cy="1274" r="8" fill="#10b981" fill-opacity=".8"/>
+<text x="86" y="1277.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">data / telemetry</text>
+<text x="950" y="1180" text-anchor="end" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="10">radius ∝ footprint</text>
+<text x="950" y="1198" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">files · LOC · pages</text>
+<text x="500" y="1260" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">each module occupies a semantic coordinate — the field IS the ontology, relationships are distance and overlap</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Generated from source analysis</text>
+</svg>

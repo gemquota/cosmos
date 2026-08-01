@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE COMPONENT STATE MACHINE — THREE ENGINES, THREE LIVES</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Every runtime's states, transitions, and the trigger that fires each one</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<rect x="60" y="128" width="880" height="42" rx="9" fill="#818cf8" opacity=".14" stroke="#818cf8" stroke-width="1" stroke-opacity=".35"/>
+<text x="76" y="153.0" fill="#818cf8" font-family="system-ui,sans-serif" font-size="12.5" font-weight="700">RSIS3 — STATE MACHINE</text>
+<text x="924" y="153.0" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">states · transitions</text>
+<rect x="300" y="180" width="150" height="52" rx="10" fill="#818cf8" opacity=".14" stroke="#818cf8" stroke-width="1.4"/>
+<text x="375" y="202" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="10" font-weight="700">IDLE</text>
+<text x="375" y="220" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">waiting for a task</text>
+<rect x="130" y="180" width="150" height="52" rx="10" fill="#818cf8" opacity=".14" stroke="#818cf8" stroke-width="1.4"/>
+<text x="205" y="202" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="10" font-weight="700">ACTING · L1</text>
+<text x="205" y="220" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">tool calls · observations</text>
+<rect x="470" y="180" width="150" height="52" rx="10" fill="#818cf8" opacity=".14" stroke="#818cf8" stroke-width="1.4"/>
+<text x="545" y="202" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="10" font-weight="700">IMPROVING · L2</text>
+<text x="545" y="220" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">candidates · eval gate</text>
+<rect x="660" y="180" width="150" height="52" rx="10" fill="#818cf8" opacity=".14" stroke="#818cf8" stroke-width="1.4"/>
+<text x="735" y="202" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="10" font-weight="700">CONSOLIDATING · L3</text>
+<text x="735" y="220" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">merge · snapshot · index</text>
+<path d="M 450 206 C 290.0 180, 290.0 180, 130 206" fill="none" stroke="#818cf8" stroke-width="1.6" opacity=".7" marker-end="url(#arwG)"/>
+<text x="290.0" y="172" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">task arrives</text>
+<path d="M 280 206 C 375.0 180, 375.0 180, 470 206" fill="none" stroke="#f59e0b" stroke-width="1.6" opacity=".7" marker-end="url(#arwG)"/>
+<text x="375.0" y="172" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">session feedback</text>
+<path d="M 620 206 C 640.0 180, 640.0 180, 660 206" fill="none" stroke="#22d3ee" stroke-width="1.6" opacity=".7" marker-end="url(#arwG)"/>
+<text x="640.0" y="172" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">plateau reached</text>
+<path d="M 810 206 C 555.0 180, 555.0 180, 300 206" fill="none" stroke="#10b981" stroke-width="1.6" opacity=".7" marker-end="url(#arwG)"/>
+<text x="555.0" y="172" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">cycle complete</text>
+<rect x="60" y="370" width="880" height="42" rx="9" fill="#22d3ee" opacity=".14" stroke="#22d3ee" stroke-width="1" stroke-opacity=".35"/>
+<text x="76" y="395.0" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="12.5" font-weight="700">MYKB — STATE MACHINE</text>
+<text x="924" y="395.0" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">states · transitions</text>
+<rect x="300" y="422" width="150" height="52" rx="10" fill="#22d3ee" opacity=".14" stroke="#22d3ee" stroke-width="1.4"/>
+<text x="375" y="444" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10" font-weight="700">SERVING</text>
+<text x="375" y="462" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">retrieval :8765</text>
+<rect x="130" y="422" width="150" height="52" rx="10" fill="#22d3ee" opacity=".14" stroke="#22d3ee" stroke-width="1.4"/>
+<text x="205" y="444" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10" font-weight="700">INDEXING</text>
+<text x="205" y="462" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">TF-IDF rebuild</text>
+<rect x="470" y="422" width="150" height="52" rx="10" fill="#22d3ee" opacity=".14" stroke="#22d3ee" stroke-width="1.4"/>
+<text x="545" y="444" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10" font-weight="700">CAPTURING</text>
+<text x="545" y="462" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">session → wiki + KG</text>
+<path d="M 450 448 C 290.0 422, 290.0 422, 130 448" fill="none" stroke="#22d3ee" stroke-width="1.6" opacity=".7" marker-end="url(#arwG)"/>
+<text x="290.0" y="414" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">corpus changed</text>
+<path d="M 280 448 C 290.0 422, 290.0 422, 300 448" fill="none" stroke="#10b981" stroke-width="1.6" opacity=".7" marker-end="url(#arwG)"/>
+<text x="290.0" y="414" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">index rebuilt</text>
+<path d="M 450 448 C 460.0 422, 460.0 422, 470 448" fill="none" stroke="#818cf8" stroke-width="1.6" opacity=".7" marker-end="url(#arwG)"/>
+<text x="460.0" y="414" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">capture hook fires</text>
+<path d="M 620 448 C 375.0 422, 375.0 422, 130 448" fill="none" stroke="#22d3ee" stroke-width="1.6" opacity=".7" marker-end="url(#arwG)"/>
+<text x="375.0" y="414" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">pages written</text>
+<rect x="60" y="612" width="880" height="42" rx="9" fill="#f59e0b" opacity=".14" stroke="#f59e0b" stroke-width="1" stroke-opacity=".35"/>
+<text x="76" y="637.0" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="12.5" font-weight="700">SPACE — STATE MACHINE</text>
+<text x="924" y="637.0" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">states · transitions</text>
+<rect x="300" y="664" width="150" height="52" rx="10" fill="#f59e0b" opacity=".14" stroke="#f59e0b" stroke-width="1.4"/>
+<text x="375" y="686" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="10" font-weight="700">COMPOSING</text>
+<text x="375" y="704" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">session dir + framework</text>
+<rect x="130" y="664" width="150" height="52" rx="10" fill="#f59e0b" opacity=".14" stroke="#f59e0b" stroke-width="1.4"/>
+<text x="205" y="686" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="10" font-weight="700">RUNNING</text>
+<text x="205" y="704" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">25 rounds · 7 providers</text>
+<rect x="470" y="664" width="150" height="52" rx="10" fill="#f59e0b" opacity=".14" stroke="#f59e0b" stroke-width="1.4"/>
+<text x="545" y="686" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="10" font-weight="700">EXPORTING</text>
+<text x="545" y="704" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="7.5">6 formats · consumers</text>
+<path d="M 450 690 C 290.0 664, 290.0 664, 130 690" fill="none" stroke="#f59e0b" stroke-width="1.6" opacity=".7" marker-end="url(#arwG)"/>
+<text x="290.0" y="656" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">space init</text>
+<path d="M 280 690 C 375.0 664, 375.0 664, 470 690" fill="none" stroke="#10b981" stroke-width="1.6" opacity=".7" marker-end="url(#arwG)"/>
+<text x="375.0" y="656" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">session ends</text>
+<path d="M 620 690 C 460.0 664, 460.0 664, 300 690" fill="none" stroke="#22d3ee" stroke-width="1.6" opacity=".7" marker-end="url(#arwG)"/>
+<text x="460.0" y="656" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">next spec</text>
+<rect x="60" y="854" width="880" height="90" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="854" width="880" height="32" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="874" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="874.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">WHAT THE MACHINES SHARE</text>
+<text x="74" y="900" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Every transition is triggered by an artifact crossing an interface — the state machines are the interfaces, animated.</text>
+<text x="74" y="924" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">RSIS3 is the only machine with four states; MyKB and SPACE are three-state loops — depth lives in the engine.</text>
+<rect x="60" y="1171" width="880" height="93" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1171" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1187" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1189.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE MACHINES</text>
+<text x="72" y="1211" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">STATE COLOUR = owning component; TRANSITION COLOUR = the component that triggers the move.</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">READ A MACHINE AS A LOOP: every component returns to a resting state — IDLE / SERVING / COMPOSING.</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">THE TRIGGER LABELS are real events — task arrives, plateau reached, capture hook fires, space init.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">if you know the trigger, you know the state — the machines are the system's choreography</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>
