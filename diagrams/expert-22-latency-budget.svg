@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE LATENCY BUDGET — WHERE THE TIME GOES</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Every bounded stage in the pipeline, its cap, and where latency actually hides</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<rect x="60" y="130" width="880" height="38" rx="8" fill="#f472b6" opacity=".12" stroke="#334155"/>
+<text x="165.0" y="153.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">STAGE</text>
+<text x="345.0" y="153.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">CAP (s)</text>
+<text x="495.0" y="153.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">TYPICAL (s)</text>
+<text x="755.0" y="153.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">WHERE IT HIDES</text>
+<rect x="60" y="168" width="880" height="50" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="70" y="196.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">L1 STEP</text>
+<text x="280" y="196.5" fill="hard cap per tool step · 10 calls max" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">120</text>
+<text x="430" y="196.5" fill="hard cap per tool step · 10 calls max" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">120</text>
+<text x="580" y="196.5" fill="hard cap per tool step · 10 calls max" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">#818cf8</text>
+<rect x="60" y="218" width="880" height="50" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="70" y="246.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">TELEMETRY FLUSH</text>
+<text x="280" y="246.5" fill="per pulse · ~1s cadence" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">1</text>
+<text x="430" y="246.5" fill="per pulse · ~1s cadence" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">1</text>
+<text x="580" y="246.5" fill="per pulse · ~1s cadence" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">#10b981</text>
+<rect x="60" y="268" width="880" height="50" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="70" y="296.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">RRP ROUND</text>
+<text x="280" y="296.5" fill="per probe round (compressed)" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">12</text>
+<text x="430" y="296.5" fill="per probe round (compressed)" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">12</text>
+<text x="580" y="296.5" fill="per probe round (compressed)" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">#f59e0b</text>
+<rect x="60" y="318" width="880" height="50" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="70" y="346.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">RETRIEVAL</text>
+<text x="280" y="346.5" fill="on-demand · adds to L1 latency when hit" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">15</text>
+<text x="430" y="346.5" fill="on-demand · adds to L1 latency when hit" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">8</text>
+<text x="580" y="346.5" fill="on-demand · adds to L1 latency when hit" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">#22d3ee</text>
+<rect x="60" y="368" width="880" height="50" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="70" y="396.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">EVALUATION</text>
+<text x="280" y="396.5" fill="per candidate · the single biggest block" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">60</text>
+<text x="430" y="396.5" fill="per candidate · the single biggest block" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">60</text>
+<text x="580" y="396.5" fill="per candidate · the single biggest block" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">#f472b6</text>
+<rect x="60" y="418" width="880" height="50" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="70" y="446.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">CONSOLIDATION</text>
+<text x="280" y="446.5" fill="per L3 cycle · runs post-session" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">60</text>
+<text x="430" y="446.5" fill="per L3 cycle · runs post-session" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">60</text>
+<text x="580" y="446.5" fill="per L3 cycle · runs post-session" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">#22d3ee</text>
+<rect x="60" y="470" width="880" height="150" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="470" width="880" height="32" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="490" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="490.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">THE THREE SURPRISES</text>
+<text x="74" y="516" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">1 · EVALUATION is 60s — half the whole pipeline; it is the price of the trust boundary, paid in wall-clock.</text>
+<text x="74" y="542" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">2 · RETRIEVAL is the only on-demand cost inside an L1 step — it turns a 1s loop into a ~9s loop when context is needed.</text>
+<text x="74" y="568" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">3 · CONSOLIDATION looks huge (60s) but is async — sessions keep acting while L3 works.</text>
+<rect x="60" y="650" width="880" height="110" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="650" width="880" height="32" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="60" y="670" width="880" height="12" fill="#818cf8" opacity=".12"/>
+<text x="500.0" y="670.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">THE BUDGET RULE</text>
+<text x="74" y="696" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Every stage's cap is a contract (A-25): exceeding it means fail/retry, never silent wait.</text>
+<text x="74" y="722" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Total worst case ≈ 120s (L1) + 60s (eval) + 60s (L3) — the system is built for a 4-minute bound.</text>
+<rect x="60" y="1171" width="880" height="93" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1171" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1187" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1189.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE BUDGET</text>
+<text x="72" y="1211" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">BAR COLOUR = owner; CAP vs TYPICAL are drawn as numbers — where they match, the budget is the bottleneck.</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">EVALUATION OWNS THE CRITICAL PATH — reducing it would speed every session, which is why its immutability is non-negotiable.</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">Compare B-21 (cadence) — that was the rhythm; this is the per-stage price of each beat.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">latency is a budget you allocate — this system spends 60 of every ~180 seconds on judgment</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

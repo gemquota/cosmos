@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">SPACE FRAMEWORK ONTOLOGY</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">The 7 RRP series mapped onto What ⇄ How and Concrete ⇄ Abstract — 326 probes distributed across the field</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<line x1="170" y1="1030" x2="830" y2="1030" stroke="#334155" stroke-width="1.4" marker-end="url(#arwG)" opacity=".9"/>
+<line x1="170" y1="1030" x2="170" y2="190" stroke="#334155" stroke-width="1.4" marker-end="url(#arwG)" opacity=".9"/>
+<text x="830" y="1052" text-anchor="end" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700">HOW · procedure</text>
+<text x="170" y="1052" text-anchor="start" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700">WHAT · description</text>
+<text x="144" y="610.0" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700" transform="rotate(-90 144 610.0)">CONCRETE ⇄ ABSTRACT</text>
+<line x1="290" y1="1025" x2="290" y2="1035" stroke="#334155" stroke-width="1"/>
+<text x="290" y="1044" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">identity</text>
+<line x1="500" y1="1025" x2="500" y2="1035" stroke="#334155" stroke-width="1"/>
+<text x="500" y="1044" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">meaning</text>
+<line x1="710" y1="1025" x2="710" y2="1035" stroke="#334155" stroke-width="1"/>
+<text x="710" y="1044" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9">workflow</text>
+<line x1="165" y1="330" x2="175" y2="330" stroke="#334155" stroke-width="1"/>
+<text x="158" y="333" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">specs</text>
+<line x1="165" y1="560" x2="175" y2="560" stroke="#334155" stroke-width="1"/>
+<text x="158" y="563" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">methods</text>
+<line x1="165" y1="800" x2="175" y2="800" stroke="#334155" stroke-width="1"/>
+<text x="158" y="803" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">operations</text>
+<text x="275" y="1012" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9" font-style="italic">DOMAIN of the artifact</text>
+<text x="725" y="1012" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9" font-style="italic">DOMAIN of the process</text>
+<circle cx="300" cy="330" r="120" fill="#f59e0b" fill-opacity="0.42" stroke="#f59e0b" stroke-width="2" style="mix-blend-mode:screen"/>
+<circle cx="300" cy="330" r="120" fill="none" stroke="#f59e0b" stroke-width="2"/>
+<text x="300" y="326" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="10" font-weight="800">CONCEPTUAL DEPTH</text>
+<text x="300" y="342" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">why · depth</text>
+<circle cx="291" cy="311" r="2.2" fill="#f59e0b" fill-opacity=".75"/>
+<circle cx="351" cy="397" r="2.2" fill="#f59e0b" fill-opacity=".75"/>
+<circle cx="339" cy="368" r="2.2" fill="#f59e0b" fill-opacity=".75"/>
+<circle cx="290" cy="334" r="2.2" fill="#f59e0b" fill-opacity=".75"/>
+<circle cx="335" cy="281" r="2.2" fill="#f59e0b" fill-opacity=".75"/>
+<circle cx="450" cy="400" r="115" fill="#fbbf24" fill-opacity="0.42" stroke="#fbbf24" stroke-width="2" style="mix-blend-mode:screen"/>
+<circle cx="450" cy="400" r="115" fill="none" stroke="#fbbf24" stroke-width="2"/>
+<text x="450" y="396" text-anchor="middle" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10" font-weight="800">ONTOLOGY</text>
+<text x="450" y="412" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">what exists</text>
+<circle cx="452" cy="400" r="2.2" fill="#fbbf24" fill-opacity=".75"/>
+<circle cx="434" cy="425" r="2.2" fill="#fbbf24" fill-opacity=".75"/>
+<circle cx="428" cy="404" r="2.2" fill="#fbbf24" fill-opacity=".75"/>
+<circle cx="434" cy="398" r="2.2" fill="#fbbf24" fill-opacity=".75"/>
+<circle cx="465" cy="422" r="2.2" fill="#fbbf24" fill-opacity=".75"/>
+<circle cx="580" cy="330" r="110" fill="#f59e0b" fill-opacity="0.42" stroke="#f59e0b" stroke-width="2" style="mix-blend-mode:screen"/>
+<circle cx="580" cy="330" r="110" fill="none" stroke="#f59e0b" stroke-width="2"/>
+<text x="580" y="326" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="10" font-weight="800">SEMANTICS</text>
+<text x="580" y="342" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">what it means</text>
+<circle cx="642" cy="323" r="2.2" fill="#f59e0b" fill-opacity=".75"/>
+<circle cx="575" cy="329" r="2.2" fill="#f59e0b" fill-opacity=".75"/>
+<circle cx="556" cy="392" r="2.2" fill="#f59e0b" fill-opacity=".75"/>
+<circle cx="575" cy="333" r="2.2" fill="#f59e0b" fill-opacity=".75"/>
+<circle cx="576" cy="362" r="2.2" fill="#f59e0b" fill-opacity=".75"/>
+<circle cx="400" cy="700" r="120" fill="#f59e0b" fill-opacity="0.42" stroke="#f59e0b" stroke-width="2" style="mix-blend-mode:screen"/>
+<circle cx="400" cy="700" r="120" fill="none" stroke="#f59e0b" stroke-width="2"/>
+<text x="400" y="696" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="10" font-weight="800">TECHNICAL SPECS</text>
+<text x="400" y="712" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">what it must do</text>
+<circle cx="379" cy="781" r="2.2" fill="#f59e0b" fill-opacity=".75"/>
+<circle cx="393" cy="711" r="2.2" fill="#f59e0b" fill-opacity=".75"/>
+<circle cx="405" cy="720" r="2.2" fill="#f59e0b" fill-opacity=".75"/>
+<circle cx="435" cy="726" r="2.2" fill="#f59e0b" fill-opacity=".75"/>
+<circle cx="468" cy="689" r="2.2" fill="#f59e0b" fill-opacity=".75"/>
+<circle cx="620" cy="760" r="115" fill="#d97706" fill-opacity="0.42" stroke="#d97706" stroke-width="2" style="mix-blend-mode:screen"/>
+<circle cx="620" cy="760" r="115" fill="none" stroke="#d97706" stroke-width="2"/>
+<text x="620" y="756" text-anchor="middle" fill="#d97706" font-family="system-ui,sans-serif" font-size="10" font-weight="800">PROCEDURES</text>
+<text x="620" y="772" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">how to do it</text>
+<circle cx="585" cy="761" r="2.2" fill="#d97706" fill-opacity=".75"/>
+<circle cx="625" cy="688" r="2.2" fill="#d97706" fill-opacity=".75"/>
+<circle cx="667" cy="765" r="2.2" fill="#d97706" fill-opacity=".75"/>
+<circle cx="670" cy="695" r="2.2" fill="#d97706" fill-opacity=".75"/>
+<circle cx="600" cy="764" r="2.2" fill="#d97706" fill-opacity=".75"/>
+<circle cx="720" cy="560" r="105" fill="#fbbf24" fill-opacity="0.42" stroke="#fbbf24" stroke-width="2" style="mix-blend-mode:screen"/>
+<circle cx="720" cy="560" r="105" fill="none" stroke="#fbbf24" stroke-width="2"/>
+<text x="720" y="556" text-anchor="middle" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10" font-weight="800">METHODOLOGY</text>
+<text x="720" y="572" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">how to think</text>
+<circle cx="667" cy="576" r="2.2" fill="#fbbf24" fill-opacity=".75"/>
+<circle cx="671" cy="542" r="2.2" fill="#fbbf24" fill-opacity=".75"/>
+<circle cx="742" cy="621" r="2.2" fill="#fbbf24" fill-opacity=".75"/>
+<circle cx="707" cy="518" r="2.2" fill="#fbbf24" fill-opacity=".75"/>
+<circle cx="723" cy="551" r="2.2" fill="#fbbf24" fill-opacity=".75"/>
+<circle cx="500" cy="840" r="105" fill="#b45309" fill-opacity="0.42" stroke="#b45309" stroke-width="2" style="mix-blend-mode:screen"/>
+<circle cx="500" cy="840" r="105" fill="none" stroke="#b45309" stroke-width="2"/>
+<text x="500" y="836" text-anchor="middle" fill="#b45309" font-family="system-ui,sans-serif" font-size="10" font-weight="800">OPERATIONS</text>
+<text x="500" y="852" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">how to run it</text>
+<circle cx="494" cy="849" r="2.2" fill="#b45309" fill-opacity=".75"/>
+<circle cx="556" cy="806" r="2.2" fill="#b45309" fill-opacity=".75"/>
+<circle cx="484" cy="776" r="2.2" fill="#b45309" fill-opacity=".75"/>
+<circle cx="486" cy="862" r="2.2" fill="#b45309" fill-opacity=".75"/>
+<circle cx="555" cy="873" r="2.2" fill="#b45309" fill-opacity=".75"/>
+<rect x="454" y="348" width="124" height="32" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="516" y="362" text-anchor="middle" fill="#fde68a" font-family="system-ui,sans-serif" font-size="10.5" font-weight="600">MEANING &amp; IDENTITY</text>
+<text x="516" y="376" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5" font-weight="600">ontology × semantics</text>
+<rect x="318" y="350" width="118" height="32" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="377" y="364" text-anchor="middle" fill="#fcd34d" font-family="system-ui,sans-serif" font-size="10.5" font-weight="600">DEPTH OF BEING</text>
+<text x="377" y="378" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5" font-weight="600">conceptual × ontology</text>
+<rect x="604" y="640" width="136" height="32" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="672" y="654" text-anchor="middle" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10.5" font-weight="600">REPEATABLE WORKFLOWS</text>
+<text x="672" y="668" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5" font-weight="600">method × procedure</text>
+<rect x="432" y="714" width="159" height="32" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="512" y="728" text-anchor="middle" fill="#fde68a" font-family="system-ui,sans-serif" font-size="10.5" font-weight="600">IMPLEMENTATION CONTRACTS</text>
+<text x="512" y="742" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5" font-weight="600">specs × procedures</text>
+<rect x="493" y="786" width="127" height="32" rx="8" fill="#0b1120" opacity=".78"/>
+<text x="557" y="800" text-anchor="middle" fill="#d97706" font-family="system-ui,sans-serif" font-size="10.5" font-weight="600">RUNBOOKS &amp; DEPLOYS</text>
+<text x="557" y="814" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5" font-weight="600">operations × procedures</text>
+<text x="80" y="1160" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-weight="700">THE 7 SERIES (radius ∝ question share, est.)</text>
+<circle cx="90" cy="1182" r="6" fill="#f59e0b" fill-opacity=".9"/>
+<text x="106" y="1185.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9">conceptual depth</text>
+<circle cx="90" cy="1200" r="6" fill="#fbbf24" fill-opacity=".9"/>
+<text x="106" y="1203.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9">ontology</text>
+<circle cx="90" cy="1218" r="6" fill="#f59e0b" fill-opacity=".9"/>
+<text x="106" y="1221.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9">semantics</text>
+<circle cx="90" cy="1236" r="6" fill="#f59e0b" fill-opacity=".9"/>
+<text x="106" y="1239.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9">technical specs</text>
+<circle cx="90" cy="1254" r="6" fill="#d97706" fill-opacity=".9"/>
+<text x="106" y="1257.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9">procedures</text>
+<circle cx="90" cy="1272" r="6" fill="#fbbf24" fill-opacity=".9"/>
+<text x="106" y="1275.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9">methodology</text>
+<circle cx="90" cy="1290" r="6" fill="#b45309" fill-opacity=".9"/>
+<text x="106" y="1293.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9">operations</text>
+<text x="920" y="1160" text-anchor="end" fill="#64748b" font-family="system-ui,sans-serif" font-size="10" font-weight="700">326 PROBES</text>
+<text x="920" y="1178" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">dots sampled · density ∝ share</text>
+<text x="920" y="1196" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">6 export formats</text>
+<text x="500" y="1275" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">the framework is a space, not a list — questions live where their series overlap</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Generated from source analysis</text>
+</svg>

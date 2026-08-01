@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE COUPLING MATRIX — WHO DEPENDS ON WHOM</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Six modules, directed dependency counts, fan-in / fan-out — the heatmap of the codebase</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<rect x="220" y="140" width="590" height="38" rx="8" fill="#f472b6" opacity=".12" stroke="#334155"/>
+<text x="279" y="164" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9">rack</text>
+<text x="397" y="164" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9">mykb</text>
+<text x="515" y="164" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9">space</text>
+<text x="633" y="164" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9">dashboard</text>
+<text x="751" y="164" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9">evaluator</text>
+<text x="160" y="164" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8">depends on ↓</text>
+<rect x="220" y="178" width="590" height="44" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="110" y="206" text-anchor="middle" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="9">rsis3 core</text>
+<rect x="224" y="182" width="110" height="36" rx="6" fill="#f59e0b" opacity=".85"/>
+<text x="279" y="205" text-anchor="middle" fill="#e2e8f0" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">1</text>
+<rect x="342" y="182" width="110" height="36" rx="6" fill="#f59e0b" opacity=".85"/>
+<text x="397" y="205" text-anchor="middle" fill="#e2e8f0" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">1</text>
+<rect x="460" y="182" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="515" y="205" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="578" y="182" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="633" y="205" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="696" y="182" width="110" height="36" rx="6" fill="#f59e0b" opacity=".85"/>
+<text x="751" y="205" text-anchor="middle" fill="#e2e8f0" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">1</text>
+<rect x="220" y="222" width="590" height="44" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="110" y="250" text-anchor="middle" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="9">rack</text>
+<rect x="224" y="226" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="279" y="249" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="342" y="226" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="397" y="249" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="460" y="226" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="515" y="249" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="578" y="226" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="633" y="249" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="696" y="226" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="751" y="249" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="220" y="266" width="590" height="44" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="110" y="294" text-anchor="middle" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="9">mykb</text>
+<rect x="224" y="270" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="279" y="293" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="342" y="270" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="397" y="293" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="460" y="270" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="515" y="293" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="578" y="270" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="633" y="293" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="696" y="270" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="751" y="293" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="220" y="310" width="590" height="44" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="110" y="338" text-anchor="middle" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="9">space</text>
+<rect x="224" y="314" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="279" y="337" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="342" y="314" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="397" y="337" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="460" y="314" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="515" y="337" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="578" y="314" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="633" y="337" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="696" y="314" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="751" y="337" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="220" y="354" width="590" height="44" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="110" y="382" text-anchor="middle" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="9">dashboard</text>
+<rect x="224" y="358" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="279" y="381" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="342" y="358" width="110" height="36" rx="6" fill="#f59e0b" opacity=".85"/>
+<text x="397" y="381" text-anchor="middle" fill="#e2e8f0" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">1</text>
+<rect x="460" y="358" width="110" height="36" rx="6" fill="#f59e0b" opacity=".85"/>
+<text x="515" y="381" text-anchor="middle" fill="#e2e8f0" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">1</text>
+<rect x="578" y="358" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="633" y="381" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="696" y="358" width="110" height="36" rx="6" fill="#0f172a" opacity=".85"/>
+<text x="751" y="381" text-anchor="middle" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="11" font-weight="700">·</text>
+<rect x="60" y="470" width="880" height="42" rx="9" fill="#10b981" opacity=".14" stroke="#10b981" stroke-width="1" stroke-opacity=".35"/>
+<text x="76" y="495.0" fill="#10b981" font-family="system-ui,sans-serif" font-size="12.5" font-weight="700">FAN-IN / FAN-OUT — THE REAL READ</text>
+<text x="924" y="495.0" text-anchor="end" fill="#475569" font-family="system-ui,sans-serif" font-size="9">directed counts</text>
+<text x="90" y="528" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="9">rsis3 core</text>
+<rect x="200" y="516" width="210" height="12" rx="4" fill="#818cf8" opacity=".8"/>
+<rect x="430" y="516" width="210" height="12" rx="4" fill="#22d3ee" opacity=".8"/>
+<text x="418" y="528" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">out 3</text>
+<text x="648" y="528" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8.5">in 3</text>
+<text x="90" y="558" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="9">rack</text>
+<rect x="200" y="546" width="70" height="12" rx="4" fill="#818cf8" opacity=".8"/>
+<rect x="430" y="546" width="70" height="12" rx="4" fill="#22d3ee" opacity=".8"/>
+<text x="278" y="558" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">out 1</text>
+<text x="508" y="558" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8.5">in 1</text>
+<text x="90" y="588" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="9">mykb</text>
+<rect x="200" y="576" width="0" height="12" rx="4" fill="#818cf8" opacity=".8"/>
+<rect x="430" y="576" width="140" height="12" rx="4" fill="#22d3ee" opacity=".8"/>
+<text x="208" y="588" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">out 0</text>
+<text x="578" y="588" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8.5">in 2</text>
+<text x="90" y="618" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="9">space</text>
+<rect x="200" y="606" width="0" height="12" rx="4" fill="#818cf8" opacity=".8"/>
+<rect x="430" y="606" width="70" height="12" rx="4" fill="#22d3ee" opacity=".8"/>
+<text x="208" y="618" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">out 0</text>
+<text x="508" y="618" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8.5">in 1</text>
+<text x="90" y="648" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="9">dashboard</text>
+<rect x="200" y="636" width="210" height="12" rx="4" fill="#818cf8" opacity=".8"/>
+<rect x="430" y="636" width="0" height="12" rx="4" fill="#22d3ee" opacity=".8"/>
+<text x="418" y="648" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">out 3</text>
+<text x="438" y="648" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8.5">in 0</text>
+<text x="90" y="678" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="9">evaluator</text>
+<rect x="200" y="666" width="0" height="12" rx="4" fill="#818cf8" opacity=".8"/>
+<rect x="430" y="666" width="70" height="12" rx="4" fill="#22d3ee" opacity=".8"/>
+<text x="208" y="678" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">out 0</text>
+<text x="508" y="678" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8.5">in 1</text>
+<text x="60" y="762" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5">indigo bar = fan-out (depends on) · cyan bar = fan-in (depended on)</text>
+<rect x="60" y="800" width="880" height="110" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="800" width="880" height="32" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="820" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="820.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">WHAT THE HEATMAP SAYS</text>
+<text x="74" y="846" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">rsis3 core is the hub: highest fan-out (needs rack, evaluator, mykb) and highest fan-in (rack, dashboard depend on it).</text>
+<text x="74" y="870" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">dashboard is a pure consumer (fan-in 0) and space/mykb are pure providers at the code level — their coupling is via files.</text>
+<rect x="60" y="1171" width="880" height="93" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1171" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1187" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1189.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE MATRIX</text>
+<text x="72" y="1211" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">HEAT = directed dependency count (0 · 1 · 2 · 3+): amber warm, red hot — rows depend on columns.</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">ZERO CELLS MATTER: evaluator depends on nothing, and nothing (except the spawn) depends on it — that isolation is the point.</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">The B-14 ownership matrix was WHO RUNS WHAT; this matrix is WHO IMPORTS WHOM — code coupling, not runtime coupling.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">coupling is where complexity lives — the heatmap shows it is concentrated in exactly one module</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

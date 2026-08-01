@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE PROBE CONSTELLATION — RRP DISPATCH SEQUENCE</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">326 probes · 7 series · 25 rounds — the cursor sweeps the constellation once per full elicitation session</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<circle cx="500" cy="560" r="250" fill="none" stroke="#334155" stroke-width="1" stroke-dasharray="2,6" opacity=".6"/>
+<line x1="500.0" y1="317.0" x2="500.0" y2="303.0" stroke="#475569" stroke-width="1.4"/>
+<text x="500" y="337" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">1</text>
+<line x1="560.4" y1="324.6" x2="563.9" y2="311.1" stroke="#475569" stroke-width="1.4"/>
+<line x1="617.1" y1="347.1" x2="623.8" y2="334.8" stroke="#475569" stroke-width="1.4"/>
+<line x1="666.3" y1="382.9" x2="675.9" y2="372.7" stroke="#475569" stroke-width="1.4"/>
+<line x1="705.2" y1="429.8" x2="717.0" y2="422.3" stroke="#475569" stroke-width="1.4"/>
+<line x1="731.1" y1="484.9" x2="744.4" y2="480.6" stroke="#475569" stroke-width="1.4"/>
+<text x="715" y="493" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">6</text>
+<line x1="742.5" y1="544.7" x2="756.5" y2="543.9" stroke="#475569" stroke-width="1.4"/>
+<line x1="738.7" y1="605.5" x2="752.4" y2="608.2" stroke="#475569" stroke-width="1.4"/>
+<line x1="719.9" y1="663.5" x2="732.5" y2="669.4" stroke="#475569" stroke-width="1.4"/>
+<line x1="687.2" y1="714.9" x2="698.0" y2="723.8" stroke="#475569" stroke-width="1.4"/>
+<line x1="642.8" y1="756.6" x2="651.1" y2="767.9" stroke="#475569" stroke-width="1.4"/>
+<text x="633" y="746" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">11</text>
+<line x1="589.5" y1="785.9" x2="594.6" y2="799.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="530.5" y1="801.1" x2="532.2" y2="815.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="469.5" y1="801.1" x2="467.8" y2="815.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="410.5" y1="785.9" x2="405.4" y2="799.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="357.2" y1="756.6" x2="348.9" y2="767.9" stroke="#475569" stroke-width="1.4"/>
+<text x="367" y="746" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">16</text>
+<line x1="312.8" y1="714.9" x2="302.0" y2="723.8" stroke="#475569" stroke-width="1.4"/>
+<line x1="280.1" y1="663.5" x2="267.5" y2="669.4" stroke="#475569" stroke-width="1.4"/>
+<line x1="261.3" y1="605.5" x2="247.6" y2="608.2" stroke="#475569" stroke-width="1.4"/>
+<line x1="257.5" y1="544.7" x2="243.5" y2="543.9" stroke="#475569" stroke-width="1.4"/>
+<line x1="268.9" y1="484.9" x2="255.6" y2="480.6" stroke="#475569" stroke-width="1.4"/>
+<text x="285" y="493" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">21</text>
+<line x1="294.8" y1="429.8" x2="283.0" y2="422.3" stroke="#475569" stroke-width="1.4"/>
+<line x1="333.7" y1="382.9" x2="324.1" y2="372.7" stroke="#475569" stroke-width="1.4"/>
+<line x1="382.9" y1="347.1" x2="376.2" y2="334.8" stroke="#475569" stroke-width="1.4"/>
+<line x1="439.6" y1="324.6" x2="436.1" y2="311.1" stroke="#475569" stroke-width="1.4"/>
+<path d="M500,560 L500,310 A250,250 0 0 1 737.8,482.7 Z" fill="#f59e0b" opacity=".07"/>
+<g><line x1="500" y1="560" x2="500" y2="310" stroke="#f59e0b" stroke-width="2" opacity=".55"><animateTransform attributeName="transform" type="rotate" from="0 500 560" to="360 500 560" dur="25s" repeatCount="indefinite"/></line><circle cx="500" cy="310" r="5" fill="#f59e0b"><animateTransform attributeName="transform" type="rotate" from="0 500 560" to="360 500 560" dur="25s" repeatCount="indefinite"/></circle></g><text x="650" y="296" text-anchor="middle" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="8.5" font-weight="700">ROUND 25</text>
+<circle cx="500" cy="560" r="26" fill="#f59e0b" opacity=".9" stroke="#0b1120" stroke-width="2"/>
+<circle cx="500" cy="560" r="34" fill="none" stroke="#f59e0b" stroke-width="1" opacity=".5"/>
+<circle cx="500" cy="560" r="48" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="2,5" opacity=".3"/>
+<text x="500" y="564" text-anchor="middle" fill="#0b1120" font-family="system-ui,sans-serif" font-size="10" font-weight="800">SPACE</text>
+<text x="500" y="628" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700">RRP ENGINE</text>
+<text x="500" y="642" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8.5">1 turn = 25 rounds = 1 spec</text>
+<circle cx="523" cy="272" r="2.6" fill="#fbbf24"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="--0.03s" repeatCount="indefinite"/></circle>
+<circle cx="479" cy="253" r="2.6" fill="#fbbf24"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="--0.06s" repeatCount="indefinite"/></circle>
+<circle cx="491" cy="249" r="2.6" fill="#fbbf24"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-0.39s" repeatCount="indefinite"/></circle>
+<circle cx="505" cy="289" r="2.6" fill="#fbbf24"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-0.64s" repeatCount="indefinite"/></circle>
+<circle cx="499" cy="288" r="2.6" fill="#fbbf24"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-0.62s" repeatCount="indefinite"/></circle>
+<circle cx="490" cy="280" r="2.6" fill="#fbbf24"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-0.58s" repeatCount="indefinite"/></circle>
+<circle cx="478" cy="255" r="2.6" fill="#fbbf24"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="--0.05s" repeatCount="indefinite"/></circle>
+<circle cx="516" cy="275" r="2.6" fill="#fbbf24"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="--0.38s" repeatCount="indefinite"/></circle>
+<circle cx="494" cy="268" r="2.6" fill="#fbbf24"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="--0.11s" repeatCount="indefinite"/></circle>
+<circle cx="485" cy="281" r="2.6" fill="#fbbf24"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="--0.13s" repeatCount="indefinite"/></circle>
+<circle cx="481" cy="278" r="2.6" fill="#fbbf24"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-0.46s" repeatCount="indefinite"/></circle>
+<text x="500" y="229" text-anchor="middle" fill="#fbbf24" font-family="system-ui,sans-serif" font-size="10.5" font-weight="800">S1 · Conceptual Depth</text>
+<text x="500" y="243" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8">3 rounds · 6 open-ended</text>
+<circle cx="716" cy="366" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.76s" repeatCount="indefinite"/></circle>
+<circle cx="709" cy="403" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.51s" repeatCount="indefinite"/></circle>
+<circle cx="755" cy="388" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.14s" repeatCount="indefinite"/></circle>
+<circle cx="765" cy="376" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.06s" repeatCount="indefinite"/></circle>
+<circle cx="710" cy="370" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.92s" repeatCount="indefinite"/></circle>
+<circle cx="728" cy="369" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.00s" repeatCount="indefinite"/></circle>
+<circle cx="733" cy="381" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.30s" repeatCount="indefinite"/></circle>
+<circle cx="709" cy="357" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.37s" repeatCount="indefinite"/></circle>
+<circle cx="732" cy="357" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.69s" repeatCount="indefinite"/></circle>
+<circle cx="703" cy="370" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-4.07s" repeatCount="indefinite"/></circle>
+<circle cx="763" cy="376" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.51s" repeatCount="indefinite"/></circle>
+<circle cx="763" cy="377" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.30s" repeatCount="indefinite"/></circle>
+<circle cx="740" cy="384" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.76s" repeatCount="indefinite"/></circle>
+<circle cx="767" cy="376" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.98s" repeatCount="indefinite"/></circle>
+<circle cx="736" cy="341" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-2.96s" repeatCount="indefinite"/></circle>
+<circle cx="701" cy="365" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.21s" repeatCount="indefinite"/></circle>
+<circle cx="721" cy="360" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-4.09s" repeatCount="indefinite"/></circle>
+<circle cx="766" cy="373" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.27s" repeatCount="indefinite"/></circle>
+<circle cx="726" cy="406" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-3.01s" repeatCount="indefinite"/></circle>
+<circle cx="731" cy="398" r="2.6" fill="#f59e0b"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-4.06s" repeatCount="indefinite"/></circle>
+<text x="731" y="330" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="10.5" font-weight="800">S2 · Ontological Characteristics</text>
+<text x="731" y="344" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8">5 rounds · 15 open-ended</text>
+<circle cx="786" cy="611" r="2.6" fill="#f97316"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-6.60s" repeatCount="indefinite"/></circle>
+<circle cx="800" cy="629" r="2.6" fill="#f97316"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-7.57s" repeatCount="indefinite"/></circle>
+<circle cx="792" cy="634" r="2.6" fill="#f97316"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-7.36s" repeatCount="indefinite"/></circle>
+<circle cx="800" cy="628" r="2.6" fill="#f97316"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-7.35s" repeatCount="indefinite"/></circle>
+<circle cx="802" cy="626" r="2.6" fill="#f97316"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-7.21s" repeatCount="indefinite"/></circle>
+<circle cx="763" cy="633" r="2.6" fill="#f97316"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-6.80s" repeatCount="indefinite"/></circle>
+<circle cx="779" cy="629" r="2.6" fill="#f97316"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-7.51s" repeatCount="indefinite"/></circle>
+<circle cx="784" cy="602" r="2.6" fill="#f97316"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-7.20s" repeatCount="indefinite"/></circle>
+<circle cx="782" cy="653" r="2.6" fill="#f97316"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-7.81s" repeatCount="indefinite"/></circle>
+<circle cx="800" cy="620" r="2.6" fill="#f97316"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-7.04s" repeatCount="indefinite"/></circle>
+<circle cx="792" cy="611" r="2.6" fill="#f97316"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-6.73s" repeatCount="indefinite"/></circle>
+<circle cx="805" cy="614" r="2.6" fill="#f97316"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-7.76s" repeatCount="indefinite"/></circle>
+<circle cx="793" cy="644" r="2.6" fill="#f97316"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-7.35s" repeatCount="indefinite"/></circle>
+<text x="789" y="589" text-anchor="middle" fill="#f97316" font-family="system-ui,sans-serif" font-size="10.5" font-weight="800">S3 · Semantic Relationships</text>
+<text x="789" y="603" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8">4 rounds · 8 open-ended</text>
+<circle cx="650" cy="814" r="2.6" fill="#fb923c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-10.89s" repeatCount="indefinite"/></circle>
+<circle cx="641" cy="811" r="2.6" fill="#fb923c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-11.00s" repeatCount="indefinite"/></circle>
+<circle cx="608" cy="822" r="2.6" fill="#fb923c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-10.47s" repeatCount="indefinite"/></circle>
+<circle cx="635" cy="827" r="2.6" fill="#fb923c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-10.95s" repeatCount="indefinite"/></circle>
+<circle cx="617" cy="813" r="2.6" fill="#fb923c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-11.04s" repeatCount="indefinite"/></circle>
+<circle cx="640" cy="825" r="2.6" fill="#fb923c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-10.24s" repeatCount="indefinite"/></circle>
+<circle cx="644" cy="823" r="2.6" fill="#fb923c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-10.05s" repeatCount="indefinite"/></circle>
+<circle cx="646" cy="821" r="2.6" fill="#fb923c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-10.20s" repeatCount="indefinite"/></circle>
+<circle cx="610" cy="817" r="2.6" fill="#fb923c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-10.60s" repeatCount="indefinite"/></circle>
+<circle cx="622" cy="827" r="2.6" fill="#fb923c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-10.75s" repeatCount="indefinite"/></circle>
+<circle cx="623" cy="843" r="2.6" fill="#fb923c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-11.27s" repeatCount="indefinite"/></circle>
+<text x="628" y="884" text-anchor="middle" fill="#fb923c" font-family="system-ui,sans-serif" font-size="10.5" font-weight="800">S4 · Procedural Breadth</text>
+<text x="628" y="898" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8">3 rounds · 6 open-ended</text>
+<circle cx="383" cy="814" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-14.56s" repeatCount="indefinite"/></circle>
+<circle cx="369" cy="809" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-13.62s" repeatCount="indefinite"/></circle>
+<circle cx="388" cy="821" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-14.15s" repeatCount="indefinite"/></circle>
+<circle cx="356" cy="851" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-13.60s" repeatCount="indefinite"/></circle>
+<circle cx="389" cy="827" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-13.70s" repeatCount="indefinite"/></circle>
+<circle cx="339" cy="806" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-14.75s" repeatCount="indefinite"/></circle>
+<circle cx="400" cy="805" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-14.93s" repeatCount="indefinite"/></circle>
+<circle cx="351" cy="855" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-13.81s" repeatCount="indefinite"/></circle>
+<circle cx="343" cy="848" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-14.32s" repeatCount="indefinite"/></circle>
+<circle cx="406" cy="833" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-13.75s" repeatCount="indefinite"/></circle>
+<circle cx="397" cy="847" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-13.93s" repeatCount="indefinite"/></circle>
+<circle cx="345" cy="803" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-13.71s" repeatCount="indefinite"/></circle>
+<circle cx="399" cy="816" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-13.79s" repeatCount="indefinite"/></circle>
+<circle cx="348" cy="854" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-14.98s" repeatCount="indefinite"/></circle>
+<circle cx="378" cy="863" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-14.80s" repeatCount="indefinite"/></circle>
+<circle cx="397" cy="810" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-14.51s" repeatCount="indefinite"/></circle>
+<circle cx="347" cy="813" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-14.05s" repeatCount="indefinite"/></circle>
+<circle cx="352" cy="792" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-14.44s" repeatCount="indefinite"/></circle>
+<circle cx="342" cy="851" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-14.68s" repeatCount="indefinite"/></circle>
+<circle cx="340" cy="803" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-13.71s" repeatCount="indefinite"/></circle>
+<circle cx="410" cy="830" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-14.08s" repeatCount="indefinite"/></circle>
+<circle cx="351" cy="832" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-14.33s" repeatCount="indefinite"/></circle>
+<circle cx="407" cy="838" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-13.68s" repeatCount="indefinite"/></circle>
+<circle cx="378" cy="857" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-14.84s" repeatCount="indefinite"/></circle>
+<circle cx="335" cy="817" r="2.6" fill="#d97706"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-14.06s" repeatCount="indefinite"/></circle>
+<text x="372" y="900" text-anchor="middle" fill="#d97706" font-family="system-ui,sans-serif" font-size="10.5" font-weight="800">S5 · Technical Specifications</text>
+<text x="372" y="914" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8">4 rounds · 20 open-ended</text>
+<circle cx="211" cy="639" r="2.6" fill="#fcd34d"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-17.94s" repeatCount="indefinite"/></circle>
+<circle cx="218" cy="650" r="2.6" fill="#fcd34d"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-17.60s" repeatCount="indefinite"/></circle>
+<circle cx="237" cy="626" r="2.6" fill="#fcd34d"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-17.43s" repeatCount="indefinite"/></circle>
+<circle cx="202" cy="627" r="2.6" fill="#fcd34d"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-17.66s" repeatCount="indefinite"/></circle>
+<circle cx="188" cy="622" r="2.6" fill="#fcd34d"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-18.26s" repeatCount="indefinite"/></circle>
+<circle cx="204" cy="645" r="2.6" fill="#fcd34d"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-17.17s" repeatCount="indefinite"/></circle>
+<circle cx="218" cy="640" r="2.6" fill="#fcd34d"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-17.54s" repeatCount="indefinite"/></circle>
+<circle cx="209" cy="608" r="2.6" fill="#fcd34d"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-18.49s" repeatCount="indefinite"/></circle>
+<circle cx="222" cy="629" r="2.6" fill="#fcd34d"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-17.33s" repeatCount="indefinite"/></circle>
+<circle cx="208" cy="612" r="2.6" fill="#fcd34d"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-18.30s" repeatCount="indefinite"/></circle>
+<circle cx="194" cy="627" r="2.6" fill="#fcd34d"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-17.92s" repeatCount="indefinite"/></circle>
+<text x="211" y="591" text-anchor="middle" fill="#fcd34d" font-family="system-ui,sans-serif" font-size="10.5" font-weight="800">S6 · Development Methodologies</text>
+<text x="211" y="605" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8">3 rounds · 6 open-ended</text>
+<circle cx="260" cy="381" r="2.6" fill="#ea580c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-21.91s" repeatCount="indefinite"/></circle>
+<circle cx="263" cy="371" r="2.6" fill="#ea580c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-20.75s" repeatCount="indefinite"/></circle>
+<circle cx="277" cy="358" r="2.6" fill="#ea580c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-21.61s" repeatCount="indefinite"/></circle>
+<circle cx="265" cy="367" r="2.6" fill="#ea580c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-21.28s" repeatCount="indefinite"/></circle>
+<circle cx="286" cy="358" r="2.6" fill="#ea580c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-21.51s" repeatCount="indefinite"/></circle>
+<circle cx="253" cy="379" r="2.6" fill="#ea580c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-20.94s" repeatCount="indefinite"/></circle>
+<circle cx="248" cy="367" r="2.6" fill="#ea580c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-20.82s" repeatCount="indefinite"/></circle>
+<circle cx="260" cy="393" r="2.6" fill="#ea580c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-21.12s" repeatCount="indefinite"/></circle>
+<circle cx="285" cy="369" r="2.6" fill="#ea580c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-21.44s" repeatCount="indefinite"/></circle>
+<circle cx="270" cy="398" r="2.6" fill="#ea580c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-21.64s" repeatCount="indefinite"/></circle>
+<circle cx="256" cy="389" r="2.6" fill="#ea580c"><animate attributeName="fill-opacity" values=".18;1;.18" dur="25s" begin="-22.01s" repeatCount="indefinite"/></circle>
+<text x="269" y="341" text-anchor="middle" fill="#ea580c" font-family="system-ui,sans-serif" font-size="10.5" font-weight="800">S7 · Operational / Functional</text>
+<text x="269" y="355" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="8">3 rounds · 6 open-ended</text>
+<line x1="615.7110594052684" y1="319.7235093249074" x2="731.4221188105369" y2="375.4470186498148" stroke="#475569" stroke-width="1.4" opacity="0.7" stroke-dasharray="6,4" marker-end="url(#arwG)"/>
+<text x="623.7110594052684" y="311.7235093249074" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="7.5">depends_on</text>
+<line x1="760.0003904081783" y1="500.65660755044195" x2="788.5786620058198" y2="625.8661964510691" stroke="#475569" stroke-width="1.4" opacity="0.7" stroke-dasharray="6,4" marker-end="url(#arwG)"/>
+<text x="768.0003904081783" y="492.65660755044195" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="7.5">depends_on</text>
+<line x1="708.5041243923085" y1="726.2764906750925" x2="628.4295867787972" y2="826.686784899116" stroke="#475569" stroke-width="1.4" opacity="0.7" stroke-dasharray="6,4" marker-end="url(#arwG)"/>
+<text x="716.5041243923085" y="718.2764906750925" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="7.5">depends_on</text>
+<line x1="500.0" y1="826.686784899116" x2="371.57041322120284" y2="826.686784899116" stroke="#475569" stroke-width="1.4" opacity="0.7" stroke-dasharray="6,4" marker-end="url(#arwG)"/>
+<text x="508.0" y="818.686784899116" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="7.5">depends_on</text>
+<line x1="291.4958756076915" y1="726.2764906750924" x2="211.4213379941802" y2="625.8661964510688" stroke="#475569" stroke-width="1.4" opacity="0.7" stroke-dasharray="6,4" marker-end="url(#arwG)"/>
+<text x="299.4958756076915" y="718.2764906750924" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="7.5">depends_on</text>
+<line x1="239.99960959182167" y1="500.6566075504419" x2="268.57788118946314" y2="375.44701864981494" stroke="#475569" stroke-width="1.4" opacity="0.7" stroke-dasharray="6,4" marker-end="url(#arwG)"/>
+<text x="247.99960959182167" y="492.6566075504419" fill="#475569" font-family="ui-monospace,Menlo,monospace" font-size="7.5">depends_on</text>
+<rect x="96" y="920" width="816" height="108" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="96" y="920" width="816" height="30" rx="10" fill="#f59e0b" opacity=".16"/>
+<rect x="96" y="938" width="816" height="12" fill="#f59e0b" opacity=".12"/>
+<text x="504.0" y="939.5" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="13" font-weight="700">WHAT THE MOTION MEANS — THE PROTOCOL, ANIMATED</text>
+<text x="110" y="964" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="10.5">THE SWEEP = DISPATCH ORDER — the cursor advances one round per 14.4°; probes brighten exactly when the protocol reaches them.</text>
+<text x="110" y="983" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">One full turn = all 25 rounds = one elicitation session. The static wedge shows rounds already dispatched at load (1–5).</text>
+<text x="110" y="1002" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">Dashed arrows = the series dependency graph — S2 can't fire before S1, and so on around the constellation.</text>
+<text x="110" y="1021" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">Star size &amp; density = probe share (open-ended count per series: 6 · 15 · 8 · 6 · 20 · 6 · 6).</text>
+<rect x="96" y="1056" width="816" height="92" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="96" y="1056" width="816" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="96" y="1072" width="816" height="12" fill="#f472b6" opacity=".12"/>
+<text x="504.0" y="1074.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">THE DISPATCH CONTRACT</text>
+<text x="110" y="1098" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">S1(3) → S2(5) → S3(4) → S4(3) → S5(4) → S6(3) → S7(3) = 25 rounds · 67 open-ended + 259 choice = 326 probes → artifacts → 6 export formats</text>
+<text x="110" y="1118" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">Series 5 (Technical Specifications) carries the heaviest probe load — implementation constraints dominate the elicitation.</text>
+<text x="110" y="1138" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">Artifacts accumulate across rounds; exports render the completed session in every format below.</text>
+<rect x="110" y="1176" width="92" height="26" rx="13" fill="#f59e0b" opacity=".13"/>
+<text x="156" y="1193" text-anchor="middle" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="9" font-weight="700">JSON</text>
+<rect x="248" y="1176" width="92" height="26" rx="13" fill="#f59e0b" opacity=".13"/>
+<text x="294" y="1193" text-anchor="middle" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="9" font-weight="700">YAML</text>
+<rect x="386" y="1176" width="92" height="26" rx="13" fill="#f59e0b" opacity=".13"/>
+<text x="432" y="1193" text-anchor="middle" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="9" font-weight="700">Markdown</text>
+<rect x="524" y="1176" width="92" height="26" rx="13" fill="#f59e0b" opacity=".13"/>
+<text x="570" y="1193" text-anchor="middle" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="9" font-weight="700">HTML</text>
+<rect x="662" y="1176" width="92" height="26" rx="13" fill="#f59e0b" opacity=".13"/>
+<text x="708" y="1193" text-anchor="middle" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="9" font-weight="700">System Prompt</text>
+<rect x="800" y="1176" width="92" height="26" rx="13" fill="#f59e0b" opacity=".13"/>
+<text x="846" y="1193" text-anchor="middle" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="9" font-weight="700">TXT</text>
+<text x="500" y="1224" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">6 EXPORT FORMATS — the constellation's output layer</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">the order of questions is not arbitrary — it is a dependency-respecting wave, and you are watching it fire</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 4 · experimental dynamics</text>
+</svg>

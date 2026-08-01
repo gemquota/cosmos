@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1600" height="1000" fill="url(#bgGrad)"/>
+<text x="800.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">FULL API MAP</text>
+<text x="800.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Every HTTP endpoint in the ecosystem — who serves it, what it does</text>
+<line x1="96.0" y1="76" x2="1504.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<rect x="110" y="120" width="420" height="190" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="110" y="120" width="420" height="32" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="110" y="140" width="420" height="12" fill="#10b981" opacity=".12"/>
+<text x="320.0" y="140.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">COSMOS DASHBOARD — port 9000 (start.sh)</text>
+<text x="124" y="166" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /                     — SPA dashboard</text>
+<text x="124" y="187" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /components/…         — static files</text>
+<text x="124" y="208" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /dashboard.html       — alt dashboard</text>
+<text x="124" y="229" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /start.sh             — launcher</text>
+<text x="124" y="250" fill="#475569" font-family="system-ui,sans-serif" font-size="9">python3 -m http.server 9000 — serves everything</text>
+<rect x="560" y="120" width="420" height="190" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="560" y="120" width="420" height="32" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="560" y="140" width="420" height="12" fill="#818cf8" opacity=".12"/>
+<text x="770.0" y="140.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">RSIS3 — dashboard (rsis/dashboard/app.py)</text>
+<text x="574" y="166" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /                  — HTML dashboard</text>
+<text x="574" y="187" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /api/status        — system status</text>
+<text x="574" y="208" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /api/trends        — trend data</text>
+<text x="574" y="229" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /api/velocity      — improvement velocity</text>
+<text x="574" y="250" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /health            — health check</text>
+<rect x="1010" y="120" width="480" height="190" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="1010" y="120" width="480" height="32" rx="10" fill="#f59e0b" opacity=".16"/>
+<rect x="1010" y="140" width="480" height="12" fill="#f59e0b" opacity=".12"/>
+<text x="1250.0" y="140.5" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="13" font-weight="700">SPACE — ports 8888 / 8899</text>
+<text x="1024" y="166" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET :8888/              — React web UI (serve-ui.mjs)</text>
+<text x="1024" y="187" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET :8899/              — meta viewer (serve-meta.mjs)</text>
+<text x="1024" y="208" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /docs-viewer.html   — documentation browser</text>
+<text x="1024" y="229" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">CLI: space run / export — non-HTTP paths</text>
+<text x="1024" y="250" fill="#475569" font-family="system-ui,sans-serif" font-size="9">requires npm run build in ui/ for web UI</text>
+<rect x="110" y="360" width="720" height="310" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="110" y="360" width="720" height="32" rx="10" fill="#22d3ee" opacity=".16"/>
+<rect x="110" y="380" width="720" height="12" fill="#22d3ee" opacity=".12"/>
+<text x="470.0" y="380.5" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13" font-weight="700">MYKB — port 8765 (server.py)</text>
+<text x="124" y="406" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /                              — wiki pages as HTML</text>
+<text x="124" y="428" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /files.json                     — recursive .md inventory</text>
+<text x="124" y="450" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /graph.json                     — knowledge graph adjacency</text>
+<text x="124" y="472" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /api/file?path=                 — raw markdown content</text>
+<text x="124" y="494" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /api/stats                      — system statistics</text>
+<text x="124" y="516" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /api/v2/search/hybrid?q=        — dense + sparse RRF search</text>
+<text x="124" y="538" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /api/v2/graph/topology          — KG topology export</text>
+<text x="124" y="560" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /api/v2/health/lint             — wiki lint health</text>
+<text x="124" y="582" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /api/v2/history/log/&lt;path&gt;      — file revision log</text>
+<text x="124" y="604" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">GET /api/v2/history/snapshot?path=&amp;ts= — time-travel</text>
+<text x="124" y="626" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">POST /api/v2/search/build           — rebuild search index</text>
+<rect x="860" y="360" width="630" height="310" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="860" y="360" width="630" height="32" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="860" y="380" width="630" height="12" fill="#f472b6" opacity=".12"/>
+<text x="1175.0" y="380.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">SENTRY HEARTBEAT — watches.json</text>
+<text x="874" y="406" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">{ "name": "COSMOS Dashboard", "port": 9000, "path": "/" }</text>
+<text x="874" y="430" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">{ "name": "SPACE Meta Viewer", "port": 8899, "path": "/" }</text>
+<text x="874" y="454" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">{ "name": "SPACE Web UI",      "port": 8888, "path": "/" }</text>
+<text x="874" y="478" fill="#475569" font-family="system-ui,sans-serif" font-size="9">Each watch: startCmd, startArgs, cwd for auto-restart</text>
+<text x="874" y="502" fill="#475569" font-family="system-ui,sans-serif" font-size="9">sentry.log — centralized, component-prefixed</text>
+<text x="874" y="526" fill="#475569" font-family="system-ui,sans-serif" font-size="9">Monitoring is external to components — zero coupling</text>
+<rect x="110" y="720" width="1380" height="110" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="110" y="720" width="1380" height="34" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="110" y="742" width="1380" height="12" fill="#818cf8" opacity=".12"/>
+<text x="800.0" y="741.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">INTEGRATION NOTES</text>
+<text x="124" y="768" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">MyKB is the only component with a dedicated always-on HTTP server — others are static or on-demand.</text>
+<text x="124" y="794" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">RSIS3 dashboard API is FastAPI-style (app.py) — status/trends/velocity drive the telemetry UI.</text>
+<text x="124" y="820" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">Port conflicts: MyKB server.py shares 8765 with RSIS3 rack server — known technical debt; run one at a time.</text>
+<rect x="110" y="850" width="1380" height="60" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="110" y="850" width="1380" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="110" y="866" width="1380" height="12" fill="#f472b6" opacity=".12"/>
+<text x="800.0" y="868.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700"></text>
+<text x="126" y="894" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">Orchestration entry: cosmos CLI → start.sh → ports + heartbeat → dashboard aggregates</text>
+<text x="800.0" y="930" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Generated from source analysis</text>
+</svg>

@@ -23,3 +23,7 @@ Each project page should have:
 ## Related
 
 - [[wiki/projects/triad-integration|Triad Integration]]
+
+## Concepts
+
+- [Triad Integration — RSIS3 + mykb + myrsikb](triad-integration.md) — Triad Integration — RSIS3 + mykb + myrsikb

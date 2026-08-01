@@ -11,3 +11,9 @@
 - [[wiki/frontend/index|Frontend]]
 - [[wiki/tooling/index|Tooling]]
 - [[wiki/frontend-frameworks/index|Frontend Frameworks]]
+
+## Concepts
+
+- [Drizzle ORM](drizzle.md) — Drizzle ORM
+- [Prisma](prisma.md) — Prisma
+- [TypeORM](typeorm.md) — TypeORM

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE OBSERVABILITY STACK — THE SYSTEM WATCHING ITSELF</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">From loop event to human decision and back — telemetry as a closed loop</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<rect x="170" y="128" width="580" height="78" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="170" y="128" width="580" height="28" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="170" y="144" width="580" height="12" fill="#818cf8" opacity=".12"/>
+<text x="460.0" y="146.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">EMIT</text>
+<text x="182" y="168" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">every loop iteration writes a pulse</text>
+<text x="790" y="156" text-anchor="start" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8">JSONL</text>
+<text x="790" y="172" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7">format</text>
+<line x1="500" y1="206" x2="500" y2="224" stroke="#818cf8" stroke-width="2" opacity="0.6" marker-end="url(#arwG)"/>
+<rect x="170" y="236" width="580" height="78" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="170" y="236" width="580" height="28" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="170" y="252" width="580" height="12" fill="#10b981" opacity=".12"/>
+<text x="460.0" y="254.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">BUFFER</text>
+<text x="182" y="276" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">rack/pulses/ · append-only</text>
+<text x="790" y="264" text-anchor="start" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8">disk</text>
+<text x="790" y="280" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7">format</text>
+<line x1="500" y1="314" x2="500" y2="332" stroke="#10b981" stroke-width="2" opacity="0.6" marker-end="url(#arwG)"/>
+<rect x="170" y="344" width="580" height="78" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="170" y="344" width="580" height="28" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="170" y="360" width="580" height="12" fill="#10b981" opacity=".12"/>
+<text x="460.0" y="362.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">SNAPSHOT</text>
+<text x="182" y="384" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">dashboard-data.json · summarized</text>
+<text x="790" y="372" text-anchor="start" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8">JSON</text>
+<text x="790" y="388" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7">format</text>
+<line x1="500" y1="422" x2="500" y2="440" stroke="#10b981" stroke-width="2" opacity="0.6" marker-end="url(#arwG)"/>
+<rect x="170" y="452" width="580" height="78" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="170" y="452" width="580" height="28" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="170" y="468" width="580" height="12" fill="#10b981" opacity=".12"/>
+<text x="460.0" y="470.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">RENDER</text>
+<text x="182" y="492" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">Chart.js · pulses / layers / success rate</text>
+<text x="790" y="480" text-anchor="start" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8">HTML</text>
+<text x="790" y="496" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7">format</text>
+<line x1="500" y1="530" x2="500" y2="548" stroke="#10b981" stroke-width="2" opacity="0.6" marker-end="url(#arwG)"/>
+<rect x="170" y="560" width="580" height="78" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="170" y="560" width="580" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="170" y="576" width="580" height="12" fill="#f472b6" opacity=".12"/>
+<text x="460.0" y="578.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READ</text>
+<text x="182" y="600" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">a human (or L3) reads the trend</text>
+<text x="790" y="588" text-anchor="start" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8">eyes</text>
+<text x="790" y="604" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7">format</text>
+<line x1="500" y1="638" x2="500" y2="656" stroke="#f472b6" stroke-width="2" opacity="0.6" marker-end="url(#arwG)"/>
+<rect x="170" y="668" width="580" height="78" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="170" y="668" width="580" height="28" rx="10" fill="#f59e0b" opacity=".16"/>
+<rect x="170" y="684" width="580" height="12" fill="#f59e0b" opacity=".12"/>
+<text x="460.0" y="686.5" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="13" font-weight="700">DECIDE</text>
+<text x="182" y="708" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">next spec / next strategy is written</text>
+<text x="790" y="696" text-anchor="start" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8">spec</text>
+<text x="790" y="712" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7">format</text>
+<line x1="500" y1="746" x2="500" y2="764" stroke="#f59e0b" stroke-width="2" opacity="0.6" marker-end="url(#arwG)"/>
+<rect x="170" y="776" width="580" height="78" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="170" y="776" width="580" height="28" rx="10" fill="#22d3ee" opacity=".16"/>
+<rect x="170" y="792" width="580" height="12" fill="#22d3ee" opacity=".12"/>
+<text x="460.0" y="794.5" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13" font-weight="700">RETURN</text>
+<text x="182" y="816" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">session runs · new pulses emitted</text>
+<text x="790" y="804" text-anchor="start" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8">loop</text>
+<text x="790" y="820" text-anchor="start" fill="#475569" font-family="system-ui,sans-serif" font-size="7">format</text>
+<path d="M 750 128 C 900 128, 900 824, 760 824" fill="none" stroke="#f472b6" stroke-width="1.8" stroke-dasharray="6,4" opacity=".8" marker-end="url(#arwH)"/>
+<text x="930" y="476.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="8.5">closes</text>
+<rect x="60" y="894" width="880" height="100" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="894" width="880" height="32" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="914" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="914.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">THE TWO READERS</text>
+<text x="74" y="940" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">HUMAN — dashboard reader → writes next spec in SPACE;  L3 — trend reader → evolves strategy directly.</text>
+<text x="74" y="964" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">Both close the loop; only L3 closes it without a human in the path.</text>
+<rect x="60" y="1171" width="880" height="93" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1171" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1187" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1189.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE STACK</text>
+<text x="72" y="1211" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">COLOUR = who does the stage — emit indigo, buffer/snapshot/render green, read pink, decide amber, return cyan.</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">EVERY STAGE NAMES ITS FORMAT — JSONL → disk → JSON → HTML → eyes → spec → loop: the stack is format transitions.</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">THE CLOSING ARC = the loop from reading back to emitting — observability is a cycle, not a log.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">the system watches itself the same way it works — through artifacts, not shared state</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

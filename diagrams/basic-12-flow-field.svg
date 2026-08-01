@@ -1,0 +1,339 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE FLOW FIELD — A VECTOR PORTRAIT</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">272 sampled states — each arrow is the resultant pull toward the loop that would consume an artifact born there</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<line x1="120" y1="945" x2="880" y2="945" stroke="#334155" stroke-width="1.4" marker-end="url(#arwG)" opacity=".9"/>
+<text x="500" y="974" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="10">X — THEORY ←———→ EXECUTION</text>
+<line x1="120" y1="160" x2="120" y2="945" stroke="#334155" stroke-width="1.4" marker-end="url(#arwG)" opacity=".9"/>
+<text x="96" y="545" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="700" transform="rotate(-90 96 545)">Y — SHORT-TERM ↑ · LONG-TERM ↓</text>
+<line x1="150" y1="200" x2="162" y2="213" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="150" y1="244" x2="167" y2="257" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="150" y1="288" x2="173" y2="298" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="150" y1="332" x2="176" y2="333" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="150" y1="376" x2="173" y2="368" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="150" y1="420" x2="167" y2="409" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="150" y1="464" x2="163" y2="453" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="150" y1="508" x2="160" y2="499" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="150" y1="552" x2="159" y2="544" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="150" y1="596" x2="159" y2="589" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="150" y1="640" x2="159" y2="634" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="150" y1="684" x2="159" y2="679" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="150" y1="728" x2="159" y2="723" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="150" y1="772" x2="159" y2="768" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="150" y1="816" x2="159" y2="811" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="150" y1="860" x2="158" y2="855" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="194" y1="200" x2="204" y2="218" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="194" y1="244" x2="209" y2="264" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="194" y1="288" x2="215" y2="303" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="194" y1="332" x2="220" y2="332" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="194" y1="376" x2="216" y2="362" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="194" y1="420" x2="209" y2="402" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="194" y1="464" x2="205" y2="449" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="194" y1="508" x2="203" y2="496" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="194" y1="552" x2="202" y2="543" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="194" y1="596" x2="203" y2="589" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="194" y1="640" x2="203" y2="634" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="194" y1="684" x2="203" y2="679" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="194" y1="728" x2="204" y2="724" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="194" y1="772" x2="204" y2="768" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="194" y1="816" x2="203" y2="811" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="194" y1="860" x2="203" y2="855" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="238" y1="200" x2="243" y2="220" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="238" y1="244" x2="244" y2="269" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="238" y1="288" x2="247" y2="312" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="238" y1="376" x2="247" y2="352" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="238" y1="420" x2="245" y2="397" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="238" y1="464" x2="244" y2="447" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="238" y1="508" x2="244" y2="495" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="238" y1="552" x2="245" y2="542" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="238" y1="596" x2="246" y2="589" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="238" y1="640" x2="247" y2="635" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="238" y1="684" x2="248" y2="680" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="238" y1="728" x2="248" y2="724" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="238" y1="772" x2="249" y2="768" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="238" y1="816" x2="249" y2="811" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="238" y1="860" x2="248" y2="855" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="282" y1="200" x2="281" y2="220" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="282" y1="244" x2="277" y2="269" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="282" y1="288" x2="269" y2="311" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="282" y1="376" x2="269" y2="354" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="282" y1="420" x2="278" y2="398" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="282" y1="464" x2="283" y2="447" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="282" y1="508" x2="285" y2="495" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="282" y1="552" x2="288" y2="543" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="282" y1="596" x2="290" y2="590" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="282" y1="640" x2="291" y2="636" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="282" y1="684" x2="293" y2="681" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="282" y1="728" x2="294" y2="726" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="282" y1="772" x2="294" y2="769" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="282" y1="816" x2="294" y2="811" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="282" y1="860" x2="293" y2="854" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="326" y1="200" x2="322" y2="217" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="326" y1="244" x2="316" y2="262" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="326" y1="288" x2="307" y2="303" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="326" y1="332" x2="302" y2="333" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="326" y1="376" x2="308" y2="364" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="326" y1="420" x2="317" y2="405" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="326" y1="464" x2="323" y2="451" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="326" y1="508" x2="327" y2="497" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="326" y1="552" x2="331" y2="544" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="326" y1="596" x2="334" y2="591" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="326" y1="640" x2="336" y2="638" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="326" y1="684" x2="337" y2="684" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="326" y1="728" x2="339" y2="728" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="326" y1="772" x2="340" y2="770" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="326" y1="816" x2="341" y2="812" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="326" y1="860" x2="339" y2="853" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="370" y1="200" x2="365" y2="214" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="370" y1="244" x2="361" y2="257" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="370" y1="288" x2="356" y2="298" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="370" y1="332" x2="354" y2="334" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="370" y1="376" x2="356" y2="371" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="370" y1="420" x2="361" y2="411" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="370" y1="464" x2="366" y2="454" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="370" y1="508" x2="371" y2="499" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="370" y1="552" x2="375" y2="546" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="370" y1="596" x2="378" y2="594" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="370" y1="640" x2="380" y2="641" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="370" y1="684" x2="382" y2="687" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="370" y1="728" x2="385" y2="731" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="370" y1="772" x2="388" y2="772" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="370" y1="816" x2="388" y2="811" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="370" y1="860" x2="386" y2="851" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="414" y1="200" x2="410" y2="212" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="414" y1="244" x2="408" y2="255" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="414" y1="288" x2="405" y2="296" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="414" y1="332" x2="403" y2="335" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="414" y1="376" x2="404" y2="374" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="414" y1="420" x2="407" y2="414" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="414" y1="464" x2="411" y2="456" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="414" y1="508" x2="415" y2="501" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="414" y1="552" x2="420" y2="548" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="414" y1="596" x2="422" y2="598" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="414" y1="640" x2="423" y2="645" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="414" y1="684" x2="425" y2="691" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="414" y1="728" x2="430" y2="736" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="414" y1="772" x2="435" y2="777" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="414" y1="816" x2="438" y2="811" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="414" y1="860" x2="433" y2="847" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="458" y1="200" x2="457" y2="211" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="458" y1="244" x2="456" y2="254" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="458" y1="288" x2="454" y2="297" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="458" y1="332" x2="453" y2="337" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="458" y1="376" x2="451" y2="376" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="458" y1="420" x2="455" y2="414" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="458" y1="464" x2="459" y2="457" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="458" y1="508" x2="462" y2="503" stroke="#f59e0b" stroke-width="1.5" opacity=".5" marker-end="url(#arwS)"/>
+<line x1="458" y1="552" x2="465" y2="552" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="458" y1="596" x2="465" y2="601" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="458" y1="640" x2="465" y2="648" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="458" y1="684" x2="466" y2="696" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="458" y1="728" x2="470" y2="743" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="458" y1="772" x2="480" y2="786" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="458" y1="816" x2="483" y2="810" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="458" y1="860" x2="474" y2="840" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="502" y1="200" x2="504" y2="211" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="502" y1="244" x2="504" y2="254" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="502" y1="288" x2="505" y2="297" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="502" y1="332" x2="507" y2="338" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="502" y1="376" x2="509" y2="377" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="502" y1="420" x2="508" y2="417" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="502" y1="464" x2="507" y2="460" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="502" y1="508" x2="508" y2="505" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="502" y1="552" x2="509" y2="553" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="502" y1="596" x2="507" y2="602" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="502" y1="640" x2="505" y2="650" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="502" y1="684" x2="505" y2="698" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="502" y1="728" x2="504" y2="748" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="502" y1="772" x2="503" y2="798" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="502" y1="860" x2="503" y2="834" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="546" y1="200" x2="551" y2="211" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="546" y1="244" x2="553" y2="254" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="546" y1="288" x2="555" y2="296" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="546" y1="332" x2="556" y2="336" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="546" y1="376" x2="556" y2="376" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="546" y1="420" x2="555" y2="417" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="546" y1="464" x2="553" y2="460" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="546" y1="508" x2="553" y2="504" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="546" y1="552" x2="553" y2="552" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="546" y1="596" x2="549" y2="602" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="546" y1="640" x2="546" y2="649" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="546" y1="684" x2="543" y2="697" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="546" y1="728" x2="538" y2="744" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="546" y1="772" x2="528" y2="785" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="546" y1="816" x2="521" y2="809" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="546" y1="860" x2="532" y2="838" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="590" y1="200" x2="597" y2="213" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="590" y1="244" x2="600" y2="255" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="590" y1="288" x2="603" y2="296" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="590" y1="332" x2="605" y2="335" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="590" y1="376" x2="604" y2="374" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="590" y1="420" x2="601" y2="415" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="590" y1="464" x2="598" y2="458" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="590" y1="508" x2="596" y2="502" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="590" y1="552" x2="596" y2="549" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="590" y1="596" x2="592" y2="602" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="590" y1="640" x2="588" y2="648" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="590" y1="684" x2="585" y2="693" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="590" y1="728" x2="580" y2="737" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="590" y1="772" x2="574" y2="776" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="590" y1="816" x2="571" y2="810" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="590" y1="860" x2="576" y2="846" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="634" y1="200" x2="642" y2="216" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="634" y1="244" x2="647" y2="259" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="634" y1="288" x2="652" y2="299" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="634" y1="332" x2="655" y2="335" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="634" y1="376" x2="652" y2="370" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="634" y1="420" x2="647" y2="411" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="634" y1="464" x2="642" y2="454" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="634" y1="508" x2="639" y2="500" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="634" y1="552" x2="638" y2="546" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="634" y1="596" x2="639" y2="597" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="634" y1="640" x2="631" y2="646" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="634" y1="684" x2="629" y2="691" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="634" y1="728" x2="625" y2="733" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="634" y1="772" x2="622" y2="772" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="634" y1="816" x2="622" y2="809" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="634" y1="860" x2="624" y2="848" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="678" y1="200" x2="685" y2="219" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="678" y1="244" x2="691" y2="265" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="678" y1="288" x2="699" y2="304" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="678" y1="332" x2="704" y2="334" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="678" y1="376" x2="700" y2="363" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="678" y1="420" x2="691" y2="404" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="678" y1="464" x2="685" y2="450" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="678" y1="508" x2="681" y2="497" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="678" y1="552" x2="679" y2="544" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="678" y1="596" x2="676" y2="591" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="678" y1="640" x2="675" y2="645" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="678" y1="684" x2="675" y2="690" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="678" y1="728" x2="673" y2="732" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="678" y1="772" x2="672" y2="767" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="678" y1="816" x2="673" y2="807" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="678" y1="860" x2="672" y2="848" stroke="#22d3ee" stroke-width="1.5" opacity=".5" marker-end="url(#arwM)"/>
+<line x1="722" y1="200" x2="724" y2="223" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="722" y1="244" x2="728" y2="269" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="722" y1="288" x2="734" y2="311" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="722" y1="376" x2="735" y2="353" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="722" y1="420" x2="728" y2="396" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="722" y1="464" x2="724" y2="447" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="722" y1="508" x2="722" y2="496" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="722" y1="552" x2="720" y2="543" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="722" y1="596" x2="717" y2="592" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="722" y1="640" x2="720" y2="646" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="722" y1="684" x2="724" y2="691" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="722" y1="728" x2="729" y2="732" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="722" y1="772" x2="729" y2="766" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="722" y1="816" x2="724" y2="805" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="722" y1="860" x2="721" y2="847" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="766" y1="200" x2="761" y2="223" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="766" y1="244" x2="760" y2="269" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="766" y1="288" x2="756" y2="312" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="766" y1="376" x2="755" y2="352" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="766" y1="420" x2="758" y2="395" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="766" y1="464" x2="760" y2="446" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="766" y1="508" x2="761" y2="496" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="766" y1="552" x2="760" y2="544" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="766" y1="596" x2="759" y2="595" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="766" y1="640" x2="763" y2="647" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="766" y1="684" x2="768" y2="693" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="766" y1="728" x2="775" y2="735" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="766" y1="772" x2="779" y2="767" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="766" y1="816" x2="772" y2="802" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="766" y1="860" x2="767" y2="845" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="810" y1="200" x2="800" y2="220" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="810" y1="244" x2="795" y2="265" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="810" y1="288" x2="789" y2="303" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="810" y1="332" x2="784" y2="333" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="810" y1="376" x2="788" y2="363" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="810" y1="420" x2="793" y2="402" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="810" y1="464" x2="799" y2="450" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="810" y1="508" x2="801" y2="498" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="810" y1="552" x2="801" y2="546" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="810" y1="596" x2="801" y2="597" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="810" y1="640" x2="804" y2="648" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="810" y1="684" x2="807" y2="696" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="810" y1="728" x2="813" y2="743" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="810" y1="816" x2="812" y2="795" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="810" y1="860" x2="808" y2="842" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="854" y1="200" x2="842" y2="215" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="854" y1="244" x2="836" y2="259" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="854" y1="288" x2="830" y2="299" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="854" y1="332" x2="828" y2="334" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="854" y1="376" x2="830" y2="369" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="854" y1="420" x2="836" y2="410" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="854" y1="464" x2="840" y2="454" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="854" y1="508" x2="843" y2="501" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="854" y1="552" x2="843" y2="549" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="854" y1="596" x2="844" y2="597" stroke="#818cf8" stroke-width="1.5" opacity=".5" marker-end="url(#arwR)"/>
+<line x1="854" y1="640" x2="844" y2="647" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="854" y1="684" x2="844" y2="695" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="854" y1="728" x2="839" y2="741" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="854" y1="816" x2="841" y2="797" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<line x1="854" y1="860" x2="846" y2="843" stroke="#10b981" stroke-width="1.5" opacity=".5" marker-end="url(#arwD)"/>
+<circle cx="250" cy="330" r="20" fill="#f59e0b" opacity=".92" stroke="#0b1120" stroke-width="2"/>
+<circle cx="250" cy="330" r="30" fill="none" stroke="#f59e0b" stroke-width="1" opacity=".5"/>
+<text x="250" y="334" text-anchor="middle" fill="#0b1120" font-family="system-ui,sans-serif" font-size="9" font-weight="800">SPACE</text>
+<text x="250" y="304" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="10.5" font-weight="800">RRP ideation · 326 probes</text>
+<text x="250" y="372" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">probe answers · spec drafts</text>
+<circle cx="750" cy="330" r="20" fill="#818cf8" opacity=".92" stroke="#0b1120" stroke-width="2"/>
+<circle cx="750" cy="330" r="30" fill="none" stroke="#818cf8" stroke-width="1" opacity=".5"/>
+<text x="750" y="334" text-anchor="middle" fill="#0b1120" font-family="system-ui,sans-serif" font-size="9" font-weight="800">RSIS3</text>
+<text x="750" y="304" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="10.5" font-weight="800">engine · evaluator gate</text>
+<text x="750" y="372" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">candidates · pulses · lessons</text>
+<circle cx="500" cy="810" r="20" fill="#22d3ee" opacity=".92" stroke="#0b1120" stroke-width="2"/>
+<circle cx="500" cy="810" r="30" fill="none" stroke="#22d3ee" stroke-width="1" opacity=".5"/>
+<text x="500" y="814" text-anchor="middle" fill="#0b1120" font-family="system-ui,sans-serif" font-size="9" font-weight="800">MYKB</text>
+<text x="500" y="784" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="10.5" font-weight="800">memory · daemon :8765</text>
+<text x="500" y="852" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">captures · KG edges · index builds</text>
+<circle cx="830" cy="770" r="20" fill="#10b981" opacity=".92" stroke="#0b1120" stroke-width="2"/>
+<circle cx="830" cy="770" r="30" fill="none" stroke="#10b981" stroke-width="1" opacity=".5"/>
+<text x="830" y="774" text-anchor="middle" fill="#0b1120" font-family="system-ui,sans-serif" font-size="9" font-weight="800">DASH</text>
+<text x="830" y="744" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="10.5" font-weight="800">telemetry sink</text>
+<text x="830" y="812" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">dashboard-data.json</text>
+<path d="M 310,340 C 420,295 590,295 700,340" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="7,5" opacity=".65" marker-end="url(#arwS)"/>
+<circle r="5" fill="#fff"><animateMotion dur="10s" repeatCount="indefinite" path="M 310,340 C 420,295 590,295 700,340"/></circle>
+<text x="505" y="304" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">spec → implementation · evaluator gate</text>
+<path d="M 720,380 C 770,560 630,700 530,780" fill="none" stroke="#818cf8" stroke-width="2" stroke-dasharray="7,5" opacity=".65" marker-end="url(#arwR)"/>
+<circle r="5" fill="#fff"><animateMotion dur="14s" repeatCount="indefinite" path="M 720,380 C 770,560 630,700 530,780"/></circle>
+<text x="681" y="606" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">lessons → consolidation</text>
+<path d="M 470,780 C 370,650 450,490 680,370" fill="none" stroke="#22d3ee" stroke-width="2" stroke-dasharray="7,5" opacity=".65" marker-end="url(#arwM)"/>
+<circle r="5" fill="#fff"><animateMotion dur="9s" repeatCount="indefinite" path="M 470,780 C 370,650 450,490 680,370"/></circle>
+<text x="451" y="560" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">context retrieval · :8765</text>
+<path d="M 768,370 C 800,480 812,630 822,740" fill="none" stroke="#818cf8" stroke-width="2" stroke-dasharray="7,5" opacity=".65" marker-end="url(#arwR)"/>
+<circle r="5" fill="#fff"><animateMotion dur="5s" repeatCount="indefinite" path="M 768,370 C 800,480 812,630 822,740"/></circle>
+<text x="803" y="544" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">pulses → dashboard-data.json</text>
+<path d="M 812,728 C 780,680 700,630 480,460" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="7,5" opacity=".65" marker-end="url(#arwD)"/>
+<circle r="5" fill="#fff"><animateMotion dur="7s" repeatCount="indefinite" path="M 812,728 C 780,680 700,630 480,460"/></circle>
+<text x="655" y="700" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">dashboard → launch SPACE web UI</text>
+<rect x="96" y="1000" width="816" height="200" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="96" y="1000" width="816" height="30" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="96" y="1018" width="816" height="12" fill="#f472b6" opacity=".12"/>
+<text x="504.0" y="1019.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE VECTOR FIELD</text>
+<text x="110" y="1044" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">ARROW = the resultant pull at that state — direction is the basin that wins, length is pull strength.</text>
+<text x="110" y="1062" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">COLOUR = dominant basin — amber SPACE ideation · indigo RSIS3 execution · cyan MYKB memory · green DASH telemetry.</text>
+<text x="110" y="1080" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">COMET = a real artifact in transit along the named route (spec → implementation · lessons → consolidation · retrieval :8765 · dashboard → launch SPACE web UI).</text>
+<text x="110" y="1098" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">Between the four orbs the field is contested — that contested band is the separatrix, where the evaluator gate decides.</text>
+<text x="110" y="1116" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">This is the same basin geometry as the attractor portrait, drawn as a continuous field instead of a simulation.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">a phase portrait without the trajectories — every possible artifact state, and the direction it is being pulled</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 5 · dynamical portraits</text>
+</svg>

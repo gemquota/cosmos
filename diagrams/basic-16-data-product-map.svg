@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE DATA PRODUCT MAP — EVERYTHING THE SYSTEM PRODUCES</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Eight artifacts that actually flow between components — who makes them, who consumes them, what format</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<rect x="60" y="130" width="880" height="36" rx="8" fill="#f472b6" opacity=".12" stroke="#334155"/>
+<text x="185.0" y="152.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">PRODUCT</text>
+<text x="410.0" y="152.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">PRODUCER</text>
+<text x="625.0" y="152.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">CONSUMER</text>
+<text x="840.0" y="152.0" text-anchor="middle" fill="#f472b6" font-family="ui-monospace,Menlo,monospace" font-size="9.5">FORMAT</text>
+<rect x="60" y="166" width="880" height="40" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="70" y="189.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">PROBE ANSWERS</text>
+<text x="320" y="189.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">SPACE · RRP</text>
+<text x="520" y="189.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">SPACE (session state)</text>
+<text x="750" y="189.5" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">JSON</text>
+<rect x="60" y="206" width="880" height="40" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="70" y="229.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">SPEC DRAFTS</text>
+<text x="320" y="229.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">SPACE · exports/</text>
+<text x="520" y="229.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">RSIS3 · L2 loop</text>
+<text x="750" y="229.5" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">MD/JSON/YAML/HTML/XML/TXT</text>
+<rect x="60" y="246" width="880" height="40" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="70" y="269.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">IMPROVEMENT CANDIDATES</text>
+<text x="320" y="269.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">RSIS3 · L2</text>
+<text x="520" y="269.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">Evaluator (stdin)</text>
+<text x="750" y="269.5" fill="#818cf8" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">JSON · SHA-256</text>
+<rect x="60" y="286" width="880" height="40" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="70" y="309.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">EVAL VERDICTS</text>
+<text x="320" y="309.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">Evaluator (immutable)</text>
+<text x="520" y="309.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">RSIS3 · L2 loop</text>
+<text x="750" y="309.5" fill="#f472b6" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">JSON (stdout)</text>
+<rect x="60" y="326" width="880" height="40" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="70" y="349.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">PULSES</text>
+<text x="320" y="349.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">RSIS3 · L1/L3</text>
+<text x="520" y="349.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">Rack → dashboard</text>
+<text x="750" y="349.5" fill="#10b981" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">JSONL</text>
+<rect x="60" y="366" width="880" height="40" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="70" y="389.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">LESSONS</text>
+<text x="320" y="389.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">RSIS3 · L3</text>
+<text x="520" y="389.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">MyKB · wiki writer</text>
+<text x="750" y="389.5" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">Markdown</text>
+<rect x="60" y="406" width="880" height="40" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="70" y="429.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">KG EDGES</text>
+<text x="320" y="429.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">MyKB · graph builder</text>
+<text x="520" y="429.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">RSIS3 · retrieval :8765</text>
+<text x="750" y="429.5" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">graph.json</text>
+<rect x="60" y="446" width="880" height="40" fill="#0f172a" stroke="#334155" stroke-width="0.7"/>
+<text x="70" y="469.5" fill="#94a3b8" font-family="ui-monospace,Menlo,monospace" font-size="8.5">DASHBOARD-DATA.JSON</text>
+<text x="320" y="469.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">Rack (RSIS3)</text>
+<text x="520" y="469.5" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8.5">Dashboard · Chart.js</text>
+<text x="750" y="469.5" fill="#10b981" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700">JSON</text>
+<rect x="60" y="560" width="880" height="150" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="560" width="880" height="32" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="60" y="580" width="880" height="12" fill="#10b981" opacity=".12"/>
+<text x="500.0" y="580.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">FORMAT FAMILIES</text>
+<text x="74" y="606" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">JSON is the machine spine — candidates, verdicts, telemetry, dashboard data all speak it.</text>
+<text x="74" y="632" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Markdown is the human spine — specs, lessons, and wiki pages are readable and diffable.</text>
+<text x="74" y="658" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">SPACE exports one spec in six formats; MyKB archives them; RSIS3 consumes the canonical one.</text>
+<rect x="60" y="740" width="880" height="150" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="740" width="880" height="32" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="60" y="760" width="880" height="12" fill="#818cf8" opacity=".12"/>
+<text x="500.0" y="760.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">WHO PAYS FOR EACH PRODUCT</text>
+<text x="74" y="786" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Every producer has exactly one primary consumer — except pulses, which fan out to the rack, the dashboard, and L3 trend detection.</text>
+<text x="74" y="812" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Every consumer is coupled to a format contract: changing a format is an interface change, not a code change.</text>
+<text x="74" y="838" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">The only bidirectional pair: candidates (RSIS3 → evaluator) and verdicts (evaluator → RSIS3) — one subprocess, two JSON messages.</text>
+<rect x="60" y="1171" width="880" height="93" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1171" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1187" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1189.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE MAP</text>
+<text x="72" y="1211" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">COLOURED FORMAT CELLS = producer palette — who owns the schema: SPACE amber, RSIS3 indigo, MyKB cyan, dashboard green, evaluator pink.</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">READ ACROSS a row as a contract: producer → consumer with a format that neither side may silently change.</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">The eight rows are the system's entire observable surface — nothing else crosses a component boundary.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">if a reviewer asks 'what does this system actually emit?', the answer is exactly these eight products</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

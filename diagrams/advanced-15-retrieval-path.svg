@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE RETRIEVAL PATH — FROM QUESTION TO CONTEXT</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">One L1 query, five stages inside MyKB, one ranked context window returned on :8765</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<rect x="180" y="128" width="640" height="92" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="180" y="128" width="640" height="30" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="180" y="146" width="640" height="12" fill="#818cf8" opacity=".12"/>
+<text x="500.0" y="147.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">1 · QUERY</text>
+<text x="192" y="170" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">L1 needs context for the next tool call</text>
+<line x1="500" y1="220" x2="500" y2="238" stroke="#22d3ee" stroke-width="2" opacity="0.65" marker-end="url(#arwM)"/>
+<rect x="180" y="250" width="640" height="92" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="180" y="250" width="640" height="30" rx="10" fill="#22d3ee" opacity=".16"/>
+<rect x="180" y="268" width="640" height="12" fill="#22d3ee" opacity=".12"/>
+<text x="500.0" y="269.5" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13" font-weight="700">2 · TOKENIZE</text>
+<text x="192" y="292" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">lowercase · strip noise · split terms</text>
+<line x1="500" y1="342" x2="500" y2="360" stroke="#22d3ee" stroke-width="2" opacity="0.65" marker-end="url(#arwM)"/>
+<rect x="180" y="372" width="640" height="92" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="180" y="372" width="640" height="30" rx="10" fill="#22d3ee" opacity=".16"/>
+<rect x="180" y="390" width="640" height="12" fill="#22d3ee" opacity=".12"/>
+<text x="500.0" y="391.5" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13" font-weight="700">3 · SCORE</text>
+<text x="192" y="414" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">TF-IDF against the wiki index (48 domains)</text>
+<line x1="500" y1="464" x2="500" y2="482" stroke="#22d3ee" stroke-width="2" opacity="0.65" marker-end="url(#arwM)"/>
+<rect x="180" y="494" width="640" height="92" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="180" y="494" width="640" height="30" rx="10" fill="#22d3ee" opacity=".16"/>
+<rect x="180" y="512" width="640" height="12" fill="#22d3ee" opacity=".12"/>
+<text x="500.0" y="513.5" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13" font-weight="700">4 · RANK</text>
+<text x="192" y="536" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">top-k pages + KG edges nearby</text>
+<line x1="500" y1="586" x2="500" y2="604" stroke="#22d3ee" stroke-width="2" opacity="0.65" marker-end="url(#arwM)"/>
+<rect x="180" y="616" width="640" height="92" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="180" y="616" width="640" height="30" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="180" y="634" width="640" height="12" fill="#818cf8" opacity=".12"/>
+<text x="500.0" y="635.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">5 · RETURN</text>
+<text x="192" y="658" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">ranked context window → L1, on-demand</text>
+<rect x="60" y="744" width="880" height="120" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="744" width="880" height="32" rx="10" fill="#22d3ee" opacity=".16"/>
+<rect x="60" y="764" width="880" height="12" fill="#22d3ee" opacity=".12"/>
+<text x="500.0" y="764.5" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13" font-weight="700">WHAT THE INDEX KNOWS</text>
+<text x="74" y="790" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">search_index.json — term → postings over the wiki corpus; built by .wiki-daemon, queried over HTTP :8765</text>
+<text x="74" y="816" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">The temporal engine adds time: queries can target a snapshot, not just the latest state of the corpus.</text>
+<text x="74" y="842" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">Retrieval is read-only — L1 gets a window, not a lease; the corpus only changes via capture (A-17).</text>
+<rect x="60" y="800" width="880" height="100" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="800" width="880" height="32" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="820" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="820.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">WHY RETRIEVAL IS THE HOT PATH</text>
+<text x="74" y="846" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">It is the only on-demand interface between memory and action — every L1 step that needs context crosses it.</text>
+<text x="74" y="870" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Latency here is L1 latency: a slow daemon slows the action loop, which is why :8765 must be the always-on server.</text>
+<rect x="60" y="1171" width="880" height="93" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1171" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1187" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1189.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE PATH</text>
+<text x="72" y="1211" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">COLOUR = who does the stage: indigo when L1 asks/consumes, cyan when the daemon computes.</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">THE PIPE IS A CONTRACT: query in, ranked window out — both JSON over :8765, both logged for the session record.</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">RETRIEVAL is deliberately read-only; the mirror write path (capture) is the only way the corpus grows.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">memory is only useful at the speed of the action loop — this pipe is that speed</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

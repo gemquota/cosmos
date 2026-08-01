@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1400" height="900" fill="url(#bgGrad)"/>
+<text x="700.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">RSIS3 — THREE-LOOP ARCHITECTURE</text>
+<text x="700.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">L1 acts • L2 improves (evaluator-gated) • L3 evolves — with budgets, telemetry, and recovery</text>
+<line x1="84.0" y1="76" x2="1316.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<rect x="110" y="130" width="900" height="200" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="110" y="130" width="900" height="34" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="110" y="152" width="900" height="12" fill="#818cf8" opacity=".12"/>
+<text x="560.0" y="151.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">L3 — Cross-Session Evolution</text>
+<text x="124" y="178" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Memory consolidation: git → knowledge graph → vector embeddings</text>
+<text x="124" y="204" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Strategy &amp; meta-parameter evolution</text>
+<text x="124" y="230" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Redundancy refinement + pruning</text>
+<text x="124" y="256" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">L2 heuristic evolution from session history</text>
+<text x="124" y="282" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">Plateau: 20 sessions or 24h timeout (L3Config)</text>
+<text x="1070" y="154" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11" font-style="italic">hours / days</text>
+<text x="1070" y="176" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5" font-style="italic">timescale</text>
+<rect x="110" y="390" width="900" height="200" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="110" y="390" width="900" height="34" rx="10" fill="#22d3ee" opacity=".16"/>
+<rect x="110" y="412" width="900" height="12" fill="#22d3ee" opacity=".12"/>
+<text x="560.0" y="411.5" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13" font-weight="700">L2 — Per-Session Improvement</text>
+<text x="124" y="438" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Code generation &amp; architecture modification</text>
+<text x="124" y="464" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Prompt/tool tuning</text>
+<text x="124" y="490" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">IMMUTABLE AI evaluator gates every candidate</text>
+<text x="124" y="516" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">Max 5 attempts / 30min session (L2Config)</text>
+<text x="1070" y="414" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11" font-style="italic">minutes</text>
+<text x="1070" y="436" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5" font-style="italic">timescale</text>
+<rect x="110" y="650" width="900" height="200" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="110" y="650" width="900" height="34" rx="10" fill="#f59e0b" opacity=".16"/>
+<rect x="110" y="672" width="900" height="12" fill="#f59e0b" opacity=".12"/>
+<text x="560.0" y="671.5" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="13" font-weight="700">L1 — Per-Task Action Loop</text>
+<text x="124" y="698" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Tool calls, observations, retries</text>
+<text x="124" y="724" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Immediate feedback + checkpoint before mutation</text>
+<text x="124" y="750" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">Max 10 tool calls / step, 120s timeout, 3 retries (L1Config)</text>
+<text x="1070" y="674" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11" font-style="italic">seconds</text>
+<text x="1070" y="696" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5" font-style="italic">timescale</text>
+<line x1="1010" y1="330" x2="1010" y2="388" stroke="#818cf8" stroke-width="2.5" opacity="0.6" marker-end="url(#arwR)"/>
+<line x1="1010" y1="590" x2="1010" y2="648" stroke="#22d3ee" stroke-width="2.5" opacity="0.6" marker-end="url(#arwM)"/>
+<path d="M 1100 850 C 1150 850, 1150 170, 1100 170" stroke="#475569" stroke-width="1.5" fill="none" opacity="0.85" stroke-dasharray="6,4" marker-end="url(#arwG)"/>
+<text x="1130" y="520" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">feedback propagates upward</text>
+<rect x="1160" y="130" width="220" height="200" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="1160" y="130" width="220" height="34" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="1160" y="152" width="220" height="12" fill="#f472b6" opacity=".12"/>
+<text x="1270.0" y="151.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">GOVERNANCE</text>
+<text x="1174" y="178" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">Budgets &amp; deadlines</text>
+<text x="1174" y="202" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">Resource enforcer</text>
+<text x="1174" y="226" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">Recovery manager</text>
+<text x="1174" y="250" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">Checkpoint rollback</text>
+<text x="1174" y="274" fill="#475569" font-family="system-ui,sans-serif" font-size="9">Triple recovery: checkpoint → HITL → fallback</text>
+<rect x="1160" y="390" width="220" height="200" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="1160" y="390" width="220" height="34" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="1160" y="412" width="220" height="12" fill="#10b981" opacity=".12"/>
+<text x="1270.0" y="411.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">TELEMETRY</text>
+<text x="1174" y="438" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">TelemetryCollector</text>
+<text x="1174" y="462" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">JSONL event buffer</text>
+<text x="1174" y="486" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">TelemetryExtrapolator</text>
+<text x="1174" y="510" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">Velocity reports</text>
+<text x="1174" y="534" fill="#475569" font-family="system-ui,sans-serif" font-size="9">Feeds L3 trend detection</text>
+<rect x="1160" y="650" width="220" height="200" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="1160" y="650" width="220" height="34" rx="10" fill="#f59e0b" opacity=".16"/>
+<rect x="1160" y="672" width="220" height="12" fill="#f59e0b" opacity=".12"/>
+<text x="1270.0" y="671.5" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="13" font-weight="700">MEMORY</text>
+<text x="1174" y="698" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">KnowledgeGraph</text>
+<text x="1174" y="722" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">VectorStore</text>
+<text x="1174" y="746" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">MemoryManager</text>
+<text x="1174" y="770" fill="#475569" font-family="system-ui,sans-serif" font-size="9">.rsis/knowledge_graph.json</text>
+<text x="1174" y="794" fill="#475569" font-family="system-ui,sans-serif" font-size="9">.rsis/vectors/</text>
+<text x="700.0" y="890" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Generated from source analysis</text>
+</svg>

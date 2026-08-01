@@ -20,3 +20,11 @@ A synthesis connects ideas from multiple sources or concepts into a coherent con
 
 - [[wiki/syntheses/knowledge-system|Knowledge System]]
 - [[wiki/syntheses/weekly-review|Weekly Review]]
+
+## Concepts
+
+- [Evidence and Provenance: Open Threads](evidence-and-provenance.md) — Evidence and Provenance: Open Threads
+- [Knowledge Acquisition Workflow: Open Threads](knowledge-acquisition-workflow.md) — Knowledge Acquisition Workflow: Open Threads
+- [Knowledge Synthesis](knowledge-synthesis.md) — Knowledge Synthesis
+- [Knowledge System Overview](knowledge-system.md) — Knowledge System Overview
+- [Weekly Review](weekly-review.md) — Weekly Review

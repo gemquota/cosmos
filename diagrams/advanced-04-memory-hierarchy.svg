@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1400" height="900" fill="url(#bgGrad)"/>
+<text x="700.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">MEMORY HIERARCHY</text>
+<text x="700.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Four tiers from ephemeral runtime state to durable, queryable knowledge</text>
+<line x1="84.0" y1="76" x2="1316.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<rect x="110" y="120" width="620" height="150" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="110" y="120" width="620" height="34" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="110" y="142" width="620" height="12" fill="#f472b6" opacity=".12"/>
+<text x="420.0" y="141.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">TIER 0 — Ephemeral Runtime</text>
+<text x="124" y="168" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">L1 tool calls &amp; in-loop context</text>
+<text x="124" y="190" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">TelemetryCollector in-memory buffer</text>
+<text x="124" y="212" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">Session state (SPACE SessionState)</text>
+<text x="124" y="234" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">Lifetime: seconds — lost on process exit</text>
+<text x="770" y="150" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5" font-style="italic">fast / volatile</text>
+<text x="770" y="164" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="10">▼</text>
+<text x="770" y="250" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5" font-style="italic">slow / durable</text>
+<rect x="110" y="310" width="620" height="150" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="110" y="310" width="620" height="34" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="110" y="332" width="620" height="12" fill="#818cf8" opacity=".12"/>
+<text x="420.0" y="331.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">TIER 1 — Session Files (.rsis/)</text>
+<text x="124" y="358" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">knowledge_graph.json — improvement nodes</text>
+<text x="124" y="380" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">vectors/index.json — semantic embeddings</text>
+<text x="124" y="402" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">telemetry/*.jsonl — event log</text>
+<text x="124" y="424" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">checkpoints — git commits for rollback</text>
+<text x="124" y="446" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">Lifetime: sessions — durable on disk, per-component</text>
+<text x="770" y="340" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5" font-style="italic">fast / volatile</text>
+<text x="770" y="354" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="10">▼</text>
+<text x="770" y="440" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5" font-style="italic">slow / durable</text>
+<rect x="110" y="500" width="620" height="170" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="110" y="500" width="620" height="34" rx="10" fill="#22d3ee" opacity=".16"/>
+<rect x="110" y="522" width="620" height="12" fill="#22d3ee" opacity=".12"/>
+<text x="420.0" y="521.5" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13" font-weight="700">TIER 2 — Wiki Knowledge (mykb/)</text>
+<text x="124" y="548" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">wiki/ — 2,360+ pages across 48 domains</text>
+<text x="124" y="570" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">.wiki-daemon/ — search_index.json, graph.json</text>
+<text x="124" y="592" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">daily/ — daily notes, raw/ — inbox</text>
+<text x="124" y="614" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">templates/ — note templates, hooks/ — capture</text>
+<text x="124" y="636" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">Lifetime: indefinite — git-tracked, time-travel capable</text>
+<text x="770" y="530" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5" font-style="italic">fast / volatile</text>
+<text x="770" y="544" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="10">▼</text>
+<text x="770" y="650" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5" font-style="italic">slow / durable</text>
+<rect x="110" y="710" width="620" height="150" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="110" y="710" width="620" height="34" rx="10" fill="#f59e0b" opacity=".16"/>
+<rect x="110" y="732" width="620" height="12" fill="#f59e0b" opacity=".12"/>
+<text x="420.0" y="731.5" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="13" font-weight="700">TIER 3 — External &amp; Exported</text>
+<text x="124" y="758" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">space/exports/ — specs in 6 formats</text>
+<text x="124" y="780" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">space/prompt-framework/ — 326 probes</text>
+<text x="124" y="802" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">GitHub Pages — deployed dashboards</text>
+<text x="124" y="824" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">Lifetime: indefinite — shared with the world</text>
+<text x="770" y="740" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5" font-style="italic">fast / volatile</text>
+<text x="770" y="754" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="10">▼</text>
+<text x="770" y="840" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="8.5" font-style="italic">slow / durable</text>
+<rect x="800" y="120" width="500" height="170" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="800" y="120" width="500" height="34" rx="10" fill="#22d3ee" opacity=".16"/>
+<rect x="800" y="142" width="500" height="12" fill="#22d3ee" opacity=".12"/>
+<text x="1050.0" y="141.5" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READS (knowledge in)</text>
+<text x="814" y="168" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">RSIS3 → MemoryManager.get_relevant_patterns()</text>
+<text x="814" y="192" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">RSIS3 → MyKB /api/v2/search/hybrid</text>
+<text x="814" y="216" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">SPACE → wiki context for question routing</text>
+<text x="814" y="240" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">All retrieval is search-or-path based, not raw DB</text>
+<rect x="800" y="330" width="500" height="170" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="800" y="330" width="500" height="34" rx="10" fill="#818cf8" opacity=".16"/>
+<rect x="800" y="352" width="500" height="12" fill="#818cf8" opacity=".12"/>
+<text x="1050.0" y="351.5" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="13" font-weight="700">WRITES (knowledge out)</text>
+<text x="814" y="378" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">RSIS3 → .rsis/ knowledge graph + telemetry</text>
+<text x="814" y="402" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">SPACE → exports/*.md → wiki pages</text>
+<text x="814" y="426" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">MyKB → daily notes via session capture hooks</text>
+<text x="814" y="450" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">Checkpoint-before-mutation on every write</text>
+<rect x="800" y="540" width="500" height="170" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="800" y="540" width="500" height="34" rx="10" fill="#10b981" opacity=".16"/>
+<rect x="800" y="562" width="500" height="12" fill="#10b981" opacity=".12"/>
+<text x="1050.0" y="561.5" text-anchor="middle" fill="#10b981" font-family="system-ui,sans-serif" font-size="13" font-weight="700">RETRIEVAL PATHS</text>
+<text x="814" y="588" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">Hybrid search: TF-IDF + RRF fusion</text>
+<text x="814" y="612" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">Knowledge graph queries (graph.json)</text>
+<text x="814" y="636" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">Vector similarity (semantic recall)</text>
+<text x="814" y="660" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">Temporal snapshots (time travel)</text>
+<rect x="800" y="750" width="500" height="110" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="800" y="750" width="500" height="34" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="800" y="772" width="500" height="12" fill="#f472b6" opacity=".12"/>
+<text x="1050.0" y="771.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">CONSISTENCY</text>
+<text x="814" y="798" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">Single source of truth: filesystem</text>
+<text x="814" y="820" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10">Indexes are derived (rebuildable)</text>
+<text x="814" y="842" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">git commits enable rollback everywhere</text>
+<text x="700.0" y="890" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Generated from source analysis</text>
+</svg>

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE SEMANTIC HYPERPLANE — ONTOLOGY AS TERRAIN, PROJECTED</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">Two semantic axes in isometric projection — elevation = footprint density, peaks = the three components</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<defs><linearGradient id="hpG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#334155" stop-opacity=".0"/><stop offset="100%" stop-color="#22d3ee" stop-opacity=".18"/></linearGradient></defs>
+<line x1="120" y1="220" x2="-60" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="120" y1="220" x2="300" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="192" y1="220" x2="12" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="192" y1="220" x2="372" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="264" y1="220" x2="84" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="264" y1="220" x2="444" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="336" y1="220" x2="156" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="336" y1="220" x2="516" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="408" y1="220" x2="228" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="408" y1="220" x2="588" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="480" y1="220" x2="300" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="480" y1="220" x2="660" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="552" y1="220" x2="372" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="552" y1="220" x2="732" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="624" y1="220" x2="444" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="624" y1="220" x2="804" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="696" y1="220" x2="516" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="696" y1="220" x2="876" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="768" y1="220" x2="588" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="768" y1="220" x2="948" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="840" y1="220" x2="660" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<line x1="840" y1="220" x2="1020" y2="760" stroke="#334155" stroke-width="0.8" opacity=".5"/>
+<ellipse cx="300" cy="360" rx="120" ry="66" fill="#f59e0b" opacity=".35" style="mix-blend-mode:screen"/>
+<ellipse cx="300" cy="360" rx="120" ry="66" fill="none" stroke="#f59e0b" stroke-width="1.6" opacity=".8"/>
+<path d="M 180 360 C 240 210, 360 210, 420 360" fill="none" stroke="#f59e0b" stroke-width="1.4" opacity=".6"/>
+<text x="300" y="196" text-anchor="middle" fill="#f59e0b" font-family="system-ui,sans-serif" font-size="11" font-weight="800">SPACE · theory</text>
+<text x="300" y="212" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">ideation surface</text>
+<ellipse cx="700" cy="360" rx="120" ry="66" fill="#818cf8" opacity=".35" style="mix-blend-mode:screen"/>
+<ellipse cx="700" cy="360" rx="120" ry="66" fill="none" stroke="#818cf8" stroke-width="1.6" opacity=".8"/>
+<path d="M 580 360 C 640 185, 760 185, 820 360" fill="none" stroke="#818cf8" stroke-width="1.4" opacity=".6"/>
+<text x="700" y="171" text-anchor="middle" fill="#818cf8" font-family="system-ui,sans-serif" font-size="11" font-weight="800">RSIS3 · execution</text>
+<text x="700" y="187" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">engine surface</text>
+<ellipse cx="500" cy="640" rx="120" ry="66" fill="#22d3ee" opacity=".35" style="mix-blend-mode:screen"/>
+<ellipse cx="500" cy="640" rx="120" ry="66" fill="none" stroke="#22d3ee" stroke-width="1.6" opacity=".8"/>
+<path d="M 380 640 C 440 435, 560 435, 620 640" fill="none" stroke="#22d3ee" stroke-width="1.4" opacity=".6"/>
+<text x="500" y="421" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="11" font-weight="800">MYKB · memory</text>
+<text x="500" y="437" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="7.5">memory surface</text>
+<text x="180" y="780" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="9">X — theory ⇄ execution</text>
+<text x="760" y="780" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="9">Y — short-term ⇄ long-term</text>
+<text x="500" y="240" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="9">Z (elevation) — footprint density: LOC + pages + probes at that semantic coordinate</text>
+<rect x="60" y="830" width="880" height="90" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="830" width="880" height="30" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="848" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="849.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">PROJECTION, NOT TRUTH</text>
+<text x="74" y="874" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Isometric projection loses real depth — but the A-24 spheres keep it. Here the point is the terrain, not the metric.</text>
+<rect x="60" y="1171" width="880" height="93" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1171" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1187" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1189.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE PLANE</text>
+<text x="72" y="1211" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">ELEVATION = footprint density (LOC + corpus + probes); each component is a massif on the semantic plane.</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">THE GRID = the two spectra from A-24; overlapping skirts show where two components share semantic ground.</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">READ THE THREE PEAKS as the ontology terrain (B-10) with component weight drawn as height.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">terrain is ontology you can walk — the hyperplane is the venn diagram with altitude</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

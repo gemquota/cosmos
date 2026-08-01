@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1320">
+<defs>
+  <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#0b1120"/>
+  </radialGradient>
+  <linearGradient id="rGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></linearGradient>
+  <linearGradient id="mGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+  <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+  <linearGradient id="dGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  <linearGradient id="hGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+  <marker id="arwR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#818cf8"/></marker>
+  <marker id="arwM" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#22d3ee"/></marker>
+  <marker id="arwS" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f59e0b"/></marker>
+  <marker id="arwD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#10b981"/></marker>
+  <marker id="arwH" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#f472b6"/></marker>
+  <marker id="arwG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 L2,4Z" fill="#475569"/></marker>
+</defs>
+<rect width="1000" height="1320" fill="url(#bgGrad)"/>
+<text x="500.0" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="24" font-weight="700" letter-spacing="1">THE TIME-SCALE SEPARATION — FOUR CLOCKS, ONE LOG AXIS</text>
+<text x="500.0" y="62" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="12.5">L1 · RRP · L3 · cross-session — separated by orders of magnitude, which is what makes them composable</text>
+<line x1="60.0" y1="76" x2="940.0" y2="76" stroke="#1e293b" stroke-width="1"/>
+
+<text x="90" y="166" text-anchor="start" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="10">L1 · ACTION</text>
+<line x1="200" y1="172" x2="880" y2="172" stroke="#334155" stroke-width="1"/>
+<polyline points="200.0,172.0 207.6,172.0 215.1,172.0 222.7,172.0 230.2,172.0 237.8,172.0 245.3,172.0 252.9,172.0 260.4,172.0 268.0,172.0 275.6,172.0 283.1,172.0 290.7,172.0 298.2,172.0 305.8,172.0 313.3,172.0 320.9,172.0 328.4,172.0 336.0,172.0 343.6,172.0 351.1,172.0 358.7,172.0 366.2,172.0 373.8,172.0 381.3,172.0 388.9,172.0 396.4,172.0 404.0,172.0 411.6,172.0 419.1,172.0 426.7,172.0 434.2,172.0 441.8,172.0 449.3,172.0 456.9,172.0 464.4,172.0 472.0,172.0 479.6,172.0 487.1,172.0 494.7,172.0 502.2,172.0 509.8,172.0 517.3,172.0 524.9,172.0 532.4,172.0 540.0,172.0 547.6,172.0 555.1,172.0 562.7,172.0 570.2,172.0 577.8,172.0 585.3,172.0 592.9,172.0 600.4,172.0 608.0,172.0 615.6,172.0 623.1,172.0 630.7,172.0 638.2,172.0 645.8,172.0 653.3,172.0 660.9,172.0 668.4,172.0 676.0,172.0 683.6,172.0 691.1,172.0 698.7,172.0 706.2,172.0 713.8,172.0 721.3,172.0 728.9,172.0 736.4,172.0 744.0,172.0 751.6,172.0 759.1,172.0 766.7,172.0 774.2,172.0 781.8,172.0 789.3,172.0 796.9,172.0 804.4,172.0 812.0,172.0 819.6,172.0 827.1,172.0 834.7,172.0 842.2,172.0 849.8,172.0 857.3,172.0 864.9,172.0 872.4,172.0 880.0,172.0" fill="none" stroke="#818cf8" stroke-width="1.6" opacity=".9"/>
+<line x1="202" y1="160" x2="202" y2="184" stroke="#818cf8" stroke-width="2"/>
+<text x="211.88888888888889" y="166" text-anchor="start" fill="#818cf8" font-family="ui-monospace,Menlo,monospace" font-size="8">T=1s</text>
+<text x="90" y="286" text-anchor="start" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="10">RRP · ROUND</text>
+<line x1="200" y1="292" x2="880" y2="292" stroke="#334155" stroke-width="1"/>
+<polyline points="200.0,292.0 207.6,279.9 215.1,304.1 222.7,292.0 230.2,279.9 237.8,304.1 245.3,292.0 252.9,279.9 260.4,304.1 268.0,292.0 275.6,279.9 283.1,304.1 290.7,292.0 298.2,279.9 305.8,304.1 313.3,292.0 320.9,279.9 328.4,304.1 336.0,292.0 343.6,279.9 351.1,304.1 358.7,292.0 366.2,279.9 373.8,304.1 381.3,292.0 388.9,279.9 396.4,304.1 404.0,292.0 411.6,279.9 419.1,304.1 426.7,292.0 434.2,279.9 441.8,304.1 449.3,292.0 456.9,279.9 464.4,304.1 472.0,292.0 479.6,279.9 487.1,304.1 494.7,292.0 502.2,279.9 509.8,304.1 517.3,292.0 524.9,279.9 532.4,304.1 540.0,292.0 547.6,279.9 555.1,304.1 562.7,292.0 570.2,279.9 577.8,304.1 585.3,292.0 592.9,279.9 600.4,304.1 608.0,292.0 615.6,279.9 623.1,304.1 630.7,292.0 638.2,279.9 645.8,304.1 653.3,292.0 660.9,279.9 668.4,304.1 676.0,292.0 683.6,279.9 691.1,304.1 698.7,292.0 706.2,279.9 713.8,304.1 721.3,292.0 728.9,279.9 736.4,304.1 744.0,292.0 751.6,279.9 759.1,304.1 766.7,292.0 774.2,279.9 781.8,304.1 789.3,292.0 796.9,279.9 804.4,304.1 812.0,292.0 819.6,279.9 827.1,304.1 834.7,292.0 842.2,279.9 849.8,304.1 857.3,292.0 864.9,279.9 872.4,304.1 880.0,292.0" fill="none" stroke="#f59e0b" stroke-width="1.6" opacity=".9"/>
+<line x1="223" y1="280" x2="223" y2="304" stroke="#f59e0b" stroke-width="2"/>
+<text x="232.66666666666666" y="286" text-anchor="start" fill="#f59e0b" font-family="ui-monospace,Menlo,monospace" font-size="8">T=12s</text>
+<text x="90" y="406" text-anchor="start" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="10">L3 · CONSOLIDATION</text>
+<line x1="200" y1="412" x2="880" y2="412" stroke="#334155" stroke-width="1"/>
+<polyline points="200.0,412.0 207.6,406.3 215.1,401.6 222.7,398.7 230.2,398.1 237.8,399.9 245.3,403.8 252.9,409.1 260.4,414.9 268.0,420.2 275.6,424.1 283.1,425.9 290.7,425.3 298.2,422.4 305.8,417.7 313.3,412.0 320.9,406.3 328.4,401.6 336.0,398.7 343.6,398.1 351.1,399.9 358.7,403.8 366.2,409.1 373.8,414.9 381.3,420.2 388.9,424.1 396.4,425.9 404.0,425.3 411.6,422.4 419.1,417.7 426.7,412.0 434.2,406.3 441.8,401.6 449.3,398.7 456.9,398.1 464.4,399.9 472.0,403.8 479.6,409.1 487.1,414.9 494.7,420.2 502.2,424.1 509.8,425.9 517.3,425.3 524.9,422.4 532.4,417.7 540.0,412.0 547.6,406.3 555.1,401.6 562.7,398.7 570.2,398.1 577.8,399.9 585.3,403.8 592.9,409.1 600.4,414.9 608.0,420.2 615.6,424.1 623.1,425.9 630.7,425.3 638.2,422.4 645.8,417.7 653.3,412.0 660.9,406.3 668.4,401.6 676.0,398.7 683.6,398.1 691.1,399.9 698.7,403.8 706.2,409.1 713.8,414.9 721.3,420.2 728.9,424.1 736.4,425.9 744.0,425.3 751.6,422.4 759.1,417.7 766.7,412.0 774.2,406.3 781.8,401.6 789.3,398.7 796.9,398.1 804.4,399.9 812.0,403.8 819.6,409.1 827.1,414.9 834.7,420.2 842.2,424.1 849.8,425.9 857.3,425.3 864.9,422.4 872.4,417.7 880.0,412.0" fill="none" stroke="#22d3ee" stroke-width="1.6" opacity=".9"/>
+<line x1="313" y1="400" x2="313" y2="424" stroke="#22d3ee" stroke-width="2"/>
+<text x="323.3333333333333" y="406" text-anchor="start" fill="#22d3ee" font-family="ui-monospace,Menlo,monospace" font-size="8">T=60s</text>
+<text x="90" y="526" text-anchor="start" fill="#10b981" font-family="ui-monospace,Menlo,monospace" font-size="10">CROSS-SESSION</text>
+<line x1="200" y1="532" x2="880" y2="532" stroke="#334155" stroke-width="1"/>
+<polyline points="200.0,532.0 207.6,531.9 215.1,531.8 222.7,531.7 230.2,531.6 237.8,531.5 245.3,531.4 252.9,531.3 260.4,531.2 268.0,531.1 275.6,531.0 283.1,530.9 290.7,530.8 298.2,530.7 305.8,530.6 313.3,530.5 320.9,530.4 328.4,530.3 336.0,530.2 343.6,530.1 351.1,530.1 358.7,530.0 366.2,529.9 373.8,529.8 381.3,529.7 388.9,529.6 396.4,529.5 404.0,529.4 411.6,529.3 419.1,529.2 426.7,529.1 434.2,529.0 441.8,528.9 449.3,528.8 456.9,528.7 464.4,528.6 472.0,528.5 479.6,528.4 487.1,528.3 494.7,528.2 502.2,528.1 509.8,528.0 517.3,528.0 524.9,527.9 532.4,527.8 540.0,527.7 547.6,527.6 555.1,527.5 562.7,527.4 570.2,527.3 577.8,527.2 585.3,527.1 592.9,527.0 600.4,526.9 608.0,526.8 615.6,526.8 623.1,526.7 630.7,526.6 638.2,526.5 645.8,526.4 653.3,526.3 660.9,526.2 668.4,526.1 676.0,526.0 683.6,526.0 691.1,525.9 698.7,525.8 706.2,525.7 713.8,525.6 721.3,525.5 728.9,525.4 736.4,525.3 744.0,525.3 751.6,525.2 759.1,525.1 766.7,525.0 774.2,524.9 781.8,524.8 789.3,524.7 796.9,524.7 804.4,524.6 812.0,524.5 819.6,524.4 827.1,524.3 834.7,524.3 842.2,524.2 849.8,524.1 857.3,524.0 864.9,523.9 872.4,523.9 880.0,523.8" fill="none" stroke="#10b981" stroke-width="1.6" opacity=".9"/>
+<line x1="880" y1="520" x2="880" y2="544" stroke="#10b981" stroke-width="2"/>
+<text x="890" y="526" text-anchor="start" fill="#10b981" font-family="ui-monospace,Menlo,monospace" font-size="8">T≈1hr</text>
+<text x="540" y="604" text-anchor="middle" fill="#64748b" font-family="ui-monospace,Menlo,monospace" font-size="8.5">← 1 second ───────────────────────────── 1 hour →</text>
+<rect x="60" y="630" width="880" height="120" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="630" width="880" height="32" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="650" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="650.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">WHY THE SEPARATION MATTERS</text>
+<text x="74" y="676" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">Each clock is ≥5× slower than the one above — fast loops finish many cycles inside slow ones, so they can be treated as stable.</text>
+<text x="74" y="702" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="10.5">This is the adiabatic assumption: L1 sees L3 as frozen; L3 sees L1 as averaged. The ratios 12:1 and 5:1 are the separations.</text>
+<text x="74" y="728" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5">If the clocks converged, the loops would entangle and the recursion would become a single indistinguishable buzz.</text>
+<rect x="60" y="1171" width="880" height="93" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1" filter="url(#shadow)"/>
+<rect x="60" y="1171" width="880" height="28" rx="10" fill="#f472b6" opacity=".16"/>
+<rect x="60" y="1187" width="880" height="12" fill="#f472b6" opacity=".12"/>
+<text x="500.0" y="1189.5" text-anchor="middle" fill="#f472b6" font-family="system-ui,sans-serif" font-size="13" font-weight="700">READING THE SEPARATION</text>
+<text x="72" y="1211" fill="#f472b6" font-family="system-ui,sans-serif" font-size="10.5">WAVE = one loop's activity over a shared 1-hour window; PERIOD MARK = its real cadence on the log axis.</text>
+<text x="72" y="1228" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">SEPARATION, NOT SYNCHRONY, is the design: overlapping periods would couple the loops destructively.</text>
+<text x="72" y="1245" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="9.5">The roster (B-21) listed periods; this map draws them to the same scale so the gaps become visible.</text>
+<text x="500.0" y="1278" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="9.5" font-style="italic">the system is stable because its clocks are far apart — order-of-magnitude spacing is the real architecture</text>
+<text x="500.0" y="1300" text-anchor="middle" fill="#334155" font-family="system-ui,sans-serif" font-size="9.5">COSMOS — Architecture Diagrams • Round 6 · the doubling pass</text>
+</svg>

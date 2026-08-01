@@ -4,6 +4,15 @@ title: "Update Log"
 ---
 # Update Log — wiki
 
+## 2026-07-31
+* **Acquisition**: 400 new articles (100 full + 300 stubs) across agent architectures, knowledge & memory systems, LLM engineering, and semantic infrastructure — all cross-linked to each other and existing articles
+* **Structure**: added `ops/rsis3-memory-bridge.md`, `ops/knowledge-acquisition.md`, `wiki/memory/README.md`, `wiki/memory/` area, and index pages for every wiki area
+* **Tools**: added `.wiki-daemon/build_graph.py`, `build_files_index.py`, `build_index_pages.py`, `link_check.py`, `normalize_frontmatter.py` for semantic-database maintenance
+* **Curation**: archived 473 low-utility session artifacts (sessions 281, tools 33, topics 54, clusters 105) to `raw/archive/session-artifacts-2026-07/`
+* **Expansion**: grew `wiki/concepts/pulse-cycle.md`, `wiki/syntheses/knowledge-system.md`, `wiki/questions/open-questions.md` with acquisition findings
+* **Graph**: regenerated `graph.json` (2,290 nodes / 13,275 edges) and `okf-graph.html` (2,702 concepts)
+* **UI**: fixed wiki-browser header tabs (missing CSS), broken inline onclick, duplicate `<body>` in dashboard, and made the graph view render statically from `graph.json`
+
 ## 2026-07-19
 * **Addition**: gemini-imported: session-81c5e6d2 — [session-81c5e6d2](wiki/sessions/session-81c5e6d2.md).
 * **Addition**: gemini-imported: user-3-10 — [user-3-10](wiki/tools/user-3-10.md).
