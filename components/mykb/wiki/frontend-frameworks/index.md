@@ -10,3 +10,14 @@ Vite is the build tool of choice — used for the lightweight web viewer. It rep
 
 ### UI & Styling
 Bootstrap provides component patterns. The viewer CSS uses a dark theme (system-ui font, dark background). The session logs show incremental styling improvements and responsive design adjustments.
+
+## Concepts
+
+- [Cross-Platform Frameworks](cross-platform-frameworks.md) — Cross-Platform Frameworks
+- [Declarative UI](declarative-ui.md) — Declarative UI
+- [Flutter Framework](flutter-framework.md) — Flutter Framework
+- [Hot Reload](hot-reload.md) — Hot Reload
+- [Material Design](material-design.md) — Material Design
+- [React Native vs Flutter](react-native-vs-flutter.md) — React Native vs Flutter
+- [Responsive Design](responsive-design.md) — Responsive Design
+- [State Management Mobile](state-management-mobile.md) — State Management Mobile

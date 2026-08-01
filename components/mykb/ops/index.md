@@ -16,3 +16,4 @@
 ## Reports
 
 * [Curation 2026-07-31](reports/curation-2026-07-31.md) — archive of low-utility session artifacts + stub curation round
+* [Curation 2026-08-01](reports/curation-2026-08-01.md) — pass 2 acquisition (100 full + 300 stubs)
