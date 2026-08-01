@@ -126,3 +126,18 @@ title: "Bundle Log"
 - **Verified**: 0 label overlaps at λ1–λ4, 64/64 edges, all L-nodes on their
   rings; snapshots `diagrams/gen/nested_snap_1/4.{svg,png}` committed
 - **New synthesis note**: `wiki/syntheses/nested-loop-graph-and-zoom-fix.md`
+
+## 2026-08-01 (MyKB stats hub)
+- **Stats hub added**: `stats.html` + `.wiki-daemon/build_stats.py` — 7 stat
+  tiles and 13 charts (word-count thresholds 300+/400+/500+, length histogram,
+  longest notes, status/type/area/tag distributions, monthly + last-60-day
+  activity, graph-degree and wikilink distributions, length-vs-links scatter),
+  embedded JSON, per-chart data tables, graceful Chart.js-less fallback
+- **Dashboard wiring**: MyKB tab in `rsis3/dashboard/index.html` gained a
+  `📊 Wiki Stats` tab (csb) + `Stats ↗` link + iframe container
+- **Snapshot drift fixed**: `files.json` regenerated 2824 → 2825 (was missing
+  `wiki/syntheses/nested-loop-graph-and-zoom-fix.md`); `--check` now passes
+- **Graph verified**: `build_graph.py` clean (2286 nodes / 13452 edges, 0
+  dangling endpoints); current wiki counts: 2,825 md files, 25 notes at 300+,
+  14 at 400+, 11 at 500+ words
+- **New synthesis note**: `wiki/syntheses/wiki-stats-hub.md`

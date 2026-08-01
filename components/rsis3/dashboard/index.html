@@ -136,9 +136,11 @@
   <div class="flex flex-wrap gap-2 mb-3">
     <button class="csb px-3 py-1.5 text-xs font-semibold rounded-lg bg-purple-500 text-white shadow" data-c="mykb" data-v="wiki" onclick="cs('mykb','wiki')">📖 Wiki Browser</button>
     <button class="csb px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-c="mykb" data-v="graph" onclick="cs('mykb','graph')">🕸️ Knowledge Graph</button>
+    <button class="csb px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-c="mykb" data-v="stats" onclick="cs('mykb','stats')">📊 Wiki Stats</button>
     <span class="flex items-center gap-2 ml-auto text-[10px] text-slate-400">
       <a href="../../mykb/index.html" target="_blank" rel="noopener" class="hover:text-purple-300">Wiki ↗</a>
       <a href="../../mykb/okf-graph.html" target="_blank" rel="noopener" class="hover:text-purple-300">Graph ↗</a>
+      <a href="../../mykb/stats.html" target="_blank" rel="noopener" class="hover:text-purple-300">Stats ↗</a>
     </span>
   </div>
   <div id="v-mykb-wiki" class="cst">
@@ -149,6 +151,11 @@
   <div id="v-mykb-graph" class="cst hide">
     <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
       <iframe data-src="../../mykb/okf-graph.html" title="MyKB knowledge graph" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#0b1120"></iframe>
+    </div>
+  </div>
+  <div id="v-mykb-stats" class="cst hide">
+    <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
+      <iframe data-src="../../mykb/stats.html" title="MyKB wiki stats hub" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#0b1120"></iframe>
     </div>
   </div>
 </div>
