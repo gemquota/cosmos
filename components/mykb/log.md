@@ -63,6 +63,25 @@ title: "Bundle Log"
   audit: 60 events, all loops start+complete, zero errors; session
   telemetry + 6 state files committed under `components/rsis3/.rsis` and
   `dashboard/loops.json` regenerated to show the run
+- **Acquisition + curation pass**: 15 OKF concept notes added to
+  `wiki/concepts/` (telemetry, immutable-evaluator, checkpoint-rollback,
+  knowledge-graph-memory, vector-memory, memory-hierarchy,
+  meta-parameter-tuning, population-based-evolution, fitness-stagnation,
+  tuning-oscillation, tuning-ownership-diagonal, recursion-guard,
+  inner-outer-loop-learning, deadband-control, learning-to-learn); 24
+  hash-named junk entity pages archived via `git mv` to
+  `raw/archive/junk-entities-2026-08/`; 2 broken wikilinks fixed in
+  `wiki/agent-systems/agent-loop.md`
+- **Structural docs**: `ops/conceptual-guide.md` ("mykb for Humans")
+  explains the layer model + how to navigate/contribute; linked from
+  `README.md`, `Home.md`, `ops/index.md`; new synthesis note
+  `wiki/syntheses/mykb-acquisition-curation-and-practices.md`
+- **RSIS3 usage practices defined + enforced**:
+  `docs/usage-practices.md` + `rsis/practices.py` (17 checks) wired as
+  `python -m rsis check-practices` and `ops/check_practices.py`; full-loop
+  workspace verifies 17/17 PASS (ownership diagonal, disjoint keys/state
+  files, telemetry coverage, checkpoint hygiene); AGENTS.md points at the
+  doc + checker
 
 ## 2026-07-31
 - **L3 consolidation (RSIRRP xxl + 4xl)**: new synthesis note

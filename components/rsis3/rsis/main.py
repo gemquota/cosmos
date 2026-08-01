@@ -37,6 +37,7 @@ from rsis.loop_l7 import MetaCogLoop
 from rsis.loop_l8 import MetaMetaLoop
 from rsis.loop_l9 import MMMLoop
 from rsis.memory import MemoryManager
+from rsis.practices import run_checks as run_practice_checks
 from rsis.recovery import FailureInjector, RecoveryManager
 from rsis.resource_monitor import ResourceEnforcer, ResourceSeverity
 from rsis.telemetry import TelemetryCollector, WorkspaceMonitor
@@ -534,6 +535,11 @@ def cmd_check(args: argparse.Namespace) -> int:
     return 0 if all_ok else 1
 
 
+def cmd_check_practices(args: argparse.Namespace) -> int:
+    """Enforce usage practices on the current workspace."""
+    return run_practice_checks()
+
+
 def cmd_recovery_test(args: argparse.Namespace) -> int:
     """Test all recovery mechanisms."""
     print(f"RSIS v{__version__} — Recovery Mechanism Test")
@@ -657,6 +663,11 @@ def main() -> int:
 
     p_check = sub.add_parser("check", help="Check resource limits")
     p_check.set_defaults(func=cmd_check)
+
+    p_practices = sub.add_parser(
+        "check-practices",
+        help="Enforce usage practices on the current workspace")
+    p_practices.set_defaults(func=cmd_check_practices)
 
     p_recovery = sub.add_parser("recovery-test",
                                 help="Test recovery mechanisms")
