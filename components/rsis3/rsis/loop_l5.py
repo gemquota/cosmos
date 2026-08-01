@@ -74,6 +74,7 @@ class EvolutionLoop:
                 data = json.loads(self.state_path.read_text())
                 data.setdefault("generation", 0)
                 data.setdefault("population", [])
+                data.setdefault("history", [])
                 return data
             except (json.JSONDecodeError, OSError) as e:
                 logger.warning("Failed to read strategy state (%s); reseeding", e)
@@ -199,6 +200,15 @@ class EvolutionLoop:
             ranked = sorted(
                 state["population"], key=lambda s: s["fitness"], reverse=True)
             avg_fitness = sum(s["fitness"] for s in ranked) / len(ranked) if ranked else 0.0
+            state.setdefault("history", [])
+            state["history"].append({
+                "generation": state["generation"],
+                "avg_fitness": round(avg_fitness, 4),
+                "best_fitness": round(ranked[0]["fitness"], 4) if ranked else 0.0,
+                "population": len(state["population"]),
+                "accepted": False,
+                "signal": "evolve",
+            })
 
             elite_count = max(
                 1, int(round(self.config.population_size * self.config.elite_fraction)))
@@ -252,6 +262,9 @@ class EvolutionLoop:
 
             state["generation"] += 1
             state["population"] = next_gen
+            if state["history"]:
+                state["history"][-1]["accepted"] = True
+                state["history"][-1]["generation"] = state["generation"]
             self._save_state(state)
 
             logger.info("L5 evolved generation %d (%d variants, %d elites)",

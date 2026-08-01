@@ -20,6 +20,7 @@
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="kg" data-tt="tab:kg" role="tab" aria-selected="false" onclick="sw('kg')">KG</button>
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="graphs" data-tt="tab:graphs" role="tab" aria-selected="false" onclick="sw('graphs')">Graphs</button>
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="constraints" data-tt="tab:constraints" role="tab" aria-selected="false" onclick="sw('constraints')">Constraints</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="loops" data-tt="tab:loops" role="tab" aria-selected="false" onclick="sw('loops')">🧬 Loops</button>
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="mykb" data-tt="tab:mykb" role="tab" aria-selected="false" onclick="sw('mykb')">📚 MyKB</button>
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="space" data-tt="tab:space" role="tab" aria-selected="false" onclick="sw('space')">🚀 SPACE</button>
 </div>
@@ -113,6 +114,20 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
     <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 tooltip-wrap" data-tt="graph:c9"><h3 class="text-xs font-bold text-slate-400 uppercase mb-3">Constraint Dist</h3><canvas id="c9"></canvas></div>
     <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 tooltip-wrap" data-tt="graph:c10"><h3 class="text-xs font-bold text-slate-400 uppercase mb-3">Lock Rate</h3><canvas id="c10"></canvas></div>
+  </div>
+</div>
+
+<!-- LOOPS TAB -->
+<div class="tab-body hide" id="b-loops">
+  <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 mb-4">
+    <div class="flex flex-wrap items-start sm:items-center justify-between gap-2 mb-2">
+      <div>
+        <h3 class="text-xs font-bold text-slate-400 uppercase">Loop Stack — L1–L9</h3>
+        <p class="text-[11px] text-slate-400 mt-0.5">Nine-level hierarchy · loop k+3 tunes loop k (L4→L1 … L9→L6) · L7–L9 are untuned fixed points (recursion guard).</p>
+      </div>
+      <span class="text-[10px] text-slate-500" id="loops-meta">loading…</span>
+    </div>
+    <div id="loops-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
   </div>
 </div>
 
@@ -210,6 +225,7 @@ function applyHash(){
 }
 window.addEventListener('hashchange', applyHash);
 loadEcosystem();
+loadLoops();
 var _bootTimer = setInterval(function(){
   var app = document.getElementById('app');
   if (app && app.style.display === 'block') {

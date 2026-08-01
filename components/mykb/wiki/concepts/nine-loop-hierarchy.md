@@ -1,7 +1,7 @@
 ---
 type: concept
 title: "Nine-Loop Hierarchy"
-description: "RSIS3's original nine nested self-improvement loops — L1–L5 implemented, L6–L9 hypothetical"
+description: "RSIS3's original nine nested self-improvement loops — L1–L9 all implemented as bounded, evaluator-gated cycles"
 tags: [concept, rsis3, architecture, loops, self-improvement]
 timestamp: "2026-07-31T00:00:00Z"
 status: stable
@@ -14,8 +14,8 @@ source: []
 
 RSIS3 was conceived as **nine nested recursion loops**. The dashboard radar
 and pulse scores (L1–L9) are this hierarchy, not RRP question-series axes.
-Three loops are the original engine; L4 and L5 were added as bounded,
-evaluator-gated cycles; L6–L9 remain hypothetical labels.
+Three loops are the original engine; L4–L9 were added as bounded,
+evaluator-gated cycles. All nine loops are implemented.
 
 ## The Loops
 
@@ -29,8 +29,8 @@ evaluator-gated cycles; L6–L9 remain hypothetical labels.
 | L5 | Evolution | implemented | Population-based strategy evolution (selection + mutation) |
 | L6 | Identity | implemented | Tunes L3 evolution params (plateau timeout) |
 | L7 | Meta-Cog | implemented | Tunes L4 optimizer params (window / thresholds) |
-| L8 | Meta-Meta | hypothetical | Tunes L5 strategy params (population / mutation) |
-| L9 | MMM | hypothetical | Tunes L6 identity params (the recursion guard) |
+| L8 | Meta-Meta | implemented | Tunes L5 strategy params (mutation ↑ on stagnation, population ↓ on volatility) |
+| L9 | MMM | implemented | Tunes L6 identity params (band widened on oscillation, narrowed on stall) |
 
 ## Tuning Ownership: the +3 Diagonal
 
@@ -48,10 +48,12 @@ self-modification depth limit in SPACE's recursive-depth analysis.
 The nine loops are not one topology:
 
 - **Nested** — L1 ⊂ L2 ⊂ L3 spawn/promote stack; L5 seeds from L3's KG
-  strategies (one-way); L7–L9 would nest above L5.
-- **Parallel** — L4 (`.rsis/optimizer_state.json`) and L5
-  (`.rsis/strategies.json`) run with disjoint state; L6 (Meta-Cog) would be a
-  parallel observer.
+  strategies (one-way).
+- **Parallel** — L4 (`.rsis/optimizer_state.json`), L5
+  (`.rsis/strategies.json`), L6 (`.rsis/identity_state.json`), L7
+  (`.rsis/metacog_state.json`), L8 (`.rsis/metameta_state.json`) and L9
+  (`.rsis/mmm_state.json`) run with disjoint state; L7–L9 are parallel
+  observers over the stack.
 - **Overlapping** — shared reads (telemetry/KG: safe) and shared config
   writes (arbitrated by ownership partition: L4 owns `l1.*`, L5 owns
   `l2.max_attempts`). Startup `load_config()` is the single injection point
@@ -62,8 +64,19 @@ The nine loops are not one topology:
 - Evaluator is immutable — never in-scope for self-improvement
 - Checkpoint before every mutation; rollback always possible
 - Loops terminate — bounded budgets at every level
-- Failures cascade up: L1 → L2 → L3 → L4 → L5
+- Failures cascade up: L1 → L2 → L3 → L4 → L5 → L8 (meta-tuners observe)
 - Memory is hierarchical: git (truth) → KG (insight) → vectors (retrieval)
+
+## L8 / L9 Details
+
+- **L8 Meta-Meta** (`python -m rsis metameta`, `.rsis/metameta_state.json`):
+  reads L5's generation-fitness history; `raise_mutation` when gains across
+  `stagnation_window` generations stay under ε; `shrink_population` when
+  best-fitness oscillates across `volatility_window` generations.
+- **L9 MMM** (`python -m rsis mmm`, `.rsis/mmm_state.json`): reads L6's
+  tuning history; `widen` when L6 alternates shrink/grow (band looser so L6
+  stops thrashing); `narrow` when L6 stalls while success is low (band
+  tighter so L6 reacts sooner).
 
 ## Related
 

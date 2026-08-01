@@ -9,6 +9,8 @@ Usage:
     python -m rsis strategies        # L5 strategy evolution cycle
     python -m rsis identity          # L6 identity loop (tunes L3 params)
     python -m rsis metacog           # L7 meta-cog loop (tunes L4 params)
+    python -m rsis metameta          # L8 meta-meta loop (tunes L5 params)
+    python -m rsis mmm               # L9 MMM loop (tunes L6 params)
     python -m rsis dashboard         # Start web dashboard
     python -m rsis status            # System overview
     python -m rsis check             # Check resource limits
@@ -32,6 +34,8 @@ from rsis.loop_l4 import OptimizerLoop
 from rsis.loop_l5 import EvolutionLoop
 from rsis.loop_l6 import IdentityLoop
 from rsis.loop_l7 import MetaCogLoop
+from rsis.loop_l8 import MetaMetaLoop
+from rsis.loop_l9 import MMMLoop
 from rsis.memory import MemoryManager
 from rsis.recovery import FailureInjector, RecoveryManager
 from rsis.resource_monitor import ResourceEnforcer, ResourceSeverity
@@ -359,6 +363,80 @@ def cmd_metacog(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_metameta(args: argparse.Namespace) -> int:
+    telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    enforcer.start()
+    telemetry.start()
+
+    try:
+        l8 = MetaMetaLoop(
+            telemetry=telemetry, memory=memory, evaluator=evaluator,
+            checkpoint_mgr=checkpoint,
+        )
+        budget = Budget(
+            max_iterations=1, max_time_s=CONFIG.l8.cycle_timeout_s,
+            label="L8 meta-meta",
+        )
+
+        with deadline(CONFIG.l8.cycle_timeout_s, "L8 meta-meta"):
+            result = l8.run_cycle(budget=budget)
+
+        if result.success and result.changed:
+            print(f"  \u2713 L5 strategy params tuned ({result.signal}): "
+                  f"{result.deltas}")
+        elif result.success:
+            print(f"  \u2139 No change ({result.signal or 'no signal'})")
+        else:
+            print(f"  \u2717 Meta-meta loop failed: {result.error}")
+            return 1
+
+    except TimeoutError as e:
+        print(f"  \u2717 Meta-meta loop timed out: {e}")
+        return 1
+    finally:
+        telemetry.stop()
+        enforcer.stop()
+
+    return 0
+
+
+def cmd_mmm(args: argparse.Namespace) -> int:
+    telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    enforcer.start()
+    telemetry.start()
+
+    try:
+        l9 = MMMLoop(
+            telemetry=telemetry, memory=memory, evaluator=evaluator,
+            checkpoint_mgr=checkpoint,
+        )
+        budget = Budget(
+            max_iterations=1, max_time_s=CONFIG.l9.cycle_timeout_s,
+            label="L9 MMM",
+        )
+
+        with deadline(CONFIG.l9.cycle_timeout_s, "L9 MMM"):
+            result = l9.run_cycle(budget=budget)
+
+        if result.success and result.changed:
+            print(f"  \u2713 L6 identity band tuned ({result.signal}): "
+                  f"{result.deltas}")
+        elif result.success:
+            print(f"  \u2139 No change ({result.signal or 'no signal'})")
+        else:
+            print(f"  \u2717 MMM loop failed: {result.error}")
+            return 1
+
+    except TimeoutError as e:
+        print(f"  \u2717 MMM loop timed out: {e}")
+        return 1
+    finally:
+        telemetry.stop()
+        enforcer.stop()
+
+    return 0
+
+
 def cmd_dashboard(args: argparse.Namespace) -> int:
     host, port = args.host, args.port
     print(f"RSIS v{__version__} \u2014 Dashboard at http://{host}:{port}")
@@ -562,6 +640,12 @@ def main() -> int:
 
     p_metacog = sub.add_parser("metacog", help="Run L7 meta-cog loop (tunes L4 params)")
     p_metacog.set_defaults(func=cmd_metacog)
+
+    p_metameta = sub.add_parser("metameta", help="Run L8 meta-meta loop (tunes L5 params)")
+    p_metameta.set_defaults(func=cmd_metameta)
+
+    p_mmm = sub.add_parser("mmm", help="Run L9 MMM loop (tunes L6 params)")
+    p_mmm.set_defaults(func=cmd_mmm)
 
     p_dash = sub.add_parser("dashboard", help="Start web dashboard")
     p_dash.add_argument("--host", default="127.0.0.1")

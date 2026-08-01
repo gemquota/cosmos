@@ -39,6 +39,24 @@ title: "Bundle Log"
 - **Agent components & acronyms**: 55 more entities enriched — 64 ACE agent components (Overseer, GoalQueue, MemoryManager, etc.) and common acronyms (AES, AGI, ADSR, ACID, APK, BFS, BOM, BTC, etc.)
 - **Total enriched**: ~450 entities (26%) with real content
 
+## 2026-08-01
+- **L8/L9 loops implemented**: `loop_l8.py` (Meta-Meta, `python -m rsis
+  metameta` — raises `l5.mutation_rate` on strategy stagnation, shrinks
+  `l5.population_size` on fitness volatility) and `loop_l9.py` (MMM,
+  `python -m rsis mmm` — widens the L6 identity band on oscillation, narrows
+  it on stall); L5 now records generation-fitness history; `load_config()`
+  injects `.rsis/metameta_state.json` + `.rsis/mmm_state.json` at startup
+- **All nine loops implemented**: RSIS_SPEC §1.1/§1.2/§1.4 + README + AGENTS
+  updated; `__version__` bumped to 0.4.0
+- **Dashboard Loops tab**: `gen-static-data.py` emits
+  `dashboard/loops.json` (state + telemetry, never-run defaults); new 🧬
+  Loops tab renders the L1–L9 stack with targets, tuned params, signals and
+  run counts
+- **New synthesis note**: `wiki/syntheses/nine-loop-stack-implementation.md`
+- **Verified**: L8 raise_mutation + shrink_population, L9 widen + narrow +
+  gap-collapse no-op, fresh-process injection, jsdom Loops tab + MyKB/SPACE
+  integration checks
+
 ## 2026-07-31
 - **L3 consolidation (RSIRRP xxl + 4xl)**: new synthesis note
   `wiki/syntheses/cosmos-dashboard-mykb-integration.md` capturing durable
