@@ -1,10 +1,6 @@
 # Authentication
-
 Part of [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security]] › Authentication. **273 entities.**
-
 ## Entities
-
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aawfyt5w61k715adh|Aawfyt5W61K715Adh]]
 - [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
 - [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abzzfeuifjsdsrga|Abzzfeuifjsdsrga]]
 - [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ag|Ag]]

@@ -5,43 +5,31 @@ description: "Semantic memory index — what RSIS3 stores and retrieves through 
 tags: ["memory", "rsis3", "semantic", "index"]
 timestamp: "2026-07-31T00:00:00Z"
 ---
-
 # Memory Layer
-
 This area indexes the semantic memory structures mykb exposes to RSIS3.
-
 ## What RSIS3 Writes
-
 - [[wiki/pulses/index|Pulses]] — outcome records of improvement cycles
 - [[wiki/decisions/index|Decisions]] — locked architectural choices
 - [[wiki/identity/index|Identity]] — self-model snapshots
 - [[wiki/reflections/index|Reflections]] — meta-analysis after audits
-
 ## What RSIS3 Reads
-
 - [[wiki/concepts/index|Concepts]] — reusable models and terms
 - [[wiki/syntheses/README|Syntheses]] — cross-source conclusions
 - [[wiki/sources/README|Sources]] — provenance and raw material
 - [[wiki/questions/index|Open Questions]] — knowledge gaps
-
 ## Semantic Dimensions
-
 | Dimension | Meaning |
 |---|---|
 | `type` | Ontological class (concept, synthesis, source, decision, pulse) |
 | `tags` | Cross-cutting facets for clustering and retrieval |
 | links | Explicit semantic edges between nodes |
 | timestamps | Temporal retrieval and trend analysis |
-
 ## Related
-
-- [[ops/rsis3-memory-bridge|RSIS3 Memory Bridge]]
+- [RSIS3 Memory Bridge](../../ops/rsis3-memory-bridge.md)
 - [[wiki/index|Wiki Index]]
 - [[wiki/syntheses/knowledge-system|Knowledge System]]
-- [[ops/knowledge-acquisition|Knowledge Acquisition]]
-
+- [Knowledge Acquisition](../../ops/knowledge-acquisition.md)
 ## Concepts
-
 - [Active Recall](active-recall.md) — Active Recall
 - [Atomic Notes](atomic-notes.md) — Atomic Notes
 - [Backlinks](backlinks.md) — Backlinks
