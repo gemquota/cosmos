@@ -231,3 +231,17 @@ title: "Bundle Log"
   graph 3,189 → **2,454 nodes**, 19,571 → **15,422 edges**
 - **Snapshots regenerated**: build_stats, build_graph, okf render,
   gen-static-data --check OK (2,994 md files)
+
+## 2026-08-02 (broken-link repair pass — 248 dead wikilinks fixed)
+- **Post-archive repair**: the 735-stub archive left **248 broken wikilinks**
+  in kept files — dead links to archived junk entities, unsupported
+  `wiki/*/…` wildcard targets (~300 instances), and stale raw-archive refs
+- **Fix**: removed dead entity bullets from index/related lists; converted
+  `[[raw/archive/…|label]]` wikilinks to relative markdown links
+  (`[label](../../raw/archive/….md)`); dropped wildcard targets the browser
+  cannot resolve
+- **Verification**: 0 unresolvable wikilinks in the wiki (was 248 at HEAD);
+  relative markdown-link targets checked against disk; 300+/400+/500+ tiers
+  unchanged at 570/17/5; words 476,046 → 475,777
+- **Snapshots regenerated**: build_stats, build_graph, okf render,
+  gen-static-data --check OK (3,729 md files)
