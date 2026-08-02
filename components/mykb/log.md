@@ -216,3 +216,18 @@ title: "Bundle Log"
   wikilinks vs HEAD (277 pre-existing template links unchanged)
 - **Snapshots regenerated**: `build_stats.py`, `build_graph.py`,
   `gen-static-data.py --check` OK (3,729 entries)
+
+## 2026-08-02 (stub curation pass — 735 pointless stubs archived)
+- **Reviewed all 3,093 content files**; archived **735 pointless stubs** to
+  `raw/archive/junk-entities-2026-08/` (preserving relative paths):
+  723 auto-extracted session-entity stubs (template-only bodies, <100 words,
+  no prose) + 12 empty `overview.md` category placeholders
+- **Criteria**: template-only body (no content beyond the "appears in N
+  session(s)" auto-template) AND zero inbound links from any kept file
+  (index pages included); 129 referenced stubs were deliberately kept so no
+  links break — verified 0 keeper→removed link violations
+- **Removed stubs were all <100 words**: 300+/400+/500+ tiers unchanged
+  (570/17/5); words 513,542 → 476,046; wikilinks 17,594 → 13,811;
+  graph 3,189 → **2,454 nodes**, 19,571 → **15,422 edges**
+- **Snapshots regenerated**: build_stats, build_graph, okf render,
+  gen-static-data --check OK (2,994 md files)
