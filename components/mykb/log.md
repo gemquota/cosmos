@@ -159,3 +159,16 @@ title: "Bundle Log"
   files only, so files.json must be regenerated *after* staging an
   acquisition round (synthesis: `wiki/syntheses/acquisition-pass-snapshot-ordering.md`)
 - **Deployed**: full-tree mirror to `gh-pages` with Pass-2 content
+
+## 2026-08-02 (Pass 3 — parallel agents)
+- **5-agent acquisition pass**: five parallel workers (data-storage,
+  api-protocols, testing, frontend, os-shell) each generated **100 unique
+  full articles** — 500 total, gated through define → confirm → generate
+- **Uniqueness confirmed programmatically**: 500/500 slugs unique (no
+  intra/cross-agent dupes), zero collisions with the existing wiki
+- **Independent verification**: 500/500 files present, frontmatter valid,
+  bodies 150–400 words, 0 broken wikilinks (agents' own checks re-run by
+  orchestrator)
+- **Wiki size**: 2,688 → 3,188 content files
+- **New synthesis note**: `wiki/syntheses/parallel-agent-acquisition.md`
+- **Deployed**: full-tree mirror to `gh-pages`
