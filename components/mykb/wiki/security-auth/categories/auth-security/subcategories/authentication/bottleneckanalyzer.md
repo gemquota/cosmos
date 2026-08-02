@@ -4,6 +4,7 @@ title: "BottleneckAnalyzer"
 description: "Android — mobile development platform, API — service communication interface, Authentication — identity verification"
 tags: ["entity", "android", "api", "ast", "auth", "authorization"]
 timestamp: "2026-07-19T22:41:42Z"
+status: "growing"
 resource: ""
 ---
 
@@ -13,6 +14,21 @@ resource: ""
 BottleneckAnalyzer appears in 1 session(s) categorized as API, Mobile, Security. Related topics: android, api, auth, authorization.
 
 **Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Bottleneckanalyzer
+
+## Overview
+
+A BottleneckAnalyzer is a tool or component that identifies the stage in a pipeline that limits overall throughput or latency. Systems are only as fast as their slowest link, so finding the bottleneck — rather than optimizing random parts — concentrates effort where it yields the largest gain. Analyzers work by instrumenting each stage, measuring time and queue depth, and reporting where work accumulates or waits.
+
+## Details
+
+- Measurement: per-stage timings, queue lengths, and utilization rates reveal where time is spent; profiling and tracing are the standard instruments.
+- Kinds of bottlenecks: CPU-bound stages, I/O waits, lock contention, network latency, and downstream service limits each require different remedies.
+- Auth and security: authentication and authorization checks are frequent suspects — hashing, token validation, and permission lookups can dominate request cost at scale.
+- API design: N+1 queries, serialized round trips, and oversized payloads are common API bottlenecks; caching and batching relieve them.
+- Mobile: main-thread work, image decoding, and network scheduling constrain app responsiveness; the analyzer surfaces which one is binding.
+- Iteration: after fixing one bottleneck, re-measure — the next constraint moves into view, and the analyzer's loop repeats.
+
+The entity sits under authorization because access checks are both a correctness boundary and a performance cost: an analyzer can prove that authorization is the bottleneck, justifying caching decisions or protocol improvements. Teams pair the tool with load testing and dashboards so that capacity decisions rest on measured data. The name generalizes to any pipeline — data, requests, rendering — where the goal is to find the single stage whose improvement matters most.
 
 ## Related Entities
 

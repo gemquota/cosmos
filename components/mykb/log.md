@@ -202,3 +202,17 @@ title: "Bundle Log"
   switches it, tapping elsewhere/scroll/resize closes it
 - **QA**: JS syntax check green; headless iframe click test passed —
   9 cards, show/toggle/switch all OK
+
+## 2026-08-02 (expansion pass — 500 articles to 300+)
+- **10-agent expansion pass**: 10 parallel workers each expanded ~50 short
+  articles (50–99 body words) to 300+ words; five agents were re-spawned
+  after upstream provider errors mid-run (work persisted; only untouched
+  files were re-assigned)
+- **Result**: 300+ tier grew **70 → 570** (+500, exactly on target);
+  400+ 8 → 17; 500+ unchanged at 5; total words 374,672 → 513,542
+  (+138,870); graph 3,189 nodes / 19,047 → 19,571 edges (+524 new links)
+- **Verification**: 500/500 files ≥300 body words (frontmatter-stripped),
+  valid frontmatter, `status: growing` on all targets; zero *new* broken
+  wikilinks vs HEAD (277 pre-existing template links unchanged)
+- **Snapshots regenerated**: `build_stats.py`, `build_graph.py`,
+  `gen-static-data.py --check` OK (3,729 entries)

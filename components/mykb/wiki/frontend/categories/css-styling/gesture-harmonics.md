@@ -1,4 +1,5 @@
 ---
+status: "growing"
 type: "entity"
 title: "Gesture Harmonics"
 description: "API — service communication interface, CLI — command-line tooling, CSS — web styling language"
@@ -12,6 +13,35 @@ resource: ""
 A touchscreen musical instrument project allowing sliding between notes with chromatic sequencing. Appears in agent sessions involving interactive music visualization and sound generation.
 
 **Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/css-styling/index|Css Styling]]
+
+## Overview
+
+Gesture Harmonics is an interactive instrument where touch position controls pitch. Rather than discrete keys, it maps continuous finger movement onto a chromatic scale, letting the player slide between notes with glissando-like transitions while retaining quantized, musical steps. Sessions involving the project pair it with visualization of the sound and real-time synthesis.
+
+## Interaction Design
+
+- Touch position on a two-dimensional surface maps to pitch and intensity.
+- Sliding gestures traverse chromatic steps, giving both precision and expressive portamento.
+- Visual feedback — glow, waveform, or note trails — reinforces the mapping between gesture and sound.
+
+## Audio and Rendering
+
+- Synthesis typically uses oscillators, gain envelopes, and effects chains in the browser Web Audio API.
+- Low-latency handling of touch events keeps the instrument responsive; samples are scheduled ahead of time.
+- The visualization layer renders waveforms or note grids in sync with the audio clock.
+
+## Session Context
+
+- The project appears in agent sessions that combine interactive music and visualization, so the instrument is exercised as both a sound engine and a drawing surface.
+- Sessions iterate on responsiveness: touch latency, scheduling ahead of the audio clock, and frame pacing all affect how playable the instrument feels.
+- Refinements typically alternate between the audio graph and the visual layer, keeping the two in sync rather than treating them independently.
+
+## Related Concepts
+
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/retroaudio|RetroAudio]] — companion audio experiments
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/drumsynth|DrumSynth]] — related sound synthesis work
+- [[wiki/web-platforms/web-apis|Web APIs]] — browser interfaces behind synthesis and input
+- [[wiki/frontend/animation-performance|Animation Performance]] — keeping the visual layer smooth
 
 ## Related Entities
 
