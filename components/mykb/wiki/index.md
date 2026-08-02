@@ -1,99 +1,101 @@
-# Wiki Index — mykb knowledge map
+---
+type: "index"
+title: "Wiki Index — Where to Look"
+description: "Nested navigation map for the mykb knowledge base: pick a family, then a folder; every folder has an index page."
+tags: ["index", "navigation", "mykb"]
+timestamp: "2026-08-02T00:00:00Z"
+---
 
-This page is the map of the knowledge base and the semantic database mykb serves
-to RSIS3. Return here after adding or merging important pages.
+# Wiki Index — Where to Look
 
-## Memory Layer (RSIS3)
+This page is the map of the knowledge base. Pick a **family** below, then open
+the folder's `index.md` for its full listing. The sidebar (Docs tab) mirrors
+the folder structure; Search and the Graph tab work across everything.
 
-* [Memory Layer](memory/README.md) — semantic memory index
-* [RSIS3 Memory Bridge](../ops/rsis3-memory-bridge.md) — read/write contract
-* [Knowledge Acquisition](../ops/knowledge-acquisition.md) — research workflow
-* [Wiki Schema](../ops/wiki-schema.md) — frontmatter schema
+## 1. Foundations & Concepts
+- [[wiki/concepts/index|concepts/]] — cross-cutting ideas and research reports
+  (mykb system reports, nine-loop hierarchy, open questions)
 
-## System Pages
+## 2. Frontend & UI
+- [[wiki/frontend/index|frontend/]] — HTML/CSS/JS, frameworks
+  (angular, ajax-spa, bootstrap), styling, UI patterns
+- [[wiki/frontend-frameworks/index|frontend-frameworks/]] — framework entity notes
+- [[wiki/js-ts-ecosystem/index|js-ts-ecosystem/]] — JavaScript/TypeScript tooling
+- [[wiki/web-platforms/index|web-platforms/]] — browser & web platform concepts
 
-* [Home](../Home.md) — Daily knowledge entry point
-* [Iteration Log](log.md) — Change history
-* [Daily Notes](../daily/README.md) — Daily notes
-* [Workflows](../ops/workflows.md) — Operating workflows
+## 3. Backend & APIs
+- [[wiki/api-services/index|api-services/]] — REST/HTTP services, API clients, JSON
+- [[wiki/api-protocols/index|api-protocols/]] — HTTP methods, status codes, protocol design
+- [[wiki/cloud-infra/index|cloud-infra/]] — cloud hosting & infrastructure services
 
-## Sources
+## 4. Security & Identity
+- [[wiki/security-auth/index|security-auth/]] — authentication, authorization, web security
+- [[wiki/security/index|security/]] — general security concepts
+- [[wiki/identity/index|identity/]] — identity, sessions, MFA, password policy
 
-* `wiki/sources/` — source pages for articles, books, videos, courses, web pages, conversations, or datasets
-* Starting template: [Source Note Template](../templates/source-note.md)
+## 5. Data & Storage
+- [[wiki/data-storage/index|data-storage/]] — databases, storage engines, caching, streaming
 
-## Concepts
+## 6. Infrastructure & DevOps
+- [[wiki/infrastructure/index|infrastructure/]] — containers, networking, service mesh
+- [[wiki/devops-infra/index|devops-infra/]] — CI/CD, deployment, SRE
+- [[wiki/development/index|development/]] — dev workflows, CLI tools, ORMs
+- [[wiki/dev-tools/index|dev-tools/]] — developer tooling entities
+- [[wiki/tooling/index|tooling/]] — shell/CLI tooling entities
 
-* `wiki/concepts/` — reusable concepts, models, and terms
-* Starting template: [Concept Note Template](../templates/concept-note.md)
+## 7. Shell & OS
+- [[wiki/os-shell/index|os-shell/]] — shell scripting, POSIX, text processing
+- [[wiki/shell-environment/index|shell-environment/]] — shell environment entities
 
-## Domains
+## 8. AI / ML / Agents
+- [[wiki/ai-ml/index|ai-ml/]] — machine learning concepts and models
+- [[wiki/ml-frameworks/index|ml-frameworks/]] — ML frameworks
+- [[wiki/meta-learning/index|meta-learning/]] — meta-learning and self-improvement
+- [[wiki/llm-agents/index|llm-agents/]] — LLM agent patterns
+- [[wiki/agent-systems/index|agent-systems/]] — agent architecture (loops, delegation, memory)
+- [[wiki/prompt-engineering/index|prompt-engineering/]] — prompt patterns and techniques
 
-* `wiki/` — larger topic maps (agents, AI/ML, prompt engineering, memory, infra)
-* Starting template: [Domain Map Template](../templates/domain-map.md)
+## 9. Platforms
+- [[wiki/android-core/index|android-core/]] — Android platform
+- [[wiki/mobile-platform/index|mobile-platform/]] — mobile concepts
 
-## Projects
+## 10. Engineering & Testing
+- [[wiki/testing/index|testing/]] — testing strategies and tools
+- [[wiki/software-engineering/index|software-engineering/]] — architecture, refactoring, ADRs
 
-* `wiki/projects/` — active projects, experiments, and learning paths
-* Starting template: [Project Note Template](../templates/project-note.md)
+## 11. Memory & Synthesis
+- [[wiki/memory/index|memory/]] — personal knowledge management, note systems, provenance
+- [[wiki/syntheses/index|syntheses/]] — distilled cross-session conclusions
+- [[wiki/compositions/index|compositions/]] — instruction-set bundles (setup, dev workflow, API, data, security, devops, languages)
+- [[wiki/decisions/index|decisions/]] — recorded architecture decisions
 
-## Questions
+## 12. Project Records & OKF Types
+- [[wiki/episodes/index|episodes/]] · [[wiki/experiments/index|experiments/]] ·
+  [[wiki/pulses/index|pulses/]] · [[wiki/questions/index|questions/]] ·
+  [[wiki/reflections/index|reflections/]] · [[wiki/projects/index|projects/]] ·
+  [[wiki/sources/index|sources/]] · [[wiki/plans/index|plans/]] · [[wiki/ops/index|ops/]]
+- [[wiki/entities/index|entities/]] — RSIS3 system entities (memory client, pulse engine, …)
+- [daily/](daily/README.md) — daily notes
 
-* [Open Questions](questions/open-questions.md) — Open questions
-* Starting template: [Question Note Template](../templates/question-note.md)
+## 13. Archives (kept for history)
+- [raw/archive/](../raw/README.md) — session artifacts, archived junk
+  entities, old audits. Not part of the active knowledge map.
 
-## Syntheses
+---
 
-* [Knowledge Iteration System](syntheses/knowledge-system.md) — The knowledge iteration loop
-* [Weekly Review](syntheses/weekly-review.md) — Weekly synthesis and review
-* Starting template: [Synthesis Note Template](../templates/synthesis-note.md)
+### Quick "where does X live?" lookup
 
-## Triad Architecture
+| You want… | Look in |
+|-----------|---------|
+| Auth / login / OAuth | `security-auth/` |
+| REST, HTTP, API clients | `api-services/` + `api-protocols/` |
+| Shell scripting / bash | `os-shell/` |
+| React, Angular, CSS | `frontend/` |
+| Databases, caching, SQL | `data-storage/` |
+| Docker, CI/CD, deployment | `infrastructure/` + `devops-infra/` |
+| ML models, prompting, agents | `ai-ml/` + `llm-agents/` + `agent-systems/` |
+| PKM / note-taking / zettelkasten | `memory/` |
+| Distilled conclusions | `syntheses/` |
+| Setup / workflow instruction sets | `compositions/` |
 
-* `wiki/concepts/triad-architecture.md` — Architecture overview: RSIS3 + mykb + myrsikb
-* `wiki/concepts/pulse-cycle.md` — 9-phase evaluation protocol
-* `wiki/concepts/identity-system.md` — Self-model with genesis hash
-
-## Entities
-
-* `wiki/entities/memory-client.md` — MemoryClient bridge facade
-* `wiki/entities/pulse-engine.md` — Pulse engine cognitive loop
-* `wiki/entities/rrp-state-machine.md` — RRP state machine
-
-## Recent Pulses
-
-* `wiki/pulses/pulse-audit-resolution.md` — Audit resolution pulse (PASS)
-
-## Recent Reflections
-
-* `wiki/reflections/reflection-post-audit.md` — Post-audit meta-analysis
-
-## Active Plans
-
-* `wiki/plans/plan-autonomy-loop.md` — Build full autonomy loop
-
-## Experiments
-
-* `wiki/experiments/exp-stub-scanner-vs-pytest.md` — StubScanner vs pytest benchmark
-
-## Episodes
-
-* `wiki/episodes/episode-audit-resolution.md` — Complete audit resolution work session
-
-## Daily Notes
-
-* `wiki/daily/2026-07-21.md` — Today's work log
-
-## Projects
-
-* `wiki/projects/triad-integration.md` — Triad integration project tracking
-
-## Lineage & History
-* `wiki/concepts/project-lineage.md` — Full evolutionary history from agent swarms to rsis3
-
-## Deployment
-* `wiki/concepts/deployment-context.md` — Android Termux + Codex web app
-
-## Agents
-* `wiki/entities/llm-proxy-agent.md` — The LLM proxy agent (current operations)
-* `wiki/tools/codex-cli-agent.md` — Codex CLI capabilities and constraints
+*See also: [Home](../Home.md) · [Iteration Log](log.md) · [Wiki Schema](../ops/wiki-schema.md)*

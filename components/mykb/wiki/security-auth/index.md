@@ -45,9 +45,9 @@ Part of [[wiki/web-platforms/index|Web Platforms]]. 253 entities.
 - [Microsegmentation](microsegmentation.md) — Microsegmentation
 - [MITRE ATT&CK Framework](mitre-attack-framework.md) — MITRE ATT&CK Framework
 - [Network Segmentation](network-segmentation.md) — Network Segmentation
-- [Open Redirects](open-redirects.md) — Open Redirects
+- [Open Redirects](../../raw/archive/junk-entities-2026-08b/security-auth/open-redirects.md) — Open Redirects
 - [Patch Management](patch-management.md) — Patch Management
-- [Path Traversal](path-traversal.md) — Path Traversal
+- [Path Traversal](../../raw/archive/junk-entities-2026-08b/security-auth/path-traversal.md) — Path Traversal
 - [Privacy by Design](privacy-by-design.md) — Privacy by Design
 - [Privilege Escalation](privilege-escalation.md) — Privilege Escalation
 - [Public Key Infrastructure](public-key-infrastructure.md) — Public Key Infrastructure

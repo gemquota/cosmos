@@ -63,7 +63,7 @@ Part of [[wiki/web-platforms/index|Web Platforms]]. 299 entities.
 - [Flexbox](flexbox.md) — Flexbox
 - [CSS Floats](floats.md) — CSS Floats
 - [Fluid Typography](fluid-typography.md) — Fluid Typography
-- [Fly.io](fly-io.md) — Fly.io
+- [Fly.io](../../raw/archive/junk-entities-2026-08b/frontend/fly-io.md) — Fly.io
 - [Focus Management](focus-management.md) — Focus Management
 - [Form Validation](form-validation.md) — Form Validation
 - [Frontend Testing](frontend-testing.md) — Frontend Testing

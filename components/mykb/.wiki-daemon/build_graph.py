@@ -69,8 +69,13 @@ def main():
         t = raw.strip()
         if t.endswith('.md'):
             t = t[:-3]
-        t = t.lstrip('./')
-        cands = ['wiki/' + t]
+        t = t.lstrip('./').split('#')[0]
+        # Prefer the exact path: wiki/... links already carry the prefix
+        cands = []
+        if t.startswith('wiki/'):
+            cands.append(t)
+        else:
+            cands.append('wiki/' + t)
         base = t.split('/')[-1].lower()
         cands += paths_by_basename.get(base, [])
         for c in cands:

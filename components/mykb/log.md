@@ -273,3 +273,29 @@ title: "Bundle Log"
   93/100 health score
 - **Snapshots regenerated**: gen-static-data + okf render (audit file moved
   into raw/archive; files.json unchanged at 3,729 entries)
+
+## 2026-08-03 (sidebar audit & navigation pass)
+- **Archived 123 junk/stub files** to `raw/archive/junk-entities-2026-08b/` via git mv:
+  template-only trivias, zero-inbound <100-word stubs, empty `communities/` graph
+  clusters, README placeholders (`clusters/`, `sessions/`, `tools/`, `topics/`),
+  and test residue. 10 candidates with real inbound links were kept
+  (e.g. `devops-infra/acid.md`, `web-platforms/web-components.md`,
+  `entities/e2e-*.md`).
+- **Fixed graph resolver bug** in `.wiki-daemon/build_graph.py`: exact `wiki/…`
+  paths are now preferred over basename fallback (was resolving
+  `[[wiki/memory/README]]` to the wrong file).
+- **Repointed 5 broken area-index links** (`frontend/`, `identity/`,
+  `security-auth/`) to the new archive dir. Verified 0 broken wikilinks and
+  0 broken markdown links in wiki content (log/index excluded).
+- **Nested "Where to Look" navigation**: rewrote `wiki/index.md` with 13
+  families + a "where does X live" lookup table; generated 9 area index pages
+  (`concepts`, `memory`, `syntheses`, `compositions`, `decisions`, `entities`,
+  `projects`, `pulses`, `sources`) with `type: index` frontmatter and
+  `[[wiki/{area}/{page}|Title]]` wikilinks.
+- **Archived previous audit** to `raw/archive/audits-2026-08/` and replaced
+  `COMPREHENSIVE_AUDIT.md` with the updated 2026-08-03 version (post-archive
+  numbers: 2,340 graph nodes / 14,793 edges, 2,252 content pages, 469,215
+  words, 570/17/5 tiers, 3,629 OKF concepts, 94/100 health).
+- **Snapshots regenerated**: build_stats (2,252 files, 469,215 words, 12,613
+  links), build_graph (2,340 nodes / 14,793 edges), okf render (3,629
+  concepts), gen-static-data --check OK (3,730 md files).
