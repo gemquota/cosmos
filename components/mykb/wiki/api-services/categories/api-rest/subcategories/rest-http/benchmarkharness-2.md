@@ -21,12 +21,12 @@ Referenced in session 019ec3a4
 - **Overview:** [Api Clients](../../overview.md)
 ## References
 Referenced in 6 session(s):
-- [android, api, ast, auth +1 (1293 turns)](../sessions/session-019ebcf6.md)
-- [api, ast, bash, bug +1 (20 turns)](../sessions/session-019ec3a4.md)
-- [android, api, ast, auth +1 (51 turns)](../sessions/session-3ebbffaf.md)
-- [android, api, ast, auth +1 (65 turns)](../sessions/session-741cda75.md)
-- [android, api, ast, auth +1 (43 turns)](../sessions/session-7bb86eb2.md)
-- [android, api, ast, auth +1 (23 turns)](../sessions/session-81c5e6d2.md)
+- [android, api, ast, auth +1 (1293 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebcf6.md)
+- [api, ast, bash, bug +1 (20 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec3a4.md)
+- [android, api, ast, auth +1 (51 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-3ebbffaf.md)
+- [android, api, ast, auth +1 (65 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-741cda75.md)
+- [android, api, ast, auth +1 (43 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-7bb86eb2.md)
+- [android, api, ast, auth +1 (23 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-81c5e6d2.md)
 ## Context
 > 36. **write_file**: {"file_path":"2b/core/healing.py","content":"import asyncio\nfrom typing import
 37. **replace**: {"file_path":"2b/core/benchmarker.py","old_string":"class BenchmarkHarness:\n","

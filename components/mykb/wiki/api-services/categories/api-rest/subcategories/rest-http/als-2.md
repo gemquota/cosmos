@@ -32,9 +32,9 @@ Acronym referenced in session 019f3f89
 
 Referenced in 2 session(s):
 
-- [android, api, ast, auth +1 (116 turns)](../sessions/session-019eeacf.md)
+- [android, api, ast, auth +1 (116 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019eeacf.md)
 
-- [android, api, ast, auth +1 (206 turns)](../sessions/session-019f3f89.md)
+- [android, api, ast, auth +1 (206 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f3f89.md)
 
 
 ## Context

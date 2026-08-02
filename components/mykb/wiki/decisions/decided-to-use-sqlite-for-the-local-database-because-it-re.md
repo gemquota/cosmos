@@ -14,7 +14,7 @@ timestamp: "2026-07-19T10:08:17.112Z"
 **Action**: decided
 **Target**: to use SQLite for the local database because it requires no server setup
 
-From session [019f75ed](session-019f75ed).
+From session .
 
 **Domain:** Decisions
 

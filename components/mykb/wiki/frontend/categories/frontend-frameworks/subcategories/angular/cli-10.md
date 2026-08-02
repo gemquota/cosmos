@@ -31,23 +31,23 @@ Acronym referenced in session 81c5e6d2
 
 Referenced in 9 session(s):
 
-- [android, api, ast, auth +1 (160 turns)](../sessions/session-019ebdb9.md)
+- [android, api, ast, auth +1 (160 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdb9.md)
 
-- [api, ast, bash, bug +1 (20 turns)](../sessions/session-019ec3a4.md)
+- [api, ast, bash, bug +1 (20 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec3a4.md)
 
-- [ajax, android, api, ast +1 (1330 turns)](../sessions/session-019ec3c4.md)
+- [ajax, android, api, ast +1 (1330 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec3c4.md)
 
-- [api, ast, auth, aws +1 (311 turns)](../sessions/session-019ee698.md)
+- [api, ast, auth, aws +1 (311 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee698.md)
 
-- [android, angular, api, ast +1 (333 turns)](../sessions/session-019ee7ae.md)
+- [android, angular, api, ast +1 (333 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee7ae.md)
 
-- [android, api, ast, auth +1 (116 turns)](../sessions/session-019eeacf.md)
+- [android, api, ast, auth +1 (116 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019eeacf.md)
 
-- [android, angular, ast, aws +1 (407 turns)](../sessions/session-019ef2c6.md)
+- [android, angular, ast, aws +1 (407 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef2c6.md)
 
-- [android, api, ast, auth +1 (285 turns)](../sessions/session-019ef46f.md)
+- [android, api, ast, auth +1 (285 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef46f.md)
 
-- [android, api, ast, auth +1 (23 turns)](../sessions/session-81c5e6d2.md)
+- [android, api, ast, auth +1 (23 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-81c5e6d2.md)
 
 
 > 94. **exec_command**: {"cmd": "grep -n 'hub.zsh\\|^alias' ~/.zshrc"}

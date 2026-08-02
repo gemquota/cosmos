@@ -21,11 +21,11 @@ Acronym referenced in session c8c575c8
 - **Overview:** [Api Clients](../../overview.md)
 ## References
 Referenced in 5 session(s):
-- [api, ast, auth, bash +1 (115 turns)](../sessions/session-11928ff2.md)
-- [android, api, ast, auth +1 (102 turns)](../sessions/session-7eb5102e.md)
-- [android, api, ast, auth +1 (61 turns)](../sessions/session-8f4285b7.md)
-- [android, api, ast, auth +1 (81 turns)](../sessions/session-9df6f4ab.md)
-- [android, api, ast, auth +1 (155 turns)](../sessions/session-c8c575c8.md)
+- [api, ast, auth, bash +1 (115 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-11928ff2.md)
+- [android, api, ast, auth +1 (102 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-7eb5102e.md)
+- [android, api, ast, auth +1 (61 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8f4285b7.md)
+- [android, api, ast, auth +1 (81 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-9df6f4ab.md)
+- [android, api, ast, auth +1 (155 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-c8c575c8.md)
 ## Context
 > 25. **run_shell_command**: {"description":"Checking which targets were scraped today.","command":"sqlite3 d
 26. **run_shell_command**: {"description":"Checking if there are any debug error files from

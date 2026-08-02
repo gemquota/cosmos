@@ -29,6 +29,6 @@ Category within **Android Core** — 294 entities.
 - *... and 279 more*
 
 ## Related Categories
-- [Angular Ui](../angular-ui/overview.md)
-- [Api Clients](../api-clients/overview.md)
-- [Shell Cli](../shell-cli/overview.md)
+- [[wiki/frontend-frameworks/categories/angular-ui/overview|Angular Ui]]
+- [[wiki/api-services/categories/api-clients/overview|Api Clients]]
+- [[wiki/tooling/categories/shell-cli/overview|Shell Cli]]

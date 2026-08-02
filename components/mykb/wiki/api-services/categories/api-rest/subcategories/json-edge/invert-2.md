@@ -27,11 +27,11 @@ Referenced in session dcc50722
 
 Referenced in 3 session(s):
 
-- [api, ast, ide, json +1 (5 turns)](../sessions/session-bcde2abf.md)
+- [api, ast, ide, json +1 (5 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-bcde2abf.md)
 
-- [edge, ide, logging, orm (3 turns)](../sessions/session-dcc50722.md)
+- [edge, ide, logging, orm (3 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-dcc50722.md)
 
-- [ide, logging, orm (3 turns)](../sessions/session-f81259ba.md)
+- [ide, logging, orm (3 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-f81259ba.md)
 
 
 ## Overview

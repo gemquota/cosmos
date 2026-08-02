@@ -31,23 +31,23 @@ Acronym referenced in session 3ebbffaf
 
 Referenced in 9 session(s):
 
-- [api, ast, aws, bash +1 (462 turns)](../sessions/session-019ebc82.md)
+- [api, ast, aws, bash +1 (462 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebc82.md)
 
-- [android, api, ast, auth +1 (1293 turns)](../sessions/session-019ebcf6.md)
+- [android, api, ast, auth +1 (1293 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebcf6.md)
 
-- [android, api, ast, auth +1 (531 turns)](../sessions/session-019ebd25.md)
+- [android, api, ast, auth +1 (531 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebd25.md)
 
-- [android, api, ast, auth +1 (447 turns)](../sessions/session-019ebdb5.md)
+- [android, api, ast, auth +1 (447 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdb5.md)
 
-- [android, api, ast, auth +1 (160 turns)](../sessions/session-019ebdb9.md)
+- [android, api, ast, auth +1 (160 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdb9.md)
 
-- [android, api, ast, auth +1 (426 turns)](../sessions/session-019ebdc5.md)
+- [android, api, ast, auth +1 (426 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdc5.md)
 
-- [api, ast, aws, bash +1 (133 turns)](../sessions/session-019ebdeb.md)
+- [api, ast, aws, bash +1 (133 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdeb.md)
 
-- [api, ast, bash, bug +1 (20 turns)](../sessions/session-019ec3a4.md)
+- [api, ast, bash, bug +1 (20 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec3a4.md)
 
-- [android, api, ast, auth +1 (51 turns)](../sessions/session-3ebbffaf.md)
+- [android, api, ast, auth +1 (51 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-3ebbffaf.md)
 
 
 > 666. **exec_command**: {"cmd": "cd /data/data/com.termux/files/home/dev/codex/2b && sed -n '103,205p' h

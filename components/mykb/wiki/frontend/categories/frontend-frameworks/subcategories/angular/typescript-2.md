@@ -30,17 +30,17 @@ Referenced in session 019f1a6c
 
 Referenced in 6 session(s):
 
-- [api, ast, aws, bash +1 (133 turns)](../sessions/session-019ebdeb.md)
+- [api, ast, aws, bash +1 (133 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdeb.md)
 
-- [api, ast, auth, bash +1 (5 turns)](../sessions/session-019f1a6c.md)
+- [api, ast, auth, bash +1 (5 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1a6c.md)
 
-- [android, api, ast, aws +1 (49 turns)](../sessions/session-019f4100.md)
+- [android, api, ast, aws +1 (49 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4100.md)
 
-- [ajax, alpine, android, angular +1 (514 turns)](../sessions/session-019f75ed.md)
+- [ajax, alpine, android, angular +1 (514 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f75ed.md)
 
-- [api, ast, auth, bash +1 (130 turns)](../sessions/session-9d38ffb8.md)
+- [api, ast, auth, bash +1 (130 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-9d38ffb8.md)
 
-- [api, ast, auth, authentication +1 (37 turns)](../sessions/session-c35cb519.md)
+- [api, ast, auth, authentication +1 (37 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-c35cb519.md)
 
 
 ## Context

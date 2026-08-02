@@ -30,25 +30,25 @@ Acronym referenced in session 0c8d8673
 
 Referenced in 10 session(s):
 
-- [ast, auth, aws, bash +1 (40 turns)](../sessions/session-019ebe8b.md)
+- [ast, auth, aws, bash +1 (40 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebe8b.md)
 
-- [angular, api, ast, auth +1 (345 turns)](../sessions/session-019ec418.md)
+- [angular, api, ast, auth +1 (345 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec418.md)
 
-- [android, angular, api, ast +1 (414 turns)](../sessions/session-019ed74e.md)
+- [android, angular, api, ast +1 (414 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ed74e.md)
 
-- [ast, auth, aws, bash +1 (7 turns)](../sessions/session-019ee4e0.md)
+- [ast, auth, aws, bash +1 (7 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee4e0.md)
 
-- [api, ast, auth, aws +1 (311 turns)](../sessions/session-019ee698.md)
+- [api, ast, auth, aws +1 (311 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee698.md)
 
-- [android, api, ast, aws +1 (49 turns)](../sessions/session-019f4100.md)
+- [android, api, ast, aws +1 (49 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4100.md)
 
-- [ast, auth, aws, bootstrap +1 (40 turns)](../sessions/session-019f6ca4.md)
+- [ast, auth, aws, bootstrap +1 (40 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f6ca4.md)
 
-- [angular, api, ast, auth +1 (172 turns)](../sessions/session-0c8d8673.md)
+- [angular, api, ast, auth +1 (172 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-0c8d8673.md)
 
-- [android, angular, api, ast +1 (54 turns)](../sessions/session-3c7eee7e.md)
+- [android, angular, api, ast +1 (54 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-3c7eee7e.md)
 
-- [android, api, ast, auth +1 (343 turns)](../sessions/session-7102fc04.md)
+- [android, api, ast, auth +1 (343 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-7102fc04.md)
 
 
 ## Context

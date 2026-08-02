@@ -29,9 +29,9 @@ Acronym referenced in session 019f1447
 
 Referenced in 2 session(s):
 
-- [ast, bash, html, http +1 (14 turns)](../sessions/session-019f0006.md)
+- [ast, bash, html, http +1 (14 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f0006.md)
 
-- [ast, auth, cli, css +1 (11 turns)](../sessions/session-019f1447.md)
+- [ast, auth, cli, css +1 (11 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1447.md)
 
 
 ## Context

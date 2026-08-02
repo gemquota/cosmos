@@ -30,9 +30,9 @@ Acronym referenced in session b554ca10
 
 Referenced in 2 session(s):
 
-- [api, ast, aws, bash +1 (260 turns)](../sessions/session-019efdfc.md)
+- [api, ast, aws, bash +1 (260 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019efdfc.md)
 
-- [ajax, android, api, ast +1 (88 turns)](../sessions/session-b554ca10.md)
+- [ajax, android, api, ast +1 (88 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-b554ca10.md)
 
 
 ## Context

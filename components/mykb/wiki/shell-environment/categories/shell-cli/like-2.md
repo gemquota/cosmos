@@ -30,9 +30,9 @@ Acronym referenced in session 019f785d
 
 Referenced in 2 session(s):
 
-- [bash, ide, shell, termux (13 turns)](../sessions/session-019f745e.md)
+- [bash, ide, shell, termux (13 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f745e.md)
 
-- [android, api, ast, auth +1 (212 turns)](../sessions/session-019f785d.md)
+- [android, api, ast, auth +1 (212 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f785d.md)
 
 
 ## Context

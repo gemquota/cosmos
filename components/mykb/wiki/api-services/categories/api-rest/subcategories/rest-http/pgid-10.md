@@ -27,25 +27,25 @@ Acronym referenced in session 05473df8
 
 Referenced in 10 session(s):
 
-- [android, api, ast, auth +1 (56 turns)](../sessions/session-00b8d8ce.md)
+- [android, api, ast, auth +1 (56 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-00b8d8ce.md)
 
-- [android, auth, bash, bug +1 (31 turns)](../sessions/session-05473df8.md)
+- [android, auth, bash, bug +1 (31 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-05473df8.md)
 
-- [android, angular, api, ast +1 (123 turns)](../sessions/session-37ab37aa.md)
+- [android, angular, api, ast +1 (123 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-37ab37aa.md)
 
-- [api, ast, auth, authentication +1 (68 turns)](../sessions/session-3de8187f.md)
+- [api, ast, auth, authentication +1 (68 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-3de8187f.md)
 
-- [android, api, ast, backend +1 (79 turns)](../sessions/session-89dbddbd.md)
+- [android, api, ast, backend +1 (79 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-89dbddbd.md)
 
-- [api, ast, auth, authentication +1 (33 turns)](../sessions/session-b292c0fe.md)
+- [api, ast, auth, authentication +1 (33 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-b292c0fe.md)
 
-- [api, ast, auth, authentication +1 (37 turns)](../sessions/session-c35cb519.md)
+- [api, ast, auth, authentication +1 (37 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-c35cb519.md)
 
-- [api, ast, auth, authentication +1 (11 turns)](../sessions/session-d3c1665e.md)
+- [api, ast, auth, authentication +1 (11 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-d3c1665e.md)
 
-- [api, ast, auth, cdn +1 (40 turns)](../sessions/session-e3700b7f.md)
+- [api, ast, auth, cdn +1 (40 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-e3700b7f.md)
 
-- [api, ast, auth, authentication +1 (35 turns)](../sessions/session-f110fe6e.md)
+- [api, ast, auth, authentication +1 (35 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-f110fe6e.md)
 
 
 ## Overview

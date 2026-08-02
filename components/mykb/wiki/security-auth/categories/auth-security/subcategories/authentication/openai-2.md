@@ -30,11 +30,11 @@ Referenced in session 019f3f89
 
 Referenced in 3 session(s):
 
-- [android, api, ast, auth +1 (160 turns)](../sessions/session-019ebdb9.md)
+- [android, api, ast, auth +1 (160 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdb9.md)
 
-- [android, api, ast, auth +1 (206 turns)](../sessions/session-019f3f89.md)
+- [android, api, ast, auth +1 (206 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f3f89.md)
 
-- [android, api, ast, auth +1 (501 turns)](../sessions/session-019f5cc2.md)
+- [android, api, ast, auth +1 (501 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f5cc2.md)
 
 
 ## Context

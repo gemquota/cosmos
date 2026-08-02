@@ -30,9 +30,9 @@ Acronym referenced in session 019ef545
 
 Referenced in 2 session(s):
 
-- [android, api, ast, auth +1 (285 turns)](../sessions/session-019ef46f.md)
+- [android, api, ast, auth +1 (285 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef46f.md)
 
-- [api, ast, auth, authentication +1 (36 turns)](../sessions/session-019ef545.md)
+- [api, ast, auth, authentication +1 (36 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef545.md)
 
 
 ## Context

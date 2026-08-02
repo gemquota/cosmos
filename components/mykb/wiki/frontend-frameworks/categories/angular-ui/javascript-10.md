@@ -30,23 +30,23 @@ Referenced in session 0c8d8673
 
 Referenced in 9 session(s):
 
-- [android, angular, api, ast +1 (628 turns)](../sessions/session-019ebe76.md)
+- [android, angular, api, ast +1 (628 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebe76.md)
 
-- [android, angular, api, ast +1 (2201 turns)](../sessions/session-019ec11d.md)
+- [android, angular, api, ast +1 (2201 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec11d.md)
 
-- [angular, api, ast, auth +1 (345 turns)](../sessions/session-019ec418.md)
+- [angular, api, ast, auth +1 (345 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec418.md)
 
-- [android, angular, api, ast +1 (414 turns)](../sessions/session-019ed74e.md)
+- [android, angular, api, ast +1 (414 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ed74e.md)
 
-- [api, ast, auth, aws +1 (311 turns)](../sessions/session-019ee698.md)
+- [api, ast, auth, aws +1 (311 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee698.md)
 
-- [ast, bash, bootstrap, bun +1 (19 turns)](../sessions/session-019ee7e1.md)
+- [ast, bash, bootstrap, bun +1 (19 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee7e1.md)
 
-- [ast, bash, cli, css +1 (31 turns)](../sessions/session-019ee884.md)
+- [ast, bash, cli, css +1 (31 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee884.md)
 
-- [api, ast, auth, authentication +1 (632 turns)](../sessions/session-019ef31d.md)
+- [api, ast, auth, authentication +1 (632 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef31d.md)
 
-- [angular, api, ast, auth +1 (172 turns)](../sessions/session-0c8d8673.md)
+- [angular, api, ast, auth +1 (172 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-0c8d8673.md)
 
 
 ## Context

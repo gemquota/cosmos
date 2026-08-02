@@ -30,23 +30,23 @@ Referenced in session 019ef278
 
 Referenced in 9 session(s):
 
-- [android, api, ast, auth +1 (161 turns)](../sessions/session-019eee5d.md)
+- [android, api, ast, auth +1 (161 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019eee5d.md)
 
-- [android, api, ast, auth +1 (196 turns)](../sessions/session-019ef278.md)
+- [android, api, ast, auth +1 (196 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef278.md)
 
-- [android, api, ast, auth +1 (443 turns)](../sessions/session-019eff5e.md)
+- [android, api, ast, auth +1 (443 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019eff5e.md)
 
-- [android, api, ast, auth +1 (443 turns)](../sessions/session-019f6b68.md)
+- [android, api, ast, auth +1 (443 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f6b68.md)
 
-- [android, api, ast, auth +1 (212 turns)](../sessions/session-019f785d.md)
+- [android, api, ast, auth +1 (212 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f785d.md)
 
-- [android, api, ast, auth +1 (86 turns)](../sessions/session-65db591e.md)
+- [android, api, ast, auth +1 (86 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-65db591e.md)
 
-- [api, ast, auth, bug +1 (83 turns)](../sessions/session-8bfd952e.md)
+- [api, ast, auth, bug +1 (83 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8bfd952e.md)
 
-- [android, api, ast, auth +1 (81 turns)](../sessions/session-9df6f4ab.md)
+- [android, api, ast, auth +1 (81 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-9df6f4ab.md)
 
-- [api, ast, auth, authentication +1 (35 turns)](../sessions/session-f110fe6e.md)
+- [api, ast, auth, authentication +1 (35 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-f110fe6e.md)
 
 
 ## Context

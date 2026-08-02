@@ -30,19 +30,19 @@ Referenced in session 019ebdc5
 
 Referenced in 7 session(s):
 
-- [android, api, ast, auth +1 (531 turns)](../sessions/session-019ebd25.md)
+- [android, api, ast, auth +1 (531 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebd25.md)
 
-- [android, api, ast, auth +1 (426 turns)](../sessions/session-019ebdc5.md)
+- [android, api, ast, auth +1 (426 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdc5.md)
 
-- [android, api, ast, auth +1 (1271 turns)](../sessions/session-019ec24a.md)
+- [android, api, ast, auth +1 (1271 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec24a.md)
 
-- [api, ast, auth, bash +1 (115 turns)](../sessions/session-11928ff2.md)
+- [api, ast, auth, bash +1 (115 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-11928ff2.md)
 
-- [api, ast, auth, authentication +1 (130 turns)](../sessions/session-ae1325ab.md)
+- [api, ast, auth, authentication +1 (130 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-ae1325ab.md)
 
-- [api, ast, auth, authentication +1 (102 turns)](../sessions/session-c9a75407.md)
+- [api, ast, auth, authentication +1 (102 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-c9a75407.md)
 
-- [api, ast, auth, authentication +1 (87 turns)](../sessions/session-fe319cab.md)
+- [api, ast, auth, authentication +1 (87 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-fe319cab.md)
 
 
 ## Context

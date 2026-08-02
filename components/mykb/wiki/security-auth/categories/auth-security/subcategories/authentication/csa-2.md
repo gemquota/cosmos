@@ -30,17 +30,17 @@ Acronym referenced in session e09affd9
 
 Referenced in 6 session(s):
 
-- [android, api, ast, bash +1 (83 turns)](../sessions/session-019ee149.md)
+- [android, api, ast, bash +1 (83 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee149.md)
 
-- [android, api, ast, auth +1 (120 turns)](../sessions/session-055286d6.md)
+- [android, api, ast, auth +1 (120 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-055286d6.md)
 
-- [android, api, ast, aws +1 (71 turns)](../sessions/session-5b1a5f15.md)
+- [android, api, ast, aws +1 (71 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-5b1a5f15.md)
 
-- [api, ast, auth, authentication +1 (53 turns)](../sessions/session-6c24b886.md)
+- [api, ast, auth, authentication +1 (53 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-6c24b886.md)
 
-- [api, ast, bash, bug +1 (86 turns)](../sessions/session-b64e57b1.md)
+- [api, ast, bash, bug +1 (86 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-b64e57b1.md)
 
-- [api, ast, bash, bug +1 (127 turns)](../sessions/session-e09affd9.md)
+- [api, ast, bash, bug +1 (127 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-e09affd9.md)
 
 
 ## Context

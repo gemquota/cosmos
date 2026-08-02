@@ -30,23 +30,23 @@ Referenced in session adc6df02
 
 Referenced in 9 session(s):
 
-- [api, ast, bash, bug +1 (20 turns)](../sessions/session-019ec3a4.md)
+- [api, ast, bash, bug +1 (20 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec3a4.md)
 
-- [android, api, ast, auth +1 (161 turns)](../sessions/session-019eee5d.md)
+- [android, api, ast, auth +1 (161 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019eee5d.md)
 
-- [android, api, ast, auth +1 (196 turns)](../sessions/session-019ef278.md)
+- [android, api, ast, auth +1 (196 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef278.md)
 
-- [api, ast, auth, backend +1 (512 turns)](../sessions/session-019f00c7.md)
+- [api, ast, auth, backend +1 (512 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f00c7.md)
 
-- [android, api, ast, auth +1 (472 turns)](../sessions/session-019f132b.md)
+- [android, api, ast, auth +1 (472 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f132b.md)
 
-- [android, angular, api, ast +1 (558 turns)](../sessions/session-019f141a.md)
+- [android, angular, api, ast +1 (558 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f141a.md)
 
-- [android, angular, api, ast +1 (348 turns)](../sessions/session-019f16d7.md)
+- [android, angular, api, ast +1 (348 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f16d7.md)
 
-- [api, ast, auth, bash +1 (18 turns)](../sessions/session-019f1877.md)
+- [api, ast, auth, bash +1 (18 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1877.md)
 
-- [android, api, ast, auth +1 (90 turns)](../sessions/session-adc6df02.md)
+- [android, api, ast, auth +1 (90 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-adc6df02.md)
 
 
 ## Context

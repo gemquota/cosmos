@@ -24,31 +24,31 @@ Referenced in session fe319cab
 - **Domain:** Mobile Platform
 - **Breadcrumb:** Mobile Platform › Android Core › Api Clients › Rest Api
 - **Category size:** 449 entities
-- **Overview:** [Api Clients](../../overview.md)
+- **Overview:** [[wiki/api-services/categories/api-clients/overview|Api Clients]]
 
 ## References
 
 Referenced in 10 session(s):
 
-- [android, api, ast, auth +1 (160 turns)](../sessions/session-019ebdb9.md)
+- [android, api, ast, auth +1 (160 turns)](../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdb9.md)
 
-- [android, angular, api, ast +1 (558 turns)](../sessions/session-019f141a.md)
+- [android, angular, api, ast +1 (558 turns)](../../../raw/archive/session-artifacts-2026-07/sessions/session-019f141a.md)
 
-- [api, ast, auth, aws +1 (587 turns)](../sessions/session-019f4b9a.md)
+- [api, ast, auth, aws +1 (587 turns)](../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4b9a.md)
 
-- [android, api, ast, auth +1 (259 turns)](../sessions/session-019f4e5d.md)
+- [android, api, ast, auth +1 (259 turns)](../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4e5d.md)
 
-- [api, ast, backend, bash +1 (20 turns)](../sessions/session-019f503e.md)
+- [api, ast, backend, bash +1 (20 turns)](../../../raw/archive/session-artifacts-2026-07/sessions/session-019f503e.md)
 
-- [angular, api, ast, auth +1 (1986 turns)](../sessions/session-019f5d97.md)
+- [angular, api, ast, auth +1 (1986 turns)](../../../raw/archive/session-artifacts-2026-07/sessions/session-019f5d97.md)
 
-- [ast, auth, aws, bootstrap +1 (40 turns)](../sessions/session-019f6ca4.md)
+- [ast, auth, aws, bootstrap +1 (40 turns)](../../../raw/archive/session-artifacts-2026-07/sessions/session-019f6ca4.md)
 
-- [android, api, ast, auth +1 (478 turns)](../sessions/session-019f6cad.md)
+- [android, api, ast, auth +1 (478 turns)](../../../raw/archive/session-artifacts-2026-07/sessions/session-019f6cad.md)
 
-- [android, angular, api, ast +1 (638 turns)](../sessions/session-0c0a9b0f.md)
+- [android, angular, api, ast +1 (638 turns)](../../../raw/archive/session-artifacts-2026-07/sessions/session-0c0a9b0f.md)
 
-- [api, ast, auth, authentication +1 (87 turns)](../sessions/session-fe319cab.md)
+- [api, ast, auth, authentication +1 (87 turns)](../../../raw/archive/session-artifacts-2026-07/sessions/session-fe319cab.md)
 
 
 ## Context

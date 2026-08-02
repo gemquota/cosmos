@@ -30,13 +30,13 @@ Acronym referenced in session 019f0006
 
 Referenced in 4 session(s):
 
-- [api, ast, aws, bash +1 (260 turns)](../sessions/session-019efdfc.md)
+- [api, ast, aws, bash +1 (260 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019efdfc.md)
 
-- [ast, bash, html, http +1 (14 turns)](../sessions/session-019f0006.md)
+- [ast, bash, html, http +1 (14 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f0006.md)
 
-- [api, ast, auth, bash +1 (5 turns)](../sessions/session-019f1a6c.md)
+- [api, ast, auth, bash +1 (5 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1a6c.md)
 
-- [ajax, api, ast, backend +1 (57 turns)](../sessions/session-511f2a52.md)
+- [ajax, api, ast, backend +1 (57 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-511f2a52.md)
 
 
 ## Context

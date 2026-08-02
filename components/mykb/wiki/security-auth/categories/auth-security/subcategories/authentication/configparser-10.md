@@ -30,25 +30,25 @@ Referenced in session 5e38e7ec
 
 Referenced in 10 session(s):
 
-- [ajax, api, ast, auth +1 (32 turns)](../sessions/session-0118cc5d.md)
+- [ajax, api, ast, auth +1 (32 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-0118cc5d.md)
 
-- [android, api, ast, auth +1 (219 turns)](../sessions/session-019f32b3.md)
+- [android, api, ast, auth +1 (219 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f32b3.md)
 
-- [android, api, ast, auth +1 (212 turns)](../sessions/session-019f785d.md)
+- [android, api, ast, auth +1 (212 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f785d.md)
 
-- [android, api, ast, auth +1 (25 turns)](../sessions/session-5e38e7ec.md)
+- [android, api, ast, auth +1 (25 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-5e38e7ec.md)
 
-- [android, api, ast, auth +1 (102 turns)](../sessions/session-7eb5102e.md)
+- [android, api, ast, auth +1 (102 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-7eb5102e.md)
 
-- [api, ast, auth, bug +1 (83 turns)](../sessions/session-8bfd952e.md)
+- [api, ast, auth, bug +1 (83 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8bfd952e.md)
 
-- [ajax, api, ast, auth +1 (25 turns)](../sessions/session-902e24a7.md)
+- [ajax, api, ast, auth +1 (25 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-902e24a7.md)
 
-- [android, api, ast, auth +1 (81 turns)](../sessions/session-9df6f4ab.md)
+- [android, api, ast, auth +1 (81 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-9df6f4ab.md)
 
-- [android, api, ast, auth +1 (155 turns)](../sessions/session-c8c575c8.md)
+- [android, api, ast, auth +1 (155 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-c8c575c8.md)
 
-- [api, ast, auth, authentication +1 (179 turns)](../sessions/session-ce22f697.md)
+- [api, ast, auth, authentication +1 (179 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-ce22f697.md)
 
 
 ## Context

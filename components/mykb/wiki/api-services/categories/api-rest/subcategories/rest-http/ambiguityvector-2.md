@@ -30,21 +30,21 @@ Referenced in session 019ef769
 
 Referenced in 8 session(s):
 
-- [ast, bash, bootstrap, bun +1 (19 turns)](../sessions/session-019ee7e1.md)
+- [ast, bash, bootstrap, bun +1 (19 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee7e1.md)
 
-- [android, api, ast, auth +1 (993 turns)](../sessions/session-019ef769.md)
+- [android, api, ast, auth +1 (993 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef769.md)
 
-- [api, ast, auth, backend +1 (512 turns)](../sessions/session-019f00c7.md)
+- [api, ast, auth, backend +1 (512 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f00c7.md)
 
-- [api, ast, auth, backend +1 (341 turns)](../sessions/session-019f0366.md)
+- [api, ast, auth, backend +1 (341 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f0366.md)
 
-- [android, angular, api, ast +1 (558 turns)](../sessions/session-019f141a.md)
+- [android, angular, api, ast +1 (558 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f141a.md)
 
-- [android, angular, api, ast +1 (348 turns)](../sessions/session-019f16d7.md)
+- [android, angular, api, ast +1 (348 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f16d7.md)
 
-- [android, angular, api, ast +1 (228 turns)](../sessions/session-019f1884.md)
+- [android, angular, api, ast +1 (228 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1884.md)
 
-- [android, angular, api, ast +1 (348 turns)](../sessions/session-019f239a.md)
+- [android, angular, api, ast +1 (348 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f239a.md)
 
 
 ## Context

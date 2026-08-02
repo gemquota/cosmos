@@ -30,15 +30,15 @@ Acronym referenced in session 019ef46f
 
 Referenced in 5 session(s):
 
-- [ast, auth, aws, bash +1 (40 turns)](../sessions/session-019ebe8b.md)
+- [ast, auth, aws, bash +1 (40 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebe8b.md)
 
-- [android, api, ast, auth +1 (285 turns)](../sessions/session-019ef46f.md)
+- [android, api, ast, auth +1 (285 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef46f.md)
 
-- [android, api, auth, authentication +1 (19 turns)](../sessions/session-019f3144.md)
+- [android, api, auth, authentication +1 (19 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f3144.md)
 
-- [ast, auth, aws, bootstrap +1 (40 turns)](../sessions/session-019f6ca4.md)
+- [ast, auth, aws, bootstrap +1 (40 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f6ca4.md)
 
-- [android, api, ast, auth +1 (70 turns)](../sessions/session-415be004.md)
+- [android, api, ast, auth +1 (70 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-415be004.md)
 
 
 ## Context

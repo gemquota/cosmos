@@ -30,25 +30,25 @@ Referenced in session 80c50c17
 
 Referenced in 10 session(s):
 
-- [android, angular, api, ast +1 (201 turns)](../sessions/session-0a2e7660.md)
+- [android, angular, api, ast +1 (201 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-0a2e7660.md)
 
-- [angular, api, ast, auth +1 (73 turns)](../sessions/session-1360812d.md)
+- [angular, api, ast, auth +1 (73 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-1360812d.md)
 
-- [android, api, ast, auth +1 (182 turns)](../sessions/session-14b4b79d.md)
+- [android, api, ast, auth +1 (182 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-14b4b79d.md)
 
-- [api, ast, aws, bug +1 (272 turns)](../sessions/session-412ac095.md)
+- [api, ast, aws, bug +1 (272 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-412ac095.md)
 
-- [android, angular, api, ast +1 (898 turns)](../sessions/session-4b35bd59.md)
+- [android, angular, api, ast +1 (898 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-4b35bd59.md)
 
-- [android, angular, api, ast +1 (161 turns)](../sessions/session-6a3592fb.md)
+- [android, angular, api, ast +1 (161 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-6a3592fb.md)
 
-- [angular, api, ast, auth +1 (242 turns)](../sessions/session-75202bac.md)
+- [angular, api, ast, auth +1 (242 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-75202bac.md)
 
-- [angular, api, ast, auth +1 (154 turns)](../sessions/session-80c50c17.md)
+- [angular, api, ast, auth +1 (154 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-80c50c17.md)
 
-- [android, angular, api, ast +1 (134 turns)](../sessions/session-cff9c90f.md)
+- [android, angular, api, ast +1 (134 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-cff9c90f.md)
 
-- [ast, auth, aws, bug +1 (70 turns)](../sessions/session-d035a75d.md)
+- [ast, auth, aws, bug +1 (70 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-d035a75d.md)
 
 
 ## Context

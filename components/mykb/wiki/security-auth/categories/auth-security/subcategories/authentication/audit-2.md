@@ -31,11 +31,11 @@ Acronym referenced in session 019f4fd2
 
 Referenced in 3 session(s):
 
-- [ajax, api, ast, auth +1 (32 turns)](../sessions/session-0118cc5d.md)
+- [ajax, api, ast, auth +1 (32 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-0118cc5d.md)
 
-- [api, ast, auth, backend +1 (250 turns)](../sessions/session-019f2369.md)
+- [api, ast, auth, backend +1 (250 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f2369.md)
 
-- [android, api, ast, auth +1 (1247 turns)](../sessions/session-019f4fd2.md)
+- [android, api, ast, auth +1 (1247 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4fd2.md)
 
 
 > 3. **user**: Proceed and additionally conduct a detailed scraping breadth increase analysis o
