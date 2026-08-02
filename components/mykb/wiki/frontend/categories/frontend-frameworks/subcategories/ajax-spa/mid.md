@@ -1,6 +1,7 @@
 ---
 type: "entity"
 title: "MID"
+status: "growing"
 description: "Middleware"
 tags: ["entity", "acronym", "api", "ast", "bash", "cdn"]
 timestamp: "2026-07-19T22:41:42Z"
@@ -14,6 +15,35 @@ Middleware — software that sits between applications and operating systems. Se
 **Related topics:** api, bash, cdn
 
 **Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/index|Frontend Frameworks]] › Mid
+
+## Overview
+
+Middleware is software that sits between applications and the systems they depend on, intercepting requests and responses to add cross-cutting behavior. Sessions show API middleware for authentication, logging, and error handling. In web frameworks, middleware runs as a pipeline around route handlers: each layer can inspect, modify, short-circuit, or pass the request onward, which makes ordering and scope explicit.
+
+## Common Middleware Duties
+
+- Authentication and authorization checks before the handler sees the request.
+- Structured logging, request IDs, and timing so traces connect to logs.
+- Error normalization converting exceptions into consistent HTTP responses.
+- Cross-cutting concerns such as CORS, compression, rate limiting, and body parsing.
+
+## Design Notes
+
+- Keep middleware stateless and idempotent so reordering or retries stay safe.
+- Document the execution order; a check placed after an early return may never run.
+- In frameworks like FastAPI or Express, per-route vs global middleware is a deliberate choice based on blast radius.
+
+## Related Concepts
+
+- [[wiki/api-protocols/api-gateway|API Gateway]] — middleware applied at the network edge
+- [[wiki/api-protocols/cors|CORS]] — a classic middleware concern for web APIs
+- [[wiki/api-protocols/rate-limiting|Rate Limiting]] — protection commonly implemented in middleware
+
+
+## Example
+
+A FastAPI service registers request-ID logging, authentication, and error-handling middleware in that order: the request ID is assigned first so every downstream log line is traceable, auth runs before business logic, and the error handler catches anything the handlers miss. The same pipeline shape appears in Express and Next.js with framework-specific names.
+
 
 ## Related Entities
 

@@ -1,4 +1,5 @@
 ---
+status: "growing"
 type: "entity"
 title: "Database Schema Audit"
 description: "Database"
@@ -14,6 +15,35 @@ Database — an organized collection of structured data. Sessions show relationa
 **Related topics:** android, api, auth, aws
 
 **Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Database Schema Audit
+
+## Overview
+
+A schema audit reviews the database structure against the intended design, the application models, and operational requirements. It checks whether columns, constraints, indexes, and relationships still match the code that reads and writes them, and whether the structure has drifted through ad hoc changes. Teams run audits before major migrations, after acquisitions, or on a schedule to keep the schema trustworthy.
+
+## What an Audit Checks
+
+- Column types, nullability, defaults, and constraints against the current application models.
+- Index coverage for the queries in the hot path, plus unused or duplicated indexes.
+- Foreign keys and referential integrity, including orphaned rows and soft-delete conventions.
+- Tables or columns that are no longer referenced by any code path.
+
+## Process
+
+1. Export the current schema and compare it with the migrations or ORM models.
+2. Identify drift and decide whether to fix forward or write corrective migrations.
+3. Use expand/contract steps for zero-downtime changes, then verify with query plans.
+
+## Tooling and Cadence
+
+- Run audits on a schedule, before major releases, and after any emergency hotfix that touched the schema.
+- Pair the audit with query-plan review so index changes are validated against real workloads.
+- Record findings as tracked tickets with owners; an audit that produces no follow-up items is rare and worth questioning.
+
+## Related Concepts
+
+- [[wiki/data-storage/schema-migrations|Schema Migrations]] — versioned structure changes
+- [[wiki/data-storage/schema-evolution|Schema Evolution]] — how schemas change safely over time
+- [[wiki/data-storage/expand-contract-migrations|Expand-Contract Migrations]] — reversible rollout pattern
 
 ## Related Entities
 

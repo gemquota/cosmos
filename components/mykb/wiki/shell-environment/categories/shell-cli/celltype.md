@@ -1,4 +1,5 @@
 ---
+status: "growing"
 type: "entity"
 title: "CellType"
 description: "Android — mobile development platform, API — service communication interface, Bash — shell scripting language"
@@ -13,6 +14,34 @@ resource: ""
 CellType appears in 1 session(s) categorized as API, Mobile, Shell. Related topics: android, api, bash, cli.
 
 **Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
+
+## Overview
+
+CellType is a typed classification for elements in a grid or simulation — for example distinguishing empty, solid, fluid, and agent cells. Typing cells makes state transitions explicit and lets an engine select behavior per cell without inspecting arbitrary data. In shell and CLI contexts, a cell type often becomes an enum or tagged union in the data model.
+
+## Typed Cell Design
+
+- Represent the type as an enum, tag, or small integer; keep cell payloads separate from the type field.
+- Define transition rules per type so updates are deterministic and testable.
+- Consider layout: array-of-structs is simple, while structure-of-arrays improves cache behavior for large grids.
+
+## Transition Rules
+
+- Each cell type defines how it reacts to neighbors: a fluid cell may flow, an agent cell may act, a solid cell stays fixed.
+- Rules are applied uniformly each tick, so the simulation is deterministic for a given seed.
+- Type changes (empty to solid, fluid to agent) are explicit transitions, typically queued to avoid mid-tick inconsistency.
+
+## Engine Integration
+
+- The shell and CLI context suggests a data model where the grid is serialized and inspected from the command line.
+- Large grids favor structure-of-arrays layouts: type flags in one buffer, payloads in parallel buffers.
+- Telemetry per type — counts, flows, lifetimes — makes behavior observable and debuggable.
+
+## Related Concepts
+
+- [[wiki/concepts/immutable-evaluator|Immutable Evaluator]] — evaluating state without side effects
+- [[wiki/concepts/checkpoint-rollback|Checkpoint Rollback]] — restoring simulation state
+- [[wiki/os-shell/command-line-interfaces|Command Line Interfaces]] — driving and inspecting the engine
 
 ## Related Entities
 
