@@ -318,6 +318,10 @@ nav a:hover{background:#1e293b;text-decoration:none}
 .card{background:#111a30;border:1px solid #1e293b;border-radius:12px;padding:14px 16px}
 .card .n{font-size:26px;font-weight:700;color:#f1f5f9;font-variant-numeric:tabular-nums}
 .card .l{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8;margin-top:4px}
+.card{cursor:pointer}
+.card:active{transform:scale(.98)}
+.tip{position:fixed;z-index:50;max-width:280px;background:#16233f;border:1px solid #334155;border-radius:10px;padding:10px 12px;font-size:12px;line-height:1.45;color:#e2e8f0;box-shadow:0 10px 28px rgba(0,0,0,.5);pointer-events:none}
+.tip b{color:#f1f5f9;display:block;margin-bottom:2px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px}
 .panel{background:#111a30;border:1px solid #1e293b;border-radius:14px;padding:16px}
 .panel.wide{grid-column:1/-1}
@@ -337,7 +341,7 @@ code{background:#0d1424;border:1px solid #1e293b;border-radius:4px;padding:1px 5
 <body>
 <header>
   <h1>📊 MyKB Wiki Stats Hub</h1>
-  <div class="sub">Knowledge graph + content metrics for <code>components/mykb</code> · generated <span id="gen"></span></div>
+  <div class="sub">Knowledge graph + content metrics for <code>components/mykb</code> · generated <span id="gen"></span> · tap cards for details</div>
   <div class="offline" id="offline">⚠ Chart.js could not load from CDN — showing data tables only.</div>
   <nav>
     <a href="#totals">Overview</a>
@@ -477,6 +481,7 @@ code{background:#0d1424;border:1px solid #1e293b;border-radius:4px;padding:1px 5
   <p>Word counts = whitespace tokens in body text with YAML frontmatter stripped. Index pages (<code>index.md</code>) and the bundle log (<code>log.md</code>) are excluded from all article-level stats; graph node/edge totals still include them. Link counts include frontmatter wikilinks. Timestamps read from frontmatter; files without one are omitted from time charts.</p>
   <p>Regenerate: <code>python3 components/mykb/.wiki-daemon/build_stats.py</code> · Snapshots: <code>python3 gen-static-data.py --check</code></p>
 </footer>
+<div class="tip" id="tip" hidden></div>
 <script>
 const STATS = __STATS_JSON__;
 const PALETTE = ['#a78bfa','#2dd4bf','#fbbf24','#f472b6','#60a5fa','#34d399','#fb923c','#a3e635','#38bdf8','#e879f9'];
@@ -490,25 +495,52 @@ function tbl(el, headers, rows){
     rows.map(r=>'<tr>'+r.map(c=>'<td>'+c+'</td>').join('')).join('</tr>') + '</tbody>';
 }
 
+const TIP = document.getElementById('tip');
+function showTip(el, html, i){
+  TIP.innerHTML = html;
+  TIP.hidden = false;
+  TIP.dataset.card = String(i);
+  const r = el.getBoundingClientRect();
+  const tw = TIP.offsetWidth, th = TIP.offsetHeight;
+  let x = Math.round(r.left + r.width / 2 - tw / 2);
+  x = Math.max(8, Math.min(x, window.innerWidth - tw - 8));
+  let y = r.top - th - 10;
+  if (y < 8) y = r.bottom + 10;
+  TIP.style.left = x + 'px';
+  TIP.style.top = y + 'px';
+}
+function hideTip(){ TIP.hidden = true; }
+
 function base(){
   document.getElementById('gen').textContent = STATS.generated;
   const T = STATS.totals;
   const th = STATS.thresholds;
   const i300 = th.labels.indexOf('300'), i400 = th.labels.indexOf('400'), i500 = th.labels.indexOf('500');
   const cards = [
-    ['wiki files', fmt(T.files), 'excl. log.md / index.md'],
-    ['total words', fmt(T.words), ''],
-    ['median words', fmt(T.median_words), 'all / ' + fmt(T.median_words_no_daily) + ' no-daily'],
-    ['content areas', fmt(T.areas_count), ''],
-    ['full articles (300+)', fmt(th.all[i300]), '400+ → ' + fmt(th.all[i400]) + ' · 500+ → ' + fmt(th.all[i500])],
-    ['graph nodes', fmt(T.nodes), fmt(T.edges) + ' edges'],
-    ['wikilinks', fmt(T.links), ''],
-    ['zero-link files', fmt(T.zero_link_files), T.zero_link_pct + '% of wiki'],
-    ['zero-degree nodes', fmt(T.zero_degree_nodes), ''],
+    ['wiki files', fmt(T.files), 'excl. log.md / index.md', '<b>Wiki files</b>Markdown notes in the wiki, excluding <code>log.md</code>, <code>index.md</code> and per-folder index pages.'],
+    ['total words', fmt(T.words), '', '<b>Total words</b>Body words across all wiki files; YAML frontmatter is not counted.'],
+    ['median words', fmt(T.median_words), 'all / ' + fmt(T.median_words_no_daily) + ' no-daily', '<b>Median words</b>Middle value of body word counts. The no-daily figure drops the single daily-note file.'],
+    ['content areas', fmt(T.areas_count), '', '<b>Content areas</b>Top-level wiki subfolders (topics) with at least one note.'],
+    ['full articles (300+)', fmt(th.all[i300]), '400+ → ' + fmt(th.all[i400]) + ' · 500+ → ' + fmt(th.all[i500]), '<b>Full articles</b>Files with at least 300 body words. 400+ and 500+ are progressively longer tiers.'],
+    ['graph nodes', fmt(T.nodes), fmt(T.edges) + ' edges', '<b>Graph nodes</b>Knowledge-graph concepts (one per wiki file); edges are the wikilinks between them.'],
+    ['wikilinks', fmt(T.links), '', '<b>Wikilinks</b><code>[[wikilink]]</code> references across all files — the edges of the knowledge graph.'],
+    ['zero-link files', fmt(T.zero_link_files), T.zero_link_pct + '% of wiki', '<b>Zero-link files</b>Files with no outgoing wikilinks, shown as a share of the whole wiki.'],
+    ['zero-degree nodes', fmt(T.zero_degree_nodes), '', '<b>Zero-degree nodes</b>Graph nodes with no links at all — fully isolated concepts.'],
   ];
-  document.getElementById('totals').innerHTML = cards.map(c=>
+  const cardsEl = document.getElementById('totals');
+  cardsEl.innerHTML = cards.map(c=>
     '<div class="card"><div class="n">'+c[1]+'</div><div class="l">'+c[0]+'</div>'+(c[2]?'<div class="l" style="text-transform:none;letter-spacing:0">'+c[2]+'</div>':'')+'</div>'
   ).join('');
+  cardsEl.querySelectorAll('.card').forEach((el, i) => {
+    el.addEventListener('click', ev => {
+      ev.stopPropagation();
+      if (TIP.hidden || TIP.dataset.card !== String(i)) showTip(el, cards[i][3], i);
+      else hideTip();
+    });
+  });
+  document.addEventListener('click', hideTip);
+  window.addEventListener('scroll', hideTip, {passive:true});
+  window.addEventListener('resize', hideTip);
 
   tbl('th-t', ['min words','all','no daily'], th.labels.map((l,i)=>[l, fmt(th.all[i]), fmt(th.no_daily[i])]));
   const h = STATS.histogram;
