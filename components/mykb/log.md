@@ -195,3 +195,10 @@ title: "Bundle Log"
   top grid reflows (auto-fit), no layout change needed
 - **Regenerated**: `build_stats.py` → `stats.html`; JS syntax check + headless
   render QA green (9 cards, 20 canvases)
+
+## 2026-08-02 (stats hub v2.2 — card tooltips)
+- **Overview cards now show info tooltips on tap/click**: each of the 9 cards
+  has an explanation; tapping toggles the bubble, tapping a different card
+  switches it, tapping elsewhere/scroll/resize closes it
+- **QA**: JS syntax check green; headless iframe click test passed —
+  9 cards, show/toggle/switch all OK
