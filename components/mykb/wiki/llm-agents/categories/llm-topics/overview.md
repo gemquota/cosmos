@@ -1,4 +1,0 @@
----
-type: "domain"
-title: "Overview"
----
