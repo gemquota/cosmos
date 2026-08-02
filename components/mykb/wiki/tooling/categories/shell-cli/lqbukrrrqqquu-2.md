@@ -9,7 +9,7 @@ status: "growing"
 ---
 ## Lqbukrrrqqquu 2
 LqBUkrrrqqquu appears in 2 session(s) categorized as API, Frontend, Shell. Related topics: api, bash, cli, css.
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/tooling/index|Tooling]] › [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
 ## Opaque Identifiers as Entities
 Names like LqBUkrrrqqquu are not words; they are opaque identifiers — generated tokens, hashes, base-encoded values, or randomized names that sessions encounter and the knowledge base records verbatim. Treating them as entity nodes preserves the ability to link the identifier to its context even when its meaning is unknown.
 Handling rules for such pages:
@@ -26,6 +26,6 @@ Occasionally the referent surfaces: a configuration file, a generated API key na
 - [[wiki/llm-agents/traceability|Traceability]] — provenance for every recorded reference
 - [[wiki/memory/digital-garden|Digital Garden]] — growing an identifier page into a full article
 ## Related Entities
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/busuj|Busuj]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/dims-2|Dims 2]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]
+- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
+- [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

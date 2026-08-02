@@ -12,10 +12,10 @@ resource: ""
 
 Whyts As is referenced in 1 session(s). Related tags: ide, spa.
 
-**Domain:** Development Tools › [[wiki/dev-tools/supercategories/development/index|Development]] › [[wiki/dev-tools/supercategories/development/categories/web-tools/index|Web Tools]]
+**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Web Tools]]
 
 ## Related Entities
 
-- [[wiki/dev-tools/supercategories/development/categories/web-tools/cyn|Cyn]]
-- [[wiki/dev-tools/supercategories/development/categories/web-tools/tic|Tic]]
-- [[wiki/dev-tools/supercategories/development/categories/web-tools/whyts|Whyts]]
+- [[wiki/development/categories/web-tools/cyn|Cyn]]
+- [[wiki/development/categories/web-tools/tic|Tic]]
+- [[wiki/development/categories/web-tools/whyts|Whyts]]

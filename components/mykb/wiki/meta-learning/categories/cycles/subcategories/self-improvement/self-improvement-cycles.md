@@ -39,4 +39,4 @@ RSIS3 (mind) → myrsikb (bridge) → mykb (memory) → improved RSIS3
 
 The most powerful meta-learning pattern in this ecosystem is the self-documenting prompt pipeline: the wiki daemon's extraction prompts are documented in the wiki they populate, creating a recursive improvement loop.
 
-See also: [[wiki/concepts/triad-architecture|Triad Architecture]], [[wiki/concepts/pulse-cycle|Pulse Cycle]], [[wiki/prompt-engineering/entities/knowledge-extraction|Knowledge Extraction]]
+See also: [[wiki/concepts/triad-architecture|Triad Architecture]], [[wiki/concepts/pulse-cycle|Pulse Cycle]], [[wiki/prompt-engineering/categories/patterns/subcategories/prompt-techniques/knowledge-extraction|Knowledge Extraction]]

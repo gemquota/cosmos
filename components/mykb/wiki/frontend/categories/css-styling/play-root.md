@@ -21,15 +21,15 @@ Whichever reading applies, the identifier behaves like an anchor: it names the p
 
 
 Roots are where configuration and state concentrate, which is both a strength and a risk. Centralizing playback logic in one root makes behavior predictable and testable, but it also means a single bug can break the whole player. Defensive practices — validating sources, handling errors per component, and logging state transitions — keep the root reliable. The identifier is worth remembering because it names the seam between the UI and the media pipeline.
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/css-styling/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/importerror-10|Importerror 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/css-10|Css 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/database-2|Database 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/display-2|Display 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/html-10|Html 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/reference-2|Reference 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/dob-2|Dob 2]]
+- [[wiki/frontend/categories/css-styling/importerror-10|Importerror 10]]
+- [[wiki/frontend/categories/css-styling/css-10|Css 10]]
+- [[wiki/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
+- [[wiki/frontend/categories/css-styling/database-2|Database 2]]
+- [[wiki/frontend/categories/css-styling/display-2|Display 2]]
+- [[wiki/frontend/categories/css-styling/html-10|Html 10]]
+- [[wiki/frontend/categories/css-styling/reference-2|Reference 2]]
+- [[wiki/frontend/categories/css-styling/dob-2|Dob 2]]

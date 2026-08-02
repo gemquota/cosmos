@@ -13,7 +13,7 @@ resource: ""
 
 Ambiguity Vector appears in 1 session(s) categorized as API, Cloud, Security. Related topics: api, auth, authentication, aws.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/security-auth/index|Security Auth]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security]] › Ambiguity Vector
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Ambiguity Vector
 
 ## Overview
 
@@ -32,18 +32,18 @@ Security reviews treat ambiguity vectors as risk because attackers exploit doubl
 
 ## Related Security Concepts
 
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ambiguityassessment|AmbiguityAssessment]] — scoring ambiguity before acting on it
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/attack-surface|Attack Surface]] — ambiguity vectors widen the surface attackers can probe
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/authentication-10|Authentication 10]] — identity flows where double readings are common
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied]] — the outcome when ambiguity resolves toward denial
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/ambiguityassessment|AmbiguityAssessment]] — scoring ambiguity before acting on it
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/attack-surface|Attack Surface]] — ambiguity vectors widen the surface attackers can probe
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/authentication-10|Authentication 10]] — identity flows where double readings are common
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied]] — the outcome when ambiguity resolves toward denial
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/sim-speed|Sim Speed]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/missing-content|Missing Content]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/searchtext|Searchtext]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/sim-speed|Sim Speed]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/missing-content|Missing Content]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/searchtext|Searchtext]]

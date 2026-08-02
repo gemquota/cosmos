@@ -9,7 +9,7 @@ status: "growing"
 ---
 ## Radarrenderer 2
 RadarRenderer appears in 3 session(s) categorized as API, Backend, Cloud, Database, Debugging, Frontend, Security, Shell. Related topics: api, auth, aws, backend, bash, bootstrap, cli, css, database.
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/tooling/index|Tooling]] › [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
 ## Overview
 RadarRenderer is a rendering component whose name suggests it draws radar-style visualizations — polar plots of range, bearing, or multi-axis metrics. Across three sessions it was referenced in API, Backend, Cloud, Database, Debugging, Frontend, Security, and Shell contexts, which paints a full-stack picture: a service fetches data from a database through an API, a renderer draws it, and shell tooling drives or debugs the pipeline, all hosted on cloud infrastructure.
 ## Rendering Role
@@ -19,6 +19,6 @@ The tags expose the supporting stack: a backend API serves the data, a database 
 ## Session Context
 Three sessions referenced RadarRenderer, so it is treated as a recurring component rather than a one-off name. This page anchors the radar-visualization thread in the tooling cluster; related entities below are the other shell-cli pages captured in the same session set.
 ## Related Entities
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/busuj|Busuj]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/dims-2|Dims 2]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]
+- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
+- [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

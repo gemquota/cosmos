@@ -14,7 +14,7 @@ Process ID — a unique identifier assigned by the operating system to each runn
 
 Acronym referenced in session 019f2765
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Pid 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Pid 2
 
 ## Related Entities
 

@@ -13,7 +13,7 @@ IP (Internet Protocol) — the principal network protocol for routing packets ac
 
 **Related topics:** android, angular, api
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Flip
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Flip
 
 ## Related Entities
 

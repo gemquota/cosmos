@@ -12,7 +12,7 @@ resource: ""
 
 Core Init appears in 1 session(s) categorized as API, Mobile, Security. Related topics: android, api, auth, authentication.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Core Init
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Core Init
 
 ## Related Entities
 

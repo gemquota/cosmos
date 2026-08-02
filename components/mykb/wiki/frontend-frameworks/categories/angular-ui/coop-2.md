@@ -13,7 +13,7 @@ resource: ""
 
 COOP appears in 3 session(s) categorized as API, Cloud, Frontend, Mobile, Security. Related topics: acronym, android, angular, api, auth, aws, bootstrap.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
 
 ## Overview
 

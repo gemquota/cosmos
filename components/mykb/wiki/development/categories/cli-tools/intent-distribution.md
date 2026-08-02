@@ -14,7 +14,7 @@ Intent — an Android messaging object for communicating between components. Ses
 
 **Related topics:** bug, cli, edge, ide
 
-**Domain:** Development Tools › [[wiki/dev-tools/supercategories/development/index|Development]] › [[wiki/dev-tools/supercategories/development/categories/cli-tools/index|Cli Tools]]
+**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Cli Tools]]
 
 ## Overview
 
@@ -48,11 +48,11 @@ Extras are not encrypted, so sensitive values should travel in explicit intents 
 
 ## Related Entities
 
-- [[wiki/dev-tools/supercategories/development/categories/cli-tools/agentic-context-engineering|Agentic Context Engineering]]
-- [[wiki/dev-tools/supercategories/development/categories/cli-tools/cognitive|Cognitive]]
-- [[wiki/dev-tools/supercategories/development/categories/cli-tools/dev|Dev]]
-- [[wiki/dev-tools/supercategories/development/categories/cli-tools/intent|Intent]]
-- [[wiki/dev-tools/supercategories/development/categories/cli-tools/performance|Performance]]
-- [[wiki/dev-tools/supercategories/development/categories/cli-tools/reality|Reality]]
-- [[wiki/dev-tools/supercategories/development/categories/cli-tools/senior-dev|Senior Dev]]
-- [[wiki/dev-tools/supercategories/development/categories/cli-tools/sovereign-orchestrator|Sovereign Orchestrator]]
+- [[wiki/development/categories/cli-tools/agentic-context-engineering|Agentic Context Engineering]]
+- [[wiki/development/categories/cli-tools/cognitive|Cognitive]]
+- [[wiki/development/categories/cli-tools/dev|Dev]]
+- [[wiki/development/categories/cli-tools/intent|Intent]]
+- [[wiki/development/categories/cli-tools/performance|Performance]]
+- [[wiki/development/categories/cli-tools/reality|Reality]]
+- [[wiki/development/categories/cli-tools/senior-dev|Senior Dev]]
+- [[wiki/development/categories/cli-tools/sovereign-orchestrator|Sovereign Orchestrator]]

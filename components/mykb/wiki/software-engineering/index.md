@@ -1,53 +1,180 @@
+---
+type: "index"
+title: "Software Engineering Index"
+description: "Listing of the software-engineering/ folder (164 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
 # Software Engineering
 
-> Programming languages, design patterns, code quality, testing strategies.
+Part of [[wiki/index|Wiki Index]]. 164 pages.
 
-**1 entity** — design patterns from the ecosystem.
+## Subfolders
+- entities/ — 1 pages
 
-## Entities
-- [[wiki/software-engineering/entities/design-patterns|Design Patterns]] — Patterns across RSIS3, SPACE, bridge
-
-## Related
-- [[wiki/development/index|Development]]
-- [[wiki/concepts/index|Concepts]]
-- [[wiki/testing/index|Testing]]
-
-## Concepts
-
-- [Agile Ceremonies](agile-ceremonies.md) — Agile Ceremonies
-- [Architecture Decision Records](architecture-decision-records.md) — Architecture Decision Records
-- [Bus Factor](bus-factor.md) — Bus Factor
-- [Choreography vs Orchestration](choreography-vs-orchestration.md) — Choreography vs Orchestration
-- [Clean Architecture](clean-architecture.md) — Clean Architecture
-- [Code Formatters](code-formatters.md) — Code Formatters
-- [Code Generation](code-generation.md) — Code Generation
-- [Code Ownership](code-ownership.md) — Code Ownership
-- [Code Review](code-review.md) — Code Review
-- [Compensating Transactions](compensating-transactions.md) — Compensating Transactions
-- [Dependency Injection](dependency-injection.md) — Dependency Injection
-- [Developer Experience](developer-experience.md) — Developer Experience
-- [Documentation as Code](documentation-as-code.md) — Documentation as Code
-- [Domain-Driven Design](domain-driven-design.md) — Domain-Driven Design
-- [Estimation Techniques](estimation-techniques.md) — Estimation Techniques
-- [Event-Driven Architecture](event-driven-architecture.md) — Event-Driven Architecture
-- [Functional Programming](functional-programming.md) — Functional Programming
-- [Git Workflows](git-workflows.md) — Git Workflows
-- [Hexagonal Architecture](hexagonal-architecture.md) — Hexagonal Architecture
-- [Internal Developer Platforms](internal-developer-platforms.md) — Internal Developer Platforms
-- [Inversion of Control](inversion-of-control.md) — Inversion of Control
-- [Microservices Architecture](microservices-architecture.md) — Microservices Architecture
-- [Mob Programming](mob-programming.md) — Mob Programming
-- [Modular Monoliths](modular-monoliths.md) — Modular Monoliths
-- [Monorepo Strategies](monorepo-strategies.md) — Monorepo Strategies
-- [Object-Oriented Programming](object-oriented-programming.md) — Object-Oriented Programming
-- [Onboarding Docs](onboarding-docs.md) — Onboarding Docs
-- [Pair Programming](pair-programming.md) — Pair Programming
-- [Process Manager Pattern](process-manager-pattern.md) — Process Manager Pattern
-- [Project Scaffolding](project-scaffolding.md) — Project Scaffolding
-- [Reactive Programming](reactive-programming.md) — Reactive Programming
-- [Refactoring](refactoring.md) — Refactoring
-- [Service Discovery](service-discovery.md) — Service Discovery
-- [Static Analysis Tools](static-analysis-tools.md) — Static Analysis Tools
-- [Technical Debt](technical-debt.md) — Technical Debt
-- [Transactional Outbox](transactional-outbox.md) — Transactional Outbox
-- [Type Systems](type-systems.md) — Type Systems
+## Pages
+- [[wiki/software-engineering/acceptance-criteria|Acceptance Criteria]] — The concrete conditions that make a story done and testable
+- [[wiki/software-engineering/actor-model|Actor Model]] — Concurrency via isolated actors that communicate only by asynchronous messages
+- [[wiki/software-engineering/adapter-pattern|Adapter Pattern]] — Translating one interface into another so incompatible components can work together
+- [[wiki/software-engineering/aggregates|Aggregates]] — DDD clusters of entities and values treated as one consistency unit
+- [[wiki/software-engineering/agile-ceremonies|Agile Ceremonies]] — The recurring meetings that structure an agile team's rhythm: planning, standup, review, retrospective
+- [[wiki/software-engineering/agile-methodology|Agile Methodology]] — The values and principles for iterative, people-first software development
+- [[wiki/software-engineering/application-services|Application Services]] — The layer that orchestrates use cases: transactions, auth, and coordination
+- [[wiki/software-engineering/architecture-decision-records|Architecture Decision Records]] — Short, numbered documents that record significant architectural decisions and their context
+- [[wiki/software-engineering/async-await-patterns|Async/Await Patterns]] — Writing asynchronous code that reads like synchronous code
+- [[wiki/software-engineering/asynchronous-patterns|Asynchronous Patterns]] — The recurring designs for non-blocking, event-driven execution
+- [[wiki/software-engineering/at-least-once|At-Least-Once Delivery]] — A delivery guarantee where messages may be delivered more than once, but never lost
+- [[wiki/software-engineering/at-most-once|At-Most-Once Delivery]] — A delivery guarantee where messages may be lost but never duplicated
+- [[wiki/software-engineering/backlog-grooming|Backlog Grooming]] — The ongoing refinement of backlog items: detail, size, and priority
+- [[wiki/software-engineering/backoff-cap|Backoff Cap]] — The maximum delay an exponential backoff strategy will reach
+- [[wiki/software-engineering/backpressure-spec|Backpressure Spec]] — The formal Reactive Streams contract for demand and cancellation
+- [[wiki/software-engineering/bridge-pattern|Bridge Pattern]] — Decoupling an abstraction from its implementation so both can vary independently
+- [[wiki/software-engineering/builder-pattern|Builder Pattern]] — Constructing complex objects step by step with fluent, readable calls
+- [[wiki/software-engineering/bus-factor|Bus Factor]] — The number of people whose departure would bring a project to a halt
+- [[wiki/software-engineering/chain-of-responsibility|Chain of Responsibility]] — Passing a request along a chain until some handler processes it
+- [[wiki/software-engineering/choreography-vs-orchestration|Choreography vs Orchestration]] — Two coordination styles for multi-step workflows: distributed responsibility vs a central conductor
+- [[wiki/software-engineering/circuit-breaker-libs|Circuit Breaker Libraries]] — Libraries that implement open/closed/half-open failure gating for calls
+- [[wiki/software-engineering/clean-architecture-practice|Clean Architecture Practice]] — Layering a system so business rules stay independent of frameworks, UI, and databases
+- [[wiki/software-engineering/clean-architecture|Clean Architecture]] — Layering scheme that keeps business rules independent of frameworks, UI, and infrastructure
+- [[wiki/software-engineering/code-formatters|Code Formatters]] — Tools that automatically normalize source code formatting to a fixed style
+- [[wiki/software-engineering/code-generation|Code Generation]] — Producing source code automatically from models, schemas, or LLM prompts
+- [[wiki/software-engineering/code-ownership|Code Ownership]] — The policy deciding who is responsible for reviewing and maintaining a given piece of code
+- [[wiki/software-engineering/code-review|Code Review]] — Systematic examination of code changes by other developers before merging
+- [[wiki/software-engineering/code-smells|Code Smells]] — Surface signs in code that hint at deeper design problems
+- [[wiki/software-engineering/coding-standards|Coding Standards]] — The shared conventions that keep a codebase consistent and reviewable
+- [[wiki/software-engineering/command-pattern|Command Pattern]] — Encapsulating an action and its arguments as an object
+- [[wiki/software-engineering/command-query-separation|Command Query Separation]] — The principle that a method either changes state or returns data, never both
+- [[wiki/software-engineering/compensating-transactions|Compensating Transactions]] — Undo actions that roll back the effects of completed steps in a distributed operation
+- [[wiki/software-engineering/composite-pattern|Composite Pattern]] — Treating individual objects and groups of objects uniformly
+- [[wiki/software-engineering/composition-over-inheritance|Composition Over Inheritance]] — Building behavior by combining objects and functions instead of subclassing
+- [[wiki/software-engineering/concurrency-models|Concurrency Models]] — The ways systems structure simultaneous execution: threads, events, actors, async
+- [[wiki/software-engineering/consumer-groups|Consumer Groups]] — Partitioning message consumption across a set of cooperating consumers
+- [[wiki/software-engineering/cqrs-pattern|CQRS Pattern]] — Separating the command (write) model from the query (read) model
+- [[wiki/software-engineering/cqrs-practice|CQRS Practice]] — Separating the write model from the read model at the architecture level
+- [[wiki/software-engineering/debugging-methodology|Debugging Methodology]] — The systematic process of finding and fixing defects
+- [[wiki/software-engineering/decorator-pattern|Decorator Pattern]] — Adding behavior to objects by wrapping them with the same interface
+- [[wiki/software-engineering/deduplication-queues|Deduplication Queues]] — Message queues that drop duplicates by message ID
+- [[wiki/software-engineering/delivery-guarantees|Delivery Guarantees]] — The spectrum of message delivery semantics from at-most-once to exactly-once
+- [[wiki/software-engineering/denormalization-practice|Denormalization Practice]] — Duplicating data deliberately to make reads fast and simple
+- [[wiki/software-engineering/dependency-injection|Dependency Injection]] — Technique for supplying an object with its dependencies from outside rather than constructing them internally
+- [[wiki/software-engineering/developer-experience|Developer Experience]] — The quality of the working environment, tooling, and feedback loops that shape how productive developers are
+- [[wiki/software-engineering/documentation-as-code|Documentation as Code]] — Treating documentation with the same rigor as source code: versioned, reviewed, and built
+- [[wiki/software-engineering/domain-driven-design|Domain-Driven Design]] — Approach to modeling software around the business domain and its language, contexts, and rules
+- [[wiki/software-engineering/domain-services|Domain Services]] — Stateless operations that coordinate multiple aggregates or encode domain rules
+- [[wiki/software-engineering/entities-vs-value-objects|Entities vs Value Objects]] — The DDD distinction between identity-tracked objects and value-defined ones
+- [[wiki/software-engineering/estimation-techniques|Estimation Techniques]] — Methods for predicting the effort or size of software work, from story points to t-shirt sizes
+- [[wiki/software-engineering/event-carried-state|Event-Carried State]] — Events that include the data consumers need instead of just an ID
+- [[wiki/software-engineering/event-driven-architecture|Event-Driven Architecture]] — Software architecture built around the production, detection, and consumption of events
+- [[wiki/software-engineering/event-driven-design|Event-Driven Design]] — Designing systems around events that trigger reactions
+- [[wiki/software-engineering/event-loops|Event Loops]] — A single-threaded dispatch model for handling many concurrent I/O operations
+- [[wiki/software-engineering/event-notification|Event Notification]] — Events that say something happened, with consumers fetching details as needed
+- [[wiki/software-engineering/event-sourcing-practice|Event Sourcing Practice]] — Storing state as an append-only log of events instead of current rows
+- [[wiki/software-engineering/exactly-once-claims|Exactly-Once Claims]] — The expensive and often illusory guarantee that a message is processed precisely once
+- [[wiki/software-engineering/exponential-backoff-practice|Exponential Backoff Practice]] — Doubling the wait between retries so load on a failing system decreases
+- [[wiki/software-engineering/facade-pattern|Facade Pattern]] — A simple interface that hides a complex subsystem
+- [[wiki/software-engineering/factory-pattern|Factory Pattern]] — Creating objects through a function or method instead of direct constructors
+- [[wiki/software-engineering/flyweight-pattern|Flyweight Pattern]] — Sharing immutable fine-grained objects to save memory
+- [[wiki/software-engineering/functional-programming-principles|Functional Programming Principles]] — Building software from pure functions and immutable data
+- [[wiki/software-engineering/functional-programming|Functional Programming]] — Paradigm that builds programs from pure functions and immutable data
+- [[wiki/software-engineering/git-workflows|Git Workflows]] — Branching and merging conventions that teams follow to coordinate changes in git
+- [[wiki/software-engineering/hexagonal-architecture|Hexagonal Architecture]] — Ports-and-adapters style that isolates the application core from external technologies
+- [[wiki/software-engineering/immutability-practice|Immutability Practice]] — Designing data structures that cannot change after creation
+- [[wiki/software-engineering/inbox-pattern|Inbox Pattern]] — Deduplicating incoming messages by persisting processed message IDs
+- [[wiki/software-engineering/internal-developer-platforms|Internal Developer Platforms]] — A productized layer of tooling, services, and golden paths that developers consume to ship software
+- [[wiki/software-engineering/interpreter-pattern|Interpreter Pattern]] — Evaluating expressions of a small language using object structure and recursion
+- [[wiki/software-engineering/inversion-of-control|Inversion of Control]] — Design principle where a framework or container controls the flow and calls user code, not the reverse
+- [[wiki/software-engineering/iterator-pattern|Iterator Pattern]] — Providing sequential access to a collection's elements without exposing its structure
+- [[wiki/software-engineering/jitter-practice|Jitter Practice]] — Adding randomness to retry timing to prevent synchronized retry storms
+- [[wiki/software-engineering/kanban-method|Kanban Method]] — The pull-based flow system of visual boards and work-in-progress limits
+- [[wiki/software-engineering/key-hashing|Key Hashing]] — Mapping keys to partitions via a hash function for even distribution
+- [[wiki/software-engineering/lag-monitoring|Lag Monitoring]] — Tracking how far consumers are behind the latest message
+- [[wiki/software-engineering/layered-architecture|Layered Architecture]] — Organizing code into stacked layers with one-directional dependencies
+- [[wiki/software-engineering/lean-software-development|Lean Software Development]] — Applying lean manufacturing principles to software: eliminate waste, amplify learning
+- [[wiki/software-engineering/legacy-code-strategies|Legacy Code Strategies]] — Working safely with old, untested, high-risk codebases
+- [[wiki/software-engineering/linting-practice|Linting Practice]] — Using linters to catch problems and enforce style automatically
+- [[wiki/software-engineering/logging-strategies|Logging Strategies]] — Deciding what to log, at what level, and where it goes
+- [[wiki/software-engineering/mediator-pattern|Mediator Pattern]] — Centralizing interactions between many objects through one coordinator
+- [[wiki/software-engineering/memento-pattern|Memento Pattern]] — Capturing and restoring an object's state without exposing its internals
+- [[wiki/software-engineering/message-passing|Message Passing]] — Communicating between concurrent units by sending data instead of sharing it
+- [[wiki/software-engineering/metrics-and-monitoring|Metrics and Monitoring]] — Collecting time-series data and watching it for health and trends
+- [[wiki/software-engineering/microkernel-architecture|Microkernel Architecture]] — A minimal core with pluggable extensions
+- [[wiki/software-engineering/microservices-architecture|Microservices Architecture]] — Architectural style that structures an application as a set of small, independently deployable services
+- [[wiki/software-engineering/mob-programming|Mob Programming]] — The whole team working together on one task at one screen
+- [[wiki/software-engineering/modular-monoliths|Modular Monoliths]] — A single deployable application whose internal modules follow strong boundaries
+- [[wiki/software-engineering/monorepo-strategies|Monorepo Strategies]] — Version-control layouts that keep many projects in a single repository with shared tooling
+- [[wiki/software-engineering/null-object-pattern|Null Object Pattern]] — Using a do-nothing object instead of null to avoid null checks
+- [[wiki/software-engineering/object-oriented-principles|Object-Oriented Principles]] — Modeling systems as objects with state, behavior, and polymorphism
+- [[wiki/software-engineering/object-oriented-programming|Object-Oriented Programming]] — Programming paradigm organizing code around objects that bundle state and behavior
+- [[wiki/software-engineering/object-pool|Object Pool]] — Reusing expensive objects instead of creating and destroying them
+- [[wiki/software-engineering/observability-practice|Observability Practice]] — Instrumenting systems so their internal state is inferable from outputs
+- [[wiki/software-engineering/observer-pattern|Observer Pattern]] — Notifying interested subscribers when a subject changes state
+- [[wiki/software-engineering/offset-management|Offset Management]] — Tracking and committing where a consumer has read in a log
+- [[wiki/software-engineering/onboarding-docs|Onboarding Docs]] — Documentation that gets a new person productive: setup, architecture map, conventions, and first tasks
+- [[wiki/software-engineering/onion-architecture|Onion Architecture]] — Layering dependencies inward toward a domain core
+- [[wiki/software-engineering/outbox-pattern|Outbox Pattern]] — Persisting events with state changes so messaging never loses them
+- [[wiki/software-engineering/outbox-table|Outbox Table]] — Persisting events in the same transaction as the state change they describe
+- [[wiki/software-engineering/pair-programming|Pair Programming]] — Two developers working together at one workstation, alternating driver and navigator roles
+- [[wiki/software-engineering/partitioning-strategies|Partitioning Strategies]] — Choosing how to split a topic or table across shards
+- [[wiki/software-engineering/performance-engineering|Performance Engineering]] — Designing and maintaining systems that meet latency and throughput targets
+- [[wiki/software-engineering/pipeline-architecture|Pipeline Architecture]] — Processing data through a linear chain of stages
+- [[wiki/software-engineering/planning-poker|Planning Poker]] — The consensus-based estimation game for relative sizing
+- [[wiki/software-engineering/poison-messages|Poison Messages]] — Messages that crash or stall consumers and block the queue
+- [[wiki/software-engineering/ports-and-adapters|Ports and Adapters]] — Isolating the core from the outside world via interfaces (ports) and implementations (adapters)
+- [[wiki/software-engineering/process-manager-pattern|Process Manager Pattern]] — A stateful component that coordinates a workflow by routing messages between participants
+- [[wiki/software-engineering/profiling-and-optimization|Profiling and Optimization]] — Measuring where resources go before and after changing code
+- [[wiki/software-engineering/project-scaffolding|Project Scaffolding]] — Creating the initial structure of a project from a template so every start follows the same golden path
+- [[wiki/software-engineering/projections|Projections]] — Read-optimized views derived from an event log or source of truth
+- [[wiki/software-engineering/promises-vs-callbacks|Promises vs Callbacks]] — Two APIs for composing asynchronous results and their tradeoffs
+- [[wiki/software-engineering/prototype-pattern|Prototype Pattern]] — Creating new objects by cloning an existing prototype
+- [[wiki/software-engineering/proxy-pattern|Proxy Pattern]] — A stand-in object that controls access to a real target
+- [[wiki/software-engineering/pure-functions|Pure Functions]] — Functions whose output depends only on inputs and that have no side effects
+- [[wiki/software-engineering/reactive-programming|Reactive Programming]] — Programming with asynchronous data streams and declarative transformations
+- [[wiki/software-engineering/reactive-streams|Reactive Streams]] — A standard for asynchronous stream processing with backpressure
+- [[wiki/software-engineering/read-models|Read Models]] — Dedicated data shapes optimized for how the system reads
+- [[wiki/software-engineering/rebalancing|Rebalancing]] — Redistributing partitions among consumers when the group changes
+- [[wiki/software-engineering/refactoring-techniques|Refactoring Techniques]] — Behavior-preserving restructuring of code to improve its design
+- [[wiki/software-engineering/refactoring|Refactoring]] — Restructuring code to improve its internal structure without changing observable behavior
+- [[wiki/software-engineering/referential-transparency|Referential Transparency]] — The property that an expression can be replaced by its value without changing behavior
+- [[wiki/software-engineering/reliability-engineering|Reliability Engineering]] — The discipline of keeping systems available through SLOs, budgets, and practice
+- [[wiki/software-engineering/repositories-pattern|Repositories Pattern]] — An abstraction that makes data access look like an in-memory collection
+- [[wiki/software-engineering/requirements-engineering|Requirements Engineering]] — The discipline of discovering, specifying, and validating what a system must do
+- [[wiki/software-engineering/resilience-libs|Resilience Libraries]] — Bundled toolkits for timeouts, retries, breakers, and bulkheads
+- [[wiki/software-engineering/retry-after|Retry-After]] — The HTTP header and convention telling clients when to retry
+- [[wiki/software-engineering/retry-patterns|Retry Patterns]] — The disciplined ways to re-attempt failed operations safely
+- [[wiki/software-engineering/retry-queues|Retry Queues]] — Dedicated queues that hold failed work for a later attempt
+- [[wiki/software-engineering/saga-choreography|Saga Choreography]] — Distributed transactions coordinated by services reacting to each other's events
+- [[wiki/software-engineering/saga-orchestration|Saga Orchestration]] — Coordinating a distributed transaction through a central orchestrator
+- [[wiki/software-engineering/scheduled-retries|Scheduled Retries]] — Retrying failed work after a planned delay instead of immediately
+- [[wiki/software-engineering/scrum-framework|Scrum Framework]] — The agile framework of sprints, roles, and ceremonies for iterative delivery
+- [[wiki/software-engineering/service-discovery|Service Discovery]] — Mechanisms that let services locate each other's addresses at runtime
+- [[wiki/software-engineering/service-locator|Service Locator]] — A central registry that hands out dependencies on request
+- [[wiki/software-engineering/shared-nothing|Shared Nothing]] — An architecture where units own their state and coordinate only through messages or network calls
+- [[wiki/software-engineering/side-effect-isolation|Side Effect Isolation]] — Concentrating I/O and state changes at the edges of pure logic
+- [[wiki/software-engineering/singleton-pitfalls|Singleton Pitfalls]] — The problems that make the singleton pattern an anti-pattern in many systems
+- [[wiki/software-engineering/software-design-principles|Software Design Principles]] — Enduring rules of thumb that guide the structure of maintainable software
+- [[wiki/software-engineering/software-estimation|Software Estimation]] — Predicting effort and duration with uncertainty made explicit
+- [[wiki/software-engineering/solid-principles|SOLID Principles]] — The five object-oriented design principles for maintainable class hierarchies
+- [[wiki/software-engineering/specification-by-example|Specification by Example]] — Collaborating on requirements through concrete examples and automated tests
+- [[wiki/software-engineering/sprint-planning|Sprint Planning]] — The ceremony that commits a team to a scope for the next iteration
+- [[wiki/software-engineering/state-pattern|State Pattern]] — Encapsulating state-specific behavior in separate state objects
+- [[wiki/software-engineering/static-analysis-tools|Static Analysis Tools]] — Programs that analyze source code without running it to find bugs, smells, and policy violations
+- [[wiki/software-engineering/static-analysis|Static Analysis]] — Analyzing code without running it to find bugs and enforce rules
+- [[wiki/software-engineering/story-points|Story Points]] — Relative units of work size used for agile estimation
+- [[wiki/software-engineering/strategy-pattern|Strategy Pattern]] — Swapping interchangeable algorithms behind a common interface
+- [[wiki/software-engineering/technical-debt-management|Technical Debt Management]] — Tracking, prioritizing, and paying down shortcuts in the codebase
+- [[wiki/software-engineering/technical-debt|Technical Debt]] — The accumulated cost of expedient software decisions that must be paid back later
+- [[wiki/software-engineering/template-method|Template Method]] — Defining an algorithm's skeleton and letting subclasses fill in steps
+- [[wiki/software-engineering/thread-pools|Thread Pools]] — Reusing a fixed set of worker threads instead of spawning one per task
+- [[wiki/software-engineering/transactional-outbox|Transactional Outbox]] — Pattern for publishing events reliably by writing them to a database table in the same transaction as the business change
+- [[wiki/software-engineering/type-systems-in-practice|Type Systems in Practice]] — Using static types to prevent errors and document intent
+- [[wiki/software-engineering/type-systems|Type Systems]] — The rules by which a language classifies values and expressions to prevent errors at compile time
+- [[wiki/software-engineering/unit-of-work|Unit of Work]] — Tracking changes during a business operation and committing them together
+- [[wiki/software-engineering/unit-testing-practice|Unit Testing Practice]] — Testing individual units of code in isolation, fast and often
+- [[wiki/software-engineering/usability-testing|Usability Testing]] — Observing real users completing tasks to find usability problems
+- [[wiki/software-engineering/use-case-layer|Use Case Layer]] — The application-level layer that expresses what the system does for its users
+- [[wiki/software-engineering/user-research-methods|User Research Methods]] — The toolkit for understanding users: interviews, surveys, observation, analytics
+- [[wiki/software-engineering/user-stories|User Stories]] — Short, value-focused descriptions of what a user needs
+- [[wiki/software-engineering/value-objects|Value Objects]] — Immutable objects defined by their values, not their identity
+- [[wiki/software-engineering/velocity-metrics|Velocity Metrics]] — Measuring delivered story points per iteration for forecasting
+- [[wiki/software-engineering/visitor-pattern|Visitor Pattern]] — Adding operations to an object structure without changing its classes

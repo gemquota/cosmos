@@ -12,7 +12,7 @@ resource: ""
 
 A touchscreen musical instrument project allowing sliding between notes with chromatic sequencing. Appears in agent sessions involving interactive music visualization and sound generation.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/css-styling/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
 
 ## Overview
 
@@ -45,11 +45,11 @@ Gesture Harmonics is an interactive instrument where touch position controls pit
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/importerror-10|Importerror 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/css-10|Css 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/database-2|Database 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/display-2|Display 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/html-10|Html 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/reference-2|Reference 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/dob-2|Dob 2]]
+- [[wiki/frontend/categories/css-styling/importerror-10|Importerror 10]]
+- [[wiki/frontend/categories/css-styling/css-10|Css 10]]
+- [[wiki/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
+- [[wiki/frontend/categories/css-styling/database-2|Database 2]]
+- [[wiki/frontend/categories/css-styling/display-2|Display 2]]
+- [[wiki/frontend/categories/css-styling/html-10|Html 10]]
+- [[wiki/frontend/categories/css-styling/reference-2|Reference 2]]
+- [[wiki/frontend/categories/css-styling/dob-2|Dob 2]]

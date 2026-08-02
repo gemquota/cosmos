@@ -1,183 +1,477 @@
-## Overview
-
-The **Data Storage** domain (1 concepts) covers database and caching technologies. The preference is for lightweight, embedded solutions with production-ready alternatives.
-
-### Key Technologies
-
-- **SQLite** — primary embedded database for local development
-- **PostgreSQL** — production database with full ACID compliance
-- **SQLAlchemy** — Python ORM for database abstraction
-- **Redis** — in-memory cache and message broker
-- **Alembic** — database migration management
-
-### Data Patterns
-
-1. SQLite for single-user agent data and wiki storage
-2. PostgreSQL for multi-user production services
-3. Redis for session caching and rate limiting
-4. ORM-first approach with SQLAlchemy model definitions
-
-
+---
+type: "index"
+title: "Data Storage Index"
+description: "Listing of the data-storage/ folder (461 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
 ---
 
-## Entities by Sub-Group
+# Data Storage
 
-### Caching
+Part of [[wiki/index|Wiki Index]]. 461 pages.
 
-- [CACHE](entities/cache.md)
+## Subfolders
+- entities/ — 7 pages
 
-## Concepts
-
-- [ACID Transactions](acid-transactions.md) — ACID Transactions
-- [B-Tree Indexing](b-tree-indexing.md) — B-Tree Indexing
-- [Backfilling](backfilling.md) — Backfilling
-- [Backpressure](backpressure.md) — Backpressure
-- [Backup Strategies](backup-strategies.md) — Backup Strategies
-- [Batch vs Stream Processing](batch-vs-stream-processing.md) — Batch vs Stream Processing
-- [Bitmap Indexes](bitmap-indexes.md) — Bitmap Indexes
-- [BM25](bm25.md) — BM25
-- [Buffer Pool Management](buffer-pool-management.md) — Buffer Pool Management
-- [Cache Eviction Policies](cache-eviction-policies.md) — Cache Eviction Policies
-- [Caching Strategies](caching-strategies.md) — Caching Strategies
-- [CAP Theorem](cap-theorem.md) — CAP Theorem
-- [Change Data Capture](cdc-change-data-capture.md) — Change Data Capture
-- [ChromaDB](chromadb.md) — ChromaDB
-- [Chunking Strategies](chunking-strategies.md) — Chunking Strategies
-- [Clustered Tables](clustered-tables.md) — Clustered Tables
-- [Columnar Storage](columnar-storage.md) — Columnar Storage
-- [Composite Indexes](composite-indexes.md) — Composite Indexes
-- [Compression Codecs](compression-codecs.md) — Compression Codecs
-- [Consistency Models](consistency-models.md) — Consistency Models
-- [Consistent Hashing](consistent-hashing.md) — Consistent Hashing
-- [Content-Addressable Storage](content-addressable-storage.md) — Content-Addressable Storage
-- [Cosine Similarity](cosine-similarity.md) — Cosine Similarity
-- [Cost-Based Query Optimization](cost-based-query-optimization.md) — Cost-Based Query Optimization
-- [Covering Indexes](covering-indexes.md) — Covering Indexes
-- [Crash Recovery](crash-recovery.md) — Crash Recovery
-- [CRDTs](crdts.md) — CRDTs
-- [Data Contracts](data-contracts.md) — Data Contracts
-- [Data Federation](data-federation.md) — Data Federation
-- [Data Lake](data-lake.md) — Data Lake
-- [Data Lifecycle Management](data-lifecycle-management.md) — Data Lifecycle Management
-- [Data Lineage](data-lineage.md) — Data Lineage
-- [Data Modeling](data-modeling.md) — Data Modeling
-- [Data Observability](data-observability.md) — Data Observability
-- [Data Pipeline Orchestration](data-pipeline-orchestration.md) — Data Pipeline Orchestration
-- [Data Profiling](data-profiling.md) — Data Profiling
-- [Data Quality Checks](data-quality-checks.md) — Data Quality Checks
-- [Data Versioning](data-versioning.md) — Data Versioning
-- [Data Warehouse](data-warehouse.md) — Data Warehouse
-- [Database Constraints](database-constraints.md) — Database Constraints
-- [Database Normalization](database-normalization.md) — Database Normalization
-- [Database Performance Monitoring](database-performance-monitoring.md) — Database Performance Monitoring
-- [Dead Letter Queues](dead-letter-queues.md) — Dead Letter Queues
-- [Deadlock Detection](deadlock-detection.md) — Deadlock Detection
-- [Deduplication](deduplication.md) — Deduplication
-- [Denormalization](denormalization.md) — Denormalization
-- [Dimensional Modeling](dimensional-modeling.md) — Dimensional Modeling
-- [Disaster Recovery](disaster-recovery.md) — Disaster Recovery
-- [Distributed Transactions](distributed-transactions.md) — Distributed Transactions
-- [Document Stores](document-stores.md) — Document Stores
-- [Dot Product](dot-product.md) — Dot Product
-- [Edit Distance](edit-distance.md) — Edit Distance
-- [Elasticsearch](elasticsearch.md) — Elasticsearch
-- [Embeddings](embeddings.md) — Embeddings
-- [Entity Resolution](entity-resolution.md) — Entity Resolution
-- [ETL vs ELT](etl-vs-elt.md) — ETL vs ELT
-- [Euclidean Distance](euclidean-distance.md) — Euclidean Distance
-- [Event Streaming Platforms](event-streaming-platforms.md) — Event Streaming Platforms
-- [Exactly-Once Semantics](exactly-once-semantics.md) — Exactly-Once Semantics
-- [Expand-Contract Migrations](expand-contract-migrations.md) — Expand-Contract Migrations
-- [FAISS](faiss.md) — FAISS
-- [Hash Indexes](hash-indexes.md) — Hash Indexes
-- [HNSW](hnsw.md) — HNSW
-- [Hybrid Search](hybrid-search.md) — Hybrid Search
-- [Idempotent Ingestion](idempotent-ingestion.md) — Idempotent Ingestion
-- [In-Memory Databases](in-memory-databases.md) — In-Memory Databases
-- [Incremental Loading](incremental-loading.md) — Incremental Loading
-- [Index Maintenance](index-maintenance.md) — Index Maintenance
-- [Inverted Index](inverted-index.md) — Inverted Index
-- [IVF Index](ivf.md) — IVF Index
-- [Jaccard Similarity](jaccard-similarity.md) — Jaccard Similarity
-- [Join Algorithms](join-algorithms.md) — Join Algorithms
-- [JSON-LD](json-ld.md) — JSON-LD
-- [Kappa Architecture](kappa-architecture.md) — Kappa Architecture
-- [Key-Value Stores](key-value-stores.md) — Key-Value Stores
-- [Knowledge Graph](knowledge-graph.md) — Knowledge Graph
-- [Lakehouse Architecture](lakehouse-architecture.md) — Lakehouse Architecture
-- [Lambda Architecture](lambda-architecture.md) — Lambda Architecture
-- [Latent Dirichlet Allocation](latent-dirichlet-allocation.md) — Latent Dirichlet Allocation
-- [Latent Semantic Analysis](latent-semantic-analysis.md) — Latent Semantic Analysis
-- [Leaderless Replication](leaderless-replication.md) — Leaderless Replication
-- [Lemmatization](lemmatization.md) — Lemmatization
-- [Locality-Sensitive Hashing](locality-sensitive-hashing.md) — Locality-Sensitive Hashing
-- [Lock Granularity](lock-granularity.md) — Lock Granularity
-- [Log Collection & Aggregation](log-collection-and-aggregation.md) — Log Collection & Aggregation
-- [LSM Trees](lsm-trees.md) — LSM Trees
-- [Lucene](lucene.md) — Lucene
-- [Massively Parallel Processing](massively-parallel-processing.md) — Massively Parallel Processing
-- [Materialized Views](materialized-views.md) — Materialized Views
-- [Message Queues](message-queues.md) — Message Queues
-- [Metadata Filtering](metadata-filtering.md) — Metadata Filtering
-- [Milvus](milvus.md) — Milvus
-- [MinHash](minhash.md) — MinHash
-- [Multi-Leader Replication](multi-leader-replication.md) — Multi-Leader Replication
-- [Multiversion Concurrency Control](multiversion-concurrency-control.md) — Multiversion Concurrency Control
-- [N-grams](n-grams.md) — N-grams
-- [Named Entity Recognition](named-entity-recognition.md) — Named Entity Recognition
-- [Object Storage](object-storage.md) — Object Storage
-- [OLAP vs OLTP](olap-vs-oltp.md) — OLAP vs OLTP
-- [Open Knowledge Format](open-knowledge-format.md) — Open Knowledge Format
-- [Open Table Formats](open-table-formats.md) — Open Table Formats
-- [Optimistic Concurrency Control](optimistic-concurrency-control.md) — Optimistic Concurrency Control
-- [Partial Indexes](partial-indexes.md) — Partial Indexes
-- [Partition Pruning](partition-pruning.md) — Partition Pruning
-- [Pinecone](pinecone.md) — Pinecone
-- [Point-in-Time Recovery](point-in-time-recovery.md) — Point-in-Time Recovery
-- [PostgreSQL tsvector](postgres-tsvector.md) — PostgreSQL tsvector
-- [Product Quantization](product-quantization.md) — Product Quantization
-- [Property Graph](property-graph.md) — Property Graph
-- [Qdrant](qdrant.md) — Qdrant
-- [Query Tuning](query-tuning.md) — Query Tuning
-- [Quorum Protocols](quorum-protocols.md) — Quorum Protocols
-- [Raft Consensus](raft-consensus.md) — Raft Consensus
-- [RDF](rdf.md) — RDF
-- [Reciprocal Rank Fusion](reciprocal-rank-fusion.md) — Reciprocal Rank Fusion
-- [Record Linkage](record-linkage.md) — Record Linkage
-- [Replication Strategies](replication-strategies.md) — Replication Strategies
-- [Retrieval-Augmented Generation](retrieval-augmented-generation.md) — Retrieval-Augmented Generation
-- [RPO and RTO](rpo-and-rto.md) — RPO and RTO
-- [Schema Evolution](schema-evolution.md) — Schema Evolution
-- [Schema Migrations](schema-migrations.md) — Schema Migrations
-- [Schema-on-Read vs Schema-on-Write](schema-on-read.md) — Schema-on-Read vs Schema-on-Write
-- [Semantic Search](semantic-search.md) — Semantic Search
-- [Sharding Strategies](sharding-strategies.md) — Sharding Strategies
-- [SimHash](simhash.md) — SimHash
-- [Slowly Changing Dimensions](slowly-changing-dimensions.md) — Slowly Changing Dimensions
-- [SPARQL](sparql.md) — SPARQL
-- [Spatial Indexes](spatial-indexes.md) — Spatial Indexes
-- [SQL Engine Architecture](sql-engines.md) — SQL Engine Architecture
-- [SQLite FTS5](sqlite-fts5.md) — SQLite FTS5
-- [Stemming](stemming.md) — Stemming
-- [Stopwords](stopwords.md) — Stopwords
-- [Storage Engines](storage-engines.md) — Storage Engines
-- [Storage Tiering](storage-tiering.md) — Storage Tiering
-- [Stream Processing Engines](stream-processing-engines.md) — Stream Processing Engines
-- [Stream Windowing](stream-windowing.md) — Stream Windowing
-- [Surrogate vs Natural Keys](surrogate-keys.md) — Surrogate vs Natural Keys
-- [Table Partitioning](table-partitioning.md) — Table Partitioning
-- [TF-IDF](tf-idf.md) — TF-IDF
-- [Time-Series Databases](time-series-databases.md) — Time-Series Databases
-- [Tokenization](tokenization.md) — Tokenization
-- [Topic Modeling](topic-modeling.md) — Topic Modeling
-- [Transaction Isolation Levels](transaction-isolation-levels.md) — Transaction Isolation Levels
-- [Triplestore](triplestore.md) — Triplestore
-- [Two-Phase Commit](two-phase-commit.md) — Two-Phase Commit
-- [Two-Phase Locking](two-phase-locking.md) — Two-Phase Locking
-- [Vacuuming & Compaction](vacuuming-and-compaction.md) — Vacuuming & Compaction
-- [Vector Databases](vector-databases.md) — Vector Databases
-- [Vectorized Query Execution](vectorized-query-execution.md) — Vectorized Query Execution
-- [Weaviate](weaviate.md) — Weaviate
-- [Wide-Column Stores](wide-column-stores.md) — Wide-Column Stores
-- [Write-Ahead Logging](write-ahead-logging.md) — Write-Ahead Logging
-- [YAML Frontmatter](yaml-frontmatter.md) — YAML Frontmatter
+## Pages
+- [[wiki/data-storage/a-b-testing-analytics|A/B Testing Analytics]] — Measuring causal effects with controlled experiments
+- [[wiki/data-storage/accumulating-snapshot-facts|Accumulating Snapshot Facts]] — Facts that track a process through its milestones
+- [[wiki/data-storage/acid-transactions|ACID Transactions]] — Atomicity, consistency, isolation, and durability semantics
+- [[wiki/data-storage/adaptive-query-execution|Adaptive Query Execution]] — Runtime query plan adjustment based on observed data statistics
+- [[wiki/data-storage/additive-vs-breaking-changes|Additive vs Breaking Changes]] — Classifying schema changes by consumer impact
+- [[wiki/data-storage/aggregation-levels|Aggregation Levels]] — Precomputing summaries at multiple grains
+- [[wiki/data-storage/airflow-and-workflow-orchestration|Airflow and Workflow Orchestration]] — Scheduling and coordinating data workflows as code
+- [[wiki/data-storage/analytics|Analytics]] — Turning data into decisions through analysis and visualization
+- [[wiki/data-storage/anomaly-detection-in-metrics|Anomaly Detection in Metrics]] — Finding unusual patterns in time-series data
+- [[wiki/data-storage/anti-entropy-and-hinted-handoff|Anti-Entropy and Hinted Handoff]] — Background reconciliation of divergent replicas
+- [[wiki/data-storage/apache-arrow-and-in-memory|Apache Arrow and In-Memory Analytics]] — A columnar in-memory format for fast data interchange and compute
+- [[wiki/data-storage/approx-queries-and-hyperloglog|Approximate Queries and HyperLogLog]] — Fast distinct-count estimation with tiny memory
+- [[wiki/data-storage/attribution-models|Attribution Models]] — Assigning credit for conversions across touchpoints
+- [[wiki/data-storage/avro-and-protobuf-serialization|Avro and Protobuf Serialization]] — Compact, schema-driven binary formats for event data
+- [[wiki/data-storage/b-tree-and-lsm-trees|B-Trees and LSM Trees]] — The two dominant data structures for database storage engines
+- [[wiki/data-storage/b-tree-indexing|B-Tree Indexing]] — Balanced tree pages, node splits, and range-scan support
+- [[wiki/data-storage/backfilling|Backfilling]] — Reprocessing historical ranges after logic or schema changes
+- [[wiki/data-storage/backpressure-and-flow-control|Backpressure and Flow Control]] — Signaling slow consumers so producers or operators slow down instead of overloading the system
+- [[wiki/data-storage/backpressure|Backpressure]] — Flow control when consumers lag producers
+- [[wiki/data-storage/backup-restore-and-pitr-revisited|Backup, Restore, and PITR Revisited]] — Protecting data with tested recovery paths
+- [[wiki/data-storage/backup-strategies|Backup Strategies]] — Full, incremental, and differential backup planning
+- [[wiki/data-storage/backward-compatible-schema-changes|Backward Compatible Schema Changes]] — Schema changes that old readers can still process
+- [[wiki/data-storage/batch-vs-stream-processing|Batch vs Stream Processing]] — Bounded versus unbounded processing trade-offs
+- [[wiki/data-storage/bayesian-experiment-analysis|Bayesian Experiment Analysis]] — Updating beliefs about effects with prior and posterior distributions
+- [[wiki/data-storage/benchmarking-and-tuned-queries|Benchmarking and Tuned Queries]] — Building fair, repeatable query benchmarks
+- [[wiki/data-storage/bitmap-indexes|Bitmap Indexes]] — Compressed bitmaps for low-cardinality predicate filtering
+- [[wiki/data-storage/bloom-filters-and-skipping|Bloom Filters and Skipping]] — Probabilistic filters that skip irrelevant data
+- [[wiki/data-storage/bm25|BM25]] — Probabilistic ranking function for lexical search that saturates term frequency and normalizes by length
+- [[wiki/data-storage/broadcast-joins-and-bucketing|Broadcast Joins and Bucketing]] — Avoiding shuffles by replicating small tables or pre-bucketing data
+- [[wiki/data-storage/bronze-silver-gold|Bronze, Silver, Gold Layers]] — The three medallion layers of lakehouse data engineering
+- [[wiki/data-storage/bucketing-and-clustering-in-tables|Bucketing and Clustering in Tables]] — Physical grouping of rows to speed joins and aggregations
+- [[wiki/data-storage/buffer-pool-management|Buffer Pool Management]] — Page caching, eviction, and dirty-page flushing inside a database
+- [[wiki/data-storage/bulk-vs-streaming-ingestion|Bulk vs Streaming Ingestion]] — Choosing how data enters the platform
+- [[wiki/data-storage/business-intelligence-dashboards|Business Intelligence Dashboards]] — The user-facing layer of analytics
+- [[wiki/data-storage/cache-aside-and-write-through|Cache-Aside and Write-Through]] — The core cache consistency patterns
+- [[wiki/data-storage/cache-eviction-policies|Cache Eviction Policies]] — LRU, LFU, TTL, and capacity management
+- [[wiki/data-storage/caching-strategies|Caching Strategies]] — Cache-aside, write-through, and write-back patterns
+- [[wiki/data-storage/cap-theorem|CAP Theorem]] — Consistency, availability, and partition-tolerance trade-offs
+- [[wiki/data-storage/case-studies-wiki|Case Studies]] — Narrative accounts of real applications in the wiki
+- [[wiki/data-storage/causal-consistency-and-strong-consistency|Causal and Strong Consistency]] — Ordering guarantees between eventual and linearizable
+- [[wiki/data-storage/cdc-change-data-capture|Change Data Capture]] — Capturing row-level changes for replication and streaming
+- [[wiki/data-storage/change-data-capture|Change Data Capture]] — Capturing row-level changes from database transaction logs
+- [[wiki/data-storage/changepoint-detection-and-seasonality|Changepoint Detection and Seasonality]] — Finding when behavior changes and modeling periodic patterns
+- [[wiki/data-storage/checkpointing-and-recovery-flink|Checkpointing and Recovery in Flink]] — Snapshot-based fault tolerance for stateful Flink jobs
+- [[wiki/data-storage/chromadb|ChromaDB]] — Embedded, Python-first vector database popular for local RAG prototypes
+- [[wiki/data-storage/chunking-strategies|Chunking Strategies]] — Approaches for splitting documents into retrievable units that balance context completeness and precision
+- [[wiki/data-storage/churn-prediction-features|Churn Prediction Features]] — Signals that predict customer departure
+- [[wiki/data-storage/citation-necessity|Citation Necessity]] — Deciding which claims need a source at all
+- [[wiki/data-storage/citation-placement|Citation Placement]] — Where in an article a source should be attached
+- [[wiki/data-storage/clickhouse-and-columnar-oltp|ClickHouse and Columnar OLTP]] — Ultra-fast columnar analytics for high-volume queries
+- [[wiki/data-storage/clickhouse-vs-druid-pinot-druid-architecture|ClickHouse vs Druid vs Pinot]] — Comparing columnar engines for real-time and high-concurrency analytics
+- [[wiki/data-storage/clustered-tables|Clustered Tables]] — Heap versus clustered-index table organization
+- [[wiki/data-storage/code-in-wiki|Code in the Wiki]] — The convention for code blocks and inline code in articles
+- [[wiki/data-storage/cohort-and-retention-analytics|Cohort and Retention Analytics]] — Tracking groups of users over time
+- [[wiki/data-storage/collaborative-and-content-filtering|Collaborative and Content Filtering]] — Two classic families of recommendation approaches
+- [[wiki/data-storage/column-level-lineage|Column-Level Lineage]] — Tracing data from source column to report
+- [[wiki/data-storage/column-pruning-and-vectorized-reads|Column Pruning and Vectorized Reads]] — Reading only the columns you need, in bulk batches
+- [[wiki/data-storage/columnar-storage-formats|Columnar Storage Formats]] — Storing data by column for fast analytical scans
+- [[wiki/data-storage/columnar-storage|Columnar Storage]] — Per-column physical layout, scan efficiency, and compression
+- [[wiki/data-storage/compaction-and-retention-kafka|Compaction and Retention in Kafka]] — Controlling how long and how much data topics keep
+- [[wiki/data-storage/composite-indexes|Composite Indexes]] — Multi-column ordering and leftmost-prefix usage rules
+- [[wiki/data-storage/compression-codecs|Compression Codecs]] — Dictionary, run-length, delta, and general-purpose encodings
+- [[wiki/data-storage/conflict-free-replicated-data-types|Conflict-Free Replicated Data Types]] — Data structures that converge without coordination
+- [[wiki/data-storage/conformed-dimensions|Conformed Dimensions]] — Shared dimensions used consistently across marts
+- [[wiki/data-storage/connectors|Connectors]] — Reusable source/sink adapters that move data between systems
+- [[wiki/data-storage/consistency-models|Consistency Models]] — Strong, causal, and eventual consistency guarantees
+- [[wiki/data-storage/consistent-hashing-and-ring-topology|Consistent Hashing and Ring Topology]] — Stable key distribution across a changing node set
+- [[wiki/data-storage/consistent-hashing|Consistent Hashing]] — Minimal-reshuffle key distribution for sharded systems
+- [[wiki/data-storage/consumer-groups-and-offsets|Consumer Groups and Offsets]] — How Kafka consumers coordinate to read partitions
+- [[wiki/data-storage/consumer-rebalancing-and-assignment|Consumer Rebalancing and Assignment]] — How Kafka assigns partitions to consumers as groups change
+- [[wiki/data-storage/content-addressable-storage|Content-Addressable Storage]] — Storage where an item's address is derived from its content hash
+- [[wiki/data-storage/continuous-aggregates-and-materialized-views|Continuous Aggregates and Materialized Views]] — Auto-refreshing precomputed aggregates for fresh dashboards
+- [[wiki/data-storage/contract-testing-data|Contract Testing for Data]] — Verifying producer-consumer contracts automatically
+- [[wiki/data-storage/cooperative-rebalancing|Cooperative Rebalancing]] — Incremental partition reassignment that avoids stopping all consumers
+- [[wiki/data-storage/cosine-similarity|Cosine Similarity]] — Similarity of two vectors measured by the cosine of the angle between them
+- [[wiki/data-storage/cost-based-query-optimization|Cost-Based Query Optimization]] — How planners estimate cardinality and choose join orders and scan paths
+- [[wiki/data-storage/cost-model-and-cardinality-estimation|Cost Model and Cardinality Estimation]] — How optimizers estimate row counts and pick plans
+- [[wiki/data-storage/count-min-sketch-and-bloom-variants|Count-Min Sketch and Bloom Variants]] — Frequency and membership estimation with hashing
+- [[wiki/data-storage/covering-indexes|Covering Indexes]] — Including extra columns so queries skip table access
+- [[wiki/data-storage/crash-recovery|Crash Recovery]] — Checkpoints, log replay, and restart procedures after failure
+- [[wiki/data-storage/crdts|CRDTs]] — Conflict-free replicated data types for convergent merges
+- [[wiki/data-storage/cross-database-joins|Cross-Database Joins]] — Joining data that lives in different systems
+- [[wiki/data-storage/csv-injection-risks|CSV Injection Risks]] — Formula injection attacks through spreadsheet import
+- [[wiki/data-storage/csv-parquet-tradeoffs|CSV vs Parquet Tradeoffs]] — When row-oriented text beats columnar binary and vice versa
+- [[wiki/data-storage/cte-and-query-rewrites|CTEs and Query Rewrites]] — Structuring complex queries with common table expressions
+- [[wiki/data-storage/data-catalogs-and-metadata|Data Catalogs and Metadata]] — The systems that make data discoverable and governable
+- [[wiki/data-storage/data-compression-techniques|Data Compression Techniques]] — Reducing storage and IO with encodings and codecs
+- [[wiki/data-storage/data-contracts-and-agreements|Data Contracts and Agreements]] — Formalizing producer-consumer expectations for data
+- [[wiki/data-storage/data-contracts|Data Contracts]] — Agreed schemas and SLAs between producers and consumers
+- [[wiki/data-storage/data-engineering-fundamentals|Data Engineering Fundamentals]] — The discipline of building systems that collect, store, and process data
+- [[wiki/data-storage/data-federation-and-virtualization|Data Federation and Virtualization]] — Querying data where it lives instead of copying it
+- [[wiki/data-storage/data-federation|Data Federation]] — Querying multiple sources without copying data
+- [[wiki/data-storage/data-import-export-patterns|Data Import/Export Patterns]] — Moving data in and out of systems safely
+- [[wiki/data-storage/data-lake-architecture|Data Lake Architecture]] — Low-cost, schema-flexible storage for all of an organization's data
+- [[wiki/data-storage/data-lake-file-layouts|Data Lake File Layouts]] — Organizing directories and files for scan efficiency
+- [[wiki/data-storage/data-lake-zones-and-layouts|Data Lake Zones and Layouts]] — Structuring a lake into bronze, silver, and gold areas
+- [[wiki/data-storage/data-lake|Data Lake]] — Raw schema-flexible storage of diverse datasets
+- [[wiki/data-storage/data-lifecycle-management|Data Lifecycle Management]] — Retention, archival, and deletion policies
+- [[wiki/data-storage/data-lineage-and-provenance|Data Lineage and Provenance]] — Tracing where data comes from and how it transforms
+- [[wiki/data-storage/data-lineage|Data Lineage]] — Tracing data flow across pipelines, tables, and reports
+- [[wiki/data-storage/data-modeling-star-schema|Data Modeling: Star Schema]] — The fact-and-dimension design at the heart of dimensional warehousing
+- [[wiki/data-storage/data-modeling|Data Modeling]] — Choosing entities, attributes, relationships, and keys
+- [[wiki/data-storage/data-observability-and-monitoring|Data Observability and Monitoring]] — Seeing inside data systems to detect and fix problems
+- [[wiki/data-storage/data-observability|Data Observability]] — Freshness, volume, and schema monitoring for pipelines
+- [[wiki/data-storage/data-pipeline-orchestration|Data Pipeline Orchestration]] — DAG scheduling, retries, and dependency management
+- [[wiki/data-storage/data-pipeline-testing|Data Pipeline Testing]] — Testing data code before it breaks production
+- [[wiki/data-storage/data-profiling-and-validation|Data Profiling and Validation]] — Understanding data before you trust it
+- [[wiki/data-storage/data-profiling|Data Profiling]] — Discovering statistics and anomalies in datasets
+- [[wiki/data-storage/data-quality-checks|Data Quality Checks]] — Assertions for completeness, uniqueness, and validity
+- [[wiki/data-storage/data-quality-dimensions|Data Quality Dimensions]] — The measurable aspects of data fitness for use
+- [[wiki/data-storage/data-reset-strategies|Data Reset Strategies]] — Restoring test environments to known states
+- [[wiki/data-storage/data-retention-and-lifecycle|Data Retention and Lifecycle]] — Keeping data long enough, not forever
+- [[wiki/data-storage/data-sampling-and-approximate-queries|Data Sampling and Approximate Queries]] — Trading exactness for speed on huge datasets
+- [[wiki/data-storage/data-skew-and-salting|Data Skew and Salting]] — Handling hot keys that unbalance parallel work
+- [[wiki/data-storage/data-testing-frameworks|Data Testing Frameworks]] — Automated checks for data and data pipelines
+- [[wiki/data-storage/data-validation-before-promotion|Data Validation Before Promotion]] — Gating data promotions on automated checks
+- [[wiki/data-storage/data-vault-modeling|Data Vault Modeling]] — Audit-friendly modeling that separates hubs, links, and satellites
+- [[wiki/data-storage/data-versioning-and-branching|Data Versioning and Branching]] — Versioning datasets and branching experiments
+- [[wiki/data-storage/data-versioning-models|Data Versioning Models]] — Versioning datasets, schemas, and code together
+- [[wiki/data-storage/data-versioning|Data Versioning]] — Tracking changes to datasets so states are reproducible and reversible
+- [[wiki/data-storage/data-warehouse-benchmarks|Data Warehouse Benchmarks]] — Reading and running benchmarks honestly
+- [[wiki/data-storage/data-warehouse|Data Warehouse]] — Subject-oriented integrated analytical stores
+- [[wiki/data-storage/data-warehousing-concepts|Data Warehousing Concepts]] — Centralized analytics stores built for fast, reliable reporting
+- [[wiki/data-storage/database-constraints|Database Constraints]] — Primary keys, uniques, checks, and foreign-key enforcement
+- [[wiki/data-storage/database-normalization|Database Normalization]] — Normal forms and removing redundancy from schemas
+- [[wiki/data-storage/database-performance-monitoring|Database Performance Monitoring]] — Metrics, slow-query logs, and bottleneck detection
+- [[wiki/data-storage/database-replication-revisited|Database Replication Revisited]] — Replication topologies, guarantees, and operational realities
+- [[wiki/data-storage/dataframes-in-production|DataFrames in Production]] — Operational patterns for dataframe code
+- [[wiki/data-storage/dbt-and-analytics-engineering|dbt and Analytics Engineering]] — SQL-first transformation workflows with testing and docs
+- [[wiki/data-storage/dead-letter-data-and-repair-pipelines|Dead Letter Data and Repair Pipelines]] — Recovering bad records instead of losing them
+- [[wiki/data-storage/dead-letter-queues-and-retries|Dead Letter Queues and Retries]] — Routing failed messages to a quarantine queue after retries are exhausted
+- [[wiki/data-storage/dead-letter-queues|Dead Letter Queues]] — Parking undeliverable messages for inspection
+- [[wiki/data-storage/dead-letter-topics-and-dlq|Dead Letter Topics and DLQ]] — Kafka topics that hold undeliverable or unprocessable records
+- [[wiki/data-storage/deadlock-detection|Deadlock Detection]] — Wait-for graphs, cycle detection, and victim selection
+- [[wiki/data-storage/debezium-and-cdc-tools|Debezium and CDC Tools]] — Change data capture connectors that stream database changes
+- [[wiki/data-storage/deduplication|Deduplication]] — Removing or merging records that represent the same underlying thing
+- [[wiki/data-storage/degenerate-dimensions|Degenerate Dimensions]] — Fact attributes with no separate dimension table
+- [[wiki/data-storage/delta-lake-and-merge-operations|Delta Lake and Merge Operations]] — ACID table format with transactional MERGE on object storage
+- [[wiki/data-storage/denormalization|Denormalization]] — Intentional redundancy to speed up reads
+- [[wiki/data-storage/diagrams-in-wiki|Diagrams in the Wiki]] — Using diagrams to explain structure and flow
+- [[wiki/data-storage/dimension-tables-and-grains|Dimension Tables and Grains]] — The descriptive context tables that give facts their business meaning
+- [[wiki/data-storage/dimensional-modeling|Dimensional Modeling]] — Fact and dimension design including star schemas
+- [[wiki/data-storage/disaster-recovery|Disaster Recovery]] — Failover, geo-redundancy, and recovery drills
+- [[wiki/data-storage/distinct-count-and-cardinality-sketches|Distinct Count and Cardinality Sketches]] — Estimating unique values under memory limits
+- [[wiki/data-storage/distributed-query-engines|Distributed Query Engines]] — Querying data across many sources and nodes
+- [[wiki/data-storage/distributed-transactions-and-2pc|Distributed Transactions and 2PC]] — Atomicity across multiple nodes and the two-phase commit protocol
+- [[wiki/data-storage/distributed-transactions|Distributed Transactions]] — Coordinating atomicity across multiple databases and systems
+- [[wiki/data-storage/document-databases|Document Databases]] — JSON-first databases for flexible, developer-friendly data
+- [[wiki/data-storage/document-stores|Document Stores]] — JSON/BSON-oriented NoSQL databases
+- [[wiki/data-storage/dot-product|Dot Product]] — Scalar sum of element-wise vector products, the raw score behind cosine similarity
+- [[wiki/data-storage/downsampling-and-retention-policies|Downsampling and Retention Policies]] — Reducing resolution and expiring old time-series data
+- [[wiki/data-storage/dq-frameworks-and-great-expectations|DQ Frameworks and Great Expectations]] — Declarative data-quality testing frameworks
+- [[wiki/data-storage/drill-through-and-slicing|Drill-Through and Slicing]] — Going from dashboards to underlying detail
+- [[wiki/data-storage/duckdb-and-embedded-analytics|DuckDB and Embedded Analytics]] — In-process analytical SQL with zero infrastructure
+- [[wiki/data-storage/edit-distance|Edit Distance]] — Minimum number of edits (insert, delete, substitute) to turn one string into another
+- [[wiki/data-storage/elasticsearch|Elasticsearch]] — Distributed search and analytics engine built on Lucene
+- [[wiki/data-storage/embeddings|Embeddings]] — Dense vector representations that capture semantic meaning of tokens, texts, or entities
+- [[wiki/data-storage/encoding-and-dictionary-encoding|Encoding and Dictionary Encoding]] — Column-level encodings that make columnar storage fast
+- [[wiki/data-storage/entity-resolution|Entity Resolution]] — Identifying records across sources that refer to the same real-world entity
+- [[wiki/data-storage/etl-vs-elt|ETL vs ELT]] — Where transformation happens and the shift to ELT
+- [[wiki/data-storage/euclidean-distance|Euclidean Distance]] — Straight-line distance between vectors, sensitive to both direction and magnitude
+- [[wiki/data-storage/evaluation-metrics-for-recommendations|Evaluation Metrics for Recommendations]] — Measuring recommender quality offline and online
+- [[wiki/data-storage/event-sourcing-databases|Event Sourcing Databases]] — Storing state as an append-only log of events
+- [[wiki/data-storage/event-streaming-platforms|Event Streaming Platforms]] — Kafka-style append-only logs with partitions and offsets
+- [[wiki/data-storage/event-time-vs-processing-time|Event Time vs Processing Time]] — Two clocks in stream processing and why the distinction matters
+- [[wiki/data-storage/eventual-consistency-and-conflict-resolution|Eventual Consistency and Conflict Resolution]] — Converging replicas that may disagree temporarily
+- [[wiki/data-storage/exactly-once-processing|Exactly-Once Processing]] — The strongest delivery guarantee in stream processing
+- [[wiki/data-storage/exactly-once-semantics-transactions|Exactly-Once Semantics and Transactions]] — The illusion of processing each record once, end to end
+- [[wiki/data-storage/exactly-once-semantics|Exactly-Once Semantics]] — Delivery and processing guarantees in streaming systems
+- [[wiki/data-storage/examples-in-wiki|Examples in the Wiki]] — The role of worked examples in articles
+- [[wiki/data-storage/excel-and-spreadsheet-data|Excel and Spreadsheet Data]] — Wrangling spreadsheet data into analytics pipelines
+- [[wiki/data-storage/expand-contract-migrations|Expand-Contract Migrations]] — Phased zero-downtime schema change patterns
+- [[wiki/data-storage/experiment-analysis-methods|Experiment Analysis Methods]] — Turning experiment data into decisions
+- [[wiki/data-storage/explain-plans-and-profiling|Explain Plans and Profiling]] — Reading query plans and finding bottlenecks
+- [[wiki/data-storage/fact-tables-and-measures|Fact Tables and Measures]] — The numeric core of a star schema recording what happened at a grain
+- [[wiki/data-storage/factless-fact-tables|Factless Fact Tables]] — Facts that record events or coverage without measures
+- [[wiki/data-storage/faiss|FAISS]] — Facebook's library for efficient similarity search and clustering of dense vectors
+- [[wiki/data-storage/faq-articles|FAQ Articles]] — Question-shaped articles that answer recurring questions
+- [[wiki/data-storage/feature-stores-and-ml-features|Feature Stores and ML Features]] — Managing and serving features for machine learning
+- [[wiki/data-storage/federated-queries-across-sources|Federated Queries Across Sources]] — Querying multiple databases and lakes in one statement
+- [[wiki/data-storage/file-format-selection-metrics|File Format Selection Metrics]] — Choosing between CSV, JSON, Parquet, ORC, and Arrow for a workload
+- [[wiki/data-storage/fivetran-and-airbyte|Fivetran and Airbyte]] — Managed and self-hosted ELT connectors for data movement
+- [[wiki/data-storage/fixture-data-and-seeding|Fixture Data and Seeding]] — Known datasets loaded for deterministic tests
+- [[wiki/data-storage/flink-sql-and-windows|Flink SQL and Windows]] — Declarative stream processing with windowed aggregations in Flink
+- [[wiki/data-storage/flink-stream-processing|Flink Stream Processing]] — A stateful, fault-tolerant engine for true streaming
+- [[wiki/data-storage/flyway-and-liquibase|Flyway and Liquibase]] — The standard Java-ecosystem migration tools
+- [[wiki/data-storage/footnote-style-wiki|Footnote Style]] — The convention for footnote-based citations in the wiki
+- [[wiki/data-storage/forecasting-baselines-and-models|Forecasting Baselines and Models]] — Predicting future values from historical series
+- [[wiki/data-storage/full-text-search-and-tokenization|Full-Text Search and Tokenization]] — From raw text to searchable tokens
+- [[wiki/data-storage/funnel-and-path-analysis|Funnel and Path Analysis]] — Measuring conversion steps and user journeys
+- [[wiki/data-storage/glossaries-wiki|Glossaries]] — Alphabetical reference pages for a domain's terms
+- [[wiki/data-storage/gossip-protocols-and-distributed-consensus|Gossip Protocols and Distributed Consensus]] — Epidemic dissemination and agreement in distributed systems
+- [[wiki/data-storage/grain-and-additivity|Grain and Additivity]] — Declaring what a fact row means and how measures sum
+- [[wiki/data-storage/graph-databases-timeseries-databases|Graph and Time-Series Databases]] — Specialized stores for relationships and timestamped data
+- [[wiki/data-storage/hash-indexes|Hash Indexes]] — Exact-match lookup structures for point queries and joins
+- [[wiki/data-storage/hint-handoff-and-repair-paths|Hinted Handoff and Repair Paths]] — Surviving node downtime in leaderless stores
+- [[wiki/data-storage/hive-tables-and-partitioning|Hive Tables and Partitioning]] — The legacy SQL-on-files model with static partitioning
+- [[wiki/data-storage/hnsw|HNSW]] — Hierarchical Navigable Small World graphs for approximate nearest-neighbour search
+- [[wiki/data-storage/hot-and-cold-data-tiering|Hot and Cold Data Tiering]] — Matching storage cost to data temperature
+- [[wiki/data-storage/hudi-and-incremental-views|Apache Hudi and Incremental Views]] — Table format with record-level upserts and incremental processing
+- [[wiki/data-storage/hybrid-logical-clocks-and-true-time|Hybrid Logical Clocks and TrueTime]] — Combining physical and logical clocks for database ordering
+- [[wiki/data-storage/hybrid-search|Hybrid Search]] — Retrieval that fuses lexical (BM25/TF-IDF) and semantic (vector) results into one ranked list
+- [[wiki/data-storage/iceberg-table-format-and-versioning|Iceberg Table Format and Versioning]] — Snapshot-based table format for ACID on the lake
+- [[wiki/data-storage/idempotent-ingestion|Idempotent Ingestion]] — Safe retries via dedup keys and upserts
+- [[wiki/data-storage/idempotent-producers-and-consumers|Idempotent Producers and Consumers]] — Making producers and consumers safe to retry
+- [[wiki/data-storage/idempotent-writes-and-upserts|Idempotent Writes and Upserts]] — Replaying the same write multiple times without corrupting state
+- [[wiki/data-storage/images-in-wiki|Images in the Wiki]] — The policy for embedding images in articles
+- [[wiki/data-storage/implicit-vs-explicit-feedback|Implicit vs Explicit Feedback]] — Signals users give intentionally or through behavior
+- [[wiki/data-storage/in-memory-databases|In-Memory Databases]] — Main-memory engines and their durability trade-offs
+- [[wiki/data-storage/incremental-loading-strategies|Incremental Loading Strategies]] — Loading only what changed instead of rebuilding tables
+- [[wiki/data-storage/incremental-loading|Incremental Loading]] — Watermark-based delta extraction strategies
+- [[wiki/data-storage/index-maintenance|Index Maintenance]] — Fragmentation, bloat, rebuilds, and fill factors
+- [[wiki/data-storage/indexes-wiki|Indexes]] — Navigation pages that list articles by a scheme
+- [[wiki/data-storage/indexes|Indexes]] — The data structures that make lookups fast
+- [[wiki/data-storage/indexing-strategies-revisited|Indexing Strategies Revisited]] — Choosing index types and designs for your query patterns
+- [[wiki/data-storage/infobox-practice|Infobox Practice]] — The convention for compact factual summaries at the top of an article
+- [[wiki/data-storage/inline-citation-style|Inline Citation Style]] — The textual form of a citation attached to a claim
+- [[wiki/data-storage/inverted-index|Inverted Index]] — Postings lists mapping terms to documents for full-text search
+- [[wiki/data-storage/ivf|IVF Index]] — Inverted-file index that partitions vectors into clusters for approximate search
+- [[wiki/data-storage/jaccard-similarity|Jaccard Similarity]] — Set-overlap metric defined as intersection size over union size
+- [[wiki/data-storage/join-algorithms|Join Algorithms]] — Nested-loop, hash, and merge joins and when each wins
+- [[wiki/data-storage/join-strategies-in-streams|Join Strategies in Streams]] — Combining multiple streams and tables in stream processing
+- [[wiki/data-storage/json-and-semi-structured-data|JSON and Semi-Structured Data]] — Storing and querying flexible, schema-less documents
+- [[wiki/data-storage/json-ld|JSON-LD]] — JSON syntax for linked data that embeds graphs and IRIs in ordinary JSON
+- [[wiki/data-storage/json-lines-and-ndjson|JSON Lines and NDJSON]] — Stream-friendly newline-delimited JSON
+- [[wiki/data-storage/kafka-and-event-streams|Kafka and Event Streams]] — The distributed log that became the standard for event streaming
+- [[wiki/data-storage/kafka-architecture-and-partitioning|Kafka Architecture and Partitioning]] — Brokers, topics, partitions, and replication inside Kafka
+- [[wiki/data-storage/kafka-connect-and-connector-pools|Kafka Connect and Connector Pools]] — The framework for running Kafka source/sink connectors at scale
+- [[wiki/data-storage/kafka-streams-and-ksql|Kafka Streams and ksqlDB]] — Stream processing inside the Kafka ecosystem via library and SQL
+- [[wiki/data-storage/kafka-transactions-and-atomicity|Kafka Transactions and Atomicity]] — Atomic writes across multiple partitions in Kafka
+- [[wiki/data-storage/kappa-architecture|Kappa Architecture]] — Single streaming path replacing the batch layer
+- [[wiki/data-storage/key-value-stores|Key-Value Stores]] — Simple get/put stores and their scaling patterns
+- [[wiki/data-storage/kimball-vs-inmon|Kimball vs Inmon]] — Two philosophies for architecting the data warehouse
+- [[wiki/data-storage/knowledge-graph|Knowledge Graph]] — Graph-structured store of entities and relationships that supports semantic query and retrieval
+- [[wiki/data-storage/ksql-and-sql-streaming|ksqlDB and SQL Streaming]] — SQL stream processing in the Kafka ecosystem
+- [[wiki/data-storage/lag-and-lead-analytics|LAG and LEAD Analytics]] — Comparing rows with previous and next values
+- [[wiki/data-storage/lakefs-and-git-for-data|lakeFS and Git for Data]] — Git-like versioning and branching for data lakes
+- [[wiki/data-storage/lakehouse-architecture|Lakehouse Architecture]] — Combining lake storage with warehouse ACID and query semantics
+- [[wiki/data-storage/lakehouse-engines-comparison|Lakehouse Engines Comparison]] — Spark, Trino, DuckDB, and cloud engines over lakehouse tables
+- [[wiki/data-storage/lambda-architecture|Lambda Architecture]] — Dual batch and speed layers for analytics
+- [[wiki/data-storage/last-write-wins-and-crdts|Last-Write-Wins and CRDTs]] — Simple vs principled conflict resolution
+- [[wiki/data-storage/late-data-and-triggers|Late Data and Triggers]] — When windows fire and how late records are incorporated
+- [[wiki/data-storage/latent-dirichlet-allocation|Latent Dirichlet Allocation]] — Generative probabilistic topic model assigning documents mixtures of topics
+- [[wiki/data-storage/latent-semantic-analysis|Latent Semantic Analysis]] — Matrix factorization over term-document counts to uncover latent word meanings
+- [[wiki/data-storage/layers|Data Architecture Layers]] — The staging, storage, processing, and serving layers of a data platform
+- [[wiki/data-storage/leaderless-replication|Leaderless Replication]] — Quorum reads and writes without a single primary
+- [[wiki/data-storage/learning-to-rank-and-features|Learning to Rank and Features]] — Training models to order results
+- [[wiki/data-storage/lemmatization|Lemmatization]] — Reducing words to dictionary lemma forms using vocabulary and morphology
+- [[wiki/data-storage/lifetime-value-models|Lifetime Value Models]] — Estimating customer worth over time
+- [[wiki/data-storage/locality-sensitive-hashing|Locality-Sensitive Hashing]] — Hashing scheme where similar items collide with high probability
+- [[wiki/data-storage/lock-granularity|Lock Granularity]] — Row, page, and table locks plus escalation trade-offs
+- [[wiki/data-storage/log-collection-and-aggregation|Log Collection & Aggregation]] — Flume-style agents shipping logs to central stores
+- [[wiki/data-storage/log-compaction-and-keys|Log Compaction and Keys]] — Retaining the latest record per key in compacted topics
+- [[wiki/data-storage/logical-clocks-and-timestamps|Logical Clocks and Timestamps]] — Ordering events without synchronized wall clocks
+- [[wiki/data-storage/logical-replication|Logical Replication]] — Replicating data by logical changes, decoupled from storage format
+- [[wiki/data-storage/lsm-trees|LSM Trees]] — Memtables, SSTables, and leveled compaction in log-structured stores
+- [[wiki/data-storage/lucene|Lucene]] — High-performance open-source full-text search library written in Java
+- [[wiki/data-storage/massively-parallel-processing|Massively Parallel Processing]] — Shared-nothing engines that parallelize queries across nodes
+- [[wiki/data-storage/materialize-and-differential-dataflow|Materialize and Differential Dataflow]] — Incremental view maintenance as a streaming engine
+- [[wiki/data-storage/materialized-views-and-incremental-refresh|Materialized Views and Incremental Refresh]] — Precomputed query results kept fresh
+- [[wiki/data-storage/materialized-views|Materialized Views]] — Precomputed query results with refresh strategies
+- [[wiki/data-storage/maxwell-and-binlog-parsers|Maxwell and Binlog Parsers]] — Lightweight MySQL binlog-to-event tools
+- [[wiki/data-storage/medallion-architecture|Medallion Architecture]] — The bronze-silver-gold layering pattern for lakehouses
+- [[wiki/data-storage/memcached-vs-redis|Memcached vs Redis]] — Two in-memory caching systems compared
+- [[wiki/data-storage/merge-and-upsert-patterns|Merge and Upsert Patterns]] — Combining new records with existing state via INSERT/UPDATE/DELETE semantics
+- [[wiki/data-storage/mermaid-in-wiki|Mermaid in the Wiki]] — The convention for Mermaid diagram blocks
+- [[wiki/data-storage/message-queues|Message Queues]] — Point-to-point work distribution with acknowledgments
+- [[wiki/data-storage/metadata-filtering|Metadata Filtering]] — Using structured attributes on stored items to narrow retrieval before or after similarity search
+- [[wiki/data-storage/metastore-and-catalog-iceberg|Metastore and Iceberg Catalog]] — Where table metadata lives in the lakehouse
+- [[wiki/data-storage/methodology|Data Modeling Methodology]] — Choosing the modeling approach that fits your organization
+- [[wiki/data-storage/milvus|Milvus]] — Open-source distributed vector database for large-scale similarity search
+- [[wiki/data-storage/minhash|MinHash]] — Fingerprint scheme estimating Jaccard similarity between sets
+- [[wiki/data-storage/monetdb-and-duckdb-comparison|MonetDB and DuckDB Comparison]] — Columnar analytics engines that run embedded or lightweight
+- [[wiki/data-storage/mongodb-data-modeling|MongoDB Data Modeling]] — Embedding vs referencing documents for performance
+- [[wiki/data-storage/mpp-engines-and-distributed-sql|MPP Engines and Distributed SQL]] — Massively parallel processing for warehouse-scale analytics
+- [[wiki/data-storage/multi-leader-replication|Multi-Leader Replication]] — Writable replicas with cross-site conflict handling
+- [[wiki/data-storage/multiple-comparisons-corrections|Multiple Comparisons Corrections]] — Controlling false positives when testing many hypotheses
+- [[wiki/data-storage/multiversion-concurrency-control|Multiversion Concurrency Control]] — Versioned rows that let readers avoid blocking writers
+- [[wiki/data-storage/mvcc-and-isolation-levels|MVCC and Isolation Levels]] — Multi-version concurrency control and the isolation spectrum
+- [[wiki/data-storage/n-grams|N-grams]] — Contiguous sequences of n tokens or characters used as matching features
+- [[wiki/data-storage/named-entity-recognition|Named Entity Recognition]] — Extracting typed entities such as people, places, and organizations from text
+- [[wiki/data-storage/navigation-boxes|Navigation Boxes]] — Standardized link clusters that orient readers within a section
+- [[wiki/data-storage/netezza-and-vertica|Netezza and Vertica]] — Columnar appliance and software MPP databases
+- [[wiki/data-storage/nosql-data-models|NoSQL Data Models]] — Key-value, document, wide-column, graph, and search models
+- [[wiki/data-storage/numpy-vectorization|NumPy Vectorization]] — Array operations that avoid Python-level loops
+- [[wiki/data-storage/object-storage|Object Storage]] — S3-style blob stores with flat namespaces and metadata
+- [[wiki/data-storage/object-store-data-access|Object Store Data Access]] — Reading and writing lake data in object storage
+- [[wiki/data-storage/offline-vs-online-stores|Offline vs Online Stores]] — Training-time and serving-time feature infrastructure
+- [[wiki/data-storage/offset-commits-and-checkpointing|Offset Commits and Checkpointing]] — Recording stream position for exactly-once or at-least-once recovery
+- [[wiki/data-storage/olap-cubes-and-rollups|OLAP Cubes and Rollups]] — Pre-aggregated multidimensional analytics
+- [[wiki/data-storage/olap-vs-oltp|OLAP vs OLTP]] — Workload classification and why engine design diverges
+- [[wiki/data-storage/open-data-formats|Open Data Formats]] — Non-proprietary formats for data interchange and storage
+- [[wiki/data-storage/open-knowledge-format|Open Knowledge Format]] — Portable markdown-plus-frontmatter convention for machine-readable knowledge bases
+- [[wiki/data-storage/open-table-formats-and-interoperability|Open Table Formats and Interoperability]] — Delta, Iceberg, and Hudi as portable, spec-driven lakehouse formats
+- [[wiki/data-storage/open-table-formats|Open Table Formats]] — Iceberg/Delta-style table metadata, snapshots, and transactions
+- [[wiki/data-storage/optimistic-concurrency-control|Optimistic Concurrency Control]] — Validating conflicts at commit instead of locking up front
+- [[wiki/data-storage/oracle-analytics|Oracle Analytics]] — Oracle's data warehouse and analytics stack
+- [[wiki/data-storage/ordering-and-timestamp-assignment|Ordering and Timestamp Assignment]] — Where and how events get their timestamps
+- [[wiki/data-storage/out-of-order-data-handling|Out-of-Order Data Handling]] — Dealing with events that arrive after their event time
+- [[wiki/data-storage/outbox-pattern-for-transactions|Outbox Pattern for Transactions]] — Reliably publishing events from a database transaction
+- [[wiki/data-storage/p-value-and-confidence-intervals|p-Values and Confidence Intervals]] — Quantifying uncertainty in estimates
+- [[wiki/data-storage/pandas-performance|Pandas Performance]] — Making pandas workloads fast and memory-efficient
+- [[wiki/data-storage/parquet-and-orc|Parquet and ORC]] — The open columnar file formats of the data lake
+- [[wiki/data-storage/partial-indexes|Partial Indexes]] — Indexes over filtered subsets of rows
+- [[wiki/data-storage/partition-pruning-and-zone-maps|Partition Pruning and Zone Maps]] — Skipping irrelevant data before scanning
+- [[wiki/data-storage/partition-pruning|Partition Pruning]] — Skipping irrelevant partitions using query predicates
+- [[wiki/data-storage/periodic-snapshot-facts|Periodic Snapshot Facts]] — Routine snapshots of state at fixed intervals
+- [[wiki/data-storage/personalization-data-flows|Personalization Data Flows]] — Moving signals from user actions to personalized experiences
+- [[wiki/data-storage/physical-replication|Physical Replication]] — Replicating database files or storage blocks to identical copies
+- [[wiki/data-storage/pinecone|Pinecone]] — Fully managed vector database service emphasizing scale and simplicity
+- [[wiki/data-storage/pinot-real-time-analytics|Pinot Real-Time Analytics]] — Low-latency OLAP serving engine for user-facing analytics
+- [[wiki/data-storage/pipelines|Pipelines]] — The chains of steps that move and transform data
+- [[wiki/data-storage/pivoting-and-unpivoting|Pivoting and Unpivoting]] — Reshaping data between wide and long forms
+- [[wiki/data-storage/point-in-time-recovery|Point-in-Time Recovery]] — Restoring to arbitrary timestamps via transaction logs
+- [[wiki/data-storage/polars-and-dataframes|Polars and DataFrames]] — Fast, expression-based dataframes in Python and Rust
+- [[wiki/data-storage/polystore-databases|Polystore Databases]] — One query surface over multiple specialized stores
+- [[wiki/data-storage/postgres-tsvector|PostgreSQL tsvector]] — PostgreSQL's native full-text search over lexemes with ranking support
+- [[wiki/data-storage/power-and-sample-size|Power and Sample Size]] — Sizing experiments before you run them
+- [[wiki/data-storage/precision-recall-and-ndcg|Precision, Recall, and NDCG]] — Ranking metrics that respect result order
+- [[wiki/data-storage/predicate-pushdown-and-projection|Predicate Pushdown and Projection]] — Pushing filters and column selection into storage engines
+- [[wiki/data-storage/presto-and-trino|Presto and Trino]] — Open-source distributed SQL engines for interactive analytics
+- [[wiki/data-storage/probabilistic-data-structures|Probabilistic Data Structures]] — Space-efficient structures with tunable error
+- [[wiki/data-storage/processing-guarantees-at-least-once|Processing Guarantees: At-Least-Once]] — Delivery guarantee that records may be processed more than once
+- [[wiki/data-storage/product-quantization|Product Quantization]] — Compressing vectors by quantizing sub-vectors into learned codebooks
+- [[wiki/data-storage/property-graph|Property Graph]] — Graph data model with typed nodes, edges, and properties on both
+- [[wiki/data-storage/public-datasets|Public Datasets]] — Using open data for benchmarks and experiments
+- [[wiki/data-storage/qdrant|Qdrant]] — Rust vector database with strong payload filtering and hybrid search
+- [[wiki/data-storage/quantile-and-percentile-sketching|Quantile and Percentile Sketching]] — Approximate order statistics without sorting everything
+- [[wiki/data-storage/quarantine-and-bad-data-handling|Quarantine and Bad Data Handling]] — Isolating records that fail quality checks
+- [[wiki/data-storage/query-planning-and-optimization|Query Planning and Optimization]] — How databases turn SQL into efficient execution plans
+- [[wiki/data-storage/query-tuning|Query Tuning]] — Index selection, hinting, and rewriting slow queries
+- [[wiki/data-storage/quorum-protocols|Quorum Protocols]] — Read/write quorum sizing and staleness bounds
+- [[wiki/data-storage/quorum-reads-and-writes|Quorum Reads and Writes]] — Majority-based consistency tuning in replicated systems
+- [[wiki/data-storage/raft-consensus|Raft Consensus]] — Log-based leader election and replication protocol
+- [[wiki/data-storage/randomization-and-stratification|Randomization and Stratification]] — Assigning units to variants to make comparisons fair
+- [[wiki/data-storage/ranking-and-tiling-window-functions|Ranking and Tiling Window Functions]] — Row numbering, ranks, and buckets with window functions
+- [[wiki/data-storage/raw-landing-and-curated-zones|Raw Landing and Curated Zones]] — The first two stages of lake ingestion
+- [[wiki/data-storage/rdf|RDF]] — W3C data model representing facts as subject-predicate-object triples
+- [[wiki/data-storage/read-replicas-and-scaling|Read Replicas and Scaling]] — Scaling read throughput with replica databases
+- [[wiki/data-storage/real-time-dashboards-and-alerts|Real-Time Dashboards and Alerts]] — Serving fresh metrics with low latency
+- [[wiki/data-storage/real-time-personalization|Real-Time Personalization]] — Adapting experiences within seconds of user behavior
+- [[wiki/data-storage/reciprocal-rank-fusion|Reciprocal Rank Fusion]] — Rank-based method for merging multiple result lists that is robust to incomparable relevance scores
+- [[wiki/data-storage/recommendation-data-pipelines|Recommendation Data Pipelines]] — Feeding recommender systems with interaction data
+- [[wiki/data-storage/record-linkage|Record Linkage]] — Statistical techniques for matching records across datasets without shared identifiers
+- [[wiki/data-storage/redis-and-caching-patterns|Redis and Caching Patterns]] — In-memory data structures for speed
+- [[wiki/data-storage/reference-blocks|Reference Blocks]] — The structured section where an article lists its sources
+- [[wiki/data-storage/reference-lists|Reference Lists]] — The final list of all sources cited by an article
+- [[wiki/data-storage/replication-mechanisms|Replication Mechanisms]] — Copying data across servers for durability, scale, and availability
+- [[wiki/data-storage/replication-strategies|Replication Strategies]] — Primary-replica replication and failover behavior
+- [[wiki/data-storage/reporting-and-analytics-tools|Reporting and Analytics Tools]] — Choosing the tool for the job in the BI ecosystem
+- [[wiki/data-storage/reservoir-sampling-and-streaming-stats|Reservoir Sampling and Streaming Stats]] — Uniform samples and incremental statistics over streams
+- [[wiki/data-storage/resource-scheduling-in-spark|Resource Scheduling in Spark]] — How Spark acquires and shares cluster resources
+- [[wiki/data-storage/retrieval-augmented-generation|Retrieval-Augmented Generation]] — Pattern that grounds LLM answers in retrieved evidence from an external knowledge store
+- [[wiki/data-storage/rfm-analysis|RFM Analysis]] — Recency, frequency, and monetary value segmentation
+- [[wiki/data-storage/role-playing-dimensions|Role-Playing Dimensions]] — One dimension table used in multiple roles
+- [[wiki/data-storage/rollups-and-drilldowns|Rollups and Drilldowns]] — Navigating from summary to detail
+- [[wiki/data-storage/rpo-and-rto|RPO and RTO]] — Recovery point and time objectives for planning
+- [[wiki/data-storage/saga-transactions-and-compensations|Saga Transactions and Compensations]] — Long-running business transactions as compensable steps
+- [[wiki/data-storage/scd-type-2-slowly-changing-dimensions|SCD Type 2: Slowly Changing Dimensions]] — Keeping full history of dimension attribute changes by inserting new versions
+- [[wiki/data-storage/schema-evolution-in-streams|Schema Evolution in Streams]] — Changing event schemas without breaking producers and consumers
+- [[wiki/data-storage/schema-evolution|Schema Evolution]] — Additive changes, backfills, and cross-version compatibility
+- [[wiki/data-storage/schema-migration-tools|Schema Migration Tools]] — Version-controlled schema changes as code
+- [[wiki/data-storage/schema-migrations|Schema Migrations]] — Versioned DDL change management and rollout
+- [[wiki/data-storage/schema-on-read|Schema-on-Read vs Schema-on-Write]] — Deferred versus enforced schemas in lake pipelines
+- [[wiki/data-storage/schema-registry-and-evolution|Schema Registry and Evolution]] — Centralized schema governance for streaming and messaging
+- [[wiki/data-storage/scraping-and-web-data|Scraping and Web Data]] — Collecting data from websites with care
+- [[wiki/data-storage/search-and-relevance-ranking|Search and Relevance Ranking]] — From keyword match to meaningful result ordering
+- [[wiki/data-storage/search-engines-elasticsearch|Search Engines: Elasticsearch]] — Distributed full-text search and analytics over inverted indexes
+- [[wiki/data-storage/segmentation-and-clustering-analytics|Segmentation and Clustering Analytics]] — Grouping users or entities by behavior
+- [[wiki/data-storage/semantic-layers-and-metrics|Semantic Layers and Metrics]] — One definition of metrics, served everywhere
+- [[wiki/data-storage/semantic-search|Semantic Search]] — Retrieval that matches meaning rather than surface keywords using embeddings or structured semantics
+- [[wiki/data-storage/sequential-testing-data|Sequential Testing]] — Monitoring experiments as data arrives without inflating errors
+- [[wiki/data-storage/sessionization-and-activity-windows|Sessionization and Activity Windows]] — Grouping events into sessions by gaps in activity
+- [[wiki/data-storage/sharding-and-partitioning-revisited|Sharding and Partitioning Revisited]] — Splitting data across nodes and files for scale
+- [[wiki/data-storage/sharding-strategies|Sharding Strategies]] — Horizontal splits by key, hash, or range across nodes
+- [[wiki/data-storage/simhash|SimHash]] — Hashing technique producing fingerprints where similar documents have close hashes
+- [[wiki/data-storage/singlestore-htap|SingleStore and HTAP]] — One engine for transactions and analytics (hybrid transactional/analytical processing)
+- [[wiki/data-storage/sketch-based-analytics|Sketch-Based Analytics]] — Using probabilistic data structures in production analytics
+- [[wiki/data-storage/slowly-changing-dimensions|Slowly Changing Dimensions]] — Tracking historical dimension attributes (SCD types)
+- [[wiki/data-storage/small-file-problem-and-compaction|Small File Problem and Compaction]] — Too many tiny files degrading lakehouse query performance
+- [[wiki/data-storage/snapshot-isolation-and-timetravel|Snapshot Isolation and Time Travel]] — Reading a consistent historical state through MVCC-style snapshotting
+- [[wiki/data-storage/soda-and-dbt-tests|Soda and dbt Tests]] — SQL-native data-quality testing inside transformation workflows
+- [[wiki/data-storage/source-formatting|Source Formatting]] — The uniform shape of source entries in references
+- [[wiki/data-storage/spark-batch-and-streaming|Spark: Batch and Streaming]] — Unified large-scale processing on one engine
+- [[wiki/data-storage/spark-executors-and-memory-planning|Spark Executors and Memory Planning]] — Right-sizing executor memory and cores for Spark jobs
+- [[wiki/data-storage/spark-sql-and-dataframes|Spark SQL and DataFrames]] — Declarative analytics on the Spark engine
+- [[wiki/data-storage/spark-structured-streaming|Spark Structured Streaming]] — Micro-batch and continuous processing on the Spark engine
+- [[wiki/data-storage/spark-tuning-and-shuffle-optimization|Spark Tuning and Shuffle Optimization]] — Reducing shuffle cost and memory pressure in Spark jobs
+- [[wiki/data-storage/sparql|SPARQL]] — Query language for RDF graphs, the SQL of the semantic web
+- [[wiki/data-storage/spatial-indexes|Spatial Indexes]] — R-trees and grid structures for geospatial queries
+- [[wiki/data-storage/sql-engines|SQL Engine Architecture]] — How parsers, optimizers, and executors turn SQL into results
+- [[wiki/data-storage/sql-on-lakehouse|SQL on Lakehouse]] — Warehouse-class SQL over open lake tables
+- [[wiki/data-storage/sql-optimization-techniques|SQL Optimization Techniques]] — Making slow queries fast with structure and statistics
+- [[wiki/data-storage/sql-server-analytics|SQL Server Analytics]] — Analytics capabilities of Microsoft SQL Server
+- [[wiki/data-storage/sqlite-fts5|SQLite FTS5]] — Full-text search extension built into SQLite with BM25 ranking
+- [[wiki/data-storage/staging-vs-mart-tables|Staging vs Mart Tables]] — Transient load area versus consumer-facing models
+- [[wiki/data-storage/starrocks-and-doris|StarRocks and Doris]] — Open-source MPP engines for real-time and high-concurrency analytics
+- [[wiki/data-storage/stateful-stream-processing|Stateful Stream Processing]] — Keeping per-key state across events for windows, joins, and aggregations
+- [[wiki/data-storage/statistical-significance-in-data|Statistical Significance in Data]] — Distinguishing real effects from noise in data analysis
+- [[wiki/data-storage/statistics-and-optimizer-hints|Statistics and Optimizer Hints]] — Feeding the optimizer better information about data
+- [[wiki/data-storage/stemming|Stemming]] — Reducing words to their base or root form by chopping affixes
+- [[wiki/data-storage/stopwords|Stopwords]] — High-frequency function words typically removed before indexing to save space
+- [[wiki/data-storage/storage-engines|Storage Engines]] — Pluggable heap, LSM, and columnar engines behind one SQL layer
+- [[wiki/data-storage/storage-tiering|Storage Tiering]] — Hot/warm/cold placement across storage media
+- [[wiki/data-storage/stream-analytics-platforms|Stream Analytics Platforms]] — Fully managed platforms for SQL stream processing
+- [[wiki/data-storage/stream-processing-engines|Stream Processing Engines]] — Flink/Spark-style continuous computation frameworks
+- [[wiki/data-storage/stream-reprocessing-and-backfills|Stream Reprocessing and Backfills]] — Re-running historical events to rebuild state or fix logic
+- [[wiki/data-storage/stream-table-duality|Stream-Table Duality]] — Streams and tables as two views of the same data
+- [[wiki/data-storage/stream-windowing|Stream Windowing]] — Tumbling, sliding, and session windows for aggregation
+- [[wiki/data-storage/streaming-data-pipelines|Streaming Data Pipelines]] — Processing data continuously as it arrives
+- [[wiki/data-storage/streaming-sinks-and-sources|Streaming Sinks and Sources]] — The endpoints that feed and consume event streams
+- [[wiki/data-storage/streams-processing-libraries|Stream Processing Libraries]] — Library-level stream processing vs full platforms
+- [[wiki/data-storage/surrogate-and-natural-keys|Surrogate and Natural Keys]] — Artificial stable identifiers versus business-provided identifiers in warehouse modeling
+- [[wiki/data-storage/surrogate-keys|Surrogate vs Natural Keys]] — Generated IDs versus business keys and their trade-offs
+- [[wiki/data-storage/synthetic-data-for-testing|Synthetic Data for Testing]] — Generating realistic fake data without exposing real data
+- [[wiki/data-storage/table-format-comparisons|Table Format Comparisons]] — Delta Lake vs Iceberg vs Hudi side by side
+- [[wiki/data-storage/table-health-and-quality-metrics|Table Health and Quality Metrics]] — A scorecard for warehouse and lakehouse tables
+- [[wiki/data-storage/table-partitioning|Table Partitioning]] — Dividing tables into partitions for pruning and management
+- [[wiki/data-storage/tables-in-wiki|Tables in the Wiki]] — When and how to use tables in articles
+- [[wiki/data-storage/task-managers-and-slots|Task Managers and Slots]] — Flink's unit of compute and how parallelism maps to resources
+- [[wiki/data-storage/teradata-and-legacy-warehouses|Teradata and Legacy Warehouses]] — The MPP appliances that defined enterprise warehousing
+- [[wiki/data-storage/test-data-generation|Test Data Generation]] — Creating data for automated tests
+- [[wiki/data-storage/tf-idf|TF-IDF]] — Classic term-weighting scheme scoring how important a word is to a document in a corpus
+- [[wiki/data-storage/time-bucketing-and-rollups|Time Bucketing and Rollups]] — Aggregating timestamps into aligned intervals
+- [[wiki/data-storage/time-series-databases|Time-Series Databases]] — Append-heavy stores optimized for timestamped data
+- [[wiki/data-storage/time-series-queries-and-gaps|Time-Series Queries and Gaps]] — Querying timestamped data and handling missing samples
+- [[wiki/data-storage/time-travel-queries|Time Travel Queries]] — Querying data as it existed at a past timestamp
+- [[wiki/data-storage/timescaledb-and-postgres-extensions|TimescaleDB and Postgres Extensions]] — Time-series power inside Postgres
+- [[wiki/data-storage/tokenization|Tokenization]] — Splitting text into tokens — words, subwords, or characters — for processing
+- [[wiki/data-storage/top-k-and-heavy-hitters-algorithms|Top-K and Heavy Hitters Algorithms]] — Finding the most frequent items efficiently
+- [[wiki/data-storage/topic-modeling|Topic Modeling]] — Unsupervised discovery of latent themes that explain a document collection
+- [[wiki/data-storage/tpch-and-tpcds|TPC-H and TPC-DS]] — The standard OLAP benchmark suites
+- [[wiki/data-storage/transaction-isolation-levels|Transaction Isolation Levels]] — Read committed, repeatable read, serializable, and anomalies
+- [[wiki/data-storage/transactional-facts|Transactional Facts]] — One row per event at the finest grain
+- [[wiki/data-storage/transactional-outbox-and-cdc-relay|Transactional Outbox and CDC Relay]] — Publishing outbox rows through change data capture
+- [[wiki/data-storage/transactions-and-acid-revisited|Transactions and ACID Revisited]] — Atomicity, consistency, isolation, and durability in modern databases
+- [[wiki/data-storage/triplestore|Triplestore]] — Database optimized for storing and querying RDF triples
+- [[wiki/data-storage/tutorials-in-wiki|Tutorials in the Wiki]] — Step-by-step learning articles
+- [[wiki/data-storage/two-phase-commit|Two-Phase Commit]] — Prepare/commit coordinator protocol for distributed atomicity
+- [[wiki/data-storage/two-phase-locking|Two-Phase Locking]] — Lock acquisition and release rules for serializability
+- [[wiki/data-storage/uniform-tables-and-format-agnostic-engines|Uniform Tables and Format-Agnostic Engines]] — Reading one table through multiple format views
+- [[wiki/data-storage/vacuuming-and-compaction|Vacuuming & Compaction]] — Reclaiming dead rows and merging storage segments
+- [[wiki/data-storage/valkey-and-keydb|Valkey and KeyDB]] — Open-source Redis-compatible servers for caching and key-value workloads
+- [[wiki/data-storage/vector-clocks-and-version-vectors|Vector Clocks and Version Vectors]] — Capturing causality between replicas
+- [[wiki/data-storage/vector-databases-revisited|Vector Databases Revisited]] — Storing embeddings and serving similarity search at scale
+- [[wiki/data-storage/vector-databases|Vector Databases]] — Databases purpose-built to index and search high-dimensional embedding vectors by similarity
+- [[wiki/data-storage/vectorized-query-execution|Vectorized Query Execution]] — Batch-at-a-time columnar processing for analytical workloads
+- [[wiki/data-storage/virtual-nodes-and-replication-factors|Virtual Nodes and Replication Factors]] — Balancing load and durability in ring-based stores
+- [[wiki/data-storage/wal-and-consistency|WAL and Consistency]] — Write-ahead logging as the durability backbone of databases
+- [[wiki/data-storage/warehouse-optimization|Warehouse Optimization]] — Tuning a warehouse for speed and cost
+- [[wiki/data-storage/watermarks-and-idle-sources|Watermarks and Idle Sources]] — Signals of event-time progress in stream processing
+- [[wiki/data-storage/weaviate|Weaviate]] — Open-source vector database with built-in hybrid search and modules
+- [[wiki/data-storage/wide-column-stores|Wide-Column Stores]] — Cassandra/HBase-style column-family tables
+- [[wiki/data-storage/window-functions-in-sql|Window Functions in SQL]] — Computing values across related rows without collapsing them
+- [[wiki/data-storage/windowed-joins-and-temporal-joins|Windowed Joins and Temporal Joins]] — Joining events within time windows or at a point in time
+- [[wiki/data-storage/windowing-and-watermarks|Windowing and Watermarks]] — Grouping stream events by time with bounded lateness
+- [[wiki/data-storage/write-ahead-logging|Write-Ahead Logging]] — Durable redo/undo records written before data pages
+- [[wiki/data-storage/xml-and-data-interchange|XML and Data Interchange]] — The older standard for structured document interchange
+- [[wiki/data-storage/yaml-frontmatter|YAML Frontmatter]] — YAML metadata block at the top of markdown files for titles, tags, and fields
+- [[wiki/data-storage/z-ordering-and-data-skipping|Z-Ordering and Data Skipping]] — Multidimensional clustering that makes scans skip irrelevant files
+- [[wiki/data-storage/zero-downtime-migrations|Zero-Downtime Migrations]] — Changing schemas without stopping services

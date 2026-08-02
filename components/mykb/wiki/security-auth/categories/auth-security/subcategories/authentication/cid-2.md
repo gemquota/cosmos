@@ -21,7 +21,7 @@ Disambiguation matters because the consequences differ: treating a content hash 
 
 Future sessions should update this note once the dominant reading in this repository becomes clear. Until then, the safest assumption is the one supported by the surrounding tooling.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Cid 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Cid 2
 
 ## Related Entities
 

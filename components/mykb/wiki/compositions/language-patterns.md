@@ -13,19 +13,19 @@ Language-specific patterns, idioms, and tooling for primary programming language
 ## Composition Map
 ### Python
 Python: async/await patterns, type hints, decorators, context managers, and the extensive package ecosystem.
-**Related entities:** FastAPI, [[wiki/*/flask|Flask]], [[wiki/*/numpy|NumPy]], Python, Sadism Pipeline, [[wiki/*/serving-flask|Serving Flask]], [[wiki/*/validationpipeline|ValidationPipeline]]
+**Related entities:** FastAPI, [[wiki/api-services/categories/api-rest/subcategories/rest-http/flask|Flask]], [[wiki/security-auth/categories/auth-security/subcategories/authentication/numpy|NumPy]], Python, Sadism Pipeline, [[wiki/api-services/categories/api-rest/subcategories/rest-http/serving-flask|Serving Flask]], [[wiki/security-auth/categories/auth-security/subcategories/authentication/validationpipeline|ValidationPipeline]]
 ### JavaScript/TypeScript
 JS/TS: type systems, async patterns, module systems (ESM/CJS), and framework-specific patterns.
-**Related entities:** ActionNode, [[wiki/*/audionode|AudioNode]], [[wiki/*/buffersourcenode|BufferSourceNode]], JavaScript, [[wiki/*/nodedefinitions|NodeDefinitions]], [[wiki/*/nodeeditor|NodeEditor]], NodeGraph, NodeId, [[wiki/*/noderenderer|NodeRenderer]], [[wiki/*/oscillatornode|OscillatorNode]], ReAct
+**Related entities:** ActionNode, [[wiki/api-services/categories/api-rest/subcategories/rest-http/audionode|AudioNode]], [[wiki/api-services/categories/api-rest/subcategories/rest-http/buffersourcenode|BufferSourceNode]], JavaScript, [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/nodedefinitions|NodeDefinitions]], [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/nodeeditor|NodeEditor]], NodeGraph, NodeId, [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/noderenderer|NodeRenderer]], [[wiki/api-services/categories/api-rest/subcategories/rest-http/oscillatornode|OscillatorNode]], ReAct
 ### Shell/Bash
 Shell scripting: command pipelines, variable expansion, function definitions, and automation patterns.
-**Related entities:** [[wiki/*/beanshell|BeanShell]], [[wiki/*/finding-redirect-destinations|Finding Redirect Destinations]], JavaScript, [[wiki/*/redirect|Redirect]], Sadism Pipeline, ShellExecArgs, TypeScript, [[wiki/*/validationpipeline|ValidationPipeline]]
+**Related entities:** [[wiki/security-auth/categories/auth-security/subcategories/authentication/beanshell|BeanShell]], [[wiki/security-auth/categories/auth-security/subcategories/authentication/finding-redirect-destinations|Finding Redirect Destinations]], JavaScript, [[wiki/security-auth/categories/auth-security/subcategories/authentication/redirect|Redirect]], Sadism Pipeline, ShellExecArgs, TypeScript, [[wiki/security-auth/categories/auth-security/subcategories/authentication/validationpipeline|ValidationPipeline]]
 ### Go
 Go: goroutines for concurrency, interfaces for abstraction, and the defer pattern for resource management.
-**Related entities:** Baby Brain Analysis Interface, [[wiki/*/bwvqxgoo|BwVqxgOO]], [[wiki/*/code-structure-tracking|Code Structure Tracking]], [[wiki/*/critical-instructions|Critical Instructions]], [[wiki/*/debugoverlay|DebugOverlay]], [[wiki/*/functional-instrumental-goals|Functional Instrumental Goals]], [[wiki/*/goalanalysis|GoalAnalysis]], [[wiki/*/goalgenerator|GoalGenerator]], GoalQueue, GoalStatus, GoalSystem
+**Related entities:** Baby Brain Analysis Interface, [[wiki/api-services/categories/api-rest/subcategories/rest-http/bwvqxgoo|BwVqxgOO]], [[wiki/api-services/categories/api-rest/subcategories/rest-http/code-structure-tracking|Code Structure Tracking]], [[wiki/security-auth/categories/auth-security/subcategories/authentication/critical-instructions|Critical Instructions]], [[wiki/api-services/categories/api-rest/subcategories/rest-http/debugoverlay|DebugOverlay]], [[wiki/api-services/categories/api-rest/subcategories/rest-http/functional-instrumental-goals|Functional Instrumental Goals]], [[wiki/security-auth/categories/auth-security/subcategories/authentication/goalanalysis|GoalAnalysis]], [[wiki/api-services/categories/api-rest/subcategories/rest-http/goalgenerator|GoalGenerator]], GoalQueue, GoalStatus, GoalSystem
 ### Java/Kotlin
 JVM languages: object-oriented patterns, build tools, and Android-specific patterns.
-**Related entities:** [[wiki/*/android-device-access|Android Device Access]], JavaScript
+**Related entities:** [[wiki/mobile-platform/entities/android-device-access|Android Device Access]], JavaScript
 ## Related Compositions
 - [[wiki/compositions/setup-installation.md|Setup & Installation Pattern]]
 - [[wiki/compositions/dev-workflow.md|Development Workflow Pattern]]

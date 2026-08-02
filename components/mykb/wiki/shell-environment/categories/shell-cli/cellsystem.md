@@ -13,7 +13,7 @@ status: "growing"
 
 CellSystem appears in 1 session(s) categorized as API, Mobile, Shell. Related topics: android, api, bash, cli.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Shell Cli
 
 ## Overview
 
@@ -29,7 +29,7 @@ Implementation concerns are the update loop, neighborhood access, and data layou
 
 ## Context
 
-The Mobile and API categories suggest the cell system may be rendered on Android while communicating with a service. Related entities in the Shell Cli branch — such as [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/genefunction|Genefunction]] and [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/cellstate|Cellstate]] — record neighboring bio-inspired entities the session also referenced.
+The Mobile and API categories suggest the cell system may be rendered on Android while communicating with a service. Related entities in the Shell Cli branch — such as [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/genefunction|Genefunction]] and [[wiki/shell-environment/categories/shell-cli/cellstate|Cellstate]] — record neighboring bio-inspired entities the session also referenced.
 
 Parameters such as grid size, neighborhood radius, and rule thresholds usually come from a config file or CLI flags, which suits the shell-oriented tooling in this branch. Output takes the form of snapshots, logs, or rendered frames that can be compared across runs. The general model described here — states, local rules, synchronous updates — covers most cell systems regardless of their specific domain.
 

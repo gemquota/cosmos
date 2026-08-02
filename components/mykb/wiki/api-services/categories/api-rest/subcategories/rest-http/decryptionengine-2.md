@@ -13,7 +13,7 @@ ACE ecosystem component — handles decryption of encrypted data and secure comm
 
 **Related topics:** android, api, auth, bun, edge, guid, ide, orm
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Decryptionengine 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Decryptionengine 2
 
 ## Related Entities
 

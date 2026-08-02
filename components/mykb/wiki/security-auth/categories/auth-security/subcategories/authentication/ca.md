@@ -23,7 +23,7 @@ Both readings share a theme of trust and verification: Scala's type system verif
 Both readings illustrate how a two-letter acronym can carry unrelated meanings in adjacent domains. The engineering response is context: the topic tags, the neighboring entities, and the session notes decide which reading applies. This page keeps the Scala description from the original body while noting the certificate-authority meaning that the security context suggests, so that future readers can follow whichever thread is relevant to their work.
 **Related topics:** android, api, auth, authentication
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Ca
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Ca
 
 ## Related Entities
 

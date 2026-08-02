@@ -18,17 +18,17 @@ Passwords should be stored as salted, slow hashes such as bcrypt or Argon2, neve
 
 OAuth 2.0 lets a user authorize a client application to access resources on their behalf. The authorization code flow with PKCE is the recommended pattern for public clients, exchanging a temporary code for tokens without exposing the client secret. Tokens are scoped, expire, and can be refreshed, which limits the damage if one is leaked.
 
-API keys identify machine clients and should be stored, transmitted, and rotated with the same care as passwords. Every authentication scheme has failure modes: leaked tokens, weak secrets, and confused-deputy problems where a legitimate service is tricked into acting on behalf of an attacker. Logging and monitoring, including attempts that result in [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied]], are part of the discipline documented across the [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/index|Frontend Frameworks]] and [[wiki/web-platforms/supercategories/security-auth/index|Security Auth]] domains.
+API keys identify machine clients and should be stored, transmitted, and rotated with the same care as passwords. Every authentication scheme has failure modes: leaked tokens, weak secrets, and confused-deputy problems where a legitimate service is tricked into acting on behalf of an attacker. Logging and monitoring, including attempts that result in [[wiki/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied]], are part of the discipline documented across the [[wiki/web-platforms/index|Frontend Frameworks]] and [[wiki/web-platforms/index|Security Auth]] domains.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/index|Frontend Frameworks]] › Au 2
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Au 2
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]

@@ -19,21 +19,21 @@ Working with JSON in the shell is a recurring need. jq filters and transforms JS
 
 Bootstrapping describes the scaffolding of projects and environments: downloading dependencies, generating configuration, and setting up the initial structure. Fast runtimes such as Bun bundle a package manager, bundler, and test runner, which shortens the feedback loop for scripts and small applications. IDEs provide the other side of the loop: completion, debugging, and navigation over the same files the shell manipulates.
 
-Because the entry records a single session, the durable lesson is the workflow rather than the tool: name things consistently, keep commands scriptable, and let each layer, shell, runtime, and editor, cooperate through plain files. The entry belongs to the [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/index|Dev Tools]] domain alongside the [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/core-standard-the|Core Standard The]] entry, which captures the baseline conventions such workflows rely on.
+Because the entry records a single session, the durable lesson is the workflow rather than the tool: name things consistently, keep commands scriptable, and let each layer, shell, runtime, and editor, cooperate through plain files. The entry belongs to the [[wiki/web-platforms/index|Dev Tools]] domain alongside the [[wiki/shell-environment/categories/dev-tools/core-standard-the|Core Standard The]] entry, which captures the baseline conventions such workflows rely on.
 
 The entry is deliberately general because a single session provides only a snapshot; what survives is the shape of the workflow, not the specific tool.
 
 The session snapshot also illustrates a general truth: most shell work is composition of small, well-scoped commands rather than new programs.
 
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/index|Dev Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Dev Tools]]
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/bootstrap|Bootstrap]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/claude-code|Claude Code]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/claude|Claude]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/core-standard-the|Core Standard The]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/evolver|Evolver]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/frontend-app-builder-use|Frontend App Builder Use]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/hard-rules|Hard Rules]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/image-gen|Image Gen]]
+- [[wiki/shell-environment/categories/dev-tools/bootstrap|Bootstrap]]
+- [[wiki/shell-environment/categories/dev-tools/claude-code|Claude Code]]
+- [[wiki/shell-environment/categories/dev-tools/claude|Claude]]
+- [[wiki/shell-environment/categories/dev-tools/core-standard-the|Core Standard The]]
+- [[wiki/shell-environment/categories/dev-tools/evolver|Evolver]]
+- [[wiki/shell-environment/categories/dev-tools/frontend-app-builder-use|Frontend App Builder Use]]
+- [[wiki/shell-environment/categories/dev-tools/hard-rules|Hard Rules]]
+- [[wiki/shell-environment/categories/dev-tools/image-gen|Image Gen]]

@@ -14,7 +14,7 @@ RubyGems — the package manager for the Ruby programming language.
 
 **Related topics:** android, api, aws, bash, bug, cli, documentation
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
 
 ## Overview
 

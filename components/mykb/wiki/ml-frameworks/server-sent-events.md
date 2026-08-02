@@ -1,27 +1,35 @@
 ---
 type: "concept"
 title: "Server-Sent Events"
-description: "SSE: a simple HTTP protocol for servers pushing a stream of events to a browser or client"
-tags: ["server-sent-events", "sse", "streaming", "http"]
-timestamp: "2026-07-31T00:00:00Z"
-status: "stub"
+description: "HTTP streaming transport that pushes model tokens to clients as they are generated"
+tags: ["sse", "streaming", "http", "real-time"]
+timestamp: "2026-08-02T00:00:00Z"
+status: "growing"
+source: ["https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events", "https://developer.mozilla.org/en-US/docs/Web/API/EventSource"]
 ---
 
 # Server-Sent Events
 
 ## Summary
-Server-Sent Events is a one-way HTTP streaming protocol where the server keeps a connection open and pushes text events. It is the standard transport for token streaming from LLM APIs.
+Server-Sent Events (SSE) is a one-way HTTP streaming protocol used to deliver LLM tokens as they are generated. It matters because users perceive streaming as responsiveness, and agents need incremental output. SSE is simpler than WebSockets for one-way model-to-client flow.
 
 ## Details
-- Format: lines of 'data: ...' separated by blank lines; clients use EventSource or fetch readers.
-- Unlike WebSockets, SSE is one-way and rides plain HTTP, simplifying proxies and retries.
-- Handles reconnection with Last-Event-ID automatically.
-- RSIS3 relevance: the dashboard consumes RSIS3 streaming telemetry via SSE-style endpoints.
+- **Mechanism** — the server keeps a response open and writes text/event-stream messages per token or chunk.
+- **Benefits** — lower time-to-first-token perception, cancellation support, and simple reconnection.
+- **Worked example** — a chat UI renders tokens via SSE events, showing a typing effect and enabling stop-mid-generation.
+- **Alternatives** — WebSockets for bidirectional flows; both feed streaming-responses-sse patterns.
+- **mykb relevance** — RSIS3 chat loops should stream to feel instant.
+- **Worked example** — a chat UI renders tokens via SSE events, showing a typing effect and enabling stop-mid-generation.
+- **Reliability** — reconnection with last-event-id and heartbeat comments keeps long generations robust.
+- **Alternatives** — WebSockets for bidirectional flows; SSE suits one-way model-to-client streaming with simpler semantics.
+- **mykb relevance** — streaming responses make RSIS3 knowledge loops feel immediate and responsive.
 
 ## Related
-- [[wiki/ml-frameworks/streaming-responses|Streaming Responses]] — The LLM feature SSE transports
-- [[wiki/prompt-engineering/message-format|Message Format]] — The payloads inside events
-- [[wiki/ml-frameworks/chat-completions|Chat Completions]] — SSE-based streaming endpoint
-- [[raw/archive/session-artifacts-2026-07/topics/http-10|http — The underlying protocol
-- [[wiki/prompt-engineering/agent-state|Agent State]] — Client-side stream assembly
-- [[wiki/prompt-engineering/tool-calling|Tool Calling]] — Tool-call events stream over SSE
+- [[wiki/llm-agents/streaming-responses-sse|Streaming Responses with SSE]] — streaming pattern
+- [[wiki/ai-ml/llm-latency-optimization|LLM Latency Optimization]] — perceived latency
+- [[wiki/llm-agents/realtime-api-latency|Realtime API Latency]] — realtime budgets
+- [[wiki/llm-agents/llm-gateway-and-routing|LLM Gateway and Routing]] — streaming gateways
+- [[wiki/agent-systems/agent-observability|Agent Observability]] — streamed telemetry
+- [[wiki/ml-frameworks/openai-api|OpenAI API]] — the API surface it uses
+- [[wiki/syntheses/knowledge-system|Knowledge System Overview]] — the KB loop this work feeds
+- [[wiki/agent-systems/retry-jitter|Retry Jitter]] — related concept in this cluster

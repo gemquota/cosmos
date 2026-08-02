@@ -13,7 +13,7 @@ resource: ""
 
 ShellExecArgs appears in 7 session(s) categorized as API, Backend, Debugging, Mobile, Security. Related topics: android, api, auth, authentication, backend, bootstrap, cli.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Shellexecargs 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Shellexecargs 2
 
 ## Overview
 

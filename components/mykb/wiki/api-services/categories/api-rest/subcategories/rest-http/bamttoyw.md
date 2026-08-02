@@ -21,7 +21,7 @@ The recommended practice is to treat such tokens as opaque identifiers until evi
 
 This entry belongs to the broader series of entity pages generated from session categorization, where fidelity to the original token matters more than a confident gloss. Opaque tokens are common in generated output, and their presence in a session is usually a breadcrumb to a specific log line or artifact rather than a concept worth defining. Reappearance in later sessions would warrant a deeper look at the artifact it references.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Bamttoyw
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Bamttoyw
 
 ## Related Entities
 

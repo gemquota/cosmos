@@ -1,8 +1,14 @@
+---
+type: "index"
+title: "Api Rest Index"
+description: "Listing of the api-services/categories/api-rest/ folder (1 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
 # Api Rest
 
-Part of [[wiki/web-platforms/supercategories/api-services/index|Api Services]] › Api Rest. 169 entities.
+Part of [[wiki/index|Wiki Index]]. 1 pages.
 
-## Sub-Categories
-
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/json-edge/index|Json Edge]] — 2 files
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/index|Rest Http]] — 169 files
+## Pages
+- [[wiki/api-services/categories/api-rest/overview|Overview]]

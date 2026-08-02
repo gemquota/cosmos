@@ -1,7 +1,14 @@
+---
+type: "index"
+title: "Web Dev Index"
+description: "Listing of the shell-environment/categories/web-dev/ folder (1 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
 # Web Dev
 
-Part of [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › Web Dev. 29 entities.
+Part of [[wiki/index|Wiki Index]]. 1 pages.
 
-## Sub-Categories
-
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/index|Css Html]] — 30 files
+## Pages
+- [[wiki/shell-environment/categories/web-dev/overview|Overview]]

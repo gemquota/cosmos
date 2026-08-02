@@ -18,7 +18,7 @@ Deployment follows the buildpack model: the platform detects the language, compi
 
 Scaling is explicit: web dynos handle HTTP traffic and can be increased or decreased to match load, while worker dynos process background jobs from queues. Releases are immutable and can be rolled back, and review apps spin up ephemeral environments for each pull request.
 
-Heroku's constraints are part of its value: an ephemeral filesystem, twelve-factor discipline, and stateless processes encourage portable applications. The model influenced a generation of PaaS offerings and remains a reference point for deployment workflows, connecting to the [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/index|Cli Tools]] and [[wiki/os-shell/supercategories/shell-environment/categories/shell-cli/workflow-2|Workflow 2]] entries in this knowledge base.
+Heroku's constraints are part of its value: an ephemeral filesystem, twelve-factor discipline, and stateless processes encourage portable applications. The model influenced a generation of PaaS offerings and remains a reference point for deployment workflows, connecting to the [[wiki/web-platforms/index|Cli Tools]] and [[wiki/shell-environment/categories/shell-cli/workflow-2|Workflow 2]] entries in this knowledge base.
 
 The entry is filed under CLI tools because the sessions that mention Heroku focus on deployment workflows driven from the terminal rather than on the platform's web console.
 
@@ -26,15 +26,15 @@ Sessions note that the same twelve-factor habits transfer to any platform, so th
 
 Documentation for the platform emphasizes the same loop: commit, push, and release, with rollback always available.
 
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/density|Density]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
+- [[wiki/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/density|Density]]
+- [[wiki/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
+- [[wiki/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
+- [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
+- [[wiki/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
+- [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]

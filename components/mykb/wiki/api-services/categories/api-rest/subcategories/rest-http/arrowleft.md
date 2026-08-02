@@ -21,7 +21,7 @@ In the session context, ArrowLeft appeared alongside API, cloud, and mobile topi
 
 
 Design systems standardize such icons for a reason: when every screen uses the same glyph, orientation, and hit area, users learn the pattern once and apply it everywhere. Teams should also consider the rotation and mirroring rules for right-to-left locales, where back navigation often flips direction. The identifier may equally refer to a keyboard key, a code symbol, or a state in a finite-state machine, and the session tags keep all of these readings open while favoring the UI interpretation recorded here.
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Arrowleft
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Arrowleft
 
 ## Related Entities
 

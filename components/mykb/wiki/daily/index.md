@@ -1,5 +1,11 @@
+---
+type: "index"
+title: "Daily Index"
+description: "Listing of the daily/ folder (0 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
 # Daily
 
-> Work-in-progress domain. Content will be populated from future session analysis.
-
-**0 entities** — awaiting extraction.
+Part of [[wiki/index|Wiki Index]]. 0 pages.

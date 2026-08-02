@@ -19,21 +19,21 @@ Skills are discovered through their name and description, so good metadata is es
 
 Documentation inside skills keeps procedures executable: commands, expected outputs, and failure handling are spelled out rather than assumed. Because skills are reused across sessions, they benefit from the same review and versioning discipline as code: changes are tested, and outdated instructions are updated or removed.
 
-Skills also appear in the human sense of the word, as the competencies a team relies on: shell scripting, API design, CSS, and documentation are all skills that show up in session topics. The wiki records both senses, cataloguing agent-facing capabilities and the technical disciplines behind them under the [[wiki/web-platforms/supercategories/frontend/index|Frontend]] and [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] domains.
+Skills also appear in the human sense of the word, as the competencies a team relies on: shell scripting, API design, CSS, and documentation are all skills that show up in session topics. The wiki records both senses, cataloguing agent-facing capabilities and the technical disciplines behind them under the [[wiki/web-platforms/index|Frontend]] and [[wiki/web-platforms/index|Shell Environment]] domains.
 
 Keeping skills focused, documented, and versioned makes them a compounding asset: each new skill shortens the work for every future session that faces the same problem.
 
 The entry also notes that skills are most valuable when they encode judgment: not just what to run, but how to verify the result and what to do when it fails.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/css-styling/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/importerror-10|Importerror 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/css-10|Css 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/database-2|Database 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/display-2|Display 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/html-10|Html 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/reference-2|Reference 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/dob-2|Dob 2]]
+- [[wiki/frontend/categories/css-styling/importerror-10|Importerror 10]]
+- [[wiki/frontend/categories/css-styling/css-10|Css 10]]
+- [[wiki/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
+- [[wiki/frontend/categories/css-styling/database-2|Database 2]]
+- [[wiki/frontend/categories/css-styling/display-2|Display 2]]
+- [[wiki/frontend/categories/css-styling/html-10|Html 10]]
+- [[wiki/frontend/categories/css-styling/reference-2|Reference 2]]
+- [[wiki/frontend/categories/css-styling/dob-2|Dob 2]]

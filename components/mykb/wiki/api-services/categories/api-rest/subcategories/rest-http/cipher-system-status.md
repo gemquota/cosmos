@@ -13,7 +13,7 @@ IP (Internet Protocol) — the principal network protocol for routing packets ac
 
 **Related topics:** android, api, auth, aws
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Cipher System Status
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Cipher System Status
 
 ## Related Entities
 

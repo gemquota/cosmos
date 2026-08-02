@@ -23,7 +23,7 @@ Short names also remind teams to document identifiers at first use. The related 
 Error codes and status tokens deserve the same treatment as acronyms. When a system returns BF as a status, the meaning lives in the code, not in the letters, and a page that records where the token appeared helps future readers find the code and the conversation around it. The related-entity list below is part of that context, and updating the page becomes easy once the definition is confirmed.
 **Related topics:** android, api, auth
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Bf
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Bf
 
 ## Related Entities
 

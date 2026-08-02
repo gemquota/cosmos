@@ -3,7 +3,7 @@ type: "index"
 title: "Wiki Index — Where to Look"
 description: "Nested navigation map for the mykb knowledge base: pick a family, then a folder; every folder has an index page."
 tags: ["index", "navigation", "mykb"]
-timestamp: "2026-08-02T00:00:00Z"
+timestamp: "2026-08-03T00:00:00Z"
 ---
 
 # Wiki Index — Where to Look
@@ -13,12 +13,11 @@ the folder's `index.md` for its full listing. The sidebar (Docs tab) mirrors
 the folder structure; Search and the Graph tab work across everything.
 
 ## 1. Foundations & Concepts
-- [[wiki/concepts/index|concepts/]] — cross-cutting ideas and research reports
-  (mykb system reports, nine-loop hierarchy, open questions)
+- [[wiki/concepts/index|concepts/]] — cross-cutting ideas, reasoning, and research
+- [[wiki/entities/index|entities/]] — auto-extracted entity notes
 
 ## 2. Frontend & UI
-- [[wiki/frontend/index|frontend/]] — HTML/CSS/JS, frameworks
-  (angular, ajax-spa, bootstrap), styling, UI patterns
+- [[wiki/frontend/index|frontend/]] — HTML/CSS/JS, frameworks, styling, UI patterns
 - [[wiki/frontend-frameworks/index|frontend-frameworks/]] — framework entity notes
 - [[wiki/js-ts-ecosystem/index|js-ts-ecosystem/]] — JavaScript/TypeScript tooling
 - [[wiki/web-platforms/index|web-platforms/]] — browser & web platform concepts
@@ -42,6 +41,7 @@ the folder structure; Search and the Graph tab work across everything.
 - [[wiki/development/index|development/]] — dev workflows, CLI tools, ORMs
 - [[wiki/dev-tools/index|dev-tools/]] — developer tooling entities
 - [[wiki/tooling/index|tooling/]] — shell/CLI tooling entities
+- [[wiki/software-engineering/index|software-engineering/]] — engineering practice, testing culture
 
 ## 7. Shell & OS
 - [[wiki/os-shell/index|os-shell/]] — shell scripting, POSIX, text processing
@@ -50,52 +50,53 @@ the folder structure; Search and the Graph tab work across everything.
 ## 8. AI / ML / Agents
 - [[wiki/ai-ml/index|ai-ml/]] — machine learning concepts and models
 - [[wiki/ml-frameworks/index|ml-frameworks/]] — ML frameworks
-- [[wiki/meta-learning/index|meta-learning/]] — meta-learning and self-improvement
 - [[wiki/llm-agents/index|llm-agents/]] — LLM agent patterns
 - [[wiki/agent-systems/index|agent-systems/]] — agent architecture (loops, delegation, memory)
 - [[wiki/prompt-engineering/index|prompt-engineering/]] — prompt patterns and techniques
 
-## 9. Platforms
+## 9. Cognition, Learning & Meta
+- [[wiki/meta-learning/index|meta-learning/]] — metacognition, self-regulated learning, expertise
+- [[wiki/memory/index|memory/]] — memory techniques, PKM, note-taking
+- [[wiki/episodes/index|episodes/]] — learning from events, after-action reviews
+- [[wiki/questions/index|questions/]] — question design, inquiry, epistemic practice
+- [[wiki/reflections/index|reflections/]] — reflective practice
+- [[wiki/experiments/index|experiments/]] — experimental records
+
+## 10. Platforms
 - [[wiki/android-core/index|android-core/]] — Android platform
 - [[wiki/mobile-platform/index|mobile-platform/]] — mobile concepts
 
-## 10. Engineering & Testing
-- [[wiki/testing/index|testing/]] — testing strategies and tools
-- [[wiki/software-engineering/index|software-engineering/]] — architecture, refactoring, ADRs
+## 11. Engineering & QA
+- [[wiki/testing/index|testing/]] — test frameworks, patterns, QA
 
-## 11. Memory & Synthesis
-- [[wiki/memory/index|memory/]] — personal knowledge management, note systems, provenance
+## 12. Memory & Synthesis (OKF types)
 - [[wiki/syntheses/index|syntheses/]] — distilled cross-session conclusions
-- [[wiki/compositions/index|compositions/]] — instruction-set bundles (setup, dev workflow, API, data, security, devops, languages)
-- [[wiki/decisions/index|decisions/]] — recorded architecture decisions
+- [[wiki/compositions/index|compositions/]] — instruction-set synthesis pages
+- [[wiki/decisions/index|decisions/]] — recorded decisions
+- [[wiki/pulses/index|pulses/]] — telemetry snapshots
+- [[wiki/projects/index|projects/]] — project records
+- [[wiki/plans/index|plans/]] — plans and roadmaps
+- [[wiki/sources/index|sources/]] — source notes
 
-## 12. Project Records & OKF Types
-- [[wiki/episodes/index|episodes/]] · [[wiki/experiments/index|experiments/]] ·
-  [[wiki/pulses/index|pulses/]] · [[wiki/questions/index|questions/]] ·
-  [[wiki/reflections/index|reflections/]] · [[wiki/projects/index|projects/]] ·
-  [[wiki/sources/index|sources/]] · [[wiki/plans/index|plans/]] · [[wiki/ops/index|ops/]]
-- [[wiki/entities/index|entities/]] — RSIS3 system entities (memory client, pulse engine, …)
-- [daily/](daily/README.md) — daily notes
+## 13. Communities & Ops
+- [[wiki/communities/index|communities/]] — git workflows & collaboration practices
+- [[wiki/ops/index|ops/]] — mykb operational docs, prompts, reports
+- [[wiki/daily/index|daily/]] — daily session logs
 
-## 13. Archives (kept for history)
-- [raw/archive/](../raw/README.md) — session artifacts, archived junk
-  entities, old audits. Not part of the active knowledge map.
+## Where does X live?
 
----
-
-### Quick "where does X live?" lookup
-
-| You want… | Look in |
-|-----------|---------|
-| Auth / login / OAuth | `security-auth/` |
-| REST, HTTP, API clients | `api-services/` + `api-protocols/` |
-| Shell scripting / bash | `os-shell/` |
-| React, Angular, CSS | `frontend/` |
-| Databases, caching, SQL | `data-storage/` |
-| Docker, CI/CD, deployment | `infrastructure/` + `devops-infra/` |
-| ML models, prompting, agents | `ai-ml/` + `llm-agents/` + `agent-systems/` |
-| PKM / note-taking / zettelkasten | `memory/` |
-| Distilled conclusions | `syntheses/` |
-| Setup / workflow instruction sets | `compositions/` |
-
-*See also: [Home](../Home.md) · [Iteration Log](log.md) · [Wiki Schema](../ops/wiki-schema.md)*
+| If you want... | Look in... |
+|----------------|------------|
+| Auth / login / security fixes | `security-auth/` then `security/`, `identity/` |
+| Frontend (HTML/CSS/JS, Angular, SPA) | `frontend/` → `frontend-frameworks/`, `js-ts-ecosystem/`, `web-platforms/` |
+| Backend APIs, REST, HTTP, status codes | `api-services/`, `api-protocols/` |
+| Cloud, AWS/Azure/GCP, networking | `cloud-infra/`, `infrastructure/` |
+| CI/CD, deployment, SRE, observability | `devops-infra/` |
+| Databases, caching, storage | `data-storage/` |
+| Shell scripting, OS internals | `os-shell/`, `shell-environment/` |
+| LLMs, agents, prompts, ML models | `ai-ml/`, `llm-agents/`, `agent-systems/`, `prompt-engineering/`, `ml-frameworks/` |
+| Learning, memory, metacognition | `meta-learning/`, `memory/`, `episodes/`, `questions/` |
+| Tests & QA | `testing/` |
+| Distilled lessons / conclusions | `syntheses/` |
+| Records (decisions, pulses, projects, sources) | `decisions/`, `pulses/`, `projects/`, `sources/`, `plans/` |
+| Old / removed content | `raw/archive/` (junk-entities, audits, session-artifacts) |

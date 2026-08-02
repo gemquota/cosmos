@@ -13,7 +13,7 @@ status: "growing"
 
 Theory is referenced in 2 session(s). Related tags: ast, guid, ide, orm, spa.
 
-**Domain:** Development Tools › [[wiki/dev-tools/supercategories/development/index|Development]] › [[wiki/dev-tools/supercategories/development/categories/data-tools/index|Data Tools]] › Theory 2
+**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Theory 2
 
 ## Overview
 
@@ -25,7 +25,7 @@ A scientific theory is more than a hypothesis: it has been refined against evide
 
 ## Engineering Theories
 
-In engineering, a theory is a working model of how a system behaves: an abstraction that explains observed behavior and predicts the effect of changes. Such models are validated against logs, benchmarks, and experiments, and they are revised when reality diverges. The modeling pages in this cluster — such as [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]] and [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]] — apply this pattern to cognition and simulation.
+In engineering, a theory is a working model of how a system behaves: an abstraction that explains observed behavior and predicts the effect of changes. Such models are validated against logs, benchmarks, and experiments, and they are revised when reality diverges. The modeling pages in this cluster — such as [[wiki/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]] and [[wiki/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]] — apply this pattern to cognition and simulation.
 
 ## Use in Sessions
 
@@ -35,11 +35,11 @@ The distinction between a theory and a model is worth preserving: a model is a s
 
 ## Related Entities
 
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/easy-problems|Easy Problems]]
+- [[wiki/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]]
+- [[wiki/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]]
+- [[wiki/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]]
+- [[wiki/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
+- [[wiki/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
+- [[wiki/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
+- [[wiki/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
+- [[wiki/development/categories/data-tools/subcategories/orm/easy-problems|Easy Problems]]

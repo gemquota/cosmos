@@ -9,7 +9,7 @@ status: "growing"
 ---
 ## Iterative 2
 Iterative appears in 2 session(s) categorized as API, Shell, Version Control. Related topics: api, bash, bootstrap, ci/cd, cli, documentation, dom, git.
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/tooling/index|Tooling]] › [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
 ## Overview
 Iterative describes work organized as repeated cycles: build a little, check the result, adjust, and repeat. The page was recorded in two sessions categorized as API, Shell, and Version Control, with related topics api, bash, bootstrap, ci/cd, cli, documentation, dom, and git. Iterative practice shows up in coding, in agent workflows, and in delivery pipelines.
 ## The Loop
@@ -20,6 +20,6 @@ Version control makes iteration safe: each cycle is a commit that can be inspect
 Iterative development manages risk by making progress visible and correctable: feedback arrives before large commitments, and the system evolves toward the goal rather than toward a single guess. The related entities in the Shell Cli branch record the neighboring tooling pages, and the general treatment here keeps the page valid as sessions add more examples.
 Iteration is also a learning mechanism: each cycle reveals assumptions that were wrong, and the plan is adjusted accordingly. Teams that make cycles short and feedback visible learn faster than teams that commit to long plans. The documentation and bootstrap tags on this page reflect the supporting practices that keep cycles cheap enough to repeat.
 ## Related Entities
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/busuj|Busuj]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/dims-2|Dims 2]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]
+- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
+- [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

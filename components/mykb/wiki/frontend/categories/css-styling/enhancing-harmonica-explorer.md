@@ -16,21 +16,21 @@ Enhancing the Harmonica Explorer means improving an interactive musical instrume
 
 Enhancement work in the sessions spanned several layers. On the interaction side, touch handling must distinguish slide gestures from taps, apply smoothing to avoid jitter, and map screen coordinates to frequencies or note indices consistently. On the audio side, the Web Audio API generates tones, and the harmonic content, envelope, and volume of each note determine how the instrument feels. Latency is the critical constraint: any delay between finger movement and sound breaks the sense of playing an instrument.
 
-On the styling side, CSS and canvas rendering create the playing surface, note indicators, and visual feedback such as glow or highlight while a note is held. Accessibility matters too: larger hit areas, visual contrast, and an alternative input path make the instrument usable beyond ideal conditions. The project family is documented across related pages including [[wiki/web-platforms/supercategories/frontend/categories/css-styling/gesture-harmonics|Gesture Harmonics]], [[wiki/web-platforms/supercategories/frontend/categories/css-styling/hold-mode|Hold Mode]], and [[wiki/web-platforms/supercategories/frontend/categories/css-styling/saving-harmonica-explorer|Saving Harmonica Explorer]].
+On the styling side, CSS and canvas rendering create the playing surface, note indicators, and visual feedback such as glow or highlight while a note is held. Accessibility matters too: larger hit areas, visual contrast, and an alternative input path make the instrument usable beyond ideal conditions. The project family is documented across related pages including [[wiki/frontend/categories/css-styling/gesture-harmonics|Gesture Harmonics]], [[wiki/frontend/categories/css-styling/hold-mode|Hold Mode]], and [[wiki/frontend/categories/css-styling/saving-harmonica-explorer|Saving Harmonica Explorer]].
 
 Future sessions should extend this page with the specific enhancements implemented and the measurements taken before and after. That measurement-first approach keeps enhancements grounded in observed behavior rather than assumptions.
 
 **Related topics:** api, bug, cli, css
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/css-styling/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/importerror-10|Importerror 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/css-10|Css 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/database-2|Database 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/display-2|Display 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/html-10|Html 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/reference-2|Reference 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/dob-2|Dob 2]]
+- [[wiki/frontend/categories/css-styling/importerror-10|Importerror 10]]
+- [[wiki/frontend/categories/css-styling/css-10|Css 10]]
+- [[wiki/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
+- [[wiki/frontend/categories/css-styling/database-2|Database 2]]
+- [[wiki/frontend/categories/css-styling/display-2|Display 2]]
+- [[wiki/frontend/categories/css-styling/html-10|Html 10]]
+- [[wiki/frontend/categories/css-styling/reference-2|Reference 2]]
+- [[wiki/frontend/categories/css-styling/dob-2|Dob 2]]

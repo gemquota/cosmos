@@ -19,7 +19,7 @@ An automatic review loop typically performs static analysis, runs targeted tests
 
 Because the evidence is limited to one session, this page records the token and its plausible expansions without asserting a single definition. Future sessions that use Auto Rv should note whether it refers to a review command, a CI job, or an agent role, and can then link this page to the specific tooling involved. Keeping the original token as the title ensures the note is findable when the shorthand reappears. Until a concrete referent appears, the entry functions as a searchable record that preserves the token exactly as it was written. Any future sighting should link back to this page.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Auto Rv
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Auto Rv
 
 ## Related Entities
 

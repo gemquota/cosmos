@@ -13,7 +13,7 @@ resource: ""
 
 Bonus Scraper Engine appears in 5 session(s) categorized as API, Backend, Mobile, Security, Shell. Related topics: android, api, auth, authentication, backend, bash.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Bonus Scraper Engine 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Bonus Scraper Engine 2
 
 ## Overview
 

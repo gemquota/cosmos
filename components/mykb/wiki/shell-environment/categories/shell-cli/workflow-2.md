@@ -19,7 +19,7 @@ Well-designed workflows are small and composable. Each step has a clear purpose,
 
 Workflow engines and CI systems add orchestration: dependencies between steps, retries and timeouts, parallel execution, and gates that pause the run until a condition, such as a human approval or a test result, is met. Logs and telemetry make every run observable, and notifications surface failures before they reach users.
 
-In agent sessions, workflows appear in API development, debugging, mobile builds, and shell automation, often combining bootstrap scripts, DOM-driven frontend checks, and command-line tooling. The entry connects to the [[wiki/os-shell/supercategories/shell-environment/categories/shell-cli/index|Shell Cli]] and [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/index|Cli Tools]] domains of this knowledge base.
+In agent sessions, workflows appear in API development, debugging, mobile builds, and shell automation, often combining bootstrap scripts, DOM-driven frontend checks, and command-line tooling. The entry connects to the [[wiki/web-platforms/index|Shell Cli]] and [[wiki/web-platforms/index|Cli Tools]] domains of this knowledge base.
 
 The wiki records workflows as reusable patterns rather than one-off scripts, and the entry points to related automation pages in the same domain.
 
@@ -27,7 +27,7 @@ Sessions record both the happy path and the failure path: what happens when a st
 
 Good workflows degrade gracefully: partial results are preserved, and rerunning is safe because the steps are idempotent.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
 
 ## Related Entities
 

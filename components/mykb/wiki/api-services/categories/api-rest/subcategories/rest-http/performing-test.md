@@ -12,7 +12,7 @@ resource: ""
 
 Performing Test appears in 1 session(s) categorized as API, Backend, Mobile, Shell. Related topics: android, api, backend, bash.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Performing Test
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Performing Test
 
 ## Related Entities
 

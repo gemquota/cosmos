@@ -16,13 +16,13 @@ A particle system simulates phenomena by updating large numbers of small element
 
 Implementation splits into CPU-based and GPU-based approaches. CPU particle systems are simpler and fine for a few thousand particles, while GPU systems push the work to the vertex and fragment shaders, sustaining hundreds of thousands of particles for dense effects. In web contexts this typically means WebGL or canvas rendering, which matches the mobile and frontend tags on this page. Game engines and data-visualization frameworks both use the technique — for example, bubble clouds, density maps, and animated scatter plots borrow the same emitter-and-force machinery.
 
-The cloud and infrastructure tags suggest the reference may also involve distributed simulation, where particle workloads are computed across instances or GPUs in the cloud. The same numerical patterns — integration steps, spatial hashing, and neighbor queries — appear in related simulation pages such as the [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]] and [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]].
+The cloud and infrastructure tags suggest the reference may also involve distributed simulation, where particle workloads are computed across instances or GPUs in the cloud. The same numerical patterns — integration steps, spatial hashing, and neighbor queries — appear in related simulation pages such as the [[wiki/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]] and [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]].
 
 Practical concerns are determinism, fixed timesteps, and performance budgets on mobile devices, where fill rate and memory limit particle counts. Profiling on-device is the final step: a particle count that runs smoothly on a desktop can stall a phone's frame budget.
 
 **Related topics:** android, angular, api, aws, bash, cli, cloud, css
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/index|Aws Cloud
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/index|Aws Cloud
 
 ## Related Entities
 

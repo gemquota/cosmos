@@ -23,7 +23,7 @@ In an agent architecture, this component is what lets an agent talk to APIs, dat
 Reliability patterns complete the picture. Exponential backoff spreads retries so that a failing service is not hammered; circuit breakers stop sending traffic once a service is clearly down; and idempotency keys let retried requests avoid duplicate side effects. The manager composes these behaviors so that agents get a single, well-tested network layer instead of each agent implementing its own. Timeouts must be set per call type, because a database query and a streaming response have very different latency envelopes.
 **Related topics:** android, api, auth, authentication
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Asyncnetworkmanager 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Asyncnetworkmanager 2
 
 ## Related Entities
 

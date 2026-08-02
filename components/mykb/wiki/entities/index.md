@@ -3,13 +3,14 @@ type: "index"
 title: "Entities Index"
 description: "Listing of the entities/ folder (8 pages)."
 tags: ["index"]
-timestamp: "2026-08-02T00:00:00Z"
+timestamp: "2026-08-03T00:00:00Z"
 ---
 
 # Entities
 
 Part of [[wiki/index|Wiki Index]]. 8 pages.
 
+## Pages
 - [[wiki/entities/e2e-entity|E2E Test]] — Verification entity
 - [[wiki/entities/e2e-test-001|E2E Verification]] — testing end-to-end
 - [[wiki/entities/identity-snapshot-0001|Identity Snapshot 1]]

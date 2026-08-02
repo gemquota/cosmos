@@ -13,7 +13,7 @@ Context — the information provided to an LLM alongside a query. Sessions show 
 
 **Related topics:** android, api, auth, aws
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Context Efficiency
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Context Efficiency
 
 ## Related Entities
 

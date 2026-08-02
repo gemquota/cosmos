@@ -23,7 +23,7 @@ Because authentication sits at the boundary of every API, its design decisions a
 The record also covers how authentication fails: expired tokens, misconfigured scopes, missing headers, and clock skew are among the most common production issues. Good error messages and structured logs help operators distinguish a real attack from a configuration problem. Because the topic crosses mobile, backend, and debugging boundaries, the page keeps a broad tag set, and the related entities below record the API client vocabulary observed in the same sessions.
 **Related topics:** android, api, auth, authentication, backend, bug, dom
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Auth User 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Auth User 2
 
 ## Related Entities
 

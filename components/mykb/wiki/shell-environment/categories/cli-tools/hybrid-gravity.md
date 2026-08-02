@@ -13,7 +13,7 @@ status: "growing"
 
 Hybrid Gravity appears in 1 session(s) categorized as Cloud, Frontend, Shell. Related topics: bash, cli, cloud, css.
 
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
 
 ## Overview
 
@@ -29,17 +29,17 @@ Implementation splits the force calculation: a spatial index (grid or tree) assi
 
 ## Context
 
-The Frontend category points to rendering the result in the browser, the Shell category to driving the simulation from the command line, and the Cloud tag to possibly offloading heavy runs. Related pages in the cli-tools cluster, such as [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]], document the simpler direct-summed sibling of this approach.
+The Frontend category points to rendering the result in the browser, the Shell category to driving the simulation from the command line, and the Cloud tag to possibly offloading heavy runs. Related pages in the cli-tools cluster, such as [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]], document the simpler direct-summed sibling of this approach.
 
 A hybrid approach also changes how results are validated: the approximated regime must be checked against the full model on small cases before it is trusted at scale. Documenting the cutoff distance and the approximation order makes the behavior reproducible. The css and cloud tags suggest the simulation also renders in the browser and may offload heavy computation, which the hybrid design makes practical.
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/density|Density]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/kh|Kh]]
+- [[wiki/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/density|Density]]
+- [[wiki/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
+- [[wiki/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
+- [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
+- [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
+- [[wiki/shell-environment/categories/cli-tools/kh|Kh]]

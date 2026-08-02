@@ -13,7 +13,7 @@ Vercel — a platform for frontend frameworks and static sites with serverless e
 
 **Related topics:** android, angular, api
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Ce
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Ce
 
 ## Related Entities
 

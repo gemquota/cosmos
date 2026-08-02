@@ -13,7 +13,7 @@ status: "growing"
 
 Code Sync Issues appears in 1 session(s) categorized as API, Mobile, Security. Related topics: android, api, auth, authentication.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Code Sync Issues
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Auth Security › Code Sync Issues
 
 ## Overview
 

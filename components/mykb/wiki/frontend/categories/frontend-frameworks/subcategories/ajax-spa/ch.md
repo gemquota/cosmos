@@ -18,7 +18,7 @@ Documents are JSON objects stored in indices, which are divided into shards and 
 
 The REST API covers the full lifecycle: index creation and mapping, document indexing and retrieval, search with query DSL, and aggregations that compute metrics, buckets, and statistics over matching documents. Queries combine full-text matching with filters, boosting, and scoring, while aggregations power dashboards and analytics pipelines.
 
-Operations concerns include planning shard counts, managing index mappings as the schema evolves, and monitoring cluster health, JVM memory, and query latency. In agent sessions, Elasticsearch appears as a backend for search features and telemetry, complementing the [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Rest]] domain and the data patterns recorded under [[wiki/web-platforms/supercategories/data-storage/entities/data|Data]]. Its role is to make large datasets explorable rather than to be the system of record.
+Operations concerns include planning shard counts, managing index mappings as the schema evolves, and monitoring cluster health, JVM memory, and query latency. In agent sessions, Elasticsearch appears as a backend for search features and telemetry, complementing the [[wiki/web-platforms/index|Api Rest]] domain and the data patterns recorded under [[wiki/data-storage/entities/data|Data]]. Its role is to make large datasets explorable rather than to be the system of record.
 
 Operational maturity comes with tooling: index lifecycle management, snapshot backups, and query profiling all belong in the same playbook as the REST API itself.
 
@@ -26,15 +26,15 @@ Sessions typically start with a small cluster, index a representative dataset, a
 
 The term appears in the ajax-spa category because search and analytics power the client-side experiences those sessions build, with the cluster sitting behind a REST API.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/index|Frontend Frameworks]] › Ch
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Ch
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]

@@ -1,145 +1,193 @@
-# OS & Shell
+---
+type: "index"
+title: "Os Shell Index"
+description: "Listing of the os-shell/ folder (177 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
 
-> Operating system internals, shell scripting, terminal workflows, and system-level tooling.
+# Os Shell
 
-**1 entity** — shell scripting patterns.
+Part of [[wiki/index|Wiki Index]]. 177 pages.
 
-## Entities
+## Subfolders
+- entities/ — 1 pages
 
-- [[wiki/os-shell/entities/bash-patterns|Bash Scripting Patterns]] — Common shell patterns from the ecosystem
-
-## Related Domains
-- [[wiki/shell-environment/index|Shell Environment]]
-- [[wiki/development/index|Development]]
-- [[wiki/tooling/index|Tooling]]
-
-## Concepts
-
-- [Access Control Lists](access-control-lists.md) — Access Control Lists
-- [ANSI Escape Sequences](ansi-escape-sequences.md) — ANSI Escape Sequences
-- [Arrays in Bash/Zsh](arrays-in-shell.md) — Arrays in Bash/Zsh
-- [Awk Text Processing](awk-text-processing.md) — Awk Text Processing
-- [Block Devices & Partitions](block-devices-and-partitions.md) — Block Devices & Partitions
-- [Boot Process](boot-process.md) — Boot Process
-- [Brace Expansion](brace-expansion.md) — Brace Expansion
-- [cgroups & Resource Control](cgroups-and-resource-control.md) — cgroups & Resource Control
-- [Checksums & Hashing](checksums-and-hashing-tools.md) — Checksums & Hashing
-- [Command-Line Interfaces](command-line-interfaces.md) — Command-Line Interfaces
-- [Command Substitution](command-substitution.md) — Command Substitution
-- [Compression Tools](compression-tools.md) — Compression Tools
-- [Containers vs VMs](containers-vs-vms.md) — Containers vs VMs
-- [Context Switching](context-switching.md) — Context Switching
-- [Copy-on-Write](copy-on-write.md) — Copy-on-Write
-- [Cron & Scheduling](cron-and-schedulers.md) — Cron & Scheduling
-- [curl & HTTP Clients](curl-and-http-clients.md) — curl & HTTP Clients
-- [Column Tools](cut-paste-and-column-tools.md) — Column Tools
-- [Daemon Processes](daemon-processes.md) — Daemon Processes
-- [Device Drivers](device-drivers.md) — Device Drivers
-- [DHCP & IP Allocation](dhcp-and-ip-allocation.md) — DHCP & IP Allocation
-- [diff & patch](diff-and-patch.md) — diff & patch
-- [dig & DNS Tools](dig-and-dns-tools.md) — dig & DNS Tools
-- [DNS Resolution](dns-resolution.md) — DNS Resolution
-- [Dotfiles](dotfiles.md) — Dotfiles
-- [Environment Variables](environment-variables.md) — Environment Variables
-- [Errexit & Shell Options](errexit-and-shell-options.md) — Errexit & Shell Options
-- [Exit Codes](exit-codes.md) — Exit Codes
-- [File Descriptors](file-descriptors.md) — File Descriptors
-- [File Locking](file-locking.md) — File Locking
-- [Filesystem Hierarchy](filesystem-hierarchy.md) — Filesystem Hierarchy
-- [Filesystem Mounts](filesystem-mounts.md) — Filesystem Mounts
-- [Filesystem Types](filesystem-types.md) — Filesystem Types
-- [find](find-command.md) — find
-- [Firewalls & netfilter](firewalls-and-netfilter.md) — Firewalls & netfilter
-- [Fork, Exec & Process Creation](fork-exec-and-process-creation.md) — Fork, Exec & Process Creation
-- [Glob Patterns](glob-patterns.md) — Glob Patterns
-- [Grep Patterns](grep-patterns.md) — Grep Patterns
-- [Hard Links](hard-links.md) — Hard Links
-- [head, tail & less](head-tail-and-less.md) — head, tail & less
-- [Here Documents](here-documents.md) — Here Documents
-- [HTTP Basics](http-basics.md) — HTTP Basics
-- [ICMP & Diagnostics](icmp-and-network-diagnostics.md) — ICMP & Diagnostics
-- [Init Systems & Runlevels](init-systems-and-runlevels.md) — Init Systems & Runlevels
-- [initramfs](initramfs.md) — initramfs
-- [Inodes & Filesystem Metadata](inodes-and-filesystem-metadata.md) — Inodes & Filesystem Metadata
-- [Interactive vs Non-Interactive Shells](interactive-vs-noninteractive-shells.md) — Interactive vs Non-Interactive Shells
-- [IP Addressing & Subnetting](ip-addresses-and-subnetting.md) — IP Addressing & Subnetting
-- [Job Control](job-control.md) — Job Control
-- [Journaling Filesystems](journaling-filesystems.md) — Journaling Filesystems
-- [jq](jq-json-processing.md) — jq
-- [Kernel Modules](kernel-modules.md) — Kernel Modules
-- [Kernel vs User Space](kernel-space-vs-user-space.md) — Kernel vs User Space
-- [Link Layer, Ethernet & ARP](link-layer-ethernet-and-arp.md) — Link Layer, Ethernet & ARP
-- [Linux Namespaces](linux-namespaces.md) — Linux Namespaces
-- [Memory Allocation](memory-allocation.md) — Memory Allocation
-- [Memory Fragmentation](memory-fragmentation.md) — Memory Fragmentation
-- [Memory-Mapped Files](memory-mapped-files.md) — Memory-Mapped Files
-- [Message Queues](message-queues.md) — Message Queues
-- [Named Pipes (FIFOs)](named-pipes-fifos.md) — Named Pipes (FIFOs)
-- [NAT & Port Forwarding](nat-and-port-forwarding.md) — NAT & Port Forwarding
-- [netcat & Raw Sockets](netcat-and-raw-sockets.md) — netcat & Raw Sockets
-- [Network Sockets](network-sockets.md) — Network Sockets
-- [nmap & Port Scanning](nmap-and-port-scanning.md) — nmap & Port Scanning
-- [OSI Model & TCP/IP](osi-model-and-tcp-ip.md) — OSI Model & TCP/IP
-- [Packet Analysis](packet-analysis-and-capture.md) — Packet Analysis
-- [Page Tables](page-tables.md) — Page Tables
-- [Paging](paging.md) — Paging
-- [Parameter Expansion](parameter-expansion.md) — Parameter Expansion
-- [Path Resolution](path-resolution.md) — Path Resolution
-- [Permissions Model](permissions-model.md) — Permissions Model
-- [Process Groups & Sessions](process-groups-and-sessions.md) — Process Groups & Sessions
-- [Process Management](process-management.md) — Process Management
-- [Process Priorities & Niceness](process-priorities-and-nice.md) — Process Priorities & Niceness
-- [Process Scheduling](process-scheduling.md) — Process Scheduling
-- [Process Signals](process-signals.md) — Process Signals
-- [Process Substitution](process-substitution.md) — Process Substitution
-- [Process Supervision](process-supervision.md) — Process Supervision
-- [procfs & sysfs](procfs-and-sysfs.md) — procfs & sysfs
-- [PTYs & Pseudo-Terminals](pty-and-pseudo-terminals.md) — PTYs & Pseudo-Terminals
-- [Quoting Rules](quoting-rules.md) — Quoting Rules
-- [Readline & Line Editing](readline-and-line-editing.md) — Readline & Line Editing
-- [Regex Engines](regex-engines.md) — Regex Engines
-- [Routing & Forwarding](routing-and-forwarding.md) — Routing & Forwarding
-- [rsync](rsync-synchronization.md) — rsync
-- [Sed Editing](sed-editing.md) — Sed Editing
-- [Semaphores](semaphores.md) — Semaphores
-- [Shared Memory](shared-memory.md) — Shared Memory
-- [Shell Aliases](shell-aliases.md) — Shell Aliases
-- [Shell Completion](shell-completion.md) — Shell Completion
-- [Shell Expansion Order](shell-expansion-order.md) — Shell Expansion Order
-- [Shell Functions](shell-functions.md) — Shell Functions
-- [Shell Scripting](shell-scripting.md) — Shell Scripting
-- [Trap Handlers](shell-trap-handlers.md) — Trap Handlers
-- [sort & uniq](sort-and-uniq.md) — sort & uniq
-- [Special File Bits](special-file-bits.md) — Special File Bits
-- [SSH & Remote Access](ssh-and-remote-access.md) — SSH & Remote Access
-- [Stdin Stdout Stderr](stdin-stdout-stderr.md) — Stdin Stdout Stderr
-- [strace & Dynamic Tracing](strace-and-dynamic-tracing.md) — strace & Dynamic Tracing
-- [sudo & Privilege Escalation](sudo-and-privilege-escalation.md) — sudo & Privilege Escalation
-- [Swap Space](swap-space.md) — Swap Space
-- [Symlinks](symlinks.md) — Symlinks
-- [System Calls](syscalls.md) — System Calls
-- [Syslog & Logging](syslog-and-logging.md) — Syslog & Logging
-- [System Monitoring](system-monitoring-tools.md) — System Monitoring
-- [systemd-journal](systemd-journal.md) — systemd-journal
-- [Systemd Units](systemd-units.md) — Systemd Units
-- [tar & Archiving](tar-and-archive-tools.md) — tar & Archiving
-- [TCP Connections](tcp-connection-lifecycle.md) — TCP Connections
-- [TCP Ports & Services](tcp-ports-and-services.md) — TCP Ports & Services
-- [tcpdump](tcpdump.md) — tcpdump
-- [Terminal Emulators](terminal-emulators.md) — Terminal Emulators
-- [Text Processing Pipelines](text-processing-pipelines.md) — Text Processing Pipelines
-- [Threads & Concurrency](threads-and-concurrency.md) — Threads & Concurrency
-- [TLB & Caching](tlb-cache.md) — TLB & Caching
-- [TLS & HTTPS](tls-and-https.md) — TLS & HTTPS
-- [tmpfs & RAM Disks](tmpfs-and-ramdisks.md) — tmpfs & RAM Disks
-- [Tmux Sessions](tmux-sessions.md) — Tmux Sessions
-- [UDP & Datagrams](udp-and-datagrams.md) — UDP & Datagrams
-- [Resource Limits](ulimit-and-resource-limits.md) — Resource Limits
-- [Umask](umask.md) — Umask
-- [Unix Domain Sockets](unix-domain-sockets.md) — Unix Domain Sockets
-- [Unix Philosophy](unix-philosophy.md) — Unix Philosophy
-- [Users and Groups](users-and-groups.md) — Users and Groups
-- [Virtual Memory](virtual-memory.md) — Virtual Memory
-- [Wireshark & tshark](wireshark-and-tshark.md) — Wireshark & tshark
-- [xargs](xargs.md) — xargs
-- [Zsh Configuration](zsh-configuration.md) — Zsh Configuration
+## Pages
+- [[wiki/os-shell/access-control-lists|Access Control Lists]] — POSIX ACLs beyond mode bits via getfacl/setfacl
+- [[wiki/os-shell/aio-and-epoll|AIO & epoll]] — Kernel async I/O and event notification side by side
+- [[wiki/os-shell/algorithms|Algorithms]] — Data structures and algorithms as the substrate of systems code
+- [[wiki/os-shell/ansi-escape-sequences|ANSI Escape Sequences]] — SGR colors, cursor control, and terminal rendering
+- [[wiki/os-shell/arrays-in-shell|Arrays in Bash/Zsh]] — Indexed and associative arrays and common patterns
+- [[wiki/os-shell/awk-text-processing|Awk Text Processing]] — The awk language for pattern-scanning and field-oriented processing of text files
+- [[wiki/os-shell/block-devices-and-partitions|Block Devices & Partitions]] — Disk devices, MBR/GPT partition tables, and device nodes
+- [[wiki/os-shell/boot-process-and-firmware|Boot Process & Firmware]] — From power-on to kernel: firmware, bootloaders, and initrd
+- [[wiki/os-shell/boot-process|Boot Process]] — Firmware to bootloader to kernel to init sequence
+- [[wiki/os-shell/brace-expansion|Brace Expansion]] — {a,b} generation, sequences, and interaction with other expansions
+- [[wiki/os-shell/btrfs-features-and-limitations|Btrfs Features & Limitations]] — Subvolumes, snapshots, and RAID on the copy-on-write filesystem
+- [[wiki/os-shell/cgroups-and-namespaces|Cgroups & Namespaces]] — Kernel primitives for resource control and isolation
+- [[wiki/os-shell/cgroups-and-resource-control|cgroups & Resource Control]] — cgroup v1/v2, limits, and accounting
+- [[wiki/os-shell/checksums-and-hashing-tools|Checksums & Hashing]] — sha256sum/md5sum usage and verification
+- [[wiki/os-shell/command-line-interfaces|Command-Line Interfaces]] — Text-based interfaces for controlling programs: arguments, flags, stdin/stdout, and exit status
+- [[wiki/os-shell/command-substitution|Command Substitution]] — $(...) and backticks, output capture, and word splitting
+- [[wiki/os-shell/compression-tools|Compression Tools]] — gzip/xz/zstd/bzip2 tradeoffs and pipelines
+- [[wiki/os-shell/containers-vs-vms|Containers vs VMs]] — Isolation boundaries, overhead, and hypervisors
+- [[wiki/os-shell/context-switching|Context Switching]] — How the kernel saves and restores process state, costs, and what triggers switches
+- [[wiki/os-shell/copy-on-write-filesystems|Copy-on-Write Filesystems]] — Cheap snapshots and checksums via write-time copying
+- [[wiki/os-shell/copy-on-write|Copy-on-Write]] — COW sharing for fork and page faults on write
+- [[wiki/os-shell/cpu-governors-and-frequency-scaling|CPU Governors & Frequency Scaling]] — Dynamic voltage and frequency scaling policies on modern CPUs
+- [[wiki/os-shell/cron-and-scheduled-tasks|Cron & Scheduled Tasks]] — Scheduling recurring jobs with cron, systemd timers, and anacron
+- [[wiki/os-shell/cron-and-schedulers|Cron & Scheduling]] — crontab syntax, at, and scheduler comparisons
+- [[wiki/os-shell/curl-and-http-clients|curl & HTTP Clients]] — Request flags, headers, and scripting
+- [[wiki/os-shell/cut-paste-and-column-tools|Column Tools]] — cut, paste, column, join for tabular text
+- [[wiki/os-shell/daemon-processes|Daemon Processes]] — Detaching from terminals, setsid/double-fork, and service-style background processes
+- [[wiki/os-shell/device-drivers-and-udev|Device Drivers & udev]] — Kernel drivers and userspace device event handling
+- [[wiki/os-shell/device-drivers|Device Drivers]] — Driver model, char/block devices, and major/minor numbers
+- [[wiki/os-shell/dhcp-and-ip-allocation|DHCP & IP Allocation]] — DORA exchange, leases, and static vs dynamic
+- [[wiki/os-shell/diff-and-patch|diff & patch]] — Unified diffs and applying patches
+- [[wiki/os-shell/dig-and-dns-tools|dig & DNS Tools]] — dig/nslookup/host query workflows
+- [[wiki/os-shell/disk-partitioning-and-filesystems|Disk Partitioning & Filesystems]] — GPT and MBR layouts and how filesystems sit on partitions
+- [[wiki/os-shell/dns-resolution|DNS Resolution]] — Recursive lookup, record types, and resolv.conf
+- [[wiki/os-shell/dotfiles|Dotfiles]] — The hidden configuration files in a home directory that personalize the shell and tools
+- [[wiki/os-shell/ebpf-and-xdp|eBPF & XDP]] — In-kernel programmable packet and tracing paths
+- [[wiki/os-shell/environment-variables|Environment Variables]] — Named values inherited by processes that parameterize program behavior without CLI flags
+- [[wiki/os-shell/errexit-and-shell-options|Errexit & Shell Options]] — set -e/-u/-o pipefail and strict-mode tradeoffs
+- [[wiki/os-shell/exit-codes|Exit Codes]] — The integer status a process returns to its parent to report success or failure
+- [[wiki/os-shell/file-descriptors|File Descriptors]] — FD table, open file descriptions, and dup/close semantics
+- [[wiki/os-shell/file-locking|File Locking]] — flock vs fcntl locks, advisory locking, and lock files
+- [[wiki/os-shell/filesystem-design|Filesystem Design]] — Data structures and algorithms behind filesystem implementations
+- [[wiki/os-shell/filesystem-hierarchy|Filesystem Hierarchy]] — The standard directory layout of Unix-like systems that defines where files and programs live
+- [[wiki/os-shell/filesystem-mounts|Filesystem Mounts]] — mount/umount, mount points, fstab, and bind mounts
+- [[wiki/os-shell/filesystem-permissions-and-umask|Filesystem Permissions & umask]] — Mode bits, ownership, and default permission masks
+- [[wiki/os-shell/filesystem-types|Filesystem Types]] — ext4, XFS, Btrfs, ZFS, FAT features and tradeoffs
+- [[wiki/os-shell/find-command|find]] — Expression syntax, -exec, -print0, and pruning
+- [[wiki/os-shell/firewalls-and-netfilter|Firewalls & netfilter]] — iptables/nftables chains, tables, and rules
+- [[wiki/os-shell/fork-exec-and-process-creation|Fork, Exec & Process Creation]] — fork/exec semantics, PID handling, and process-creation paths
+- [[wiki/os-shell/fuse-and-user-space-filesystems|FUSE & User-Space Filesystems]] — Filesystems implemented in userspace via the FUSE kernel module
+- [[wiki/os-shell/glob-patterns|Glob Patterns]] — Shell wildcard patterns for matching filenames and paths
+- [[wiki/os-shell/grep-patterns|Grep Patterns]] — Searching text with the grep family: matching lines against patterns
+- [[wiki/os-shell/hard-links|Hard Links]] — Link counts, same-inode aliases, and limitations
+- [[wiki/os-shell/head-tail-and-less|head, tail & less]] — Stream preview and interactive paging
+- [[wiki/os-shell/here-documents|Here Documents]] — Feeding a command's stdin from literal text embedded in the script
+- [[wiki/os-shell/http-basics|HTTP Basics]] — Methods, status codes, headers, and request flow
+- [[wiki/os-shell/icmp-and-network-diagnostics|ICMP & Diagnostics]] — Echo/ping, error messages, and traceroute
+- [[wiki/os-shell/immutable-filesystems|Immutable Filesystems]] — Read-only roots and overlay layers for tamper-resistant systems
+- [[wiki/os-shell/init-systems-and-runlevels|Init Systems & Runlevels]] — sysvinit, systemd targets, and boot ordering
+- [[wiki/os-shell/initramfs|initramfs]] — Early userspace, root mounting, and rescue
+- [[wiki/os-shell/inodes-and-filesystem-metadata|Inodes & Filesystem Metadata]] — Inode contents, allocation, and stat data
+- [[wiki/os-shell/interactive-vs-noninteractive-shells|Interactive vs Non-Interactive Shells]] — Startup files, prompts, and behavioral differences
+- [[wiki/os-shell/interrupt-handlers-and-workqueues|Interrupt Handlers & Workqueues]] — Deferring work from interrupt context to kernel threads
+- [[wiki/os-shell/io-uring-and-async-io|io_uring & Async I/O]] — The high-performance asynchronous I/O interface on Linux
+- [[wiki/os-shell/ip-addresses-and-subnetting|IP Addressing & Subnetting]] — IPv4/IPv6 addresses, CIDR, and subnet math
+- [[wiki/os-shell/job-control-and-background-tasks|Job Control & Background Tasks]] — Foreground/background switching and job management in shells
+- [[wiki/os-shell/job-control|Job Control]] — The shell's ability to run, suspend, resume, and background processes
+- [[wiki/os-shell/journaling-filesystems|Journaling Filesystems]] — Write-ahead journaling, ext4 modes, and crash recovery
+- [[wiki/os-shell/jq-json-processing|jq]] — Filtering and transforming JSON in pipelines
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — The monolithic kernel and its core subsystems
+- [[wiki/os-shell/kernel-modules-and-loading|Kernel Modules & Loading]] — Loadable kernel objects, module parameters, and udev integration
+- [[wiki/os-shell/kernel-modules|Kernel Modules]] — Loadable modules, modprobe, and dependency resolution
+- [[wiki/os-shell/kernel-space-vs-user-space|Kernel vs User Space]] — Privilege levels, syscall boundary, and isolation
+- [[wiki/os-shell/kvm-and-qemu|KVM & QEMU]] — The Linux hypervisor and the emulator that front-ends it
+- [[wiki/os-shell/link-layer-ethernet-and-arp|Link Layer, Ethernet & ARP]] — Frames, MAC addressing, and ARP
+- [[wiki/os-shell/linux-capabilities-and-selinux|Linux Capabilities & SELinux]] — Discretionary privilege splitting and mandatory access control
+- [[wiki/os-shell/linux-namespaces|Linux Namespaces]] — PID/net/mnt/user namespaces and isolation
+- [[wiki/os-shell/logical-volume-management|Logical Volume Management]] — Pooling and resizing block storage with LVM
+- [[wiki/os-shell/mdadm-and-lvm2|mdadm & LVM2]] — Linux software RAID and logical volume management tools
+- [[wiki/os-shell/memory-allocation|Memory Allocation]] — malloc/brk/mmap paths, heap growth, and allocator behavior
+- [[wiki/os-shell/memory-fragmentation|Memory Fragmentation]] — Internal vs external fragmentation, compaction, and impact
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — Virtual memory, page tables, and the MMU
+- [[wiki/os-shell/memory-mapped-files|Memory-Mapped Files]] — mmap semantics, file-backed and shared mappings
+- [[wiki/os-shell/message-queues|Message Queues]] — POSIX/SysV queues, message boundaries, and priorities
+- [[wiki/os-shell/named-pipes-fifos|Named Pipes (FIFOs)]] — mkfifo creation and reader/writer blocking semantics
+- [[wiki/os-shell/namespace-networking|Namespace Networking]] — Network namespaces as isolated network stacks for containers
+- [[wiki/os-shell/nat-and-port-forwarding|NAT & Port Forwarding]] — Address translation and forwarding rules
+- [[wiki/os-shell/netcat-and-raw-sockets|netcat & Raw Sockets]] — Port checks, piping, and ad-hoc connections
+- [[wiki/os-shell/network-sockets|Network Sockets]] — Socket API, address families, and connection semantics
+- [[wiki/os-shell/nmap-and-port-scanning|nmap & Port Scanning]] — Scan types and host discovery
+- [[wiki/os-shell/non-blocking-sockets|Non-Blocking Sockets]] — Socket modes that return immediately instead of blocking
+- [[wiki/os-shell/numa-and-cpu-topology|NUMA & CPU Topology]] — Non-uniform memory access and topology-aware scheduling
+- [[wiki/os-shell/oom-killer-and-memory-pressure|OOM Killer & Memory Pressure]] — How the kernel reclaims memory and selects victims under pressure
+- [[wiki/os-shell/osi-model-and-tcp-ip|OSI Model & TCP/IP]] — Layer stacks and encapsulation
+- [[wiki/os-shell/package-managers-system-level|System-Level Package Managers]] — apt, dnf, pacman, and the packaging formats behind distros
+- [[wiki/os-shell/packet-analysis-and-capture|Packet Analysis]] — Capture, filtering, and protocol decoding
+- [[wiki/os-shell/page-tables|Page Tables]] — Multi-level page tables, entries, and virtual-to-physical translation
+- [[wiki/os-shell/paging|Paging]] — Page-based memory management, page faults, and demand paging
+- [[wiki/os-shell/parameter-expansion|Parameter Expansion]] — ${var:-default}, slicing, substitution, and indirection
+- [[wiki/os-shell/path-resolution-and-symlinks|Path Resolution & Symlinks]] — How the kernel walks absolute and relative paths, symlinks, and mount points
+- [[wiki/os-shell/path-resolution|Path Resolution]] — How the shell and kernel turn a path string into a file: relative, absolute, and symlink traversal
+- [[wiki/os-shell/pci-e-topology|PCIe Topology]] — The bus hierarchy linking CPUs, memory, and devices
+- [[wiki/os-shell/permissions-model|Permissions Model]] — The Unix read/write/execute model for files and directories, plus ownership
+- [[wiki/os-shell/process-groups-and-sessions|Process Groups & Sessions]] — Controlling terminals, process-group IDs, and how shells organize foreground/background jobs
+- [[wiki/os-shell/process-management|Process Management]] — The lifecycle of operating-system processes: creation, scheduling, signalling, and termination
+- [[wiki/os-shell/process-priorities-and-nice|Process Priorities & Niceness]] — nice/renice, priority classes, and scheduler weighting
+- [[wiki/os-shell/process-scheduling|Process Scheduling]] — CPU scheduler policies, preemption, and run queues across processes and threads
+- [[wiki/os-shell/process-signals-and-lifecycle|Process Signals & Lifecycle]] — How processes are born, signaled, and reaped
+- [[wiki/os-shell/process-signals|Process Signals]] — Asynchronous notifications sent to processes to request actions or report conditions
+- [[wiki/os-shell/process-substitution|Process Substitution]] — Feeding a command's output as if it were a file, via <(cmd)
+- [[wiki/os-shell/process-supervision|Process Supervision]] — Supervisors, restart policies, and daemon management
+- [[wiki/os-shell/procfs-and-sysfs|procfs & sysfs]] — Virtual filesystems exposing kernel and device state
+- [[wiki/os-shell/pty-and-pseudo-terminals|PTYs & Pseudo-Terminals]] — How terminals multiplex I/O via /dev/pts
+- [[wiki/os-shell/quoting-rules|Quoting Rules]] — Single/double quotes, backslash escapes, and ANSI-C quoting
+- [[wiki/os-shell/raid-levels|RAID Levels]] — Striping, mirroring, and parity combinations for storage
+- [[wiki/os-shell/rcu-and-read-copy-update|RCU & Read-Copy-Update]] — Lock-free reads with deferred reclamation for kernel data
+- [[wiki/os-shell/readline-and-line-editing|Readline & Line Editing]] — Emacs/vi modes, key bindings, and inputrc
+- [[wiki/os-shell/regex-engines|Regex Engines]] — The implementations that interpret regular expressions, from POSIX to PCRE and backreferences
+- [[wiki/os-shell/resource-utilization-analysis|Resource Utilization Analysis]] — Reading CPU, memory, disk, and network counters to find the bottleneck
+- [[wiki/os-shell/routing-and-forwarding|Routing & Forwarding]] — Routing tables, next hops, and protocols
+- [[wiki/os-shell/rsync-synchronization|rsync]] — Incremental sync, remote copies, and key flags
+- [[wiki/os-shell/runc-and-crun|runc & crun]] — Low-level OCI runtime implementations
+- [[wiki/os-shell/sed-editing|Sed Editing]] — The stream editor for scripted, non-interactive text transformations
+- [[wiki/os-shell/select-poll-epoll-comparison|select, poll & epoll]] — Scaling event notification from fd arrays to readiness sets
+- [[wiki/os-shell/semaphores|Semaphores]] — Counting and binary semaphores, mutex vs semaphore roles
+- [[wiki/os-shell/shared-memory|Shared Memory]] — POSIX/SysV shm, mmap-based sharing, and synchronization needs
+- [[wiki/os-shell/shell-aliases|Shell Aliases]] — User-defined shorthand that expands to longer commands
+- [[wiki/os-shell/shell-completion|Shell Completion]] — Tab completion, programmable completion, and compgen
+- [[wiki/os-shell/shell-expansion-order|Shell Expansion Order]] — The sequence bash/zsh apply brace, tilde, parameter, and other expansions
+- [[wiki/os-shell/shell-functions|Shell Functions]] — Defining, scoping, return values, and exported functions
+- [[wiki/os-shell/shell-scripting|Shell Scripting]] — Writing programs that compose command-line tools to automate tasks
+- [[wiki/os-shell/shell-trap-handlers|Trap Handlers]] — trap for signals and EXIT, and cleanup patterns
+- [[wiki/os-shell/socket-options-and-tuning|Socket Options & Tuning]] — SO_* knobs for buffers, timeouts, and reuse across sockets
+- [[wiki/os-shell/sort-and-uniq|sort & uniq]] — Field/version sorting and deduplication
+- [[wiki/os-shell/special-file-bits|Special File Bits]] — setuid/setgid/sticky bits and their security effects
+- [[wiki/os-shell/spinlocks-and-mutexes|Spinlocks & Mutexes]] — Locking primitives and when spinning beats sleeping
+- [[wiki/os-shell/ssh-and-remote-access|SSH & Remote Access]] — Key auth, agent, config, and tunnels
+- [[wiki/os-shell/stdin-stdout-stderr|Stdin Stdout Stderr]] — The three standard streams every process inherits: input, output, and diagnostics
+- [[wiki/os-shell/strace-and-dynamic-tracing|strace & Dynamic Tracing]] — Syscall tracing with strace/ltrace and bpftrace
+- [[wiki/os-shell/sudo-and-privilege-escalation|sudo & Privilege Escalation]] — sudoers, privilege separation, and alternatives
+- [[wiki/os-shell/swap-and-zram|Swap & zram]] — Swap devices, zram compressed RAM swap, and pressure handling
+- [[wiki/os-shell/swap-space|Swap Space]] — Swap devices/files, swapping vs paging, and swappiness
+- [[wiki/os-shell/symlinks|Symlinks]] — Filesystem pointers that make one path refer to another file or directory
+- [[wiki/os-shell/syscalls-and-trap-handling|Syscalls & Trap Handling]] — The user-to-kernel boundary and how calls are serviced
+- [[wiki/os-shell/syscalls|System Calls]] — The syscall interface, libc wrappers, and examples
+- [[wiki/os-shell/syslog-and-logging|Syslog & Logging]] — Syslog protocol, facilities/severities, and backends
+- [[wiki/os-shell/system-monitoring-tools|System Monitoring]] — top/htop/ps/vmstat/iostat usage patterns
+- [[wiki/os-shell/systemd-and-init-systems|systemd & Init Systems]] — The first process and service supervision on Linux
+- [[wiki/os-shell/systemd-journal|systemd-journal]] — journald, journalctl, and structured logs
+- [[wiki/os-shell/systemd-units|Systemd Units]] — The declarative service, socket, timer, and mount definitions supervised by systemd
+- [[wiki/os-shell/tar-and-archive-tools|tar & Archiving]] — Archive creation, extraction, and stream semantics
+- [[wiki/os-shell/tcp-connection-lifecycle|TCP Connections]] — Handshake, state machine, and teardown
+- [[wiki/os-shell/tcp-keepalive|TCP Keepalive]] — Detecting dead peers with idle-probe-kill timing
+- [[wiki/os-shell/tcp-nagle-and-delayed-ack|TCP Nagle & Delayed ACK]] — Small-packet coalescing and the latency interaction between them
+- [[wiki/os-shell/tcp-ports-and-services|TCP Ports & Services]] — Port ranges, well-known ports, and /etc/services
+- [[wiki/os-shell/tcpdump|tcpdump]] — Capture syntax, filters, and common patterns
+- [[wiki/os-shell/terminal-emulators|Terminal Emulators]] — Terminfo/termcap, the TERM variable, and emulator families
+- [[wiki/os-shell/text-processing-pipelines|Text Processing Pipelines]] — Chaining text-transforming commands so each stage filters or reshapes the stream
+- [[wiki/os-shell/thermal-throttling-and-power|Thermal Throttling & Power]] — Heat limits that cut CPU frequency and the power budget tradeoffs
+- [[wiki/os-shell/threads-and-concurrency|Threads & Concurrency]] — Thread model, user vs kernel threads, and synchronization primitives
+- [[wiki/os-shell/tlb-cache|TLB & Caching]] — Translation lookaside buffer hits, misses, and invalidation
+- [[wiki/os-shell/tls-and-https|TLS & HTTPS]] — Handshake, certificates, and encryption basics
+- [[wiki/os-shell/tmpfs-and-ramdisks|tmpfs & RAM Disks]] — Memory-backed filesystems and their use cases
+- [[wiki/os-shell/tmux-sessions|Tmux Sessions]] — Terminal multiplexing: persistent, detachable terminal sessions with panes and windows
+- [[wiki/os-shell/udp-and-datagrams|UDP & Datagrams]] — Connectionless delivery, checksums, and use cases
+- [[wiki/os-shell/ulimit-and-resource-limits|Resource Limits]] — ulimit/rlimits for files, processes, and memory
+- [[wiki/os-shell/umask|Umask]] — The default permission mask applied to every new file and directory
+- [[wiki/os-shell/unix-domain-sockets|Unix Domain Sockets]] — Local IPC via socket files, stream vs datagram modes
+- [[wiki/os-shell/unix-philosophy|Unix Philosophy]] — The design principles behind Unix: small tools, text streams, and composition
+- [[wiki/os-shell/users-and-groups|Users and Groups]] — The identity system of the OS: accounts with UIDs/GIDs that own processes and files
+- [[wiki/os-shell/users-groups-and-acls|Users, Groups & ACLs]] — Local identity model of users and groups with discretionary ACLs on Linux files
+- [[wiki/os-shell/virtual-memory|Virtual Memory]] — Address-space abstraction, mappings, and how processes view memory
+- [[wiki/os-shell/wireshark-and-tshark|Wireshark & tshark]] — GUI/CLI dissection and follow-stream workflows
+- [[wiki/os-shell/xargs|xargs]] — Building command lines, -0, -n, -I, and batching
+- [[wiki/os-shell/xfs-and-ext4|XFS & ext4]] — The two battle-tested Linux filesystems and when to pick each
+- [[wiki/os-shell/zfs-features-and-snapshots|ZFS Features & Snapshots]] — Copy-on-write pools, checksums, snapshots, and scrubs
+- [[wiki/os-shell/zsh-configuration|Zsh Configuration]] — Customizing the Z shell: rc files, prompts, completions, and plugins

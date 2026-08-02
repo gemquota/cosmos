@@ -16,19 +16,19 @@ In the MVVM pattern the ViewModel sits between the View and the data layer. It e
 
 A ViewModel's lifetime is scoped to its ViewModelStoreOwner. The owner's ViewModelStore retains instances across recreation and calls onCleared() when the owner is permanently destroyed, which releases resources and cancels work launched in viewModelScope. Best practice is to avoid holding references to Views, Activities, or Fragments inside a ViewModel, since those references can outlive the view and cause memory leaks; state should be exposed as observables and collected by the UI layer.
 
-The saved state module (SavedStateHandle) persists a small amount of state across process death, complementing the in-memory store. Testing a ViewModel is straightforward because it is a plain class: unit tests can construct it directly and verify state transitions without an emulator. Navigation libraries give each destination its own ViewModel scope, and multi-module applications commonly define ViewModels per feature. Together these patterns make ViewModel a core building block of maintainable Android applications, and they appear throughout the [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] and [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Rest]] domains.
+The saved state module (SavedStateHandle) persists a small amount of state across process death, complementing the in-memory store. Testing a ViewModel is straightforward because it is a plain class: unit tests can construct it directly and verify state transitions without an emulator. Navigation libraries give each destination its own ViewModel scope, and multi-module applications commonly define ViewModels per feature. Together these patterns make ViewModel a core building block of maintainable Android applications, and they appear throughout the [[wiki/web-platforms/index|Android Core]] and [[wiki/web-platforms/index|Api Rest]] domains.
 
 Related patterns such as data binding, lifecycle observers, and repository layering reinforce the same separation of concerns, and code review checklists in the wiki's entity pages routinely call out ViewModel misuse as a common source of leaks and recomposition bugs.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/api-services/index|Api Services]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Rest]] › Model
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Model
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/aborted|Aborted]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/aegis|Aegis]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/agent-active|Agent Active]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity-projection-2|Ambiguity Projection 2]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity-system|Ambiguity System]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity|Ambiguity]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ap|Ap]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/apex|Apex]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aborted|Aborted]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aegis|Aegis]]
+- [[wiki/agent-systems/categories/agents/subcategories/agent-core/agent-active|Agent Active]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-projection-2|Ambiguity Projection 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-system|Ambiguity System]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity|Ambiguity]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ap|Ap]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/apex|Apex]]

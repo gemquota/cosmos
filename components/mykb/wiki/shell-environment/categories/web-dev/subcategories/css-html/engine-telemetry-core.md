@@ -19,21 +19,21 @@ Telemetry typically has three layers. Metrics are numeric measurements, such as 
 
 The core owns the pipeline: buffering events without blocking the engine, batching writes, dropping data under pressure, and persisting to storage. Field schemas must be stable and consistent, since dashboards and queries depend on names and types, and high-cardinality fields are constrained to keep storage and query costs manageable.
 
-In the [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/telemetry-fields|Telemetry Fields]] entry, the field definitions are catalogued; here, the collection machinery is the subject. Sessions pair the core with CI/CD, where build and test runs emit telemetry that gates releases, and with frontend rendering, where the DOM and CSS present the live dashboard. The entry belongs to the [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/index|Web Dev]] domain.
+In the [[wiki/shell-environment/categories/web-dev/subcategories/css-html/telemetry-fields|Telemetry Fields]] entry, the field definitions are catalogued; here, the collection machinery is the subject. Sessions pair the core with CI/CD, where build and test runs emit telemetry that gates releases, and with frontend rendering, where the DOM and CSS present the live dashboard. The entry belongs to the [[wiki/web-platforms/index|Web Dev]] domain.
 
 The entry records the core as the single integration point for observability, so that adding a new metric, log, or trace does not mean touching every producer.
 
 The core also defines retention: what is kept for real-time dashboards, what is rolled up for historical trends, and what is discarded to control cost.
 
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/index|Web Dev]] › Engine Telemetry Core
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Engine Telemetry Core
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/analysis-2|Analysis 2]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/budget|Budget]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/canvas|Canvas]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/chemical-playground|Chemical Playground]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/context-2|Context 2]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/defi|Defi]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/diffusion-simulator|Diffusion Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/fields|Fields]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/analysis-2|Analysis 2]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/budget|Budget]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/canvas|Canvas]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/chemical-playground|Chemical Playground]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/context-2|Context 2]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/defi|Defi]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/diffusion-simulator|Diffusion Simulator]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/fields|Fields]]

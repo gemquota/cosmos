@@ -13,7 +13,7 @@ resource: ""
 React is a JavaScript library for building user interfaces, developed by Meta. Component-based, declarative, with a rich ecosystem including hooks, suspense, server components.
 Referenced in session 8ec60717
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › React 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › React 2
 
 ## Related Entities
 

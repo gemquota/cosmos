@@ -12,7 +12,7 @@ resource: ""
 
 Web Audio appears in 5 session(s) categorized as API, Cloud, Debugging, Mobile, Security, Shell. Related topics: android, api, auth, authentication, aws, bash, bootstrap.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Web Audio 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Web Audio 2
 
 ## Related Entities
 

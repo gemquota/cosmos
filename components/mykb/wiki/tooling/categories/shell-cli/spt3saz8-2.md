@@ -9,7 +9,7 @@ resource: ""
 ---
 ## Spt3Saz8 2
 SpT3saZ8 appears in 2 session(s) categorized as API, Frontend, Shell. Related topics: api, bash, cli, css.
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/tooling/index|Tooling]] › [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
 ## Overview
 SpT3saZ8 is an opaque token recorded from API, frontend, and shell sessions. Its mixed-case shape is consistent with an auto-generated identifier — a session id, artifact name, cache key, or database handle — rather than a word. The knowledge base keeps such tokens as entities so that every occurrence can be traced and, when the underlying object is identified, the page can be upgraded from token to description.
 ## Working with Opaque Tokens
@@ -31,6 +31,6 @@ SpT3saZ8 is an opaque token recorded from API, frontend, and shell sessions. Its
 - [[wiki/llm-agents/agent-logs|Agent Logs]] — the transcripts that carry the evidence
 - [[wiki/api-protocols/api-keys|API Keys]] — opaque credentials with a similar shape
 ## Related Entities
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/busuj|Busuj]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/dims-2|Dims 2]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]
+- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
+- [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

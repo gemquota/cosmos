@@ -14,7 +14,7 @@ resource: ""
 MySQL is an open-source relational database management system. Popular for web applications, part of the LAMP stack, owned by Oracle.
 Referenced in session 019f1a6c
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Mysql
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Mysql
 
 ## Overview
 

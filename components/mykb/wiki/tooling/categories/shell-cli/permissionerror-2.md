@@ -14,8 +14,8 @@ Diagnosing a PermissionError follows a consistent order: confirm the path actual
 Beyond the specific error, the sessions point to general error-handling discipline: catch errors at the right layer, distinguish recoverable from fatal conditions, log the operation and context that failed, and implement retries with backoff only for transient failures. Security-wise, failing safe matters — an error path must not expose sensitive data or leave partial state.
 The page records the error type and the handling patterns; future sessions should attach the specific filesystems, containers, and permission models involved. A short incident note per occurrence — what was denied, why, and how it was resolved — builds a useful reference over time.
 **Related topics:** api, bash, bug, bun, cli, css
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/tooling/index|Tooling]] › [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
 ## Related Entities
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/busuj|Busuj]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/dims-2|Dims 2]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]
+- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
+- [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

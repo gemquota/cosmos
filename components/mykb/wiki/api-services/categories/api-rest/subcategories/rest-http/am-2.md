@@ -14,7 +14,7 @@ YAML (YAML Ain't Markup Language) — a human-readable data serialization langua
 
 **Related topics:** android, angular, api, auth, aws, bash, bug
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Am 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Am 2
 
 ## Overview
 

@@ -13,15 +13,15 @@ AREA — A defined region or scope.
 
 **Related topics:** ajax, alpine, android, angular
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/index|Frontend Frameworks]] › Area
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Area
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/angular/aaaa|Aaaa]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/angular/aabb-2|Aabb 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/angular/above-2|Above 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/angular/acp-2|Acp 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/angular/ad-2|Ad 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/angular/addr|Addr]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/angular/adr-2|Adr 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/angular/audiocontext-10|Audiocontext 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/aaaa|Aaaa]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/aabb-2|Aabb 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/above-2|Above 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/acp-2|Acp 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/ad-2|Ad 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/addr|Addr]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/adr-2|Adr 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/audiocontext-10|Audiocontext 10]]

@@ -32,5 +32,5 @@ Referenced in 4 session(s):
 383. **exec_command**: {"cmd": "cd /data/data/com.termux/files/home/dev/codex/hz && grep -n 'dim
 **Domain:** Web Platforms › Tooling
 ## Related
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/busuj|Busuj]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]
+- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

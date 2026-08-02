@@ -1,130 +1,122 @@
+---
+type: "index"
+title: "Frontend Index"
+description: "Listing of the frontend/ folder (109 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
 # Frontend
 
-Part of [[wiki/web-platforms/index|Web Platforms]]. 299 entities.
+Part of [[wiki/index|Wiki Index]]. 109 pages.
 
-## Categories
-
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/index|Css Styling]] — 31 files
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/index|Frontend Frameworks]] — 2 files
-
-## See Also
-
-- [[wiki/web-platforms/supercategories/frontend-frameworks/index|Frontend Frameworks]]
-- [[wiki/web-platforms/supercategories/api-protocols/index|Api Protocols]]
-- [[wiki/web-platforms/supercategories/api-services/index|Api Services]]
-- [[wiki/web-platforms/supercategories/security-auth/index|Security Auth]]
-- [[wiki/web-platforms/supercategories/cloud-infra/index|Cloud Infra]]
-- [[wiki/web-platforms/supercategories/tooling/index|Tooling]]
-
-## Concepts
-
-- [Accessibility Testing](accessibility-testing.md) — Accessibility Testing
-- [Animation Performance](animation-performance.md) — Animation Performance
-- [ARIA](aria.md) — ARIA
-- [AWS DynamoDB](aws-dynamodb.md) — AWS DynamoDB
-- [AWS Lambda](aws-lambda.md) — AWS Lambda
-- [AWS S3](aws-s3.md) — AWS S3
-- [BEM](bem.md) — BEM
-- [CSS Box Model](box-model.md) — CSS Box Model
-- [Browser Caching](browser-caching.md) — Browser Caching
-- [Bundle Analysis](bundle-analysis.md) — Bundle Analysis
-- [Client-Side Rendering (CSR)](client-side-rendering.md) — Client-Side Rendering (CSR)
-- [Client-Side Routing](client-side-routing.md) — Client-Side Routing
-- [Code Splitting](code-splitting.md) — Code Splitting
-- [Color Contrast](color-contrast.md) — Color Contrast
-- [Component Composition](component-composition.md) — Component Composition
-- [Compound Components](compound-components.md) — Compound Components
-- [Container Queries](container-queries.md) — Container Queries
-- [Content Security Policy](content-security-policy.md) — Content Security Policy
-- [Controlled vs Uncontrolled](controlled-uncontrolled.md) — Controlled vs Uncontrolled
-- [Core Web Vitals](core-web-vitals.md) — Core Web Vitals
-- [CORS](cors.md) — CORS
-- [Critical CSS](critical-css.md) — Critical CSS
-- [Critical Rendering Path](critical-rendering-path.md) — Critical Rendering Path
-- [Cross-Site Scripting (XSS)](cross-site-scripting.md) — Cross-Site Scripting (XSS)
-- [CSS Cascade and Specificity](css-cascade-specificity.md) — CSS Cascade and Specificity
-- [CSS Custom Properties](css-custom-properties.md) — CSS Custom Properties
-- [CSS Grid](css-grid.md) — CSS Grid
-- [CSS-in-JS](css-in-js.md) — CSS-in-JS
-- [CSS Modules](css-modules.md) — CSS Modules
-- [CSS Positioning](css-positioning.md) — CSS Positioning
-- [Custom Hooks](custom-hooks.md) — Custom Hooks
-- [Debouncing and Throttling](debouncing-throttling.md) — Debouncing and Throttling
-- [Design Systems](design-systems.md) — Design Systems
-- [Design Tokens](design-tokens.md) — Design Tokens
-- [Dev Server](dev-server.md) — Dev Server
-- [DOM API](dom-api.md) — DOM API
-- [Edge Functions](edge-functions.md) — Edge Functions
-- [Edge Rendering](edge-rendering.md) — Edge Rendering
-- [End-to-End Testing](end-to-end-testing.md) — End-to-End Testing
-- [Error Boundaries](error-boundaries.md) — Error Boundaries
-- [ES Modules](es-modules.md) — ES Modules
-- [Fetch API](fetch-api.md) — Fetch API
-- [Flexbox](flexbox.md) — Flexbox
-- [CSS Floats](floats.md) — CSS Floats
-- [Fluid Typography](fluid-typography.md) — Fluid Typography
-- [Fly.io](../../raw/archive/junk-entities-2026-08b/frontend/fly-io.md) — Fly.io
-- [Focus Management](focus-management.md) — Focus Management
-- [Form Validation](form-validation.md) — Form Validation
-- [Frontend Testing](frontend-testing.md) — Frontend Testing
-- [Google Cloud Run](google-cloud-run.md) — Google Cloud Run
-- [Hot Module Replacement](hot-module-replacement.md) — Hot Module Replacement
-- [HTML Forms](html-forms.md) — HTML Forms
-- [Hydration](hydration.md) — Hydration
-- [Image Optimization](image-optimization.md) — Image Optimization
-- [Incremental Static Regeneration (ISR)](incremental-static-regeneration.md) — Incremental Static Regeneration (ISR)
-- [IndexedDB](indexeddb.md) — IndexedDB
-- [Internationalization](internationalization.md) — Internationalization
-- [Intersection Observer](intersection-observer.md) — Intersection Observer
-- [Islands Architecture](islands-architecture.md) — Islands Architecture
-- [Keyboard Navigation](keyboard-navigation.md) — Keyboard Navigation
-- [Lazy Loading](lazy-loading.md) — Lazy Loading
-- [Localization](localization.md) — Localization
-- [Long Tasks](long-tasks.md) — Long Tasks
-- [Media Queries](media-queries.md) — Media Queries
-- [Micro-Frontends](micro-frontends.md) — Micro-Frontends
-- [Minification](minification.md) — Minification
-- [Mobile-First Design](mobile-first-design.md) — Mobile-First Design
-- [Module Bundlers](module-bundlers.md) — Module Bundlers
-- [Netlify](netlify.md) — Netlify
-- [Performance Budgets](performance-budgets.md) — Performance Budgets
-- [Pointer Events](pointer-events.md) — Pointer Events
-- [Polyfills](polyfills.md) — Polyfills
-- [Reduced Motion](prefers-reduced-motion.md) — Reduced Motion
-- [Progressive Enhancement](progressive-enhancement.md) — Progressive Enhancement
-- [Progressive Web Apps](progressive-web-apps.md) — Progressive Web Apps
-- [Prop Drilling](prop-drilling.md) — Prop Drilling
-- [Reactive State](reactive-state.md) — Reactive State
-- [Reflow and Repaint](reflow-repaint.md) — Reflow and Repaint
-- [Render-Blocking Resources](render-blocking-resources.md) — Render-Blocking Resources
-- [Render Props](render-props.md) — Render Props
-- [Resource Hints](resource-hints.md) — Resource Hints
-- [Responsive Design](responsive-design.md) — Responsive Design
-- [Responsive Images](responsive-images.md) — Responsive Images
-- [Rollup](rollup.md) — Rollup
-- [RTL Layouts](rtl-layouts.md) — RTL Layouts
-- [Screen Readers](screen-readers.md) — Screen Readers
-- [Semantic HTML](semantic-html.md) — Semantic HTML
-- [Server-Side Rendering (SSR)](server-side-rendering.md) — Server-Side Rendering (SSR)
-- [Serverless](serverless.md) — Serverless
-- [Service Workers](service-workers.md) — Service Workers
-- [Shadow DOM](shadow-dom.md) — Shadow DOM
-- [Source Maps](source-maps.md) — Source Maps
-- [Static Site Generation (SSG)](ssg.md) — Static Site Generation (SSG)
-- [State Machines](state-machines.md) — State Machines
-- [State Management Patterns](state-management-patterns.md) — State Management Patterns
-- [Static Site Generation](static-site-generation.md) — Static Site Generation
-- [Theming](theming.md) — Theming
-- [Transpilation](transpilation.md) — Transpilation
-- [Tree Shaking](tree-shaking.md) — Tree Shaking
-- [Unidirectional Data Flow](unidirectional-data-flow.md) — Unidirectional Data Flow
-- [Utility-First CSS](utility-css.md) — Utility-First CSS
-- [Vercel](vercel.md) — Vercel
-- [Virtual DOM](virtual-dom.md) — Virtual DOM
-- [Visual Regression Testing](visual-regression-testing.md) — Visual Regression Testing
-- [Vite](vite.md) — Vite
-- [WCAG](wcag.md) — WCAG
-- [Web Components](web-components.md) — Web Components
-- [Web Storage](web-storage.md) — Web Storage
-- [Web Workers](web-workers.md) — Web Workers
-- [Webpack Concepts](webpack-concepts.md) — Webpack Concepts
+## Pages
+- [[wiki/frontend/accessibility-testing|Accessibility Testing]] — Automated and manual a11y checks
+- [[wiki/frontend/animation-performance|Animation Performance]] — Compositor-friendly transform and opacity techniques
+- [[wiki/frontend/aria|ARIA]] — Roles, states, and properties for accessibility semantics
+- [[wiki/frontend/aws-dynamodb|AWS DynamoDB]] — Serverless key-value and document database with single-digit-millisecond latency at scale
+- [[wiki/frontend/aws-lambda|AWS Lambda]] — AWS's Functions-as-a-Service: event-driven functions scaling to zero with per-invocation billing
+- [[wiki/frontend/aws-s3|AWS S3]] — Object storage service for files, static sites, backups, and data lakes with 99.999999999% durability
+- [[wiki/frontend/bem|BEM]] — Block-Element-Modifier class naming methodology
+- [[wiki/frontend/box-model|CSS Box Model]] — Content, padding, border, and margin sizing behavior
+- [[wiki/frontend/browser-caching|Browser Caching]] — Cache-Control, validators, and stale-while-revalidate patterns
+- [[wiki/frontend/bundle-analysis|Bundle Analysis]] — Measuring, visualizing, and auditing bundle composition
+- [[wiki/frontend/client-side-rendering|Client-Side Rendering (CSR)]] — Rendering pages in the browser from JavaScript, with SEO and first-load tradeoffs
+- [[wiki/frontend/client-side-routing|Client-Side Routing]] — History API and URL-driven SPA navigation
+- [[wiki/frontend/code-splitting|Code Splitting]] — Splitting bundles by route, component, or dynamic import
+- [[wiki/frontend/color-contrast|Color Contrast]] — Contrast ratios and AA/AAA text requirements
+- [[wiki/frontend/component-composition|Component Composition]] — Building UIs from composable parts
+- [[wiki/frontend/compound-components|Compound Components]] — Implicit state sharing among related components
+- [[wiki/frontend/container-queries|Container Queries]] — Styling components from their container's size
+- [[wiki/frontend/content-security-policy|Content Security Policy]] — Directives restricting allowed resource origins
+- [[wiki/frontend/controlled-uncontrolled|Controlled vs Uncontrolled]] — Managing component state internally or externally
+- [[wiki/frontend/core-web-vitals|Core Web Vitals]] — User-centric metrics LCP, INP, and CLS
+- [[wiki/frontend/cors|CORS]] — Cross-origin request rules and headers
+- [[wiki/frontend/critical-css|Critical CSS]] — Inlining above-the-fold styles to speed first paint
+- [[wiki/frontend/critical-rendering-path|Critical Rendering Path]] — How HTML, CSS, and JS become painted pixels
+- [[wiki/frontend/cross-site-scripting|Cross-Site Scripting (XSS)]] — Injection vectors and prevention techniques
+- [[wiki/frontend/css-cascade-specificity|CSS Cascade and Specificity]] — How conflicting rules resolve by origin, specificity, and order
+- [[wiki/frontend/css-custom-properties|CSS Custom Properties]] — Cascading variables for theming and runtime updates
+- [[wiki/frontend/css-grid|CSS Grid]] — Two-dimensional layout with rows, columns, and tracks
+- [[wiki/frontend/css-in-js|CSS-in-JS]] — Styling via JavaScript with runtime and compile-time strategies
+- [[wiki/frontend/css-modules|CSS Modules]] — Build-time scoped class names for local styling
+- [[wiki/frontend/css-positioning|CSS Positioning]] — Static, relative, absolute, fixed, and sticky containing-block rules
+- [[wiki/frontend/custom-hooks|Custom Hooks]] — Extracting reusable stateful logic
+- [[wiki/frontend/debouncing-throttling|Debouncing and Throttling]] — Rate-limiting event handler execution
+- [[wiki/frontend/design-systems|Design Systems]] — Tokens, component libraries, and governance
+- [[wiki/frontend/design-tokens|Design Tokens]] — Platform-agnostic style values and distribution
+- [[wiki/frontend/dev-server|Dev Server]] — Local serving, proxies, and fast reload
+- [[wiki/frontend/dom-api|DOM API]] — Document tree, nodes, traversal, and manipulation
+- [[wiki/frontend/edge-functions|Edge Functions]] — Small serverless functions executed at CDN edge nodes close to users for low-latency logic
+- [[wiki/frontend/edge-rendering|Edge Rendering]] — Executing rendering logic at CDN edge nodes for low latency
+- [[wiki/frontend/end-to-end-testing|End-to-End Testing]] — Browser-level full-flow automation
+- [[wiki/frontend/error-boundaries|Error Boundaries]] — Catching and recovering from render-time errors
+- [[wiki/frontend/es-modules|ES Modules]] — import/export semantics and static module graphs
+- [[wiki/frontend/fetch-api|Fetch API]] — HTTP requests, streaming, and abort control
+- [[wiki/frontend/flexbox|Flexbox]] — One-dimensional alignment and distribution of flex items
+- [[wiki/frontend/floats|CSS Floats]] — Legacy text-wrap and column layout via float behavior
+- [[wiki/frontend/fluid-typography|Fluid Typography]] — Viewport-relative type scaling with clamp()
+- [[wiki/frontend/focus-management|Focus Management]] — Focus states, traps, and restoration in dynamic UIs
+- [[wiki/frontend/form-validation|Form Validation]] — Constraint validation API and custom validation patterns
+- [[wiki/frontend/frontend-testing|Frontend Testing]] — Unit, integration, and end-to-end strategy
+- [[wiki/frontend/google-cloud-run|Google Cloud Run]] — Serverless container platform on GCP scaling requests to zero with per-request billing
+- [[wiki/frontend/hot-module-replacement|Hot Module Replacement]] — Updating modules without full page reloads
+- [[wiki/frontend/html-forms|HTML Forms]] — Form controls, submission, and serialization
+- [[wiki/frontend/hydration|Hydration]] — Attaching state and event handling to server-rendered HTML
+- [[wiki/frontend/image-optimization|Image Optimization]] — Formats, compression, dimensions, and encoding choices
+- [[wiki/frontend/incremental-static-regeneration|Incremental Static Regeneration (ISR)]] — Revalidating static pages on demand after build
+- [[wiki/frontend/indexeddb|IndexedDB]] — Client-side structured database for large data
+- [[wiki/frontend/internationalization|Internationalization]] — Message extraction and i18n framework plumbing
+- [[wiki/frontend/intersection-observer|Intersection Observer]] — Callbacks when elements enter or leave the viewport
+- [[wiki/frontend/islands-architecture|Islands Architecture]] — Static HTML shells with isolated interactive component islands
+- [[wiki/frontend/keyboard-navigation|Keyboard Navigation]] — Tab order, focusability, and full keyboard operability
+- [[wiki/frontend/lazy-loading|Lazy Loading]] — Deferring images, iframes, and components until needed
+- [[wiki/frontend/localization|Localization]] — Translated content, pluralization, and locale formatting
+- [[wiki/frontend/long-tasks|Long Tasks]] — Main-thread task length and its effect on responsiveness
+- [[wiki/frontend/media-queries|Media Queries]] — Querying viewport and device features for conditional styles
+- [[wiki/frontend/micro-frontends|Micro-Frontends]] — Splitting frontends across teams and integration modes
+- [[wiki/frontend/minification|Minification]] — Removing whitespace and renaming to shrink payloads
+- [[wiki/frontend/mobile-first-design|Mobile-First Design]] — Designing from small screens up with enhancement
+- [[wiki/frontend/module-bundlers|Module Bundlers]] — How bundlers resolve, transform, and emit dependency graphs
+- [[wiki/frontend/netlify|Netlify]] — All-in-one web hosting platform with git-based builds, forms, functions, and CDN
+- [[wiki/frontend/performance-budgets|Performance Budgets]] — Setting and enforcing size, time, and count limits
+- [[wiki/frontend/pointer-events|Pointer Events]] — Unified mouse, touch, and pen input model
+- [[wiki/frontend/polyfills|Polyfills]] — Feature detection and shims for legacy browsers
+- [[wiki/frontend/prefers-reduced-motion|Reduced Motion]] — Respecting user motion preferences in animations
+- [[wiki/frontend/progressive-enhancement|Progressive Enhancement]] — Layering baseline functionality then enhancements
+- [[wiki/frontend/progressive-web-apps|Progressive Web Apps]] — Installability, app shell, and offline experiences
+- [[wiki/frontend/prop-drilling|Prop Drilling]] — Passing data through component trees and context alternatives
+- [[wiki/frontend/reactive-state|Reactive State]] — Observables and signals as reactivity primitives
+- [[wiki/frontend/reflow-repaint|Reflow and Repaint]] — Layout and paint invalidation costs and avoidance
+- [[wiki/frontend/render-blocking-resources|Render-Blocking Resources]] — Identifying and deferring blocking scripts and stylesheets
+- [[wiki/frontend/render-props|Render Props]] — Sharing logic through function-as-prop APIs
+- [[wiki/frontend/resource-hints|Resource Hints]] — preload, prefetch, preconnect, and dns-prefetch
+- [[wiki/frontend/responsive-design|Responsive Design]] — Fluid layouts, flexible media, and breakpoint strategy
+- [[wiki/frontend/responsive-images|Responsive Images]] — srcset, sizes, and picture element selection
+- [[wiki/frontend/rollup|Rollup]] — ES-module-first bundling with strong tree shaking
+- [[wiki/frontend/rtl-layouts|RTL Layouts]] — dir handling and logical properties for right-to-left
+- [[wiki/frontend/screen-readers|Screen Readers]] — How assistive tech consumes the accessibility tree
+- [[wiki/frontend/semantic-html|Semantic HTML]] — Choosing native elements for meaning and behavior
+- [[wiki/frontend/server-side-rendering|Server-Side Rendering (SSR)]] — Generating HTML per request on the server and its latency tradeoffs
+- [[wiki/frontend/serverless|Serverless]] — On-demand, auto-scaling function and managed service execution with no server administration
+- [[wiki/frontend/service-workers|Service Workers]] — Network interception, lifecycle, and offline caching
+- [[wiki/frontend/shadow-dom|Shadow DOM]] — Encapsulated DOM subtrees isolating styles and structure
+- [[wiki/frontend/source-maps|Source Maps]] — Mapping bundled and minified output back to source
+- [[wiki/frontend/ssg|Static Site Generation (SSG)]] — Build-time HTML pre-rendering and when it fits
+- [[wiki/frontend/state-machines|State Machines]] — Modeling UI flows as finite state machines
+- [[wiki/frontend/state-management-patterns|State Management Patterns]] — Taxonomy of local, global, and server state
+- [[wiki/frontend/static-site-generation|Static Site Generation]] — Pre-rendering pages at build time into static HTML, CSS, and JS served from any CDN
+- [[wiki/frontend/theming|Theming]] — Theme switching and dark mode strategies
+- [[wiki/frontend/transpilation|Transpilation]] — Converting modern syntax to target-compatible JavaScript
+- [[wiki/frontend/tree-shaking|Tree Shaking]] — Removing unused exports via static module analysis
+- [[wiki/frontend/unidirectional-data-flow|Unidirectional Data Flow]] — One-way data flow and store architecture
+- [[wiki/frontend/utility-css|Utility-First CSS]] — Composing styles from single-purpose utility classes
+- [[wiki/frontend/vercel|Vercel]] — Frontend cloud platform optimized for static and serverless Next.js-style deployments
+- [[wiki/frontend/virtual-dom|Virtual DOM]] — In-memory UI trees with diffing and reconciliation
+- [[wiki/frontend/visual-regression-testing|Visual Regression Testing]] — Screenshot diffing for UI changes
+- [[wiki/frontend/vite|Vite]] — Dev server and build architecture on esbuild and Rollup
+- [[wiki/frontend/wcag|WCAG]] — Principles, guidelines, and conformance levels for accessibility
+- [[wiki/frontend/web-components|Web Components]] — Custom elements, templates, and slots
+- [[wiki/frontend/web-storage|Web Storage]] — localStorage, sessionStorage, and cookies
+- [[wiki/frontend/web-workers|Web Workers]] — Background threads for CPU-heavy work
+- [[wiki/frontend/webpack-concepts|Webpack Concepts]] — Loaders, plugins, chunks, and configuration model

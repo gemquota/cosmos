@@ -1,9 +1,14 @@
+---
+type: "index"
+title: "Frontend Frameworks Index"
+description: "Listing of the frontend/categories/frontend-frameworks/ folder (1 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
 # Frontend Frameworks
 
-Part of [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › Frontend Frameworks. 270 entities.
+Part of [[wiki/index|Wiki Index]]. 1 pages.
 
-## Sub-Categories
-
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/index|Ajax Spa]] — 121 files
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/angular/index|Angular]] — 127 files
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/bootstrap/index|Bootstrap]] — 26 files
+## Pages
+- [[wiki/frontend/categories/frontend-frameworks/overview|Overview]]

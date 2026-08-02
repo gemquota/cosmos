@@ -23,7 +23,7 @@ The related entities below record the neighboring API client pages observed in t
 
 
 Acronym hygiene also applies to generated code and configuration. A name like ACS that is clear at definition time becomes opaque months later, so reviewers should ask whether the identifier carries meaning on its own. Preferring descriptive names over three-letter abbreviations reduces the load on readers and on future agents that must interpret logs, a lesson reinforced by nearly every session-derived acronym page in this knowledge base.
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Acs
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Acs
 
 ## Related Entities
 

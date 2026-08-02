@@ -14,7 +14,7 @@ Migration — the systematic process of moving data or systems between environme
 
 **Related topics:** android, api, auth, bash
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Git Migration Finalized
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Git Migration Finalized
 
 ## Overview
 
