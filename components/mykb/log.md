@@ -245,3 +245,20 @@ title: "Bundle Log"
   unchanged at 570/17/5; words 476,046 → 475,777
 - **Snapshots regenerated**: build_stats, build_graph, okf render,
   gen-static-data --check OK (3,729 md files)
+
+## 2026-08-02 (link repair pass — 797 dead markdown links fixed)
+- **Repointed 777 session links** to `raw/archive/session-artifacts-2026-07/sessions/`
+  (all 236 referenced sessions exist in the archive; deep relative paths resolve
+  on disk and strip to browser-resolvable `raw/...` paths via files.json)
+- **Repointed 3 overview links** to archived `raw/archive/junk-entities-2026-08/`
+  category overviews; converted 14 dead cross-domain category links to
+  `[[wiki/…/overview|label]]` wikilinks (entity "**Overview:**" bullets and
+  overview "Related Categories" lists)
+- **Repointed misc**: `data-storage/index.md` CACHE → `entities/cache.md`;
+  `cosmos-dashboard-mykb-integration` Wiki Schema → `../../ops/wiki-schema.md`
+- **Verification**: 0 broken wikilinks and 0 broken relative markdown links in
+  wiki pages (one intentional `[title](path)` syntax example skipped; root
+  `log.md`/`index.md` excluded as before); tiers unchanged 570/17/5;
+  wikilinks 13,567 → 13,581
+- **Snapshots regenerated**: build_stats, build_graph, okf render,
+  gen-static-data --check OK (3,729 md files)

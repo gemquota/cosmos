@@ -31,25 +31,25 @@ Acronym referenced in session 511f2a52
 
 Referenced in 10 session(s):
 
-- [ajax, android, api, ast +1 (1330 turns)](../sessions/session-019ec3c4.md)
+- [ajax, android, api, ast +1 (1330 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec3c4.md)
 
-- [ajax, android, api, ast +1 (172 turns)](../sessions/session-019edd8d.md)
+- [ajax, android, api, ast +1 (172 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019edd8d.md)
 
-- [api, ast, auth, aws +1 (311 turns)](../sessions/session-019ee698.md)
+- [api, ast, auth, aws +1 (311 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee698.md)
 
-- [android, angular, api, ast +1 (333 turns)](../sessions/session-019ee7ae.md)
+- [android, angular, api, ast +1 (333 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee7ae.md)
 
-- [android, api, ast, auth +1 (248 turns)](../sessions/session-019f0219.md)
+- [android, api, ast, auth +1 (248 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f0219.md)
 
-- [android, api, ast, auth +1 (373 turns)](../sessions/session-019f023f.md)
+- [android, api, ast, auth +1 (373 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f023f.md)
 
-- [android, api, ast, auth +1 (171 turns)](../sessions/session-019f40da.md)
+- [android, api, ast, auth +1 (171 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f40da.md)
 
-- [android, api, ast, auth +1 (222 turns)](../sessions/session-019f429c.md)
+- [android, api, ast, auth +1 (222 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f429c.md)
 
-- [api, ast, auth, aws +1 (587 turns)](../sessions/session-019f4b9a.md)
+- [api, ast, auth, aws +1 (587 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4b9a.md)
 
-- [ajax, api, ast, backend +1 (57 turns)](../sessions/session-511f2a52.md)
+- [ajax, api, ast, backend +1 (57 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-511f2a52.md)
 
 
 > - bun

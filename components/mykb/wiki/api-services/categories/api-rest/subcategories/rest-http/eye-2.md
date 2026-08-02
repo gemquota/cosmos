@@ -21,8 +21,8 @@ Acronym referenced in session 66f8ea88
 - **Overview:** [Api Clients](../../overview.md)
 ## References
 Referenced in 2 session(s):
-- [android, api, ast, auth +1 (127 turns)](../sessions/session-01106e45.md)
-- [angular, api, ast, auth +1 (82 turns)](../sessions/session-66f8ea88.md)
+- [android, api, ast, auth +1 (127 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-01106e45.md)
+- [angular, api, ast, auth +1 (82 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-66f8ea88.md)
 ## Context
 > 26. **assistant**: (no content)
 27. **user**: simplify him ans se rje single centres sextant eye and mske him adoesbke

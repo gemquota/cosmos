@@ -31,21 +31,21 @@ Acronym referenced in session 3ebbffaf
 
 Referenced in 8 session(s):
 
-- [api, ast, bash, cli +1 (332 turns)](../sessions/session-019ebd47.md)
+- [api, ast, bash, cli +1 (332 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebd47.md)
 
-- [api, ast, bash, cli +1 (417 turns)](../sessions/session-019ebda6.md)
+- [api, ast, bash, cli +1 (417 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebda6.md)
 
-- [ast, auth, aws, bash +1 (40 turns)](../sessions/session-019ebe8b.md)
+- [ast, auth, aws, bash +1 (40 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebe8b.md)
 
-- [api, ast, bash, bug +1 (20 turns)](../sessions/session-019ec3a4.md)
+- [api, ast, bash, bug +1 (20 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec3a4.md)
 
-- [ajax, android, api, ast +1 (172 turns)](../sessions/session-019edd8d.md)
+- [ajax, android, api, ast +1 (172 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019edd8d.md)
 
-- [ast, auth, aws, bash +1 (7 turns)](../sessions/session-019ee4e0.md)
+- [ast, auth, aws, bash +1 (7 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee4e0.md)
 
-- [ast, bash, bootstrap, bun +1 (19 turns)](../sessions/session-019ee7e1.md)
+- [ast, bash, bootstrap, bun +1 (19 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee7e1.md)
 
-- [android, api, ast, auth +1 (51 turns)](../sessions/session-3ebbffaf.md)
+- [android, api, ast, auth +1 (51 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-3ebbffaf.md)
 
 
 > 1. **user**: <environment_context>   <cwd>/data/data/com.termux/files/home/dev/codex/sim</cwd

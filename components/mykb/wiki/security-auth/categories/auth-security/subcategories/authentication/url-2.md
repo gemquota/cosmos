@@ -31,13 +31,13 @@ Acronym referenced in session dd75982d
 
 Referenced in 4 session(s):
 
-- [android, api, auth, authentication +1 (19 turns)](../sessions/session-019f3144.md)
+- [android, api, auth, authentication +1 (19 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f3144.md)
 
-- [android, api, ast, auth +1 (12 turns)](../sessions/session-45eef7f9.md)
+- [android, api, ast, auth +1 (12 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-45eef7f9.md)
 
-- [api, ast, auth, authentication +1 (33 turns)](../sessions/session-b292c0fe.md)
+- [api, ast, auth, authentication +1 (33 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-b292c0fe.md)
 
-- [api, auth, authentication, bash +1 (26 turns)](../sessions/session-dd75982d.md)
+- [api, auth, authentication, bash +1 (26 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-dd75982d.md)
 
 
 > 11. **run_shell_command**: {"description":"Checking if playwright is installed.","command":"pip show playwr

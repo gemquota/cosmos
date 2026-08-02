@@ -22,16 +22,16 @@ Acronym referenced in session 5b1a5f15
 - **Overview:** [Frontend Frameworks](../../overview.md)
 ## References
 Referenced in 10 session(s):
-- [android, api, ast, auth +1 (1293 turns)](../sessions/session-019ebcf6.md)
-- [ajax, android, api, ast +1 (1330 turns)](../sessions/session-019ec3c4.md)
-- [android, api, ast, bash +1 (83 turns)](../sessions/session-019ee149.md)
-- [android, api, ast, auth +1 (443 turns)](../sessions/session-019eff5e.md)
-- [android, api, ast, auth +1 (206 turns)](../sessions/session-019f3f89.md)
-- [android, api, ast, auth +1 (259 turns)](../sessions/session-019f4e5d.md)
-- [android, api, ast, auth +1 (1774 turns)](../sessions/session-019f6624.md)
-- [android, api, ast, auth +1 (443 turns)](../sessions/session-019f6b68.md)
-- [android, api, ast, aws +1 (71 turns)](../sessions/session-5b1a5f15.md)
-- [android, api, ast, auth +1 (97 turns)](../sessions/session-fa9ee442.md)
+- [android, api, ast, auth +1 (1293 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebcf6.md)
+- [ajax, android, api, ast +1 (1330 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec3c4.md)
+- [android, api, ast, bash +1 (83 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee149.md)
+- [android, api, ast, auth +1 (443 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019eff5e.md)
+- [android, api, ast, auth +1 (206 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f3f89.md)
+- [android, api, ast, auth +1 (259 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4e5d.md)
+- [android, api, ast, auth +1 (1774 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f6624.md)
+- [android, api, ast, auth +1 (443 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f6b68.md)
+- [android, api, ast, aws +1 (71 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-5b1a5f15.md)
+- [android, api, ast, auth +1 (97 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-fa9ee442.md)
 > 310. **exec_command**: {"cmd": "(crontab -l 2>/dev/null; echo \"5 0 29 6 * /data/data/com.termux/files/
 311. **exec_command**: {"cmd": "date; echo \"Scheduled: 00:05 AEST June 29 (in ~1h22m)\""}
 312.

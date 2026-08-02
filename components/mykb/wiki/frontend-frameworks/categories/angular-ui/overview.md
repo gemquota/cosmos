@@ -26,6 +26,6 @@ Category within **Android Core** — 25 entities.
 - *... and 10 more*
 
 ## Related Categories
-- [Api Clients](../api-clients/overview.md)
-- [Auth Security](../auth-security/overview.md)
-- [Shell Cli](../shell-cli/overview.md)
+- [[wiki/api-services/categories/api-clients/overview|Api Clients]]
+- [[wiki/security-auth/categories/auth-security/overview|Auth Security]]
+- [[wiki/tooling/categories/shell-cli/overview|Shell Cli]]

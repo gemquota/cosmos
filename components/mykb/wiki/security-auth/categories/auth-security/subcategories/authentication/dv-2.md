@@ -31,11 +31,11 @@ Acronym referenced in session 00cdd849
 
 Referenced in 3 session(s):
 
-- [api, ast, auth, aws +1 (48 turns)](../sessions/session-00cdd849.md)
+- [api, ast, auth, aws +1 (48 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-00cdd849.md)
 
-- [api, ast, auth, authentication +1 (448 turns)](../sessions/session-b006376d.md)
+- [api, ast, auth, authentication +1 (448 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-b006376d.md)
 
-- [api, ast, auth, authentication +1 (59 turns)](../sessions/session-b5a42a06.md)
+- [api, ast, auth, authentication +1 (59 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-b5a42a06.md)
 
 
 > 2. **user**: Unfiltered review and thoughts on the entire directory saved as wtf.md

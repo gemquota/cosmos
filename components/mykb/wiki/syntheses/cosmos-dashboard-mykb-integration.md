@@ -62,4 +62,4 @@ durable conclusions, not the session trivia.
 - [[wiki/syntheses/knowledge-synthesis|Knowledge Synthesis]]
 - [[wiki/frontend/static-site-generation|Static Site Generation]]
 - [[wiki/testing/llm-evaluation|LLM Evaluation]]
-- [Wiki Schema](../ops/wiki-schema.md)
+- [Wiki Schema](../../ops/wiki-schema.md)

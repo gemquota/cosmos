@@ -31,25 +31,25 @@ Acronym referenced in session 28696a72
 
 Referenced in 10 session(s):
 
-- [angular, api, ast, auth +1 (345 turns)](../sessions/session-019ec418.md)
+- [angular, api, ast, auth +1 (345 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec418.md)
 
-- [android, angular, api, ast +1 (414 turns)](../sessions/session-019ed74e.md)
+- [android, angular, api, ast +1 (414 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ed74e.md)
 
-- [api, ast, auth, bash +1 (5 turns)](../sessions/session-019f1a6c.md)
+- [api, ast, auth, bash +1 (5 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1a6c.md)
 
-- [ajax, android, api, ast +1 (113 turns)](../sessions/session-019f1a6d.md)
+- [ajax, android, api, ast +1 (113 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1a6d.md)
 
-- [android, api, ast, auth +1 (219 turns)](../sessions/session-019f32b3.md)
+- [android, api, ast, auth +1 (219 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f32b3.md)
 
-- [android, angular, api, ast +1 (50 turns)](../sessions/session-28696a72.md)
+- [android, angular, api, ast +1 (50 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-28696a72.md)
 
-- [ajax, android, api, ast +1 (337 turns)](../sessions/session-64a381a3.md)
+- [ajax, android, api, ast +1 (337 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-64a381a3.md)
 
-- [android, api, ast, auth +1 (65 turns)](../sessions/session-741cda75.md)
+- [android, api, ast, auth +1 (65 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-741cda75.md)
 
-- [android, api, ast, auth +1 (61 turns)](../sessions/session-8f4285b7.md)
+- [android, api, ast, auth +1 (61 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8f4285b7.md)
 
-- [android, api, ast, auth +1 (76 turns)](../sessions/session-980f78c4.md)
+- [android, api, ast, auth +1 (76 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-980f78c4.md)
 
 
 > 45. **run_shell_command**: {"command":"pip install playwright httpx pandas && playwright install-deps && pl

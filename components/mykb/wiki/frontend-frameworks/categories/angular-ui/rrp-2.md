@@ -30,15 +30,15 @@ Acronym referenced in session 019f1973
 
 Referenced in 5 session(s):
 
-- [ast, bash, html, http +1 (14 turns)](../sessions/session-019f0006.md)
+- [ast, bash, html, http +1 (14 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f0006.md)
 
-- [bash, ci/cd, documentation, dom +1 (2 turns)](../sessions/session-019f1973.md)
+- [bash, ci/cd, documentation, dom +1 (2 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1973.md)
 
-- [api, bash, bootstrap, cli +1 (4 turns)](../sessions/session-019f1a6b.md)
+- [api, bash, bootstrap, cli +1 (4 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1a6b.md)
 
-- [api, ast, auth, bash +1 (5 turns)](../sessions/session-019f1a6c.md)
+- [api, ast, auth, bash +1 (5 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1a6c.md)
 
-- [android, api, ast, bash +1 (4 turns)](../sessions/session-019f4d32.md)
+- [android, api, ast, bash +1 (4 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4d32.md)
 
 
 ## Context

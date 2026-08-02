@@ -34,7 +34,7 @@ Initialization should be observable and fast. Print or log each stage so failure
 
 Referenced in 1 session(s):
 
-- [edge, ide, logging, orm (3 turns)](../sessions/session-dcc50722.md)
+- [edge, ide, logging, orm (3 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-dcc50722.md)
 
 ## Context
 

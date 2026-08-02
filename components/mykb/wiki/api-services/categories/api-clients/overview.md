@@ -29,6 +29,6 @@ Category within **Android Core** — 449 entities.
 - *... and 434 more*
 
 ## Related Categories
-- [Angular Ui](../angular-ui/overview.md)
-- [Auth Security](../auth-security/overview.md)
-- [Shell Cli](../shell-cli/overview.md)
+- [[wiki/frontend-frameworks/categories/angular-ui/overview|Angular Ui]]
+- [[wiki/security-auth/categories/auth-security/overview|Auth Security]]
+- [[wiki/tooling/categories/shell-cli/overview|Shell Cli]]

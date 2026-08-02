@@ -30,11 +30,11 @@ Referenced in session 019f6cad
 
 Referenced in 3 session(s):
 
-- [android, api, ast, auth +1 (1774 turns)](../sessions/session-019f6624.md)
+- [android, api, ast, auth +1 (1774 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f6624.md)
 
-- [android, api, ast, auth +1 (478 turns)](../sessions/session-019f6cad.md)
+- [android, api, ast, auth +1 (478 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f6cad.md)
 
-- [android, api, ast, auth +1 (343 turns)](../sessions/session-7102fc04.md)
+- [android, api, ast, auth +1 (343 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-7102fc04.md)
 
 
 ## Context

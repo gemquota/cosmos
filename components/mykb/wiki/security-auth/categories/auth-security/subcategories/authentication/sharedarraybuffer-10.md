@@ -30,25 +30,25 @@ Referenced in session 80c50c17
 
 Referenced in 10 session(s):
 
-- [android, angular, api, ast +1 (628 turns)](../sessions/session-019ebe76.md)
+- [android, angular, api, ast +1 (628 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebe76.md)
 
-- [ast, auth, aws, bash +1 (40 turns)](../sessions/session-019ebe8b.md)
+- [ast, auth, aws, bash +1 (40 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebe8b.md)
 
-- [angular, api, ast, auth +1 (345 turns)](../sessions/session-019ec418.md)
+- [angular, api, ast, auth +1 (345 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec418.md)
 
-- [android, angular, api, ast +1 (414 turns)](../sessions/session-019ed74e.md)
+- [android, angular, api, ast +1 (414 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ed74e.md)
 
-- [ast, auth, aws, bash +1 (7 turns)](../sessions/session-019ee4e0.md)
+- [ast, auth, aws, bash +1 (7 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee4e0.md)
 
-- [api, ast, auth, aws +1 (311 turns)](../sessions/session-019ee698.md)
+- [api, ast, auth, aws +1 (311 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee698.md)
 
-- [android, api, ast, auth +1 (373 turns)](../sessions/session-019f023f.md)
+- [android, api, ast, auth +1 (373 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f023f.md)
 
-- [android, api, ast, auth +1 (478 turns)](../sessions/session-019f6cad.md)
+- [android, api, ast, auth +1 (478 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f6cad.md)
 
-- [angular, api, ast, auth +1 (154 turns)](../sessions/session-80c50c17.md)
+- [angular, api, ast, auth +1 (154 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-80c50c17.md)
 
-- [android, angular, api, ast +1 (134 turns)](../sessions/session-cff9c90f.md)
+- [android, angular, api, ast +1 (134 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-cff9c90f.md)
 
 
 ## Context

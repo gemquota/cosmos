@@ -30,25 +30,25 @@ Acronym referenced in session 019f417e
 
 Referenced in 10 session(s):
 
-- [android, api, ast, auth +1 (447 turns)](../sessions/session-019ebdb5.md)
+- [android, api, ast, auth +1 (447 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdb5.md)
 
-- [angular, api, ast, auth +1 (930 turns)](../sessions/session-019ebe43.md)
+- [angular, api, ast, auth +1 (930 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebe43.md)
 
-- [api, ast, auth, aws +1 (311 turns)](../sessions/session-019ee698.md)
+- [api, ast, auth, aws +1 (311 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee698.md)
 
-- [android, angular, api, ast +1 (333 turns)](../sessions/session-019ee7ae.md)
+- [android, angular, api, ast +1 (333 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee7ae.md)
 
-- [ast, bash, bootstrap, bun +1 (19 turns)](../sessions/session-019ee7e1.md)
+- [ast, bash, bootstrap, bun +1 (19 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee7e1.md)
 
-- [api, ast, auth, authentication +1 (243 turns)](../sessions/session-019ef7a0.md)
+- [api, ast, auth, authentication +1 (243 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef7a0.md)
 
-- [android, api, ast, auth +1 (42 turns)](../sessions/session-019f0223.md)
+- [android, api, ast, auth +1 (42 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f0223.md)
 
-- [android, api, ast, aws +1 (384 turns)](../sessions/session-019f0689.md)
+- [android, api, ast, aws +1 (384 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f0689.md)
 
-- [android, angular, api, ast +1 (348 turns)](../sessions/session-019f16d7.md)
+- [android, angular, api, ast +1 (348 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f16d7.md)
 
-- [api, ast, aws, bash +1 (582 turns)](../sessions/session-019f417e.md)
+- [api, ast, aws, bash +1 (582 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f417e.md)
 
 
 ## Context

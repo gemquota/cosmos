@@ -30,17 +30,17 @@ Referenced in session 019f1a6b
 
 Referenced in 6 session(s):
 
-- [android, angular, api, ast +1 (228 turns)](../sessions/session-019f1884.md)
+- [android, angular, api, ast +1 (228 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1884.md)
 
-- [api, bash, bootstrap, cli +1 (4 turns)](../sessions/session-019f1a6b.md)
+- [api, bash, bootstrap, cli +1 (4 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1a6b.md)
 
-- [android, api, ast, auth +1 (222 turns)](../sessions/session-019f429c.md)
+- [android, api, ast, auth +1 (222 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f429c.md)
 
-- [api, ast, backend, bash +1 (20 turns)](../sessions/session-019f503e.md)
+- [api, ast, backend, bash +1 (20 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f503e.md)
 
-- [android, angular, api, ast +1 (566 turns)](../sessions/session-019f7602.md)
+- [android, angular, api, ast +1 (566 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f7602.md)
 
-- [android, api, ast, auth +1 (146 turns)](../sessions/session-7c71c63e.md)
+- [android, api, ast, auth +1 (146 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-7c71c63e.md)
 
 
 ## Context

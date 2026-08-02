@@ -31,11 +31,11 @@ Acronym referenced in session 055286d6
 
 Referenced in 3 session(s):
 
-- [android, api, ast, auth +1 (120 turns)](../sessions/session-055286d6.md)
+- [android, api, ast, auth +1 (120 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-055286d6.md)
 
-- [android, api, ast, aws +1 (71 turns)](../sessions/session-5b1a5f15.md)
+- [android, api, ast, aws +1 (71 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-5b1a5f15.md)
 
-- [api, ast, auth, authentication +1 (53 turns)](../sessions/session-6c24b886.md)
+- [api, ast, auth, authentication +1 (53 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-6c24b886.md)
 
 
 > 1. **user**: why did it notice the ltc balancd above 30 and not exchange it or send it

@@ -31,23 +31,23 @@ Acronym referenced in session 019eee5d
 
 Referenced in 9 session(s):
 
-- [api, ast, bash, bug +1 (20 turns)](../sessions/session-019ec3a4.md)
+- [api, ast, bash, bug +1 (20 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec3a4.md)
 
-- [android, api, ast, auth +1 (161 turns)](../sessions/session-019eee5d.md)
+- [android, api, ast, auth +1 (161 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019eee5d.md)
 
-- [android, api, ast, auth +1 (212 turns)](../sessions/session-019f785d.md)
+- [android, api, ast, auth +1 (212 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f785d.md)
 
-- [android, api, ast, auth +1 (25 turns)](../sessions/session-5e38e7ec.md)
+- [android, api, ast, auth +1 (25 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-5e38e7ec.md)
 
-- [android, api, ast, auth +1 (86 turns)](../sessions/session-65db591e.md)
+- [android, api, ast, auth +1 (86 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-65db591e.md)
 
-- [android, api, ast, auth +1 (88 turns)](../sessions/session-7a06f562.md)
+- [android, api, ast, auth +1 (88 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-7a06f562.md)
 
-- [android, api, ast, auth +1 (152 turns)](../sessions/session-941085b2.md)
+- [android, api, ast, auth +1 (152 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-941085b2.md)
 
-- [android, api, ast, auth +1 (155 turns)](../sessions/session-c8c575c8.md)
+- [android, api, ast, auth +1 (155 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-c8c575c8.md)
 
-- [api, ast, auth, authentication +1 (35 turns)](../sessions/session-f110fe6e.md)
+- [api, ast, auth, authentication +1 (35 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-f110fe6e.md)
 
 
 > 15. **run_shell_command**: {"command":"ls -R ~/.zero/identities 2>/dev/null || echo \"No identities found\"

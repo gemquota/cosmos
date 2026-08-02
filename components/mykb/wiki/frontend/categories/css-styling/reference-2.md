@@ -30,9 +30,9 @@ Referenced in session 019f1a6c
 
 Referenced in 2 session(s):
 
-- [api, ast, auth, bash +1 (5 turns)](../sessions/session-019f1a6c.md)
+- [api, ast, auth, bash +1 (5 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1a6c.md)
 
-- [ajax, android, api, ast +1 (113 turns)](../sessions/session-019f1a6d.md)
+- [ajax, android, api, ast +1 (113 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1a6d.md)
 
 
 ## Context

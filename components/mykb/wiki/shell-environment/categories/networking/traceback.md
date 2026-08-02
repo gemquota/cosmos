@@ -19,7 +19,7 @@ Referenced in session 019f0040
 
 Referenced in 1 session(s):
 
-- [ast, bash, http, python +1 (9 turns)](../sessions/session-019f0040.md)
+- [ast, bash, http, python +1 (9 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f0040.md)
 
 
 ## Overview

@@ -31,21 +31,21 @@ Acronym referenced in session 019ef2c6
 
 Referenced in 8 session(s):
 
-- [api, ast, aws, bash +1 (133 turns)](../sessions/session-019ebdeb.md)
+- [api, ast, aws, bash +1 (133 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdeb.md)
 
-- [android, angular, ast, aws +1 (407 turns)](../sessions/session-019ef2c6.md)
+- [android, angular, ast, aws +1 (407 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef2c6.md)
 
-- [api, ast, auth, authentication +1 (243 turns)](../sessions/session-019ef7a0.md)
+- [api, ast, auth, authentication +1 (243 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef7a0.md)
 
-- [api, ast, backend, bash +1 (185 turns)](../sessions/session-019f007a.md)
+- [api, ast, backend, bash +1 (185 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f007a.md)
 
-- [ast, auth, cli, css +1 (11 turns)](../sessions/session-019f1447.md)
+- [ast, auth, cli, css +1 (11 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1447.md)
 
-- [android, api, ast, aws +1 (49 turns)](../sessions/session-019f4100.md)
+- [android, api, ast, aws +1 (49 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4100.md)
 
-- [api, ast, auth, aws +1 (587 turns)](../sessions/session-019f4b9a.md)
+- [api, ast, auth, aws +1 (587 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4b9a.md)
 
-- [ajax, api, ast, auth +1 (918 turns)](../sessions/session-89e039d9.md)
+- [ajax, api, ast, auth +1 (918 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-89e039d9.md)
 
 
 > - documentation

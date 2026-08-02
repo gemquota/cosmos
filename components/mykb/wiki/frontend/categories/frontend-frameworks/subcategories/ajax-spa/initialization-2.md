@@ -30,11 +30,11 @@ Referenced in session 905a295f
 
 Referenced in 3 session(s):
 
-- [edge, ide, spa (3 turns)](../sessions/session-905a295f.md)
+- [edge, ide, spa (3 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-905a295f.md)
 
-- [edge, ide, logging, orm (3 turns)](../sessions/session-dcc50722.md)
+- [edge, ide, logging, orm (3 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-dcc50722.md)
 
-- [ajax, api, ast, auth +1 (18 turns)](../sessions/session-fdc4b34f.md)
+- [ajax, api, ast, auth +1 (18 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-fdc4b34f.md)
 
 
 ## Context

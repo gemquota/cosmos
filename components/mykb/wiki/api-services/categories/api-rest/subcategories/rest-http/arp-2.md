@@ -21,8 +21,8 @@ Acronym referenced in session 019f422b
 - **Overview:** [Api Rest](../../overview.md)
 ## References
 Referenced in 2 session(s):
-- [api, ast, aws, bash +1 (462 turns)](../sessions/session-019ebc82.md)
-- [api, ast, bash, bug +1 (235 turns)](../sessions/session-019f422b.md)
+- [api, ast, aws, bash +1 (462 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebc82.md)
+- [api, ast, bash, bug +1 (235 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f422b.md)
 ## Context
 > 55. **user**: b. Unresponsive. c. Unresponsive.
 56. **exec_command**: {"cmd": "grep -n \"freeze\\|FREEZE\\|frozen\\|arp\\|ARP\\|arpeggiator\\|touchsta

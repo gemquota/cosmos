@@ -26,9 +26,9 @@ Referenced in session 905a295f
 
 Referenced in 2 session(s):
 
-- [ast, auth, aws, bash +1 (40 turns)](../sessions/session-019ebe8b.md)
+- [ast, auth, aws, bash +1 (40 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebe8b.md)
 
-- [edge, ide, spa (3 turns)](../sessions/session-905a295f.md)
+- [edge, ide, spa (3 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-905a295f.md)
 
 
 ## Overview

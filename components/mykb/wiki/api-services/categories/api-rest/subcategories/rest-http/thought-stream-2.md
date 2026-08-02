@@ -21,9 +21,9 @@ Referenced in session f323f1aa
 - **Overview:** [Api Clients](../../overview.md)
 ## References
 Referenced in 3 session(s):
-- [android, api, ast, auth +1 (56 turns)](../sessions/session-00b8d8ce.md)
-- [android, api, ast, auth +1 (8 turns)](../sessions/session-11005c06.md)
-- [android, api, ast, auth +1 (9 turns)](../sessions/session-f323f1aa.md)
+- [android, api, ast, auth +1 (56 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-00b8d8ce.md)
+- [android, api, ast, auth +1 (8 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-11005c06.md)
+- [android, api, ast, auth +1 (9 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-f323f1aa.md)
 ## Context
 > 2. **update_topic**: {"strategic_intent":"Decrypting the CIPHER-ALPHA payload and logging the interna
 3. **run_shell_command**: {"command":"cat >> private.md <<EOF\n\n--- Thought Stream: $(date) ---\n

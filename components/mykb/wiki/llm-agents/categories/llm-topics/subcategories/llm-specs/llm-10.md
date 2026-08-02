@@ -25,31 +25,31 @@ Acronym referenced in session d3507371
 - **Domain:** Mobile Platform
 - **Breadcrumb:** Mobile Platform › Android Core › Api Clients › Rest Api
 - **Category size:** 449 entities
-- **Overview:** [Api Clients](../../overview.md)
+- **Overview:** [Api Clients](../../../../../../raw/archive/junk-entities-2026-08/llm-agents/categories/llm-topics/overview.md)
 
 ## References
 
 Referenced in 10 session(s):
 
-- [api, ast, auth, bash +1 (2 turns)](../sessions/session-019ed989.md)
+- [api, ast, auth, bash +1 (2 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ed989.md)
 
-- [api, ast, auth, authentication +1 (36 turns)](../sessions/session-019ef545.md)
+- [api, ast, auth, authentication +1 (36 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef545.md)
 
-- [api, bash, bootstrap, cli +1 (4 turns)](../sessions/session-019f1a6b.md)
+- [api, bash, bootstrap, cli +1 (4 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1a6b.md)
 
-- [api, ast, auth, bash +1 (5 turns)](../sessions/session-019f1a6c.md)
+- [api, ast, auth, bash +1 (5 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1a6c.md)
 
-- [android, api, ast, bash +1 (4 turns)](../sessions/session-019f4d32.md)
+- [android, api, ast, bash +1 (4 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4d32.md)
 
-- [api, ast, backend, bash +1 (20 turns)](../sessions/session-019f503e.md)
+- [api, ast, backend, bash +1 (20 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f503e.md)
 
-- [angular, api, ast, auth +1 (180 turns)](../sessions/session-019f68d5.md)
+- [angular, api, ast, auth +1 (180 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f68d5.md)
 
-- [android, api, ast, auth +1 (89 turns)](../sessions/session-6cc3ed28.md)
+- [android, api, ast, auth +1 (89 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-6cc3ed28.md)
 
-- [android, api, ast, backend +1 (39 turns)](../sessions/session-8d06b609.md)
+- [android, api, ast, backend +1 (39 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8d06b609.md)
 
-- [android, api, ast, backend +1 (11 turns)](../sessions/session-d3507371.md)
+- [android, api, ast, backend +1 (11 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-d3507371.md)
 
 
 > 2. **update_topic**: {"title":"Researching Eagle 3.1","summary":"The user is inquiring about the util

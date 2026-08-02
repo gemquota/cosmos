@@ -26,6 +26,6 @@ Category within **Android Core** — 23 entities.
 - *... and 8 more*
 
 ## Related Categories
-- [Angular Ui](../angular-ui/overview.md)
-- [Api Clients](../api-clients/overview.md)
-- [Auth Security](../auth-security/overview.md)
+- [[wiki/frontend-frameworks/categories/angular-ui/overview|Angular Ui]]
+- [[wiki/api-services/categories/api-clients/overview|Api Clients]]
+- [[wiki/security-auth/categories/auth-security/overview|Auth Security]]

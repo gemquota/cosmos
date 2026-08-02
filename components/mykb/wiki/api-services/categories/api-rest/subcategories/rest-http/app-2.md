@@ -31,11 +31,11 @@ Acronym referenced in session 019efdfc
 
 Referenced in 3 session(s):
 
-- [android, api, ast, auth +1 (196 turns)](../sessions/session-019ef278.md)
+- [android, api, ast, auth +1 (196 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef278.md)
 
-- [api, ast, aws, bash +1 (260 turns)](../sessions/session-019efdfc.md)
+- [api, ast, aws, bash +1 (260 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019efdfc.md)
 
-- [ast, bash, bug, frontend +1 (8 turns)](../sessions/session-019f2364.md)
+- [ast, bash, bug, frontend +1 (8 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f2364.md)
 
 
 > - **Turns**: 196

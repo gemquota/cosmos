@@ -27,25 +27,25 @@ Referenced in session ad7c240a
 
 Referenced in 10 session(s):
 
-- [api, auth, authentication, cli +1 (7 turns)](../sessions/session-2f985ebe.md)
+- [api, auth, authentication, cli +1 (7 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-2f985ebe.md)
 
-- [api, auth, authentication, cli +1 (7 turns)](../sessions/session-327c5f11.md)
+- [api, auth, authentication, cli +1 (7 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-327c5f11.md)
 
-- [api, auth, authentication, cli +1 (7 turns)](../sessions/session-3f8e6924.md)
+- [api, auth, authentication, cli +1 (7 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-3f8e6924.md)
 
-- [api, auth, authentication, cli +1 (6 turns)](../sessions/session-80b7472a.md)
+- [api, auth, authentication, cli +1 (6 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-80b7472a.md)
 
-- [api, auth, authentication, cli +1 (7 turns)](../sessions/session-a4a1fa99.md)
+- [api, auth, authentication, cli +1 (7 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-a4a1fa99.md)
 
-- [api, auth, authentication, cli +1 (6 turns)](../sessions/session-ad7c240a.md)
+- [api, auth, authentication, cli +1 (6 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-ad7c240a.md)
 
-- [api, ast, auth, authentication +1 (18 turns)](../sessions/session-bf4782f0.md)
+- [api, ast, auth, authentication +1 (18 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-bf4782f0.md)
 
-- [api, auth, authentication, bug +1 (10 turns)](../sessions/session-c9ae07d5.md)
+- [api, auth, authentication, bug +1 (10 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-c9ae07d5.md)
 
-- [api, auth, authentication, cli +1 (10 turns)](../sessions/session-cddfd27f.md)
+- [api, auth, authentication, cli +1 (10 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-cddfd27f.md)
 
-- [api, auth, authentication, cli +1 (6 turns)](../sessions/session-e6e53c53.md)
+- [api, auth, authentication, cli +1 (6 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-e6e53c53.md)
 
 
 ## Overview

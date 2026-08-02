@@ -31,13 +31,13 @@ Acronym referenced in session 019ecf88
 
 Referenced in 4 session(s):
 
-- [android, api, ast, auth +1 (1271 turns)](../sessions/session-019ec24a.md)
+- [android, api, ast, auth +1 (1271 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec24a.md)
 
-- [ajax, android, api, ast +1 (2829 turns)](../sessions/session-019ecf88.md)
+- [ajax, android, api, ast +1 (2829 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ecf88.md)
 
-- [android, angular, api, ast +1 (558 turns)](../sessions/session-019f141a.md)
+- [android, angular, api, ast +1 (558 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f141a.md)
 
-- [android, api, ast, auth +1 (1774 turns)](../sessions/session-019f6624.md)
+- [android, api, ast, auth +1 (1774 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f6624.md)
 
 
 > 897. **exec_command**: {"cmd": "cd /data/data/com.termux/files/home/dev/codex/ww && python3 << 'PYEOF'\

@@ -24,7 +24,7 @@ The **Data Storage** domain (1 concepts) covers database and caching technologie
 
 ### Caching
 
-- [CACHE](../../wiki/entities/cache.md)
+- [CACHE](entities/cache.md)
 
 ## Concepts
 

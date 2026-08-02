@@ -31,15 +31,15 @@ Acronym referenced in session 019f03b1
 
 Referenced in 5 session(s):
 
-- [android, api, ast, bash +1 (83 turns)](../sessions/session-019ee149.md)
+- [android, api, ast, bash +1 (83 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee149.md)
 
-- [android, api, ast, auth +1 (60 turns)](../sessions/session-019f03b1.md)
+- [android, api, ast, auth +1 (60 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f03b1.md)
 
-- [android, api, ast, auth +1 (23 turns)](../sessions/session-203f0209.md)
+- [android, api, ast, auth +1 (23 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-203f0209.md)
 
-- [android, api, ast, auth +1 (31 turns)](../sessions/session-2166b7a2.md)
+- [android, api, ast, auth +1 (31 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-2166b7a2.md)
 
-- [api, ast, bash, bug +1 (86 turns)](../sessions/session-b64e57b1.md)
+- [api, ast, bash, bug +1 (86 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-b64e57b1.md)
 
 
 > 40. **exec_command**: {"cmd": "curl -s https://pypi.org 2>&1 | head -3; echo \"---\"; curl -s https://

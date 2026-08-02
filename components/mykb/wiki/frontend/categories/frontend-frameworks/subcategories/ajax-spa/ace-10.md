@@ -31,25 +31,25 @@ Acronym referenced in session c88fb179
 
 Referenced in 10 session(s):
 
-- [android, api, ast, auth +1 (875 turns)](../sessions/session-019ed4b6.md)
+- [android, api, ast, auth +1 (875 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ed4b6.md)
 
-- [ast, bash, bootstrap, bun +1 (19 turns)](../sessions/session-019ee7e1.md)
+- [ast, bash, bootstrap, bun +1 (19 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee7e1.md)
 
-- [android, angular, api, ast +1 (558 turns)](../sessions/session-019f141a.md)
+- [android, angular, api, ast +1 (558 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f141a.md)
 
-- [ajax, alpine, android, angular +1 (514 turns)](../sessions/session-019f75ed.md)
+- [ajax, alpine, android, angular +1 (514 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f75ed.md)
 
-- [android, angular, api, ast +1 (638 turns)](../sessions/session-0c0a9b0f.md)
+- [android, angular, api, ast +1 (638 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-0c0a9b0f.md)
 
-- [api, ast, bash, cdn +1 (24 turns)](../sessions/session-3e426ef1.md)
+- [api, ast, bash, cdn +1 (24 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-3e426ef1.md)
 
-- [api, ast, auth, authentication +1 (448 turns)](../sessions/session-b006376d.md)
+- [api, ast, auth, authentication +1 (448 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-b006376d.md)
 
-- [ajax, android, api, ast +1 (88 turns)](../sessions/session-b554ca10.md)
+- [ajax, android, api, ast +1 (88 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-b554ca10.md)
 
-- [android, api, ast, auth +1 (187 turns)](../sessions/session-c88fb179.md)
+- [android, api, ast, auth +1 (187 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-c88fb179.md)
 
-- [ajax, android, api, ast +1 (100 turns)](../sessions/session-e2d72a2c.md)
+- [ajax, android, api, ast +1 (100 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-e2d72a2c.md)
 
 
 > - **Turns**: 638

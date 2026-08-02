@@ -21,13 +21,13 @@ Referenced in session 55599610
 - **Overview:** [Api Clients](../../overview.md)
 ## References
 Referenced in 7 session(s):
-- [api, ast, bash, bug +1 (20 turns)](../sessions/session-019ec3a4.md)
-- [api, ast, auth, bug +1 (13 turns)](../sessions/session-3a56106a.md)
-- [android, api, ast, auth +1 (51 turns)](../sessions/session-3ebbffaf.md)
-- [android, api, ast, auth +1 (252 turns)](../sessions/session-55599610.md)
-- [android, api, ast, auth +1 (89 turns)](../sessions/session-6cc3ed28.md)
-- [android, api, ast, auth +1 (23 turns)](../sessions/session-81c5e6d2.md)
-- [android, api, ast, backend +1 (39 turns)](../sessions/session-8d06b609.md)
+- [api, ast, bash, bug +1 (20 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec3a4.md)
+- [api, ast, auth, bug +1 (13 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-3a56106a.md)
+- [android, api, ast, auth +1 (51 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-3ebbffaf.md)
+- [android, api, ast, auth +1 (252 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-55599610.md)
+- [android, api, ast, auth +1 (89 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-6cc3ed28.md)
+- [android, api, ast, auth +1 (23 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-81c5e6d2.md)
+- [android, api, ast, backend +1 (39 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8d06b609.md)
 ## Context
 > 17. **replace**: {"old_string":"    async def _get_cloud_diagnosis(self, report: str) -> Optional
 18. **replace**: {"file_path":"2b/harness.py","instruction":"Update the BenchmarkJudge initializa

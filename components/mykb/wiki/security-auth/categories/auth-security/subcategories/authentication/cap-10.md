@@ -31,25 +31,25 @@ Acronym referenced in session 454634e7
 
 Referenced in 10 session(s):
 
-- [android, api, ast, auth +1 (87 turns)](../sessions/session-454634e7.md)
+- [android, api, ast, auth +1 (87 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-454634e7.md)
 
-- [android, api, ast, auth +1 (12 turns)](../sessions/session-45eef7f9.md)
+- [android, api, ast, auth +1 (12 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-45eef7f9.md)
 
-- [api, ast, auth, bash +1 (15 turns)](../sessions/session-5347b60b.md)
+- [api, ast, auth, bash +1 (15 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-5347b60b.md)
 
-- [android, api, ast, auth +1 (343 turns)](../sessions/session-7102fc04.md)
+- [android, api, ast, auth +1 (343 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-7102fc04.md)
 
-- [android, api, ast, auth +1 (146 turns)](../sessions/session-7c71c63e.md)
+- [android, api, ast, auth +1 (146 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-7c71c63e.md)
 
-- [orm (2 turns)](../sessions/session-8b7e54f6.md)
+- [orm (2 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8b7e54f6.md)
 
-- [api, ast, auth, authentication +1 (448 turns)](../sessions/session-b006376d.md)
+- [api, ast, auth, authentication +1 (448 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-b006376d.md)
 
-- [android, angular, api, ast +1 (134 turns)](../sessions/session-cff9c90f.md)
+- [android, angular, api, ast +1 (134 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-cff9c90f.md)
 
-- [api, ast, auth, aws +1 (59 turns)](../sessions/session-dd8c2400.md)
+- [api, ast, auth, aws +1 (59 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-dd8c2400.md)
 
-- [ast, cli, ide, queue +1 (2 turns)](../sessions/session-f857d918.md)
+- [ast, cli, ide, queue +1 (2 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-f857d918.md)
 
 
 > 11. **grep_search**: {"pattern":"Michael Douglas|Mr\\. Smith"}

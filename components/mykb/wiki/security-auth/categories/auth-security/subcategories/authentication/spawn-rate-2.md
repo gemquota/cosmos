@@ -30,13 +30,13 @@ Referenced in session 8430185b
 
 Referenced in 4 session(s):
 
-- [api, ast, auth, authentication +1 (632 turns)](../sessions/session-019ef31d.md)
+- [api, ast, auth, authentication +1 (632 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef31d.md)
 
-- [ast, aws, bash, bug +1 (33 turns)](../sessions/session-496e95af.md)
+- [ast, aws, bash, bug +1 (33 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-496e95af.md)
 
-- [android, angular, api, ast +1 (177 turns)](../sessions/session-7d1e3877.md)
+- [android, angular, api, ast +1 (177 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-7d1e3877.md)
 
-- [angular, api, ast, auth +1 (344 turns)](../sessions/session-8430185b.md)
+- [angular, api, ast, auth +1 (344 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8430185b.md)
 
 
 ## Context

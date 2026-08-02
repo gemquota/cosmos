@@ -30,15 +30,15 @@ Acronym referenced in session 019ee884
 
 Referenced in 5 session(s):
 
-- [ast, bash, bootstrap, bun +1 (19 turns)](../sessions/session-019ee7e1.md)
+- [ast, bash, bootstrap, bun +1 (19 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee7e1.md)
 
-- [ast, bash, cli, css +1 (31 turns)](../sessions/session-019ee884.md)
+- [ast, bash, cli, css +1 (31 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee884.md)
 
-- [angular, api, ast, auth +1 (180 turns)](../sessions/session-019f68d5.md)
+- [angular, api, ast, auth +1 (180 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f68d5.md)
 
-- [android, api, ast, backend +1 (79 turns)](../sessions/session-89dbddbd.md)
+- [android, api, ast, backend +1 (79 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-89dbddbd.md)
 
-- [ast, auth, aws, bug +1 (70 turns)](../sessions/session-d035a75d.md)
+- [ast, auth, aws, bug +1 (70 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-d035a75d.md)
 
 
 ## Context

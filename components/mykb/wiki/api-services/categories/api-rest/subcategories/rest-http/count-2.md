@@ -30,19 +30,19 @@ Acronym referenced in session 37ab37aa
 
 Referenced in 7 session(s):
 
-- [android, auth, bash, bug +1 (31 turns)](../sessions/session-05473df8.md)
+- [android, auth, bash, bug +1 (31 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-05473df8.md)
 
-- [android, angular, api, ast +1 (96 turns)](../sessions/session-09993b9d.md)
+- [android, angular, api, ast +1 (96 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-09993b9d.md)
 
-- [android, api, ast, auth +1 (182 turns)](../sessions/session-14b4b79d.md)
+- [android, api, ast, auth +1 (182 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-14b4b79d.md)
 
-- [android, angular, api, ast +1 (123 turns)](../sessions/session-37ab37aa.md)
+- [android, angular, api, ast +1 (123 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-37ab37aa.md)
 
-- [android, ast, auth, aws +1 (30 turns)](../sessions/session-38797263.md)
+- [android, ast, auth, aws +1 (30 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-38797263.md)
 
-- [android, api, ast, auth +1 (39 turns)](../sessions/session-425ef39b.md)
+- [android, api, ast, auth +1 (39 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-425ef39b.md)
 
-- [android, api, ast, auth +1 (343 turns)](../sessions/session-7102fc04.md)
+- [android, api, ast, auth +1 (343 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-7102fc04.md)
 
 
 ## Context

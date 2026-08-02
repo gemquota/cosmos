@@ -14,7 +14,7 @@ timestamp: "2026-07-19T10:08:17.112Z"
 **Action**: chose
 **Target**: TypeORM because it has the best TypeScript support
 
-From session [019f75ed](session-019f75ed).
+From session .
 
 **Domain:** Decisions
 

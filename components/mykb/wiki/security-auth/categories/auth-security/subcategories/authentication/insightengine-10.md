@@ -21,16 +21,16 @@ Referenced in session 80c50c17
 - **Overview:** [Auth Security](../../overview.md)
 ## References
 Referenced in 10 session(s):
-- [api, ast, auth, aws +1 (311 turns)](../sessions/session-019ee698.md)
-- [android, angular, api, ast +1 (201 turns)](../sessions/session-0a2e7660.md)
-- [android, api, ast, auth +1 (182 turns)](../sessions/session-14b4b79d.md)
-- [android, ast, auth, aws +1 (30 turns)](../sessions/session-38797263.md)
-- [api, ast, aws, bug +1 (272 turns)](../sessions/session-412ac095.md)
-- [android, angular, api, ast +1 (898 turns)](../sessions/session-4b35bd59.md)
-- [angular, api, ast, auth +1 (154 turns)](../sessions/session-80c50c17.md)
-- [android, angular, api, ast +1 (543 turns)](../sessions/session-8f62822c.md)
-- [android, angular, api, ast +1 (134 turns)](../sessions/session-cff9c90f.md)
-- [ast, auth, aws, bug +1 (70 turns)](../sessions/session-d035a75d.md)
+- [api, ast, auth, aws +1 (311 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee698.md)
+- [android, angular, api, ast +1 (201 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-0a2e7660.md)
+- [android, api, ast, auth +1 (182 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-14b4b79d.md)
+- [android, ast, auth, aws +1 (30 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-38797263.md)
+- [api, ast, aws, bug +1 (272 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-412ac095.md)
+- [android, angular, api, ast +1 (898 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-4b35bd59.md)
+- [angular, api, ast, auth +1 (154 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-80c50c17.md)
+- [android, angular, api, ast +1 (543 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8f62822c.md)
+- [android, angular, api, ast +1 (134 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-cff9c90f.md)
+- [ast, auth, aws, bug +1 (70 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-d035a75d.md)
 ## Context
 > 54. **list_directory**: {"dir_path":"tickets/vepa-b7-02"}
 55. **read_file**: {"file_path":"src/insightEngine.js"}

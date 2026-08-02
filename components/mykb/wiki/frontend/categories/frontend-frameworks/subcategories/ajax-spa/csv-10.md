@@ -31,25 +31,25 @@ Acronym referenced in session 203f0209
 
 Referenced in 10 session(s):
 
-- [android, api, ast, auth +1 (161 turns)](../sessions/session-019eee5d.md)
+- [android, api, ast, auth +1 (161 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019eee5d.md)
 
-- [android, api, ast, auth +1 (196 turns)](../sessions/session-019ef278.md)
+- [android, api, ast, auth +1 (196 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef278.md)
 
-- [android, api, ast, auth +1 (219 turns)](../sessions/session-019f32b3.md)
+- [android, api, ast, auth +1 (219 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f32b3.md)
 
-- [android, api, ast, auth +1 (212 turns)](../sessions/session-019f785d.md)
+- [android, api, ast, auth +1 (212 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f785d.md)
 
-- [android, angular, api, ast +1 (638 turns)](../sessions/session-0c0a9b0f.md)
+- [android, angular, api, ast +1 (638 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-0c0a9b0f.md)
 
-- [android, api, ast, auth +1 (23 turns)](../sessions/session-203f0209.md)
+- [android, api, ast, auth +1 (23 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-203f0209.md)
 
-- [api, ast, bash, cdn +1 (24 turns)](../sessions/session-3e426ef1.md)
+- [api, ast, bash, cdn +1 (24 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-3e426ef1.md)
 
-- [ajax, android, api, ast +1 (337 turns)](../sessions/session-64a381a3.md)
+- [ajax, android, api, ast +1 (337 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-64a381a3.md)
 
-- [ajax, android, api, ast +1 (88 turns)](../sessions/session-b554ca10.md)
+- [ajax, android, api, ast +1 (88 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-b554ca10.md)
 
-- [api, auth, authentication, bash +1 (26 turns)](../sessions/session-dd75982d.md)
+- [api, auth, authentication, bash +1 (26 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-dd75982d.md)
 
 
 > 5. **exec_command**: {"cmd": "ls -la /data/data/com.termux/files/home/dev/golf/"}

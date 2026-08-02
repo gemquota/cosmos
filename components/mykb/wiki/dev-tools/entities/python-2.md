@@ -24,15 +24,15 @@ Referenced in session 05473df8
 - **Domain:** Mobile Platform
 - **Breadcrumb:** Mobile Platform › Android Core › Api Clients › Rest Api
 - **Category size:** 449 entities
-- **Overview:** [Api Clients](../../overview.md)
+- **Overview:** [[wiki/api-services/categories/api-clients/overview|Api Clients]]
 
 ## References
 
 Referenced in 2 session(s):
 
-- [android, api, ast, auth +1 (116 turns)](../sessions/session-019eeacf.md)
+- [android, api, ast, auth +1 (116 turns)](../../../raw/archive/session-artifacts-2026-07/sessions/session-019eeacf.md)
 
-- [android, auth, bash, bug +1 (31 turns)](../sessions/session-05473df8.md)
+- [android, auth, bash, bug +1 (31 turns)](../../../raw/archive/session-artifacts-2026-07/sessions/session-05473df8.md)
 
 
 ## Context
