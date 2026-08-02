@@ -1,6 +1,5 @@
 [
  "AGENTS.md",
- "COMPREHENSIVE_AUDIT.md",
  "Home.md",
  "README.md",
  "daily/README.md",
@@ -27,6 +26,7 @@
  "ops/wiki-schema.md",
  "ops/workflows.md",
  "raw/README.md",
+ "raw/archive/audits-2026-07/COMPREHENSIVE_AUDIT.md",
  "raw/archive/junk-entities-2026-08/agent-systems/categories/agents/overview.md",
  "raw/archive/junk-entities-2026-08/agent-systems/categories/agents/subcategories/agent-core/overview.md",
  "raw/archive/junk-entities-2026-08/ai-ml/categories/core-concepts/overview.md",
