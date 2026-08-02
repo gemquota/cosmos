@@ -188,3 +188,10 @@ title: "Bundle Log"
 - **QA**: headless Chromium — 20 canvases, zero JS errors; fallback
   (tiles/tables) renders without Chart.js
 - **Deployed**: full-tree mirror to `gh-pages`
+
+## 2026-08-02 (stats hub v2.1 — overview card)
+- **9th overview card added**: `full articles (300+)` with sub-line
+  `400+ → 8 · 500+ → 5`, computed dynamically from thresholds data —
+  top grid reflows (auto-fit), no layout change needed
+- **Regenerated**: `build_stats.py` → `stats.html`; JS syntax check + headless
+  render QA green (9 cards, 20 canvases)
