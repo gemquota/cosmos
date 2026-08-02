@@ -159,12 +159,12 @@ for nid in LOOP_IDS:
     label = next(n[1] for n in NODES if n[0] == nid)
     txt = label + (" · tunes L%s" % sub[1:] if sub else "")
     ring_meta.append({"id": nid, "r": round(r, 1), "a": a,
-                      "lx": CX + (r + 16) * math.cos(a), "ly": CY - (r + 16) * math.sin(a),
+                      "lx": CX + (r + 20) * math.cos(a), "ly": CY - (r + 20) * math.sin(a),
                       "label": txt, "sub": "tunes L%s" % sub[1:] if sub else None,
                       "w": 6.2 * len(txt) / 2 + 8})
 
 # ── force pass: ring labels only; every disc is fixed ──
-lab = [[m["id"], m["lx"], m["ly"], m["w"], 17.0, m["lx"], m["ly"]] for m in ring_meta]
+lab = [[m["id"], m["lx"], m["ly"], m["w"], 19.0, m["lx"], m["ly"]] for m in ring_meta]
 discs = [(x, y, r) for _, x, y, r in fixed_discs] +         [(x, y, max(n[5], n[6]) * 1.5 + 2) for nid, (x, y) in loop_pos.items() for n in [next(n for n in NODES if n[0] == nid)]]
 
 def lab_nd(a, b):
@@ -358,14 +358,19 @@ function draw() {
     const g = el('g', {'data-id':m.id});
     g.classList.add('ring');
     g.dataset.op = a;
-    g.appendChild(el('circle', {cx:m.node[0], cy:m.node[1], r:m.r, fill:'none',
-      stroke:'#818cf8', 'stroke-width':1.3, opacity:0.10 + 0.16 * a,
-      'stroke-dasharray': (parseInt(m.id[1]) % 2) ? '' : '3,4'}));
-    const tl = el('text', {x:m.lx, y:m.ly, 'text-anchor':'middle', fill:'#a5b4fc',
-      'font-size':11, 'font-weight':700, 'font-family':'ui-monospace,Menlo,monospace', opacity:0.9});
+    // soft glow + faint zone fill so the loop stack reads as nested bullseye zones
+    g.appendChild(el('circle', {cx:m.node[0], cy:m.node[1], r:r, fill:'none',
+      stroke:'#6366f1', 'stroke-width':12, opacity:0.06 * a}));
+    g.appendChild(el('circle', {cx:m.node[0], cy:m.node[1], r:r, fill:'#818cf8',
+      opacity:0.02 * a}));
+    g.appendChild(el('circle', {cx:m.node[0], cy:m.node[1], r:r, fill:'none',
+      stroke:'#a5b4fc', 'stroke-width':3.2, opacity:0.30 + 0.30 * a,
+      'stroke-dasharray': (parseInt(m.id[1]) % 2) ? '' : '4,5'}));
+    const tl = el('text', {x:m.lx, y:m.ly, 'text-anchor':'middle', fill:'#c7d2fe',
+      'font-size':13, 'font-weight':800, 'font-family':'ui-monospace,Menlo,monospace', opacity:0.95});
     tl.classList.add('rlabel');
     g.appendChild(tl);
-    const tspan = el('tspan', {x:m.lx, dy:13, fill:'#818cf8', 'font-size':9.5, 'font-weight':400}, m.label);
+    const tspan = el('tspan', {x:m.lx, dy:15, fill:'#a5b4fc', 'font-size':10.5, 'font-weight':500}, m.label);
     tl.appendChild(tspan);
     SVG.appendChild(g);
   }
@@ -412,12 +417,16 @@ function draw() {
     const g = el('g', {'data-id':n.id, transform:'translate('+p.x+','+p.y+')'});
     g.classList.add('node');
     g.dataset.op = p.a;
-    const halo = el('circle', {r:p.r+9, fill:col, opacity:.1});
-    const disc = el('circle', {r:p.r, fill:col, opacity:.22, stroke:col, 'stroke-width':2});
+    const isLoop = /^l[1-9]$/.test(n.id);
+    const halo = el('circle', {r:p.r + (isLoop ? 16 : 9), fill:col, opacity:isLoop ? 0.22 : .1});
+    const disc = el('circle', {r:p.r, fill:col, opacity:isLoop ? 0.6 : .22,
+      stroke:isLoop ? '#c7d2fe' : col, 'stroke-width':isLoop ? 3.4 : 2});
     const fs = n.label.length > 10 ? 12 : 14;
-    const txt = el('text', {'text-anchor':'middle', dy:3, fill:'#e2e8f0', 'font-size':fs,
-      'font-weight':700, 'font-family':'system-ui,sans-serif'}, n.label);
+    const txt = el('text', {'text-anchor':'middle', dy:3, fill:isLoop ? '#ffffff' : '#e2e8f0', 'font-size':fs,
+      'font-weight':isLoop ? 800 : 700, 'font-family':'system-ui,sans-serif'}, n.label);
     g.appendChild(halo); g.appendChild(disc); g.appendChild(txt);
+    if (isLoop) g.appendChild(el('circle', {r:p.r + 8, fill:'none', stroke:'#a5b4fc',
+      'stroke-width':1.8, opacity:0.95, 'stroke-dasharray':'3,3'}));
     SVG.appendChild(g);
   }
   highlight(pinned);
