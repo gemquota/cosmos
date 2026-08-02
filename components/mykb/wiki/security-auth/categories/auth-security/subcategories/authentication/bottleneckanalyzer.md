@@ -13,7 +13,7 @@ resource: ""
 
 BottleneckAnalyzer appears in 1 session(s) categorized as API, Mobile, Security. Related topics: android, api, auth, authorization.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Bottleneckanalyzer
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Bottleneckanalyzer
 
 ## Overview
 

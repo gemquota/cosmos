@@ -9,7 +9,7 @@ status: "growing"
 ---
 ## Gdzlbzebp 2
 GdZLBZEBP appears in 2 session(s) categorized as API, Frontend, Shell. Related topics: api, bash, cli, css.
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/tooling/index|Tooling]] › [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
 ## Overview
 GdZLBZEBP is a session-derived identifier: an opaque string recorded in agent sessions and preserved as a wiki page so future sessions can resolve it. The page appears in two sessions categorized as API, Frontend, and Shell, with related topics api, bash, cli, and css. Opaque identifiers like this arise from generated names, hashes, or internal tooling, and the wiki's job is to keep them findable rather than to guess their meaning.
 ## Opaque Identifiers
@@ -20,6 +20,6 @@ When an opaque identifier appears again, the page anchors the search: related en
 General treatment is the correct default for identifiers without documented meaning: record the context, preserve the spelling, and reuse existing wikilinks. The related entities list under the Shell Cli branch gives readers the neighboring tooling pages. Future sessions can promote the entry when the identifier's meaning becomes clear.
 A practical habit is to annotate opaque identifiers when their meaning becomes known, so the page gradually moves from a bare cross-reference to a documented concept. Until then, preserving the exact string, the session references, and the category tags is the entire value of the entry. The related entities list gives future readers the neighboring tooling context.
 ## Related Entities
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/busuj|Busuj]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/dims-2|Dims 2]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]
+- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
+- [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

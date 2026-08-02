@@ -21,15 +21,15 @@ In the sessions where this entity appeared, the sprite was most likely part of a
 
 
 The technique also generalizes beyond sprites: any flat element that must face a viewer, such as labels, icons, or minimap markers, can reuse the same orientation math. Performance gains come from replacing many small meshes with a few textured quads, and modern engines handle the sorting and batching automatically. Understanding billboards is a small but useful part of any rendering pipeline, and the concept shows up across game and visualization code alike.
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/security-auth/index|Security Auth]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security]] › Billboardsprite
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Billboardsprite
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/sim-speed|Sim Speed]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/missing-content|Missing Content]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/searchtext|Searchtext]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/sim-speed|Sim Speed]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/missing-content|Missing Content]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/searchtext|Searchtext]]

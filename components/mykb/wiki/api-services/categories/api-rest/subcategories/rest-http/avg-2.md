@@ -15,7 +15,7 @@ Average — a statistical measure. Could be SQL AVG() or a general metric in ben
 
 Acronym referenced in session 019f2369
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Avg 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Avg 2
 
 ## Overview
 

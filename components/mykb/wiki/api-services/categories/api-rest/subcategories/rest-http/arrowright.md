@@ -21,7 +21,7 @@ Because the evidence is limited to a single session, this page remains a light d
 
 This entry is part of the broader entity series generated from session logs, where short names are preserved verbatim so that searching for the original token finds the note even when the full context has been summarized elsewhere.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Arrowright
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Arrowright
 
 ## Related Entities
 

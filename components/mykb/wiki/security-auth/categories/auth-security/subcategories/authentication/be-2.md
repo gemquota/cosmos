@@ -14,11 +14,11 @@ Babel — a JavaScript transpiler that converts ES6+ code into backwards-compati
 
 **Related topics:** api, auth, authentication
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/security-auth/index|Security Auth]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security]] › Be 2
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Be 2
 
 ## Overview
 
-Babel is a JavaScript toolchain that transforms modern syntax into backwards-compatible output, letting developers target current language features while shipping code that older runtimes can parse. It parses source into an AST, runs plugins and presets, and regenerates JavaScript. In this knowledge base, the two-letter title BE is a shorthand for Babel, the same entity as [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]].
+Babel is a JavaScript toolchain that transforms modern syntax into backwards-compatible output, letting developers target current language features while shipping code that older runtimes can parse. It parses source into an AST, runs plugins and presets, and regenerates JavaScript. In this knowledge base, the two-letter title BE is a shorthand for Babel, the same entity as [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]].
 
 ## Details
 
@@ -36,11 +36,11 @@ In API and authentication code, the transformed bundle ships the client logic �
 Keep the Babel config small and explicit: one preset, a pinned target list, and only the plugins the codebase actually uses. Upgrade plugin versions deliberately and re-run the full client test suite, because a config change can silently alter output for every page. Add a smoke test that exercises the transformed bundle in the oldest supported runtime so regressions surface in CI rather than in user browsers.
 
 
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/sim-speed|Sim Speed]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/missing-content|Missing Content]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/searchtext|Searchtext]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/sim-speed|Sim Speed]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/missing-content|Missing Content]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/searchtext|Searchtext]]

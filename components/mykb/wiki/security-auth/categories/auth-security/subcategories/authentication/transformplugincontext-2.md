@@ -13,7 +13,7 @@ Context — the information provided to an LLM alongside a query. Sessions show 
 
 **Related topics:** android, angular, api, auth, authentication, cli, cloud
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Transformplugincontext 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Transformplugincontext 2
 
 ## Related Entities
 

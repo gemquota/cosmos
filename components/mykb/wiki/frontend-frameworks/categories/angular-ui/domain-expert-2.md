@@ -16,13 +16,13 @@ The Document Object Model represents a web document as a tree of nodes — eleme
 
 Direct DOM work remains important for performance-critical paths and for code outside a framework's reach. Batching reads and writes avoids layout thrashing, event delegation reduces the number of listeners, and DocumentFragment or detachment minimizes reflows. Frameworks add a virtual-DOM or change-detection layer that reconciles declarative state with the real tree, trading a little overhead for predictable updates.
 
-Security is inseparable from DOM manipulation: inserting user-controlled strings via innerHTML can enable XSS, so escaping, textContent, and sanitizers are standard defenses. The domain-expert framing suggests a role that owns these patterns — someone who knows when to manipulate the DOM directly and when to delegate to the framework. In the Angular UI cluster, pages such as [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/javascript-10|Javascript 10]] document adjacent language patterns.
+Security is inseparable from DOM manipulation: inserting user-controlled strings via innerHTML can enable XSS, so escaping, textContent, and sanitizers are standard defenses. The domain-expert framing suggests a role that owns these patterns — someone who knows when to manipulate the DOM directly and when to delegate to the framework. In the Angular UI cluster, pages such as [[wiki/frontend-frameworks/categories/angular-ui/javascript-10|Javascript 10]] document adjacent language patterns.
 
 Future sessions should record the specific manipulation patterns used, the performance measurements taken, and any security fixes applied. Recording those patterns in wiki notes is what turns a role's tacit knowledge into shared documentation.
 
 **Related topics:** android, angular, api, auth, bash, ci/cd, documentation, dom
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
 
 ## Related Entities
 

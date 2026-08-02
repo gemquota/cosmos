@@ -3,22 +3,30 @@ type: "concept"
 title: "Dynamic Application Security Testing"
 description: "Testing running applications for vulnerabilities through their external interfaces"
 tags: ["dast", "dynamic-analysis", "pentest", "devsecops"]
-timestamp: "2026-08-01T00:00:00Z"
-status: "stub"
-source: ["https://owasp.org/www-project-web-security-testing-guide/"]
+timestamp: "2026-08-02T00:00:00Z"
+status: "growing"
+source: ["https://owasp.org/www-community/Vulnerability_Scanning_Tools", "https://en.wikipedia.org/wiki/Dynamic_application_security_testing"]
 ---
 
 # Dynamic Application Security Testing
 
-- DAST probes a running application — HTTP endpoints, APIs, UIs — the way an attacker would, finding runtime flaws SAST misses.
-- OWASP's Web Security Testing Guide is the methodology reference for what to test and how.
-- DAST is slower and needs deployed environments, so it fits staging/release gates rather than per-commit.
-- For mykb: DAST against the API gateway exercises authn, injection, and access-control paths end to end.
+## Summary
+
+
+## Details
+- Dynamic application security testing (DAST) probes a running application the way an attacker would, sending malicious payloads and observing responses.
+- It tests the deployed system end-to-end, including configuration and framework behavior, catching issues static analysis cannot see.
+- DAST needs a running environment and careful scoping so scans do not corrupt data or trigger destructive endpoints.
+- Scan results require triage: automated scanners report many findings that need a human to judge real exploitability.
+- **Worked example / comparison** — Comparison — SAST flags the unsafe query in source at commit time; DAST confirms whether the deployed app actually reflects the injection in its responses.
+- For mykb, DAST is documented as the runtime half of the appsec testing pair, complementing SAST in the same cluster.
 
 ## Related
-
-- [[wiki/api-services/sast|Static Application Security Testing]] — the static complement
-- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]] — a flaw DAST surfaces
-- [[wiki/security-auth/security-headers|Security Headers]] — DAST validates header posture
-- [[wiki/api-protocols/openapi|OpenAPI]] — API surface DAST targets
-- [[wiki/security-auth/audit-logging|Audit Logging]] — DAST verifies security events are logged
+- [[wiki/api-services/sast|Static Application Security Testing]]
+- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]]
+- [[wiki/security-auth/security-headers|Security Headers]]
+- [[wiki/api-protocols/openapi|OpenAPI]]
+- [[wiki/security-auth/audit-logging|Audit Logging]]
+- [[wiki/concepts/promotion-readiness|Promotion Readiness]]
+- [[wiki/ai-ml/article-health-scores|Article Health Scores]]
+- [[wiki/concepts/decision-guides|Decision Guides]]

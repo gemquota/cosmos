@@ -13,7 +13,7 @@ Testing — software validation to ensure correctness. Sessions show unit tests 
 
 **Related topics:** android, api, auth, authentication, aws, bash
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Testing Endpoint 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Testing Endpoint 2
 
 ## Related Entities
 

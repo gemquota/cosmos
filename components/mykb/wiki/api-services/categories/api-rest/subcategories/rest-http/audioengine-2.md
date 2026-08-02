@@ -14,7 +14,7 @@ ACE ecosystem component — handles audio processing and sound generation for ag
 
 **Related topics:** android, api, auth, aws, bash, bootstrap, bug
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Audioengine 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Audioengine 2
 
 ## Overview
 

@@ -14,7 +14,7 @@ Error — exception and error conditions in software. Sessions show error handli
 
 **Related topics:** android, api, bash, bug, cli
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Shell Cli
 
 ## Overview
 

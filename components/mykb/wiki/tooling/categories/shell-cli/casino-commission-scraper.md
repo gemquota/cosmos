@@ -9,7 +9,7 @@ status: "growing"
 ---
 ## Casino Commission Scraper
 Casino Commission Scraper appears in 1 session(s) categorized as API, Shell. Related topics: api, bash, cdn, cli.
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/tooling/index|Tooling]] › [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
 ## Overview
 A commission scraper is a script or tool that periodically fetches commission, payout, or balance data from an external service and records it for review. In this case the data source is a casino affiliate or gaming platform, and the scrape runs from the command line, likely on a schedule. The session tags — API, Bash, CDN, CLI — describe the pipeline: HTTP requests against the service's endpoints (sometimes behind a CDN), parsing with shell or scripting tools, and CLI-driven operation.
 ## Scraping Approach
@@ -19,6 +19,6 @@ Scheduled scrapers must handle flaky networks, rate limits, and service-side cha
 ## Session Context
 One session recorded the scraper under API and Shell, so this page anchors the data-collection tool in the tooling cluster. Related entities below are the shell-cli pages captured in the same session set.
 ## Related Entities
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/busuj|Busuj]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/dims-2|Dims 2]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]
+- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
+- [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

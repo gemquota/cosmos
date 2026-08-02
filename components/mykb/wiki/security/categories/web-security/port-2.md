@@ -44,4 +44,4 @@ Referenced in 2 session(s):
 
 ## Related
 
-- [[wiki/security-auth/supercategories/security/categories/web-security/workspace-initialization-2|Workspace Initialization 2]]
+- [[wiki/security/categories/web-security/workspace-initialization-2|Workspace Initialization 2]]

@@ -13,7 +13,7 @@ resource: ""
 
 AARRR appears in 1 session(s) categorized as API, Mobile, Security. Related topics: acronym, android, api, auth.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Aarrr
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Aarrr
 
 ## Overview
 

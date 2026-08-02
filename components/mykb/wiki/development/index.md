@@ -1,9 +1,11 @@
+---
+type: "index"
+title: "Development Index"
+description: "Listing of the development/ folder (0 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
 # Development
 
-Part of [[wiki/dev-tools/index|Development Tools]]. 51 entities.
-
-## Categories
-
-- [[wiki/dev-tools/supercategories/development/categories/cli-tools/index|Cli Tools]] — 13 files
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/index|Data Tools]] — 2 files
-- [[wiki/dev-tools/supercategories/development/categories/web-tools/index|Web Tools]] — 5 files
+Part of [[wiki/index|Wiki Index]]. 0 pages.

@@ -13,7 +13,7 @@ Canvas — an HTML5 element for drawing 2D graphics via JavaScript. Used in the 
 
 **Related topics:** android, angular, api, aws
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Mockcanvas
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Mockcanvas
 
 ## Related Entities
 

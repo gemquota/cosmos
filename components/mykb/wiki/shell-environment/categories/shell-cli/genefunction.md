@@ -19,13 +19,13 @@ In genetic algorithms and evolutionary simulations, individuals are described by
 
 Implementation details matter: gene values may be continuous or discrete, gene expression may interact across loci, and the mapping from genotype to phenotype is often where realism or abstraction lives. Because simulations must be reproducible, gene functions are usually pure: the same genome and environment yield the same phenotype, and randomness is confined to explicitly seeded mutation and drift.
 
-In agent sessions, gene functions appear when building simulation engines that pair with [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/cellstate|Cellstate]] and [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/moleculecatalog|Moleculecatalog]], with APIs and shell tooling driving experiments from the command line. The entry is part of the [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli]] domain.
+In agent sessions, gene functions appear when building simulation engines that pair with [[wiki/shell-environment/categories/shell-cli/cellstate|Cellstate]] and [[wiki/shell-environment/categories/shell-cli/moleculecatalog|Moleculecatalog]], with APIs and shell tooling driving experiments from the command line. The entry is part of the [[wiki/web-platforms/index|Shell Cli]] domain.
 
 The entry sits alongside the other simulation primitives in the wiki, and its durable lesson is that the genotype-to-phenotype mapping, not the selection rule, usually determines what evolution can produce.
 
 The term is recorded as a primitive of the simulation domain, so that pages describing the engine can refer to it instead of redefining the concept.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
 
 ## Related Entities
 

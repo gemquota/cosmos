@@ -14,7 +14,7 @@ ADSR — Attack, Decay, Sustain, Release. An envelope model in sound synthesis.
 
 **Related topics:** android, api, auth, aws, bash, cli
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
 
 ## Overview
 

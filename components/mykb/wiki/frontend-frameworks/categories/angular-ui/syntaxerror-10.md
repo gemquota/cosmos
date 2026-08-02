@@ -14,7 +14,7 @@ Error — exception and error conditions in software. Sessions show error handli
 
 **Related topics:** android, angular, api, auth, authentication, aws, bash, bug
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
 
 ## Overview
 

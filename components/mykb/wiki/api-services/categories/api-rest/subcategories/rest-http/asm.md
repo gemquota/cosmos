@@ -14,7 +14,7 @@ WebAssembly — a binary instruction format enabling high-performance code execu
 
 **Related topics:** android, api, backend
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Asm
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Asm
 
 ## Overview
 

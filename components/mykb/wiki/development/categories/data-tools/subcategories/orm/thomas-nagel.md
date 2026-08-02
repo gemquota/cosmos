@@ -13,11 +13,11 @@ status: "growing"
 
 Thomas Nagel is referenced in 1 session(s). Related tags: ast, ide, orm, spa.
 
-**Domain:** Development Tools › [[wiki/dev-tools/supercategories/development/index|Development]] › [[wiki/dev-tools/supercategories/development/categories/data-tools/index|Data Tools]] › Thomas Nagel
+**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Thomas Nagel
 
 ## Overview
 
-Thomas Nagel is the philosopher whose 1974 essay, What Is It Like to Be a Bat?, framed the subjective character of experience as a central problem for physicalist accounts of mind. His argument is a touchstone in the consciousness cluster, alongside [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]] and [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]].
+Thomas Nagel is the philosopher whose 1974 essay, What Is It Like to Be a Bat?, framed the subjective character of experience as a central problem for physicalist accounts of mind. His argument is a touchstone in the consciousness cluster, alongside [[wiki/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]] and [[wiki/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]].
 
 ## The Bat Argument
 
@@ -35,11 +35,11 @@ Nagel's essay remains a required reference because it states the problem in the 
 
 ## Related Entities
 
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/easy-problems|Easy Problems]]
+- [[wiki/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]]
+- [[wiki/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]]
+- [[wiki/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]]
+- [[wiki/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
+- [[wiki/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
+- [[wiki/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
+- [[wiki/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
+- [[wiki/development/categories/data-tools/subcategories/orm/easy-problems|Easy Problems]]

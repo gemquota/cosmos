@@ -12,7 +12,7 @@ resource: ""
 
 Body Simulator appears in 1 session(s) categorized as Shell. Related topics: bash, bootstrap, bun, cli.
 
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
 
 ## Overview
 
@@ -30,15 +30,15 @@ The core of a body simulator is a numeric integrator. Given positions and veloci
 
 ## Context
 
-The entity is tagged bash, bootstrap, and bun, pointing to a shell-oriented implementation approach: scripts bootstrap the simulator, orchestrate runs, and bundle output, while the underlying engine may be a compiled binary or a runtime like Bun for fast startup. Its sibling entities — [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/density|Density]], [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/drip-rate|Drip Rate]], [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]], and [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]] — cover adjacent physics models with the same CLI conventions.
+The entity is tagged bash, bootstrap, and bun, pointing to a shell-oriented implementation approach: scripts bootstrap the simulator, orchestrate runs, and bundle output, while the underlying engine may be a compiled binary or a runtime like Bun for fast startup. Its sibling entities — [[wiki/shell-environment/categories/cli-tools/density|Density]], [[wiki/shell-environment/categories/cli-tools/drip-rate|Drip Rate]], [[wiki/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]], and [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]] — cover adjacent physics models with the same CLI conventions.
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/density|Density]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/kh|Kh]]
+- [[wiki/shell-environment/categories/cli-tools/density|Density]]
+- [[wiki/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
+- [[wiki/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
+- [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
+- [[wiki/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
+- [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
+- [[wiki/shell-environment/categories/cli-tools/kh|Kh]]

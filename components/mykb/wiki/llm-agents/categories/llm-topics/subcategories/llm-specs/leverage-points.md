@@ -14,7 +14,7 @@ RAG (Retrieval-Augmented Generation) — a pattern combining information retriev
 
 **Related topics:** api, auth, bash, bug
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/api-services/index|Api Services]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Rest]] › Leverage Points
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Leverage Points
 
 ## Overview
 
@@ -36,11 +36,11 @@ For API and auth layers, leverage points include request validation, idempotency
 Locate leverage points by mapping the pipeline and measuring each stage: retrieval latency, retrieval precision, prompt token usage, and failure rates. The stage with the widest gap between current and achievable performance is the one to improve first. Iterate in short cycles, re-measuring after each change, and let the evidence — not intuition about elegance — decide where the next intervention lands.
 
 
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/aborted|Aborted]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/aegis|Aegis]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/agent-active|Agent Active]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity-projection-2|Ambiguity Projection 2]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity-system|Ambiguity System]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity|Ambiguity]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ap|Ap]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/apex|Apex]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aborted|Aborted]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aegis|Aegis]]
+- [[wiki/agent-systems/categories/agents/subcategories/agent-core/agent-active|Agent Active]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-projection-2|Ambiguity Projection 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-system|Ambiguity System]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity|Ambiguity]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ap|Ap]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/apex|Apex]]

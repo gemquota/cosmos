@@ -10,7 +10,7 @@ resource: ""
 ## Simulationconfig 2
 Simulation — the computational modeling of real-world systems for analysis or prediction.
 **Related topics:** ajax, android, api, auth, bash, cli
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/tooling/index|Tooling]] › [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
 ## Overview
 SimulationConfig is a configuration object or file that fully determines how a simulation run executes. Separating configuration from code is what makes simulations reproducible and tunable: the same engine binary can model different worlds purely by loading different configs. A typical SimulationConfig bundles the model parameters, the numerical settings, the runtime environment, and the output specification into one structured document that a CLI or API can validate before a run starts.
 ## Typical Configuration Fields
@@ -24,6 +24,6 @@ Shell-based tools load SimulationConfig from a path (`--config simulation.toml`)
 ## Context
 The entity is tagged ajax, android, api, auth, bash, and cli, indicating the config object surfaced in sessions that combine frontend or mobile interfaces with backend simulation services — a web UI submits parameters, an API validates them, and a CLI job runs the model. Its sibling tooling entities (dims, intent-distribution-engine, and related shell-cli nodes) come from the same session batch.
 ## Related Entities
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/busuj|Busuj]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/dims-2|Dims 2]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]
+- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
+- [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

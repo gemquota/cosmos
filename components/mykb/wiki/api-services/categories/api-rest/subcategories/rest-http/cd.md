@@ -11,7 +11,7 @@ resource: ""
 
 Continuous Delivery/Deployment — practice of automatically deploying code changes to production.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Cd
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Cd
 
 ## Related Entities
 

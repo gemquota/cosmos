@@ -15,7 +15,7 @@ Gemini Context Engineer — a system/role for managing Gemini AI agent context a
 
 Acronym referenced in session 7a06f562
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Gce 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Gce 2
 
 ## Related Entities
 

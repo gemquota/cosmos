@@ -1,26 +1,33 @@
 ---
 type: "concept"
 title: "Context Engineering"
-description: "Deliberately designing what goes into a model's context — prompts, retrieval, memory, and structure — to maximize output quality"
-tags: ["context-engineering", "prompt-engineering", "retrieval", "agents"]
-timestamp: "2026-07-31T00:00:00Z"
-status: "stub"
+description: "The discipline of designing, assembling, and maintaining the context given to a model"
+tags: ["context", "prompting", "engineering", "llm"]
+timestamp: "2026-08-02T00:00:00Z"
+status: "growing"
+source: ["https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents", "https://platform.openai.com/docs/guides/prompt-engineering"]
 ---
 
 # Context Engineering
 
 ## Summary
-Context engineering treats the context window as a designed system rather than a passive buffer: choosing, ordering, and formatting information for the task at hand. It unifies prompting, retrieval, memory, and compression under one discipline.
+Context engineering treats the model context as a designed artifact: what information is included, in what order, at what granularity. It matters because context determines output quality more than any other prompt lever. Good context engineering reduces hallucination, cost, and latency simultaneously.
 
 ## Details
-- Ordering matters: instructions and key evidence placed early or late can dominate behaviour; recency effects are real.
-- Includes retrieval strategy (what to fetch), memory policy (what to persist), and formatting (what structure helps).
-- Concretely: system prompt, few-shot exemplars, retrieved passages, tool results, and conversation history are all context-design decisions.
-- RSIS3 relevance: the L1 loop's context assembly — pulse context, wiki retrieval, tool results — is context engineering in action.
+- **Design dimensions** — content selection, ordering, formatting, repetition, and freshness.
+- **Layers** — system prompt, task instructions, retrieved evidence, conversation history, and tool results.
+- **Worked example** — for a support bot: system rules, then condensed history, then top-3 retrieved articles, then the user question, each section delimited and labeled.
+- **Measurement** — ablation tests vary one context dimension at a time against golden-test-sets.
+- **mykb relevance** — mykb retrieval is context engineering: the right knowledge in the right order beats a bigger model.
+- **Worked example** — for a support bot: system rules, condensed history, top-3 retrieved articles, then the user question, each section delimited and labeled.
+- **Measurement** — ablation tests vary one context dimension at a time against golden-test-sets to find what actually moves quality.
 
 ## Related
-- [[wiki/prompt-engineering/retrieval-prompting|Retrieval Prompting]] — The retrieval side of context design
-- [[wiki/prompt-engineering/context-windows|Context Windows]] — The resource being engineered
-- [[wiki/prompt-engineering/prompt-compression|Prompt Compression]] — The compression side of context design
-- [[wiki/prompt-engineering/token-budgets|Token Budgets]] — The allocation framework
-- [[wiki/prompt-engineering/in-context-learning|In-Context Learning]] — Why context content drives behaviour
+- [[wiki/prompt-engineering/context-window-management|Context Window Management]] — budgeting
+- [[wiki/prompt-engineering/agentic-context-crafting|Agentic Context Crafting]] — agent variant
+- [[wiki/prompt-engineering/retrieval-prompting|Retrieval Prompting]] — retrieval into context
+- [[wiki/ai-ml/grounded-generation|Grounded Generation]] — grounded output
+- [[wiki/prompt-engineering/system-prompt-design|System Prompt Design]] — system layer
+- [[wiki/prompt-engineering/context-injection|Context Injection]] — related concept in this cluster
+- [[wiki/memory/knowledge-curation|Knowledge Curation]] — the curation pipeline
+- [[wiki/prompt-engineering/token-budgets|Token Budgets]] — context budgeting

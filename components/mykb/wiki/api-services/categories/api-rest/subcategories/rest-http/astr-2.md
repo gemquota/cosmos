@@ -13,7 +13,7 @@ resource: ""
 
 ASTR appears in 4 session(s) categorized as API, Frontend, Mobile, Security. Related topics: acronym, android, angular, api, auth.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Astr 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Astr 2
 
 ## Overview
 

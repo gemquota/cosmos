@@ -13,11 +13,11 @@ RAG (Retrieval-Augmented Generation) — a pattern combining information retriev
 
 **Related topics:** aws, bash, bug, cli
 
-**Domain:** DevOps & Infrastructure › [[wiki/devops-infra/supercategories/infrastructure/index|Infrastructure]] › [[wiki/devops-infra/supercategories/infrastructure/categories/scripts/index|Scripts]]
+**Domain:** DevOps & Infrastructure › [[wiki/web-platforms/index|Infrastructure]] › [[wiki/web-platforms/index|Scripts]]
 
 ## Related Entities
 
-- [[wiki/devops-infra/supercategories/infrastructure/categories/scripts/bond-law|Bond Law]]
-- [[wiki/devops-infra/supercategories/infrastructure/categories/scripts/engineering-emergence|Engineering Emergence]]
-- [[wiki/devops-infra/supercategories/infrastructure/categories/scripts/field-manual|Field Manual]]
-- [[wiki/devops-infra/supercategories/infrastructure/categories/scripts/stable-bonding|Stable Bonding]]
+- [[wiki/infrastructure/categories/scripts/bond-law|Bond Law]]
+- [[wiki/infrastructure/categories/scripts/engineering-emergence|Engineering Emergence]]
+- [[wiki/infrastructure/categories/scripts/field-manual|Field Manual]]
+- [[wiki/infrastructure/categories/scripts/stable-bonding|Stable Bonding]]

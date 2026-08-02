@@ -13,7 +13,7 @@ Embedding — a vector representation of text for semantic similarity search. Se
 
 **Related topics:** android, api, auth, bash
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Mb 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Mb 2
 
 ## Related Entities
 

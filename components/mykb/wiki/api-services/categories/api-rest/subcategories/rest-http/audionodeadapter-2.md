@@ -22,7 +22,7 @@ Future sessions that see either token should confirm which meaning was active an
 
 **Related topics:** android, api, aws, bash, bootstrap
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Audionodeadapter 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Audionodeadapter 2
 
 ## Related Entities
 

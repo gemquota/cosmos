@@ -14,7 +14,7 @@ Cache — temporary storage of frequently accessed data for performance. Session
 
 **Related topics:** android, api, auth, authentication
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Ach 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Auth Security › Ach 2
 
 ## Overview
 

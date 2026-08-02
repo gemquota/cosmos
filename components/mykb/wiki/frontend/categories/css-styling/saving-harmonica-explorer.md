@@ -23,15 +23,15 @@ Such a project exercises the whole frontend stack: pointer handling for the slid
 Saving also raises the state questions every interactive app faces: what to persist, where to store it, and how to restore it on launch. Session history, recorded snippets, and user preferences each have different storage needs, from in-memory lists to local storage to backend sync. The explorer's saving feature turns it from a toy into a tool, because users can revisit and build on what they discovered.
 **Related topics:** api, bug, cli, css
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/css-styling/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/importerror-10|Importerror 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/css-10|Css 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/database-2|Database 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/display-2|Display 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/html-10|Html 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/reference-2|Reference 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/dob-2|Dob 2]]
+- [[wiki/frontend/categories/css-styling/importerror-10|Importerror 10]]
+- [[wiki/frontend/categories/css-styling/css-10|Css 10]]
+- [[wiki/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
+- [[wiki/frontend/categories/css-styling/database-2|Database 2]]
+- [[wiki/frontend/categories/css-styling/display-2|Display 2]]
+- [[wiki/frontend/categories/css-styling/html-10|Html 10]]
+- [[wiki/frontend/categories/css-styling/reference-2|Reference 2]]
+- [[wiki/frontend/categories/css-styling/dob-2|Dob 2]]

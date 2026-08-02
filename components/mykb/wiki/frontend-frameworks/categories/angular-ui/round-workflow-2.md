@@ -13,7 +13,7 @@ resource: ""
 
 Round Workflow appears in 2 session(s) categorized as API, Frontend, Mobile, Security, Shell. Related topics: android, angular, api, auth, bash, bootstrap, cli, dom.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Angular Ui
 
 ## Overview
 

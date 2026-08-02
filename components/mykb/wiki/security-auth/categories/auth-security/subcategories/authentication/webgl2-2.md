@@ -13,7 +13,7 @@ WebGL (Web Graphics Library) — a JavaScript API for rendering interactive 2D a
 
 **Related topics:** android, angular, api, auth, authentication, bash, bug, cli
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Webgl2 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Webgl2 2
 
 ## Related Entities
 

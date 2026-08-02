@@ -21,7 +21,7 @@ The computation itself is simple and stable, which is why the metric appears acr
 
 
 Average age is also useful for debugging because it is easy to compute from logs and timestamps, and it answers questions like how long requests have been in flight or how old the data in a view actually is. When paired with percentiles, it gives a compact picture of a system's freshness and latency. The Cloud, Debugging, and Shell tags on this page reflect exactly these monitoring uses.
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
 
 ## Related Entities
 

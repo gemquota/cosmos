@@ -15,7 +15,7 @@ Eagle 3.1 — a speculative decoding method for LLM inference acceleration. Rese
 
 Acronym referenced in session d3507371
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Eagle
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Eagle
 
 ## Related Entities
 

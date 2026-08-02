@@ -13,7 +13,7 @@ Testing — software validation to ensure correctness. Sessions show unit tests 
 
 **Related topics:** android, api, auth, bug
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Testing Preparation
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Testing Preparation
 
 ## Related Entities
 

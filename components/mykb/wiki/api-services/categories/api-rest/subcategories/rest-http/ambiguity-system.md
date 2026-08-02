@@ -13,7 +13,7 @@ status: "growing"
 
 Ambiguity System appears in 1 session(s) categorized as API, Cloud, DevOps, Shell. Related topics: api, bash, deployment, documentation.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/api-services/index|Api Services]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Rest]] › Ambiguity System
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Ambiguity System
 
 ## Overview
 
@@ -54,11 +54,11 @@ Consider a payments API with an optional `currency` field. Omitting it is ambigu
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/aborted|Aborted]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/aegis|Aegis]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/agent-active|Agent Active]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity-projection-2|Ambiguity Projection 2]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity|Ambiguity]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ap|Ap]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/apex|Apex]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/audioctx|Audioctx]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aborted|Aborted]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aegis|Aegis]]
+- [[wiki/agent-systems/categories/agents/subcategories/agent-core/agent-active|Agent Active]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-projection-2|Ambiguity Projection 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity|Ambiguity]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ap|Ap]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/apex|Apex]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/audioctx|Audioctx]]

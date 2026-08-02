@@ -21,7 +21,7 @@ For future sessions, the recommended practice is to capture the sentence in whic
 
 Recurrence across multiple sessions is itself a signal worth tracking: frequent tokens get promoted to richer notes as evidence accumulates, and this page will be updated accordingly. This makes the entry a living note, whose meaning is expected to converge as more sessions contribute context. Each new sighting should record its sentence.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Bold 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Bold 2
 
 ## Related Entities
 

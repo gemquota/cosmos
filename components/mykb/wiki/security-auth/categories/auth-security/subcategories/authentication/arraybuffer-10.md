@@ -21,7 +21,7 @@ Security considerations dominate binary handling. Length and bounds must be chec
 
 The page preserves the token and its session frequency, signaling that the primitive deserves detailed patterns as evidence accumulates. Centralizing binary parsing helpers in one module is the pattern that keeps this accumulated experience reusable. Bounds checks belong in that shared layer, not scattered per call site.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Arraybuffer 10
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Arraybuffer 10
 
 ## Related Entities
 

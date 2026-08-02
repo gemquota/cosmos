@@ -19,21 +19,21 @@ On Android, density groups such as mdpi, hdpi, xhdpi, and xxhdpi correspond to d
 
 Web interfaces face the same problem through the device pixel ratio: a CSS pixel is not the same as a physical pixel on high-density screens, and canvas or image rendering must multiply by the ratio to stay sharp. Responsive images choose different resolutions based on the display, and CSS media queries can vary layout by density as well as by viewport size.
 
-For print and scanning, DPI describes the fidelity of the output or capture, with 300 DPI a common standard for text and 150 DPI for photos. Misunderstanding DPI causes common bugs: oversized downloads, blurry icons, or scaled canvases. The concept connects to the [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/canvastexture|Canvastexture]] entry and the [[wiki/web-platforms/supercategories/mobile-platform/supercategories/android-core/index|Android Core]] domain in this knowledge base.
+For print and scanning, DPI describes the fidelity of the output or capture, with 300 DPI a common standard for text and 150 DPI for photos. Misunderstanding DPI causes common bugs: oversized downloads, blurry icons, or scaled canvases. The concept connects to the [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/canvastexture|Canvastexture]] entry and the [[wiki/web-platforms/index|Android Core]] domain in this knowledge base.
 
 Testing on a range of densities, from low-end to high-end devices, catches scaling bugs that are invisible on the developer's own monitor.
 
 Asset pipelines generate density variants from a single source image, and tools that automate this reduce the chance of shipping a single-resolution icon to a high-density device.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/index|Frontend Frameworks]] › Dpi
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Dpi
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]

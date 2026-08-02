@@ -56,9 +56,9 @@ Referenced in 3 session(s):
 
 ## Related
 
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
+- [[wiki/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]]
+- [[wiki/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]]
+- [[wiki/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
+- [[wiki/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
+- [[wiki/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
+- [[wiki/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]

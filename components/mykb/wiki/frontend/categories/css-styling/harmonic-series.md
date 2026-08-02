@@ -18,17 +18,17 @@ Almost every pitched instrument produces a fundamental together with a spectrum 
 
 In the touchscreen musical instrument project, the harmonic series informs sound generation and tuning. Sliding between notes implies continuous frequency control, and chromatic sequencing places notes one semitone apart while the harmonic content gives each generated tone its character. A player expects octaves and fifths to feel related, which is exactly the structure the series provides.
 
-Implementation on mobile uses the Web Audio API or native engines to create oscillators and shape their partials with filters and envelopes. Related project pages cover [[wiki/web-platforms/supercategories/frontend/categories/css-styling/gesture-harmonics|Gesture Harmonics]] and the [[wiki/web-platforms/supercategories/frontend/categories/css-styling/harmonica-harmonic-explorer|Harmonica Harmonic Explorer]], which carry the interaction details.
+Implementation on mobile uses the Web Audio API or native engines to create oscillators and shape their partials with filters and envelopes. Related project pages cover [[wiki/frontend/categories/css-styling/gesture-harmonics|Gesture Harmonics]] and the [[wiki/frontend/categories/css-styling/harmonica-harmonic-explorer|Harmonica Harmonic Explorer]], which carry the interaction details.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/css-styling/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/importerror-10|Importerror 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/css-10|Css 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/database-2|Database 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/display-2|Display 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/html-10|Html 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/reference-2|Reference 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/dob-2|Dob 2]]
+- [[wiki/frontend/categories/css-styling/importerror-10|Importerror 10]]
+- [[wiki/frontend/categories/css-styling/css-10|Css 10]]
+- [[wiki/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
+- [[wiki/frontend/categories/css-styling/database-2|Database 2]]
+- [[wiki/frontend/categories/css-styling/display-2|Display 2]]
+- [[wiki/frontend/categories/css-styling/html-10|Html 10]]
+- [[wiki/frontend/categories/css-styling/reference-2|Reference 2]]
+- [[wiki/frontend/categories/css-styling/dob-2|Dob 2]]

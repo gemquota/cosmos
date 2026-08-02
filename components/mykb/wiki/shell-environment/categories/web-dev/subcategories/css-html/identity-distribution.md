@@ -14,7 +14,7 @@ IDE (Integrated Development Environment) — a software application for software
 
 **Related topics:** bash, bug, cli, css, dom
 
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/index|Web Dev]] › Identity Distribution
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Identity Distribution
 
 ## Overview
 
@@ -35,11 +35,11 @@ The page anchors the IDE concept in the web-dev tree. When a session configures 
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/analysis-2|Analysis 2]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/budget|Budget]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/canvas|Canvas]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/chemical-playground|Chemical Playground]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/context-2|Context 2]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/defi|Defi]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/diffusion-simulator|Diffusion Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/engine-telemetry-core|Engine Telemetry Core]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/analysis-2|Analysis 2]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/budget|Budget]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/canvas|Canvas]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/chemical-playground|Chemical Playground]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/context-2|Context 2]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/defi|Defi]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/diffusion-simulator|Diffusion Simulator]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/engine-telemetry-core|Engine Telemetry Core]]

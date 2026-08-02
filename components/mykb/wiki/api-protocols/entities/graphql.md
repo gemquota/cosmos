@@ -14,7 +14,7 @@ status: "growing"
 GraphQL is a query language for APIs and a runtime for fulfilling those queries with existing data. Developed by Meta, provides a flexible alternative to REST.
 Referenced in session 019f1a6c
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Graphql
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Graphql
 
 ## Overview
 

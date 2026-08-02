@@ -14,7 +14,7 @@ resource: ""
 Claude is an AI assistant created by Anthropic. Known for helpfulness, harmlessness, and honesty. Used via the Anthropic API for text generation and analysis.
 Referenced in session 019f06a8
 
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/index|Dev Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Dev Tools]]
 
 ## Overview
 
@@ -35,11 +35,11 @@ The page anchors the assistant as a tool. Sessions that evaluate model output, t
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/bootstrap|Bootstrap]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/claude-code|Claude Code]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/core-standard-the|Core Standard The]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/evolver|Evolver]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/frontend-app-builder-use|Frontend App Builder Use]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/hard-rules|Hard Rules]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/image-gen|Image Gen]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/jul|Jul]]
+- [[wiki/shell-environment/categories/dev-tools/bootstrap|Bootstrap]]
+- [[wiki/shell-environment/categories/dev-tools/claude-code|Claude Code]]
+- [[wiki/shell-environment/categories/dev-tools/core-standard-the|Core Standard The]]
+- [[wiki/shell-environment/categories/dev-tools/evolver|Evolver]]
+- [[wiki/shell-environment/categories/dev-tools/frontend-app-builder-use|Frontend App Builder Use]]
+- [[wiki/shell-environment/categories/dev-tools/hard-rules|Hard Rules]]
+- [[wiki/shell-environment/categories/dev-tools/image-gen|Image Gen]]
+- [[wiki/shell-environment/categories/dev-tools/jul|Jul]]

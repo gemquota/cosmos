@@ -51,4 +51,4 @@ Referenced in 1 session(s):
 
 ## Related
 
-- [[wiki/devops-infra/supercategories/infrastructure/categories/aws/items|Items]]
+- [[wiki/infrastructure/categories/aws/items|Items]]

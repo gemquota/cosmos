@@ -13,7 +13,7 @@ status: "growing"
 
 Analysis appears in 3 session(s) categorized as API, Frontend, Language, Shell. Related topics: bash, html, http, ide, isr, orm, python, rest, spa.
 
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/index|Web Dev]] › Analysis 2
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Analysis 2
 
 ## Overview
 
@@ -25,7 +25,7 @@ Code analysis inspects programs statically or dynamically to find bugs, complexi
 
 ## Method
 
-Good analysis is iterative and evidence-based: form a hypothesis, gather measurements, test, and revise. Tools include profilers, loggers, debuggers, and scripts that slice datasets. The results are written down — in notes, dashboards, or this wiki — so the reasoning survives the session. Cross-referencing with related pages such as [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/context-2|Context 2]] keeps findings connected.
+Good analysis is iterative and evidence-based: form a hypothesis, gather measurements, test, and revise. Tools include profilers, loggers, debuggers, and scripts that slice datasets. The results are written down — in notes, dashboards, or this wiki — so the reasoning survives the session. Cross-referencing with related pages such as [[wiki/shell-environment/categories/web-dev/subcategories/css-html/context-2|Context 2]] keeps findings connected.
 
 ## In Practice
 
@@ -35,11 +35,11 @@ Documenting analysis results is part of the method: a conclusion without its evi
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/budget|Budget]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/canvas|Canvas]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/chemical-playground|Chemical Playground]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/context-2|Context 2]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/defi|Defi]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/diffusion-simulator|Diffusion Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/engine-telemetry-core|Engine Telemetry Core]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/fields|Fields]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/budget|Budget]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/canvas|Canvas]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/chemical-playground|Chemical Playground]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/context-2|Context 2]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/defi|Defi]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/diffusion-simulator|Diffusion Simulator]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/engine-telemetry-core|Engine Telemetry Core]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/fields|Fields]]

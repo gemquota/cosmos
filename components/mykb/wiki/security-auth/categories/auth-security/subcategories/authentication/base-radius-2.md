@@ -21,7 +21,7 @@ Recording both readings is deliberate: the sessions did not resolve the ambiguit
 
 
 The geometric and protocol readings also share a practical lesson: base values define the reference against which everything else is measured. In simulation and layout, changing the base radius rescales the whole system predictably; in authentication, RADIUS defines the central reference for who is allowed on the network. Recording the identifier with both readings preserves the session evidence and lets a future session pick the right one.
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Base Radius 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Base Radius 2
 
 ## Related Entities
 

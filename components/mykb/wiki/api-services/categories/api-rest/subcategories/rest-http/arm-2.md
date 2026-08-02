@@ -16,13 +16,13 @@ A harmonic is an integer multiple of a fundamental frequency, and the harmonic s
 
 In the touchscreen musical instrument project referenced by this entity, harmonics inform both sound generation and interaction design. Sliding between notes implies continuous pitch control, and mapping a slider or gesture to frequency — rather than to fixed semitone steps — requires the audio layer to handle fractional frequencies cleanly. Chromatic sequencing, mentioned by sibling pages, suggests a layout where adjacent notes are one semitone apart, while harmonic content determines the character of the generated tone.
 
-Implementation on mobile platforms typically uses the Web Audio API or native audio engines, generating oscillators and shaping their harmonic content with filters and gain envelopes. Latency must stay low so the gesture and the sound feel coupled. Pages about the [[wiki/web-platforms/supercategories/frontend/categories/css-styling/harmonica-harmonic-explorer|Harmonica Harmonic Explorer]], [[wiki/web-platforms/supercategories/frontend/categories/css-styling/gesture-harmonics|Gesture Harmonics]], and [[wiki/web-platforms/supercategories/frontend/categories/css-styling/fluid-interaction|Fluid Interaction]] document the same project family.
+Implementation on mobile platforms typically uses the Web Audio API or native audio engines, generating oscillators and shaping their harmonic content with filters and gain envelopes. Latency must stay low so the gesture and the sound feel coupled. Pages about the [[wiki/frontend/categories/css-styling/harmonica-harmonic-explorer|Harmonica Harmonic Explorer]], [[wiki/frontend/categories/css-styling/gesture-harmonics|Gesture Harmonics]], and [[wiki/frontend/categories/css-styling/fluid-interaction|Fluid Interaction]] document the same project family.
 
 Measuring perceived latency, tuning the attack and release of generated tones, and testing on low-end devices are the practical steps that turn the concept into a usable instrument.
 
 **Related topics:** android, api, auth, backend
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Arm 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Arm 2
 
 ## Related Entities
 

@@ -10,7 +10,7 @@ resource: ""
 ## Rest
 REST (Representational State Transfer) is an architectural style for designing networked applications. Uses HTTP methods (GET, POST, PUT, DELETE) for CRUD operations.
 Acronym referenced in session 019f1a6b
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/tooling/index|Tooling]] › [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
 ## Overview
 REST is an architectural style for networked applications that treats the system as a set of addressable resources manipulated over HTTP. Resources are identified by URLs, and the standard methods — GET, POST, PUT, PATCH, and DELETE — map onto read and write operations. The style emphasizes stateless requests, self-describing messages, and a uniform interface, which keeps clients simple and lets servers evolve representations independently.
 ## Details
@@ -22,6 +22,6 @@ REST is an architectural style for networked applications that treats the system
 - Contrast: REST differs from RPC-style and from single-endpoint query APIs like [[wiki/api-protocols/entities/graphql|GraphQL]]; choosing between them is a contract-design decision.
 In practice, REST APIs dominate public and internal service contracts, and shell automation is the fastest way to explore them: a few `curl` commands reveal headers, status codes, and payload shapes before any client code is written. Good REST design — consistent naming, correct status codes, and explicit error bodies — makes both browsers and scripts predictable consumers.
 ## Related Entities
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/busuj|Busuj]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/dims-2|Dims 2]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]
+- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
+- [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

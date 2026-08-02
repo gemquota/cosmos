@@ -18,19 +18,19 @@ Circular imports are usually resolved by restructuring: move the shared code int
 
 Robust error handling anticipates these failures: try/catch blocks around import-heavy code, clear error messages that name the missing module, and dependency manifests that pin versions so the environment is reproducible. Recovery strategies include degrading gracefully, showing a helpful setup message, or retrying after installing the dependency.
 
-Logging the traceback and the resolved sys.path makes debugging faster, and CI checks that catch import errors early prevent them from reaching users. The patterns recorded in this entry extend to the broader [[wiki/web-platforms/supercategories/frontend/categories/css-styling/index|Css Styling]] domain, where the same discipline of explicit error types, structured logging, and recovery applies to frontend and backend code alike.
+Logging the traceback and the resolved sys.path makes debugging faster, and CI checks that catch import errors early prevent them from reaching users. The patterns recorded in this entry extend to the broader [[wiki/web-platforms/index|Css Styling]] domain, where the same discipline of explicit error types, structured logging, and recovery applies to frontend and backend code alike.
 
 The entry appears alongside other error-type pages in the wiki, and its patterns generalize to any import or initialization failure in interpreted languages.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/css-styling/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/css-10|Css 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/database-2|Database 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/display-2|Display 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/html-10|Html 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/reference-2|Reference 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/dob-2|Dob 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/css-styling/telemetry-2|Telemetry 2]]
+- [[wiki/frontend/categories/css-styling/css-10|Css 10]]
+- [[wiki/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
+- [[wiki/frontend/categories/css-styling/database-2|Database 2]]
+- [[wiki/frontend/categories/css-styling/display-2|Display 2]]
+- [[wiki/frontend/categories/css-styling/html-10|Html 10]]
+- [[wiki/frontend/categories/css-styling/reference-2|Reference 2]]
+- [[wiki/frontend/categories/css-styling/dob-2|Dob 2]]
+- [[wiki/frontend/categories/css-styling/telemetry-2|Telemetry 2]]

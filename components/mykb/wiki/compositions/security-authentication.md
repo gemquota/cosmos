@@ -13,13 +13,13 @@ Security protocols, authentication flows, and authorization patterns. This compo
 ## Composition Map
 ### Authentication Flow
 Authentication flows: OAuth 2.0 authorization code flow, JWT token-based auth, SSO, and multi-factor authentication.
-**Related entities:** [[wiki/*/auth-system-analysis|Auth System Analysis]], Auth User, [[wiki/*/cognitive-dissonance|Cognitive Dissonance]], [[wiki/*/convexauthstate|ConvexAuthState]], Invalid Login, [[wiki/*/login|Login]], Login Failed, SSOT, [[wiki/*/stresssolver|StressSolver]]
+**Related entities:** [[wiki/api-services/categories/api-rest/subcategories/rest-http/auth-system-analysis|Auth System Analysis]], Auth User, [[wiki/security-auth/categories/auth-security/subcategories/authentication/cognitive-dissonance|Cognitive Dissonance]], [[wiki/api-services/categories/api-rest/subcategories/rest-http/convexauthstate|ConvexAuthState]], Invalid Login, [[wiki/security-auth/categories/auth-security/subcategories/authentication/login|Login]], Login Failed, SSOT, [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/stresssolver|StressSolver]]
 ### Authorization
 Authorization patterns: Role-Based Access Control (RBAC), Attribute-Based Access Control (ABAC), and policy engines.
-**Related entities:** [[wiki/*/acli|ACLI]], [[wiki/*/dynamic-obstacles|Dynamic Obstacles]], Permission,, [[wiki/*/policyengine|PolicyEngine]]
+**Related entities:** [[wiki/api-services/categories/api-rest/subcategories/rest-http/acli|ACLI]], [[wiki/security-auth/categories/auth-security/subcategories/authentication/dynamic-obstacles|Dynamic Obstacles]], Permission,, [[wiki/security-auth/categories/auth-security/subcategories/authentication/policyengine|PolicyEngine]]
 ### Data Protection
 Data protection: encryption at rest and in transit, hashing algorithms, and key management.
-**Related entities:** [[wiki/*/archival-hash|Archival Hash]], [[wiki/*/audit-hash|Audit Hash]], [[wiki/*/cipher|Cipher]], [[wiki/*/cipher-flow-graph-status|Cipher Flow Graph Status]], [[wiki/*/cipher-system-status|Cipher System Status]], OpenSSL
+**Related entities:** [[wiki/security-auth/categories/auth-security/subcategories/authentication/archival-hash|Archival Hash]], [[wiki/security/categories/authentication/audit-hash|Audit Hash]], [[wiki/api-services/categories/api-rest/subcategories/rest-http/cipher|Cipher]], [[wiki/api-services/categories/api-rest/subcategories/rest-http/cipher-flow-graph-status|Cipher Flow Graph Status]], [[wiki/api-services/categories/api-rest/subcategories/rest-http/cipher-system-status|Cipher System Status]], OpenSSL
 ### Web Security
 Web security patterns: CORS configuration, CSRF protection, XSS prevention, and Content Security Policy.
 **Related entities:**

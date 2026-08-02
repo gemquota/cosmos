@@ -13,7 +13,7 @@ status: "growing"
 
 Gravity Sim appears in 1 session(s) categorized as Shell. Related topics: bash, bootstrap, bun, cli.
 
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
 
 ## Overview
 
@@ -29,17 +29,17 @@ Simulators advance time in discrete steps. Euler integration is simple but drift
 
 ## CLI Context
 
-As a CLI tool, a gravity sim typically reads initial conditions (masses, positions, velocities) from arguments or a config file and writes state snapshots or an ASCII/CSV trace to stdout. Neighboring pages such as [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]] and [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]] share the same parameter-driven, terminal-friendly design.
+As a CLI tool, a gravity sim typically reads initial conditions (masses, positions, velocities) from arguments or a config file and writes state snapshots or an ASCII/CSV trace to stdout. Neighboring pages such as [[wiki/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]] and [[wiki/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]] share the same parameter-driven, terminal-friendly design.
 
 Simulation output is only as trustworthy as its validation: a classic check is that circular orbits remain stable for many periods and that energy stays roughly constant when the integrator is conservative. CLI tools support such checks by exposing parameters and repeatable seeds. The related cli-tools pages share this emphasis on parameter-driven, reproducible runs.
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/density|Density]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/kh|Kh]]
+- [[wiki/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/density|Density]]
+- [[wiki/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
+- [[wiki/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
+- [[wiki/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
+- [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
+- [[wiki/shell-environment/categories/cli-tools/kh|Kh]]

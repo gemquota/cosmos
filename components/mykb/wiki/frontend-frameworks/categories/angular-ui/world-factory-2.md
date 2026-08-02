@@ -13,7 +13,7 @@ resource: ""
 
 World Factory appears in 2 session(s) categorized as Cloud, Debugging, Frontend, Mobile, Shell. Related topics: android, angular, aws, bash, cli, css, dom.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Angular Ui
 
 ## Overview
 

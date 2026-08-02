@@ -1,7 +1,11 @@
+---
+type: "index"
+title: "Auth Security Index"
+description: "Listing of the android-core/categories/auth-security/ folder (0 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
 # Auth Security
 
-Part of [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › Auth Security. 294 entities.
-
-## Sub-Categories
-
-- [[wiki/mobile-platform/supercategories/android-core/categories/auth-security/subcategories/authentication/index|Authentication]] — 295 files
+Part of [[wiki/index|Wiki Index]]. 0 pages.

@@ -1,9 +1,14 @@
+---
+type: "index"
+title: "Ops Index"
+description: "Listing of the ops/ folder (1 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
 # Ops
 
-> Work-in-progress domain. Content will be populated from future session analysis.
+Part of [[wiki/index|Wiki Index]]. 1 pages.
 
-**0 entities** — awaiting extraction.
-
-## Concepts
-
-- [Gap Analysis Report](gap-report.md) — Gap Analysis Report
+## Pages
+- [[wiki/ops/gap-report|Gap Analysis Report]] — Auto-generated knowledge gap analysis

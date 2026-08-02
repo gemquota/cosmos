@@ -14,7 +14,7 @@ HTTP (HyperText Transfer Protocol) — the foundation protocol for data communic
 
 **Related topics:** android, api, auth, aws
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Basehttprequesthandler
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Basehttprequesthandler
 
 ## Overview
 

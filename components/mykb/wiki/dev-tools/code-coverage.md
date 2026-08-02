@@ -3,8 +3,9 @@ type: "concept"
 title: "Code Coverage"
 description: "The percentage of code exercised by tests, used as a signal for test sufficiency"
 tags: ["testing", "metrics", "quality", "coverage"]
-timestamp: "2026-08-01T00:00:00Z"
-status: "stub"
+timestamp: "2026-08-02T00:00:00Z"
+status: "growing"
+source: ["https://en.wikipedia.org/wiki/Code_coverage", "https://martinfowler.com/bliki/TestCoverage.html"]
 ---
 
 # Code Coverage
@@ -16,9 +17,18 @@ Code coverage measures which lines, branches, or paths tests execute. It is a us
 - Line vs branch coverage: branch coverage catches untested decision paths.
 - Use as a floor and a diff gate (new code must be covered), not a target to game.
 - RSIS3 relevance: wiki link validation covers the graph; missing links are uncovered edges.
+- Code coverage measures what fraction of code is executed by tests — line, branch, function, and statement coverage being the common metrics.
+- Coverage is a floor, not a quality metric: 100% coverage of weak assertions still proves little.
+- The useful practice is coverage-guided test design: find uncovered branches that correspond to real risk and add tests there.
+- Coverage trends matter more than absolute numbers; drops in coverage should fail CI only when policy says so.
+- **Worked example / comparison** — Worked example — the wiki's link-checker reaches 90% branch coverage; the uncovered branches are the timeout and parse-error paths, which then get targeted tests.
+- For mykb, code-coverage is documented as the test-adequacy signal in the dev-tools testing cluster.
 
 ## Related
-- [[wiki/testing/entities/test-patterns|Testing Patterns]] — coverage guides where tests are missing
-- [[wiki/dev-tools/mutation-testing|Mutation Testing]] — a stronger check that coverage games cannot fool
-- [[wiki/testing/eval-sets|Eval Sets]] — for LLM systems, evals are the coverage story
-- [[wiki/software-engineering/refactoring|Refactoring]] — the refactoring safety net coverage describes
+- [[wiki/testing/entities/test-patterns|Testing Patterns]]
+- [[wiki/dev-tools/mutation-testing|Mutation Testing]]
+- [[wiki/testing/eval-sets|Eval Sets]]
+- [[wiki/software-engineering/refactoring|Refactoring]]
+- [[wiki/concepts/promotion-readiness|Promotion Readiness]]
+- [[wiki/dev-tools/global-link-check|Global Link Check]]
+- [[wiki/concepts/decision-guides|Decision Guides]]

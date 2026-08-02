@@ -18,7 +18,7 @@ Concurrency is a defining feature. Goroutines are cheap, concurrent functions mu
 
 The toolchain is a model of simplicity: go build compiles, go test runs tests with built-in benchmarking, gofmt formats code deterministically, and go vet catches common mistakes. Modules with a go.mod file pin dependencies, and the module proxy makes builds reproducible.
 
-Go is a popular choice for CLI tools, API servers, network daemons, and infrastructure software, where its performance, small binaries, and easy concurrency matter. Its tooling fits naturally with the [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/index|Cli Tools]] and [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/index|Frontend Frameworks]] domains recorded in this knowledge base, where sessions note its use for performance-sensitive components.
+Go is a popular choice for CLI tools, API servers, network daemons, and infrastructure software, where its performance, small binaries, and easy concurrency matter. Its tooling fits naturally with the [[wiki/web-platforms/index|Cli Tools]] and [[wiki/web-platforms/index|Frontend Frameworks]] domains recorded in this knowledge base, where sessions note its use for performance-sensitive components.
 
 The wiki's sessions note Go specifically for components where startup time, memory use, or deployment simplicity outweighs the convenience of interpreted languages.
 
@@ -26,15 +26,15 @@ Go's error handling is explicit: functions return errors to be checked, and the 
 
 The language's package system and module cache also make builds fast, which matters when a CLI tool is rebuilt frequently during development.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/index|Frontend Frameworks]] › God
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › God
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]

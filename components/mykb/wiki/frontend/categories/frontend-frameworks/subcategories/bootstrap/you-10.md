@@ -70,9 +70,9 @@ Referenced in 10 session(s):
 
 ## Related
 
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/bootstrap/webglrenderer-2|Webglrenderer 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/bootstrap/circular-import-risk|Circular Import Risk]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/bootstrap/presetsystem-2|Presetsystem 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/bootstrap/probmap-2|Probmap 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/bootstrap/touchinput-2|Touchinput 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/bootstrap/decisiontype|Decisiontype]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/webglrenderer-2|Webglrenderer 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/circular-import-risk|Circular Import Risk]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/presetsystem-2|Presetsystem 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/probmap-2|Probmap 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/touchinput-2|Touchinput 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/decisiontype|Decisiontype]]

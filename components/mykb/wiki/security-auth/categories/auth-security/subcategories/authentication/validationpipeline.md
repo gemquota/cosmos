@@ -13,7 +13,7 @@ pip (Python Package Installer) — the standard package manager for Python. Sess
 
 **Related topics:** android, api, auth, authorization
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Validationpipeline
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Validationpipeline
 
 ## Related Entities
 

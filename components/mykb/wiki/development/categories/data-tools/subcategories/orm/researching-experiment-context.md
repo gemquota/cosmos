@@ -18,21 +18,21 @@ Retrieval-augmented generation brings relevant documents into context at query t
 
 Agent systems add tool outputs and observations to context and must decide what to keep across many steps. Experimentation and research phases test different context strategies: chunk sizes, prompt orders, retrieval counts, and summarization prompts are all measured for their effect on answer quality. Logging and monitoring make those experiments observable, while ORM-backed stores keep the resulting data organized.
 
-Good context management balances fidelity against cost: more tokens cost more and slow generation, while aggressive pruning loses details. The practices recorded under [[wiki/dev-tools/supercategories/development/categories/data-tools/index|Data Tools]] show that iterating on context design, like any experiment, benefits from clear hypotheses, controlled changes, and consistent evaluation.
+Good context management balances fidelity against cost: more tokens cost more and slow generation, while aggressive pruning loses details. The practices recorded under [[wiki/web-platforms/index|Data Tools]] show that iterating on context design, like any experiment, benefits from clear hypotheses, controlled changes, and consistent evaluation.
 
 Recording which context variant was used, what was retrieved, and what the final answer was turns every session into a data point for the next experiment.
 
 The research context is also where assumptions are tested: whether the model has the facts it needs, whether instructions are unambiguous, and whether the output format is stable.
 
-**Domain:** Development Tools › [[wiki/dev-tools/supercategories/development/index|Development]] › [[wiki/dev-tools/supercategories/development/categories/data-tools/index|Data Tools]] › Researching Experiment Context
+**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Researching Experiment Context
 
 ## Related Entities
 
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/easy-problems|Easy Problems]]
+- [[wiki/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]]
+- [[wiki/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]]
+- [[wiki/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]]
+- [[wiki/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
+- [[wiki/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
+- [[wiki/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
+- [[wiki/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
+- [[wiki/development/categories/data-tools/subcategories/orm/easy-problems|Easy Problems]]

@@ -34,9 +34,9 @@ Referenced in 2 session(s):
 127. **exec_command**: {"cmd": "grep -n \"SLIDERS\\|S = {\\|INST = {\\|DIMS\\|SC =\\|ARP_INTERVA
 **Domain:** Web Platforms › Api Services › Api Rest
 ## Related
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/aborted|Aborted]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/aegis|Aegis]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/agent-active|Agent Active]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity-projection-2|Ambiguity Projection 2]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity-system|Ambiguity System]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity|Ambiguity]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aborted|Aborted]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aegis|Aegis]]
+- [[wiki/agent-systems/categories/agents/subcategories/agent-core/agent-active|Agent Active]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-projection-2|Ambiguity Projection 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-system|Ambiguity System]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity|Ambiguity]]

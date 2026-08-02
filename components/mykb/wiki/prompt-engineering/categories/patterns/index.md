@@ -1,6 +1,11 @@
+---
+type: "index"
+title: "Patterns Index"
+description: "Listing of the prompt-engineering/categories/patterns/ folder (0 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
 # Patterns
 
-6 entities.
-
-## Sub-Categories
-- [[wiki/prompt-engineering/categories/patterns/subcategories/prompt-techniques/index|Prompt Techniques]] — 6 files
+Part of [[wiki/index|Wiki Index]]. 0 pages.
