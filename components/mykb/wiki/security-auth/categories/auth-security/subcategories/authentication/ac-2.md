@@ -5,6 +5,7 @@ description: "Acronym referenced in session 019f321e"
 tags: ["acronym", "android", "api", "ast", "auth", "authentication", "entity"]
 timestamp: "2026-07-19T22:41:40Z"
 resource: ""
+status: "growing"
 ---
 
 
@@ -12,7 +13,15 @@ resource: ""
 
 Audio Context — the Web Audio API interface for managing and playing audio. Used in audio visualization and browser-based audio projects.
 
-Acronym referenced in session 019f321e
+The AudioContext is the hub of the Web Audio API: it owns the audio hardware connection, maintains the master clock, and routes audio through a graph of nodes. Everything audible in a page flows through an AudioContext, from oscillators and buffer sources to effects and the final destination.
+
+The API is modular: source nodes generate sound, processing nodes such as gains, filters, and convolvers transform it, and the destination node outputs to the speakers. Connections are made explicitly, which gives precise control over routing and allows complex effects chains. Audio can also be analysed: the AnalyserNode computes frequency and time-domain data, typically via an FFT, for visualizations such as oscilloscopes and spectrum bars.
+
+Timing is handled on the context's clock: scheduling with AudioParam values and the currentTime property keeps events sample-accurate, avoiding the jitter of setTimeout. Automation ramps values smoothly over time, so volume and filter changes are click-free. Performance matters because audio runs in real time; long processing chains or garbage collection pauses cause glitches.
+
+Browsers require a user gesture before audio can start, so contexts are created or resumed after interaction. The entry appears in the [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security]] tree alongside rendering topics such as [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/canvastexture|Canvastexture]], since audio visualization typically pairs an AudioContext with a canvas animation loop.
+
+The entry is filed under authentication because the sessions that mentioned it combined audio features with sign-in and session work, but the technical content is entirely about the Web Audio API.
 
 **Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Ac 2
 
