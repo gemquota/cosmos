@@ -172,3 +172,19 @@ title: "Bundle Log"
 - **Wiki size**: 2,688 → 3,188 content files
 - **New synthesis note**: `wiki/syntheses/parallel-agent-acquisition.md`
 - **Deployed**: full-tree mirror to `gh-pages`
+
+## 2026-08-02 (stats hub v2)
+- **Stats hub v2**: `build_stats.py` + `stats.html` extended — article-level
+  stats now **exclude `log.md`, `index.md` and all `*/index.md`** (graph
+  totals still include them; footer caveat added)
+- **Article-level counts after exclusion**: 3,189 → **3,093 files**,
+  374,672 words, 16,805 wikilinks; thresholds 300+/400+/500+ =
+  **70/8/5** (previously 86/19/16); graph unchanged at 3,189 nodes /
+  19,047 edges
+- **7 new charts added** (20 canvases total): ECDF (share ≤ N words),
+  words by area, word-length buckets by area, status by month, cumulative
+  growth, avg words/month, most linked-to; tiles now show
+  `excl. log.md / index.md` + content-area counts (8 cards)
+- **QA**: headless Chromium — 20 canvases, zero JS errors; fallback
+  (tiles/tables) renders without Chart.js
+- **Deployed**: full-tree mirror to `gh-pages`
