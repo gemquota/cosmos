@@ -262,3 +262,14 @@ title: "Bundle Log"
   wikilinks 13,567 → 13,581
 - **Snapshots regenerated**: build_stats, build_graph, okf render,
   gen-static-data --check OK (3,729 md files)
+
+## 2026-08-02 (comprehensive audit refresh)
+- **Archived** previous audit to `raw/archive/audits-2026-07/COMPREHENSIVE_AUDIT.md`
+  (2026-07-21, via git mv — history preserved)
+- **Replaced** `COMPREHENSIVE_AUDIT.md` with updated 2026-08-02 version: current
+  numbers for content (3,742 md files, 475,777 words, 570/17/5 tiers), graph
+  (2,454 nodes / 15,422 edges), OKF graph (3,628 concepts), linter (0 broken
+  links in wiki content), search, dashboard, API, git/deploy, debt, and a
+  93/100 health score
+- **Snapshots regenerated**: gen-static-data + okf render (audit file moved
+  into raw/archive; files.json unchanged at 3,729 entries)

@@ -1,12 +1,16 @@
 ---
 type: "log"
 title: "Comprehensive Audit"
+description: "Full-stack audit of the mykb LLM personal knowledge wiki as of 2026-08-02 — content, graph, search, dashboard, linter, and deployment health."
+timestamp: "2026-08-02T00:00:00Z"
+status: "active"
 ---
 
 # mykb — Comprehensive System Audit
 
-**Date:** 2026-07-21 (Updated)  
+**Date:** 2026-08-02
 **Scope:** Full-stack audit of the mykb LLM personal knowledge wiki
+**Previous audit:** Archived at `raw/archive/audits-2026-07/COMPREHENSIVE_AUDIT.md` (2026-07-21)
 
 ---
 
@@ -14,174 +18,201 @@ title: "Comprehensive Audit"
 
 | Metric | Value |
 |--------|-------|
-| Total files | 2,326 |
-| Markdown files | 2,313 |
-| Python files | 6 |
-| JavaScript files | 2 |
-| Data files | 1 |
-| Total disk | 21.0 MB |
+| Total files | 3,779 |
+| Tracked markdown files | 3,742 (`files.json`: 3,729 — excludes dot-directories) |
+| Wiki content pages (excl. log/index) | 2,358 |
+| Python files | 16 |
+| JavaScript files | 0 (legacy Node.js daemon removed) |
+| Data/JSON files | 13 |
+| HTML files | 3 (`index.html`, `okf-graph.html`, `stats.html`) |
+| Total disk | 72 MB |
 
-### Domain Hierarchy
+### Content Areas (top 12 of 47)
 
-| Domain | Entities | Status |
-|--------|----------|--------|
-| mobile-platform | 800 | Full hierarchy (supercategories → categories → subcategories) |
-| web-platforms | 764 | Full hierarchy |
-| os-shell | 67 | Supercategories + categories |
-| dev-tools | 52 | Supercategories + categories |
-| security-auth | 25 | Supercategories + categories |
-| devops-infra | 7 | Categories only |
-| ai-ml | 0 | Documentation pages only |
-| software-engineering | 0 | Documentation pages only |
-| agent-systems | 0 | Documentation pages only |
-| data-storage | 0 | Documentation pages only |
-| **Total** | **1,715** | |
+| Area | Files | Words |
+|------|-------|-------|
+| frontend | 322 | 64,963 |
+| security-auth | 307 | 55,534 |
+| api-services | 255 | 46,611 |
+| data-storage | 160 | 38,620 |
+| api-protocols | 130 | 30,422 |
+| os-shell | 129 | 27,976 |
+| testing | 105 | 18,804 |
+| shell-environment | 95 | 28,939 |
+| concepts | 74 | — |
+| devops-infra | 64 | — |
+| android-core | 57 | — |
+| ai-ml | 55 | — |
+
+### Archives
+
+| Archive | Files |
+|---------|-------|
+| `raw/archive/session-artifacts-2026-07/` | 474 (281 sessions + tools/topics/clusters) |
+| `raw/archive/junk-entities-2026-08/` | 759 (735 archived stubs + empty overviews) |
+| `raw/archive/audits-2026-07/` | 1 (previous comprehensive audit) |
 
 ### Pipeline
 
 ```
-Agent → Hooks (post-tool-use.py, session-stop.py) → Buffer (.ndjson)
-  → Daemon (daemon.js → extract.js → store.js — Legacy Node.js)
-    → Entity files → Curate (curate-wiki.py)
-      → Search Index (search_fusion.py — 11,491 chunks, hybrid BM25+TF-IDF+RRF)
-        → Server (server.py port 8825)
-          → Viewer (index.html — 3 content views: Doc/Graph/Actions)
+Agent session → hooks (post-tool-use.py, session-stop.py)
+  → wiki/ entity, synthesis, and composition notes
+    → curation passes (acquisition, expansion, stub archive, link repair)
+      → snapshots: build_stats.py (stats.html) · build_graph.py (graph.json)
+                   · okf render (okf-graph.html) · gen-static-data.py (files.json)
+        → commit on main → Deploy commit on gh-pages
+          → GitHub Pages (gemquota.github.io/cosmos/)
 ```
 
 ---
 
 ## 2. Content Quality
 
-### Entity Size Distribution
+### Word-Count Histogram (2,358 content pages)
 
-| Size | Count | % | Assessment |
-|------|-------|---|------------|
-| 400-800B | 643 | 38% | Thin — frontmatter + session refs |
-| 800B-2KB | 1,014 | 59% | Adequate — descriptions + context |
-| 2-5KB | 44 | 3% | Rich — substantial content |
-| > 5KB | 0 | 0% | — |
+| Bucket | Count |
+|--------|-------|
+| 0-49 | 97 |
+| 50-99 | 303 |
+| 100-199 | 763 |
+| 200-299 | 625 |
+| 300-399 | 553 |
+| 400-499 | 12 |
+| 500-749 | 1 |
+| 1000+ | 4 |
 
-**Bulk enrichment pass (Phase 2):** 305 entities enriched from 168-term comprehensive glossary with real glossary-based content (Database, Logging, CDN, DNS, IDE, GraphQL, JSON, REST, WebSocket, Authentication, ADB, etc.) and 6 user-confirmed project definitions (Gesture Harmonics, Harmonic Series, GoalQueue, IntentRouter, MemoryManager, PrestigeSystem, Overseer). Total entities with real content: ~395 (23%). 1,300 remain template-based but with descriptions. Entity enrichment script (`deep_enrich.py`) supports research, questionnaire, composition, and auto-enrich modes.
+### Threshold Tiers
 
-### Enrichment Coverage
+| Threshold | Files ≥ threshold |
+|-----------|-------------------|
+| 100 | 1,958 |
+| 200 | 1,195 |
+| 300 | **570** |
+| 400 | **17** |
+| 500 | **5** |
+| 1000 | 4 |
 
-| Feature | Count | % |
-|---------|-------|---|
-| YAML frontmatter | ~2,313 | 100% |
-| Tags | ~2,300 | 99% |
-| Context description | ~1,700 | 73% |
-| Related entities | ~1,700 | 73% |
+**Totals:** 475,777 words · median 202/file · mean 201.8/file · 13,581 wikilinks · 120 zero-link files (5.1%)
+
+### Status Distribution
+
+| Status | Count |
+|--------|-------|
+| growing | 1,222 |
+| stub | 576 |
+| (none) | 548 |
+| stable | 8 |
+| completed / draft / active / seed | 1 each |
 
 ### Top Tags
 
 ```
-entity(1715), ast(1612), api(1520), auth(1272), android(964), 
-bash(673), authentication(617), aws(473), bug(406), angular(360), 
-acronym(331), cli(302), ajax(214), backend(211), bootstrap(151)
+entity(948), ast(884), api(799), auth(645), android(585), bash(428),
+authentication(344), aws(260), bug(252), acronym(240), cli(234),
+angular(208), ajax(156), backend(128), testing(126)
 ```
+
+### Acquisition & Curation History (2026-07 → 2026-08)
+
+- Session-entity import + **Pass 2** (+400 articles) + **Pass 3** (+500 via 5 parallel agents)
+- **Expansion pass**: 500 articles expanded from 50–99 to 300+ words via 10 parallel agents (300+ tier 70 → 570)
+- **Stub curation**: 735 pointless stubs archived (template-only orphans + empty overviews)
+- **Link repair**: 248 dead wikilinks + 797 dead markdown links fixed (repointed to archives or removed)
+- Enrichment tooling (`enrich_links.py`, `build_index_pages.py`) for progressive enrichment
 
 ---
 
 ## 3. Knowledge Graph Health
 
-| Metric | Previous Audit | Current Audit | Change |
-|--------|---------------|---------------|--------|
-| Nodes | 1,722 | 1,701 | -21 (cleanup) |
-| Edges | 3,053 | 13,068 | **+10,015 (328% increase)** |
-| Isolated nodes | 1,220 (71%) | 0 (0%) | **Eliminated** |
-| Graph density | 0.21% | 0.9% | 4.3× denser |
+| Metric | Previous Audit | Current Audit |
+|--------|---------------|---------------|
+| Nodes | 1,701 | **2,454** |
+| Edges | 13,068 | **15,422** |
+| Average degree | — | 12.7 (median 10, max 993) |
+| Isolated nodes | 0 | 26 (1% — index/overview pages) |
+| Broken wikilinks | 13 | **0** |
 
-**Critical improvement:** The graph was rebuilt using tag-sharing and category-neighbor edges in addition to session co-occurrence. This eliminated all isolated nodes and increased edge count by 328%. The graph now accurately reflects semantic relationships across the knowledge base.
+### Edge Sources
 
-### Edge Type Breakdown
+- `[[wikilinks]]` and markdown links between wiki files (resolved by basename + path)
+- Semantic edges: concepts sharing ≥ 3 tags
+- Graph rebuilt after the stub archive — 735 junk nodes removed, edges recomputed
 
-- Session co-occurrence edges (weight ≥ 2)
-- Tag-sharing edges (entities sharing ≥ 2 tags)
-- Category-neighbor edges (same subcategory)
-- All isolated nodes connected via tag propagation
+### OKF Graph (okf-graph.html)
 
-### Topology API
+| Metric | Value |
+|--------|-------|
+| Concepts embedded | 3,628 (wiki + raw + ops) |
+| Cross-links | 942 |
+| Distinct tags | 2,377 |
+| Views | graph, index, tags, catalog, files, stats |
 
-`GET /api/v2/graph/topology?root=<node>&depth=<n>` — Subgraph filtering now available from the web dashboard. Example: `?root=android-device-access&depth=2` returns 179 nodes, 1,160 edges.
+### Top Hubs (degree)
 
-### Graph Rendering
-
-- Force-directed 2D canvas (custom physics engine with spatial grid)
-- Layout cached in `sessionStorage` for instant re-render on tab switch
-- Re-layout button to reset positions
-- Drag to pan, scroll to zoom, 60-step physics simulation
+- `wiki/api-services/categories/api-clients/overview` — 119
+- `wiki/security-auth/.../authentication/{ab, rubenverborgh, selective-chaos, ...}` — ~115 each
 
 ---
 
 ## 4. Search Architecture
 
-### Hybrid Search (search_fusion.py)
-
 | Component | Method |
 |-----------|--------|
 | Sparse index | BM25Okapi (rank_bm25) |
 | Dense index | TF-IDF term vectors (cosine similarity) |
-| Fusion | Reciprocal Rank Fusion (k=60) |
-| Chunking | Structure-aware (Markdown headers #/##/###) |
-| Code extraction | AST-based function/class signature extraction |
+| Fusion | Reciprocal Rank Fusion |
+| Chunking | Structure-aware (Markdown headers) |
+| Index lifecycle | Built at runtime from wiki files (`/api/v2/search/build`) |
 
-### Search Index
-
-| Metric | Value |
-|--------|-------|
-| Files indexed | 2,310 |
-| Chunks | 11,491 |
-| Vector dimension | 3,000 |
-| Vector storage | 131.5 MB (search_vectors.npy) |
-| Chunk metadata | header chain, code signatures, source path |
-
-### Cross-Encoder Reranking (reranker.py)
-
-| Feature | Details |
-|---------|---------|
-| Model | cross-encoder/ms-marco-MiniLM-L-6-v2 (22 MB, CPU) |
-| Mode | `fast` (skip) or `deep` (rerank top-30) |
-| Cache | LRU, 50 entries |
-| Fallback | TF-IDF word overlap when model unavailable |
-| Latency | < 300ms for K=30 on CPU |
+- No committed search artifacts — the index is regenerated from the wiki on demand.
+- The cross-encoder reranker from the previous audit was removed together with the legacy Node.js daemon; retrieval relies on hybrid BM25 + TF-IDF + RRF.
 
 ---
 
 ## 5. Dashboard Features
 
-The web viewer (`index.html` served by `server.py` on port 8825) now has 3 content views:
+### Wiki Browser (`index.html`)
 
-| View | Keybinding | Features |
-|------|-----------|----------|
-| **Doc** | default | File browser (collapsible tree), Markdown rendering, frontmatter header strip, wikilink `[[...]]` → internal SPA navigation |
-| **Graph** | `Ctrl+G` | Full-size force-directed graph (1,701 nodes, 13,068 edges), topology subgraph filter (root node + depth), drag-to-pan, scroll-to-zoom, re-layout button |
-| **Compositions** | sidebar | Lists 7 instruction set compositions (Setup, Dev Workflow, API, Data, Security, DevOps, Languages) — click to view synthesis pages with stage breakdowns and related entities |
-| **Actions** | `Ctrl+H` | System stats (file counts, sizes, top domains/tags), linter report (broken wikilinks, orphans), rebuild search index, entity enrichment trigger |
+| Tab | Contents |
+|-----|----------|
+| Docs | Collapsible file tree, Markdown rendering, wikilink SPA navigation |
+| Graph | Force-directed canvas (2,454 nodes / 15,422 edges), pan/zoom, layout cache |
+| Compositions | 7 instruction-set synthesis pages |
+| Search | Entity search with click-to-navigate results |
+| Actions | Health panel: file stats, linter report, search-index rebuild |
 
-### Sidebar Tabs
+### Stats Hub (`stats.html`)
 
-- **Docs** — File tree with "By Type" / "By Folder" grouping
-- **Compositions** — 7 instruction set composition pages for browsing higher-order patterns
-- **Search** — Entity TF-IDF search with click-to-navigate results
-- **Actions** — Health dashboard and maintenance tools
+- 9 overview cards (files, words, links, tiers, graph size, ...) with **tap-for-info tooltips**
+- 13+ charts: threshold tiers, word histogram, areas, tags, monthly acquisition, degree distribution, top files/nodes
+- Excludes `log.md` and index pages
+
+### OKF Graph (`okf-graph.html`)
+
+- Static, self-contained interactive graph of all 3,628 concepts; 6 views; deployed and embedded in the unified dashboard
+
+### Unified Dashboard
+
+The RSIS3 dashboard embeds the wiki browser, knowledge graph, and stats hub side by side with direct ↗ links to each standalone page.
 
 ---
 
-## 6. API Endpoints (server.py)
+## 6. API Endpoints (server.py, default port 8765)
 
 | Endpoint | Method | Purpose |
 |----------|--------|---------|
 | `/` | GET | Serves `index.html` viewer |
-| `/files.json` | GET | List all `.md` files (2,313 paths) |
-| `/search?q=` | GET | Legacy TF-IDF entity search |
-| `/graph.json` | GET | Full knowledge graph (1,701 nodes, 13,068 edges) |
-| `/api/stats` | GET | System statistics (sizes, domains, tags) |
+| `/files.json` | GET | List all `.md` files (3,729 paths) |
+| `/graph.json` | GET | Knowledge graph (2,454 nodes, 15,422 edges) |
+| `/search?q=` | GET | TF-IDF entity search |
+| `/api/stats` | GET | System statistics (files, areas, tags) |
 | `/api/v2/search/hybrid?q=` | GET | Hybrid search (BM25 + TF-IDF + RRF) |
 | `/api/v2/search/build` | GET | Rebuild search index from wiki files |
 | `/api/v2/graph/topology?root=&depth=` | GET | Subgraph filtering |
+| `/api/v2/health/lint` | GET | Linter report |
 | `/api/v2/history/log/{path}` | GET | Git commit history for a file |
 | `/api/v2/history/snapshot?path=&ts=` | GET | File content at a point in time |
-| `/api/v2/health/lint` | GET | Linter report (broken wikilinks, orphans) |
+| `/api/file?path=` | GET | Raw file content endpoint |
 
 ---
 
@@ -189,42 +220,30 @@ The web viewer (`index.html` served by `server.py` on port 8825) now has 3 conte
 
 | Metric | Value |
 |--------|-------|
-| Files scanned | 2,313 |
-| Total [[wikilinks]] | 38 |
-| Broken links | 13 |
-| Orphan notes | 2,213 |
-| Files with broken links | 8 |
+| Files scanned (kb_linter) | 3,729 |
+| Total [[wikilinks]] | 17,871 |
+| Flagged broken | 9,951 (concentrated in export/doc artifacts — benign syntax examples) |
+| Orphan notes | 2,176 |
+| Broken wikilinks in wiki content | **0** |
+| Broken relative markdown links in wiki content | **0** |
 
-**Broken links** are concentrated in export artifacts (`mykb-code.md`, `mykb-content.md`, `COMPREHENSIVE_AUDIT.md`) — not in actual wiki content. The 13 broken wikilinks are benign (they reference files that don't exist, mostly from auto-generated concatenation exports).
-
-**Orphan notes** (2,213) are expected — entity stubs are auto-generated from sessions and don't have incoming wikilinks. Only the ~100 manually curated overview/index pages have backlinks, which is normal for this system's architecture.
+**Notes:**
+- Wiki content is fully link-clean after the 248-wikilink + 797-markdown-link repair passes (`log.md`/`index.md` excluded; one intentional `[title](path)` syntax example).
+- OKF `validate`: 3,628 concepts conformant; 8 errors all in `log.md` (date headings must be `YYYY-MM-DD`); warnings for root docs missing `description`.
+- OKF `lint`: 5 errors; reachability warnings for archived and root documentation pages (expected).
 
 ---
 
 ## 8. Technical Debt
 
-### Dual-Language Runtime
-
-| Runtime | Files | Critical path? |
-|---------|-------|----------------|
-| Python | 6 | Server, search, curation, graph, linter, temporal engine |
-| JavaScript | 2 | daemon.js, extract.js |
-
-The hooks were ported to Python (`hooks/post-tool-use.py`, `hooks/session-stop.py`). Remaining Node.js:
-- `daemon.js` + `extract.js` — legacy extraction daemon (superseded by Python hooks)
-- `import-gemini.js` — one-shot import tool
-
-**Risk:** Minimal. The Python hooks handle session capture. The Node.js daemon is not on the critical path.
-
-### Hardcoded Paths
-
-**Status:** Mostly resolved. The Python modules now use `__file__`-relative resolution or `BUNDLE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))`. The daemon `config.json` may still have absolute paths but the daemon is legacy.
-
-### Error Handling
-
-- Minimal bare `except:` clauses in production code (server.py, search_fusion.py)
-- Hooks intentionally use bare excepts (requirement: never block the agent)
-- kb_linter.py, temporal_engine.py have structured error handling
+| Item | Status |
+|------|--------|
+| Legacy Node.js daemon | ✅ Removed — runtime is Python-only (16 files) |
+| Hardcoded paths | 🔄 Modules use `__file__`-relative resolution; `.wiki-daemon/config.json` still has stale absolute paths |
+| `log.md` date headings vs OKF spec | ⬜ Open (8 validator errors, cosmetic) |
+| Root docs unreachable per OKF lint | ⬜ Open (`COMPREHENSIVE_AUDIT.md`, `mykb-code.md`, `mykb-content.md`) |
+| Automated tests | ⬜ Open — no test suite |
+| Graph leaves with degree 0 | 26 index/overview pages (1%) |
 
 ---
 
@@ -232,13 +251,13 @@ The hooks were ported to Python (`hooks/post-tool-use.py`, `hooks/session-stop.p
 
 | Metric | Value |
 |--------|-------|
-| Branch | master |
-| Commits | 1 (initial commit: 7aae0a2d70a3) |
-| Unstaged | 0 |
-| Untracked | 0 |
-| Last commit | 2026-07-21 (batch improvements) |
+| Branch | main |
+| Commits | 59 |
+| Deploy branch | gh-pages (parallel `Deploy:` commit history) |
+| Remote | github.com/gemquota/cosmos.git |
+| Live site | https://gemquota.github.io/cosmos/ |
 
-The temporal engine (`temporal_engine.py`) wraps GitPython for automatic versioning. Configuration in `.wiki-daemon/config.json`.
+The temporal engine (`temporal_engine.py`) wraps GitPython for automatic per-file versioning and history endpoints.
 
 ---
 
@@ -246,87 +265,55 @@ The temporal engine (`temporal_engine.py`) wraps GitPython for automatic version
 
 | Check | Status | Notes |
 |-------|--------|-------|
-| Server exposes static files + JSON API only | ✅ | No user input executed as commands |
-| Search endpoint injection risk | ✅ | No shell execution, no SQL (no DB) |
-| Path traversal | ✅ | File serving uses `urllib.parse.unquote` + `os.path.relpath` |
+| Static files + JSON API only | ✅ | No user input executed as commands |
+| Search endpoint injection risk | ✅ | No shell execution, no SQL |
+| Path traversal | ✅ | `urllib.parse.unquote` + `os.path.relpath` guards |
 | Graph endpoint | ✅ | Reads prebuilt JSON only |
-| Cross-encoder model | ⚠ | Downloaded on first use (~22 MB) |
-| Linter | ✅ | Read-only analysis, no file mutations |
+| Linter | ✅ | Read-only analysis |
+| Hooks | ✅ | Bare excepts by design (never block the agent) |
 
 ---
 
 ## 11. Recommendations Status
 
-| Priority | Action | Previous Status | Current Status |
-|----------|--------|----------------|----------------|
-| **P0** | Rebuild graph with tag/category edges | ⬜ Open | ✅ **Done** — 0% isolated, 13K edges |
-| **P1** | Enrich thin entities with synthesized content | ⬜ Open | ✅ **Done** — 42 enriched, tool created for ongoing |
-| **P2** | Port Node.js daemon to Python | ⬜ Open | 🔄 Deferred — hooks already ported, daemon not critical |
-| **P3** | Replace hardcoded paths with `__file__`-relative | ⬜ Open | ✅ **Done** — Python modules use auto-resolution |
-| **P4** | Add cross-category navigation links | ⬜ Open | 🔄 Ongoing — topology API enables this |
-| **P5** | Warm-start TF-IDF index at server startup | ✅ Done | ✅ **Done** |
-| **P6** | Add `/api/stats` endpoint | ✅ Done | ✅ **Done** |
-| **—** | Graph tab re-render on tab switch | — | ✅ **Done** — removed data-loaded guard |
-| **—** | Wikilink SPA navigation | — | ✅ **Done** — global click interceptor |
-| **—** | Graph layout caching | — | ✅ **Done** — sessionStorage positions |
-| **—** | Cross-encoder reranker | — | ✅ **New** — reranker.py module |
-| **—** | Dashboard redesign (3 content views) | — | ✅ **Done** — Doc/Graph/Actions |
-| **—** | start.sh with PID management | — | ✅ **Done** — stale PID cleanup, auto-open |
-| **—** | Entity enrichment script | — | ✅ **New** — enrich_entities.py |
-| **—** | Deep enrichment (glossary + user-confirmed) | — | ✅ **Done** — 18 entities enriched with glossary definitions |
-| **—** | Composition pages (7 instruction sets) | — | ✅ **New** — wiki/compositions/*.md |
-| **—** | Semantic groups from tag analysis | — | ✅ **New** — 15 groups identified in ops/reports/ |
-| **—** | Compositions tab in web dashboard | — | ✅ **Done** — sidebar tab + navigation |
+| Priority | Action | Status |
+|----------|--------|--------|
+| **P0** | Rebuild graph with tag/category edges | ✅ Done — 15,422 edges, ~1% isolated |
+| **P1** | Enrich thin entities to 300+ words | ✅ Done — 570 articles ≥300 words (was 70) |
+| **P2** | Archive pointless stubs | ✅ Done — 735 archived, 129 referenced kept |
+| **P3** | Repair dead links | ✅ Done — 248 wikilinks + 797 markdown links |
+| **P4** | Stats hub with charts + tooltips | ✅ Done — 9 cards, 13+ charts |
+| **P5** | Remove legacy Node.js daemon | ✅ Done — Python-only runtime |
+| **P6** | `__file__`-relative paths | 🔄 Partial — `config.json` still absolute |
+| **—** | OKF-conformant log headings | ⬜ Open |
+| **—** | Automated test suite | ⬜ Open |
+| **—** | Index reachability for root docs | ⬜ Open |
 
 ---
 
-## 12. Health Score: **92/100** (+1 from previous)
+## 12. Health Score: **93/100** (+1 from previous)
 
 | Category | Score | Notes |
 |----------|-------|-------|
-| Content quality | 86/100 | 90 entities with real content, 1,611 with descriptions, enrichment pipeline ready |
-| Graph connectivity | 95/100 | 0% isolated, 13K edges, topology API available |
-| Search | 90/100 | Hybrid BM25+TF-IDF+RRF, reranker available, 11K chunks |
-| Dashboard | 93/100 | 4 sidebar tabs, 7 compositions, keyboard shortcuts, health panel |
-| Code quality | 88/100 | Minimal tech debt, dual-language not critical |
-| Security | 95/100 | No injection risks, read-only analysis |
+| Content quality | 90/100 | 570 full articles (≥300 words), median 202 words, 5.1% zero-link |
+| Graph connectivity | 96/100 | 15,422 edges, avg degree 12.7, 0 broken links |
+| Search | 86/100 | Hybrid BM25+TF-IDF+RRF; runtime index; reranker removed |
+| Dashboard | 96/100 | 5 tabs + stats hub + OKF graph + unified dashboard embed |
+| Code quality | 92/100 | Python-only, automated snapshot pipeline; stale config, no tests |
+| Security | 96/100 | No injection risks, read-only analysis, path guards |
 
 ### Key Strengths
-- Graph is fully connected with rich edge semantics
-- Hybrid search with structure-aware chunking
-- Complete domain hierarchy with category overview pages
-- Working git-backed versioning
-- Dashboard integrates all features with keyboard shortcuts
-- **NEW: 7 composition pages for higher-order instruction patterns**
-- **NEW: Entity enrichment pipeline with research/questionnaire/apply modes**
-- **NEW: Semantic grouping from shared tag analysis**
+- 570 articles ≥300 words after the 10-agent expansion pass (was 70)
+- Link-clean wiki content (0 broken wikilinks, 0 broken markdown links)
+- Automated snapshot pipeline: stats hub, graph, OKF render, files index
+- Dual-branch deployment (main → gh-pages) verified live
+- 3,628-concept interactive OKF graph embedded in the dashboard
 
 ### Remaining Weaknesses
-- 1,300 entities still template-only (organized questionnaire prepared)
-- Dual-language runtime (Node.js daemon not ported)
-- 13 broken wikilinks in export artifacts (benign)
+- 400 files still under 100 words (97 in 0-49, 303 in 50-99)
+- 26 index/overview pages with degree 0
 - No automated test coverage
+- `config.json` stale absolute paths; `log.md` heading format vs OKF spec
+- Search index built at runtime only (no warm-start artifacts committed)
 
-| Category | Score | Notes |
-|----------|-------|-------|
-| Content quality | 85/100 | Most entities adequate, 3% rich, enrichment tool ready |
-| Graph connectivity | 95/100 | 0% isolated, 13K edges, topology API available |
-| Search | 90/100 | Hybrid BM25+TF-IDF+RRF, reranker available, 11K chunks |
-| Dashboard | 92/100 | 3 views, keyboard shortcuts, working graph, health panel |
-| Code quality | 88/100 | Minimal tech debt, dual-language not critical |
-| Security | 95/100 | No injection risks, read-only analysis |
-
-### Key Strengths
-- Graph is fully connected with rich edge semantics
-- Hybrid search with structure-aware chunking
-- Complete domain hierarchy with category overview pages
-- Working git-backed versioning
-- Dashboard integrates all features with keyboard shortcuts
-
-### Remaining Weaknesses
-- Entity content still thin for ~38% of files (400-800B range)
-- Dual-language runtime (Node.js daemon not ported)
-- 13 broken wikilinks in export artifacts (benign but should be cleaned)
-- No automated test coverage
-
-*Generated by mykb audit system — 2026-07-21 (Updated)*
+*Generated by mykb audit system — 2026-08-02*
