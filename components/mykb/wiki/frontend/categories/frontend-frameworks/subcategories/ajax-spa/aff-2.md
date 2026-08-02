@@ -32,9 +32,9 @@ Acronym referenced in session 121c60ae
 
 Referenced in 2 session(s):
 
-- [ajax, api, ast, auth +1 (118 turns)](../sessions/session-121c60ae.md)
+- [ajax, api, ast, auth +1 (118 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-121c60ae.md)
 
-- [ajax, android, api, ast +1 (154 turns)](../sessions/session-fe448bc7.md)
+- [ajax, android, api, ast +1 (154 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-fe448bc7.md)
 
 
 ## Context

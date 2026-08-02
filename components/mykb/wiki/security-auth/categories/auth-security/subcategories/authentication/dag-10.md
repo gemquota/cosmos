@@ -31,23 +31,23 @@ Acronym referenced in session 81c5e6d2
 
 Referenced in 9 session(s):
 
-- [api, ast, bash, bug +1 (20 turns)](../sessions/session-019ec3a4.md)
+- [api, ast, bash, bug +1 (20 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec3a4.md)
 
-- [android, api, ast, auth +1 (285 turns)](../sessions/session-019ef46f.md)
+- [android, api, ast, auth +1 (285 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef46f.md)
 
-- [api, ast, auth, bug +1 (13 turns)](../sessions/session-3a56106a.md)
+- [api, ast, auth, bug +1 (13 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-3a56106a.md)
 
-- [android, api, ast, auth +1 (252 turns)](../sessions/session-55599610.md)
+- [android, api, ast, auth +1 (252 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-55599610.md)
 
-- [android, api, ast, auth +1 (70 turns)](../sessions/session-678b164b.md)
+- [android, api, ast, auth +1 (70 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-678b164b.md)
 
-- [android, api, ast, auth +1 (43 turns)](../sessions/session-7bb86eb2.md)
+- [android, api, ast, auth +1 (43 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-7bb86eb2.md)
 
-- [android, api, ast, auth +1 (23 turns)](../sessions/session-81c5e6d2.md)
+- [android, api, ast, auth +1 (23 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-81c5e6d2.md)
 
-- [android, api, ast, auth +1 (76 turns)](../sessions/session-980f78c4.md)
+- [android, api, ast, auth +1 (76 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-980f78c4.md)
 
-- [android, api, ast, bootstrap +1 (145 turns)](../sessions/session-a872f7fc.md)
+- [android, api, ast, bootstrap +1 (145 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-a872f7fc.md)
 
 
 > 5. **read_file**: {"file_path":"research/chat/pcg.md"}

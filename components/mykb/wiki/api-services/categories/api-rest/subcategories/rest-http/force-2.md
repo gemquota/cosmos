@@ -21,11 +21,11 @@ Acronym referenced in session 412ac095
 - **Overview:** [Api Clients](../../overview.md)
 ## References
 Referenced in 5 session(s):
-- [android, angular, api, ast +1 (96 turns)](../sessions/session-09993b9d.md)
-- [angular, api, ast, auth +1 (73 turns)](../sessions/session-1360812d.md)
-- [api, ast, aws, bug +1 (272 turns)](../sessions/session-412ac095.md)
-- [android, api, ast, auth +1 (39 turns)](../sessions/session-425ef39b.md)
-- [angular, api, ast, auth +1 (154 turns)](../sessions/session-80c50c17.md)
+- [android, angular, api, ast +1 (96 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-09993b9d.md)
+- [angular, api, ast, auth +1 (73 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-1360812d.md)
+- [api, ast, aws, bug +1 (272 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-412ac095.md)
+- [android, api, ast, auth +1 (39 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-425ef39b.md)
+- [angular, api, ast, auth +1 (154 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-80c50c17.md)
 ## Context
 > 84. **replace**: {"file_path":"vepa-feature-nuclear-rewrite/src/worker/physics.worker.js","new_st
 85. **replace**: {"instruction":"Add energy sharing, allotropic transitions, and will-based force

@@ -30,17 +30,17 @@ Referenced in session fe448bc7
 
 Referenced in 6 session(s):
 
-- [ajax, api, ast, auth +1 (32 turns)](../sessions/session-0118cc5d.md)
+- [ajax, api, ast, auth +1 (32 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-0118cc5d.md)
 
-- [android, angular, api, ast +1 (638 turns)](../sessions/session-0c0a9b0f.md)
+- [android, angular, api, ast +1 (638 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-0c0a9b0f.md)
 
-- [ajax, api, ast, auth +1 (118 turns)](../sessions/session-121c60ae.md)
+- [ajax, api, ast, auth +1 (118 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-121c60ae.md)
 
-- [api, ast, bash, cdn +1 (24 turns)](../sessions/session-3e426ef1.md)
+- [api, ast, bash, cdn +1 (24 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-3e426ef1.md)
 
-- [ajax, android, api, ast +1 (88 turns)](../sessions/session-b554ca10.md)
+- [ajax, android, api, ast +1 (88 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-b554ca10.md)
 
-- [ajax, android, api, ast +1 (154 turns)](../sessions/session-fe448bc7.md)
+- [ajax, android, api, ast +1 (154 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-fe448bc7.md)
 
 
 ## Context

@@ -31,23 +31,23 @@ Acronym referenced in session 0c8d8673
 
 Referenced in 9 session(s):
 
-- [api, ast, aws, bash +1 (462 turns)](../sessions/session-019ebc82.md)
+- [api, ast, aws, bash +1 (462 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebc82.md)
 
-- [api, ast, bash, cli +1 (332 turns)](../sessions/session-019ebd47.md)
+- [api, ast, bash, cli +1 (332 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebd47.md)
 
-- [api, ast, bash, cli +1 (417 turns)](../sessions/session-019ebda6.md)
+- [api, ast, bash, cli +1 (417 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebda6.md)
 
-- [api, ast, aws, bash +1 (133 turns)](../sessions/session-019ebdeb.md)
+- [api, ast, aws, bash +1 (133 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdeb.md)
 
-- [android, angular, api, ast +1 (2201 turns)](../sessions/session-019ec11d.md)
+- [android, angular, api, ast +1 (2201 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec11d.md)
 
-- [ajax, android, api, ast +1 (172 turns)](../sessions/session-019edd8d.md)
+- [ajax, android, api, ast +1 (172 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019edd8d.md)
 
-- [ast, bash, bootstrap, bun +1 (19 turns)](../sessions/session-019ee7e1.md)
+- [ast, bash, bootstrap, bun +1 (19 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee7e1.md)
 
-- [android, angular, ast, aws +1 (407 turns)](../sessions/session-019ef2c6.md)
+- [android, angular, ast, aws +1 (407 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef2c6.md)
 
-- [angular, api, ast, auth +1 (172 turns)](../sessions/session-0c8d8673.md)
+- [angular, api, ast, auth +1 (172 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-0c8d8673.md)
 
 
 > - cli

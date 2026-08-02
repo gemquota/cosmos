@@ -30,9 +30,9 @@ Acronym referenced in session 11928ff2
 
 Referenced in 2 session(s):
 
-- [api, ast, auth, bash +1 (115 turns)](../sessions/session-11928ff2.md)
+- [api, ast, auth, bash +1 (115 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-11928ff2.md)
 
-- [api, ast, auth, authentication +1 (130 turns)](../sessions/session-ae1325ab.md)
+- [api, ast, auth, authentication +1 (130 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-ae1325ab.md)
 
 
 ## Context

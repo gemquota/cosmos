@@ -27,25 +27,25 @@ Referenced in session 673e6311
 
 Referenced in 10 session(s):
 
-- [android, angular, api, ast +1 (333 turns)](../sessions/session-019ee7ae.md)
+- [android, angular, api, ast +1 (333 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee7ae.md)
 
-- [ast, bash, bootstrap, bun +1 (19 turns)](../sessions/session-019ee7e1.md)
+- [ast, bash, bootstrap, bun +1 (19 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee7e1.md)
 
-- [api, ast, auth, authentication +1 (632 turns)](../sessions/session-019ef31d.md)
+- [api, ast, auth, authentication +1 (632 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef31d.md)
 
-- [api, ast, auth, authentication +1 (858 turns)](../sessions/session-019ef7a2.md)
+- [api, ast, auth, authentication +1 (858 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef7a2.md)
 
-- [android, api, ast, auth +1 (443 turns)](../sessions/session-019eff5e.md)
+- [android, api, ast, auth +1 (443 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019eff5e.md)
 
-- [api, ast, auth, backend +1 (53 turns)](../sessions/session-019f2765.md)
+- [api, ast, auth, backend +1 (53 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f2765.md)
 
-- [api, ast, auth, aws +1 (587 turns)](../sessions/session-019f4b9a.md)
+- [api, ast, auth, aws +1 (587 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4b9a.md)
 
-- [android, api, ast, auth +1 (259 turns)](../sessions/session-019f4e5d.md)
+- [android, api, ast, auth +1 (259 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4e5d.md)
 
-- [android, api, ast, auth +1 (443 turns)](../sessions/session-019f6b68.md)
+- [android, api, ast, auth +1 (443 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f6b68.md)
 
-- [android, api, ast, auth +1 (175 turns)](../sessions/session-673e6311.md)
+- [android, api, ast, auth +1 (175 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-673e6311.md)
 
 
 ## Overview

@@ -21,10 +21,10 @@ Acronym referenced in session 019ebd47
 - **Overview:** [Shell Cli](overview.md)
 ## References
 Referenced in 4 session(s):
-- [api, ast, aws, bash +1 (462 turns)](../sessions/session-019ebc82.md)
-- [api, ast, bash, cli +1 (332 turns)](../sessions/session-019ebd47.md)
-- [api, ast, bash, cli +1 (417 turns)](../sessions/session-019ebda6.md)
-- [api, ast, aws, bash +1 (133 turns)](../sessions/session-019ebdeb.md)
+- [api, ast, aws, bash +1 (462 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebc82.md)
+- [api, ast, bash, cli +1 (332 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebd47.md)
+- [api, ast, bash, cli +1 (417 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebda6.md)
+- [api, ast, aws, bash +1 (133 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdeb.md)
 ## Context
 > 126. **exec_command**: {"cmd": "grep -n \"SLIDERS\\|S\\.\\|const S=\" /data/data/com.termux/files/home/
 127. **exec_command**: {"cmd": "grep -n \"SLIDERS\\|S = {\\|INST = {\\|DIMS\\|SC =\\|ARP_INTERVA

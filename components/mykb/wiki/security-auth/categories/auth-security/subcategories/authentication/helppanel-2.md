@@ -30,15 +30,15 @@ Referenced in session 37ab37aa
 
 Referenced in 5 session(s):
 
-- [angular, api, ast, auth +1 (172 turns)](../sessions/session-0c8d8673.md)
+- [angular, api, ast, auth +1 (172 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-0c8d8673.md)
 
-- [android, angular, api, ast +1 (123 turns)](../sessions/session-37ab37aa.md)
+- [android, angular, api, ast +1 (123 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-37ab37aa.md)
 
-- [android, angular, api, ast +1 (54 turns)](../sessions/session-3c7eee7e.md)
+- [android, angular, api, ast +1 (54 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-3c7eee7e.md)
 
-- [android, angular, api, ast +1 (898 turns)](../sessions/session-4b35bd59.md)
+- [android, angular, api, ast +1 (898 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-4b35bd59.md)
 
-- [angular, api, ast, auth +1 (242 turns)](../sessions/session-75202bac.md)
+- [angular, api, ast, auth +1 (242 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-75202bac.md)
 
 
 ## Context

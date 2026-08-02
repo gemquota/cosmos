@@ -31,25 +31,25 @@ Acronym referenced in session 019f4b9a
 
 Referenced in 10 session(s):
 
-- [api, ast, aws, bash +1 (462 turns)](../sessions/session-019ebc82.md)
+- [api, ast, aws, bash +1 (462 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebc82.md)
 
-- [api, ast, bash, cli +1 (332 turns)](../sessions/session-019ebd47.md)
+- [api, ast, bash, cli +1 (332 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebd47.md)
 
-- [api, ast, bash, cli +1 (417 turns)](../sessions/session-019ebda6.md)
+- [api, ast, bash, cli +1 (417 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebda6.md)
 
-- [android, api, ast, auth +1 (447 turns)](../sessions/session-019ebdb5.md)
+- [android, api, ast, auth +1 (447 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdb5.md)
 
-- [api, ast, aws, bash +1 (133 turns)](../sessions/session-019ebdeb.md)
+- [api, ast, aws, bash +1 (133 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdeb.md)
 
-- [android, api, ast, auth +1 (373 turns)](../sessions/session-019f023f.md)
+- [android, api, ast, auth +1 (373 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f023f.md)
 
-- [android, api, ast, aws +1 (384 turns)](../sessions/session-019f0689.md)
+- [android, api, ast, aws +1 (384 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f0689.md)
 
-- [api, ast, aws, bash +1 (582 turns)](../sessions/session-019f417e.md)
+- [api, ast, aws, bash +1 (582 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f417e.md)
 
-- [api, ast, bash, bug +1 (235 turns)](../sessions/session-019f422b.md)
+- [api, ast, bash, bug +1 (235 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f422b.md)
 
-- [api, ast, auth, aws +1 (587 turns)](../sessions/session-019f4b9a.md)
+- [api, ast, auth, aws +1 (587 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4b9a.md)
 
 
 > 70. **exec_command**: {"cmd": "cat ./e/src/ui-status.js", "yield_time_ms": 1000}

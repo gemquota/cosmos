@@ -27,25 +27,25 @@ Acronym referenced in session 65db591e
 
 Referenced in 10 session(s):
 
-- [android, api, ast, auth +1 (196 turns)](../sessions/session-019ef278.md)
+- [android, api, ast, auth +1 (196 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef278.md)
 
-- [android, api, ast, auth +1 (443 turns)](../sessions/session-019eff5e.md)
+- [android, api, ast, auth +1 (443 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019eff5e.md)
 
-- [android, api, ast, auth +1 (443 turns)](../sessions/session-019f6b68.md)
+- [android, api, ast, auth +1 (443 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f6b68.md)
 
-- [ajax, alpine, android, angular +1 (514 turns)](../sessions/session-019f75ed.md)
+- [ajax, alpine, android, angular +1 (514 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f75ed.md)
 
-- [api, ast, auth, authentication +1 (32 turns)](../sessions/session-603fe7c5.md)
+- [api, ast, auth, authentication +1 (32 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-603fe7c5.md)
 
-- [android, api, ast, auth +1 (86 turns)](../sessions/session-65db591e.md)
+- [android, api, ast, auth +1 (86 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-65db591e.md)
 
-- [api, ast, auth, bug +1 (83 turns)](../sessions/session-8bfd952e.md)
+- [api, ast, auth, bug +1 (83 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8bfd952e.md)
 
-- [android, api, ast, auth +1 (37 turns)](../sessions/session-8ec60717.md)
+- [android, api, ast, auth +1 (37 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8ec60717.md)
 
-- [api, ast, auth, authentication +1 (179 turns)](../sessions/session-ce22f697.md)
+- [api, ast, auth, authentication +1 (179 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-ce22f697.md)
 
-- [ajax, android, api, ast +1 (154 turns)](../sessions/session-fe448bc7.md)
+- [ajax, android, api, ast +1 (154 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-fe448bc7.md)
 
 
 ## Overview

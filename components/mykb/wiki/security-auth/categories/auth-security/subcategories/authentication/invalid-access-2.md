@@ -30,11 +30,11 @@ Referenced in session 8f4285b7
 
 Referenced in 3 session(s):
 
-- [android, api, ast, auth +1 (61 turns)](../sessions/session-8f4285b7.md)
+- [android, api, ast, auth +1 (61 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8f4285b7.md)
 
-- [android, api, ast, auth +1 (155 turns)](../sessions/session-c8c575c8.md)
+- [android, api, ast, auth +1 (155 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-c8c575c8.md)
 
-- [android, api, ast, auth +1 (97 turns)](../sessions/session-fa9ee442.md)
+- [android, api, ast, auth +1 (97 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-fa9ee442.md)
 
 
 ## Context

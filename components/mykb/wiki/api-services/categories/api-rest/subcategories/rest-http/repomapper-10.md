@@ -30,25 +30,25 @@ Referenced in session 3ebbffaf
 
 Referenced in 10 session(s):
 
-- [android, api, ast, auth +1 (127 turns)](../sessions/session-01106e45.md)
+- [android, api, ast, auth +1 (127 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-01106e45.md)
 
-- [android, api, ast, auth +1 (1271 turns)](../sessions/session-019ec24a.md)
+- [android, api, ast, auth +1 (1271 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec24a.md)
 
-- [api, ast, bash, bug +1 (20 turns)](../sessions/session-019ec3a4.md)
+- [api, ast, bash, bug +1 (20 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec3a4.md)
 
-- [api, ast, auth, bash +1 (115 turns)](../sessions/session-11928ff2.md)
+- [api, ast, auth, bash +1 (115 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-11928ff2.md)
 
-- [api, ast, bash, bug +1 (54 turns)](../sessions/session-13adc671.md)
+- [api, ast, bash, bug +1 (54 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-13adc671.md)
 
-- [android, api, ast, auth +1 (51 turns)](../sessions/session-3ebbffaf.md)
+- [android, api, ast, auth +1 (51 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-3ebbffaf.md)
 
-- [android, api, ast, auth +1 (89 turns)](../sessions/session-6cc3ed28.md)
+- [android, api, ast, auth +1 (89 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-6cc3ed28.md)
 
-- [android, api, ast, backend +1 (79 turns)](../sessions/session-89dbddbd.md)
+- [android, api, ast, backend +1 (79 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-89dbddbd.md)
 
-- [android, api, ast, bootstrap +1 (145 turns)](../sessions/session-a872f7fc.md)
+- [android, api, ast, bootstrap +1 (145 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-a872f7fc.md)
 
-- [api, ast, auth, authentication +1 (102 turns)](../sessions/session-c9a75407.md)
+- [api, ast, auth, authentication +1 (102 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-c9a75407.md)
 
 
 ## Context

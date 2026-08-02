@@ -31,25 +31,25 @@ Acronym referenced in session c88fb179
 
 Referenced in 10 session(s):
 
-- [android, api, ast, auth +1 (531 turns)](../sessions/session-019ebd25.md)
+- [android, api, ast, auth +1 (531 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebd25.md)
 
-- [android, api, ast, auth +1 (426 turns)](../sessions/session-019ebdc5.md)
+- [android, api, ast, auth +1 (426 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdc5.md)
 
-- [api, ast, auth, backend +1 (250 turns)](../sessions/session-019f2369.md)
+- [api, ast, auth, backend +1 (250 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f2369.md)
 
-- [android, api, ast, auth +1 (660 turns)](../sessions/session-019f27f2.md)
+- [android, api, ast, auth +1 (660 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f27f2.md)
 
-- [api, ast, auth, authentication +1 (935 turns)](../sessions/session-019f321e.md)
+- [api, ast, auth, authentication +1 (935 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f321e.md)
 
-- [android, api, ast, auth +1 (222 turns)](../sessions/session-019f429c.md)
+- [android, api, ast, auth +1 (222 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f429c.md)
 
-- [api, ast, backend, bash +1 (20 turns)](../sessions/session-019f503e.md)
+- [api, ast, backend, bash +1 (20 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f503e.md)
 
-- [android, api, ast, auth +1 (425 turns)](../sessions/session-019f737d.md)
+- [android, api, ast, auth +1 (425 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f737d.md)
 
-- [android, api, ast, auth +1 (31 turns)](../sessions/session-2166b7a2.md)
+- [android, api, ast, auth +1 (31 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-2166b7a2.md)
 
-- [android, api, ast, auth +1 (187 turns)](../sessions/session-c88fb179.md)
+- [android, api, ast, auth +1 (187 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-c88fb179.md)
 
 
 > - api

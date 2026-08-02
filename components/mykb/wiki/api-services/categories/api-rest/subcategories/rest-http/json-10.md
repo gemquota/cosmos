@@ -31,25 +31,25 @@ Acronym referenced in session 81c5e6d2
 
 Referenced in 10 session(s):
 
-- [api, ast, bash, cli +1 (332 turns)](../sessions/session-019ebd47.md)
+- [api, ast, bash, cli +1 (332 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebd47.md)
 
-- [api, ast, bash, cli +1 (417 turns)](../sessions/session-019ebda6.md)
+- [api, ast, bash, cli +1 (417 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebda6.md)
 
-- [ast, auth, aws, bash +1 (40 turns)](../sessions/session-019ebe8b.md)
+- [ast, auth, aws, bash +1 (40 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebe8b.md)
 
-- [ast, auth, aws, bash +1 (7 turns)](../sessions/session-019ee4e0.md)
+- [ast, auth, aws, bash +1 (7 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee4e0.md)
 
-- [api, ast, auth, authentication +1 (36 turns)](../sessions/session-019ef545.md)
+- [api, ast, auth, authentication +1 (36 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef545.md)
 
-- [ast, auth, cli, css +1 (11 turns)](../sessions/session-019f1447.md)
+- [ast, auth, cli, css +1 (11 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1447.md)
 
-- [android, api, ast, aws +1 (49 turns)](../sessions/session-019f4100.md)
+- [android, api, ast, aws +1 (49 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4100.md)
 
-- [ast, auth, aws, bootstrap +1 (40 turns)](../sessions/session-019f6ca4.md)
+- [ast, auth, aws, bootstrap +1 (40 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f6ca4.md)
 
-- [android, api, ast, auth +1 (23 turns)](../sessions/session-81c5e6d2.md)
+- [android, api, ast, auth +1 (23 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-81c5e6d2.md)
 
-- [android, api, ast, backend +1 (79 turns)](../sessions/session-89dbddbd.md)
+- [android, api, ast, backend +1 (79 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-89dbddbd.md)
 
 
 > - ios

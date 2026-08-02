@@ -30,11 +30,11 @@ Referenced in session dd75982d
 
 Referenced in 3 session(s):
 
-- [android, angular, api, ast +1 (638 turns)](../sessions/session-0c0a9b0f.md)
+- [android, angular, api, ast +1 (638 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-0c0a9b0f.md)
 
-- [api, ast, bash, cdn +1 (24 turns)](../sessions/session-3e426ef1.md)
+- [api, ast, bash, cdn +1 (24 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-3e426ef1.md)
 
-- [api, auth, authentication, bash +1 (26 turns)](../sessions/session-dd75982d.md)
+- [api, auth, authentication, bash +1 (26 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-dd75982d.md)
 
 
 ## Context

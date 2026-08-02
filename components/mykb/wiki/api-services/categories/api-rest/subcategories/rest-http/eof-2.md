@@ -32,9 +32,9 @@ Acronym referenced in session 55599610
 
 Referenced in 2 session(s):
 
-- [api, ast, aws, bash +1 (133 turns)](../sessions/session-019ebdeb.md)
+- [api, ast, aws, bash +1 (133 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdeb.md)
 
-- [android, api, ast, auth +1 (252 turns)](../sessions/session-55599610.md)
+- [android, api, ast, auth +1 (252 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-55599610.md)
 
 
 ## Context

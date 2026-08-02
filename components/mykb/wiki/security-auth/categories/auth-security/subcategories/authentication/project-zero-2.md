@@ -30,13 +30,13 @@ Referenced in session 8ec60717
 
 Referenced in 4 session(s):
 
-- [api, ast, auth, authentication +1 (32 turns)](../sessions/session-603fe7c5.md)
+- [api, ast, auth, authentication +1 (32 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-603fe7c5.md)
 
-- [android, api, ast, auth +1 (175 turns)](../sessions/session-673e6311.md)
+- [android, api, ast, auth +1 (175 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-673e6311.md)
 
-- [android, api, ast, auth +1 (37 turns)](../sessions/session-8ec60717.md)
+- [android, api, ast, auth +1 (37 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8ec60717.md)
 
-- [android, api, ast, auth +1 (152 turns)](../sessions/session-941085b2.md)
+- [android, api, ast, auth +1 (152 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-941085b2.md)
 
 
 ## Context

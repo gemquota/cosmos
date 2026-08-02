@@ -30,11 +30,11 @@ Referenced in session 791ec3a4
 
 Referenced in 3 session(s):
 
-- [ast, ide, orm, spa (3 turns)](../sessions/session-1e62ff4e.md)
+- [ast, ide, orm, spa (3 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-1e62ff4e.md)
 
-- [ide, orm (3 turns)](../sessions/session-48317da3.md)
+- [ide, orm (3 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-48317da3.md)
 
-- [ast, guid, ide, orm +1 (3 turns)](../sessions/session-791ec3a4.md)
+- [ast, guid, ide, orm +1 (3 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-791ec3a4.md)
 
 
 ## Context

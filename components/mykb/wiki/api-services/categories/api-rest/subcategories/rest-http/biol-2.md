@@ -31,23 +31,23 @@ Acronym referenced in session 38797263
 
 Referenced in 9 session(s):
 
-- [android, api, ast, auth +1 (182 turns)](../sessions/session-14b4b79d.md)
+- [android, api, ast, auth +1 (182 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-14b4b79d.md)
 
-- [android, ast, auth, aws +1 (30 turns)](../sessions/session-38797263.md)
+- [android, ast, auth, aws +1 (30 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-38797263.md)
 
-- [android, angular, api, ast +1 (898 turns)](../sessions/session-4b35bd59.md)
+- [android, angular, api, ast +1 (898 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-4b35bd59.md)
 
-- [android, api, ast, auth +1 (146 turns)](../sessions/session-7c71c63e.md)
+- [android, api, ast, auth +1 (146 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-7c71c63e.md)
 
-- [android, angular, api, ast +1 (177 turns)](../sessions/session-7d1e3877.md)
+- [android, angular, api, ast +1 (177 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-7d1e3877.md)
 
-- [angular, api, ast, auth +1 (344 turns)](../sessions/session-8430185b.md)
+- [angular, api, ast, auth +1 (344 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8430185b.md)
 
-- [android, angular, api, ast +1 (543 turns)](../sessions/session-8f62822c.md)
+- [android, angular, api, ast +1 (543 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8f62822c.md)
 
-- [android, api, ast, auth +1 (147 turns)](../sessions/session-c8972324.md)
+- [android, api, ast, auth +1 (147 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-c8972324.md)
 
-- [android, api, ast, auth +1 (167 turns)](../sessions/session-d77d6658.md)
+- [android, api, ast, auth +1 (167 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-d77d6658.md)
 
 
 > 53. **replace**: {"file_path":"src/worker/physics.worker.js","new_string":"    }\n};\n\nfunction

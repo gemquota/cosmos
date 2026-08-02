@@ -31,11 +31,11 @@ Acronym referenced in session cff9c90f
 
 Referenced in 3 session(s):
 
-- [android, angular, api, ast +1 (123 turns)](../sessions/session-37ab37aa.md)
+- [android, angular, api, ast +1 (123 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-37ab37aa.md)
 
-- [ast, aws, bash, bug +1 (33 turns)](../sessions/session-496e95af.md)
+- [ast, aws, bash, bug +1 (33 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-496e95af.md)
 
-- [android, angular, api, ast +1 (134 turns)](../sessions/session-cff9c90f.md)
+- [android, angular, api, ast +1 (134 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-cff9c90f.md)
 
 
 > 28. **read_file**: {"file_path":"README.md"}

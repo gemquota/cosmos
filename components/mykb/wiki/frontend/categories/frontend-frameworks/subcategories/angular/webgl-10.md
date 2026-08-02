@@ -30,25 +30,25 @@ Referenced in session c3131b2c
 
 Referenced in 10 session(s):
 
-- [android, angular, api, ast +1 (628 turns)](../sessions/session-019ebe76.md)
+- [android, angular, api, ast +1 (628 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebe76.md)
 
-- [ajax, android, api, ast +1 (1330 turns)](../sessions/session-019ec3c4.md)
+- [ajax, android, api, ast +1 (1330 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec3c4.md)
 
-- [android, angular, api, ast +1 (333 turns)](../sessions/session-019ee7ae.md)
+- [android, angular, api, ast +1 (333 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ee7ae.md)
 
-- [android, api, ast, auth +1 (993 turns)](../sessions/session-019ef769.md)
+- [android, api, ast, auth +1 (993 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef769.md)
 
-- [api, ast, auth, authentication +1 (858 turns)](../sessions/session-019ef7a2.md)
+- [api, ast, auth, authentication +1 (858 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef7a2.md)
 
-- [api, ast, auth, backend +1 (512 turns)](../sessions/session-019f00c7.md)
+- [api, ast, auth, backend +1 (512 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f00c7.md)
 
-- [android, api, ast, auth +1 (373 turns)](../sessions/session-019f023f.md)
+- [android, api, ast, auth +1 (373 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f023f.md)
 
-- [android, api, ast, aws +1 (49 turns)](../sessions/session-019f4100.md)
+- [android, api, ast, aws +1 (49 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4100.md)
 
-- [ajax, api, ast, aws +1 (316 turns)](../sessions/session-019f66ba.md)
+- [ajax, api, ast, aws +1 (316 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f66ba.md)
 
-- [android, api, ast, auth +1 (107 turns)](../sessions/session-c3131b2c.md)
+- [android, api, ast, auth +1 (107 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-c3131b2c.md)
 
 
 ## Context

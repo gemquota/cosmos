@@ -20,7 +20,7 @@ Acronym referenced in session 496e95af
 
 Referenced in 1 session(s):
 
-- [ast, aws, bash, bug +1 (33 turns)](../sessions/session-496e95af.md)
+- [ast, aws, bash, bug +1 (33 turns)](../../../../raw/archive/session-artifacts-2026-07/sessions/session-496e95af.md)
 
 
 ## Overview

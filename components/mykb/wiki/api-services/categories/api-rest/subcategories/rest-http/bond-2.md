@@ -32,17 +32,17 @@ Acronym referenced in session 8430185b
 
 Referenced in 6 session(s):
 
-- [android, angular, api, ast +1 (201 turns)](../sessions/session-0a2e7660.md)
+- [android, angular, api, ast +1 (201 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-0a2e7660.md)
 
-- [android, api, ast, auth +1 (87 turns)](../sessions/session-454634e7.md)
+- [android, api, ast, auth +1 (87 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-454634e7.md)
 
-- [ast, aws, bash, bug +1 (33 turns)](../sessions/session-496e95af.md)
+- [ast, aws, bash, bug +1 (33 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-496e95af.md)
 
-- [android, angular, api, ast +1 (177 turns)](../sessions/session-7d1e3877.md)
+- [android, angular, api, ast +1 (177 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-7d1e3877.md)
 
-- [angular, api, ast, auth +1 (344 turns)](../sessions/session-8430185b.md)
+- [angular, api, ast, auth +1 (344 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8430185b.md)
 
-- [android, angular, api, ast +1 (543 turns)](../sessions/session-8f62822c.md)
+- [android, angular, api, ast +1 (543 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-8f62822c.md)
 
 
 ## Context

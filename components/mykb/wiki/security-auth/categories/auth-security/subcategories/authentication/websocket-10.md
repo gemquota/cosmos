@@ -30,25 +30,25 @@ Referenced in session f110fe6e
 
 Referenced in 10 session(s):
 
-- [android, api, ast, auth +1 (160 turns)](../sessions/session-019ebdb9.md)
+- [android, api, ast, auth +1 (160 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdb9.md)
 
-- [android, api, ast, auth +1 (161 turns)](../sessions/session-019eee5d.md)
+- [android, api, ast, auth +1 (161 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019eee5d.md)
 
-- [android, api, ast, auth +1 (196 turns)](../sessions/session-019ef278.md)
+- [android, api, ast, auth +1 (196 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ef278.md)
 
-- [android, api, ast, auth +1 (219 turns)](../sessions/session-019f32b3.md)
+- [android, api, ast, auth +1 (219 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f32b3.md)
 
-- [android, api, ast, auth +1 (259 turns)](../sessions/session-019f4e5d.md)
+- [android, api, ast, auth +1 (259 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f4e5d.md)
 
-- [android, api, ast, auth +1 (1774 turns)](../sessions/session-019f6624.md)
+- [android, api, ast, auth +1 (1774 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f6624.md)
 
-- [android, api, ast, bash +1 (289 turns)](../sessions/session-019f7032.md)
+- [android, api, ast, bash +1 (289 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f7032.md)
 
-- [ajax, api, ast, auth +1 (25 turns)](../sessions/session-902e24a7.md)
+- [ajax, api, ast, auth +1 (25 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-902e24a7.md)
 
-- [api, ast, auth, authentication +1 (179 turns)](../sessions/session-ce22f697.md)
+- [api, ast, auth, authentication +1 (179 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-ce22f697.md)
 
-- [api, ast, auth, authentication +1 (35 turns)](../sessions/session-f110fe6e.md)
+- [api, ast, auth, authentication +1 (35 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-f110fe6e.md)
 
 
 ## Context

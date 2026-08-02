@@ -21,9 +21,9 @@ Acronym referenced in session 0118cc5d
 - **Overview:** [Auth Security](../../overview.md)
 ## References
 Referenced in 3 session(s):
-- [ajax, api, ast, auth +1 (32 turns)](../sessions/session-0118cc5d.md)
-- [api, ast, auth, authentication +1 (68 turns)](../sessions/session-3de8187f.md)
-- [ajax, api, ast, auth +1 (25 turns)](../sessions/session-902e24a7.md)
+- [ajax, api, ast, auth +1 (32 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-0118cc5d.md)
+- [api, ast, auth, authentication +1 (68 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-3de8187f.md)
+- [ajax, api, ast, auth +1 (25 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-902e24a7.md)
 ## Context
 > 25. **system**: error: [API Error: You have exhausted your daily quota on this model.]
 26. **system**: info: This request failed. Press F12 for diagnostics, or run /settings and chang

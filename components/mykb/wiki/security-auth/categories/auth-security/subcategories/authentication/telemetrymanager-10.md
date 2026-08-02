@@ -27,25 +27,25 @@ Referenced in session d3507371
 
 Referenced in 10 session(s):
 
-- [android, api, ast, auth +1 (1271 turns)](../sessions/session-019ec24a.md)
+- [android, api, ast, auth +1 (1271 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec24a.md)
 
-- [ajax, android, api, ast +1 (2829 turns)](../sessions/session-019ecf88.md)
+- [ajax, android, api, ast +1 (2829 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ecf88.md)
 
-- [android, api, ast, backend +1 (65 turns)](../sessions/session-01a82d4d.md)
+- [android, api, ast, backend +1 (65 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-01a82d4d.md)
 
-- [api, ast, auth, bash +1 (115 turns)](../sessions/session-11928ff2.md)
+- [api, ast, auth, bash +1 (115 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-11928ff2.md)
 
-- [android, api, ast, auth +1 (90 turns)](../sessions/session-adc6df02.md)
+- [android, api, ast, auth +1 (90 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-adc6df02.md)
 
-- [android, api, ast, auth +1 (71 turns)](../sessions/session-add4c8bc.md)
+- [android, api, ast, auth +1 (71 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-add4c8bc.md)
 
-- [api, ast, auth, authentication +1 (59 turns)](../sessions/session-b5a42a06.md)
+- [api, ast, auth, authentication +1 (59 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-b5a42a06.md)
 
-- [api, ast, auth, authentication +1 (102 turns)](../sessions/session-c9a75407.md)
+- [api, ast, auth, authentication +1 (102 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-c9a75407.md)
 
-- [android, api, ast, backend +1 (11 turns)](../sessions/session-d3507371.md)
+- [android, api, ast, backend +1 (11 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-d3507371.md)
 
-- [api, ast, auth, authentication +1 (87 turns)](../sessions/session-fe319cab.md)
+- [api, ast, auth, authentication +1 (87 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-fe319cab.md)
 
 
 ## Overview

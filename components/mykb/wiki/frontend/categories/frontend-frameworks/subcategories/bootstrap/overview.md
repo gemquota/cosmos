@@ -13,7 +13,7 @@ Referenced in session 019f1447
 
 Referenced in 1 session(s):
 
-- [ast, auth, cli, css +1 (11 turns)](../sessions/session-019f1447.md)
+- [ast, auth, cli, css +1 (11 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019f1447.md)
 
 
 ## Overview
