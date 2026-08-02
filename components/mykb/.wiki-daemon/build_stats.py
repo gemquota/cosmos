@@ -493,11 +493,14 @@ function tbl(el, headers, rows){
 function base(){
   document.getElementById('gen').textContent = STATS.generated;
   const T = STATS.totals;
+  const th = STATS.thresholds;
+  const i300 = th.labels.indexOf('300'), i400 = th.labels.indexOf('400'), i500 = th.labels.indexOf('500');
   const cards = [
     ['wiki files', fmt(T.files), 'excl. log.md / index.md'],
     ['total words', fmt(T.words), ''],
     ['median words', fmt(T.median_words), 'all / ' + fmt(T.median_words_no_daily) + ' no-daily'],
     ['content areas', fmt(T.areas_count), ''],
+    ['full articles (300+)', fmt(th.all[i300]), '400+ → ' + fmt(th.all[i400]) + ' · 500+ → ' + fmt(th.all[i500])],
     ['graph nodes', fmt(T.nodes), fmt(T.edges) + ' edges'],
     ['wikilinks', fmt(T.links), ''],
     ['zero-link files', fmt(T.zero_link_files), T.zero_link_pct + '% of wiki'],
@@ -507,7 +510,6 @@ function base(){
     '<div class="card"><div class="n">'+c[1]+'</div><div class="l">'+c[0]+'</div>'+(c[2]?'<div class="l" style="text-transform:none;letter-spacing:0">'+c[2]+'</div>':'')+'</div>'
   ).join('');
 
-  const th = STATS.thresholds;
   tbl('th-t', ['min words','all','no daily'], th.labels.map((l,i)=>[l, fmt(th.all[i]), fmt(th.no_daily[i])]));
   const h = STATS.histogram;
   tbl('hist-t', ['bucket','files'], h.labels.map((l,i)=>[l, fmt(h.counts[i])]));
