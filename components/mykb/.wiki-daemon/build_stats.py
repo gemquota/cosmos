@@ -12,7 +12,7 @@ import glob
 import json
 import os
 import re
-from collections import Counter
+from collections import Counter, defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)            # components/mykb
@@ -72,9 +72,13 @@ def main():
     months, daily_months = Counter(), Counter()
     days60 = Counter()
     statuses, types_, areas, tags = Counter(), Counter(), Counter(), Counter()
+    area_words, month_words = Counter(), Counter()
+    status_month = defaultdict(Counter)
     per_file = {}                      # rel -> (words, links, status)
 
     for rel, fm, words, links in walk_md():
+        if rel == 'log.md' or rel == 'index.md' or rel.endswith('/index.md'):
+            continue
         files.append(rel)
         total_words += words
         total_links += links
@@ -87,12 +91,16 @@ def main():
         statuses[fm.get('status', 'none')] += 1
         types_[fm.get('type', 'none')] += 1
         area = rel.split('/')[0]
-        areas[area if len(rel.split('/')) > 1 else '(root)'] += 1
+        akey = area if len(rel.split('/')) > 1 else '(root)'
+        areas[akey] += 1
+        area_words[akey] += words
         for t in fm.get('tags', []):
             tags[t] += 1
         mo = iso_month(fm.get('timestamp'))
         if mo:
             months[mo] += 1
+            month_words[mo] += words
+            status_month[mo][fm.get('status', 'none')] += 1
             if rel.startswith('daily/'):
                 daily_months[mo] += 1
         d = iso_day(fm.get('timestamp'))
@@ -101,14 +109,24 @@ def main():
         per_file[rel] = {'w': words, 'l': links, 's': fm.get('status', 'none')}
 
     # graph degree
-    nodes = edges = degree = None
+    nodes = edges = degree = links_in = None
     try:
         g = json.load(open(os.path.join(ROOT, 'graph.json')))
         nodes, edges = len(g.get('nodes', [])), len(g.get('edges', []))
         degree = Counter()
+        links_in = Counter()
+
+        def graph_ok(nid):
+            return bool(nid) and nid != 'wiki/log' and nid != 'wiki/index' \
+                and not nid.endswith('/index')
+
         for e in g.get('edges', []):
-            degree[e.get('source')] += 1
-            degree[e.get('target')] += 1
+            s, t = e.get('source'), e.get('target')
+            if graph_ok(s):
+                degree[s] += 1
+            if graph_ok(t):
+                degree[t] += 1
+                links_in[t] += 1
     except Exception:
         pass
 
@@ -175,6 +193,43 @@ def main():
         items = counter.most_common(top)
         return [{'label': k or '(none)', 'count': v} for k, v in items]
 
+    months_sorted = sorted(set(months) | set(daily_months))
+    cumulative = []
+    _acc = 0
+    for m in months_sorted:
+        _acc += months[m]
+        cumulative.append(_acc)
+
+    ecdf = [round(100.0 - pct(sum(1 for w in words_all if w >= t), n), 1)
+            for t in thresholds]
+    avg_month = [round(month_words[m] / months[m], 1) if months[m] else 0
+                 for m in months_sorted]
+
+    ab_labels = ['<150', '150-299', '300-499', '500-999', '1000+']
+    ab_edges = [0, 150, 300, 500, 1000]
+    top_areas = [k for k, _ in areas.most_common(10) if k not in ('daily', '(root)')]
+
+    def _bucket_of(w):
+        for i in range(len(ab_edges) - 1):
+            if ab_edges[i] <= w < ab_edges[i + 1]:
+                return i
+        return len(ab_edges) - 1
+
+    area_buckets = {
+        'areas': top_areas,
+        'labels': ab_labels,
+        'counts': [[sum(1 for r, pf in per_file.items()
+                        if r.split('/')[0] == a and _bucket_of(pf['w']) == b)
+                    for b in range(len(ab_labels))] for a in top_areas],
+    }
+    sm_labels = ['growing', 'stub', 'stable', 'other']
+    status_by_month = {
+        'labels': months_sorted,
+        'datasets': [{'label': s, 'counts': [status_month[m].get(s, 0)
+                                             for m in months_sorted]}
+                     for s in sm_labels],
+    }
+
     stats = {
         'generated': _dt.datetime.now(_dt.timezone.utc).strftime('%Y-%m-%dT%H:%MZ'),
         'totals': {
@@ -185,6 +240,7 @@ def main():
             'median_words': med(words_all),
             'mean_words': round(total_words / n, 1) if n else 0,
             'median_words_no_daily': med(words_nd),
+            'areas_count': len([k for k in areas if k not in ('daily', '(root)')]),
             'zero_link_files': zero_links,
             'zero_link_pct': pct(zero_links, n),
             'nodes': nodes,
@@ -202,9 +258,9 @@ def main():
         'areas': series(areas, 15),
         'tags': series(tags, 20),
         'months': {
-            'labels': sorted(set(months) | set(daily_months)),
-            'all': [months[m] for m in sorted(set(months) | set(daily_months))],
-            'daily': [daily_months[m] for m in sorted(set(months) | set(daily_months))],
+            'labels': months_sorted,
+            'all': [months[m] for m in months_sorted],
+            'daily': [daily_months[m] for m in months_sorted],
         },
         'last60': {
             'labels': sorted(days60)[-60:],
@@ -214,6 +270,15 @@ def main():
         'degree_hist': {'labels': deg_buckets, 'counts': deg_hist},
         'top_files': [{'path': k, 'title': v['w'], 'words': v['w']} for k, v in top_files],
         'top_nodes': [{'id': k, 'degree': v} for k, v in top_nodes],
+        'words_by_area': [{'area': k, 'words': v, 'files': areas[k]}
+                          for k, v in area_words.most_common(15)],
+        'area_buckets': area_buckets,
+        'status_by_month': status_by_month,
+        'cumulative': {'labels': months_sorted, 'counts': cumulative},
+        'ecdf': {'labels': [str(t) for t in thresholds], 'pct_le': ecdf},
+        'avg_month': {'labels': months_sorted, 'words': avg_month},
+        'links_in': ([{'id': k, 'links': v} for k, v in links_in.most_common(15)]
+                     if links_in else []),
         'scatter': scatter,
     }
 
@@ -298,6 +363,12 @@ code{background:#0d1424;border:1px solid #1e293b;border-radius:4px;padding:1px 5
       <div class="chart"><canvas id="hist-c"></canvas></div>
       <details><summary>Buckets</summary><table id="hist-t"></table></details>
     </div>
+    <div class="panel" id="ecdf">
+      <h2>Share of files under N words</h2>
+      <p class="why">Cumulative share (ECDF) of articles with body length below each threshold.</p>
+      <div class="chart"><canvas id="ecdf-c"></canvas></div>
+      <details><summary>Thresholds</summary><table id="ecdf-t"></table></details>
+    </div>
     <div class="panel" id="topfiles">
       <h2>Longest files</h2>
       <p class="why">Top 15 by body word count.</p>
@@ -322,6 +393,18 @@ code{background:#0d1424;border:1px solid #1e293b;border-radius:4px;padding:1px 5
       <div class="chart"><canvas id="areas-c"></canvas></div>
       <details><summary>Areas</summary><table id="areas-t"></table></details>
     </div>
+    <div class="panel" id="area-words">
+      <h2>Words by area</h2>
+      <p class="why">Total body words per area (top 15) — where the knowledge weight lives.</p>
+      <div class="chart"><canvas id="aw-c"></canvas></div>
+      <details><summary>Areas</summary><table id="aw-t"></table></details>
+    </div>
+    <div class="panel" id="area-buckets">
+      <h2>Word buckets by area</h2>
+      <p class="why">Length composition per area (stacked): most full articles sit in the 150–300 word band.</p>
+      <div class="chart"><canvas id="ab-c"></canvas></div>
+      <details><summary>Areas</summary><table id="ab-t"></table></details>
+    </div>
     <div class="panel" id="tags">
       <h2>Top tags</h2>
       <p class="why">Most-used frontmatter tags (top 20).</p>
@@ -333,6 +416,24 @@ code{background:#0d1424;border:1px solid #1e293b;border-radius:4px;padding:1px 5
       <p class="why">Frontmatter timestamps — all files vs. daily notes per calendar month.</p>
       <div class="chart"><canvas id="months-c"></canvas></div>
       <details><summary>Months</summary><table id="months-t"></table></details>
+    </div>
+    <div class="panel" id="status-month">
+      <h2>Status by month</h2>
+      <p class="why">Lifecycle status of articles added per calendar month (stacked).</p>
+      <div class="chart"><canvas id="sm-c"></canvas></div>
+      <details><summary>Months</summary><table id="sm-t"></table></details>
+    </div>
+    <div class="panel" id="cumulative">
+      <h2>Cumulative growth</h2>
+      <p class="why">Total wiki content files over time.</p>
+      <div class="chart"><canvas id="cum-c"></canvas></div>
+      <details><summary>Months</summary><table id="cum-t"></table></details>
+    </div>
+    <div class="panel" id="avg-month">
+      <h2>Average words per month</h2>
+      <p class="why">Mean body length of articles added each month — acquisition volume vs. depth.</p>
+      <div class="chart"><canvas id="avg-c"></canvas></div>
+      <details><summary>Months</summary><table id="avg-t"></table></details>
     </div>
     <div class="panel" id="last60">
       <h2>Files per day (last 60 days)</h2>
@@ -352,6 +453,12 @@ code{background:#0d1424;border:1px solid #1e293b;border-radius:4px;padding:1px 5
       <div class="chart"><canvas id="topn-c"></canvas></div>
       <details><summary>Nodes</summary><table id="topn-t"></table></details>
     </div>
+    <div class="panel" id="links-in">
+      <h2>Most linked-to articles</h2>
+      <p class="why">Top 15 by inbound graph links — the hub pages of the wiki.</p>
+      <div class="chart"><canvas id="li-c"></canvas></div>
+      <details><summary>Nodes</summary><table id="li-t"></table></details>
+    </div>
     <div class="panel" id="linkshist">
       <h2>Wikilinks per file</h2>
       <p class="why">Number of <code>[[wikilinks]]</code> per file, bucketed.</p>
@@ -367,7 +474,7 @@ code{background:#0d1424;border:1px solid #1e293b;border-radius:4px;padding:1px 5
   </section>
 </div>
 <footer>
-  <p>Word counts = whitespace tokens in body text with YAML frontmatter stripped. Link counts include frontmatter wikilinks. Timestamps read from frontmatter; files without one are omitted from time charts.</p>
+  <p>Word counts = whitespace tokens in body text with YAML frontmatter stripped. Index pages (<code>index.md</code>) and the bundle log (<code>log.md</code>) are excluded from all article-level stats; graph node/edge totals still include them. Link counts include frontmatter wikilinks. Timestamps read from frontmatter; files without one are omitted from time charts.</p>
   <p>Regenerate: <code>python3 components/mykb/.wiki-daemon/build_stats.py</code> · Snapshots: <code>python3 gen-static-data.py --check</code></p>
 </footer>
 <script>
@@ -376,6 +483,7 @@ const PALETTE = ['#a78bfa','#2dd4bf','#fbbf24','#f472b6','#60a5fa','#34d399','#f
 const COLORS = {growing:'#a78bfa', stub:'#64748b', stable:'#2dd4bf', none:'#475569'};
 
 function fmt(n){ return Number(n).toLocaleString('en-US'); }
+function short(s){ return s.length > 28 ? '…' + s.slice(-27) : s; }
 function tbl(el, headers, rows){
   const t = document.getElementById(el); if(!t) return;
   t.innerHTML = '<thead><tr>' + headers.map(h=>'<th>'+h+'</th>').join('') + '</tr></thead><tbody>' +
@@ -386,9 +494,10 @@ function base(){
   document.getElementById('gen').textContent = STATS.generated;
   const T = STATS.totals;
   const cards = [
-    ['wiki files', fmt(T.files), T.daily + ' daily notes'],
+    ['wiki files', fmt(T.files), 'excl. log.md / index.md'],
     ['total words', fmt(T.words), ''],
     ['median words', fmt(T.median_words), 'all / ' + fmt(T.median_words_no_daily) + ' no-daily'],
+    ['content areas', fmt(T.areas_count), ''],
     ['graph nodes', fmt(T.nodes), fmt(T.edges) + ' edges'],
     ['wikilinks', fmt(T.links), ''],
     ['zero-link files', fmt(T.zero_link_files), T.zero_link_pct + '% of wiki'],
@@ -402,6 +511,8 @@ function base(){
   tbl('th-t', ['min words','all','no daily'], th.labels.map((l,i)=>[l, fmt(th.all[i]), fmt(th.no_daily[i])]));
   const h = STATS.histogram;
   tbl('hist-t', ['bucket','files'], h.labels.map((l,i)=>[l, fmt(h.counts[i])]));
+  const ec = STATS.ecdf;
+  tbl('ecdf-t', ['max words','share of files'], ec.labels.map((l,i)=>[l, ec.pct_le[i] + '%']));
   const tf = STATS.top_files;
   tbl('top-t', ['file','words'], tf.map(f=>[f.path, fmt(f.words)]));
   const st = STATS.status;
@@ -410,16 +521,28 @@ function base(){
   tbl('types-t', ['type','notes'], ty.map(t=>[t.label, fmt(t.count)]));
   const ar = STATS.areas;
   tbl('areas-t', ['area','files'], ar.map(a=>[a.label, fmt(a.count)]));
+  const aw = STATS.words_by_area;
+  tbl('aw-t', ['area','files','words'], aw.map(a=>[a.area, fmt(a.files), fmt(a.words)]));
+  const ab = STATS.area_buckets;
+  tbl('ab-t', ['area'].concat(ab.labels), ab.areas.map((a,i)=>[a].concat(ab.counts[i].map(fmt))));
   const tg = STATS.tags;
   tbl('tags-t', ['tag','files'], tg.map(t=>[t.label, fmt(t.count)]));
   const mo = STATS.months;
   tbl('months-t', ['month','all','daily'], mo.labels.map((l,i)=>[l, fmt(mo.all[i]), fmt(mo.daily[i])]));
+  const sm = STATS.status_by_month;
+  tbl('sm-t', ['month'].concat(sm.datasets.map(d=>d.label)), sm.labels.map((m,i)=>[m].concat(sm.datasets.map(d=>fmt(d.counts[i])))));
+  const cum = STATS.cumulative;
+  tbl('cum-t', ['month','total files'], cum.labels.map((l,i)=>[l, fmt(cum.counts[i])]));
+  const av = STATS.avg_month;
+  tbl('avg-t', ['month','avg words'], av.labels.map((l,i)=>[l, fmt(av.words[i])]));
   const l60 = STATS.last60;
   tbl('last60-t', ['day','files'], l60.labels.map((l,i)=>[l, fmt(l60.counts[i])]));
   const dg = STATS.degree_hist;
   tbl('deg-t', ['degree','nodes'], dg.labels.map((l,i)=>[l, fmt(dg.counts[i])]));
   const tn = STATS.top_nodes;
   tbl('topn-t', ['node','degree'], tn.map(n=>[n.id, fmt(n.degree)]));
+  const li = STATS.links_in;
+  tbl('li-t', ['node','inbound links'], li.map(x=>[x.id, fmt(x.links)]));
   const lh = STATS.links_hist;
   tbl('links-t', ['links','files'], lh.labels.map((l,i)=>[l, fmt(lh.counts[i])]));
   const sc = STATS.scatter;
@@ -442,6 +565,10 @@ function charts(){
   new Chart(document.getElementById('hist-c'), {type:'bar', data:{labels:h.labels, datasets:[{label:'files', data:h.counts, backgroundColor:'#a78bfa'}]},
     options:{plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}}}});
 
+  const ec = STATS.ecdf;
+  new Chart(document.getElementById('ecdf-c'), {type:'line', data:{labels:ec.labels, datasets:[{label:'share ≤ N words', data:ec.pct_le, borderColor:'#2dd4bf', backgroundColor:'rgba(45,212,191,.15)', fill:true, tension:.3}]},
+    options:{plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true,max:100,title:{display:true,text:'% of files'}},x:{title:{display:true,text:'max words'}}}}});
+
   const tf = STATS.top_files;
   new Chart(document.getElementById('top-c'), {type:'bar', data:{labels:tf.map(f=>f.path.replace(/^.*\//,'')), datasets:[{label:'words', data:tf.map(f=>f.words), backgroundColor:'#fbbf24'}]},
     options:{indexAxis:'y', plugins:{legend:{display:false}}, scales:{x:{beginAtZero:true}}}});
@@ -458,6 +585,15 @@ function charts(){
   new Chart(document.getElementById('areas-c'), {type:'bar', data:{labels:ar.map(a=>a.label), datasets:[{label:'files', data:ar.map(a=>a.count), backgroundColor:'#2dd4bf'}]},
     options:{indexAxis:'y', plugins:{legend:{display:false}}, scales:{x:{beginAtZero:true}}}});
 
+  const aw = STATS.words_by_area;
+  new Chart(document.getElementById('aw-c'), {type:'bar', data:{labels:aw.map(a=>a.area), datasets:[{label:'words', data:aw.map(a=>a.words), backgroundColor:'#f472b6'}]},
+    options:{indexAxis:'y', plugins:{legend:{display:false}}, scales:{x:{beginAtZero:true,title:{display:true,text:'words'}}}}});
+
+  const ab = STATS.area_buckets;
+  const abPalette = ['#a78bfa','#2dd4bf','#fbbf24','#f472b6','#60a5fa'];
+  new Chart(document.getElementById('ab-c'), {type:'bar', data:{labels:ab.areas, datasets:ab.labels.map((l,i)=>({label:l, data:ab.counts.map(r=>r[i]), backgroundColor:abPalette[i]}))},
+    options:{indexAxis:'y', scales:{x:{stacked:true,beginAtZero:true}, y:{stacked:true}}}});
+
   const tg = STATS.tags;
   new Chart(document.getElementById('tags-c'), {type:'bar', data:{labels:tg.map(t=>t.label), datasets:[{label:'files', data:tg.map(t=>t.count), backgroundColor:tg.map((_,i)=>PALETTE[i%PALETTE.length])}]},
     options:{indexAxis:'y', plugins:{legend:{display:false}}, scales:{x:{beginAtZero:true}}}});
@@ -467,6 +603,19 @@ function charts(){
     {label:'all files', data:mo.all, backgroundColor:'#a78bfa'},
     {label:'daily notes', data:mo.daily, backgroundColor:'#f472b6'},
   ]}, options:{scales:{y:{beginAtZero:true}}}});
+
+  const sm = STATS.status_by_month;
+  const smColors = {growing:'#a78bfa', stub:'#64748b', stable:'#2dd4bf', other:'#475569'};
+  new Chart(document.getElementById('sm-c'), {type:'bar', data:{labels:sm.labels, datasets:sm.datasets.map(d=>({label:d.label, data:d.counts, backgroundColor:smColors[d.label]||'#475569'}))},
+    options:{scales:{x:{stacked:true}, y:{stacked:true,beginAtZero:true}}}});
+
+  const cum = STATS.cumulative;
+  new Chart(document.getElementById('cum-c'), {type:'line', data:{labels:cum.labels, datasets:[{label:'total files', data:cum.counts, borderColor:'#a78bfa', backgroundColor:'rgba(167,139,250,.15)', fill:true, tension:.25}]},
+    options:{plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}}}});
+
+  const av = STATS.avg_month;
+  new Chart(document.getElementById('avg-c'), {type:'line', data:{labels:av.labels, datasets:[{label:'avg words', data:av.words, borderColor:'#fb923c', tension:.25}]},
+    options:{plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true,title:{display:true,text:'words'}}}}});
 
   const l60 = STATS.last60;
   new Chart(document.getElementById('last60-c'), {type:'bar', data:{labels:l60.labels, datasets:[{label:'files', data:l60.counts, backgroundColor:'#38bdf8'}]},
@@ -479,6 +628,10 @@ function charts(){
   const tn = STATS.top_nodes;
   new Chart(document.getElementById('topn-c'), {type:'bar', data:{labels:tn.map(n=>n.id.replace(/^.*\//,'')), datasets:[{label:'links', data:tn.map(n=>n.degree), backgroundColor:'#34d399'}]},
     options:{indexAxis:'y', plugins:{legend:{display:false}}, scales:{x:{beginAtZero:true}}}});
+
+  const li = STATS.links_in;
+  new Chart(document.getElementById('li-c'), {type:'bar', data:{labels:li.map(x=>short(x.id.replace(/^wiki\//,''))), datasets:[{label:'inbound', data:li.map(x=>x.links), backgroundColor:'#fbbf24'}]},
+    options:{indexAxis:'y', plugins:{legend:{display:false}}, scales:{x:{beginAtZero:true,title:{display:true,text:'inbound links'}}}}});
 
   const lh = STATS.links_hist;
   new Chart(document.getElementById('links-c'), {type:'bar', data:{labels:lh.labels, datasets:[{label:'files', data:lh.counts, backgroundColor:'#fb923c'}]},
