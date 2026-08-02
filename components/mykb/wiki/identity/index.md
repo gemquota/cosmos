@@ -29,7 +29,7 @@
 - [OTP Codes](otp-codes.md) — OTP Codes
 - [Passkey Ecosystem](passkey-ecosystem.md) — Passkey Ecosystem
 - [Password Managers](password-managers.md) — Password Managers
-- [Password Policies](password-policies.md) — Password Policies
+- [Password Policies](../../raw/archive/junk-entities-2026-08b/identity/password-policies.md) — Password Policies
 - [Passwordless Authentication](passwordless-authentication.md) — Passwordless Authentication
 - [Phishing Resistance](phishing-resistance.md) — Phishing Resistance
 - [Refresh Tokens](refresh-tokens.md) — Refresh Tokens
@@ -39,7 +39,7 @@
 - [Session Management](session-management.md) — Session Management
 - [Single Sign-On](single-sign-on.md) — Single Sign-On
 - [Smartcards](smartcards.md) — Smartcards
-- [Identity Snapshot 1](snapshot-0001.md) — Identity Snapshot 1
+- [Identity Snapshot 1](../../raw/archive/junk-entities-2026-08b/identity/snapshot-0001.md) — Identity Snapshot 1
 - [Token Revocation](token-revocation.md) — Token Revocation
 - [TOTP](totp.md) — TOTP
 - [WebAuthn API](web-authn-api.md) — WebAuthn API
