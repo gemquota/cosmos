@@ -13,7 +13,7 @@ resource: ""
 
 Density appears in 1 session(s) categorized as Debugging, Frontend, Shell. Related topics: bash, cli, css.
 
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
 
 ## Overview
 
@@ -27,15 +27,15 @@ Density describes how much of something occupies a given space or volume — mas
 - Debugging: a density parameter set too high or too low is a common root cause of simulation artifacts — clumping, explosions, or empty regions — making it a frequent subject of debugging sessions.
 - Ranges: simulations often clamp density to stable bounds; exceeding them degrades numerical stability rather than just changing visuals.
 
-The entity belongs to a family of simulation parameters — see [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/particle-size-min|Particle Size Min]] and [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/tension|Tension]] — where each knob trades behavior against cost. Documenting the parameter's units, default, and effect lets scripts set it deliberately and lets debugging sessions reason about artifacts from the values used. When density appears in a session, the fix is usually to check the value against the documented range before touching the simulation logic.
+The entity belongs to a family of simulation parameters — see [[wiki/shell-environment/categories/cli-tools/particle-size-min|Particle Size Min]] and [[wiki/shell-environment/categories/cli-tools/tension|Tension]] — where each knob trades behavior against cost. Documenting the parameter's units, default, and effect lets scripts set it deliberately and lets debugging sessions reason about artifacts from the values used. When density appears in a session, the fix is usually to check the value against the documented range before touching the simulation logic.
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/kh|Kh]]
+- [[wiki/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
+- [[wiki/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
+- [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
+- [[wiki/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
+- [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
+- [[wiki/shell-environment/categories/cli-tools/kh|Kh]]

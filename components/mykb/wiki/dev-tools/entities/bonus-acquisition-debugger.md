@@ -13,7 +13,7 @@ resource: ""
 
 Bonus Acquisition Debugger appears in 1 session(s) categorized as API, Debugging, Mobile, Security. Related topics: android, api, auth.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Bonus Acquisition Debugger
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Bonus Acquisition Debugger
 
 ## Overview
 

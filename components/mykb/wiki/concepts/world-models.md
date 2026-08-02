@@ -3,8 +3,9 @@ type: "concept"
 title: "World Models"
 description: "Internal representations that let agents simulate and predict their environment"
 tags: ["world-models", "simulation", "prediction", "agents"]
-timestamp: "2026-07-31T00:00:00Z"
-status: "stub"
+timestamp: "2026-08-02T00:00:00Z"
+status: "growing"
+source: ["https://arxiv.org/abs/1803.10122", "https://worldmodels.github.io/"]
 ---
 
 # World Models
@@ -17,10 +18,19 @@ World models are the agent's internal representation of how its environment work
 - World models enable mental rehearsal before risky actions.
 - RSIS3 relevance: its domain knowledge in mykb acts as a lightweight world model.
 - Open questions: when to trust the model vs. reality, and keeping it current.
+- A world model is an internal representation an agent learns of how its environment behaves, used to predict outcomes and plan actions without acting.
+- World models compress the environment: they must capture the dynamics that matter for the task while discarding irrelevant detail.
+- They enable imagination-based planning — the agent simulates candidate actions and evaluates consequences before committing.
+- The risk is model error: a world model that is confidently wrong sends the agent confidently off course, so planning must stay aware of model limits.
+- **Worked example / comparison** — Worked example — an agent maintains a model of the wiki graph's link structure; it predicts which new stub links would raise graph density before adding them.
+- For mykb, world models are documented as the predictive engine behind the perception loop and belief states.
 
 ## Related
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — planning requires a world model
-- [[wiki/concepts/belief-states|Belief States]] — the current-situation slice of the model
-- [[wiki/concepts/active-inference|Active Inference]] — perception-action unified via models
-- [[wiki/concepts/free-energy-principle|Free Energy Principle]] — theoretical grounding
-- [[wiki/concepts/perception-loop|Perception Loop]] — how the model is kept updated
+- [[wiki/agent-systems/planning-systems|Planning Systems]]
+- [[wiki/concepts/belief-states|Belief States]]
+- [[wiki/concepts/active-inference|Active Inference]]
+- [[wiki/concepts/free-energy-principle|Free Energy Principle]]
+- [[wiki/concepts/perception-loop|Perception Loop]]
+- [[wiki/concepts/promotion-readiness|Promotion Readiness]]
+- [[wiki/dev-tools/global-link-check|Global Link Check]]
+- [[wiki/concepts/deep-dives|Deep Dives]]

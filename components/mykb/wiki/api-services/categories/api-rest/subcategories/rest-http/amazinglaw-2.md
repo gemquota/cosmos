@@ -13,7 +13,7 @@ status: "growing"
 
 AmazingLaw appears in 2 session(s) categorized as API, Cloud, Frontend, Mobile, Security, Shell. Related topics: android, angular, api, auth, aws, bash.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Amazinglaw 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Amazinglaw 2
 
 ## Overview
 

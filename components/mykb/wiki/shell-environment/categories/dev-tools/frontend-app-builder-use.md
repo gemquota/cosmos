@@ -13,7 +13,7 @@ status: "growing"
 
 Frontend App Builder Use appears in 1 session(s) categorized as Debugging, Frontend, Shell. Related topics: bash, frontend, ide.
 
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/index|Dev Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Dev Tools]]
 
 ## Overview
 
@@ -35,11 +35,11 @@ A good rule is to treat the builder as the source of conventions: staying within
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/bootstrap|Bootstrap]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/claude-code|Claude Code]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/claude|Claude]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/core-standard-the|Core Standard The]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/evolver|Evolver]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/hard-rules|Hard Rules]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/image-gen|Image Gen]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/dev-tools/jul|Jul]]
+- [[wiki/shell-environment/categories/dev-tools/bootstrap|Bootstrap]]
+- [[wiki/shell-environment/categories/dev-tools/claude-code|Claude Code]]
+- [[wiki/shell-environment/categories/dev-tools/claude|Claude]]
+- [[wiki/shell-environment/categories/dev-tools/core-standard-the|Core Standard The]]
+- [[wiki/shell-environment/categories/dev-tools/evolver|Evolver]]
+- [[wiki/shell-environment/categories/dev-tools/hard-rules|Hard Rules]]
+- [[wiki/shell-environment/categories/dev-tools/image-gen|Image Gen]]
+- [[wiki/shell-environment/categories/dev-tools/jul|Jul]]

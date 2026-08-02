@@ -13,7 +13,7 @@ Localization (l10n) — the adaptation of software for specific languages and cu
 
 **Related topics:** android, api, auth, authentication, backend
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Local
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Local
 
 ## Related Entities
 

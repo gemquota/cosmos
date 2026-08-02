@@ -22,7 +22,7 @@ The entry preserves the session token verbatim, so future sessions can search fo
 
 **Related topics:** android, api, bash
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Atp
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Atp
 
 ## Related Entities
 

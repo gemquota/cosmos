@@ -19,7 +19,7 @@ Floating-point arithmetic is the foundation and the pitfall. Numbers such as 0.1
 
 Practical math work uses libraries: linear algebra for graphics and machine learning, statistics for analysis and telemetry, and special functions for physics. When applications need speed, hot math is moved into typed arrays, WebAssembly, or dedicated GPU code, and when they need correctness, algorithms are chosen for numerical stability rather than elegance.
 
-In frontend work, math powers layout calculations, animation easing, and canvas rendering; in shell work, it powers data processing pipelines with tools such as awk and bc. The feature appears across the [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/chemical-playground|Chemical Playground]] and [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/score|Score]] entries, all part of the [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/index|Web Dev]] domain.
+In frontend work, math powers layout calculations, animation easing, and canvas rendering; in shell work, it powers data processing pipelines with tools such as awk and bc. The feature appears across the [[wiki/shell-environment/categories/web-dev/subcategories/css-html/chemical-playground|Chemical Playground]] and [[wiki/shell-environment/categories/web-dev/subcategories/css-html/score|Score]] entries, all part of the [[wiki/web-platforms/index|Web Dev]] domain.
 
 The entry serves as a disambiguation point: sessions tagged with math range from pure computation to numerical debugging, and the page collects the shared concerns.
 
@@ -27,15 +27,15 @@ The entry also records a practical rule: when results are displayed, show enough
 
 In the wiki's sessions, math shows up as both a feature area and a debugging theme, and this page collects both.
 
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/index|Web Dev]] › Math 2
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Math 2
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/analysis-2|Analysis 2]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/budget|Budget]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/canvas|Canvas]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/chemical-playground|Chemical Playground]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/context-2|Context 2]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/defi|Defi]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/diffusion-simulator|Diffusion Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/web-dev/subcategories/css-html/engine-telemetry-core|Engine Telemetry Core]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/analysis-2|Analysis 2]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/budget|Budget]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/canvas|Canvas]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/chemical-playground|Chemical Playground]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/context-2|Context 2]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/defi|Defi]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/diffusion-simulator|Diffusion Simulator]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/engine-telemetry-core|Engine Telemetry Core]]

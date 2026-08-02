@@ -19,21 +19,21 @@ Control characters, such as the ASCII codes 0x00 through 0x1F, predate graphical
 
 The word control also appears in architecture discussions: control flow determines the order of execution in a program, and the control plane in networking and cloud systems manages configuration and policy, separate from the data plane that carries traffic. In security contexts, access control governs who can perform which actions, and control measures such as rate limiting protect services from abuse.
 
-In agent sessions the term appears alongside API, backend, and security topics, where control shows up as command handling, flow control, and authorization. Keeping control logic explicit, testable, and auditable is a theme that runs through the [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Rest]] domain and the [[wiki/web-platforms/supercategories/security-auth/index|Security Auth]] domain in this knowledge base.
+In agent sessions the term appears alongside API, backend, and security topics, where control shows up as command handling, flow control, and authorization. Keeping control logic explicit, testable, and auditable is a theme that runs through the [[wiki/web-platforms/index|Api Rest]] domain and the [[wiki/web-platforms/index|Security Auth]] domain in this knowledge base.
 
 The session notes record concrete examples of each sense, and the entry serves as a disambiguation point for a term that is easy to confuse across contexts.
 
 The entry is deliberately brief on specifics because the term is ambiguous; the value is in pointing to the three distinct contexts where it appears.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/index|Frontend Frameworks]] › Ctrl 2
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Ctrl 2
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]

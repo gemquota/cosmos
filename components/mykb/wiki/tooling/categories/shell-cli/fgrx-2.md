@@ -9,7 +9,7 @@ resource: ""
 ---
 ## Fgrx 2
 FgRX appears in 2 session(s) categorized as API, Frontend, Shell. Related topics: api, bash, cli, css.
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/tooling/index|Tooling]] › [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
 ## Overview
 FgRX is an unresolved token extracted from two sessions categorized under API, Frontend, and Shell. The expansion is not confirmed at extraction time, so the page records the token with its session evidence and deliberately avoids guessing a meaning. Tokens like this typically surface as function names, CLI flags, or internal identifiers that were logged while a tool ran. Keeping the page as an evidence anchor lets a later pass attach the canonical meaning without losing the original co-occurrence data.
 ## Working Interpretation
@@ -21,6 +21,6 @@ The tag pattern — api, bash, cli, css, entity — places FgRX in the shell-too
 - Mark the page `growing` when the definition is confirmed and add the real description and related concepts at that point.
 - Log the resolution decision in the weekly review so the merge history stays auditable.
 ## Related Entities
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/busuj|Busuj]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/dims-2|Dims 2]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]
+- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
+- [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

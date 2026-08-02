@@ -12,11 +12,11 @@ resource: ""
 
 Stable Bonding appears in 1 session(s) categorized as Cloud, Debugging, Shell. Related topics: aws, bash, cli.
 
-**Domain:** DevOps & Infrastructure › [[wiki/devops-infra/supercategories/infrastructure/index|Infrastructure]] › [[wiki/devops-infra/supercategories/infrastructure/categories/scripts/index|Scripts]]
+**Domain:** DevOps & Infrastructure › [[wiki/web-platforms/index|Infrastructure]] › [[wiki/web-platforms/index|Scripts]]
 
 ## Related Entities
 
-- [[wiki/devops-infra/supercategories/infrastructure/categories/scripts/average-stiffness|Average Stiffness]]
-- [[wiki/devops-infra/supercategories/infrastructure/categories/scripts/bond-law|Bond Law]]
-- [[wiki/devops-infra/supercategories/infrastructure/categories/scripts/engineering-emergence|Engineering Emergence]]
-- [[wiki/devops-infra/supercategories/infrastructure/categories/scripts/field-manual|Field Manual]]
+- [[wiki/infrastructure/categories/scripts/average-stiffness|Average Stiffness]]
+- [[wiki/infrastructure/categories/scripts/bond-law|Bond Law]]
+- [[wiki/infrastructure/categories/scripts/engineering-emergence|Engineering Emergence]]
+- [[wiki/infrastructure/categories/scripts/field-manual|Field Manual]]

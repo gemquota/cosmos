@@ -1,11 +1,15 @@
+---
+type: "index"
+title: "Aws Cloud Index"
+description: "Listing of the cloud-infra/categories/aws-cloud/ folder (2 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
 # Aws Cloud
 
-Part of [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › Aws Cloud. 5 entities.
+Part of [[wiki/index|Wiki Index]]. 2 pages.
 
-## Entities
-
-- [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/damp|Damp
-- [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/mainactivity|Mainactivity
-- [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/memorytrace|Memorytrace
-- [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/particle-simulation-2|Particle Simulation 2
-- [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/sysfont|Sysfont
+## Pages
+- [[wiki/cloud-infra/categories/aws-cloud/mainactivity|MainActivity]] — Activity
+- [[wiki/cloud-infra/categories/aws-cloud/particle-simulation-2|Particle Simulation]] — Particle System

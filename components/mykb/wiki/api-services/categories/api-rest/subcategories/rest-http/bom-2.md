@@ -23,7 +23,7 @@ Because the acronym appears in both meanings, the session context matters: depen
 The dual meaning is itself a lesson in disambiguation: identical strings can name unrelated concepts, and the correct reading depends entirely on context. Teams that treat BOM as ambiguous by default avoid the mistake of assuming one meaning across a codebase. Session-derived pages handle this by preserving both expansions and letting the tags, session identifiers, and related entities point to the right one for any given use.
 **Related topics:** android, angular, api, auth, aws
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Bom 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Bom 2
 
 ## Related Entities
 

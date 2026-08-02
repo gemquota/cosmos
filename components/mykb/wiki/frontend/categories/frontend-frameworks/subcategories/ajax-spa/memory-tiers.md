@@ -21,15 +21,15 @@ In the API and security context where this page appears, tiering governs perform
 
 
 The hierarchical view also shapes capacity planning. If hot data fits in memory, a service can serve most requests without touching disk; if it does not, cache misses dominate and latency rises. Teams measure hit rates and tier usage to decide where to add capacity, and security teams check that data moving between tiers respects access boundaries. Both concerns are reflected in the API and Security tags on this page.
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/index|Frontend Frameworks]] › Memory Tiers
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Memory Tiers
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]

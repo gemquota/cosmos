@@ -19,21 +19,21 @@ Classic examples include continuing to use a service one believes is insecure, o
 
 In software and security contexts, cognitive dissonance appears when practices conflict with stated policy. A team may acknowledge that secrets should be rotated but continue with long-lived credentials, or an organization may value privacy while collecting more data than it needs. Recognizing the gap between belief and practice is the first step to closing it, which is why audits, postmortems, and honest retrospectives matter.
 
-For agents and automation, the concept is a reminder that systems inherit the inconsistencies of their designers: a policy that contradicts user expectations will be worked around. The entry sits in the [[wiki/web-platforms/supercategories/security-auth/index|Security Auth]] domain, where belief, behavior, and policy intersect around authentication and authorization decisions.
+For agents and automation, the concept is a reminder that systems inherit the inconsistencies of their designers: a policy that contradicts user expectations will be worked around. The entry sits in the [[wiki/web-platforms/index|Security Auth]] domain, where belief, behavior, and policy intersect around authentication and authorization decisions.
 
 The value of the entry is practical: it names a failure mode in teams and in users, so that reviewers can ask whether stated policy and actual behavior match.
 
 The entry is short by design: the concept is borrowed from psychology, and the wiki records it as context for discussions of user behavior and team process.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/security-auth/index|Security Auth]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security]] › Cognitive Dissonance
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Cognitive Dissonance
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/sim-speed|Sim Speed]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/missing-content|Missing Content]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/searchtext|Searchtext]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/sim-speed|Sim Speed]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/missing-content|Missing Content]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/searchtext|Searchtext]]

@@ -21,15 +21,15 @@ The related entities below list the neighboring API client records observed in t
 
 
 Aggregating ambiguity also supports automation. An agent can use the final score to decide whether to proceed, ask for clarification, or escalate to a human, and it can record the score so that later passes can tune the threshold. This metric is an example of a wider class of confidence signals that recursive systems track: the system not only acts but also knows how sure it is, and that knowledge drives the next action.
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/api-services/index|Api Services]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Rest]] › Avg Final Ambiguity 2
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Avg Final Ambiguity 2
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/aborted|Aborted]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/aegis|Aegis]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/agent-active|Agent Active]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity-projection-2|Ambiguity Projection 2]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity-system|Ambiguity System]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity|Ambiguity]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ap|Ap]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/apex|Apex]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aborted|Aborted]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aegis|Aegis]]
+- [[wiki/agent-systems/categories/agents/subcategories/agent-core/agent-active|Agent Active]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-projection-2|Ambiguity Projection 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-system|Ambiguity System]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity|Ambiguity]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ap|Ap]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/apex|Apex]]

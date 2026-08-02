@@ -13,7 +13,7 @@ resource: ""
 
 BenchmarkResult appears in 5 session(s) categorized as API, Backend, Mobile, Security. Related topics: android, api, auth, authentication, authorization, backend.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Benchmarkresult 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Auth Security › Benchmarkresult 2
 
 ## Overview
 

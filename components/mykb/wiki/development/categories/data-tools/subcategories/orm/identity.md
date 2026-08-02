@@ -23,15 +23,15 @@ Both readings share a theme: identity determines how tools and systems recognize
 The IDE reading is anchored by the sessions, but the page keeps the Identity title because the entity record was created from those sessions and the surrounding data-tools vocabulary. Readers should check the tags and related entities to see which sense applies: the development-tooling context for IDEs, or the object-relational context for entity keys and equality. Recording both meanings on one page is a deliberate choice that preserves the session evidence without discarding the connection that the ORM neighbors imply.
 **Related topics:** ide, isr, orm, rest
 
-**Domain:** Development Tools › [[wiki/dev-tools/supercategories/development/index|Development]] › [[wiki/dev-tools/supercategories/development/categories/data-tools/index|Data Tools]] › Identity
+**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Identity
 
 ## Related Entities
 
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/easy-problems|Easy Problems]]
+- [[wiki/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]]
+- [[wiki/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]]
+- [[wiki/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]]
+- [[wiki/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
+- [[wiki/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
+- [[wiki/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
+- [[wiki/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
+- [[wiki/development/categories/data-tools/subcategories/orm/easy-problems|Easy Problems]]

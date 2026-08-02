@@ -1,146 +1,291 @@
-## Overview
+---
+type: "index"
+title: "Api Protocols Index"
+description: "Listing of the api-protocols/ folder (275 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
 
-API protocols form the backbone of the mykb web domain. Session analysis reveals a REST-first approach that expands into WebSocket for real-time features and GraphQL for complex queries.
+# Api Protocols
 
-### REST
-REST is the default API architectural style. FastAPI provides automatic OpenAPI documentation. Sessions show REST endpoints for CRUD operations on entities, concept search, and graph traversal. JSON is the universal interchange format.
+Part of [[wiki/index|Wiki Index]]. 275 pages.
 
-### GraphQL
-Appears in specific contexts where client-driven queries reduce over-fetching. The session data suggests GraphQL was explored but not adopted as a primary approach — it served specific use cases.
+## Subfolders
+- entities/ — 2 pages
 
-### WebSocket
-Used for real-time features in agent tool communication. The LLM wiki daemon context suggests WebSocket bridges between agent processes and the wiki server for live updates.
-
-### HTTP Protocol
-HTTP/1.1 is the baseline. Sessions show HTTP servers (SimpleHTTPRequestHandler) embedded in agents for local tool APIs, plus production Nginx configurations.
-
-## Concepts
-
-- [API Analytics](api-analytics.md) — API Analytics
-- [API Authentication Methods](api-authentication-methods.md) — API Authentication Methods
-- [API Backward Compatibility](api-backward-compatibility.md) — API Backward Compatibility
-- [API Deprecation](api-deprecation.md) — API Deprecation
-- [Design-First APIs](api-design-first.md) — Design-First APIs
-- [API Gateway](api-gateway.md) — API Gateway
-- [API Keys](api-keys.md) — API Keys
-- [API Versioning](api-versioning.md) — API Versioning
-- [AsyncAPI](asyncapi.md) — AsyncAPI
-- [At-Least-Once Delivery](at-least-once-delivery.md) — At-Least-Once Delivery
-- [Backend for Frontend](backend-for-frontend.md) — Backend for Frontend
-- [Backpressure](backpressure.md) — Backpressure
-- [Basic Authentication](basic-authentication.md) — Basic Authentication
-- [Bulkhead Pattern](bulkhead-pattern.md) — Bulkhead Pattern
-- [Chunked Transfer Encoding](chunked-transfer-encoding.md) — Chunked Transfer Encoding
-- [Circuit Breaker](circuit-breaker.md) — Circuit Breaker
-- [Concurrency Limits](concurrency-limits.md) — Concurrency Limits
-- [Content Negotiation](content-negotiation.md) — Content Negotiation
-- [Contract Testing](contract-testing.md) — Contract Testing
-- [CORS](cors.md) — CORS
-- [CQRS](cqrs.md) — CQRS
-- [CSRF](csrf.md) — CSRF
-- [Cursor Pagination](cursor-pagination.md) — Cursor Pagination
-- [Deadline Propagation](deadline-propagation.md) — Deadline Propagation
-- [DNS Load Balancing](dns-load-balancing.md) — DNS Load Balancing
-- [DNS SRV Records](dns-srv-records.md) — DNS SRV Records
-- [Error Contract Design](error-contract-design.md) — Error Contract Design
-- [Event-Driven APIs](event-driven-apis.md) — Event-Driven APIs
-- [Event Sourcing](event-sourcing.md) — Event Sourcing
-- [Exponential Backoff](exponential-backoff.md) — Exponential Backoff
-- [Graceful Shutdown](graceful-shutdown.md) — Graceful Shutdown
-- [GraphQL Connections](graphql-connections.md) — GraphQL Connections
-- [GraphQL Error Handling](graphql-error-handling.md) — GraphQL Error Handling
-- [GraphQL Federation](graphql-federation.md) — GraphQL Federation
-- [GraphQL Fragments](graphql-fragments.md) — GraphQL Fragments
-- [GraphQL N+1 Problem](graphql-n-plus-one.md) — GraphQL N+1 Problem
-- [GraphQL Queries & Mutations](graphql-queries-mutations.md) — GraphQL Queries & Mutations
-- [GraphQL Resolvers](graphql-resolvers.md) — GraphQL Resolvers
-- [GraphQL Schema Design](graphql-schema-design.md) — GraphQL Schema Design
-- [GraphQL Security](graphql-security.md) — GraphQL Security
-- [GraphQL Subscriptions](graphql-subscriptions.md) — GraphQL Subscriptions
-- [GraphQL](graphql.md) — GraphQL
-- [gRPC Deadlines](grpc-deadlines.md) — gRPC Deadlines
-- [gRPC Gateway](grpc-gateway.md) — gRPC Gateway
-- [gRPC Interceptors](grpc-interceptors.md) — gRPC Interceptors
-- [gRPC Load Balancing](grpc-load-balancing.md) — gRPC Load Balancing
-- [gRPC Metadata](grpc-metadata.md) — gRPC Metadata
-- [gRPC Status Codes](grpc-status-codes.md) — gRPC Status Codes
-- [gRPC Streaming](grpc-streaming.md) — gRPC Streaming
-- [gRPC-Web](grpc-web.md) — gRPC-Web
-- [gRPC](grpc.md) — gRPC
-- [HATEOAS](hateoas.md) — HATEOAS
-- [Health Checks](health-checks.md) — Health Checks
-- [HPACK](hpack.md) — HPACK
-- [HTTP Caching](http-caching.md) — HTTP Caching
-- [HTTP Compression](http-compression.md) — HTTP Compression
-- [HTTP Conditional Requests](http-conditional-requests.md) — HTTP Conditional Requests
-- [HTTP Cookies](http-cookies.md) — HTTP Cookies
-- [HTTP Headers](http-headers.md) — HTTP Headers
-- [HTTP Keep-Alive](http-keep-alive.md) — HTTP Keep-Alive
-- [HTTP Methods](http-methods.md) — HTTP Methods
-- [HTTP Status Codes](http-status-codes.md) — HTTP Status Codes
-- [HTTP/2 Flow Control](http2-flow-control.md) — HTTP/2 Flow Control
-- [HTTP/2](http2.md) — HTTP/2
-- [HTTP/3](http3.md) — HTTP/3
-- [Idempotency Keys](idempotency-keys.md) — Idempotency Keys
-- [Idempotency](idempotency.md) — Idempotency
-- [Jitter](jitter.md) — Jitter
-- [JSON:API](json-api-spec.md) — JSON:API
-- [JSON Patch](json-patch.md) — JSON Patch
-- [JSON-RPC](json-rpc.md) — JSON-RPC
-- [JSON Schema](json-schema.md) — JSON Schema
-- [JWT](json-web-tokens.md) — JWT
-- [Apache Kafka](kafka.md) — Apache Kafka
-- [Keyset Pagination](keyset-pagination.md) — Keyset Pagination
-- [Liveness Probes](liveness-probes.md) — Liveness Probes
-- [Load Balancing](load-balancing.md) — Load Balancing
-- [Load Shedding](load-shedding.md) — Load Shedding
-- [Media Type Versioning](media-type-versioning.md) — Media Type Versioning
-- [Message Queues](message-queues.md) — Message Queues
-- [MQTT](mqtt.md) — MQTT
-- [mTLS](mtls.md) — mTLS
-- [NDJSON Streaming](ndjson-streaming.md) — NDJSON Streaming
-- [Authorization Code Flow](oauth2-authorization-code.md) — Authorization Code Flow
-- [Client Credentials](oauth2-client-credentials.md) — Client Credentials
-- [PKCE](oauth2-pkce.md) — PKCE
-- [Refresh Tokens](oauth2-refresh-tokens.md) — Refresh Tokens
-- [OAuth Scopes](oauth2-scopes.md) — OAuth Scopes
-- [OAuth 2.0](oauth2.md) — OAuth 2.0
-- [Offset Pagination](offset-pagination.md) — Offset Pagination
-- [OpenAPI](openapi.md) — OpenAPI
-- [OpenID Connect](openid-connect.md) — OpenID Connect
-- [Optimistic Concurrency](optimistic-concurrency.md) — Optimistic Concurrency
-- [Problem Details](problem-details.md) — Problem Details
-- [Protocol Buffers](protobuf.md) — Protocol Buffers
-- [QUIC](quic.md) — QUIC
-- [RabbitMQ](rabbitmq.md) — RabbitMQ
-- [Rate Limit Algorithms](rate-limit-algorithms.md) — Rate Limit Algorithms
-- [Rate Limit Headers](rate-limit-headers.md) — Rate Limit Headers
-- [Rate Limiting](rate-limiting.md) — Rate Limiting
-- [Readiness Probes](readiness-probes.md) — Readiness Probes
-- [Redis Streams](redis-streams.md) — Redis Streams
-- [Response Envelopes](response-envelopes.md) — Response Envelopes
-- [REST APIs](rest-apis.md) — REST APIs
-- [REST Maturity Model](rest-maturity-model.md) — REST Maturity Model
-- [REST Non-CRUD Actions](rest-non-crud-actions.md) — REST Non-CRUD Actions
-- [REST Partial Updates](rest-partial-updates.md) — REST Partial Updates
-- [REST Query Parameters](rest-query-parameters.md) — REST Query Parameters
-- [REST Resource Design](rest-resource-design.md) — REST Resource Design
-- [Retry & Backoff](retry-backoff.md) — Retry & Backoff
-- [Retry Policies](retry-policies.md) — Retry Policies
-- [RPC Styles](rpc-styles.md) — RPC Styles
-- [Saga Pattern](saga-pattern.md) — Saga Pattern
-- [SDK Generation](sdk-generation.md) — SDK Generation
-- [SemVer for APIs](semver-for-apis.md) — SemVer for APIs
-- [Server-Sent Events](server-sent-events.md) — Server-Sent Events
-- [Service Mesh](service-mesh.md) — Service Mesh
-- [Streaming APIs](streaming-apis.md) — Streaming APIs
-- [Timeouts](timeouts.md) — Timeouts
-- [TLS Certificates](tls-certificates.md) — TLS Certificates
-- [TLS Handshake](tls-handshake.md) — TLS Handshake
-- [Webhooks](webhooks.md) — Webhooks
-- [WebSocket Broadcast](websocket-broadcast.md) — WebSocket Broadcast
-- [WebSocket Frames](websocket-frames.md) — WebSocket Frames
-- [WebSocket Handshake](websocket-handshake.md) — WebSocket Handshake
-- [WebSocket Reconnection](websocket-reconnection.md) — WebSocket Reconnection
-- [WebSocket Security](websocket-security.md) — WebSocket Security
-- [WebSockets](websockets.md) — WebSockets
+## Pages
+- [[wiki/api-protocols/301-vs-302|301 vs 302]] — Permanent versus temporary redirects and their caching and method behavior
+- [[wiki/api-protocols/401-vs-403|401 vs 403]] — Unauthenticated versus unauthorized responses and when each applies
+- [[wiki/api-protocols/404-vs-410|404 vs 410]] — Not Found versus Gone and what each signals to clients and crawlers
+- [[wiki/api-protocols/429-handling|Handling 429]] — Client and server behavior for HTTP Too Many Requests responses
+- [[wiki/api-protocols/502-handling|Handling 502]] — Bad Gateway responses and debugging upstream failures behind proxies
+- [[wiki/api-protocols/503-handling|Handling 503]] — Service Unavailable responses, Retry-After, and graceful degradation
+- [[wiki/api-protocols/504-handling|Handling 504]] — Gateway Timeout responses and upstream deadline propagation
+- [[wiki/api-protocols/access-dates|Access Dates]] — Recording when a source URL was last retrieved and verified
+- [[wiki/api-protocols/algorithm-confusion|JWT Algorithm Confusion]] — Switching signing algorithms to forge tokens when the verifier is lax
+- [[wiki/api-protocols/api-analytics|API Analytics]] — Usage, adoption, and business metrics
+- [[wiki/api-protocols/api-authentication-methods|API Authentication Methods]] — Taxonomy of API authentication schemes
+- [[wiki/api-protocols/api-backward-compatibility|API Backward Compatibility]] — Additive changes and compatibility rules
+- [[wiki/api-protocols/api-basic-auth|API Basic Auth]] — Base64 username:password credentials sent in the Authorization header
+- [[wiki/api-protocols/api-deprecation|API Deprecation]] — Deprecation policy, Sunset header, and migration windows
+- [[wiki/api-protocols/api-design-first|Design-First APIs]] — Spec-first workflow with review gates
+- [[wiki/api-protocols/api-digest-auth|API Digest Auth]] — Challenge-response HTTP authentication with hashed credentials
+- [[wiki/api-protocols/api-docs-generators|API Docs Generators]] — Turning OpenAPI or other definitions into reference documentation
+- [[wiki/api-protocols/api-expansion|API Expansion]] — Embedding or expanding related resources in a single response
+- [[wiki/api-protocols/api-filtering|API Filtering]] — Query-parameter conventions for narrowing collections by field values
+- [[wiki/api-protocols/api-gateway-practice|API Gateway Practice]] — Centralizing auth, routing, rate limiting, and observability in front of backend services
+- [[wiki/api-protocols/api-gateway|API Gateway]] — Routing, aggregation, authn, and policy enforcement
+- [[wiki/api-protocols/api-keys-vs-tokens|API Keys vs Tokens]] — Comparing static key material with verifiable, expiring tokens
+- [[wiki/api-protocols/api-keys|API Keys]] — Key issuance, usage, and limitations
+- [[wiki/api-protocols/api-pagination|API Pagination]] — Offset, cursor, and keyset strategies for slicing large result sets
+- [[wiki/api-protocols/api-sorting|API Sorting]] — Stable sort-parameter conventions and multi-field ordering in APIs
+- [[wiki/api-protocols/api-throttling|API Throttling]] — Enforcing per-client call rates to protect capacity and shape traffic
+- [[wiki/api-protocols/api-versioning-practice|API Versioning Practice]] — Strategies for evolving APIs without breaking consumers: path, header, and media-type versioning
+- [[wiki/api-protocols/api-versioning|API Versioning]] — Managing incompatible API changes over time with URL, header, or query-string version identifiers
+- [[wiki/api-protocols/archive-timestamps|Archive Timestamps]] — The capture time recorded on an archived snapshot of a page
+- [[wiki/api-protocols/archive-urls|Archive URLs]] — Snapshot links that preserve a source even after the original dies
+- [[wiki/api-protocols/asyncapi-spec|AsyncAPI Specification]] — The OpenAPI counterpart for event-driven and message-based APIs
+- [[wiki/api-protocols/asyncapi|AsyncAPI]] — Spec for event-driven API contracts
+- [[wiki/api-protocols/at-least-once-delivery|At-Least-Once Delivery]] — Delivery guarantees and deduplication
+- [[wiki/api-protocols/audience-claims|Audience Claims]] — Verifying the aud claim so tokens minted elsewhere are rejected
+- [[wiki/api-protocols/auth-flows-web|Auth Flows on the Web]] — OAuth 2.0 and OpenID Connect grant flows for browser, native, and machine clients
+- [[wiki/api-protocols/authorization-code-flow|Authorization Code Flow]] — OAuth grant exchanging an authorization code for tokens at a confidential client
+- [[wiki/api-protocols/backend-for-frontend|Backend for Frontend]] — Per-client BFF gateway pattern
+- [[wiki/api-protocols/backpressure|Backpressure]] — Flow control across streaming and messaging pipelines
+- [[wiki/api-protocols/basic-authentication|Basic Authentication]] — HTTP Basic auth mechanics and risks
+- [[wiki/api-protocols/bearer-tokens|Bearer Tokens]] — Authorization header tokens whose possession proves identity
+- [[wiki/api-protocols/billion-laughs|Billion Laughs]] — XML entity-expansion attack that grows output exponentially
+- [[wiki/api-protocols/blind-injection|Blind Injection]] — Injection without visible output, inferred through timing or boolean side channels
+- [[wiki/api-protocols/bulkhead-pattern|Bulkhead Pattern]] — Failure isolation between dependencies
+- [[wiki/api-protocols/cache-poisoning|Cache Poisoning]] — Injecting malicious content into shared caches so victims receive attacker-served responses
+- [[wiki/api-protocols/cdn-architecture|CDN Architecture]] — Distributed edge caching and delivery networks that bring content closer to users
+- [[wiki/api-protocols/certificate-chains|Certificate Chains]] — Hierarchies of CA-signed X.509 certificates that establish server identity in TLS
+- [[wiki/api-protocols/charset-encodings|Charset Encodings]] — Character encodings such as UTF-8, UTF-16, and Latin-1 used in text payloads
+- [[wiki/api-protocols/chunked-transfer-encoding|Chunked Transfer Encoding]] — HTTP/1.1 chunked coding for streamed bodies
+- [[wiki/api-protocols/circuit-breaker|Circuit Breaker]] — Failing fast when a downstream service degrades, preventing cascading failures
+- [[wiki/api-protocols/clickjacking-defense|Clickjacking Defense]] — Techniques that prevent invisible overlays from hijacking user clicks
+- [[wiki/api-protocols/client-credentials-flow|Client Credentials Flow]] — OAuth grant for applications acting as themselves
+- [[wiki/api-protocols/client-libraries|API Client Libraries]] — Generated or hand-written SDKs that wrap HTTP APIs for consumers
+- [[wiki/api-protocols/concurrency-limits|Concurrency Limits]] — In-flight limits and adaptive control
+- [[wiki/api-protocols/conditional-put|Conditional PUT]] — Using If-Match and ETags for safe, optimistic full updates
+- [[wiki/api-protocols/content-negotiation|Content Negotiation]] — Accept header negotiation for representations
+- [[wiki/api-protocols/content-sniffing|Content Sniffing Attacks]] — Abusing MIME-sniffing or content-type confusion to shift how payloads are parsed
+- [[wiki/api-protocols/contract-testing|Contract Testing]] — Consumer-driven contract verification
+- [[wiki/api-protocols/cookie-flags|Cookie Flags]] — Secure, HttpOnly, SameSite, and partition attributes controlling cookie use
+- [[wiki/api-protocols/cookie-prefixes|Cookie Prefixes]] — __Host- and __Secure- prefixes that enforce cookie attributes
+- [[wiki/api-protocols/cookie-scoping|Cookie Scoping]] — Domain, path, and scheme rules deciding which requests carry a cookie
+- [[wiki/api-protocols/cors-credentials|CORS with Credentials]] — Cross-origin requests that carry cookies, TLS client certs, or HTTP auth
+- [[wiki/api-protocols/cors-preflight|CORS Preflight]] — OPTIONS request browsers send before risky cross-origin requests
+- [[wiki/api-protocols/cors-wildcard|CORS Wildcards]] — Using * in Access-Control-Allow-* headers and its restrictions with credentials
+- [[wiki/api-protocols/cors|CORS]] — Preflight, headers, and configuration
+- [[wiki/api-protocols/cqrs|CQRS]] — Command Query Responsibility Segregation: separate write and read models for scalability and clarity
+- [[wiki/api-protocols/crlf-injection|CRLF Injection]] — Carriage-return line-feed injection that splits headers or logs
+- [[wiki/api-protocols/cross-origin-isolation|Cross-Origin Isolation]] — COOP and COEP headers enabling shared memory and stronger origin isolation
+- [[wiki/api-protocols/cross-site-requests|Cross-Site Requests]] — How browsers attach credentials to requests across sites and origins
+- [[wiki/api-protocols/csp-headers|CSP Headers]] — Content-Security-Policy directives that constrain what a page may load or execute
+- [[wiki/api-protocols/csrf-tokens|CSRF Tokens]] — Unpredictable per-session tokens that prove request intent
+- [[wiki/api-protocols/csrf|CSRF]] — Cross-site request forgery and defenses
+- [[wiki/api-protocols/cursor-pagination|Cursor Pagination]] — Opaque cursor-based paging for stable iteration
+- [[wiki/api-protocols/deadline-propagation|Deadline Propagation]] — Timeout propagation across distributed calls
+- [[wiki/api-protocols/decompression-bombs|Decompression Bombs]] — Small compressed payloads that expand to enormous output, exhausting memory
+- [[wiki/api-protocols/device-flow|Device Authorization Flow]] — OAuth flow for input-constrained devices via a user-code URL
+- [[wiki/api-protocols/dns-fundamentals|DNS Fundamentals]] — The hierarchical naming system translating hostnames to addresses, records, and service endpoints
+- [[wiki/api-protocols/dns-load-balancing|DNS Load Balancing]] — Round-robin and weighted DNS distribution
+- [[wiki/api-protocols/dns-srv-records|DNS SRV Records]] — Service discovery via SRV records
+- [[wiki/api-protocols/domain-cookies|Domain Cookies]] — Cookies sent to a domain and all its subdomains
+- [[wiki/api-protocols/double-submit-cookie|Double-Submit Cookie]] — CSRF defense comparing a cookie with a mirrored request value
+- [[wiki/api-protocols/entity-expansion|Entity Expansion]] — XML and HTML entities abused to amplify payload size during parsing
+- [[wiki/api-protocols/error-codes-api|Error Codes in APIs]] — Designing stable, machine-readable error identifiers beyond HTTP status
+- [[wiki/api-protocols/error-contract-design|Error Contract Design]] — Error shapes, codes, and documentation
+- [[wiki/api-protocols/event-driven-apis|Event-Driven APIs]] — Event notification and pub/sub API patterns
+- [[wiki/api-protocols/event-sourcing|Event Sourcing]] — Persisting state as an immutable sequence of events that can be replayed to reconstruct any state
+- [[wiki/api-protocols/exponential-backoff|Exponential Backoff]] — Doubling retry delays (1s, 2s, 4s...) so load on recovering services recedes over time
+- [[wiki/api-protocols/file-upload-security|File Upload Security]] — Validating, scanning, and isolating user-supplied files to prevent abuse
+- [[wiki/api-protocols/graceful-shutdown|Graceful Shutdown]] — Smoothly draining in-flight work and closing resources when a process receives a stop signal
+- [[wiki/api-protocols/graphql-basics|GraphQL Basics]] — Query language and runtime letting clients request exactly the data they need from a typed schema
+- [[wiki/api-protocols/graphql-connections|GraphQL Connections]] — Relay-style cursor connections and edges
+- [[wiki/api-protocols/graphql-error-handling|GraphQL Error Handling]] — Errors array, partial results, and extensions
+- [[wiki/api-protocols/graphql-federation|GraphQL Federation]] — Composing a distributed schema across services
+- [[wiki/api-protocols/graphql-fragments|GraphQL Fragments]] — Reusable field selections and inline fragments
+- [[wiki/api-protocols/graphql-n-plus-one|GraphQL N+1 Problem]] — Query explosion and DataLoader patterns
+- [[wiki/api-protocols/graphql-queries-mutations|GraphQL Queries & Mutations]] — Operations, arguments, and variables
+- [[wiki/api-protocols/graphql-resolvers|GraphQL Resolvers]] — Resolver functions, data fetching, and batching
+- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]] — SDL types, fields, and naming conventions
+- [[wiki/api-protocols/graphql-security|GraphQL Security]] — Query complexity, depth limits, and introspection control
+- [[wiki/api-protocols/graphql-subscriptions|GraphQL Subscriptions]] — Realtime events and pub/sub wiring
+- [[wiki/api-protocols/graphql|GraphQL]] — Query language and runtime for APIs where clients request exactly the fields and relations they need
+- [[wiki/api-protocols/grpc-apis|gRPC APIs]] — Typed, binary RPC framework over HTTP/2 with streaming, deadlines, and generated clients
+- [[wiki/api-protocols/grpc-deadlines|gRPC Deadlines]] — Deadline propagation and cancellation
+- [[wiki/api-protocols/grpc-gateway|gRPC Gateway]] — gRPC-to-REST JSON transcoding
+- [[wiki/api-protocols/grpc-interceptors|gRPC Interceptors]] — Client- and server-side middleware
+- [[wiki/api-protocols/grpc-load-balancing|gRPC Load Balancing]] — Client-side and xDS load-balancing policies
+- [[wiki/api-protocols/grpc-metadata|gRPC Metadata]] — Header and trailer metadata exchange
+- [[wiki/api-protocols/grpc-status-codes|gRPC Status Codes]] — The gRPC error model and status semantics
+- [[wiki/api-protocols/grpc-streaming|gRPC Streaming]] — Unary, server-, client-, and bidi-streaming RPCs
+- [[wiki/api-protocols/grpc-web|gRPC-Web]] — Browser gRPC over HTTP/1.1 via a proxy
+- [[wiki/api-protocols/grpc|gRPC]] — High-performance RPC framework using HTTP/2 and Protocol Buffers for typed service contracts
+- [[wiki/api-protocols/hash-collision-dos|Hash Collision DoS]] — Forcing many same-bucket hashes to degrade map lookups to linear time
+- [[wiki/api-protocols/hateoas|HATEOAS]] — Hypermedia links that drive application state
+- [[wiki/api-protocols/header-injection|Header Injection]] — Injecting CRLF or other delimiters to forge HTTP response headers
+- [[wiki/api-protocols/health-checks|Health Checks]] — Endpoints and probes that report process status so orchestrators and load balancers can act
+- [[wiki/api-protocols/hpack|HPACK]] — HTTP/2 header compression
+- [[wiki/api-protocols/hsts-practice|HSTS in Practice]] — HTTP Strict Transport Security header forcing HTTPS-only browser connections
+- [[wiki/api-protocols/http-caching|HTTP Caching]] — Storing and reusing HTTP responses via Cache-Control, ETags, and validators to cut latency and bandwidth
+- [[wiki/api-protocols/http-compression|HTTP Compression]] — Content-Encoding negotiation with gzip, br, and deflate
+- [[wiki/api-protocols/http-conditional-requests|HTTP Conditional Requests]] — ETag/Last-Modified validators with If-* headers and 304/412 outcomes
+- [[wiki/api-protocols/http-cookies|HTTP Cookies]] — Cookie attributes, scoping, SameSite, and API usage
+- [[wiki/api-protocols/http-fundamentals|HTTP Fundamentals]] — The request-response protocol underpinning the web: methods, headers, status codes, and caching
+- [[wiki/api-protocols/http-headers|HTTP Headers]] — Standard request and response headers and their conventions
+- [[wiki/api-protocols/http-keep-alive|HTTP Keep-Alive]] — Persistent connections, reuse, and connection pooling
+- [[wiki/api-protocols/http-methods|HTTP Methods]] — Semantics of GET, POST, PUT, PATCH, DELETE: safety and idempotency
+- [[wiki/api-protocols/http-parameter-pollution|HTTP Parameter Pollution]] — Sending repeated query or body parameters to bypass validation and routing
+- [[wiki/api-protocols/http-status-checks|HTTP Status Checks]] — Using HTTP response codes to verify source URLs
+- [[wiki/api-protocols/http-status-codes|HTTP Status Codes]] — 1xx-5xx classes and commonly used response codes
+- [[wiki/api-protocols/http2-flow-control|HTTP/2 Flow Control]] — Stream- and connection-level flow-control windows
+- [[wiki/api-protocols/http2-multiplexing|HTTP/2 Multiplexing]] — Binary framing, stream multiplexing, and header compression that remove head-of-line blocking
+- [[wiki/api-protocols/http2|HTTP/2]] — Multiplexing, streams, and prioritization
+- [[wiki/api-protocols/http3-quic|HTTP/3 and QUIC]] — The next-generation web transport: UDP-based QUIC with 0-RTT and independent streams
+- [[wiki/api-protocols/http3|HTTP/3]] — HTTP over QUIC: features and benefits
+- [[wiki/api-protocols/httponly-flag|HttpOnly Cookie Flag]] — Blocking JavaScript access to cookies to blunt XSS theft
+- [[wiki/api-protocols/idempotency-keys|Idempotency Keys]] — Idempotency-Key headers for retry-safe POST workflows
+- [[wiki/api-protocols/idempotency|Idempotency]] — Guaranteeing repeated identical requests produce the same result, enabling safe client retries
+- [[wiki/api-protocols/idor-web|IDOR on the Web]] — Insecure Direct Object References: accessing resources via guessable identifiers
+- [[wiki/api-protocols/iframe-sandboxing|iframe Sandboxing]] — Restricting embedded content capabilities through the sandbox attribute
+- [[wiki/api-protocols/insecure-deserialization|Insecure Deserialization]] — Untrusted serialized data that triggers code execution or logic corruption
+- [[wiki/api-protocols/introspection-endpoint|Token Introspection]] — OAuth endpoint that reports a token's active state and metadata
+- [[wiki/api-protocols/ipv4-vs-ipv6|IPv4 vs IPv6]] — Comparing 32-bit and 128-bit IP addressing, exhaustion, and transition mechanisms
+- [[wiki/api-protocols/issuer-validation|Issuer Validation]] — Checking the iss claim against trusted identity providers
+- [[wiki/api-protocols/jitter|Jitter]] — Randomized delay variation that prevents synchronized retry storms across many clients
+- [[wiki/api-protocols/jku-attacks|JKU Attacks]] — Abusing the jku header to point verification at attacker keys
+- [[wiki/api-protocols/json-api-spec|JSON:API]] — Resource and relationship conventions with compound documents
+- [[wiki/api-protocols/json-patch|JSON Patch]] — RFC 6902 operation format for partial updates
+- [[wiki/api-protocols/json-rpc|JSON-RPC]] — JSON-RPC 2.0 requests, responses, and notifications
+- [[wiki/api-protocols/json-schema-validation|JSON Schema Validation]] — Declarative validation of JSON documents: types, formats, constraints, and references
+- [[wiki/api-protocols/json-schema|JSON Schema]] — Declarative vocabulary for validating, annotating, and documenting JSON document structures
+- [[wiki/api-protocols/json-web-tokens|JWT]] — Token structure, claims, and verification
+- [[wiki/api-protocols/jti-claims|JWT ID Claims]] — Unique token identifiers enabling replay detection and revocation
+- [[wiki/api-protocols/jwks-rotation|JWKS Rotation]] — Rotating signing keys published at the JSON Web Key Set endpoint
+- [[wiki/api-protocols/jwt-practice|JWT in Practice]] — JSON Web Tokens: structure, signing, validation, and the attacks that follow misuse
+- [[wiki/api-protocols/kafka|Apache Kafka]] — Distributed, durable, log-based event streaming platform for high-throughput pipelines
+- [[wiki/api-protocols/keyset-pagination|Keyset Pagination]] — Seek-based paging on indexed keys
+- [[wiki/api-protocols/liveness-probes|Liveness Probes]] — Checks whether a process is alive and healthy enough to keep running, triggering restarts on failure
+- [[wiki/api-protocols/load-balancing|Load Balancing]] — Distribution algorithms and health-aware routing
+- [[wiki/api-protocols/load-shedding|Load Shedding]] — Rejecting excess load with 503 responses
+- [[wiki/api-protocols/m2m-tokens|Machine-to-Machine Tokens]] — Client-credential tokens issued for service-to-service calls
+- [[wiki/api-protocols/mass-assignment|Mass Assignment]] — Over-binding client fields onto server objects when input is bound blindly
+- [[wiki/api-protocols/media-type-versioning|Media Type Versioning]] — Vendor media types for versioned representations
+- [[wiki/api-protocols/message-queues|Message Queues]] — Asynchronous buffers decoupling producers from consumers for reliable work distribution
+- [[wiki/api-protocols/mime-sniffing|MIME Sniffing]] — Browser behavior that guesses a resource type when Content-Type is absent or wrong
+- [[wiki/api-protocols/mime-types|MIME Types]] — Media types that label payload formats in HTTP Content-Type headers
+- [[wiki/api-protocols/mqtt|MQTT]] — Publish/subscribe protocol and QoS levels
+- [[wiki/api-protocols/mtls|mTLS]] — Mutual TLS for service-to-service authentication
+- [[wiki/api-protocols/ndjson-streaming|NDJSON Streaming]] — Newline-delimited JSON event streams
+- [[wiki/api-protocols/none-algorithm|JWT none Algorithm]] — Exploiting the none signing algorithm on misconfigured verifiers
+- [[wiki/api-protocols/nosniff-header|X-Content-Type-Options nosniff]] — Header that disables MIME sniffing so declared content types are honored
+- [[wiki/api-protocols/nosql-injection|NoSQL Injection]] — Operator injection into document-store queries such as MongoDB $where clauses
+- [[wiki/api-protocols/oauth2-authorization-code|Authorization Code Flow]] — The standard OAuth grant end to end
+- [[wiki/api-protocols/oauth2-client-credentials|Client Credentials]] — Machine-to-machine OAuth grant
+- [[wiki/api-protocols/oauth2-pkce|PKCE]] — Code verifier and challenge for public clients
+- [[wiki/api-protocols/oauth2-refresh-tokens|Refresh Tokens]] — Refresh token lifecycle, rotation, and reuse detection
+- [[wiki/api-protocols/oauth2-scopes|OAuth Scopes]] — Scope design and consent granularity
+- [[wiki/api-protocols/oauth2|OAuth 2.0]] — Roles, grant types, and endpoints overview
+- [[wiki/api-protocols/ocsp-stapling|OCSP Stapling]] — Serving certificate revocation status inside the TLS handshake to reduce round trips
+- [[wiki/api-protocols/offset-pagination|Offset Pagination]] — Limit/offset paging, costs, and instability
+- [[wiki/api-protocols/openapi-spec|OpenAPI Specification]] — Machine-readable description of REST APIs: paths, operations, schemas, and security
+- [[wiki/api-protocols/openapi|OpenAPI]] — Vendor-neutral specification for describing REST APIs as machine-readable documents with endpoints, schemas, and security
+- [[wiki/api-protocols/openid-connect|OpenID Connect]] — ID tokens, discovery, and userinfo endpoint
+- [[wiki/api-protocols/optimistic-concurrency|Optimistic Concurrency]] — Version/ETag-based conflict detection
+- [[wiki/api-protocols/padding-oracle|Padding Oracle]] — CBC decryption oracle that reveals plaintext via padding-error responses
+- [[wiki/api-protocols/parameter-pollution|Parameter Pollution]] — Duplicate or ambiguous parameters causing unintended server-side behavior
+- [[wiki/api-protocols/partitioned-cookies|Partitioned Cookies]] — CHIPS: scoping cookies to the top-level site that embedded them
+- [[wiki/api-protocols/path-cookies|Path Cookies]] — Restricting cookie delivery to URL prefixes
+- [[wiki/api-protocols/percent-encoding|Percent-Encoding]] — Encoding reserved and non-ASCII bytes in URLs as %XX escape sequences
+- [[wiki/api-protocols/pkce-flow|PKCE Flow]] — Proof Key for Code Exchange: protecting the authorization code grant on public clients
+- [[wiki/api-protocols/popup-security|Popup Security]] — Controlling window.open behavior, opener relationships, and popup abuse
+- [[wiki/api-protocols/problem-details|Problem Details]] — RFC 9457 error response format
+- [[wiki/api-protocols/protobuf-serialization|Protocol Buffers]] — Compact, typed binary serialization with schema evolution rules, used by gRPC
+- [[wiki/api-protocols/protobuf|Protocol Buffers]] — Language-neutral, binary serialization schema language for typed structured data
+- [[wiki/api-protocols/punycode-domains|Punycode Domains]] — Internationalized domain names encoded in ASCII via punycode
+- [[wiki/api-protocols/quic|QUIC]] — QUIC transport: handshake, 0-RTT, and migration
+- [[wiki/api-protocols/quota-headers|Quota Headers]] — HTTP headers that communicate rate-limit and quota state to clients
+- [[wiki/api-protocols/rabbitmq|RabbitMQ]] — Mature AMQP message broker with routing, exchanges, and delivery guarantees
+- [[wiki/api-protocols/rate-limit-algorithms|Rate Limit Algorithms]] — Token bucket, leaky bucket, and window algorithms
+- [[wiki/api-protocols/rate-limit-headers|Rate Limit Headers]] — Rate-limit response headers and Retry-After
+- [[wiki/api-protocols/rate-limiting-api|Rate Limiting for APIs]] — Algorithms, headers, and client behavior for enforcing per-client request budgets
+- [[wiki/api-protocols/rate-limiting|Rate Limiting]] — Controlling how many requests a client may make in a window to protect APIs from abuse and overload
+- [[wiki/api-protocols/readiness-probes|Readiness Probes]] — Checks whether a service can accept traffic right now, controlling load-balancer membership
+- [[wiki/api-protocols/redis-streams|Redis Streams]] — Append-only log data structure in Redis for streaming, queues, and consumer groups
+- [[wiki/api-protocols/referrer-policy|Referrer Policy]] — HTTP header controlling how much of the referring URL is shared across origins
+- [[wiki/api-protocols/refresh-token-rotation|Refresh Token Rotation]] — Issuing new refresh tokens per use to bound replay risk
+- [[wiki/api-protocols/regex-dos|ReDoS Attacks]] — Catastrophic backtracking in regular expressions causing CPU exhaustion
+- [[wiki/api-protocols/request-smuggling|Request Smuggling]] — Exploiting parser discrepancies between proxies and backends to smuggle requests
+- [[wiki/api-protocols/response-envelopes|Response Envelopes]] — data/meta/error wrapper conventions
+- [[wiki/api-protocols/response-splitting|Response Splitting]] — CRLF-based header injection that appends a second forged HTTP response
+- [[wiki/api-protocols/rest-api-design|REST API Design]] — Resource-oriented HTTP API design: nouns, methods, status codes, and consistent conventions
+- [[wiki/api-protocols/rest-apis|REST APIs]] — Architectural style for stateless, resource-oriented HTTP APIs built on standard methods and status codes
+- [[wiki/api-protocols/rest-maturity-model|REST Maturity Model]] — Richardson Maturity Model levels 0-3
+- [[wiki/api-protocols/rest-non-crud-actions|REST Non-CRUD Actions]] — Modeling custom operations outside CRUD
+- [[wiki/api-protocols/rest-partial-updates|REST Partial Updates]] — PATCH semantics and the merge-patch media type
+- [[wiki/api-protocols/rest-query-parameters|REST Query Parameters]] — Filtering, sorting, and searching conventions
+- [[wiki/api-protocols/rest-resource-design|REST Resource Design]] — Nouns, sub-resources, and URI modeling conventions
+- [[wiki/api-protocols/rest-vs-graphql|REST vs GraphQL]] — Comparing fixed endpoint shapes with client-driven query languages
+- [[wiki/api-protocols/rest-vs-grpc|REST vs gRPC]] — JSON-over-HTTP versus typed binary contracts over HTTP/2
+- [[wiki/api-protocols/rest-vs-rpc|REST vs RPC]] — Resource-oriented HTTP APIs versus action-oriented remote procedure calls
+- [[wiki/api-protocols/retry-after-web|Retry-After]] — HTTP header telling clients when a temporarily unavailable resource may be retried
+- [[wiki/api-protocols/retry-backoff|Retry & Backoff]] — Re-attempting failed operations with increasing delays to ride out transient errors
+- [[wiki/api-protocols/retry-policies|Retry Policies]] — Retry budgets, caps, and idempotent retry design
+- [[wiki/api-protocols/rpc-styles|RPC Styles]] — Taxonomy of RPC styles and their trade-offs
+- [[wiki/api-protocols/saga-pattern|Saga Pattern]] — Coordinating distributed transactions as sequences of local transactions with compensating actions
+- [[wiki/api-protocols/samesite-lax-strict|SameSite Lax vs Strict]] — Cookie scoping that limits cross-site request sending
+- [[wiki/api-protocols/scope-validation|Scope Validation]] — Checking that requested scopes bound token permissions
+- [[wiki/api-protocols/sdk-generation|SDK Generation]] — Generating client SDKs from API specs
+- [[wiki/api-protocols/sec-fetch-headers|Sec-Fetch Headers]] — Fetch metadata headers that reveal request destination and mode
+- [[wiki/api-protocols/second-order-injection|Second-Order Injection]] — Payloads stored safely at write time but executed later at a different sink
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — Cookie attributes, scoping, and session protection against theft, CSRF, and cross-site abuse
+- [[wiki/api-protocols/secure-flag|Secure Cookie Flag]] — Restricting cookie transmission to HTTPS connections
+- [[wiki/api-protocols/semver-for-apis|SemVer for APIs]] — Applying semantic versioning to API releases
+- [[wiki/api-protocols/server-sent-events|Server-Sent Events]] — SSE stream format, fields, and reconnection
+- [[wiki/api-protocols/service-mesh|Service Mesh]] — Sidecar proxies, mTLS, and traffic policies
+- [[wiki/api-protocols/session-invalidation|Session Invalidation]] — Ending server sessions on logout, rotation, and security events
+- [[wiki/api-protocols/source-dates|Source Dates]] — Recording when a source was published
+- [[wiki/api-protocols/sparse-fieldsets|Sparse Fieldsets]] — Letting clients select which fields a response includes
+- [[wiki/api-protocols/sql-injection-practice|SQL Injection]] — Injection of SQL through unsanitized input into dynamically built queries
+- [[wiki/api-protocols/sse-streaming|Server-Sent Events (SSE)]] — One-way HTTP streaming where the server pushes events to the browser over a long-lived connection
+- [[wiki/api-protocols/ssrf-practice|SSRF Attacks]] — Server-Side Request Forgery: abusing server fetches to reach internal services
+- [[wiki/api-protocols/streaming-apis|Streaming APIs]] — Streaming request/response patterns and trade-offs
+- [[wiki/api-protocols/synchronizer-token|Synchronizer Token Pattern]] — Server-stored CSRF tokens validated against session state
+- [[wiki/api-protocols/tcp-vs-udp|TCP vs UDP]] — Reliable connection-oriented versus fast datagram transport protocols
+- [[wiki/api-protocols/template-injection|Template Injection]] — Server- or client-side template engines evaluating attacker-controlled expressions
+- [[wiki/api-protocols/third-party-cookies|Third-Party Cookies]] — Cookies set by embedded origins and their tracking and deprecation story
+- [[wiki/api-protocols/throttling-vs-debouncing|Throttling vs Debouncing]] — Two input-rate strategies: fixed-rate limiting versus trailing-edge coalescing
+- [[wiki/api-protocols/timeouts|Timeouts]] — Upper bounds on how long a call may take, preventing hung operations from consuming resources
+- [[wiki/api-protocols/timing-attacks|Timing Attacks]] — Side-channel leaks of secrets through measurable processing-time differences
+- [[wiki/api-protocols/tls-certificates|TLS Certificates]] — X.509 certificates, CAs, chains, and validation
+- [[wiki/api-protocols/tls-handshake|TLS Handshake]] — TLS basics, versions, and cipher suites
+- [[wiki/api-protocols/tls-https|TLS and HTTPS]] — Transport Layer Security providing confidentiality, integrity, and authentication for HTTP
+- [[wiki/api-protocols/token-refresh-strategies|Token Refresh Strategies]] — Keeping sessions alive with refresh tokens: rotation, reuse detection, and silent renewal
+- [[wiki/api-protocols/uri-vs-url|URI vs URL]] — Distinguishing uniform resource identifiers from locators in web standards
+- [[wiki/api-protocols/url-deduplication|URL Deduplication]] — Detecting and merging repeated source URLs across the wiki
+- [[wiki/api-protocols/url-formatting|URL Formatting]] — The conventions for writing URLs in articles and references
+- [[wiki/api-protocols/url-normalization-wiki|URL Normalization]] — Canonicalizing equivalent URLs so they compare equal
+- [[wiki/api-protocols/url-structure|URL Structure]] — Anatomy of a URL: scheme, authority, path, query, and fragment components
+- [[wiki/api-protocols/weak-hash-jwt|Weak Hashes in JWT]] — HS256 tokens signed with guessable or weak secrets
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — The OWASP Top 10 and cheat sheets as the baseline threat model for web applications
+- [[wiki/api-protocols/webhook-delivery|Webhook Delivery]] — HTTP callbacks from servers to subscribers carrying event notifications
+- [[wiki/api-protocols/webhook-events|Webhook Events]] — The event objects and schemas webhook deliveries carry
+- [[wiki/api-protocols/webhook-retries|Webhook Retries]] — Redelivery policies for failed webhook HTTP calls
+- [[wiki/api-protocols/webhook-signatures|Webhook Signatures]] — HMAC or asymmetric signatures proving webhook payload authenticity
+- [[wiki/api-protocols/webhook-subscriptions|Webhook Subscriptions]] — Managing endpoint registrations, filters, and lifecycle for webhooks
+- [[wiki/api-protocols/webhook-topics|Webhook Topics]] — Categorizing subscribable event types in a webhook system
+- [[wiki/api-protocols/webhooks-practice|Webhooks in Practice]] — Server-to-server HTTP callbacks that push event notifications to subscriber endpoints
+- [[wiki/api-protocols/webhooks|Webhooks]] — HTTP callbacks that push event notifications from a provider to a consumer's endpoint
+- [[wiki/api-protocols/websocket-broadcast|WebSocket Broadcast]] — Room and topic fan-out design
+- [[wiki/api-protocols/websocket-frames|WebSocket Frames]] — Frame types, masking, and fragmentation
+- [[wiki/api-protocols/websocket-handshake|WebSocket Handshake]] — Upgrade request, keys, and subprotocols
+- [[wiki/api-protocols/websocket-protocols|WebSocket Protocols]] — Full-duplex, persistent message channels over a single TCP connection, upgraded from HTTP
+- [[wiki/api-protocols/websocket-reconnection|WebSocket Reconnection]] — Reconnect strategies and state resync
+- [[wiki/api-protocols/websocket-security|WebSocket Security]] — Origin checks, wss, and token authentication
+- [[wiki/api-protocols/websockets|WebSockets]] — Full-duplex, persistent TCP-based protocol for low-latency bidirectional browser-server communication
+- [[wiki/api-protocols/x-frame-options|X-Frame-Options]] — Legacy header that prevents a page from being embedded in frames
+- [[wiki/api-protocols/xml-injection|XML Injection]] — Inserting markup or entities into XML documents and parsers
+- [[wiki/api-protocols/zip-slip|Zip Slip]] — Path traversal via archive entries that escape the extraction directory

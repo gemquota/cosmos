@@ -21,15 +21,15 @@ The Shell tag means these tools are exercised from the command line, with parame
 
 
 The parameter also has a design lesson: simulations need explicit limits to be useful. Without bounds, extreme inputs produce extreme outputs that drown out the interesting range, and debugging becomes chasing numerical artifacts. Documenting what Mass Max means — what happens at the boundary, and why the bound exists — turns the parameter from a magic number into a piece of the model's specification, which is the kind of clarity the knowledge base aims to preserve.
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/density|Density]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
+- [[wiki/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/density|Density]]
+- [[wiki/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
+- [[wiki/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
+- [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
+- [[wiki/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
+- [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]

@@ -12,7 +12,7 @@ resource: ""
 
 Exception appears in 3 session(s) categorized as API, Mobile, Security, Shell. Related topics: android, api, auth, authentication, bash, cli, ide, json, logging.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Exception 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Exception 2
 
 ## Related Entities
 

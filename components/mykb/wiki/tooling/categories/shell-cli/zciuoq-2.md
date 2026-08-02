@@ -9,7 +9,7 @@ resource: ""
 ---
 ## Zciuoq 2
 ZciuOq appears in 2 session(s) categorized as API, Frontend, Shell. Related topics: api, bash, cli, css.
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/tooling/index|Tooling]] › [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
 ## Overview
 ZciuOq is an unresolved token extracted from two sessions categorized under API, Frontend, and Shell. Like other session-mined identifiers in the shell-cli cluster, its meaning is not defined in the available evidence, so this page anchors the raw token with its co-occurring entities and tags. Recording the token as-is preserves the graph edges that a future session may need when the canonical term is discovered, while avoiding the risk of inventing a definition.
 ## Working Interpretation
@@ -22,6 +22,6 @@ The mixed-case spelling and the surrounding identifier-shaped neighbors (long al
 ## Graph Position
 The related-entities list places ZciuOq among identifiers that co-occur in the same sessions, so any future resolution should start by reading those neighbors. Because the token is stable across two sessions, it is likely a real symbol rather than a one-off typo, which raises the value of resolving it. Until then, the page continues to contribute its edges to the knowledge graph without asserting a false definition.
 ## Related Entities
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/busuj|Busuj]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/dims-2|Dims 2]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]
+- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
+- [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

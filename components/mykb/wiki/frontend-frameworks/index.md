@@ -1,23 +1,97 @@
-## Overview
+---
+type: "index"
+title: "Frontend Frameworks Index"
+description: "Listing of the frontend-frameworks/ folder (84 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
 
-The frontend landscape in mykb centers on Angular as the primary framework, with TypeScript as the preferred language. The stack reflects a developer who values structured, type-safe application architecture.
+# Frontend Frameworks
 
-### Angular
-Dominant framework appearing in 38 sessions. Used for the main web viewer and agent interfaces. The session data shows Angular CLI patterns, component architecture, and RxJS observable patterns.
+Part of [[wiki/index|Wiki Index]]. 84 pages.
 
-### Build Tooling
-Vite is the build tool of choice — used for the lightweight web viewer. It replaced earlier Webpack-based setups. The session turns show migration patterns and Vite configuration for SPAs.
-
-### UI & Styling
-Bootstrap provides component patterns. The viewer CSS uses a dark theme (system-ui font, dark background). The session logs show incremental styling improvements and responsive design adjustments.
-
-## Concepts
-
-- [Cross-Platform Frameworks](cross-platform-frameworks.md) — Cross-Platform Frameworks
-- [Declarative UI](declarative-ui.md) — Declarative UI
-- [Flutter Framework](flutter-framework.md) — Flutter Framework
-- [Hot Reload](hot-reload.md) — Hot Reload
-- [Material Design](material-design.md) — Material Design
-- [React Native vs Flutter](react-native-vs-flutter.md) — React Native vs Flutter
-- [Responsive Design](responsive-design.md) — Responsive Design
-- [State Management Mobile](state-management-mobile.md) — State Management Mobile
+## Pages
+- [[wiki/frontend-frameworks/accordions-practice|Accordions in Practice]] — Collapsible sections: disclosure semantics, animation, and when accordions help
+- [[wiki/frontend-frameworks/angular-signals|Angular Signals]] — Granular reactivity primitives in Angular
+- [[wiki/frontend-frameworks/apollo-client|Apollo Client]] — Full-featured GraphQL client with normalized caching
+- [[wiki/frontend-frameworks/async-state|Async State]] — Modeling pending, success, and error phases of async data
+- [[wiki/frontend-frameworks/carousels-practice|Carousels in Practice]] — Rotating content panels: automation, controls, accessibility, and alternatives
+- [[wiki/frontend-frameworks/change-detection|Change Detection]] — How frameworks discover and apply state updates to the DOM
+- [[wiki/frontend-frameworks/composition-apis|Composition APIs]] — Function-based component composition versus options and class APIs
+- [[wiki/frontend-frameworks/concurrent-rendering|Concurrent Rendering]] — Interruptible rendering that keeps UIs responsive
+- [[wiki/frontend-frameworks/context-api|Context API]] — Prop-drilling-free sharing of values through a component tree
+- [[wiki/frontend-frameworks/context-rendering|Context and Rendering]] — How context value changes propagate through consumers
+- [[wiki/frontend-frameworks/controlled-components|Controlled Components]] — Inputs whose value and updates are owned by React state
+- [[wiki/frontend-frameworks/cross-platform-frameworks|Cross-Platform Frameworks]] — Sharing one codebase across Android and iOS with Flutter, React Native, and Kotlin Multiplatform
+- [[wiki/frontend-frameworks/data-fetching-libs|Data Fetching Libraries]] — Caching, retry, and invalidation layers over fetch
+- [[wiki/frontend-frameworks/date-pickers|Date Pickers]] — Choosing dates and times: native inputs, calendars, ranges, and timezones
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — Describing UI as a function of state instead of mutating views
+- [[wiki/frontend-frameworks/derived-state|Derived State]] — Computing values from source state instead of duplicating it
+- [[wiki/frontend-frameworks/dropdowns-practice|Dropdowns in Practice]] — Select menus and comboboxes: native selects, custom menus, search, and keyboard behavior
+- [[wiki/frontend-frameworks/empty-states|Empty States]] — Designing for no data: guidance, onboarding, and next actions in blank screens
+- [[wiki/frontend-frameworks/error-states|Error States]] — Handling failures in the UI: recovery paths, retries, and humane error messages
+- [[wiki/frontend-frameworks/file-upload-uis|File Upload UIs]] — Uploading files well: drag-drop, progress, validation, previews, and resumability
+- [[wiki/frontend-frameworks/finite-state-uis|Finite State UIs]] — Modeling UI conditions as bounded states with defined edges
+- [[wiki/frontend-frameworks/flutter-framework|Flutter Framework]] — Google UI toolkit compiling Dart to native code, rendering its own UI across platforms
+- [[wiki/frontend-frameworks/form-libraries|Form Libraries]] — Managing values, validation, and submission without boilerplate
+- [[wiki/frontend-frameworks/graphql-aliases|GraphQL Aliases]] — Renaming fields in responses to disambiguate queries
+- [[wiki/frontend-frameworks/graphql-batching|GraphQL Batching]] — Coalescing multiple operations into one HTTP request
+- [[wiki/frontend-frameworks/graphql-caching|GraphQL Caching]] — Normalized, persisted, and HTTP-level cache strategies
+- [[wiki/frontend-frameworks/graphql-directives|GraphQL Directives]] — @include and @skip conditional execution in queries
+- [[wiki/frontend-frameworks/graphql-variables|GraphQL Variables]] — Parameterizing queries and mutations with typed variables
+- [[wiki/frontend-frameworks/hoc-patterns|Higher-Order Components]] — Component factories that wrap others to share logic
+- [[wiki/frontend-frameworks/hooks-practice|Hooks in Practice]] — Rules and patterns for stateful logic in React hooks
+- [[wiki/frontend-frameworks/hot-reload|Hot Reload]] — Instantly applying code changes to a running app during development
+- [[wiki/frontend-frameworks/immutable-state|Immutable State]] — Never-mutate updates that make change detection and undo tractable
+- [[wiki/frontend-frameworks/jotai-practice|Jotai in Practice]] — Atomic primitive-based state for React
+- [[wiki/frontend-frameworks/loading-states|Loading States]] — Designing for pending data: spinners, progress, placeholders, and optimistic feedback
+- [[wiki/frontend-frameworks/material-design|Material Design]] — Google open design system for adaptive, expressive interfaces across Android, web, and Flutter
+- [[wiki/frontend-frameworks/memoization-practice|Memoization Practice]] — Caching derived values to avoid repeated work
+- [[wiki/frontend-frameworks/mobx-practice|MobX in Practice]] — Observable-based state with automatic reactions
+- [[wiki/frontend-frameworks/modals-practice|Modals in Practice]] — Dialog design: focus trapping, dismissal, scroll, and when not to use modals
+- [[wiki/frontend-frameworks/ng-zone|NgZone]] — Angular's change-detection triggering zone wrapper
+- [[wiki/frontend-frameworks/observable-pattern|Observable Pattern]] — Streams of values over time with subscription semantics
+- [[wiki/frontend-frameworks/optimistic-ui|Optimistic UI]] — Applying user actions to the UI immediately and reconciling with the server result
+- [[wiki/frontend-frameworks/persisted-queries|Persisted GraphQL Queries]] — Sending query hashes instead of full documents
+- [[wiki/frontend-frameworks/portals-practice|Portals in Practice]] — Rendering children into DOM nodes outside the parent tree
+- [[wiki/frontend-frameworks/pure-components|Pure Components]] — Components that re-render only when props and state change
+- [[wiki/frontend-frameworks/query-depth-limit|Query Depth Limits]] — Capping query nesting to blunt GraphQL DoS
+- [[wiki/frontend-frameworks/re-render-causes|Re-Render Causes]] — The inputs that trigger component re-renders
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — React core plus the libraries that surround it: state, data fetching, styling, and build tooling
+- [[wiki/frontend-frameworks/react-hook-form|React Hook Form]] — Uncontrolled form state with registration-based hooks
+- [[wiki/frontend-frameworks/react-native-vs-flutter|React Native vs Flutter]] — Head-to-head comparison of the two dominant cross-platform toolkits
+- [[wiki/frontend-frameworks/react-query-practice|TanStack Query Practice]] — Server-state caching with auto-refetch and invalidation
+- [[wiki/frontend-frameworks/reactivity-pitfalls|Reactivity Pitfalls]] — Lost tracking, stale closures, and mutation mistakes in reactive UIs
+- [[wiki/frontend-frameworks/recoil-practice|Recoil in Practice]] — Atom and selector state graph for React
+- [[wiki/frontend-frameworks/redux-practice|Redux in Practice]] — Single-store unidirectional state with actions and reducers
+- [[wiki/frontend-frameworks/refs-practice|Refs in Practice]] — Imperative DOM access and stable identity via refs
+- [[wiki/frontend-frameworks/relay-practice|Relay in Practice]] — Colocated-fragment GraphQL client from Meta
+- [[wiki/frontend-frameworks/responsive-design|Responsive Design]] — UIs that adapt to screen size, orientation, and form factor across phones, tablets, and foldables
+- [[wiki/frontend-frameworks/rtk-query|RTK Query]] — Redux Toolkit's data fetching and caching layer
+- [[wiki/frontend-frameworks/rxjs-practice|RxJS in Practice]] — Reactive extensions for composing async event streams
+- [[wiki/frontend-frameworks/schema-coercion|Schema Coercion]] — Casting raw input to typed values during validation
+- [[wiki/frontend-frameworks/selector-libraries|Selector Libraries]] — Subscribing to slices of state to avoid broad re-renders
+- [[wiki/frontend-frameworks/selectors-practice|Selectors in Practice]] — Pure functions that derive memoized state slices
+- [[wiki/frontend-frameworks/signal-based-state|Signal-Based State]] — Fine-grained reactive cells that notify only their subscribers
+- [[wiki/frontend-frameworks/skeleton-screens|Skeleton Screens]] — Placeholder shapes that preview content layout while data loads
+- [[wiki/frontend-frameworks/solid-js-signals|Solid.js Signals]] — Fine-grained reactivity: signals, memos, and effects with no virtual DOM
+- [[wiki/frontend-frameworks/starttransition|startTransition]] — Marking React updates as low-priority transitions
+- [[wiki/frontend-frameworks/state-machines-web|State Machines on the Web]] — Explicit states and transitions for complex UI flows
+- [[wiki/frontend-frameworks/state-management-mobile|State Management Mobile]] — Architecting state flow for mobile UIs across toolkits
+- [[wiki/frontend-frameworks/suspense-practice|Suspense in Practice]] — Declarative waiting states for async component data
+- [[wiki/frontend-frameworks/svelte-compiler|Svelte's Compiler]] — Compiling components into imperative DOM updates at build time instead of runtime diffing
+- [[wiki/frontend-frameworks/swr-practice|SWR in Practice]] — Stale-while-revalidate data fetching hooks
+- [[wiki/frontend-frameworks/tabs-patterns|Tabs Patterns]] — Tab interfaces: semantics, keyboard navigation, lazy loading, and content switching
+- [[wiki/frontend-frameworks/toast-notifications|Toast Notifications]] — Transient, non-blocking feedback messages and their placement, stacking, and dismissal
+- [[wiki/frontend-frameworks/tooltips-practice|Tooltips in Practice]] — Hover/ focus-accessible hints: trigger, delay, placement, and dismissal
+- [[wiki/frontend-frameworks/uncontrolled-components|Uncontrolled Components]] — Inputs whose value lives in the DOM until read via refs
+- [[wiki/frontend-frameworks/urql-practice|urql in Practice]] — Lightweight, exchange-based GraphQL client
+- [[wiki/frontend-frameworks/use-callback|useCallback]] — Stable function identities to limit re-renders
+- [[wiki/frontend-frameworks/use-memo|useMemo]] — Caching expensive derived values in React
+- [[wiki/frontend-frameworks/vue-composition-api|Vue Composition API]] — setup()-based logic organization in Vue 3
+- [[wiki/frontend-frameworks/vue-ecosystem|Vue Ecosystem]] — Vue's reactive core, composition API, and the tooling: router, Pinia, Nuxt, and Vite
+- [[wiki/frontend-frameworks/vue-reactivity|Vue Reactivity]] — Proxy-based dependency tracking in Vue 3
+- [[wiki/frontend-frameworks/xstate-practice|XState in Practice]] — Authoring executable statecharts with XState
+- [[wiki/frontend-frameworks/yup-schemas|Yup Schemas]] — Declarative object schema validation for forms and payloads
+- [[wiki/frontend-frameworks/zod-validation|Zod Validation]] — TypeScript-first runtime schema parsing and validation
+- [[wiki/frontend-frameworks/zustand-practice|Zustand in Practice]] — Minimal external store hooks for React state

@@ -19,21 +19,21 @@ On Android, adaptive icons are defined as foreground and background layers that 
 
 Live icons are constrained by platform policy: launchers control when and how often animations run, battery and performance limits discourage constant redraw, and accessibility guidelines require that motion not interfere with usability. Icon updates should be lightweight, driven by events rather than polling where possible, and should degrade gracefully to a static representation.
 
-Security appears in the same sessions because live icons are sometimes used to draw attention to sensitive notifications, and the underlying capability, updating app identity, must not be spoofable by other apps. The term connects to the [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/canvastexture|Canvastexture]] entry for rendering techniques and the [[wiki/web-platforms/supercategories/mobile-platform/supercategories/android-core/index|Android Core]] domain.
+Security appears in the same sessions because live icons are sometimes used to draw attention to sensitive notifications, and the underlying capability, updating app identity, must not be spoofable by other apps. The term connects to the [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/canvastexture|Canvastexture]] entry for rendering techniques and the [[wiki/web-platforms/index|Android Core]] domain.
 
 Sessions pair live icon work with canvas rendering and notification handling, and the entry records those connections for reuse in future icon and notification features.
 
 The term is recorded as a capability pattern rather than a specific API, since the details differ by platform while the underlying idea, state expressed through the icon, stays the same.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/frontend/index|Frontend]] › [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/index|Frontend Frameworks]] › Liveicon
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Liveicon
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
-- [[wiki/web-platforms/supercategories/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]

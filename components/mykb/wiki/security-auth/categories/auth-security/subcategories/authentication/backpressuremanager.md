@@ -23,7 +23,7 @@ In an agent pipeline, backpressure is what keeps a busy system stable: component
 Backpressure also protects the producer's own resources. Without it, a producer can build unbounded internal queues, allocate memory until the garbage collector thrashes, and fail under load it created itself. By making the consumer's capacity visible, backpressure turns an uncontrolled flood into a negotiated flow, and it gives operators a single place — the manager — to observe where pressure is building. Monitoring queue depth and drop rates there reveals bottlenecks before they become outages.
 **Related topics:** android, api, auth, authentication
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Backpressuremanager
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Backpressuremanager
 
 ## Related Entities
 

@@ -96,7 +96,7 @@ This report surveys 12 reference systems across 5 methodological categories, the
 **Key Innovations**:
 - **Block references**: Reference individual paragraphs, not just pages
 - **Daily notes as defaults**: Every day gets a note; all thoughts start there
-- **Page references**: `[[wiki/backlinks]]` syntax creates automatic bidirectional links
+- **Page references**: `[[wiki/memory/backlinks]]` syntax creates automatic bidirectional links
 - **Query blocks**: Embedded queries aggregate blocks by metadata
 - **Attributes**: `property:: value` syntax for structured data within blocks
 

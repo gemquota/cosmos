@@ -1,7 +1,14 @@
+---
+type: "index"
+title: "Api Clients Index"
+description: "Listing of the api-services/categories/api-clients/ folder (1 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
 # Api Clients
 
-Part of [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › Api Clients. 449 entities.
+Part of [[wiki/index|Wiki Index]]. 1 pages.
 
-## Sub-Categories
-
-- [[wiki/web-platforms/supercategories/api-services/categories/api-clients/subcategories/rest-api/index|Rest Api — 450 files
+## Pages
+- [[wiki/api-services/categories/api-clients/overview|Overview]]

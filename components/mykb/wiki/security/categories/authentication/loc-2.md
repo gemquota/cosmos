@@ -18,21 +18,21 @@ Translation is only part of the work. Locales differ in date formats, number and
 
 Technical infrastructure includes resource files keyed by message IDs, key-value stores per locale, fallback chains when a locale is incomplete, and pseudo-localization to catch layout problems early. Right-to-left languages require mirroring the interface, which is handled with logical properties in CSS rather than hard-coded left and right values.
 
-Tooling keeps localization flowing: extraction of strings from code, translation management systems, and automated checks for missing or unused keys. Localization also affects compliance and trust, since users interact with the product in their own language. The entry sits in the [[wiki/security-auth/supercategories/security/index|Security]] and [[wiki/security-auth/supercategories/security/categories/authentication/index|Authentication]] domains of this knowledge base, where localized messages and error text also carry security meaning.
+Tooling keeps localization flowing: extraction of strings from code, translation management systems, and automated checks for missing or unused keys. Localization also affects compliance and trust, since users interact with the product in their own language. The entry sits in the [[wiki/web-platforms/index|Security]] and [[wiki/web-platforms/index|Authentication]] domains of this knowledge base, where localized messages and error text also carry security meaning.
 
 Localization is never finished: new strings, new locales, and new cultural conventions keep the process alive, and the wiki records it as a practice rather than a one-time task.
 
 Quality gates in CI, such as checking that every locale file parses and that translations do not truncate, keep localization defects out of releases.
 
-**Domain:** Security & Authentication › [[wiki/security-auth/supercategories/security/index|Security]] › [[wiki/security-auth/supercategories/security/categories/authentication/index|Authentication]]
+**Domain:** Security & Authentication › [[wiki/web-platforms/index|Security]] › [[wiki/web-platforms/index|Authentication]]
 
 ## Related Entities
 
-- [[wiki/security-auth/supercategories/security/categories/authentication/audit-hash|Audit Hash]]
-- [[wiki/security-auth/supercategories/security/categories/authentication/baxdxuoc|Baxdxuoc]]
-- [[wiki/security-auth/supercategories/security/categories/authentication/blizkl9u|Blizkl9U]]
-- [[wiki/security-auth/supercategories/security/categories/authentication/bmxbydqu|Bmxbydqu]]
-- [[wiki/security-auth/supercategories/security/categories/authentication/canvasrenderer-2|Canvasrenderer 2]]
-- [[wiki/security-auth/supercategories/security/categories/authentication/cbvrzdvz|Cbvrzdvz]]
-- [[wiki/security-auth/supercategories/security/categories/authentication/ccdy9tdr|Ccdy9Tdr]]
-- [[wiki/security-auth/supercategories/security/categories/authentication/chlxaaiu|Chlxaaiu]]
+- [[wiki/security/categories/authentication/audit-hash|Audit Hash]]
+- [[wiki/security/categories/authentication/baxdxuoc|Baxdxuoc]]
+- [[wiki/security/categories/authentication/blizkl9u|Blizkl9U]]
+- [[wiki/security/categories/authentication/bmxbydqu|Bmxbydqu]]
+- [[wiki/security/categories/authentication/canvasrenderer-2|Canvasrenderer 2]]
+- [[wiki/security/categories/authentication/cbvrzdvz|Cbvrzdvz]]
+- [[wiki/security/categories/authentication/ccdy9tdr|Ccdy9Tdr]]
+- [[wiki/security/categories/authentication/chlxaaiu|Chlxaaiu]]

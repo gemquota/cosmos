@@ -14,8 +14,8 @@ Intents carry extras, data URIs, flags, and categories, and PendingIntent lets a
 Framed as an engine, the concept generalizes beyond Android: any system that receives requests and routes them to handlers by capability is doing intent distribution. The related entities below list the neighboring shell and CLI pages observed in the same sessions, giving the engine a place in the wider vocabulary of the knowledge base.
 Reliability completes the picture: routing decisions should be logged, handlers should be time-boxed, and unmatched intents should fall through to a defined default rather than failing silently. These are the same concerns as any message dispatcher or API gateway, which is why the entity sits in the tooling vocabulary alongside queue and terminal topics. The engine's job is to make the mapping from intent to handler explicit, observable, and safe.
 **Related topics:** api, auth, aws, backend, cli, ide, queue, terminal
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/tooling/index|Tooling]] › [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
 ## Related Entities
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/busuj|Busuj]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/dims-2|Dims 2]]
-- [[wiki/web-platforms/supercategories/tooling/categories/shell-cli/kksrylf3|Kksrylf3]]
+- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
+- [[wiki/tooling/categories/shell-cli/kksrylf3|Kksrylf3]]

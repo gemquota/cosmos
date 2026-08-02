@@ -70,9 +70,9 @@ Referenced in 10 session(s):
 
 ## Related
 
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/sim-speed|Sim Speed]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/sim-speed|Sim Speed]]

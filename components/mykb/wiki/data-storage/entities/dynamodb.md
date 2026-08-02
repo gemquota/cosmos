@@ -14,7 +14,7 @@ Amazon DynamoDB — a fully managed NoSQL key-value and document database.
 
 **Related topics:** android, angular, api, auth
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Dynamodb
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Dynamodb
 
 ## Overview
 

@@ -52,7 +52,7 @@ The pulse cycle wraps the [[wiki/agent-systems/agent-loop|agent loop]]: each
 phase is a bounded agent loop over reasoning steps, and the whole cycle is one
 episode of [[wiki/agent-systems/recursive-self-improvement|recursive
 self-improvement]]. Decisions are governed by
-[[wiki/agent-systems/constraint-satisfaction|constraint satisfaction]] and
+[[wiki/concepts/constraint-satisfaction|constraint satisfaction]] and
 evaluated with the discipline of [[wiki/testing/llm-evaluation|LLM
 evaluation]] — golden tests, eval sets, and regression suites map onto phase 9.
 ## Memory Writes

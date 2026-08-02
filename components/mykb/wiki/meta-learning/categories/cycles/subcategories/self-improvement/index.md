@@ -1,6 +1,14 @@
+---
+type: "index"
+title: "Self Improvement Index"
+description: "Listing of the meta-learning/categories/cycles/subcategories/self-improvement/ folder (1 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
 # Self Improvement
 
-1 entities.
+Part of [[wiki/index|Wiki Index]]. 1 pages.
 
-## Entities
-- [[wiki/meta-learning/categories/cycles/subcategories/self-improvement/self-improvement-cycles|Self Improvement Cycles]]
+## Pages
+- [[wiki/meta-learning/categories/cycles/subcategories/self-improvement/self-improvement-cycles|Self-Improvement Cycles]]

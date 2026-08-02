@@ -21,15 +21,15 @@ In API work, base models double as contracts — Pydantic models validate incomi
 
 Future sessions should record which BaseModel convention was in use and how validation, serialization, and inheritance were configured. The ten-session frequency marks this as a pattern worth documenting carefully, since every future model inherits whatever the base class decides. That inheritance makes the base class a high-leverage review point.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/security-auth/index|Security Auth]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security]] › Basemodel 10
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Basemodel 10
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/sim-speed|Sim Speed]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/missing-content|Missing Content]]
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/searchtext|Searchtext]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/sim-speed|Sim Speed]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/missing-content|Missing Content]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/searchtext|Searchtext]]

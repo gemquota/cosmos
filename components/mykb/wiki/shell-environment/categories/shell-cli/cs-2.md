@@ -14,7 +14,7 @@ CSS (Cascading Style Sheets) — a stylesheet language for describing the presen
 
 **Related topics:** android, api, auth, bash, bug, cli
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Shell Cli
 
 ## Overview
 

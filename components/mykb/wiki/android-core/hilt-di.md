@@ -3,22 +3,29 @@ type: "concept"
 title: "Hilt DI"
 description: "Dagger-based dependency injection tuned for Android"
 tags: ["android", "di", "dagger", "hilt"]
-timestamp: "2026-08-01T00:00:00Z"
-status: "stub"
-source: []
+timestamp: "2026-08-02T00:00:00Z"
+status: "growing"
+source: ["https://dagger.dev/hilt/", "https://developer.android.com/training/dependency-injection/hilt-android"]
 ---
 
 # Hilt DI
 
-Hilt is Google dependency-injection library built on Dagger, generating wiring for Android components at compile time. It provides standard scopes, automatic injection into components, and integration with ViewModels and WorkManager.
-- @HiltAndroidApp application and @AndroidEntryPoint components bootstrap the graph.
-- Modules provide bindings; qualifiers disambiguate same-typed dependencies.
-- KSP-based Dagger is faster than the old annotation-processing path.
-- DI keeps networking, repositories, and agents testable.
+## Summary
+
+
+## Details
+- Hilt is the dependency-injection framework for Android built on Dagger, generating the graph at compile time so missing dependencies fail the build, not the runtime.
+- Modules declare providers, components scope objects (singleton, activity, fragment, view model), and qualifiers disambiguate bindings.
+- Hilt integrates with Android's lifecycle: it can inject into activities, fragments, services, ViewModels, and even WorkManager workers.
+- The cost is build-time code generation and a learning curve around scoping rules; the payoff is explicit, testable wiring.
+- **Worked example / comparison** — Worked example — a repository annotated @Singleton is provided by a module; an activity and a ViewModel both request it and receive the same instance, with no manual wiring.
+- For mykb, Hilt is documented as the dependency-injection standard in the android-core cluster, with links to the DI concepts it implements.
 
 ## Related
-
-- [[wiki/android-core/kotlin-language|Kotlin Language]] — Hilt is Kotlin-first
-- [[wiki/android-core/room-database|Room Database]] — repositories get database access via DI
-- [[wiki/android-core/android-architecture|Android Architecture]] — DI wires the layered architecture
-- [[wiki/software-engineering/entities/design-patterns|Design Patterns in the Ecosystem]] — injection is a structural pattern
+- [[wiki/android-core/kotlin-language|Kotlin Language]]
+- [[wiki/android-core/room-database|Room Database]]
+- [[wiki/android-core/android-architecture|Android Architecture]]
+- [[wiki/software-engineering/entities/design-patterns|Design Patterns in the Ecosystem]]
+- [[wiki/concepts/promotion-readiness|Promotion Readiness]]
+- [[wiki/dev-tools/markdown-linting|Markdown Linting]]
+- [[wiki/concepts/decision-guides|Decision Guides]]

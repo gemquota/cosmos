@@ -19,17 +19,17 @@ In CSS, max takes two related forms: the max() function, which picks the larger 
 
 In bash and CLI work, max appears as the upper bound in loops, the largest value in a dataset via sort -n | tail -1 or awk, and the argument to tools like seq and timeout. Cloud contexts use max for autoscaling limits, quota ceilings, and cost caps — the maximum instance count or budget beyond which the system must not grow.
 
-Across all readings, the lesson is the same: an explicit, configurable maximum turns unbounded behavior into bounded behavior. Related simulation parameters are documented alongside [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/particle-size-min|Particle Size Min]] and [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/mass-max|Mass Max]]. Naming the bound and its unit in configuration keeps the intent visible wherever the value is read.
+Across all readings, the lesson is the same: an explicit, configurable maximum turns unbounded behavior into bounded behavior. Related simulation parameters are documented alongside [[wiki/shell-environment/categories/cli-tools/particle-size-min|Particle Size Min]] and [[wiki/shell-environment/categories/cli-tools/mass-max|Mass Max]]. Naming the bound and its unit in configuration keeps the intent visible wherever the value is read.
 
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/density|Density]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
+- [[wiki/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/density|Density]]
+- [[wiki/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
+- [[wiki/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
+- [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
+- [[wiki/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
+- [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]

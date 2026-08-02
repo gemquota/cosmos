@@ -23,7 +23,7 @@ The related entities below list the neighboring API client records observed in t
 
 
 Accretion also has a conceptual counterpart in knowledge and agent systems: ideas, files, and capabilities grow by accumulating related material over time. The knowledge base itself behaves this way, collecting session observations into entities that become richer with each pass. The physics meaning remains primary here, but the parallel explains why the acronym recurred in an API and mobile context where growth by accumulation is a useful mental model.
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Accr 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Accr 2
 
 ## Related Entities
 

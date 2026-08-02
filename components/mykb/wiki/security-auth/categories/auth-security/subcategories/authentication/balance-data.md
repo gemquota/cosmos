@@ -21,7 +21,7 @@ Security is equally central: balance endpoints must enforce authorization per ac
 
 The page records the concept so future sessions can attach the specific endpoints, consistency rules, and access checks implemented. Consistency between the displayed value and the ledger is the acceptance criterion that matters most to users.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Balance Data
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Balance Data
 
 ## Related Entities
 

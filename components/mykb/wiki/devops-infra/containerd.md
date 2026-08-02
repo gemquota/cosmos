@@ -5,6 +5,7 @@ description: "Industry-standard OCI container runtime managing image lifecycle a
 tags: ["containerd", "containers", "oci", "runtime", "kubernetes"]
 timestamp: "2026-07-31T00:00:00Z"
 status: "growing"
+source: ["https://containerd.io/", "https://github.com/containerd/containerd"]
 ---
 
 # containerd

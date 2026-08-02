@@ -13,7 +13,7 @@ resource: ""
 
 ArchiveBuilder appears in 1 session(s) categorized as API, Frontend, Mobile, Security. Related topics: android, angular, api, auth.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Archivebuilder
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Archivebuilder
 
 ## Overview
 

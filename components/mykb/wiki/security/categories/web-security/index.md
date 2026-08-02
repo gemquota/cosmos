@@ -1,8 +1,15 @@
+---
+type: "index"
+title: "Web Security Index"
+description: "Listing of the security/categories/web-security/ folder (2 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
 # Web Security
 
-Part of [[wiki/security-auth/supercategories/security/index|Security]] › Web Security. 2 entities.
+Part of [[wiki/index|Wiki Index]]. 2 pages.
 
-## Entities
-
-- [[wiki/security-auth/supercategories/security/categories/web-security/port-2|Port 2]]
-- [[wiki/security-auth/supercategories/security/categories/web-security/workspace-initialization-2|Workspace Initialization 2]]
+## Pages
+- [[wiki/security/categories/web-security/port-2|PORT]] — Acronym referenced in session 019f1447
+- [[wiki/security/categories/web-security/workspace-initialization-2|Workspace Initialization]] — Referenced in session 905a295f

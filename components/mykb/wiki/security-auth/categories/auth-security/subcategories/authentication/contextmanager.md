@@ -13,7 +13,7 @@ Context — the information provided to an LLM alongside a query. Sessions show 
 
 **Related topics:** android, api, auth, authentication
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Contextmanager
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Contextmanager
 
 ## Related Entities
 

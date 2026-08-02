@@ -19,21 +19,21 @@ Syntax is usually described with a formal grammar, such as a context-free gramma
 
 Conformance testing checks whether an implementation actually follows the spec, and the spec's precision determines how much room interpreters and compilers have to disagree. Ambiguities in a spec surface as subtle bugs, which is why language specs are revised through formal processes and errata.
 
-In agent sessions, language specs appear when building parsers, validating tool output, or debugging why a script behaves differently across environments. The same discipline applies to API specifications, which document endpoints, schemas, and errors as a contract between client and server. This connects the entry to the [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Rest]] domain and to the [[wiki/web-platforms/supercategories/llm-agents/categories/llm-topics/index|Llm Topics]] entries in this knowledge base.
+In agent sessions, language specs appear when building parsers, validating tool output, or debugging why a script behaves differently across environments. The same discipline applies to API specifications, which document endpoints, schemas, and errors as a contract between client and server. This connects the entry to the [[wiki/web-platforms/index|Api Rest]] domain and to the [[wiki/web-platforms/index|Llm Topics]] entries in this knowledge base.
 
 The entry serves as a pointer for both meanings: the formal specification of a language and the specification of the language an agent should use to communicate with a system.
 
 For agent tooling, a written spec also serves as documentation and as the input to conformance checks, which keeps generated output predictable across versions.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/supercategories/api-services/index|Api Services]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Rest]] › Language Spec
+**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Language Spec
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/aborted|Aborted]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/aegis|Aegis]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/agent-active|Agent Active]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity-projection-2|Ambiguity Projection 2]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity-system|Ambiguity System]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ambiguity|Ambiguity]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/ap|Ap]]
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-http/apex|Apex]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aborted|Aborted]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aegis|Aegis]]
+- [[wiki/agent-systems/categories/agents/subcategories/agent-core/agent-active|Agent Active]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-projection-2|Ambiguity Projection 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-system|Ambiguity System]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity|Ambiguity]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ap|Ap]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/apex|Apex]]

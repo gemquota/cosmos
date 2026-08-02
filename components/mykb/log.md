@@ -160,7 +160,7 @@ title: "Bundle Log"
   acquisition round (synthesis: `wiki/syntheses/acquisition-pass-snapshot-ordering.md`)
 - **Deployed**: full-tree mirror to `gh-pages` with Pass-2 content
 
-## 2026-08-02 (Pass 3 — parallel agents)
+## 2026-08-02
 - **5-agent acquisition pass**: five parallel workers (data-storage,
   api-protocols, testing, frontend, os-shell) each generated **100 unique
   full articles** — 500 total, gated through define → confirm → generate
@@ -173,7 +173,7 @@ title: "Bundle Log"
 - **New synthesis note**: `wiki/syntheses/parallel-agent-acquisition.md`
 - **Deployed**: full-tree mirror to `gh-pages`
 
-## 2026-08-02 (stats hub v2)
+## 2026-08-02
 - **Stats hub v2**: `build_stats.py` + `stats.html` extended — article-level
   stats now **exclude `log.md`, `index.md` and all `*/index.md`** (graph
   totals still include them; footer caveat added)
@@ -189,21 +189,21 @@ title: "Bundle Log"
   (tiles/tables) renders without Chart.js
 - **Deployed**: full-tree mirror to `gh-pages`
 
-## 2026-08-02 (stats hub v2.1 — overview card)
+## 2026-08-02
 - **9th overview card added**: `full articles (300+)` with sub-line
   `400+ → 8 · 500+ → 5`, computed dynamically from thresholds data —
   top grid reflows (auto-fit), no layout change needed
 - **Regenerated**: `build_stats.py` → `stats.html`; JS syntax check + headless
   render QA green (9 cards, 20 canvases)
 
-## 2026-08-02 (stats hub v2.2 — card tooltips)
+## 2026-08-02
 - **Overview cards now show info tooltips on tap/click**: each of the 9 cards
   has an explanation; tapping toggles the bubble, tapping a different card
   switches it, tapping elsewhere/scroll/resize closes it
 - **QA**: JS syntax check green; headless iframe click test passed —
   9 cards, show/toggle/switch all OK
 
-## 2026-08-02 (expansion pass — 500 articles to 300+)
+## 2026-08-02
 - **10-agent expansion pass**: 10 parallel workers each expanded ~50 short
   articles (50–99 body words) to 300+ words; five agents were re-spawned
   after upstream provider errors mid-run (work persisted; only untouched
@@ -217,7 +217,7 @@ title: "Bundle Log"
 - **Snapshots regenerated**: `build_stats.py`, `build_graph.py`,
   `gen-static-data.py --check` OK (3,729 entries)
 
-## 2026-08-02 (stub curation pass — 735 pointless stubs archived)
+## 2026-08-02
 - **Reviewed all 3,093 content files**; archived **735 pointless stubs** to
   `raw/archive/junk-entities-2026-08/` (preserving relative paths):
   723 auto-extracted session-entity stubs (template-only bodies, <100 words,
@@ -232,7 +232,7 @@ title: "Bundle Log"
 - **Snapshots regenerated**: build_stats, build_graph, okf render,
   gen-static-data --check OK (2,994 md files)
 
-## 2026-08-02 (broken-link repair pass — 248 dead wikilinks fixed)
+## 2026-08-02
 - **Post-archive repair**: the 735-stub archive left **248 broken wikilinks**
   in kept files — dead links to archived junk entities, unsupported
   `wiki/*/…` wildcard targets (~300 instances), and stale raw-archive refs
@@ -246,7 +246,7 @@ title: "Bundle Log"
 - **Snapshots regenerated**: build_stats, build_graph, okf render,
   gen-static-data --check OK (3,729 md files)
 
-## 2026-08-02 (link repair pass — 797 dead markdown links fixed)
+## 2026-08-02
 - **Repointed 777 session links** to `raw/archive/session-artifacts-2026-07/sessions/`
   (all 236 referenced sessions exist in the archive; deep relative paths resolve
   on disk and strip to browser-resolvable `raw/...` paths via files.json)
@@ -263,7 +263,7 @@ title: "Bundle Log"
 - **Snapshots regenerated**: build_stats, build_graph, okf render,
   gen-static-data --check OK (3,729 md files)
 
-## 2026-08-02 (comprehensive audit refresh)
+## 2026-08-02
 - **Archived** previous audit to `raw/archive/audits-2026-07/COMPREHENSIVE_AUDIT.md`
   (2026-07-21, via git mv — history preserved)
 - **Replaced** `COMPREHENSIVE_AUDIT.md` with updated 2026-08-02 version: current
@@ -274,7 +274,7 @@ title: "Bundle Log"
 - **Snapshots regenerated**: gen-static-data + okf render (audit file moved
   into raw/archive; files.json unchanged at 3,729 entries)
 
-## 2026-08-03 (sidebar audit & navigation pass)
+## 2026-08-03
 - **Archived 123 junk/stub files** to `raw/archive/junk-entities-2026-08b/` via git mv:
   template-only trivias, zero-inbound <100-word stubs, empty `communities/` graph
   clusters, README placeholders (`clusters/`, `sessions/`, `tools/`, `topics/`),
@@ -299,3 +299,34 @@ title: "Bundle Log"
 - **Snapshots regenerated**: build_stats (2,252 files, 469,215 words, 12,613
   links), build_graph (2,340 nodes / 14,793 edges), okf render (3,629
   concepts), gen-static-data --check OK (3,730 md files).
+
+## 2026-08-02
+- **Pass 3 — Integration & Depth Wave (8×400)**: 3,200 files written by eight parallel workers across AI/LLM/Agents (I), Systems & Infrastructure (J), Data & Analytics (K), Cognition/Meta (L), Dev Culture & Tooling (M), RSI + RSIS3↔mykb integration (N), Curation & Quality (O), and Frontend/Web/Mobile/APIs (P).
+- **800 full articles** (150–400 words, 2+ curl-verified sources each) + **2,400 stubs**; 100 legacy stubs promoted to full (spec-O), plus 9 bonus promotions where pass-1/2 files already satisfied new spec slugs.
+- **Post-pass verification**: 0 missing files, 0 broken wikilinks, 0 word-count violations across all specs; ~1,180 source URLs curl-verified HTTP 200.
+- **Bundle now**: 5,612 md files, ~1.1M words, 34,951 wikilinks, 2,006 growing / 3,150 stub articles.
+- **Synthesis note**: `wiki/syntheses/pass3-integration-depth-wave.md` distills the wave's findings (RSIS3 integration loops, curation-as-runtime-dependency, rate-limit ceiling of 3–4 concurrent workers, stubs-first ordering, dedup-aware slug allocation).
+- **Snapshots regenerated**: linkmap (7,5xx entries), build_graph, build_files_index, build_index_pages, okf render. `gen-static-data --check` requires committed files (wave is uncommitted).
+
+## 2026-08-03 (pass 3 integration & deploy)
+- **Integrated the Pass 3 wave (8×400)**: 3,200 worker files committed — 800
+  fulls (150–400 words, curl-verified sources) + 2,400 stubs across
+  AI/LLM/Agents, Systems & Infrastructure, Data & Analytics, Cognition/Meta,
+  Dev Culture & Tooling, RSI/RSIS3, Curation & Quality, Frontend/Web/Mobile.
+- **Fixed spec-L path bug**: 300 cognition files written to `wiki/wiki/…`
+  (wrong base) were reconciled — 273 stale drafts deleted, 27 unique files
+  relocated to `wiki/{concepts,memory,meta-learning}/` with `wiki/wiki/`
+  link prefixes rewritten; the correct 400-file batch already lived at
+  `wiki/{concepts,memory,meta-learning,episodes,questions}/`.
+- **Archived 3 placeholder READMEs** (`projects/`, `sources/`, `syntheses/`)
+  to `raw/archive/junk-entities-2026-08b/`; kept `memory/README.md` (linked).
+- **Uniform navigation**: regenerated 99 `index.md` pages (one per folder,
+  5,338 pages listed) in wikilink style; rewrote `wiki/index.md` "Where to
+  Look" to cover all 45 areas in 13 families + a lookup table.
+- **Verification**: 0 broken wikilinks / 0 broken markdown links in wiki
+  content (46 flagged are doc-example syntax in SPEC/my kb-code/content/audits).
+- **Snapshots regenerated**: stats.html (5,341 files, 910,453 words, 30,682
+  links, 572/18/5 tiers), graph.json (5,442 nodes / 36,114 edges), okf render
+  (6,722 concepts), gen-static-data (files.json 6,845 entries).
+- **Audit refreshed**: `COMPREHENSIVE_AUDIT.md` updated to post-Pass-3 numbers
+  (95/100 health).

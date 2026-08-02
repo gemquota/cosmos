@@ -13,7 +13,7 @@ Physics Engine — software simulating physical systems (gravity, collision, for
 
 **Related topics:** android, angular, api, auth, authentication, aws, bash, bootstrap
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Vector Emergent Physics Automata 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Vector Emergent Physics Automata 2
 
 ## Related Entities
 

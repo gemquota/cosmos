@@ -13,11 +13,11 @@ status: "growing"
 
 Global Workspace Theory is referenced in 2 session(s). Related tags: ast, guid, ide, orm, spa.
 
-**Domain:** Development Tools › [[wiki/dev-tools/supercategories/development/index|Development]] › [[wiki/dev-tools/supercategories/development/categories/data-tools/index|Data Tools]] › Global Workspace Theory 2
+**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Global Workspace Theory 2
 
 ## Overview
 
-Global Workspace Theory (GWT) is Baars's account of consciousness: at any moment, a limited amount of content is broadcast globally across a large set of specialized processors, and that broadcast constitutes the conscious experience. The page was referenced in sessions exploring the theory cluster, alongside pages such as [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]] and [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]].
+Global Workspace Theory (GWT) is Baars's account of consciousness: at any moment, a limited amount of content is broadcast globally across a large set of specialized processors, and that broadcast constitutes the conscious experience. The page was referenced in sessions exploring the theory cluster, alongside pages such as [[wiki/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]] and [[wiki/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]].
 
 ## Components
 
@@ -35,11 +35,11 @@ The page is best read as a bridge between the cognitive-science literature and t
 
 ## Related Entities
 
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/easy-problems|Easy Problems]]
+- [[wiki/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]]
+- [[wiki/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]]
+- [[wiki/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]]
+- [[wiki/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
+- [[wiki/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
+- [[wiki/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
+- [[wiki/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
+- [[wiki/development/categories/data-tools/subcategories/orm/easy-problems|Easy Problems]]

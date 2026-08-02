@@ -23,7 +23,7 @@ The related entities below record the neighboring API client pages observed in t
 
 
 ARIA also illustrates the difference between conformance and quality. A page can pass automated accessibility checks and still be confusing to navigate, because semantics only help when they describe the user's actual experience. Testing with real assistive technology, including on mobile web views, closes that gap. Security teams care because accessibility features are part of the attack surface: poorly labeled controls can hide phishing or mislead automation.
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Aria 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Aria 2
 
 ## Related Entities
 

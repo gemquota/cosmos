@@ -14,7 +14,7 @@ AIM — AOL Instant Messenger or Adaptive Integration Module.
 
 **Related topics:** android, angular, api, auth, bash, bootstrap, ci/cd, cli
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
 
 ## Overview
 

@@ -14,7 +14,7 @@ RAG (Retrieval-Augmented Generation) — a pattern combining information retriev
 
 **Related topics:** android, api, auth, backend
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Storageconfig
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Storageconfig
 
 ## Overview
 

@@ -12,7 +12,7 @@ resource: ""
 
 MutationEngine appears in 1 session(s) categorized as API, Mobile, Shell. Related topics: android, api, bash, cli.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Shell Cli
 
 ## Overview
 
@@ -33,7 +33,7 @@ A mutation engine is a component that systematically mutates inputs, code, or da
 
 ## Integration Notes
 
-The entity is tagged android, api, and bash/cli, so it surfaces in pipelines that run mutation testing from the command line: CI scripts invoke the engine, aggregate the mutation report, and gate merges on a score threshold. Performance is the main practical constraint — each mutant is a full test run — so engines batch mutants, use incremental analysis, and prioritize the operators most likely to find real gaps. Sibling entities like [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/cellsystem|Cellsystem]], [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/cellstate|Cellstate]], and [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/deterministicrng|Deterministicrng]] indicate the same session batch also touched simulation and state-machine concepts.
+The entity is tagged android, api, and bash/cli, so it surfaces in pipelines that run mutation testing from the command line: CI scripts invoke the engine, aggregate the mutation report, and gate merges on a score threshold. Performance is the main practical constraint — each mutant is a full test run — so engines batch mutants, use incremental analysis, and prioritize the operators most likely to find real gaps. Sibling entities like [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/cellsystem|Cellsystem]], [[wiki/shell-environment/categories/shell-cli/cellstate|Cellstate]], and [[wiki/shell-environment/categories/shell-cli/deterministicrng|Deterministicrng]] indicate the same session batch also touched simulation and state-machine concepts.
 
 ## Related Entities
 

@@ -14,7 +14,7 @@ Persistent Cognitive Graph — a project for maintaining persistent state/knowle
 
 Acronym referenced in session b4e00d39
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Pcg 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Pcg 2
 
 ## Related Entities
 

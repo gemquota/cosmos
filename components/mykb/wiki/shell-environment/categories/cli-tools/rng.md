@@ -21,15 +21,15 @@ In frontend and shell work, RNG appears in shuffle logic, procedural content, sa
 
 
 Choosing a generator depends on the job: a fast, low-quality PRNG for visual effects where pattern is harmless; a high-quality PRNG with a long period for simulation; a cryptographically secure generator for anything security-related. Reproducibility practices — seeding, logging the seed, and making it a CLI flag — turn randomness from a debugging nuisance into a controlled variable. The Frontend tag suggests shuffle and sampling uses, where visible repetition is the usual complaint.
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/density|Density]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
+- [[wiki/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/density|Density]]
+- [[wiki/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
+- [[wiki/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
+- [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
+- [[wiki/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
+- [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]

@@ -18,11 +18,11 @@ The pipeline has three main stages. First, the knowledge base is prepared: docum
 
 Design choices shape quality: chunk size and overlap affect whether facts survive intact, embedding models determine what counts as similar, and the number of retrieved chunks trades context budget against coverage. Retrievers are evaluated with hit-rate and ranking metrics, and the whole pipeline with answer-level quality checks and faithfulness judgments.
 
-RAG reduces hallucinations by forcing the model to answer from provided text, and it makes updating knowledge as simple as re-indexing. It is a core building block of agent systems, complementing the [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/autonomous-iterative-mode-2|Autonomous Iterative Mode 2]] and related entries in the [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui]] domain.
+RAG reduces hallucinations by forcing the model to answer from provided text, and it makes updating knowledge as simple as re-indexing. It is a core building block of agent systems, complementing the [[wiki/frontend-frameworks/categories/angular-ui/autonomous-iterative-mode-2|Autonomous Iterative Mode 2]] and related entries in the [[wiki/web-platforms/index|Angular Ui]] domain.
 
 The entry sits under Angular UI because sessions encountered RAG while building agent-driven interfaces, and the same retrieval pipeline serves chat, search, and reporting features.
 
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
 
 ## Related Entities
 

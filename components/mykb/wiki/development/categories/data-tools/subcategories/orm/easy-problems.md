@@ -13,7 +13,7 @@ resource: ""
 
 Easy Problems is referenced in 1 session(s). Related tags: ast, guid, ide, orm, spa.
 
-**Domain:** Development Tools › [[wiki/dev-tools/supercategories/development/index|Development]] › [[wiki/dev-tools/supercategories/development/categories/data-tools/index|Data Tools]] › Easy Problems
+**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Easy Problems
 
 ## Overview
 
@@ -22,7 +22,7 @@ In the philosophy of consciousness, the "easy problems" are the questions about 
 ## Details
 
 - Scope: easy problems include attention, memory, categorization, learning, and verbal reports of experience.
-- Contrast: they stand against the "hard problem" of consciousness — why any of this processing is accompanied by subjective experience at all. See [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]].
+- Contrast: they stand against the "hard problem" of consciousness — why any of this processing is accompanied by subjective experience at all. See [[wiki/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]].
 - Scientific tractability: easy problems are explanatory targets for functional accounts; a complete functional explanation is considered a solution.
 - Software parallel: in data tooling, easy problems are the well-posed ones — schema mapping, query answering, and data transformation — where an ORM or analysis tool can be built and verified.
 
@@ -34,11 +34,11 @@ The term is a useful scoping device in research and engineering alike: it separa
 Naming a problem easy does not diminish it — it clarifies the kind of answer that counts as progress. Functional accounts of perception, memory, and attention are achievable in principle, and their pursuit is exactly where experiments and tooling pay off. Keeping the easy problems labeled separately prevents the trap of declaring consciousness explained by a mechanism that only addresses information processing.
 
 
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
-- [[wiki/dev-tools/supercategories/development/categories/data-tools/subcategories/orm/experiment|Experiment]]
+- [[wiki/development/categories/data-tools/subcategories/orm/analyzing|Analyzing]]
+- [[wiki/development/categories/data-tools/subcategories/orm/biological-basis|Biological Basis]]
+- [[wiki/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]]
+- [[wiki/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
+- [[wiki/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
+- [[wiki/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
+- [[wiki/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
+- [[wiki/development/categories/data-tools/subcategories/orm/experiment|Experiment]]

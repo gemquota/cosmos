@@ -3,23 +3,30 @@ type: "concept"
 title: "Android Manifest"
 description: "XML contract declaring components, permissions, and intent filters to the OS"
 tags: ["android", "manifest", "configuration", "permissions"]
-timestamp: "2026-08-01T00:00:00Z"
-status: "stub"
-source: []
+timestamp: "2026-08-02T00:00:00Z"
+status: "growing"
+source: ["https://developer.android.com/guide/topics/manifest/manifest-intro", "https://developer.android.com/guide/topics/manifest/application-element"]
 ---
 
 # Android Manifest
 
-The AndroidManifest.xml is the app contract with the OS: it declares every component, the permissions the app requires, hardware features, and intent filters. It is merged from library manifests during Gradle builds.
-- Declares activities, services, content providers, and receivers so the system can launch them.
-- Lists uses-permission entries and feature requirements such as camera or NFC.
-- Holds intent filters that advertise capabilities, including deep-link patterns.
-- Inspect merged output with aapt or Android Studio to debug manifest conflicts.
+## Summary
+
+
+## Details
+- The manifest declares app identity, components, permissions, and hardware/software features; the package manager reads it before any component runs.
+- Component declarations are the core: each activity, service, receiver, and provider must be listed or the system cannot launch it.
+- Permissions are requested here at install time (or runtime for dangerous groups), and the manifest is also where the app declares its minimum and target SDK.
+- Manifest errors are a classic first-run failure: a missing intent-filter or undeclared component produces silent crashes or invisible launcher icons.
+- **Worked example / comparison** — Worked example — declaring a service requires its class, exported flag, and any intent-filter; forgetting the declaration means Context.startService throws, while forgetting the filter means other apps cannot find it.
+- For mykb, android-manifest sits in the android-core cluster; freshness review is important here because manifest rules change with each Android release.
 
 ## Related
-
-- [[wiki/android-core/android-architecture|Android Architecture]] — the manifest wires components into the platform stack
-- [[wiki/android-core/android-intents|Android Intents]] — intent filters in the manifest resolve implicit intents
-- [[wiki/android-core/android-permissions|Android Permissions]] — manifest declarations feed the permission model
-- [[wiki/shell-environment/gradle-builds|Gradle Builds]] — manifest merging happens during the build
-- [[wiki/mobile-platform/entities/android-device-access|Android Device Access]] — ADB and tooling read manifest metadata
+- [[wiki/android-core/android-architecture|Android Architecture]]
+- [[wiki/android-core/android-intents|Android Intents]]
+- [[wiki/android-core/android-permissions|Android Permissions]]
+- [[wiki/shell-environment/gradle-builds|Gradle Builds]]
+- [[wiki/mobile-platform/entities/android-device-access|Android Device Access]]
+- [[wiki/concepts/promotion-readiness|Promotion Readiness]]
+- [[wiki/dev-tools/markdown-linting|Markdown Linting]]
+- [[wiki/concepts/content-freshness-review|Content Freshness Review]]

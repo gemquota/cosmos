@@ -21,7 +21,7 @@ In the sessions that produced this page, MongoDB appeared in an API and mobile c
 
 
 Choosing a document store is a trade-off. The flexible schema speeds up early development, but it moves responsibility for data shape into the application, so validation and migration strategy matter more over time. Teams commonly pair MongoDB with a caching layer, add indexes for hot query patterns, and monitor slow queries and connection pool saturation. These operational concerns are exactly what an API and mobile context emphasizes, where latency and availability are visible to end users.
-**Domain:** Mobile Platform › [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Mongodb
+**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Mongodb
 
 ## Related Entities
 

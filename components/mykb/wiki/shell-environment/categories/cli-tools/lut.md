@@ -13,7 +13,7 @@ status: "growing"
 
 LUT appears in 1 session(s) categorized as Debugging, Shell. Related topics: acronym, bash, cli.
 
-**Domain:** OS & Shell › [[wiki/os-shell/supercategories/shell-environment/index|Shell Environment]] › [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
 
 ## Overview
 
@@ -33,11 +33,11 @@ One session recorded LUT under Debugging and Shell. This page anchors the lookup
 
 ## Related Entities
 
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/density|Density]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
-- [[wiki/os-shell/supercategories/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
+- [[wiki/shell-environment/categories/cli-tools/body-simulator|Body Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/density|Density]]
+- [[wiki/shell-environment/categories/cli-tools/drip-rate|Drip Rate]]
+- [[wiki/shell-environment/categories/cli-tools/fluid-simulator|Fluid Simulator]]
+- [[wiki/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
+- [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
+- [[wiki/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
+- [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
