@@ -472,3 +472,9 @@ title: "Bundle Log"
   `raw/archive/junk-entities-2026-08c/` (session-corpus entity shadowing the real
   concept name); inbound links existed only in the auto-generated index
 - **All new notes ≥320 body words**; wikilinks verified resolvable
+
+## 2026-08-03 (AO / Agent OS integration assessment)
+- **Assessed** `~/dev/codex/ao` (Agent OS, ~6.9k LOC pure-Python multi-agent runtime) for COSMOS inclusion; verified `ao run selftest` passes offline (graceful fallbacks for sqlite-vec/docker/fastapi)
+- **Assessment doc**: `docs/ao-assessment.md` — recommendation is selective harvest into RSIS3, not a fourth top-level component
+- **Synthesis**: `wiki/syntheses/ao-agent-os-integration-assessment.md` — harvest infrastructure (sandbox, HITL approvals, scheduler guards, cost ledger) into `rsis/loop_l1.py`, never duplicate memory/dashboard/telemetry surfaces
+- **Durable rules**: one memory (MyKB), one dashboard, one telemetry; vendor AO before relying on it (no git history); keep the immutable evaluator as the multi-agent verification gate
