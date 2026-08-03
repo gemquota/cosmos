@@ -18,6 +18,7 @@ GitOps multi-environment patterns structure how one set of manifests becomes dev
 - Failure modes: overlay drift — a value added to prod but not staging means promotion surprises; promotion by copy-paste diverging from the base; image tags floating (`latest`) so environments run different code than reviewed; secrets in overlays; one environment failing sync while others succeed, hiding config errors until the next promotion.
 - Tradeoffs: single-source-of-truth bases are DRY but make environment-specific quirks harder to express; fully duplicated per-environment repos are explicit but drift-prone; the middle path — shared base plus minimal overlays plus promotion gates — balances fidelity and reviewability.
 - Operational notes: enforce image digest pinning, add diff checks between environments, and make promotion a recorded, reviewable artifact.
+- Sync health: each environment must report its own sync and health status — a prod app that is healthy but out-of-sync hides pending changes, so alert on out-of-sync state, not only degraded health.
 - RSIS3 relevance: cosmos's own environments (dev wiki, published dashboard) benefit from the same overlay structure so promoting a dashboard build or wiki update is a reviewed diff.
 
 ## Related
@@ -25,5 +26,3 @@ GitOps multi-environment patterns structure how one set of manifests becomes dev
 - [[wiki/cloud-infra/multi-cloud-hybrid-cloud|Multi-Cloud & Hybrid Cloud]]
 - [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]]
 - [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

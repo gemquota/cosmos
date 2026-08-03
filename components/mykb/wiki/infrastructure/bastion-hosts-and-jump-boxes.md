@@ -23,5 +23,3 @@ Bastion hosts (jump boxes) are hardened, deliberately exposed entry points that 
 - [[wiki/cloud-infra/dedicated-hosts-and-instances|Dedicated Hosts & Instances]]
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

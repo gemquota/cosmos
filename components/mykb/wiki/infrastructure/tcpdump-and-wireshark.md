@@ -27,5 +27,3 @@ tcpdump and Wireshark form the canonical packet-analysis workflow: tcpdump captu
 - [[wiki/os-shell/tcpdump|tcpdump]]
 - [[wiki/os-shell/wireshark-and-tshark|Wireshark & tshark]]
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

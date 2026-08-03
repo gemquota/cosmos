@@ -23,5 +23,3 @@ RCU (Read-Copy-Update) is a synchronization mechanism that makes reads of shared
 - [[wiki/os-shell/copy-on-write|Copy-on-Write]]
 - [[wiki/shell-environment/categories/web-dev/subcategories/css-html/physics-update|Physics Update]]
 - [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

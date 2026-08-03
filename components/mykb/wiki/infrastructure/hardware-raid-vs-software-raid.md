@@ -23,5 +23,3 @@ Hardware RAID implements the RAID array on a dedicated controller card (with its
 - [[wiki/os-shell/raid-levels|RAID Levels]]
 - [[wiki/infrastructure/software-defined-networking|Software-Defined Networking]]
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

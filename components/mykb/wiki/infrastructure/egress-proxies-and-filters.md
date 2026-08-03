@@ -24,5 +24,3 @@ Egress control manages the traffic leaving your network: which hosts may reach w
 - [[wiki/devops-infra/reverse-proxies|Reverse Proxies]]
 - [[wiki/infrastructure/tcpdump-filters-and-capture|tcpdump Filters & Capture]]
 - [[wiki/devops-infra/ingress-egress-policies|Ingress & Egress Policies]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

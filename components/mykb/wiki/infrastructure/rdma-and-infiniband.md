@@ -23,5 +23,3 @@ RDMA (Remote Direct Memory Access) lets one computer read or write another compu
 - [[wiki/infrastructure/roce-and-rdma-over-tcp|RoCE & RDMA over TCP]]
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

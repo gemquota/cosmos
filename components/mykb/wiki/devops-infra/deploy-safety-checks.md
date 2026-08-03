@@ -26,5 +26,3 @@ Deploy safety checks are automated gates evaluated before, during, and after a r
 - [[wiki/devops-infra/preflight-checks-and-guards|Preflight Checks & Guards]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/devops-infra/observability-pillars|Observability Pillars]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

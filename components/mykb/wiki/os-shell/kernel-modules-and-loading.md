@@ -25,5 +25,3 @@ Loadable kernel modules (LKMs) let the kernel gain functionality without a reboo
 - [[wiki/infrastructure/kernel-bypass-networking|Kernel-Bypass Networking]]
 - [[wiki/os-shell/kernel-modules|Kernel Modules]]
 - [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

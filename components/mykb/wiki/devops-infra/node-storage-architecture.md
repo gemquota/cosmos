@@ -18,6 +18,7 @@ Node storage architecture describes how a Kubernetes node provides disk to conta
 - Failure modes: node disk full — the most common silent killer: image GC cannot keep up, evictions begin, and the kubelet marks the node NotReady; I/O contention from many pods sharing one disk; layer corruption from unclean shutdowns, breaking container starts; storage-root exhaustion from log files and dead containers; orphaned volumes leaking space after pod deletion.
 - Tradeoffs: local storage is fast and cheap but node-bound; network storage is durable but slower; the architecture choice (overlayfs vs device-mapper, dedicated data disks vs shared root) determines performance isolation and blast radius; monitoring must watch disk usage per node, per volume, and per layer store.
 - Operational notes: set eviction thresholds deliberately, reserve disk for the kubelet, and monitor inode usage as well as bytes.
+- Layer sharing: identical base layers are shared across containers, so one pull rarely multiplies disk usage; frequent rebuilds, however, churn layers and inflate garbage-collection work.
 - RSIS3 relevance: the wiki daemon's disk usage and the node's storage architecture explain sudden evictions or slow writes — RSIS3's operational notes should track disk pressure as a first-class signal.
 
 ## Related
@@ -25,5 +26,3 @@ Node storage architecture describes how a Kubernetes node provides disk to conta
 - [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]]
 - [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]]
 - [[wiki/devops-infra/storage-classes-and-provisioners|Storage Classes & Provisioners]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

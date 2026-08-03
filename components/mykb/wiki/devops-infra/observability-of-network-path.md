@@ -25,5 +25,3 @@ Observability of the network path traces what happens to a request between clien
 - [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/os-shell/path-resolution-and-symlinks|Path Resolution & Symlinks]]
 - [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

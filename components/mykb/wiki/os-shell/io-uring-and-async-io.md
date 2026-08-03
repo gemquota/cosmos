@@ -22,5 +22,3 @@ io_uring is Linux's modern asynchronous I/O interface, designed to minimize the 
 - [[wiki/infrastructure/io-latency-and-iops|IO Latency & IOPS]]
 - [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
 - [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

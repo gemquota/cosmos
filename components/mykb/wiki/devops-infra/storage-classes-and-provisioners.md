@@ -18,6 +18,7 @@ Storage classes define the flavors of storage available in a Kubernetes cluster 
 - Failure modes: missing or wrong default class leaving PVCs pending; parameters the provider ignores or rejects, failing provisioning; reclaim policies that delete data when a claim is removed; WaitForFirstConsumer not configured where placement matters, attaching volumes to the wrong node; class proliferation — dozens of subtly different classes that no one understands.
 - Tradeoffs: multiple classes let workloads match cost and performance, but every class is an operational surface (quotas, monitoring, troubleshooting); the alternative, one class for everything, is simpler and wasteful; the mature pattern is a small catalog of well-documented classes with explicit default and lifecycle ownership.
 - Operational notes: document the class catalog, monitor provisioned capacity and failures, and set quotas per class.
+- Reclaim care: Retain keeps volume data after PVC deletion but leaves orphaned volumes behind — pair it with a documented takeover-and-delete procedure so storage does not accumulate silently.
 - RSIS3 relevance: the wiki store's storage class choice (speed versus durability) is a cost-and-recovery decision — document which class holds what and why.
 
 ## Related
@@ -25,5 +26,3 @@ Storage classes define the flavors of storage available in a Kubernetes cluster 
 - [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]]
 - [[wiki/cloud-infra/coldline-and-archive-storage-classes|Coldline & Archive Storage Classes]]
 - [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

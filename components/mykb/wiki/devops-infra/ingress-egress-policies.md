@@ -25,5 +25,3 @@ Ingress and egress policies control what traffic may enter and leave a workload 
 - [[wiki/devops-infra/ingress-controllers|Ingress Controllers]]
 - [[wiki/devops-infra/network-policies-kubernetes|Kubernetes Network Policies]]
 - [[wiki/infrastructure/egress-proxies-and-filters|Egress Proxies & Filters]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

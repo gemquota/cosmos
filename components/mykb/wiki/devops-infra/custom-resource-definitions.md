@@ -27,5 +27,3 @@ Custom Resource Definitions (CRDs) extend the Kubernetes API with domain-specifi
 - [[wiki/os-shell/cgroups-and-resource-control|cgroups & Resource Control]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/devops-infra/observability-pillars|Observability Pillars]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

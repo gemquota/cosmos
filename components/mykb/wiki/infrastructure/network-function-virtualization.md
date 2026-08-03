@@ -24,5 +24,3 @@ Network function virtualization (NFV) runs network functions — firewalls, load
 - [[wiki/cloud-infra/function-execution-lifecycle|Function Execution Lifecycle]]
 - [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]]
 - [[wiki/infrastructure/network-interface-bonding|Network Interface Bonding]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

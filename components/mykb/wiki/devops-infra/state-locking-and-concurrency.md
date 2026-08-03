@@ -26,5 +26,3 @@ State locking and concurrency control prevent two writers from corrupting shared
 - [[wiki/infrastructure/query-timeouts-and-concurrency-limits|Query Timeouts And Concurrency Limits]]
 - [[wiki/os-shell/file-locking|File Locking]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

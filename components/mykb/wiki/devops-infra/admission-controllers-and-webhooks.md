@@ -24,5 +24,3 @@ Admission control is the last gate before a Kubernetes API request is persisted:
 - [[wiki/devops-infra/ingress-controllers|Ingress Controllers]]
 - [[wiki/infrastructure/sdn-controllers|SDN Controllers]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

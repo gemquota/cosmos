@@ -18,6 +18,7 @@ A SIEM centralizes logs, events, and alerts from across the estate and turns the
 - Concrete examples: correlating failed logins followed by a successful one from a new geolocation, detecting credential dumping by matching unusual process spawns against a baseline, and replaying the full kill chain from firewall, EDR, and authentication logs during an incident.
 - Failure modes: alert fatigue from noisy rules that trains analysts to ignore everything; log-source gaps that leave blind spots; timestamp and timezone skew across appliances; ingestion lag that breaks time-window correlations; rules that silently reference removed fields; and retention policies driven by license cost rather than investigation need.
 - Tradeoffs: centralizing everything simplifies correlation but concentrates cost and privacy risk; edge analytics reduce egress but fragment the view. Signature rules are cheap and precise but miss novel attacks, while anomaly detection finds outliers but generates more false positives.
+- Rule tuning: treat every alert as a candidate for tuning — track true/false positive rates per rule, suppress noisy rules with windows, and re-baseline after infrastructure changes.
 - RSIS3/mykb relevance: the SIEM's triage loop — collect, correlate, alert, investigate, tune rules — is a direct analogue of RSIS3's L1 action loop, and this node keeps that analogy retrievable for telemetry design.
 
 ## Related
@@ -25,5 +26,3 @@ A SIEM centralizes logs, events, and alerts from across the estate and turns the
 - [[wiki/devops-infra/helm-and-chart-management|Helm & Chart Management]]
 - [[wiki/infrastructure/ssh-key-management|SSH Key Management]]
 - [[wiki/cloud-infra/cloud-security-groups|Cloud Security Groups]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

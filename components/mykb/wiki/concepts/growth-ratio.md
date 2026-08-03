@@ -25,4 +25,3 @@ Growth ratio measures new articles over a window divided by the total, normalizi
 - [[wiki/concepts/seed-article-criteria|Seed Article Criteria]]
 - [[wiki/concepts/content-freshness-review|Content Freshness Review]]
 - [[wiki/concepts/wiki-health-dashboard|Wiki Health Dashboard]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow: Open Threads]]

@@ -18,6 +18,7 @@ DNS in Kubernetes maps service names to cluster IPs: CoreDNS runs as the cluster
 - Failure modes: the classic `ndots` problem — short hostnames generate many extra upstream queries, multiplying DNS latency (lower ndots or use FQDNs); CoreDNS being scaled to zero or restarted during a DNS outage causes cluster-wide resolution failures; search-domain typos resolving to wrong namespaces; cache TTLs serving stale endpoints after a service deletion; upstream DNS failures cascading to all pods.
 - Tradeoffs: the cluster DNS server centralizes resolution and enables service discovery but is a single point of failure — run multiple replicas with anti-affinity; node-local DNS caches reduce latency and upstream load at the cost of another moving part; DNS-based discovery is simple but eventually consistent, unlike an API-based registry.
 - Operational notes: monitor CoreDNS latency and error rates, test resolution paths in CI, and keep upstream resolvers redundant.
+- Debugging: resolve from inside the pod, then query the cluster DNS server directly; enable CoreDNS `errors` and `log` plugins under investigation to isolate the failing link.
 - RSIS3 relevance: if cosmos services resolve each other by DNS, a CoreDNS hiccup explains "the daemon is unreachable" failures — RSIS3's monitoring should distinguish DNS failures from service failures.
 
 ## Related
@@ -26,5 +27,3 @@ DNS in Kubernetes maps service names to cluster IPs: CoreDNS runs as the cluster
 - [[wiki/cloud-infra/dns-zone-transfers|DNS Zone Transfers]]
 - [[wiki/cloud-infra/dns-management|DNS Management]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

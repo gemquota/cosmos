@@ -18,6 +18,7 @@ Infrastructure drift is the difference between declared configuration (Terraform
 - Failure modes: auto-reconcile fighting legitimate out-of-band actions (emergency scaling, manual data migration) — create an explicit "bypass with review" path; detectors that cannot see certain resources, giving false confidence; alert fatigue when drift is noisy but benign; drift detection itself drifting (detector credentials stale, checks disabled).
 - Tradeoffs: continuous reconciliation enforces the repo as truth but can stomp intentional manual changes; detection-only preserves flexibility but lets drift accumulate until it matters; the mature pattern is detection with alerting plus reconciliation for known-safe resource classes and manual approval for the rest.
 - Operational notes: separate drift alerts by severity, keep detector credentials least-privileged, and periodically reconcile known drift back into the repo so the repo stays the source of truth.
+- Coverage: detect drift in managed resources and in unmanaged ones — periodic full inventory scans catch out-of-band edits and unknown resources that config tools never see.
 - RSIS3 relevance: RSIS3's state files can drift from their schemas the same way — a drift check on registry invariants and checkpoints catches loops that mutated state outside the declared format.
 
 ## Related
@@ -26,5 +27,3 @@ Infrastructure drift is the difference between declared configuration (Terraform
 - [[wiki/infrastructure/gpu-compute-infrastructure|GPU Compute Infrastructure]]
 - [[wiki/infrastructure/configuration-drift|Configuration Drift]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

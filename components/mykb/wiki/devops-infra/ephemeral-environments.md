@@ -18,6 +18,7 @@ Ephemeral environments are short-lived, on-demand copies of the stack created pe
 - Failure modes: environment drift — previews that differ from production (different data, different env vars) and give false confidence; resource exhaustion when many PRs each run a full stack (use shared services, thin clones, or spot scheduling); stateful environments that cannot be torn down cleanly, leaking cost; database seeds that are stale or contain PII, requiring sanitization.
 - Tradeoffs: ephemeral environments multiply infrastructure spend and pipeline complexity but collapse the feedback loop and remove staging contention; the alternative — one shared staging env — serializes testing and accumulates drift; the middle ground provisions ephemeral environments only for risky or high-traffic changes.
 - Operational notes: set TTL-based cleanup, monitor environment count and cost, and make environment URLs and status visible in the PR.
+- Cost shape: namespace-per-PR with shared Redis and object storage keeps each preview cheap, but set namespace quotas so a PR burst cannot exhaust cluster capacity.
 - RSIS3 relevance: the cosmos dashboard's preview environment per change mirrors RSIS3's experimental principle — try changes in an isolated, disposable copy before promoting to the live wiki.
 
 ## Related
@@ -26,5 +27,3 @@ Ephemeral environments are short-lived, on-demand copies of the stack created pe
 - [[wiki/devops-infra/development-environments-as-code|Development Environments as Code]]
 - [[wiki/infrastructure/data-environments-dev-staging-prod|Data Environments Dev Staging Prod]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

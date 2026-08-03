@@ -25,5 +25,3 @@ Network budgeting is planning capacity, growth, and cost for the network: foreca
 - [[wiki/infrastructure/network-interface-bonding|Network Interface Bonding]]
 - [[wiki/infrastructure/network-policy|Network Policy]]
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

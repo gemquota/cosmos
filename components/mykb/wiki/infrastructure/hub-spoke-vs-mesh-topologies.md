@@ -25,5 +25,3 @@ Hub-spoke and mesh are the two poles of interconnect design: hub-spoke routes al
 - [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]]
 - [[wiki/infrastructure/service-mesh|Service Mesh]]
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -18,6 +18,7 @@ NGINX configuration patterns are the recurring structures for routing, proxying,
 - Failure modes: location matching surprises — prefix vs regex precedence (^~, =, regex) routes traffic to the wrong handler; proxy timeouts misconfigured for slow upstreams, returning 504s; upstreams with no health checks keeping dead backends in rotation; config drift between environments; reload mistakes — a broken config blocks reload and leaves the old one running, hiding the error.
 - Tradeoffs: NGINX config is powerful but imperative and easy to abuse; the pattern discipline (small includes, variables, testing) keeps it maintainable; the alternative — a gateway product with a UI or CRDs — trades control for convenience; for most teams, NGINX as code with CI validation is the sweet spot.
 - Operational notes: run `nginx -t` in CI, keep config in git with environments as overlays, monitor upstream health and 5xx rates, and test reloads.
+- Tuning: set connect/read/send timeouts per upstream tier, enable `proxy_buffering` so slow clients do not hold backend connections, and use `limit_req` with burst and `nodelay` to absorb traffic spikes.
 - RSIS3 relevance: the dashboard and API endpoints behind NGINX follow these patterns — correct caching, timeouts, and rate limits keep RSIS3's frontend healthy under bursty load.
 
 ## Related
@@ -25,5 +26,3 @@ NGINX configuration patterns are the recurring structures for routing, proxying,
 - [[wiki/devops-infra/configuration-management-revisited|Configuration Management]]
 - [[wiki/devops-infra/haproxy-vs-nginx|HAProxy vs NGINX]]
 - [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

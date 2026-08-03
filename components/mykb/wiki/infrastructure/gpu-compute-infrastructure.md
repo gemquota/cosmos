@@ -23,5 +23,3 @@ GPU compute infrastructure is the practice of treating GPUs as schedulable, shar
 - [[wiki/cloud-infra/compute-autoscaling|Compute Autoscaling]]
 - [[wiki/infrastructure/gpu-drivers-and-cuda|GPU Drivers & CUDA]]
 - [[wiki/devops-infra/infrastructure-drift-detection|Infrastructure Drift Detection]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

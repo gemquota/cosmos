@@ -69,6 +69,37 @@ errors. Combined report: `ops/reports/adversarial-review-stub-promotion-2026-08.
 - Provenance: articles still carry no `Sources` section despite the
   promotion checklist; enforce in the next promotion wave.
 
+
+## Pass 2 (post-cleanup re-review)
+Five parallel reviewers re-ran the same slices after the cleanup. Scores:
+**79/64/62/68/71 (mean 68.8)** vs Pass 1's 68/57/79/71/64 (mean 67.8) — the
+mechanical fixes held in every slice (0 self-links, 0 annotation strings, 0
+dead/truncated links, 0 sub-320 files, factual fixes verified correct), but
+the score barely moved because the deliberately-unfixed classes dominate the
+remaining defect surface and two cleanup gaps surfaced.
+
+- **Verified held everywhere**: 0 self-links, 0 annotation strings, 0
+  unclosed links, 0 dead README links, 0 files under 320 words, syntheses
+  `type` correct, all 7 factual fixes correct (WCAG ratios recomputed and
+  matching, dom-clobbering vectors real, gpu driver wording, calibration
+  direction, dp-vs-px, anr-diagnostics, org-mode).
+- **Cleanup gaps found and fixed after the pass**: the "fixed syntheses
+  trailer" had only been removed from bare lines — 233 files still carried
+  the two-link boilerplate with descriptor suffixes ("how stubs grow into
+  full articles in mykb" / "the curation loop this stub belongs to");
+  another 464 lines removed. Also fixed: `compositions/fencing-tokens.md`
+  wrong-page link, stale display labels after the clickhouse rename,
+  `frontend-frameworks/react-ecosystem.md` fabricated "dashboard is a React
+  SPA" claim (the dashboard is vanilla JS), and 3 files whose Related
+  sections had been emptied now have topical links.
+- **Remaining (Pass 3 agenda)**: unverifiable "the wiki's X does Y" claims
+  (~74/48/61/183 per slice — the largest remaining fabrication risk),
+  keyword-matched irrelevant links (55–96 files), near-duplicate clusters
+  (8+, incl. a 6-file CSS-unit cluster), orphaned trailing bullets after
+  RSIS3-relevance paragraphs (60+14+5 files), padding-to-threshold (most
+  files in the 320–360 band), and the templated RSIS3-relevance closer
+  (86–99% of files). The 320-word floor holds; the bar has moved to
+  provenance and uniqueness.
 ## Related
 - [[wiki/syntheses/stub-promotion-wave-2026-08|Stub Promotion Wave]]
 - [[wiki/syntheses/pass3-integration-depth-wave|Pass 3 — Integration & Depth Wave]]

@@ -28,5 +28,3 @@ Writing scripts that survive quoting, globbing, unset variables, and failure. Ro
 - [[wiki/os-shell/arrays-in-shell|Arrays in Bash/Zsh]]
 - [[wiki/os-shell/errexit-and-shell-options|Errexit & Shell Options]]
 - [[wiki/shell-environment/terminal-multiplexers-tmux|Terminal Multiplexers: tmux]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -26,5 +26,3 @@ Storage throughput is the bandwidth side of storage performance: how many bytes 
 - [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]]
 - [[wiki/cloud-infra/bandwidth-vs-throughput|Bandwidth vs Throughput]]
 - [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

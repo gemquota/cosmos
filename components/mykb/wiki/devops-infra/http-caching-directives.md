@@ -26,5 +26,3 @@ HTTP caching directives — Cache-Control, Expires, ETag, Vary — tell browsers
 - [[wiki/devops-infra/build-caching-and-artifacts|Build Caching & Artifacts]]
 - [[wiki/cloud-infra/http-2-multiplexing|HTTP/2 Multiplexing]]
 - [[wiki/cloud-infra/http-3-0-rtt|HTTP/3 0-RTT]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

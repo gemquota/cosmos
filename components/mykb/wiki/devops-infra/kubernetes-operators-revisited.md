@@ -25,5 +25,3 @@ Operators extend Kubernetes with domain knowledge: a controller plus CRDs that e
 - [[wiki/devops-infra/kubernetes-scheduling|Kubernetes Scheduling]]
 - [[wiki/devops-infra/network-policies-kubernetes|Kubernetes Network Policies]]
 - [[wiki/infrastructure/kubernetes-operators|Kubernetes Operators]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

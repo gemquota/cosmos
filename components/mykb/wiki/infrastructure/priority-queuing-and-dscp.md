@@ -22,5 +22,3 @@ Priority queuing and DSCP are the marking-and-servicing machinery of QoS: DSCP (
 - [[wiki/devops-infra/priority-classes-and-preemption|Priority Classes & Preemption]]
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

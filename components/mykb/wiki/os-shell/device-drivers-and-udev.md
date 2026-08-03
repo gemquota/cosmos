@@ -24,5 +24,3 @@ Device drivers are the kernel modules that make hardware usable, and udev is the
 - [[wiki/os-shell/device-drivers|Device Drivers]]
 - [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
 - [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
