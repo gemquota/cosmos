@@ -4,19 +4,21 @@ title: "Release Engineering Trains"
 description: "Fixed-cadence release trains that batch changes predictably"
 tags: ["release-trains", "cadence", "releases", "engineering"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Release Engineering Trains
 
 ## Summary
-Fixed-cadence release trains that batch changes predictably. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Release engineering turns software delivery into a repeatable process: versioning, changelogs, build reproducibility, artifact signing, promotion, and rollback all operate as engineered pipelines rather than manual rituals. The goal is that any commit can become a release — deterministically, reviewably, and reversibly.
 
 ## Details
-- Definition anchor: Fixed-cadence release trains that batch changes predictably.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: CI builds artifacts from a single source of truth, attaches metadata (version, commit, SBOM, signature), publishes them, and records provenance; promotion pipelines move the same artifact through stages with gates; release tooling (semantic-release, release-please, git-cliff) derives versions and changelogs from history; rollback is a promotion of an older artifact, not a new build.
+- Concrete example: a merge to main triggers a build; release-please bumps the version and opens a release PR; merging it publishes the signed artifact and changelog; the artifact promotes to staging, passes checks, and promotes to prod with a recorded decision; a bad release rolls back by re-promoting the previous artifact.
+- Failure modes: unreproducible builds (environment-dependent artifacts) making rollback unreliable; version collisions from manual version bumps; changelogs that drift from actual changes; promotion steps done by hand and skipped under pressure; artifact storage that loses or mutates old versions; signing that is not verified at deploy.
+- Tradeoffs: engineered release pipelines cost setup and ceremony but make releases boring and safe; the alternative — manual release rituals — works until it fails under pressure; the payoff is that release risk becomes a solved, rehearsed process instead of an incident.
+- Operational notes: keep one release pipeline per product, make every step auditable, and rehearse rollback regularly.
+- RSIS3 relevance: RSIS3's own releases (dashboard bundles, packaged loops) deserve the same engineering — versioned, signed, promotable artifacts with a rehearsed rollback path.
 
 ## Related
 - [[wiki/devops-infra/chaos-engineering-revisited|Chaos Engineering]] — related coverage in the same cluster

@@ -4,23 +4,26 @@ title: "Latency, RTT & Jitter"
 description: "Measuring round-trip time, variability, and their effect on protocols"
 tags: ["latency", "rtt", "jitter", "networking"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Latency, RTT & Jitter
 
 ## Summary
-Measuring round-trip time, variability, and their effect on protocols. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Latency is the time for a packet to traverse a path, RTT is the round trip, and jitter is its variance. They are the three numbers that decide whether a service feels local — and each is dominated by different physics: distance, queueing, and load.
 
 ## Details
-- Definition anchor: Measuring round-trip time, variability, and their effect on protocols.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: propagation delay is fixed by distance (~1ms per 100km fiber), processing and queueing add variable delay; RTT = 2× one-way for request-response; jitter is the standard deviation of RTT, driven by queueing, scheduling, and congestion. TCP and QUIC react to measured RTT; timeouts and retransmissions compound on high-jitter paths.
+- Concrete example: a user in Sydney calling a us-east service pays ~200ms RTT before any processing; jitter spikes (bufferbloat, shared links) push p95 to 400ms, breaking interactive UX even when median looks fine; a game or voice app tolerates latency better than jitter, which is why jitter buffers and pacing exist.
+- Failure modes: optimizing median RTT while p95/p99 explode (jitter is the UX killer); measuring from the wrong vantage (server-side RTT misses the user's last mile); mistaking retransmission delay for bandwidth limits; and ignoring that TLS handshakes add 1-2 RTTs — a 200ms link becomes 400-600ms to first byte.
+- Operational tradeoffs: latency is bought with geography (edge, CDN, region choice), jitter with buffer and congestion control, and both with architecture (fewer round trips, caching, prefetch). Instrument the full path (client → edge → origin) and track p95/p99, not averages.
+- RSIS3/mykb relevance: the wiki's global latency dashboard feeds the loop's placement reviews, which weigh region proximity against residency constraints.
+- Measurement vantage: instrument both server-side and client-side (RUM); server-side RTT misses the last mile where jitter and loss actually live.
+- Budgeting: set latency budgets per user-facing path and trace each hop; the p95 stack-up of five 20ms hops is the number to manage.
 
 ## Related
-- [[wiki/cloud-infra/http-3-0-rtt|HTTP/3 0-RTT]] — related coverage in the same cluster
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/cloud-infra/http-3-0-rtt|HTTP/3 0-RTT]]
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

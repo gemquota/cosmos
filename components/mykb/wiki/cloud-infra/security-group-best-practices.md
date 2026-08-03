@@ -4,24 +4,27 @@ title: "Security Group Best Practices"
 description: "Least-privilege rules, tagging, and audit habits for security groups"
 tags: ["security-groups", "best-practices", "firewall", "aws"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Security Group Best Practices
 
 ## Summary
-Least-privilege rules, tagging, and audit habits for security groups. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Security group best practices turn the most misconfigured control in cloud networking into a dependable boundary: least privilege, group-to-group references, code-based management, and continuous verification. Most cloud breaches trace back to a stray 0.0.0.0/0 rule.
 
 ## Details
-- Definition anchor: Least-privilege rules, tagging, and audit habits for security groups.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: define groups per role (web, app, db, bastion), allow only required ports, reference other groups instead of IPs where possible, keep rules minimal, and manage them as code (Terraform/CDK) with review; use prefix lists for shared ranges and NACLs as a coarse second layer; audit with tools that detect broad exposure.
+- Concrete example: the web SG allows 443 from 0.0.0.0/0 (necessary) but 22 only from the bastion SG; the DB SG allows 5432 only from the app SG; a compliance scan flags any management port open to the world and fails CI. The drift pattern is console edits bypassing code review.
+- Failure modes: ephemeral "just for debugging" rules that become permanent; security groups referenced by IP instead of group ID (drift when instances change); duplicate groups with near-identical rules; and rules that allow more than the port needs (0-65535 shortcuts).
+- Operational tradeoffs: group references give automatic propagation but hide dependencies (deleting a group breaks rules — check references); code management adds process but makes exposure reviewable. The standard is defense in depth: SG per role + NACL baseline + flow-log alerts on unexpected egress.
+- RSIS3/mykb relevance: the wiki's environment templates encode security groups as code with a rule vocabulary; this note is the review checklist the loop runs before merging network changes.
+- Review cadence: run an exposure scan on a schedule and treat any new 0.0.0.0/0 rule on a management port as a review event; drift is the threat, not the initial config.
+- Naming: name groups by role and environment (web-prod, db-prod) so reviews read intent; unnamed or generically-named groups are unreviewable.
 
 ## Related
-- [[wiki/devops-infra/ci-cd-best-practices|CI/CD Best Practices]] — related coverage in the same cluster
-- [[wiki/devops-infra/on-call-practices|On-Call Practices]] — related coverage in the same cluster
-- [[wiki/infrastructure/security-information-and-event-management|SIEM]] — related coverage in the same cluster
-- [[wiki/cloud-infra/cloud-security-groups|Cloud Security Groups]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/devops-infra/ci-cd-best-practices|CI/CD Best Practices]]
+- [[wiki/devops-infra/on-call-practices|On-Call Practices]]
+- [[wiki/infrastructure/security-information-and-event-management|SIEM]]
+- [[wiki/cloud-infra/cloud-security-groups|Cloud Security Groups]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

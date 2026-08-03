@@ -4,19 +4,22 @@ title: "Ignition & User Data"
 description: "First-boot configuration for Fedora CoreOS and cloud VMs"
 tags: ["ignition", "user-data", "provisioning", "coreos"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Ignition & User Data
 
 ## Summary
-First-boot configuration for Fedora CoreOS and cloud VMs. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Ignition and cloud-init are the two first-boot provisioning systems for Linux instances: cloud-init is the ubiquitous, distro-agnostic tool that runs user-data scripts and modules; Ignition is the Fedora CoreOS-style system that applies a JSON config to the raw disk at first boot, before services start. Both make boot-time configuration declarative and reproducible.
 
 ## Details
-- Definition anchor: First-boot configuration for Fedora CoreOS and cloud VMs.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- cloud-init mechanics: instance metadata (user-data, instance-id) is consumed by modules in phases (network, config, final); it writes files, users, SSH keys, packages, and runs arbitrary commands; it is idempotent via instance-id tracking and reports status to the console or a datasource.
+- Ignition mechanics: a JSON config (Butane transpiles human-friendly YAML to JSON) is written to the disk image; on first boot Ignition parses it and provisions storage, filesystems, files, systemd units, and users before the OS services start — making it suited to immutable images where runtime mutation is discouraged.
+- Concrete example: a Terraform-created VM passes cloud-init user-data that sets the admin user, installs the agent, and registers the host; a CoreOS node is built with an Ignition config that formats disks, writes the workload, and starts the container runtime on boot.
+- Failure modes: user-data that fails partway leaves a broken instance that "boots" — check cloud-init status; scripts that are not idempotent break on second run; secrets embedded in user-data persist in metadata and logs; Ignition configs that reference files or units that do not exist fail boot with obscure errors; base-image changes invalidating assumptions (distro version, network config).
+- Tradeoffs: cloud-init is flexible and widely supported but imperative at its edges (shell); Ignition is declarative and deterministic but tied to the CoreOS ecosystem; choose by image philosophy — mutable images pair with cloud-init, immutable with Ignition.
+- Operational notes: version user-data and Ignition configs in the repo, test first boot in CI, and monitor boot success signals.
+- RSIS3 relevance: wherever cosmos nodes boot, deterministic first-boot config means a replacement wiki daemon host reaches the same state without manual recovery steps.
 
 ## Related
 - [[wiki/devops-infra/envoy-data-plane|Envoy Data Plane]] — related coverage in the same cluster

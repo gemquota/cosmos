@@ -4,25 +4,27 @@ title: "Azure VNet & NSGs"
 description: "Virtual networks, subnets, and network security groups on Azure"
 tags: ["azure", "vnet", "nsg", "cloud"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Azure VNet & NSGs
 
 ## Summary
-Virtual networks, subnets, and network security groups on Azure. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Azure VNets and network security groups (NSGs) define the isolation and filtering of Azure networking: VNets carve address space and subnets, NSGs filter traffic per subnet/interface with rule precedence. They are the primary security boundary for Azure workloads.
 
 ## Details
-- Definition anchor: Virtual networks, subnets, and network security groups on Azure.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: a VNet owns a CIDR and contains subnets; each subnet has a route table and can be attached to NSGs (applied at subnet or NIC level); NSG rules are evaluated in priority order with explicit allows/denies, and default rules allow intra-VNet traffic and deny internet ingress. Azure Firewall and VNet peering extend the model.
+- Concrete example: an app subnet with an NSG allowing 443 from the load balancer's subnet only and denying everything else inbound; a management subnet restricted to a bastion; peering connects VNets for hub-spoke routing while NSGs still filter per subnet. NSG flow logs feed analysis and alerting.
+- Failure modes: NSG priority mistakes (a broad deny shadowed by a later allow, or vice versa); applying NSGs only at NIC level so subnet-wide traffic bypasses expectations; asymmetric rules that allow one direction but not responses; and CIDR overlap between peered VNets breaking routing silently.
+- Operational tradeoffs: NSGs are stateful and cheap — the default filter layer — while Azure Firewall adds centralized inspection, DNS, and logging at a cost; choose by compliance need. Keep rules minimal and documented, and enable flow logs before incidents, not after.
+- RSIS3/mykb relevance: experiment environments inherit a documented NSG baseline from this note, so loop-provisioned VNets start secure instead of relying on default rules.
+- Flow logs: enable NSG flow logs before incidents; retroactive analysis is impossible, and the logs are the difference between a root cause and a guess.
 
 ## Related
-- [[wiki/cloud-infra/cloud-providers-aws-azure-gcp|Cloud Providers: AWS, Azure, GCP]] — related coverage in the same cluster
-- [[wiki/cloud-infra/azure-managed-disks|Azure Managed Disks]] — related coverage in the same cluster
-- [[wiki/cloud-infra/parameter-stores-aws-ssm-azure-keyvault-gcp-secretmanager|Cloud Parameter Stores]] — related coverage in the same cluster
-- [[wiki/infrastructure/azure-synapse|Azure Synapse]] — related coverage in the same cluster
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/cloud-infra/cloud-providers-aws-azure-gcp|Cloud Providers: AWS, Azure, GCP]]
+- [[wiki/cloud-infra/azure-managed-disks|Azure Managed Disks]]
+- [[wiki/cloud-infra/parameter-stores-aws-ssm-azure-keyvault-gcp-secretmanager|Cloud Parameter Stores]]
+- [[wiki/infrastructure/azure-synapse|Azure Synapse]]
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

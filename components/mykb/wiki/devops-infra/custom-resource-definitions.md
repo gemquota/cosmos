@@ -4,19 +4,21 @@ title: "Custom Resource Definitions"
 description: "Extending the Kubernetes API with typed resources"
 tags: ["crd", "kubernetes", "api", "extensibility"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Custom Resource Definitions
 
 ## Summary
-Extending the Kubernetes API with typed resources. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Custom Resource Definitions (CRDs) extend the Kubernetes API with domain-specific object types: a CRD defines the schema, and a controller (operator) reconciles instances toward desired state. This turns the Kubernetes API and controller pattern into a platform for building operational automation with built-in declarative semantics.
 
 ## Details
-- Definition anchor: Extending the Kubernetes API with typed resources.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: a CRD declares group, version, kind, and an OpenAPI v3 schema for spec and status; the API server stores instances and validates them; an operator watches instances and reconciles — reading spec, comparing to reality, and acting; status surfaces outcomes and conditions back to users and other controllers.
+- Concrete example: a `PostgresCluster` CRD with spec for version, replicas, and storage; the operator creates StatefulSets, PVCs, and backups, then reports Ready conditions in status; users interact only with the CRD, not the underlying resources.
+- Failure modes: schemas without validation defaults — missing required fields surface only at runtime; status written by multiple controllers causing conflicts; conversion webhooks breaking when a new version is introduced — old instances must convert or you lose upgradeability; a controller that reconciles too fast (hot loop) or too slow (drift); name conflicts and API-group collisions; pruning and garbage collection of owned resources when an instance is deleted.
+- Tradeoffs: CRDs are powerful but add maintenance — schema design, conversions, RBAC, and controller maturity all become your problem; the alternative (ConfigMaps plus scripts) is simpler but loses validation, watch semantics, and status. Use CRDs when the resource is truly declarative and long-lived, not for one-off jobs.
+- Operational notes: follow API versioning conventions, write comprehensive schema defaults, set `preserveUnknownFields: false`, and test upgrades across versions in staging.
+- RSIS3 relevance: RSIS3 could model loop configurations (strategy sets, pulse pipelines) as CRDs — the API server provides validation, versioning, and watch semantics for free.
 
 ## Related
 - [[wiki/os-shell/resource-utilization-analysis|Resource Utilization Analysis]] — related coverage in the same cluster

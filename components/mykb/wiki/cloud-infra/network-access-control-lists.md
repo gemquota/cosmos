@@ -4,24 +4,26 @@ title: "Network Access Control Lists"
 description: "Stateless subnet-level filtering rules on cloud networks"
 tags: ["acl", "networking", "firewall", "cloud"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Network Access Control Lists
 
 ## Summary
-Stateless subnet-level filtering rules on cloud networks. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Network ACLs (NACLs) are stateless, subnet-level filters — in AWS they evaluate rules by priority for both directions; GCP firewall rules and Azure NSGs fill similar roles with different semantics. They are the coarse second layer under security groups, not the primary control.
 
 ## Details
-- Definition anchor: Stateless subnet-level filtering rules on cloud networks.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: AWS NACLs are stateless: inbound and outbound rules are evaluated independently, so responses need explicit allow rules (ephemeral ports); rules have a priority (lowest number wins, default deny at 65535); GCP firewall rules are stateful with priority and can target tags/service accounts; Azure NSGs are stateful with priority and apply per subnet/NIC.
+- Concrete example: a subnet-level NACL denies inbound 22 from 0.0.0.0/0 while the instance security group allows 22 only from a bastion — defense in depth; a GCP firewall rule allows egress to the internet only from tagged instances, blocking others even if their SG allows it; ephemeral-port ranges (1024-65535) must be allowed for outbound responses on stateless NACLs.
+- Failure modes: forgetting ephemeral-port allows on stateless NACLs (connections fail one way); rule ordering mistakes where a broad allow shadows a deny; NACL/SG contradictions that are hard to debug (check both when traffic fails); and drifting rule sets from manual edits that diverge from IaC.
+- Operational tradeoffs: NACLs give subnet-wide control and DDoS-baseline filtering, but statelessness makes them error-prone; security groups remain the primary per-instance control. Keep NACLs minimal and stable, and remember that with stateful alternatives (GCP, Azure NSG), the ephemeral-port burden disappears.
+- RSIS3/mykb relevance: the wiki's subnet baselines use minimal NACLs plus group references; this note records the ephemeral-port rules the loop's IaC templates must preserve.
+- Change review: route NACL edits through the same review as security groups; stateless rules are easier to get wrong and harder to notice when wrong.
 
 ## Related
-- [[wiki/devops-infra/network-observability|Network Observability]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/cloud-infra/congestion-control-algorithms|Congestion Control Algorithms]] — related coverage in the same cluster
-- [[wiki/cloud-infra/flow-control|Flow Control]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/devops-infra/network-observability|Network Observability]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/cloud-infra/congestion-control-algorithms|Congestion Control Algorithms]]
+- [[wiki/cloud-infra/flow-control|Flow Control]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

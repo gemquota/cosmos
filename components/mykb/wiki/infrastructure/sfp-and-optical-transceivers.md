@@ -4,19 +4,21 @@ title: "SFP & Optical Transceivers"
 description: "Hot-swappable modules that adapt switches to fiber or copper"
 tags: ["sfp", "optics", "transceiver", "networking"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # SFP & Optical Transceivers
 
 ## Summary
-Hot-swappable modules that adapt switches to fiber or copper. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+SFP and its higher-speed relatives (SFP+, SFP28, QSFP, QSFP-DD, OSFP) are hot-swappable modules that adapt switches, NICs, and routers to fiber or copper media. They package the speed, reach, and media decision into a small field-replaceable component, which is why datacenters stock spares rather than rip out line cards when optics fail.
 
 ## Details
-- Definition anchor: Hot-swappable modules that adapt switches to fiber or copper.
-- Open questions: how this interacts with adjacent datacenter and network infrastructure topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: the module contains a laser and photodiode (optical) or a copper PHY, plus an EEPROM carrying identity, serial number, and digital optical monitoring (DOM) data. The host reads DOM telemetry — TX/RX power, temperature, and voltage — to detect degradation before hard failure.
+- Variants and reach: SFP for 1G, SFP+ for 10G, SFP28 for 25G, QSFP28 for 100G (4x25), and QSFP-DD/OSFP for 400G (8x50). Optics are named by reach: SR for short multimode runs, LR for long single-mode runs, and ER/ZR for metro and longer spans, each with different power budgets.
+- Concrete examples: a 40G QSFP+ to 4x10G SFP+ breakout cable fanning out to four servers, DAC cables for short rack-internal links where cost and power beat reach, and a 10G LR module crossing a building backbone on single-mode fiber.
+- Failure modes: dirty or damaged fiber connectors (the leading cause of flapping links), laser aging that shows up as rising TX power or falling RX margin, counterfeit or vendor-locked modules rejected by the switch, DOM threshold alerts ignored until the link drops, and heat build-up in dense 400G ports.
+- Tradeoffs: DAC and AOC cables cost less than optical modules but are fixed-length and heavier; optics give flexibility and reach at higher cost per port; single-mode fiber costs more up front but supports future speeds, while multimode is cheaper for short runs.
+- RSIS3/mykb relevance: when self-improvement cycles tune the physical layer, this node reminds retrievals that the module and the fiber are separate failure domains and that DOM telemetry is the observability signal to track.
 
 ## Related
 - [[wiki/infrastructure/optical-storage-tape|Optical Storage & Tape]] — related coverage in the same cluster

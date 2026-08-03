@@ -4,17 +4,20 @@ title: "esbuild in Practice"
 description: "Extremely fast JavaScript bundler written in Go"
 tags: ["esbuild", "bundlers", "javascript", "tooling"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 # esbuild in Practice
 
 ## Summary
-Extremely fast JavaScript bundler written in Go. A stub in the mykb wiki that frames the concept and the questions to expand into a full article.
+esbuild is an extremely fast JavaScript and TypeScript bundler written in Go, with parallel parsing and a minifier built in. It covers most application builds — bundling, transforms, code splitting, and a dev server — at a fraction of webpack's build time, though its plugin ecosystem is less mature.
 
 ## Details
-- esbuild bundles at Go speed with parallel parsing
-- It lacks full plugin maturity but covers most app builds
-- Open question — when does esbuild replace webpack outright?
+- Mechanism: esbuild parses files in parallel using Go's concurrency, transforms JSX/TS, resolves modules, bundles, minifies, and emits source maps; its API (build, transform, serve) is scriptable; a plugin API exists but is intentionally narrower than webpack's; watch mode and a dev server support iteration.
+- Concrete example: a dashboard build with hundreds of modules bundles in under a second; `esbuild --bundle app.js --outdir=dist --minify --sourcemap` is a full pipeline; a Vite project uses esbuild for dependency pre-bundling; a script replaces a slow webpack build for a library's browser bundle.
+- Failure modes: plugin needs beyond esbuild's model (code splitting with custom chunking, advanced loaders) forcing webpack back; output size sometimes larger without deep tree-shaking passes; ecosystem plugins lagging; configuration magic hiding behaviors; fast builds encouraging config churn.
+- Tradeoffs: esbuild trades plugin ecosystem and full configurability for speed — most app builds never need the depth they give up; the alternative, webpack, is slower and more powerful; the mature pattern is esbuild for speed-sensitive builds and webpack or Rollup where plugins and precise output matter.
+- Operational notes: pin the version, verify output correctness across targets, and benchmark before optimizing.
+- RSIS3 relevance: the dashboard's JS build is a prime esbuild candidate — near-instant rebuilds keep the loop fast.
 
 ## Related
 - [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]] — related coverage in the same cluster

@@ -4,22 +4,25 @@ title: "AMD EPYC & Intel Xeon"
 description: "Serving as the x86 workhorses of modern cloud instances"
 tags: ["epyc", "xeon", "cpu", "cloud"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # AMD EPYC & Intel Xeon
 
 ## Summary
-Serving as the x86 workhorses of modern cloud instances. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Cloud instance families are built on AMD EPYC and Intel Xeon generations, each with different clock speeds, core counts, memory bandwidth, and per-core licensing implications. The choice shows up in price-performance and software licensing, not just benchmarks.
 
 ## Details
-- Definition anchor: Serving as the x86 workhorses of modern cloud instances.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: providers expose CPU-generation-aware families (AWS M6a AMD vs M6i Intel, GCP AMD Milan vs Ice Lake, Azure D-family variants); AMD EPYC typically offers more cores per socket and often lower price per core, while Xeon historically carries better AVX-512/AMX support and single-thread clock for some generations.
+- Concrete example: a compute-heavy batch job that scales with cores runs cheaper on AMD EPYC families at equal vCPU count; a workload relying on AVX-512 (some ML inference, scientific codes) may run faster per-core on matching Intel families, changing the cost equation despite higher list price.
+- Failure modes: benchmarking one generation and assuming the vendor line holds; licensing by core/socket (Oracle, SQL Server, Windows Server) making AMD's higher core counts costlier in software than in compute; ignoring memory bandwidth differences for data-heavy jobs; and spot/commit pricing varying by CPU family.
+- Operational tradeoffs: standardize on one family per workload tier to keep golden images and capacity simple, but benchmark your actual workload — CPU generation differences (2-4x in some generations) dwarf micro-architectural marketing. Use family flexibility in savings plans only where licensing permits.
+- RSIS3/mykb relevance: benchmark results per CPU family are stored in the wiki so the loop's experiment planner picks the cheapest adequate family instead of the default.
+- Procurement note: reserved/commit pricing differs per CPU family; a savings plan that spans families preserves flexibility only if licensing allows running anywhere.
+- Measurement: publish a per-workload benchmark matrix (cores, memory bandwidth, price) in the wiki and re-run it after CPU generation launches, since two generations can change the recommendation.
 
 ## Related
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

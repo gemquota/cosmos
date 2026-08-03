@@ -4,19 +4,22 @@ title: "Terraform Workspaces & Modules"
 description: "Reusable module composition and isolated state workspaces"
 tags: ["terraform", "modules", "workspaces", "iac"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Terraform Workspaces & Modules
 
 ## Summary
-Reusable module composition and isolated state workspaces. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Terraform workspaces and modules are the two main structures for organizing infrastructure code: modules package reusable, parameterized resource groups (a VPC module, a database module), and workspaces (or environments with separate state) isolate state for dev, staging, and prod. Modules give reuse and consistency; workspaces give separation.
 
 ## Details
-- Definition anchor: Reusable module composition and isolated state workspaces.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Modules: a directory of Terraform with input variables and outputs; modules are versioned (registry, git tags) and called with arguments; they enforce patterns (naming, tagging, security defaults) consistently across every use.
+- Workspaces: named state instances within one backend — each workspace has its own state and variables; the common alternative is directory-per-environment with separate state files, which avoids shared-module coupling; both isolate environments so a change in dev cannot affect prod.
+- Concrete example: a `network` module creates VPC, subnets, and security groups; dev, staging, and prod each call it in their own directory with different CIDRs and tags; a database module versions its schema and settings; CI runs plan on every workspace and applies with approvals.
+- Failure modes: workspace drift — variables or state diverging between environments; module version skew where environments run different module versions; state lock contention blocking parallel applies; module interfaces that grow too large or too rigid; accidentally applying the wrong workspace, changing prod from a dev session.
+- Tradeoffs: modules reduce duplication but add an abstraction layer that must be versioned and tested; workspaces share a backend and can cause cross-environment mistakes, while separate state directories are safer and clearer at the cost of duplication; the mature pattern is versioned modules plus directory-per-environment state and a promotion pipeline.
+- Operational notes: test modules in CI, pin module versions, separate state backends per environment, and gate applies by environment.
+- RSIS3 relevance: cosmos's infrastructure should follow the same structure — reusable modules for the wiki stack, separate state per environment — so promoting a change is a reviewed diff.
 
 ## Related
 - [[wiki/devops-infra/terraform-state-management|Terraform State Management]] — related coverage in the same cluster

@@ -330,3 +330,21 @@ title: "Bundle Log"
   (6,722 concepts), gen-static-data (files.json 6,845 entries).
 - **Audit refreshed**: `COMPREHENSIVE_AUDIT.md` updated to post-Pass-3 numbers
   (95/100 health).
+
+## 2026-08-03 (stub promotion wave & deploy)
+- **Promotion wave (1,098 stubs → growing)**: five worker batches (275/275/
+  274/274/31) promoted every stub with ≥120 body words to a full 320+ word
+  article (median 391, max 612). One worker hit the provider 429 ceiling at
+  4 concurrent writers (ceiling reconfirmed: 3–4); its 31-file remainder was
+  completed by a fifth worker.
+- **Link integrity**: full diff against the pre-wave baseline shows zero new
+  broken links. 9 concepts files had valid `[[wikilinks]]` stripped by a
+  worker; all were restored into `## Related` with `[[wiki/…|Display]]`
+  targets verified on disk (0 broken restored links).
+- **Synthesis note**: `wiki/syntheses/stub-promotion-wave-2026-08.md`.
+- **Snapshots regenerated**: stats.html (5,341 files, 1,193,986 words, 30,720
+  links, 1,670/542/152 tiers), graph.json (5,442 nodes / 36,145 edges), okf
+  render (6,722 concepts), gen-static-data (files.json 6,845 entries,
+  --check OK).
+- **KG verified**: wiki/index hub present, 0 isolated nodes, 0 isolated index
+  nodes; static graph + okf-graph.html shipped to gh-pages.

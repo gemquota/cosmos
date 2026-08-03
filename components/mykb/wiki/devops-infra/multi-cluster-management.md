@@ -4,19 +4,22 @@ title: "Multi-Cluster Management"
 description: "Operating many clusters with consistent policy and networking"
 tags: ["multi-cluster", "kubernetes", "federation", "operations"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Multi-Cluster Management
 
 ## Summary
-Operating many clusters with consistent policy and networking. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Multi-cluster management covers running and governing several Kubernetes clusters — where they are (multi-region, multi-cloud, edge), how configuration flows to them, and how identities, policies, and observability stay consistent across them. The value is isolation, locality, and scale; the cost is duplicated operational surface.
 
 ## Details
-- Definition anchor: Operating many clusters with consistent policy and networking.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Reasons: tenant isolation (one noisy tenant cannot affect others), regional latency and data residency, blast-radius containment (a cluster failure affects only its tenants), and cloud-portability; the cost is multiplied control planes, kubeconfigs, and upgrade burden.
+- Mechanism: management planes (Argo CD, Flux, ACM, Fleet) push config to registered clusters; identity federation (OIDC with per-cluster audiences) lets one identity system govern all; observability aggregates metrics, logs, and traces from every cluster; upgrades are orchestrated per fleet rather than per cluster.
+- Concrete example: one Argo CD hub with ApplicationSets generating per-cluster apps from the same repo; an OIDC provider issuing cluster-scoped credentials; a metrics federation pulling from each cluster's Prometheus; a region failure leaves other regions untouched.
+- Failure modes: config drift between clusters when promotion is manual; credential sprawl — a compromised hub credential reaches every cluster (use short-lived, scoped tokens); upgrade skew — clusters on different Kubernetes versions behave differently under the same manifests; network partitions between hub and spokes causing stale sync or missed alerts; split-brain overrides diverging from the declared state.
+- Tradeoffs: many small clusters improve isolation but multiply operational cost and waste resources; few large clusters are cheaper but widen blast radius and tenant coupling; the mature pattern is a small number of regional clusters with clear tenant namespaces plus hub-spoke management.
+- Operational notes: treat cluster registration as privileged, centralize audits, and test cross-cluster failover.
+- RSIS3 relevance: if cosmos runs multiple instances (dev, prod wiki), multi-cluster discipline keeps their configs in sync while isolating failure — the same management pattern the hub dashboard uses for separate projects.
 
 ## Related
 - [[wiki/os-shell/logical-volume-management|Logical Volume Management]] — related coverage in the same cluster

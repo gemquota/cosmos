@@ -4,25 +4,27 @@ title: "VPN Split Tunneling"
 description: "Sending only some traffic through the VPN tunnel"
 tags: ["VPN", "tunneling", "routing", "security"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # VPN Split Tunneling
 
 ## Summary
-Sending only some traffic through the VPN tunnel. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Split tunneling routes only specified traffic through the VPN while the rest uses the local internet; full tunneling sends everything through the VPN. Split saves bandwidth and latency; full tunneling centralizes inspection and compliance. The choice is a security-vs-performance policy.
 
 ## Details
-- Definition anchor: Sending only some traffic through the VPN tunnel.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: client VPN configs carry route lists: split lists internal ranges (10.0.0.0/8) through the tunnel, leaving everything else local; full tunnel sets 0.0.0.0/0 (and IPv6) through the VPN with default-route injection. DNS handling matters: split configs should send only internal domains to the VPN resolver to avoid DNS leaks.
+- Concrete example: a developer VPN splits out only the internal CIDR — video calls and web browsing stay local, fast; a regulated team forces full tunnel so all egress passes through the corporate filter and logs; a misconfigured split tunnel leaks internal DNS or routes, sending confidential lookups to the ISP resolver.
+- Failure modes: DNS leaks (queries for internal names going to public resolvers); split-route gaps (a new internal subnet not in the list breaks access); full-tunnel performance complaints (all traffic hairpins through HQ); and policy bypass when users can toggle tunneling or the client is not enforced.
+- Operational tradeoffs: split tunneling is the UX and performance winner for general use; full tunneling is the compliance winner where inspection is mandatory. The middle path: split by default with enforced full-tunnel profiles for sensitive roles, and DNS explicitly scoped in both.
+- RSIS3/mykb relevance: the wiki's admin VPN splits out only management ranges with scoped DNS; this note records the route/DNS policy the loop checks when access issues surface.
+- Policy enforcement: manage split/full tunneling through the client configuration and prevent user overrides where compliance requires inspection; a toggle is a policy bypass.
 
 ## Related
-- [[wiki/cloud-infra/vpn-technologies|VPN Technologies]] — related coverage in the same cluster
-- [[wiki/cloud-infra/site-to-site-vpn|Site-to-Site VPN]] — related coverage in the same cluster
-- [[wiki/cloud-infra/client-vpn-profile|Client VPN Profiles]] — related coverage in the same cluster
-- [[wiki/cloud-infra/vpn-tunnels|VPN Tunnels]] — related coverage in the same cluster
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/cloud-infra/vpn-technologies|VPN Technologies]]
+- [[wiki/cloud-infra/site-to-site-vpn|Site-to-Site VPN]]
+- [[wiki/cloud-infra/client-vpn-profile|Client VPN Profiles]]
+- [[wiki/cloud-infra/vpn-tunnels|VPN Tunnels]]
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

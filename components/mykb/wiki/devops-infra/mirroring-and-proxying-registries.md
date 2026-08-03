@@ -4,19 +4,21 @@ title: "Mirroring & Proxying Registries"
 description: "Caching and controlling access to container registries"
 tags: ["mirror", "registry", "proxy", "containers"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Mirroring & Proxying Registries
 
 ## Summary
-Caching and controlling access to container registries. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Registry mirroring and proxying put a local cache in front of container registries: pulls of popular images are served from the mirror instead of the upstream, reducing egress cost, latency, and upstream rate limits — and keeping pulls working during upstream outages or registry throttling.
 
 ## Details
-- Definition anchor: Caching and controlling access to container registries.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: a registry configured as a pull-through cache (Harbor, Nexus, distribution mirror) proxies requests to the upstream, caches layers, and serves subsequent pulls locally; clients point their registry config at the mirror (mirror: in /etc/containers/registries.conf, containerd config, or a registry fallback); tags and digests are validated against the upstream to prevent tampering.
+- Concrete example: a fleet of build machines and clusters all pull through a local Harbor that caches `docker.io` layers; first pull is slow, subsequent ones are local; during a Docker Hub rate-limit event, the cache absorbs the load; promotion pipelines push internal images to the same registry.
+- Failure modes: stale cached layers when upstream re-tags (cache-busting issues, resolved by digest-based pulls); mirror outages blocking all pulls — the mirror becomes a single point of failure unless clients can fall back; cache poisoning if the mirror does not validate signatures; unbounded disk growth from layer caching (configure retention and GC); authentication propagation — mirroring private upstreams needs the mirror to hold credentials.
+- Tradeoffs: mirrors cut cost and latency and provide an availability buffer, but add infrastructure and a trust boundary; the alternative — pulling direct — is simpler but pays egress and throttling; the standard pattern is mirror for public upstreams plus a private registry for internal images.
+- Operational notes: monitor cache hit ratio, disk usage, and upstream health; sign internal images; test the fallback path.
+- RSIS3 relevance: cosmos's CI pulls many images — a local mirror makes builds reproducible and fast and keeps them running when upstream rate limits bite.
 
 ## Related
 - [[wiki/devops-infra/container-registries-revisited|Container Registries]] — related coverage in the same cluster

@@ -4,19 +4,21 @@ title: "Identity-Aware Proxies"
 description: "Google IAP-style gateways that authorize by identity, not network"
 tags: ["iap", "proxy", "identity", "access"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Identity-Aware Proxies
 
 ## Summary
-Google IAP-style gateways that authorize by identity, not network. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Identity-aware proxies (IAPs) put authentication and authorization in front of applications at the network edge: the proxy verifies identity (OIDC, SSO, mTLS) and applies access policy before any request reaches the app, so internal tools and APIs are reachable only by authorized users without exposing VPN or complex per-app auth.
 
 ## Details
-- Definition anchor: Google IAP-style gateways that authorize by identity, not network.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: the IAP terminates the session — a user authenticates with the IdP (Google Workspace, Okta, Entra ID, GitHub), the proxy issues a short-lived session, and each request is checked against policy (group membership, IP allowlists, context); the upstream app receives identity headers (email, groups) and can trust them because only the proxy can set them.
+- Concrete example: Google Cloud IAP in front of an internal dashboard — users sign in with their corporate account, only members of the ops group can access, and the app reads the verified email header; Cloudflare Access or Pomerium apply the same pattern to arbitrary origins; BeyondCorp-style zero trust replaces the VPN.
+- Failure modes: trusting identity headers from direct access — if the app is reachable past the proxy, attackers can forge `X-User-Email`; session expiry surprises killing long-running requests; policy that is permissive by default (any authenticated user when only a subset should pass); proxy outages becoming a single point of failure for all protected apps; browser cookie and CORS misconfigurations leaking sessions.
+- Tradeoffs: IAPs centralize auth and remove per-app login logic, but they add a hop, an external dependency on the IdP, and a trust boundary that must be airtight; the alternative — per-app auth — is more flexible but multiplies implementation and audit surface.
+- Operational notes: enforce that upstream apps reject identity headers when not behind the proxy, keep policies in code, and monitor proxy availability.
+- RSIS3 relevance: the wiki daemon and dashboard are exactly the internal tools an IAP protects — SSO-gated access with verified identity headers beats homegrown auth for a personal knowledge base.
 
 ## Related
 - [[wiki/devops-infra/reverse-proxies|Reverse Proxies]] — related coverage in the same cluster

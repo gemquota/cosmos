@@ -4,19 +4,20 @@ title: "Network Function Virtualization"
 description: "Running firewalls, load balancers, and routers as software instances"
 tags: ["nfv", "virtualization", "networking", "cloud"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Network Function Virtualization
 
 ## Summary
-Running firewalls, load balancers, and routers as software instances. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Network function virtualization (NFV) runs network functions — firewalls, load balancers, routers, NAT, WAN accelerators — as software instances on commodity servers instead of as dedicated hardware appliances. It is the virtualization movement applied to the middlebox market: the same NFV concept that made compute and storage software-defined, applied to the network functions that used to require a box per function.
 
 ## Details
-- Definition anchor: Running firewalls, load balancers, and routers as software instances.
-- Open questions: how this interacts with adjacent datacenter and network infrastructure topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- The problem NFV solves: the appliance model. Every network function historically meant dedicated hardware — a firewall appliance, a load-balancer box, a router chassis — each with its own procurement cycle, capacity ceiling, failure domain, and management interface. Scaling meant buying another box; upgrading meant hardware replacement; and the fleet of appliances was a sprawl of vendor-specific operations. NFV replaces the fleet with software: the functions run as VMs or containers on standard servers (or in the cloud), so they get the entire virtualization benefit — instant deployment, horizontal scaling, hardware independence, and one operational surface.
+- The architecture: NFV separates the function (the VNF — virtual network function: firewall, LB, router) from the infrastructure (NFVI — the compute/storage/network it runs on) and adds MANO (management and orchestration — the layer that deploys, scales, and lifecycles VNFs, the NFV counterpart to Kubernetes). In practice, the distinction collapsed into the cloud-native world: modern VNFs are containerized workloads (or cloud functions) deployed by Kubernetes, and the "NFV" label now mostly refers to the telco heritage and the carrier-grade requirements (performance, availability, and the orchestration of virtualized telecom functions like vEPC, vIMS, vRAN).
+- The performance question is the historical crux: network functions are packet-heavy, and software data planes historically could not match hardware appliances at line rate. The answer came from the same kernel-bypass and offload toolkits (DPDK, SR-IOV, SmartNICs): a virtual firewall can hit line rate if the data path bypasses the kernel and the NIC offloads the work — which is why NFV performance engineering is really the kernel-bypass/offload story. The tradeoff: software functions are cheaper and more flexible at the cost of CPU consumption and the need for careful data-plane design; hardware appliances win on raw per-box performance and lose on everything else.
+- The failure modes: performance surprises (a VNF sharing a host with noisy neighbors), orchestration complexity (MANO/Kubernetes adds a control plane to learn and operate), and the licensing trap (vendors who priced appliances per-box are not automatically cheap as software).
+- For mykb: NFV connects the virtualization and networking clusters — it is the application of cloud patterns (function execution lifecycle, network observability) to network functions.
 
 ## Related
 - [[wiki/devops-infra/network-observability|Network Observability]] — related coverage in the same cluster

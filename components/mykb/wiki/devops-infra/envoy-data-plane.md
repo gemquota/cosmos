@@ -4,19 +4,21 @@ title: "Envoy Data Plane"
 description: "The L3/L4/L7 proxy at the heart of modern service meshes"
 tags: ["envoy", "proxy", "data-plane", "service-mesh"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Envoy Data Plane
 
 ## Summary
-The L3/L4/L7 proxy at the heart of modern service meshes. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Envoy is a high-performance, C++ service proxy that implements the data plane: L4/L7 routing, load balancing, TLS, observability, and filters. It is the reference implementation behind service meshes (Istio, Consul Connect, Gloo) and API gateways, and its xDS APIs make configuration dynamic and consistent across a fleet.
 
 ## Details
-- Definition anchor: The L3/L4/L7 proxy at the heart of modern service meshes.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: Envoy is organized as listeners (ports), clusters (upstreams), and routes (matching and forwarding rules); a filter chain processes each request (HTTP, gRPC, TCP); xDS (CDS, EDS, LDS, RDS, SDS) delivers configuration and endpoint updates from a control plane, letting the fleet converge on the same config without restarts.
+- Concrete example: a sidecar Envoy in a mesh handles mTLS, retries, circuit breaking, and distributed tracing headers for a service; an edge Envoy terminates TLS, enforces rate limits, and routes by path prefix to clusters; the control plane (Istiod) publishes xDS updates when services scale.
+- Failure modes: config mismatches between the control plane and the proxy (stale EDS endpoints routing to dead pods); filter ordering mistakes that break retries or header propagation; resource exhaustion from too many clusters or listeners (each costs memory); hot restart and draining issues during upgrades causing dropped connections; misconfigured timeouts turning slow backends into cascading failures.
+- Tradeoffs: Envoy's power comes with complexity — its config surface is large and its behavior is config-driven, so teams need a control plane and config discipline; the alternative (nginx, haproxy) is simpler but lacks dynamic xDS-style reconfiguration and rich observability; the payoff is consistent policy, telemetry, and fast convergence at scale.
+- Operational notes: monitor Envoy stats (upstream_rq_5xx, listener_downstream_cx_active), validate config via `envoy --mode validate`, and keep control-plane-to-proxy version compatibility.
+- RSIS3 relevance: if cosmos services sit behind a mesh or gateway, Envoy's routing and retry behavior shapes the failure modes RSIS3 observes between loops.
 
 ## Related
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster

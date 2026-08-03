@@ -4,19 +4,21 @@ title: "Golden Images & Image Baking"
 description: "Pre-baked machine images with known-good configuration"
 tags: ["golden-image", "baking", "packer", "images"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Golden Images & Image Baking
 
 ## Summary
-Pre-baked machine images with known-good configuration. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Golden images are pre-baked, hardened base images — OS, security patches, agents, and defaults — that instances are created from; image baking is the pipeline (Packer, image builders, CI) that builds and publishes them. Baking moves provisioning work to build time, so boot is fast, deterministic, and consistent with the security baseline.
 
 ## Details
-- Definition anchor: Pre-baked machine images with known-good configuration.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: a build pipeline starts from a base OS image, applies a scripted provisioner (Packer: install packages, apply CIS hardening, install agents, enable services, set timezone and SSH config), runs validation and scans, then publishes a versioned, signed image to a registry; instance creation references the exact image version.
+- Concrete example: a quarterly bake produces `ubuntu-24.04-cis-2026.08` from a versioned Packer template; a security patch forces a new bake rather than in-place updates; CI runs `packer validate` and vulnerability scans before publishing; autoscaling uses the latest golden image so new instances are already patched.
+- Failure modes: stale golden images — instances born old because the bake is infrequent or the autoscaler references an old version; in-place patching drift undermining the bake (patch at instance level too, or rebuild); image bloat from baked-in but unused packages; a bad bake propagating a broken config to every new instance (test images before promoting to prod); bake secrets embedded in the image.
+- Tradeoffs: baking makes boot fast and consistent but slows change — every package update needs a bake cycle; the alternative, first-boot configuration, is more flexible but slower and less consistent; the common split is a small golden image for the OS baseline plus first-boot config for instance-specific state.
+- Operational notes: version and sign images, scan them in CI, test a boot before promotion, and track which image versions run where.
+- RSIS3 relevance: cosmos services benefit from the same discipline — a known, reproducible base for the daemon and dashboard serving ensures new instances behave like tested ones.
 
 ## Related
 - [[wiki/devops-infra/container-images-oci|Container Images (OCI)]] — related coverage in the same cluster

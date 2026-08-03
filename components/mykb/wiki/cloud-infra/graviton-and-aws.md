@@ -4,25 +4,27 @@ title: "Graviton & AWS"
 description: "AWS custom ARM silicon for cost-effective compute"
 tags: ["graviton", "aws", "arm", "compute"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Graviton & AWS
 
 ## Summary
-AWS custom ARM silicon for cost-effective compute. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+AWS Graviton processors are ARM-based instances (M6g, C6g, R6g, and successors) built for price-performance; AWS claims up to 40% better price-performance over comparable x86 for many workloads. Porting, licensing, and measurement determine whether the claim holds for you.
 
 ## Details
-- Definition anchor: AWS custom ARM silicon for cost-effective compute.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: Graviton3/4 deliver higher per-core performance and lower power than the prior generation; instances use the same Nitro stack (EBS, networking) so the management surface is identical; software runs as arm64 binaries — containers, JIT runtimes, and most compiled code port with a rebuild; native x86 dependencies (some databases, closed-source agents, legacy binaries) do not.
+- Concrete example: a Node/Python/Go service fleet rebuilds its containers for arm64, moves to Graviton, and measures 25-35% cost reduction at the same p95 latency; a Java app with an x86-only native agent stays on x86 until the vendor ships arm64. Lambda and Fargate also offer arm64 architecture, extending the same economics to serverless.
+- Failure modes: assuming portability — C/C++ with SIMD intrinsics, assembly, and closed binaries silently fail or misbehave on arm64; licensing priced per vCPU/socket that penalizes Graviton's core counts; dev machines on x86 masking build issues until deploy; and measuring only throughput while tail latency regresses on specific workloads.
+- Operational tradeoffs: Graviton is the default starting point for new greenfield workloads on AWS; the migration path is per-service: rebuild, test in a shadow fleet, compare real metrics, then cut over. Keep a small x86 baseline for compatibility-bound services and revisit as vendor support improves.
+- RSIS3/mykb relevance: the wiki records per-service Graviton migration results, so the loop's capacity planner applies ARM first where telemetry already proved the win.
+- Shadow fleet: validate Graviton in a shadow deployment before cutover; real traffic exposes the portability issues benchmarks miss.
 
 ## Related
-- [[wiki/cloud-infra/cloud-providers-aws-azure-gcp|Cloud Providers: AWS, Azure, GCP]] — related coverage in the same cluster
-- [[wiki/cloud-infra/aws-vpc-design|AWS VPC Design]] — related coverage in the same cluster
-- [[wiki/cloud-infra/parameter-stores-aws-ssm-azure-keyvault-gcp-secretmanager|Cloud Parameter Stores]] — related coverage in the same cluster
-- [[wiki/infrastructure/aws-msk-and-managed-kafka|Aws Msk And Managed Kafka]] — related coverage in the same cluster
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/cloud-infra/cloud-providers-aws-azure-gcp|Cloud Providers: AWS, Azure, GCP]]
+- [[wiki/cloud-infra/aws-vpc-design|AWS VPC Design]]
+- [[wiki/cloud-infra/parameter-stores-aws-ssm-azure-keyvault-gcp-secretmanager|Cloud Parameter Stores]]
+- [[wiki/infrastructure/aws-msk-and-managed-kafka|Aws Msk And Managed Kafka]]
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]
