@@ -22,5 +22,3 @@ Cosign and Sigstore bring software signing to the container ecosystem without ke
 - RSIS3 relevance: RSIS3's own builds and artifacts (generated dashboards, packaged tools) benefit from signed provenance so later loops know exactly which code produced which output.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

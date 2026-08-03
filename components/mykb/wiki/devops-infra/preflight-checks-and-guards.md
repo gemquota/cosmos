@@ -23,5 +23,3 @@ Preflight checks and guards are validation gates that run before an action — a
 ## Related
 - [[wiki/devops-infra/deploy-safety-checks|Deploy Safety Checks]]
 - [[wiki/devops-infra/deployment-verification-synthetic-checks|Deployment Verification & Synthetic Checks]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

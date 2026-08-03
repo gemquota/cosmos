@@ -20,6 +20,7 @@ PostgreSQL's tsvector/tsquery types implement full-text search inside SQL: text 
 - Operational notes: add a generated column for the tsvector, index it with GIN, and test ranking on real queries.
 - RSIS3 relevance: a Postgres-backed mykb could add FTS beside its metadata columns, with filtering in the same query — search without a new system.
 
+## Practice
 - Rebuild the tsvector on update with triggers or generated columns so the index never silently goes stale.
 ## Related
 - [[wiki/data-storage/sqlite-fts5|SQLite FTS5]] — the embedded FTS alternative

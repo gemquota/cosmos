@@ -26,4 +26,3 @@ SSH tunneling carries TCP traffic inside an encrypted SSH session, letting you r
 - [[wiki/cloud-infra/vpn-split-tunneling|VPN Split Tunneling]]
 - [[wiki/infrastructure/ssh-key-management|SSH Key Management]]
 - [[wiki/os-shell/nmap-and-port-scanning|nmap & Port Scanning]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]

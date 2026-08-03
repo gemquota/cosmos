@@ -24,5 +24,4 @@ SCSI is a command/response architecture that defines how hosts issue I/O to stor
 
 ## Related
 - [[wiki/cloud-infra/http-protocols|HTTP Protocols]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/cloud-infra/object-storage-protocols|Object Storage Protocols]]

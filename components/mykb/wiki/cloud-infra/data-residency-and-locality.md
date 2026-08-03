@@ -17,7 +17,7 @@ Data residency means keeping data in specific jurisdictions to satisfy law, comp
 - Concrete example: a European health app keeps PII in eu-central with backups in eu-west, disables cross-border replication, and routes support tooling through region-scoped access; a global analytics pipeline replicates only aggregates across regions while raw data stays in the region of origin; latency-critical auth caches replicate keys, not the whole dataset.
 - Failure modes: assuming "region" equals residency (support access, logs, and metadata may leave the region); accidentally replicating data to other regions via misconfigured backups or CDNs; and latency designs that ignore residency, forcing round-trips to a far region. Residency and latency can conflict — a distributed team serving one region with mandatory local storage needs a real strategy.
 - Operational tradeoffs: residency compliance costs redundancy options and speed; locality buys latency at data-architecture complexity. Document data classification per dataset, map it to region/residency commitments, and test that flows (logs, telemetry, vendor integrations) stay within the allowed boundaries. Re-verify vendor subprocessors annually, since silent data-flow changes can violate commitments.
-- RSIS3/mykb relevance: the wiki's deployment is single-region with residency notes per dataset; this node is the checklist the loop consults before adding replication or third-party processing.
+- RSIS3/mykb relevance: the wiki's deployment would be single-region with residency notes per dataset; this node would be the checklist the loop consults before adding replication or third-party processing.
 
 ## Related
 - [[wiki/devops-infra/envoy-data-plane|Envoy Data Plane]]

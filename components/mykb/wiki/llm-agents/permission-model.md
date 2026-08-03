@@ -17,7 +17,7 @@ A permission model defines what an agent may do — which tools, which scopes, w
 - Concrete example: a wiki agent has read/write on the notes directory but read-only on the config; a deployment agent requires a separate grant for production credentials, granted per session; an analysis agent can call search APIs but not external send endpoints. The failure pattern: broad grants ("everything") that make the permission model decorative.
 - Failure modes: prompt-level "permissions" that the model can be talked out of (enforce at runtime); grants that outlive sessions (expiry and revocation); tool access without parameter constraints (a write tool that can target anywhere); and permission sprawl accumulating as new tools ship.
 - Operational tradeoffs: a strict permission model costs configuration and review; it pays in safety, auditability, and the ability to grant autonomy safely. The standard is deny-by-default, tool-boundary enforcement, scoped grants with expiry, and a permission audit trail.
-- RSIS3/mykb relevance: the wiki's agents run under a deny-by-default permission model enforced at the tool boundary, with every grant versioned in the environment config.
+- RSIS3/mykb relevance: the wiki's agents would run under a deny-by-default permission model enforced at the tool boundary, with every grant versioned in the environment config.
 - Parameter scoping: constrain tool arguments (paths, endpoints, sizes) in the grant, not just the tool name; an unrestricted write tool grant is a full-access grant in disguise.
 - Session scoping: tie grants to session duration and purpose; a permission granted for one task should not linger for the next.
 

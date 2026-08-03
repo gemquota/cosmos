@@ -18,7 +18,7 @@ Test set discipline means the final test data is never used for training, tuning
 - Failure modes: test leakage through shared corpora (retrieval databases, few-shot examples scraped from test data); peeking during iterative evaluation and then reporting as final; test sets reused across model versions, gradually memorized; data leakage through the human loop (reviewers see test examples); splitting errors where test rows also appear in training.
 - Tradeoffs: strict holdout costs a chunk of scarce data and delays final feedback; the alternative, iterating on everything, produces better-looking numbers that mean nothing; the mature pattern is a locked test set, a documented evaluation protocol, and contamination checks.
 - Operational notes: store the test set separately, log every evaluation run, and audit for contamination before reporting.
-- RSIS3 relevance: the pass verifier runs on files the generator never tuned against — the same holdout discipline applied to the wiki's eval artifacts.
+- RSIS3 relevance: the pass verifier would run on files the generator never tuned against — the same holdout discipline applied to the wiki's eval artifacts.
 
 ## Related
 - [[wiki/decisions/eval-splits|Eval Splits]] — the structure

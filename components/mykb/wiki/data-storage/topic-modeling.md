@@ -21,6 +21,7 @@ Topic modeling learns a small set of latent topics — distributions over words 
 - Operational notes: evaluate topic coherence, seed runs for reproducibility, and review topic labels before they drive curation.
 - RSIS3 relevance: topic models over mykb pages could propose taxonomy branches or flag pages that fit no topic — the thematic map RSIS3 uses for gap analysis.
 
+## Practice
 - Combine topic weights with human review before using them to reorganize taxonomy.
 ## Related
 - [[wiki/data-storage/latent-dirichlet-allocation|Latent Dirichlet Allocation]] — the canonical topic model

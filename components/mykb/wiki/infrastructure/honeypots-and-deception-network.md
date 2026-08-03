@@ -24,4 +24,3 @@ Honeypots are decoy systems designed to be attacked: fake services, fake credent
 - [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]]
 - [[wiki/infrastructure/network-interface-bonding|Network Interface Bonding]]
 - [[wiki/infrastructure/network-policy|Network Policy]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]

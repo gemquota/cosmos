@@ -21,4 +21,3 @@ select, poll, and epoll are the Linux APIs for waiting on many file descriptors 
 ## Related
 - [[wiki/os-shell/aio-and-epoll|AIO & epoll]]
 - [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]

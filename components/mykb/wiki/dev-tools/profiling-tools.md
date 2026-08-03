@@ -20,6 +20,7 @@ Profiling tools attach to a process and report where time or memory goes: sampli
 - Operational notes: collect profiles under representative load, keep symbols in sync, and automate profile capture during incidents.
 - RSIS3 relevance: profile the agent loop to find where token and latency budgets are actually spent — the same measure-before-change discipline for loop efficiency.
 
+## Practice
 - Profile both hot spots and cold waits: a service can be slow because it is busy or because it is blocked.
 ## Related
 - [[wiki/dev-tools/profilers|Profilers]]

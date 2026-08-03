@@ -18,7 +18,7 @@ Stateful application patterns cover how workloads with persistent data run on Ku
 - Failure modes: scaling down accidentally deleting the PVC (and data) when the volumeClaimTemplate is removed; node loss stranding local volumes — data pinned to a dead node; rescheduling races where two replicas briefly share a volume; ordered startup making rollouts slow when startup is sequential; stateful sets with no backup plan, where PVC deletion means data loss.
 - Tradeoffs: StatefulSets buy stable identity and storage at the cost of operational complexity — scaling, upgrades, and failure recovery are all harder than for stateless Deployments; the alternative, stateless-plus-external-store (database-as-a-service, object storage), trades control for simplicity; the decision is whether the workload truly needs node-local, ordered state or can outsource it.
 - Operational notes: protect PVCs with explicit reclaim policies, back up statefully, test scale-down and node-loss scenarios, and prefer operators for complex lifecycles.
-- RSIS3 relevance: the wiki store and checkpoint volume are exactly the stateful workload — stable identity, durable PVCs, and a rehearsed recovery path.
+- RSIS3 relevance: the wiki store and checkpoint volume would be exactly the stateful workload — stable identity, durable PVCs, and a rehearsed recovery path.
 
 ## Related
 - [[wiki/devops-infra/web-application-firewalls|Web Application Firewalls]]

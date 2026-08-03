@@ -21,7 +21,6 @@ Feature flags decouple deployment from release: code ships behind a flag, and th
 - RSIS3 relevance: RSIS3's experimental strategies are natural feature flags — evaluate a new L2 behavior for a fraction of tasks, compare telemetry, and kill-switch it if pulses degrade.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/os-shell/systemd-and-init-systems|systemd & Init Systems]]
 - [[wiki/infrastructure/intrusion-detection-systems|Intrusion Detection Systems]]
 - [[wiki/devops-infra/dotenv-vs-config-systems|dotenv vs Config Systems]]

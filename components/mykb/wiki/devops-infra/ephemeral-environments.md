@@ -23,7 +23,5 @@ Ephemeral environments are short-lived, on-demand copies of the stack created pe
 
 ## Related
 - [[wiki/shell-environment/shell-environments-and-rc-files|Shell Environments & RC Files]]
-- [[wiki/devops-infra/preview-environments|Preview Environments]]
 - [[wiki/devops-infra/development-environments-as-code|Development Environments as Code]]
 - [[wiki/infrastructure/data-environments-dev-staging-prod|Data Environments Dev Staging Prod]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

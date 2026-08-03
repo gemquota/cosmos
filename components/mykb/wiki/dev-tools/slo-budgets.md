@@ -20,6 +20,7 @@ An SLO budget divides the allowed error budget (for example 0.1% unavailability 
 - Operational notes: track burn in dashboards, review budget spend after incidents, and tie release gates to remaining budget.
 - RSIS3 relevance: treat wiki-link breakage as budget spend on the knowledge SLO — the same numeric discipline for the wiki's reliability.
 
+## Practice
 - Align the budget window with the business calendar so monthly reviews and monthly budgets tell the same story.
 ## Related
 - [[wiki/devops-infra/error-budgets|Error Budgets]]

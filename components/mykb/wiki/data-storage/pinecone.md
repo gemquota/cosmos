@@ -20,6 +20,7 @@ Pinecone is a fully managed vector database: upload embeddings, define namespace
 - Operational notes: keep the source of truth (markdown, embeddings pipeline) portable, monitor index freshness and query latency, and design metadata filters before data volume grows.
 - RSIS3 relevance: a managed vector backend would let mykb offload embedding search while keeping its markdown source of truth — the zero-ops path for production retrieval.
 
+## Practice
 - Keep embeddings and metadata exportable so a future self-hosted move does not require re-indexing from scratch.
 ## Related
 - [[wiki/data-storage/vector-databases|Vector Databases]] — the category

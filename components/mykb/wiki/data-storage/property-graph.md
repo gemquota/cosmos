@@ -22,8 +22,12 @@ A property graph stores nodes and edges that both carry key-value properties, wi
 - Query languages like Cypher and Gremlin traverse the graph directly, which makes path-based questions natural.
 - Property graphs are the model behind most graph databases (Neo4j, Amazon Neptune) and fit domain models where relationships are the core value.
 - **Worked example / comparison** — Worked example — the wiki's link graph is a property graph: articles are nodes with title and status properties, wikilinks are edges with a 'why' property from the Related annotation.
-- For mykb, property-graph is documented as the model the wiki's own graph tooling uses, in contrast to the RDF/triplestore family.
+- For mykb, property-graph is documented as the model the wiki's own graph tooling would use, in contrast to the RDF/triplestore family.
 
+- Fit for the wiki: articles, statuses, and 'why' annotations map naturally onto nodes, properties, and typed edges, which is why the model fits the corpus's retrieval needs.
+- Model rationale: property graphs favor traversal and operational workloads, while RDF suits strict, standards-based semantics; the wiki's documented model is the property graph, in contrast to the triplestore family.
+- Graph tooling intent: the wiki's own graph tooling would use the property-graph model, with each wikilink carrying a 'why' property from the Related annotation, so traversal-based queries stay natural.
+- Limits: schema-optional models need index and validation discipline, so the graph should be checked for missing or malformed properties on the same cadence as other corpus invariants.
 ## Related
 - [[wiki/data-storage/triplestore|Triplestore]]
 - [[wiki/data-storage/knowledge-graph|Knowledge Graph]]

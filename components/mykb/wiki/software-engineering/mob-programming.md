@@ -17,7 +17,7 @@ Mob programming puts the whole team on one task, one screen: a driver types whil
 - Concrete example: a team mobs a gnarly migration that touches every module — one week of mobbing transfers the architecture to everyone and produces review-free code (it was reviewed continuously); a new hire's onboarding mobs a real feature instead of reading docs. The anti-pattern: mobbing simple, well-understood work that one person could do faster.
 - Failure modes: mob fatigue and diminished returns beyond a few hours; dominant voices reducing participation; mobbing everything, starving parallel work; and sessions without a goal becoming unproductive meetings.
 - Operational tradeoffs: mobbing trades throughput for shared understanding and quality — the right tool for complex, cross-cutting, or high-risk work; the pattern is mob the spikes and migrations, pair the features, solo the trivia. Rotate drivers and timebox religiously.
-- RSIS3/mykb relevance: the wiki's hardest refactors are mobbed in real-time sessions, and the resulting decisions land in syntheses so the knowledge outlives the session.
+- RSIS3/mykb relevance: the wiki's hardest refactors would be mobbed in real-time sessions, and the resulting decisions would land in syntheses so the knowledge outlives the session.
 - Session design: define the goal and the exit criteria before starting; mobbing without a target turns into a long meeting with a keyboard.
 - Participation hygiene: enforce rotating drivers on a timer and invite the quiet voices in; the value is the collective review, which only exists if everyone contributes.
 

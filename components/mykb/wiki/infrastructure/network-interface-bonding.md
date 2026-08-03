@@ -24,4 +24,3 @@ Network interface bonding combines multiple physical NICs into one logical inter
 - [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]]
 - [[wiki/infrastructure/network-function-virtualization|Network Function Virtualization]]
 - [[wiki/infrastructure/network-policy|Network Policy]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]

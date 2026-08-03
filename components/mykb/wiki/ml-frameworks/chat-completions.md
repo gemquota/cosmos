@@ -17,7 +17,7 @@ The Chat Completions API is the dominant hosted LLM interface: a conversation as
 - Concrete example: a chat UI maps its conversation to messages and appends each assistant turn; a RAG loop assembles retrieved context into the system message and questions into user messages; a tool-using agent includes the tool schema and executes the returned tool_calls, appending results as tool messages.
 - Failure modes: role misuse (system content treated as untrusted instructions when prompt-injected); length miscalculation (max tokens counting output only); temperature/top_p interplay misunderstood (they are not interchangeable); and relying on the model to respect message boundaries — role semantics are a convention, so treat all content as untrusted.
 - Operational tradeoffs: chat-shaped prompting is the compatibility layer of the LLM ecosystem — same shape across providers and local runtimes via adapters; the trade is verbosity and context management versus a single-prompt design. Track tokens per role and cache static prefixes for cost control.
-- RSIS3/mykb relevance: the wiki's loop targets OpenAI-compatible chat endpoints across hosted and local runtimes, so one prompting convention spans experiments.
+- RSIS3/mykb relevance: the wiki's loop would target OpenAI-compatible chat endpoints across hosted and local runtimes, so one prompting convention spans experiments.
 - Streaming contract: with stream=true the response is delta events ending with a final chunk carrying usage; clients must handle partial content, cancellation, and the no-usage edge case.
 - Retry and backoff: provider rate limits and overload errors (429/5xx) are the norm at scale — implement jittered backoff and Retry-After honoring rather than assuming availability.
 

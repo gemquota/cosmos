@@ -20,8 +20,12 @@ Technical debt is the gap between the code that exists and the code you would wr
 - Pay down in the work you touch: refactor-as-you-go (boy scout rule) compounds faster than big rewrites.
 - Debt is not always bad: it is rational when the interest is lower than the cost of paying it now.
 - For the mykb bundle, debt includes unverified sources, duplicate concepts, and stale links — inventory and schedule them.
+- Debt measurement is the first step: count unverified sources, duplicate concepts, and stale links so the inventory has a size and a trend, not just a mood.
+- Scheduling is what separates managed debt from shame: every item gets an owner, a review date, and a payoff estimate, and capacity is budgeted in each cycle rather than hoping a cleanup sprint appears.
+- Refactor-as-you-go compounds: fixing debt in the work you touch keeps the growth rate below the payoff rate.
+- The burn-down is the management view: a shrinking backlog signals that interest payments are under control; a growing one signals that new shortcuts outpace repayments.
 
-Worked example — the wiki has 200 unverified source links. Each month they age, and every link-check pass grows slower. The team budgets 10% of capacity to verification and tracks the debt in the backlog with a burn-down.
+Worked example — the wiki would have 200 unverified source links. Each month they would age, and every link-check pass would grow slower. The team would budget 10% of capacity to verification and track the debt in the backlog with a burn-down.
 
 ## Related
 - [[wiki/software-engineering/refactoring-techniques|Refactoring Techniques]]

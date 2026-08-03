@@ -27,6 +27,4 @@ Sub-agent delegation is the pattern where a main agent hands a well-scoped subta
 - [[wiki/llm-agents/handoff-protocol|Handoff Protocol]] — the transfer contract between agents
 - [[wiki/llm-agents/expert-consultation|Expert Consultation]] — delegation as a question to a specialist
 - [[wiki/llm-agents/agent-personas|Agent Personas]] — role framing for delegated work
-- [[raw/archive/session-artifacts-2026-07/tools/invoke-agent-1-2|invoke_agent — RSIS3's sub-agent invocation tool
-- [[raw/archive/session-artifacts-2026-07/tools/spawn-agent-1-2|spawn_agent — RSIS3's sub-agent spawn tool
 - [[wiki/syntheses/knowledge-system|Knowledge System Overview]] — shared knowledge passed during delegation

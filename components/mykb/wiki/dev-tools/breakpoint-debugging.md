@@ -20,6 +20,7 @@ Breakpoint debugging pauses a program at a line or condition so you can inspect 
 - Operational notes: pair breakpoint debugging with reproducible tests, and know the post-mortem path for production crashes.
 - RSIS3 relevance: interactive breakpoints are how an agent debugs a failing tool call in the loop — pause at the call, inspect inputs, step into the tool.
 
+## Practice
 - Operational notes: keep debugger and build in sync (same source revision and symbols), and script breakpoint sessions for reproducible repros instead of relying on memory.
 ## Related
 - [[wiki/dev-tools/debuggers|Debuggers]]

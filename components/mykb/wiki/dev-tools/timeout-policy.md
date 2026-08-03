@@ -20,6 +20,7 @@ A timeout policy fixes the maximum wait for every call — HTTP, DB, lock, model
 - Operational notes: monitor timeout-hit rates, size from p99 latency data, and rehearse the behavior when a dependency crosses its timeout.
 - RSIS3 relevance: every agent tool call needs a timeout so one hung tool does not stall the whole run — the bounded-failure pattern RSIS3 applies to all its calls.
 
+## Practice
 - Review timeouts as part of code review, since a missing or wrong timeout is a reliability bug like any other.
 ## Related
 - [[wiki/api-protocols/timeouts|Timeouts]]

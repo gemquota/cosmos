@@ -24,4 +24,3 @@ Hub-spoke and mesh are the two poles of interconnect design: hub-spoke routes al
 - [[wiki/devops-infra/cluster-federation-vs-hub-spoke|Federation vs Hub-Spoke]]
 - [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]]
 - [[wiki/infrastructure/service-mesh|Service Mesh]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]

@@ -29,4 +29,3 @@ Quantization stores weights in lower-precision formats (INT8, INT4, or mixed) to
 - [[wiki/ai-ml/llama|Llama]] — Model family commonly run quantized
 - [[wiki/ai-ml/mistral|Mistral]] — Model family commonly run quantized
 - [[wiki/concepts/mykb-research-report|mykb Research Report: Personal LLM Wiki Systems — Methodologies, Architectures & Integration Blueprint]] — Local inference research in the mykb blueprint
-- [[raw/archive/session-artifacts-2026-07/topics/python-2|python — Quantization tooling lives in the Python ecosystem

@@ -24,7 +24,7 @@ Device fragmentation is the diversity of hardware and software in the wild: OS v
 - [[wiki/web-platforms/device-detection|Device Detection]] — adjacent concept in this wiki
 - [[wiki/web-platforms/user-agent-parsing|User-Agent Parsing]] — adjacent concept in this wiki
 - [[wiki/web-platforms/responsive-breakpoints|Responsive Breakpoints]] — adjacent concept in this wiki
-- [[wiki/web-platforms/dvh-svh|Dynamic and Small Viewport Units]] — adjacent concept in this wiki
+- [[wiki/web-platforms/vw-vh|vw and vh Units]] — adjacent concept in this wiki
 - [[wiki/mobile-platform/adaptive-layouts|Adaptive Layouts]] — existing coverage
 - [[wiki/mobile-platform/tablet-support|Tablet Support]] — existing coverage
 - [[wiki/android-core/density-buckets|Density Buckets]] — existing coverage

@@ -28,5 +28,4 @@ Jailbreaks are crafted prompts that circumvent refusal and safety training to ge
 - [[wiki/prompt-engineering/refusal-behaviour|Refusal Behaviour]] — What jailbreaks are designed to defeat
 - [[wiki/ai-ml/guardrails|Guardrails]] — Runtime defenses against jailbreak attempts
 - [[wiki/prompt-engineering/safety-tuning|Safety Tuning]] — The training-side defense jailbreaks target
-- [[raw/archive/session-artifacts-2026-07/topics/security|security — Jailbreaks as a security-domain threat
 - [[wiki/concepts/mykb-research-report|mykb Research Report: Personal LLM Wiki Systems — Methodologies, Architectures & Integration Blueprint]] — Alignment research context for attack evolution

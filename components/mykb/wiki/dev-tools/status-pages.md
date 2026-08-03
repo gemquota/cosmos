@@ -20,6 +20,7 @@ Status pages tell users and internal teams whether a service is up, degraded, or
 - Operational notes: rehearse status updates in game days, keep components aligned with real dependencies, and archive history for reporting.
 - RSIS3 relevance: a wiki status page could show sync health between raw captures and curated articles — the same availability communication for the knowledge pipeline.
 
+## Practice
 - Automate component health feeds, but keep a human-confirmed update step so the page never cries wolf.
 ## Related
 - [[wiki/devops-infra/incident-response|Incident Response]]

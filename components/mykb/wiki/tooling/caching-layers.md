@@ -19,7 +19,7 @@ Caching layers place fast storage at every level of the stack — browser, CDN, 
 - Cache hits hide problems: measure miss rates per layer, not just overall hit ratio. A high aggregate hit ratio can mask a specific layer's miss storm — if the application cache misses on every request because the key includes a random value, the database takes the load while the headline ratio looks healthy.
 - Failure modes: cache stampede, where a key expires and thousands of requests hit the origin simultaneously (mitigated by request coalescing and jittered TTLs); thundering-herd invalidation, where a purge empties a layer at once; stale reads after writes, when invalidation is missed; and unbounded caches that evict hot data for cold data.
 - Tradeoffs: each cache layer adds complexity, memory cost, and a consistency contract, but it also removes a network hop and an origin request per hit; the right number of layers is the minimum that keeps origin load and latency within budget — more layers than that is complexity without benefit.
-- mykb relevance: the wiki serves from a multi-layer cache so article reads never hit disk; the same layering applies to the knowledge graph and index, with the lesson that invalidation on write is what keeps the layers honest.
+- mykb relevance: the wiki would serve from a multi-layer cache so article reads never hit disk; the same layering would apply to the knowledge graph and index, with the lesson that invalidation on write is what keeps the layers honest.
 
 ## Related
 - [[wiki/tooling/cache-invalidation|Cache Invalidation]]

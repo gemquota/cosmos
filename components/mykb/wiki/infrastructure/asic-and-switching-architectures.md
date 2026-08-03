@@ -22,4 +22,3 @@ ASIC-based switching architectures use fixed-function silicon — application-sp
 ## Related
 - [[wiki/cloud-infra/availability-zone-architectures|Availability Zone Architectures]]
 - [[wiki/os-shell/context-switching|Context Switching]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]

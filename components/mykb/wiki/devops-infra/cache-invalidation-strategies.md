@@ -26,5 +26,3 @@ Cache invalidation decides when cached copies become stale and how they get refr
 - [[wiki/devops-infra/progressive-sync-strategies|Progressive Sync Strategies]]
 - [[wiki/cloud-infra/cloud-migration-strategies|Cloud Migration Strategies]]
 - [[wiki/cloud-infra/snapshot-strategies|Snapshot Strategies]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

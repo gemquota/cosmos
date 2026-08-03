@@ -24,5 +24,3 @@ Content hashing and ETags let caches validate freshness without transferring the
 - [[wiki/infrastructure/ipfs-and-content-addressing|IPFS & Content Addressing]]
 - [[wiki/cloud-infra/content-delivery-networks|Content Delivery Networks]]
 - [[wiki/os-shell/checksums-and-hashing-tools|Checksums & Hashing]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

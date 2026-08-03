@@ -25,5 +25,3 @@ Retry policies define when, how often, and with what backoff a failed operation 
 - [[wiki/devops-infra/network-policies-kubernetes|Kubernetes Network Policies]]
 - [[wiki/devops-infra/escalation-policies|Escalation Policies]]
 - [[wiki/cloud-infra/snapshot-lifecycle-policies|Snapshot Lifecycle Policies]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

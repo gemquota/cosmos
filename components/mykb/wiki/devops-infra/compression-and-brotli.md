@@ -24,5 +24,3 @@ Compression reduces transfer size for text payloads. Brotli is Google's modern a
 ## Related
 - [[wiki/infrastructure/compression-in-storage|Compression in Storage]]
 - [[wiki/os-shell/compression-tools|Compression Tools]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

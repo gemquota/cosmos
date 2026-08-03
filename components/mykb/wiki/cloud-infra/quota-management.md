@@ -17,7 +17,7 @@ Cloud quotas (limits) cap resources per account/region — instances, IPs, API c
 - Concrete example: an autoscaling group hits the vCPU quota during a spike and cannot launch — the incident compounds because the fix (raise quota) needs a support request; a CI pipeline hits the API rate limit and fails builds; a storage quota blocks a backup job silently, so retention gaps appear months later.
 - Failure modes: discovering quotas during incidents; quota requests taking days for large raises; per-region quotas duplicating (forgot the new region); and confusing soft capacity quotas with rate limits — each needs its own headroom plan.
 - Operational tradeoffs: raising quotas costs nothing but planning (and sometimes approval); the discipline is a quota registry: what is used, headroom, owner, and review cadence. Automate quota monitoring (usage/limit metrics) and pre-raise before launches, not during them.
-- RSIS3/mykb relevance: the wiki's quota registry tracks per-service limits and headroom, so the loop's capacity plans include quota raises in the pre-launch checklist.
+- RSIS3/mykb relevance: the wiki's quota registry would track per-service limits and headroom, so the loop's capacity plans include quota raises in the pre-launch checklist.
 - Request patterns: batch quota increases with usage projections (providers ask for justification); keep a template with peak measurements ready so incident-time raises are not blocked by paperwork.
 - Rate-limit planning: API rate quotas need headroom for retries and bursts; design clients with exponential backoff and monitor 429/403 rate-limit responses as a health signal.
 

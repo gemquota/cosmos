@@ -25,4 +25,3 @@ Contract testing validates that a consumer and provider agree on the message sha
 - [[wiki/infrastructure/blue-green-deployments|Blue-Green Deployments]]
 - [[wiki/infrastructure/canary-deployments|Canary Deployments]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

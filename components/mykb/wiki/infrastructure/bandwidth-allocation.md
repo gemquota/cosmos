@@ -24,5 +24,4 @@ Bandwidth allocation is the problem of dividing limited link capacity among comp
 - [[wiki/cloud-infra/cost-of-bandwidth|Cost of Bandwidth]]
 - [[wiki/os-shell/dhcp-and-ip-allocation|DHCP & IP Allocation]]
 - [[wiki/os-shell/memory-allocation|Memory Allocation]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

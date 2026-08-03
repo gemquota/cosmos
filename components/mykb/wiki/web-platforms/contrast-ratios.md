@@ -25,7 +25,7 @@ Contrast ratio quantifies the luminance difference between text and background, 
 - [[wiki/web-platforms/css-variables-theming|CSS Variables and Theming]]
 - [[wiki/web-platforms/color-blind-considerations|Color Blind Accessibility]]
 - [[wiki/web-platforms/color-spaces|CSS Color Spaces]]
-- [[wiki/web-platforms/srgb-vs-p3|sRGB vs Display P3]]
+- [[wiki/web-platforms/color-spaces|CSS Color Spaces]]
 - [[wiki/web-platforms/css-layout|CSS Layout]]
 - [[wiki/mobile-platform/dark-mode-support|Dark Mode Support]]
 - [[wiki/web-platforms/web-accessibility|Web Accessibility]]

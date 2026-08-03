@@ -21,9 +21,12 @@ A devcontainer is a Docker container configured via a `devcontainer.json` that b
 - The specification (devcontainer.json plus a Dockerfile or image) makes onboarding deterministic: clone, open, and the environment is identical to the maintainer's.
 - The tradeoff is discipline: the environment must be defined entirely in the container, which surfaces 'works on my machine' problems as configuration errors.
 - Devcontainers fit the reproducible-builds story and are the standard for editor-integrated (VS Code / Codespaces) development.
-- **Worked example / comparison** — Worked example — the wiki's devcontainer pins Python, Node, and the markdown toolchain versions; a new contributor opens the repo and runs the build without installing anything.
+- **Worked example / comparison** — Worked example — the wiki's devcontainer would pin Python, Node, and the markdown toolchain versions; a new contributor would open the repo and run the build without installing anything.
 - For mykb, devcontainers are documented as the environment half of reproducible development, complementing reproducible-builds.
 
+- The discipline cost: the environment must be defined entirely in the container; anything outside it is 'works on my machine' again, which is why the container spec is the contract.
+- Fit with reproducible builds: devcontainers are the environment half of reproducible development; the standing rule is that a contributor's environment is identical to the maintainer's, not merely similar.
+- Agent sessions: the same containerized environment would let resumed agent work start from a known toolchain instead of an ad-hoc shell, which is the reproducibility property the loop relies on.
 ## Related
 - [[wiki/software-engineering/developer-experience|Developer Experience]]
 - [[wiki/software-engineering/onboarding-docs|Onboarding Docs]]

@@ -22,5 +22,3 @@ hostPath mounts a node directory into a pod; subPath mounts a single file or dir
 - RSIS3 relevance: any host-mounted state in the cosmos deployment needs the same care — know which node owns it and what survives restarts.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

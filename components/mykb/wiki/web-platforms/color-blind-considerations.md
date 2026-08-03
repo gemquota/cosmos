@@ -25,7 +25,7 @@ Color blindness affects roughly 8% of men and 0.5% of women, so interfaces must 
 ## Related
 - [[wiki/web-platforms/css-variables-theming|CSS Variables and Theming]]
 - [[wiki/web-platforms/color-spaces|CSS Color Spaces]]
-- [[wiki/web-platforms/srgb-vs-p3|sRGB vs Display P3]]
+- [[wiki/web-platforms/color-spaces|CSS Color Spaces]]
 - [[wiki/web-platforms/color-mix|color-mix() CSS]]
 - [[wiki/web-platforms/css-layout|CSS Layout]]
 - [[wiki/mobile-platform/dark-mode-support|Dark Mode Support]]

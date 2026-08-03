@@ -21,4 +21,3 @@ io_uring is Linux's modern asynchronous I/O interface, designed to minimize the 
 ## Related
 - [[wiki/infrastructure/io-latency-and-iops|IO Latency & IOPS]]
 - [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]

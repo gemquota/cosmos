@@ -17,7 +17,7 @@ Certificate pinning binds a client to a specific certificate or public key, reje
 - Concrete example: a banking app pins its API's intermediate CA so a fraudulent certificate from any other CA is rejected; an internal service mesh pins its own CA, making compromised public CAs irrelevant. The failure mode: when the pinned key rotates (cert renewal, provider change) without a client update, every connection fails — a self-inflicted outage.
 - Failure modes: pinning the leaf instead of the SPKI (leaf renewals break the pin); pin expiry scenarios without a release pipeline fast enough to update clients; long-lived IoT devices that cannot be updated; and pinning third-party endpoints you do not control, guaranteeing breakage on their rotation.
 - Operational tradeoffs: pinning buys CA-independence for high-value, updateable clients; for everything else, standard PKI plus certificate transparency monitoring and short-lived certs is the accepted defense. Prefer pinning the CA/SPKI over leaf pins and design a dual-pin rollout (new pin shipped before old pin expires).
-- RSIS3/mykb relevance: the wiki's internal tooling pins its private CA for API clients, with a rotation runbook recorded here so the loop never pins a leaf certificate.
+- RSIS3/mykb relevance: the wiki's internal tooling would pin its private CA for API clients, with a rotation runbook recorded here so the loop never pins a leaf certificate.
 - Rollout design: ship the new pin alongside the old (dual-pin) before rotation; a single-pin cutover is an outage scheduled around the cert's expiry. Monitor pin-verification failures as an early warning when a rotation goes wrong.
 
 ## Related

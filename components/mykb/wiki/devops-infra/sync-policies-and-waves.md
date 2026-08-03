@@ -26,5 +26,3 @@ Sync policies and waves control how Argo CD and Flux apply changes to a cluster:
 - [[wiki/devops-infra/network-policies-kubernetes|Kubernetes Network Policies]]
 - [[wiki/devops-infra/escalation-policies|Escalation Policies]]
 - [[wiki/cloud-infra/snapshot-lifecycle-policies|Snapshot Lifecycle Policies]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

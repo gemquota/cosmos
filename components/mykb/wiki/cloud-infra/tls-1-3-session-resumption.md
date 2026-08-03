@@ -17,7 +17,7 @@ TLS session resumption skips the full handshake on repeat connections: session I
 - Concrete example: a mobile client that connects frequently (every few minutes) with TLS 1.3 resumption saves a full handshake (and its latency on high-RTT links) per reconnect; an HTTP/2 pool that stays warm rarely needs resumption at all; 0-RTT early data lets a client send its first request with the ClientHello — ideal for latency-sensitive APIs, dangerous for non-idempotent ones.
 - Failure modes: 0-RTT replay — captured early data can be replayed (must be idempotent or replay-protected); ticket keys unrotated, allowing long-lived session forgery; resumption sessions leaking across clients on shared infrastructure; and ticket size or policy mismatches that silently fall back to full handshakes, hiding the performance regression.
 - Operational tradeoffs: resumption trades a little security surface (ticket theft window) for significant latency savings on reconnect-heavy paths; the standard is short ticket lifetimes, rotating ticket keys, and 0-RTT only for safe, idempotent requests. Measure handshake RTT per client population to justify the settings, and size the anti-replay cache to the early-data window.
-- RSIS3/mykb relevance: the wiki's API layer enables TLS 1.3 resumption with short-lived tickets; this note records the ticket policy the loop verifies after certificate or proxy changes.
+- RSIS3/mykb relevance: the wiki's API layer would enable TLS 1.3 resumption with short-lived tickets; this note records the ticket policy the loop verifies after certificate or proxy changes.
 
 ## Related
 - [[wiki/cloud-infra/https-and-tls|HTTPS & TLS]]

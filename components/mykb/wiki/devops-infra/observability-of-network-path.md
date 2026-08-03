@@ -23,5 +23,5 @@ Observability of the network path traces what happens to a request between clien
 ## Related
 - [[wiki/devops-infra/network-observability|Network Observability]]
 - [[wiki/devops-infra/observability-pillars|Observability Pillars]]
-- [[wiki/os-shell/path-resolution-and-symlinks|Path Resolution & Symlinks]]
+- [[wiki/os-shell/path-resolution|Path Resolution]]
 - [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]]

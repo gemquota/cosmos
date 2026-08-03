@@ -21,9 +21,13 @@ A circuit breaker wraps calls to a dependency and trips open when failures excee
 - It has three states: closed (normal), open (fail fast), and half-open (allow a probe request to test recovery); the half-open window decides when to close again.
 - Timeouts, failure counts, and success thresholds tune how aggressively the breaker trips; a good breaker also surfaces its state for observability.
 - It differs from retry: retries assume transient failure, while a breaker assumes the dependency is down and stops hammering it.
-- **Worked example / comparison** — Worked example — the wiki's search service breaker trips after five 5-second timeouts; subsequent requests fail in milliseconds until a half-open probe succeeds.
+- **Worked example / comparison** — Worked example — the wiki's search service breaker would trip after five 5-second timeouts; subsequent requests would fail in milliseconds until a half-open probe succeeds.
 - For mykb, circuit breakers are documented as the sibling of retry-backoff for protecting the wiki's external dependencies.
 
+- Threshold tuning: timeouts, failure counts, and success thresholds set how aggressively the breaker trips; the standing rule is to tune from observed latency percentiles and failure rates, not guesses.
+- Observability: a good breaker surfaces its state — closed, open, half-open — so operators can see when the dependency is degrading rather than discovering it through user complaints.
+- Bundle intent: for the wiki's external dependencies, circuit breakers would sit alongside retry-backoff as the resilience pair protecting source checks and sync jobs.
+- Half-open probing: the probe traffic in the half-open state should be small and bounded so recovery is tested without re-creating the original load.
 ## Related
 - [[wiki/api-protocols/retry-backoff|Retry & Backoff]]
 - [[wiki/api-protocols/timeouts|Timeouts]]

@@ -18,10 +18,9 @@ Pod-to-pod communication in Kubernetes flows through the cluster network: pods g
 - Failure modes: CNI outages killing all cross-node traffic; IPAM exhaustion or duplicate IPs breaking routing; kube-proxy/iptables scale limits with thousands of Services; Service endpoints going stale after pod deletion; MTU mismatches fragmenting packets on overlays; NetworkPolicy accidentally blocking the very communication it was meant to segment.
 - Tradeoffs: the cluster network abstracts away node topology — a huge operational win — but adds layers (CNI, Service proxy) whose failures are hard to diagnose; direct pod IPs are fast but unstable (pods churn), so Services and DNS are the norm; the tradeoff is simplicity of use versus the complexity of the network stack underneath.
 - Operational notes: monitor CNI health, Service endpoint counts, and connection errors; test cross-node connectivity in staging; keep NetworkPolicy rules reviewed.
-- RSIS3 relevance: when RSIS3's loops call each other across pods, understanding the network path (CNI, Service, policy) explains intermittent failures that application logs miss.
+- RSIS3 relevance: when RSIS3's loops call each other across pods, understanding the network path (CNI, Service, policy) explains intermittent failures that application logs miss; tracing the pod-to-pod path per service is the first diagnostic step.
 
 ## Related
 - [[wiki/devops-infra/pod-disruption-budgets|Pod Disruption Budgets]]
 - [[wiki/infrastructure/pod-lifecycle|Pod Lifecycle]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

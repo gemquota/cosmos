@@ -22,7 +22,7 @@ CSS custom properties (`--token: value`) hold values that cascade and can change
 
 ## Related
 - [[wiki/web-platforms/color-spaces|CSS Color Spaces]] — adjacent concept in this wiki
-- [[wiki/web-platforms/srgb-vs-p3|sRGB vs Display P3]] — adjacent concept in this wiki
+- [[wiki/web-platforms/color-spaces|CSS Color Spaces]] — adjacent concept in this wiki
 - [[wiki/web-platforms/color-mix|color-mix() CSS]] — adjacent concept in this wiki
 - [[wiki/web-platforms/contrast-ratios|Contrast Ratios]] — adjacent concept in this wiki
 - [[wiki/web-platforms/css-layout|CSS Layout]] — existing coverage

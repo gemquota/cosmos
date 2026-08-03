@@ -20,6 +20,7 @@ Property testing libraries (QuickCheck, Hypothesis, fast-check) generate hundred
 - Operational notes: fix seeds for reproducible CI, tune max_examples per suite, and convert every finding into a permanent regression example.
 - RSIS3 relevance: link-resolution and frontmatter rules are properties that could be tested across the wiki corpus — the same generative checking for the wiki's invariants.
 
+## Practice
 - Author properties alongside examples: examples document intent, properties prove invariants at scale.
 - Use custom generators for domain types so the library explores realistic structures, not just primitives.
 - Combine libraries with model-based testing: generate a sequence of operations and check that the system state always matches the model, catching the stateful bugs that single-input properties miss.

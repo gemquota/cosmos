@@ -23,7 +23,6 @@ Semantic-release automates the entire release process from commit messages: it p
 
 ## Related
 - [[wiki/cloud-infra/storage-tiering-automation|Storage Tiering Automation]]
-- [[wiki/devops-infra/release-engineering-trains|Release Engineering Trains]]
+- [[wiki/devops-infra/release-engineering|Release Engineering]]
 - [[wiki/devops-infra/changelog-automation|Changelog Automation]]
 - [[wiki/devops-infra/release-trains|Release Trains]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

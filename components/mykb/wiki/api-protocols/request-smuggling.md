@@ -22,7 +22,7 @@ Failure modes: frontend and backend using different parsers, or the same parser 
 
 Operational tradeoffs: the durable fix is protocol normalization: reject requests with conflicting Content-Length and Transfer-Encoding, strip or canonicalize both headers at the edge, and use HTTP/2 end-to-end where possible (its framing removes the ambiguity). Testing requires differential requests against the actual proxy-origin pair. This is a class where configuration and parser choice matter more than application code.
 
-RSIS3/mykb relevance: any gateway the wiki deploys must normalize framing headers; documenting the CL/TE rule gives RSIS3's infra checks a concrete test.
+RSIS3/mykb relevance: any gateway the wiki would deploy must normalize framing headers; documenting the CL/TE rule gives RSIS3's infra checks a concrete test.
 
 ## Related
 - [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]

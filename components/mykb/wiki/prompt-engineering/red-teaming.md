@@ -21,6 +21,7 @@ Red teaming is structured adversarial testing of a model or agent system: a team
 - Operational notes: run scheduled campaigns, track findings to closure, and re-run evals after every change.
 - RSIS3 relevance: RSIS3's self-improvement should include scheduled red-team drills on its own prompt system — the same probe-fix-reverify loop it applies to everything else.
 
+## Practice
 - Keep a scored findings log so progress is measurable and priority is clear after each campaign.
 ## Related
 - [[wiki/ai-ml/jailbreaks|Jailbreaks]] — A primary target of red-team campaigns

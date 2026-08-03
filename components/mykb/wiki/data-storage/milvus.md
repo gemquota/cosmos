@@ -21,6 +21,7 @@ Milvus is an open-source vector database built for scale: distributed indexing, 
 - Operational notes: monitor index lag and query latency, size nodes from recall benchmarks, and test failover.
 - RSIS3 relevance: a future mykb deployment with many users or massive corpora could host its embedding index in Milvus — the scale-out path for semantic retrieval.
 
+## Practice
 - Benchmark recall and latency on the real query mix before committing, since index and node choices lock in performance.
 ## Related
 - [[wiki/data-storage/vector-databases|Vector Databases]] — the category Milvus belongs to

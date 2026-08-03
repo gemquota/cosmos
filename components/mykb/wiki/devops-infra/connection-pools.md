@@ -18,12 +18,10 @@ Connection pools reuse a bounded set of TCP connections to a backend (database, 
 - Failure modes: pool exhaustion when a backend slows down — requests pile up on held connections and acquisition timeouts cascade; stale connections after a backend restart — the pool hands out dead sockets until health-checked; unbounded growth from connection leaks where callers forget to release; the pool-shrink problem where idle connections are closed under memory pressure just as load returns.
 - Operational notes: set acquire and lease timeouts, validate connections on borrow (SELECT 1 or a TCP probe), size pools from peak concurrency rather than average, add jitter to connection creation to avoid thundering-herd reconnects after an outage, and monitor wait time and utilization.
 - Tradeoffs: pooling trades complexity for latency and backend protection; connection-per-request is simpler but cannot survive high fan-out; pooling per process versus a centralized pooler (pgbouncer) is a resource-versus-ops tradeoff.
-- RSIS3 relevance: RSIS3 agents issuing parallel mykb queries benefit from a shared pool so bursts of retrieval do not exhaust the wiki daemon's connection budget.
+- RSIS3 relevance: RSIS3 agents issuing parallel mykb queries benefit from a shared pool so bursts of retrieval do not exhaust the wiki daemon's connection budget; pool sizing follows the p95 latency target, not the peak.
 
 ## Related
 - [[wiki/cloud-infra/connection-multiplexing|Connection Multiplexing]]
 - [[wiki/devops-infra/connection-pooling|Connection Pooling]]
 - [[wiki/devops-infra/worker-pools|Worker Pools]]
 - [[wiki/infrastructure/node-pools|Node Pools]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

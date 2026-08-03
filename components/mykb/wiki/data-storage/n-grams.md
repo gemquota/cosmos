@@ -21,6 +21,7 @@ N-grams are contiguous slices of n tokens (word n-grams) or n characters (charac
 - Operational notes: choose n per task (2-3 for phrases, 3-5 characters for fuzzy matching), and prune high-frequency n-grams from feature spaces.
 - RSIS3 relevance: n-gram features feed mykb's lexical search and duplicate detection — the local-order signal that complements embeddings.
 
+## Practice
 - Combine word and character n-grams deliberately: word n-grams for phrases, character shingles for spelling-robust matching.
 ## Related
 - [[wiki/data-storage/tokenization|Tokenization]] — the step that produces n-gram units

@@ -20,6 +20,7 @@ Package managers automate dependency acquisition: npm/pnpm/yarn for JavaScript, 
 - Operational notes: commit lockfiles, scan dependencies, pin the manager version, and keep registries mirrored or verified.
 - RSIS3 relevance: cosmos's Python toolchain relies on pip-level resolution for its daemons — the same lockfile-and-scan discipline keeps loop runs reproducible.
 
+## Practice
 - Prefer the package manager's own update flow over manual edits so the lockfile and manifest never disagree.
 ## Related
 - [[wiki/dev-tools/lockfiles|Lockfiles]] — the resolution result package managers record

@@ -17,7 +17,7 @@ Multicast delivers one stream to many receivers efficiently — video distributi
 - Concrete example: a trading floor fans market data to hundreds of terminals with multicast at wire speed; a datacenter uses multicast for VM-to-VM discovery (VXLAN head-end replication is the unicast emulation); a video platform uses multicast only on campus networks and unicast/CDN elsewhere because the internet does not route multicast.
 - Failure modes: cloud VPCs silently dropping multicast (design for unicast or overlay); IGMP snooping misconfigs on switches causing intermittent drops; group addresses colliding or leaking across tenants; and multicast storms from misconfigured sources saturating links.
 - Operational tradeoffs: where multicast is unavailable (most cloud), replicate with unicast fan-out (list distribution, pub/sub brokers) and accept the bandwidth cost; overlay multicast (a broker or mesh) restores efficiency at latency and complexity cost. Choose based on group size and scale — small groups are cheaper with unicast.
-- RSIS3/mykb relevance: the wiki's distributed-cache experiments document unicast fan-out designs, since cloud environments in this deployment do not support multicast.
+- RSIS3/mykb relevance: the wiki's distributed-cache experiments document unicast fan-out designs, since cloud environments in this deployment would not support multicast.
 - Broker alternative: where multicast is unavailable, a pub/sub broker with topic filtering replicates the fan-out pattern at predictable cost; choose it when group membership is dynamic.
 - Group hygiene: document every multicast group address and its purpose; address collisions across applications are invisible until traffic mixes.
 

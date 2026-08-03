@@ -18,7 +18,7 @@ A bi-encoder runs the query and each document through the same encoder independe
 - **Training** — bi-encoders are trained with contrastive losses on positive and negative pairs: in-batch negatives are the cheapest source, hard negatives mined from the model's own mistakes sharpen the boundary, and cross-encoder scores can label training pairs; in practice, mining good negatives matters more than the loss function itself.
 - **Trade-off** — the independent encoding loses query-document interaction, so it is fast and scalable but weaker than cross-encoders on fine-grained relevance; retrieval quality depends heavily on how well the embedding space captures the notion of similarity the task needs.
 - **Failure modes** — embedding spaces drift when the encoder is updated (indexes must be rebuilt), long documents exceed the token limit and get truncated, and frequency biases make popular terms dominate similarity; chunking strategy is therefore part of the design.
-- **mykb relevance** — the wiki's own semantic search is a bi-encoder pipeline: notes are embedded once and queried at write time, so the quality of note retrieval depends on the encoder choice, chunk boundaries, and index refresh policy, not just on the query text.
+- **mykb relevance** — a documented design for the wiki's semantic search would be a bi-encoder pipeline: notes would be embedded once and queried at write time, so the quality of note retrieval would depend on the encoder choice, chunk boundaries, and index refresh policy, not just on the query text.
 
 ## Related
 - [[wiki/meta-learning/sentence-transformers|Sentence Transformers]] — the toolkit for training bi-encoders

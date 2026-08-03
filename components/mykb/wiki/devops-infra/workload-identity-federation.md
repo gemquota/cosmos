@@ -18,12 +18,10 @@ Workload identity federation lets workloads authenticate to external services (c
 - Failure modes: trust policies too broad (any workflow or branch able to mint credentials); token replay where a stolen token is valid longer than intended (keep TTLs short); audience mismatches breaking issuance; fallback to static keys when federation misconfigures, quietly reintroducing the risk; identity mapping sprawl that is hard to audit.
 - Tradeoffs: federation eliminates static secrets — the single biggest credential win — at the cost of trust-policy design and debugging; the alternative, static keys, is simpler until one leaks; the mature pattern is federation with pinned trust, short TTLs, and audit logs on issuance.
 - Operational notes: review trust policies periodically, monitor credential issuance, and treat identity mappings as code.
-- RSIS3 relevance: cosmos's CI and daemon should use federated identity for cloud access — no static keys in the repo means a repo leak does not become an account compromise.
+- RSIS3 relevance: cosmos's CI and daemon should use federated identity for cloud access — no static keys in the repo means a repo leak does not become an account compromise; short-lived tokens also bound the damage of any single credential leak.
 
 ## Related
 - [[wiki/devops-infra/identity-aware-proxies|Identity-Aware Proxies]]
 - [[wiki/devops-infra/cluster-federation-vs-hub-spoke|Federation vs Hub-Spoke]]
 - [[wiki/infrastructure/workload-management-and-queues|Workload Management And Queues]]
 - [[wiki/shell-environment/categories/web-dev/subcategories/css-html/identity-distribution|Identity Distribution]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

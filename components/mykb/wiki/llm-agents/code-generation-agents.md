@@ -26,6 +26,5 @@ Code-generation agents operate inside a repository: they read context, produce p
 - [[wiki/llm-agents/agentic-workflows|Agentic Workflows]] — the broader workflow this agent executes
 - [[wiki/llm-agents/deterministic-replay|Deterministic Replay]] — re-running the edit-test cycle for debugging
 - [[wiki/llm-agents/agent-versioning|Agent Versioning]] — versioning the agent's own code and config
-- [[raw/archive/session-artifacts-2026-07/tools/apply-patch-1-10|apply_patch — the surgical edit tool RSIS3 uses
 - [[wiki/concepts/mykb-implementation-report|Mykb Implementation Report]] — an example of agent-built systems
 - [[wiki/syntheses/knowledge-system|Knowledge System Overview]] — knowledge captured from coding sessions

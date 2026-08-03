@@ -17,7 +17,7 @@ Site-to-site VPNs connect two networks over the internet via encrypted tunnels â
 - Concrete example: a company connects its office to a cloud VPC with a site-to-site VPN for management traffic, keeping the datacenter link for bulk data; a hybrid deployment joins on-prem Active Directory to cloud workloads; two VPCs in different regions without peering use a VPN gateway pair.
 - Failure modes: tunnel flapping on unstable ISPs; MTU issues inside tunnels (see MSS clamping); BGP misconfiguration advertising overlapping routes; single-tunnel designs (use two); and treating VPN throughput as guaranteed â€” it is best-effort over the internet, so latency-sensitive or bulk traffic needs dedicated connectivity.
 - Operational tradeoffs: VPNs are fast to deploy and cheap vs dedicated links, but add latency, bandwidth ceilings, and internet dependence; the standard is VPN as the baseline with dedicated/private links (Direct Connect, Interconnect) for latency-critical or high-volume paths. Monitor tunnel status and failover as first-class metrics, alerting on BGP session state rather than raw interface counters.
-- RSIS3/mykb relevance: the wiki's hybrid connectivity uses dual tunnels with BGP; this note records the tunnel and route policy the loop checks during network changes.
+- RSIS3/mykb relevance: the wiki's hybrid connectivity would use dual tunnels with BGP; this note records the tunnel and route policy the loop checks during network changes.
 - Dual-carrier design: terminate tunnels on independent ISPs or paths where uptime matters; a single-ISP tunnel is a single point of failure wearing a VPN label. Include dead-peer detection and route-failover timers so the standby tunnel actually carries traffic.
 
 ## Related

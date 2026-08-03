@@ -24,5 +24,3 @@ Secret stores centralize secrets â€” API keys, tokens, passwords, certificates â
 ## Related
 - [[wiki/cloud-infra/parameter-stores-aws-ssm-azure-keyvault-gcp-secretmanager|Cloud Parameter Stores]]
 - [[wiki/infrastructure/secret-rotation|Secret Rotation]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

@@ -17,7 +17,7 @@ TCP retransmission is how the protocol recovers from lost segments: timers trigg
 - Concrete example: a 1% packet-loss link inflates effective RTT and collapses throughput (each loss cuts the window); a retransmission spike on a specific path during an incident points to a saturated link or failing NIC; a mis-tuned proxy that duplicates ACKs causes the classic "server retransmits but the network is fine" mystery.
 - Failure modes: reading retransmit counts without loss context (reordering and delayed ACKs trigger spurious retransmits); blaming the network when the server's receive buffer or app is the bottleneck; RTO minimums (200ms+) making loss feel like stalls on low-latency paths; and middleboxes that break SACK/timestamps, degrading recovery.
 - Operational tradeoffs: low retransmission (<0.1%) is normal; sustained spikes warrant investigation, and zero-loss assumptions break under congestion. Measure retransmit rate per flow and path (kernel counters, tcpdump, flow telemetry) and tune window/ECN/SACK before buying more bandwidth.
-- RSIS3/mykb relevance: the wiki's cross-region sync logs retransmit rates per link; the loop's replication tuning targets loss recovery settings, not just bandwidth.
+- RSIS3/mykb relevance: the wiki's cross-region sync would log retransmit rates per link; the loop's replication tuning would target loss recovery settings, not just bandwidth.
 - Diagnosis order: check loss before blaming throughput; a retransmit spike on one path points to a specific link, while uniform loss suggests a shared bottleneck.
 - Baseline first: record the normal retransmit rate per path before an incident; without a baseline, the alert is either noise or late.
 

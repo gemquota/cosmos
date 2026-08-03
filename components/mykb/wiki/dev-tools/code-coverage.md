@@ -21,7 +21,11 @@ Code coverage measures which lines, branches, or paths tests execute. It is a us
 - Coverage is a floor, not a quality metric: 100% coverage of weak assertions still proves little.
 - The useful practice is coverage-guided test design: find uncovered branches that correspond to real risk and add tests there.
 - Coverage trends matter more than absolute numbers; drops in coverage should fail CI only when policy says so.
-- **Worked example / comparison** — Worked example — the wiki's link-checker reaches 90% branch coverage; the uncovered branches are the timeout and parse-error paths, which then get targeted tests.
+- **Worked example / comparison** — Worked example — the wiki's link-checker would reach 90% branch coverage; the uncovered branches would be the timeout and parse-error paths, which then get targeted tests.
+- Branch coverage is the useful signal for decision logic: it catches untested if/else and switch paths that line coverage misses, which is where most regressions hide.
+- Mutation testing complements coverage: it changes the code and checks whether tests catch the change, exposing assertions that pass for the wrong reasons.
+- Coverage gates should be policy-driven: enforce a floor on new code and review drops, but treat the number as a tripwire for inspection rather than a score to maximize.
+- Coverage trends matter more than snapshots: a slowly falling number is how tests rot, and CI should make that trend visible even when no single commit crosses a threshold.
 - For mykb, code-coverage is documented as the test-adequacy signal in the dev-tools testing cluster.
 
 ## Related

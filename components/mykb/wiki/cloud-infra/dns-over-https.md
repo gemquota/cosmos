@@ -17,7 +17,7 @@ DNS-over-HTTPS (DoH) encrypts DNS queries inside HTTPS, hiding them from network
 - Concrete example: a user on airport Wi-Fi resolves through DoH and an attacker cannot inject fake DNS answers or log the domains; a company with compliance filtering must either deploy its own DoH resolver or block third-party DoH endpoints to keep DNS policy enforced; browsers negotiate DoH with fallback to plain DNS when the resolver fails.
 - Failure modes: DoH breaking split-horizon and local resolution (intranet names fail when queries go to public resolvers — enterprise deployments must route private names separately); blocking all DoH also breaking legit services that rely on it; performance overhead of a second connection unless connection reuse applies; and misconfigured resolvers leaking metadata despite encryption.
 - Operational tradeoffs: DoH buys privacy and integrity at the cost of visibility (for ISPs and enterprises) and a small dependency on the resolver provider; browsers now bundle DoH, so networks that filter must actively manage it rather than ignore it.
-- RSIS3/mykb relevance: the wiki's admin tooling uses a private DoH resolver for internal names; this note records the resolver policy and fallbacks the loop must preserve.
+- RSIS3/mykb relevance: the wiki's admin tooling would use a private DoH resolver for internal names; this note records the resolver policy and fallbacks the loop must preserve.
 - Enterprise path: run a private DoH resolver for split-horizon names and enforce it via policy; blocking public DoH without a replacement breaks both privacy and filtering.
 
 ## Related

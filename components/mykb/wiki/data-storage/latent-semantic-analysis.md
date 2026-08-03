@@ -20,6 +20,7 @@ Latent semantic analysis (LSA) applies singular value decomposition to a term-do
 - Operational notes: weight with TF-IDF, validate k on a held-out task, and rebuild when the corpus changes.
 - RSIS3 relevance: LSA gives mykb a cheap, interpretable semantic space over the wiki — a baseline that modern embeddings can be compared against.
 
+## Practice
 - Prefer TF-IDF weighting over raw counts so frequent words do not dominate the singular vectors.
 ## Related
 - [[wiki/data-storage/latent-dirichlet-allocation|Latent Dirichlet Allocation]] — the probabilistic successor to LSA

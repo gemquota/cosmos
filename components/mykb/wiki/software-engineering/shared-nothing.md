@@ -17,7 +17,7 @@ Shared-nothing architecture partitions state so each worker owns its data exclus
 - Concrete example: a chat service shards rooms across servers by room id — a server owns its rooms' state; an event-processing pool claims jobs from a queue with lease-based locks, so no two workers process the same job; a cache cluster partitions keys by hash so each node owns its keys.
 - Failure modes: hidden shared state (a shared cache or database column that reintroduces contention); hot partitions (one shard takes most traffic — pick partition keys by access pattern); rebalancing complexity when adding nodes; and cross-shard queries that silently become expensive scatter-gathers.
 - Operational tradeoffs: shared-nothing scales linearly and fails independently at the cost of data partitioning design and cross-partition operations; the discipline is partition by the hot access path, keep cross-partition work rare, and design rebalancing as a first-class operation.
-- RSIS3/mykb relevance: the wiki's workers partition their queues and state by domain, so loop jobs scale horizontally without distributed locks.
+- RSIS3/mykb relevance: the wiki's workers would partition their queues and state by domain, so loop jobs scale horizontally without distributed locks.
 - Partition key choice: model the access path before choosing the shard key; a key chosen by convenience becomes the hot-shard regret.
 - Rebalancing: plan for adding and removing nodes with background migration and double-write windows so scaling is boring, not an incident.
 - Consistency across partitions: operations spanning partitions need explicit coordination (idempotent messages, compensation); never assume cross-partition reads are cheap or consistent.

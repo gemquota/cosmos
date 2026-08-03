@@ -25,5 +25,3 @@ OPA (Open Policy Agent) and Kyverno are the two dominant policy engines for Kube
 - [[wiki/devops-infra/gatekeeper-and-policy-as-code|Gatekeeper & Policy as Code]]
 - [[wiki/infrastructure/network-policy|Network Policy]]
 - [[wiki/os-shell/regex-engines|Regex Engines]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

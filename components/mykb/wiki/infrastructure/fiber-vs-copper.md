@@ -20,5 +20,3 @@ Fiber vs copper is the physical-layer choice for network links: electrical signa
 - For mykb: the node anchors the physical-layer cluster — cabling standards, transceivers, and network-topology design all build on the fiber-vs-copper choice.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

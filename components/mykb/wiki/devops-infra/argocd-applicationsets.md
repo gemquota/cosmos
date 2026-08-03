@@ -23,4 +23,3 @@ ApplicationSets generate ArgoCD Application resources from templates, replacing 
 
 ## Related
 - [[wiki/devops-infra/gitops-argocd|GitOps & ArgoCD]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

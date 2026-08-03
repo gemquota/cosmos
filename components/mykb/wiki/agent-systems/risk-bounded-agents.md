@@ -27,5 +27,4 @@ A risk-bounded agent is one whose freedom to act is deliberately limited by safe
 - [[wiki/llm-agents/approval-gates|Approval Gates]] — human checkpoints on high-risk actions
 - [[wiki/llm-agents/policy-enforcement|Policy Enforcement]] — runtime checking of the bounds
 - [[wiki/concepts/calibration|Calibration]] — accurate risk estimates keep bounds sensible
-- [[raw/archive/session-artifacts-2026-07/topics/security|security — the threat model bounds respond to
 - [[wiki/ops/gap-report|Gap Analysis Report]] — safety coverage gaps identified

@@ -23,5 +23,4 @@ Flow tables and offloads move packet-processing decisions from general-purpose C
 - [[wiki/cloud-infra/flow-control|Flow Control]]
 - [[wiki/cloud-infra/flow-logs-and-analysis|Flow Logs & Analysis]]
 - [[wiki/os-shell/page-tables|Page Tables]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

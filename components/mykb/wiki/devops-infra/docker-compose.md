@@ -21,9 +21,13 @@ Docker Compose defines and runs multi-container apps from `compose.yaml`: servic
 - One command (docker compose up) builds and runs the whole stack, and profiles extend it to selectable service groups.
 - Compose is the standard for local development and CI of composed services, though production often migrates to orchestration like Kubernetes.
 - The file is the contract: environment, ports, healthchecks, and dependencies live in version-controlled YAML.
-- **Worked example / comparison** — Worked example — the wiki's dev stack is a compose file with a web service, a graph worker, and a database service on a shared network, started with one command.
+- **Worked example / comparison** — Worked example — the wiki's dev stack would be a compose file with a web service, a graph worker, and a database service on a shared network, started with one command.
 - For mykb, docker-compose is documented as the local multi-service runtime, the on-ramp to the kubernetes article.
 
+- The file is the contract: environment, ports, healthchecks, and dependencies live in version-controlled YAML, so a new contributor reproduces the exact local stack without tribal knowledge.
+- CI use: the same compose file can stand up the stack for integration tests; the standing rule is that local, CI, and production differ only by explicit override files.
+- Environment parity: the local stack should mirror the production services (queue, database, worker) so integration bugs show up on the laptop before CI; the compose file is the single source for that topology.
+- Lifecycle commands: compose up, down, and profile selection should be scripted and documented per repository so the environment is a known quantity rather than a series of remembered commands.
 ## Related
 - [[wiki/devops-infra/kubernetes|Kubernetes]]
 - [[wiki/security/container-hardening|Container Hardening]]

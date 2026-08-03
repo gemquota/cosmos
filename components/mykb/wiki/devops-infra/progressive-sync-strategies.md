@@ -25,5 +25,3 @@ Progressive sync strategies stage how configuration and application state propag
 - [[wiki/devops-infra/backup-strategies-3-2-1|Backup Strategies: 3-2-1]]
 - [[wiki/cloud-infra/cloud-migration-strategies|Cloud Migration Strategies]]
 - [[wiki/devops-infra/progressive-delivery-models|Progressive Delivery Models]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

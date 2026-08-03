@@ -20,6 +20,7 @@ Semantic Versioning (MAJOR.MINOR.PATCH) encodes compatibility: breaking changes 
 - Operational notes: enforce commit conventions, verify bump-vs-changes in CI, and keep tags and artifacts in lockstep.
 - RSIS3 relevance: wiki article status (stub vs growing) is a semver-like signal — the same derived, verifiable progression discipline.
 
+## Practice
 - Automate the bump from commit history and let the lockfile pin the resolved tree the versions imply.
 ## Related
 - [[wiki/dev-tools/conventional-commits|Conventional Commits]] — commit types drive automated version bumps

@@ -25,4 +25,3 @@ API compatibility policies decide which changes to a service contract are allowe
 - [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]]
 - [[wiki/devops-infra/ingress-egress-policies|Ingress & Egress Policies]]
 - [[wiki/devops-infra/api-gateway-patterns|API Gateway Patterns]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

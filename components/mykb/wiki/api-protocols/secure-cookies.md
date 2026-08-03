@@ -17,7 +17,7 @@ Cookies are the classic browser session mechanism, and their security hinges on 
 - **SameSite semantics** — Lax permits top-level GET navigations; Strict blocks cross-site entirely; None requires Secure and enables third-party contexts.
 - **CSRF defense** — SameSite alone is not enough for state-changing endpoints; synchronizer tokens or double-submit cookies add intent proof.
 - **Partitioning** — third-party cookies are being partitioned or blocked; embedded sessions must move to partitioned (CHIPS) or first-party storage.
-- **Worked example** — mykb's session cookie uses Secure, HttpOnly, and Lax with a rotating CSRF token served to the SPA.
+- **Worked example** — mykb's session cookie would use Secure, HttpOnly, and Lax with a rotating CSRF token served to the SPA.
 - **Relevance** — RSIS3's dashboard login is a cookie-based flow; the wiki records the flag matrix so hardening is auditable.
 
 ## Related

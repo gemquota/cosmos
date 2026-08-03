@@ -17,7 +17,7 @@ GCP block-device mapping connects persistent disks (PDs), local SSDs, and images
 - Concrete example: a database on pd-ssd sized so the GB-based IOPS covers peak (e.g. 8,000 IOPS needs ~1TB in the standard model); a cache tier on local SSD knowing data dies with the instance; a boot disk from a hardened image with pd-balanced for a small, moderate-I/O VM.
 - Failure modes: expecting local SSD persistence (data loss on stop); sizing PDs purely for capacity when IOPS come from size (over-paying or starving I/O); device-name confusion when multiple disks attach (use by-id links, not /dev/sd*); and forgetting that live resize requires filesystem grow and possible reboot.
 - Operational tradeoffs: PDs give durability and snapshots at a cost and IOPS ceiling; local SSD gives raw speed with ephemerality; pd-extreme (provisioned IOPS) is the escape hatch for high-I/O workloads. Match tier to access pattern and document the device-by-id mapping for automation.
-- RSIS3/mykb relevance: experiment runners use a recorded disk recipe (type, size, device path, filesystem) so the loop's provisioning is reproducible and telemetry maps disks correctly.
+- RSIS3/mykb relevance: experiment runners would use a recorded disk recipe (type, size, device path, filesystem) so the loop's provisioning is reproducible and telemetry maps disks correctly.
 - Device identity: mount and reference disks by the by-id/google-* names, never /dev/sd*; device letters change across reboots and attachment order. Use this mapping in fstab and systemd units so boot does not depend on discovery order.
 
 ## Related

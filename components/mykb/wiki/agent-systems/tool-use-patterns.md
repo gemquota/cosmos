@@ -27,6 +27,4 @@ Tool use is the mechanism by which an agent turns model output into side effects
 - [[wiki/agent-systems/action-observation-loop|Action-Observation Loop]] — tool results become observations
 - [[wiki/llm-agents/tool-registry|Tool Registry]] — centralized discovery and validation of tools
 - [[wiki/llm-agents/permission-model|Permission Model]] — authorization around tool execution
-- [[raw/archive/session-artifacts-2026-07/tools/exec-command-1-2|exec_command — RSIS3's primary execution tool
-- [[raw/archive/session-artifacts-2026-07/tools/apply-patch-1-10|apply_patch — RSIS3's surgical edit tool
 - [[wiki/syntheses/knowledge-system|Knowledge System Overview]] — how tool output feeds the wiki pipeline

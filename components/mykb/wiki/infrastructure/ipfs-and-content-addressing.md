@@ -23,4 +23,3 @@ IPFS (InterPlanetary File System) is a distributed, peer-to-peer storage network
 - [[wiki/devops-infra/content-hashing-and-etags|Content Hashing & ETags]]
 - [[wiki/cloud-infra/content-delivery-networks|Content Delivery Networks]]
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

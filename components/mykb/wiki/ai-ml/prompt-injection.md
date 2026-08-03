@@ -28,5 +28,4 @@ Prompt injection is a class of attack where adversarial instructions hidden in u
 - [[wiki/prompt-engineering/red-teaming|Red Teaming]] — Proactive discovery of injection vulnerabilities
 - [[wiki/ai-ml/guardrails|Guardrails]] — Runtime defenses against injection
 - [[wiki/prompt-engineering/prompt-leakage|Prompt Leakage]] — The information-exfiltration outcome of injection
-- [[raw/archive/session-artifacts-2026-07/topics/security|security — Injection sits inside the broader security domain
 - [[wiki/concepts/mykb-implementation-report|mykb Implementation Report: 6-Phase Buildout — Actual State, Architecture, and Results]] — Agent-loop implementation context for injection risk

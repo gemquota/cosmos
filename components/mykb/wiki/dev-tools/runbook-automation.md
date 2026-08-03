@@ -20,6 +20,7 @@ Runbook automation captures the steps responders follow — restart a service, f
 - Operational notes: test automated runbooks in drills, keep them idempotent, and log every invocation.
 - RSIS3 relevance: the agent loop can invoke runbook automations instead of typing steps into a terminal — the same procedure-as-code idea for operational recovery.
 
+## Practice
 - Prefer automation that mirrors the manual runbook exactly, so the two can be diffed and verified against each other.
 - Version the automation with the runbook text, so a procedure change and its implementation ship together.
 ## Related

@@ -20,6 +20,7 @@ A verbose flag (-v, --verbose, -vvv) raises log verbosity at runtime so users ca
 - Operational notes: keep default output quiet, test that stdout stays parseable at every verbosity, and document the levels in help text.
 - RSIS3 relevance: the wiki CLI can expose a verbose flag to trace which articles and links it processes — the same on-demand introspection RSIS3 wants for its own runs.
 
+## Practice
 - Make the flag repeatable and document each level so users can escalate verbosity without guessing.
 ## Related
 - [[wiki/dev-tools/log-levels|Log Levels]]

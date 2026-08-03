@@ -25,4 +25,3 @@ Database failover automation moves primary database role to a replica automatica
 - [[wiki/infrastructure/redundancy-and-failover-dc|Datacenter Redundancy & Failover]]
 - [[wiki/devops-infra/replication-and-failover-dr|Replication & Failover DR]]
 - [[wiki/devops-infra/database-indexing|Database Indexing]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

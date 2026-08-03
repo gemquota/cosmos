@@ -20,6 +20,7 @@ Patent issues for AI include patentability of model innovations, infringement by
 - Operational notes: track the patent landscape, document disclosure decisions, and review jurisdiction changes. Re-run the landscape scan before each launch milestone — published applications can mature into blocking claims quickly.
 - RSIS3 relevance: the bundle's novel scripts and methods have patent-adjacent disclosure choices — the same deliberate decision documented in its provenance.
 
+## Practice
 - Do a freedom-to-operate check before shipping anything patentable, and document the decision.
 - Coordinate with the secrecy decision per invention, since a public disclosure can forfeit patent rights.
 ## Related

@@ -17,7 +17,7 @@ S3 lifecycle policies automate object transitions — from Standard to IA/Glacie
 - Concrete example: a media archive lifecycle moves raw files to Glacier after 90 days and Deep Archive after 365, with expirations on temporary uploads after 7 days; an analytics bucket keeps 30 days hot, then transitions to IA for the quarterly query pattern. Wrong access assumptions (reading Flexible monthly) rack up retrieval fees that dwarf storage savings.
 - Failure modes: expiration rules deleting data before retention requires (a one-character prefix error is a data-loss incident); early-deletion charges when objects leave a class before minimum duration; lifecycle rules that do not match access patterns (hot data tiered cold); and Glacier restore concurrency limits stalling large recoveries.
 - Operational tradeoffs: lifecycle is the standard answer for retention and tiering, but every rule is a policy: define retention per data class, test expirations on a bucket copy, and monitor transitions to catch cost drift. Deep Archive is for the truly cold — budget restore RTO for DR, not just storage savings.
-- RSIS3/mykb relevance: the wiki's backup lifecycle (30/90/365) is recorded here with its restore tests, so the loop's retention reviews have a verified baseline.
+- RSIS3/mykb relevance: the wiki's backup lifecycle (30/90/365) would be recorded here with its restore tests, so the loop's retention reviews have a verified baseline.
 - Expiration safety: test lifecycle expirations on a bucket copy with a deletion dry-run; a typo in a prefix is irreversible at the object level.
 
 ## Related

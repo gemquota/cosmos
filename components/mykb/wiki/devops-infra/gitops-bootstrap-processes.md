@@ -25,4 +25,3 @@ GitOps bootstrap processes bring a cluster or environment from empty to fully ma
 - [[wiki/devops-infra/gitops-multi-env-patterns|GitOps Multi-Env Patterns]]
 - [[wiki/infrastructure/dataset-release-processes|Dataset Release Processes]]
 - [[wiki/os-shell/daemon-processes|Daemon Processes]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

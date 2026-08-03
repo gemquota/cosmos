@@ -17,7 +17,7 @@ TLS encrypts traffic between clients and servers, authenticates the server (and 
 - **Certificate trust** — servers present a chain from leaf to a CA root; clients validate signatures, validity, hostname, and revocation.
 - **Forward secrecy** — ephemeral Diffie-Hellman keys mean past traffic stays secret if long-term keys leak.
 - **Operational musts** — HSTS forces HTTPS, certificate transparency deters misissuance, and short-lived certs shrink compromise windows.
-- **Worked example** — the mykb bundle is served over HTTPS with Let's Encrypt certificates; the wiki tracks TLS handshakes and certificate chains for ops.
+- **Worked example** — the mykb bundle would be served over HTTPS with Let's Encrypt certificates; the wiki would track TLS handshakes and certificate chains for ops.
 - **Relevance** — every curl-verified source fetch and every API call in RSIS3 rides on TLS assumptions.
 
 ## Related

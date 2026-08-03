@@ -23,5 +23,3 @@ Datacenter redundancy is the discipline of having no single points of failure in
 - [[wiki/devops-infra/replication-and-failover-dr|Replication & Failover DR]]
 - [[wiki/devops-infra/database-failover-automation|Database Failover Automation]]
 - [[wiki/infrastructure/time-synchronization-in-dc|Time Synchronization in the Datacenter]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

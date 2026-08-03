@@ -25,4 +25,3 @@ Registry mirroring and proxying put a local cache in front of container registri
 - [[wiki/devops-infra/websocket-proxying|WebSocket Proxying]]
 - [[wiki/devops-infra/mirroring-and-shadow-traffic|Mirroring & Shadow Traffic]]
 - [[wiki/infrastructure/container-registries|Container Registries]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

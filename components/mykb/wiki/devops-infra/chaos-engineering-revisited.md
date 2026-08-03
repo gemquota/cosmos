@@ -29,7 +29,7 @@ Chaos engineering experiments with failures in production to build confidence in
 - Pipelines and GitOps practices in the delivery articles show how this concept is deployed and promoted safely.
 
 ## Related
-- [[wiki/devops-infra/release-engineering-trains|Release Engineering Trains]]
+- [[wiki/devops-infra/release-engineering|Release Engineering]]
 - [[wiki/infrastructure/traffic-engineering|Traffic Engineering]]
 - [[wiki/devops-infra/chaos-engineering|Chaos Engineering]]
 - [[wiki/devops-infra/site-reliability-engineering|Site Reliability Engineering]]

@@ -17,7 +17,7 @@ A handoff protocol is the contract for transferring a task between agents (or ag
 - Concrete example: an analyst agent completes a research phase and hands the synthesis task to a writer agent with the findings, citations, and tone constraints in one envelope; a human takes over a stuck agent's run with the full trace and pending decision highlighted; a long-running loop checkpoints its state so a restart hands off seamlessly.
 - Failure modes: handoffs that transfer narrative but not state (the receiver redoes work); lossy context — decisions made but not recorded; protocol drift between agent versions; and handoff storms where tasks bounce between agents without progress (escalation rules needed).
 - Operational tradeoffs: structured handoffs cost writing discipline and schema maintenance; they pay in resumability, accountability, and composability of agents. The standard is a versioned envelope schema, idempotent resume, and metrics on handoff success.
-- RSIS3/mykb relevance: the wiki's multi-agent passes use a versioned handoff envelope, so a pass interrupted mid-stream resumes from recorded state instead of restarting.
+- RSIS3/mykb relevance: the wiki's multi-agent passes would use a versioned handoff envelope, so a pass interrupted mid-stream resumes from recorded state instead of restarting.
 - Envelope schema versioning: include schema version in the envelope and reject incompatible receivers loudly rather than misparsing state.
 - Failure accounting: log handoff failures with reasons (timeout, validation, receiver error) — repeated failures indicate a protocol design problem, not bad luck.
 

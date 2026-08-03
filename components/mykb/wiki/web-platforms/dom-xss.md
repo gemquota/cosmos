@@ -17,7 +17,7 @@ DOM-based XSS occurs when untrusted data flows through JavaScript — location, 
 - Concrete example: a single-page app reading location.hash and writing it into innerHTML for a deep-link title executes <img src=x onerror=alert(1)> embedded in the hash; the payload is never in the URL sent to the server, so WAFs and server-side escaping miss it.
 - Failure modes: sinks beyond innerHTML — attribute assignment (element.href from user data), javascript: URLs in links, postMessage handlers that trust event.origin, and JSON.parse followed by property access — are easy to miss in review; frameworks with dangerouslySetInnerHTML or v-html recreate the same sink.
 - Operational tradeoffs: defense is layered: validate and encode at the sink (textContent, createElement, setAttribute where possible), keep a central allowlist for rich HTML, never eval strings, verify postMessage origins, and run DOM-XSS-aware scanners plus a CSP that blocks inline script as a backstop.
-- RSIS3/mykb relevance: the wiki's markdown renderer routes untrusted HTML through the safe-rendering pipeline and CSP, and this node anchors the DOM-XSS checklist reviewed in loop passes.
+- RSIS3/mykb relevance: the wiki's markdown renderer would route untrusted HTML through the safe-rendering pipeline and CSP, and this node anchors the DOM-XSS checklist reviewed in loop passes.
 - Browser-side detection: DOM-XSS scanners (static taint analysis in build, runtime instrumentation in dev) plus a strict CSP block the classes of sinks that code review misses; treat a CSP bypass report as a release blocker.
 - Framework escape hatches: dangerouslySetInnerHTML, v-html, and template-string HTML builders re-open sinks; audit every occurrence and require a sanitizer review before merge.
 

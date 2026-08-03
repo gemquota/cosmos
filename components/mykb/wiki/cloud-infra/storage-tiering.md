@@ -17,7 +17,7 @@ Storage tiering matches data classes to storage economics — hot, warm, cold, a
 - Concrete example: a media library keeps 30 days hot, transitions to IA at 90, and archives at 365 via lifecycle; access telemetry shows 5% of the archive is read yearly, so deep archive is right; a "hot" bucket that analytics reads weekly is a tiering miss that costs 5-10x.
 - Failure modes: tiering by age instead of access pattern (young-but-dead data stays hot, old-but-read data gets retrieval fees); lifecycle churn (objects oscillating between tiers, accruing operation fees); ignoring minimum-duration penalties; and applications that assume synchronous access to archived data.
 - Operational tradeoffs: automatic tiering removes guesswork at a small premium; manual lifecycle rules are cheaper for known patterns. Instrument access per object class, review tier placement quarterly, and always validate restore times for the archive tier in DR plans.
-- RSIS3/mykb relevance: the wiki's storage cost model maps every dataset to a tier with telemetry; the loop's cost reviews move tiers based on measured access, not calendar age.
+- RSIS3/mykb relevance: the wiki's storage cost model would map every dataset to a tier with telemetry; the loop's cost reviews would move tiers based on measured access, not calendar age.
 - Retrieval fee awareness: read-heavy but cold data can cost more in retrieval fees than it saves in storage; compute the break-even access rate per class before tiering.
 - Testing restores: schedule annual restore drills from the archive tier so RTO claims match reality, and document expected restore times per tier.
 

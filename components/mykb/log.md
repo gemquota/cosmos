@@ -393,3 +393,41 @@ title: "Bundle Log"
   29,992 links, 1,672/466/46 tiers), graph.json (5,444 nodes / 35,509 edges,
   0 isolated), okf render (6,724 concepts), gen-static-data check OK.
 - **Combined pass-2 report**: `ops/reports/adversarial-review-pass2-stub-promotion-2026-08.md`.
+
+## 2026-08-03 (adversarial review pass 3 — claims grounding, link hygiene, merges)
+- **"the wiki's … does Y" claims grounded/reworded (558-file scope)**: 5
+  parallel agents + manual completion rewrote every unverifiable operational
+  claim (wiki runs batch experiments, signs domains, serves HTTP/2/h3 at the
+  edge, forecasts export traffic, fuses TF-IDF+embeddings, tracks dashboard
+  CLS as a rack pulse, etc.) into design-intent/policy language ("would…",
+  "a documented policy…", "the standing rule is…"). Search claims grounded in
+  the real `search_fusion.py` (TF-IDF + BM25 + RRF; neural embeddings are a
+  documented future option, not current fact). Content-description and
+  generic "system/loop" statements left unchanged; no frontmatter or
+  `[[wikilinks]]` touched; ~145 files edited, ~126 claim sentences reworded.
+- **Keyword-matched hub links removed (222 links, 143 files)**: keep-if-topic
+  gate removed kubernetes-control-plane (86), observability-pillars (65),
+  storage-systems (44), ospf-protocols (27) links from off-topic files;
+  kernel-architecture / memory-management-paging / web-security-owasp /
+  css-layout links retained where topical. Confirmed misfires removed:
+  nvme-over-fabrics-tcp (tcp-keepalive), memory-management-paging
+  (mdadm-and-lvm2, select-poll-epoll, io-uring), cloud-security-groups +
+  process-groups-and-sessions + memory-management-paging
+  (users-groups-and-acls). 22 dead links to the removed
+  `raw/archive/session-artifacts-2026-07/…` corpus deleted across 134 files.
+- **Orphaned trailing bullets fixed (59 files)**: headerless bullet blocks
+  after the last `## ` section got a `## Practice` header.
+- **Near-duplicate merges (7)**: `preview-environments`→`ephemeral-environments`,
+  `runbooks-and-playbooks`→`runbooks`, `srgb-vs-p3`→`color-spaces`,
+  `cls-avoidance`→`cumulative-layout-shift`,
+  `path-resolution-and-symlinks`→`path-resolution`, `dvh-svh`→`vw-vh`
+  (unique svh/lvh/keyboard content folded in), and
+  `release-engineering-trains` retitled →`release-engineering` (frontmatter/
+  body mismatch fixed, keyword links replaced). All inbound links retargeted;
+  duplicate index entries deduped; losers archived (deleted).
+- **Word-count repair**: 13 files that dipped under 320 after link removals
+  topped back up; edited files verified ≥320 body words.
+- **Snapshots regenerated**: stats.html (5,337 files, 1,178,657 words,
+  29,727 links, 1,707/464/48 tiers), graph.json (5,438 nodes / 35,244 edges,
+  0 isolated), okf render (6,718 concepts), gen-static-data check OK.
+- **Synthesis note**: `wiki/syntheses/adversarial-review-pass-3-2026-08.md`.

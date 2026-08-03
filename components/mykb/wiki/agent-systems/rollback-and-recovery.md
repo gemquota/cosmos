@@ -26,6 +26,5 @@ Rollback and recovery is the ability to undo a change and restore the last known
 - [[wiki/llm-agents/deterministic-replay|Deterministic Replay]] — re-running failures before retrying
 - [[wiki/llm-agents/agent-versioning|Agent Versioning]] — versioning what gets rolled back
 - [[wiki/llm-agents/agent-logs|Agent Logs]] — the record of what was changed
-- [[raw/archive/session-artifacts-2026-07/topics/git-2|git — the version-control substrate
 - [[wiki/syntheses/knowledge-system|Knowledge System Overview]] — recovery lessons become knowledge
 - [[wiki/ops/gap-report|Gap Analysis Report]] — recovery gaps identified
