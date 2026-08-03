@@ -25,5 +25,3 @@ Disaster recovery tiers classify systems by how much downtime and data loss they
 - [[wiki/devops-infra/disaster-recovery|Disaster Recovery]]
 - [[wiki/devops-infra/point-in-time-recovery|Point-in-Time Recovery]]
 - [[wiki/infrastructure/pulsar-architecture-and-tiers|Pulsar Architecture And Tiers]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

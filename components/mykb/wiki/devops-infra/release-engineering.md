@@ -1,0 +1,28 @@
+---
+type: "concept"
+title: "Release Engineering"
+description: "Versioning, changelogs, reproducible builds, artifact signing, and promotion pipelines as engineered, auditable release process"
+tags: ["release-engineering", "pipelines", "releases", "provenance"]
+timestamp: "2026-08-02T00:00:00Z"
+status: "growing"
+---
+
+# Release Engineering
+
+## Summary
+Release engineering turns software delivery into a repeatable process: versioning, changelogs, build reproducibility, artifact signing, promotion, and rollback all operate as engineered pipelines rather than manual rituals. The goal is that any commit can become a release — deterministically, reviewably, and reversibly.
+
+## Details
+- Mechanism: CI builds artifacts from a single source of truth, attaches metadata (version, commit, SBOM, signature), publishes them, and records provenance; promotion pipelines move the same artifact through stages with gates; release tooling (semantic-release, release-please, git-cliff) derives versions and changelogs from history; rollback is a promotion of an older artifact, not a new build.
+- Concrete example: a merge to main triggers a build; release-please bumps the version and opens a release PR; merging it publishes the signed artifact and changelog; the artifact promotes to staging, passes checks, and promotes to prod with a recorded decision; a bad release rolls back by re-promoting the previous artifact.
+- Failure modes: unreproducible builds (environment-dependent artifacts) making rollback unreliable; version collisions from manual version bumps; changelogs that drift from actual changes; promotion steps done by hand and skipped under pressure; artifact storage that loses or mutates old versions; signing that is not verified at deploy.
+- Tradeoffs: engineered release pipelines cost setup and ceremony but make releases boring and safe; the alternative — manual release rituals — works until it fails under pressure; the payoff is that release risk becomes a solved, rehearsed process instead of an incident.
+- Operational notes: keep one release pipeline per product, make every step auditable, and rehearse rollback regularly.
+- Provenance: attach build metadata — commit, builder, SBOM — to the artifact at build time and verify it at deploy, so the artifact itself is the record of what shipped.
+- RSIS3 relevance: RSIS3's own releases (dashboard bundles, packaged loops) deserve the same engineering — versioned, signed, promotable artifacts with a rehearsed rollback path.
+
+## Related
+- [[wiki/devops-infra/release-trains|Release Trains]] — the cadence model for shipping releases
+- [[wiki/devops-infra/release-versioning|Release Versioning]] — semver and immutable published versions
+- [[wiki/devops-infra/semantic-release-automation|Semantic Release Automation]] — deriving versions and changelogs from history
+- [[wiki/devops-infra/changelog-automation|Changelog Automation]] — keeping release notes in sync with what shipped

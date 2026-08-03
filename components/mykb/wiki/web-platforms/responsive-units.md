@@ -24,7 +24,7 @@ Responsive units — %, vw/vh/dvw/dvh, cqw/cqi, em/rem, clamp expressions — si
 ## Related
 - [[wiki/web-platforms/responsive-design-systems|Responsive Design Systems]]
 - [[wiki/web-platforms/vw-vh|vw and vh Units]]
-- [[wiki/web-platforms/dvh-svh|Dynamic and Small Viewport Units]]
+- [[wiki/web-platforms/vw-vh|vw and vh Units]]
 - [[wiki/web-platforms/em-vs-rem|em vs rem]]
 - [[wiki/web-platforms/css-layout|CSS Layout]]
 - [[wiki/frontend-frameworks/responsive-design|Responsive Design]]

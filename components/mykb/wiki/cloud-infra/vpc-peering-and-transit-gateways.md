@@ -17,7 +17,7 @@ VPC peering connects two VPCs directly; transit gateways connect many through a 
 - Concrete example: two VPCs that share a database peer directly — cheap and simple; ten VPCs needing a shared service hub use a transit gateway so each spoke peers once with the hub; a security requirement to inspect all east-west traffic routes everything through a firewall attachment on the TGW.
 - Failure modes: CIDR overlap between peered VPCs (routes conflict or vanish); forgetting that peering is non-transitive and routing breaks at the third hop; TGW route-table misconfiguration black-holing spokes; and cost/bandwidth surprises — inter-region TGW traffic bills, and hub architectures concentrate failure and bandwidth.
 - Operational tradeoffs: peering wins for few, stable pairs; transit hubs win for scale and inspection but add per-attachment pricing and a single routing authority. The pattern is peering for tight pairs and transit for hub-spoke, with CIDR uniqueness enforced across the estate.
-- RSIS3/mykb relevance: the wiki's environment map uses peering for shared services and a transit hub for the fleet; this note records the routing model the loop preserves when adding VPCs.
+- RSIS3/mykb relevance: the wiki's environment map would use peering for shared services and a transit hub for the fleet; this note records the routing model the loop preserves when adding VPCs.
 - Route hygiene: document every peering route and TGW attachment in the IPAM/network map; an undocumented route is an incident waiting for a network change to expose it.
 - Bandwidth note: TGW and peering have bandwidth ceilings per attachment; verify the ceiling against the workload before routing bulk traffic through the hub.
 

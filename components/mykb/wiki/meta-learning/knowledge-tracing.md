@@ -20,7 +20,7 @@ Knowledge Tracing — Modeling whether a learner has mastered a skill from perfo
 - Modern variants add deep networks (DKVMs), item difficulty, and forgetting. Knowledge tracing powers mastery learning: when mastery probability crosses a threshold, the skill is considered learned and practice moves on.
 - Worked example: a tutoring system presents fraction problems; after each answer, mastery probability updates — guessing right once raises it little, consistent success raises it steadily, and a slip lowers it briefly.
 - Uses: adaptive problem selection, knowledge-gap diagnosis, and learning-curve analytics. Limits: skill definition granularity, and mastery of logged problems does not guarantee transfer.
-- mykb relevance: the wiki's gap detector is a coarse knowledge-tracer for the knowledge base — locating weak regions rather than skills.
+- mykb relevance: the wiki's gap detector would be a coarse knowledge-tracer for the knowledge base — locating weak regions rather than skills.
 
 ## Related
 

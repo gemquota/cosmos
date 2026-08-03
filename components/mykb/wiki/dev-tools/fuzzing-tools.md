@@ -20,6 +20,7 @@ Fuzzing tools throw unexpected inputs at parsers, APIs, and binaries to trigger 
 - Operational notes: run short CI fuzz bursts, keep a minimized corpus, and triage every crash into a regression test.
 - RSIS3 relevance: fuzzing the mykb markdown parser would harden the acquisition pipeline against malformed notes — hostile input handling is exactly what a growing wiki needs.
 
+## Practice
 - Start with the highest-risk parsers (markdown, YAML, JSON) and add fuzzing where input crosses trust boundaries.
 ## Related
 - [[wiki/testing/fuzzing|Fuzzing]]

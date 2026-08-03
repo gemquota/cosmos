@@ -20,8 +20,12 @@ Availability Heuristic — Judging frequency or probability by how easily exampl
 - Tversky & Kahneman demonstrated the heuristic in frequency judgments; later work (Schwarz) showed that the perceived ease of recall itself matters — struggling to recall many examples lowers judged frequency more than recalling a few.
 - Worked example: after highly publicized plane crashes, perceived flight risk spikes while driving — statistically far riskier — feels safer because accident images are unavailable; media coverage manipulates the heuristic.
 - Mitigations: base rates, reference classes, and explicit probability training; awareness alone is weak against visceral examples.
-- mykb relevance: forecasting and evidence evaluation must override availability with base rates and logs — the wiki's data side does this.
+- mykb relevance: forecasting and evidence evaluation must override availability with base rates and logs — the wiki's data side would do this.
 
+- Application: processes that estimate frequency or risk — link health, source reliability, trend detection — should consult recorded data before intuition, because the vivid example is exactly the unreliable signal.
+- Design intent: the standing rule is that base rates and logs override availability in the wiki's data processes, so a recent dramatic example does not move a metric or a decision by itself.
+- Awareness is necessary but weak: knowing the bias does not stop it, which is why the mitigation is designed into the data path rather than left to each reader.
+- Forecasting discipline: projections should start from recorded history and adjust for documented exceptions, not from whatever recent case comes most easily to mind.
 ## Related
 
 - [[wiki/concepts/heuristics-and-biases|Heuristics and Biases]] — the research program

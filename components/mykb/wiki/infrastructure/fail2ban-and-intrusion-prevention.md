@@ -21,5 +21,3 @@ fail2ban is an automated intrusion-prevention tool that watches service logs, de
 
 ## Related
 - [[wiki/infrastructure/intrusion-detection-systems|Intrusion Detection Systems]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

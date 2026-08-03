@@ -20,6 +20,7 @@ License compliance for AI tracks the terms attached to models, code, and data an
 - Operational notes: automate scanning in CI, keep the inventory current, and document decisions for ambiguous licenses. Scan generated code and bundled assets too, since they carry their own obligations.
 - RSIS3 relevance: the bundle's dependencies and generated content should be license-audited — the same inventory-and-gate discipline applied to its stack.
 
+## Practice
 - Gate the pipeline on the inventory: an unlisted dependency or dataset should fail the build, not sail through.
 - Escalate ambiguous terms to a documented decision rather than guessing, so the interpretation is repeatable.
 ## Related

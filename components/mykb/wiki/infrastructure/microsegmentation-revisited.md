@@ -20,5 +20,3 @@ Microsegmentation is fine-grained isolation between workloads — down to the in
 - For mykb: microsegmentation is the security story behind the network-policy and service-mesh nodes — the same east-west isolation logic implemented at different layers.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

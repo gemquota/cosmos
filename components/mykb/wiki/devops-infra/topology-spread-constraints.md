@@ -25,5 +25,4 @@ Topology spread constraints distribute pods across failure domains — zones, re
 - [[wiki/os-shell/numa-and-cpu-topology|NUMA & CPU Topology]]
 - [[wiki/infrastructure/network-topology-design|Network Topology Design]]
 - [[wiki/os-shell/pci-e-topology|PCIe Topology]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/devops-infra/observability-pillars|Observability Pillars]]

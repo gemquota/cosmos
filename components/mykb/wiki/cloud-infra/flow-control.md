@@ -21,7 +21,6 @@ Flow control is the mechanism that stops a fast sender from overwhelming a slow 
 - Buffer sizing: set socket buffers to the bandwidth-delay product for high-throughput paths; an undersized receive buffer throttles throughput invisibly. The window is per direction, so both peers' buffers matter on asymmetric paths.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/os-shell/job-control-and-background-tasks|Job Control & Background Tasks]]
 - [[wiki/cloud-infra/congestion-control-algorithms|Congestion Control Algorithms]]
 - [[wiki/cloud-infra/network-access-control-lists|Network Access Control Lists]]

@@ -25,5 +25,3 @@ restic and Borg are deduplicating, encrypted backup tools for filesystem trees. 
 - [[wiki/devops-infra/backup-strategies-3-2-1|Backup Strategies: 3-2-1]]
 - [[wiki/os-shell/checksums-and-hashing-tools|Checksums & Hashing]]
 - [[wiki/devops-infra/fault-injection-tools|Fault Injection Tools]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

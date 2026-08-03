@@ -20,6 +20,7 @@ Product quantization splits each vector into sub-vectors, learns a small codeboo
 - Operational notes: train codebooks on representative data, benchmark recall versus memory, and add candidate re-ranking where accuracy matters.
 - RSIS3 relevance: PQ indexes let a local device hold very large embedding collections for mykb-style recall — the memory lever when the wiki corpus grows.
 
+## Practice
 - Combine PQ with re-ranking: compress for the candidate scan, then re-score the top candidates on full vectors.
 ## Related
 - [[wiki/data-storage/hnsw|HNSW]] — graph index that can be PQ-compressed

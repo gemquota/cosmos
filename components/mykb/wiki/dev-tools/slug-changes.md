@@ -20,6 +20,7 @@ Slug changes are the concrete events where an article's filename changes; each o
 - Operational notes: batch slug changes into link-fix sprints, record reasons, and always finish with the global link check.
 - RSIS3 relevance: for mykb, slug changes are graph mutations — the same change-management discipline RSIS3 applies to its state transitions.
 
+## Practice
 - Keep a slug-change log so curators can spot rename churn and correct the underlying naming pattern.
 ## Related
 - [[wiki/dev-tools/slug-stability|Slug Stability]]

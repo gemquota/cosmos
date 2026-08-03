@@ -26,4 +26,3 @@ Service accounts and workload identities give machine workloads an identity for 
 - [[wiki/devops-infra/service-meshes-istio-linkerd|Service Meshes: Istio & Linkerd]]
 - [[wiki/cloud-infra/service-discovery-dns-based|DNS-Based Service Discovery]]
 - [[wiki/cloud-infra/function-as-a-service|Function-as-a-Service]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

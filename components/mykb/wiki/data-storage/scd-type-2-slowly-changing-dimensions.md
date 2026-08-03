@@ -18,7 +18,7 @@ SCD Type 2 adds a new row whenever a tracked attribute changes, preserving the o
 - Failure modes: Type 2 applied to every attribute, doubling the table on each change and fragmenting history; missing effective dates, so versions are ambiguous; no current flag maintained, forcing expensive max(valid_from) lookups; merge races expiring and inserting the same row; surrogate key collisions across versions.
 - Tradeoffs: Type 2 preserves auditable history at the cost of table growth and load complexity; the alternatives — Type 1 overwrite (simple, no history), Type 3 (prior value only), Type 6 (mix) — trade history for simplicity; the mature pattern is Type 2 for audited dimensions, Type 1 for attributes history does not matter for.
 - Operational notes: track tracked-attribute lists explicitly, index effective dates, and test historical joins in CI.
-- RSIS3 relevance: the wiki's entity and status history are naturally Type 2 — preserving versioned truth is what makes the knowledge graph auditable.
+- RSIS3 relevance: the wiki's entity and status history would be naturally Type 2 — preserving versioned truth is what makes the knowledge graph auditable.
 
 
 ## Related

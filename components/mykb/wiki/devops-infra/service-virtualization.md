@@ -26,4 +26,3 @@ Service virtualization replaces real downstream services with simulated versions
 - [[wiki/infrastructure/network-function-virtualization|Network Function Virtualization]]
 - [[wiki/devops-infra/service-meshes-istio-linkerd|Service Meshes: Istio & Linkerd]]
 - [[wiki/cloud-infra/function-as-a-service|Function-as-a-Service]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

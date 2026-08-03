@@ -21,5 +21,3 @@ Bastion hosts (jump boxes) are hardened, deliberately exposed entry points that 
 
 ## Related
 - [[wiki/cloud-infra/dedicated-hosts-and-instances|Dedicated Hosts & Instances]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

@@ -17,7 +17,7 @@ Security group best practices turn the most misconfigured control in cloud netwo
 - Concrete example: the web SG allows 443 from 0.0.0.0/0 (necessary) but 22 only from the bastion SG; the DB SG allows 5432 only from the app SG; a compliance scan flags any management port open to the world and fails CI. The drift pattern is console edits bypassing code review.
 - Failure modes: ephemeral "just for debugging" rules that become permanent; security groups referenced by IP instead of group ID (drift when instances change); duplicate groups with near-identical rules; and rules that allow more than the port needs (0-65535 shortcuts).
 - Operational tradeoffs: group references give automatic propagation but hide dependencies (deleting a group breaks rules — check references); code management adds process but makes exposure reviewable. The standard is defense in depth: SG per role + NACL baseline + flow-log alerts on unexpected egress.
-- RSIS3/mykb relevance: the wiki's environment templates encode security groups as code with a rule vocabulary; this note is the review checklist the loop runs before merging network changes.
+- RSIS3/mykb relevance: the wiki's environment templates would encode security groups as code with a rule vocabulary; this note is the review checklist the loop would run before merging network changes.
 - Review cadence: run an exposure scan on a schedule and treat any new 0.0.0.0/0 rule on a management port as a review event; drift is the threat, not the initial config.
 - Naming: name groups by role and environment (web-prod, db-prod) so reviews read intent; unnamed or generically-named groups are unreviewable.
 

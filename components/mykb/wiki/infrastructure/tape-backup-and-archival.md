@@ -26,4 +26,3 @@ Linear tape remains the workhorse for long-term, low-cost retention: data writte
 - [[wiki/devops-infra/backup-tools-restic-borg|Backup Tools: restic & Borg]]
 - [[wiki/infrastructure/optical-storage-tape|Optical Storage & Tape]]
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

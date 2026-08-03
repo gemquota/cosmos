@@ -24,4 +24,3 @@ SDN controllers centralize the network's control plane: a software brain compute
 ## Related
 - [[wiki/devops-infra/ingress-controllers|Ingress Controllers]]
 - [[wiki/devops-infra/admission-controllers-and-webhooks|Admission Controllers & Webhooks]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]

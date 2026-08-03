@@ -20,6 +20,7 @@ Frontmatter linting checks every article's metadata block: required fields prese
 - Operational notes: keep the linter in the repo, run it in the global verification pass, and treat lint failures as promotion blockers.
 - RSIS3 relevance: frontmatter linting runs at write time and in the global verification pass — the same schema-enforcement discipline RSIS3 applies to its state files.
 
+## Practice
 - Report lint violations with file, field, and expected value so fixes are mechanical, and keep the rule set versioned with the spec.
 ## Related
 - [[wiki/data-storage/yaml-frontmatter|YAML Frontmatter]]

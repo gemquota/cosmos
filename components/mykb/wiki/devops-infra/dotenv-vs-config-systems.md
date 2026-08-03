@@ -22,7 +22,6 @@ dotenv files and full configuration systems solve adjacent problems: .env keeps 
 - RSIS3 relevance: RSIS3's local runs can use dotenv for developer ergonomics while production configuration (daemon tokens, dashboard endpoints) belongs in the config system layer.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/os-shell/systemd-and-init-systems|systemd & Init Systems]]
 - [[wiki/infrastructure/intrusion-detection-systems|Intrusion Detection Systems]]
 - [[wiki/devops-infra/feature-flag-systems-revisited|Feature Flag Systems]]

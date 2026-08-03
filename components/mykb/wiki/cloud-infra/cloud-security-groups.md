@@ -17,7 +17,7 @@ Cloud security groups are stateful, instance-level firewalls (AWS SG, GCP firewa
 - Concrete example: an app SG allows 443 from the load-balancer SG and 22 from a bastion SG only; the database SG allows 5432 from the app SG. Using group references instead of CIDRs means adding a server to the app tier automatically inherits the rules — and removing it drops them.
 - Failure modes: 0.0.0.0/0 on management ports (22, 3389, 5432) — the most common breach vector; rules referencing stale CIDRs after environments move; duplicate/conflicting rules that shadow intended policy; and drift between IaC and console edits that makes the source of truth lie.
 - Operational tradeoffs: groups are cheap, stateful, and per-application — the right default filter — but they are not a substitute for identity-aware controls (IAM), network inspection (firewalls), or logging. Treat security groups as code: review diffs, minimize rule count, and use group-to-group references.
-- RSIS3/mykb relevance: the wiki's environment templates encode security groups as code with a documented rule vocabulary, so loop-provisioned workloads inherit a safe baseline.
+- RSIS3/mykb relevance: the wiki's environment templates would encode security groups as code with a documented rule vocabulary, so loop-provisioned workloads inherit a safe baseline.
 - Default posture: start with deny-all per environment and open rules only as services require; a permissive starter template is how the first exposure ships.
 - Deny-by-default: delete default allow rules where the platform creates them; a fresh environment should start closed and open only what is needed.
 

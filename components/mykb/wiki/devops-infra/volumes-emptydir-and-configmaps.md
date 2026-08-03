@@ -25,5 +25,3 @@ emptyDir and ConfigMap volumes cover the ephemeral and configuration storage nee
 - [[wiki/devops-infra/local-persistent-volumes|Local Persistent Volumes]]
 - [[wiki/devops-infra/configmaps-and-secrets-rotation|ConfigMaps & Secrets Rotation]]
 - [[wiki/infrastructure/persistent-volumes|Persistent Volumes]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

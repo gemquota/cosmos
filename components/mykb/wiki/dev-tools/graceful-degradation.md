@@ -20,6 +20,7 @@ Graceful degradation keeps a system usable when a dependency fails: search falls
 - Operational notes: test the degraded modes, alert when they activate, and keep the fallback paths exercised.
 - RSIS3 relevance: when a model provider fails, the agent can degrade to rule-based fallbacks for routine tasks — the design-in-advance discipline RSIS3 applies to every loop dependency.
 
+## Practice
 - Decide the degraded behavior per dependency tier so losing a non-critical dependency degrades less than losing a core one.
 ## Related
 - [[wiki/dev-tools/fallback-values|Fallback Values]]

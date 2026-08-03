@@ -21,5 +21,3 @@ Leader election and quorum decide who acts in a distributed system: leader elect
 - RSIS3 relevance: any HA deployment of the wiki daemon or shared state needs explicit leader election and fencing — otherwise a failed node may keep writing while its replacement runs.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

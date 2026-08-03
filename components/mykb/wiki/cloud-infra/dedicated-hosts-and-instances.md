@@ -17,7 +17,7 @@ Dedicated hosts and instances give a customer exclusive use of a physical server
 - Concrete example: an Oracle or Windows Server license tied to sockets/cores forces dedicated hosts so the physical core count matches licensing; a regulated workload demands sole tenancy to exclude other customers; a latency-critical pair wants host affinity so instances share the same NUMA/network path.
 - Failure modes: paying for dedicated tenancy without a licensing or compliance driver (pure cost); confusing dedicated instances with dedicated hosts and losing placement control; host-level maintenance events taking down all pinned instances at once (plan for host replacement); and capacity assumptions — dedicated hosts reserve a whole host, wasting unused vCPUs.
 - Operational tradeoffs: the premium buys isolation and placement control, not performance (shared tenancy is usually equal or better price-performance); use savings plans/reserved coverage on hosts and keep host pools sized for failover. Re-evaluate annually — licensing deals change.
-- RSIS3/mykb relevance: the wiki's compliance-sensitive workloads are on dedicated hosts with a placement diagram; this note documents the justification so the loop does not spread dedicated tenancy by default.
+- RSIS3/mykb relevance: the wiki's compliance-sensitive workloads would be on dedicated hosts with a placement diagram; this note documents the justification so the loop does not spread dedicated tenancy by default.
 - Utilization: track host-level vCPU utilization; a dedicated host at 20% utilization is the clearest sign the licensing rationale should be re-audited. Maintenance windows and a host-replacement plan are capacity concerns, not afterthoughts.
 
 ## Related

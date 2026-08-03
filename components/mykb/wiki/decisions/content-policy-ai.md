@@ -20,6 +20,7 @@ Content policy specifies what outputs are allowed — violent, sexual, hateful, 
 - Operational notes: maintain a test set per category, review enforcement rates, and version policy changes.
 - RSIS3 relevance: the wiki's curation rules are a content policy for knowledge — the same written-category-and-enforcement structure applied to articles.
 
+## Practice
 - Include concrete examples per category so both classifiers and human reviewers interpret the rules consistently.
 - Measure enforcement against the policy with a labeled test set so rule changes show up as measurable behavior shifts.
 ## Related

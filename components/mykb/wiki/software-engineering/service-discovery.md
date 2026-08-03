@@ -17,7 +17,7 @@ Service discovery answers "where is this service right now?" — DNS-based, regi
 - Concrete example: a payments service scales to 5 instances; new ones register with Consul, old ones deregister on health-check failure; an API gateway (server-side) queries the registry for the current list and load-balances; a client library (client-side) gets the list and balances itself, cutting one hop.
 - Failure modes: stale registrations after crashes (TTLs and health checks must be reliable); registry as single point of failure (run quorum, plan for its loss); DNS caching defeating failover (short TTLs); and discovery adding a dependency to every startup — bootstrap without the registry must still work (cached last-known endpoints).
 - Operational tradeoffs: discovery buys elasticity and self-healing at the cost of infrastructure and eventual consistency (registration lag); the pattern is platform-native discovery where available (K8s), registry for VMs, and DNS as the universal fallback.
-- RSIS3/mykb relevance: the wiki's services resolve through the platform registry with DNS fallback; this note records the registration and health-check conventions the loop relies on during scaling.
+- RSIS3/mykb relevance: the wiki's services would resolve through the platform registry with DNS fallback; this note records the registration and health-check conventions the loop relies on during scaling.
 - Startup order: consumers must tolerate registry unavailability at boot by retrying or using cached endpoints; a registry outage should degrade discovery, not disable the fleet.
 - Registration hygiene: implement graceful deregistration on shutdown and let health checks purge crash leftovers; stale entries are the main source of "route to dead instance" errors.
 

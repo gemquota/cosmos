@@ -24,4 +24,4 @@ Traffic engineering plans and steers how traffic flows across a network so that 
 - [[wiki/devops-infra/chaos-engineering-revisited|Chaos Engineering]]
 - [[wiki/devops-infra/site-reliability-engineering-revisited|Site Reliability Engineering]]
 - [[wiki/infrastructure/traffic-shaping-and-qos|Traffic Shaping & QoS]]
-- [[wiki/devops-infra/release-engineering-trains|Release Engineering Trains]]
+- [[wiki/devops-infra/release-engineering|Release Engineering]]

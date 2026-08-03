@@ -21,5 +21,3 @@ RDMA (Remote Direct Memory Access) lets one computer read or write another compu
 
 ## Related
 - [[wiki/infrastructure/roce-and-rdma-over-tcp|RoCE & RDMA over TCP]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

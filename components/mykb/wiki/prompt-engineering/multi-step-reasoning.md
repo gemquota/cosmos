@@ -20,6 +20,7 @@ Multi-step reasoning makes a model show or construct intermediate steps before t
 - Operational notes: eval reasoning outputs separately, cap step counts, and verify externalized steps against their tools.
 - RSIS3 relevance: RRP's critique-refine cycles are multi-step reasoning applied to prompts themselves — the same decompose-then-verify structure.
 
+## Practice
 - Separate reasoning output from the final answer in the prompt so steps inform, not pollute, the conclusion.
 ## Related
 - [[wiki/prompt-engineering/prompt-chaining|Prompt Chaining]] — The engineered form of stepwise reasoning

@@ -21,6 +21,7 @@ Stemming crudely removes suffixes so running, runs, and ran all match run. It is
 - Operational notes: enable the stemmer per language, verify index/query consistency, and evaluate recall on real queries.
 - RSIS3 relevance: FTS engines over mykb text can enable stemmers so embedding and embeddings retrieve the same pages — the normalization that keeps lexical search usable.
 
+## Practice
 - Keep the stemmer consistent between indexing and querying; a mismatch is a silent recall bug.
 ## Related
 - [[wiki/data-storage/lemmatization|Lemmatization]] — the dictionary-based, more accurate alternative

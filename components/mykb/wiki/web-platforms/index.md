@@ -24,7 +24,7 @@ Part of [[wiki/index|Wiki Index]]. 162 pages.
 - [[wiki/web-platforms/caniuse-practice|Can I Use in Practice]] — Using caniuse data to decide feature support targets
 - [[wiki/web-platforms/canvas-2d|Canvas 2D API]] — Immediate-mode 2D drawing: paths, text, images, and pixel access on a bitmap surface
 - [[wiki/web-platforms/clamp-practice|clamp() in Practice]] — Fluid CSS values clamped between minimum and maximum bounds
-- [[wiki/web-platforms/cls-avoidance|CLS Avoidance]] — Techniques that prevent unexpected layout shift
+- [[wiki/web-platforms/cumulative-layout-shift|Cumulative Layout Shift]] — Techniques that prevent unexpected layout shift
 - [[wiki/web-platforms/color-blind-considerations|Color Blind Accessibility]] — Designing palettes that work without relying on hue alone
 - [[wiki/web-platforms/color-mix|color-mix() CSS]] — Mixing two colors in a chosen color space
 - [[wiki/web-platforms/color-spaces|CSS Color Spaces]] — sRGB, Display P3, and other color spaces in CSS
@@ -53,7 +53,7 @@ Part of [[wiki/index|Wiki Index]]. 162 pages.
 - [[wiki/web-platforms/dom-manipulation|DOM Manipulation]] — Reading and changing the Document Object Model to make pages interactive
 - [[wiki/web-platforms/dom-xss|DOM XSS]] — Injection sinks in client-side JavaScript instead of server HTML
 - [[wiki/web-platforms/drag-and-drop-web|Drag and Drop on the Web]] — HTML5 drag and drop, pointer-event alternatives, and accessible reordering
-- [[wiki/web-platforms/dvh-svh|Dynamic and Small Viewport Units]] — Handling mobile browser chrome with dvh and svh
+- [[wiki/web-platforms/vw-vh|vw and vh Units]] — Handling mobile browser chrome with dvh and svh
 - [[wiki/web-platforms/em-vs-rem|em vs rem]] — Relative font units: parent-scoped versus root-scoped sizing
 - [[wiki/web-platforms/error-monitoring-web|Error Monitoring for the Web]] — Capturing, aggregating, and triaging client-side errors, crashes, and performance regressions
 - [[wiki/web-platforms/evergreen-browsers|Evergreen Browsers]] — Self-updating browsers and their implications for support policy
@@ -133,7 +133,7 @@ Part of [[wiki/index|Wiki Index]]. 162 pages.
 - [[wiki/web-platforms/speech-synthesis-web|Speech Synthesis on the Web]] — The SpeechSynthesis API: text-to-speech voices, rates, and browser differences
 - [[wiki/web-platforms/sprite-sheets|Sprite Sheets]] — Combining many small images into one file to cut requests
 - [[wiki/web-platforms/srcset-practice|srcset in Practice]] — Serving density- and width-matched image candidates
-- [[wiki/web-platforms/srgb-vs-p3|sRGB vs Display P3]] — Wide-gamut color and browser support differences
+- [[wiki/web-platforms/color-spaces|CSS Color Spaces]] — Wide-gamut color and browser support differences
 - [[wiki/web-platforms/stacking-contexts|Stacking Contexts]] — The z-axis grouping that determines paint order
 - [[wiki/web-platforms/state-management|State Management]] — The patterns and tools for tracking and synchronizing the data a UI depends on
 - [[wiki/web-platforms/sticky-position|position: sticky]] — Elements that stick within their scroll container boundaries

@@ -22,7 +22,7 @@ Failure modes: Domain=example.com on a multi-tenant host exposes cookies to ever
 
 Operational tradeoffs: the narrowest scope (host-only, Path=/, Secure, SameSite=Lax, __Host- prefix) is the security baseline but breaks legitimate subdomain sharing; sharing cookies across subdomains is sometimes needed — auth on one subdomain, API on another — and then should use a dedicated auth cookie with Domain set explicitly and a documented list of subdomains. The rule: widen scope deliberately and only as far as the threat model allows.
 
-RSIS3/mykb relevance: the wiki's auth boundary is a single host, so the standing rule is host-only cookies; documenting the scope contract prevents future "convenience" widening during refactors.
+RSIS3/mykb relevance: the wiki's auth boundary would be a single host, so the standing rule is host-only cookies; documenting the scope contract prevents future "convenience" widening during refactors.
 
 ## Related
 - [[wiki/api-protocols/secure-cookies|Secure Cookies]]

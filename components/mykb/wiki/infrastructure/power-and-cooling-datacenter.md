@@ -21,5 +21,3 @@ Power and cooling are the physical substrate of every datacenter: the power chai
 
 ## Related
 - [[wiki/os-shell/thermal-throttling-and-power|Thermal Throttling & Power]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

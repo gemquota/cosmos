@@ -23,5 +23,3 @@ Canary and blue-green are progressive delivery strategies that release with a li
 ## Related
 - [[wiki/infrastructure/blue-green-deployments|Blue-Green Deployments]]
 - [[wiki/infrastructure/canary-deployments|Canary Deployments]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

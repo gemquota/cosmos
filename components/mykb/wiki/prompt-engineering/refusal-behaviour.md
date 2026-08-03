@@ -20,6 +20,7 @@ Refusal behaviour is the model's learned ability to say I can't help with that i
 - Operational notes: track over- and under-refusal rates in evals, and test the boundary cases after every model change.
 - RSIS3 relevance: RSIS3's own boundaries (no self-destruction, crisis handling) are refusal-like constraints in its prompt system — the same calibration question applies to its guardrails.
 
+## Practice
 - Measure refusal consistency across phrasings of the same request, since inconsistent refusals signal calibration drift.
 ## Related
 - [[wiki/prompt-engineering/safety-tuning|Safety Tuning]] — The training that produces refusal behaviour

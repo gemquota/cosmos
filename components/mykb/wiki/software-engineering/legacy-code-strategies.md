@@ -20,10 +20,14 @@ Legacy code is old code that people fear to change — usually because it lacks 
 - The strangler pattern replaces legacy systems incrementally, routing new behavior to new code until the old dies.
 - Budget and ownership are the real levers: legacy code rots faster without an explicit improvement budget.
 - For the mykb bundle, legacy is the old curation pipeline: characterize it, wrap it with tests, strangler it feature by feature.
-- Worked example — the wiki's old sync script has no tests; a characterization test pins its behavior, a seam injects a fake clock, and a new sync stage stranglers it incrementally.
+- Worked example — the wiki's old sync script would have no tests; a characterization test would pin its behavior, a seam would inject a fake clock, and a new sync stage would strangler it incrementally.
 
-Worked example — the wiki's old sync script has no tests; a characterization test pins its behavior, a seam injects a fake clock, and a new sync stage stranglers it incrementally.
+Worked example — the wiki's old sync script would have no tests; a characterization test would pin its behavior, a seam would inject a fake clock, and a new sync stage would strangler it incrementally.
 
+- Budget reality: legacy code rots faster without an explicit improvement budget; the standing rule is that every change to legacy code leaves it slightly more tested than before.
+- Ownership: unowned legacy code is a liability without a decay plan; naming an owner and a budget is the first step before any strategy can work.
+- Sync-script application: the wiki's old sync script, as a worked example, would follow the same path — characterization tests first, then seams, then incremental strangling — rather than a rewrite.
+- Measurement: the strategy is working when the untested surface shrinks with each change and the failure rate on changes goes down, not up.
 ## Related
 - [[wiki/software-engineering/refactoring-techniques|Refactoring Techniques]]
 - [[wiki/software-engineering/technical-debt-management|Technical Debt Management]]

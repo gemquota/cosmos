@@ -1,7 +1,7 @@
 ---
 type: "concept"
 title: "Runbooks"
-description: "Written procedures for handling alerts and incidents so anyone on call can act correctly"
+description: "Runbooks and playbooks: written procedures for alerts and incidents so anyone on call can act correctly"
 tags: ["runbooks", "oncall", "documentation", "incidents"]
 timestamp: "2026-08-01T00:00:00Z"
 status: "growing"
@@ -17,6 +17,8 @@ Runbooks are the step-by-step procedures for responding to known alerts and inci
 - Concrete example: an alert fires for database connection exhaustion; the runbook says check `pg_stat_activity` for idle-in-transaction sessions, look for a specific query pattern, kill the offending sessions, and if the problem persists, page the database owner; the expected outputs are shown so the responder can tell success from failure.
 - Failure modes: runbooks that rot — systems change and the commands stop working, so responders improvise; runbooks that are too vague (check the database) or too long to read under pressure; steps that assume context the responder lacks (a VPN, a bastion, a known directory); runbooks that are never tested, so the first real execution is the test; alerts that do not link to any runbook.
 - Tradeoffs: runbooks are cheap insurance against tribal-knowledge failure, but they require maintenance — review them after incidents and when systems change; the alternative, no documentation, fails exactly when it matters most; the discipline is to write for the worst-case reader and validate in game days.
+- Playbook mechanics: scenario-level guidance sits alongside runbooks — a decision tree for outage classes (dependency down, data corruption, security event), communication templates, stakeholder lists, and handoff procedures; playbooks cover the judgment calls individual runbooks cannot.
+- Playbook example: a runbook for high database latency (check slow queries, replication lag, connection count; commands to run; when to fail over) pairs with a playbook for a suspected security incident (contain, preserve evidence, notify, coordinate with security, communicate status); a playbook that exists but is never practiced fails exactly like an untested runbook.
 - Operational notes: keep runbooks with the code they describe, link them from alerts and dashboards, and treat runbook updates as part of incident follow-up.
 - RSIS3 relevance: the wiki daemon, dashboard, and backup restore should each have a runbook in the repo — RSIS3's recovery loop then has an executable, tested procedure instead of a memory.
 
@@ -25,3 +27,4 @@ Runbooks are the step-by-step procedures for responding to known alerts and inci
 - [[wiki/devops-infra/on-call-rotations|On-Call Rotations]] — who reads the runbooks
 - [[wiki/devops-infra/escalation-policies|Escalation Policies]] — when runbooks fail
 - [[wiki/devops-infra/observability|Observability]] — dashboards runbooks reference
+- [[wiki/infrastructure/data-eng-runbooks|Data Eng Runbooks]] — data-pipeline runbooks

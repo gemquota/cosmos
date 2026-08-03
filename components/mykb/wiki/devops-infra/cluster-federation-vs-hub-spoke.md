@@ -26,4 +26,3 @@ Two patterns dominate multi-cluster Kubernetes management. Federation (KubeFed) 
 - [[wiki/infrastructure/redis-cluster-and-sentinel|Redis Cluster And Sentinel]]
 - [[wiki/devops-infra/multi-cluster-management|Multi-Cluster Management]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

@@ -20,5 +20,3 @@ DPDK (Data Plane Development Kit) and Solarflare/Onload are technologies for use
 - For mykb: DPDK/Solarflare sit under the kernel-bypass, packet-capture-performance, and high-performance networking nodes — the hardware layer that makes those techniques possible.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

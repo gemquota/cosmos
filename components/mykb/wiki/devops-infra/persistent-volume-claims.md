@@ -24,4 +24,3 @@ PersistentVolumeClaims (PVCs) are the user-facing request for storage in Kuberne
 - [[wiki/os-shell/logical-volume-management|Logical Volume Management]]
 - [[wiki/devops-infra/local-persistent-volumes|Local Persistent Volumes]]
 - [[wiki/infrastructure/persistent-volumes|Persistent Volumes]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

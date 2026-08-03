@@ -22,6 +22,5 @@ Network ACLs (NACLs) are stateless, subnet-level filters — in AWS they evaluat
 
 ## Related
 - [[wiki/devops-infra/network-observability|Network Observability]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/cloud-infra/congestion-control-algorithms|Congestion Control Algorithms]]
 - [[wiki/cloud-infra/flow-control|Flow Control]]

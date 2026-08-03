@@ -24,4 +24,3 @@ Network budgeting is planning capacity, growth, and cost for the network: foreca
 - [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]]
 - [[wiki/infrastructure/network-interface-bonding|Network Interface Bonding]]
 - [[wiki/infrastructure/network-policy|Network Policy]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]

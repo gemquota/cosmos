@@ -23,5 +23,3 @@ GPU drivers and CUDA are the software stack that exposes GPU compute to applicat
 - [[wiki/infrastructure/gpu-compute-infrastructure|GPU Compute Infrastructure]]
 - [[wiki/os-shell/device-drivers-and-udev|Device Drivers & udev]]
 - [[wiki/os-shell/device-drivers|Device Drivers]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

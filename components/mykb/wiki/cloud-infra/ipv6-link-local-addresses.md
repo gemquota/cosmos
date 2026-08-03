@@ -17,7 +17,7 @@ IPv6 link-local addresses (fe80::/10) are auto-generated, scope-limited addresse
 - Concrete example: two routers peer over a point-to-point link using their link-local addresses — no global addressing needed on the transit segment; a host SLAACs its global address using RA from the router's link-local; Docker/kubernetes pods talk to gateway via fe80::1. The link-local address is stable per link, so it is often the reliable way to address a neighbor.
 - Failure modes: assuming link-local addresses are globally reachable (they are not — scope matters); duplicate detection failures causing address conflicts on misconfigured links; EUI-64-based addresses exposing MAC-derived identifiers (privacy extensions exist); and filtering fe80 traffic accidentally, breaking NDP and routing peering.
 - Operational tradeoffs: link-local addressing simplifies configuration (auto, no state) at the cost of conceptual confusion about scope; the operational norm is to use them for infrastructure protocols and reserve global addresses for user-facing services.
-- RSIS3/mykb relevance: the wiki's IPv6 lab notes document link-local peering, so the loop's network experiments start with correct scope expectations.
+- RSIS3/mykb relevance: the wiki's IPv6 lab notes document link-local peering, so the loop's network experiments would start with correct scope expectations.
 - Security scope: link-local traffic cannot cross routers, so NDP and peering are inherently link-bounded; keep that scoping in mind when filtering, and never filter fe80 wholesale.
 - Stability benefit: use link-local addresses for neighbor services (routers, gateways) because they are stable per link even when global addresses change.
 

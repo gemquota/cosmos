@@ -21,6 +21,7 @@ Lucene is the Java full-text search library underpinning Elasticsearch and Solr,
 - Operational notes: test analyzer changes with reindexes, monitor merge and segment health, and benchmark queries against real corpora.
 - RSIS3 relevance: any serious FTS layer over wiki text will inherit Lucene's analyzers and BM25 defaults via Elasticsearch — the reference behavior mykb's search approximates.
 
+## Practice
 - Wrap Lucene with a managed layer (Elasticsearch) unless the corpus is small enough that the library alone is sufficient.
 ## Related
 - [[wiki/data-storage/bm25|BM25]] — Lucene's default ranking function

@@ -113,7 +113,6 @@ Part of [[wiki/index|Wiki Index]]. 177 pages.
 - [[wiki/os-shell/page-tables|Page Tables]] — Multi-level page tables, entries, and virtual-to-physical translation
 - [[wiki/os-shell/paging|Paging]] — Page-based memory management, page faults, and demand paging
 - [[wiki/os-shell/parameter-expansion|Parameter Expansion]] — ${var:-default}, slicing, substitution, and indirection
-- [[wiki/os-shell/path-resolution-and-symlinks|Path Resolution & Symlinks]] — How the kernel walks absolute and relative paths, symlinks, and mount points
 - [[wiki/os-shell/path-resolution|Path Resolution]] — How the shell and kernel turn a path string into a file: relative, absolute, and symlink traversal
 - [[wiki/os-shell/pci-e-topology|PCIe Topology]] — The bus hierarchy linking CPUs, memory, and devices
 - [[wiki/os-shell/permissions-model|Permissions Model]] — The Unix read/write/execute model for files and directories, plus ownership

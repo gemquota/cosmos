@@ -20,6 +20,7 @@ A fail-safe system defaults to a safe state when it cannot determine the correct
 - Operational notes: document the default action of every guard, test outage behavior, and make the failure mode visible to operators.
 - RSIS3 relevance: link-checking should fail-safe — an unverifiable source link is flagged, not silently kept — the same default-to-safety RSIS3 wants for its guardrails.
 
+## Practice
 - Verify fail-safe behavior in tests: inject the failure condition and assert the safe default actually engages, before an outage does it for you.
 ## Related
 - [[wiki/dev-tools/fail-fast|Fail-Fast]]

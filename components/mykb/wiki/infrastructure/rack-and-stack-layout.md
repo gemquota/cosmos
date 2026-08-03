@@ -21,4 +21,3 @@ Rack and stack layout is the physical arrangement of servers, switches, and cabl
 
 ## Related
 - [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]

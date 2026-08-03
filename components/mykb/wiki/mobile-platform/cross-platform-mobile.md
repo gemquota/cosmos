@@ -23,7 +23,7 @@ Cross-platform frameworks let one codebase target iOS and Android: React Native 
 ## Related
 - [[wiki/web-platforms/device-detection|Device Detection]] — adjacent concept in this wiki
 - [[wiki/web-platforms/responsive-breakpoints|Responsive Breakpoints]] — adjacent concept in this wiki
-- [[wiki/web-platforms/dvh-svh|Dynamic and Small Viewport Units]] — adjacent concept in this wiki
+- [[wiki/web-platforms/vw-vh|vw and vh Units]] — adjacent concept in this wiki
 - [[wiki/web-platforms/touch-action-css|touch-action CSS]] — adjacent concept in this wiki
 - [[wiki/frontend-frameworks/cross-platform-frameworks|Cross-Platform Frameworks]] — existing coverage
 - [[wiki/frontend-frameworks/react-native-vs-flutter|React Native vs Flutter]] — existing coverage

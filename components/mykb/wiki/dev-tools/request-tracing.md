@@ -20,6 +20,7 @@ Request tracing assigns a trace ID to a request and records spans for each hop, 
 - Operational notes: validate propagation in tests, log trace IDs everywhere, and keep sampling policies aligned.
 - RSIS3 relevance: agent runs produce natural traces — one run ID, many tool calls and model turns — the same timeline RSIS3 needs when a loop step fails.
 
+## Practice
 - Start a trace at every external boundary and retry with the same trace ID so retried attempts stay in one story.
 ## Related
 - [[wiki/devops-infra/distributed-tracing|Distributed Tracing]]

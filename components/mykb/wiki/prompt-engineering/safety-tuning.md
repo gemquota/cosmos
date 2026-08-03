@@ -20,6 +20,7 @@ Safety tuning is the training-side counterpart to runtime guardrails: aligning m
 - Operational notes: eval refusal calibration and capability retention after tuning, and refresh tuning as attack patterns evolve.
 - RSIS3 relevance: any locally fine-tuned RSIS3 model needs a safety-tuning pass on the same preference data used for behaviour — the training-side half of its guardrails.
 
+## Practice
 - Treat safety tuning as a continuous loop with red teaming, not a one-time training pass.
 - Document the preference data and tuning recipe so a later fine-tune can reproduce the same safety behaviour.
 ## Related

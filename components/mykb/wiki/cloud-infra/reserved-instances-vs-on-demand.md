@@ -17,7 +17,7 @@ Reserved instances and savings plans commit to capacity or spend in exchange for
 - Concrete example: a stable fleet of 40 web servers buys 3-year Compute savings plans covering ~80% of expected spend and lets instance types vary; a spike-driven batch workload stays on-demand/spot because its baseline is near zero; a mis-bought RI (wrong family/region) becomes stranded capacity unless convertible.
 - Failure modes: over-committing on uncertain workloads (savings plans auto-cover, but underutilization still wastes the commitment); buying RIs without analyzing reservation utilization; regional moves stranding reservations; and ignoring that discounts apply to usage, so spot and savings-plan interplay needs explicit modeling.
 - Operational tradeoffs: commitment trades flexibility for price; the pattern is reserve the floor (steady baseline) and leave the ceiling on-demand/spot. Review coverage monthly (utilization and coverage reports), and prefer savings plans for their flexibility over classic RIs where licensing allows.
-- RSIS3/mykb relevance: the wiki's cost model tracks baseline coverage and commitment utilization, so the loop's capacity reviews adjust commitments instead of letting them drift.
+- RSIS3/mykb relevance: the wiki's cost model would track baseline coverage and commitment utilization, so the loop's capacity reviews would adjust commitments instead of letting them drift.
 - Coverage review: check reservation utilization quarterly and convert idle reserved instances rather than letting them expire unused; an unused reservation is a sunk cost with a schedule.
 - Flexibility premium: when workloads shift families often, pay the premium for savings plans over RIs; the discount difference is smaller than the stranding risk.
 

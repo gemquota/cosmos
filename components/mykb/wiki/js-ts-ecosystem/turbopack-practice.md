@@ -19,6 +19,7 @@ Turbopack is the Rust-based incremental bundler from the Next.js team: it caches
 - Operational notes: pin versions, watch cache behavior, and benchmark dev startup and HMR latency.
 - RSIS3 relevance: the dashboard build benefits from Turbopack's incremental cache — fast iteration keeps the loop tight.
 
+## Practice
 - Keep a webpack fallback while Turbopack matures, so a plugin gap does not block the build.
 - Cache hygiene: Turbopack's persistent cache is the source of both its speed and its sharp edges; after upgrades, flag changes, or transform changes, clear the cache and rebuild from scratch so stale compilations cannot ship, verify production output matches dev output when cache-dependent behavior is suspected, and keep the cache out of CI layers that prune it mid-build.
 ## Related

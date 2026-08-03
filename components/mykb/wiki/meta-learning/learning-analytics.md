@@ -20,7 +20,11 @@ Learning Analytics — Measuring, analyzing, and acting on learning data.
 - Value comes from the loop: data → insight → intervention → new data. Predictive models (course completion, mastery) work best when tied to actionable decisions; metrics like time-on-task and quiz mastery are common proxies with real limitations.
 - Worked example: a dashboard flags that a student's practice accuracy fell below threshold on fractions; the system assigns targeted review and the tutor checks whether the intervention moved the metric — analytics as formative assessment at scale.
 - Ethical and validity concerns: privacy, algorithmic bias, gaming of metrics, and the risk of optimizing engagement instead of learning.
-- mykb relevance: the wiki's own telemetry — gap reports, retrieval stats, status counts — is learning analytics applied to the knowledge base.
+- Learning analytics works best when tied to action: predictive models (completion, mastery) only pay off when a decision — intervention, content change, schedule adjustment — follows the prediction.
+- Metrics have known limitations: time-on-task measures engagement, not learning; quiz mastery measures performance, not transfer; and both can be gamed or misread without a theory of the task.
+- Privacy is part of the discipline: analytics over learner data requires consent, minimization, and audit, the same expectations applied to any personal data pipeline.
+- Dashboards should separate description (what happened), diagnosis (why), and prediction (what next), and label each clearly so the loop does not mistake correlation for cause.
+- mykb relevance: the wiki's own telemetry — gap reports, retrieval stats, status counts — would be learning analytics applied to the knowledge base.
 
 ## Related
 

@@ -25,4 +25,3 @@ Golden images are pre-baked, hardened base images — OS, security patches, agen
 - [[wiki/devops-infra/image-signing-and-notary|Image Signing & Notary]]
 - [[wiki/devops-infra/trivy-and-image-scanning|Trivy & Image Scanning]]
 - [[wiki/devops-infra/golden-signals|Golden Signals]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

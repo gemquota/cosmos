@@ -25,5 +25,3 @@ Custom Resource Definitions (CRDs) extend the Kubernetes API with domain-specifi
 - [[wiki/cloud-infra/resource-tagging|Resource Tagging]]
 - [[wiki/infrastructure/t-shirt-sizing-and-resource-models|T Shirt Sizing And Resource Models]]
 - [[wiki/os-shell/cgroups-and-resource-control|cgroups & Resource Control]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

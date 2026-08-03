@@ -20,10 +20,10 @@ Color spaces define the coordinate system colors are expressed in. Modern CSS mo
 - RSIS3/mykb relevance: the dashboard theme tokens are stored in oklch with sRGB fallbacks, and the wiki documents the choice so future palette edits stay perceptually consistent.
 - Gamut mapping: when a P3 color lands on an sRGB display, the browser clips or maps it; verify brand colors on both gamuts and keep the sRGB fallback first in the declaration order.
 - Authoring default: write new color tokens in oklch with explicit sRGB fallbacks; the wide-gamut value expresses intent while the fallback preserves legacy behavior on standard displays.
+- Wide-gamut assets: images can carry P3 via ICC profiles or AVIF/HEIC; tag exported images with their profile so the browser converts correctly, because untagged P3 files render washed out on sRGB displays, and screenshots or exports re-encoded to sRGB lose the vividness intent.
 
 ## Related
 - [[wiki/web-platforms/css-variables-theming|CSS Variables and Theming]]
-- [[wiki/web-platforms/srgb-vs-p3|sRGB vs Display P3]]
 - [[wiki/web-platforms/color-mix|color-mix() CSS]]
 - [[wiki/web-platforms/contrast-ratios|Contrast Ratios]]
 - [[wiki/web-platforms/css-layout|CSS Layout]]

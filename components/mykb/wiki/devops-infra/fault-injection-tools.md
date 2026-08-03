@@ -25,5 +25,3 @@ Fault injection tools deliberately introduce failures — latency, errors, netwo
 - [[wiki/devops-infra/backup-tools-restic-borg|Backup Tools: restic & Borg]]
 - [[wiki/os-shell/checksums-and-hashing-tools|Checksums & Hashing]]
 - [[wiki/infrastructure/network-simulation-tools|Network Simulation Tools]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

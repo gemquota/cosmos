@@ -20,6 +20,7 @@ Baggage lets a trace carry small key-value metadata — tenant, region, experime
 - Operational notes: document the baggage schema, cap size and count, and sanitize values at the edge.
 - RSIS3 relevance: agent runs could carry task and worker IDs as baggage for cross-service correlation — exactly the pattern RSIS3 needs when debugging a loop across components.
 
+## Practice
 - Operational notes: document the baggage schema, cap its size, and treat baggage values as untrusted strings at every hop — never use them for access decisions.
 ## Related
 - [[wiki/dev-tools/distributed-tracing-ids|Distributed Tracing IDs]]

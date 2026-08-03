@@ -24,5 +24,3 @@ North-south traffic flows between users and the datacenter (in through the edge,
 - [[wiki/devops-infra/traffic-shifting-and-splitting|Traffic Shifting & Splitting]]
 - [[wiki/infrastructure/north-star-metrics|North Star Metrics]]
 - [[wiki/devops-infra/mirroring-and-shadow-traffic|Mirroring & Shadow Traffic]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

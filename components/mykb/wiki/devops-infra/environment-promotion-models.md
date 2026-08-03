@@ -27,4 +27,3 @@ Environment promotion models define how configuration and artifacts move from de
 - [[wiki/devops-infra/progressive-delivery-models|Progressive Delivery Models]]
 - [[wiki/infrastructure/data-maturity-models|Data Maturity Models]]
 - [[wiki/infrastructure/t-shirt-sizing-and-resource-models|T Shirt Sizing And Resource Models]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

@@ -22,5 +22,3 @@ Smoke tests after deploy are quick, shallow checks that the new version actually
 
 ## Related
 - [[wiki/devops-infra/deploy-safety-checks|Deploy Safety Checks]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

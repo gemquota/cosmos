@@ -20,5 +20,3 @@ Colocation means housing your servers in a third-party datacenter: you own (or l
 - For mykb: colocation connects to rack-and-stack layout, power and cooling, and the hosting decision tree that includes bare metal and cloud.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

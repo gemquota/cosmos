@@ -23,5 +23,3 @@ Renovate (and Dependabot) automate dependency updates: they watch package manife
 ## Related
 - [[wiki/devops-infra/dependency-mapping-and-blast-radius|Dependency Mapping & Blast Radius]]
 - [[wiki/devops-infra/os-updates-and-immutable-images|OS Updates & Immutable Images]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

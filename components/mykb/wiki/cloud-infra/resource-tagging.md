@@ -17,7 +17,7 @@ Resource tagging attaches key-value metadata to cloud resources for cost allocat
 - Concrete example: a cost report groups spend by cost-center and environment because every resource is tagged at creation; a nightly cleanup job deletes non-production instances older than 24h keyed on environment=dev; an audit shows the 3% untagged resources because a script created them without tags — policy enforcement catches it next time.
 - Failure modes: tag sprawl (free-form keys that defeat reporting); resources created outside IaC without tags; tags used for secrets or mutable identity (IAM should decide access, not tags); and cleanup/reporting logic depending on tags that nobody enforces, silently missing resources.
 - Operational tradeoffs: tagging costs a little process and pays in visibility and automation; enforce at creation (policy/IaC), keep the vocabulary small, and audit drift monthly. Treat tags as data: versioned, documented, and tested.
-- RSIS3/mykb relevance: the wiki's environments enforce the tag schema at provisioning time; this note records the vocabulary so the loop's resource lifecycle automation stays accurate.
+- RSIS3/mykb relevance: the wiki's environments would enforce the tag schema at provisioning time; this note records the vocabulary so the loop's resource lifecycle automation stays accurate.
 - Access control: tags should describe, not authorize; IAM policies that read tags can be bypassed by untagged or mis-tagged resources, so combine with identity-based controls.
 - Cost hygiene: require tags on cost-allocatable resources and reconcile the untagged bucket in the monthly cost review, shrinking it toward zero.
 

@@ -25,5 +25,3 @@ Local persistent volumes bind storage to a specific node: a Local PersistentVolu
 - [[wiki/devops-infra/persistent-volume-claims|Persistent Volume Claims]]
 - [[wiki/infrastructure/persistent-volumes|Persistent Volumes]]
 - [[wiki/devops-infra/volumes-emptydir-and-configmaps|emptyDir & ConfigMap Volumes]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

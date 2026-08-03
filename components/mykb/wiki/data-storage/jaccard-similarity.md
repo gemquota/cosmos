@@ -21,6 +21,7 @@ Jaccard similarity scores two sets as |A ∩ B| / |A ∪ B|, from 0 (disjoint) t
 - Operational notes: choose shingle size per language, calibrate thresholds, and use MinHash when the corpus outgrows exact computation.
 - RSIS3 relevance: Jaccard over tags and shingles gives mykb a cheap lexical relatedness and duplicate-detection signal alongside semantic search.
 
+## Practice
 - Interpret it as a fraction of shared content: 0.5 means half of the combined elements are shared, which maps intuitively to review thresholds.
 ## Related
 - [[wiki/data-storage/cosine-similarity|Cosine Similarity]] — the vector alternative to set overlap

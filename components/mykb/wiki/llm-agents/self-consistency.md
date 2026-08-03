@@ -17,7 +17,7 @@ Self-consistency improves answer reliability by sampling multiple reasoning path
 - Concrete example: a math word problem sampled 8 times yields the same answer in 6 traces — the majority answer is chosen; an open-ended classification gets a vote across samples with the runner-up flagged as uncertainty; a code question's tests are run against the top-voted solution. The failure pattern: using it for divergent questions where answers legitimately differ.
 - Failure modes: cost — N samples multiply tokens and latency; diversity failure (low temperature makes samples identical); majority voting on structured outputs needing aggregation logic; and answer extraction errors (the model's prose vs the actual answer).
 - Operational tradeoffs: self-consistency buys accuracy and an uncertainty signal at N× inference cost; the discipline is picking N by task difficulty, pairing with answer extraction, and using vote margins as confidence for downstream gating.
-- RSIS3/mykb relevance: the wiki's loop uses self-consistency on high-stakes extractions and ratings, with vote margins feeding the confidence field in telemetry.
+- RSIS3/mykb relevance: the wiki's loop would use self-consistency on high-stakes extractions and ratings, with vote margins feeding the confidence field in telemetry.
 - Answer extraction: for structured tasks, parse each sample's answer with the same parser and treat parse failures as votes for uncertainty rather than silently dropping them.
 - Adaptive sampling: increase N when early samples disagree and stop early when a supermajority emerges — the fixed-N version wastes budget on easy questions.
 

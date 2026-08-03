@@ -24,4 +24,3 @@ Packet capture performance is the art of capturing every packet at line rate wit
 - [[wiki/infrastructure/tcpdump-filters-and-capture|tcpdump Filters & Capture]]
 - [[wiki/cloud-infra/tls-performance|TLS Performance]]
 - [[wiki/os-shell/packet-analysis-and-capture|Packet Analysis]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]

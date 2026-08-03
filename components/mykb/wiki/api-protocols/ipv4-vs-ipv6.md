@@ -22,7 +22,7 @@ Failure modes: publishing AAAA records for a host that can't route IPv6 causes c
 
 Operational tradeoffs: IPv6 requires no NAT and simplifies addressing at scale, but monitoring, firewalls, and rate limiters must be family-aware; IPv4-only operation is simpler operationally but inherits NAT-related rate-limit and geo issues. The baseline for new services: dual-stack with family-tagged logging, IPv6-compatible storage (128-bit fields or text), and rate limiting keyed on identity rather than raw address where possible.
 
-RSIS3/mykb relevance: the wiki's hosted services sit behind GitHub Pages' CDN; documenting the family handling (CDN terminates both, app sees one) keeps RSIS3's network notes honest about what the app actually observes.
+RSIS3/mykb relevance: the wiki's hosted services would sit behind GitHub Pages' CDN; documenting the family handling (CDN terminates both, app sees one) keeps RSIS3's network notes honest about what the app actually observes.
 
 ## Related
 - [[wiki/api-protocols/dns-fundamentals|DNS Fundamentals]]

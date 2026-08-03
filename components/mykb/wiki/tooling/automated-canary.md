@@ -16,7 +16,7 @@ Automated canary rollouts run the analysis loop themselves: deploy to a small sl
 - Automation needs trustworthy metrics and pre-agreed thresholds to be safe.
 - Keep a human escape hatch: auto-rollback plus a pause-and-review mode.
 - Automate the promotion path and the rollback path with equal care.
-- mykb relevance: the wiki deploy auto-promotes a canary once link-health metrics pass.
+- mykb relevance: the wiki deploy would auto-promote a canary once link-health metrics pass.
 
 ## Related
 - [[wiki/tooling/canary-analysis|Canary Analysis]]

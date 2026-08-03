@@ -22,7 +22,7 @@ Failure modes: nosniff alone doesn't fix missing or wrong Content-Type — a ser
 
 Operational tradeoffs: nosniff is a one-line, zero-cost header with broad modern support and should be on every response; it breaks the rare legit case of content-type-less downloads, which should instead declare application/octet-stream explicitly. Combined with correct Content-Type at every endpoint and Content-Disposition for attachments, it closes a whole class of stored-XSS and mime-confusion bugs.
 
-RSIS3/mykb relevance: the wiki hosts generated HTML snapshots; ensuring the static host sends nosniff plus correct types is a standing check in the deployment practice.
+RSIS3/mykb relevance: the wiki would host generated HTML snapshots; ensuring the static host sends nosniff plus correct types is a standing check in the deployment practice.
 
 ## Related
 - [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]

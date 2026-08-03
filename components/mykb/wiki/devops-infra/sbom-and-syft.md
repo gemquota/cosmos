@@ -18,8 +18,6 @@ A Software Bill of Materials (SBOM) lists every component in an artifact — pac
 - Failure modes: SBOMs generated once and never updated — they describe the artifact at build time, so a base-image update invalidates them; scanning that is not enforced (SBOM exists, nothing acts on it); vulnerability databases lagging, so fresh CVEs are missed; SBOM formats and fields that vary, breaking downstream tooling; false positives from version-only matching without fix-version context.
 - Tradeoffs: SBOMs add build time, storage, and toolchain complexity but provide the provenance and audit trail that incident response needs; the alternative — asking what is in an image after a compromise — is too late; the maturity path is generate, sign, store, scan, and alert, in that order.
 - Operational notes: attach SBOMs to every release artifact, enforce scanning gates, and keep SBOMs retrievable for at least the artifact's retention window.
-- RSIS3 relevance: cosmos's artifacts (dashboard bundles, daemon images) should carry SBOMs so RSIS3 can assess the exposure of its own stack when a CVE lands.
+- RSIS3 relevance: cosmos's artifacts (dashboard bundles, daemon images) should carry SBOMs so RSIS3 can assess the exposure of its own stack when a CVE lands; scanning must run on every promotion, not just at release.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

@@ -17,7 +17,7 @@ Parameter stores — AWS SSM Parameter Store, Azure Key Vault, GCP Secret Manage
 - Concrete example: a service reads its DB credentials at startup from Secret Manager with IAM-scoped access; a deployment pulls image tags from SSM parameters; a key-rotation schedule updates Key Vault with versioned secrets that apps resolve by label, avoiding config redeploys.
 - Failure modes: secrets in plaintext parameter-store tiers (priced cheap, dangerous); access policies too broad (any lambda can read any secret); rotation without dependent-service coordination (apps caching old values break); throttling (Key Vault's default limits) under high-frequency reads; and secret sprawl when teams bypass the store for "speed".
 - Operational tradeoffs: central stores trade a small dependency for auditability and rotation; the pattern is least-privilege per service, versioned secrets, and rotation tested in staging. Cache values with short TTLs to absorb throttling, and treat the store itself as crown-jewel infrastructure with locked-down control-plane access.
-- RSIS3/mykb relevance: the wiki's deployments read configuration and secrets from a parameter store with per-service IAM; this note records the naming and rotation conventions the loop's tooling reuses.
+- RSIS3/mykb relevance: the wiki's deployments would read configuration and secrets from a parameter store with per-service IAM; this note records the naming and rotation conventions the loop's tooling reuses.
 - Secret rotation: automate rotation with a schedule and dependent-service coordination; a rotated secret no consumer knows about is an outage with good intentions. Version secrets by label so consumers resolve the current value without redeploys.
 
 ## Related

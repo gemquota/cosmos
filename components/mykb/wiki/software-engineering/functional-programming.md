@@ -17,7 +17,7 @@ Functional programming emphasizes pure functions, immutable data, and explicit d
 - Concrete example: a reducer (state, action) => state keeps application state transitions pure and replayable (Redux, Elm); a data pipeline written as compose(validate, transform, persist) is trivially unit-tested; replacing a mutable cache with a pure function + memoization removes a whole class of race and staleness bugs.
 - Failure modes: forcing purity where IO is inherent (the boundary must admit effects — discipline them, do not deny them); performance myths — immutability has costs, but structural sharing and persistent data structures mitigate them; and over-abstraction (monad stacks, point-free soup) that hurts readability.
 - Operational tradeoffs: functional discipline buys predictability and testability at the cost of a learning curve and some ceremony; the pragmatic path is functional core / imperative shell — pure logic inside, effects at the edges.
-- RSIS3/mykb relevance: the wiki's transformation pipelines are written as pure functions with immutable inputs, so loop experiments replay deterministically on the same data.
+- RSIS3/mykb relevance: the wiki's transformation pipelines would be written as pure functions with immutable inputs, so loop experiments replay deterministically on the same data.
 - Error handling: model failures as values (Option/Result) rather than exceptions where the flow is expected to branch; reserve exceptions for truly exceptional boundary failures.
 - Practical adoption: start with immutability and pure helpers in the hot path of logic; full FP discipline is a language-level choice, but the principles pay off incrementally.
 

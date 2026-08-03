@@ -24,4 +24,3 @@ Network simulation tools model topologies and protocols in software before anyth
 - [[wiki/shell-environment/unix-text-processing-tools|Unix Text Processing Tools]]
 - [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]]
 - [[wiki/cloud-infra/categories/aws-cloud/particle-simulation-2|Particle Simulation]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]

@@ -22,7 +22,7 @@ Failure modes: adding Domain=example.com for convenience silently widens the bou
 
 Operational tradeoffs: domain-wide cookies reduce friction for subdomain-based architectures — one login for app and api — but the security cost is real: the strongest subdomain determines the security of all. Alternatives: host-only cookies plus a token exchange, or a shared auth domain with dedicated auth cookies and an explicit, audited subdomain list. The default should be host-only; widen to Domain= only with a documented threat model.
 
-RSIS3/mykb relevance: the wiki's services are single-host today, so the standing rule is host-only cookies; documenting the boundary prevents a future refactor from silently widening it.
+RSIS3/mykb relevance: the wiki's services would be single-host today, so the standing rule is host-only cookies; documenting the boundary prevents a future refactor from silently widening it.
 
 ## Related
 - [[wiki/api-protocols/secure-cookies|Secure Cookies]]

@@ -20,6 +20,7 @@ Doris is an Apache-licensed MPP database for real-time analytics; StarRocks fork
 - Operational notes: benchmark the real query mix, design materialized views for hot queries, and monitor compaction and node balance.
 - RSIS3 relevance: wiki telemetry at scale (pulses, sync history) could land in StarRocks/Doris — the serving engine for fast, concurrent dashboard queries.
 
+## Practice
 - Validate MySQL-protocol expectations early, since some tooling and driver behaviors differ from a real MySQL server.
 
 ## Related

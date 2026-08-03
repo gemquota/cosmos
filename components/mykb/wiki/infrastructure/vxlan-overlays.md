@@ -22,5 +22,3 @@ VXLAN encapsulates Layer 2 Ethernet frames inside UDP over an existing IP networ
 - RSIS3/mykb relevance: overlay-versus-underlay reasoning is the network analogue of separating logical from physical state in the knowledge store; this node keeps the encapsulation tradeoffs retrievable for multi-node deployments.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

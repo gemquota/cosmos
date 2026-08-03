@@ -18,12 +18,10 @@ PriorityClasses and preemption govern which pods win when resources are scarce: 
 - Failure modes: priority inflation — every team sets max priority, so the ordering is meaningless and preemption fights itself (govern the range); preemption storms where evicted pods immediately reschedule and re-preempt; priority without quotas — a greedy priority-100 workload squeezes everyone; batch jobs losing progress repeatedly to preemption; preemption ignoring PDBs in some configurations, violating availability guarantees.
 - Tradeoffs: priorities give critical workloads scheduling guarantees under scarcity but add a governance burden and a failure mode (mass eviction) that is hard to debug; the alternative — overprovisioning or quotas — is simpler but wasteful; the mature pattern is a small, governed priority ladder plus quotas and PDBs.
 - Operational notes: audit priority assignments, monitor preemption events, and keep the priority ladder documented.
-- RSIS3 relevance: if cosmos runs time-critical jobs (dashboard builds, telemetry collection) alongside batch work, priorities keep the critical path scheduled when nodes fill up.
+- RSIS3 relevance: if cosmos runs time-critical jobs (dashboard builds, telemetry collection) alongside batch work, priorities keep the critical path scheduled when nodes fill up; preemption must have a recovery story for evicted batch work.
 
 ## Related
 - [[wiki/infrastructure/priority-queuing-and-dscp|Priority Queuing & DSCP]]
 - [[wiki/devops-infra/storage-classes-and-provisioners|Storage Classes & Provisioners]]
 - [[wiki/infrastructure/storage-classes|Storage Classes]]
 - [[wiki/cloud-infra/coldline-and-archive-storage-classes|Coldline & Archive Storage Classes]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

@@ -20,6 +20,7 @@ IP and AI covers patents, copyright, trade secrets, and database rights across m
 - Operational notes: keep an IP register, document ownership per asset, and review contracts for AI clauses. Review the register on acquisition, contractor changes, and model releases, since each event shifts what is owned.
 - RSIS3 relevance: the bundle's provenance and licensing notes are IP hygiene — the same documentation discipline applied to its artifacts.
 
+## Practice
 - Document the IP posture per asset so ownership questions never depend on memory or a single person.
 ## Related
 - [[wiki/decisions/copyright-and-ai|Copyright and AI]] — the copyright slice

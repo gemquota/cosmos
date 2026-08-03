@@ -20,6 +20,7 @@ Usage policies define permitted and prohibited uses of AI systems, from API term
 - Operational notes: maintain an abuse taxonomy, test enforcement, and treat each exploit as a policy bug.
 - RSIS3 relevance: the bundle's worker briefs are usage policies for its agents — the same scope-and-consequence structure applied to loop behavior.
 
+## Practice
 - Review policies against observed abuse on a schedule, and treat every exploit as a policy bug to fix.
 ## Related
 - [[wiki/decisions/abuse-detection-ai|Abuse Detection]] — the enforcement

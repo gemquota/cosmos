@@ -20,6 +20,7 @@ Locality-sensitive hashing (LSH) maps items so that near neighbours land in the 
 - Operational notes: tune bands and rows against a labeled recall test, and keep exact verification as the final step.
 - RSIS3 relevance: LSH and MinHash give mykb cheap near-duplicate detection across capture sources — the same dedup guarantee RSIS3 wants before curating.
 
+## Practice
 - Keep the exact verification step mandatory: LSH only proposes candidates, it never decides similarity on its own.
 ## Related
 - [[wiki/data-storage/minhash|MinHash]] — the LSH family for set similarity

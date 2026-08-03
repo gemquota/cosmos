@@ -20,7 +20,7 @@ Cognitive Diagnosis Models — Models that infer fine-grained knowledge states f
 - Output is a profile — mastered, partial, or unmastered per skill — which is more actionable for remediation than a total score. CDMs connect psychometrics to cognitive theory and to intelligent tutoring.
 - Worked example: a student misses every item requiring 'carrying in addition' but passes all others; the CDM attributes a specific deficit, and the tutor targets exactly that skill.
 - Advances: general diagnostic models, attribute hierarchies, and neural variants; challenges include attribute definition and Q-matrix validation.
-- mykb relevance: cognitive-diagnosis-models are the fine-grained sibling of knowledge-tracing — the wiki's gap reports approximate them per topic.
+- mykb relevance: cognitive-diagnosis-models are the fine-grained sibling of knowledge-tracing — the wiki's gap reports would approximate them per topic.
 
 ## Related
 

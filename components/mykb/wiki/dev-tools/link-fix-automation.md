@@ -20,6 +20,7 @@ Link-fix automation rewrites broken or stale wikilinks using a target map, repla
 - Operational notes: keep the target map generated from real renames, require dry-run-plus-review, and always finish with the global link check.
 - RSIS3 relevance: for mykb, link-fix automation is the payoff of consistent slug naming — the better slugs are, the more fixes can be mechanical.
 
+## Practice
 - Keep the automation idempotent: running the fix twice must not double-edit or break already-fixed links.
 ## Related
 - [[wiki/dev-tools/fix-dry-runs|Fix Dry Runs]]

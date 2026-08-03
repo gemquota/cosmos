@@ -17,7 +17,7 @@ Hugging Face is the open-model ecosystem: Hub (datasets, models, spaces), transf
 - Concrete example: a team pulls a small instruction-tuned model for local serving via llama.cpp/transformers, fine-tunes it on wiki-style notes with PEFT/LoRA, and pushes the adapter back to the Hub; an eval suite runs a set of leaderboard tasks before adopting a new base model.
 - Failure modes: supply-chain risk — model weights are code-adjacent (pickle payloads; prefer safetensors and pinned revisions); license confusion (weights licenses vary from permissive to restrictive — check before commercial use); cache/dedup issues across team machines; and local-vs-hosted quality gaps when models are quantized too aggressively.
 - Operational tradeoffs: open models buy control, privacy, and cost predictability at the cost of infrastructure and expertise; the discipline is pinned revisions, safetensors, license review, and a reproducible local serving stack.
-- RSIS3/mykb relevance: the wiki's local runtimes source pinned open models from the Hub, with license and revision recorded per experiment.
+- RSIS3/mykb relevance: the wiki's local runtimes would source pinned open models from the Hub, with license and revision recorded per experiment.
 - Reproducibility: pin the full commit revision (not just the model name) in training and eval configs; Hub revisions change and silent weight updates invalidate experiments.
 - Offline practice: mirror required models/datasets to internal storage for air-gapped or unreliable-network runs, and verify checksums before load.
 - Storage hygiene: model caches grow fast (multi-GB per model); manage HF_HOME with a shared cache policy so teams do not re-download or fill disks.

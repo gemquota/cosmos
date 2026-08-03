@@ -24,5 +24,3 @@ Deploy safety checks are automated gates evaluated before, during, and after a r
 - [[wiki/devops-infra/deployment-verification-synthetic-checks|Deployment Verification & Synthetic Checks]]
 - [[wiki/devops-infra/smoke-tests-after-deploy|Smoke Tests After Deploy]]
 - [[wiki/devops-infra/preflight-checks-and-guards|Preflight Checks & Guards]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

@@ -17,7 +17,7 @@ DNS-based service discovery maps service names to addresses so clients do not ha
 - Concrete example: a microservice calls http://payments.svc.internal:8080 resolved via an internal resolver backed by a registry; a new payments instance registers, unhealthy ones deregister, and clients pick them up within the TTL; a Kubernetes service with no cluster IP exposes pod IPs via DNS for stateful consumers.
 - Failure modes: caching defeating failover (long TTLs keep dead IPs alive — use TTL ~5-30s and client-side retry); split-horizon gaps (public resolver serving internal names); registration lag after deployment (clients hit the old IP until propagation); and DNS as a hard dependency — resolver outage takes down all service calls.
 - Operational tradeoffs: DNS discovery is simple, ubiquitous, and works everywhere; its cache and propagation semantics are its weakness for fast failover. Pair with client-side retry/load balancing, keep TTLs short for dynamic services, and treat the resolver as critical infrastructure.
-- RSIS3/mykb relevance: the wiki's services resolve through an internal DNS backed by the registry; this note records TTL and retry policy so the loop's failover tests respect discovery lag.
+- RSIS3/mykb relevance: the wiki's services would resolve through an internal DNS backed by the registry; this note records TTL and retry policy so the loop's failover tests respect discovery lag.
 - Health checks: discovery is only as fresh as its health checks; a registry that never deregisters dead instances is a list of traffic black holes.
 
 ## Related

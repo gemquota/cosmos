@@ -17,7 +17,7 @@ Lamport clocks assign each event a counter that ticks on send, giving a total or
 - Concrete example: wiki sync events use Lamport timestamps to linearize merge order across replicas — every replica agrees on a total order even without a shared clock; mutual exclusion algorithms (Ricart-Agrawala-style) use Lamport order to break ties fairly; the failure pattern is relying on Lamport order to detect concurrent edits (it cannot — that needs vector clocks).
 - Failure modes: treating Lamport order as causal truth (arbitrary order of concurrent events can mislead); using wall-clock time as the counter (clocks drift and reorder events); and monotonicity violations when counters reset or merge incorrectly.
 - Operational tradeoffs: Lamport clocks are cheap (one integer per process) and sufficient for total ordering; the trade is that concurrency detection and causality queries need vector clocks or version vectors; the discipline is choosing the clock to the question — total order here, concurrency there.
-- RSIS3/mykb relevance: the wiki's sync layer linearizes event order with Lamport timestamps, giving every replica the same merge sequence at minimal overhead.
+- RSIS3/mykb relevance: the wiki's sync layer would linearize event order with Lamport timestamps, giving every replica the same merge sequence at minimal overhead.
 - Counter persistence: counters must survive restarts without resetting below the last issued value, or ordering guarantees break across crashes.
 - Choice guidance: use Lamport when only a total order is needed; upgrade to vector clocks the moment concurrent-write detection or causality queries enter the requirements.
 

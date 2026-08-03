@@ -20,6 +20,7 @@ Retrieval prompting fetches the most relevant passages from a knowledge store an
 - Operational notes: eval retrieval quality and answer faithfulness, monitor retrieval hit rates, and treat retrieved content as untrusted.
 - RSIS3 relevance: mykb's TF-IDF and embedding search are the retrieval layer RSIS3 prompts draw from — retrieval quality bounds loop answer quality.
 
+## Practice
 - Require the model to cite or quote retrieved evidence, which makes ungrounded filler visible in the output.
 ## Related
 - [[wiki/prompt-engineering/context-engineering|Context Engineering]] — The umbrella practice retrieval fits into

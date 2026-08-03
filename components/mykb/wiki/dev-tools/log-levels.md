@@ -20,6 +20,7 @@ Log levels (trace, debug, info, warn, error, fatal) grade each event's importanc
 - Operational notes: document the level contract, sample debug output in production, and audit level usage in reviews.
 - RSIS3 relevance: define levels for curation events so a broken link logs at warn and a failed sync at error — the graded signal RSIS3 needs from its pipelines.
 
+## Practice
 - Treat the level contract as part of the code review: wrong levels are caught in review, not in production.
 ## Related
 - [[wiki/dev-tools/structured-logs|Structured Logs]]

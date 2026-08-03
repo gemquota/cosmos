@@ -20,6 +20,7 @@ Log rotation renames and compresses the current log file on a schedule or size t
 - Operational notes: verify reopen behavior after rotation, monitor rotation age and failures, and align retention with audit needs.
 - RSIS3 relevance: rotate agent session logs with retention that matches audit requirements — the same bounded-storage discipline RSIS3 applies to its own run artifacts.
 
+## Practice
 - Add a canary check that the log file is actually growing and being rotated, so silent-loss bugs cannot hide.
 ## Related
 - [[wiki/dev-tools/log-retention|Log Retention]]

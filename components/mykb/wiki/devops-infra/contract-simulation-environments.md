@@ -25,4 +25,3 @@ Contract simulation environments emulate the external services a system depends 
 - [[wiki/devops-infra/contract-testing-deployments|Contract Testing Deployments]]
 - [[wiki/devops-infra/ephemeral-environments|Ephemeral Environments]]
 - [[wiki/cloud-infra/categories/aws-cloud/particle-simulation-2|Particle Simulation]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

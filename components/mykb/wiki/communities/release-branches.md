@@ -16,8 +16,16 @@ Release branches fork from main at release time, receiving only fixes until the 
 - Cherry-pick fixes back to main so the fix is not lost to the release branch.
 - Multiple active releases need multiple branches; each needs its own CI and tagging.
 - Release branches add merge load — prefer tags and toggles when you can ship often.
-- mykb relevance: the wiki's monthly bundle release freezes a branch for QA.
+- mykb relevance: the wiki's monthly bundle release would freeze a branch for QA.
 
+- Branch lifecycle: the release branch forks from main at release time, enters a stabilization phase that accepts only fixes, and ships; after shipping, fixes are cherry-picked back to main so they are not lost.
+- Naming and tagging: each release branch gets a name and a tag at ship time; tags are the immutable record, while branches are the working area.
+- Multiple releases in flight: each active release needs its own branch, CI pipeline, and tagging scheme; support branches for older versions add maintenance load and should be time-boxed.
+- Tradeoffs: release branches add merge load and context switching; teams that ship often should prefer tags and feature toggles, reserving branches for releases that need long stabilization.
+- QA gate: the branch freezes for QA — the standing policy is that the freeze is explicit, the test scope is defined at freeze time, and fixes accepted during the freeze are limited to release-blocking defects.
+- Integration discipline: cherry-picks back to main should carry the original commit's identity and the release context, so the fix history is traceable from both the branch and the trunk.
+- Release-cadence fit: for a monthly bundle release, the branch is the freeze point for QA while main keeps moving; the freeze is short and the promotion path is defined before the branch is cut.
+- Abandonment policy: if a release is cancelled, the branch should be merged or tagged as abandoned so it does not linger as an unowned divergence.
 ## Related
 - [[wiki/communities/git-flow|Git Flow]]
 - [[wiki/communities/hotfix-branches|Hotfix Branches]]

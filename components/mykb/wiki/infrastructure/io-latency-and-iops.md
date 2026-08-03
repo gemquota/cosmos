@@ -24,5 +24,4 @@ IO latency and IOPS are the two numbers that describe storage performance: IOPS 
 - [[wiki/os-shell/io-uring-and-async-io|io_uring & Async I/O]]
 - [[wiki/cloud-infra/latency-optimization|Latency Optimization]]
 - [[wiki/infrastructure/pipeline-sla-and-latency-budgets|Pipeline Sla And Latency Budgets]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

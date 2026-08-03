@@ -23,7 +23,7 @@ Largest Contentful Paint (LCP) marks when the page's largest content element bec
 ## Related
 - [[wiki/web-platforms/error-monitoring-web|Error Monitoring for the Web]]
 - [[wiki/web-platforms/cumulative-layout-shift|Cumulative Layout Shift]]
-- [[wiki/web-platforms/cls-avoidance|CLS Avoidance]]
+- [[wiki/web-platforms/cumulative-layout-shift|Cumulative Layout Shift]]
 - [[wiki/web-platforms/font-shift|FOIT and Font Shift]]
 - [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]]
 - [[wiki/web-platforms/progressive-web-apps|Progressive Web Apps]]

@@ -27,5 +27,4 @@ Logit bias injects a per-token adjustment into the pre-sampling logits, making s
 - [[wiki/prompt-engineering/refusal-behaviour|Refusal Behaviour]] — Token biasing can support refusal mechanisms
 - [[wiki/ai-ml/subword-tokenization|Subword Tokenization]] — Why token IDs, not words, are the bias unit
 - [[wiki/prompt-engineering/structured-output|Structured Output]] — Schema enforcement makes logit bias mostly unnecessary
-- [[raw/archive/session-artifacts-2026-07/topics/security|security — Token-level blocking as a security control
 - [[wiki/concepts/mykb-implementation-report|mykb Implementation Report: 6-Phase Buildout — Actual State, Architecture, and Results]] — Token-level controls implemented in the buildout

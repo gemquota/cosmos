@@ -20,6 +20,7 @@ Incident command assigns explicit roles — incident commander, scribe, subject-
 - Operational notes: practice the structure in game days, keep a declared-incident checklist, and review role effectiveness in postmortems.
 - RSIS3 relevance: agent incidents benefit from the same structure — a coordinator, a recorder, and clear handoffs — so a failing loop run is coordinated, not improvised.
 
+## Practice
 - Keep the structure proportional: a two-person incident needs a commander and a note-taker, not a full staff.
 ## Related
 - [[wiki/devops-infra/incident-response|Incident Response]]

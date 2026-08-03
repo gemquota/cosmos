@@ -20,6 +20,7 @@ APM tools (Datadog, New Relic, Sentry Performance, Grafana Cloud) bundle auto-in
 - Operational notes: set sampling policies, curate dashboards to the team's signals, and keep agent versions current.
 - RSIS3 relevance: an APM lens on the acquisition pipeline would surface slow curation steps — the same latency-and-error view RSIS3 applies to its own loops.
 
+## Practice
 - Operational notes: sample aggressively, keep the dashboard curated, and make every alert traceable in one click — the path from alert to root cause is what makes APM worth its cost.
 ## Related
 - [[wiki/dev-tools/trace-viewers|Trace Viewers]]

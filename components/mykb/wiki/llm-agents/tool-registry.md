@@ -17,7 +17,7 @@ A tool registry is the catalog of functions an agent may call: schemas, descript
 - Concrete example: a wiki agent's registry lists search_notes, read_note, write_note (write-scoped), and graph_query with schemas that constrain paths; function-calling models select tools by description, so schema quality — clear names, precise descriptions, strict parameter types — determines routing accuracy.
 - Failure modes: ambiguous or overlapping tool descriptions causing misrouting; schemas too loose (free-form strings where enums belong) allowing invalid calls; registry drift — tools removed but still advertised; and tools without permission metadata sneaking past policy checks.
 - Operational tradeoffs: a registry centralizes tool governance (discoverability, versioning, permissions) at the cost of schema maintenance; the discipline is schema-first design, permission metadata per tool, invocation logging, and versioning so prompts and runtimes stay in sync.
-- RSIS3/mykb relevance: the wiki's tool registry is the single source of truth for agent capabilities, and the loop's permission model reads from the same metadata.
+- RSIS3/mykb relevance: the wiki's tool registry would be the single source of truth for agent capabilities, and the loop's permission model would read from the same metadata.
 - Schema quality practice: descriptions should state the tool's purpose, the meaning of each parameter, and common failure conditions; the model routes on these words.
 - Registry testing: fuzz-call tools with adversarial arguments to verify schema enforcement and permission checks, since the registry is the attack surface.
 

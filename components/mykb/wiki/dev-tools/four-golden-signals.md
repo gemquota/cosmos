@@ -19,11 +19,10 @@ The four golden signals from the Google SRE book are latency, traffic, errors, a
 - Failure modes: tracking only some signals — monitoring latency without saturation misses the cause; using averages, which hide tail problems; alerting on every counter instead of the few that describe health; saturation defined on the wrong resource, so the real bottleneck is invisible.
 - Tradeoffs: the golden signals are a minimal, high-signal set that fits on one dashboard — richer systems add domain metrics, but the core four stay readable; the alternative, exhaustive metrics, is noise; the discipline is picking the top few per service and keeping them owned.
 - Operational notes: define the four signals per service, put them on the top dashboard tier, and feed them into SLO alerts.
-- RSIS3 relevance: the golden signals map to article latency, read traffic, curation errors, and storage saturation — the same four-question health view for the wiki.
+- RSIS3 relevance: the golden signals map to article latency, read traffic, curation errors, and storage saturation — the same four-question health view for the wiki; each signal needs an explicit target and an owning team.
 
 ## Related
 - [[wiki/devops-infra/golden-signals|Golden Signals]]
 - [[wiki/dev-tools/metric-backends|Metric Backends]]
 - [[wiki/dev-tools/latency-percentiles|Latency Percentiles]]
 - [[wiki/software-engineering/reliability-engineering|Reliability Engineering]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

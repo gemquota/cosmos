@@ -20,6 +20,7 @@ Printf debugging — scattering print statements through code to see values and 
 - Operational notes: prefer labeled logging calls over raw prints so the instrumentation survives, and gate temporary output behind a flag.
 - RSIS3 relevance: when a generated article looks wrong, printf the template variables to find the first divergence — the simplest tool in the debugging ladder RSIS3 uses.
 
+## Practice
 - Pair prints with unique sentinel labels so the debug output is greppable and removable in one pass.
 ## Related
 - [[wiki/dev-tools/debug-logging|Debug Logging]]

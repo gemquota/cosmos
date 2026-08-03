@@ -21,9 +21,13 @@ Retry with backoff re-attempts failed requests after increasing delays, distingu
 - Backoff grows the delay between attempts so a struggling dependency gets room to recover without being flooded.
 - Retry counts, per-attempt timeouts, and circuit-breaker state must all be coordinated or retries make outages worse.
 - The protocol matters: idempotent operations are safe to retry; non-idempotent ones need request IDs or exactly-once semantics.
-- **Worked example / comparison** — Worked example — a wiki sync worker retries a failed fetch up to five times with doubling delays, stopping immediately on a 4xx because retrying a bad request will not help.
-- For mykb, retry-backoff is the standard resilience layer for the wiki's source checks and sync jobs.
+- **Worked example / comparison** — Worked example — a wiki sync worker would retry a failed fetch up to five times with doubling delays, stopping immediately on a 4xx because retrying a bad request will not help.
+- For mykb, retry-backoff would be the standard resilience layer for the wiki's source checks and sync jobs.
 
+- Coordination: retry counts, per-attempt timeouts, and circuit-breaker state must all be coordinated or retries make outages worse; the standard pattern is bounded retries with exponential backoff plus jitter, escalating to a breaker.
+- Failure classification: transient errors (429, 503, network blips) retry; permanent errors (4xx) do not — the classification is what keeps retries from hammering a target or masking a bug.
+- Idempotency requirement: only idempotent operations should be retried, or the request should carry an idempotency key, so a duplicated attempt cannot double-apply a side effect.
+- Observability: every retry should be logged with the attempt number and delay, so retry storms are visible in telemetry rather than silent.
 ## Related
 - [[wiki/api-protocols/exponential-backoff|Exponential Backoff]]
 - [[wiki/api-protocols/jitter|Jitter]]

@@ -25,4 +25,3 @@ Rate limiting at the edge protects services before requests consume backend reso
 - [[wiki/cloud-infra/edge-locations|Edge Locations]]
 - [[wiki/cloud-infra/edge-computing|Edge Computing]]
 - [[wiki/infrastructure/data-encryption-at-rest|Data Encryption At Rest]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
