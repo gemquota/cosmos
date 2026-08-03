@@ -26,5 +26,3 @@ GitOps bootstrap processes bring a cluster or environment from empty to fully ma
 - [[wiki/infrastructure/dataset-release-processes|Dataset Release Processes]]
 - [[wiki/os-shell/daemon-processes|Daemon Processes]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -26,5 +26,3 @@ Virtual switches are software switches that forward frames between virtual machi
 - [[wiki/cloud-infra/virtual-machines-hypervisors|Virtual Machines & Hypervisors]]
 - [[wiki/cloud-infra/virtual-machines|Virtual Machines]]
 - [[wiki/infrastructure/warehouse-clusters-and-virtual-warehouses|Warehouse Clusters And Virtual Warehouses]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

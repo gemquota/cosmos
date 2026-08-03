@@ -23,5 +23,3 @@ TCP keepalive is the mechanism that detects dead or unreachable peers: after a s
 - [[wiki/cloud-infra/udp-vs-tcp|UDP vs TCP]]
 - [[wiki/cloud-infra/tcp-retransmission|TCP Retransmission]]
 - [[wiki/infrastructure/nvme-over-fabrics-tcp|NVMe over Fabrics (TCP)]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -24,5 +24,3 @@ Scheduling recurring jobs is the operating system's oldest automation problem, a
 - [[wiki/devops-infra/scheduled-jobs|Scheduled Jobs]]
 - [[wiki/os-shell/cron-and-schedulers|Cron & Scheduling]]
 - [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

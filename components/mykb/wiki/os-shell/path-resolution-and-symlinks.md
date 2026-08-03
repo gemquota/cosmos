@@ -24,5 +24,3 @@ Path resolution is the kernel's walk from a path string to an inode: starting at
 - [[wiki/os-shell/path-resolution|Path Resolution]]
 - [[wiki/os-shell/dns-resolution|DNS Resolution]]
 - [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

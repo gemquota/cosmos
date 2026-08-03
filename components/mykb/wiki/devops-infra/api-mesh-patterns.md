@@ -25,5 +25,3 @@ API mesh patterns compose multiple API gateways and service-mesh layers so that 
 - [[wiki/devops-infra/service-mesh-sidecars|Service Mesh Sidecars]]
 - [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]]
 - [[wiki/devops-infra/api-compatibility-policies|API Compatibility Policies]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

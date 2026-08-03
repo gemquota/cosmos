@@ -21,3 +21,6 @@ Legal hold freezes data from deletion or modification when litigation or investi
 - Hold audit: reconcile active holds against retention policies quarterly; the intersection is where deletion automation and legal obligations collide.
 - Release authority: define who may release a hold and require written confirmation; an unauthorized release is a spoliation event with legal consequences.
 
+## Related
+- [[wiki/cloud-infra/object-lock-and-worm|Object Lock and WORM]] — immutability mechanisms at the object layer
+- [[wiki/cloud-infra/data-residency-and-locality|Data Residency and Locality]] — jurisdiction constraints on storage

@@ -19,11 +19,10 @@ SCSI is a command/response architecture that defines how hosts issue I/O to stor
 - Failure modes: link CRC errors, command timeouts that trigger SCSI error recovery and device resets, reservations held by a dead initiator, and expander topology loops. Misconfigured multipath can double-issue writes when failover is not set to active/passive correctly.
 - Tradeoffs: SAS drives cost more but offer dual-porting, better error handling, and longer service life; SATA wins on price. Choose by workload: streaming and archival data tolerate SATA, while transactional and shared storage favor SAS.
 - Operational practice: dm-multipath over dual SAS ports, enclosure management (SES) for slot LEDs and power control, and predictable rebuild pacing to avoid RAID resync storms.
+- Timeout tuning: HBA timeouts and retry counts decide how quickly a failing disk leaves a RAID group — too aggressive causes rebuild storms, too lenient makes I/O hang.
 - RSIS3/mykb relevance: self-improvement cycles that tune storage subsystems need this node to distinguish command semantics from transport, avoiding confusion between SCSI-level errors and fabric-level problems.
 
 ## Related
 - [[wiki/cloud-infra/http-protocols|HTTP Protocols]]
 - [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/cloud-infra/object-storage-protocols|Object Storage Protocols]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

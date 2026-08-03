@@ -26,5 +26,3 @@ Registry mirroring and proxying put a local cache in front of container registri
 - [[wiki/devops-infra/mirroring-and-shadow-traffic|Mirroring & Shadow Traffic]]
 - [[wiki/infrastructure/container-registries|Container Registries]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

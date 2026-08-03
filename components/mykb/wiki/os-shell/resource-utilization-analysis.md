@@ -25,5 +25,3 @@ Resource utilization analysis is the practice of reading CPU, memory, disk, and 
 - [[wiki/cloud-infra/flow-logs-and-analysis|Flow Logs & Analysis]]
 - [[wiki/cloud-infra/resource-tagging|Resource Tagging]]
 - [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

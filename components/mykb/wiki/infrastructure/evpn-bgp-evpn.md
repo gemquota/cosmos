@@ -22,5 +22,3 @@ EVPN (Ethernet VPN) uses BGP as the control plane to distribute MAC and IP reach
 ## Related
 - [[wiki/cloud-infra/bgp-routing|BGP Routing]]
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

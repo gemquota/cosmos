@@ -19,10 +19,9 @@ RTO (Recovery Time Objective) and RPO (Recovery Point Objective) define what rec
 - Failure modes: targets stated but never measured — no drill proves the RTO is actually met; RPO assumed from backup frequency without accounting for restore lag; targets that are aspirational rather than designed (RTO 5 minutes for a system with manual recovery); a single recovery path that cannot meet either target during a real regional failure.
 - Tradeoffs: tighter targets cost more — replication, storage, automation, testing; looser targets are cheap but painful when used; the numbers should be negotiated with the business, then the architecture should be designed to them, and drills should verify them.
 - Operational notes: document RTO/RPO per system, measure them in drills, and renegotiate when systems change.
+- Measurement: RTO is met only when restored service passes a health check — time the drill to that point, not to the moment traffic is accepted.
 - RSIS3 relevance: the wiki and MyKB store need explicit RTO/RPO — decide how long recovery may take and how much history can be lost before choosing the backup and replication machinery.
 
 ## Related
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/devops-infra/observability-pillars|Observability Pillars]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

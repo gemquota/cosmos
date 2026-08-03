@@ -24,5 +24,3 @@ NVMe over Fabrics (NVMe-oF) carries NVMe commands over a network fabric instead 
 - [[wiki/cloud-infra/udp-vs-tcp|UDP vs TCP]]
 - [[wiki/infrastructure/roce-and-rdma-over-tcp|RoCE & RDMA over TCP]]
 - [[wiki/cloud-infra/tcp-retransmission|TCP Retransmission]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

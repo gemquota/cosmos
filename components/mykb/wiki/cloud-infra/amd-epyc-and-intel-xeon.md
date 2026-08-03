@@ -20,3 +20,6 @@ Cloud instance families are built on AMD EPYC and Intel Xeon generations, each w
 - RSIS3/mykb relevance: benchmark results per CPU family are stored in the wiki so the loop's experiment planner picks the cheapest adequate family instead of the default.
 - Procurement note: reserved/commit pricing differs per CPU family; a savings plan that spans families preserves flexibility only if licensing allows running anywhere.
 - Measurement: publish a per-workload benchmark matrix (cores, memory bandwidth, price) in the wiki and re-run it after CPU generation launches, since two generations can change the recommendation. Record the compiler or runtime version in every row — a toolchain update can flip the winner.
+
+## Related
+- [[wiki/cloud-infra/graviton-and-aws|Graviton and AWS]] — the ARM competitor in the same price bands

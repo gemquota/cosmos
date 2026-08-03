@@ -18,6 +18,7 @@ Topology spread constraints distribute pods across failure domains — zones, re
 - Failure modes: constraints that cannot be satisfied, leaving pods Pending (check with events); skew creeping when scaling up without rebalancing (the scheduler balances at placement, not retroactively); counting only scheduled pods, ignoring crash-looping ones; constraints conflicting with other scheduling rules (affinity, taints), making scheduling impossible; spreading that ignores real fault domains because labels are wrong.
 - Tradeoffs: spread constraints buy blast-radius isolation at the cost of scheduling flexibility and cluster fragmentation; the alternative — no constraints — lets the scheduler pack efficiently and fail whole regions together; the mature pattern is spread across zones for critical workloads, node spread for the rest, with maxSkew tuned to real failure domains.
 - Operational notes: verify topology labels, monitor pod distribution per domain, and test zone-loss behavior in drills.
+- Label accuracy: spread works only when topology labels are correct — verify zone labels on nodes and use well-known keys, or constraints can silently spread across a single domain.
 - RSIS3 relevance: if cosmos runs replicated services, spread constraints keep the wiki available when a zone fails — a small spec change with large availability impact.
 
 ## Related
@@ -26,5 +27,3 @@ Topology spread constraints distribute pods across failure domains — zones, re
 - [[wiki/os-shell/pci-e-topology|PCIe Topology]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/devops-infra/observability-pillars|Observability Pillars]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

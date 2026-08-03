@@ -25,5 +25,3 @@ First-boot configuration provisions a fresh machine or container from zero to a 
 - [[wiki/os-shell/boot-process-and-firmware|Boot Process & Firmware]]
 - [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]]
 - [[wiki/devops-infra/configuration-as-data|Configuration as Data]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -24,5 +24,3 @@ Kernel-bypass networking gives applications direct access to the NIC from usersp
 - [[wiki/infrastructure/vlan-networking|VLAN Networking]]
 - [[wiki/cloud-infra/multicast-networking|Multicast Networking]]
 - [[wiki/infrastructure/software-defined-networking|Software-Defined Networking]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

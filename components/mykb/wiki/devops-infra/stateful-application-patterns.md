@@ -25,5 +25,3 @@ Stateful application patterns cover how workloads with persistent data run on Ku
 - [[wiki/cloud-infra/serverless-computing-patterns|Serverless Computing Patterns]]
 - [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]]
 - [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

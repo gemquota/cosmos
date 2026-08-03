@@ -27,5 +27,3 @@ Disaster recovery tiers classify systems by how much downtime and data loss they
 - [[wiki/infrastructure/pulsar-architecture-and-tiers|Pulsar Architecture And Tiers]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/devops-infra/observability-pillars|Observability Pillars]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

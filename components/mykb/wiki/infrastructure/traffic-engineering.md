@@ -25,5 +25,3 @@ Traffic engineering plans and steers how traffic flows across a network so that 
 - [[wiki/devops-infra/site-reliability-engineering-revisited|Site Reliability Engineering]]
 - [[wiki/infrastructure/traffic-shaping-and-qos|Traffic Shaping & QoS]]
 - [[wiki/devops-infra/release-engineering-trains|Release Engineering Trains]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

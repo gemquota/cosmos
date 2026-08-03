@@ -18,6 +18,7 @@ The Container Storage Interface (CSI) standardizes how Kubernetes provides stora
 - Failure modes: attach/detach timeouts when the driver or cloud API hangs — pods can get stuck Terminating; multi-attach errors when a ReadWriteOnce volume is scheduled on two nodes; resize failures when the filesystem is not expanded after the PV grows; driver upgrades that restart while volumes are mounted, causing I/O errors; orphaned volumes after PVC deletion when the driver fails to delete, leaking cost.
 - Tradeoffs: CSI standardizes the interface but shifts complexity into drivers with uneven vendor maturity, so test attach, detach, and resize paths; network volumes are safe across node failure but slow; local volumes are fast but pinned to a node and need application-level replication.
 - Operational notes: monitor PV/PVC state, set reclaim policies deliberately (Retain versus Delete), and test volume expansion and snapshot/restore in staging.
+- Expansion detail: online resize needs both the driver and the mounted filesystem to support it — expanding the PV alone leaves the pod's usable space unchanged.
 - RSIS3 relevance: RSIS3's persistent state (the mykb store, checkpoints) on Kubernetes relies on CSI volumes — driver behavior explains backup, capacity, and attach failure modes.
 
 ## Related
@@ -25,5 +26,3 @@ The Container Storage Interface (CSI) standardizes how Kubernetes provides stora
 - [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]]
 - [[wiki/devops-infra/container-network-interfaces|Container Network Interfaces]]
 - [[wiki/devops-infra/storage-classes-and-provisioners|Storage Classes & Provisioners]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

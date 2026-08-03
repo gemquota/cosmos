@@ -26,5 +26,3 @@ tcpdump filters are Berkeley Packet Filter (BPF) expressions that select which p
 - [[wiki/infrastructure/packet-analysis-with-tcpdump|Packet Analysis with tcpdump]]
 - [[wiki/infrastructure/egress-proxies-and-filters|Egress Proxies & Filters]]
 - [[wiki/infrastructure/tcpdump-and-wireshark|tcpdump & Wireshark]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

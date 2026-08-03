@@ -26,5 +26,3 @@ Preview environments are short-lived deployments of a branch or PR, reachable at
 - [[wiki/devops-infra/development-environments-as-code|Development Environments as Code]]
 - [[wiki/infrastructure/data-environments-dev-staging-prod|Data Environments Dev Staging Prod]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

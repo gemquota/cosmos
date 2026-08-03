@@ -26,5 +26,3 @@ Storage observability is the practice of measuring latency, IOPS, throughput, ca
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/devops-infra/observability-of-network-path|Observability of the Network Path]]
 - [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

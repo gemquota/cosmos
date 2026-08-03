@@ -29,5 +29,3 @@ The grep, sed, awk, cut, sort, jq family for streaming text transformation. Thes
 - [[wiki/os-shell/text-processing-pipelines|Text Processing Pipelines]]
 - [[wiki/shell-environment/shell-environments-and-rc-files|Shell Environments & RC Files]]
 - [[wiki/shell-environment/terminal-multiplexers-tmux|Terminal Multiplexers: tmux]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -24,5 +24,3 @@ PCIe (Peripheral Component Interconnect Express) is the serial bus hierarchy tha
 - [[wiki/infrastructure/network-topology-design|Network Topology Design]]
 - [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
 - [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -25,5 +25,3 @@ Zero-trust networking is the model where no network is trusted by default: every
 - [[wiki/infrastructure/vlan-networking|VLAN Networking]]
 - [[wiki/devops-infra/zero-trust-access-proxies|Zero Trust Access Proxies]]
 - [[wiki/cloud-infra/multicast-networking|Multicast Networking]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

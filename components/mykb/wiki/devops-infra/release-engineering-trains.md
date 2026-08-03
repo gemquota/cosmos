@@ -18,6 +18,7 @@ Release engineering turns software delivery into a repeatable process: versionin
 - Failure modes: unreproducible builds (environment-dependent artifacts) making rollback unreliable; version collisions from manual version bumps; changelogs that drift from actual changes; promotion steps done by hand and skipped under pressure; artifact storage that loses or mutates old versions; signing that is not verified at deploy.
 - Tradeoffs: engineered release pipelines cost setup and ceremony but make releases boring and safe; the alternative — manual release rituals — works until it fails under pressure; the payoff is that release risk becomes a solved, rehearsed process instead of an incident.
 - Operational notes: keep one release pipeline per product, make every step auditable, and rehearse rollback regularly.
+- Provenance: attach build metadata — commit, builder, SBOM — to the artifact at build time and verify it at deploy, so the artifact itself is the record of what shipped.
 - RSIS3 relevance: RSIS3's own releases (dashboard bundles, packaged loops) deserve the same engineering — versioned, signed, promotable artifacts with a rehearsed rollback path.
 
 ## Related
@@ -25,5 +26,3 @@ Release engineering turns software delivery into a repeatable process: versionin
 - [[wiki/devops-infra/site-reliability-engineering-revisited|Site Reliability Engineering]]
 - [[wiki/devops-infra/semantic-release-automation|Semantic Release Automation]]
 - [[wiki/infrastructure/traffic-engineering|Traffic Engineering]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

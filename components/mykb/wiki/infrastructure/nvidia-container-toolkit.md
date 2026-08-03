@@ -24,5 +24,3 @@ The NVIDIA Container Toolkit is the software that makes GPUs usable inside conta
 - [[wiki/devops-infra/container-images-oci|Container Images (OCI)]]
 - [[wiki/devops-infra/container-network-interfaces|Container Network Interfaces]]
 - [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

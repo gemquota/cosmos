@@ -22,5 +22,3 @@ Thermal throttling is the CPU protecting itself from heat damage by cutting freq
 - [[wiki/infrastructure/power-and-cooling-datacenter|Power & Cooling in the Datacenter]]
 - [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
 - [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -18,6 +18,7 @@ gRPC is an RPC framework built on HTTP/2 and Protocol Buffers: strongly typed se
 - Failure modes: protobuf field-number reuse corrupts data across versions — never reuse numbers, never change types; message sizes without limits let a peer exhaust memory (set max receive size); long-lived streams that leak without keepalive or deadlines; connection pooling issues under HTTP/2 multiplexing (too many streams, flow control stalls); server reflection or health-checking absent, making ops harder.
 - Tradeoffs: gRPC's efficiency, streaming, and typed contracts come at the cost of tooling and debuggability — payloads are binary, so tracing and curl-style debugging need reflection or grpcurl; the alternative, REST/JSON, is universally debuggable but slower and untyped; teams often run both via a gateway.
 - Operational notes: version protos, run breaking-change checks, set deadlines and retry policies, and expose health and reflection endpoints.
+- Balancing: HTTP/2 multiplexing breaks naive per-connection load balancing — use client-side pick-first with subchannel sharing or a stream-aware proxy, and enable keepalive pings to detect dead peers.
 - RSIS3 relevance: RSIS3's component-to-component calls (mykb daemon, SPACE) would benefit from typed protobuf contracts with built-in deadlines — versioned schemas keep loop upgrades safe.
 
 ## Related
@@ -25,5 +26,3 @@ gRPC is an RPC framework built on HTTP/2 and Protocol Buffers: strongly typed se
 - [[wiki/infrastructure/vlan-networking|VLAN Networking]]
 - [[wiki/cloud-infra/multicast-networking|Multicast Networking]]
 - [[wiki/infrastructure/software-defined-networking|Software-Defined Networking]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

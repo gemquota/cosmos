@@ -27,5 +27,3 @@ Service accounts and workload identities give machine workloads an identity for 
 - [[wiki/cloud-infra/service-discovery-dns-based|DNS-Based Service Discovery]]
 - [[wiki/cloud-infra/function-as-a-service|Function-as-a-Service]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

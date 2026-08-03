@@ -23,5 +23,3 @@ NVMe multipath gives a host multiple physical paths to the same NVMe namespace �
 - [[wiki/infrastructure/nvme-and-nvme-of|NVMe & NVMe-oF]]
 - [[wiki/infrastructure/nvme-over-fabrics-tcp|NVMe over Fabrics (TCP)]]
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

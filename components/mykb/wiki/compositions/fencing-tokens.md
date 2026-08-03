@@ -26,4 +26,3 @@ A fencing token is a monotonically increasing number issued with each lock grant
 - [[wiki/compositions/distributed-locks|Distributed Locks]]
 - [[wiki/tooling/leader-election|Leader Election]]
 - [[wiki/tooling/distributed-consistency|Distributed Consistency]]
-- [[wiki/compositions/lease-based-locks|Fencing Tokens]]

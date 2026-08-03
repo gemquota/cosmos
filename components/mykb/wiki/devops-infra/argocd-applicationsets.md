@@ -18,10 +18,9 @@ ApplicationSets generate ArgoCD Application resources from templates, replacing 
 - Failure modes: a generator returning zero matches silently stops deploying with no apps and no errors — alert on the generated app count; a bad template renders invalid Application specs that ArgoCD repeatedly fails to apply; `automated: selfHeal` plus a generator change can create or delete dozens of apps in one pass, so diff or dry-run before merging.
 - Tradeoffs: ApplicationSets reduce boilerplate and centralize configuration but hide the per-app detail operators used to review; debugging which generator produced an app needs `argocd appset list` and label selectors. Very large sets strain the app controller's reconciliation loop, so batch operations and refresh intervals matter.
 - Operational notes: pin the ApplicationSet controller to the ArgoCD release, make `preserveResourcesOnDeletion` explicit, and keep the template in git so the merge diff is the reviewable source of truth.
+- Generator tuning: `requeueAfterSeconds` and revision polling decide how fast new directories and clusters appear — short intervals hammer the git host and cluster API, long ones delay rollout, so tune them per source.
 - RSIS3 relevance: the same template-and-generate discipline applies to RSIS3's batch telemetry renders — generate dashboards and checkpoints from a declarative spec instead of hand-maintaining each artifact.
 
 ## Related
 - [[wiki/devops-infra/gitops-argocd|GitOps & ArgoCD]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
