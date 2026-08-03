@@ -18,10 +18,9 @@ Devcontainers package the entire development environment — toolchain, dependen
 - Failure modes: image drift — base images change and break builds, so pin digests and rebuild periodically; slow first builds when every dependency is compiled from scratch (cache layers and prebuilt images fix this); permission and mount issues on different host filesystems (bind-mount ownership); features that conflict or install different versions than documented; environment parity illusion — the container matches CI, not production, so platform-specific bugs still leak.
 - Tradeoffs: devcontainers trade image build and maintenance effort for onboarding speed and reproducibility; the alternative (setup scripts) drifts by nature; the middle path is a base image plus thin per-repo overlays.
 - Operational notes: keep devcontainer config reviewed like code, test image builds in CI, and document the escape hatch for environment-specific debugging.
+- Security surface: the container runs with the host user's privileges and mounts, so pin base images and features by digest, scan them, and mount only the workspace — not the whole home directory.
 - RSIS3 relevance: the cosmos repo's three components could standardize on one devcontainer so any loop iteration runs against a known toolchain, removing environment variables from reproducibility concerns.
 
 ## Related
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/devops-infra/observability-pillars|Observability Pillars]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

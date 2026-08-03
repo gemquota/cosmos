@@ -25,5 +25,3 @@ Progressive rollout metrics are the health signals that gate each step of a grad
 - [[wiki/devops-infra/prometheus-and-metrics|Prometheus & Metrics]]
 - [[wiki/devops-infra/progressive-delivery-models|Progressive Delivery Models]]
 - [[wiki/devops-infra/progressive-sync-strategies|Progressive Sync Strategies]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

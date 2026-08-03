@@ -27,5 +27,3 @@ SSH tunneling carries TCP traffic inside an encrypted SSH session, letting you r
 - [[wiki/infrastructure/ssh-key-management|SSH Key Management]]
 - [[wiki/os-shell/nmap-and-port-scanning|nmap & Port Scanning]]
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -20,3 +20,7 @@ Authoritative and recursive resolvers are the two halves of DNS: authoritative s
 - RSIS3/mykb relevance: the cosmos deployment's DNS changes follow a TTL-first procedure recorded here, so the loop's release checklist staggers DNS cutovers safely.
 - Monitoring: query authoritative servers directly (dig @ns) for propagation checks; resolver-side caching means user-visible results always lag TTLs. During incidents, compare cached answers across several public resolvers to separate local cache lag from an upstream outage.
 - Security: keep recursion closed on authoritative hosts, run DNSSEC validation on resolvers, and use RPKI-aligned validation where available to blunt cache poisoning and hijacks.
+
+## Related
+- [[wiki/cloud-infra/split-horizon-dns|Split-Horizon DNS]] — publishing versus resolving views
+- [[wiki/cloud-infra/dhcp-and-ipam|DHCP and IPAM]] — how names and addresses are handed out

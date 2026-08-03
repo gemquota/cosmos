@@ -21,7 +21,6 @@ Seed article criteria decide which new topics deserve a first article rather tha
 ## Related
 - [[wiki/concepts/stub-criteria|Stub Criteria]]
 - [[wiki/concepts/promotion-readiness|Promotion Readiness]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow: Open Threads]]
 - [[wiki/memory/knowledge-capture|Knowledge Capture]]
 - [[wiki/concepts/notability-policy|Notability Policy]]
 - [[wiki/concepts/growth-ratio|Growth Ratio]]

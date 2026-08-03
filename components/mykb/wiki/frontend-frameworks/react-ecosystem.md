@@ -17,7 +17,7 @@ React is a component library for building declarative UIs; the ecosystem around 
 - **State and data** — Context for shallow trees, external stores (Zustand, Redux) for app state, TanStack Query/SWR for server state.
 - **Rendering features** — Suspense, transitions, and concurrent rendering keep UIs responsive; memoization guards against re-render storms.
 - **Tooling** — Vite, Next.js, and React Native cover web and native; the compiler and RSC blur server/client boundaries.
-- **Worked example** — the mykb dashboard is a React SPA with TanStack Query for wiki data and an external store for UI state.
+- **Worked example** — a data-heavy dashboard is a natural fit for React with TanStack Query for API data and an external store for UI state; the current mykb dashboard deliberately stays framework-light (vanilla JS with Tailwind and Chart.js) so a React SPA would only be worth the dependency cost at higher widget complexity.
 - **Relevance** — RSIS3's agent UI choices should be evaluated against the same core trade-offs.
 
 ## Related

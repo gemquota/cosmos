@@ -18,6 +18,7 @@ Semantic-release automates the entire release process from commit messages: it p
 - Failure modes: undisciplined commits (all fix or all feat) producing wrong or empty releases — enforce Conventional Commits with a linter and block non-conforming merges; release-triggering commits merged by automation that then cannot run (release PRs need the same CI); tag conflicts when the tool runs twice; changelog overwrites of hand-written history; breaking changes shipped as minor because the commit message did not mark them.
 - Tradeoffs: automation makes releases deterministic and frequent but bakes the policy into commit discipline — the cost is process, not technology; the alternative, manual version decisions, is flexible and error-prone; semantic-release pays off when releases are frequent enough that the discipline is self-enforcing.
 - Operational notes: gate merges on commit format, test the release pipeline in a dry-run mode, and keep publish credentials scoped and rotated.
+- Branching: pre-release channels and maintenance branches need per-branch release config so hotfix versions derive from their own base instead of fighting over the tag namespace.
 - RSIS3 relevance: cosmos's artifact releases could ride the same automation — version, changelog, and publish derived from commit history, giving RSIS3 an auditable release trail.
 
 ## Related
@@ -26,5 +27,3 @@ Semantic-release automates the entire release process from commit messages: it p
 - [[wiki/devops-infra/changelog-automation|Changelog Automation]]
 - [[wiki/devops-infra/release-trains|Release Trains]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -26,5 +26,3 @@ Health checks tell the orchestrator whether a container is alive and ready; side
 - [[wiki/devops-infra/init-containers-and-hooks|Init Containers & Hooks]]
 - [[wiki/infrastructure/sidecar-pattern|Sidecar Pattern]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

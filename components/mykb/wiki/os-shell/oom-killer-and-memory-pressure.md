@@ -25,5 +25,3 @@ When a Linux system runs out of reclaimable memory, the kernel's OOM killer pick
 - [[wiki/os-shell/memory-fragmentation|Memory Fragmentation]]
 - [[wiki/os-shell/memory-mapped-files|Memory-Mapped Files]]
 - [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

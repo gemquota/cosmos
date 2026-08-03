@@ -25,5 +25,3 @@ Packet capture performance is the art of capturing every packet at line rate wit
 - [[wiki/cloud-infra/tls-performance|TLS Performance]]
 - [[wiki/os-shell/packet-analysis-and-capture|Packet Analysis]]
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

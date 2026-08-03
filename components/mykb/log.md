@@ -374,3 +374,22 @@ title: "Bundle Log"
   30,452 links, 1,672/474/60 tiers), graph.json (5,443 nodes / 35,964
   edges, 0 isolated), okf render (6,724 concepts), gen-static-data check OK.
 - **Synthesis note**: `wiki/syntheses/adversarial-review-pass-1-2026-08.md`.
+
+## 2026-08-03 (adversarial review pass 2)
+- **Pass 2 re-review (5 parallel agents)**: same 1,098-file slices after the
+  cleanup. Scores 79/64/62/68/71 (mean 68.8). Mechanical fixes held in every
+  slice (0 self-links, 0 annotation strings, 0 dead/truncated links, 0
+  sub-320 files, factual fixes verified correct); remaining defect surface is
+  the deliberately-unfixed classes (unverifiable "the wiki's" claims,
+  keyword-matched links, near-duplicates, padding-to-threshold, orphaned
+  trailing bullets).
+- **Post-pass-2 fixes**: removed 464 remaining syntheses-trailer lines (233
+  files still carried the two-link boilerplate with descriptor suffixes);
+  fixed fencing-tokens wrong-page link, stale display labels after the
+  clickhouse rename, and the fabricated "dashboard is a React SPA" claim in
+  react-ecosystem.md; restored topical Related links to 3 emptied sections;
+  32 files topped back to ≥320 after trailer removal.
+- **Snapshots regenerated**: stats.html (5,343 files, 1,173,663 words,
+  29,992 links, 1,672/466/46 tiers), graph.json (5,444 nodes / 35,509 edges,
+  0 isolated), okf render (6,724 concepts), gen-static-data check OK.
+- **Combined pass-2 report**: `ops/reports/adversarial-review-pass2-stub-promotion-2026-08.md`.

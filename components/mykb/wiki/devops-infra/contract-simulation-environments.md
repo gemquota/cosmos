@@ -26,5 +26,3 @@ Contract simulation environments emulate the external services a system depends 
 - [[wiki/devops-infra/ephemeral-environments|Ephemeral Environments]]
 - [[wiki/cloud-infra/categories/aws-cloud/particle-simulation-2|Particle Simulation]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -26,5 +26,3 @@ Envoy is a high-performance, C++ service proxy that implements the data plane: L
 - [[wiki/infrastructure/data-deduplication-in-storage|Data Deduplication in Storage]]
 - [[wiki/cloud-infra/data-archiving|Data Archiving]]
 - [[wiki/devops-infra/observability-pillars|Observability Pillars]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

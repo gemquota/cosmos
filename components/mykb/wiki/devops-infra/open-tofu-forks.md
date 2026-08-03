@@ -18,10 +18,9 @@ OpenTofu is the open-source fork of Terraform created after HashiCorp's license 
 - Failure modes: feature drift — a Terraform feature or provider that depends on proprietary behavior breaks on the fork; version skew in state format between tools; ecosystem confusion where some CI tools assume terraform binary names; providers pinning to upstream-only behaviors; migration cutovers that mix tofu and terraform in one pipeline, splitting state.
 - Tradeoffs: OpenTofu buys license freedom and community governance but introduces a second ecosystem to track; the compatibility promise is strong but not absolute — test every provider and feature before committing; staying on Terraform means accepting its license terms; both are viable for most teams, and the split is more about governance than capability.
 - Operational notes: pin versions, test plan diffs in CI with both tools during migration, and keep state migration rehearsed.
+- Migration path: run both binaries in CI during the transition, compare `tofu plan` against the same state, and switch the pipeline only when plans match — never let both tools apply in the same window.
 - RSIS3 relevance: cosmos's infra-as-code choice (OpenTofu vs Terraform) is a governance decision with operational consequences — the wiki's infrastructure definitions should record which toolchain they target.
 
 ## Related
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/devops-infra/observability-pillars|Observability Pillars]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

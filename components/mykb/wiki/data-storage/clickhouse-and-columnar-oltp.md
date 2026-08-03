@@ -34,7 +34,7 @@ ClickHouse is built for the read path: every design choice favors fast scans ove
 - [[wiki/data-storage/real-time-dashboards-and-alerts|Real Time Dashboards And Alerts]] — serving
 - [[wiki/data-storage/materialized-views-and-incremental-refresh|Materialized Views And Incremental Refresh]] — views
 - [[wiki/data-storage/olap-vs-oltp|OLAP vs OLTP]] — workloads
-- [[wiki/data-storage/clickhouse-vs-druid-vs-pinot|Clickhouse Vs Druid Pinot Druid Architecture]] — comparison
+- [[wiki/data-storage/clickhouse-vs-druid-vs-pinot|ClickHouse vs Druid vs Pinot]] — comparison
 - [[wiki/data-storage/data-warehouse|Data Warehouse]] — warehouse reference
 - [[wiki/data-storage/data-quality-dimensions|Data Quality Dimensions]] — quality dimensions
 

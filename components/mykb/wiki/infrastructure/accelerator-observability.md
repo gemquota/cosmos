@@ -23,5 +23,3 @@ Accelerator observability is the practice of collecting and acting on metrics fo
 - [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/devops-infra/observability-of-network-path|Observability of the Network Path]]
 - [[wiki/infrastructure/storage-observability|Storage Observability]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

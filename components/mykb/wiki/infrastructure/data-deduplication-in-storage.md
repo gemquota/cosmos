@@ -24,5 +24,3 @@ Data deduplication removes duplicate blocks at write time, storing one copy and 
 - [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]]
 - [[wiki/devops-infra/envoy-data-plane|Envoy Data Plane]]
 - [[wiki/infrastructure/data-plane-versus-control-plane|Data Plane vs Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

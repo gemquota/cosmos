@@ -23,5 +23,3 @@ OpenFlow pipelines are the match-action flow-table architecture that lets a soft
 - [[wiki/devops-infra/log-aggregation-pipelines|Log Aggregation Pipelines]]
 - [[wiki/devops-infra/continuous-delivery-pipelines|Continuous Delivery Pipelines]]
 - [[wiki/os-shell/text-processing-pipelines|Text Processing Pipelines]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

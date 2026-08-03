@@ -25,5 +25,3 @@ Feature flags decouple deployment from release: code ships behind a flag, and th
 - [[wiki/os-shell/systemd-and-init-systems|systemd & Init Systems]]
 - [[wiki/infrastructure/intrusion-detection-systems|Intrusion Detection Systems]]
 - [[wiki/devops-infra/dotenv-vs-config-systems|dotenv vs Config Systems]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

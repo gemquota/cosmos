@@ -25,5 +25,3 @@ Precision Time Protocol (PTP, IEEE 1588) synchronizes clocks to sub-microsecond 
 - [[wiki/infrastructure/time-synchronization-in-dc|Time Synchronization in the Datacenter]]
 - [[wiki/devops-infra/point-in-time-recovery|Point-in-Time Recovery]]
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

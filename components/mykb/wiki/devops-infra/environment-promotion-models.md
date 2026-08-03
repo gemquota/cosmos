@@ -19,6 +19,7 @@ Environment promotion models define how configuration and artifacts move from de
 - Failure modes: environment-specific build artifacts that mask issues until prod; config that exists only in production (ambient drift) breaking the next promotion; promotion steps done by hand and skipped or mis-ordered; secrets injected at the wrong environment; rollback promoting an old artifact against new schema, creating version skew.
 - Tradeoffs: strict promotion pipelines add process and waiting time but make releases predictable and auditable; loose models ship faster but accumulate drift and surprises; the key trade is per-environment customization versus fidelity to production.
 - Operational notes: promote the same digest everywhere, keep promotion logs, and rehearse rollback as part of every promotion runbook.
+- Parity gates: render the config per tier and diff the output (helm template, kustomize build) so promotion proceeds only when the only differences are the declared per-environment values.
 - RSIS3 relevance: RSIS3's own releases (loop versions, dashboard builds) should follow artifact promotion — the same generated dashboard bundle promoted to preview and production with only config differing.
 
 ## Related
@@ -27,5 +28,3 @@ Environment promotion models define how configuration and artifacts move from de
 - [[wiki/infrastructure/data-maturity-models|Data Maturity Models]]
 - [[wiki/infrastructure/t-shirt-sizing-and-resource-models|T Shirt Sizing And Resource Models]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

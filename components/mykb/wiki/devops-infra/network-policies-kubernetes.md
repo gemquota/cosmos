@@ -25,5 +25,3 @@ Kubernetes NetworkPolicy is the built-in mechanism for segmenting pod traffic: i
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]]
 - [[wiki/infrastructure/network-interface-bonding|Network Interface Bonding]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

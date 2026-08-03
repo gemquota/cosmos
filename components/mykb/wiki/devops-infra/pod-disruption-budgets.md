@@ -18,6 +18,7 @@ PodDisruptionBudgets (PDBs) cap how many pods of a workload may be voluntarily e
 - Failure modes: PDBs set too tight (minAvailable equal to replicas) that block all maintenance indefinitely — cluster upgrades stall; PDBs that ignore readiness, so the budget counts not-ready pods and disruption still causes downtime; percentage rounding that permits zero available; eviction storms when the drain tool retries aggressively against a full budget.
 - Tradeoffs: PDBs are cheap insurance for planned disruption but only as good as the replica count and readiness they assume; the alternative — no PDBs — lets maintenance tools evict everything at once, turning an upgrade into an outage; pair PDBs with anti-affinity so evictions land on distinct nodes.
 - Operational notes: size PDBs from real capacity, watch PDB status (currentHealthy, desiredHealthy), and test drain behavior in staging.
+- Interactions: PDBs combine with pod priority and readiness gates during drains — test drain behavior with real workloads so replacements are ready before the next eviction is allowed.
 - RSIS3 relevance: if the wiki daemon runs replicated, a PDB keeps retrieval available during node maintenance — a small config that prevents a big outage.
 
 ## Related
@@ -26,5 +27,3 @@ PodDisruptionBudgets (PDBs) cap how many pods of a workload may be voluntarily e
 - [[wiki/devops-infra/error-budgets|Error Budgets]]
 - [[wiki/infrastructure/pod-lifecycle|Pod Lifecycle]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

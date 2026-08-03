@@ -23,5 +23,3 @@ FUSE (Filesystem in Userspace) is a Linux kernel module that lets a normal users
 - [[wiki/os-shell/copy-on-write-filesystems|Copy-on-Write Filesystems]]
 - [[wiki/os-shell/disk-partitioning-and-filesystems|Disk Partitioning & Filesystems]]
 - [[wiki/os-shell/immutable-filesystems|Immutable Filesystems]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

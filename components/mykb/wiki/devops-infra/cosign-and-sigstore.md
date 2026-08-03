@@ -18,10 +18,9 @@ Cosign and Sigstore bring software signing to the container ecosystem without ke
 - Failure modes: trusting any signature instead of pinning expected identity — verification must assert the certificate identity and issuer, not just validity; Rekor unavailability blocking verification (use offline verification or bundle caching); expired short-lived certificates breaking long-running pipelines; signing keys or tokens exfiltrated from CI, so keep OIDC permissions minimal and rotate frequently.
 - Tradeoffs: keyless signing removes long-lived private keys — the biggest operational win — but depends on Sigstore's availability and OIDC infrastructure; self-hosted sigstore deployments trade that dependency for control; verifying everything adds pipeline steps and latency but is the only way to enforce supply-chain policy.
 - Operational notes: verify at admission time (policy engines can call cosign), sign SBOMs alongside images, and monitor the transparency log for unexpected entries for your repositories.
+- Offline verification: keyless signatures can embed a Rekor bundle, so store bundles with the artifact and verify against them, keeping admission working through transparency-log outages.
 - RSIS3 relevance: RSIS3's own builds and artifacts (generated dashboards, packaged tools) benefit from signed provenance so later loops know exactly which code produced which output.
 
 ## Related
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/devops-infra/observability-pillars|Observability Pillars]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -18,6 +18,7 @@ Patch management is the process of keeping software updated against known vulner
 - Failure modes: patch backlog from understaffed review (prioritize by exploitability, not severity alone); automation that updates blindly and breaks production (pin, test, and roll back); patching that is not verified — a CVE closes while the vulnerable code path still ships; the firefighting pattern where only known-exploited CVEs get patched, leaving the rest to pile up.
 - Tradeoffs: continuous patching reduces the window of exposure but costs pipeline time and carries regression risk; manual windows are predictable but leave systems vulnerable in between; the mature pattern is automated updates plus test gates and fast rollback, with expedite paths for emergencies.
 - Operational notes: keep an SBOM per artifact, measure time-to-patch per severity, and rehearse the expedite path.
+- Inventory quality: patching is only as good as the inventory — stale SBOMs, unmanaged hosts, and abandoned images silently escape the cycle, so reconcile installed software against inventory before trusting coverage reports.
 - RSIS3 relevance: the cosmos stack (python, node, dashboard deps) should run the same continuous patch loop — RSIS3 can even treat patch cadence as one of its operational telemetry signals.
 
 ## Related
@@ -25,5 +26,3 @@ Patch management is the process of keeping software updated against known vulner
 - [[wiki/devops-infra/helm-and-chart-management|Helm & Chart Management]]
 - [[wiki/infrastructure/ssh-key-management|SSH Key Management]]
 - [[wiki/infrastructure/security-information-and-event-management|SIEM]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

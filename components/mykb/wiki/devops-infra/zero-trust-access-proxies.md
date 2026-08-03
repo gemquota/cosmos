@@ -26,5 +26,3 @@ Zero-trust access proxies (Cloudflare Access, Google IAP, Pomerium, Tailscale) r
 - [[wiki/cloud-infra/remote-access-methods|Remote Access Methods]]
 - [[wiki/infrastructure/zero-downtime-deploys|Zero-Downtime Deploys]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

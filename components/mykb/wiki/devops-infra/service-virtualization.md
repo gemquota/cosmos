@@ -18,6 +18,7 @@ Service virtualization replaces real downstream services with simulated versions
 - Failure modes: virtualization drift — the virtual service diverges from the real API, so tests pass against the fake and break in production (anchor it with contract tests); over-scripted responses that encode assumptions (happy path only) hiding error-handling gaps; stateful scenarios (webhooks, callbacks) that are hard to virtualize faithfully; teams that never run the real integration, accumulating risk.
 - Tradeoffs: virtualization gives fast, cheap, deterministic test and preview environments at the cost of fidelity; the alternative, real integrations, is realistic but slow, costly, and flaky; the mature pattern is virtualization for daily cycles plus scheduled real-integration runs (nightly or pre-release) to catch drift.
 - Operational notes: keep virtual services in the repo, pin their API versions, and schedule real-provider runs.
+- Scenario design: script realistic failures — timeouts, malformed payloads, 429s — into the virtual service so error-handling paths execute in every run, not only the happy path.
 - RSIS3 relevance: cosmos can virtualize external APIs (LLM providers, hosting services) for deterministic eval runs — scripted successes and failures — reserving live calls for acceptance.
 
 ## Related
@@ -26,5 +27,3 @@ Service virtualization replaces real downstream services with simulated versions
 - [[wiki/devops-infra/service-meshes-istio-linkerd|Service Meshes: Istio & Linkerd]]
 - [[wiki/cloud-infra/function-as-a-service|Function-as-a-Service]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

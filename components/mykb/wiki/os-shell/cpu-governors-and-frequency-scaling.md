@@ -23,5 +23,3 @@ CPU frequency scaling (DVFS, dynamic voltage and frequency scaling) lets the ker
 - [[wiki/os-shell/numa-and-cpu-topology|NUMA & CPU Topology]]
 - [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
 - [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

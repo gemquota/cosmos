@@ -24,5 +24,3 @@ The data plane and control plane split is the organizing principle of networked 
 - [[wiki/os-shell/job-control-and-background-tasks|Job Control & Background Tasks]]
 - [[wiki/devops-infra/envoy-data-plane|Envoy Data Plane]]
 - [[wiki/cloud-infra/congestion-control-algorithms|Congestion Control Algorithms]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

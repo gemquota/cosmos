@@ -27,5 +27,3 @@ Progressive delivery models — canary, blue-green, ring-based, dark launch — 
 - [[wiki/devops-infra/continuous-delivery-pipelines|Continuous Delivery Pipelines]]
 - [[wiki/devops-infra/progressive-rollout-metrics|Progressive Rollout Metrics]]
 - [[wiki/devops-infra/progressive-sync-strategies|Progressive Sync Strategies]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
