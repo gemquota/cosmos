@@ -25,4 +25,3 @@ Identity-aware proxies (IAPs) put authentication and authorization in front of a
 - [[wiki/devops-infra/workload-identity-federation|Workload Identity Federation]]
 - [[wiki/devops-infra/zero-trust-access-proxies|Zero Trust Access Proxies]]
 - [[wiki/shell-environment/categories/web-dev/subcategories/css-html/identity-distribution|Identity Distribution]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

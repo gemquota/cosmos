@@ -22,5 +22,3 @@ Clock drift is the gradual divergence of a machine's clock from true time, cause
 ## Related
 - [[wiki/devops-infra/infrastructure-drift-detection|Infrastructure Drift Detection]]
 - [[wiki/infrastructure/configuration-drift|Configuration Drift]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

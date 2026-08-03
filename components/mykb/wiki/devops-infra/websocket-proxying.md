@@ -22,5 +22,3 @@ WebSocket proxying lets a reverse proxy terminate or forward the WebSocket upgra
 
 ## Related
 - [[wiki/devops-infra/mirroring-and-proxying-registries|Mirroring & Proxying Registries]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

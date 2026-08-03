@@ -22,5 +22,3 @@ Supply-chain attestations are signed statements about an artifact — who built 
 - RSIS3 relevance: cosmos artifacts with attestations let RSIS3 loops verify that a dashboard bundle or daemon build came from the trusted pipeline before deployment.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

@@ -25,7 +25,7 @@ Mobile UX patterns cover navigation (tabs, drawers, stacks), touch ergonomics (4
 - [[wiki/web-platforms/touch-action-css|touch-action CSS]] — adjacent concept in this wiki
 - [[wiki/web-platforms/pointer-events-css|pointer-events CSS]] — adjacent concept in this wiki
 - [[wiki/web-platforms/scroll-snap|Scroll Snap]] — adjacent concept in this wiki
-- [[wiki/web-platforms/dvh-svh|Dynamic and Small Viewport Units]] — adjacent concept in this wiki
+- [[wiki/web-platforms/vw-vh|vw and vh Units]] — adjacent concept in this wiki
 - [[wiki/mobile-platform/adaptive-layouts|Adaptive Layouts]] — existing coverage
 - [[wiki/mobile-platform/tablet-support|Tablet Support]] — existing coverage
 - [[wiki/frontend-frameworks/material-design|Material Design]] — existing coverage

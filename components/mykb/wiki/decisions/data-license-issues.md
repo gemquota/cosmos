@@ -20,6 +20,7 @@ Data license issues arise when training data is used beyond its license terms â€
 - Operational notes: record licenses at ingestion, keep a provenance manifest, and audit high-risk sources.
 - RSIS3 relevance: raw captures in the bundle should record their source licenses â€” the same provenance discipline applied to the wiki's sources.
 
+## Practice
 - Treat license metadata as a first-class field in the data model, not an afterthought added during audits.
 - Re-verify high-risk sources on a schedule, because terms and sources change even when your own pipeline does not.
 - Prefer clearly licensed sources for anything that may be redistributed, and document the license of every raw capture at ingestion time.

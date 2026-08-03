@@ -18,7 +18,9 @@ Web authentication follows OAuth 2.0 grants and OpenID Connect for identity. The
 - **Device flow** — the client polls while the user approves on another device; suited to TVs and CLI tools.
 - **OpenID Connect** — OIDC layers an ID token and userinfo endpoint on OAuth for sign-in.
 - **Validation checklist** — verify issuer, audience, expiry, signature via JWKS, and scopes on every request.
-- **Worked example** — the mykb dashboard uses OIDC with PKCE; the wiki records each flow and validation rule for the auth layer.
+- **Worked example** — the mykb dashboard would use OIDC with PKCE; the wiki records each flow and validation rule for the auth layer.
+- **Token storage and refresh** — the weak points in practice: access tokens should live in memory or secure storage, refresh tokens should rotate on use and be bound to the client, and logout should invalidate both server-side rather than relying on client-side deletion.
+- **OIDC on top of OAuth** — the ID token and userinfo endpoint let a client obtain identity claims without a second round trip; the ID token is verified against the issuer's JWKS just like an access token.
 - **Relevance** — RSIS3's tool grants are OAuth flows too; agents must refresh and validate without exposing secrets.
 
 ## Related

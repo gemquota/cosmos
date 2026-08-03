@@ -22,4 +22,3 @@ The loopback interface (lo) and the Linux bridge are two different answers to th
 ## Related
 - [[wiki/os-shell/linux-capabilities-and-selinux|Linux Capabilities & SELinux]]
 - [[wiki/os-shell/linux-namespaces|Linux Namespaces]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]

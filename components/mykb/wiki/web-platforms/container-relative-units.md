@@ -25,7 +25,7 @@ Container query units — cqw, cqh, cqi, cqb, cqmin, cqmax — size children rel
 - [[wiki/web-platforms/responsive-design-systems|Responsive Design Systems]]
 - [[wiki/web-platforms/responsive-units|Responsive Units]]
 - [[wiki/web-platforms/vw-vh|vw and vh Units]]
-- [[wiki/web-platforms/dvh-svh|Dynamic and Small Viewport Units]]
+- [[wiki/web-platforms/vw-vh|vw and vh Units]]
 - [[wiki/web-platforms/css-layout|CSS Layout]]
 - [[wiki/frontend-frameworks/responsive-design|Responsive Design]]
 - [[wiki/mobile-platform/adaptive-layouts|Adaptive Layouts]]

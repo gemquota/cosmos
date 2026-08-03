@@ -20,9 +20,14 @@ Unit testing verifies a single unit — a function, class, or module — in isol
 - The test pyramid puts unit tests at the base: thousands of them, milliseconds each.
 - TDD writes the test first: red, green, refactor — the test is a design conversation.
 - Coverage is a floor, not a goal: assertion quality matters more than line counts.
+- Test doubles isolate the unit: fakes, stubs, and mocks replace collaborators so a failure localizes to the unit under test rather than its neighbors.
+- Determinism is non-negotiable: tests that depend on wall-clock time, random values, or network state flake, and a flaky suite destroys the trust that makes tests run constantly.
+- Behavior naming keeps the suite readable: a test named 'rejects empty slug' documents the contract, while 'test_slug_function' documents nothing.
+- The pyramid is a sizing guide: many fast unit tests, fewer integration tests, few end-to-end tests, so the suite stays milliseconds-fast for the bulk of the work.
+- TDD's red-green-refactor loop is a design tool: writing the test first forces an interface decision before implementation, and the refactor step keeps the code honest.
 - For the mykb bundle, unit tests cover slug normalization, frontmatter validation, and link resolution.
 
-Worked example — the wiki's slug utility has unit tests: kebab-case conversion, unicode handling, and duplicate detection; a mutation-testing pass confirms the assertions actually fail when the code breaks.
+Worked example — the wiki's slug utility would have unit tests: kebab-case conversion, unicode handling, and duplicate detection; a mutation-testing pass would confirm the assertions actually fail when the code breaks.
 
 ## Related
 - [[wiki/dev-tools/code-coverage-tools|Code Coverage Tools]]

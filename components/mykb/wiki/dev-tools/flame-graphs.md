@@ -25,4 +25,3 @@ Flame graphs stack sampled call stacks so the widest bars show the hottest code 
 - [[wiki/dev-tools/profiling-tools|Profiling Tools]]
 - [[wiki/software-engineering/performance-engineering|Performance Engineering]]
 - [[wiki/dev-tools/benchmark-frameworks|Benchmark Frameworks]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

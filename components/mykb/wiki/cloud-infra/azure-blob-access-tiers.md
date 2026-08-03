@@ -17,7 +17,7 @@ Azure Blob access tiers (hot, cool, cold, archive) trade cost for latency: hot f
 - Concrete example: a media pipeline writes to hot for immediate processing, moves results to cool after 30 days via a lifecycle rule, and archives old source footage after 90; a compliance dump sits in archive, restored on request. The wrong choice shows up in bills: leaving data in hot forever is the most common storage overspend.
 - Failure modes: lifecycle rules that churn — moving blobs hot↔cool repeatedly accrues per-operation costs; ignoring retrieval fees for read-heavy-but-cold data (reading a 10TB archive frequently is ruinously expensive); archive blobs unavailable synchronously, breaking apps that assume instant access; and minimum-retention surprises deleting young blobs.
 - Operational tradeoffs: tier by access pattern measured from real telemetry, not assumptions; enable auto-tiering for unknown patterns and reserve manual policies for known access classes. Rehydration time and cost should be part of the RTO story for archived data.
-- RSIS3/mykb relevance: the wiki's artifact storage uses tiered blobs with lifecycle rules documented here, and retrieval telemetry feeds the loop's cost reviews.
+- RSIS3/mykb relevance: the wiki's artifact storage would use tiered blobs with lifecycle rules documented here, and retrieval telemetry would feed the loop's cost reviews.
 - Access tracking: enable last-access-time tracking before choosing tiers; tiering decisions without access data are guesses with a billing consequence.
 - Lifecycle automation: encode tier moves as lifecycle rules rather than manual scripts; manual tiering is the process that stops happening after the second month.
 

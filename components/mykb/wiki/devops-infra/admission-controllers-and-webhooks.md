@@ -23,4 +23,3 @@ Admission control is the last gate before a Kubernetes API request is persisted:
 ## Related
 - [[wiki/devops-infra/ingress-controllers|Ingress Controllers]]
 - [[wiki/infrastructure/sdn-controllers|SDN Controllers]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

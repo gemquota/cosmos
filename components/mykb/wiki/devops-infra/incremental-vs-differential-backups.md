@@ -18,9 +18,7 @@ Incremental backups store only changes since the last backup of any kind; differ
 - Failure modes: chain breakage — a missing or corrupt incremental makes everything after it unrecoverable (verify chains with restore drills); backup software bugs in change tracking silently skipping files; restore-time complexity escalating with chain length; retention interacting with chains (pruning a base invalidates descendants unless the tool rewrites them).
 - Tradeoffs: incremental minimizes storage and backup window but maximizes restore time and fragility; differential trades storage for simpler, more robust restores; the practical hybrid is periodic fulls plus incremental chains with frequent restore tests, or forever-incremental tools (restic, Borg) that dedupe and make each snapshot independently restorable.
 - Operational notes: test the full chain restore, monitor chain integrity, and set retention that keeps enough fulls for the restore SLA.
-- RSIS3 relevance: the wiki's git history is effectively an incremental chain — every commit is a recoverable point, but the restore path should be rehearsed, exactly as with tape or object-storage chains.
+- RSIS3 relevance: the wiki's git history is effectively an incremental chain — every commit is a recoverable point, but the restore path should be rehearsed, exactly as with tape or object-storage chains; a documented restore drill keeps the recovery claim honest.
 
 ## Related
 - [[wiki/devops-infra/backups|Backups]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

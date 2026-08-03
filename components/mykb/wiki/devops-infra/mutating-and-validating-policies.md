@@ -18,12 +18,10 @@ Kubernetes admission policies come in two kinds: mutating policies rewrite reque
 - Failure modes: mutation order surprises — a later policy sees an earlier one's changes and rejects them; infinite loops when a mutating policy touches its own webhook config; validation gaps when resources are created by controllers bypassing admission (kubelet, system controllers); overly broad policies blocking legitimate workloads, causing firefights — use audit mode before enforcing.
 - Tradeoffs: policy-based enforcement gives consistent, code-reviewed guardrails versus scattered hooks and human review; the cost is policy-authoring complexity (CEL, Rego, Kyverno syntax) and admission latency; the payoff is that every request is checked against the same rules, including ones from automation.
 - Operational notes: test policies in CI, roll out in audit mode first, monitor admission latency and denial rates, and keep policies in git.
-- RSIS3 relevance: RSIS3's loop pipelines can use the same pattern — mutate (default) and validate (guardrail) each artifact against invariants before persisting, with audit mode while rules are new.
+- RSIS3 relevance: RSIS3's loop pipelines can use the same pattern — mutate (default) and validate (guardrail) each artifact against invariants before persisting, with audit mode while rules are new; dry-run logging surfaces every would-be rejection.
 
 ## Related
 - [[wiki/devops-infra/ingress-egress-policies|Ingress & Egress Policies]]
 - [[wiki/devops-infra/network-policies-kubernetes|Kubernetes Network Policies]]
 - [[wiki/devops-infra/escalation-policies|Escalation Policies]]
 - [[wiki/cloud-infra/snapshot-lifecycle-policies|Snapshot Lifecycle Policies]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

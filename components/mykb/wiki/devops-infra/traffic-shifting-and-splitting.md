@@ -25,5 +25,3 @@ Traffic shifting and splitting control what fraction of requests reach which ver
 - [[wiki/devops-infra/mirroring-and-shadow-traffic|Mirroring & Shadow Traffic]]
 - [[wiki/infrastructure/east-west-vs-north-south-traffic|East-West vs North-South Traffic]]
 - [[wiki/infrastructure/traffic-engineering|Traffic Engineering]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

@@ -25,5 +25,3 @@ Registry garbage collection and retention manage the lifecycle of stored contain
 - [[wiki/infrastructure/confluent-cloud-and-schema-registry|Confluent Cloud And Schema Registry]]
 - [[wiki/infrastructure/glue-schema-registry|Glue Schema Registry]]
 - [[wiki/infrastructure/nacos-and-service-registry|Nacos And Service Registry]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

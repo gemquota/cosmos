@@ -20,6 +20,7 @@ Trade secrets protect AI innovations through secrecy rather than publication: we
 - Operational notes: classify assets, control access, and review what enters public artifacts. Apply the classification at creation time, since retroactive secrecy of an already-copied artifact is nearly impossible.
 - RSIS3 relevance: the bundle's private scripts and identity data are trade-secret-like assets — the same classification and access discipline applied to its knowledge.
 
+## Practice
 - Audit what crosses the boundary into public artifacts, since one careless disclosure can end the protection. Log distribution of sensitive files and rotate access after contractor departures.
 ## Related
 - [[wiki/decisions/ip-and-ai|Intellectual Property and AI]] — the frame

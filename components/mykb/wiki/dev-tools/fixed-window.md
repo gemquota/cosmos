@@ -20,6 +20,7 @@ The fixed-window algorithm counts requests per calendar-aligned period (per minu
 - Operational notes: use fixed windows where bursts are harmless (daily quotas), sliding or token-bucket where peaks matter, and always expire counters.
 - RSIS3 relevance: fixed windows suit daily quotas (articles per day) where bursts are harmless — the same coarse, cheap enforcement RSIS3 wants for per-day batch limits.
 
+## Practice
 - Combine with a small burst allowance inside the window so legitimate short peaks are not rejected wholesale.
 ## Related
 - [[wiki/dev-tools/rate-limiting-algorithms|Rate Limiting Algorithms]]

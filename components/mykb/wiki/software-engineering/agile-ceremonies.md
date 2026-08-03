@@ -17,7 +17,7 @@ Agile ceremonies are the recurring meetings — standup, planning, review, retro
 - Concrete example: a team's retro identifies flaky tests as the top waste, produces one action (dedicated flake-fixing timebox), and tracks it next sprint; planning uses velocity (measured, not guessed) to size; the review shows real running features, so stakeholders steer early. The anti-pattern: ceremonies that run long, review only slides, and retros that produce no follow-up.
 - Failure modes: ceremony theater — meetings with no decisions; standups that become status reports to a manager; planning without capacity realism; retros without accountability (action items vanish); and over-process that slows small teams (a 2-person team may need only a weekly sync).
 - Operational tradeoffs: ceremonies trade meeting time for alignment and early feedback; the discipline is timeboxes, explicit outputs, and continuous tuning of the ceremony set itself. For solo/agent-driven work, the equivalent is a written plan + review cadence rather than meetings.
-- RSIS3/mykb relevance: the wiki's loop schedules mirror these cadences — planning, review, retro as checkpoints — with action items tracked so improvements persist.
+- RSIS3/mykb relevance: the wiki's loop schedules would mirror these cadences — planning, review, retro as checkpoints — with action items tracked so improvements persist.
 - Timeboxing: default to 15/45/60-minute caps and a facilitator who cuts drift; ceremonies that grow are the first sign the team is using meetings instead of artifacts.
 - Outputs-first: each ceremony should end with a written output (committed scope, demoed feature, action items); without artifacts, ceremonies evaporate into conversation.
 

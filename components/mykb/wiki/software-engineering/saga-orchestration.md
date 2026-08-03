@@ -17,7 +17,7 @@ Saga orchestration runs a distributed transaction as a sequence of local transac
 - Concrete example: a travel booking saga: book flight → book hotel → book car; if the car fails, cancel hotel and flight — each cancellation is a compensating local transaction; a payment saga charges, reserves inventory, and refunds + releases on failure. The saga must handle partial failures at every step, including compensation failures (retries, escalations).
 - Failure modes: non-idempotent commands (a retried charge double-charges — require idempotency keys); compensations that cannot run (external partner down — persist for retry, escalate); sagas that block on synchronous calls and lose the async resilience; and state-machine bugs from unhandled event ordering.
 - Operational tradeoffs: orchestration centralizes visibility and control (easy to audit, hard to hide) at the cost of a coordinating component and per-step compensation work; the discipline is persisted saga state, timeout policies per step, idempotent participants, and failure-injection testing.
-- RSIS3/mykb relevance: the wiki's provisioning and multi-step agent operations run as orchestrated sagas, so partial failures leave the system compensated, not half-deployed.
+- RSIS3/mykb relevance: the wiki's provisioning and multi-step agent operations would run as orchestrated sagas, so partial failures leave the system compensated, not half-deployed.
 - Contract-first: define command and event schemas per step before wiring the saga; schema drift between steps is the most common source of saga bugs.
 - Operational visibility: expose saga state (step, status, age) as metrics and a dashboard; sagas that stall silently are the classic failure of orchestration.
 

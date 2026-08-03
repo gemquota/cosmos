@@ -19,7 +19,7 @@ Database migrations are versioned scripts that evolve a schema in order — upgr
 - Backfill data before enforcing constraints; enforce in later migrations, not the same one.
 - Run migrations as a deploy step before new code lands; test against a production-like copy first.
 - Edit never — a deployed migration is history; fix forward with a new migration.
-- For the mykb bundle, migrations version the wiki's metadata store alongside the content tree.
+- For the mykb bundle, migrations would version the wiki's metadata store alongside the content tree.
 - Worked example — a wiki migration adds a source_status column, backfills it from the sources table, then adds an index; each step is its own reversible revision.
 
 Worked example — a wiki migration adds a source_status column, backfills it from the sources table, then adds an index; each step is its own reversible revision.

@@ -20,6 +20,7 @@ Exception handling practice is the set of conventions that keep failures visible
 - Operational notes: define the taxonomy, centralize error reporting, and review exception paths in code review.
 - RSIS3 relevance: the acquisition pipeline needs per-stage exception policies so one bad article never halts the batch — the fail-loudly-but-continue discipline RSIS3 applies to its loops.
 
+## Practice
 - Handle exceptions at the level with the information to act: low layers wrap, high layers decide policy, and nobody logs without context.
 ## Related
 - [[wiki/dev-tools/error-codes|Error Codes]]

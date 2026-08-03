@@ -17,7 +17,7 @@ Tool schemas are the JSON Schema descriptions that teach a model what functions 
 - Concrete example: a search tool schema declares query (string, required, described), filters (enum), and limit (integer 1-50); clear descriptions make the model choose it over a vague sibling; strict mode guarantees parseable calls; the failure pattern is schemas so loose the model invents parameters or so terse it misuses them.
 - Failure modes: description drift — schemas that do not match implementations; ambiguous/overlapping tool names causing wrong routing; overly strict validation rejecting legitimate model calls; and injection through tool arguments (a "filename" parameter that can hold a path traversal unless validated).
 - Operational tradeoffs: schema quality trades authoring effort for routing accuracy and safety; the discipline is schema-first tool design, validation at the boundary, logging actual calls against schema expectations, and iterating descriptions based on observed misroutes.
-- RSIS3/mykb relevance: the wiki's tool registry is schema-first; this note records the conventions (descriptions, enums, validation) the loop applies to every new tool.
+- RSIS3/mykb relevance: the wiki's tool registry would be schema-first; this note records the conventions (descriptions, enums, validation) the loop would apply to every new tool.
 - Schema iteration: log every schema-validation failure and misroute; those events are the data that tells you which descriptions or enums to fix.
 - Security: treat tool arguments as untrusted input — schema validation is not sanitization; apply allowlists and path checks at the tool boundary.
 

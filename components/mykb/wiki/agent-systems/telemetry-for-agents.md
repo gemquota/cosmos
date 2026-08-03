@@ -27,6 +27,4 @@ Agent telemetry is the practice of emitting structured, queryable data about wha
 - [[wiki/llm-agents/agent-logs|Agent Logs]] — the log pillar of telemetry
 - [[wiki/llm-agents/traceability|Traceability]] — what telemetry enables
 - [[wiki/concepts/agent-benchmarks|Agent Benchmarks]] — metrics telemetry feeds into
-- [[raw/archive/session-artifacts-2026-07/topics/monitoring|monitoring — consuming telemetry operationally
-- [[raw/archive/session-artifacts-2026-07/topics/logging-2|logging — the logging foundation
 - [[wiki/ops/gap-report|Gap Analysis Report]] — telemetry-driven gap analysis

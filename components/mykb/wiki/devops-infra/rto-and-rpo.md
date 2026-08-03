@@ -23,5 +23,3 @@ RTO (Recovery Time Objective) and RPO (Recovery Point Objective) define what rec
 - RSIS3 relevance: the wiki and MyKB store need explicit RTO/RPO — decide how long recovery may take and how much history can be lost before choosing the backup and replication machinery.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

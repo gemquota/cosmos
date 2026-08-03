@@ -27,6 +27,5 @@ Crisis monitoring watches an agent's runtime signals for conditions that mean so
 - [[wiki/llm-agents/agent-logs|Agent Logs]] — the raw material for anomaly detection
 - [[wiki/llm-agents/traceability|Traceability]] — attributing crises to specific actions
 - [[wiki/agent-systems/rollback-and-recovery|Rollback and Recovery]] — the recovery path crises trigger
-- [[raw/archive/session-artifacts-2026-07/topics/monitoring|monitoring — the operational discipline behind it
 - [[wiki/ops/gap-report|Gap Analysis Report]] — anomalies feed gap analysis
 - [[wiki/questions/open-questions|Open Questions]] — open questions on crisis detection

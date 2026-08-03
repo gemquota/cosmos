@@ -176,7 +176,7 @@ Part of [[wiki/index|Wiki Index]]. 240 pages.
 - [[wiki/devops-infra/postmortem-culture|Postmortem Culture]] — Blameless incident reviews that focus on systems and processes, not people
 - [[wiki/devops-infra/postmortems-and-blameless|Postmortems & Blameless Culture]] — Learning from failures without blame
 - [[wiki/devops-infra/preflight-checks-and-guards|Preflight Checks & Guards]] — Validating prerequisites before destructive operations
-- [[wiki/devops-infra/preview-environments|Preview Environments]] — Full-stack environments attached to pull requests
+- [[wiki/devops-infra/ephemeral-environments|Ephemeral Environments]] — Short-lived per-PR environments, torn down automatically
 - [[wiki/devops-infra/priority-classes-and-preemption|Priority Classes & Preemption]] — Scheduling precedence and evicting lower-priority pods
 - [[wiki/devops-infra/progressive-delivery-models|Progressive Delivery Models]] — Phased rollout combining flags, canaries, and metrics gates
 - [[wiki/devops-infra/progressive-rollout-metrics|Progressive Rollout Metrics]] — Tracking error rate and latency while shifting traffic
@@ -193,7 +193,7 @@ Part of [[wiki/index|Wiki Index]]. 240 pages.
 - [[wiki/devops-infra/refresh-days|Refresh Days]] — Scheduled days for updating stale content
 - [[wiki/devops-infra/registry-gc-and-retention|Registry GC & Retention]] — Reclaiming space and enforcing image retention policies
 - [[wiki/devops-infra/release-days|Release Days]] — Scheduled days for publishing wiki releases
-- [[wiki/devops-infra/release-engineering-trains|Release Engineering Trains]] — Fixed-cadence release trains that batch changes predictably
+- [[wiki/devops-infra/release-engineering|Release Engineering]] — Versioning, changelogs, reproducible builds, and promotion pipelines as an auditable process
 - [[wiki/devops-infra/release-trains|Release Trains]] — Shipping releases on a fixed cadence so every change rides the next scheduled departure
 - [[wiki/devops-infra/release-versioning|Release Versioning]] — Naming and numbering releases with semantic versioning so changes are understandable and comparable
 - [[wiki/devops-infra/remote-development-vscode-ssh|Remote Development: VS Code & SSH]] — Editing code on remote hosts with VS Code Remote and SSH
@@ -206,7 +206,7 @@ Part of [[wiki/index|Wiki Index]]. 240 pages.
 - [[wiki/devops-infra/rollback-plans|Rollback Plans]] — Predefined, rehearsed procedures for reverting bad releases quickly and safely
 - [[wiki/devops-infra/root-cause-analysis|Root Cause Analysis]] — Systematically finding the underlying causes of incidents, beyond the immediate trigger
 - [[wiki/devops-infra/rto-and-rpo|RTO & RPO]] — Recovery time and recovery point objectives that size DR plans
-- [[wiki/devops-infra/runbooks-and-playbooks|Runbooks & Playbooks]] — Step-by-step operational procedures for known incidents
+- [[wiki/devops-infra/runbooks|Runbooks]] — Step-by-step operational procedures for known incidents
 - [[wiki/devops-infra/runbooks|Runbooks]] — Written procedures for handling alerts and incidents so anyone on call can act correctly
 - [[wiki/devops-infra/sbom-and-syft|SBOMs & Syft]] — Machine-readable bills of materials for container images
 - [[wiki/devops-infra/scheduled-jobs|Scheduled Jobs]] — Running work on a schedule — cron, batch, and maintenance tasks — reliably and observably

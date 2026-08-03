@@ -24,5 +24,3 @@ Caddy and Traefik are modern reverse proxies that remove the two most error-pron
 ## Related
 - [[wiki/devops-infra/caddy|Caddy]]
 - [[wiki/devops-infra/traefik|Traefik]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

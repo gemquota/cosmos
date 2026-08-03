@@ -17,7 +17,7 @@ Human-in-the-loop (HITL) places a person at critical points of an agent workflow
 - Concrete example: an agent drafts a public post and queues it for human review with its sources; a code agent proposes a large refactor and waits for approval with a diff summary; a research agent flags a low-confidence claim and asks a domain expert before committing it to the wiki.
 - Failure modes: rubber-stamping — approvals without review (fatigue, poor context); humans as a bottleneck (queues pile up, agents stall — add SLAs and escalation); HITL as theater (the agent redoes what was rejected); and losing the human's input when it should influence the loop (corrections not fed back).
 - Operational tradeoffs: HITL trades speed and autonomy for correctness, safety, and accountability; the discipline is risk-tiered gates, decision-grade context, fast review UX, and closed loops where human corrections improve future behavior.
-- RSIS3/mykb relevance: the wiki's agents gate consequential writes and external actions through HITL, with corrections captured as knowledge for future passes.
+- RSIS3/mykb relevance: the wiki's agents would gate consequential writes and external actions through HITL, with corrections captured as knowledge for future passes.
 - Queue design: human review queues need SLAs and fallbacks (escalate, auto-hold) so the loop is not silently blocked by a full queue.
 - Feedback capture: treat human corrections as labeled training/steering data — store them with the triggering context so future versions learn from them.
 

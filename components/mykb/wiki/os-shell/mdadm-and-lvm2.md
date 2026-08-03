@@ -21,4 +21,3 @@ mdadm and LVM2 are the two classic Linux storage layers that sit between raw dis
 
 ## Related
 - [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]

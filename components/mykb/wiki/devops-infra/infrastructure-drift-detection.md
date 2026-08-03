@@ -26,4 +26,3 @@ Infrastructure drift is the difference between declared configuration (Terraform
 - [[wiki/infrastructure/intrusion-detection-systems|Intrusion Detection Systems]]
 - [[wiki/infrastructure/gpu-compute-infrastructure|GPU Compute Infrastructure]]
 - [[wiki/infrastructure/configuration-drift|Configuration Drift]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

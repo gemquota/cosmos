@@ -22,5 +22,3 @@ OpenTofu is the open-source fork of Terraform created after HashiCorp's license 
 - RSIS3 relevance: cosmos's infra-as-code choice (OpenTofu vs Terraform) is a governance decision with operational consequences — the wiki's infrastructure definitions should record which toolchain they target.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

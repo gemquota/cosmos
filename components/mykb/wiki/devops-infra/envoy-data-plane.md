@@ -21,8 +21,6 @@ Envoy is a high-performance, C++ service proxy that implements the data plane: L
 - RSIS3 relevance: if cosmos services sit behind a mesh or gateway, Envoy's routing and retry behavior shapes the failure modes RSIS3 observes between loops.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/infrastructure/data-plane-versus-control-plane|Data Plane vs Control Plane]]
 - [[wiki/infrastructure/data-deduplication-in-storage|Data Deduplication in Storage]]
 - [[wiki/cloud-infra/data-archiving|Data Archiving]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

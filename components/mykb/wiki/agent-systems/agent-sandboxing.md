@@ -26,6 +26,3 @@ Sandboxing is the practice of running agent actions in an isolated environment �
 - [[wiki/llm-agents/permission-model|Permission Model]] — authorization that complements isolation
 - [[wiki/llm-agents/approval-gates|Approval Gates]] — human review for sandboxed high-risk actions
 - [[wiki/llm-agents/policy-enforcement|Policy Enforcement]] — runtime checks inside the sandbox
-- [[raw/archive/session-artifacts-2026-07/topics/security|security — the discipline sandboxing belongs to
-- [[raw/archive/session-artifacts-2026-07/topics/shell-2|shell — shell execution as the sandboxed surface
-- [[raw/archive/session-artifacts-2026-07/tools/exec-command-1-2|exec_command — the tool RSIS3 routes into the sandbox

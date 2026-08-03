@@ -25,7 +25,7 @@ DNS resolution turns human-readable names into the addresses applications can us
 - Failures cascade: a broken resolver, a poisoned cache, or a missing zone file each produces a distinct symptom pattern worth documenting in runbooks.
 
 ## Related
-- [[wiki/os-shell/path-resolution-and-symlinks|Path Resolution & Symlinks]]
+- [[wiki/os-shell/path-resolution|Path Resolution]]
 - [[wiki/cloud-infra/dns-over-https|DNS over HTTPS]]
 - [[wiki/os-shell/dns-resolution|DNS Resolution]]
 - [[wiki/cloud-infra/dns-management|DNS Management]]

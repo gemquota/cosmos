@@ -24,4 +24,3 @@ Precision Time Protocol (PTP, IEEE 1588) synchronizes clocks to sub-microsecond 
 - [[wiki/infrastructure/network-time-protocol|Network Time Protocol]]
 - [[wiki/infrastructure/time-synchronization-in-dc|Time Synchronization in the Datacenter]]
 - [[wiki/devops-infra/point-in-time-recovery|Point-in-Time Recovery]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]

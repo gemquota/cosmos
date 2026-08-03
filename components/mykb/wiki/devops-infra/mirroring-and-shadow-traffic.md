@@ -25,5 +25,3 @@ Mirroring and shadow traffic send a copy of production requests to a new version
 - [[wiki/devops-infra/traffic-shifting-and-splitting|Traffic Shifting & Splitting]]
 - [[wiki/devops-infra/mirroring-and-proxying-registries|Mirroring & Proxying Registries]]
 - [[wiki/infrastructure/east-west-vs-north-south-traffic|East-West vs North-South Traffic]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

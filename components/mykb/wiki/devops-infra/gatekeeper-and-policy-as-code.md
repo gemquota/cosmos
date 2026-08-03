@@ -25,4 +25,3 @@ Gatekeeper (and OPA/Rego generally) enforces policy as code on Kubernetes: admis
 - [[wiki/devops-infra/development-environments-as-code|Development Environments as Code]]
 - [[wiki/devops-infra/configuration-as-data|Configuration as Data]]
 - [[wiki/infrastructure/infrastructure-as-code|Infrastructure as Code]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

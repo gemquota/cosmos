@@ -25,4 +25,3 @@ State locking and concurrency control prevent two writers from corrupting shared
 - [[wiki/devops-infra/optimistic-locking|Optimistic Locking]]
 - [[wiki/infrastructure/query-timeouts-and-concurrency-limits|Query Timeouts And Concurrency Limits]]
 - [[wiki/os-shell/file-locking|File Locking]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

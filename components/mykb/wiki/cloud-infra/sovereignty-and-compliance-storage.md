@@ -17,7 +17,7 @@ Sovereignty and compliance storage is about where data may reside and how it is 
 - Concrete example: a health dataset stores only in a HIPAA-eligible region with server-side encryption using customer keys, strict IAM, access logging, and 7-year retention via object lock; a sovereign cloud isolates EU customer data from US legal reach; a misstep — a backup in the wrong region or a support ticket exporting data — breaks the residency story.
 - Failure modes: assuming region placement equals sovereignty (metadata, logs, and support access may leave); encryption misconfigured (SSE off, keys in the same account as data); retention vs deletion conflicts; and certification drift when new services are added without re-evaluating compliance scope.
 - Operational tradeoffs: sovereign/compliance storage costs more (region premiums, key management, audit) and constrains architecture; the trade is regulatory viability vs cost. Map data classes to requirements, enforce at the pipeline (no copy outside allowed regions), and audit quarterly.
-- RSIS3/mykb relevance: the wiki's data-classification matrix drives storage placement; this note is the checklist the loop applies when new datasets or regions enter the design.
+- RSIS3/mykb relevance: the wiki's data-classification matrix would drive storage placement; this note is the checklist the loop applies when new datasets or regions enter the design.
 - Support and telemetry: verify that support access, logs, and diagnostics stay inside the allowed region; residency is about the whole data path, not just the primary store.
 - Contract review: verify the provider's data-processing terms match the residency claim; the marketing region and the legal data flow can differ.
 

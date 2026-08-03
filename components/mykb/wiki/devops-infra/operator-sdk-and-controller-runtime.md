@@ -23,4 +23,3 @@ Operator SDK and controller-runtime are the standard frameworks for building Kub
 
 ## Related
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

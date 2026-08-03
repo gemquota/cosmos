@@ -22,5 +22,3 @@ Health endpoint contracts standardize how services expose liveness, readiness, a
 
 ## Related
 - [[wiki/infrastructure/health-check-patterns|Health Check Patterns]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

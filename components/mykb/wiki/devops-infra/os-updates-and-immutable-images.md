@@ -26,4 +26,3 @@ OS update strategy is the decision between patching in place and rebuilding: mut
 - [[wiki/os-shell/immutable-filesystems|Immutable Filesystems]]
 - [[wiki/devops-infra/renovate-and-dependency-updates|Renovate & Dependency Updates]]
 - [[wiki/infrastructure/immutable-infrastructure|Immutable Infrastructure]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

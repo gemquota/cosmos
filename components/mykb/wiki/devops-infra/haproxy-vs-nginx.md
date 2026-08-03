@@ -19,10 +19,8 @@ HAProxy and NGINX are the two workhorse reverse proxies: HAProxy is a purpose-bu
 - Failure modes: misconfigured health checks that mark healthy backends down (or vice versa), causing mass traffic shifts; reload mistakes dropping sessions (HAProxy handles reloads well; NGINX needs careful worker management); connection limits hit under load (both need tuning of file descriptors and timeouts); TLS configuration drift between proxy tiers.
 - Tradeoffs: HAProxy trades web-server features for load-balancing purity and predictability; NGINX trades some balancing sophistication for breadth; the tiebreaker is operational familiarity, ecosystem, and whether caching/serving features matter.
 - Operational notes: test reload paths, monitor backend health-state flaps, and keep proxy config in version control with validation in CI.
-- RSIS3 relevance: whichever proxy fronts the dashboard or API, its health checks and timeouts define how RSIS3's observability sees availability — a bad check hides real failures.
+- RSIS3 relevance: whichever proxy fronts the dashboard or API, its health checks and timeouts define how RSIS3's observability sees availability — a bad check hides real failures, so checks must exercise the actual request path.
 
 ## Related
 - [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]]
 - [[wiki/devops-infra/nginx|Nginx]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

@@ -21,5 +21,3 @@ Serving model inference on GPUs is the practice of turning trained models into r
 - For mykb: the node anchors the inference-serving cluster — it connects accelerator observability, container tooling, and model serving decisions.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

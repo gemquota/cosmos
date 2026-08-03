@@ -25,5 +25,3 @@ Traffic shaping and QoS manage how latency and throughput are distributed across
 - [[wiki/devops-infra/mirroring-and-shadow-traffic|Mirroring & Shadow Traffic]]
 - [[wiki/infrastructure/east-west-vs-north-south-traffic|East-West vs North-South Traffic]]
 - [[wiki/infrastructure/traffic-engineering|Traffic Engineering]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

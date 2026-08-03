@@ -29,6 +29,6 @@ Site reliability engineering applies software engineering practices to operation
 
 ## Related
 - [[wiki/cloud-infra/site-to-site-vpn|Site-to-Site VPN]]
-- [[wiki/devops-infra/release-engineering-trains|Release Engineering Trains]]
+- [[wiki/devops-infra/release-engineering|Release Engineering]]
 - [[wiki/devops-infra/site-reliability-engineering|Site Reliability Engineering]]
 - [[wiki/devops-infra/chaos-engineering|Chaos Engineering]]

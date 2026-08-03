@@ -24,4 +24,3 @@ Kubernetes ConfigMaps and Secrets deliver configuration and sensitive data to po
 - [[wiki/devops-infra/secrets-management-revisited|Secrets Management]]
 - [[wiki/devops-infra/volumes-emptydir-and-configmaps|emptyDir & ConfigMap Volumes]]
 - [[wiki/infrastructure/secret-rotation|Secret Rotation]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

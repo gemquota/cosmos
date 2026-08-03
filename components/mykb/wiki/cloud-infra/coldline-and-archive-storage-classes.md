@@ -17,7 +17,7 @@ Coldline (GCP), Archive (GCP), and the equivalent cold classes on AWS/Azure are 
 - Concrete example: 5TB of legal holds in Archive at ~$0.004/GB-month vs ~$0.02 hot — a 5x saving on the dominant cost — with a documented restore procedure for e-discovery; database backups move to coldline after 30 days via lifecycle rules, keeping the last week hot for DR drills.
 - Failure modes: restoring frequently from archive (retrieval fees dwarf the storage savings); lifecycle rules moving objects before the minimum duration (early-deletion charges); access patterns changing (a "cold" bucket that analytics reads weekly is over-tiered); and applications assuming instant access to archived objects.
 - Operational tradeoffs: tier by measured access frequency and restore RTO requirements; coldline is a safe default for quarterly-recovery data, archive for yearly; automation (lifecycle policies) beats manual tiering, and restore-time/cost should be tested annually, not assumed.
-- RSIS3/mykb relevance: the wiki's backup tiers are documented with access telemetry, so the loop's retention reviews move tiers based on real restore patterns.
+- RSIS3/mykb relevance: the wiki's backup tiers would be documented with access telemetry, so the loop's retention reviews move tiers based on real restore patterns.
 - Restore rehearsal: test archive restore end-to-end annually with a representative object; the retrieval path is the part of the design nobody verifies until it is urgent. Include the e-discovery workflow in the rehearsal so legal deadlines are not the first test.
 
 ## Related

@@ -24,5 +24,3 @@ Startup probes protect slow-booting containers from premature restarts, and grac
 ## Related
 - [[wiki/infrastructure/startup-probes|Startup Probes]]
 - [[wiki/infrastructure/graceful-termination|Graceful Termination]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

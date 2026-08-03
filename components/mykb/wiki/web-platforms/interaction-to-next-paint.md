@@ -25,7 +25,7 @@ Interaction to Next Paint (INP) measures the latency of every significant intera
 - [[wiki/web-platforms/error-monitoring-web|Error Monitoring for the Web]]
 - [[wiki/web-platforms/largest-contentful-paint|Largest Contentful Paint]]
 - [[wiki/web-platforms/cumulative-layout-shift|Cumulative Layout Shift]]
-- [[wiki/web-platforms/cls-avoidance|CLS Avoidance]]
+- [[wiki/web-platforms/cumulative-layout-shift|Cumulative Layout Shift]]
 - [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]]
 - [[wiki/web-platforms/progressive-web-apps|Progressive Web Apps]]
 - [[wiki/web-platforms/browser-engines|Browser Engines]]

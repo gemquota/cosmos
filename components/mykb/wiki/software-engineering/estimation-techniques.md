@@ -17,7 +17,7 @@ Estimation techniques turn uncertain work into usable planning ranges — story 
 - Concrete example: a team sizes a backlog against a reference story (points), tracks velocity over sprints, and forecasts with confidence bands instead of a single date; a data team estimates a migration with three-point ranges and a 90% confidence interval; a lone engineer uses time-boxed spikes to shrink uncertainty before committing.
 - Failure modes: anchoring and planning fallacy (estimates rationalized by last optimistic number); estimating before understanding (no spikes, no discovery); treating estimates as commitments (punishing misses trains inflating); and velocity gaming (point inflation) when numbers become targets.
 - Operational tradeoffs: estimation costs time and produces ranges, not guarantees; the discipline is estimate the uncertain things, keep the unit consistent, track actuals against estimates, and use ranges for decisions that tolerate them. For low-stakes work, skip estimation entirely.
-- RSIS3/mykb relevance: the wiki's loop plans use three-point ranges and track actuals, so improvement cycles get calibrated forecasts instead of confident guesses.
+- RSIS3/mykb relevance: the wiki's loop plans would use three-point ranges and track actuals, so improvement cycles get calibrated forecasts instead of confident guesses.
 - Calibration loop: compare estimates to actuals at a regular cadence; a team that never measures its misses is guessing with extra steps.
 - Uncertainty handling: split large uncertain items into spikes and smaller cards until the range is decision-grade; estimation of the unknown is the main source of error.
 

@@ -21,5 +21,3 @@ Automated rollbacks revert a release to its previous known-good revision when he
 - RSIS3 relevance: RSIS3's L2 improvement loop is itself a rollout of new behaviors; automated rollback gives it the same safety — if a new strategy degrades pulse telemetry, revert to the previous parameter set instead of compounding the damage.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

@@ -20,6 +20,7 @@ A good Summary answers in a few sentences: what the concept is, where it sits in
 - Operational notes: review the summary at promotion time, keep it synchronized with the Details, and treat it as part of the content score.
 - RSIS3 relevance: for mykb, summary quality is part of the content score and is reviewed at promotion time, not at stub time — the same review gate RSIS3 applies to its own artifacts.
 
+## Practice
 - Rewrite the summary from the finished Details: the act of distilling catches unsupported claims and missing context.
 ## Related
 - [[wiki/dev-tools/description-quality|Description Quality]]

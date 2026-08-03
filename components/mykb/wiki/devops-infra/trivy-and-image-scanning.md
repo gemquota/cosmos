@@ -25,5 +25,3 @@ Trivy scans container images, filesystems, and repositories for vulnerabilities 
 - [[wiki/devops-infra/golden-images-and-image-baking|Golden Images & Image Baking]]
 - [[wiki/infrastructure/container-scanning|Container Scanning]]
 - [[wiki/infrastructure/docker-image-optimization|Docker Image Optimization]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

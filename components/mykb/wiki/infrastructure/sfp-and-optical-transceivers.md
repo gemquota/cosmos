@@ -22,5 +22,3 @@ SFP and its higher-speed relatives (SFP+, SFP28, QSFP, QSFP-DD, OSFP) are hot-sw
 
 ## Related
 - [[wiki/infrastructure/optical-storage-tape|Optical Storage & Tape]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

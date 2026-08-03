@@ -20,6 +20,7 @@ API access policies define who can call a model service, at what rate, for what 
 - Operational notes: document the terms, enforce at the gateway, monitor for anomalies, and review policy against observed abuse. Include a key-revocation and appeal path so legitimate users can recover from false positives.
 - RSIS3 relevance: internal tooling APIs have analogous access rules — the wiki daemon and dashboard should document and enforce their own access tiers.
 
+## Practice
 - Publish the policy visibly so users can predict enforcement, and keep a changelog when terms change.
 ## Related
 - [[wiki/decisions/usage-policies-ai|AI Usage Policies]] — the usage terms

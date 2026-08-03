@@ -26,4 +26,3 @@ tcpdump and Wireshark form the canonical packet-analysis workflow: tcpdump captu
 - [[wiki/infrastructure/tcpdump-filters-and-capture|tcpdump Filters & Capture]]
 - [[wiki/os-shell/tcpdump|tcpdump]]
 - [[wiki/os-shell/wireshark-and-tshark|Wireshark & tshark]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]

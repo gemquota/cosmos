@@ -11,15 +11,20 @@ source: ["https://en.wikipedia.org/wiki/Dogfooding", "https://en.wikipedia.org/w
 # Dogfooding
 
 ## Summary
-Dogfooding is the practice of using one's own product in real work so its flaws surface naturally. For AI systems it means the improvement loop runs on itself — the wiki is curated with the wiki's own tools, the agent uses its own agent stack — turning incidents into fixes.
+Dogfooding is the practice of using one's own product in real work so its flaws surface naturally. For AI systems it means the improvement loop runs on itself — the wiki would be curated with the wiki's own tools, the agent uses its own agent stack — turning incidents into fixes.
 
 ## Details
 - **Why it works** — real usage exposes problems no synthetic test can: friction, broken links, missing features.
 - **Eat-your-own-dog-food lineage** — self-hosting culture in compilers generalized to products.
 - **Agent/AI form** — dogfooding doubles as self-evaluation: the system is its own first production user.
 - **Risk** — dogfooding biases the product toward the maker's use; external users still matter.
-- **RSIS3 example** — the cosmos bundle is dogfooded: workers use the wiki's own practices, and pass reports update the practices.
+- **RSIS3 example** — the cosmos bundle would be dogfooded: workers use the wiki's own practices, and pass reports update the practices.
 
+- Why it works: real usage exposes problems no synthetic test can — friction, broken links, missing features — because the product meets its own deployment conditions.
+- Boundary: dogfooding is a complement, not a substitute, for external testing; makers' blind spots are exactly where dogfooding is weakest, so outside users still matter.
+- Operationalizing it: the standing rule is that the wiki's tooling is used to curate the wiki, so tooling defects surface as curation incidents that get fixed in the same cycle.
+- Feedback path: incidents found while dogfooding should flow into the same fix-and-verify pipeline as external reports, so the practice closes the loop rather than just adding anecdotes.
+- Cost awareness: dogfooding slows the maker's own work, so the practice should target the highest-value flows — the ones that run every pass — rather than every possible feature.
 ## Related
 - [[wiki/decisions/self-hosting|Self-Hosting]] — the technical sibling
 - [[wiki/concepts/incident-driven-improvement|Incident-Driven Improvement]] — what dogfooding feeds

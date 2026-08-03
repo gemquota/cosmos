@@ -20,6 +20,7 @@ Model license risks arise when models, data, or outputs are used in ways their l
 - Operational notes: inventory at ingestion, gate deployments, and re-check on version upgrades. Assign a named owner and review cadence to each inventory entry, since unowned entries decay into shadow usage.
 - RSIS3 relevance: the bundle's tooling choices carry license obligations — the same inventory-and-gate discipline for its models.
 
+## Practice
 - Re-check licenses on every model version upgrade, since terms can change between releases; compare the new terms against the original use case, not just the diff.
 - Watch for shadow usage outside the inventory, and make the inventory a deployment prerequisite.
 ## Related

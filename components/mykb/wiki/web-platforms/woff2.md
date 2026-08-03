@@ -17,7 +17,7 @@ WOFF2 is the web font container: Brotli-compressed, with per-glyph hinting pruni
 - Concrete example: Inter's 400 weight as TTF (~300KB) becomes ~100KB woff2 after subsetting to latin; @font-face src: url(font.woff2) format('woff2') with no ttf/eot fallback is fine for the evergreen baseline; old IE/Android 4.x fallbacks (woff/eot/ttf) are only needed when the support matrix demands them.
 - Failure modes: shipping un-subsetted woff2 (the container saves less than subsetting does); serving woff2 with wrong Content-Type or cache headers, causing repeat downloads; and font-loading errors from missing crossorigin on preloaded fonts (CORS applies to fonts).
 - Operational tradeoffs: woff2 is the right default; pair with subsetting, unicode-range slicing, and font-display control; the remaining variance is per-engine decompression and hinting quality, which is why variable fonts and woff2 still need visual testing per platform.
-- RSIS3/mykb relevance: the wiki's font pipeline emits subsetted woff2 with versioned URLs; this node records the build settings so font changes stay cache-stable.
+- RSIS3/mykb relevance: the wiki's font pipeline would emit subsetted woff2 with versioned URLs; this node records the build settings so font changes stay cache-stable.
 - Encoding edge cases: some fonts (CFF-based, variable axes) compress differently; verify woff2 output size and rendering after conversion rather than trusting ratios.
 - Cache strategy: versioned filenames plus immutable cache headers make font updates instant while keeping repeat visits cache-hit.
 - Subsetting order: subset to the needed character set before converting to woff2; the container shrinks the tables, but subsetting is what removes the unused glyphs that dominate size.

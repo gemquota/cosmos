@@ -20,6 +20,7 @@ Copyright and AI spans three questions: training on copyrighted works, ownership
 - Operational notes: keep provenance records, monitor for reproduced content, and track jurisdiction changes.
 - RSIS3 relevance: the wiki's sources and reproductions should respect copyright — provenance and licensing notes are the practical hygiene.
 
+## Practice
 - Record provenance at ingestion and output, since the ability to demonstrate where content came from is the core defense.
 - Keep jurisdiction in mind when distributing outputs, since the same action is legal in one country and infringing in another.
 ## Related

@@ -17,7 +17,7 @@ VPN tunnels are encrypted point-to-point links (IPsec, WireGuard, OpenVPN) carry
 - Concrete example: a branch office runs two IPsec tunnels to the cloud hub with BGP preferring the primary; an MTU mismatch silently drops large packets until MSS clamping is applied (the classic tunnel black hole); a WireGuard mesh connects remote workers directly, peer-to-peer, without a central concentrator.
 - Failure modes: MTU/fragmentation black holes; dead-peer detection failures leaving one-way tunnels; key/SA expiry without rekeying (silent outages); routing loops or asymmetric paths when BGP and static routes mix; and tunnel software versions drifting from the policy baseline.
 - Operational tradeoffs: tunnels are cheap and fast to deploy but add latency, complexity, and internet dependence; dedicated links beat them for latency-critical traffic. Monitor tunnel status, rekey health, and MTU per link, and keep the tunnel configuration versioned.
-- RSIS3/mykb relevance: the wiki's hybrid links use dual IPsec tunnels with BGP and recorded MTU clamps; this node is the reference for the loop's connectivity troubleshooting.
+- RSIS3/mykb relevance: the wiki's hybrid links would use dual IPsec tunnels with BGP and recorded MTU clamps; this node is the reference for the loop's connectivity troubleshooting.
 - Key management: prefer IKEv2 with certificates or strong PSKs, rotate them on a schedule, and store tunnel credentials in the parameter store, not in config files.
 - Failover testing: rehearse tunnel failover quarterly by disabling the primary; an untested failover is a future outage with a two-hour postmortem attached.
 

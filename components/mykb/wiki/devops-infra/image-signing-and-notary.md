@@ -25,5 +25,3 @@ Image signing cryptographically binds a container image to its builder so consum
 - [[wiki/devops-infra/package-signing-and-repositories|Package Signing & Repositories]]
 - [[wiki/infrastructure/docker-image-optimization|Docker Image Optimization]]
 - [[wiki/devops-infra/golden-images-and-image-baking|Golden Images & Image Baking]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

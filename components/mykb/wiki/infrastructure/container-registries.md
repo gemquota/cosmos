@@ -19,9 +19,11 @@ A container registry is the distribution backbone for container images: it store
 - Pull-through caches sit between a cluster and an upstream registry, reducing egress and rate-limit pressure while adding a local audit point.
 - Access control: registries authenticate clients (token or mTLS), support scoped permissions, and integrate with identity systems like the wiki's RBAC model.
 - Signing with cosign or Notary attaches provenance so consumers can verify who built an image; SBOMs can be attached and scanned at push time.
-- Worked example: a mykb deployment pipeline pushes an image to a private registry with a digest-pinned deploy manifest; the cluster's kubelet pulls via a pull-through cache in the same VPC.
+- Worked example: a mykb deployment pipeline would push an image to a private registry with a digest-pinned deploy manifest; the cluster's kubelet would pull via a pull-through cache in the same VPC.
 - Self-hosting (Docker Registry, Harbor, Quay) gives data residency but adds storage, auth, and uptime responsibility.
 
+- Digest discipline: production deployments should pin digests rather than tags, because a tag can move under the deployment; the standing rule is that tags are for humans and digests are for machines.
+- Cleanup policy: registries accumulate orphaned layers, so retention rules should prune unreferenced images on a schedule rather than letting storage grow unbounded.
 ## Related
 - [[wiki/infrastructure/artifact-repositories|Artifact Repositories]] — broader home for images, packages, and binaries
 - [[wiki/infrastructure/container-scanning|Container Scanning]] — policy checks applied at push time

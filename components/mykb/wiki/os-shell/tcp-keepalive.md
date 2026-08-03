@@ -22,4 +22,3 @@ TCP keepalive is the mechanism that detects dead or unreachable peers: after a s
 - [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
 - [[wiki/cloud-infra/udp-vs-tcp|UDP vs TCP]]
 - [[wiki/cloud-infra/tcp-retransmission|TCP Retransmission]]
-- [[wiki/infrastructure/nvme-over-fabrics-tcp|NVMe over Fabrics (TCP)]]

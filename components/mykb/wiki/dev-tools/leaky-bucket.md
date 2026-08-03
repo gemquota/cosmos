@@ -20,6 +20,7 @@ The leaky bucket holds requests in a queue and drains them at a fixed rate, so o
 - Operational notes: monitor queue depth and drain rate, set explicit caps and drop policies, and size the drain rate from real downstream capacity.
 - RSIS3 relevance: leaky-bucket the wiki sync queue so link-checking never bursts the source sites — the smoothing that keeps RSIS3's outbound load predictable.
 
+## Practice
 - Apply it where downstream capacity is genuinely fixed, and prefer token buckets where bursts are acceptable.
 ## Related
 - [[wiki/dev-tools/token-bucket|Token Bucket]]

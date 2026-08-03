@@ -28,5 +28,4 @@ Guardrails are the software layer around a model that validates inputs, outputs,
 - [[wiki/prompt-engineering/agentic-rails|Agentic Rails]] — Execution-level policy for agent tool use
 - [[wiki/prompt-engineering/safety-tuning|Safety Tuning]] — The training-side complement to rails
 - [[wiki/prompt-engineering/system-prompts|System Prompts]] — Rails enforce what the system prompt requests
-- [[raw/archive/session-artifacts-2026-07/topics/security|security — Guardrails as a security control
 - [[wiki/concepts/mykb-research-report|mykb Research Report: Personal LLM Wiki Systems — Methodologies, Architectures & Integration Blueprint]] — Safety research base for rail design

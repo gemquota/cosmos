@@ -20,5 +20,3 @@ Mininet emulates complete network topologies — hosts, switches, links, and the
 - For mykb: Mininet anchors the emulation cluster with network simulation tools — the two are the virtualized way to test what the topology-design nodes describe.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

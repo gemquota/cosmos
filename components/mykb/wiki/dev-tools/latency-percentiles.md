@@ -20,6 +20,7 @@ Latency percentiles (p50, p90, p99) describe the distribution of request times i
 - Operational notes: align bucket boundaries with targets, monitor percentile divergence, and always include the error path in latency measurement.
 - RSIS3 relevance: article-generation latency should be reported at p95 so slow agent turns are visible — the same tail-awareness RSIS3 wants in its telemetry.
 
+## Practice
 - Report percentiles with the sample count and window so a thin sample is not mistaken for a stable p99.
 ## Related
 - [[wiki/dev-tools/four-golden-signals|Four Golden Signals]]

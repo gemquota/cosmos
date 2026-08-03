@@ -18,9 +18,7 @@ Versioning APIs in SDKs is the client-side mirror of API compatibility: the SDK'
 - Failure modes: SDK and server version skew — a new SDK against an old server (or vice versa) failing at runtime; breaking changes shipped as minor versions, breaking consumers without warning; SDKs that silently swallow unknown fields, hiding data loss; generated SDKs whose codegen changes types between releases; deprecated fields removed without the promised window.
 - Tradeoffs: strict SDK versioning slows API evolution but keeps consumers upgradeable; the alternative — constantly breaking SDKs — fragments the consumer base; the mature pattern is additive changes within a major, a documented deprecation window, and automated compatibility tests between SDK and server.
 - Operational notes: run SDK-server integration tests in CI, publish SDK changelogs, and track which SDK versions are in use.
-- RSIS3 relevance: any SDK cosmos publishes for the wiki daemon API needs the same discipline — consumers (loops, scripts) must be able to upgrade without breakage.
+- RSIS3 relevance: any SDK cosmos publishes for the wiki daemon API needs the same discipline — consumers (loops, scripts) must be able to upgrade without breakage; versioning the API contract separately from the implementation avoids surprise breakage.
 
 ## Related
 - [[wiki/devops-infra/release-versioning|Release Versioning]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

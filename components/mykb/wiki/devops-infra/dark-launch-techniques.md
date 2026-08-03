@@ -23,4 +23,3 @@ Dark launching ships code behind flags or routes so it runs in production withou
 ## Related
 - [[wiki/infrastructure/snapshot-and-clone-techniques|Snapshot & Clone Techniques]]
 - [[wiki/infrastructure/data-anonymization-techniques|Data Anonymization Techniques]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

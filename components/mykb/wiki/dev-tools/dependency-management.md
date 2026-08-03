@@ -21,8 +21,13 @@ Dependency management is the discipline of knowing, controlling, and updating ev
 - The transitive blight is real: a tiny package deep in the graph can be the critical vulnerability.
 - For the mykb bundle, dependency management covers tooling and sources: pinned builds, scanned packages, and tracked source URLs.
 
-Worked example — the wiki's dependency review: Renovate opens grouped PRs weekly, CI scans each for CVEs, and the SBOM regenerates per release so the audit trail is current.
+Worked example — the wiki's dependency review: Renovate would open grouped PRs weekly, CI would scan each for CVEs, and the SBOM would regenerate per release so the audit trail is current.
 
+- Cadence design: automated PRs, grouped updates, and CI verification keep upgrades small and reviewable; the standing rule is that every update is verified before merge and rolled back on failure.
+- Inventory value: lockfiles expose transitive dependencies and SBOMs record them for auditing, so the audit trail can answer what was running when, even after upgrades.
+- Scope for the bundle: dependency management would cover tooling and sources — pinned builds, scanned packages, and tracked source URLs — so corpus reproducibility does not depend on a moving toolchain.
+- Response discipline: when an advisory arrives, the fix should be prepared on a branch, verified by CI, and merged as a priority update rather than waiting for the next grouped cycle.
+- Renewal review: dependencies that are no longer maintained should be flagged for replacement rather than pinned forever; maintenance status is part of the inventory.
 ## Related
 - [[wiki/communities/dependency-updates|Dependency Updates]]
 - [[wiki/communities/dependency-graphs|Dependency Graphs]]

@@ -26,6 +26,4 @@ Retry strategies govern what an agent does when a step fails: how many times to 
 - [[wiki/llm-agents/deterministic-replay|Deterministic Replay]] — re-running failed steps for debugging
 - [[wiki/llm-agents/agent-logs|Agent Logs]] — the record retry decisions write to
 - [[wiki/llm-agents/traceability|Traceability]] — linking retries back to causes
-- [[raw/archive/session-artifacts-2026-07/topics/logging-2|logging — observability foundation for retries
-- [[raw/archive/session-artifacts-2026-07/topics/monitoring|monitoring — watching retry rates over time
 - [[wiki/ops/gap-report|Gap Analysis Report]] — identifies retry policy gaps

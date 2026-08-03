@@ -26,5 +26,3 @@ Time synchronization in the datacenter keeps every host, switch, and storage arr
 - [[wiki/infrastructure/precision-time-protocol|Precision Time Protocol]]
 - [[wiki/devops-infra/point-in-time-recovery|Point-in-Time Recovery]]
 - [[wiki/infrastructure/redundancy-and-failover-dc|Datacenter Redundancy & Failover]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

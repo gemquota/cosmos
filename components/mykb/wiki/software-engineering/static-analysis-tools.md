@@ -17,7 +17,7 @@ Static analysis tools inspect code without running it — linters, type checkers
 - Concrete example: a Python repo gates on Ruff + mypy + bandit; a new dependency flagged by the security scanner fails CI before merge; a type-checking fix catches a None-handling bug that tests missed; a complexity rule stops a function from growing past maintainable size.
 - Failure modes: tool sprawl — overlapping rulesets with conflicting opinions; false positives that teach teams to suppress everything (review suppressions); slow gates that get bypassed; and rules that encode taste rather than risk, generating noise.
 - Operational tradeoffs: static analysis trades a little setup and false-positive triage for early, cheap bug detection; the pattern is a small, maintained rule set, severity tiers (block vs warn), suppressions reviewed, and results visible in the PR flow.
-- RSIS3/mykb relevance: the wiki's generated code is gated by the repo's static-analysis set, so loop output arrives with lint, types, and security checks already applied.
+- RSIS3/mykb relevance: the wiki's generated code would be gated by the repo's static-analysis set, so loop output arrives with lint, types, and security checks already applied.
 - Rule stewardship: assign an owner per tool and review rule additions quarterly; rulesets grow until they enforce taste unless pruned.
 - Suppression audit: count suppressions in CI and trend them; a rising suppression count means the tool is being trained to ignore real issues.
 

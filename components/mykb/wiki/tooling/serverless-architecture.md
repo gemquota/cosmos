@@ -19,11 +19,15 @@ Serverless architecture runs code on managed platforms — functions as a servic
 - Managed services (queues, databases, object storage) move operational burden to the vendor but lock you in.
 - Cost model inverts: idle costs nothing, but sustained high traffic can exceed a fixed server's cost.
 - Distributed debugging and local parity are the hard parts — observability and testable abstractions are mandatory.
-- For the mykb bundle, serverless fits the wiki's event path: link-check triggers, capture handlers, and scheduled sync.
-- Worked example — a wiki capture lands in object storage, triggering a function that validates, queues, and notifies — no servers to patch, and idle costs nothing.
+- For the mykb bundle, serverless would fit the wiki's event path: link-check triggers, capture handlers, and scheduled sync.
+- Worked example — a wiki capture would land in object storage, triggering a function that validates, queues, and notifies — no servers to patch, and idle costs nothing.
 
-Worked example — a wiki capture lands in object storage, triggering a function that validates, queues, and notifies — no servers to patch, and idle costs nothing.
+Worked example — a wiki capture would land in object storage, triggering a function that validates, queues, and notifies — no servers to patch, and idle costs nothing.
 
+- Observability and local parity are the hard parts; the standing rule is that functions are testable locally and that tracing spans survive the managed boundary, so debugging is not blocked by vendor tooling.
+- Cost governance: because idle costs nothing, the risk is sustained high traffic; budgets and per-invocation telemetry keep cost decisions explicit rather than discovered on the bill.
+- Adoption screening: a component is a serverless candidate when it is bursty, event-driven, and low-maintenance by nature; the screening would be applied per component rather than to the whole event path.
+- Migration guard: moving a component to serverless should preserve its existing contracts and retry semantics, so the architecture change does not change behavior.
 ## Related
 - [[wiki/tooling/edge-computing-practice|Edge Computing Practice]]
 - [[wiki/tooling/cloud-native-principles|Cloud Native Principles]]

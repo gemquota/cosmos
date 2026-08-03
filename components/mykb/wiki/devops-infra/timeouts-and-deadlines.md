@@ -18,9 +18,7 @@ Timeouts and deadlines bound how long an operation may take: a timeout limits a 
 - Failure modes: no timeouts, so a hung dependency queues requests until memory or connections exhaust; timeouts longer than the caller's patience, so callers retry into a pile-up; timeouts so short they fail on legitimate slow responses; deadlines that do not propagate, so each hop restarts the clock and the chain never ends; timeouts that trigger retries without budget, multiplying load.
 - Tradeoffs: tight timeouts protect capacity but cause premature failures and retry noise; loose timeouts preserve legitimate work but let slow dependencies tie up resources; the art is sizing from measured percentiles with headroom and making timeouts configurable per dependency.
 - Operational notes: measure and monitor timeout-hit rates, size from p99 latency data, and centralize timeout policy.
-- RSIS3 relevance: RSIS3's calls to the daemon and LLM providers need explicit timeouts and deadlines — a hung provider should cancel the loop step, not stall the whole loop.
+- RSIS3 relevance: RSIS3's calls to the daemon and LLM providers need explicit timeouts and deadlines — a hung provider should cancel the loop step, not stall the whole loop; the timeout ladder (retry, circuit-break, alert) is the operational half of the contract.
 
 ## Related
 - [[wiki/infrastructure/query-timeouts-and-concurrency-limits|Query Timeouts And Concurrency Limits]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

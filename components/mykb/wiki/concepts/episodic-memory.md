@@ -22,7 +22,7 @@ Episodic memory stores concrete episodes: what happened, when, and with what out
 - It contrasts with semantic memory: episodic records the episode itself, semantic extracts the general knowledge from many episodes.
 - Autobiographical recall and memory consolidation both operate on episodic traces, and episodic memory is what supports mental time travel.
 - In agents, episodic memory maps to session logs and pulse records that let the system recall what it did and what resulted.
-- **Worked example / comparison** — Worked example — the wiki's session logs are episodic memory: they record that on this date a link-fix pass ran, which files it touched, and what the graph metrics showed afterward.
+- **Worked example / comparison** — Worked example — the wiki's session logs would serve as episodic memory: they would record that on this date a link-fix pass ran, which files it touched, and what the graph metrics showed afterward.
 - For mykb, episodic memory is documented as the event-record layer that semantic-memory and procedural-memory build upon.
 
 ## Related

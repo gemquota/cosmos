@@ -29,4 +29,3 @@ The action-observation loop is the ReAct pattern: the agent writes a reasoning t
 - [[wiki/concepts/forward-chaining|Forward Chaining]] — reasoning forward from observations
 - [[wiki/concepts/production-rules|Production Rules]] — condition-action rules as actions
 - [[wiki/syntheses/knowledge-system|Knowledge System Overview]] — observations become wiki knowledge
-- [[raw/archive/session-artifacts-2026-07/tools/exec-command-1-2|exec_command — a typical action in the loop

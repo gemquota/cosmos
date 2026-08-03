@@ -17,7 +17,7 @@ WebP and AVIF are the modern image formats replacing JPEG/PNG: both deliver majo
 - Concrete example: a hero JPEG at 300KB becomes ~180KB WebP or ~120KB AVIF at comparable quality; a screenshot-heavy wiki page ships AVIF with WebP and JPEG fallbacks via <picture>, and an encoder pipeline (sharp/cwebp/avifenc) generates all variants at build time.
 - Failure modes: choosing format by file size alone — visual quality and artifact types differ (AVIF smoothing vs WebP blocking); transparent and animation cases (WebP anim, AVIF anim) having separate support stories; encode-time costs on large batches delaying CI; and content that must match brand color exactly needing careful profiles.
 - Operational tradeoffs: AVIF maximizes savings but complicates the pipeline and fallback markup; WebP is the pragmatic middle. Standard practice: AVIF first, WebP second, JPEG/PNG fallback, with srcset for sizes — and remember quality-per-byte beats format purity: re-encode old JPEGs only where they dominate traffic.
-- RSIS3/mykb relevance: the wiki's image pipeline generates AVIF/WebP/JPEG tiers with a quality table documented here, keeping the loop's asset costs bounded.
+- RSIS3/mykb relevance: the wiki's image pipeline would generate AVIF/WebP/JPEG tiers with a quality table documented here, keeping the loop's asset costs bounded.
 - Quality calibration: pick quality targets per image type (photos vs screenshots vs graphics) rather than one global setting; screenshots compress differently and the same quality number can look terrible on text-heavy images.
 - Pipeline validation: decode-test every encoder output in CI with a real browser to catch corrupt or unsupported files; a format that encodes fine but decodes broken is worse than the size savings.
 

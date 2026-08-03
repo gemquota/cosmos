@@ -26,5 +26,3 @@ Replication copies data to multiple locations for availability; failover switche
 - [[wiki/infrastructure/redundancy-and-failover-dc|Datacenter Redundancy & Failover]]
 - [[wiki/devops-infra/database-failover-automation|Database Failover Automation]]
 - [[wiki/devops-infra/replication|Replication]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

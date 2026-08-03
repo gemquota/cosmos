@@ -22,5 +22,3 @@ Game days are scheduled, scripted exercises where a team intentionally fails a s
 - RSIS3 relevance: RSIS3's own reliability loops need the same rehearsal — practice recovering the wiki store or dashboard from a backup before a real loss, and turn findings into loop improvements.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

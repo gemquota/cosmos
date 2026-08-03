@@ -17,7 +17,7 @@ Private Link / private endpoints give services private IPs inside your VPC, so t
 - Concrete example: an app calls an SaaS API through a PrivateLink endpoint — no NAT, no public IP, no internet egress bill; a hub VPC exposes its internal service to spoke VPCs via PrivateLink, avoiding peering mesh; compliance requires no public exposure of database access, satisfied by endpoints instead of security-group gymnastics.
 - Failure modes: DNS not switching to the private IP (the classic "still going to the internet" bug — private DNS zone must be linked and split-horizon correct); cross-region/on-prem resolution of private endpoints (needs custom DNS forwarding); per-endpoint pricing accumulating across many services; and service-side trust — endpoints are mutual: the consumer sees a private IP, but the service still authorizes by identity.
 - Operational tradeoffs: endpoints buy privacy, lower egress cost, and simpler security groups at per-hour pricing and DNS complexity; use them for high-volume or compliance-sensitive traffic and document the DNS split so the loop's service discovery does not regress to public resolution.
-- RSIS3/mykb relevance: the wiki's hub services are reached via private endpoints with documented DNS zones, so cross-service calls never traverse public egress.
+- RSIS3/mykb relevance: the wiki's hub services would be reached via private endpoints with documented DNS zones, so cross-service calls would never traverse public egress.
 
 ## Related
 - [[wiki/cloud-infra/virtual-private-clouds|Virtual Private Clouds]]

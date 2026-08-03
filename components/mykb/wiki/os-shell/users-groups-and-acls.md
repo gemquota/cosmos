@@ -20,8 +20,4 @@ The local identity model pairs users (numeric UIDs) and groups (GIDs) with discr
 - RSIS3/mykb relevance: the wiki's shared corpus is a classic ACL use case — many agents and humans with different roles (read-only editors, write-capable daemons); encoding that as groups plus a few ACL exceptions, and scripting it, mirrors RSIS3's principle that access policy should be declared and reproducible, not accumulated by hand.
 
 ## Related
-- [[wiki/cloud-infra/cloud-security-groups|Cloud Security Groups]]
 - [[wiki/os-shell/users-and-groups|Users and Groups]]
-- [[wiki/os-shell/process-groups-and-sessions|Process Groups & Sessions]]
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]

@@ -21,6 +21,7 @@ SimHash converts a document into a fixed-size bit fingerprint such that similar 
 - Operational notes: calibrate the Hamming threshold on labeled duplicates, and always verify candidates exactly before acting.
 - RSIS3 relevance: SimHash fingerprints give mykb a fast, deterministic near-duplicate detector across capture sources — the first-pass filter before curation.
 
+## Practice
 - Weight tokens by importance so content words, not stopwords, drive the fingerprint bits.
 ## Related
 - [[wiki/data-storage/locality-sensitive-hashing|Locality-Sensitive Hashing]] — SimHash is an LSH-style scheme

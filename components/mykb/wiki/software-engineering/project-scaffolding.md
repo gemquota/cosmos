@@ -17,7 +17,7 @@ Project scaffolding is the reproducible starting shape of a new codebase — str
 - Concrete example: a team's service template includes Dockerfile, CI with lint+test+image-build, observability setup, and a health endpoint; a new service is up in minutes with the same conventions as the last ten; a template update (new lint rule, CI caching) is applied to new projects and backported to existing ones.
 - Failure modes: template rot — scaffolding that encodes abandoned tooling; fork-and-drift, where each generated project diverges so far the template becomes fiction; over-scaffolding (generating 50 files nobody reads); and missing the boring parts (license, security baseline, docs) in favor of exciting ones.
 - Operational tradeoffs: scaffolding trades a little up-front investment for massive consistency and onboarding savings; the pattern is a small set of living templates, updated like products, with generation scripts that are themselves tested.
-- RSIS3/mykb relevance: the wiki's component templates generate new loop tools with the standard CI and docs layout, so every generated project inherits the quality baseline.
+- RSIS3/mykb relevance: the wiki's component templates would generate new loop tools with the standard CI and docs layout, so every generated project inherits the quality baseline.
 - Template testing: generate a project from the template in CI and run its checks; a template that cannot produce a passing project is a liability.
 - Backport cadence: apply template updates to existing projects on a schedule (or via automated PRs) so the ecosystem does not fork from the template.
 

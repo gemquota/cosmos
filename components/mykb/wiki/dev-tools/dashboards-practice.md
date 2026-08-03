@@ -20,6 +20,7 @@ Dashboard practice is about structuring charts around decisions: what to watch f
 - Operational notes: review dashboards in postmortems, prune dead panels, and link every alert to the dashboard panel it represents.
 - RSIS3 relevance: a knowledge-health dashboard could watch stub-to-full conversion and link integrity — the same decision-focused structure RSIS3 uses for its own telemetry views.
 
+## Practice
 - Keep panels versioned like code: every dashboard change is a reviewed diff, so the board cannot rot silently.
 ## Related
 - [[wiki/devops-infra/monitoring-dashboards|Monitoring Dashboards]]

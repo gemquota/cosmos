@@ -25,4 +25,3 @@ Synthetic checks verify deployments by probing the system as a user would, from 
 - [[wiki/devops-infra/preflight-checks-and-guards|Preflight Checks & Guards]]
 - [[wiki/infrastructure/data-deployment-strategies|Data Deployment Strategies]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

@@ -18,12 +18,10 @@ The 3-2-1 rule: keep at least three copies of the data, on two different media t
 - Failure modes: the rule is a minimum, not a guarantee — backups that are never restored are suspect (silent corruption, missing files, wrong retention); a backup on the same SAN as the primary defeats the two-media intent; an offsite copy in the same cloud account can be deleted by the same compromised credentials, which is why ransomware guidance adds immutable or air-gapped copies and the 3-2-1-1 variant with an offline copy.
 - Tradeoffs: more copies cost storage, bandwidth, and restore-testing time; the real measures are RTO and RPO, so tune frequency (RPO) and restore speed (RTO) per data tier rather than giving everything three hourly copies.
 - Operational notes: automate restores — a periodic restore drill is worth more than an extra copy — monitor backup success and staleness, and treat the backup catalog itself as critical data.
-- RSIS3/mykb relevance: the wiki is git-versioned markdown, so repo plus remote mirror plus periodic export archive is a natural 3-2-1; RSIS3's own state files should follow the same rule because loop evolution is worthless if the state that produced it is unrecoverable.
+- RSIS3/mykb relevance: the wiki is git-versioned markdown, so repo plus remote mirror plus periodic export archive would be a natural 3-2-1; RSIS3's own state files should follow the same rule because loop evolution is worthless if the state that produced it is unrecoverable.
 
 ## Related
 - [[wiki/devops-infra/cache-invalidation-strategies|Cache Invalidation Strategies]]
 - [[wiki/devops-infra/backup-tools-restic-borg|Backup Tools: restic & Borg]]
 - [[wiki/cloud-infra/cloud-migration-strategies|Cloud Migration Strategies]]
 - [[wiki/devops-infra/progressive-sync-strategies|Progressive Sync Strategies]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

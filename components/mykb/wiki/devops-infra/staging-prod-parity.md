@@ -23,5 +23,3 @@ Staging-prod parity is the principle that the staging environment matches produc
 ## Related
 - [[wiki/infrastructure/data-environments-dev-staging-prod|Data Environments Dev Staging Prod]]
 - [[wiki/infrastructure/prod-like-data-environments|Prod Like Data Environments]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

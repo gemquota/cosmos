@@ -22,7 +22,7 @@ Demand forecasting projects future load from historical trends, seasonality, and
 - It is the input to capacity planning: a forecast with uncertainty bounds drives buffer sizing and scaling policy.
 - Forecast quality decays with horizon and changes in the underlying drivers, so forecasts need re-evaluation cadence.
 - Methods range from naive baselines to statistical models and machine learning; the baseline comparison matters more than the algorithm.
-- **Worked example / comparison** — Worked example — the wiki's monthly export traffic is forecast from twelve months of history with a weekly seasonality; the 90th-percentile bound sizes the autoscaling pool.
+- **Worked example / comparison** — Worked example — the wiki's monthly export traffic would be forecast from twelve months of history with a weekly seasonality; the 90th-percentile bound would size the autoscaling pool.
 - For mykb, demand-forecasting is documented as the quantitative foundation under capacity-planning.
 
 ## Related

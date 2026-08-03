@@ -26,5 +26,3 @@ Ignition and cloud-init are the two first-boot provisioning systems for Linux in
 - [[wiki/infrastructure/data-plane-versus-control-plane|Data Plane vs Control Plane]]
 - [[wiki/cloud-infra/data-archiving|Data Archiving]]
 - [[wiki/infrastructure/data-deduplication-in-storage|Data Deduplication in Storage]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

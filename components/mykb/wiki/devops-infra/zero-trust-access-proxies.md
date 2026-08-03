@@ -25,4 +25,3 @@ Zero-trust access proxies (Cloudflare Access, Google IAP, Pomerium, Tailscale) r
 - [[wiki/devops-infra/zero-trust-networking-revisited|Zero Trust Networking]]
 - [[wiki/cloud-infra/remote-access-methods|Remote Access Methods]]
 - [[wiki/infrastructure/zero-downtime-deploys|Zero-Downtime Deploys]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]

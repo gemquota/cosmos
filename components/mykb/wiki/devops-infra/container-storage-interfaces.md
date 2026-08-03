@@ -19,7 +19,7 @@ The Container Storage Interface (CSI) standardizes how Kubernetes provides stora
 - Tradeoffs: CSI standardizes the interface but shifts complexity into drivers with uneven vendor maturity, so test attach, detach, and resize paths; network volumes are safe across node failure but slow; local volumes are fast but pinned to a node and need application-level replication.
 - Operational notes: monitor PV/PVC state, set reclaim policies deliberately (Retain versus Delete), and test volume expansion and snapshot/restore in staging.
 - Expansion detail: online resize needs both the driver and the mounted filesystem to support it — expanding the PV alone leaves the pod's usable space unchanged.
-- RSIS3 relevance: RSIS3's persistent state (the mykb store, checkpoints) on Kubernetes relies on CSI volumes — driver behavior explains backup, capacity, and attach failure modes.
+- RSIS3 relevance: RSIS3's persistent state (the mykb store, checkpoints) on Kubernetes would rely on CSI volumes — driver behavior explains backup, capacity, and attach failure modes.
 
 ## Related
 - [[wiki/infrastructure/storage-systems|Storage Systems]]

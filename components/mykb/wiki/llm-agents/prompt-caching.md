@@ -17,7 +17,7 @@ Prompt caching reuses the KV-cache of a prior model call when the new prompt sha
 - Concrete example: an agent with a 5k-token system prompt + tool schema reuses the cache across every turn — 80-90% of input tokens at cache prices; a RAG loop that prepends retrieved chunks before the question changes the prefix per query and destroys cache reuse (order dynamic content consistently).
 - Failure modes: assuming cache hits (prefix changes — timestamps, ordering, minor edits — invalidate silently); stale cache serving outdated context in some setups (understand provider semantics); cost leakage from non-cacheable prefixes; and debugging cost regressions that trace to prompt reordering.
 - Operational tradeoffs: caching trades prompt-engineering discipline (stable prefixes) for cost and latency; the practice is static-first prompt layouts, cache-aware dynamic insertion points, and monitoring cache-hit rates and token costs per session.
-- RSIS3/mykb relevance: the wiki's loop prompts keep static system/tool prefixes stable so long sessions reuse caches, and cost telemetry tracks the savings.
+- RSIS3/mykb relevance: the wiki's loop prompts would keep static system/tool prefixes stable so long sessions reuse caches, and cost telemetry would track the savings.
 - Cache-aware design: order prompt sections by stability (system, tools, few-shot, then dynamic), and keep dynamic inserts at the tail to preserve the shared prefix.
 - Monitoring: track cache hit ratio and token cost per session; a hit-ratio drop after a prompt edit is the signal that the layout changed.
 

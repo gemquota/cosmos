@@ -25,4 +25,3 @@ Node affinity and taints/tolerations control where pods land: affinity expresses
 - [[wiki/devops-infra/node-storage-architecture|Node Storage Architecture]]
 - [[wiki/infrastructure/node-pools|Node Pools]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

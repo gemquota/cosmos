@@ -29,5 +29,4 @@ Multi-agent orchestration is the coordination of multiple agents — specialists
 - [[wiki/agent-systems/blackboard-architecture|Blackboard Architecture]] — shared-state coordination
 - [[wiki/llm-agents/handoff-protocol|Handoff Protocol]] — the transfer mechanism between agents
 - [[wiki/concepts/mykb-research-report|Mykb Research Report]] — research on multi-agent memory systems
-- [[raw/archive/session-artifacts-2026-07/tools/invoke-agent-1-2|invoke_agent — RSIS3's sub-agent invocation tool
 - [[wiki/syntheses/knowledge-system|Knowledge System Overview]] — the shared knowledge substrate agents coordinate over

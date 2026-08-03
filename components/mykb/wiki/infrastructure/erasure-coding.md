@@ -21,4 +21,3 @@ Erasure coding is a redundant encoding scheme that protects data against failure
 
 ## Related
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

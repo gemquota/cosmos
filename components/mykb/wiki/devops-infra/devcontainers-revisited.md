@@ -23,4 +23,3 @@ Devcontainers package the entire development environment — toolchain, dependen
 
 ## Related
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

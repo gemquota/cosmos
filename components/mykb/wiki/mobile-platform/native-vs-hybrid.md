@@ -22,7 +22,7 @@ Native apps use platform SDKs (SwiftUI/UIKit, Jetpack Compose); hybrid apps wrap
 
 ## Related
 - [[wiki/web-platforms/device-detection|Device Detection]] — adjacent concept in this wiki
-- [[wiki/web-platforms/dvh-svh|Dynamic and Small Viewport Units]] — adjacent concept in this wiki
+- [[wiki/web-platforms/vw-vh|vw and vh Units]] — adjacent concept in this wiki
 - [[wiki/web-platforms/touch-action-css|touch-action CSS]] — adjacent concept in this wiki
 - [[wiki/web-platforms/dark-mode-practice|Dark Mode Practice]] — adjacent concept in this wiki
 - [[wiki/frontend-frameworks/cross-platform-frameworks|Cross-Platform Frameworks]] — existing coverage

@@ -16,7 +16,7 @@ Cache-Control is the HTTP header contract with every cache in the path — brows
 - max-age, s-maxage, no-cache (revalidate before use), no-store (never persist), private vs public.
 - no-cache does not mean no caching: it means revalidate — a common confusion.
 - Versioned assets (content-hash URLs) get long max-age; HTML gets short or no-cache.
-- mykb relevance: the wiki serves immutable article hashes with long max-age.
+- mykb relevance: the wiki would serve immutable article hashes with long max-age.
 
 ## Related
 - [[wiki/tooling/etag-negotiation|ETag Negotiation]]

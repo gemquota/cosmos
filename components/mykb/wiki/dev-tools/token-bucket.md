@@ -20,6 +20,7 @@ The token bucket algorithm refills tokens at a steady rate and allows a request 
 - Operational notes: monitor bucket depth and rejections, size capacity from real burst needs, and keep per-key state expiry bounded.
 - RSIS3 relevance: a token bucket per tool class keeps agent bursts inside provider limits — the same steady-rate-with-bursts model RSIS3 needs for model calls.
 
+## Practice
 - Expose the effective rate and burst in documentation so callers know what the limiter allows before they hit it.
 ## Related
 - [[wiki/dev-tools/rate-limiting-algorithms|Rate Limiting Algorithms]]

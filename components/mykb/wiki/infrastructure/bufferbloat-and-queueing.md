@@ -20,5 +20,3 @@ Bufferbloat is the condition where network buffers are so deep that packets sit 
 - For mykb: bufferbloat connects queueing theory, QoS, and traffic shaping — the sibling nodes in the networking cluster.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]

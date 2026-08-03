@@ -19,9 +19,9 @@ Metrics are numeric time series — requests per second, latency percentiles, er
 - Label discipline controls cardinality: bounded label values keep metrics affordable at scale.
 - Histograms and percentiles beat averages for latency; watch p99 and the tail.
 - Monitoring is only as good as its coverage of failure modes — instrument the paths you fear.
-- For the mykb bundle, metrics track curation lag, link-check outcomes, and article growth per area.
+- For the mykb bundle, metrics would track curation lag, link-check outcomes, and article growth per area.
 
-Worked example — the wiki publishes four golden signals per service: request latency histogram, throughput, error ratio, and queue depth. Dashboards show them per area; alerts fire only on error-budget burn.
+Worked example — the wiki would publish four golden signals per service: request latency histogram, throughput, error ratio, and queue depth. Dashboards would show them per area; alerts would fire only on error-budget burn.
 
 ## Related
 - [[wiki/dev-tools/metric-backends|Metric Backends]]

@@ -17,7 +17,7 @@ Spot instances sell spare cloud capacity at 60-90% discounts with the risk of in
 - Concrete example: a rendering farm spreads independent jobs across spot fleets with interruption-aware scheduling; a CI runner pool uses spot with on-demand fallback when interruption rates spike; a batch ML training job checkpoints every 5 minutes so a preemption costs minutes, not hours.
 - Failure modes: stateful services (queues, databases) on spot losing data on interruption; single long jobs with no checkpointing losing all progress; no capacity diversification (all spot in one AZ/type, so a price spike interrupts everything); and cost models that ignore the retry/restart overhead of interrupted work.
 - Operational tradeoffs: spot savings are real but come with availability variance; the pattern is spot for elastic stateless layers + a small on-demand core, with interruption rates monitored and fallback strategies rehearsed. Measure effective savings after accounting for restarts.
-- RSIS3/mykb relevance: the wiki's batch layer runs spot-first with checkpointing; this note records interruption-rate telemetry so the loop tunes the spot/on-demand mix empirically.
+- RSIS3/mykb relevance: the wiki's batch layer would run spot-first with checkpointing; this note records interruption-rate telemetry so the loop tunes the spot/on-demand mix empirically.
 - Graceful handling: register the interruption-notice handler (metadata polling or instance lifecycle hooks) to run drain logic, and make every job idempotent so a restart anywhere converges.
 - Fleet design: use capacity-optimized allocation and mixed instance types so the fleet rides market shifts; monitor the interruption rate per fleet as a first-class metric.
 

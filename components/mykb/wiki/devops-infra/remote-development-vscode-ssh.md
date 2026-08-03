@@ -25,5 +25,3 @@ Remote development with VS Code SSH attaches a full editor experience — Intell
 - [[wiki/infrastructure/ssh-tunneling-and-port-forwarding|SSH Tunneling & Port Forwarding]]
 - [[wiki/os-shell/ssh-and-remote-access|SSH & Remote Access]]
 - [[wiki/infrastructure/ssh-key-management|SSH Key Management]]
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

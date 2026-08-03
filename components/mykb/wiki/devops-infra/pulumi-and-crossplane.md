@@ -22,5 +22,3 @@ Pulumi and Crossplane represent the next generation of infrastructure-as-code: P
 - RSIS3 relevance: cosmos's infra-as-code choice affects how quickly loop experiments get environments — a programmable or claim-based model makes disposable test environments cheap.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]]

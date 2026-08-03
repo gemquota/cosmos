@@ -17,7 +17,11 @@ Rate limiting caps how many requests a client may make in a window, protecting s
 - **Headers** — RateLimit-Limit/Remaining/Reset (and Retry-After) make limits machine-readable so clients can adapt.
 - **Client behavior** — on 429, back off by Retry-After, queue non-urgent work, and degrade gracefully instead of retrying hot.
 - **Distributed limits** — Redis counters or edge quotas keep limits consistent across instances.
-- **Worked example** — the mykb daemon rate-limits its wiki-writing workers per pass and retries with jittered backoff on 429s.
+- **Worked example** — the mykb daemon would rate-limit its wiki-writing workers per pass and retry with jittered backoff on 429s.
+- **Choosing limits** — set window and budget from measured peak behavior rather than round numbers; per-client buckets with a shared pool prevent one client from starving the rest.
+- **Testing** — load tests and drills should verify that the limiter returns 429 and honors Retry-After before an incident needs it, since an untested limiter is just a config file with good intentions.
+- **Client-side practice** — retry budgets and exponential backoff with jitter are the client's half of the contract; honoring Retry-After and avoiding hot retries keeps the whole system stable under degradation.
+- **Monitoring** — tracking 429 rates, retry counts, and queue depths separates a working limiter from one that is silently rejecting or silently failing open.
 - **Relevance** — RSIS3's acquisition workers must budget source fetches; the wiki tracks algorithms and headers to keep quotas auditable.
 
 ## Related

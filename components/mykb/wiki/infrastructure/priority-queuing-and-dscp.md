@@ -20,5 +20,3 @@ Priority queuing and DSCP are the marking-and-servicing machinery of QoS: DSCP (
 
 ## Related
 - [[wiki/devops-infra/priority-classes-and-preemption|Priority Classes & Preemption]]
-- [[wiki/infrastructure/storage-systems|Storage Systems]]
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
