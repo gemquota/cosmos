@@ -29,7 +29,7 @@ Entity resolution determines whether two records — a wiki page and a citation,
 - [[wiki/data-storage/deduplication|Deduplication]]
 - [[wiki/data-storage/knowledge-graph|Knowledge Graph]]
 - [[wiki/memory/provenance|Provenance]]
-- [[wiki/data-storage/index|Data Storage]]
+- [[wiki/data-storage/00-index|Data Storage]]
 - [[wiki/concepts/promotion-readiness|Promotion Readiness]]
 - [[wiki/ai-ml/article-health-scores|Article Health Scores]]
 - [[wiki/concepts/explainers|Explainers]]

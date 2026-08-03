@@ -13,7 +13,7 @@ status: "growing"
 
 Image Gen appears in 1 session(s) categorized as Debugging, Frontend, Shell. Related topics: bash, frontend, ide.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Dev Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Dev Tools]]
 
 ## Overview
 
@@ -29,7 +29,7 @@ The IDE tag points at editors and agents that embed generation: a developer asks
 
 ## Session Context
 
-One session recorded Image Gen under Debugging, Frontend, and Shell. This page anchors the asset-generation thread in the dev-tools cluster, and the [[wiki/frontend/index|Frontend]] tree holds the rendering side that consumes generated images.
+One session recorded Image Gen under Debugging, Frontend, and Shell. This page anchors the asset-generation thread in the dev-tools cluster, and the [[wiki/frontend/00-index|Frontend]] tree holds the rendering side that consumes generated images.
 
 ## Related Entities
 

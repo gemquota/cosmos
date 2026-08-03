@@ -13,7 +13,7 @@ resource: ""
 
 GetInternalDocs appears in 2 session(s) categorized as API, Cloud, Debugging, Mobile, Security, Shell. Related topics: android, api, auth, aws, bash, bun, cli.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/00-index|Shell Cli
 
 ## Overview
 

@@ -13,7 +13,7 @@ resource: ""
 
 BEAT appears in 1 session(s) categorized as API, Cloud, Shell. Related topics: acronym, api, aws, bash.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Beat
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Beat
 
 ## Interpretation Notes
 

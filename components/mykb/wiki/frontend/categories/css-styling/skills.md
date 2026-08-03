@@ -19,13 +19,13 @@ Skills are discovered through their name and description, so good metadata is es
 
 Documentation inside skills keeps procedures executable: commands, expected outputs, and failure handling are spelled out rather than assumed. Because skills are reused across sessions, they benefit from the same review and versioning discipline as code: changes are tested, and outdated instructions are updated or removed.
 
-Skills also appear in the human sense of the word, as the competencies a team relies on: shell scripting, API design, CSS, and documentation are all skills that show up in session topics. The wiki records both senses, cataloguing agent-facing capabilities and the technical disciplines behind them under the [[wiki/web-platforms/index|Frontend]] and [[wiki/web-platforms/index|Shell Environment]] domains.
+Skills also appear in the human sense of the word, as the competencies a team relies on: shell scripting, API design, CSS, and documentation are all skills that show up in session topics. The wiki records both senses, cataloguing agent-facing capabilities and the technical disciplines behind them under the [[wiki/web-platforms/00-index|Frontend]] and [[wiki/web-platforms/00-index|Shell Environment]] domains.
 
 Keeping skills focused, documented, and versioned makes them a compounding asset: each new skill shortens the work for every future session that faces the same problem.
 
 The entry also notes that skills are most valuable when they encode judgment: not just what to run, but how to verify the result and what to do when it fails.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Related Entities
 

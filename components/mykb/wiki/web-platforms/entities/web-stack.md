@@ -38,6 +38,6 @@ React 19 with TypeScript gives the dashboards a typed component model, while Vit
 
 ## Operational Patterns
 
-Deployments follow the API patterns above: REST with JSON for most interactions, WebSockets for live telemetry, and OpenAPI for discoverability. [[wiki/api-protocols/index|API Protocols]] documents the transport conventions, [[wiki/data-storage/entities/database-schema-audit|database schema audit]] covers keeping the SQLite schema consistent, and [[wiki/devops-infra/observability|observability]] records how the running stack is monitored. The [[wiki/devops-infra/index|DevOps Infrastructure]] tree holds the deployment and container material for shipping this stack.
+Deployments follow the API patterns above: REST with JSON for most interactions, WebSockets for live telemetry, and OpenAPI for discoverability. [[wiki/api-protocols/00-index|API Protocols]] documents the transport conventions, [[wiki/data-storage/entities/database-schema-audit|database schema audit]] covers keeping the SQLite schema consistent, and [[wiki/devops-infra/observability|observability]] records how the running stack is monitored. The [[wiki/devops-infra/00-index|DevOps Infrastructure]] tree holds the deployment and container material for shipping this stack.
 
-See also: [[wiki/web-platforms/index|Web Platforms]], [[wiki/frontend/index|Frontend]], [[wiki/api-services/index|API Services]]
+See also: [[wiki/web-platforms/00-index|Web Platforms]], [[wiki/frontend/00-index|Frontend]], [[wiki/api-services/00-index|API Services]]

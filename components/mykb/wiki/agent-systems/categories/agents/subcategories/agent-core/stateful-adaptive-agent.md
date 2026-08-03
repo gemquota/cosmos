@@ -25,7 +25,7 @@ The related entities below capture the API layer, authentication, and backend se
 Recovery is the practical test of a stateful design. If an agent crashes mid-task, the persisted state must be enough to resume from the last checkpoint, and the adaptation history must show why earlier attempts failed. Session replay and parameter logs make this possible, turning each failure into input for the next improvement cycle. These concerns align with the recursive self-improvement loops used across this knowledge base, where outcomes are consolidated and fed back into future runs.
 **Related topics:** api, auth, aws, backend
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Stateful Adaptive Agent
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Stateful Adaptive Agent
 
 ## Related Entities
 

@@ -13,7 +13,7 @@ resource: ""
 
 ArgumentParser appears in 6 session(s) categorized as API, Backend, Cloud, Debugging, Mobile, Security, Shell. Related topics: ajax, android, api, auth, authentication, aws, backend, bash.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Argumentparser 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Argumentparser 2
 
 ## Overview
 

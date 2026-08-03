@@ -18,13 +18,13 @@ Token counts matter for several reasons. Context windows are measured in tokens,
 
 Counting tokens accurately requires the same tokenizer the model uses, since approximations such as words times a constant drift. Practical management includes summarizing long histories, pruning stale turns, chunking documents before retrieval, and monitoring usage per session to catch runaway prompts.
 
-Prompt and response length interact with quality: too little context starves the model, while too much dilutes attention and invites distraction. The discipline of token-aware design connects to the [[wiki/web-platforms/index|Angular Ui]] domain entries and to the [[wiki/llm-agents/categories/llm-topics/subcategories/llm-specs/language-spec|Language Spec]] entry in this knowledge base.
+Prompt and response length interact with quality: too little context starves the model, while too much dilutes attention and invites distraction. The discipline of token-aware design connects to the [[wiki/web-platforms/00-index|Angular Ui]] domain entries and to the [[wiki/llm-agents/categories/llm-topics/subcategories/llm-specs/language-spec|Language Spec]] entry in this knowledge base.
 
 Tooling that reports token usage per request makes the trade-offs visible, and teams can then decide where summarization, caching, or smaller prompts pay for themselves.
 
 Estimating tokens before calling a model, with a conservative safety margin, prevents expensive failures when a prompt silently exceeds the limit.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/00-index|Angular Ui
 
 ## Related Entities
 

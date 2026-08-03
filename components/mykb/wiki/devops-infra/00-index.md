@@ -1,0 +1,257 @@
+---
+type: "index"
+hub: true
+title: "Devops Infra Index"
+description: "Listing of the devops-infra/ folder (240 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
+# Devops Infra
+
+Part of [[wiki/index|Wiki Index]]. 240 pages.
+
+## Subfolders
+- entities/ — 1 pages
+
+## Pages
+- [[wiki/devops-infra/acid|ACID]] — Atomicity, Consistency, Isolation, Durability — the guarantees of reliable transactions
+- [[wiki/devops-infra/admission-controllers-and-webhooks|Admission Controllers & Webhooks]] — Intercepting API requests to validate or mutate resources
+- [[wiki/devops-infra/alert-fatigue|Alert Fatigue]] — Desensitization to alerts when too many are noisy, leading to missed real incidents
+- [[wiki/devops-infra/ansible-and-puppet|Ansible & Puppet]] — Agentless and agent-based configuration tools
+- [[wiki/devops-infra/api-compatibility-policies|API Compatibility Policies]] — Rules for evolving APIs without breaking clients
+- [[wiki/devops-infra/api-gateway-patterns|API Gateway Patterns]] — Fronting APIs with a single gateway for routing, auth, rate limiting, and aggregation
+- [[wiki/devops-infra/api-gateways|API Gateways]] — Policy, auth, and routing control points in front of services
+- [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]] — Composing and routing APIs through gateways and mesh layers
+- [[wiki/devops-infra/archive-days|Archive Days]] — Scheduled days for archiving retired content
+- [[wiki/devops-infra/argocd-applicationsets|ArgoCD ApplicationSets]] — Template-driven generation of ArgoCD applications at scale
+- [[wiki/devops-infra/artifact-repositories-revisited|Artifact Repositories]] — Central stores for packages, images, and binaries
+- [[wiki/devops-infra/audit-days|Audit Days]] — Scheduled days for checking wiki-wide invariants
+- [[wiki/devops-infra/automated-rollbacks|Automated Rollbacks]] — Reverting releases automatically when health signals degrade
+- [[wiki/devops-infra/backup-strategies-3-2-1|Backup Strategies: 3-2-1]] — Three copies on two media with one offsite for resilience
+- [[wiki/devops-infra/backup-tools-restic-borg|Backup Tools: restic & Borg]] — Deduplicating encrypted backups with restic and Borg
+- [[wiki/devops-infra/backups|Backups]] — Restorable copies of data enabling recovery from corruption, deletion, and disasters
+- [[wiki/devops-infra/build-caching-and-artifacts|Build Caching & Artifacts]] — Reusing work and storing outputs across builds
+- [[wiki/devops-infra/cache-invalidation-strategies|Cache Invalidation Strategies]] — Purge, versioned keys, and TTL design to keep caches correct
+- [[wiki/devops-infra/caddy-and-traefik|Caddy & Traefik]] — Modern reverse proxies with automatic TLS and dynamic configuration
+- [[wiki/devops-infra/caddy|Caddy]] — Web server and reverse proxy with automatic HTTPS via Let's Encrypt by default
+- [[wiki/devops-infra/canary-and-blue-green-revisited|Canary & Blue-Green Deploys]] — Incremental and instantaneous release strategies with rollback
+- [[wiki/devops-infra/changelog-automation|Changelog Automation]] — Generating human-readable change logs from merged changes
+- [[wiki/devops-infra/changelog-practices|Changelog Practices]] — Maintaining readable, structured records of what changed in each release
+- [[wiki/devops-infra/chaos-engineering-revisited|Chaos Engineering]] — Experimenting with failures to build confidence
+- [[wiki/devops-infra/chaos-engineering|Chaos Engineering]] — Designing and running controlled experiments that inject failures to reveal system weaknesses before users do
+- [[wiki/devops-infra/ci-cd-best-practices|CI/CD Best Practices]] — Fast feedback, hermetic builds, and safe promotion
+- [[wiki/devops-infra/cleanup-days|Cleanup Days]] — Scheduled days for resolving cleanup-needed flags
+- [[wiki/devops-infra/clickhouse|ClickHouse]] — Columnar OLAP database for fast analytical queries over large event datasets
+- [[wiki/devops-infra/cloudflare|Cloudflare]] — CDN, DNS, edge-compute, and security platform sitting in front of web properties
+- [[wiki/devops-infra/cluster-federation-vs-hub-spoke|Federation vs Hub-Spoke]] — Two models for coordinating application placement across clusters
+- [[wiki/devops-infra/compression-and-brotli|Compression & Brotli]] — Content-encoding negotiation and when Brotli beats gzip
+- [[wiki/devops-infra/configmaps-and-secrets-rotation|ConfigMaps & Secrets Rotation]] — Injecting and rotating Kubernetes configuration and secrets
+- [[wiki/devops-infra/configuration-as-data|Configuration as Data]] — Storing config in versioned data formats, not code
+- [[wiki/devops-infra/configuration-management-revisited|Configuration Management]] — Keeping system state declarative and convergent
+- [[wiki/devops-infra/connection-pooling|Connection Pooling]] — Reusing database connections across requests to amortize handshake cost and bound concurrency
+- [[wiki/devops-infra/connection-pools|Connection Pools]] — Reusing connections to amortize handshake and socket costs
+- [[wiki/devops-infra/container-images-oci|Container Images (OCI)]] — Layered, immutable image format defined by the OCI spec
+- [[wiki/devops-infra/container-network-interfaces|Container Network Interfaces]] — How CNI plugins attach pods to networks and assign addresses
+- [[wiki/devops-infra/container-registries-revisited|Container Registries]] — Storing and distributing container images at scale
+- [[wiki/devops-infra/container-runtimes|Container Runtimes]] — The software that actually runs containerized processes
+- [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]] — The CSI plugin standard for attaching storage to containers
+- [[wiki/devops-infra/containerd|containerd]] — Industry-standard OCI container runtime managing image lifecycle and execution
+- [[wiki/devops-infra/content-camps|Content Camps]] — Focused events for producing content on a theme
+- [[wiki/devops-infra/content-hashing-and-etags|Content Hashing & ETags]] — Validator-based caching with hashes, ETags, and immutable assets
+- [[wiki/devops-infra/continuous-delivery-pipelines|Continuous Delivery Pipelines]] — Automating the path from commit to production
+- [[wiki/devops-infra/contract-simulation-environments|Contract Simulation Environments]] — Simulated dependencies that honor real API contracts
+- [[wiki/devops-infra/contract-testing-deployments|Contract Testing Deployments]] — Verifying producer-consumer agreements before release
+- [[wiki/devops-infra/cosign-and-sigstore|Cosign & Sigstore]] — Signing and verifying artifacts with keyless Sigstore flows
+- [[wiki/devops-infra/curation-sprints|Curation Sprints]] — Focused sessions covering the full curation cycle
+- [[wiki/devops-infra/custom-resource-definitions|Custom Resource Definitions]] — Extending the Kubernetes API with typed resources
+- [[wiki/devops-infra/dark-launch-techniques|Dark Launch Techniques]] — Running new code paths invisibly behind flags before exposure
+- [[wiki/devops-infra/database-failover-automation|Database Failover Automation]] — Automated promotion of replicas when the primary fails
+- [[wiki/devops-infra/database-indexing|Database Indexing]] — Data structures that accelerate lookups and scans at the cost of write overhead and storage
+- [[wiki/devops-infra/dependency-mapping-and-blast-radius|Dependency Mapping & Blast Radius]] — Knowing what breaks when a service fails to limit impact
+- [[wiki/devops-infra/deploy-safety-checks|Deploy Safety Checks]] — Gates that stop bad deployments before they reach users
+- [[wiki/devops-infra/deployment-verification-synthetic-checks|Deployment Verification & Synthetic Checks]] — Post-deploy checks that prove the service actually works
+- [[wiki/devops-infra/devcontainers-revisited|Devcontainers]] — Containerized development environments defined in config
+- [[wiki/devops-infra/development-environments-as-code|Development Environments as Code]] — Declaring dev environments with devcontainers and scripts
+- [[wiki/devops-infra/disaster-recovery-tiers|Disaster Recovery Tiers]] — The RTO/RPO spectrum from tape to synchronous mirroring
+- [[wiki/devops-infra/disaster-recovery|Disaster Recovery]] — Planning and mechanisms to restore service after region-scale failures, defined by RPO and RTO
+- [[wiki/devops-infra/distributed-tracing-revisited|Distributed Tracing]] — Following requests across service boundaries
+- [[wiki/devops-infra/distributed-tracing|Distributed Tracing]] — Correlating a single request's path across many services via trace IDs, spans, and context propagation
+- [[wiki/devops-infra/docker-compose|Docker Compose]] — Declarative local multi-container orchestration with a single YAML file
+- [[wiki/devops-infra/dotenv-vs-config-systems|dotenv vs Config Systems]] — Flat .env files versus structured config services
+- [[wiki/devops-infra/duckdb|DuckDB]] — In-process analytical database engine, 'SQLite for analytics', optimized for OLAP queries
+- [[wiki/devops-infra/edit-sprints|Edit Sprints]] — Time-boxed pushes of editing work
+- [[wiki/devops-infra/env-var-management|Environment Variable Management]] — Organizing env vars across local, CI, and production
+- [[wiki/devops-infra/environment-promotion-models|Environment Promotion Models]] — Promoting artifacts and config through environment tiers
+- [[wiki/devops-infra/envoy-data-plane|Envoy Data Plane]] — The L3/L4/L7 proxy at the heart of modern service meshes
+- [[wiki/devops-infra/envoy|Envoy]] — High-performance L4/L7 proxy used for service mesh data planes, gateways, and edge routing
+- [[wiki/devops-infra/ephemeral-environments|Ephemeral Environments]] — Short-lived preview environments created per branch or PR
+- [[wiki/devops-infra/error-budgets|Error Budgets]] — The allowed failure allowance derived from SLOs that governs release velocity and reliability work
+- [[wiki/devops-infra/escalation-policies|Escalation Policies]] — Defined chains of who gets contacted when, until an incident has an owner
+- [[wiki/devops-infra/event-streaming|Event Streaming]] — Continuously publishing and consuming ordered event logs as the source of truth for state
+- [[wiki/devops-infra/fault-injection-tools|Fault Injection Tools]] — Chaos tools that deliberately break dependencies in test
+- [[wiki/devops-infra/feature-flag-systems-revisited|Feature Flag Systems]] — Runtime toggles that separate deploy from release
+- [[wiki/devops-infra/feature-flags|Feature Flags]] — Runtime toggles that change behavior without redeploys, enabling gradual rollout and experimentation
+- [[wiki/devops-infra/first-boot-configuration|First-Boot Configuration]] — Applying network, storage, and agent config at first launch
+- [[wiki/devops-infra/game-days-and-failure-drills|Game Days & Failure Drills]] — Deliberate failure exercises that test runbooks and muscle memory
+- [[wiki/devops-infra/gatekeeper-and-policy-as-code|Gatekeeper & Policy as Code]] — OPA Gatekeeper admission policies stored as code
+- [[wiki/devops-infra/github-actions|GitHub Actions]] — Event-driven CI/CD platform running workflows on GitHub repositories for build, test, and deploy
+- [[wiki/devops-infra/gitops-argocd|GitOps & ArgoCD]] — Git as the source of truth for cluster state
+- [[wiki/devops-infra/gitops-bootstrap-processes|GitOps Bootstrap Processes]] — Booting a cluster from Git-managed state, starting with a seed
+- [[wiki/devops-infra/gitops-multi-env-patterns|GitOps Multi-Env Patterns]] — Reusing one repo across dev, staging, and prod environments
+- [[wiki/devops-infra/golden-images-and-image-baking|Golden Images & Image Baking]] — Pre-baked machine images with known-good configuration
+- [[wiki/devops-infra/golden-signals|Golden Signals]] — The four metrics — latency, traffic, errors, saturation — that best characterize service health
+- [[wiki/devops-infra/grafana-dashboards|Grafana Dashboards]] — Visualizing telemetry and the dashboard design loop
+- [[wiki/devops-infra/grpc-and-protobuf-networking|gRPC & Protobuf Networking]] — HTTP/2 based RPC with binary framing and streaming semantics
+- [[wiki/devops-infra/haproxy-vs-nginx|HAProxy vs NGINX]] — Choosing between a dedicated L4/L7 load balancer and a web server proxy
+- [[wiki/devops-infra/health-endpoint-contracts|Health Endpoint Contracts]] — Standardized /healthz and /readyz response semantics
+- [[wiki/devops-infra/healthcheck-and-sidecar-containers|Healthcheck & Sidecar Containers]] — Sidecars that proxy, sync, or check the health of the main container
+- [[wiki/devops-infra/helm-and-chart-management|Helm & Chart Management]] — Packaging and templating Kubernetes applications
+- [[wiki/devops-infra/helm|Helm]] — Kubernetes package manager templating, versioning, and deploying applications as charts
+- [[wiki/devops-infra/hostpath-and-subpath|hostPath & SubPath Volumes]] — Mounting host directories or volume subpaths into containers
+- [[wiki/devops-infra/http-caching-directives|HTTP Caching Directives]] — Cache-Control, Expires, and Vary semantics for shared and private caches
+- [[wiki/devops-infra/identity-aware-proxies|Identity-Aware Proxies]] — Google IAP-style gateways that authorize by identity, not network
+- [[wiki/devops-infra/ignition-and-user-data|Ignition & User Data]] — First-boot configuration for Fedora CoreOS and cloud VMs
+- [[wiki/devops-infra/image-signing-and-notary|Image Signing & Notary]] — Cryptographic signatures that authenticate container images
+- [[wiki/devops-infra/incident-response-revisited|Incident Response]] — Detecting, containing, and resolving production incidents
+- [[wiki/devops-infra/incident-response|Incident Response]] — The process for detecting, declaring, mitigating, and learning from production incidents
+- [[wiki/devops-infra/incremental-vs-differential-backups|Incremental vs Differential Backups]] — Change-based backup levels and their restore tradeoffs
+- [[wiki/devops-infra/infrastructure-as-code-revisited|Infrastructure as Code]] — Managing infrastructure with versioned, reviewable definitions
+- [[wiki/devops-infra/infrastructure-drift-detection|Infrastructure Drift Detection]] — Finding and reconciling config that diverged from the desired state
+- [[wiki/devops-infra/ingress-controllers|Ingress Controllers]] — The layer that routes external traffic into Kubernetes
+- [[wiki/devops-infra/ingress-egress-policies|Ingress & Egress Policies]] — Directional traffic rules at gateways, firewalls, and service boundaries
+- [[wiki/devops-infra/init-containers-and-hooks|Init Containers & Hooks]] — Setup containers and lifecycle hooks before main containers start
+- [[wiki/devops-infra/isolation-levels|Isolation Levels]] — Policies governing how concurrent transactions see each other's uncommitted and committed changes
+- [[wiki/devops-infra/istio|Istio]] — Service mesh providing mTLS, traffic routing, observability, and policy for Kubernetes
+- [[wiki/devops-infra/k8s-dns-and-coredns|Kubernetes DNS & CoreDNS]] — Cluster DNS resolution, headless services, and CoreDNS plugins
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — The API, scheduler, and controllers that drive cluster state
+- [[wiki/devops-infra/kubernetes-networking-models|Kubernetes Networking Models]] — How pods, services, and ingress connect in a cluster
+- [[wiki/devops-infra/kubernetes-operators-revisited|Kubernetes Operators]] — Controllers that encode application operational knowledge
+- [[wiki/devops-infra/kubernetes-scheduling|Kubernetes Scheduling]] — Matching pods to nodes under constraints and resources
+- [[wiki/devops-infra/kubernetes|Kubernetes]] — Portable container-orchestration platform for deploying, scaling, and managing containerized workloads
+- [[wiki/devops-infra/kustomize|Kustomize]] — Native Kubernetes manifest customization via overlays without templating
+- [[wiki/devops-infra/leader-election-and-quorum|Leader Election & Quorum]] — Choosing one active replica and agreeing on cluster membership
+- [[wiki/devops-infra/link-fix-sprints|Link-Fix Sprints]] — Focused sessions for repairing the link graph
+- [[wiki/devops-infra/load-balancing-l4-l7|Load Balancing L4-L7]] — Distributing traffic at transport or application layers
+- [[wiki/devops-infra/load-balancing|Load Balancing]] — Distributing client traffic across backend instances to improve availability, latency, and capacity utilization
+- [[wiki/devops-infra/local-persistent-volumes|Local Persistent Volumes]] — Node-local storage with static binding for low-latency workloads
+- [[wiki/devops-infra/localstack-and-cloud-emulators|LocalStack & Cloud Emulators]] — Emulating cloud services locally for development and tests
+- [[wiki/devops-infra/log-aggregation-pipelines|Log Aggregation Pipelines]] — Collecting, shipping, and indexing logs at scale
+- [[wiki/devops-infra/log-aggregation|Log Aggregation]] — Centralized collection, storage, and search of logs from many services for debugging and analysis
+- [[wiki/devops-infra/maintenance-days|Maintenance Days]] — Scheduled days for keeping the wiki infrastructure healthy
+- [[wiki/devops-infra/message-broker-patterns|Message Broker Patterns]] — Using brokers to decouple producers and consumers: queues, topics, and delivery semantics
+- [[wiki/devops-infra/metrics-logs-traces|Metrics, Logs & Traces]] — The three signal types and how they complement each other
+- [[wiki/devops-infra/mirroring-and-proxying-registries|Mirroring & Proxying Registries]] — Caching and controlling access to container registries
+- [[wiki/devops-infra/mirroring-and-shadow-traffic|Mirroring & Shadow Traffic]] — Copying live traffic to new versions without user impact
+- [[wiki/devops-infra/mongodb|MongoDB]] — Document-oriented NoSQL database storing flexible BSON documents with horizontal scaling
+- [[wiki/devops-infra/monitoring-dashboards|Monitoring Dashboards]] — Curated metric and log views that answer operational questions without paging through raw data
+- [[wiki/devops-infra/multi-cluster-management|Multi-Cluster Management]] — Operating many clusters with consistent policy and networking
+- [[wiki/devops-infra/mutating-and-validating-policies|Mutating & Validating Policies]] — Admission policies that change or reject resource requests
+- [[wiki/devops-infra/mysql|MySQL]] — Widely deployed open-source relational database powering many web applications
+- [[wiki/devops-infra/network-observability|Network Observability]] — Collecting and correlating network signals for operations
+- [[wiki/devops-infra/network-policies-kubernetes|Kubernetes Network Policies]] — L3/L4 allowlists between pods enforced by the CNI plugin
+- [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]] — Server blocks, locations, upstreams, and proxy directives done right
+- [[wiki/devops-infra/nginx|Nginx]] — High-performance web server and reverse proxy handling static content, TLS, caching, and load balancing
+- [[wiki/devops-infra/node-affinity-and-taints|Node Affinity & Taints]] — Scheduling constraints that attract or repel pods
+- [[wiki/devops-infra/node-storage-architecture|Node Storage Architecture]] — How node-local storage, CSI, and cloud disks compose in Kubernetes
+- [[wiki/devops-infra/observability-of-network-path|Observability of the Network Path]] — Measuring per-hop latency, loss, and path changes across the network
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — Metrics, logs, and traces as the foundation of operations
+- [[wiki/devops-infra/observability|Observability]] — Measuring system behavior through metrics, logs, and traces to answer questions about any state
+- [[wiki/devops-infra/on-call-practices|On-Call Practices]] — Rotations, escalation, and sustainable paging
+- [[wiki/devops-infra/on-call-rotations|On-Call Rotations]] — Scheduling engineers to carry the pager with handoff, coverage, and fatigue management
+- [[wiki/devops-infra/open-tofu-forks|OpenTofu & Forks]] — The open-source Terraform fork and ecosystem compatibility
+- [[wiki/devops-infra/opentelemetry-instrumentation|OpenTelemetry Instrumentation]] — Vendor-neutral telemetry generation and export
+- [[wiki/devops-infra/operator-sdk-and-controller-runtime|Operator SDK & Controller Runtime]] — Tooling for scaffolding operators and reconciling resources
+- [[wiki/devops-infra/optimistic-locking|Optimistic Locking]] — Detecting concurrent-write conflicts via version fields instead of holding row locks
+- [[wiki/devops-infra/os-updates-and-immutable-images|OS Updates & Immutable Images]] — Replacing immutable images instead of mutating running systems
+- [[wiki/devops-infra/package-signing-and-repositories|Package Signing & Repositories]] — Signed packages and trusted mirrors for OS and language ecosystems
+- [[wiki/devops-infra/partitioning|Partitioning]] — Dividing tables into smaller physical segments by key or range for manageability and performance
+- [[wiki/devops-infra/patch-management-revisited|Patch Management]] — Processes for tracking, testing, and applying security updates
+- [[wiki/devops-infra/persistent-volume-claims|Persistent Volume Claims]] — Requesting storage abstractly so clusters bind volumes on demand
+- [[wiki/devops-infra/pod-disruption-budgets|Pod Disruption Budgets]] — Limiting voluntary evictions to protect availability
+- [[wiki/devops-infra/pod-to-pod-communication|Pod-to-Pod Communication]] — Routing between pods across nodes with overlays and routing tables
+- [[wiki/devops-infra/podman|Podman]] — Daemonless, rootless container engine compatible with OCI images and the Docker CLI
+- [[wiki/devops-infra/point-in-time-recovery|Point-in-Time Recovery]] — Restoring a database to an arbitrary moment using full backups plus archived transaction logs
+- [[wiki/devops-infra/policy-engines-opa-kyverno|Policy Engines: OPA & Kyverno]] — General-purpose and Kubernetes-native policy evaluation
+- [[wiki/devops-infra/postgresql|PostgreSQL]] — Advanced open-source relational database with strong consistency, extensions, and SQL standards
+- [[wiki/devops-infra/postmortem-culture|Postmortem Culture]] — Blameless incident reviews that focus on systems and processes, not people
+- [[wiki/devops-infra/postmortems-and-blameless|Postmortems & Blameless Culture]] — Learning from failures without blame
+- [[wiki/devops-infra/preflight-checks-and-guards|Preflight Checks & Guards]] — Validating prerequisites before destructive operations
+- [[wiki/devops-infra/ephemeral-environments|Ephemeral Environments]] — Short-lived per-PR environments, torn down automatically
+- [[wiki/devops-infra/priority-classes-and-preemption|Priority Classes & Preemption]] — Scheduling precedence and evicting lower-priority pods
+- [[wiki/devops-infra/progressive-delivery-models|Progressive Delivery Models]] — Phased rollout combining flags, canaries, and metrics gates
+- [[wiki/devops-infra/progressive-rollout-metrics|Progressive Rollout Metrics]] — Tracking error rate and latency while shifting traffic
+- [[wiki/devops-infra/progressive-sync-strategies|Progressive Sync Strategies]] — Rolling out cluster changes gradually instead of all at once
+- [[wiki/devops-infra/prometheus-and-metrics|Prometheus & Metrics]] — Pull-based time-series monitoring with PromQL
+- [[wiki/devops-infra/provisioners-packer-cloud-init|Provisioners: Packer & cloud-init]] — Building images with Packer and first-boot config with cloud-init
+- [[wiki/devops-infra/pub-sub-messaging|Pub/Sub Messaging]] — Publish-subscribe messaging where publishers broadcast to many independent subscribers
+- [[wiki/devops-infra/publish-days|Publish Days]] — Scheduled days for making content publicly available
+- [[wiki/devops-infra/pulumi-and-crossplane|Pulumi & Crossplane]] — Infrastructure as code in general-purpose languages and control planes
+- [[wiki/devops-infra/quality-days|Quality Days]] — Scheduled days dedicated to raising article quality
+- [[wiki/devops-infra/query-planning|Query Planning]] — How databases turn SQL into execution plans, choosing join orders and index access paths
+- [[wiki/devops-infra/rate-limiting-at-edge|Rate Limiting at the Edge]] — Token-bucket limits enforced in CDN, gateway, or reverse proxy layers
+- [[wiki/devops-infra/readiness-vs-liveness-revisited|Readiness vs Liveness Probes]] — Distinguishing restart-worthy failure from not-ready states
+- [[wiki/devops-infra/refresh-days|Refresh Days]] — Scheduled days for updating stale content
+- [[wiki/devops-infra/registry-gc-and-retention|Registry GC & Retention]] — Reclaiming space and enforcing image retention policies
+- [[wiki/devops-infra/release-days|Release Days]] — Scheduled days for publishing wiki releases
+- [[wiki/devops-infra/release-engineering|Release Engineering]] — Versioning, changelogs, reproducible builds, and promotion pipelines as an auditable process
+- [[wiki/devops-infra/release-trains|Release Trains]] — Shipping releases on a fixed cadence so every change rides the next scheduled departure
+- [[wiki/devops-infra/release-versioning|Release Versioning]] — Naming and numbering releases with semantic versioning so changes are understandable and comparable
+- [[wiki/devops-infra/remote-development-vscode-ssh|Remote Development: VS Code & SSH]] — Editing code on remote hosts with VS Code Remote and SSH
+- [[wiki/devops-infra/renovate-and-dependency-updates|Renovate & Dependency Updates]] — Automated pull requests that keep dependencies current
+- [[wiki/devops-infra/replication-and-failover-dr|Replication & Failover DR]] — Copying data across sites and switching over when a site fails
+- [[wiki/devops-infra/replication|Replication]] — Copying data from primary to replica nodes for availability, read scaling, and disaster recovery
+- [[wiki/devops-infra/retry-policies|Retry Policies]] — Retrying failures with backoff, jitter, and limits
+- [[wiki/devops-infra/reverse-proxies|Reverse Proxies]] — Fronting origin servers for TLS, routing, and protection
+- [[wiki/devops-infra/review-sprints|Review Sprints]] — Time-boxed sessions focused on reviewing articles
+- [[wiki/devops-infra/rollback-plans|Rollback Plans]] — Predefined, rehearsed procedures for reverting bad releases quickly and safely
+- [[wiki/devops-infra/root-cause-analysis|Root Cause Analysis]] — Systematically finding the underlying causes of incidents, beyond the immediate trigger
+- [[wiki/devops-infra/rto-and-rpo|RTO & RPO]] — Recovery time and recovery point objectives that size DR plans
+- [[wiki/devops-infra/runbooks|Runbooks]] — Step-by-step operational procedures for known incidents
+- [[wiki/devops-infra/runbooks|Runbooks]] — Written procedures for handling alerts and incidents so anyone on call can act correctly
+- [[wiki/devops-infra/sbom-and-syft|SBOMs & Syft]] — Machine-readable bills of materials for container images
+- [[wiki/devops-infra/scheduled-jobs|Scheduled Jobs]] — Running work on a schedule — cron, batch, and maintenance tasks — reliably and observably
+- [[wiki/devops-infra/secret-stores-vault-consul|Secret Stores: Vault & Consul]] — Centralized secret storage with leases and access policies
+- [[wiki/devops-infra/secrets-management-revisited|Secrets Management]] — Storing, rotating, and distributing credentials safely
+- [[wiki/devops-infra/semantic-release-automation|Semantic Release Automation]] — Deriving versions and changelogs from commit conventions
+- [[wiki/devops-infra/service-accounts-and-identities|Service Accounts & Identities]] — Machine identities for workloads: tokens, keys, and cloud roles
+- [[wiki/devops-infra/service-mesh-sidecars|Service Mesh Sidecars]] — Proxies injected beside workloads for mesh features
+- [[wiki/devops-infra/service-meshes-istio-linkerd|Service Meshes: Istio & Linkerd]] — Sidecar-based proxy mesh providing mTLS, traffic policy, and telemetry
+- [[wiki/devops-infra/service-virtualization|Service Virtualization]] — Simulating dependent services for isolated testing
+- [[wiki/devops-infra/severity-levels|Severity Levels]] — Classifying incidents by impact and urgency so responses match reality
+- [[wiki/devops-infra/sharding|Sharding]] — Splitting data across multiple database instances by key to scale write and storage capacity
+- [[wiki/devops-infra/site-reliability-engineering-revisited|Site Reliability Engineering]] — Applying engineering discipline to operations
+- [[wiki/devops-infra/site-reliability-engineering|Site Reliability Engineering]] — Applying software engineering to operations: SLOs, error budgets, automation, and toil reduction
+- [[wiki/devops-infra/slo-and-error-budgets|SLOs & Error Budgets]] — Targets and budgets that govern reliability tradeoffs
+- [[wiki/devops-infra/smoke-tests-after-deploy|Smoke Tests After Deploy]] — Fast end-to-end sanity checks run on each release
+- [[wiki/devops-infra/sqlite|SQLite]] — Embedded, zero-configuration SQL database stored in a single file
+- [[wiki/devops-infra/staging-prod-parity|Staging-Prod Parity]] — Keeping pre-production environments close to production
+- [[wiki/devops-infra/startup-probes-and-graceful-shutdown|Startup Probes & Graceful Shutdown]] — Slow-start handling and draining connections on shutdown
+- [[wiki/devops-infra/state-locking-and-concurrency|State Locking & Concurrency]] — Preventing conflicting infrastructure mutations with locks
+- [[wiki/devops-infra/stateful-application-patterns|Stateful Application Patterns]] — Running databases and queues on Kubernetes with stable identity
+- [[wiki/devops-infra/storage-classes-and-provisioners|Storage Classes & Provisioners]] — Dynamic volume provisioning policies in Kubernetes
+- [[wiki/devops-infra/stream-processing|Stream Processing]] — Computing over live event streams: filtering, aggregating, and joining as data flows
+- [[wiki/devops-infra/supply-chain-attestations|Supply Chain Attestations]] — Verified metadata about how artifacts were built and shipped
+- [[wiki/devops-infra/sync-policies-and-waves|Sync Policies & Waves]] — Ordering ArgoCD syncs and handling automated or manual sync
+- [[wiki/devops-infra/terraform-state-management|Terraform State Management]] — The state file as Terraform's source of truth
+- [[wiki/devops-infra/terraform-workspaces-and-modules|Terraform Workspaces & Modules]] — Reusable module composition and isolated state workspaces
+- [[wiki/devops-infra/terraform|Terraform]] — Declarative infrastructure-as-code tool for provisioning cloud resources reproducibly
+- [[wiki/devops-infra/tfstate-management|Terraform State Management]] — Storing, locking, and sharing Terraform state so plan/apply is safe in teams
+- [[wiki/devops-infra/timeouts-and-deadlines|Timeouts & Deadlines]] — Bounding operation duration to fail fast and stay responsive
+- [[wiki/devops-infra/topology-spread-constraints|Topology Spread Constraints]] — Spreading pods across zones, nodes, or racks
+- [[wiki/devops-infra/traefik|Traefik]] — Cloud-native reverse proxy and ingress controller that auto-discovers containers and services
+- [[wiki/devops-infra/traffic-shifting-and-splitting|Traffic Shifting & Splitting]] — Moving percentages of traffic between versions gradually
+- [[wiki/devops-infra/transactions|Database Transactions]] — Atomic units of work that group operations to commit or roll back together
+- [[wiki/devops-infra/trivy-and-image-scanning|Trivy & Image Scanning]] — Finding vulnerabilities in images and filesystems
+- [[wiki/devops-infra/update-days|Update Days]] — Scheduled days for applying content updates
+- [[wiki/devops-infra/versioning-apis-in-sdks|Versioning APIs in SDKs]] — Coordinating library versions with the APIs they call
+- [[wiki/devops-infra/volumes-emptydir-and-configmaps|emptyDir & ConfigMap Volumes]] — Ephemeral and configuration volumes injected into pods
+- [[wiki/devops-infra/vulnerability-fix-cadence|Vulnerability Fix Cadence]] — How quickly to patch based on severity and exposure
+- [[wiki/devops-infra/web-application-firewalls|Web Application Firewalls]] — Filtering HTTP traffic for injection and exploit patterns
+- [[wiki/devops-infra/websocket-proxying|WebSocket Proxying]] — Upgrading and long-lived connection handling behind proxies
+- [[wiki/devops-infra/wiki-hackathons|Wiki Hackathons]] — Intensive collaborative events for wiki projects
+- [[wiki/devops-infra/worker-pools|Worker Pools]] — Pools of workers that consume jobs from queues, scaling concurrency to demand
+- [[wiki/devops-infra/workload-identity-federation|Workload Identity Federation]] — Exchanging workload credentials for cloud roles without long-lived keys
+- [[wiki/devops-infra/writing-sprints|Writing Sprints]] — Time-boxed sessions focused on writing articles
+- [[wiki/devops-infra/zero-trust-access-proxies|Zero Trust Access Proxies]] — Proxies that verify identity and device posture before granting app access
+- [[wiki/devops-infra/zero-trust-networking-revisited|Zero Trust Networking]] — Never trust network location; authenticate and authorize every request

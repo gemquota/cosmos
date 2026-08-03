@@ -26,4 +26,4 @@ A cross-encoder feeds the query and a document together into a transformer and o
 - [[wiki/meta-learning/sentence-transformers|Sentence Transformers]] — hosts cross-encoder models
 - [[wiki/data-storage/semantic-search|Semantic Search]] — the pipeline cross-encoders refine
 - [[wiki/meta-learning/knowledge-distillation|Knowledge Distillation]] — cross-encoders often distill into bi-encoders
-- [[wiki/meta-learning/index|Meta-Learning]] — retrieval model family
+- [[wiki/meta-learning/00-index|Meta-Learning]] — retrieval model family

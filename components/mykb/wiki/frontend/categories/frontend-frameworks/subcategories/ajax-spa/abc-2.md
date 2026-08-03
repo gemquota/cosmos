@@ -10,7 +10,7 @@ resource: ""
 
 ## Abc 2
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Abc 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Abc 2
 
 ## Related Entities
 

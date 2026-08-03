@@ -13,7 +13,7 @@ resource: ""
 
 SpatialGrid appears in 3 session(s) categorized as API, Cloud, Frontend, Mobile, Security, Shell. Related topics: android, angular, api, auth, authentication, aws, bash, cli, cloud, css, dom, feature.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/00-index|Angular Ui
 
 ## Overview
 

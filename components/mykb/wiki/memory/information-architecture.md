@@ -26,5 +26,5 @@ Information architecture (IA) is the discipline of structuring, labeling, and in
 - [[wiki/memory/taxonomy|Taxonomy]] — hierarchical organization systems
 - [[wiki/memory/personal-knowledge-management|Personal Knowledge Management]] — IA applied to personal knowledge
 - [[wiki/memory/para-method|PARA Method]] — an actionability-based IA
-- [[wiki/data-storage/index|Data Storage]] — an example namespace in mykb
+- [[wiki/data-storage/00-index|Data Storage]] — an example namespace in mykb
 - [[wiki/index|Wiki Index]] — the top-level navigation hub

@@ -13,7 +13,7 @@ resource: ""
 
 Beautiful Expensive appears in 1 session(s) categorized as API, Backend, Cloud, Security. Related topics: api, auth, aws, backend.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Beautiful Expensive
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Beautiful Expensive
 
 ## Overview
 

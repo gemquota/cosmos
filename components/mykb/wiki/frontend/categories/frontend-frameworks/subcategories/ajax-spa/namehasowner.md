@@ -13,7 +13,7 @@ status: "growing"
 
 NameHasOwner appears in 1 session(s) categorized as API, Cloud, Shell. Related topics: ajax, api, aws, bash.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Namehasowner
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Namehasowner
 
 ## Overview
 

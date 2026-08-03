@@ -13,7 +13,7 @@ status: "growing"
 
 Teleportation Paradox appears in 1 session(s) categorized as API. Related topics: ide, isr, orm, rest.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Teleportation Paradox
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Teleportation Paradox
 
 ## The Thought Experiment
 

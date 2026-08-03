@@ -22,7 +22,7 @@ Measuring perceived latency, tuning the attack and release of generated tones, a
 
 **Related topics:** android, api, auth, backend
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Arm 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Arm 2
 
 ## Related Entities
 

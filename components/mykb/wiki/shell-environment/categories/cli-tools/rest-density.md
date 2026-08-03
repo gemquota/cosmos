@@ -22,7 +22,7 @@ The page records both senses so future sessions can attach the API contracts or 
 
 **Related topics:** bash, bug, cli, css
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Cli Tools]]
 
 ## Related Entities
 

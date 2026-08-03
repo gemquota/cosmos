@@ -13,7 +13,7 @@ Database — an organized collection of structured data. Sessions show relationa
 
 **Related topics:** android, angular, api, auth, authentication, authorization
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Databaseconnection 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Databaseconnection 2
 
 ## Related Entities
 

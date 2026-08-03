@@ -13,7 +13,7 @@ resource: ""
 
 BufferSourceNode appears in 1 session(s) categorized as API, Cloud, Debugging, Shell. Related topics: api, aws, bash.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Buffersourcenode
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Buffersourcenode
 
 ## Overview
 

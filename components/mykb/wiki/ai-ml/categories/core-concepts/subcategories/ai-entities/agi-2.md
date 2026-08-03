@@ -14,7 +14,7 @@ AGI — Artificial General Intelligence. A hypothetical AI that matches or excee
 
 **Related topics:** android, api, auth
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Agi 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Agi 2
 
 ## Overview
 

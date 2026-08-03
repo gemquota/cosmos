@@ -21,7 +21,7 @@ The Turing test frames evaluation rather than computation: a system that cannot 
 
 The page records the term so future sessions can distinguish the computational, the philosophical, and the testing senses, each of which carries different engineering consequences. Recording which sense was intended is the small step that keeps future reading accurate.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Turing 2
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Turing 2
 
 ## Related Entities
 

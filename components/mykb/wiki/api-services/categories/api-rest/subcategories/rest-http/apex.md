@@ -22,7 +22,7 @@ For readers of session logs, the practical rule is to look for platform nouns �
 
 **Related topics:** api, auth, bash
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Apex
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Apex
 
 ## Related Entities
 

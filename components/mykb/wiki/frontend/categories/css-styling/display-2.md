@@ -21,7 +21,7 @@ The combination of API, database, and security tags suggests the session involve
 
 This page records the term across these senses; future sessions should note which rendering or exposure problem was being solved.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Related Entities
 

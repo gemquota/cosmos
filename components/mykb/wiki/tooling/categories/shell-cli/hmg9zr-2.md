@@ -13,7 +13,7 @@ The most common sources are session tokens, request IDs, short-lived credentials
 Working with opaque identifiers demands traceability. Logs should carry the identifier at every hop, lookups should be indexed, and no code should attempt to decode meaning from the string, because any apparent structure is incidental. When an identifier is security-sensitive, it must also be long enough and random enough to resist guessing, and it should be stored and transmitted with the same care as other secrets.
 The session context on this page records where the token appeared and what it was tagged with, which is the raw material for later correlation. The related entities below list the neighboring shell and CLI pages observed in the same sessions, giving the token a place in the wider vocabulary of the knowledge base.
 Short mixed-case tokens of this shape are frequently truncated hashes, which have a useful property: they can be verified by recomputation, so a record can prove that it refers to the exact artifact it claims to. That makes them suitable for cache keys, build artifact names, and content addresses. Whatever the token's origin, preserving it verbatim with its context is the correct behavior for a knowledge base that values accuracy over interpretation.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Related Entities
 - [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
 - [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]

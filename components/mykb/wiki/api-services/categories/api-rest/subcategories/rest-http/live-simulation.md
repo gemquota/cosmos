@@ -13,7 +13,7 @@ Simulation — the computational modeling of real-world systems for analysis or 
 
 **Related topics:** android, api, auth, aws
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Live Simulation
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Live Simulation
 
 ## Related Entities
 

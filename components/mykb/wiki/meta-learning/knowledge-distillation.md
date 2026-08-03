@@ -27,5 +27,5 @@ Knowledge distillation transfers a large teacher model's knowledge into a smalle
 - [[wiki/meta-learning/bi-encoder|Bi-Encoder]] — the student architecture often distilled for search
 - [[wiki/meta-learning/cross-encoder|Cross-Encoder]] — the teacher architecture in ranking distillation
 - [[wiki/meta-learning/sentence-transformers|Sentence Transformers]] — practical host of distilled encoders
-- [[wiki/meta-learning/index|Meta-Learning]] — learning-to-learn techniques like distillation
+- [[wiki/meta-learning/00-index|Meta-Learning]] — learning-to-learn techniques like distillation
 - [[wiki/concepts/mykb-research-report|Mykb Research Report]] — surveys distilled retrieval models

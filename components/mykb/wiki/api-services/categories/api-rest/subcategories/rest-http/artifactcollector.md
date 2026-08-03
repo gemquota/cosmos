@@ -13,7 +13,7 @@ resource: ""
 
 ArtifactCollector appears in 1 session(s) categorized as API, Frontend, Mobile, Security. Related topics: android, angular, api, auth.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Artifactcollector
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Artifactcollector
 
 ## Overview
 

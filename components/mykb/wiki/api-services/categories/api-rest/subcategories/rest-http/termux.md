@@ -13,7 +13,7 @@ resource: ""
 Termux is an Android terminal emulator and Linux environment app that works without root. Provides a full Linux experience on Android devices. The primary host environment for mykb.
 Referenced in session 019f460d
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Termux
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Termux
 
 ## Related Entities
 

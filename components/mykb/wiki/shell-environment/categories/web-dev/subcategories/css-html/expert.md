@@ -10,7 +10,7 @@ resource: ""
 
 ## Expert
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Expert
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Expert
 
 ## Related Entities
 

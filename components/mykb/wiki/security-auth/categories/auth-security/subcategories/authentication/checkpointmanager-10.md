@@ -14,7 +14,7 @@ ACE ecosystem component — manages system state checkpoints for fault tolerance
 
 **Related topics:** ajax, android, api, auth, authentication, backend, bash, bug
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Checkpointmanager 10
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Checkpointmanager 10
 
 ## Overview
 

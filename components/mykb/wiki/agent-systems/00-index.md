@@ -1,0 +1,190 @@
+---
+type: "index"
+hub: true
+title: "Agent Systems Index"
+description: "Listing of the agent-systems/ folder (176 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
+# Agent Systems
+
+Part of [[wiki/index|Wiki Index]]. 176 pages.
+
+## Pages
+- [[wiki/agent-systems/a-b-testing-agents|A/B Testing Agents]] — Controlled experiments comparing agent versions on live traffic
+- [[wiki/agent-systems/accountability-ai|AI Accountability]] — Mechanisms that hold AI actors responsible
+- [[wiki/agent-systems/action-observation-loop|Action-Observation Loop]] — The ReAct-style pattern of interleaving reasoning, actions, and observations
+- [[wiki/agent-systems/adversarial-self-play|Adversarial Self-Play]] — Training where agents oppose each other to expose and fix weaknesses
+- [[wiki/agent-systems/agent-bootstrapping|Agent Bootstrapping]] — Starting with a minimal capable agent and growing it through its own operation
+- [[wiki/agent-systems/agent-cancellation|Agent Cancellation]] — Cleanly stopping a running agent when it is no longer needed or has gone off track
+- [[wiki/agent-systems/agent-consensus|Agent Consensus]] — Mechanisms for multiple agents to agree on decisions or outputs
+- [[wiki/agent-systems/agent-cost-optimization|Agent Cost Optimization]] — Reducing token, latency, and operational costs of agent systems without losing quality
+- [[wiki/agent-systems/agent-ensembling|Agent Ensembling]] — Running multiple agents or models on the same task and combining results for robustness
+- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]] — Measuring whether an agent behaves correctly, efficiently, and safely
+- [[wiki/agent-systems/agent-factories|Agent Factories]] — Infrastructure for generating many agent configurations or instances from templates
+- [[wiki/agent-systems/agent-logs-and-audits|Agent Logs and Audits]] — Structured records of agent actions enabling review, debugging, and compliance
+- [[wiki/agent-systems/agent-loop|Agent Loop]] — The fundamental cycle of perceive, decide, act, and observe that drives every autonomous agent
+- [[wiki/agent-systems/agent-memory-systems|Agent Memory Systems]] — Memory architectures that let agents persist state, experience, and knowledge across runs
+- [[wiki/agent-systems/agent-observability|Agent Observability]] — Instrumentation that exposes what an agent did, why, and at what cost
+- [[wiki/agent-systems/agent-orchestration-frameworks|Agent Orchestration Frameworks]] — Software platforms for defining, running, and monitoring agent workflows
+- [[wiki/agent-systems/agent-pipelines|Agent Pipelines]] — Composing multiple agent stages into a sequential processing pipeline
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — Components that decompose goals into ordered, executable plans
+- [[wiki/agent-systems/agent-prioritization|Agent Prioritization]] — Ranking tasks or requests so agents work on the highest-value work first
+- [[wiki/agent-systems/agent-run-inspectors|Agent Run Inspectors]] — Tools to inspect a completed or in-flight agent run step by step
+- [[wiki/agent-systems/agent-runtime-security|Agent Runtime Security]] — Securing the environment agents execute in, including sandboxes, secrets, and tools
+- [[wiki/agent-systems/agent-sandboxing-variants|Agent Sandboxing Variants]] — Different containment strategies for safely executing agent actions
+- [[wiki/agent-systems/agent-sandboxing|Agent Sandboxing]] — Isolating agent execution to contain mistakes and hostile input
+- [[wiki/agent-systems/agent-state-machines|Agent State Machines]] — Modeling agent runs as explicit states and legal transitions
+- [[wiki/agent-systems/agent-supervision|Agent Supervision]] — Human or system oversight of agent activity with intervention authority
+- [[wiki/agent-systems/agent-templates|Agent Templates]] — Reusable blueprints defining agent roles, tools, and workflows
+- [[wiki/agent-systems/agent-testing-strategies|Agent Testing Strategies]] — Testing agents across unit, integration, simulation, and production levels
+- [[wiki/agent-systems/agent-timeouts|Agent Timeouts]] — Maximum execution durations that force agents to stop and report
+- [[wiki/agent-systems/agent-trace-visualization|Agent Trace Visualization]] — Displaying agent execution traces for debugging and analysis
+- [[wiki/agent-systems/ai-act|EU AI Act]] — The European Union's AI regulation
+- [[wiki/agent-systems/ai-governance|AI Governance]] — The institutions and rules steering AI development
+- [[wiki/agent-systems/ai-regulation|AI Regulation]] — Laws and rules governing AI
+- [[wiki/agent-systems/ai-researcher-agents|AI Researcher Agents]] — Agents that autonomously conduct parts of the research process
+- [[wiki/agent-systems/approval-based-agents|Approval-Based Agents]] — Agents that seek approval for consequential actions before taking them
+- [[wiki/agent-systems/approval-workflows-wiki|Approval Workflows]] — The review-and-approve path for consequential wiki changes
+- [[wiki/agent-systems/autonomous-agents|Autonomous Agents]] — Agents that pursue goals over long horizons with limited human intervention
+- [[wiki/agent-systems/autonomy-levels|Autonomy Levels]] — A spectrum from human-driven to fully self-directed agent operation
+- [[wiki/agent-systems/backpressure-agents|Backpressure for Agents]] — Signaling upstream producers to slow down when an agent system is saturated
+- [[wiki/agent-systems/behavior-trees|Behavior Trees]] — Hierarchical control structures for composing reactive behaviors
+- [[wiki/agent-systems/blackboard-architecture|Blackboard Architecture]] — Multiple specialists coordinating through a shared, inspectable state
+- [[wiki/agent-systems/bounded-agents|Bounded Agents]] — Agents designed with explicit limits on resources, impact, and authority
+- [[wiki/agent-systems/browser-and-computer-agents|Browser and Computer Agents]] — Agents that operate web browsers or entire computer interfaces to complete tasks
+- [[wiki/agent-systems/budget-and-quota-control|Budget and Quota Control]] — Enforcing spending, token, and rate limits on agent activity
+- [[wiki/agent-systems/canary-deployments-agents|Canary Deployments for Agents]] — Rolling out agent changes to a small traffic slice before full deployment
+- [[wiki/agent-systems/checkpointing-agent-runs|Checkpointing Agent Runs]] — Persisting agent state at milestones so runs can pause, resume, or roll back
+- [[wiki/agent-systems/circuit-breakers-for-agents|Circuit Breakers for Agents]] — Automatically stopping agent activity when failures cross a threshold
+- [[wiki/agent-systems/code-execution-environments|Code Execution Environments]] — Isolated runtimes where agents execute code safely and observe results
+- [[wiki/agent-systems/code-generation-agents-revisited|Code Generation Agents]] — Agents that plan, write, test, and iterate on code across whole repositories
+- [[wiki/agent-systems/code-repair-agents|Code Repair Agents]] — Agents that diagnose failing code and produce patches validated by tests
+- [[wiki/agent-systems/commitment-devices-ai|Commitment Devices]] — Mechanisms that enforce commitments
+- [[wiki/agent-systems/commitment-problems|Commitment Problems]] — Why commitments fail and how to fix them
+- [[wiki/agent-systems/corrigibility-training|Corrigibility Training]] — Training agents to accept correction and shutdown
+- [[wiki/agent-systems/covert-reasoning|Covert Reasoning]] — Models planning in ways hidden from oversight
+- [[wiki/agent-systems/creative-writing-agents|Creative Writing Agents]] — Agents that draft stories, scripts, and marketing copy with style control
+- [[wiki/agent-systems/credible-commitments|Credible Commitments]] — Promises that others can trust will be kept
+- [[wiki/agent-systems/crisis-monitoring|Crisis Monitoring]] — Detecting degradation or dangerous behavior and triggering recovery
+- [[wiki/agent-systems/critic-agents|Critic Agents]] — Agents that review and critique outputs from other agents
+- [[wiki/agent-systems/curriculum-self-improvement|Curriculum Self-Improvement]] — Ordering self-generated training tasks from easy to hard
+- [[wiki/agent-systems/customer-support-agents|Customer Support Agents]] — Agents that handle support tickets, answers, and follow-ups for users
+- [[wiki/agent-systems/data-science-agents|Data Science Agents]] — Agents that explore data, run analyses, and produce reports or models
+- [[wiki/agent-systems/deception-research-ai|Deception Research]] — The empirical study of AI deception
+- [[wiki/agent-systems/decision-reports|Decision Reports]] — Structured records of why decisions were made
+- [[wiki/agent-systems/degraded-mode-operations|Degraded Mode Operations]] — Graceful reduction of service quality when resources or dependencies fail
+- [[wiki/agent-systems/delegation-and-handoffs|Delegation and Handoffs]] — Moving tasks and context from one agent to another with full transfer of responsibility
+- [[wiki/agent-systems/discount-factor-ai|Discount Factor in AI]] — How future rewards are weighted
+- [[wiki/agent-systems/discounting-practice|Discounting in Practice]] — How real systems set discounting
+- [[wiki/agent-systems/documentation-agents|Documentation Agents]] — Agents that read codebases and produce or update documentation
+- [[wiki/agent-systems/endpoint-health-checks|Endpoint Health Checks]] — Monitoring API and model endpoints for availability and correctness
+- [[wiki/agent-systems/escalation-handling|Escalation Handling]] — Routing work to more capable agents or humans when an agent is stuck or out of scope
+- [[wiki/agent-systems/explainability-ai|Explainable AI]] — Techniques for explaining model decisions
+- [[wiki/agent-systems/explainable-decisions|Explainable Decisions]] — Decisions that come with understandable reasons
+- [[wiki/agent-systems/exponential-backoff-llm|Exponential Backoff for LLMs]] — Retry strategy that grows delay between attempts on transient failures
+- [[wiki/agent-systems/feature-flags-for-agents|Feature Flags for Agents]] — Runtime toggles controlling agent behaviors and model choices without redeploys
+- [[wiki/agent-systems/finance-agents|Finance Agents]] — Agents for financial analysis, reporting, and compliance workflows
+- [[wiki/agent-systems/generator-verifier-loop|Generator-Verifier Loop]] — Pattern pairing a generating model with a verifying model to raise output quality
+- [[wiki/agent-systems/goal-decomposition|Goal Decomposition]] — Breaking a high-level goal into ordered, executable subgoals
+- [[wiki/agent-systems/goal-disclosure|Goal Disclosure]] — Making an agent's goals explicit and checkable
+- [[wiki/agent-systems/goal-locking|Goal Locking]] — Freezing an agent's goals against modification
+- [[wiki/agent-systems/harmless-ai|Harmless AI]] — Systems that avoid causing harm
+- [[wiki/agent-systems/helpful-ai|Helpful AI]] — Systems that actively assist user goals
+- [[wiki/agent-systems/hha-standards|HHH Standards]] — Helpful, Honest, Harmless as assistant standards
+- [[wiki/agent-systems/hidden-goals|Hidden Goals]] — Objectives concealed from observers
+- [[wiki/agent-systems/hidden-reasoning|Hidden Reasoning]] — Reasoning that is not exposed in outputs
+- [[wiki/agent-systems/hierarchical-agents|Hierarchical Agents]] — Agents organized in a tree where higher levels delegate to lower ones
+- [[wiki/agent-systems/honest-ai|Honest AI]] — Systems that are truthful and transparent about limits
+- [[wiki/agent-systems/honest-signaling|Honest Signaling]] — Signals that reliably convey true information
+- [[wiki/agent-systems/horizon-length|Horizon Length]] — How far ahead an agent plans or is rewarded
+- [[wiki/agent-systems/human-in-the-loop-approvals|Human-in-the-Loop Approvals]] — Approval gates where a human reviews and authorizes agent actions
+- [[wiki/agent-systems/idempotent-agent-actions|Idempotent Agent Actions]] — Designing agent operations so repeating them has the same effect as doing them once
+- [[wiki/agent-systems/identity-and-continuity|Identity and Continuity]] — Stable self-model and persistent memory that let an agent be the same entity across sessions
+- [[wiki/agent-systems/inference-time-reasoning|Inference-Time Reasoning]] — Reasoning elicited or searched at generation time rather than trained in
+- [[wiki/agent-systems/instruction-following|Instruction Following]] — How reliably models do what instructions say
+- [[wiki/agent-systems/instruction-hierarchy|Instruction Hierarchy]] — Ordering instruction sources by authority
+- [[wiki/agent-systems/introspection-ai|Introspection in AI]] — An AI system examining its own internal processes
+- [[wiki/agent-systems/iterative-self-improvement|Iterative Self-Improvement]] — Repeatedly using one's own outputs to get better at a task
+- [[wiki/agent-systems/justification-ai|Justification in AI]] — Giving grounds for AI behavior
+- [[wiki/agent-systems/legal-accountability|Legal Accountability for AI]] — Law-based responsibility for AI harms
+- [[wiki/agent-systems/legal-agents|Legal Agents]] — Agents that draft, review, and summarize legal documents with professional oversight
+- [[wiki/agent-systems/lobotomized-optimizers|Lobotomized Optimizers]] — Agents whose optimization drive is removed
+- [[wiki/agent-systems/loops|Loops]] — Iterative execution patterns that repeat actions until success or a stop condition
+- [[wiki/agent-systems/lying-ai|AI Lying]] — Models producing deliberate falsehoods
+- [[wiki/agent-systems/market-based-agent-coordination|Market-Based Agent Coordination]] — Using prices, auctions, and bidding to allocate work among agents
+- [[wiki/agent-systems/medical-ai-agents|Medical AI Agents]] — Agents supporting clinical documentation, literature review, and decision support
+- [[wiki/agent-systems/meta-cognition-in-agents|Meta-Cognition in Agents]] — Agents that monitor and regulate their own reasoning processes
+- [[wiki/agent-systems/model-fallback-chains|Model Fallback Chains]] — Ordered sequences of models tried when a primary model fails or degrades
+- [[wiki/agent-systems/model-routing-rules|Model Routing Rules]] — Policy rules deciding which model handles which request
+- [[wiki/agent-systems/multi-agent-orchestration|Multi-Agent Orchestration]] — Coordinating several agents with distinct roles into one coherent system
+- [[wiki/agent-systems/multi-agent-systems|Multi-Agent Systems]] — Multiple specialized agents collaborating, competing, or coordinating to complete tasks
+- [[wiki/agent-systems/myopia-ai|Myopia in AI]] — Agents with short effective planning horizons
+- [[wiki/agent-systems/myopic-reward|Myopic Reward]] — Rewards that depend only on current-step outcomes
+- [[wiki/agent-systems/near-term-myopia|Near-Term Myopia]] — Focusing only on immediately visible consequences
+- [[wiki/agent-systems/noticeboards|Noticeboards]] — Central pages where issues are announced for the community
+- [[wiki/agent-systems/obedient-ai|Obedient AI]] — Systems that reliably follow instructions
+- [[wiki/agent-systems/obfuscation-ai|Obfuscation in AI]] — Making behavior or internals hard to inspect
+- [[wiki/agent-systems/offline-agent-testing|Offline Agent Testing]] — Testing agents against recorded or simulated data without live dependencies
+- [[wiki/agent-systems/partial-failure-handling|Partial Failure Handling]] — Graceful recovery when some components of a request fail
+- [[wiki/agent-systems/plan-execute-observe|Plan-Execute-Observe]] — A control loop that plans, acts, observes results, and replans
+- [[wiki/agent-systems/planning-systems|Planning Systems]] — Architectures that separate the deliberation about what to do from the doing
+- [[wiki/agent-systems/precommitment-ai|Precommitment in AI]] — Binding future behavior to current intentions
+- [[wiki/agent-systems/priority-weights|Priority Weights]] — Numeric priorities assigned to goals or instructions
+- [[wiki/agent-systems/provider-failover|Provider Failover]] — Automatic switching between LLM providers when one becomes unavailable
+- [[wiki/agent-systems/queue-management|Queue Management]] — The discipline of keeping work queues bounded and moving
+- [[wiki/agent-systems/queueing-agents|Queueing Agents]] — Managing agent task queues with ordering, fairness, and capacity controls
+- [[wiki/agent-systems/rate-limiter-design|Rate Limiter Design]] — Designing token and request rate limits for LLM APIs and gateways
+- [[wiki/agent-systems/rationale-generation|Rationale Generation]] — Producing reasons for actions or answers
+- [[wiki/agent-systems/recruiting-agents|Recruiting Agents]] — Agents that screen candidates, schedule interviews, and draft evaluations
+- [[wiki/agent-systems/recursive-feedback-loops|Recursive Feedback Loops]] — Loops where a system's output feeds back into its own next iteration
+- [[wiki/agent-systems/recursive-self-improvement|Recursive Self-Improvement]] — Systems that modify their own code, prompts, and strategies across escalating loops
+- [[wiki/agent-systems/reflection-agents|Reflection Agents]] — Agents that use memory of past attempts to guide future behavior
+- [[wiki/agent-systems/requests-pages|Requests Pages]] — Pages where work can be formally requested
+- [[wiki/agent-systems/research-agents|Research Agents]] — Agents that gather, synthesize, and cite information across many sources
+- [[wiki/agent-systems/responsibility-ai|AI Responsibility]] — Attributing responsibility for AI outcomes
+- [[wiki/agent-systems/retry-and-backoff-patterns|Retry and Backoff Patterns]] — Repeating failed operations with delays to handle transient failures
+- [[wiki/agent-systems/retry-jitter|Retry Jitter]] — Randomized delay added to retries to prevent synchronized retry storms
+- [[wiki/agent-systems/retry-strategies|Retry Strategies]] — Policies for recovering from transient failures without masking real errors
+- [[wiki/agent-systems/review-queues-wiki|Review Queues]] — Queues that order articles and tasks for review
+- [[wiki/agent-systems/reward-locking|Reward Locking]] — Freezing a reward function against drift
+- [[wiki/agent-systems/risk-bounded-agents|Risk-Bounded Agents]] — Agents whose behavior is constrained by explicit safety limits
+- [[wiki/agent-systems/rollback-and-recovery|Rollback and Recovery]] — Returning a system to a known-good state after a failed change
+- [[wiki/agent-systems/sales-agents|Sales Agents]] — Agents that qualify leads, draft outreach, and support sales conversations
+- [[wiki/agent-systems/satisficing-agents|Satisficing Agents]] — Agents that stop at 'good enough' rather than optimizing maximally
+- [[wiki/agent-systems/scaffold-loops|Scaffold Loops]] — Agent frameworks that wrap models with tools, memory, and control flow
+- [[wiki/agent-systems/self-correction|Self-Correction]] — An agent repairing its own errors, with or without external feedback
+- [[wiki/agent-systems/self-critique|Self-Critique]] — A model generating its own critical feedback on its outputs
+- [[wiki/agent-systems/self-evaluation|Self-Evaluation]] — A model or agent scoring its own outputs or progress
+- [[wiki/agent-systems/self-modeling|Self-Modeling]] — An agent maintaining a model of itself and its own capacities
+- [[wiki/agent-systems/self-play|Self-Play]] — Training by playing against copies of oneself
+- [[wiki/agent-systems/self-reflection-loops|Self-Reflection Loops]] — Agents that examine their own outputs and improve on the next attempt
+- [[wiki/agent-systems/session-replay-agents|Session Replay for Agents]] — Replaying recorded agent sessions to debug or retest behavior
+- [[wiki/agent-systems/session-state-machine|Session State Machine]] — Modeling an agent session as a finite state machine with explicit transitions
+- [[wiki/agent-systems/shadow-mode-evaluation|Shadow Mode Evaluation]] — Running new models or agents in parallel to production without affecting users
+- [[wiki/agent-systems/signaling-ai|Signaling in AI]] — Actions that convey information about an agent
+- [[wiki/agent-systems/simulation-environments-agents|Simulation Environments for Agents]] — Sandboxed worlds where agents can be tested against realistic scenarios
+- [[wiki/agent-systems/skill-acquisition-loops|Skill Acquisition Loops]] — Cycles in which agents learn and consolidate new skills
+- [[wiki/agent-systems/sophistry|Sophistry]] — Plausible-sounding but misleading reasoning
+- [[wiki/agent-systems/stated-vs-hidden-goals|Stated vs Hidden Goals]] — Comparing what a system says it wants with what it does
+- [[wiki/agent-systems/static-analysis-agents|Static Analysis Agents]] — Agents that review code without executing it to find bugs and smells
+- [[wiki/agent-systems/steganography-ai|Steganography in AI]] — Hiding information inside model outputs
+- [[wiki/agent-systems/strategic-deception|Strategic Deception]] — Deception used to advance long-term goals
+- [[wiki/agent-systems/sub-agent-delegation|Sub-Agent Delegation]] — Spawning dedicated agents for isolated subtasks and collecting their results
+- [[wiki/agent-systems/summarization-agents|Summarization Agents]] — Agents specialized in condensing documents, conversations, and reports
+- [[wiki/agent-systems/supervisor-pattern-swarm|Supervisor Pattern and Swarm]] — Two coordination styles: a central supervisor directing workers, or a flat swarm of peers
+- [[wiki/agent-systems/task-scheduling-agents|Task Scheduling for Agents]] — Assigning, ordering, and dispatching work across agents and capacity
+- [[wiki/agent-systems/telemetry-for-agents|Telemetry for Agents]] — Structured logs, metrics, and traces that make agent behavior observable
+- [[wiki/agent-systems/test-time-compute|Test-Time Compute]] — Extra computation spent during inference to improve answers
+- [[wiki/agent-systems/testing-agents|Testing Agents]] — Agents that generate, run, and repair tests for codebases
+- [[wiki/agent-systems/time-consistency-ai|Time Consistency]] — Preferences that do not change with time passage
+- [[wiki/agent-systems/tool-selection-policies|Tool Selection Policies]] — Rules deciding which tools an agent may use and when
+- [[wiki/agent-systems/tool-use-patterns|Tool Use Patterns]] — Design patterns for expressing agent actions as discrete, schematized tool calls
+- [[wiki/agent-systems/translation-agents|Translation Agents]] — Agents that translate text with context awareness and quality control
+- [[wiki/agent-systems/transparency-ai|Transparency in AI]] — Making AI systems inspectable and understandable
+- [[wiki/agent-systems/triage-workflow|Triage Workflow]] — The process of routing incoming issues to the right owner and priority
+- [[wiki/agent-systems/truthfulness-ai|Truthfulness in AI]] — Systems that report what they know, not what flatters
+- [[wiki/agent-systems/value-locking|Value Locking]] — Freezing a value system against change
+- [[wiki/agent-systems/verifier-agents|Verifier Agents]] — Agents that check outputs for correctness, safety, or compliance
+- [[wiki/agent-systems/voting-agents|Voting Agents]] — Aggregating multiple agent answers through voting to reach a final decision

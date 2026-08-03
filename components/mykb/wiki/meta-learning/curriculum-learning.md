@@ -26,5 +26,5 @@ Curriculum learning trains models on easy examples first and gradually introduce
 - [[wiki/memory/just-in-time-learning|Just-in-Time Learning]] — the human-side contrast to scheduled curricula
 - [[wiki/memory/active-recall|Active Recall]] — human retrieval practice as a curriculum
 - [[wiki/meta-learning/cluster-analysis|Cluster Analysis]] — groups data into difficulty tiers
-- [[wiki/meta-learning/index|Meta-Learning]] — learning-to-learn strategies include curricula
-- [[wiki/questions/index|Open Questions]] — open questions on curriculum design
+- [[wiki/meta-learning/00-index|Meta-Learning]] — learning-to-learn strategies include curricula
+- [[wiki/questions/00-index|Open Questions]] — open questions on curriculum design

@@ -19,13 +19,13 @@ Syntax is usually described with a formal grammar, such as a context-free gramma
 
 Conformance testing checks whether an implementation actually follows the spec, and the spec's precision determines how much room interpreters and compilers have to disagree. Ambiguities in a spec surface as subtle bugs, which is why language specs are revised through formal processes and errata.
 
-In agent sessions, language specs appear when building parsers, validating tool output, or debugging why a script behaves differently across environments. The same discipline applies to API specifications, which document endpoints, schemas, and errors as a contract between client and server. This connects the entry to the [[wiki/web-platforms/index|Api Rest]] domain and to the [[wiki/web-platforms/index|Llm Topics]] entries in this knowledge base.
+In agent sessions, language specs appear when building parsers, validating tool output, or debugging why a script behaves differently across environments. The same discipline applies to API specifications, which document endpoints, schemas, and errors as a contract between client and server. This connects the entry to the [[wiki/web-platforms/00-index|Api Rest]] domain and to the [[wiki/web-platforms/00-index|Llm Topics]] entries in this knowledge base.
 
 The entry serves as a pointer for both meanings: the formal specification of a language and the specification of the language an agent should use to communicate with a system.
 
 For agent tooling, a written spec also serves as documentation and as the input to conformance checks, which keeps generated output predictable across versions.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Language Spec
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Language Spec
 
 ## Related Entities
 

@@ -22,4 +22,4 @@ Weaviate is an open-source vector database that ships vector, lexical (BM25), an
 - [[wiki/data-storage/hybrid-search|Hybrid Search]] — the pattern Weaviate bakes in
 - [[wiki/data-storage/embeddings|Embeddings]] — the vectors it stores
 - [[wiki/data-storage/knowledge-graph|Knowledge Graph]] — graph-adjacent retrieval features
-- [[wiki/data-storage/index|Data Storage]] — vector database family
+- [[wiki/data-storage/00-index|Data Storage]] — vector database family

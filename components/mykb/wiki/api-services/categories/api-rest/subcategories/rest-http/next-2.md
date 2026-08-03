@@ -10,7 +10,7 @@ React framework with server-side rendering, file-based routing, API routes, and 
 
 **Related technologies:** android, api, auth, backend
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Next 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Next 2
 
 ## Related Entities
 

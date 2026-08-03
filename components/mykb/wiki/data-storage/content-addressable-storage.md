@@ -29,7 +29,7 @@ Content-addressable storage (CAS) names every item by the hash of its contents, 
 - [[wiki/data-storage/deduplication|Deduplication]]
 - [[wiki/memory/provenance|Provenance]]
 - [[wiki/data-storage/vector-databases|Vector Databases]]
-- [[wiki/data-storage/index|Data Storage]]
+- [[wiki/data-storage/00-index|Data Storage]]
 - [[wiki/concepts/promotion-readiness|Promotion Readiness]]
 - [[wiki/dev-tools/global-link-check|Global Link Check]]
 - [[wiki/concepts/explainers|Explainers]]

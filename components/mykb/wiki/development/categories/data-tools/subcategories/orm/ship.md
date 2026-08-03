@@ -14,7 +14,7 @@ IP (Internet Protocol) — the principal network protocol for routing packets ac
 
 **Related topics:** ide, isr, orm, rest
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Ship
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Ship
 
 ## Overview
 

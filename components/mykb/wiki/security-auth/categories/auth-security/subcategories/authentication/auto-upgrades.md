@@ -21,7 +21,7 @@ The entity is recorded because the sessions encountered it as a concrete concern
 
 
 Operational automation is the companion of technical safeguards: upgrade windows, maintenance pages, and monitoring that alerts when a rollout deviates from expectation. Documentation matters too, because operators need to know what changed in each release to triage regressions quickly. The practice works best when upgrades are boring and routine, which is exactly the state the sessions were moving toward.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Auto Upgrades
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Auto Upgrades
 
 ## Related Entities
 

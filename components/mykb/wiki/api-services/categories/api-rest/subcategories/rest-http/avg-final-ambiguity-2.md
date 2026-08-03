@@ -21,7 +21,7 @@ The related entities below list the neighboring API client records observed in t
 
 
 Aggregating ambiguity also supports automation. An agent can use the final score to decide whether to proceed, ask for clarification, or escalate to a human, and it can record the score so that later passes can tune the threshold. This metric is an example of a wider class of confidence signals that recursive systems track: the system not only acts but also knows how sure it is, and that knowledge drives the next action.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Avg Final Ambiguity 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Avg Final Ambiguity 2
 
 ## Related Entities
 

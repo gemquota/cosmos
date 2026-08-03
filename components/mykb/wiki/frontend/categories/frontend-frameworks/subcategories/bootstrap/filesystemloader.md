@@ -12,7 +12,7 @@ resource: ""
 
 FileSystemLoader appears in 1 session(s) categorized as API, Backend, Shell. Related topics: api, backend, bash, bootstrap.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Filesystemloader
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Filesystemloader
 
 ## Related Entities
 

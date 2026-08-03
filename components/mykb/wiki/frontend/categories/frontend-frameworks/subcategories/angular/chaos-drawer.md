@@ -10,7 +10,7 @@ resource: ""
 
 ## Chaos Drawer
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Chaos Drawer
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Chaos Drawer
 
 ## Related Entities
 

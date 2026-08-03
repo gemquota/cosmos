@@ -14,7 +14,7 @@ FastAPI — a modern Python async web framework with automatic OpenAPI documenta
 
 **Related topics:** bash, cli, css, dom
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Tap
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Tap
 
 ## Overview
 

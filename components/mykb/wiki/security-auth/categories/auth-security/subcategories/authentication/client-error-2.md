@@ -23,7 +23,7 @@ Error handling is the discipline that makes CLIs trustworthy: clear messages, se
 The Client Error name also suggests the other half of the CLI contract: what the program prints when something goes wrong. A good client error names the operation that failed, the reason in terms a user can act on, and any remediation — re-run with a flag, check credentials, or fix the argument. Errors that are vague force guesswork, while errors that are precise make the interface feel trustworthy, which is the standard the sessions were working toward.
 **Related topics:** android, api, auth, authentication, bash
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Client Error 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Client Error 2
 
 ## Related Entities
 

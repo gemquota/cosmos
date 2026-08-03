@@ -13,7 +13,7 @@ status: "growing"
 
 DeFi appears in 1 session(s) categorized as Frontend, Shell, Version Control. Related topics: bash, ci/cd, css, dom.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Defi
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Defi
 
 ## Decentralized Finance
 

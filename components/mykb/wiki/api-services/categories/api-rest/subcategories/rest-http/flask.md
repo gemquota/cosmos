@@ -13,7 +13,7 @@ resource: ""
 Flask is a lightweight WSGI web application framework in Python. Designed for simplicity and flexibility, with an extensive extension ecosystem.
 Referenced in session 019f2765
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Flask
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Flask
 
 ## Related Entities
 

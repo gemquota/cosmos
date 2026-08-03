@@ -13,7 +13,7 @@ AABB — Axis-Aligned Bounding Box. A rectangular collision detection primitive 
 
 **Related topics:** ajax, android, angular, api, bash
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Aabb 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Aabb 2
 
 ## Related Entities
 

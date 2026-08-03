@@ -25,7 +25,7 @@ The related entities listed below record neighboring concepts observed in the sa
 Monitoring is a recurring theme in the observed sessions. Agents emit structured logs of their decisions, tool calls, and results, and dashboards aggregate those events so that failures can be traced to a specific step. This observability is what makes multi-agent orchestration tractable: when the system misbehaves, the relevant session can be replayed and the faulty agent isolated and improved.
 **Related topics:** api, auth, bash, bug
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Agent Active
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Agent Active
 
 ## Related Entities
 

@@ -12,7 +12,7 @@ resource: ""
 
 ProbMap appears in 2 session(s) categorized as API, Cloud, Debugging, Shell. Related topics: api, aws, bash, bootstrap.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Probmap 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Probmap 2
 
 ## Related Entities
 

@@ -9,7 +9,7 @@ resource: ""
 ---
 ## Pulse 2
 PULSE appears in 2 session(s) categorized as API, Backend, Shell. Related topics: acronym, api, backend, bash, bootstrap, cli, dom.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Overview
 PULSE is an acronym referenced in two Cosmos sessions grouped under API, Backend, and Shell, with related topics acronym, api, backend, bash, bootstrap, cli, and dom. The term most plausibly describes a periodic signal — a heartbeat or status tick — that a process emits so other systems know it is alive and healthy. In API and backend work, pulses appear as health pings, keepalive messages, or telemetry heartbeats sent on an interval.
 The shell and CLI association suggests the pulse was also observable from the command line, for example a status command that reports the last heartbeat time, the interval, and the health of the emitting process. Designing a pulse well means choosing the interval, the failure timeout, and what the receiver does when pulses stop: alerts, restarts, or removal from a load-balanced pool.

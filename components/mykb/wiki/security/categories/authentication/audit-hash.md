@@ -23,7 +23,7 @@ Audit hashes also support accountability: logging a hash of each artifact makes 
 Integrity checking works because of the avalanche property: changing a single bit of input produces a completely different digest, so any modification, however small, is detected. Verification compares the recomputed digest with the expected one, and the comparison itself must be constant-time when the digest is a secret, to avoid leaking information through timing. These details are why hashing appears in so many security mechanisms, from signatures and certificates to content-addressed storage.
 **Related topics:** auth, aws, bash, bootstrap
 
-**Domain:** Security & Authentication › [[wiki/web-platforms/index|Security]] › [[wiki/web-platforms/index|Authentication]]
+**Domain:** Security & Authentication › [[wiki/web-platforms/00-index|Security]] › [[wiki/web-platforms/00-index|Authentication]]
 
 ## Related Entities
 

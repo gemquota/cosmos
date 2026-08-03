@@ -28,5 +28,5 @@ A vector database stores embedding vectors alongside metadata and answers approx
 - [[wiki/data-storage/qdrant|Qdrant]] — Rust vector database with strong filtering
 - [[wiki/data-storage/embeddings|Embeddings]] — the vectors such databases index
 - [[wiki/data-storage/hybrid-search|Hybrid Search]] — lexical plus vector retrieval in one system
-- [[wiki/data-storage/index|Data Storage]] — home directory for storage technologies
+- [[wiki/data-storage/00-index|Data Storage]] — home directory for storage technologies
 - [[wiki/concepts/mykb-research-report|Mykb Research Report]] — surveys vector search options for mykb

@@ -22,7 +22,7 @@ In agent sessions, RAG appears wherever the agent must answer from a corpus rath
 
 **Related topics:** api, backend, bash, bug
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Average Session
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Average Session
 
 ## Related Entities
 

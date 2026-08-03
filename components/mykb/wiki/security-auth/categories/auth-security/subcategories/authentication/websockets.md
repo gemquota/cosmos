@@ -13,7 +13,7 @@ WebSocket — a full-duplex communication protocol over TCP for real-time bidire
 
 **Related topics:** android, api, auth, authentication
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Websockets
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Websockets
 
 ## Related Entities
 

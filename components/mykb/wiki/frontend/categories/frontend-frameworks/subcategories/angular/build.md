@@ -13,7 +13,7 @@ esbuild — an extremely fast JavaScript bundler and minifier written in Go.
 
 **Related topics:** angular, api, auth
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Build
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Build
 
 ## Related Entities
 

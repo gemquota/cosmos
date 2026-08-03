@@ -21,7 +21,7 @@ The session context for this page covers API, cloud, mobile, and shell topics, s
 
 
 Performance is the other reason the graph model succeeds. Audio runs on a real-time thread with tight latency budgets, and the API is designed so that most processing happens without per-sample JavaScript work. Developers still need to be careful: creating nodes inside the audio callback, or connecting large graphs on every frame, can cause glitches. Tools for visualizing node connections and monitoring the output level make such problems much easier to diagnose.
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Audionode
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Audionode
 
 ## Related Entities
 

@@ -13,7 +13,7 @@ IDE (Integrated Development Environment) — a software application for software
 
 **Related topics:** api, aws, bash, bootstrap
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Missing Complexity Slider
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Missing Complexity Slider
 
 ## Related Entities
 

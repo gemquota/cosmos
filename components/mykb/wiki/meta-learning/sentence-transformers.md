@@ -22,4 +22,4 @@ Sentence Transformers (SBERT) fine-tunes BERT-style models to map sentences to c
 - [[wiki/data-storage/semantic-search|Semantic Search]] — SBERT's primary application
 - [[wiki/meta-learning/bi-encoder|Bi-Encoder]] — the architecture SBERT uses
 - [[wiki/meta-learning/cross-encoder|Cross-Encoder]] — the reranking counterpart
-- [[wiki/meta-learning/index|Meta-Learning]] — representation learning family
+- [[wiki/meta-learning/00-index|Meta-Learning]] — representation learning family

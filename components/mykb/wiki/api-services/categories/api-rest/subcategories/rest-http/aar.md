@@ -13,7 +13,7 @@ status: "growing"
 
 AAR appears in 1 session(s) categorized as API, Frontend, Mobile. Related topics: acronym, android, angular, api.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Aar
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Aar
 
 ## What AAR Means
 

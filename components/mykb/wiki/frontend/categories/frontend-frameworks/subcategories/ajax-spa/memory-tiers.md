@@ -21,7 +21,7 @@ In the API and security context where this page appears, tiering governs perform
 
 
 The hierarchical view also shapes capacity planning. If hot data fits in memory, a service can serve most requests without touching disk; if it does not, cache misses dominate and latency rises. Teams measure hit rates and tier usage to decide where to add capacity, and security teams check that data moving between tiers respects access boundaries. Both concerns are reflected in the API and Security tags on this page.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Memory Tiers
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Memory Tiers
 
 ## Related Entities
 

@@ -12,7 +12,7 @@ resource: ""
 
 Cyn appears in 1 session(s) categorized as API, Shell. Related topics: guid, ide, rest, spa, terminal.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Web Tools]]
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Web Tools]]
 
 ## Related Entities
 

@@ -13,7 +13,7 @@ resource: ""
 
 CDP appears in 7 session(s) categorized as API, Cloud, Frontend, Mobile, Security, Shell. Related topics: acronym, android, angular, api, auth, authentication, aws, bash.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Cdp 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Cdp 2
 
 ## Overview
 

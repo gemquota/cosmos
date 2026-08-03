@@ -13,7 +13,7 @@ RubyGems — the package manager for the Ruby programming language.
 
 **Related topics:** api, auth, bash, bug
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Gemini Bridge
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Gemini Bridge
 
 ## Related Entities
 

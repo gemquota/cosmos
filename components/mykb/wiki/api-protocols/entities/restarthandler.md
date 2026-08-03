@@ -14,7 +14,7 @@ REST (Representational State Transfer) — an architectural style for designing 
 
 **Related topics:** android, angular, api, auth
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Restarthandler
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Restarthandler
 
 ## Overview
 

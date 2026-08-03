@@ -13,7 +13,7 @@ status: "growing"
 
 Complete Reference appears in 2 session(s) categorized as API, Cloud, DevOps, Frontend, Security, Shell, Version Control. Related topics: api, auth, bash, bootstrap, ci/cd, css, deployment, documentation, dom.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Overview
 

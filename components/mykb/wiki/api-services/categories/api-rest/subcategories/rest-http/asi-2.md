@@ -24,7 +24,7 @@ Related work on recursive self-improvement and multi-agent orchestration in this
 
 Acronym referenced in session 00b8d8ce
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Asi 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Asi 2
 
 ## Related Entities
 

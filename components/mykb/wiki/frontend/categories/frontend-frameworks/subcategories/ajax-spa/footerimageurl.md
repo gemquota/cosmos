@@ -13,7 +13,7 @@ status: "growing"
 
 FooterImageURL appears in 1 session(s) categorized as API, Mobile, Security. Related topics: ajax, android, api, auth.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Footerimageurl
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Footerimageurl
 
 ## Overview
 

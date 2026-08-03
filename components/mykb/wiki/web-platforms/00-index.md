@@ -1,0 +1,179 @@
+---
+type: "index"
+hub: true
+title: "Web Platforms Index"
+description: "Listing of the web-platforms/ folder (162 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
+# Web Platforms
+
+Part of [[wiki/index|Wiki Index]]. 162 pages.
+
+## Subfolders
+- entities/ — 1 pages
+
+## Pages
+- [[wiki/web-platforms/accessibility-web|Web Accessibility]] — Making web interfaces usable by everyone: semantics, keyboard support, ARIA, and WCAG
+- [[wiki/web-platforms/allowlist-validation|Allowlist Validation]] — Accepting only explicitly permitted values and formats
+- [[wiki/web-platforms/aspect-ratio-css|aspect-ratio in CSS]] — The aspect-ratio property reserving element proportions
+- [[wiki/web-platforms/aspect-ratio-images|Aspect Ratio for Images]] — Using width and height attributes to reserve image space
+- [[wiki/web-platforms/atomic-writes|Atomic Writes]] — Replacing files via temp file and rename to avoid partial states
+- [[wiki/web-platforms/browser-engines|Browser Engines]] — The rendering engines that parse HTML, CSS, and JavaScript to display web pages
+- [[wiki/web-platforms/browser-rendering-pipeline|Browser Rendering Pipeline]] — How browsers turn HTML, CSS, and JavaScript into pixels: parse, style, layout, paint, composite
+- [[wiki/web-platforms/caniuse-practice|Can I Use in Practice]] — Using caniuse data to decide feature support targets
+- [[wiki/web-platforms/canvas-2d|Canvas 2D API]] — Immediate-mode 2D drawing: paths, text, images, and pixel access on a bitmap surface
+- [[wiki/web-platforms/clamp-practice|clamp() in Practice]] — Fluid CSS values clamped between minimum and maximum bounds
+- [[wiki/web-platforms/cumulative-layout-shift|Cumulative Layout Shift]] — Techniques that prevent unexpected layout shift
+- [[wiki/web-platforms/color-blind-considerations|Color Blind Accessibility]] — Designing palettes that work without relying on hue alone
+- [[wiki/web-platforms/color-mix|color-mix() CSS]] — Mixing two colors in a chosen color space
+- [[wiki/web-platforms/color-spaces|CSS Color Spaces]] — sRGB, Display P3, and other color spaces in CSS
+- [[wiki/web-platforms/component-architecture|Component Architecture]] — Building UIs from reusable, composable pieces that encapsulate markup, style, and behavior
+- [[wiki/web-platforms/compositing-triggers|Compositing Triggers]] — Operations that move work to the compositor thread
+- [[wiki/web-platforms/contain-property|CSS Containment]] — Isolating element style, layout, and paint to speed rendering
+- [[wiki/web-platforms/container-relative-units|Container Query Units]] — Length units relative to a container's size
+- [[wiki/web-platforms/content-visibility|content-visibility CSS]] — Skipping rendering of off-screen content to cut layout cost
+- [[wiki/web-platforms/contrast-ratios|Contrast Ratios]] — WCAG luminance contrast for text legibility
+- [[wiki/web-platforms/css-animations|CSS Animations]] — Keyframe-driven property animation with iteration control
+- [[wiki/web-platforms/css-architecture|CSS Architecture]] — Organizing stylesheets for maintainability: naming, specificity, layers, and design tokens
+- [[wiki/web-platforms/css-grid-practice|CSS Grid in Practice]] — Two-dimensional layout: tracks, areas, alignment, and auto-placement
+- [[wiki/web-platforms/css-layout|CSS Layout]] — The mechanisms — flexbox, grid, floats — that position elements on the page
+- [[wiki/web-platforms/css-transforms|CSS Transforms]] — translate, scale, and rotate operations on elements
+- [[wiki/web-platforms/css-transitions|CSS Transitions]] — Interpolating property changes over a duration
+- [[wiki/web-platforms/css-variables-theming|CSS Variables and Theming]] — Custom properties, inheritance, and token-driven light/dark theming
+- [[wiki/web-platforms/cumulative-layout-shift|Cumulative Layout Shift]] — CLS: quantifying unexpected visible layout movement
+- [[wiki/web-platforms/dark-mode-practice|Dark Mode Practice]] — Implementing themeable dark interfaces without jarring contrast
+- [[wiki/web-platforms/date-formatting|Date Formatting]] — Locale-aware date and time presentation
+- [[wiki/web-platforms/denylist-validation|Denylist Validation]] — Blocking known-bad patterns instead of allowing known-good ones
+- [[wiki/web-platforms/device-detection|Device Detection]] — Classifying devices via UA, Client Hints, and feature probing
+- [[wiki/web-platforms/device-pixel-ratio|Device Pixel Ratio]] — CSS pixels per physical pixel on a screen
+- [[wiki/web-platforms/dns-prefetch|DNS Prefetch]] — Resolving hostnames early to cut navigation latency
+- [[wiki/web-platforms/dom-and-cssom|DOM and CSSOM]] — The object models behind HTML and CSS that drive rendering and scripting
+- [[wiki/web-platforms/dom-clobbering|DOM Clobbering]] — HTML attributes shadowing DOM globals to confuse scripts
+- [[wiki/web-platforms/dom-manipulation|DOM Manipulation]] — Reading and changing the Document Object Model to make pages interactive
+- [[wiki/web-platforms/dom-xss|DOM XSS]] — Injection sinks in client-side JavaScript instead of server HTML
+- [[wiki/web-platforms/drag-and-drop-web|Drag and Drop on the Web]] — HTML5 drag and drop, pointer-event alternatives, and accessible reordering
+- [[wiki/web-platforms/vw-vh|vw and vh Units]] — Handling mobile browser chrome with dvh and svh
+- [[wiki/web-platforms/em-vs-rem|em vs rem]] — Relative font units: parent-scoped versus root-scoped sizing
+- [[wiki/web-platforms/error-monitoring-web|Error Monitoring for the Web]] — Capturing, aggregating, and triaging client-side errors, crashes, and performance regressions
+- [[wiki/web-platforms/evergreen-browsers|Evergreen Browsers]] — Self-updating browsers and their implications for support policy
+- [[wiki/web-platforms/feature-queries|CSS Feature Queries]] — @supports blocks gating styles on capability
+- [[wiki/web-platforms/file-locks|File Locking]] — Advisory locks coordinating concurrent file access
+- [[wiki/web-platforms/flexbox-practice|Flexbox in Practice]] — One-dimensional layout: main and cross axes, growth, shrinking, and alignment
+- [[wiki/web-platforms/font-display-swap|font-display: swap]] — Controlling how long text waits before fallback fonts render
+- [[wiki/web-platforms/font-fallbacks|Font Fallbacks]] — Declaring font-family fallback stacks for missing glyphs and files
+- [[wiki/web-platforms/font-loading-strategy|Font Loading Strategy]] — Serving web fonts fast and without layout shift: subsetting, preload, and font-display
+- [[wiki/web-platforms/font-shift|FOIT and Font Shift]] — Layout jank caused by webfont loading and swapping
+- [[wiki/web-platforms/forms-practice|Forms in Practice]] — Building robust HTML forms: semantics, validation, accessibility, and progressive enhancement
+- [[wiki/web-platforms/frame-budget|Frame Budget]] — The 16ms per-frame time budget for smooth 60fps interfaces
+- [[wiki/web-platforms/geolocation-api|Geolocation API]] — Accessing device location with permission, accuracy options, and privacy constraints
+- [[wiki/web-platforms/graceful-enhancement|Graceful Enhancement]] — Building core experiences that work before layering enhancements
+- [[wiki/web-platforms/html5-apis|HTML5 APIs]] — The platform APIs that moved the web beyond pages: storage, media, geolocation, sensors, and more
+- [[wiki/web-platforms/hydration-strategies|Hydration Strategies]] — Making server-rendered HTML interactive: full, partial, islands, and streaming hydration
+- [[wiki/web-platforms/i18n-web|Web Internationalization]] — Designing web apps for multiple languages, scripts, and regions
+- [[wiki/web-platforms/icon-fonts|Icon Fonts]] — Rendering icons as glyphs, with their trade-offs versus SVG
+- [[wiki/web-platforms/indexeddb-practice|IndexedDB in Practice]] — The browser's transactional object store for structured data, offline-first apps, and caches
+- [[wiki/web-platforms/infinite-scroll-practice|Infinite Scroll in Practice]] — Loading more content as the user approaches the bottom, with pagination and stability caveats
+- [[wiki/web-platforms/inline-svg|Inline SVG]] — Embedding SVG markup directly in HTML for styleable graphics
+- [[wiki/web-platforms/input-latency|Input Latency]] — Delay from user input to visible response
+- [[wiki/web-platforms/input-normalization|Input Normalization]] — Canonicalizing input before validation and storage
+- [[wiki/web-platforms/interaction-to-next-paint|Interaction to Next Paint]] — INP: the Core Web Vitals metric for input responsiveness
+- [[wiki/web-platforms/javascript-event-loop|JavaScript Event Loop]] — How the runtime schedules tasks, microtasks, and rendering on the single main thread
+- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]] — The environments that execute JavaScript: V8, SpiderMonkey, JavaScriptCore, and Node/Deno/Bun
+- [[wiki/web-platforms/l10n-practice|Localization Practice]] — Translating, adapting, and testing content for specific locales
+- [[wiki/web-platforms/largest-contentful-paint|Largest Contentful Paint]] — LCP: timing the largest visible content element
+- [[wiki/web-platforms/layout-triggers|Layout Triggers]] — Property changes that invalidate and recompute layout
+- [[wiki/web-platforms/lazy-loading-practice|Lazy Loading in Practice]] — Deferring off-screen images, iframes, and code until needed, and knowing when not to
+- [[wiki/web-platforms/link-rel-attributes|Link rel Attributes]] — The rel values that control resource hints and relationships
+- [[wiki/web-platforms/locale-data|Locale Data]] — CLDR datasets powering number, date, and plural rules per locale
+- [[wiki/web-platforms/logical-properties|CSS Logical Properties]] — Flow-relative inset, margin, and padding properties for LTR and RTL
+- [[wiki/web-platforms/machine-learning-web|Machine Learning on the Web]] — Running ML models in the browser: ONNX Runtime, TensorFlow.js, WebNN, and WebGPU
+- [[wiki/web-platforms/media-queries-practice|Media Queries in Practice]] — Width, height, and interaction media feature usage
+- [[wiki/web-platforms/message-formatting|Message Formatting]] — ICU message syntax for interpolating translated strings with placeholders
+- [[wiki/web-platforms/minification-practice|Minification Practice]] — Shrinking HTML, CSS, and JavaScript payloads through whitespace removal, mangling, and tree shaking
+- [[wiki/web-platforms/mutation-xss|Mutation XSS]] — Browsers mutating markup into executable script during parsing
+- [[wiki/web-platforms/number-formatting|Number Formatting]] — Locale-aware digit grouping, decimals, and currency display
+- [[wiki/web-platforms/offscreen-canvas|OffscreenCanvas]] — Rendering canvas work on a worker thread away from the main thread
+- [[wiki/web-platforms/output-encoding|Output Encoding]] — Encoding dynamic values for the context they are emitted into
+- [[wiki/web-platforms/paint-triggers|Paint Triggers]] — Property changes that force repainting of pixels
+- [[wiki/web-platforms/passkeys-practice|Passkeys in Practice]] — Phishing-resistant, synced credentials that replace passwords across devices
+- [[wiki/web-platforms/path-normalization|Path Normalization]] — Resolving dot segments and traversal before filesystem access
+- [[wiki/web-platforms/payment-request-api|Payment Request API]] — Standardized browser checkout: payment methods, shipping, and the user approval sheet
+- [[wiki/web-platforms/picture-element|picture Element]] — Art-directed and format-variant responsive images
+- [[wiki/web-platforms/plural-rules|Plural Rules]] — Locale-dependent plural categories such as one, few, and many
+- [[wiki/web-platforms/pointer-events-css|pointer-events CSS]] — Controlling whether elements are hit-test targets
+- [[wiki/web-platforms/polyfills-practice|Polyfills in Practice]] — Emulating missing browser APIs for older engines
+- [[wiki/web-platforms/polyglot-xss|Polyglot XSS]] — Payloads valid in multiple contexts to defeat filters
+- [[wiki/web-platforms/preconnect-practice|Preconnect Practice]] — Opening early connections to origins that will be used
+- [[wiki/web-platforms/prefers-color-scheme|prefers-color-scheme]] — Media query detecting light or dark system preference
+- [[wiki/web-platforms/prefers-contrast|prefers-contrast]] — Media query adapting UI to high-contrast preferences
+- [[wiki/web-platforms/prefetch-practice|Prefetch Practice]] — Fetching likely-next resources during idle time
+- [[wiki/web-platforms/preload-practice|Preload Practice]] — Fetching critical resources early with link rel=preload
+- [[wiki/web-platforms/priority-hints|Priority Hints]] — The fetchpriority attribute steering resource loading order
+- [[wiki/web-platforms/progressive-web-apps|Progressive Web Apps]] — Web applications that use platform capabilities — installability, offline, push — while remaining web-delivered
+- [[wiki/web-platforms/prototype-pollution-web|Prototype Pollution on the Web]] — Mutating Object.prototype via merge operations to alter app behavior
+- [[wiki/web-platforms/px-vs-rem|px vs rem]] — When fixed pixels or root-relative rems suit a design
+- [[wiki/web-platforms/race-conditions-web|Race Conditions on the Web]] — Concurrent requests and clients producing inconsistent state
+- [[wiki/web-platforms/realtime-collaboration|Realtime Collaboration]] — CRDTs, operational transforms, and sync protocols for multi-user editing
+- [[wiki/web-platforms/reflected-xss|Reflected XSS]] — Injection echoed back in a single response without storage
+- [[wiki/web-platforms/render-blocking|Render Blocking]] — Resources that delay first paint until fetched and parsed
+- [[wiki/web-platforms/repaint-vs-reflow|Repaint vs Reflow]] — Distinguishing pixel repainting from layout reflow work
+- [[wiki/web-platforms/reserved-space|Reserving Layout Space]] — Holding dimensions for images and ads to prevent shift
+- [[wiki/web-platforms/responsive-breakpoints|Responsive Breakpoints]] — Choosing content-driven width thresholds for layout changes
+- [[wiki/web-platforms/responsive-design-systems|Responsive Design Systems]] — Fluid layouts, breakpoints, and adaptive behavior across viewport sizes and input modes
+- [[wiki/web-platforms/responsive-units|Responsive Units]] — Choosing units that scale with viewport, container, or root
+- [[wiki/web-platforms/retina-displays|Retina Displays]] — High-density screens and what they mean for image assets
+- [[wiki/web-platforms/rtl-support|RTL Support]] — Building interfaces that mirror correctly for right-to-left languages
+- [[wiki/web-platforms/safe-html-rendering|Safe HTML Rendering]] — Rendering user content as text or through hardened HTML pipelines
+- [[wiki/web-platforms/sanitization-practice|Sanitization Practice]] — Cleaning untrusted input while preserving intended structure
+- [[wiki/web-platforms/scroll-behavior|scroll-behavior CSS]] — Controlling smooth versus instant scroll navigation
+- [[wiki/web-platforms/scroll-snap|Scroll Snap]] — Aligning scroll positions to defined snap points
+- [[wiki/web-platforms/sizes-attribute|sizes Attribute]] — Telling the browser rendered image widths for candidate selection
+- [[wiki/web-platforms/speculative-loading|Speculative Loading]] — Preload, prefetch, and prerender heuristics for likely navigation
+- [[wiki/web-platforms/speech-synthesis-web|Speech Synthesis on the Web]] — The SpeechSynthesis API: text-to-speech voices, rates, and browser differences
+- [[wiki/web-platforms/sprite-sheets|Sprite Sheets]] — Combining many small images into one file to cut requests
+- [[wiki/web-platforms/srcset-practice|srcset in Practice]] — Serving density- and width-matched image candidates
+- [[wiki/web-platforms/color-spaces|CSS Color Spaces]] — Wide-gamut color and browser support differences
+- [[wiki/web-platforms/stacking-contexts|Stacking Contexts]] — The z-axis grouping that determines paint order
+- [[wiki/web-platforms/state-management|State Management]] — The patterns and tools for tracking and synchronizing the data a UI depends on
+- [[wiki/web-platforms/sticky-position|position: sticky]] — Elements that stick within their scroll container boundaries
+- [[wiki/web-platforms/stored-xss|Stored XSS]] — Injection persisted on the server and served to many victims
+- [[wiki/web-platforms/streaming-rendering|Streaming Rendering]] — Sending HTML in chunks as data becomes ready, so first paint happens before the whole page renders
+- [[wiki/web-platforms/subsetting-fonts|Font Subsetting]] — Trimming font files to only the glyphs a site actually uses
+- [[wiki/web-platforms/supports-rule|@supports Rule]] — Conditional CSS based on property and value support
+- [[wiki/web-platforms/svg-animation|SVG Animation]] — Animating SVG with CSS, SMIL, and JavaScript APIs
+- [[wiki/web-platforms/svg-scaling|SVG Scaling]] — Keeping vector graphics crisp across sizes and densities
+- [[wiki/web-platforms/symlink-following|Symlink Following]] — Attacks that traverse symbolic links during file operations
+- [[wiki/web-platforms/template-escaping|Template Escaping]] — Auto-escaping values inside templating engines
+- [[wiki/web-platforms/timezone-formatting|Timezone Handling]] — Converting, naming, and formatting instants across time zones
+- [[wiki/web-platforms/toctou|TOCTOU Vulnerabilities]] — Time-of-check to time-of-use gaps in authorization and files
+- [[wiki/web-platforms/touch-action-css|touch-action CSS]] — Declaring how browser touch gestures may manipulate an element
+- [[wiki/web-platforms/touch-gestures|Touch Gestures]] — Touch events, pointer events, and gesture handling for tap, swipe, pinch, and pan
+- [[wiki/web-platforms/unicode-normalization|Unicode Normalization]] — Canonical equivalence forms such as NFC and NFD
+- [[wiki/web-platforms/url-normalization|URL Normalization]] — Canonicalizing URLs to defeat parser and matching inconsistencies
+- [[wiki/web-platforms/user-agent-parsing|User-Agent Parsing]] — Extracting browser and device signals from the User-Agent string
+- [[wiki/web-platforms/variable-fonts|Variable Fonts]] — Single font files exposing weight, width, and optical axes
+- [[wiki/web-platforms/virtual-scrolling|Virtual Scrolling]] — Rendering only visible rows of large lists: windowing, recycling, and measurements
+- [[wiki/web-platforms/vw-vh|vw and vh Units]] — Viewport-relative length units and their pitfalls
+- [[wiki/web-platforms/web-accessibility|Web Accessibility]] — Designing and building websites so people with disabilities can perceive, operate, and understand them
+- [[wiki/web-platforms/web-animations|Web Animations API]] — Animating DOM elements from JavaScript with keyframes, timing, and playback control
+- [[wiki/web-platforms/web-apis|Web APIs]] — The browser-provided interfaces — DOM, fetch, storage, sensors — that web code calls
+- [[wiki/web-platforms/web-assembly|WebAssembly]] — Portable, low-level binary format that runs near-native code in the browser
+- [[wiki/web-platforms/web-authn|Web Authentication (WebAuthn)]] — Passwordless and phishing-resistant authentication with public-key credentials
+- [[wiki/web-platforms/web-components|Web Components]] — The standard-based way to create reusable UI components with custom elements and shadow DOM
+- [[wiki/web-platforms/web-fonts|Web Fonts]] — Serving and applying downloadable font files in the browser
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — Libraries and platforms that structure web development: React, Vue, Svelte, Next.js, and their kin
+- [[wiki/web-platforms/web-notifications|Web Notifications]] — The Notifications API: requesting permission and displaying system-level notifications
+- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]] — Making web pages load, render, and respond faster through measurement and targeted fixes
+- [[wiki/web-platforms/web-push|Web Push]] — Sending notifications to users from servers via push services and service workers
+- [[wiki/web-platforms/web-standards|Web Standards]] — The open specifications from W3C, WHATWG, and IETF that define how the web works
+- [[wiki/web-platforms/webgl-basics|WebGL Basics]] — OpenGL ES in the browser: shaders, buffers, and the rendering pipeline for 2D/3D graphics
+- [[wiki/web-platforms/webgpu-compute|WebGPU Compute]] — General-purpose GPU programming in the browser: shaders, buffers, and dispatch
+- [[wiki/web-platforms/webp-vs-avif|WebP vs AVIF]] — Comparing modern image codecs for size and quality
+- [[wiki/web-platforms/webrtc-practice|WebRTC in Practice]] — Peer-to-peer audio, video, and data channels in the browser with NAT traversal
+- [[wiki/web-platforms/webusb-practice|WebUSB in Practice]] — Connecting web apps to USB devices: device selection, claim, and control transfers
+- [[wiki/web-platforms/will-change|will-change CSS]] — Hinting upcoming composited changes to the browser
+- [[wiki/web-platforms/woff2|WOFF2 Format]] — The compressed web font container format
+- [[wiki/web-platforms/xs-leaks|XS-Leaks]] — Cross-site information leaks through browser side channels
+- [[wiki/web-platforms/z-index-management|Z-Index Management]] — Controlling overlap order without stacking-context surprises

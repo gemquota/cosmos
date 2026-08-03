@@ -10,7 +10,7 @@ Android Debug Bridge — command-line tool for interacting with Android devices.
 
 **Related technologies:** android, api, auth
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Adb 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Adb 2
 
 ## Overview
 
@@ -26,7 +26,7 @@ Sessions emphasize ADB as a debugging instrument: inspecting activities with `ad
 
 ## Automation and Scripting
 
-Because ADB is scriptable, it fits into CI and shell tooling: boot emulators, install builds, run instrumentation, and collect results without manual interaction. [[wiki/android-core/android-services|services]] and background tasks can be started and stopped directly, and `am start` launches activities with explicit intents for integration tests. For Android-specific workflows, the surrounding [[wiki/android-core/index|Android Core]] cluster records the platform concepts that ADB manipulates, making the bridge the practical surface for most device automation.
+Because ADB is scriptable, it fits into CI and shell tooling: boot emulators, install builds, run instrumentation, and collect results without manual interaction. [[wiki/android-core/android-services|services]] and background tasks can be started and stopped directly, and `am start` launches activities with explicit intents for integration tests. For Android-specific workflows, the surrounding [[wiki/android-core/00-index|Android Core]] cluster records the platform concepts that ADB manipulates, making the bridge the practical surface for most device automation.
 
 ## Related Entities
 

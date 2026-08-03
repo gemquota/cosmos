@@ -13,7 +13,7 @@ REST (Representational State Transfer) — an architectural style for designing 
 
 **Related topics:** api, auth, bash, bug
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Prestige Particles
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Prestige Particles
 
 ## Related Entities
 

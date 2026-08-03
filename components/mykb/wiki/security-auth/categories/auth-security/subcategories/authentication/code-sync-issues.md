@@ -13,7 +13,7 @@ status: "growing"
 
 Code Sync Issues appears in 1 session(s) categorized as API, Mobile, Security. Related topics: android, api, auth, authentication.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Auth Security › Code Sync Issues
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Auth Security › Code Sync Issues
 
 ## Overview
 
@@ -25,7 +25,7 @@ Sync problems usually trace to concurrent edits, undeclared environment-specific
 
 ## Prevention
 
-Prevention combines automation with discipline: commit everything that matters, keep secrets out of repos and in a managed store, generate client code from the API contract, and treat environments as ephemeral artifacts rather than hand-tuned machines. [[wiki/devops-infra/release-trains|release trains]] align the timing of client and backend releases so contract drift is bounded, and the [[wiki/development/index|Development]] tree documents the workflow conventions that keep repos and environments consistent. When a sync issue does surface, the fastest fix is usually to reproduce it in a clean checkout, because the difference between environments is the bug.
+Prevention combines automation with discipline: commit everything that matters, keep secrets out of repos and in a managed store, generate client code from the API contract, and treat environments as ephemeral artifacts rather than hand-tuned machines. [[wiki/devops-infra/release-trains|release trains]] align the timing of client and backend releases so contract drift is bounded, and the [[wiki/development/00-index|Development]] tree documents the workflow conventions that keep repos and environments consistent. When a sync issue does surface, the fastest fix is usually to reproduce it in a clean checkout, because the difference between environments is the bug.
 
 ## Session Context
 

@@ -27,4 +27,4 @@ Locality-sensitive hashing (LSH) maps items so that near neighbours land in the 
 - [[wiki/data-storage/simhash|SimHash]] — the LSH family for text fingerprints
 - [[wiki/data-storage/cosine-similarity|Cosine Similarity]] — the metric random-projection LSH targets
 - [[wiki/data-storage/embeddings|Embeddings]] — the modern alternative for dense search
-- [[wiki/data-storage/index|Data Storage]] — similarity techniques
+- [[wiki/data-storage/00-index|Data Storage]] — similarity techniques

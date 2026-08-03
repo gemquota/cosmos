@@ -8,15 +8,15 @@ timestamp: "2026-07-31T00:00:00Z"
 # Memory Layer
 This area indexes the semantic memory structures mykb exposes to RSIS3.
 ## What RSIS3 Writes
-- [[wiki/pulses/index|Pulses]] — outcome records of improvement cycles
-- [[wiki/decisions/index|Decisions]] — locked architectural choices
-- [[wiki/identity/index|Identity]] — self-model snapshots
-- [[wiki/reflections/index|Reflections]] — meta-analysis after audits
+- [[wiki/pulses/00-index|Pulses]] — outcome records of improvement cycles
+- [[wiki/decisions/00-index|Decisions]] — locked architectural choices
+- [[wiki/identity/00-index|Identity]] — self-model snapshots
+- [[wiki/reflections/00-index|Reflections]] — meta-analysis after audits
 ## What RSIS3 Reads
-- [[wiki/concepts/index|Concepts]] — reusable models and terms
+- [[wiki/concepts/00-index|Concepts]] — reusable models and terms
 - [[wiki/syntheses/README|Syntheses]] — cross-source conclusions
 - [[wiki/sources/README|Sources]] — provenance and raw material
-- [[wiki/questions/index|Open Questions]] — knowledge gaps
+- [[wiki/questions/00-index|Open Questions]] — knowledge gaps
 ## Semantic Dimensions
 | Dimension | Meaning |
 |---|---|

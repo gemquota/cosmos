@@ -13,7 +13,7 @@ resource: ""
 
 Baby Brain Analysis Interface appears in 2 session(s) categorized as API, Backend, Cloud, Security, Shell. Related topics: api, auth, aws, backend, bash.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Baby Brain Analysis Interface 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Baby Brain Analysis Interface 2
 
 ## Overview
 

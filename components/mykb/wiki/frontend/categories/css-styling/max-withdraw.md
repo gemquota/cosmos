@@ -13,7 +13,7 @@ resource: ""
 
 Max Withdraw appears in 1 session(s) categorized as API, Debugging, Security. Related topics: api, auth, dom.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Overview
 

@@ -14,7 +14,7 @@ Context — the information provided to an LLM alongside a query. Sessions show 
 
 **Related topics:** api, auth, cdn, cli
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Context Updates
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Context Updates
 
 ## Overview
 

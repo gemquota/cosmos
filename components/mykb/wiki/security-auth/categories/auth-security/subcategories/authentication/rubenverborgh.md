@@ -8,7 +8,7 @@ resource: ""
 ---
 ## Rubenverborgh
 RubenVerborgh appears in 1 session(s) categorized as API, Frontend, Security. Related topics: angular, api, auth, authentication.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Rubenverborgh
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Rubenverborgh
 ## Related Entities
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]

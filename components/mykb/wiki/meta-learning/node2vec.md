@@ -26,4 +26,4 @@ Node2Vec learns node embeddings by simulating biased random walks and feeding th
 - [[wiki/data-storage/embeddings|Embeddings]] — the output representation type
 - [[wiki/meta-learning/word2vec|Word2Vec]] — the learning machinery node2vec reuses
 - [[wiki/meta-learning/transfer-learning|Transfer Learning]] — walk-based features transfer across graphs
-- [[wiki/meta-learning/index|Meta-Learning]] — representation learning family
+- [[wiki/meta-learning/00-index|Meta-Learning]] — representation learning family

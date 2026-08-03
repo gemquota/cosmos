@@ -13,7 +13,7 @@ status: "growing"
 
 Hold Mode appears in 1 session(s) categorized as API, Debugging, Frontend. Related topics: api, cli, css.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Overview
 
@@ -21,7 +21,7 @@ Hold mode is an interactive state in which an application or tool pauses normal 
 
 ## Frontend and CSS
 
-In the browser, hold mode is often expressed through CSS states and class toggles: a `disabled` or `paused` class changes pointer events, opacity, and cursor, while animations are controlled with `animation-play-state`. The visual treatment must make the held state obvious — dimmed controls, a spinner, or a banner — otherwise users cannot tell whether the app is thinking or stuck. The [[wiki/frontend/categories/css-styling/index|CSS Styling]] cluster documents the styling patterns, and the broader [[wiki/web-platforms/index|Web Platforms]] tree covers the client architecture these states live in.
+In the browser, hold mode is often expressed through CSS states and class toggles: a `disabled` or `paused` class changes pointer events, opacity, and cursor, while animations are controlled with `animation-play-state`. The visual treatment must make the held state obvious — dimmed controls, a spinner, or a banner — otherwise users cannot tell whether the app is thinking or stuck. The [[wiki/frontend/categories/css-styling/00-index|CSS Styling]] cluster documents the styling patterns, and the broader [[wiki/web-platforms/00-index|Web Platforms]] tree covers the client architecture these states live in.
 
 ## API and CLI Context
 
@@ -29,7 +29,7 @@ On the API side, hold mode maps to pausing consumption: a worker stops pulling f
 
 ## Implementation Notes
 
-Implementations must define entry and exit conditions explicitly: what triggers the hold, what happens to in-flight work, and what the resume path does. Timeouts prevent a hold from becoming a deadlock, and state should be observable through logging. [[wiki/api-services/index|API Services]] covers the interfaces that expose held state to clients, and [[wiki/shell-environment/categories/cli-tools/index|CLI Tools]] documents the command-line conventions for interactive gating.
+Implementations must define entry and exit conditions explicitly: what triggers the hold, what happens to in-flight work, and what the resume path does. Timeouts prevent a hold from becoming a deadlock, and state should be observable through logging. [[wiki/api-services/00-index|API Services]] covers the interfaces that expose held state to clients, and [[wiki/shell-environment/categories/cli-tools/00-index|CLI Tools]] documents the command-line conventions for interactive gating.
 
 ## Related Entities
 

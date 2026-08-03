@@ -14,7 +14,7 @@ resource: ""
 Bootstrap is a CSS framework for developing responsive and mobile-first websites. Provides a grid system, components, and utilities.
 Referenced in session 019f06a8
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Dev Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Dev Tools]]
 
 ## Overview
 

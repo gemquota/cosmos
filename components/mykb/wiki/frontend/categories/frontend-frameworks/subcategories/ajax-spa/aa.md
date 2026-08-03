@@ -14,7 +14,7 @@ AA — an acronym or abbreviation referenced in agent sessions. May refer to a p
 
 **Related topics:** ajax, android, api
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Aa
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Aa
 
 ## Why Acronym Entities Exist
 

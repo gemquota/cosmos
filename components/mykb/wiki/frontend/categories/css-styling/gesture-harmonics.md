@@ -12,7 +12,7 @@ resource: ""
 
 A touchscreen musical instrument project allowing sliding between notes with chromatic sequencing. Appears in agent sessions involving interactive music visualization and sound generation.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Overview
 

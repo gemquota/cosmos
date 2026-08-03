@@ -18,13 +18,13 @@ Translation is only part of the work. Locales differ in date formats, number and
 
 Technical infrastructure includes resource files keyed by message IDs, key-value stores per locale, fallback chains when a locale is incomplete, and pseudo-localization to catch layout problems early. Right-to-left languages require mirroring the interface, which is handled with logical properties in CSS rather than hard-coded left and right values.
 
-Tooling keeps localization flowing: extraction of strings from code, translation management systems, and automated checks for missing or unused keys. Localization also affects compliance and trust, since users interact with the product in their own language. The entry sits in the [[wiki/web-platforms/index|Security]] and [[wiki/web-platforms/index|Authentication]] domains of this knowledge base, where localized messages and error text also carry security meaning.
+Tooling keeps localization flowing: extraction of strings from code, translation management systems, and automated checks for missing or unused keys. Localization also affects compliance and trust, since users interact with the product in their own language. The entry sits in the [[wiki/web-platforms/00-index|Security]] and [[wiki/web-platforms/00-index|Authentication]] domains of this knowledge base, where localized messages and error text also carry security meaning.
 
 Localization is never finished: new strings, new locales, and new cultural conventions keep the process alive, and the wiki records it as a practice rather than a one-time task.
 
 Quality gates in CI, such as checking that every locale file parses and that translations do not truncate, keep localization defects out of releases.
 
-**Domain:** Security & Authentication › [[wiki/web-platforms/index|Security]] › [[wiki/web-platforms/index|Authentication]]
+**Domain:** Security & Authentication › [[wiki/web-platforms/00-index|Security]] › [[wiki/web-platforms/00-index|Authentication]]
 
 ## Related Entities
 

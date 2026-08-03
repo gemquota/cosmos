@@ -9,7 +9,7 @@ resource: ""
 ---
 ## Xqkvrxdvvvddddvvv 2
 XqkVRXDVVVddddVVV appears in 2 session(s) categorized as API, Frontend, Shell. Related topics: api, bash, cli, css.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Overview
 XqkVRXDVVVddddVVV is an entity referenced in two Cosmos sessions grouped under API, Frontend, and Shell, with related topics api, bash, cli, and css. The name is an opaque identifier — most likely a generated key, a session label, or an internal handle — and the page exists so the transcripts that mention it remain findable. The category spread suggests the sessions worked across a web frontend, its API, and the shell tooling around both.
 Opaque identifiers in the corpus are treated as traceability anchors: the description records where the name appeared, the tags describe the work, and the related entities form the cluster the sessions touched. They are not given speculative definitions, because inventing one would corrupt the record. The value of the page is the pointer, not the name itself.

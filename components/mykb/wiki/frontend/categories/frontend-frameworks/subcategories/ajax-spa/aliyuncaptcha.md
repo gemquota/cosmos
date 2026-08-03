@@ -14,7 +14,7 @@ APT (Advanced Package Tool) — a package management system for Debian-based Lin
 
 **Related topics:** ajax, api, auth, azure
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Aliyuncaptcha
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Aliyuncaptcha
 
 ## Overview
 

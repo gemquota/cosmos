@@ -14,7 +14,7 @@ ACE Control Panel — the management interface for the ACE (Agentic Context Engi
 
 Acronym referenced in session e2d72a2c
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Acp 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Acp 2
 
 ## Related Entities
 

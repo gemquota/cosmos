@@ -14,7 +14,7 @@ CLI (Command Line Interface) — a text-based interface for interacting with sof
 
 **Related topics:** android, api, auth
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Acli
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Acli
 
 ## Overview
 

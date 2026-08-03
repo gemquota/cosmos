@@ -21,7 +21,7 @@ The session context for this page covers API, debugging, mobile, and security to
 
 
 Observability is the final requirement. Each task should report when it started, what it did, and how it ended, and the orchestrator should expose overall progress so that operators can answer basic questions: how many tasks succeeded, which ones failed, and whether the batch is stuck. Good logging also makes replay possible, which is essential for debugging the intermittent failures that batch systems are prone to. These concerns apply regardless of the underlying queue or scheduler.
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Batchorchestrator
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Batchorchestrator
 
 ## Related Entities
 

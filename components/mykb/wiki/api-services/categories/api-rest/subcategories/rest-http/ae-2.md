@@ -14,7 +14,7 @@ AE — an acronym or abbreviation referenced in agent sessions. Could be Applica
 
 **Related topics:** android, angular, api
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Ae 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Ae 2
 
 ## Overview
 

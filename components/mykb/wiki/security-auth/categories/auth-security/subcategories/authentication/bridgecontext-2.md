@@ -22,7 +22,7 @@ This page records the concept so future sessions can attach the specific budgets
 
 **Related topics:** ajax, android, api, auth, authentication
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Bridgecontext 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Bridgecontext 2
 
 ## Related Entities
 

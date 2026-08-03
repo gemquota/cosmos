@@ -12,7 +12,7 @@ resource: ""
 
 Consciousness Inquiry is referenced in 1 session(s). Related tags: ide, orm.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Consciousness Inquiry
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Consciousness Inquiry
 
 ## Related Entities
 

@@ -13,7 +13,7 @@ resource: ""
 
 Avg Ambiguity appears in 1 session(s) categorized as API, Debugging, Security, Shell. Related topics: api, auth, bash.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Avg Ambiguity
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Avg Ambiguity
 
 ## Overview
 

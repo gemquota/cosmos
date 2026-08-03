@@ -13,7 +13,7 @@ status: "growing"
 
 BDSM appears in 2 session(s) categorized as API, Cloud, Security. Related topics: acronym, api, auth, authentication, aws.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Bdsm 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Bdsm 2
 
 ## Overview
 
@@ -25,7 +25,7 @@ Acronyms are a recurring problem in session-derived knowledge bases because the 
 
 ## Session Context
 
-Both recorded sessions categorized the term under API, Cloud, and Security. Keeping the page general is deliberate: asserting a confident expansion with no evidence would corrupt the knowledge graph, while deleting the term would lose the session linkage. The related entities under the authentication branch provide the neighboring concepts captured in the same session set. For navigation, [[wiki/api-services/index|API Services]] and [[wiki/cloud-infra/index|Cloud Infra]] group the service material, and [[wiki/security/index|Security]] holds the authentication content the sessions touched.
+Both recorded sessions categorized the term under API, Cloud, and Security. Keeping the page general is deliberate: asserting a confident expansion with no evidence would corrupt the knowledge graph, while deleting the term would lose the session linkage. The related entities under the authentication branch provide the neighboring concepts captured in the same session set. For navigation, [[wiki/api-services/00-index|API Services]] and [[wiki/cloud-infra/00-index|Cloud Infra]] group the service material, and [[wiki/security/00-index|Security]] holds the authentication content the sessions touched.
 
 ## Related Entities
 

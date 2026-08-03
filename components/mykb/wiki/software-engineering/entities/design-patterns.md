@@ -38,4 +38,4 @@ Session-derived notes are cloned from templates with fresh frontmatter, preservi
 
 Patterns remain useful only when the cost of the abstraction stays below the cost of the duplication it removes; the ecosystem reviews these choices whenever a new component is added. Documented patterns also serve new contributors as a map of where responsibilities live. A pattern that no longer pays for its indirection is retired explicitly, with the rationale recorded, so future sessions do not resurrect it. Consistency in naming and structure is what makes the map legible.
 
-See also: [[wiki/software-engineering/index|Software Engineering]], [[wiki/concepts/triad-architecture|Triad Architecture]], [[wiki/devops-infra/api-gateway-patterns|API Gateway Patterns]], [[wiki/agent-systems/action-observation-loop|Action Observation Loop]]
+See also: [[wiki/software-engineering/00-index|Software Engineering]], [[wiki/concepts/triad-architecture|Triad Architecture]], [[wiki/devops-infra/api-gateway-patterns|API Gateway Patterns]], [[wiki/agent-systems/action-observation-loop|Action Observation Loop]]

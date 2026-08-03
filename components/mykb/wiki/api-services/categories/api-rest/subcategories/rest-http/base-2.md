@@ -15,7 +15,7 @@ Base — a foundational directory, class, or package. Used in software architect
 
 Acronym referenced in session 019f4bd5
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Base 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Base 2
 
 ## Overview
 
@@ -31,7 +31,7 @@ Client code in the observed sessions resolves requests against a base URL — th
 
 ## Architecture Notes
 
-"Base" also appears as a package or directory name that anchors a module layout, and in distributed systems BASE describes the trade-off where availability and soft state are preferred over strict consistency. Both readings share the same intuition: a foundation that defines what everything else assumes. For wiki navigation, the [[wiki/development/index|Development]] tree covers class and package structure, [[wiki/api-services/index|API Services]] covers endpoint conventions, and [[wiki/web-platforms/index|Web Platforms]] records the client-side frameworks that consume them.
+"Base" also appears as a package or directory name that anchors a module layout, and in distributed systems BASE describes the trade-off where availability and soft state are preferred over strict consistency. Both readings share the same intuition: a foundation that defines what everything else assumes. For wiki navigation, the [[wiki/development/00-index|Development]] tree covers class and package structure, [[wiki/api-services/00-index|API Services]] covers endpoint conventions, and [[wiki/web-platforms/00-index|Web Platforms]] records the client-side frameworks that consume them.
 
 ## Related Entities
 

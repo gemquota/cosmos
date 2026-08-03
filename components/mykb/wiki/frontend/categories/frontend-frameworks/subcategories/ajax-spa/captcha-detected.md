@@ -14,7 +14,7 @@ A captcha is a challenge-response test used to tell humans and automated clients
 
 **Related topics:** ajax, api, auth, azure
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Captcha Detected
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Captcha Detected
 
 ## Overview
 

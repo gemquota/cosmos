@@ -21,7 +21,7 @@ Accuracy matters as much as access: commission records are financial data, so fi
 
 The page records the pattern so future sessions can attach the specific source, authentication flow, and normalization rules implemented. Documenting the source's policy and the scraper's rate limits keeps the operation defensible and maintainable.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Commission Scraper
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Commission Scraper
 
 ## Related Entities
 

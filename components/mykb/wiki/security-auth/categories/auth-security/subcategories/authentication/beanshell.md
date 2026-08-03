@@ -21,7 +21,7 @@ The sessions recorded this entity in an API, mobile, and security context, where
 
 
 From an engineering perspective, the lesson is to choose the least powerful tool that solves the problem. A rules engine with a restricted vocabulary, a configuration format with no code execution, or a separate process with a narrow API each reduce the attack surface while covering most legitimate use cases. When a full interpreter is genuinely needed, treat it as a security boundary: document it, sandbox it, and review every input that reaches it.
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Beanshell
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Beanshell
 
 ## Related Entities
 

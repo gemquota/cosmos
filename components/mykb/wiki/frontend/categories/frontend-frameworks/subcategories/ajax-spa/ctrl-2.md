@@ -19,13 +19,13 @@ Control characters, such as the ASCII codes 0x00 through 0x1F, predate graphical
 
 The word control also appears in architecture discussions: control flow determines the order of execution in a program, and the control plane in networking and cloud systems manages configuration and policy, separate from the data plane that carries traffic. In security contexts, access control governs who can perform which actions, and control measures such as rate limiting protect services from abuse.
 
-In agent sessions the term appears alongside API, backend, and security topics, where control shows up as command handling, flow control, and authorization. Keeping control logic explicit, testable, and auditable is a theme that runs through the [[wiki/web-platforms/index|Api Rest]] domain and the [[wiki/web-platforms/index|Security Auth]] domain in this knowledge base.
+In agent sessions the term appears alongside API, backend, and security topics, where control shows up as command handling, flow control, and authorization. Keeping control logic explicit, testable, and auditable is a theme that runs through the [[wiki/web-platforms/00-index|Api Rest]] domain and the [[wiki/web-platforms/00-index|Security Auth]] domain in this knowledge base.
 
 The session notes record concrete examples of each sense, and the entry serves as a disambiguation point for a term that is easy to confuse across contexts.
 
 The entry is deliberately brief on specifics because the term is ambiguous; the value is in pointing to the three distinct contexts where it appears.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Ctrl 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Ctrl 2
 
 ## Related Entities
 

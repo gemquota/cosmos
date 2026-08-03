@@ -1,5 +1,6 @@
 ---
 type: "concept"
+hub: true
 title: "OSPF Protocols"
 description: "Link-state routing inside an autonomous system with fast convergence"
 tags: ["ospf", "routing", "igp", "protocols"]

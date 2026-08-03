@@ -13,7 +13,7 @@ resource: ""
 
 BASES appears in 1 session(s) categorized as API, Mobile, Shell. Related topics: acronym, android, api, bash.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Bases
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Bases
 
 ## Overview
 
@@ -29,7 +29,7 @@ BASES is an acronym recorded in agent sessions across API, Mobile, and Shell con
 ## Related Concepts
 
 - [[wiki/api-protocols/rest-apis|REST APIs]] — base URL and resource path conventions
-- [[wiki/ai-ml/index|AI & ML]] — base models and evaluation baselines
+- [[wiki/ai-ml/00-index|AI & ML]] — base models and evaluation baselines
 - [[wiki/os-shell/command-line-interfaces|Command Line Interfaces]] — base paths and configuration for shell tooling
 
 

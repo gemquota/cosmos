@@ -13,7 +13,7 @@ RubyGems — the package manager for the Ruby programming language.
 
 **Related topics:** android, api, auth, authentication, backend, bash, bug, cli
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Gemmaharness 10
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Gemmaharness 10
 
 ## Related Entities
 

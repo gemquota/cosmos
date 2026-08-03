@@ -13,7 +13,7 @@ Request — an HTTP or API request object. Represents incoming network requests 
 
 **Related topics:** ajax, api, auth, authentication, bootstrap, bug, cli, cloud
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Request 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Request 2
 
 ## Related Entities
 

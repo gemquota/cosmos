@@ -13,7 +13,7 @@ resource: ""
 
 CFD appears in 1 session(s) categorized as API, Cloud. Related topics: acronym, ajax, api, aws.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Cfd
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Cfd
 
 ## Overview
 

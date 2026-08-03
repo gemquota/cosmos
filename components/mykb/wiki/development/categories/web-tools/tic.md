@@ -13,7 +13,7 @@ Elasticsearch — a distributed, RESTful search and analytics engine.
 
 **Related topics:** guid, ide, rest, spa, terminal
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Web Tools]]
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Web Tools]]
 
 ## Related Entities
 

@@ -19,11 +19,11 @@ Policies are typically expressed as allow or deny rules scoped by actor, action,
 
 Implementation details matter: approvals must be auditable, with records of who approved what, when, and why; timeouts must be defined so stale requests expire; and the policy evaluation must itself be protected so that an attacker cannot grant their own approval. Misconfigured policies cause either operational friction, when everything waits for approval, or risk, when too much runs unchecked.
 
-Approval policies appear across the stack: sandbox permissions in agent runtimes, pull-request review requirements, and infrastructure change management. The term is well represented in the [[wiki/web-platforms/index|Auth Security]] domain, alongside the [[wiki/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied]] entry that records the outcome when a policy blocks an action.
+Approval policies appear across the stack: sandbox permissions in agent runtimes, pull-request review requirements, and infrastructure change management. The term is well represented in the [[wiki/web-platforms/00-index|Auth Security]] domain, alongside the [[wiki/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied]] entry that records the outcome when a policy blocks an action.
 
 The wiki records the term as a cross-cutting concept because approval policies appear in agent runtimes, CI systems, and infrastructure tooling alike, with the same design questions recurring.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Approvalpolicy 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Approvalpolicy 2
 
 ## Related Entities
 

@@ -12,7 +12,7 @@ resource: ""
 
 Platform is referenced in 1 session(s). Related tags: cli, ide, orm.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Platform
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Platform
 
 ## Related Entities
 

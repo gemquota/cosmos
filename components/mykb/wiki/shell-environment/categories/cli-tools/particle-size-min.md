@@ -14,7 +14,7 @@ Particle System — a visual effect technique using many small sprites to simula
 
 **Related topics:** bash, bootstrap, bun, cli
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Cli Tools]]
 
 ## Overview
 

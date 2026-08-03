@@ -13,7 +13,7 @@ status: "growing"
 
 AutoHealer appears in 9 session(s) categorized as API, Backend, Debugging, Mobile, Security, Shell. Related topics: ajax, android, api, auth, authentication, babel, backend, bash, bun, cli.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Autohealer 10
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Autohealer 10
 
 ## Overview
 

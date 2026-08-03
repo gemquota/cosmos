@@ -14,7 +14,7 @@ IDE (Integrated Development Environment) — a software application for software
 
 **Related topics:** bash, bug, cli, css, dom
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Identity Distribution
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Identity Distribution
 
 ## Overview
 

@@ -18,11 +18,11 @@ Goal management breaks a large objective into smaller, verifiable steps and keep
 
 Multi-agent orchestration divides work between specialized agents, for example a planner, a coder, and a reviewer, each with its own instructions and tool access. Coordination requires shared state, clear handoff formats, and escalation rules when an agent cannot proceed. Evaluation measures whether agents actually achieve outcomes, not just whether they produce plausible text, which drives iterative improvement.
 
-Safety and permissioning limit what agents may do: sandboxed execution, approval policies for destructive actions, and audit logs keep autonomous operation accountable. The concept extends the [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]] tooling patterns and [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/adaptive-agency|Adaptive Agency]] entries in this knowledge base, and recurs across the [[wiki/web-platforms/index|Frontend Frameworks]] domain.
+Safety and permissioning limit what agents may do: sandboxed execution, approval policies for destructive actions, and audit logs keep autonomous operation accountable. The concept extends the [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]] tooling patterns and [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/adaptive-agency|Adaptive Agency]] entries in this knowledge base, and recurs across the [[wiki/web-platforms/00-index|Frontend Frameworks]] domain.
 
 The same loop, observe, decide, act, and verify, applies whether the agent edits code, answers questions, or operates infrastructure, and the wiki records it as a reusable pattern.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Agent 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Agent 2
 
 ## Related Entities
 

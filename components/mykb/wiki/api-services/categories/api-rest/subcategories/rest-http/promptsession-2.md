@@ -13,7 +13,7 @@ Prompt — the input text provided to an LLM to guide its output. Sessions show 
 
 **Related topics:** android, api, auth, authentication, backend, bash, bug, cli
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Promptsession 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Promptsession 2
 
 ## Related Entities
 

@@ -21,7 +21,7 @@ The Shell tag means these tools are exercised from the command line, with parame
 
 
 The parameter also has a design lesson: simulations need explicit limits to be useful. Without bounds, extreme inputs produce extreme outputs that drown out the interesting range, and debugging becomes chasing numerical artifacts. Documenting what Mass Max means — what happens at the boundary, and why the bound exists — turns the parameter from a magic number into a piece of the model's specification, which is the kind of clarity the knowledge base aims to preserve.
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Cli Tools]]
 
 ## Related Entities
 

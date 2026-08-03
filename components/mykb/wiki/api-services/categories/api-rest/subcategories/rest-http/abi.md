@@ -14,7 +14,7 @@ Scalability — the ability of a system to handle increased load. Sessions refer
 
 **Related topics:** android, api, backend
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Abi
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Abi
 
 ## Overview
 

@@ -431,3 +431,25 @@ title: "Bundle Log"
   29,727 links, 1,707/464/48 tiers), graph.json (5,438 nodes / 35,244 edges,
   0 isolated), okf render (6,718 concepts), gen-static-data check OK.
 - **Synthesis note**: `wiki/syntheses/adversarial-review-pass-3-2026-08.md`.
+
+## 2026-08-03 (hub tags, stub auditor, dual-wiki toggle)
+- **Hub-page tagging**: all 100 directory `index.md` pages renamed to `00-index.md`
+  (sorts first in each directory; root `wiki/index.md` retained as landing page)
+  and tagged `hub: true` in frontmatter; `build_index_pages.py` regenerates the
+  new name with legacy fallback.
+- **Stats exclusion**: `build_stats.py` now skips `type: index` and `hub: true`
+  pages plus `00-index.md`/`index.md`/`log.md`; stats.html regenerated
+  (5,314 files, 1,173,771 words, 29,669 links, 1,705/463/47 tiers at 300/400/500+).
+- **Stub auditor SPA**: `stub-audit.html` + generator
+  `.wiki-daemon/build_stub_audit.py` (3,848 stub/growing files, 45 areas, 69 dirs);
+  per-file options Keep / Enrich / Categorize (area + dir pickers) / Archive
+  (git mv) / Delete (git rm), localStorage persistence, exportable report with
+  ready-to-run commands. Linked from Actions panel along with Stats Hub.
+- **Dual-wiki meta toggle**: `index.html` sidebar gained a meta toggle next to the
+  theme toggle (persisted as `md-meta`). Meta namespaces hidden when off:
+  syntheses, pulses, reflections, episodes, daily, ops, raw, templates, log,
+  README, Home, AGENTS, COMPREHENSIVE_AUDIT, mykb-code/content.
+- **Index sorting**: sidebar/browser now sort `index.md`/`README.md` first in each
+  directory so landing pages lead the listing.
+- **Snapshots regenerated**: build_graph (5,439 nodes / 35,249 edges), okf render
+  (6,818 concepts), gen-static-data check OK (6,842 md files).

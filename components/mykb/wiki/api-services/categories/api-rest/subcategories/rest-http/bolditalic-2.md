@@ -13,7 +13,7 @@ status: "growing"
 
 BoldItalic appears in 2 session(s) categorized as API, Backend, Cloud, Mobile, Security. Related topics: android, api, auth, authentication, aws, backend.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Bolditalic 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Bolditalic 2
 
 ## Overview
 
@@ -25,7 +25,7 @@ In CSS, bold italic text combines font-weight with font-style: `font-weight: bol
 
 ## Role in Sessions
 
-The session categories indicate BoldItalic was part of cross-cutting UI and API work: a backend may emit formatted text, an API delivers it, a mobile client renders it, and authentication guards access to the endpoints involved. Cloud and security tags point to the deployment and access-control layers around that pipeline. As an entity page, BoldItalic anchors those associations so that later sessions can find the styling thread quickly. For broader reference, [[wiki/frontend/index|Frontend]] documents rendering and styling, [[wiki/web-platforms/index|Web Platforms]] covers the client stacks, and [[wiki/api-services/index|API Services]] records the interfaces that transport the formatted content.
+The session categories indicate BoldItalic was part of cross-cutting UI and API work: a backend may emit formatted text, an API delivers it, a mobile client renders it, and authentication guards access to the endpoints involved. Cloud and security tags point to the deployment and access-control layers around that pipeline. As an entity page, BoldItalic anchors those associations so that later sessions can find the styling thread quickly. For broader reference, [[wiki/frontend/00-index|Frontend]] documents rendering and styling, [[wiki/web-platforms/00-index|Web Platforms]] covers the client stacks, and [[wiki/api-services/00-index|API Services]] records the interfaces that transport the formatted content.
 
 ## Related Entities
 

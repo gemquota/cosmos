@@ -13,7 +13,7 @@ resource: ""
 
 Playground appears in 1 session(s) categorized as Frontend, Shell. Related topics: bash, css, dom, feature.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Playground
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Playground
 
 ## Overview
 

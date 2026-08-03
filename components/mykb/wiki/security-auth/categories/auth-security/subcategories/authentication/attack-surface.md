@@ -21,7 +21,7 @@ On mobile, the surface includes exported activities and services, deep links, pe
 
 The standard methodology is to enumerate entry points, rank them by exposure and impact, remove the unnecessary, and monitor the rest. Future sessions should record the enumeration performed and the reductions applied. The outcome of such an exercise is usually a short list: remove what is unnecessary, constrain what remains, and instrument the boundaries that matter most. Regular re-enumeration keeps the list accurate as features change.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Attack Surface
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Attack Surface
 
 ## Related Entities
 

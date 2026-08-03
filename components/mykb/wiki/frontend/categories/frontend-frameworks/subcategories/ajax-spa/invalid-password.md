@@ -25,7 +25,7 @@ The entry generalizes beyond passwords to any failed credential check, and its l
 
 The entry also covers the client side: password managers and autofill interact with the form, so field semantics and autocomplete attributes matter for a smooth flow.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Invalid Password
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Invalid Password
 
 ## Related Entities
 

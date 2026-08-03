@@ -18,9 +18,9 @@ Passwords should be stored as salted, slow hashes such as bcrypt or Argon2, neve
 
 OAuth 2.0 lets a user authorize a client application to access resources on their behalf. The authorization code flow with PKCE is the recommended pattern for public clients, exchanging a temporary code for tokens without exposing the client secret. Tokens are scoped, expire, and can be refreshed, which limits the damage if one is leaked.
 
-API keys identify machine clients and should be stored, transmitted, and rotated with the same care as passwords. Every authentication scheme has failure modes: leaked tokens, weak secrets, and confused-deputy problems where a legitimate service is tricked into acting on behalf of an attacker. Logging and monitoring, including attempts that result in [[wiki/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied]], are part of the discipline documented across the [[wiki/web-platforms/index|Frontend Frameworks]] and [[wiki/web-platforms/index|Security Auth]] domains.
+API keys identify machine clients and should be stored, transmitted, and rotated with the same care as passwords. Every authentication scheme has failure modes: leaked tokens, weak secrets, and confused-deputy problems where a legitimate service is tricked into acting on behalf of an attacker. Logging and monitoring, including attempts that result in [[wiki/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied]], are part of the discipline documented across the [[wiki/web-platforms/00-index|Frontend Frameworks]] and [[wiki/web-platforms/00-index|Security Auth]] domains.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Au 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Au 2
 
 ## Related Entities
 

@@ -25,7 +25,7 @@ The related entities listed below capture the neighboring API client pages obser
 Entity pages for short names also support search and linking. Because the identifier is stable, other pages can reference it, and readers can find every place the name appears through the related-entity lists. That network effect is the main reason the knowledge base keeps such pages even when the underlying meaning is thin: the connections matter as much as the definition.
 **Related topics:** android, angular, api, auth
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Allo 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Allo 2
 
 ## Related Entities
 

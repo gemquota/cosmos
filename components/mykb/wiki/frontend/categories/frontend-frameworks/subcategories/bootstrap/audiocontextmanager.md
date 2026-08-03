@@ -13,7 +13,7 @@ Context — the information provided to an LLM alongside a query. Sessions show 
 
 **Related topics:** api, aws, bash, bootstrap
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Audiocontextmanager
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Audiocontextmanager
 
 ## Related Entities
 

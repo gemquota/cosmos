@@ -25,5 +25,5 @@ Evidence and provenance is the discipline of keeping synthesized conclusions aud
 - [[wiki/syntheses/knowledge-synthesis|Knowledge Synthesis]] — synthesized claims are what provenance protects
 - [[wiki/memory/provenance|Provenance]] — the thread this stub continues
 - [[wiki/syntheses/weekly-review|Weekly Review]] — the ritual that should re-check evidence
-- [[wiki/sources/index|Sources]] — the namespace holding evidence
-- [[wiki/questions/index|Open Questions]] — where these threads are tracked
+- [[wiki/sources/00-index|Sources]] — the namespace holding evidence
+- [[wiki/questions/00-index|Open Questions]] — where these threads are tracked

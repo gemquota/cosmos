@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stub Auditor</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --bg:#0f1115; --panel:#171a21; --card:#1c2028; --border:#2a2f3a;
+  --text:#e8e6e3; --muted:#8b919e; --accent:#6b9aff; --accent-soft:#1e2a45;
+  --keep:#34d399; --enrich:#60a5fa; --cat:#c084fc; --archive:#fbbf24; --del:#f87171;
+}
+body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+.container { max-width:860px; margin:0 auto; padding:20px 16px 140px; }
+h1 { font-size:22px; font-weight:700; }
+.sub { color:var(--muted); font-size:13px; margin-top:4px; }
+.progress-wrap { display:flex; align-items:center; gap:12px; margin:16px 0 8px; }
+.progress-bar { flex:1; height:8px; background:var(--panel); border-radius:4px; overflow:hidden; border:1px solid var(--border); }
+.progress-fill { height:100%; width:0%; background:linear-gradient(90deg,var(--accent),var(--keep)); transition:width .2s; }
+.progress-label { font-size:12px; color:var(--muted); white-space:nowrap; }
+.controls { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:12px 0; }
+.tabs { display:flex; gap:4px; }
+.tab { padding:5px 12px; font-size:12px; border-radius:6px; border:1px solid var(--border); background:var(--panel); color:var(--muted); cursor:pointer; }
+.tab.active { background:var(--accent-soft); color:var(--accent); border-color:var(--accent); }
+.btn { padding:6px 14px; font-size:12px; font-weight:600; border-radius:6px; border:1px solid var(--border); background:var(--panel); color:var(--text); cursor:pointer; }
+.btn:hover { border-color:var(--accent); }
+.btn.copy { background:var(--accent-soft); color:var(--accent); border-color:var(--accent); }
+.filters { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:10px 0; font-size:12px; color:var(--muted); }
+.filters label { display:flex; align-items:center; gap:5px; cursor:pointer; }
+#results-panel { display:none; margin:12px 0; border:1px solid var(--border); border-radius:8px; background:var(--panel); }
+#results-panel.open { display:block; }
+.results-head { display:flex; justify-content:space-between; align-items:center; padding:10px 14px; border-bottom:1px solid var(--border); font-size:13px; font-weight:600; }
+#results-text { width:100%; min-height:220px; background:#0b0d11; color:#cfe3c9; border:none; padding:14px; font:12px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace; resize:vertical; outline:none; }
+.copy-flash { color:var(--keep); font-size:12px; margin-left:8px; }
+#list { margin-top:8px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:12px 14px; margin-bottom:8px; }
+.card.classified { opacity:.55; }
+.card .top { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+.card .num { font-size:11px; color:var(--muted); }
+.card .title { font-size:15px; font-weight:700; letter-spacing:.3px; }
+.card .badge { font-size:10.5px; color:var(--muted); background:var(--panel); border:1px solid var(--border); padding:1px 7px; border-radius:10px; }
+.card .badge.warn { color:#ffd166; border-color:#ffd16655; }
+.card .desc { font-size:12px; color:var(--muted); margin-top:5px; }
+.card .path { font-size:10.5px; color:#5a6270; margin-top:4px; word-break:break-all; }
+.card .snip { font-size:11px; color:#c9d1d9; margin-top:6px; border-top:1px dashed var(--border); padding-top:6px; white-space:pre-wrap; overflow-wrap:anywhere; }
+.actions { display:flex; gap:6px; margin-top:10px; flex-wrap:wrap; }
+.opt { flex:1; min-width:96px; padding:7px 8px; font-size:12px; font-weight:600; border-radius:6px; border:1px solid var(--border); background:var(--panel); color:var(--muted); cursor:pointer; transition:all .12s; }
+.opt:hover { transform:translateY(-1px); }
+.opt.k { --c:var(--keep); }
+.opt.e { --c:var(--enrich); }
+.opt.c { --c:var(--cat); }
+.opt.a { --c:var(--archive); }
+.opt.d { --c:var(--del); }
+.opt.sel { background:var(--c); border-color:var(--c); color:#0b0d11; }
+.opt .key { font-size:10px; opacity:.6; margin-right:5px; }
+.cat-picker { margin-top:10px; border:1px solid var(--cat); border-radius:8px; background:var(--panel); padding:10px 12px; display:none; }
+.cat-picker.open { display:block; }
+.cat-picker label { display:block; font-size:11px; color:var(--muted); margin:8px 0 4px; }
+.cat-picker select, .cat-picker input { width:100%; padding:6px 8px; font-size:12px; border-radius:6px; border:1px solid var(--border); background:#0b0d11; color:var(--text); }
+.cat-picker .row { display:flex; gap:8px; flex-wrap:wrap; }
+.cat-picker .row > div { flex:1; min-width:150px; }
+.cat-picker .hint { font-size:11px; color:var(--muted); margin-top:6px; }
+.legend { display:flex; gap:14px; flex-wrap:wrap; font-size:12px; color:var(--muted); margin:12px 0 4px; }
+.legend span b { margin-right:4px; }
+.footer { position:fixed; bottom:0; left:0; right:0; background:rgba(15,17,21,.92); border-top:1px solid var(--border); padding:10px; text-align:center; font-size:11px; color:var(--muted); backdrop-filter:blur(4px); }
+@media (max-width:640px){ .opt { flex-basis:calc(50% - 6px); } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Stub Auditor</h1>
+  <div class="sub" id="subtitle">Review stub articles: Keep, Enrich, Categorize, Archive, or Delete. Progress persists in this browser; export the report to apply it.</div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <div class="progress-label" id="progress-label">0/0</div>
+  </div>
+
+  <div class="legend">
+    <span><b style="color:var(--keep)">Keep</b> fine as-is</span>
+    <span><b style="color:var(--enrich)">Enrich</b> expand to full article</span>
+    <span><b style="color:var(--cat)">Categorize</b> move to a domain folder</span>
+    <span><b style="color:var(--archive)">Archive</b> move to raw/archive</span>
+    <span><b style="color:var(--del)">Delete</b> remove</span>
+  </div>
+
+  <div class="filters">
+    <label><input type="checkbox" id="flt-stub" checked> status: stub</label>
+    <label><input type="checkbox" id="flt-short" checked> &lt;320 words</label>
+    <label><input type="checkbox" id="flt-cat" checked> categories/ subfolders</label>
+  </div>
+
+  <div class="controls">
+    <div class="tabs">
+      <button class="tab active" data-filter="all">All</button>
+      <button class="tab" data-filter="remaining">Remaining</button>
+      <button class="tab" data-filter="classified">Classified</button>
+    </div>
+    <div style="flex:1"></div>
+    <button class="btn" id="show-results">Results</button>
+    <button class="btn copy" id="copy-results">Copy to clipboard</button>
+  </div>
+
+  <div id="results-panel">
+    <div class="results-head"><span>Results — paste into the wiki / run the commands</span><span><button class="btn copy" id="copy-results2" style="padding:4px 10px;font-size:11px;">Copy</button></span></div>
+    <textarea id="results-text" readonly spellcheck="false"></textarea>
+  </div>
+
+  <div id="list"></div>
+  <div class="footer">Keys: <b>1</b>=Keep <b>2</b>=Enrich <b>3</b>=Categorize <b>4</b>=Archive <b>5</b>=Delete &middot; re-click to undo &middot; progress persists in this browser</div>
+</div>
+
+<script>
+var DATA = /*__DATA__*/;
+var ITEMS = DATA.items;
+var DIRS = DATA.dirs;
+var AREAS = DATA.areas;
+var CHOICES = {};
+try { var saved = JSON.parse(localStorage.getItem('stub-audit') || '{}'); CHOICES = saved; } catch(e) {}
+var filter = 'all';
+var catTargets = {};
+
+function esc(s) {
+  return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function persist() { localStorage.setItem('stub-audit', JSON.stringify(CHOICES)); }
+function setChoice(path, choice) {
+  if (CHOICES[path] === choice) delete CHOICES[path];
+  else CHOICES[path] = choice;
+  if (choice !== 'c') delete catTargets[path];
+  persist(); render();
+}
+function setCat(path, target) {
+  CHOICES[path] = 'c';
+  catTargets[path] = target;
+  persist(); render();
+}
+function visible() {
+  var fltStub = document.getElementById('flt-stub').checked;
+  var fltShort = document.getElementById('flt-short').checked;
+  var fltCat = document.getElementById('flt-cat').checked;
+  return ITEMS.filter(function(it) {
+    if (fltStub && it.s === 'stub') return true;
+    if (fltShort && it.w < 320) return true;
+    if (!fltStub && !fltShort) return true;
+    return false;
+  }).filter(function(it) {
+    if (fltCat) return true;
+    return !/\/categories\/|\/subcategories\/|\/entities\//.test(it.p);
+  });
+}
+function render() {
+  var items = visible();
+  var done = ITEMS.filter(function(it){ return CHOICES[it.p]; }).length;
+  var pct = Math.round(done / ITEMS.length * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-label').textContent = done + '/' + ITEMS.length + ' (' + pct + '%)';
+  document.getElementById('subtitle').textContent = items.length + ' stub articles shown · ' + done + ' classified overall';
+
+  var list = document.getElementById('list');
+  list.innerHTML = '';
+  items.forEach(function(it) {
+    var choice = CHOICES[it.p] || null;
+    if (filter === 'remaining' && choice) return;
+    if (filter === 'classified' && !choice) return;
+    var card = document.createElement('div');
+    card.className = 'card' + (choice ? ' classified' : '');
+    var sel = { k:'', e:'', c:'', a:'', d:'' };
+    if (choice && sel[choice] !== undefined) sel[choice] = ' sel';
+    var target = (choice === 'c' && catTargets[it.p]) ? '<div class="hint" style="color:var(--cat)">target: ' + esc(catTargets[it.p]) + '</div>' : '';
+    var picker = '<div class="cat-picker" id="cp-' + esc(it.p) + '">' + pickerHTML(it) + '</div>';
+    card.innerHTML =
+      '<div class="top"><span class="num">' + it.n + '.</span><span class="title">' + esc(it.t) + '</span>' +
+      '<span class="badge">' + it.w + ' words</span><span class="badge' + (it.s === 'stub' ? ' warn' : '') + '">' + esc(it.s) + '</span></div>' +
+      (it.d ? '<div class="desc">' + esc(it.d) + '</div>' : '') +
+      '<div class="path">' + esc(it.p) + '</div>' +
+      (it.x ? '<div class="snip">' + esc(it.x) + '…</div>' : '') +
+      target + picker +
+      '<div class="actions">' +
+        '<button class="opt k' + sel.k + '" data-c="k"><span class="key">1</span>Keep</button>' +
+        '<button class="opt e' + sel.e + '" data-c="e"><span class="key">2</span>Enrich</button>' +
+        '<button class="opt c' + sel.c + '" data-c="c"><span class="key">3</span>Categorize</button>' +
+        '<button class="opt a' + sel.a + '" data-c="a"><span class="key">4</span>Archive</button>' +
+        '<button class="opt d' + sel.d + '" data-c="d"><span class="key">5</span>Delete</button>' +
+      '</div>';
+    var path = it.p;
+    card.querySelectorAll('.opt').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var c = btn.getAttribute('data-c');
+        if (c === 'c') { setChoice(path, 'c'); openPicker(path); }
+        else setChoice(path, c);
+      });
+    });
+    list.appendChild(card);
+  });
+  document.title = 'Stub Auditor ' + done + '/' + ITEMS.length;
+}
+function pickerHTML(it) {
+  var cur = it.p.split('/').slice(0, -1).join('/');
+  var area = it.p.split('/')[0];
+  var opts = '<div class="row">' +
+    '<div><label>Area (domain)</label><select id="ca-area-' + esc(it.p) + '">' +
+    AREAS.map(function(a){ return '<option value="' + esc(a) + '"' + (a === area ? ' selected' : '') + '>' + esc(a) + '</option>'; }).join('') +
+    '</select></div>' +
+    '<div style="flex:2"><label>Destination folder (existing wiki dirs)</label><input list="stub-dirs" id="ca-path-' + esc(it.p) + '" value="' + esc(cur) + '"></div>' +
+    '</div>';
+  return '<label>Categorize — choose an area and a destination folder, then press the ✓ button</label>' + opts +
+    '<div class="row"><div style="flex:1"><button class="btn" id="ca-ok-' + esc(it.p) + '" style="margin-top:8px;background:var(--cat);color:#0b0d11;border-color:var(--cat);font-weight:700">&#10003; Apply target</button></div></div>' +
+    '<div class="hint">e.g. wiki/os-shell/foo.md &rarr; wiki/' + esc(area) + '/&hellip;  Final path is prefixed with wiki/ automatically.</div>';
+}
+function openPicker(path) {
+  var el = document.getElementById('cp-' + path);
+  if (!el) return;
+  el.classList.add('open');
+  var ok = document.getElementById('ca-ok-' + path);
+  if (ok) ok.addEventListener('click', function() {
+    var area = document.getElementById('ca-area-' + path).value;
+    var sub = document.getElementById('ca-path-' + path).value.trim().replace(/^\/+|\/+$/g, '');
+    var target = sub ? area + '/' + sub : area;
+    setCat(path, 'wiki/' + target);
+  });
+}
+function buildResults() {
+  var lines = [];
+  var now = new Date().toISOString().slice(0,10);
+  lines.push('# Stub Audit Results — ' + now);
+  lines.push('');
+  var classified = ITEMS.filter(function(it){ return CHOICES[it.p]; }).length;
+  lines.push('Reviewed: ' + classified + '/' + ITEMS.length);
+  lines.push('');
+  var order = [['k','## Keep',''],['e','## Enrich',''],['c','## Categorize',''],['a','## Archive',''],['d','## Delete','']];
+  order.forEach(function(g) {
+    var items = ITEMS.filter(function(it){ return CHOICES[it.p] === g[0]; });
+    lines.push(g[1] + ' (' + items.length + ')');
+    lines.push('');
+    items.forEach(function(it) {
+      var line = '- ' + it.t + ' (' + it.p + ')';
+      if (g[0] === 'c' && catTargets[it.p]) {
+        var from = 'wiki/' + it.p;
+        var to = catTargets[it.p] + '/' + it.p.split('/').pop();
+        line = '- ' + it.t + ' (' + it.p + ' → ' + to + ')';
+        lines.push('git mv ' + from + ' ' + to);
+      } else if (g[0] === 'a') {
+        var name = it.p.split('/').pop();
+        lines.push('git mv wiki/' + it.p + ' raw/archive/stub-audit-' + now + '/' + it.p);
+      } else if (g[0] === 'd') {
+        lines.push('git rm wiki/' + it.p);
+      }
+      lines.push(line);
+    });
+    lines.push('');
+  });
+  var un = ITEMS.filter(function(it){ return !CHOICES[it.p]; });
+  if (un.length) {
+    lines.push('## Unreviewed (' + un.length + ')');
+    lines.push('');
+    un.forEach(function(it){ lines.push('- ' + it.t + ' (' + it.p + ')'); });
+    lines.push('');
+  }
+  return lines.join('\n');
+}
+function showResults() {
+  var ta = document.getElementById('results-text');
+  ta.value = buildResults();
+  document.getElementById('results-panel').classList.add('open');
+  document.getElementById('results-panel').scrollIntoView({ behavior:'smooth' });
+}
+function copyResults() {
+  var ta = document.getElementById('results-text');
+  var text = ta.value || buildResults();
+  function done(ok) {
+    var el = document.querySelector('.copy-flash');
+    if (!el) { el = document.createElement('span'); el.className = 'copy-flash'; document.querySelector('.results-head').appendChild(el); }
+    el.textContent = ok ? 'copied ✓' : 'copy failed';
+    setTimeout(function(){ el.textContent=''; }, 1800);
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function(){ done(true); }).catch(function(){ fallbackCopy(text, done); });
+  } else fallbackCopy(text, done);
+}
+function fallbackCopy(text, done) {
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.select();
+  try { done(document.execCommand('copy')); } catch(e) { done(false); }
+  document.body.removeChild(ta);
+}
+document.querySelectorAll('.tab').forEach(function(t) {
+  t.addEventListener('click', function() {
+    document.querySelectorAll('.tab').forEach(function(x){ x.classList.remove('active'); });
+    t.classList.add('active');
+    filter = t.getAttribute('data-filter');
+    render();
+  });
+});
+['flt-stub','flt-short','flt-cat'].forEach(function(id) {
+  document.getElementById(id).addEventListener('change', render);
+});
+document.getElementById('show-results').addEventListener('click', showResults);
+document.getElementById('copy-results').addEventListener('click', function(){ showResults(); copyResults(); });
+document.getElementById('copy-results2').addEventListener('click', copyResults);
+
+var KEY_MAP = { '1':'k', '2':'e', '3':'c', '4':'a', '5':'d' };
+document.addEventListener('keydown', function(e) {
+  if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+  var key = KEY_MAP[e.key];
+  if (!key) return;
+  var first = ITEMS.find(function(it){ return !CHOICES[it.p]; });
+  if (!first) return;
+  if (key === 'c') { setChoice(first.p, 'c'); openPicker(first.p); }
+  else setChoice(first.p, key);
+});
+
+var dl = document.createElement('datalist');
+dl.id = 'stub-dirs';
+DIRS.forEach(function(d){ var o = document.createElement('option'); o.value = d; dl.appendChild(o); });
+document.body.appendChild(dl);
+
+render();
+</script>
+</body>
+</html>

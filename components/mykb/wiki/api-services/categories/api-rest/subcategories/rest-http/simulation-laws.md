@@ -13,7 +13,7 @@ Amazon Web Services — a comprehensive cloud platform. Sessions reference EC2, 
 
 **Related topics:** android, angular, api, auth
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Simulation Laws
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Simulation Laws
 
 ## Related Entities
 

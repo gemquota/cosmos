@@ -29,7 +29,7 @@ JSON-LD encodes linked data as JSON, linking terms to IRIs via a `@context` and 
 - [[wiki/data-storage/knowledge-graph|Knowledge Graph]]
 - [[wiki/memory/ontology-design|Ontology Design]]
 - [[wiki/data-storage/sparql|SPARQL]]
-- [[wiki/data-storage/index|Data Storage]]
+- [[wiki/data-storage/00-index|Data Storage]]
 - [[wiki/concepts/promotion-readiness|Promotion Readiness]]
 - [[wiki/dev-tools/global-link-check|Global Link Check]]
 - [[wiki/concepts/explainers|Explainers]]

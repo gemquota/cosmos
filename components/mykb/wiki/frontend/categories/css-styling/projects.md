@@ -21,11 +21,11 @@ Version control provides the history and collaboration layer. Branches isolate w
 
 Documentation captures the project's intent: a README explains how to run and test, and design notes record why decisions were made. Task tracking ties issues to commits so the history reads as a story of the project's evolution. Security practices, such as scanning dependencies for vulnerabilities and reviewing authorization boundaries, belong in every project regardless of size.
 
-The term appears in sessions categorized as API, Debugging, and Security, reflecting that project work is where these concerns meet: APIs are the contracts projects expose, debugging is how defects are found, and security is the discipline that protects the result. Related patterns live under [[wiki/frontend/categories/css-styling/importerror-10|Importerror 10]] and the [[wiki/web-platforms/index|Frontend]] domain.
+The term appears in sessions categorized as API, Debugging, and Security, reflecting that project work is where these concerns meet: APIs are the contracts projects expose, debugging is how defects are found, and security is the discipline that protects the result. Related patterns live under [[wiki/frontend/categories/css-styling/importerror-10|Importerror 10]] and the [[wiki/web-platforms/00-index|Frontend]] domain.
 
 The durable lesson is that project success depends less on tooling than on the discipline of recording decisions, verifying changes, and keeping the repository runnable by anyone at any time.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Related Entities
 

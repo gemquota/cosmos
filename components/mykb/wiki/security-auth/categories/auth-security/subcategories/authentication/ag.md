@@ -18,13 +18,13 @@ The Fragment lifecycle mirrors the Activity lifecycle, with callbacks from onAtt
 
 Fragment transactions are performed on the FragmentManager: a transaction adds, removes, replaces, or hides fragments, and can be added to the back stack so that the system back button reverses the change. Transitions and animations can be attached to the transaction for smooth navigation.
 
-Fragments communicate with their host Activity and each other through shared ViewModels, callbacks, or the FragmentResult API, rather than holding direct references, which keeps them reusable and testable. The Fragment entry in the [[wiki/web-platforms/index|Auth Security]] domain accompanies other Android patterns recorded in sessions, where dynamic UI and lifecycle discipline recur across projects.
+Fragments communicate with their host Activity and each other through shared ViewModels, callbacks, or the FragmentResult API, rather than holding direct references, which keeps them reusable and testable. The Fragment entry in the [[wiki/web-platforms/00-index|Auth Security]] domain accompanies other Android patterns recorded in sessions, where dynamic UI and lifecycle discipline recur across projects.
 
 The entry records Fragment patterns as they appeared in sessions, including the common mistake of holding an Activity reference from a long-lived Fragment, which is avoided with scoped ViewModels.
 
 Navigation components model destinations and arguments, which simplifies the same transactions the wiki records while keeping state restoration explicit.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Ag
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Ag
 
 ## Related Entities
 

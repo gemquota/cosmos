@@ -14,7 +14,7 @@ Agent — an autonomous software entity that performs tasks on behalf of users. 
 
 **Related topics:** android, api, auth, backend
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Mockagent
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Mockagent
 
 ## Overview
 

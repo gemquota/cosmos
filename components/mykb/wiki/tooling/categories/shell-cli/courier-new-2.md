@@ -9,7 +9,7 @@ resource: ""
 ---
 ## Courier New 2
 Courier New appears in 2 session(s) categorized as API, Cloud, Debugging, Frontend, Mobile, Shell. Related topics: ajax, android, api, aws, bash, cli, css.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Overview
 Courier New is a monospace typeface long used in terminals, code editors, and printed documents. In the sessions where it appears, it is most plausibly encountered through tooling: terminal output, log alignment, code listings, or debugger panes where fixed-width characters keep columns readable.
 ## Why Monospace Matters
@@ -29,7 +29,7 @@ Courier New is a monospace typeface long used in terminals, code editors, and pr
 ## Related Concepts
 - [[wiki/os-shell/ansi-escape-sequences|ANSI Escape Sequences]] — styling terminal text
 - [[wiki/os-shell/command-line-interfaces|Command Line Interfaces]] — where monospace output is standard
-- [[wiki/frontend/categories/css-styling/index|CSS Styling]] — font stacks and code presentation
+- [[wiki/frontend/categories/css-styling/00-index|CSS Styling]] — font stacks and code presentation
 ## Related Entities
 - [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
 - [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]

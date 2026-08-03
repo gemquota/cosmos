@@ -14,7 +14,7 @@ CSS (Cascading Style Sheets) — a stylesheet language for describing the presen
 
 **Related topics:** android, api, auth, bash, bug, cli
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Shell Cli
 
 ## Overview
 
@@ -26,11 +26,11 @@ Selectors target elements by tag, class, id, or attribute, and declarations set 
 
 ## Styling the Viewer
 
-The MyKB viewer applies these patterns: a base theme defines light colors, a dark theme overrides the custom properties, and components consume the variables so no component hard-codes colors. Layout uses flexbox or grid, and typography is set through the cascade with sensible fallbacks. Debugging CSS — the bug tag on this page — usually means inspecting computed styles in the browser or checking specificity fights between the theme and component styles. The [[wiki/frontend/index|Frontend]] tree documents the rendering side, and [[wiki/frontend/categories/css-styling/index|CSS Styling]] collects the styling patterns used across the wiki's own interfaces.
+The MyKB viewer applies these patterns: a base theme defines light colors, a dark theme overrides the custom properties, and components consume the variables so no component hard-codes colors. Layout uses flexbox or grid, and typography is set through the cascade with sensible fallbacks. Debugging CSS — the bug tag on this page — usually means inspecting computed styles in the browser or checking specificity fights between the theme and component styles. The [[wiki/frontend/00-index|Frontend]] tree documents the rendering side, and [[wiki/frontend/categories/css-styling/00-index|CSS Styling]] collects the styling patterns used across the wiki's own interfaces.
 
 ## Session Context
 
-The session that recorded CS touched mobile, API, auth, and shell topics alongside styling, matching the full-stack context in which the viewer lives — it is served from the same ecosystem whose APIs and shell tooling are documented elsewhere, including the [[wiki/web-platforms/index|Web Platforms]] cluster.
+The session that recorded CS touched mobile, API, auth, and shell topics alongside styling, matching the full-stack context in which the viewer lives — it is served from the same ecosystem whose APIs and shell tooling are documented elsewhere, including the [[wiki/web-platforms/00-index|Web Platforms]] cluster.
 
 ## Related Entities
 

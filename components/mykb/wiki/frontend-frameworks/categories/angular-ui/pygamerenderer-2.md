@@ -13,7 +13,7 @@ resource: ""
 
 PygameRenderer appears in 2 session(s) categorized as Cloud, Debugging, Frontend, Mobile, Shell. Related topics: android, angular, aws, bash, cli, css, dom.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/00-index|Angular Ui
 
 ## Overview
 

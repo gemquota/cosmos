@@ -14,7 +14,7 @@ KH — an acronym or abbreviation referenced in agent sessions.
 
 **Related topics:** bash, bug, cli
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Cli Tools]]
 
 ## Overview
 

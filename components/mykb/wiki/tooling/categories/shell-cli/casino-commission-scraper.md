@@ -9,7 +9,7 @@ status: "growing"
 ---
 ## Casino Commission Scraper
 Casino Commission Scraper appears in 1 session(s) categorized as API, Shell. Related topics: api, bash, cdn, cli.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Overview
 A commission scraper is a script or tool that periodically fetches commission, payout, or balance data from an external service and records it for review. In this case the data source is a casino affiliate or gaming platform, and the scrape runs from the command line, likely on a schedule. The session tags — API, Bash, CDN, CLI — describe the pipeline: HTTP requests against the service's endpoints (sometimes behind a CDN), parsing with shell or scripting tools, and CLI-driven operation.
 ## Scraping Approach

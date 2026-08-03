@@ -10,7 +10,7 @@ resource: ""
 
 ## Nah
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Dev Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Dev Tools]]
 
 ## Related Entities
 

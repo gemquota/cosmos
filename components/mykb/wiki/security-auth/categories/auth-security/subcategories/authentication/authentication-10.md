@@ -11,7 +11,7 @@ Identity verification process for users and systems. Sessions show OAuth 2.0 flo
 
 **Related technologies:** api, auth, authentication, bug, cli, cloud
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Authentication 10
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Authentication 10
 
 ## Overview
 

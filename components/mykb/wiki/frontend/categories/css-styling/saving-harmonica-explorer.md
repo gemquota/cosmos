@@ -23,7 +23,7 @@ Such a project exercises the whole frontend stack: pointer handling for the slid
 Saving also raises the state questions every interactive app faces: what to persist, where to store it, and how to restore it on launch. Session history, recorded snippets, and user preferences each have different storage needs, from in-memory lists to local storage to backend sync. The explorer's saving feature turns it from a toy into a tool, because users can revisit and build on what they discovered.
 **Related topics:** api, bug, cli, css
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Related Entities
 

@@ -25,4 +25,4 @@ Elasticsearch clusters Lucene shards across nodes to deliver near-real-time full
 - [[wiki/data-storage/bm25|BM25]] — its default ranking
 - [[wiki/data-storage/sqlite-fts5|SQLite FTS5]] — the embedded alternative
 - [[wiki/data-storage/hybrid-search|Hybrid Search]] — ES supports vector and lexical fusion
-- [[wiki/data-storage/index|Data Storage]] — search engines
+- [[wiki/data-storage/00-index|Data Storage]] — search engines

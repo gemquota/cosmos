@@ -25,4 +25,4 @@ Cornell Notes split each page into a narrow cue column, a wide note area, and a 
 - [[wiki/memory/note-taking-methods|Note-Taking Methods]] — Cornell is one structured capture method
 - [[wiki/memory/active-recall|Active Recall]] — the cue column exists for retrieval practice
 - [[wiki/memory/mind-mapping|Mind Mapping]] — a visual alternative layout
-- [[wiki/reflections/index|Reflections]] — retrospective summaries share the cue-answer shape
+- [[wiki/reflections/00-index|Reflections]] — retrospective summaries share the cue-answer shape

@@ -14,7 +14,7 @@ Evaluation — the assessment of LLM output quality. Sessions show manual review
 
 **Related topics:** ajax, android, api, auth
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Evaluationresult
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Evaluationresult
 
 ## Overview
 

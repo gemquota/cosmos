@@ -12,7 +12,7 @@ resource: ""
 
 Bond Angle Preference appears in 1 session(s) categorized as API, Cloud, Frontend, Security. Related topics: angular, api, auth, aws.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Bond Angle Preference
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Bond Angle Preference
 
 ## Related Entities
 

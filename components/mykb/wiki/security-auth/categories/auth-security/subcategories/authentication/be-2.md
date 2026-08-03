@@ -14,7 +14,7 @@ Babel — a JavaScript transpiler that converts ES6+ code into backwards-compati
 
 **Related topics:** api, auth, authentication
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Be 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Be 2
 
 ## Overview
 

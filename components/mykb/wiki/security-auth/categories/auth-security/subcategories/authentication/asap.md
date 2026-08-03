@@ -14,7 +14,7 @@ ASAP — As Soon As Possible. A time urgency indicator.
 
 **Related topics:** api, auth, authentication
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Asap
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Asap
 
 ## Overview
 
@@ -22,11 +22,11 @@ ASAP expands to "As Soon As Possible," a time-urgency qualifier used in communic
 
 ## Use in Communication
 
-Because ASAP is ambiguous — one person's "soon" is another's "tonight" — effective teams pair it with concrete information: a ticket should state the impact, the affected users, and a target time. In incident work, ASAP usually means the issue blocks other activity, so the note should also name what is blocked and who is waiting. This precision matters in security contexts, where a prompt fix can be the difference between a contained issue and a breach; [[wiki/security/index|Security]] documents the response practices that urgency qualifiers feed into.
+Because ASAP is ambiguous — one person's "soon" is another's "tonight" — effective teams pair it with concrete information: a ticket should state the impact, the affected users, and a target time. In incident work, ASAP usually means the issue blocks other activity, so the note should also name what is blocked and who is waiting. This precision matters in security contexts, where a prompt fix can be the difference between a contained issue and a breach; [[wiki/security/00-index|Security]] documents the response practices that urgency qualifiers feed into.
 
 ## Software Context
 
-In API work, an ASAP request typically translates into priorities: a hotfix branch, a faster review queue, or a higher-severity incident. The engineering response should still follow the normal safety process — test, review, deploy — because speed without verification produces regressions. Authentication-related urgency appears when credentials or tokens are compromised and rotation becomes critical. The [[wiki/api-services/index|API Services]] tree covers the interfaces where such hotfixes land, and [[wiki/development/index|Development]] records the workflow conventions that keep urgent changes safe.
+In API work, an ASAP request typically translates into priorities: a hotfix branch, a faster review queue, or a higher-severity incident. The engineering response should still follow the normal safety process — test, review, deploy — because speed without verification produces regressions. Authentication-related urgency appears when credentials or tokens are compromised and rotation becomes critical. The [[wiki/api-services/00-index|API Services]] tree covers the interfaces where such hotfixes land, and [[wiki/development/00-index|Development]] records the workflow conventions that keep urgent changes safe.
 
 ## Session Context
 

@@ -14,7 +14,7 @@ Authentication — the process of verifying the identity of users or systems. Se
 
 **Related topics:** android, api, auth, aws
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Auth System Analysis
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Auth System Analysis
 
 ## Overview
 

@@ -21,7 +21,7 @@ Related orchestration patterns in this repository, such as supervisor-worker del
 
 Future sessions should note which agents were defined, what tools were attached, and how authorization boundaries were enforced. Recording the agent topology and its permission boundaries in the session log keeps the framework's behavior auditable and reproducible. This is especially true when agents may act on live systems.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Autogen
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Autogen
 
 ## Related Entities
 

@@ -13,7 +13,7 @@ status: "growing"
 
 AmazingLaw appears in 2 session(s) categorized as API, Cloud, Frontend, Mobile, Security, Shell. Related topics: android, angular, api, auth, aws, bash.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Amazinglaw 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Amazinglaw 2
 
 ## Overview
 
@@ -25,7 +25,7 @@ The two recorded sessions categorize AmazingLaw under six domains, which is typi
 
 ## Cross-Domain Relevance
 
-For the wiki, entities like this one act as junction points: the [[wiki/web-platforms/index|Web Platforms]] tree records the browser and client side, [[wiki/api-services/index|API Services]] covers the service interfaces, and [[wiki/security/index|Security]] holds the authentication and authorization material that the sessions touched. The Mobile Platform branch contributes the Android side through [[wiki/android-core/index|Android Core]], while shell and cloud work live in their own clusters. Treating AmazingLaw as a cross-cutting label keeps the taxonomy honest: it is not a component you can point to in a codebase, but a marker for where several technical threads converged in the observed work.
+For the wiki, entities like this one act as junction points: the [[wiki/web-platforms/00-index|Web Platforms]] tree records the browser and client side, [[wiki/api-services/00-index|API Services]] covers the service interfaces, and [[wiki/security/00-index|Security]] holds the authentication and authorization material that the sessions touched. The Mobile Platform branch contributes the Android side through [[wiki/android-core/00-index|Android Core]], while shell and cloud work live in their own clusters. Treating AmazingLaw as a cross-cutting label keeps the taxonomy honest: it is not a component you can point to in a codebase, but a marker for where several technical threads converged in the observed work.
 
 ## Related Entities
 

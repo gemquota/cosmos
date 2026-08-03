@@ -13,7 +13,7 @@ resource: ""
 
 Sovereign Cognitive Platform appears in 2 session(s) categorized as Debugging. Related topics: cli, edge, ide, orm.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Sovereign Cognitive Platform 2
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Sovereign Cognitive Platform 2
 
 ## Overview
 
@@ -33,7 +33,7 @@ The debugging tag suggests the sessions used this framing while tracing defects 
 
 - [[wiki/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness]] — the conceptual framing in related sessions
 - [[wiki/concepts/metacognition|Metacognition]] — self-observation loops
-- [[wiki/llm-agents/index|LLM Agents]] — the reasoning substrate
+- [[wiki/llm-agents/00-index|LLM Agents]] — the reasoning substrate
 
 ## Related Entities
 

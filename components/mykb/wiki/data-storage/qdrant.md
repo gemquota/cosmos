@@ -22,4 +22,4 @@ Qdrant is a Rust-written vector database emphasizing payload filtering, approxim
 - [[wiki/data-storage/hnsw|HNSW]] — its default index
 - [[wiki/data-storage/metadata-filtering|Metadata Filtering]] — Qdrant's signature feature
 - [[wiki/data-storage/hybrid-search|Hybrid Search]] — sparse-plus-dense retrieval in Qdrant
-- [[wiki/data-storage/index|Data Storage]] — vector database family
+- [[wiki/data-storage/00-index|Data Storage]] — vector database family

@@ -14,7 +14,7 @@ BroadcastReceiver — an Android component for listening to system-wide broadcas
 
 **Related topics:** api, auth, authentication
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Bro
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Bro
 
 ## Overview
 
@@ -30,7 +30,7 @@ Broadcasts carry data across app boundaries, which makes them a security surface
 
 ## Session Context
 
-The entity surfaced in a session tagged API, auth, and authentication, matching an app where broadcast delivery (login result, token refresh, session expiry) feeds the authentication flow. [[wiki/android-core/index|Android Core]] groups the platform material, and [[wiki/security/index|Security]] holds the surrounding identity guidance.
+The entity surfaced in a session tagged API, auth, and authentication, matching an app where broadcast delivery (login result, token refresh, session expiry) feeds the authentication flow. [[wiki/android-core/00-index|Android Core]] groups the platform material, and [[wiki/security/00-index|Security]] holds the surrounding identity guidance.
 
 ## Related Entities
 

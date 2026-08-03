@@ -22,7 +22,7 @@ Future sessions should record the specific manipulation patterns used, the perfo
 
 **Related topics:** android, angular, api, auth, bash, ci/cd, documentation, dom
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/00-index|Angular Ui
 
 ## Related Entities
 

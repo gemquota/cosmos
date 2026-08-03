@@ -9,7 +9,7 @@ status: "growing"
 ---
 ## Lqbukrrrqqquu 2
 LqBUkrrrqqquu appears in 2 session(s) categorized as API, Frontend, Shell. Related topics: api, bash, cli, css.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Opaque Identifiers as Entities
 Names like LqBUkrrrqqquu are not words; they are opaque identifiers — generated tokens, hashes, base-encoded values, or randomized names that sessions encounter and the knowledge base records verbatim. Treating them as entity nodes preserves the ability to link the identifier to its context even when its meaning is unknown.
 Handling rules for such pages:

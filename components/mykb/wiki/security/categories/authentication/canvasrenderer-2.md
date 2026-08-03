@@ -22,7 +22,7 @@ The page records the technique as it appears in the graph viewer, and future ses
 
 **Related topics:** auth, aws, bash, bootstrap, bun
 
-**Domain:** Security & Authentication › [[wiki/web-platforms/index|Security]] › [[wiki/web-platforms/index|Authentication]]
+**Domain:** Security & Authentication › [[wiki/web-platforms/00-index|Security]] › [[wiki/web-platforms/00-index|Authentication]]
 
 ## Related Entities
 

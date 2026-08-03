@@ -13,7 +13,7 @@ status: "growing"
 
 Ambiguity System appears in 1 session(s) categorized as API, Cloud, DevOps, Shell. Related topics: api, bash, deployment, documentation.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Ambiguity System
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Ambiguity System
 
 ## Overview
 

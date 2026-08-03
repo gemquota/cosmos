@@ -1,0 +1,143 @@
+---
+type: "index"
+hub: true
+title: "Dev Tools Index"
+description: "Listing of the dev-tools/ folder (126 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
+# Dev Tools
+
+Part of [[wiki/index|Wiki Index]]. 126 pages.
+
+## Subfolders
+- entities/ — 5 pages
+
+## Pages
+- [[wiki/dev-tools/adaptive-limits|Adaptive Limits]] — Concurrency limits that adjust automatically from observed latency and error signals
+- [[wiki/dev-tools/alerting-rules|Alerting Rules]] — Conditions that turn metric thresholds into pages, tickets, or chat messages
+- [[wiki/dev-tools/apm-tools|APM Tools]] — Application performance monitoring suites that combine metrics, traces, and alerts
+- [[wiki/dev-tools/backpressure-handling|Backpressure Handling]] — Signaling producers to slow down when consumers cannot keep up
+- [[wiki/dev-tools/baggage-propagation|Baggage Propagation]] — Carrying small metadata strings alongside trace context across service boundaries
+- [[wiki/dev-tools/benchmark-frameworks|Benchmark Frameworks]] — Frameworks for writing and running reproducible performance comparisons
+- [[wiki/dev-tools/benchmark-testing|Benchmark Testing]] — Measuring the performance of code under controlled conditions to detect regressions and guide optimization
+- [[wiki/dev-tools/blame-wiki|Blame]] — Finding which edit introduced a line
+- [[wiki/dev-tools/breakpoint-debugging|Breakpoint Debugging]] — Pausing execution at chosen lines to inspect state interactively
+- [[wiki/dev-tools/broken-link-reports|Broken Link Reports]] — Reports that list wikilinks pointing at non-existent files
+- [[wiki/dev-tools/build-systems|Build Systems]] — The tools and pipelines that turn source into artifacts
+- [[wiki/dev-tools/bulkhead-isolation|Bulkhead Isolation]] — Partitioning resources so failure in one pool cannot starve another
+- [[wiki/dev-tools/burn-rate-alerts|Burn Rate Alerts]] — Alerts that fire when an SLO error budget is being consumed faster than planned
+- [[wiki/dev-tools/canary-releases|Canary Releases]] — Rolling a change out to a small slice of traffic before wider exposure
+- [[wiki/dev-tools/cancellation-tokens|Cancellation Tokens]] — Handles that propagate a cancel request through async work
+- [[wiki/dev-tools/centralized-logging|Centralized Logging]] — Shipping logs from many hosts to one searchable store
+- [[wiki/dev-tools/circuit-open-state|Circuit Open State]] — The state where a circuit breaker stops calling a failing dependency
+- [[wiki/dev-tools/code-coverage-tools|Code Coverage Tools]] — Tools that measure which lines and branches of code execute during a test run
+- [[wiki/dev-tools/code-coverage|Code Coverage]] — The percentage of code exercised by tests, used as a signal for test sufficiency
+- [[wiki/dev-tools/component-libraries|Component Libraries]] — Reusable UI building blocks with documented APIs and visual consistency
+- [[wiki/dev-tools/concurrency-limiters|Concurrency Limiters]] — Bounding how many requests are in flight simultaneously
+- [[wiki/dev-tools/consistent-titles|Consistent Titles]] — The practice of naming articles uniformly so titles read as one corpus
+- [[wiki/dev-tools/continuous-delivery|Continuous Delivery]] — Keeping every change releasable through automated, production-like pipelines
+- [[wiki/dev-tools/continuous-deployment|Continuous Deployment]] — Shipping every passing change to production automatically
+- [[wiki/dev-tools/continuous-integration|Continuous Integration]] — Merging small changes frequently and verifying every merge automatically
+- [[wiki/dev-tools/conventional-commits|Conventional Commits]] — A lightweight commit message convention that encodes the type and scope of each change
+- [[wiki/dev-tools/core-dumps|Core Dumps]] — Snapshot files of a crashed process's memory for post-mortem debugging
+- [[wiki/dev-tools/correlation-ids|Correlation IDs]] — IDs attached to logs, metrics, and traces so one request is findable everywhere
+- [[wiki/dev-tools/coverage-gauges|Coverage Gauges]] — Dashboards and badges that make test coverage trends visible over time
+- [[wiki/dev-tools/crash-reports|Crash Reports]] — Telemetry that captures what a client or service was doing when it crashed
+- [[wiki/dev-tools/curl-patterns|Curl Patterns]] — Recurring command-line idioms for transferring data with curl during development and debugging
+- [[wiki/dev-tools/dashboards-practice|Dashboards Practice]] — Principles for designing monitoring dashboards that answer questions instead of just showing charts
+- [[wiki/dev-tools/debug-logging|Debug Logging]] — High-detail logging written to explain internals during troubleshooting
+- [[wiki/dev-tools/debuggers|Debuggers]] — Tools that pause and inspect a running program to understand its state at a specific moment
+- [[wiki/dev-tools/dependency-management|Dependency Management]] — The practice of controlling what your software depends on and when it changes
+- [[wiki/dev-tools/description-quality|Description Quality]] — The standard for the one-sentence frontmatter description
+- [[wiki/dev-tools/devcontainers|Devcontainers]] — Containerized development environments defined in the repository, so every contributor runs the same setup
+- [[wiki/dev-tools/devops-culture|DevOps Culture]] — The culture of shared ownership across development and operations
+- [[wiki/dev-tools/diff-viewing|Diff Viewing]] — Comparing versions of an article to see what changed
+- [[wiki/dev-tools/distributed-tracing-ids|Distributed Tracing IDs]] — Unique identifiers that tie spans of one logical request together across services
+- [[wiki/dev-tools/edit-summaries-wiki|Edit Summaries]] — The convention of describing each edit's purpose
+- [[wiki/dev-tools/error-codes|Error Codes]] — Stable identifiers attached to failures so they can be looked up and handled uniformly
+- [[wiki/dev-tools/error-contracts|Error Contracts]] — Agreements about the shape and semantics of errors between producers and consumers
+- [[wiki/dev-tools/error-tracking-tools|Error Tracking Tools]] — Services that aggregate exceptions and errors with context across releases
+- [[wiki/dev-tools/exception-handling-practice|Exception Handling Practice]] — Discipline for catching, wrapping, and reporting exceptions without swallowing them
+- [[wiki/dev-tools/fail-fast|Fail Fast]] — Detecting invalid state as early as possible instead of letting it cascade
+- [[wiki/dev-tools/fail-safe|Fail-Safe]] — Designing so that when something fails, the outcome is the safe option
+- [[wiki/dev-tools/fallback-values|Fallback Values]] — Safe defaults returned when a primary value or operation is unavailable
+- [[wiki/dev-tools/fix-dry-runs|Fix Dry Runs]] — Previewing link fixes before applying them to the wiki
+- [[wiki/dev-tools/fixed-window|Fixed Window]] — A rate limiter that resets a counter at fixed boundaries
+- [[wiki/dev-tools/flame-graphs|Flame Graphs]] — Stack-trace visualizations that show where CPU time is concentrated
+- [[wiki/dev-tools/four-golden-signals|Four Golden Signals]] — Latency, traffic, errors, and saturation — the metrics that best describe user-facing health
+- [[wiki/dev-tools/frontmatter-linting|Frontmatter Linting]] — Automated validation of YAML frontmatter fields and values
+- [[wiki/dev-tools/fuzzing-tools|Fuzzing Tools]] — Tools that feed malformed, random, or structured inputs to software to discover crashes and bugs
+- [[wiki/dev-tools/git-bisect|Git Bisect]] — Binary search through commit history to find the commit that introduced a regression
+- [[wiki/dev-tools/git-rebase|Git Rebase]] — Rewriting commit history by replaying commits onto a new base
+- [[wiki/dev-tools/git-stash|Git Stash]] — Temporarily setting aside uncommitted changes so the working tree can be switched or cleaned
+- [[wiki/dev-tools/git-submodules|Git Submodules]] — Embedding one git repository inside another at a pinned commit
+- [[wiki/dev-tools/global-link-check|Global Link Check]] — A wiki-wide scan that every wikilink resolves to a real file
+- [[wiki/dev-tools/graceful-degradation|Graceful Degradation]] — Continuing to serve a reduced but useful experience when parts of a system fail
+- [[wiki/dev-tools/half-open-state|Half-Open State]] — The probe state a circuit breaker enters to test whether a dependency recovered
+- [[wiki/dev-tools/incident-command|Incident Command]] — Roles and coordination structures for managing a live incident response
+- [[wiki/dev-tools/jq-querying|Jq Querying]] — Filtering and transforming JSON from the command line with jq
+- [[wiki/dev-tools/latency-percentiles|Latency Percentiles]] — Reporting latency by percentile so outliers and tail behavior are visible
+- [[wiki/dev-tools/leaky-bucket|Leaky Bucket]] — A rate limiter that smooths bursts into a fixed output rate
+- [[wiki/dev-tools/link-fix-automation|Link-Fix Automation]] — Automated tooling that repairs broken or stale wikilinks
+- [[wiki/dev-tools/link-updates|Link Updates]] — The process of updating wikilinks after structural changes
+- [[wiki/dev-tools/load-shedding-practice|Load Shedding Practice]] — Dropping low-value or excess work to protect the system under overload
+- [[wiki/dev-tools/local-dev-logs|Local Dev Logs]] — Logging practices for development machines before anything reaches central storage
+- [[wiki/dev-tools/lockfiles|Lockfiles]] — Files that pin the exact resolved versions of a dependency tree for reproducible installs
+- [[wiki/dev-tools/log-aggregators|Log Aggregators]] — Systems that collect, index, and search logs from many services in one place
+- [[wiki/dev-tools/log-levels|Log Levels]] — The debug/info/warn/error taxonomy that grades log importance
+- [[wiki/dev-tools/log-retention|Log Retention]] — Policies for how long logs are kept, where, and in what form
+- [[wiki/dev-tools/log-rotation|Log Rotation]] — Splitting and pruning log files so disk never fills from logging alone
+- [[wiki/dev-tools/markdown-authoring|Markdown Authoring]] — Writing structured plain-text documents in Markdown, from notes to books and wikis
+- [[wiki/dev-tools/markdown-linting|Markdown Linting]] — Automated checks on markdown structure and syntax
+- [[wiki/dev-tools/merge-conflicts|Merge Conflicts]] — The state where concurrent changes touch overlapping lines and git cannot auto-merge them
+- [[wiki/dev-tools/message-brokers|Message Brokers]] — The middleware that moves messages between producers and consumers
+- [[wiki/dev-tools/metric-backends|Metric Backends]] — Time-series stores that persist and query metrics from services and infrastructure
+- [[wiki/dev-tools/monorepos|Monorepos]] — One repository holding many projects with shared tooling
+- [[wiki/dev-tools/mutation-testing-tools|Mutation Testing Tools]] — Tools that mutate source code to check whether tests actually detect faults
+- [[wiki/dev-tools/mutation-testing|Mutation Testing]] — Injecting small faults into code to check whether the test suite detects them
+- [[wiki/dev-tools/package-management|Package Management]] — Installing, publishing, and resolving dependencies across ecosystems
+- [[wiki/dev-tools/package-managers|Package Managers]] — Tools that install, update, and resolve dependencies for a language or system
+- [[wiki/dev-tools/page-history|Page History]] — The full revision record of an article
+- [[wiki/dev-tools/polyrepo-strategy|Polyrepo Strategy]] — Separate repositories per project, each with its own history and tooling
+- [[wiki/dev-tools/printf-debugging|Printf Debugging]] — Inserting print statements to observe program state at chosen points
+- [[wiki/dev-tools/profilers|Profilers]] — Tools that measure where a program spends time, memory, or I/O to guide optimization
+- [[wiki/dev-tools/profiling-tools|Profiling Tools]] — Tools that measure where CPU time, memory, and I/O are spent in a running program
+- [[wiki/dev-tools/property-based-testing|Property-Based Testing]] — Testing by generating many inputs and checking invariants that must hold for all of them
+- [[wiki/dev-tools/property-testing-libraries|Property Testing Libraries]] — Libraries that generate many random inputs to check invariants instead of hand-written examples
+- [[wiki/dev-tools/prose-linting|Prose Linting]] — Automated checks on sentence and paragraph quality
+- [[wiki/dev-tools/rate-limiting-algorithms|Rate Limiting Algorithms]] — Algorithms that cap request rates: token bucket, leaky bucket, sliding window, fixed window
+- [[wiki/dev-tools/related-blocks|Related Blocks]] — The standardized Related section that closes every article
+- [[wiki/dev-tools/release-management|Release Management]] — The process of planning, building, and shipping versions of software
+- [[wiki/dev-tools/renaming-procedure|Renaming Procedure]] — The defined steps for renaming an article without breaking the graph
+- [[wiki/dev-tools/repl-driven-development|Repl-Driven Development]] — Building software by exploring behavior interactively in a read-eval-print loop
+- [[wiki/dev-tools/reproducible-builds|Reproducible Builds]] — Builds that produce byte-identical outputs from the same source, given the same inputs
+- [[wiki/dev-tools/request-tracing|Request Tracing]] — Following a single request through every service, queue, and call it touches
+- [[wiki/dev-tools/revision-compare|Revision Compare]] — Side-by-side comparison of two revisions
+- [[wiki/dev-tools/rollback-strategies|Rollback Strategies]] — The prepared ways to undo a bad release quickly
+- [[wiki/dev-tools/runbook-automation|Runbook Automation]] — Turning documented operational procedures into repeatable, executable automation
+- [[wiki/dev-tools/sampling-traces|Sampling Traces]] — Recording only a subset of traces to control storage and cost while keeping signal
+- [[wiki/dev-tools/semver-tooling|Semver Tooling]] — Tools and practices for applying Semantic Versioning to packages, releases, and dependencies
+- [[wiki/dev-tools/sentence-case-rules|Sentence Case Rules]] — Capitalization conventions where only the first word and proper nouns are capitalized
+- [[wiki/dev-tools/sev-levels|Sev Levels]] — Standard severity classifications that set expectations for incident response speed
+- [[wiki/dev-tools/sliding-window|Sliding Window]] — A rate limiter that counts requests over a rolling time window
+- [[wiki/dev-tools/slo-budgets|SLO Budgets]] — Allocating a fixed error budget across changes, releases, and experiments
+- [[wiki/dev-tools/slug-changes|Slug Changes]] — The tracking and execution of article filename changes
+- [[wiki/dev-tools/slug-stability|Slug Stability]] — The practice of keeping article filenames stable once published
+- [[wiki/dev-tools/span-attributes|Span Attributes]] — Structured key-value metadata attached to a tracing span
+- [[wiki/dev-tools/spellcheck-wiki|Spellcheck for the Wiki]] — Automated spelling verification across all articles
+- [[wiki/dev-tools/status-pages|Status Pages]] — Public or internal pages that report service availability and ongoing incidents
+- [[wiki/dev-tools/structured-logs|Structured Logs]] — Log entries emitted as structured data (JSON) instead of free-form strings
+- [[wiki/dev-tools/style-enforcement|Style Enforcement]] — Making the wiki's writing conventions mechanically checkable
+- [[wiki/dev-tools/summary-quality|Summary Quality]] — The standard for a good opening Summary section
+- [[wiki/dev-tools/symbolication|Symbolication]] — Mapping crash-time addresses back to function names and source lines
+- [[wiki/dev-tools/tail-latency|Tail Latency]] — The slowest few percent of requests and the strategies that control them
+- [[wiki/dev-tools/timeout-policy|Timeout Policy]] — Rules for how long a call may take before it is abandoned
+- [[wiki/dev-tools/title-case-rules|Title Case Rules]] — Capitalization conventions for article titles
+- [[wiki/dev-tools/token-bucket|Token Bucket]] — A rate limiter that allows bursts up to a bucket capacity while enforcing a steady average rate
+- [[wiki/dev-tools/trace-viewers|Trace Viewers]] — UIs for exploring distributed traces across services and spans
+- [[wiki/dev-tools/trunk-based-development|Trunk-Based Development]] — Short-lived branches merging to mainline frequently, with toggles hiding incomplete work
+- [[wiki/dev-tools/verbose-flag|Verbose Flag]] — A CLI or config switch that raises logging verbosity on demand
+- [[wiki/dev-tools/watchpoints|Watchpoints]] — Breakpoints that trigger when a memory location or expression changes value
+- [[wiki/dev-tools/yaml-configs|YAML Configs]] — Human-readable YAML files used to configure tools, pipelines, and applications

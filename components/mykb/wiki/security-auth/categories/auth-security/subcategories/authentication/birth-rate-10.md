@@ -13,7 +13,7 @@ status: "growing"
 
 Birth Rate appears in 10 session(s) categorized as API, Cloud, Debugging, Frontend, Mobile, Security, Shell. Related topics: android, angular, api, auth, authentication, aws, bash, cli.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Auth Security › Birth Rate 10
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Auth Security › Birth Rate 10
 
 ## Overview
 
