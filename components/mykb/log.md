@@ -478,3 +478,10 @@ title: "Bundle Log"
 - **Assessment doc**: `docs/ao-assessment.md` — recommendation is selective harvest into RSIS3, not a fourth top-level component
 - **Synthesis**: `wiki/syntheses/ao-agent-os-integration-assessment.md` — harvest infrastructure (sandbox, HITL approvals, scheduler guards, cost ledger) into `rsis/loop_l1.py`, never duplicate memory/dashboard/telemetry surfaces
 - **Durable rules**: one memory (MyKB), one dashboard, one telemetry; vendor AO before relying on it (no git history); keep the immutable evaluator as the multi-agent verification gate
+
+## 2026-08-03 (Phase A — AO tool-layer port into RSIS3 L1)
+- **Ported** the Agent OS tool layer into `components/rsis3/rsis/tools/` (sandbox, hitl, manager, workspace_tools) and wired it into `rsis/loop_l1.py` with a `ToolConfig` gate: RestrictedPython/subprocess/Docker sandbox, per-agent allowlists, path containment, 5-level risk classifier with HITL modes (auto/interactive/api/deny), redacted audit logs (`.rsis/audit.jsonl`, `.rsis/hitl.jsonl`)
+- **Stub planner upgraded**: keyword consumed → remainder is payload; single-required-string and free-text (`run_code`) tools get the payload; each tool runs at most once per task; unmatched tasks complete
+- **Verified**: 12-point smoke suite (sandbox exec, destructive-code block, allowlist deny, path traversal, HITL thresholds, legacy path, audit/redaction) + full `cmd_run` end-to-end in a temp workspace + `status`/`check`/`check-practices` all green
+- **Docs**: RSIS3 README tool-layer section; `docs/ao-assessment.md` Phase A status
+- **Synthesis extended**: `wiki/syntheses/ao-agent-os-integration-assessment.md` gains Phase A implementation patterns

@@ -170,6 +170,41 @@ class EvaluatorConfig:
     read_only_mount: bool = True
 
 
+# ── Tool Layer (sandbox + allowlists + HITL) ─────────────────────────────
+
+@dataclass
+class ToolConfig:
+    """Sandboxed tool execution for L1 (ported from Agent OS).
+
+    `enabled=False` restores the pre-port behaviour (no tools, no sandbox).
+    HITL is off by default so unattended runs never prompt; set
+    `hitl_enabled` + `approval_mode` for operator-gated runs.
+    """
+    enabled: bool = True
+
+    # Sandbox
+    sandbox_backend: str = "auto"            # auto | restricted | subprocess | docker
+    sandbox_timeout: int = 30
+    sandbox_allow_network: bool = False
+    sandbox_mem_limit: str = "data"          # data | as | off
+    sandbox_max_memory_mb: int = 512
+    sandbox_docker_image: str = "python:3.11-slim"
+    sandbox_docker_mem_limit: str = "256m"
+    sandbox_docker_nano_cpus: int = 1_000_000_000
+
+    # HITL approvals
+    hitl_enabled: bool = False
+    approval_mode: str = "interactive"       # auto | interactive | api | deny
+    approval_threshold: str = "high"         # SAFE..CRITICAL (name or 1-5)
+    approval_timeout: float = 60.0           # api-mode fail-closed timeout (s)
+    auto_approve_tools: list = field(default_factory=list)
+
+    # Secrets + audit
+    secret_backend: str = "env"              # env | keyring
+    audit_log: str = ".rsis/audit.jsonl"
+    hitl_log: str = ".rsis/hitl.jsonl"
+
+
 # ── Main Configuration ───────────────────────────────────────────────────
 
 @dataclass
@@ -186,6 +221,7 @@ class RSISConfig:
     resources: ResourceLimits = field(default_factory=ResourceLimits)
     memory: MemoryConfig = field(default_factory=MemoryConfig)
     evaluator: EvaluatorConfig = field(default_factory=EvaluatorConfig)
+    tools: ToolConfig = field(default_factory=ToolConfig)
 
     # Workspace
     workspace_dir: str = "."
@@ -308,6 +344,18 @@ def load_config() -> RSISConfig:
         cfg.log_level = os.environ["RSIS_LOG_LEVEL"]
     if "RSIS_EVALUATOR_MODEL" in os.environ:
         cfg.evaluator.model = os.environ["RSIS_EVALUATOR_MODEL"]
+    if "RSIS_TOOLS_ENABLED" in os.environ:
+        cfg.tools.enabled = os.environ["RSIS_TOOLS_ENABLED"].lower() in ("1", "true", "yes")
+    if "RSIS_SANDBOX_BACKEND" in os.environ:
+        cfg.tools.sandbox_backend = os.environ["RSIS_SANDBOX_BACKEND"]
+    if "RSIS_SANDBOX_TIMEOUT" in os.environ:
+        cfg.tools.sandbox_timeout = int(os.environ["RSIS_SANDBOX_TIMEOUT"])
+    if "RSIS_HITL_ENABLED" in os.environ:
+        cfg.tools.hitl_enabled = os.environ["RSIS_HITL_ENABLED"].lower() in ("1", "true", "yes")
+    if "RSIS_APPROVAL_MODE" in os.environ:
+        cfg.tools.approval_mode = os.environ["RSIS_APPROVAL_MODE"]
+    if "RSIS_APPROVAL_THRESHOLD" in os.environ:
+        cfg.tools.approval_threshold = os.environ["RSIS_APPROVAL_THRESHOLD"]
     return _apply_tuned_state(cfg)
 
 

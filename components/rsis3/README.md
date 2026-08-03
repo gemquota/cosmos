@@ -74,6 +74,36 @@ python -m rsis evolve
 python -m rsis status
 ```
 
+## Tool Layer (L1 sandbox + approvals)
+
+L1 executes tools through a sandboxed layer (`rsis/tools/`, ported from the
+Agent OS project — see `docs/ao-assessment.md`):
+
+- **Sandbox** — `run_code` evaluates untrusted Python via RestrictedPython
+  (subprocess or Docker backends available via `sandbox_backend`); all child
+  processes get resource limits, a minimal env, and a hard timeout.
+- **Allowlists** — every tool declares `agent_allowlist`; calls outside it are
+  denied. `write_file` is restricted to implementing agents (`l1`, `coder`),
+  `reviewer` is read-only.
+- **Path containment** — file tools resolve paths inside the workspace and
+  deny traversal.
+- **HITL approvals** — a 5-level risk classifier (SAFE→CRITICAL) gates calls
+  at/above the configured threshold. Modes: `auto`, `interactive` (console
+  y/N), `api` (operator resolution, fail-closed timeout), `deny`.
+- **Audit** — every call is logged redacted to `.rsis/audit.jsonl` (HITL
+  decisions to `.rsis/hitl.jsonl`); secrets are masked in outputs.
+
+Config (env-overridable, `rsis/config.py` → `ToolConfig`):
+
+| Env var | Default | Meaning |
+|---|---|---|
+| `RSIS_TOOLS_ENABLED` | `1` | master switch (0 = pre-port behaviour) |
+| `RSIS_SANDBOX_BACKEND` | `auto` | `auto`/`restricted`/`subprocess`/`docker` |
+| `RSIS_SANDBOX_TIMEOUT` | `30` | seconds per tool call |
+| `RSIS_HITL_ENABLED` | `0` | enable operator approval for risky tools |
+| `RSIS_APPROVAL_MODE` | `interactive` | `auto`/`interactive`/`api`/`deny` |
+| `RSIS_APPROVAL_THRESHOLD` | `high` | risk level requiring approval |
+
 ## Project Structure
 
 ```
@@ -88,6 +118,12 @@ rsis/
 │   ├── loop_l2.py         # L2 Improvement Loop
 │   ├── loop_l3.py         # L3 Evolution Loop
 │   ├── memory.py          # Three-tier memory hierarchy
+│   ├── tools/             # Sandboxed tool layer (L1)
+│   │   ├── base.py        # Tool protocol + results
+│   │   ├── sandbox.py     # subprocess / RestrictedPython / Docker
+│   │   ├── hitl.py        # risk classifier + approval gate
+│   │   ├── manager.py     # registry, allowlists, vault, audit
+│   │   └── workspace_tools.py
 │   └── main.py            # CLI entry point
 ├── evaluator/             # Immutable evaluator (separate process)
 │   ├── evaluator.py       # Evaluator binary

@@ -7,11 +7,13 @@ Collects workspace telemetry and creates checkpoints before destructive ops.
 import logging
 import time
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any, Callable, Optional
 
 from rsis.checkpoint import CheckpointManager
 from rsis.config import CONFIG
 from rsis.telemetry import TelemetryCollector, TelemetryEvent
+from rsis.tools import ToolManager, default_tool_manager
 
 logger = logging.getLogger(__name__)
 
@@ -44,11 +46,22 @@ class L1ActionLoop:
         telemetry: TelemetryCollector,
         checkpoint_mgr: Optional[CheckpointManager] = None,
         tools: Optional[dict[str, Callable]] = None,
+        tool_manager: Optional[ToolManager] = None,
+        agent_name: str = "l1",
     ):
         self.config = CONFIG.l1
         self.telemetry = telemetry
         self.checkpoint = checkpoint_mgr or CheckpointManager(CONFIG.workspace_dir)
         self.tools = tools or {}
+        self.agent_name = agent_name
+        # Sandboxed tool layer (allowlists + HITL). Falls back to the plain
+        # callable dict when disabled or when an explicit manager is given.
+        if tool_manager is not None:
+            self.tool_manager = tool_manager
+        elif CONFIG.tools.enabled:
+            self.tool_manager = default_tool_manager(Path(CONFIG.workspace_dir))
+        else:
+            self.tool_manager = None
         self._task_description: str = ""
 
     def execute(self, task: str, context: Optional[dict] = None) -> L1Result:
@@ -129,15 +142,34 @@ class L1ActionLoop:
         """Decide the next tool to call based on task and prior results.
 
         In production this would use an LLM to plan. This stub uses a simple
-        keyword router for demonstration.
+        keyword router for demonstration. With the sandboxed tool layer the
+        task must name a tool; unmatched tasks complete instead of spinning
+        on an arbitrary default.
         """
-        if not self.tools:
-            return None, {}
-
         # If the last call failed, try a simpler approach
         if previous_calls and previous_calls[-1].error:
             logger.info("Retrying after failure...")
             return "retry", {"previous_error": previous_calls[-1].error}
+
+        if self.tool_manager is not None:
+            candidates = self.tool_manager.list_tools(self.agent_name)
+            if not candidates:
+                return None, {}
+            task_lower = task.lower()
+            for tool_name in candidates:
+                if tool_name in task_lower:
+                    # Stub planner: each tool runs at most once per task.
+                    # Failed calls still retry (previous error -> retry beat).
+                    if any(c.name == tool_name and not c.error
+                           for c in previous_calls):
+                        continue
+                    return tool_name, self._arguments_for(
+                        tool_name, task, context)
+            logger.info("L1 task matched no tool; marking complete")
+            return None, {}
+
+        if not self.tools:
+            return None, {}
 
         # Simple keyword routing for demo purposes
         task_lower = task.lower()
@@ -146,8 +178,31 @@ class L1ActionLoop:
                 return tool_name, {"task": task, **context}
 
         # Default: use first tool
-        first_tool = next(iter(self.tools))
-        return first_tool, {"task": task, **context}
+        return next(iter(self.tools)), {"task": task, **context}
+
+    def _arguments_for(self, tool_name: str, task: str,
+                       context: dict) -> dict:
+        """Stub planner args for a sandboxed tool.
+
+        Tools declare strict schemas (required params with types).  When a
+        tool takes exactly one required string parameter, the stub planner
+        hands it the task text; anything more complex falls back to the
+        legacy `{"task": ...}` envelope and fails validation visibly.
+        """
+        tool = self.tool_manager.tools.get(tool_name)
+        if tool is not None:
+            # The matched keyword is consumed; the rest is the payload.
+            payload = task.replace(tool_name, "").strip()
+            # Free-text tools receive the task text as their payload.
+            if tool_name == "run_code":
+                return {"code": payload, **context}
+            required_strings = [
+                name for name, spec in tool.parameters.items()
+                if spec.get("required") and spec.get("type") == "string"
+            ]
+            if len(required_strings) == 1:
+                return {required_strings[0]: payload, **context}
+        return {"task": task, **context}
 
     def _execute_tool(self, name: str, args: dict) -> ToolCall:
         """Execute a single tool call."""
@@ -155,6 +210,16 @@ class L1ActionLoop:
             return ToolCall(name="retry", arguments=args, result=None)
         if name == "noop":
             return ToolCall(name="noop", arguments=args, result=None)
+
+        # Sandboxed tool layer: allowlists, validation, HITL, audit.
+        if self.tool_manager is not None and name in self.tool_manager.tools:
+            result = self.tool_manager.execute(self.agent_name, name, args)
+            error = None if result.ok else f"{result.status.value}: {result.output}"
+            return ToolCall(
+                name=name, arguments=args,
+                result=result.output if result.ok else None,
+                error=error,
+            )
 
         handler = self.tools.get(name)
         if not handler:

@@ -62,3 +62,37 @@ them.
 - [[wiki/llm-agents/multi-agent-research-systems|Multi-Agent Research Systems]]
 - [[wiki/llm-agents/dont-build-multi-agents|Don't Build Multi-Agents]]
 - [[wiki/llm-agents/agentic-loops|Agentic Loops]]
+
+## Phase A implementation patterns (2026-08-03)
+The selective harvest was executed: `components/rsis3/rsis/tools/` (sandbox,
+hitl, manager, workspace_tools) wired into `rsis/loop_l1.py` via a
+`ToolConfig` gate. Durable port patterns:
+1. **Sync port, not copy-paste.** AO's asyncio ToolManager became a sync
+   manager: tool runs go through a worker thread with a hard timeout
+   (`concurrent.futures`), and the async ApprovalGate was merged into a sync
+   `HITLSafetyGate` whose `api` mode registers a pending request and polls
+   (0.25s) until operator resolution or a fail-closed timeout. Behavior
+   surface (auto/interactive/api/deny, SAFE→CRITICAL risk ladder) is
+   identical; only the transport differs.
+2. **Stub planners need argument discipline.** The keyword router cannot feed
+   strict tool schemas. Rules that worked: consume the matched keyword and
+   pass the remainder as the payload; fill a tool's single required string
+   param with the payload; special-case free-text tools (`run_code` →
+   `code=payload`); run each tool at most once per task (skip after one
+   success, retry after failure); unmatched tasks complete instead of
+   defaulting to an arbitrary tool.
+3. **Allowlist + containment + audit are the L1 security triad.** Write tools
+   restrict to implementing agents (`l1`, `coder`); reviewers are read-only.
+   Paths resolve inside the sandbox root with a parents-check. Every call and
+   every HITL decision lands redacted in `.rsis/audit.jsonl` /
+   `.rsis/hitl.jsonl` (secret patterns masked even when never loaded).
+4. **Config gates keep the port reversible.** `ToolConfig` with
+   `RSIS_TOOLS_ENABLED=0` restores pre-port behaviour; HITL defaults off so
+   unattended runs never prompt; `RSIS_SANDBOX_BACKEND=docker` escalates
+   isolation without code changes. Legacy `tools={...}` callable dicts still
+   work — the manager path merely takes precedence for its own tools.
+5. **Verify through the real entry point.** Smoke tests alone missed the
+   `main.py` path; driving `cmd_run` (with the disk-limit gate raised) proved
+   L2 → L1 tool execution and audit end-to-end. The repo's resource check
+   (disk >80%) and an undefined `logger` in main's throttle callback are
+   pre-existing environment/code issues, not port regressions.
