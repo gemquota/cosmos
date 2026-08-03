@@ -4,24 +4,27 @@ title: "Anycast Routing"
 description: "Advertising the same IP from multiple locations so clients reach the nearest one"
 tags: ["anycast", "routing", "bgp", "edge"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Anycast Routing
 
 ## Summary
-Advertising the same IP from multiple locations so clients reach the nearest one. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Anycast advertises the same IP from multiple locations and lets routers send each user to the nearest one. It is what makes CDNs, DNS, and global load balancers fast and resilient — at the cost of per-session consistency requirements.
 
 ## Details
-- Definition anchor: Advertising the same IP from multiple locations so clients reach the nearest one.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: the same prefix is announced via BGP from many sites; routers pick the best path per destination, so different users (and sometimes different packets of one user) land at different sites. Protocols must tolerate this: DNS and HTTP reconnects are fine; long-lived TCP sessions and stateful apps are not, unless engineered with session affinity or shared state.
+- Concrete example: 1.1.1.1 and 8.8.8.8 are anycast — a DNS query from Tokyo resolves at a Tokyo PoP; CDN edge IPs are anycast so video flows from the nearest edge; a health-checked anycast VIP fails over by withdrawing the route from a broken site.
+- Failure modes: TCP flows pinning to one site while routing flaps (anycast + BGP convergence = session drops); stateful services (websockets, gaming) breaking unless sticky; overlapping anycast announcements leaking or conflicting; and hijacking — anycast prefixes are targets for BGP hijacks, needing RPKI/ROA protection.
+- Operational tradeoffs: anycast buys latency reduction, DDoS absorption, and fast failover; it costs control over session locality and demands stateless or shared-state design. Use it for stateless protocols (DNS, HTTP edge) and reserve unicast + DNS steering for sticky workloads.
+- RSIS3/mykb relevance: the hub and cosmos deployments rely on anycast DNS/CDN; this note records the architecture so the loop does not build stateful assumptions over anycast endpoints.
+- Session design: keep anycast-facing protocols stateless or share state across sites; a websocket pinned to one PoP breaks when the route changes mid-session.
+- Hijack defense: protect anycast prefixes with RPKI/ROA so a mistaken announcement cannot redirect your traffic to an attacker's network.
 
 ## Related
-- [[wiki/cloud-infra/bgp-routing|BGP Routing]] — related coverage in the same cluster
-- [[wiki/infrastructure/eventbridge-and-routing|Eventbridge And Routing]] — related coverage in the same cluster
-- [[wiki/os-shell/routing-and-forwarding|Routing & Forwarding]] — related coverage in the same cluster
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/cloud-infra/bgp-routing|BGP Routing]]
+- [[wiki/infrastructure/eventbridge-and-routing|Eventbridge And Routing]]
+- [[wiki/os-shell/routing-and-forwarding|Routing & Forwarding]]
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

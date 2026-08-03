@@ -4,19 +4,21 @@ title: "Federation vs Hub-Spoke"
 description: "Two models for coordinating application placement across clusters"
 tags: ["federation", "hub-spoke", "kubernetes", "architecture"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Federation vs Hub-Spoke
 
 ## Summary
-Two models for coordinating application placement across clusters. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Two patterns dominate multi-cluster Kubernetes management. Federation (KubeFed) uses a central control plane that propagates and reconciles selected resources across member clusters, making them behave as one fleet. Hub-spoke keeps clusters independent and manages them from a central hub — Argo CD, ACM, or Fleet — that pushes configuration without owning the clusters' workloads.
 
 ## Details
-- Definition anchor: Two models for coordinating application placement across clusters.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Federation (KubeFed): a federation control plane propagates chosen resources (deployments, ingresses, secrets) to member clusters and keeps them in sync; templated placement controls which clusters receive which resources. It suits fleets that must stay logically identical.
+- Hub-spoke: the hub holds configuration and state (repositories, policies, app definitions) and pushes to spokes through GitOps agents; spokes stay autonomous and can run offline or with local overrides. It is the more common production pattern because failure domains remain isolated.
+- Concrete example: Argo CD on a hub with registered cluster destinations; ApplicationSets generate apps per cluster; the hub is a control-plane tenant, not a workload tenant, so hub failure degrades management rather than runtime.
+- Failure modes: federation's sync controller fighting local controllers that reconcile the same Deployment — reserve federated resources for truly global ones; credential sprawl in hub-spoke, where a hub holding kubeconfigs is a single compromise point — use short-lived tokens and audit who can add destinations; split-brain when spokes hold divergent overrides after a partial push.
+- Tradeoffs: federation gives stronger consistency at the cost of coupling and coordinated upgrades; hub-spoke accepts eventual consistency for operational simplicity and per-cluster autonomy. A common hybrid federates identity and policies while running applications hub-spoke.
+- RSIS3 relevance: RSIS3's multiple instances (dev versus prod knowledge bases) map naturally to hub-spoke — a central control repo pushes configuration to independent instances while each keeps local state.
 
 ## Related
 - [[wiki/infrastructure/hub-spoke-vs-mesh-topologies|Hub-Spoke vs Mesh Topologies]] — related coverage in the same cluster

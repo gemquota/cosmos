@@ -4,19 +4,21 @@ title: "SDN Controllers"
 description: "Centralized brains that program distributed forwarding"
 tags: ["sdn", "controller", "networking", "automation"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # SDN Controllers
 
 ## Summary
-Centralized brains that program distributed forwarding. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+SDN controllers centralize the network's control plane: a software brain computes forwarding decisions and programs distributed switches through southbound APIs such as OpenFlow. This separation of "what the network should do" from "how individual switches do it" enables policy-driven automation, global optimization, and programmatic network services.
 
 ## Details
-- Definition anchor: Centralized brains that program distributed forwarding.
-- Open questions: how this interacts with adjacent datacenter and network infrastructure topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: the controller maintains a topology graph and policy model, computes paths or flow rules, and installs them into switches via the southbound API. Applications talk to the controller through a northbound API to request connectivity, security, or QoS services without touching switch CLI.
+- Deployments: single controllers are simple but fragile; clustered controllers (for example ONOS or OpenDaylight with Raft-based state replication) tolerate controller failure; hierarchical designs place domain controllers under a parent for large fabrics.
+- Failure modes: controller loss can leave switches fail-open (forwarding with stale rules) or fail-closed (dropping new flows) depending on configuration; clustered controllers can split-brain; flow-table overflow pushes rules out of TCAM; stale topology after a link flap causes black holes until recomputation.
+- Tradeoffs: centralized visibility and programmable policy versus a new single point of failure, higher operational complexity, and harder debugging when the data plane and control plane disagree. The controller must also handle switch-request storms when many devices reconnect at once.
+- Operational practice: run controllers in odd-numbered clusters, pre-provision fallback flows for critical paths, monitor southbound session counts, and version the northbound API carefully because applications depend on it.
+- RSIS3/mykb relevance: the control-plane/data-plane split is a useful analogy for RSIS3's own separation of reflection loops from execution, and this node keeps that parallel retrievable during architecture discussions.
 
 ## Related
 - [[wiki/devops-infra/ingress-controllers|Ingress Controllers]] — related coverage in the same cluster

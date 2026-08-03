@@ -4,19 +4,21 @@ title: "ConfigMaps & Secrets Rotation"
 description: "Injecting and rotating Kubernetes configuration and secrets"
 tags: ["configmap", "secrets", "rotation", "kubernetes"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # ConfigMaps & Secrets Rotation
 
 ## Summary
-Injecting and rotating Kubernetes configuration and secrets. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Kubernetes ConfigMaps and Secrets deliver configuration and sensitive data to pods; rotation is the process of replacing values, or the whole object, safely. The hard part is that pods hold mounted values in memory, so rotation must trigger a reload or restart — and secret rotation has the extra failure mode of breaking running workloads when keys change unexpectedly.
 
 ## Details
-- Definition anchor: Injecting and rotating Kubernetes configuration and secrets.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanisms: update the object and rely on mounted-volume updates — files mounted under `subPath` update only on restart while regular files update in place; or use a reloader (Stakater Reloader, Reloader) that watches ConfigMap and Secret changes and rolls the Deployment; or bake config into images, which is worst for secrets.
+- Concrete example: a credentials Secret mounted as a volume; rotation updates the Secret with a new API key; the reloader detects the change and triggers a rolling restart so pods pick up the new value. A safer variant writes a new Secret under a new name, flips the Deployment reference, then deletes the old object.
+- Failure modes: partial rollout — old and new pods run different keys during a rolling restart, so consumers must tolerate both briefly; a race between secret update and pod restart leaving pods with tokens that invalidate mid-request; `secretKeyRef` environment values never update without restart, so an operator who only edits the object thinks rotation worked while pods keep the old value; deleting a Secret still referenced by pods breaks them with confusing errors.
+- Tradeoffs: restart-based rotation is simple and robust but causes availability blips and connection churn; name-versioned secrets avoid restarts but accumulate objects and need cleanup; external secret operators (External Secrets Operator, Vault agent) keep secrets in one place and push rotations with controlled timing.
+- Operational notes: rotate on a schedule and after compromise, test in staging first, keep a rollback path where the previous key remains valid for a grace window, and audit secret metadata without ever logging values.
+- RSIS3 relevance: MyKB daemon credentials and API tokens follow the same lifecycle — rotation planning belongs in the operational playbook and the policy notes belong in mykb.
 
 ## Related
 - [[wiki/devops-infra/secrets-management-revisited|Secrets Management]] — related coverage in the same cluster

@@ -4,24 +4,25 @@ title: "Private Link & Private Endpoints"
 description: "Reaching cloud services over private IPs without public exposure"
 tags: ["privatelink", "endpoints", "networking", "security"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Private Link & Private Endpoints
 
 ## Summary
-Reaching cloud services over private IPs without public exposure. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Private Link / private endpoints give services private IPs inside your VPC, so traffic to SaaS and other VPCs never touches the public internet: AWS PrivateLink/interface VPC endpoints, Azure Private Link, GCP Private Service Connect. They cut egress costs, simplify security, and complicate routing and DNS.
 
 ## Details
-- Definition anchor: Reaching cloud services over private IPs without public exposure.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: a private endpoint is a NIC with an IP in your subnet backed by a service (SaaS, your own services, provider APIs); DNS resolution maps the service's public name to the private IP inside the VPC; traffic flows over the provider's backbone, not the internet. AWS interface endpoints support private DNS, Azure private endpoints integrate with private DNS zones, and PSC uses service attachment + forwarding rules.
+- Concrete example: an app calls an SaaS API through a PrivateLink endpoint — no NAT, no public IP, no internet egress bill; a hub VPC exposes its internal service to spoke VPCs via PrivateLink, avoiding peering mesh; compliance requires no public exposure of database access, satisfied by endpoints instead of security-group gymnastics.
+- Failure modes: DNS not switching to the private IP (the classic "still going to the internet" bug — private DNS zone must be linked and split-horizon correct); cross-region/on-prem resolution of private endpoints (needs custom DNS forwarding); per-endpoint pricing accumulating across many services; and service-side trust — endpoints are mutual: the consumer sees a private IP, but the service still authorizes by identity.
+- Operational tradeoffs: endpoints buy privacy, lower egress cost, and simpler security groups at per-hour pricing and DNS complexity; use them for high-volume or compliance-sensitive traffic and document the DNS split so the loop's service discovery does not regress to public resolution.
+- RSIS3/mykb relevance: the wiki's hub services are reached via private endpoints with documented DNS zones, so cross-service calls never traverse public egress.
 
 ## Related
-- [[wiki/cloud-infra/virtual-private-clouds|Virtual Private Clouds]] — related coverage in the same cluster
-- [[wiki/cloud-infra/ipv6-link-local-addresses|IPv6 Link-Local Addresses]] — related coverage in the same cluster
-- [[wiki/os-shell/link-layer-ethernet-and-arp|Link Layer, Ethernet & ARP]] — related coverage in the same cluster
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/cloud-infra/virtual-private-clouds|Virtual Private Clouds]]
+- [[wiki/cloud-infra/ipv6-link-local-addresses|IPv6 Link-Local Addresses]]
+- [[wiki/os-shell/link-layer-ethernet-and-arp|Link Layer, Ethernet & ARP]]
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

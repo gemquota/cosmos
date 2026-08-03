@@ -4,24 +4,26 @@ title: "Flow Control"
 description: "Receiver-window based pacing that prevents sender overflow of buffers"
 tags: ["flow-control", "tcp", "windows", "networking"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Flow Control
 
 ## Summary
-Receiver-window based pacing that prevents sender overflow of buffers. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Flow control is the mechanism that stops a fast sender from overwhelming a slow receiver: TCP's receive-window throttling, QUIC's stream-level control, and link-level pause frames. It is distinct from congestion control (which protects the network, not the receiver).
 
 ## Details
-- Definition anchor: Receiver-window based pacing that prevents sender overflow of buffers.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: TCP flow control is receiver-driven: the receiver advertises a window (the free buffer space), the sender cannot send more than the window without an update; a zero window stalls the connection until a window-update (window probe) arrives. QUIC does this per stream and per connection, so one stalled consumer does not block others; hardware flow control (pause frames) handles link-level backpressure.
+- Concrete example: a slow database client with a tiny receive buffer throttles a bulk sender through window updates — the sender's throughput collapses despite a fat link; HTTP/2's per-connection flow control (but per-stream too) prevents one slow stream from hogging buffers; tuning receive buffers upward fixes throughput on high-BDP paths where the receiver window, not the network, is the limit.
+- Failure modes: confusing flow control with congestion — tuning one does not fix the other; zero-window deadlocks when window updates are lost (probes exist but can stall); buffer bloat from huge windows defeating latency; and receiver-side limits (NIC, socket buffers) that silently cap throughput.
+- Operational tradeoffs: correctly sized buffers are the whole game: too small throttles, too large bloats latency; modern kernels autotune, but proxies and middleboxes still impose their own windows. Measure per-connection window usage when throughput is suspiciously capped.
+- RSIS3/mykb relevance: the wiki's transfer diagnostics record window and buffer stats, so the loop's replication tuning separates receiver limits from network limits.
+- Buffer sizing: set socket buffers to the bandwidth-delay product for high-throughput paths; an undersized receive buffer throttles throughput invisibly.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/os-shell/job-control-and-background-tasks|Job Control & Background Tasks]] — related coverage in the same cluster
-- [[wiki/cloud-infra/congestion-control-algorithms|Congestion Control Algorithms]] — related coverage in the same cluster
-- [[wiki/cloud-infra/network-access-control-lists|Network Access Control Lists]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/os-shell/job-control-and-background-tasks|Job Control & Background Tasks]]
+- [[wiki/cloud-infra/congestion-control-algorithms|Congestion Control Algorithms]]
+- [[wiki/cloud-infra/network-access-control-lists|Network Access Control Lists]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

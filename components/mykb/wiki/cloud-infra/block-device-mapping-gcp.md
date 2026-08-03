@@ -4,24 +4,26 @@ title: "Block Device Mapping on GCP"
 description: "GCE disks, snapshots, and attachment semantics"
 tags: ["gcp", "disk", "block-storage", "cloud"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Block Device Mapping on GCP
 
 ## Summary
-GCE disks, snapshots, and attachment semantics. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+GCP block-device mapping connects persistent disks (PDs), local SSDs, and images to instances as /dev devices, with per-disk performance caps and a size-tied IOPS model. Getting the mapping right — which device name, which performance tier, which filesystem — is where GCP storage sharp edges live.
 
 ## Details
-- Definition anchor: GCE disks, snapshots, and attachment semantics.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: persistent disks attach as /dev/disk/by-id/google-* names; each PD has IOPS/throughput tied to size and type (pd-standard, pd-balanced, pd-ssd, pd-extreme), and performance scales per GB up to caps; local SSDs are ephemeral NVMe attached at high IOPS with no persistence; snapshots and images are the backup/portability layer.
+- Concrete example: a database on pd-ssd sized so the GB-based IOPS covers peak (e.g. 8,000 IOPS needs ~1TB in the standard model); a cache tier on local SSD knowing data dies with the instance; a boot disk from a hardened image with pd-balanced for a small, moderate-I/O VM.
+- Failure modes: expecting local SSD persistence (data loss on stop); sizing PDs purely for capacity when IOPS come from size (over-paying or starving I/O); device-name confusion when multiple disks attach (use by-id links, not /dev/sd*); and forgetting that live resize requires filesystem grow and possible reboot.
+- Operational tradeoffs: PDs give durability and snapshots at a cost and IOPS ceiling; local SSD gives raw speed with ephemerality; pd-extreme (provisioned IOPS) is the escape hatch for high-I/O workloads. Match tier to access pattern and document the device-by-id mapping for automation.
+- RSIS3/mykb relevance: experiment runners use a recorded disk recipe (type, size, device path, filesystem) so the loop's provisioning is reproducible and telemetry maps disks correctly.
+- Device identity: mount and reference disks by the by-id/google-* names, never /dev/sd*; device letters change across reboots and attachment order.
 
 ## Related
-- [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]] — related coverage in the same cluster
-- [[wiki/cloud-infra/cloud-providers-aws-azure-gcp|Cloud Providers: AWS, Azure, GCP]] — related coverage in the same cluster
-- [[wiki/cloud-infra/gcp-vpc-and-cloud-nat|GCP VPC & Cloud NAT]] — related coverage in the same cluster
-- [[wiki/devops-infra/dependency-mapping-and-blast-radius|Dependency Mapping & Blast Radius]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]]
+- [[wiki/cloud-infra/cloud-providers-aws-azure-gcp|Cloud Providers: AWS, Azure, GCP]]
+- [[wiki/cloud-infra/gcp-vpc-and-cloud-nat|GCP VPC & Cloud NAT]]
+- [[wiki/devops-infra/dependency-mapping-and-blast-radius|Dependency Mapping & Blast Radius]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

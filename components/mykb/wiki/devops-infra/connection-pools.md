@@ -4,19 +4,21 @@ title: "Connection Pools"
 description: "Reusing connections to amortize handshake and socket costs"
 tags: ["connection-pools", "networking", "performance", "clients"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Connection Pools
 
 ## Summary
-Reusing connections to amortize handshake and socket costs. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Connection pools reuse a bounded set of TCP connections to a backend (database, HTTP service) across many requests, amortizing handshake cost and preventing connection storms. Pool sizing, timeouts, and health checks determine whether the pool helps or becomes the bottleneck under load.
 
 ## Details
-- Definition anchor: Reusing connections to amortize handshake and socket costs.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: a pool holds idle connections, hands them to callers, checks them out and back in with a mutex or queue, and creates or destroys connections as demand changes. Sizing rules matter: too few connections serialize requests; too many exhaust backend resources — Postgres has a hard connection ceiling.
+- Concrete example: an app with 100 concurrent requests against a Postgres pool of 20 — the pool queues excess requests; pgbouncer in transaction mode multiplexes many client sessions over a few server connections; an HTTP pooler keeps keep-alive connections warm to a gateway.
+- Failure modes: pool exhaustion when a backend slows down — requests pile up on held connections and acquisition timeouts cascade; stale connections after a backend restart — the pool hands out dead sockets until health-checked; unbounded growth from connection leaks where callers forget to release; the pool-shrink problem where idle connections are closed under memory pressure just as load returns.
+- Operational notes: set acquire and lease timeouts, validate connections on borrow (SELECT 1 or a TCP probe), size pools from peak concurrency rather than average, add jitter to connection creation to avoid thundering-herd reconnects after an outage, and monitor wait time and utilization.
+- Tradeoffs: pooling trades complexity for latency and backend protection; connection-per-request is simpler but cannot survive high fan-out; pooling per process versus a centralized pooler (pgbouncer) is a resource-versus-ops tradeoff.
+- RSIS3 relevance: RSIS3 agents issuing parallel mykb queries benefit from a shared pool so bursts of retrieval do not exhaust the wiki daemon's connection budget.
 
 ## Related
 - [[wiki/cloud-infra/connection-multiplexing|Connection Multiplexing]] — related coverage in the same cluster

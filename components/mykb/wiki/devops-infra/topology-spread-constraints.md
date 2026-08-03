@@ -4,19 +4,21 @@ title: "Topology Spread Constraints"
 description: "Spreading pods across zones, nodes, or racks"
 tags: ["topology-spread", "scheduling", "kubernetes", "availability"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Topology Spread Constraints
 
 ## Summary
-Spreading pods across zones, nodes, or racks. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Topology spread constraints distribute pods across failure domains — zones, regions, nodes — so that losing one domain does not take down the whole workload. They extend node affinity: instead of just placing pods, they enforce an even spread across labeled topologies with configurable skew.
 
 ## Details
-- Definition anchor: Spreading pods across zones, nodes, or racks.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: a pod spec declares topologySpreadConstraints with a topology key (topology.kubernetes.io/zone), maxSkew (the allowed imbalance), whenUnsatisfiable (DoNotSchedule or ScheduleAnyway), and labelSelector; the scheduler counts matching pods per domain and prefers or requires balanced placement.
+- Concrete example: a 6-replica Deployment spreads maxSkew=1 across 3 zones, so each zone holds 2 replicas; a node loss in one zone leaves 4 replicas running; a workload spread across nodes with anti-affinity avoids co-location; batch workloads use ScheduleAnyway so they still schedule when balance is impossible.
+- Failure modes: constraints that cannot be satisfied, leaving pods Pending (check with events); skew creeping when scaling up without rebalancing (the scheduler balances at placement, not retroactively); counting only scheduled pods, ignoring crash-looping ones; constraints conflicting with other scheduling rules (affinity, taints), making scheduling impossible; spreading that ignores real fault domains because labels are wrong.
+- Tradeoffs: spread constraints buy blast-radius isolation at the cost of scheduling flexibility and cluster fragmentation; the alternative — no constraints — lets the scheduler pack efficiently and fail whole regions together; the mature pattern is spread across zones for critical workloads, node spread for the rest, with maxSkew tuned to real failure domains.
+- Operational notes: verify topology labels, monitor pod distribution per domain, and test zone-loss behavior in drills.
+- RSIS3 relevance: if cosmos runs replicated services, spread constraints keep the wiki available when a zone fails — a small spec change with large availability impact.
 
 ## Related
 - [[wiki/os-shell/numa-and-cpu-topology|NUMA & CPU Topology]] — related coverage in the same cluster

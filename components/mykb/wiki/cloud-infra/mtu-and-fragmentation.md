@@ -4,23 +4,25 @@ title: "MTU & Fragmentation"
 description: "Maximum transmission unit limits and how oversized packets get handled"
 tags: ["mtu", "fragmentation", "networking", "tcp"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # MTU & Fragmentation
 
 ## Summary
-Maximum transmission unit limits and how oversized packets get handled. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+MTU is the largest packet a link carries (typically 1500 bytes, jumbo 9000 on internal networks); fragmentation splits packets that exceed the next hop's MTU. Mismatches cause black holes, especially with encapsulation and IPv6, where routers do not fragment.
 
 ## Details
-- Definition anchor: Maximum transmission unit limits and how oversized packets get handled.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: IP fragmentation splits oversized packets (with reassembly at the destination); the DF (don't fragment) bit forces senders to learn the path MTU via ICMP; IPv6 removed router fragmentation entirely — only the source fragments, so PMTUD failures black-hole traffic. Encapsulation (VXLAN +36B, GRE, IPsec, tunnels) shrinks effective MTU, and MSS clamping on TCP is the standard workaround.
+- Concrete example: a VXLAN overlay with 1500 MTU underlay needs 1450 or 1400 tenant MTU to fit headers; a VPN tunnel delivering 1500 MTU payloads but dropping ICMP packet-too-big messages silently stalls transfers — the classic MTU black hole; jumbo frames inside a datacenter cut CPU and latency for storage traffic but break at any legacy hop.
+- Failure modes: assuming 1500 everywhere (tunnels, PPPoE, carrier networks reduce it); ICMP filtered, breaking PMTUD (allow ICMP type 3 code 4); inconsistent MTU across a path causing mystery packet loss at exactly the fragment threshold; and IPv6 deployments with no MSS clamping path.
+- Operational tradeoffs: standardize on 1500 for internet-facing paths and 9000 internally where the whole path supports it; document MTU per segment and verify with ping -M do sweeps. When encapsulation is involved, set the tenant MTU deliberately rather than discovering black holes in production.
+- RSIS3/mykb relevance: the wiki's tunneled lab networks record per-link MTUs and MSS clamps, so the loop's connectivity tests start from known-good values.
+- Verification: probe each segment with df-bit ping sweeps at decreasing sizes to find the path MTU; the sweep is minutes of work that prevents the classic black-hole outage.
 
 ## Related
-- [[wiki/os-shell/memory-fragmentation|Memory Fragmentation]] — related coverage in the same cluster
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/os-shell/memory-fragmentation|Memory Fragmentation]]
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

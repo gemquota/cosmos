@@ -4,19 +4,21 @@ title: "Storage Classes & Provisioners"
 description: "Dynamic volume provisioning policies in Kubernetes"
 tags: ["storage-class", "provisioner", "kubernetes", "storage"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Storage Classes & Provisioners
 
 ## Summary
-Dynamic volume provisioning policies in Kubernetes. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Storage classes define the flavors of storage available in a Kubernetes cluster — performance tier, replication, reclaim behavior — and provisioners (drivers) create the actual volumes. A StorageClass maps a user request to an implementation: fast SSD, network volume, local disk, or a cloud product, with parameters like IOPS and disk type.
 
 ## Details
-- Definition anchor: Dynamic volume provisioning policies in Kubernetes.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: a StorageClass declares a provisioner (the CSI driver), parameters (disk type, IOPS, replication), reclaimPolicy (Delete or Retain), volumeBindingMode (Immediate or WaitForFirstConsumer), and mount options; a PVC referencing the class triggers provisioning; the default class is used when the PVC names none.
+- Concrete example: a cluster offers `fast-ssd` (EBS gp3 with high IOPS, WaitForFirstConsumer for correct node placement), `standard` (network volume with replication), and `local-ssd` (node-pinned); a database uses fast-ssd, a cache uses local-ssd, and backups go to object storage outside the class system.
+- Failure modes: missing or wrong default class leaving PVCs pending; parameters the provider ignores or rejects, failing provisioning; reclaim policies that delete data when a claim is removed; WaitForFirstConsumer not configured where placement matters, attaching volumes to the wrong node; class proliferation — dozens of subtly different classes that no one understands.
+- Tradeoffs: multiple classes let workloads match cost and performance, but every class is an operational surface (quotas, monitoring, troubleshooting); the alternative, one class for everything, is simpler and wasteful; the mature pattern is a small catalog of well-documented classes with explicit default and lifecycle ownership.
+- Operational notes: document the class catalog, monitor provisioned capacity and failures, and set quotas per class.
+- RSIS3 relevance: the wiki store's storage class choice (speed versus durability) is a cost-and-recovery decision — document which class holds what and why.
 
 ## Related
 - [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster

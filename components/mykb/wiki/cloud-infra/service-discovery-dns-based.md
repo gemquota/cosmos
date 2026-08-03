@@ -4,24 +4,26 @@ title: "DNS-Based Service Discovery"
 description: "SRV records and convention-based discovery for services"
 tags: ["service-discovery", "dns", "srv", "networking"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # DNS-Based Service Discovery
 
 ## Summary
-SRV records and convention-based discovery for services. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+DNS-based service discovery maps service names to addresses so clients do not hard-code IPs: SRV records for ports, A/AAAA for endpoints, service registries (Consul, etcd, cloud service discovery) publishing into DNS. It is the simplest discovery mechanism and the one with the worst cache-failure modes.
 
 ## Details
-- Definition anchor: SRV records and convention-based discovery for services.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: services register names (app.prod.internal) with the registry; the registry updates DNS (or the resolver serves from its store); clients resolve names with short TTLs and retry. Variants: SRV records carry host+port (used by gRPC, Kubernetes headless services), cloud service discovery publishes instance IPs (AWS Cloud Map), and sidecar registrars (Consul) health-check before advertising.
+- Concrete example: a microservice calls http://payments.svc.internal:8080 resolved via an internal resolver backed by a registry; a new payments instance registers, unhealthy ones deregister, and clients pick them up within the TTL; a Kubernetes service with no cluster IP exposes pod IPs via DNS for stateful consumers.
+- Failure modes: caching defeating failover (long TTLs keep dead IPs alive — use TTL ~5-30s and client-side retry); split-horizon gaps (public resolver serving internal names); registration lag after deployment (clients hit the old IP until propagation); and DNS as a hard dependency — resolver outage takes down all service calls.
+- Operational tradeoffs: DNS discovery is simple, ubiquitous, and works everywhere; its cache and propagation semantics are its weakness for fast failover. Pair with client-side retry/load balancing, keep TTLs short for dynamic services, and treat the resolver as critical infrastructure.
+- RSIS3/mykb relevance: the wiki's services resolve through an internal DNS backed by the registry; this note records TTL and retry policy so the loop's failover tests respect discovery lag.
+- Health checks: discovery is only as fresh as its health checks; a registry that never deregisters dead instances is a list of traffic black holes.
 
 ## Related
-- [[wiki/cloud-infra/dns-resolution-process|DNS Resolution Process]] — related coverage in the same cluster
-- [[wiki/devops-infra/service-mesh-sidecars|Service Mesh Sidecars]] — related coverage in the same cluster
-- [[wiki/cloud-infra/dns-over-https|DNS over HTTPS]] — related coverage in the same cluster
-- [[wiki/devops-infra/service-meshes-istio-linkerd|Service Meshes: Istio & Linkerd]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/cloud-infra/dns-resolution-process|DNS Resolution Process]]
+- [[wiki/devops-infra/service-mesh-sidecars|Service Mesh Sidecars]]
+- [[wiki/cloud-infra/dns-over-https|DNS over HTTPS]]
+- [[wiki/devops-infra/service-meshes-istio-linkerd|Service Meshes: Istio & Linkerd]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

@@ -4,26 +4,29 @@ title: "Reserved vs On-Demand Instances"
 description: "Trading flexibility for price with commitment-based pricing"
 tags: ["ri", "on-demand", "pricing", "cloud"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Reserved vs On-Demand Instances
 
 ## Summary
-Trading flexibility for price with commitment-based pricing. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Reserved instances and savings plans commit to capacity or spend in exchange for discounts (up to 70%+); on-demand pays list price for flexibility. The choice is a financial hedge: commitment discounts for steady baselines, on-demand for elasticity and uncertainty.
 
 ## Details
-- Definition anchor: Trading flexibility for price with commitment-based pricing.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: AWS RIs come in standard (deep discount, inflexible) and convertible (moderate discount, changeable) forms; savings plans commit to $/hour of compute (EC2 Instance, Compute, SageMaker) and automatically cover matching usage; Azure reserved instances and GCP committed use discounts (CUDs) work similarly. All are per-region and (for RIs) per-family unless converted.
+- Concrete example: a stable fleet of 40 web servers buys 3-year Compute savings plans covering ~80% of expected spend and lets instance types vary; a spike-driven batch workload stays on-demand/spot because its baseline is near zero; a mis-bought RI (wrong family/region) becomes stranded capacity unless convertible.
+- Failure modes: over-committing on uncertain workloads (savings plans auto-cover, but underutilization still wastes the commitment); buying RIs without analyzing reservation utilization; regional moves stranding reservations; and ignoring that discounts apply to usage, so spot and savings-plan interplay needs explicit modeling.
+- Operational tradeoffs: commitment trades flexibility for price; the pattern is reserve the floor (steady baseline) and leave the ceiling on-demand/spot. Review coverage monthly (utilization and coverage reports), and prefer savings plans for their flexibility over classic RIs where licensing allows.
+- RSIS3/mykb relevance: the wiki's cost model tracks baseline coverage and commitment utilization, so the loop's capacity reviews adjust commitments instead of letting them drift.
+- Coverage review: check reservation utilization quarterly and convert idle reserved instances rather than letting them expire unused; an unused reservation is a sunk cost with a schedule.
+- Flexibility premium: when workloads shift families often, pay the premium for savings plans over RIs; the discount difference is smaller than the stranding risk.
 
 ## Related
-- [[wiki/cloud-infra/dedicated-hosts-and-instances|Dedicated Hosts & Instances]] — related coverage in the same cluster
-- [[wiki/cloud-infra/burstable-instances|Burstable Instances]] — related coverage in the same cluster
-- [[wiki/infrastructure/on-demand-vs-reserved-compute|On Demand Vs Reserved Compute]] — related coverage in the same cluster
-- [[wiki/cloud-infra/demand-forecasting|Demand Forecasting]] — related coverage in the same cluster
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/cloud-infra/dedicated-hosts-and-instances|Dedicated Hosts & Instances]]
+- [[wiki/cloud-infra/burstable-instances|Burstable Instances]]
+- [[wiki/infrastructure/on-demand-vs-reserved-compute|On Demand Vs Reserved Compute]]
+- [[wiki/cloud-infra/demand-forecasting|Demand Forecasting]]
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

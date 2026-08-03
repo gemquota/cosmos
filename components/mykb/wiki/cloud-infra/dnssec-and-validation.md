@@ -4,22 +4,25 @@ title: "DNSSEC & Validation"
 description: "Authenticating DNS answers with signed zone records and chain-of-trust validation"
 tags: ["dns", "dnssec", "security", "validation"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # DNSSEC & Validation
 
 ## Summary
-Authenticating DNS answers with signed zone records and chain-of-trust validation. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+DNSSEC cryptographically signs DNS records so resolvers can verify answers came from the authoritative source — defeating spoofing, cache poisoning, and some hijacking. Validation is the resolver-side check; deployment is the signing and key management on the authoritative side.
 
 ## Details
-- Definition anchor: Authenticating DNS answers with signed zone records and chain-of-trust validation.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: the zone owner signs records with a zone-signing key (ZSK), signs the ZSK with a key-signing key (KSK), and publishes DS records at the parent for a chain of trust; validating resolvers walk the chain to the root. Algorithms (RSASHA256, ECDSA P-256, Ed25519) and key rollovers must be planned; signatures expire, so re-signing must happen before validity lapses.
+- Concrete example: an attacker forges a DNS answer for example.com; a validating resolver detects the bad signature and returns SERVFAIL, so the client never reaches the fake site. A broken key rollover (DS mismatch) takes the whole domain down for validators — the classic DNSSEC outage — so staging and monitoring rollovers is mandatory.
+- Failure modes: expired signatures after a signing pipeline stops (silent SERVFAILs for validators); KSK rollover errors causing denial-of-service on the domain; unsigned delegation gaps (a child zone without DS breaks validation for it); and resolvers not validating at all, making DNSSEC invisible to the user.
+- Operational tradeoffs: DNSSEC defends the resolution path but adds operational complexity (key management, rollover runbooks, signing latency); the root and TLDs are signed, so validation is deployable today. Combine with DoH/DoT (which protects the last mile) for end-to-end answer integrity.
+- RSIS3/mykb relevance: the wiki's domains are signed with automated key rollover; this note records the DS publication and rollover procedure the loop's DNS automation follows.
+- Rollover rehearsal: practice KSK rollover in a staging domain before the real one; the first rollover should not happen during a production emergency.
+- Validation monitoring: track the percentage of validating resolvers for your zones; the metric tells you how much of the internet actually verifies your signatures.
 
 ## Related
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

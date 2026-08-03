@@ -4,19 +4,21 @@ title: "gRPC & Protobuf Networking"
 description: "HTTP/2 based RPC with binary framing and streaming semantics"
 tags: ["grpc", "protobuf", "http2", "rpc"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # gRPC & Protobuf Networking
 
 ## Summary
-HTTP/2 based RPC with binary framing and streaming semantics. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+gRPC is an RPC framework built on HTTP/2 and Protocol Buffers: strongly typed service definitions in .proto files generate clients and servers, with multiplexed streaming, binary encoding, and built-in deadlines. Protobuf defines the wire format; gRPC defines the call semantics — unary, server-streaming, client-streaming, and bidirectional streaming.
 
 ## Details
-- Definition anchor: HTTP/2 based RPC with binary framing and streaming semantics.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: `.proto` files declare messages and service methods; `protoc` generates code; messages serialize to a compact binary format with field numbers (forward/backward compatible if numbering rules are followed); gRPC multiplexes many calls over one HTTP/2 connection, supports deadlines and cancellation, and attaches metadata (headers); servers stream responses and clients stream requests.
+- Concrete example: a recommendation service exposes `GetRecs(UserID) returns (stream Rec)` — the client opens one HTTP/2 connection and receives a stream; errors use rich status codes (INVALID_ARGUMENT, DEADLINE_EXCEEDED); a gateway (grpc-gateway, Envoy) translates REST/JSON for browser clients.
+- Failure modes: protobuf field-number reuse corrupts data across versions — never reuse numbers, never change types; message sizes without limits let a peer exhaust memory (set max receive size); long-lived streams that leak without keepalive or deadlines; connection pooling issues under HTTP/2 multiplexing (too many streams, flow control stalls); server reflection or health-checking absent, making ops harder.
+- Tradeoffs: gRPC's efficiency, streaming, and typed contracts come at the cost of tooling and debuggability — payloads are binary, so tracing and curl-style debugging need reflection or grpcurl; the alternative, REST/JSON, is universally debuggable but slower and untyped; teams often run both via a gateway.
+- Operational notes: version protos, run breaking-change checks, set deadlines and retry policies, and expose health and reflection endpoints.
+- RSIS3 relevance: RSIS3's component-to-component calls (mykb daemon, SPACE) would benefit from typed protobuf contracts with built-in deadlines — versioned schemas keep loop upgrades safe.
 
 ## Related
 - [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster

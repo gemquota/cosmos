@@ -4,19 +4,21 @@ title: "Software-Defined Networking"
 description: "Decoupling the control plane from the data plane with centralized controllers"
 tags: ["sdn", "control-plane", "networking", "openflow"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Software-Defined Networking
 
 ## Summary
-Decoupling the control plane from the data plane with centralized controllers. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Software-defined networking (SDN) decouples the control plane — the logic that decides where traffic goes — from the data plane, the switches and routers that actually forward packets. A centralized controller computes policy and pushes forwarding rules down to devices, replacing per-box configuration with a programmatic, network-wide view.
 
 ## Details
-- Definition anchor: Decoupling the control plane from the data plane with centralized controllers.
-- Open questions: how this interacts with adjacent datacenter and network infrastructure topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: control and data planes are separated by a well-defined southbound interface, historically OpenFlow, which lets the controller install flow rules (match fields, actions, priorities) into switch forwarding tables. Applications consume a northbound API, so intent — "segment these tenants," "route around this link" — is expressed once instead of per device.
+- Concrete examples: a controller that recomputes paths when a link fails and pre-installs failover entries; a campus network where a controller enforces per-user access policies across dozens of access switches; and cloud overlay fabrics where SDN controllers program VXLAN tunnels between virtual switches.
+- Failure modes: controller loss can leave switches with stale rules or unable to install new flows; clustered controllers risk split-brain if partitioning is mishandled; flow-table capacity is finite, so a flood of new flows can overflow TCAM; and bugs in the centralized logic become network-wide incidents instead of box-local ones.
+- Tradeoffs: SDN buys programmability, global visibility, and consistent policy at the price of a new control-plane dependency, higher operational skill requirements, and debugging complexity when data-plane behavior diverges from controller intent. Fail-open versus fail-closed behavior must be chosen deliberately for every critical path.
+- Operational practice: run controllers as an odd-numbered cluster, monitor southbound session counts and flow-table utilization, test controller failover with network faults injected into production-like labs, and keep fallback forwarding rules for management and emergency traffic.
+- RSIS3/mykb relevance: SDN's separation of decision-making from execution mirrors RSIS3's loop architecture, and this node keeps that structural analogy retrievable when the system reasons about its own control flow.
 
 ## Related
 - [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster

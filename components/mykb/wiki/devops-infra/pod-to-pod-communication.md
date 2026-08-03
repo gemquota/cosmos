@@ -4,19 +4,21 @@ title: "Pod-to-Pod Communication"
 description: "Routing between pods across nodes with overlays and routing tables"
 tags: ["kubernetes", "networking", "pods", "overlay"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Pod-to-Pod Communication
 
 ## Summary
-Routing between pods across nodes with overlays and routing tables. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Pod-to-pod communication in Kubernetes flows through the cluster network: pods get their own IPs, and the CNI provides connectivity across nodes — via overlays, direct routing, or cloud VPC integration. Services, DNS, and NetworkPolicy layer on top for stable names, discovery, and segmentation.
 
 ## Details
-- Definition anchor: Routing between pods across nodes with overlays and routing tables.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: each pod receives an IP from the CNI (IPAM); the CNI sets up routing (veth pairs, overlays like VXLAN, or native routes) so any pod can reach any other pod's IP regardless of node; Services provide stable virtual IPs with DNS names; kube-proxy or eBPF load-balances Service traffic to pod endpoints; NetworkPolicy filters between pods.
+- Concrete example: pod A calls pod B by Service DNS (`b.svc.cluster.local:8080`); the request hits the Service ClusterIP, is forwarded to a backend pod, and the CNI routes it across the node boundary; with Cilium, eBPF performs the load balancing and policy enforcement in the kernel path.
+- Failure modes: CNI outages killing all cross-node traffic; IPAM exhaustion or duplicate IPs breaking routing; kube-proxy/iptables scale limits with thousands of Services; Service endpoints going stale after pod deletion; MTU mismatches fragmenting packets on overlays; NetworkPolicy accidentally blocking the very communication it was meant to segment.
+- Tradeoffs: the cluster network abstracts away node topology — a huge operational win — but adds layers (CNI, Service proxy) whose failures are hard to diagnose; direct pod IPs are fast but unstable (pods churn), so Services and DNS are the norm; the tradeoff is simplicity of use versus the complexity of the network stack underneath.
+- Operational notes: monitor CNI health, Service endpoint counts, and connection errors; test cross-node connectivity in staging; keep NetworkPolicy rules reviewed.
+- RSIS3 relevance: when RSIS3's loops call each other across pods, understanding the network path (CNI, Service, policy) explains intermittent failures that application logs miss.
 
 ## Related
 - [[wiki/devops-infra/pod-disruption-budgets|Pod Disruption Budgets]] — related coverage in the same cluster

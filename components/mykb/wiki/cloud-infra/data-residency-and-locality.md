@@ -4,26 +4,27 @@ title: "Data Residency & Locality"
 description: "Where data physically lives and the laws that follow it"
 tags: ["residency", "locality", "compliance", "data"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Data Residency & Locality
 
 ## Summary
-Where data physically lives and the laws that follow it. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Data residency means keeping data in specific jurisdictions to satisfy law, compliance, or latency; locality means keeping it near compute. They overlap but answer different questions — where it may be, vs where it should be — and both shape architecture more than most features.
 
 ## Details
-- Definition anchor: Where data physically lives and the laws that follow it.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: residency constraints come from regulations (GDPR, Schrems II, country-specific data localization), contract, or policy; providers answer with region selection, data-classification controls, and residency commitments (which regions keep data in-country, where support/telemetry flows). Locality is an engineering trade: compute near data minimizes latency and transfer costs; regions far apart add RTT and egress bills.
+- Concrete example: a European health app keeps PII in eu-central with backups in eu-west, disables cross-border replication, and routes support tooling through region-scoped access; a global analytics pipeline replicates only aggregates across regions while raw data stays in the region of origin; latency-critical auth caches replicate keys, not the whole dataset.
+- Failure modes: assuming "region" equals residency (support access, logs, and metadata may leave the region); accidentally replicating data to other regions via misconfigured backups or CDNs; and latency designs that ignore residency, forcing round-trips to a far region. Residency and latency can conflict — a distributed team serving one region with mandatory local storage needs a real strategy.
+- Operational tradeoffs: residency compliance costs redundancy options and speed; locality buys latency at data-architecture complexity. Document data classification per dataset, map it to region/residency commitments, and test that flows (logs, telemetry, vendor integrations) stay within the allowed boundaries.
+- RSIS3/mykb relevance: the wiki's deployment is single-region with residency notes per dataset; this node is the checklist the loop consults before adding replication or third-party processing.
 
 ## Related
-- [[wiki/devops-infra/envoy-data-plane|Envoy Data Plane]] — related coverage in the same cluster
-- [[wiki/infrastructure/data-plane-versus-control-plane|Data Plane vs Control Plane]] — related coverage in the same cluster
-- [[wiki/cloud-infra/data-archiving|Data Archiving]] — related coverage in the same cluster
-- [[wiki/infrastructure/data-deduplication-in-storage|Data Deduplication in Storage]] — related coverage in the same cluster
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/devops-infra/envoy-data-plane|Envoy Data Plane]]
+- [[wiki/infrastructure/data-plane-versus-control-plane|Data Plane vs Control Plane]]
+- [[wiki/cloud-infra/data-archiving|Data Archiving]]
+- [[wiki/infrastructure/data-deduplication-in-storage|Data Deduplication in Storage]]
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

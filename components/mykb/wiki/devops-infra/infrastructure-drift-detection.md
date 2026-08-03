@@ -4,19 +4,21 @@ title: "Infrastructure Drift Detection"
 description: "Finding and reconciling config that diverged from the desired state"
 tags: ["drift", "iac", "terraform", "gitops"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Infrastructure Drift Detection
 
 ## Summary
-Finding and reconciling config that diverged from the desired state. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Infrastructure drift is the difference between declared configuration (Terraform, Helm, GitOps manifests) and the actual running state. Drift detection continuously compares the two, reports divergence, and optionally reconciles; it turns "I think production matches the repo" into a checked, measurable fact.
 
 ## Details
-- Definition anchor: Finding and reconciling config that diverged from the desired state.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: a detector compares desired state (repo) with observed state (cloud API, cluster, live resources) — `terraform plan` diff, Argo CD's sync status, Flux drift detection, cloud config rules; results classify resources as in-sync, out-of-sync, or unknown; policy decides whether to alert, auto-reconcile, or require a human fix.
+- Concrete example: Argo CD shows an out-of-sync app because someone scaled a Deployment by hand; Flux detects and reverts it within a minute (or flags it); Terraform drift runs in CI nightly and files a ticket when state diverges; cloud rules flag a security group opened out-of-band.
+- Failure modes: auto-reconcile fighting legitimate out-of-band actions (emergency scaling, manual data migration) — create an explicit "bypass with review" path; detectors that cannot see certain resources, giving false confidence; alert fatigue when drift is noisy but benign; drift detection itself drifting (detector credentials stale, checks disabled).
+- Tradeoffs: continuous reconciliation enforces the repo as truth but can stomp intentional manual changes; detection-only preserves flexibility but lets drift accumulate until it matters; the mature pattern is detection with alerting plus reconciliation for known-safe resource classes and manual approval for the rest.
+- Operational notes: separate drift alerts by severity, keep detector credentials least-privileged, and periodically reconcile known drift back into the repo so the repo stays the source of truth.
+- RSIS3 relevance: RSIS3's state files can drift from their schemas the same way — a drift check on registry invariants and checkpoints catches loops that mutated state outside the declared format.
 
 ## Related
 - [[wiki/devops-infra/infrastructure-as-code-revisited|Infrastructure as Code]] — related coverage in the same cluster

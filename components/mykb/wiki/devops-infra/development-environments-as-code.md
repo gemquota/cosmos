@@ -4,19 +4,21 @@ title: "Development Environments as Code"
 description: "Declaring dev environments with devcontainers and scripts"
 tags: ["dev-environments", "devcontainer", "as-code", "tooling"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Development Environments as Code
 
 ## Summary
-Declaring dev environments with devcontainers and scripts. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Development environments as code means every environment — local, preview, staging — is defined in the repository as declarative configuration (Docker Compose, devcontainers, Terraform modules, environment manifests) rather than assembled by hand. The environment becomes reviewable, reproducible, and promotable like the application code it hosts.
 
 ## Details
-- Definition anchor: Declaring dev environments with devcontainers and scripts.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: a single source of truth describes the stack (services, dependencies, ports, secrets references); local tooling (compose, devcontainer, tilt) instantiates it; CI and preview platforms instantiate the same definition; drift between environments becomes a diff rather than a mystery.
+- Concrete example: `docker-compose.yml` defining app, database, and cache for local development; the same services defined in the staging Terraform module; a preview environment created per PR from the same image and config; a schema migration scripted into every environment creation so parity holds.
+- Failure modes: environment definitions that diverge from production (a local-only mock that hides integration bugs); secret handling that leaks or blocks environment bring-up; resource blowups when every PR preview runs a full stack; drift when environments are mutated by hand instead of recreated; version skew between the environment config and the app expecting it.
+- Tradeoffs: environments-as-code shifts work into maintaining declarative definitions but makes onboarding and parity dramatically better; the cost is complexity — multi-service definitions, service discovery, and stateful dependencies need careful design; ephemeral, recreatable environments trade away long-lived state by design.
+- Operational notes: test environment definitions in CI, recreate environments from scratch regularly to prove reproducibility, and gate environment changes through review like code changes.
+- RSIS3 relevance: the cosmos repo's components (RSIS3, MyKB, SPACE) benefit from one declarative environment definition so every loop experiment runs against the same stack, making results comparable.
 
 ## Related
 - [[wiki/devops-infra/infrastructure-as-code-revisited|Infrastructure as Code]] — related coverage in the same cluster

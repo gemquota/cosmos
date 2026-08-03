@@ -4,19 +4,20 @@ title: "Network Time Protocol"
 description: "Hierarchical time sync to UTC within milliseconds over UDP"
 tags: ["ntp", "time", "sync", "networking"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Network Time Protocol
 
 ## Summary
-Hierarchical time sync to UTC within milliseconds over UDP. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Network Time Protocol (NTP) synchronizes computer clocks to UTC within milliseconds over UDP, using a hierarchy of time sources. It is the internet's clock: every server that needs consistent timestamps — for logs, authentication (Kerberos is NTP-sensitive), TLS certificate validation, distributed coordination, and cache invalidation — depends on NTP keeping its clock within a few milliseconds of the rest of the world.
 
 ## Details
-- Definition anchor: Hierarchical time sync to UTC within milliseconds over UDP.
-- Open questions: how this interacts with adjacent datacenter and network infrastructure topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- The protocol mechanics: an NTP client sends a request with its transmit timestamp; the server replies with its receive and transmit timestamps; the client computes the offset (how far its clock is from the server) and the round-trip delay from the four timestamps, then adjusts its clock — slewing for small offsets (gradually changing the clock rate to avoid time jumps) and stepping for large ones. The four-timestamp exchange is the clever part: it separates the offset from the network delay, and the delay itself becomes the measurement of the sync quality. The accuracy depends on the delay being symmetric (the request and reply take the same path) — asymmetric routing and congested links degrade accuracy.
+- The hierarchy: stratum 0 sources (atomic clocks, GPS receivers) generate true time; stratum 1 servers sync directly from stratum 0; stratum 2 from stratum 1; and so on down to the clients. Each stratum hop adds a small amount of jitter, so the design goal is a shallow, redundant hierarchy: a datacenter runs internal stratum 2/3 servers synced to multiple stratum 1 upstreams, and all clients sync to the internal servers — giving fleet-consistent time (what most systems actually need) and resilience against upstream failure. The client-side algorithm (the NTP intersection algorithm) filters the sample set, rejects outliers (a broken upstream, a delayed packet), and selects the best cluster of sources.
+- The operational rules: run a local NTP tier (never point thousands of servers at public pools — the pool gets hammered and the fleet's sync quality varies); use multiple upstreams and monitor the offsets; use chrony on modern Linux (it handles asymmetric delay and intermittent connectivity far better than ntpd); and configure step thresholds so a large clock jump (a rebooted machine with a dead RTC battery, a suspended VM) gets corrected safely rather than causing a timestamp discontinuity mid-transaction.
+- Failure modes: NTP blocked by firewalls (clocks drift silently — days of drift are invisible until a Kerberos ticket or a TLS certificate fails), a poisoned upstream (the fleet syncs to a wrong clock — the "time" the fleet shares is wrong everywhere), and the leap-second/step class of bugs (a stepped clock breaks monotonic-time assumptions, which is why applications must use monotonic clocks for durations).
+- For mykb: NTP is the millisecond-scale member of the time-sync cluster — the sibling Precision Time Protocol (PTP) does microseconds-to-nanoseconds in the datacenter, and clock drift is the underlying problem both solve.
 
 ## Related
 - [[wiki/cloud-infra/wireguard-protocol|WireGuard Protocol]] — related coverage in the same cluster
