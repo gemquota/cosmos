@@ -96,3 +96,38 @@ hitl, manager, workspace_tools) wired into `rsis/loop_l1.py` via a
    L2 → L1 tool execution and audit end-to-end. The repo's resource check
    (disk >80%) and an undefined `logger` in main's throttle callback are
    pre-existing environment/code issues, not port regressions.
+
+## Phase B implementation patterns (2026-08-03)
+The second harvest wave: a persistent LLM cost ledger with budget caps in
+RSIS3, and offline semantic retrieval in the mykb search engine.
+1. **Persistent ledger, not per-process counters.** Each RSIS loop runs as its
+   own process, so budget enforcement must survive restarts: every LLM call
+   appends to `.rsis/costs.jsonl` and `CostLedger` replays it at construction
+   (rebuilding aggregates + the `budget_exceeded` latch). A per-process cap
+   would silently reset between `run`/`evolve`/`optimize` invocations.
+2. **Two-stage enforcement: pre-flight guard + latch.** `guard_budget` refuses
+   a call when (running total + estimated cost) crosses the cap; once spend
+   reaches the cap, the latch makes new sessions refuse at `cmd_run` startup.
+   The pre-flight estimate must include the *out* tokens (guard uses
+   prompt+completion estimates; error paths record completion=0, so latches
+   come from successful calls or lowered caps).
+3. **Client-side token estimates are a baseline, not a bill.** The evaluator
+   client estimates `len(json)//4 + prompt allowance` because exact usage is
+   unknowable without the provider. Price table is a local $/1M-token table
+   keyed by model substring; swap in real per-call costs when available.
+4. **Semantic search offline = hashed n-grams, not embeddings API.** mykb's
+   search now fuses a third signal: deterministic blake2b-hashed 2-4 char
+   n-grams + tokens into 256-dim signed vectors (sign by hash parity,
+   L2-normalized). Pure numpy, no model/API, reproducible across runs — and
+   it catches lexical gaps (query "operator approval before risky automation"
+   ranks `approval-gates.md` #1). Old indexes degrade gracefully
+   (`sem_vectors=None` → hybrid falls back to BM25+TF-IDF).
+5. **Test hygiene with the checkpoint manager.** L1's checkpoint-before-
+   mutation commits to git on tool failure — running tests from inside the
+   repo both pollutes history with `rsis-checkpoint` commits AND `git init`s
+   a nested repo when the CWD has no `.git`. Test runs must use a temp CWD,
+   or disable `CONFIG.checkpoint_before_mutation`.
+6. **Watch out for non-reentrant locks and deque slicing in ports.** The ao
+   telemetry port deadlocked (snapshot() re-acquiring its own Lock via
+   budget_remaining()) and crashed on `deque[-20:]` — both caught only by
+   running the full e2e path, not unit-level smoke checks.

@@ -485,3 +485,9 @@ title: "Bundle Log"
 - **Verified**: 12-point smoke suite (sandbox exec, destructive-code block, allowlist deny, path traversal, HITL thresholds, legacy path, audit/redaction) + full `cmd_run` end-to-end in a temp workspace + `status`/`check`/`check-practices` all green
 - **Docs**: RSIS3 README tool-layer section; `docs/ao-assessment.md` Phase A status
 - **Synthesis extended**: `wiki/syntheses/ao-agent-os-integration-assessment.md` gains Phase A implementation patterns
+
+## 2026-08-03 (Phase B — cost ledger + semantic search)
+- **RSIS3 cost ledger**: `CostLedger` in `rsis/telemetry.py` (price table, per-call estimates, persistent `.rsis/costs.jsonl` replay, `budget_exceeded` latch); `EvaluatorClient` records each call and pre-flights `guard_budget`; `cmd_run --budget-cap` + `RSIS_BUDGET_CAP_USD`/`RSIS_COST_LOG` env gates; `status` prints spend/budget. Verified: cap allows call 1 and refuses call 2; lowered cap across processes latches and refuses at startup
+- **MyKB semantic search**: `search_fusion.py` gains hashed n-gram embeddings (blake2b, 256-dim, signed, L2-normalized) as a third RRF signal; `query --semantic` mode + `/api/v2/search/semantic` endpoint; old indexes degrade gracefully; `.gitignore` covers `search_sem.npy`; index rebuilt (27,893 chunks)
+- **Docs**: RSIS3 README cost-ledger section; search_fusion docstring updated
+- **Synthesis extended**: `wiki/syntheses/ao-agent-os-integration-assessment.md` gains Phase B patterns (persistent ledger replay, two-stage enforcement, client-side token baselines, offline hashed n-grams, checkpoint-manager test hygiene, lock/deque port pitfalls)

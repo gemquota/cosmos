@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Hybrid Search Engine (Epic 1) + Structure-Aware Chunking (Epic 2)
+    + Offline Semantic Retrieval (Phase B)
 
 Provides:
   - Structure-aware markdown chunking at header boundaries
@@ -7,14 +8,17 @@ Provides:
   - BM25 sparse index
   - TF-IDF dense vector index (cosine similarity)
   - Reciprocal Rank Fusion (RRF) of both result sets
+  - Hashed n-gram semantic embeddings (no model/API) fused as a third
+    retrieval signal; `query --semantic` shows semantic-only results
   - Batch ingestion and unified search API
 
 Usage:
   python3 .wiki-daemon/search_fusion.py build-index   # Build/rebuild indices from wiki files
   python3 .wiki-daemon/search_fusion.py query <text>   # Search from CLI
+  python3 .wiki-daemon/search_fusion.py query --semantic <text>
   python3 .wiki-daemon/search_fusion.py serve          # Start API server (port 8850)
 """
-import os, re, sys, json, math
+import os, re, sys, json, math, hashlib
 from collections import defaultdict, Counter
 from datetime import datetime
 
@@ -26,6 +30,51 @@ INDEX_DIR = os.path.join(BUNDLE, '.wiki-daemon')
 
 RFF_K = 60  # RRF smoothing constant
 MAX_CHUNK_SIZE = 4000  # max chars per chunk (fallback for very long sections)
+SEM_EMBED_DIM = 256    # hashed n-gram semantic embedding size (offline)
+
+
+# ── Semantic embeddings (offline, deterministic) ──────────────────────
+
+def _hash_token(token: str) -> int:
+    """Stable 64-bit hash (blake2b, unsalted — deterministic across runs)."""
+    return int(hashlib.blake2b(token.encode(), digest_size=8).hexdigest(), 16)
+
+
+def hashed_embed(text, dim: int = SEM_EMBED_DIM):
+    """Deterministic hashed character n-gram embedding (no model/API).
+
+    Maps 2-4 char n-grams and word tokens into a dim-D signed count vector
+    (sign via hash parity), L2-normalized. This is a coarse lexical-semantic
+    signal: it shares the vocabulary-blind robustness of hashing while
+    still capturing sub-word overlap that BM25/TF-IDF miss.
+    """
+    vec = np.zeros(dim, dtype=np.float32)
+    norm_text = re.sub(r'\s+', ' ', (text or '').lower()).strip()
+    ngrams = set()
+    for n in (2, 3, 4):
+        for i in range(max(0, len(norm_text) - n + 1)):
+            ngrams.add(norm_text[i:i + n])
+    for tok in re.findall(r'[a-z0-9_]+', norm_text):
+        ngrams.add(tok)
+    for gram in ngrams:
+        h = _hash_token(gram)
+        idx = h % dim
+        vec[idx] += 1.0 if (h >> 32) % 2 == 0 else -1.0
+    norm = np.linalg.norm(vec)
+    if norm > 0:
+        vec = vec / norm
+    return vec
+
+
+def semantic_search(index_data, query_text, top_n=30):
+    """Cosine similarity over hashed-embedding vectors."""
+    sem = index_data.get('sem_vectors')
+    if sem is None:
+        return []
+    q_vec = hashed_embed(query_text)
+    similarities = sem @ q_vec
+    return [(i, float(similarities[i]))
+            for i in np.argsort(similarities)[-top_n * 2:][::-1]]
 
 # ── Epic 2: Structure-Aware Chunking ─────────────────────────────
 
@@ -214,11 +263,19 @@ def build_indices(chunks):
     norms = np.linalg.norm(vectors, axis=1, keepdims=True)
     norms[norms == 0] = 1
     vectors = vectors / norms
+
+    # ── Semantic hashed-embedding vectors ──
+    print("  Building semantic (hashed n-gram) vector index...")
+    sem_vectors = np.zeros((num_docs, SEM_EMBED_DIM), dtype=np.float32)
+    for i, c in enumerate(chunks):
+        sem_vectors[i] = hashed_embed(
+            f"{c['header_chain']} {c['header']} {c['body']}")
     
     index_data = {
         'chunks': chunks,
         'bm25': bm25,
         'vectors': vectors,
+        'sem_vectors': sem_vectors,
         'vocab': {k: v for k, v in vocab.items() if v < 3000},
         'idf': idf,
         'num_chunks': num_docs,
@@ -233,6 +290,7 @@ def save_index(index_data):
     chunks_path = os.path.join(INDEX_DIR, 'search_chunks.json')
     meta_path = os.path.join(INDEX_DIR, 'search_meta.json')
     vectors_path = os.path.join(INDEX_DIR, 'search_vectors.npy')
+    sem_path = os.path.join(INDEX_DIR, 'search_sem.npy')
     
     # Save chunks as JSON
     with open(chunks_path, 'w') as f:
@@ -240,6 +298,7 @@ def save_index(index_data):
     
     # Save vectors as numpy array
     np.save(vectors_path, index_data['vectors'])
+    np.save(sem_path, index_data['sem_vectors'])
     
     # Save metadata (BM25 params, vocab)
     meta = {
@@ -248,12 +307,14 @@ def save_index(index_data):
         'vocab': index_data['vocab'],
         'idf': index_data['idf'],
         'built_at': index_data['built_at'],
+        'has_semantic': True,
     }
     with open(meta_path, 'w') as f:
         json.dump(meta, f)
     
     print(f"  Saved: {len(index_data['chunks'])} chunks")
     print(f"  Vectors: {index_data['vectors'].shape}")
+    print(f"  Semantic vectors: {index_data['sem_vectors'].shape}")
     print(f"  Size: {vectors_path} ({os.path.getsize(vectors_path)/1024/1024:.1f}MB)")
 
 def load_index():
@@ -261,6 +322,7 @@ def load_index():
     chunks_path = os.path.join(INDEX_DIR, 'search_chunks.json')
     meta_path = os.path.join(INDEX_DIR, 'search_meta.json')
     vectors_path = os.path.join(INDEX_DIR, 'search_vectors.npy')
+    sem_path = os.path.join(INDEX_DIR, 'search_sem.npy')
     
     if not all(os.path.exists(p) for p in [chunks_path, meta_path, vectors_path]):
         return None
@@ -270,6 +332,7 @@ def load_index():
     with open(meta_path) as f:
         meta = json.load(f)
     vectors = np.load(vectors_path)
+    sem_vectors = np.load(sem_path) if os.path.exists(sem_path) else None
     
     # Rebuild BM25 from saved chunks
     tokens_list = [tokenize(f"{c['header_chain']} {' '.join(s['name'] for s in c['signatures'])} {c['body']}") for c in chunks]
@@ -279,6 +342,7 @@ def load_index():
         'chunks': chunks,
         'bm25': bm25,
         'vectors': vectors,
+        'sem_vectors': sem_vectors,
         'vocab': meta['vocab'],
         'idf': meta['idf'],
         'num_chunks': meta['num_chunks'],
@@ -287,22 +351,12 @@ def load_index():
 
 # ── RRF Fusion ────────────────────────────────────────────────────
 
-def rrf_fusion(dense_results, sparse_results, k=RFF_K, top_n=30):
-    """Fuse two ranked result lists using Reciprocal Rank Fusion."""
-    # Build score maps
+def rrf_fusion(*result_lists, k=RFF_K, top_n=30):
+    """Fuse two or more ranked result lists using Reciprocal Rank Fusion."""
     scores = defaultdict(float)
-    seen = {}
-    
-    for rank, (idx, score) in enumerate(dense_results):
-        scores[idx] += 1.0 / (k + rank + 1)
-        seen[idx] = scores[idx]
-    
-    for rank, (idx, score) in enumerate(sparse_results):
-        scores[idx] += 1.0 / (k + rank + 1)
-        if idx not in seen:
-            pass  # Only appears in sparse results
-    
-    # Sort by fused score
+    for results in result_lists:
+        for rank, (idx, score) in enumerate(results):
+            scores[idx] += 1.0 / (k + rank + 1)
     ranked = sorted(scores.items(), key=lambda x: -x[1])
     return ranked[:top_n]
 
@@ -337,8 +391,12 @@ def search_query(index_data, query_text, top_n=30):
     similarities = index_data['vectors'] @ query_vec
     dense_results = [(i, float(similarities[i])) for i in np.argsort(similarities)[-top_n*2:][::-1]]
     
-    # ── RRF Fusion ──
-    fused = rrf_fusion(dense_results, sparse_results, top_n=top_n)
+    # ── Semantic: hashed-embedding cosine ──
+    semantic_results = semantic_search(index_data, query_text, top_n=top_n)
+
+    # ── RRF Fusion (sparse + tf-idf + semantic) ──
+    fused = rrf_fusion(dense_results, sparse_results, semantic_results,
+                       top_n=top_n)
     
     # Build response
     results = []
@@ -372,14 +430,39 @@ def cmd_build_index():
     save_index(index_data)
     print("Done!")
 
-def cmd_query(query_text):
+def _rows_from_results(index_data, fused, top_n=30):
+    """Format fused (idx, rrf_score) pairs into API response rows."""
+    results = []
+    for idx, rrf_score in fused:
+        chunk = index_data['chunks'][idx]
+        results.append({
+            'rank': len(results) + 1,
+            'score': round(rrf_score, 4),
+            'source': chunk['source'],
+            'header': chunk['header'],
+            'header_chain': chunk['header_chain'],
+            'snippet': chunk['body'][:300],
+            'has_code': chunk['has_code'],
+            'signatures': chunk['signatures'],
+            'size': chunk['size'],
+        })
+    return results
+
+
+def cmd_query(query_text, semantic_only=False):
     index_data = load_index()
     if not index_data:
         print("No index found. Run 'build-index' first.")
         return
-    
-    results = search_query(index_data, query_text)
+
+    if semantic_only:
+        sem = semantic_search(index_data, query_text, top_n=20)
+        results = _rows_from_results(index_data, sem)
+    else:
+        results = search_query(index_data, query_text)
     print(f"\nQuery: '{query_text}'")
+    if semantic_only:
+        print("Mode: semantic-only")
     print(f"Results: {len(results)}\n")
     for r in results[:10]:
         sigs = ', '.join(f"{s['name']}" for s in r['signatures'][:2]) if r['signatures'] else ''
@@ -441,8 +524,20 @@ def cmd_serve():
                     'chunks': index_data['num_chunks'],
                     'vocab_size': index_data['vectors'].shape[1],
                     'index_built': index_data['built_at'],
+                    'semantic': index_data.get('sem_vectors') is not None,
                 }
                 self.wfile.write(json.dumps(stats).encode())
+            elif parsed.path == '/api/v2/search/semantic':
+                q = params.get('q', [''])[0]
+                top_n = int(params.get('top_n', [20])[0])
+                sem = semantic_search(index_data, q, top_n=top_n) if q else []
+                results = _rows_from_results(index_data, sem, top_n=top_n)
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({'query': q, 'results': results,
+                                             'total': len(results)}).encode())
             else:
                 self.send_response(404)
                 self.end_headers()
@@ -470,7 +565,11 @@ if __name__ == '__main__':
         if len(sys.argv) < 3:
             print("Usage: search_fusion.py query <text>")
             sys.exit(1)
-        cmd_query(' '.join(sys.argv[2:]))
+        args = sys.argv[2:]
+        semantic_only = args and args[0] == '--semantic'
+        if semantic_only:
+            args = args[1:]
+        cmd_query(' '.join(args), semantic_only=semantic_only)
     elif cmd == 'serve':
         cmd_serve()
     else:
