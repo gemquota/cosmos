@@ -38,8 +38,10 @@ from rsis.loop_l8 import MetaMetaLoop
 from rsis.loop_l9 import MMMLoop
 from rsis.memory import MemoryManager
 from rsis.practices import run_checks as run_practice_checks
+from rsis.pipeline import run_demo as run_pipeline_demo
 from rsis.recovery import FailureInjector, RecoveryManager
 from rsis.resource_monitor import ResourceEnforcer, ResourceSeverity
+from rsis.scheduler import run_demo as run_scheduler_demo
 from rsis.telemetry import TelemetryCollector, WorkspaceMonitor, default_ledger
 from rsis.timeout import Budget, deadline, TimeoutError
 
@@ -102,6 +104,8 @@ def cmd_init(args: argparse.Namespace) -> int:
 
 def cmd_run(args: argparse.Namespace) -> int:
     telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    if args.parallel is not None:
+        CONFIG.l2.parallel_candidates = args.parallel
     ledger = default_ledger()
     if args.budget_cap is not None:
         CONFIG.budget_cap_usd = args.budget_cap
@@ -567,6 +571,18 @@ def cmd_check_practices(args: argparse.Namespace) -> int:
     return run_practice_checks()
 
 
+def cmd_scheduler(args: argparse.Namespace) -> int:
+    """Run the agent scheduler demo (priority + FIFO + recursion guards)."""
+    print("RSIS agent scheduler demo")
+    return run_scheduler_demo()
+
+
+def cmd_pipeline(args: argparse.Namespace) -> int:
+    """Run the DAG worker pool demo (fan-out/fan-in + guards)."""
+    print("RSIS DAG pipeline demo")
+    return run_pipeline_demo()
+
+
 def cmd_recovery_test(args: argparse.Namespace) -> int:
     """Test all recovery mechanisms."""
     print(f"RSIS v{__version__} — Recovery Mechanism Test")
@@ -659,6 +675,8 @@ def main() -> int:
     p_run.add_argument("--goal", "-g", default="self-improve the codebase")
     p_run.add_argument("--budget-cap", type=float, default=None,
                        help="Hard LLM cost cap in USD for this session (0=unlimited)")
+    p_run.add_argument("--parallel", type=int, default=None,
+                       help="Fan out N parallel L2 candidates (DAG multi-agent)")
     p_run.set_defaults(func=cmd_run)
 
     p_evolve = sub.add_parser("evolve", help="Run L3 evolution cycle")
@@ -697,6 +715,14 @@ def main() -> int:
         "check-practices",
         help="Enforce usage practices on the current workspace")
     p_practices.set_defaults(func=cmd_check_practices)
+
+    p_scheduler = sub.add_parser("scheduler",
+                                 help="Agent scheduler demo (priority/FIFO/guards)")
+    p_scheduler.set_defaults(func=cmd_scheduler)
+
+    p_pipeline = sub.add_parser("pipeline",
+                                help="DAG worker pool demo (fan-out/fan-in)")
+    p_pipeline.set_defaults(func=cmd_pipeline)
 
     p_recovery = sub.add_parser("recovery-test",
                                 help="Test recovery mechanisms")

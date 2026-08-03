@@ -1,27 +1,38 @@
 ---
 type: "entity"
 title: "GemmaHarness"
-description: "RubyGems"
-tags: ["android", "api", "ast", "auth", "authentication", "backend", "bash", "bug", "cli", "entity"]
+description: "A harness that drives and evaluates Gemma-family language models"
+tags: ["entity", "gemma", "harness", "evaluation", "llm"]
 timestamp: "2026-07-19T22:41:38Z"
 resource: ""
 ---
 
-## Gemmaharness 10
+# GemmaHarness
 
-RubyGems — the package manager for the Ruby programming language.
+## Summary
 
-**Related topics:** android, api, auth, authentication, backend, bash, bug, cli
+GemmaHarness is a harness for running and evaluating Gemma-family language models: it loads a model, feeds it prompts, collects outputs, and scores them against tasks. Harnesses matter because model quality is only measurable through disciplined, reproducible evaluation runs. The same scaffold usually supports batching, logging, and comparison across model versions.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Gemmaharness 10
+## Details
 
-## Related Entities
+- **Definition** — A model harness wraps inference with configuration, task definitions, and result recording so evaluations are repeatable and comparable.
+- **Components** — A harness typically has a loader, a prompt builder, an inference driver, a scorer, and an output store.
+- **Reproducibility** — Pinned model weights, seeds, decoding parameters, and prompt templates are recorded so a run can be replayed exactly.
+- **Worked example** — GemmaHarness loads a Gemma checkpoint, runs a benchmark of reasoning prompts with fixed temperature, scores answers, and writes JSONL results with metadata.
+- **Common failure modes** — Prompt drift between runs, decoding nondeterminism that invalidates comparisons, and test-set contamination from benchmark leakage are the big risks.
+- **Practical relevance** — Harnesses sit between raw models and decisions about which model to ship, making their quality critical to honest evaluation.
+- **Variants** — Lightweight harnesses evaluate one checkpoint; agentic harnesses drive multi-turn tool-use sessions and score end states.
+- **Telemetry note** — The stub mis-tags GemmaHarness against RubyGems; the Gemma-model reading matches the harness name and the LLM-heavy session context.
+- **Model comparison** — Running several checkpoints through one harness produces side-by-side results, supporting model selection with shared conditions.
+- **Logging** — Prompts, outputs, and scores stored per run create a dataset for post-hoc analysis and regression detection.
+- **Worked example** — A regression gate re-runs the harness on every candidate model and fails the build if core benchmarks drop below the previous release.
+- **Efficiency** — Batching prompts, caching reused prefixes, and skipping repeated tasks cut evaluation cost while preserving validity.
 
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aap-2|Aap 2
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aar|Aar
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aarrr|Aarrr
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/abi|Abi
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/accr-2|Accr 2
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/ace-core|Ace Core
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acid|Acid
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acli|Acli
+## Related
+
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/lm-2|LM]] — the models being evaluated
+- [[wiki/testing/agent-evaluations|Agent Evaluations]] — scoring agent behavior
+- [[wiki/dev-tools/structured-logs|Structured Logs]] — recording run outputs
+- [[wiki/concepts/benchmark-contamination|Benchmark Contamination]] — the evaluation hazard
+- [[wiki/concepts/calibration|Calibration]] — scoring confidence
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/gce-2|GCE]] — managing evaluation context

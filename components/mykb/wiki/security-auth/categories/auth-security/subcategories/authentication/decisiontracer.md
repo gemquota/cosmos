@@ -1,26 +1,32 @@
 ---
 type: "entity"
 title: "DecisionTracer"
-description: "Android — mobile development platform, API — service communication interface, Authentication — identity verification"
-tags: ["entity", "android", "api", "ast", "auth", "authentication"]
-timestamp: "2026-07-19T22:41:41Z"
 resource: ""
 ---
+description: "Recording and replaying the reasoning path behind each decision a system makes"
+tags: ["entity", "android", "api", "ast", "auth", "authentication", "tracing", "observability"]
+timestamp: "2026-07-19T22:41:44Z"
 
+# DecisionTracer
 
-## Decisiontracer
+## Summary
+A decision tracer captures the inputs, intermediate choices, and outputs that lead to a particular decision. It matters because systems that cannot explain their own decisions are impossible to debug and hard to audit. Traced decisions turn "why did this happen" questions into replayable evidence.
 
-DecisionTracer appears in 1 session(s) categorized as API, Mobile, Security. Related topics: android, api, auth, authentication.
+## Details
+- **Definition** — a decision tracer records a structured trail of each decision point: the context, candidate options, evidence considered, and the selected outcome.
+- **Correlation** — decisions are tagged with trace IDs so related events across services and logs can be stitched into one story.
+- **Replay** — storing the inputs and versions that produced a decision lets engineers re-run the logic and confirm or refute hypotheses.
+- **Audit value** — for authorization, policy, or agent decisions, a trace provides the accountability trail that reviewers and regulators expect.
+- **Granularity** — tracing every micro-decision is expensive; sampling and level-based capture balance fidelity against storage and overhead.
+- **Privacy** — traces often contain sensitive inputs, so they must be redacted, scoped, and retained under the same rules as the systems they describe.
+- **Common failure modes** — traces that omit the deciding input, span boundaries that break correlation, and logging that only records outcomes.
+- **Worked example** — an agent denies an action; the tracer shows the policy version, the user attributes, and the matched rule, letting a reviewer confirm the denial was correct.
+- **Practical relevance** — decision tracing converts opaque systems into inspectable ones and is a prerequisite for trustworthy automation.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Decisiontracer
-
-## Related Entities
-
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+## Related
+- [[wiki/agent-systems/decision-reports|Decision Reports]] — structured decision artifacts
+- [[wiki/agent-systems/agent-trace-visualization|Agent Trace Visualization]] — exploring traces
+- [[wiki/agent-systems/agent-logs-and-audits|Agent Logs and Audits]] — audit trails
+- [[wiki/testing/traces-spans|Traces and Spans]] — distributed tracing mechanics
+- [[wiki/agent-systems/explainable-decisions|Explainable Decisions]] — making reasoning legible
+- [[wiki/software-engineering/logging-strategies|Logging Strategies]] — capture and retention

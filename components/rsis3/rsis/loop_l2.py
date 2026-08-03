@@ -17,7 +17,9 @@ from rsis.checkpoint import CheckpointManager
 from rsis.config import CONFIG
 from rsis.evaluator import EvalResult, EvaluatorClient
 from rsis.loop_l1 import L1ActionLoop, L1Result, ToolCall
+from rsis.pipeline import DAGWorkerPool
 from rsis.recovery import RecoveryManager
+from rsis.scheduler import AgentScheduler, Priority
 from rsis.telemetry import TelemetryCollector, TelemetryEvent
 from rsis.timeout import Budget, TimeoutError
 
@@ -81,6 +83,10 @@ class L2ImprovementLoop:
         self.telemetry.record(TelemetryEvent(
             event_type="l2_start", metadata={"goal": goal},
         ))
+
+        parallel = self.config.parallel_candidates
+        if parallel and parallel > 1:
+            return self._run_parallel_session(goal, budget)
 
         eval_results: list[EvalResult] = []
         candidates: list[ImprovementCandidate] = []
@@ -171,6 +177,147 @@ class L2ImprovementLoop:
             candidates=candidates,
             applied=applied,
         )
+
+    # ── Multi-agent parallel session (DAG fan-out/fan-in) ───────────── #
+
+    def _run_parallel_session(self, goal: str,
+                              budget: Budget) -> L2Result:
+        """Fan-out N candidate coders, fan-in through the evaluator gate.
+
+        DAG: planner → N parallel coders → fan-in reviewer. The review wave
+        runs through the AgentScheduler so repeated coder↔reviewer hand-offs
+        are depth/cycle guarded instead of spinning. The immutable evaluator
+        remains the gate: only a PASS candidate is applied.
+        """
+        n = max(2, min(int(self.config.parallel_candidates),
+                       budget.max_iterations))
+        logger.info("L2 parallel session: %d candidates (fan-out)", n)
+        self.telemetry.record(TelemetryEvent(
+            event_type="l2_parallel_start",
+            metadata={"goal": goal, "candidates": n},
+        ))
+
+        pool = DAGWorkerPool(num_workers=min(n, 4),
+                             on_event=self._dag_event)
+        pool.add_task("planner", "planner", {"goal": goal})
+        for i in range(n):
+            pool.add_task(f"coder-{i}", "coder", {"attempt": i + 1},
+                          depends_on=["planner"])
+        pool.add_task("fanin", "fanin",
+                      {}, depends_on=[f"coder-{i}" for i in range(n)])
+
+        def run(task):
+            if task.role == "planner":
+                return {"goal": goal, "count": n}
+            if task.role == "coder":
+                if not budget.tick():
+                    raise TimeoutError("L2 parallel budget exhausted")
+                return self._generate_candidate(
+                    goal, task.payload["attempt"], [])
+            if task.role == "fanin":
+                candidates = [pool.tasks[f"coder-{i}"].result
+                              for i in range(n)]
+                candidates = [c for c in candidates if c is not None]
+                return self._review_candidates(goal, candidates)
+            raise RuntimeError(f"unknown DAG role: {task.role}")
+
+        try:
+            pool.run_pipeline(run)
+        except Exception as e:
+            logger.error("L2 parallel DAG failed: %s", e)
+            self.recovery.record_failure()
+            self.telemetry.record(TelemetryEvent(
+                event_type="l2_complete",
+                metadata={"success": False, "attempts": 0},
+            ))
+            return L2Result(success=False, error=str(e))
+
+        reviews = pool.tasks["fanin"].result or {}
+        applied = None
+        candidates: list[ImprovementCandidate] = []
+        eval_results: list[EvalResult] = []
+        for review_id in sorted(reviews, key=lambda k: int(k.split("-")[-1])):
+            candidate, eval_result = reviews[review_id]
+            candidates.append(candidate)
+            eval_results.append(eval_result)
+            self.telemetry.record(TelemetryEvent(
+                event_type="l2_evaluation",
+                metadata={"attempt": len(eval_results),
+                          "decision": eval_result.decision,
+                          "score_avg": eval_result.score_avg},
+            ))
+            if applied is None and eval_result.passed:
+                try:
+                    self._apply_improvement(candidate)
+                    self.checkpoint.checkpoint(
+                        f"l2-applied-{candidate.description[:30]}")
+                    applied = candidate
+                    self.recovery.reset_failure_count()
+                except Exception as e:
+                    logger.error("Failed to apply improvement: %s", e)
+                    self.recovery.record_failure()
+
+        success = applied is not None
+        if not success and budget.expired:
+            logger.warning("L2 parallel budget exhausted without success")
+            self.recovery.record_failure()
+
+        self.telemetry.record(TelemetryEvent(
+            event_type="l2_complete",
+            metadata={"success": success, "attempts": len(eval_results)},
+        ))
+        return L2Result(
+            success=success,
+            attempts=len(eval_results),
+            eval_results=eval_results,
+            candidates=candidates,
+            applied=applied,
+        )
+
+    def _review_candidates(self, goal: str,
+                           candidates: list) -> dict:
+        """Fan-in: gate every candidate through the immutable evaluator.
+
+        Reviews run through the AgentScheduler (depth=1, cycle-guarded) so
+        a repeating coder↔reviewer hand-off aborts instead of spinning.
+        """
+        sched = AgentScheduler(max_depth=2, cycle_limit=3)
+        reviews: dict[str, tuple] = {}
+
+        def handler(task):
+            candidate = task.payload["candidate"]
+            result = self.evaluator.evaluate({
+                "description": candidate.description,
+                "target_files": candidate.target_files,
+                "diff": candidate.diff_or_code,
+                "rationale": candidate.rationale,
+                "goal": goal,
+            })
+            reviews[task.task_id] = (candidate, result)
+            return result.decision
+
+        sched.register_agent("reviewer", handler)
+        for i, candidate in enumerate(candidates):
+            task_id = f"review-{i}"
+            queued = sched.submit_task(
+                task_id, "reviewer", f"review candidate {i}",
+                Priority.MEDIUM,
+                payload={"candidate": candidate, "index": i},
+                depth=1)
+            if not queued:   # guard rejection (depth/cycle) -> fail closed
+                reviews[task_id] = (
+                    candidate,
+                    EvalResult(decision="FAIL",
+                               rationale="rejected by scheduler guard"))
+        sched.run_event_loop()
+        return reviews
+
+    def _dag_event(self, event: dict) -> None:
+        """Bridge DAG traceability events into workspace telemetry."""
+        self.telemetry.record(TelemetryEvent(
+            event_type=event.get("kind", "dag_task"),
+            metadata={k: v for k, v in event.items() if k != "kind"},
+        ))
 
     def _generate_candidate(
         self, goal: str, attempt: int, previous_results: list[EvalResult]
