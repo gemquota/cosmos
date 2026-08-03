@@ -21,7 +21,7 @@ Security concerns go beyond key handling. Prompt injection arrives through user-
 
 The page records the tool and its integration constraints; future sessions should attach the specific endpoints, models, and guardrails used. Testing the integration with constrained prompts and misuse cases, before launch, is the cheapest way to catch injection and leakage problems. Documenting those test cases makes the guardrails maintainable.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Chatgpt
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Chatgpt
 
 ## Related Entities
 

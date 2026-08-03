@@ -37,6 +37,6 @@ Scripts that run on both Termux and desktop Linux must avoid GNU-isms and locale
 
 ## Automation Patterns
 
-Automation scripts share a shape: detect prerequisites, run the work, verify the result, and report. Port detection loops probe until a free port is found, as in the example above; process management captures `$!` right after launching, then polls or kills by PID. [[wiki/os-shell/environment-variables|environment variables]] carry configuration between invocations, and exit codes plus a final summary line make the script friendly to CI logs. The [[wiki/shell-environment/index|Shell Environment]] and [[wiki/os-shell/index|OS & Shell]] clusters collect the surrounding reference material for these patterns.
+Automation scripts share a shape: detect prerequisites, run the work, verify the result, and report. Port detection loops probe until a free port is found, as in the example above; process management captures `$!` right after launching, then polls or kills by PID. [[wiki/os-shell/environment-variables|environment variables]] carry configuration between invocations, and exit codes plus a final summary line make the script friendly to CI logs. The [[wiki/shell-environment/00-index|Shell Environment]] and [[wiki/os-shell/00-index|OS & Shell]] clusters collect the surrounding reference material for these patterns.
 
-See also: [[wiki/shell-environment/index|Shell Environment]], [[wiki/os-shell/index|OS & Shell]]
+See also: [[wiki/shell-environment/00-index|Shell Environment]], [[wiki/os-shell/00-index|OS & Shell]]

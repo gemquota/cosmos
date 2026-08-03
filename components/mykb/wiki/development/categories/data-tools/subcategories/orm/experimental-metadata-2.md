@@ -10,7 +10,7 @@ resource: ""
 
 ## Experimental Metadata 2
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Experimental Metadata 2
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Experimental Metadata 2
 
 ## Related Entities
 

@@ -14,11 +14,11 @@ Agent — an autonomous software entity that performs tasks on behalf of users. 
 
 **Related topics:** android, api, auth, aws
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Agentcore
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Agentcore
 
 ## Overview
 
-An agent core is the runtime heart of an autonomous system: the component that owns the agent loop, decides which tool or API to call next, and tracks progress toward a goal. Rather than a single monolithic program, modern agent cores are composed of smaller pieces — planners, executors, memory stores, and API clients — that cooperate through well-defined interfaces. The [[wiki/mobile-platform/supercategories/android-core/index|Android Core]] domain context treats the core as a platform concern: the agent must run inside a mobile environment, respect its lifecycle, and still reach remote services through the API client layer.
+An agent core is the runtime heart of an autonomous system: the component that owns the agent loop, decides which tool or API to call next, and tracks progress toward a goal. Rather than a single monolithic program, modern agent cores are composed of smaller pieces — planners, executors, memory stores, and API clients — that cooperate through well-defined interfaces. The [[wiki/mobile-platform/supercategories/android-core/00-index|Android Core]] domain context treats the core as a platform concern: the agent must run inside a mobile environment, respect its lifecycle, and still reach remote services through the API client layer.
 
 ## Multi-Agent Orchestration
 

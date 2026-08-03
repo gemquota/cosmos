@@ -26,4 +26,4 @@ HNSW builds a multi-layer graph where each layer is a navigable small-world netw
 - [[wiki/data-storage/faiss|FAISS]] — implements HNSW among other indexes
 - [[wiki/data-storage/ivf|IVF Index]] — the clustering-based alternative
 - [[wiki/data-storage/product-quantization|Product Quantization]] — compression that can pair with HNSW
-- [[wiki/data-storage/index|Data Storage]] — ANN index family
+- [[wiki/data-storage/00-index|Data Storage]] — ANN index family

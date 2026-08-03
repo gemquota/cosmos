@@ -13,7 +13,7 @@ status: "growing"
 
 Required Output Format is referenced in 2 session(s). Related tags: ast, guid, ide, orm, spa.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Required Output Format 2
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Required Output Format 2
 
 ## Overview
 

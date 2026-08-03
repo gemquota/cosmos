@@ -21,7 +21,7 @@ The session context on this page records where the token appeared and what it wa
 
 
 Token hygiene is part of the same discipline: tokens should be long enough to resist collision and guessing, generated with a good randomness source, and never reused across contexts. When tokens are sensitive, they belong in protected storage and should be transmitted only over TLS. Recording an opaque token in a knowledge base is not the same as documenting it — the page is a pointer to the evidence, not a definition of the value.
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Bomdwriw 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Bomdwriw 2
 
 ## Related Entities
 

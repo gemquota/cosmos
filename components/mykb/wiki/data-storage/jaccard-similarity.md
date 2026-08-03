@@ -28,4 +28,4 @@ Jaccard similarity scores two sets as |A ∩ B| / |A ∪ B|, from 0 (disjoint) t
 - [[wiki/data-storage/minhash|MinHash]] — the estimator for large sets
 - [[wiki/data-storage/edit-distance|Edit Distance]] — string-level closeness vs set overlap
 - [[wiki/data-storage/semantic-search|Semantic Search]] — Jaccard is a lexical relatedness baseline
-- [[wiki/data-storage/index|Data Storage]] — similarity metrics
+- [[wiki/data-storage/00-index|Data Storage]] — similarity metrics

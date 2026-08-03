@@ -19,7 +19,7 @@ FAQ articles collect recurring questions and answer each one concisely, making t
 
 ## Related
 - [[wiki/data-storage/faq-articles|FAQ Articles]]
-- [[wiki/questions/index|Questions]]
+- [[wiki/questions/00-index|Questions]]
 - [[wiki/concepts/how-to-articles|How-To Articles]]
 - [[wiki/data-storage/glossaries-wiki|Glossaries]]
 - [[wiki/concepts/see-also|See Also]]

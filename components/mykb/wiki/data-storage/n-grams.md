@@ -28,4 +28,4 @@ N-grams are contiguous slices of n tokens (word n-grams) or n characters (charac
 - [[wiki/data-storage/tf-idf|TF-IDF]] — weighted n-gram features
 - [[wiki/data-storage/bm25|BM25]] — phrase and n-gram queries in FTS
 - [[wiki/data-storage/edit-distance|Edit Distance]] — character n-grams approximate it
-- [[wiki/data-storage/index|Data Storage]] — text feature family
+- [[wiki/data-storage/00-index|Data Storage]] — text feature family

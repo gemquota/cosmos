@@ -9,7 +9,7 @@ status: "growing"
 ---
 ## Scraper Program Audit
 Scraper Program Audit appears in 1 session(s) categorized as API, Shell. Related topics: api, bash, cdn, cli.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Overview
 Scraper Program Audit describes the practice of reviewing a web scraper program before, during, and after use: checking what it fetches, how fast it fetches, what it does with the data, and whether the activity is permitted. The page was recorded in a session categorized as API and Shell, with related topics api, bash, cdn, and cli.
 ## What an Audit Covers

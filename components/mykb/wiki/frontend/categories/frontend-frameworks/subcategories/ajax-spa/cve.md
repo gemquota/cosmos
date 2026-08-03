@@ -13,7 +13,7 @@ status: "growing"
 
 CVE appears in 1 session(s) categorized as API, Mobile. Related topics: acronym, ajax, android, api.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Cve
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Cve
 
 ## Overview
 

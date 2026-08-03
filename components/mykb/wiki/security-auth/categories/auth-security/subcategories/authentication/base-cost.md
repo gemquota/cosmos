@@ -13,7 +13,7 @@ resource: ""
 
 Base Cost appears in 1 session(s) categorized as API, Cloud, Security. Related topics: api, auth, authentication, aws.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Base Cost
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Base Cost
 
 ## Overview
 
@@ -39,7 +39,7 @@ Chargeback and showback reports should split base from variable cost per team so
 
 ## Related Concepts
 
-- [[wiki/devops-infra/index|DevOps & Infrastructure]] — where cost ownership lives
+- [[wiki/devops-infra/00-index|DevOps & Infrastructure]] — where cost ownership lives
 - [[wiki/devops-infra/error-budgets|Error Budgets]] — the reliability-cost tradeoff frame
 - [[wiki/devops-infra/incident-response|Incident Response]] — spending that scales with operational burden
 

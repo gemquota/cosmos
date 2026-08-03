@@ -13,7 +13,7 @@ resource: ""
 
 DIR appears in 1 session(s) categorized as Frontend, Shell. Related topics: acronym, bash, html, http.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Dir
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Dir
 
 ## Overview
 

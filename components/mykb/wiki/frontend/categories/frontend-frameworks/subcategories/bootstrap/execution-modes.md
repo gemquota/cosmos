@@ -12,7 +12,7 @@ resource: ""
 
 Execution Modes appears in 1 session(s) categorized as API, Security, Shell. Related topics: api, auth, bash, bootstrap.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Execution Modes
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Execution Modes
 
 ## Related Entities
 

@@ -13,7 +13,7 @@ resource: ""
 
 AHEAD appears in 1 session(s) categorized as API, Mobile, Security. Related topics: acronym, android, api, auth.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Ahead
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Ahead
 
 ## Overview
 

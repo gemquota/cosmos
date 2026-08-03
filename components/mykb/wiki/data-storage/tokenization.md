@@ -27,4 +27,4 @@ Tokenization breaks raw text into the units a downstream system consumes: whites
 - [[wiki/data-storage/stopwords|Stopwords]] — tokens often filtered after tokenization
 - [[wiki/data-storage/tf-idf|TF-IDF]] — the weighting scheme that consumes tokens
 - [[wiki/data-storage/chunking-strategies|Chunking Strategies]] — chunk sizes are measured in tokens
-- [[wiki/data-storage/index|Data Storage]] — text preprocessing
+- [[wiki/data-storage/00-index|Data Storage]] — text preprocessing

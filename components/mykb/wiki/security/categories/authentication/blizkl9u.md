@@ -12,7 +12,7 @@ resource: ""
 
 BlizKl9U appears in 1 session(s) categorized as Cloud, Security. Related topics: auth, aws, bootstrap, bun.
 
-**Domain:** Security & Authentication › [[wiki/web-platforms/index|Security]] › [[wiki/web-platforms/index|Authentication]]
+**Domain:** Security & Authentication › [[wiki/web-platforms/00-index|Security]] › [[wiki/web-platforms/00-index|Authentication]]
 
 ## Related Entities
 

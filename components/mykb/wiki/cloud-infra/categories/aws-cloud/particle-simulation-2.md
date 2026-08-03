@@ -22,7 +22,7 @@ Practical concerns are determinism, fixed timesteps, and performance budgets on 
 
 **Related topics:** android, angular, api, aws, bash, cli, cloud, css
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/index|Aws Cloud
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/00-index|Aws Cloud
 
 ## Related Entities
 

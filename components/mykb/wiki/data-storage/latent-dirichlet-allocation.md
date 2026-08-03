@@ -26,4 +26,4 @@ Latent Dirichlet allocation (LDA) models each document as a mixture of topics an
 - [[wiki/data-storage/latent-semantic-analysis|Latent Semantic Analysis]] — the linear-algebra alternative
 - [[wiki/data-storage/n-grams|N-grams]] — the features LDA consumes
 - [[wiki/memory/knowledge-curation|Knowledge Curation]] — LDA topics as curation signals
-- [[wiki/data-storage/index|Data Storage]] — NLP analytics family
+- [[wiki/data-storage/00-index|Data Storage]] — NLP analytics family

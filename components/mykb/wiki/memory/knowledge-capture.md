@@ -26,4 +26,4 @@ Knowledge capture is the front end of every knowledge loop: turning an experienc
 - [[wiki/memory/memory-consolidation|Memory Consolidation]] — capture is the encoding before consolidation
 - [[wiki/memory/note-taking-methods|Note-Taking Methods]] — human capture techniques
 - [[wiki/memory/provenance|Provenance]] — capture should record where each item came from
-- [[wiki/sources/index|Sources]] — the namespace where raw captures land
+- [[wiki/sources/00-index|Sources]] — the namespace where raw captures land

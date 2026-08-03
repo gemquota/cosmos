@@ -13,7 +13,7 @@ resource: ""
 
 American Academy appears in 1 session(s) categorized as API, Security, Shell. Related topics: api, auth, authentication, bash.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › American Academy
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › American Academy
 
 ## Overview
 

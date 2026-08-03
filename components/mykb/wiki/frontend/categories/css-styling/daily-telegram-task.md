@@ -13,7 +13,7 @@ status: "growing"
 
 Daily Telegram Task appears in 1 session(s) categorized as API, Debugging, Security. Related topics: api, auth, dom.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Overview
 
@@ -25,11 +25,11 @@ Daily tasks are usually triggered by cron or a scheduler rather than a long-runn
 
 ## API Integration
 
-The task typically combines a data source API with the Telegram Bot API. Authentication requires a bot token, which must be kept out of the repository and treated as a secret — [[wiki/security/secrets-management|secrets management]] describes the safe patterns. Messages are sent via REST calls to `sendMessage` or `sendDocument`, and the response should be checked so that a rejected message triggers a retry rather than an unnoticed loss. The [[wiki/api-services/index|API Services]] tree documents the client patterns used for these calls.
+The task typically combines a data source API with the Telegram Bot API. Authentication requires a bot token, which must be kept out of the repository and treated as a secret — [[wiki/security/secrets-management|secrets management]] describes the safe patterns. Messages are sent via REST calls to `sendMessage` or `sendDocument`, and the response should be checked so that a rejected message triggers a retry rather than an unnoticed loss. The [[wiki/api-services/00-index|API Services]] tree documents the client patterns used for these calls.
 
 ## Debugging and Failure Handling
 
-When a daily task breaks, the common causes are expired credentials, changed API responses, and transient network errors. Defensive design includes timeouts, bounded retries with backoff, and a fallback notification channel. The DOM tag suggests the session also touched browser or client-side rendering, possibly a page that displays task status; the [[wiki/frontend/categories/css-styling/index|CSS Styling]] cluster covers that presentation side. Because failures surface only once a day, observability — logging what the task attempted and received — is the difference between a five-minute fix and a day of hunting.
+When a daily task breaks, the common causes are expired credentials, changed API responses, and transient network errors. Defensive design includes timeouts, bounded retries with backoff, and a fallback notification channel. The DOM tag suggests the session also touched browser or client-side rendering, possibly a page that displays task status; the [[wiki/frontend/categories/css-styling/00-index|CSS Styling]] cluster covers that presentation side. Because failures surface only once a day, observability — logging what the task attempted and received — is the difference between a five-minute fix and a day of hunting.
 
 ## Related Entities
 

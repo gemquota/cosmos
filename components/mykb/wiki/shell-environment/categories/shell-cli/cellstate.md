@@ -19,13 +19,13 @@ Simulations iterate in discrete time steps. On each step, the update rule reads 
 
 Determinism matters in simulation and testing. A deterministic random number generator and a fixed update order let the same initial state produce the same outcome, which makes bugs reproducible. The related [[wiki/shell-environment/categories/shell-cli/deterministicrng|Deterministicrng]] and [[wiki/shell-environment/categories/shell-cli/cellsystem|Cellsystem]] entries record the same concerns.
 
-In agent sessions, cell state appears in the context of building and debugging simulation engines from the command line, where APIs expose the grid, shell scripts drive runs, and mobile or frontend views visualize the result. The entry lives in the [[wiki/web-platforms/index|Shell Cli]] domain of this knowledge base.
+In agent sessions, cell state appears in the context of building and debugging simulation engines from the command line, where APIs expose the grid, shell scripts drive runs, and mobile or frontend views visualize the result. The entry lives in the [[wiki/web-platforms/00-index|Shell Cli]] domain of this knowledge base.
 
 The entry connects to the simulation engine pages in the same category, and it documents the state representation that those engines operate on.
 
 State transitions are validated with reference cases, such as known initial conditions that should produce a known final pattern, which gives the engine a regression test.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/00-index|Shell Cli
 
 ## Related Entities
 

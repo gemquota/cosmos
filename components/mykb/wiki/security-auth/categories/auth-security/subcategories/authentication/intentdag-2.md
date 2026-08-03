@@ -13,7 +13,7 @@ Intent — an Android messaging object for communicating between components. Ses
 
 **Related topics:** android, api, auth, authentication, bash, bug
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Intentdag 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Intentdag 2
 
 ## Related Entities
 

@@ -13,7 +13,7 @@ resource: ""
 
 Audit Operational Checklist appears in 1 session(s) categorized as API, Debugging, Security. Related topics: api, auth, authentication.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Audit Operational Checklist
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Audit Operational Checklist
 
 ## Overview
 

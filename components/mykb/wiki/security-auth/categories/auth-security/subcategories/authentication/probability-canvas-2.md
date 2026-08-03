@@ -13,7 +13,7 @@ Canvas — an HTML5 element for drawing 2D graphics via JavaScript. Used in the 
 
 **Related topics:** android, api, auth, authentication, aws, bash, bootstrap, bug
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Probability Canvas 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Probability Canvas 2
 
 ## Related Entities
 

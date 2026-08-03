@@ -13,7 +13,7 @@ AREA — A defined region or scope.
 
 **Related topics:** ajax, alpine, android, angular
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Area
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Area
 
 ## Related Entities
 

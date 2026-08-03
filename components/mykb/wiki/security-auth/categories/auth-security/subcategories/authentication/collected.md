@@ -13,7 +13,7 @@ resource: ""
 
 Collected appears in 1 session(s) categorized as API, Cloud, Security. Related topics: api, auth, authentication, cli, cloud.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Collected
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Collected
 
 ## Overview
 

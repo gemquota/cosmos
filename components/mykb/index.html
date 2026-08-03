@@ -334,6 +334,8 @@ body {
 
 
 [data-theme="dark"] .toggle-switch::after { transform: translateX(16px); }
+.toggle-switch.meta-on { background: var(--accent) !important; }
+.toggle-switch.meta-on::after { transform: translateX(16px) !important; }
 
 /* ── Search ── */
 #search-wrap {
@@ -867,6 +869,8 @@ body {
     <div class="toggle-wrap">
       <span class="toggle-label" id="theme-label">&#9681;</span>
       <div class="toggle-switch" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle dark mode"></div>
+      <span class="toggle-label" id="meta-label" title="Show or hide wiki-meta pages (syntheses, pulses, logs, ops, audits)">&#128220;</span>
+      <div class="toggle-switch" id="meta-toggle" role="button" tabindex="0" aria-label="Toggle meta pages"></div>
     </div>
   </div>
 
@@ -939,6 +943,8 @@ body {
       <p><button id="enrich-entities" style="padding:4px 12px;font-size:12px;border:1px solid var(--border);border-radius:3px;background:var(--bg);color:var(--text);cursor:pointer;">📝 Enrich Entity Descriptions</button></p>
       
       <h2>Reports</h2>
+      <p><a href="stats.html" style="color:var(--accent);font-size:13px;">📈 Stats Hub</a></p>
+      <p><a href="stub-audit.html" style="color:var(--accent);font-size:13px;">🧹 Stub Auditor</a></p>
       <p><a href="ops/reports/audit-report.json" target="_blank" style="color:var(--accent);font-size:13px;">📊 Audit Report (JSON)</a></p>
       <p><a href="ops/reports/semantic_composition.md" target="_blank" style="color:var(--accent);font-size:13px;">🔬 Semantic Composition Report</a></p>
       <p><a href="ops/reports/entity_questionnaire.md" target="_blank" style="color:var(--accent);font-size:13px;">📋 Entity Questionnaire</a></p>
@@ -1793,6 +1799,42 @@ themeToggle.addEventListener('keydown', function(e) {
   if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleTheme(); }
 });
 
+/* ── Meta toggle (dual wiki): show/hide wiki-meta pages ── */
+var META_PREFIXES = ['wiki/syntheses/', 'wiki/pulses/', 'wiki/reflections/', 'wiki/episodes/',
+                     'wiki/daily/', 'wiki/ops/', 'raw/', 'ops/', 'templates/', 'daily/',
+                     'wiki/index.md', 'log.md', 'index.md', 'README.md', 'Home.md',
+                     'AGENTS.md', 'COMPREHENSIVE_AUDIT.md', 'mykb-code.md', 'mykb-content.md'];
+function isMetaFile(f) {
+  for (var i = 0; i < META_PREFIXES.length; i++) {
+    var pre = META_PREFIXES[i];
+    if (f === pre || f.indexOf(pre) === 0) return true;
+  }
+  return false;
+}
+function visibleFiles() {
+  if (showMeta) return state.files;
+  return state.files.filter(function(f) { return !isMetaFile(f); });
+}
+var showMeta = localStorage.getItem('md-meta') !== 'off';
+var metaToggle = document.getElementById('meta-toggle');
+var metaLabel = document.getElementById('meta-label');
+function syncMetaToggle() {
+  metaToggle.classList.toggle('meta-on', showMeta);
+  metaLabel.title = showMeta ? 'Hide wiki-meta pages (syntheses, pulses, ops, logs)' : 'Show wiki-meta pages (syntheses, pulses, ops, logs)';
+}
+function toggleMeta() {
+  showMeta = !showMeta;
+  localStorage.setItem('md-meta', showMeta ? 'on' : 'off');
+  syncMetaToggle();
+  renderSidebar();
+  if (searchInput && searchInput.value) performSearch();
+}
+metaToggle.addEventListener('click', toggleMeta);
+metaToggle.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMeta(); }
+});
+syncMetaToggle();
+
 /* ═══════════════════════════════════════════
    File Loading
    ═══════════════════════════════════════════ */
@@ -1984,7 +2026,7 @@ function performSearch() {
   var results = [];
   var queryWords = query.split(/\s+/).filter(function(w) { return w.length > 0; });
   
-  state.files.forEach(function(f) {
+  visibleFiles().forEach(function(f) {
     var title = state.meta[f] && state.meta[f].title;
     var type = state.meta[f] && state.meta[f].type;
     var tags = state.meta[f] && state.meta[f].tags;
@@ -2059,13 +2101,13 @@ function renderSidebar() {
   if (!state.currentFile) home.classList.add('active');
   fileList.appendChild(home);
 
-  var count = state.files.length;
+  var count = visibleFiles().length;
   var sectionLabel = document.getElementById('files-section-label');
 
   // Limit rendering for performance - max 300 files
   var MAX_RENDER = 300;
   if (sectionLabel) sectionLabel.textContent = 'Documents (' + count + ')' + (count > MAX_RENDER ? ' · showing first ' + MAX_RENDER : '');
-  var fileSubset = state.files.slice(0, MAX_RENDER);
+  var fileSubset = visibleFiles().slice(0, MAX_RENDER);
 
   // ---- Group By Type ----
   if (state.groupMode === 'type') {
@@ -2160,6 +2202,16 @@ function renderSidebar() {
     if (a === '') return -1;
     if (b === '') return 1;
     return a.localeCompare(b);
+  });
+
+  // Sort within each dir: landing page (index.md/README.md) first, then by name
+  Object.keys(groups).forEach(function(dir) {
+    groups[dir].sort(function(a, b) {
+      var aIdx = a.name === 'index.md' || a.name === 'README.md' ? 0 : 1;
+      var bIdx = b.name === 'index.md' || b.name === 'README.md' ? 0 : 1;
+      if (aIdx !== bIdx) return aIdx - bIdx;
+      return a.name.localeCompare(b.name);
+    });
   });
 
   if (sectionLabel) {

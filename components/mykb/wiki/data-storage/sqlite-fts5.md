@@ -26,4 +26,4 @@ FTS5 is SQLite's built-in full-text search extension: an inverted index with tok
 - [[wiki/data-storage/postgres-tsvector|PostgreSQL tsvector]] — the server-side FTS alternative
 - [[wiki/data-storage/lucene|Lucene]] — the heavyweight library alternative
 - [[wiki/concepts/mykb-implementation-report|Mykb Implementation Report]] — records mykb's storage choices
-- [[wiki/data-storage/index|Data Storage]] — embedded databases
+- [[wiki/data-storage/00-index|Data Storage]] — embedded databases

@@ -22,7 +22,7 @@ Future sessions should confirm which sense was intended — graphics pipeline or
 
 **Related topics:** android, angular, api
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Bg
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Bg
 
 ## Related Entities
 

@@ -21,7 +21,7 @@ In bash and CLI work, max appears as the upper bound in loops, the largest value
 
 Across all readings, the lesson is the same: an explicit, configurable maximum turns unbounded behavior into bounded behavior. Related simulation parameters are documented alongside [[wiki/shell-environment/categories/cli-tools/particle-size-min|Particle Size Min]] and [[wiki/shell-environment/categories/cli-tools/mass-max|Mass Max]]. Naming the bound and its unit in configuration keeps the intent visible wherever the value is read.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Cli Tools]]
 
 ## Related Entities
 

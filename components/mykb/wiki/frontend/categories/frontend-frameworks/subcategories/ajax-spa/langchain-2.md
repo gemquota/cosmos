@@ -14,7 +14,7 @@ LangChain — an LLM application framework for building context-aware AI applica
 
 **Related topics:** ajax, android, api, auth, bash, cdn
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Langchain 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Langchain 2
 
 ## Overview
 

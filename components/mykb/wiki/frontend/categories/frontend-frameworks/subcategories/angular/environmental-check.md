@@ -12,7 +12,7 @@ resource: ""
 
 Environmental Check appears in 1 session(s) categorized as API, Frontend, Security, Shell. Related topics: angular, api, auth, bash.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Environmental Check
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Environmental Check
 
 ## Related Entities
 

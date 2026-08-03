@@ -14,7 +14,7 @@ Voice over IP (VoIP) — transmitting voice conversations as data packets over I
 
 **Related topics:** bash, ci/cd, css, dom
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Voip
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Voip
 
 ## Overview
 
@@ -26,7 +26,7 @@ A VoIP call involves signaling and media planes. Signaling protocols like SIP es
 
 ## Security and Integration
 
-VoIP adds security concerns beyond ordinary web traffic: unencrypted RTP can be eavesdropped, and SIP endpoints can be abused for fraud. TLS protects signaling, SRTP encrypts the media, and access controls limit who may place calls. [[wiki/os-shell/tls-and-https|TLS and HTTPS]] documents the encryption layer used in signaling, and the [[wiki/security/index|Security]] tree holds the broader identity material. In the recorded session, the bash and ci/cd tags reflect automation — testing call flows or deploying voice services in pipelines — while css and dom point at the browser interface where calls are initiated or displayed.
+VoIP adds security concerns beyond ordinary web traffic: unencrypted RTP can be eavesdropped, and SIP endpoints can be abused for fraud. TLS protects signaling, SRTP encrypts the media, and access controls limit who may place calls. [[wiki/os-shell/tls-and-https|TLS and HTTPS]] documents the encryption layer used in signaling, and the [[wiki/security/00-index|Security]] tree holds the broader identity material. In the recorded session, the bash and ci/cd tags reflect automation — testing call flows or deploying voice services in pipelines — while css and dom point at the browser interface where calls are initiated or displayed.
 
 ## Session Context
 

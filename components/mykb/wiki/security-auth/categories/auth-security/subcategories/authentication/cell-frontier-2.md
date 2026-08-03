@@ -13,7 +13,7 @@ resource: ""
 
 Cell Frontier appears in 2 session(s) categorized as API, Cloud, Security. Related topics: api, auth, authentication, aws.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Cell Frontier 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Cell Frontier 2
 
 ## Overview
 

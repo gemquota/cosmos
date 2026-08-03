@@ -28,4 +28,4 @@ Milvus is an open-source vector database built for scale: distributed indexing, 
 - [[wiki/data-storage/faiss|FAISS]] — the ANN library Milvus builds on
 - [[wiki/data-storage/hnsw|HNSW]] — the graph index Milvus offers
 - [[wiki/data-storage/embeddings|Embeddings]] — the vectors Milvus indexes
-- [[wiki/data-storage/index|Data Storage]] — vector database family
+- [[wiki/data-storage/00-index|Data Storage]] — vector database family

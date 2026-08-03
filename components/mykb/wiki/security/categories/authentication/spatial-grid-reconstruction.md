@@ -13,7 +13,7 @@ resource: ""
 
 Spatial Grid Reconstruction appears in 1 session(s) categorized as Cloud, Debugging, Security. Related topics: auth, aws, cli.
 
-**Domain:** Security & Authentication › [[wiki/web-platforms/index|Security]] › [[wiki/web-platforms/index|Authentication]]
+**Domain:** Security & Authentication › [[wiki/web-platforms/00-index|Security]] › [[wiki/web-platforms/00-index|Authentication]]
 
 ## Overview
 
@@ -36,7 +36,7 @@ Spatial Grid Reconstruction refers to techniques that rebuild a spatial layout o
 
 - [[wiki/os-shell/command-line-interfaces|Command Line Interfaces]] — scripting the pipeline end to end
 - [[wiki/data-storage/vector-databases|Vector Databases]] — storing and querying spatial embeddings
-- [[wiki/ai-ml/index|AI & ML]] — learned components of perception pipelines
+- [[wiki/ai-ml/00-index|AI & ML]] — learned components of perception pipelines
 
 
 ## Example

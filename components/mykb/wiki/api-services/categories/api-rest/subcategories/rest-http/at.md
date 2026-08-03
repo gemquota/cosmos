@@ -23,7 +23,7 @@ The acronym itself is ambiguous, and the session context is what anchors the mea
 The session tags on this page include API and mobile, and the description anchors the identifier to Matplotlib, so the plotting reading is the one recorded here. Still, AT is one of the most overloaded acronyms in computing: it also names attention mechanisms in neural networks, the AT command set for modems, and access tokens in authentication. Recording the expansion chosen by the session, and noting the ambiguity, keeps the page useful without pretending the identifier has a single meaning.
 **Related topics:** android, api, auth
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › At
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › At
 
 ## Related Entities
 

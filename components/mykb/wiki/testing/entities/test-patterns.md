@@ -23,4 +23,4 @@ Testing strategies across the ecosystem.
 - **Integration at boundaries** — Test interfaces between modules
 - **Property-based** — SPACE template interpolation verification
 
-See also: [[wiki/testing/index|Testing]], [[wiki/software-engineering/index|Software Engineering]]
+See also: [[wiki/testing/00-index|Testing]], [[wiki/software-engineering/00-index|Software Engineering]]

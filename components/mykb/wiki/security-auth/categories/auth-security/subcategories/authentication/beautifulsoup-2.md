@@ -21,7 +21,7 @@ Parsing untrusted HTML also demands defensive practices: the parse tree is data,
 
 The page records the library and its role in the pipeline; future sessions should attach the specific scrapers, sources, and legal or rate-limit constraints observed. Logging fetch metadata — source, timestamp, and content hash — makes scraped datasets auditable and reproducible.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Beautifulsoup 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Beautifulsoup 2
 
 ## Related Entities
 

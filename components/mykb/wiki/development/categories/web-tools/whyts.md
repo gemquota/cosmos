@@ -12,7 +12,7 @@ resource: ""
 
 Whyts is referenced in 1 session(s). Related tags: ide, spa.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Web Tools]]
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Web Tools]]
 
 ## Related Entities
 

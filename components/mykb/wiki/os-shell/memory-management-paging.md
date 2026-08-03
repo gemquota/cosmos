@@ -1,5 +1,6 @@
 ---
 type: "concept"
+hub: true
 title: "Memory Management & Paging"
 description: "Virtual memory, page tables, and the MMU"
 tags: ["memory", "paging", "virtual-memory", "kernel"]

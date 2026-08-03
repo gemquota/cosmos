@@ -14,7 +14,7 @@ FastAPI — a modern Python async web framework with automatic OpenAPI documenta
 
 **Related topics:** api, auth, backend
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Ap
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Ap
 
 ## Overview
 

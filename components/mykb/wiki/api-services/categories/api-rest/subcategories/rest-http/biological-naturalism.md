@@ -17,13 +17,13 @@ Biological naturalism is a philosophical position, associated with John Searle, 
 
 The position is central to debates about machine intelligence: if consciousness depends on specific biological mechanisms, then purely computational systems may not replicate it, even when they behave intelligently. Critics such as functionalists argue that consciousness is defined by causal role rather than substrate, so the same mental states could in principle be realized in silicon. These disagreements shape how AI capabilities, ethical agency, and responsibility are discussed in engineering contexts.
 
-In agent-session notes, the term appears alongside mobile, cloud, and security topics, where discussions of autonomy and decision-making often borrow concepts from the philosophy of mind. Distinguishing behavioral competence from subjective experience matters when systems are granted authority over API and infrastructure actions. The entry therefore records the term as a cross-domain reference point connecting [[wiki/web-platforms/index|Security Auth]] discussions with foundational questions about agency and machine cognition.
+In agent-session notes, the term appears alongside mobile, cloud, and security topics, where discussions of autonomy and decision-making often borrow concepts from the philosophy of mind. Distinguishing behavioral competence from subjective experience matters when systems are granted authority over API and infrastructure actions. The entry therefore records the term as a cross-domain reference point connecting [[wiki/web-platforms/00-index|Security Auth]] discussions with foundational questions about agency and machine cognition.
 
 The philosophical framing is recorded rather than resolved, and readers are invited to treat it as background for debates about agent autonomy, transparency, and the limits of behaviorist evaluation.
 
 The entry is included because the term surfaced in real sessions, and the wiki records it so that future sessions encountering the phrase can quickly locate its meaning and relevance.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Biological Naturalism
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Biological Naturalism
 
 ## Related Entities
 

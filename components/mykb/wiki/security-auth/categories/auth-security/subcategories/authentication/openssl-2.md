@@ -13,7 +13,7 @@ SSL/TLS (Secure Sockets Layer / Transport Layer Security) — cryptographic prot
 
 **Related topics:** android, api, auth, authentication, aws, bash, bug
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Openssl 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Openssl 2
 
 ## Related Entities
 

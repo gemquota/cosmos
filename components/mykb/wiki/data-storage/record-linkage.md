@@ -29,7 +29,7 @@ Record linkage (data matching) joins records across datasets using similarity ov
 - [[wiki/data-storage/deduplication|Deduplication]]
 - [[wiki/memory/provenance|Provenance]]
 - [[wiki/data-storage/knowledge-graph|Knowledge Graph]]
-- [[wiki/questions/index|Open Questions]]
+- [[wiki/questions/00-index|Open Questions]]
 - [[wiki/concepts/promotion-readiness|Promotion Readiness]]
 - [[wiki/dev-tools/global-link-check|Global Link Check]]
 - [[wiki/concepts/explainers|Explainers]]

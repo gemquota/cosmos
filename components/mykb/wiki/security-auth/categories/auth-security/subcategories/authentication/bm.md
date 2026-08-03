@@ -14,7 +14,7 @@ BM — Benchmark or Business Model. Referenced in performance analysis.
 
 **Related topics:** api, auth, authentication
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Bm
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Bm
 
 ## Overview
 

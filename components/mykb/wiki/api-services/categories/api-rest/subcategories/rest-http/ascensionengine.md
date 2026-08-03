@@ -23,7 +23,7 @@ This pattern mirrors the recursive self-improvement loops used elsewhere in the 
 Escalation policies must also define the failure path. If a capability is granted and then proves harmful, the engine should be able to revoke it, downgrade the agent, and log what triggered the change. Keeping escalation reversible makes experimentation safe and turns the engine into a mechanism for controlled growth rather than a one-way ratchet. The combination of gating, monitoring, and reversibility is what distinguishes an ascension engine from a simple feature flag system.
 **Related topics:** android, angular, api, auth
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Ascensionengine
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Ascensionengine
 
 ## Related Entities
 

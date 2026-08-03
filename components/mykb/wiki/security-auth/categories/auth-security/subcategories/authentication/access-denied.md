@@ -13,7 +13,7 @@ resource: ""
 
 Access Denied appears in 1 session(s) categorized as API, Mobile, Security. Related topics: android, api, auth, authentication.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Auth Security › Access Denied
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Auth Security › Access Denied
 
 ## Overview
 

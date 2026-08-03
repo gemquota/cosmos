@@ -29,4 +29,4 @@ Stemming crudely removes suffixes so running, runs, and ran all match run. It is
 - [[wiki/data-storage/stopwords|Stopwords]] — filtering that typically precedes stemming
 - [[wiki/data-storage/tf-idf|TF-IDF]] — stemmed terms change TF-IDF weights
 - [[wiki/data-storage/bm25|BM25]] — BM25 indexes stemmed terms in most engines
-- [[wiki/data-storage/index|Data Storage]] — text normalization
+- [[wiki/data-storage/00-index|Data Storage]] — text normalization

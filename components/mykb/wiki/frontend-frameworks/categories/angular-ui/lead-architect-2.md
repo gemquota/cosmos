@@ -21,7 +21,7 @@ In agent-driven development, the lead architect may be a designated agent with a
 
 Future sessions should capture the decisions made, the alternatives rejected, and the rationale, so the architecture remains legible long after the session ends. Capturing this rationale is the deliverable that outlives any single session.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/00-index|Angular Ui
 
 ## Related Entities
 

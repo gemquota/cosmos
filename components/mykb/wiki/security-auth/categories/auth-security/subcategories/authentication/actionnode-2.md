@@ -13,7 +13,7 @@ status: "growing"
 
 ActionNode appears in 2 session(s) categorized as API, Mobile, Security. Related topics: android, api, auth, authentication.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Auth Security › Actionnode 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Auth Security › Actionnode 2
 
 ## Node-Based Action Execution
 
@@ -36,7 +36,7 @@ Because every node records its outcome, a failed run yields an exact path throug
 ## Related Notes
 
 - [[wiki/entities/llm-proxy-agent|LLM Proxy Agent]] — an agent-shaped consumer of action graphs
-- [[wiki/llm-agents/index|LLM Agents]] — tool-calling loops that execute actions
+- [[wiki/llm-agents/00-index|LLM Agents]] — tool-calling loops that execute actions
 
 ## Related Entities
 

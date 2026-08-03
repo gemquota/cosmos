@@ -11,7 +11,7 @@ HTML5 element for drawing 2D graphics via JavaScript. Used in the mykb graph vie
 
 **Related technologies:** bash, cli, css, dom
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Canvas
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Canvas
 
 ## Overview
 

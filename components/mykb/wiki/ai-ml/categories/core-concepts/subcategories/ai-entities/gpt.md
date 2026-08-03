@@ -13,7 +13,7 @@ status: "growing"
 
 GPT appears in 1 session(s) categorized as API, Security, Shell. Related topics: acronym, api, auth, bash.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Gpt
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Gpt
 
 ## Overview
 

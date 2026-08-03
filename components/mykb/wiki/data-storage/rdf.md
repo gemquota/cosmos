@@ -30,7 +30,7 @@ RDF (Resource Description Framework) models every fact as a triple: subject, pre
 - [[wiki/data-storage/json-ld|JSON-LD]]
 - [[wiki/data-storage/knowledge-graph|Knowledge Graph]]
 - [[wiki/memory/ontology-design|Ontology Design]]
-- [[wiki/data-storage/index|Data Storage]]
+- [[wiki/data-storage/00-index|Data Storage]]
 - [[wiki/concepts/promotion-readiness|Promotion Readiness]]
 - [[wiki/dev-tools/global-link-check|Global Link Check]]
 - [[wiki/concepts/explainers|Explainers]]

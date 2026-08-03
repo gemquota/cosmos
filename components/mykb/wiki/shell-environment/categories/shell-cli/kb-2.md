@@ -13,7 +13,7 @@ status: "growing"
 
 KB appears in 2 session(s) categorized as API, Cloud, Mobile, Shell. Related topics: acronym, android, api, bash, cli, cloud.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Shell Cli
 
 ## Two Readings
 

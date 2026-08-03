@@ -18,13 +18,13 @@ Retrieval-augmented generation brings relevant documents into context at query t
 
 Agent systems add tool outputs and observations to context and must decide what to keep across many steps. Experimentation and research phases test different context strategies: chunk sizes, prompt orders, retrieval counts, and summarization prompts are all measured for their effect on answer quality. Logging and monitoring make those experiments observable, while ORM-backed stores keep the resulting data organized.
 
-Good context management balances fidelity against cost: more tokens cost more and slow generation, while aggressive pruning loses details. The practices recorded under [[wiki/web-platforms/index|Data Tools]] show that iterating on context design, like any experiment, benefits from clear hypotheses, controlled changes, and consistent evaluation.
+Good context management balances fidelity against cost: more tokens cost more and slow generation, while aggressive pruning loses details. The practices recorded under [[wiki/web-platforms/00-index|Data Tools]] show that iterating on context design, like any experiment, benefits from clear hypotheses, controlled changes, and consistent evaluation.
 
 Recording which context variant was used, what was retrieved, and what the final answer was turns every session into a data point for the next experiment.
 
 The research context is also where assumptions are tested: whether the model has the facts it needs, whether instructions are unambiguous, and whether the output format is stable.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Researching Experiment Context
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Researching Experiment Context
 
 ## Related Entities
 

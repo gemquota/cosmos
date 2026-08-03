@@ -10,7 +10,7 @@ resource: ""
 
 ## Decryption
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Decryption
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Decryption
 
 ## Related Entities
 

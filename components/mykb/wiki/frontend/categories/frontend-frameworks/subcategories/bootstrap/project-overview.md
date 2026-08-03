@@ -12,7 +12,7 @@ resource: ""
 
 Project Overview appears in 1 session(s) categorized as API, Debugging, Security. Related topics: api, auth, bootstrap.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Project Overview
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Project Overview
 
 ## Related Entities
 

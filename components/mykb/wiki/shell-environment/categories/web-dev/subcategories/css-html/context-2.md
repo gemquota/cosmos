@@ -14,7 +14,7 @@ Context — the information provided to an LLM alongside a query. Sessions show 
 
 **Related topics:** bash, bug, ci/cd, cli, css, dom, edge, ide
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Context 2
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Context 2
 
 ## Overview
 

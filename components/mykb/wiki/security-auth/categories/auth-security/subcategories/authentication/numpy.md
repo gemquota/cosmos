@@ -13,7 +13,7 @@ NumPy — a Python library for numerical computing with multi-dimensional arrays
 
 **Related topics:** api, auth, authentication, bigquery
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Numpy
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Numpy
 
 ## Related Entities
 

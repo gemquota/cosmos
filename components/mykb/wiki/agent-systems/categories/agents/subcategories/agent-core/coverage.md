@@ -20,7 +20,7 @@ Within this repository, RAG-style grounding appears wherever agents summarize or
 
 **Related topics:** api, bash, deployment, documentation
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Coverage
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Coverage
 
 ## Related Entities
 

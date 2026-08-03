@@ -27,4 +27,4 @@ FAISS (Facebook AI Similarity Search) is the foundational open-source library fo
 - [[wiki/data-storage/ivf|IVF Index]] — the inverted-file index FAISS popularized
 - [[wiki/data-storage/product-quantization|Product Quantization]] — compression FAISS supports
 - [[wiki/data-storage/embeddings|Embeddings]] — the vectors FAISS searches
-- [[wiki/data-storage/index|Data Storage]] — ANN libraries
+- [[wiki/data-storage/00-index|Data Storage]] — ANN libraries

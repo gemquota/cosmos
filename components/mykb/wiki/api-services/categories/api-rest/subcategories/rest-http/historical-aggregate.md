@@ -12,7 +12,7 @@ resource: ""
 
 Historical Aggregate appears in 1 session(s) categorized as API, Backend, Debugging, Shell. Related topics: api, backend, bash.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Historical Aggregate
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Historical Aggregate
 
 ## Related Entities
 

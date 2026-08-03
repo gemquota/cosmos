@@ -13,7 +13,7 @@ Error — exception and error conditions in software. Sessions show error handli
 
 **Related topics:** android, angular, api, auth, aws, bash
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Referenceerror 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Referenceerror 2
 
 ## Related Entities
 

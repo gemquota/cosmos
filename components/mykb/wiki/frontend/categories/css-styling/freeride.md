@@ -23,7 +23,7 @@ Documentation and debugging are the other recurring themes: the IDE is where dev
 The name FreeRide may also be a project or brand from the sessions themselves, and like other entity pages this one records what was observed rather than asserting a definition. The IDE reading is the one the source sessions support, and the frontend, CSS, and documentation tags describe the work the IDE was used for. If later sessions establish a different meaning, the page can be updated without losing the tooling context already recorded here.
 **Related topics:** api, bash, css, documentation
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Related Entities
 

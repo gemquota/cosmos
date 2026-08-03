@@ -1,5 +1,6 @@
 ---
 type: "concept"
+hub: true
 title: "Kubernetes Control Plane"
 description: "The API, scheduler, and controllers that drive cluster state"
 tags: ["kubernetes", "control-plane", "api", "etcd"]

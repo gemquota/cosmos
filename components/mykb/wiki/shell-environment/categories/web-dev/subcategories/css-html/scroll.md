@@ -13,7 +13,7 @@ status: "growing"
 
 Scroll appears in 1 session(s) categorized as Frontend, Shell. Related topics: bash, cli, css, dom.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Scroll
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Scroll
 
 ## Overview
 

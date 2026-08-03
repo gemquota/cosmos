@@ -13,7 +13,7 @@ ABOVE — a term or abbreviation referenced in agent sessions. Context suggests 
 
 **Related topics:** ajax, android, angular, api, auth
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Above 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Above 2
 
 ## Related Entities
 

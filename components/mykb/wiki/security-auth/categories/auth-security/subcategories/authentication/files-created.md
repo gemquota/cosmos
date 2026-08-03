@@ -12,7 +12,7 @@ resource: ""
 
 Files Created appears in 1 session(s) categorized as API, Security. Related topics: api, auth, authentication, cli.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Files Created
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Files Created
 
 ## Related Entities
 

@@ -1,5 +1,6 @@
 ---
 type: "concept"
+hub: true
 title: "Observability Pillars"
 description: "Metrics, logs, and traces as the foundation of operations"
 tags: ["observability", "metrics", "logs", "traces"]

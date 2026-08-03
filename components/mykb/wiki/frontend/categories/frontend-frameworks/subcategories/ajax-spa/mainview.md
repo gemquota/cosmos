@@ -21,7 +21,7 @@ Good main-view implementations separate data fetching from rendering, use explic
 
 This page preserves the token so future sessions can attach the concrete framework, component hierarchy, and authentication flow in which MainView appeared.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Mainview
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Mainview
 
 ## Related Entities
 

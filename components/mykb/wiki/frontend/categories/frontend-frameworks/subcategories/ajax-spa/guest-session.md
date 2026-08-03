@@ -13,7 +13,7 @@ status: "growing"
 
 Guest Session appears in 1 session(s) categorized as API, Mobile, Security. Related topics: ajax, android, api, auth.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Guest Session
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Guest Session
 
 ## Overview
 
@@ -29,7 +29,7 @@ Guest sessions are a favorite target for abuse because they require no identity 
 
 ## Session Context
 
-The recorded session placed guest sessions under API, Mobile, and Security, matching an app that starts anonymous and later upgrades. For navigation, [[wiki/web-platforms/index|Web Platforms]] covers the client architectures involved, and [[wiki/security/index|Security]] groups the access-control material that governs what a guest may do.
+The recorded session placed guest sessions under API, Mobile, and Security, matching an app that starts anonymous and later upgrades. For navigation, [[wiki/web-platforms/00-index|Web Platforms]] covers the client architectures involved, and [[wiki/security/00-index|Security]] groups the access-control material that governs what a guest may do.
 
 ## Related Entities
 

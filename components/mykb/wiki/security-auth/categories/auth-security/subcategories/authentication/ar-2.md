@@ -14,7 +14,7 @@ Angular — a TypeScript-based web application framework by Google. Sessions sho
 
 **Related topics:** api, auth, authentication
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Ar 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Ar 2
 
 ## Overview
 

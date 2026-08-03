@@ -12,7 +12,7 @@ resource: ""
 
 AWAY appears in 2 session(s) categorized as API, Security. Related topics: acronym, api, auth, authentication.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Away 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Away 2
 
 ## Overview
 

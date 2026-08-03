@@ -25,4 +25,4 @@ Cluster analysis partitions a set of items — documents, embeddings, notes — 
 - [[wiki/data-storage/embeddings|Embeddings]] — the features clustering usually consumes
 - [[wiki/memory/folksonomy|Folksonomy]] — clusters can propose tag vocabularies
 - [[wiki/data-storage/knowledge-graph|Knowledge Graph]] — community detection is graph clustering
-- [[wiki/meta-learning/index|Meta-Learning]] — unsupervised learning family
+- [[wiki/meta-learning/00-index|Meta-Learning]] — unsupervised learning family

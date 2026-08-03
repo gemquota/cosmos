@@ -27,4 +27,4 @@ PostgreSQL's tsvector/tsquery types implement full-text search inside SQL: text 
 - [[wiki/data-storage/tf-idf|TF-IDF]] — lexical weighting behind ts_rank
 - [[wiki/data-storage/bm25|BM25]] — the ranking ts_rank approximates
 - [[wiki/data-storage/metadata-filtering|Metadata Filtering]] — SQL filters combine with FTS naturally
-- [[wiki/data-storage/index|Data Storage]] — database technologies
+- [[wiki/data-storage/00-index|Data Storage]] — database technologies

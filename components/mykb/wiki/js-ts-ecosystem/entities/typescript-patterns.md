@@ -36,4 +36,4 @@ The toolchain centers on tsc for type-checking and bundlers such as Vite for fas
 {"compilerOptions":{"strict":true,"target":"ES2022","module":"ESNext"}}
 ```
 
-See also: [[wiki/js-ts-ecosystem/index|JS/TS Ecosystem]], [[wiki/frontend/index|Frontend]]
+See also: [[wiki/js-ts-ecosystem/00-index|JS/TS Ecosystem]], [[wiki/frontend/00-index|Frontend]]

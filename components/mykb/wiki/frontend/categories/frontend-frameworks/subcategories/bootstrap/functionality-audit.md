@@ -12,7 +12,7 @@ resource: ""
 
 Functionality Audit appears in 1 session(s) categorized as API, Cloud, Shell. Related topics: api, aws, bash, bootstrap.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Functionality Audit
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Functionality Audit
 
 ## Related Entities
 

@@ -14,7 +14,7 @@ Middleware — software that sits between applications and operating systems. Se
 
 **Related topics:** api, bash, cdn
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Mid
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Mid
 
 ## Overview
 

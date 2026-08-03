@@ -21,7 +21,7 @@ The API and security tags suggest the texture data may arrive over the network �
 
 The page records the token as a renderer concept; future sessions should attach the concrete API, format choices, and validation steps involved. The pattern of validating before binding is the security habit that keeps untrusted media from becoming a renderer exploit.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Bindabletexture
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Bindabletexture
 
 ## Related Entities
 

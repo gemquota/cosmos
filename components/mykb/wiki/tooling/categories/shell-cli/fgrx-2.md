@@ -9,7 +9,7 @@ resource: ""
 ---
 ## Fgrx 2
 FgRX appears in 2 session(s) categorized as API, Frontend, Shell. Related topics: api, bash, cli, css.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Overview
 FgRX is an unresolved token extracted from two sessions categorized under API, Frontend, and Shell. The expansion is not confirmed at extraction time, so the page records the token with its session evidence and deliberately avoids guessing a meaning. Tokens like this typically surface as function names, CLI flags, or internal identifiers that were logged while a tool ran. Keeping the page as an evidence anchor lets a later pass attach the canonical meaning without losing the original co-occurrence data.
 ## Working Interpretation

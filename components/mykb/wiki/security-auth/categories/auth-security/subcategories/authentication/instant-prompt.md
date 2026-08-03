@@ -13,7 +13,7 @@ Prompt — the input text provided to an LLM to guide its output. Sessions show 
 
 **Related topics:** android, api, auth, authentication
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Instant Prompt
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Instant Prompt
 
 ## Related Entities
 

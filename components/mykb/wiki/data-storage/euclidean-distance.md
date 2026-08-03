@@ -27,4 +27,4 @@ Euclidean (L2) distance measures the straight-line gap between two vectors. It i
 - [[wiki/data-storage/dot-product|Dot Product]] — the score-based alternative
 - [[wiki/data-storage/embeddings|Embeddings]] — the vectors distance is computed over
 - [[wiki/data-storage/vector-databases|Vector Databases]] — selectable as the index metric
-- [[wiki/data-storage/index|Data Storage]] — similarity metrics
+- [[wiki/data-storage/00-index|Data Storage]] — similarity metrics

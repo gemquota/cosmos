@@ -9,7 +9,7 @@ status: "growing"
 ---
 ## Terminal Display 2
 Terminal Display appears in 2 session(s) categorized as API, Cloud, Database, Debugging, Frontend, Security, Shell. Related topics: api, auth, aws, bash, bootstrap, cli, css, database.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Overview
 Terminal Display refers to how command-line programs present output: text, colors, tables, progress indicators, and interactive panes rendered in a terminal. The page was recorded in two sessions categorized as API, Cloud, Database, Debugging, Frontend, Security, and Shell, with related topics api, auth, aws, bash, bootstrap, cli, css, and database — a broad tooling surface.
 ## Formatting

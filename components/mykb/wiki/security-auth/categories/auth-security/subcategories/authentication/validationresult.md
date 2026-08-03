@@ -13,7 +13,7 @@ Validation — the process of verifying data meets defined criteria. Sessions sh
 
 **Related topics:** android, api, auth, authorization
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Validationresult
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Validationresult
 
 ## Related Entities
 

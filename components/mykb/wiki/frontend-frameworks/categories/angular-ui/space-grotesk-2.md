@@ -19,11 +19,11 @@ Typefaces shape user experience at a level below conscious attention: x-height a
 
 Web delivery uses @font-face with formats such as woff2, and font loading must be managed so text is not invisible or subject to layout shift while the font downloads. Variable fonts allow weight to be adjusted in a single file, while subsetting keeps payloads small by including only the glyphs used. Localization affects font choice, since the typeface must cover the scripts the product actually displays.
 
-In sessions, the font appears across frontend and mobile work, where designers and developers choose and tune it together with CSS, and debugging sessions trace rendering issues back to font loading or fallback stacks. It is a small but real part of the [[wiki/web-platforms/index|Css Styling]] and [[wiki/web-platforms/index|Angular Ui]] domains in this knowledge base.
+In sessions, the font appears across frontend and mobile work, where designers and developers choose and tune it together with CSS, and debugging sessions trace rendering issues back to font loading or fallback stacks. It is a small but real part of the [[wiki/web-platforms/00-index|Css Styling]] and [[wiki/web-platforms/00-index|Angular Ui]] domains in this knowledge base.
 
 The entry records the font as a dependency like any other: versioned, subset, and chosen deliberately so that branding does not silently degrade performance or accessibility.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/00-index|Angular Ui
 
 ## Related Entities
 

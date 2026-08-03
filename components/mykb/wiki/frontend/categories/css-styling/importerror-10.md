@@ -18,11 +18,11 @@ Circular imports are usually resolved by restructuring: move the shared code int
 
 Robust error handling anticipates these failures: try/catch blocks around import-heavy code, clear error messages that name the missing module, and dependency manifests that pin versions so the environment is reproducible. Recovery strategies include degrading gracefully, showing a helpful setup message, or retrying after installing the dependency.
 
-Logging the traceback and the resolved sys.path makes debugging faster, and CI checks that catch import errors early prevent them from reaching users. The patterns recorded in this entry extend to the broader [[wiki/web-platforms/index|Css Styling]] domain, where the same discipline of explicit error types, structured logging, and recovery applies to frontend and backend code alike.
+Logging the traceback and the resolved sys.path makes debugging faster, and CI checks that catch import errors early prevent them from reaching users. The patterns recorded in this entry extend to the broader [[wiki/web-platforms/00-index|Css Styling]] domain, where the same discipline of explicit error types, structured logging, and recovery applies to frontend and backend code alike.
 
 The entry appears alongside other error-type pages in the wiki, and its patterns generalize to any import or initialization failure in interpreted languages.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Related Entities
 

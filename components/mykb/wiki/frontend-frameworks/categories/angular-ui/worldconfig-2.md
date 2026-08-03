@@ -13,7 +13,7 @@ resource: ""
 
 WorldConfig appears in 2 session(s) categorized as Cloud, Debugging, Frontend, Mobile, Shell. Related topics: android, angular, aws, bash, cli, css, dom.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Angular Ui
 
 ## Overview
 
@@ -42,7 +42,7 @@ Configuration is read at well-defined points: module import, bootstrap, or expli
 
 ## Related Concepts
 
-- [[wiki/frontend-frameworks/categories/angular-ui/index|Angular UI]] — the component family context
+- [[wiki/frontend-frameworks/categories/angular-ui/00-index|Angular UI]] — the component family context
 - [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — configuration that drives rendering
 - [[wiki/os-shell/environment-variables|Environment Variables]] — process-level configuration source
 - [[wiki/testing/test-configuration-management|Test Configuration Management]] — isolating configuration in test suites

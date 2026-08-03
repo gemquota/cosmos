@@ -27,5 +27,5 @@ Transfer learning reuses representations or weights learned on one task as a sta
 - [[wiki/meta-learning/word2vec|Word2Vec]] — early transfer of word representations
 - [[wiki/meta-learning/graph-embeddings|Graph Embeddings]] — transferring structural knowledge from graphs
 - [[wiki/meta-learning/node2vec|Node2Vec]] — graph representation learning for transfer
-- [[wiki/meta-learning/index|Meta-Learning]] — the field that studies learning to transfer
+- [[wiki/meta-learning/00-index|Meta-Learning]] — the field that studies learning to transfer
 - [[wiki/concepts/mykb-research-report|Mykb Research Report]] — survey of transfer-based retrieval models

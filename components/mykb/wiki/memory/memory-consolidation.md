@@ -26,5 +26,5 @@ Memory consolidation is the biological and cognitive process that stabilizes new
 - [[wiki/memory/memory-organisation|Memory Organisation]] — how consolidated memories are structured
 - [[wiki/memory/knowledge-capture|Knowledge Capture]] — the encoding step before consolidation
 - [[wiki/memory/memory-retrieval-curves|Memory Retrieval Curves]] — forgetting that consolidation counteracts
-- [[wiki/reflections/index|Reflections]] — RSIS3's periodic consolidation records
-- [[wiki/identity/index|Identity]] — the self-model consolidation updates
+- [[wiki/reflections/00-index|Reflections]] — RSIS3's periodic consolidation records
+- [[wiki/identity/00-index|Identity]] — the self-model consolidation updates

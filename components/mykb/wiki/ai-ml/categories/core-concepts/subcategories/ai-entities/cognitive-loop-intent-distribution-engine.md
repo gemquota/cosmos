@@ -25,7 +25,7 @@ The related entities recorded with this page describe the API layer, authenticat
 Security and reliability matter in intent routing. Authentication protects the components that intents reach, timeouts prevent a hung receiver from stalling the whole loop, and structured logging records every routing decision. These safeguards are the same ones used in API gateways, which is why the related entities for this page come from the API services vocabulary.
 **Related topics:** api, auth, bash, bug
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Cognitive Loop Intent Distribution Engine
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Cognitive Loop Intent Distribution Engine
 
 ## Related Entities
 

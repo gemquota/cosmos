@@ -10,7 +10,7 @@ resource: ""
 
 ## Stresssolver
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Stresssolver
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Stresssolver
 
 ## Related Entities
 

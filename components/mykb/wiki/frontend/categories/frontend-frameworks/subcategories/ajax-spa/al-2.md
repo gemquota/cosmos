@@ -14,7 +14,7 @@ Scala — a language combining object-oriented and functional programming on the
 
 **Related topics:** ajax, android, api, auth
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Al 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Al 2
 
 ## Overview
 
@@ -26,7 +26,7 @@ The type system is the defining feature: Scala infers types, supports case class
 
 ## Ecosystem and Usage
 
-Scala ships with the sbt build tool and integrates with the JVM ecosystem, so it can call Java libraries directly and run inside standard JVM containers. Frameworks such as Akka for concurrency and Play or http4s for HTTP services cover the web side, which is why the language shows up in API and backend work. The functional core also makes it a natural fit for data engineering, where transformation pipelines mirror collection operations. For wiki navigation, [[wiki/development/index|Development]] records language and tooling patterns, [[wiki/api-services/index|API Services]] covers the service interfaces built with it, and [[wiki/js-ts-ecosystem/index|JS/TS Ecosystem]] documents the frontend counterpart that these backends feed.
+Scala ships with the sbt build tool and integrates with the JVM ecosystem, so it can call Java libraries directly and run inside standard JVM containers. Frameworks such as Akka for concurrency and Play or http4s for HTTP services cover the web side, which is why the language shows up in API and backend work. The functional core also makes it a natural fit for data engineering, where transformation pipelines mirror collection operations. For wiki navigation, [[wiki/development/00-index|Development]] records language and tooling patterns, [[wiki/api-services/00-index|API Services]] covers the service interfaces built with it, and [[wiki/js-ts-ecosystem/00-index|JS/TS Ecosystem]] documents the frontend counterpart that these backends feed.
 
 ## Session Context
 

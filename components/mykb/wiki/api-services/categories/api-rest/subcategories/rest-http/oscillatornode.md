@@ -12,7 +12,7 @@ resource: ""
 
 OscillatorNode appears in 1 session(s) categorized as API, Cloud, Mobile, Shell. Related topics: android, api, aws, bash.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Oscillatornode
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Oscillatornode
 
 ## Related Entities
 

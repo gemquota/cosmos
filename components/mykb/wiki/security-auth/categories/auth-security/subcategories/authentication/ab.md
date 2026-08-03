@@ -10,7 +10,7 @@ resource: ""
 ## Ab
 Babel — a JavaScript transpiler that converts ES6+ code into backwards-compatible versions.
 **Related topics:** api, auth, authentication
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Ab
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Ab
 ## Overview
 Babel is a JavaScript toolchain that transforms modern JavaScript (and TypeScript and JSX) into versions that older browsers and runtimes understand. It works by parsing source code into an abstract syntax tree, applying a configurable set of plugins and presets, and emitting transformed code. This makes it possible to write with current syntax — arrow functions, optional chaining, class fields, and more — while still shipping broadly compatible bundles.
 ## Details

@@ -10,7 +10,7 @@ resource: ""
 ## Simulationconfig 2
 Simulation — the computational modeling of real-world systems for analysis or prediction.
 **Related topics:** ajax, android, api, auth, bash, cli
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Overview
 SimulationConfig is a configuration object or file that fully determines how a simulation run executes. Separating configuration from code is what makes simulations reproducible and tunable: the same engine binary can model different worlds purely by loading different configs. A typical SimulationConfig bundles the model parameters, the numerical settings, the runtime environment, and the output specification into one structured document that a CLI or API can validate before a run starts.
 ## Typical Configuration Fields

@@ -14,7 +14,7 @@ CLI (Command Line Interface) — a text-based interface for interacting with sof
 
 **Related topics:** android, angular, api, auth, authentication, authorization, bash, cdn
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Auth Security › Asyncclient 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Auth Security › Asyncclient 2
 
 ## Overview
 

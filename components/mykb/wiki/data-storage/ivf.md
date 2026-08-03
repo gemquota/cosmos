@@ -25,4 +25,4 @@ An IVF (inverted file) index clusters the corpus into cells, then searches only 
 - [[wiki/data-storage/faiss|FAISS]] — the library that made IVF canonical
 - [[wiki/data-storage/hnsw|HNSW]] — the graph alternative to clustering
 - [[wiki/data-storage/product-quantization|Product Quantization]] — often combined with IVF for compression
-- [[wiki/data-storage/index|Data Storage]] — ANN index family
+- [[wiki/data-storage/00-index|Data Storage]] — ANN index family

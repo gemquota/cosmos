@@ -13,7 +13,7 @@ Google BigQuery — a serverless, highly scalable data warehouse for analytics. 
 
 **Related topics:** ajax, alpine, android, angular, ansible, api, auth, authentication
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Bigquery 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Bigquery 2
 
 ## Related Entities
 

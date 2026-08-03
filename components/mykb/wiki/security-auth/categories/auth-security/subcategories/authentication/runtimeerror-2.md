@@ -13,7 +13,7 @@ Error — exception and error conditions in software. Sessions show error handli
 
 **Related topics:** android, api, auth, authentication, bash
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Runtimeerror 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Runtimeerror 2
 
 ## Related Entities
 

@@ -21,7 +21,7 @@ In API work, base models double as contracts — Pydantic models validate incomi
 
 Future sessions should record which BaseModel convention was in use and how validation, serialization, and inheritance were configured. The ten-session frequency marks this as a pattern worth documenting carefully, since every future model inherits whatever the base class decides. That inheritance makes the base class a high-leverage review point.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Basemodel 10
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Basemodel 10
 
 ## Related Entities
 

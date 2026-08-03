@@ -14,7 +14,7 @@ DOM (Document Object Model) — a programming interface for HTML and XML documen
 
 **Related topics:** ajax, api, backend, bash
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Major Sector Dominance
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Major Sector Dominance
 
 ## Overview
 

@@ -21,7 +21,7 @@ For an ORM-tagged page, the practical lesson is that apparent contradictions usu
 
 This page therefore records the term as both a philosophical concept and a debugging heuristic, and future sessions should note which paradox instance was under discussion. In both philosophy and code, the productive response to a paradox is to change the frame rather than to pick a side blindly.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Paradox
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Paradox
 
 ## Related Entities
 

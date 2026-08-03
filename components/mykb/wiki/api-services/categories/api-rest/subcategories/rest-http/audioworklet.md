@@ -13,7 +13,7 @@ resource: ""
 
 AudioWorklet appears in 1 session(s) categorized as API, Cloud, Mobile, Security. Related topics: android, api, auth, aws.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Audioworklet
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Audioworklet
 
 ## Overview
 

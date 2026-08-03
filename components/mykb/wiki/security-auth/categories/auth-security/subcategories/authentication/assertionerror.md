@@ -14,7 +14,7 @@ Error — exception and error conditions in software. Sessions show error handli
 
 **Related topics:** api, auth, authentication, aws
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Assertionerror
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Assertionerror
 
 ## Overview
 

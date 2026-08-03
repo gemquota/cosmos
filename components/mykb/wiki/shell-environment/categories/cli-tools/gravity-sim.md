@@ -13,7 +13,7 @@ status: "growing"
 
 Gravity Sim appears in 1 session(s) categorized as Shell. Related topics: bash, bootstrap, bun, cli.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Cli Tools]]
 
 ## Overview
 

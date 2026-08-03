@@ -25,4 +25,4 @@ Embedding alignment learns a transformation between two embedding spaces — dif
 - [[wiki/meta-learning/word2vec|Word2Vec]] — classic testbed for cross-lingual alignment
 - [[wiki/meta-learning/graph-embeddings|Graph Embeddings]] — aligning graph and text spaces
 - [[wiki/meta-learning/transfer-learning|Transfer Learning]] — alignment is a transfer mechanism
-- [[wiki/meta-learning/index|Meta-Learning]] — representation learning family
+- [[wiki/meta-learning/00-index|Meta-Learning]] — representation learning family

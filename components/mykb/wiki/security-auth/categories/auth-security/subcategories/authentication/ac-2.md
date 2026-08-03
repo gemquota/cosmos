@@ -19,11 +19,11 @@ The API is modular: source nodes generate sound, processing nodes such as gains,
 
 Timing is handled on the context's clock: scheduling with AudioParam values and the currentTime property keeps events sample-accurate, avoiding the jitter of setTimeout. Automation ramps values smoothly over time, so volume and filter changes are click-free. Performance matters because audio runs in real time; long processing chains or garbage collection pauses cause glitches.
 
-Browsers require a user gesture before audio can start, so contexts are created or resumed after interaction. The entry appears in the [[wiki/web-platforms/index|Auth Security]] tree alongside rendering topics such as [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/canvastexture|Canvastexture]], since audio visualization typically pairs an AudioContext with a canvas animation loop.
+Browsers require a user gesture before audio can start, so contexts are created or resumed after interaction. The entry appears in the [[wiki/web-platforms/00-index|Auth Security]] tree alongside rendering topics such as [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/canvastexture|Canvastexture]], since audio visualization typically pairs an AudioContext with a canvas animation loop.
 
 The entry is filed under authentication because the sessions that mentioned it combined audio features with sign-in and session work, but the technical content is entirely about the Web Audio API.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Ac 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Ac 2
 
 ## Related Entities
 

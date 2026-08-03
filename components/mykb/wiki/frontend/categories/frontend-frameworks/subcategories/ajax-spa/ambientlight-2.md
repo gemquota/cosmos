@@ -14,7 +14,7 @@ AmbientLight — a concept or component related to lighting simulation or enviro
 
 **Related topics:** ajax, android, api, auth, aws, bash
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Ambientlight 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Ambientlight 2
 
 ## Overview
 

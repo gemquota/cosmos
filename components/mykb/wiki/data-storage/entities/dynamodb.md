@@ -14,7 +14,7 @@ Amazon DynamoDB — a fully managed NoSQL key-value and document database.
 
 **Related topics:** android, angular, api, auth
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Dynamodb
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Dynamodb
 
 ## Overview
 
@@ -26,7 +26,7 @@ A table holds items, each identified by a primary key that is either a single pa
 
 ## Access Patterns
 
-DynamoDB is used through a small set of operations: GetItem, PutItem, UpdateItem, DeleteItem, and Query, with Scan available as a last resort because it reads the whole table. [[wiki/devops-infra/connection-pooling|connection pooling]] and retry logic belong in the client, while capacity planning — on-demand versus provisioned — decides how cost and throttling behave under load. [[wiki/data-storage/entities/cache|cache]] layers such as DynamoDB Accelerator or external caches reduce read cost for hot keys, and the [[wiki/infrastructure/categories/aws/index|AWS]] tree documents the surrounding account and IAM setup.
+DynamoDB is used through a small set of operations: GetItem, PutItem, UpdateItem, DeleteItem, and Query, with Scan available as a last resort because it reads the whole table. [[wiki/devops-infra/connection-pooling|connection pooling]] and retry logic belong in the client, while capacity planning — on-demand versus provisioned — decides how cost and throttling behave under load. [[wiki/data-storage/entities/cache|cache]] layers such as DynamoDB Accelerator or external caches reduce read cost for hot keys, and the [[wiki/infrastructure/categories/aws/00-index|AWS]] tree documents the surrounding account and IAM setup.
 
 ## Operations
 

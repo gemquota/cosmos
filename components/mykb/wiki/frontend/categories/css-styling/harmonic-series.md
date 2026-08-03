@@ -20,7 +20,7 @@ In the touchscreen musical instrument project, the harmonic series informs sound
 
 Implementation on mobile uses the Web Audio API or native engines to create oscillators and shape their partials with filters and envelopes. Related project pages cover [[wiki/frontend/categories/css-styling/gesture-harmonics|Gesture Harmonics]] and the [[wiki/frontend/categories/css-styling/harmonica-harmonic-explorer|Harmonica Harmonic Explorer]], which carry the interaction details.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Related Entities
 

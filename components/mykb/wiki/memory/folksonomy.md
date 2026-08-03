@@ -28,4 +28,4 @@ A folksonomy is classification by free-form tags applied by users (or agents), f
 - [[wiki/meta-learning/cluster-analysis|Cluster Analysis]] — groups tags into de-facto categories
 - [[wiki/memory/knowledge-curation|Knowledge Curation]] — curating tags keeps folksonomies usable
 - [[wiki/concepts/mykb-analysis|Mykb Analysis]] — mykb's tagging conventions in practice
-- [[wiki/reflections/index|Reflections]] — tagged retrospective records
+- [[wiki/reflections/00-index|Reflections]] — tagged retrospective records

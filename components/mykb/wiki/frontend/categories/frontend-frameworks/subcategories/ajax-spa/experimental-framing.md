@@ -13,7 +13,7 @@ resource: ""
 
 Experimental Framing appears in 1 session(s) categorized as API, Security. Related topics: api, auth, cdn, cli.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Experimental Framing
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Experimental Framing
 
 ## Overview
 

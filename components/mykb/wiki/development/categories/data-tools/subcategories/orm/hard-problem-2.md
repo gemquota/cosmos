@@ -13,7 +13,7 @@ resource: ""
 
 Hard Problem is referenced in 2 session(s). Related tags: ast, guid, ide, orm, spa.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Hard Problem 2
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Hard Problem 2
 
 ## Overview
 

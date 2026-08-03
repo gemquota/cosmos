@@ -1,0 +1,176 @@
+---
+type: "index"
+hub: true
+title: "Meta Learning Index"
+description: "Listing of the meta-learning/ folder (162 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
+# Meta Learning
+
+Part of [[wiki/index|Wiki Index]]. 162 pages.
+
+## Pages
+- [[wiki/meta-learning/academic-emotions|Academic Emotions]] — Emotions experienced in achievement and learning settings
+- [[wiki/meta-learning/academic-self-concept|Academic Self-Concept]] — Self-perceptions of ability in academic domains
+- [[wiki/meta-learning/achievement-emotion-theory|Achievement Emotion Theory]] — Pekrun's control-value theory of emotions in achievement settings
+- [[wiki/meta-learning/achievement-goal-theory|Achievement Goal Theory]] — Framework explaining motivation through the goals students pursue in achievement settings
+- [[wiki/meta-learning/adaptive-learning-systems|Adaptive Learning Systems]] — Systems that tailor content, pacing, and feedback to each learner
+- [[wiki/meta-learning/agentic-engagement|Agentic Engagement]] — Students' proactive, constructive contribution to their own learning environment
+- [[wiki/meta-learning/approach-avoidance-motivation|Approach-Avoidance Motivation]] — Twin motivational systems: pursuing rewards and avoiding threats
+- [[wiki/meta-learning/athlete-cognition|Athlete Cognition]] — Cognitive processes underlying elite sports performance
+- [[wiki/meta-learning/attribution-theory|Attribution Theory]] — How people explain causes of events and how explanations shape motivation
+- [[wiki/meta-learning/automaticity-research|Automaticity Research]] — Study of behaviors that become fast, effortless, and attention-free with practice
+- [[wiki/meta-learning/autonomy-support|Autonomy Support]] — Interpersonal styles that offer choice, rationale, and perspective-taking
+- [[wiki/meta-learning/behavioral-engagement|Behavioral Engagement]] — Visible participation: attendance, effort, and on-task conduct
+- [[wiki/meta-learning/bi-encoder|Bi-Encoder]] — Model encoding query and document separately into vectors for fast similarity search
+- [[wiki/meta-learning/boredom-research|Boredom Research]] — Study of boredom's causes, correlates, and consequences in learning
+- [[wiki/meta-learning/calibration-training|Calibration Training]] — Practice that improves the match between confidence and accuracy
+- [[wiki/meta-learning/category-learning|Category Learning]] — Acquiring the criteria that group objects, events, or ideas together
+- [[wiki/meta-learning/chess-expertise|Chess Expertise]] — The classic research domain for expert memory and pattern recognition
+- [[wiki/meta-learning/choice-architecture|Choice Architecture]] — Designing the context in which people make decisions
+- [[wiki/meta-learning/cluster-analysis|Cluster Analysis]] — Grouping items so similar ones share a cluster, revealing structure without labels
+- [[wiki/meta-learning/coach-feedback|Coach Feedback]] — External, expert-provided feedback that guides skill improvement
+- [[wiki/meta-learning/cognitive-apprenticeship|Cognitive Apprenticeship]] — Teaching by modeling, coaching, and fading expert thinking processes
+- [[wiki/meta-learning/cognitive-diagnosis-models|Cognitive Diagnosis Models]] — Models that infer fine-grained knowledge states from response patterns
+- [[wiki/meta-learning/cognitive-engagement|Cognitive Engagement]] — Psychological investment and strategy use in learning tasks
+- [[wiki/meta-learning/colbert|ColBERT]] — Late-interaction retriever scoring query-document pairs token-by-token
+- [[wiki/meta-learning/commitment-devices|Commitment Devices]] — Structures that bind future behavior to current intentions
+- [[wiki/meta-learning/communities-of-practice|Communities of Practice]] — Groups bound by shared practice who learn together over time
+- [[wiki/meta-learning/competence-need|Competence Need]] — The psychological need to feel effective and capable
+- [[wiki/meta-learning/confidence-ratings|Confidence Ratings]] — Expressed probability judgments of one's own answer correctness
+- [[wiki/meta-learning/corrective-feedback-types|Corrective Feedback Types]] — Kinds of error feedback: confirmation, hints, and explanations
+- [[wiki/meta-learning/creative-expertise|Creative Expertise]] — How deliberate practice and domain knowledge support creativity
+- [[wiki/meta-learning/cross-encoder|Cross-Encoder]] — Model scoring query-document pairs jointly through full attention
+- [[wiki/meta-learning/cue-routine-reward|Cue-Routine-Reward]] — The three-part behavioral pattern underlying habit formation
+- [[wiki/meta-learning/curiosity-driven-learning|Curiosity-Driven Learning]] — Learning motivated by information gaps and the drive to understand
+- [[wiki/meta-learning/curriculum-learning|Curriculum Learning]] — Training strategy that orders examples from easy to hard, mimicking human learning curricula
+- [[wiki/meta-learning/delay-of-gratification|Delay of Gratification]] — Choosing larger later rewards over smaller immediate ones, as in the marshmallow test
+- [[wiki/meta-learning/deliberate-play|Deliberate Play]] — Playful, self-directed practice that still targets skill development
+- [[wiki/meta-learning/diagnostic-expertise|Diagnostic Expertise]] — Skilled identification of conditions from evidence
+- [[wiki/meta-learning/directive-feedback|Directive Feedback]] — Feedback that directly tells the learner what is wrong and what to do
+- [[wiki/meta-learning/discovery-learning|Discovery Learning]] — Learning by actively exploring and finding principles oneself
+- [[wiki/meta-learning/double-loop-learning|Double-Loop Learning]] — Learning that questions governing assumptions, not just corrects errors
+- [[wiki/meta-learning/educational-data-mining|Educational Data Mining]] — Applying data-mining and ML methods to educational data
+- [[wiki/meta-learning/effort-praise|Effort Praise]] — Praising effort and strategy rather than ability
+- [[wiki/meta-learning/embedding-alignment|Embedding Alignment]] — Mapping embeddings from different spaces or languages into a shared coordinate frame
+- [[wiki/meta-learning/emotional-engagement|Emotional Engagement]] — Affective reactions to learning: interest, enjoyment, anxiety, boredom
+- [[wiki/meta-learning/emotional-regulation|Emotional Regulation]] — Strategies for influencing which emotions arise, when, and how they are expressed
+- [[wiki/meta-learning/engagement-research|Engagement Research]] — Study of student involvement across behavioral, cognitive, emotional, and agentic dimensions
+- [[wiki/meta-learning/engineering-intuition|Engineering Intuition]] — Expert engineers' gut sense for what will work and what will break
+- [[wiki/meta-learning/epistemic-curiosity|Epistemic Curiosity]] — Desire for knowledge that reduces uncertainty and fills understanding gaps
+- [[wiki/meta-learning/error-driven-learning|Error-Driven Learning]] — Learning by adjusting predictions or behavior in proportion to errors
+- [[wiki/meta-learning/expectancy-value-theory|Expectancy-Value Theory]] — Motivation as the product of success expectations and task value
+- [[wiki/meta-learning/experiential-learning|Experiential Learning]] — Learning through experience transformed by reflection
+- [[wiki/meta-learning/expertise-transfer|Expertise Transfer]] — Whether and when skill in one domain carries to another
+- [[wiki/meta-learning/explanation-based-learning|Explanation-Based Learning]] — Learning from a single example by explaining why it satisfies a general rule
+- [[wiki/meta-learning/explanatory-style|Explanatory Style]] — Habitual way people explain good and bad events
+- [[wiki/meta-learning/facilitative-feedback|Facilitative Feedback]] — Feedback that guides learners to discover corrections themselves
+- [[wiki/meta-learning/feedback-frequency|Feedback Frequency]] — How often feedback is given and its effects on learning
+- [[wiki/meta-learning/feedback-sandwich|Feedback Sandwich]] — Framing criticism between positive statements
+- [[wiki/meta-learning/feedback-timing|Feedback Timing]] — When feedback is delivered and how timing affects learning
+- [[wiki/meta-learning/feedforward|Feedforward]] — Feedback reframed as guidance for the next attempt
+- [[wiki/meta-learning/fitts-posner-model|Fitts-Posner Model]] — Three stages of skill acquisition: cognitive, associative, autonomous
+- [[wiki/meta-learning/flow-state|Flow State]] — Absorbed, effortless engagement when challenge matches skill
+- [[wiki/meta-learning/forecasting-research|Forecasting Research]] — Study of probability estimation about future events and its accuracy
+- [[wiki/meta-learning/formative-assessment|Formative Assessment]] — Ongoing assessment used to adjust teaching and learning while it happens
+- [[wiki/meta-learning/friction-design|Friction Design]] — Deliberately adding or removing effort to shape behavior
+- [[wiki/meta-learning/future-time-perspective|Future Time Perspective]] — How far and how vividly people project into the future
+- [[wiki/meta-learning/generalist-vs-specialist|Generalist vs Specialist]] — Trade-offs between breadth and depth in knowledge and skill
+- [[wiki/meta-learning/glove|GloVe]] — Word embeddings learned from global co-occurrence statistics via matrix factorization
+- [[wiki/meta-learning/goal-intentions|Goal Intentions]] — Commitments to achieve particular outcomes
+- [[wiki/meta-learning/grammar-induction|Grammar Induction]] — Learning the rules of a language from exposure
+- [[wiki/meta-learning/graph-embeddings|Graph Embeddings]] — Low-dimensional vector representations of graph nodes, edges, or subgraphs
+- [[wiki/meta-learning/grit-research|Grit Research]] — Study of perseverance and passion for long-term goals and its predictive power
+- [[wiki/meta-learning/habit-loops|Habit Loops]] — The cue-routine-reward cycle that sustains automatic behavior
+- [[wiki/meta-learning/habit-stacking|Habit Stacking]] — Anchoring a new habit to an existing routine
+- [[wiki/meta-learning/habit-vs-goal-directed|Habit vs Goal-Directed Control]] — Dual-system account of action: automatic stimulus-response habits versus deliberate goal pursuit
+- [[wiki/meta-learning/identity-development|Identity Development]] — Process of forming a coherent sense of self across adolescence and adulthood
+- [[wiki/meta-learning/individual-interest|Individual Interest]] — Enduring personal preference for and engagement with a domain
+- [[wiki/meta-learning/information-seeking-behavior|Information-Seeking Behavior]] — Actions people take to acquire, evaluate, and use information
+- [[wiki/meta-learning/inquiry-based-learning|Inquiry-Based Learning]] — Learning driven by questions, investigation, and evidence
+- [[wiki/meta-learning/intelligent-tutoring-systems|Intelligent Tutoring Systems]] — AI-driven tutors that model learners and adapt instruction
+- [[wiki/meta-learning/interest-theory|Interest Theory]] — How interest develops and drives attention, learning, and persistence
+- [[wiki/meta-learning/interpreter-training|Interpreter Training]] — How simultaneous and consecutive interpreters build expertise
+- [[wiki/meta-learning/intrinsic-motivation|Intrinsic Motivation]] — Engagement driven by interest and enjoyment rather than external reward
+- [[wiki/meta-learning/item-response-theory|Item Response Theory]] — Psychometric models linking item difficulty and ability to response probability
+- [[wiki/meta-learning/knowledge-compilation|Knowledge Compilation]] — The stage where separate steps fuse into smooth, single procedures
+- [[wiki/meta-learning/knowledge-distillation|Knowledge Distillation]] — Training a small student model to imitate a larger teacher model's predictions and knowledge
+- [[wiki/meta-learning/knowledge-tracing|Knowledge Tracing]] — Modeling whether a learner has mastered a skill from performance history
+- [[wiki/meta-learning/learned-optimism|Learned Optimism]] — Seligman's claim that optimistic explanatory styles can be learned
+- [[wiki/meta-learning/learning-analytics|Learning Analytics]] — Measuring, analyzing, and acting on learning data
+- [[wiki/meta-learning/learning-curves|Learning Curves]] — Graphs of performance improvement as a function of practice
+- [[wiki/meta-learning/mastery-experiences|Mastery Experiences]] — Successful performances that build self-efficacy
+- [[wiki/meta-learning/mastery-goals|Mastery Goals]] — Goals focused on developing understanding and competence
+- [[wiki/meta-learning/mastery-learning|Mastery Learning]] — Instruction where learners must reach mastery before advancing
+- [[wiki/meta-learning/medical-expertise|Medical Expertise]] — Development of diagnostic and clinical skill in medicine
+- [[wiki/meta-learning/model-based-learning|Model-Based Learning]] — Learning through an explicit internal model of the environment
+- [[wiki/meta-learning/model-free-learning|Model-Free Learning]] — Learning stimulus-response values directly from experience without a world model
+- [[wiki/meta-learning/motivation-internalization|Motivation Internalization]] — Process by which externally prompted behaviors become personally endorsed
+- [[wiki/meta-learning/motor-learning|Motor Learning]] — Acquisition and refinement of movement skills through practice
+- [[wiki/meta-learning/musician-practice|Musician Practice]] — Practice patterns of expert musicians and their cognitive effects
+- [[wiki/meta-learning/narrow-expertise|Narrow Expertise]] — Deep skill confined to a specific domain or task set
+- [[wiki/meta-learning/neuroplasticity|Neuroplasticity]] — The brain's lifelong capacity to reorganize structure and function with experience
+- [[wiki/meta-learning/node2vec|Node2Vec]] — Random-walk method learning node embeddings that balance homophily and structural roles
+- [[wiki/meta-learning/novelty-detection|Novelty Detection]] — Cognitive and computational processes that flag inputs as new or unexpected
+- [[wiki/meta-learning/novelty-seeking|Novelty Seeking]] — Drive to explore unfamiliar stimuli, situations, and ideas
+- [[wiki/meta-learning/nudges|Nudges]] — Low-cost design changes that steer behavior while preserving choice
+- [[wiki/meta-learning/organizational-learning|Organizational Learning]] — How organizations acquire, retain, and apply knowledge as collective entities
+- [[wiki/meta-learning/outcome-expectancy|Outcome Expectancy]] — Belief that a behavior will produce a given outcome
+- [[wiki/meta-learning/pattern-recognition-expertise|Pattern Recognition Expertise]] — Experts' ability to see meaningful patterns novices miss
+- [[wiki/meta-learning/pattern-recognition-learning|Pattern Recognition Learning]] — Acquiring the ability to classify and respond to recurring patterns
+- [[wiki/meta-learning/peer-assessment|Peer Assessment]] — Learners evaluating each other's work against criteria
+- [[wiki/meta-learning/perceptual-curiosity|Perceptual Curiosity]] — Drive for novel sensory stimulation and surprise
+- [[wiki/meta-learning/perceptual-expertise|Perceptual Expertise]] — Expert-level discrimination and recognition within a visual domain
+- [[wiki/meta-learning/performance-goals|Performance Goals]] — Goals focused on demonstrating competence relative to others
+- [[wiki/meta-learning/personalized-learning|Personalized Learning]] — Instruction tailored to individual learners' needs, pace, and interests
+- [[wiki/meta-learning/polymath-research|Polymath Research]] — Study of multi-domain expertise and its cognitive basis
+- [[wiki/meta-learning/possible-selves|Possible Selves]] — Mental representations of who one might become
+- [[wiki/meta-learning/posttraumatic-growth|Posttraumatic Growth]] — Positive psychological change reported after struggling with highly challenging life events
+- [[wiki/meta-learning/power-law-of-practice|Power Law of Practice]] — The regular finding that performance improves as a power function of practice
+- [[wiki/meta-learning/praise-research|Praise Research]] — Evidence on how praise affects motivation and learning
+- [[wiki/meta-learning/precommitment|Precommitment]] — Binding oneself in advance to resist future temptation
+- [[wiki/meta-learning/prediction-error-signal|Prediction Error Signal]] — Neural and computational signal encoding the gap between expected and actual outcomes
+- [[wiki/meta-learning/problem-based-learning|Problem-Based Learning]] — Learning organized around solving authentic problems
+- [[wiki/meta-learning/proceduralization|Proceduralization]] — Converting declarative knowledge into procedural skill
+- [[wiki/meta-learning/procrastination-research|Procrastination Research]] — Study of voluntary delay of intended action despite expected costs
+- [[wiki/meta-learning/project-based-learning|Project-Based Learning]] — Learning through sustained projects that produce authentic artifacts
+- [[wiki/meta-learning/purposeful-practice|Purposeful Practice]] — Practice with clear goals, feedback, and comfort-zone stretching, short of full deliberate practice
+- [[wiki/meta-learning/reflective-practice|Reflective Practice]] — Systematically examining one's own experience and actions to improve
+- [[wiki/meta-learning/relatedness-need|Relatedness Need]] — The psychological need for connection and belonging
+- [[wiki/meta-learning/resilience-research|Resilience Research]] — Study of adaptation and recovery in the face of adversity, stress, and failure
+- [[wiki/meta-learning/reward-prediction-error|Reward Prediction Error]] — Difference between expected and received reward, the signal driving reinforcement learning
+- [[wiki/meta-learning/risk-literacy|Risk Literacy]] — Ability to interpret risk information and make informed decisions
+- [[wiki/meta-learning/rubicon-model|Rubicon Model]] — Heckhausen's phase model separating deliberation from volitional implementation
+- [[wiki/meta-learning/scaffolding-learning|Scaffolding Learning]] — Temporary support that lets learners do more than they could alone, then fades
+- [[wiki/meta-learning/self-assessment-accuracy|Self-Assessment Accuracy]] — How well learners judge their own performance and knowledge
+- [[wiki/meta-learning/self-concept-research|Self-Concept Research]] — How self-perceptions form and relate to achievement
+- [[wiki/meta-learning/self-control-research|Self-Control Research]] — Empirical study of resisting temptation, regulating impulses, and predicting life outcomes
+- [[wiki/meta-learning/self-determination-theory|Self-Determination Theory]] — Motivation theory centered on autonomy, competence, and relatedness needs
+- [[wiki/meta-learning/self-grading|Self-Grading]] — Learners scoring their own work against model answers
+- [[wiki/meta-learning/sentence-transformers|Sentence Transformers]] — Framework for embedding sentences and paragraphs with transformer models
+- [[wiki/meta-learning/sequence-learning|Sequence Learning]] — Learning ordered patterns of events or actions
+- [[wiki/meta-learning/sight-reading-cognition|Sight-Reading Cognition]] — Cognitive processes in reading and performing unfamiliar music at first sight
+- [[wiki/meta-learning/situational-interest|Situational Interest]] — Short-lived interest sparked by features of the immediate environment
+- [[wiki/meta-learning/skill-acquisition-stages|Skill Acquisition Stages]] — Progression from clumsy performance to automaticity
+- [[wiki/meta-learning/social-accountability|Social Accountability]] — Using commitments to others to motivate follow-through
+- [[wiki/meta-learning/social-learning-theory|Social Learning Theory]] — Bandura's account of learning through observation, modeling, and self-efficacy
+- [[wiki/meta-learning/statistical-learning|Statistical Learning]] — Implicitly tracking regularities in sensory input
+- [[wiki/meta-learning/subjective-task-value|Subjective Task Value]] — How much a task matters to the person across intrinsic, utility, attainment, and cost facets
+- [[wiki/meta-learning/t-shaped-skills|T-Shaped Skills]] — Deep expertise in one area plus broad ability across many
+- [[wiki/meta-learning/task-initiation|Task Initiation]] — Getting started on a task despite competing options and friction
+- [[wiki/meta-learning/task-persistence|Task Persistence]] — Continuing effort on a task despite difficulty, boredom, or setback
+- [[wiki/meta-learning/temporal-motivation-theory|Temporal Motivation Theory]] — Expectancy-value model with time discounting to predict task motivation
+- [[wiki/meta-learning/temptation-bundling|Temptation Bundling]] — Pairing an indulgence with a needed but disliked behavior
+- [[wiki/meta-learning/test-anxiety|Test Anxiety]] — Worry and emotionality that impair performance in evaluative situations
+- [[wiki/meta-learning/theory-of-mind|Theory of Mind]] — Attributing mental states to others to explain and predict behavior
+- [[wiki/meta-learning/threshold-concepts|Threshold Concepts]] — Concepts whose grasp transforms understanding and opens a discipline
+- [[wiki/meta-learning/tiny-habits|Tiny Habits]] — Fogg's method of starting with micro-behaviors to build habits
+- [[wiki/meta-learning/transfer-learning|Transfer Learning]] — Reusing knowledge from one task or domain to improve learning on a different but related one
+- [[wiki/meta-learning/verbal-persuasion|Verbal Persuasion]] — Efficacy beliefs influenced by feedback and encouragement from others
+- [[wiki/meta-learning/vicarious-experience|Vicarious Experience]] — Learning and confidence from observing similar others succeed
+- [[wiki/meta-learning/volitional-control|Volitional Control]] — Will-based processes that translate intentions into action and protect them
+- [[wiki/meta-learning/willpower-research|Willpower Research]] — Scientific study of self-control, ego depletion, and the limits of voluntary effort
+- [[wiki/meta-learning/word2vec|Word2Vec]] — Shallow neural models learning dense word vectors from local context
+- [[wiki/meta-learning/zone-of-proximal-development|Zone of Proximal Development]] — Vygotsky's gap between solo ability and ability with assistance

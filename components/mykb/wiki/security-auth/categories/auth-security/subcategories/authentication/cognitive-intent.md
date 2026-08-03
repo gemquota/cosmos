@@ -14,7 +14,7 @@ Intent — an Android messaging object for communicating between components. Ses
 
 **Related topics:** api, auth, authentication, aws
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Cognitive Intent
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Cognitive Intent
 
 ## Overview
 

@@ -14,7 +14,7 @@ Token — a unit of text processed by an LLM. Sessions show token counting, cont
 
 **Related topics:** api, auth, aws, bash
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Tokenbudget
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Tokenbudget
 
 ## Budgeting Context
 
@@ -34,7 +34,7 @@ Practical techniques include counting tokens with the provider's tokenizer befor
 
 - [[wiki/prompt-engineering/context-windows|Context Windows]] — the constraint budgets operate within
 - [[wiki/ml-frameworks/categories/frameworks/subcategories/ml-topics/llm-inference|LLM Inference]] — where token accounting happens
-- [[wiki/llm-agents/index|LLM Agents]] — multi-turn agents that must manage budgets over time
+- [[wiki/llm-agents/00-index|LLM Agents]] — multi-turn agents that must manage budgets over time
 
 ## Related Entities
 

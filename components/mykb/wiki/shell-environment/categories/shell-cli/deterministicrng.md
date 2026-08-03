@@ -13,7 +13,7 @@ resource: ""
 
 DeterministicRNG appears in 1 session(s) categorized as API, Mobile, Shell. Related topics: android, api, bash, cli.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/00-index|Shell Cli
 
 ## Overview
 

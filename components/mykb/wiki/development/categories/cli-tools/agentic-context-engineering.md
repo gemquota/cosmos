@@ -14,7 +14,7 @@ Agent — an autonomous software entity that performs tasks on behalf of users. 
 
 **Related topics:** bug, cli, edge, ide
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Cli Tools]]
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Cli Tools]]
 
 ## Overview
 

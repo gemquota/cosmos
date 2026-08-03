@@ -13,7 +13,7 @@ IDE (Integrated Development Environment) — a software application for software
 
 **Related topics:** android, angular, api, auth, authentication, aws
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Narrativeidentity 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Narrativeidentity 2
 
 ## Related Entities
 

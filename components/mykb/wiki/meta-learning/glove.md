@@ -22,4 +22,4 @@ GloVe (Global Vectors) learns word vectors by factorizing a word-word co-occurre
 - [[wiki/data-storage/embeddings|Embeddings]] — the category GloVe belongs to
 - [[wiki/meta-learning/sentence-transformers|Sentence Transformers]] — contextual successors
 - [[wiki/meta-learning/transfer-learning|Transfer Learning]] — GloVe vectors as transferable features
-- [[wiki/meta-learning/index|Meta-Learning]] — representation learning family
+- [[wiki/meta-learning/00-index|Meta-Learning]] — representation learning family

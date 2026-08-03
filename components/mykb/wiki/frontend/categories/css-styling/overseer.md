@@ -20,7 +20,7 @@ Practical supervisor design balances throughput against control: too little para
 
 Future sessions should record the specific supervisor implementation, its batch sizes, and the failure modes observed.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Related Entities
 

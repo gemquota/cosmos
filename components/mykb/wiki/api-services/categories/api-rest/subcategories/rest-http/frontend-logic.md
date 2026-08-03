@@ -12,7 +12,7 @@ resource: ""
 
 Frontend Logic appears in 1 session(s) categorized as API, Backend, Security, Shell. Related topics: api, auth, backend, bash.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Frontend Logic
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Frontend Logic
 
 ## Related Entities
 

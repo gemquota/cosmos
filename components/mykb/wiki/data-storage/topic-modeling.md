@@ -28,4 +28,4 @@ Topic modeling learns a small set of latent topics — distributions over words 
 - [[wiki/data-storage/latent-semantic-analysis|Latent Semantic Analysis]] — the matrix-factorization alternative
 - [[wiki/meta-learning/cluster-analysis|Cluster Analysis]] — groups documents using topic vectors
 - [[wiki/memory/knowledge-curation|Knowledge Curation]] — topic modeling as a curation aid
-- [[wiki/data-storage/index|Data Storage]] — NLP analytics family
+- [[wiki/data-storage/00-index|Data Storage]] — NLP analytics family

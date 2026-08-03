@@ -77,7 +77,10 @@ def main():
     per_file = {}                      # rel -> (words, links, status)
 
     for rel, fm, words, links in walk_md():
-        if rel == 'log.md' or rel == 'index.md' or rel.endswith('/index.md'):
+        if rel == 'log.md' or rel == 'index.md' or rel.endswith('/index.md') \
+           or rel.endswith('/00-index.md') or fm.get('hub') in ('true', True):
+            continue
+        if fm.get('type') == 'index' or str(fm.get('hub', '')).lower() == 'true':
             continue
         files.append(rel)
         total_words += words
