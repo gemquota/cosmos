@@ -19,10 +19,10 @@ Schema coercion is the casting of raw input — almost always strings from forms
 - RSIS3/mykb relevance: the daemon's search and filter parameters arrive as strings; coercing them through explicit schemas at the API boundary (with types inferred for the UI) prevents the class of bugs where "page 2" becomes "201", mirroring RSIS3's rule that input validation is explicit and typed at every trust boundary.
 
 ## Related
-- [[wiki/web-platforms/forms-practice|Forms in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/form-libraries|Form Libraries]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/react-hook-form|React Hook Form]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/yup-schemas|Yup Schemas]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-apis|Web APIs]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-accessibility|Web Accessibility]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
+- [[wiki/web-platforms/forms-practice|Forms in Practice]]
+- [[wiki/frontend-frameworks/form-libraries|Form Libraries]]
+- [[wiki/frontend-frameworks/react-hook-form|React Hook Form]]
+- [[wiki/frontend-frameworks/yup-schemas|Yup Schemas]]
+- [[wiki/web-platforms/web-apis|Web APIs]]
+- [[wiki/web-platforms/web-accessibility|Web Accessibility]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]

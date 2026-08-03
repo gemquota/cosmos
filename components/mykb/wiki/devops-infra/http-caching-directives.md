@@ -22,9 +22,9 @@ HTTP caching directives — Cache-Control, Expires, ETag, Vary — tell browsers
 - RSIS3 relevance: the dashboard's static bundle can be served immutable while live snapshot JSON uses no-cache revalidation — the directive choice directly controls how fresh RSIS3's telemetry appears.
 
 ## Related
-- [[wiki/cloud-infra/http-protocols|HTTP Protocols]] — related coverage in the same cluster
-- [[wiki/devops-infra/build-caching-and-artifacts|Build Caching & Artifacts]] — related coverage in the same cluster
-- [[wiki/cloud-infra/http-2-multiplexing|HTTP/2 Multiplexing]] — related coverage in the same cluster
-- [[wiki/cloud-infra/http-3-0-rtt|HTTP/3 0-RTT]] — related coverage in the same cluster
+- [[wiki/cloud-infra/http-protocols|HTTP Protocols]]
+- [[wiki/devops-infra/build-caching-and-artifacts|Build Caching & Artifacts]]
+- [[wiki/cloud-infra/http-2-multiplexing|HTTP/2 Multiplexing]]
+- [[wiki/cloud-infra/http-3-0-rtt|HTTP/3 0-RTT]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

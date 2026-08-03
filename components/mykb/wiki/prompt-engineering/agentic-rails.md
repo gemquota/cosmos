@@ -25,4 +25,3 @@ Agentic rails are policies enforced around an agent's actions rather than its te
 - [[wiki/prompt-engineering/tool-calling|Tool Calling]] — The actions rails govern
 - [[wiki/prompt-engineering/tool-selection|Tool Selection]] — Selection happens inside rail constraints
 - [[wiki/ai-ml/prompt-injection|Prompt Injection]] — Rails contain injection-driven tool misuse
-- [[raw/archive/session-artifacts-2026-07/topics/security|security — Action policy as security control

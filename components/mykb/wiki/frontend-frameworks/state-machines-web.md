@@ -19,10 +19,10 @@ State machines on the web model UI and application flows as explicit states with
 - RSIS3/mykb relevance: RSIS3's loops are state machines by design — phases, guarded transitions, and entry actions — and the dashboard's connection status (loading, live, degraded, offline) should be modeled the same way, so the UI can never claim "live and offline" simultaneously.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/xstate-practice|XState in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/finite-state-uis|Finite State UIs]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/immutable-state|Immutable State]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/software-engineering/reactive-programming|Reactive Programming]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/xstate-practice|XState in Practice]]
+- [[wiki/frontend-frameworks/finite-state-uis|Finite State UIs]]
+- [[wiki/frontend-frameworks/immutable-state|Immutable State]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/software-engineering/reactive-programming|Reactive Programming]]

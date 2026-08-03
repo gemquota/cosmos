@@ -24,5 +24,5 @@ The proactionary principle favors proceeding with innovation absent demonstrated
 - [[wiki/concepts/expected-value-reasoning|Expected Value Reasoning]] — the pro-growth logic
 - [[wiki/concepts/risk-benefit-analysis|Risk-Benefit Analysis]] — the balancing tool
 - [[wiki/concepts/conservatism-ai|Conservatism in AI Design]] — the precautionary design
-- [[wiki/concepts/conservative-ai|Conservative AI]] — the full treatment of this theme
-- [[wiki/concepts/calibration|Calibration]] — existing graph context
+- [[wiki/concepts/conservative-ai|Conservative AI]]
+- [[wiki/concepts/calibration|Calibration]]

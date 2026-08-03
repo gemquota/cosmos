@@ -21,8 +21,8 @@ BigQuery is Google Cloud's serverless, columnar data warehouse, built on a disag
 - BI Engine and BigLake extend it toward interactive and lakehouse workloads. BI Engine is an in-memory acceleration layer that makes dashboards sub-second against BigQuery tables; BigLake lets the warehouse query data sitting in GCS (and other clouds) without copying, with row-level security and metadata managed centrally.
 - For mykb: the node anchors the GCP warehouse branch and connects MPP, serverless cost models, and partition-pruning concepts to a concrete implementation.
 
-## Related
 
+## Related
 - [[wiki/data-storage/data-warehouse|Data Warehouse]] — warehouse fundamentals
 - [[wiki/data-storage/massively-parallel-processing|Massively Parallel Processing]] — MPP roots of Dremel
 - [[wiki/infrastructure/serverless-data-platforms|Serverless Data Platforms]] — serverless cost model

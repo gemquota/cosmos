@@ -19,10 +19,10 @@ Weak-hash JWT failures are tokens signed with HMAC algorithms such as HS256 whos
 - RSIS3/mykb relevance: RSIS3 and MyKB issue tokens across loop components; the standing rule is that any HMAC secret must be generated randomly, stored outside code, and rotated, with a test that verifies a token signed with the wrong secret is rejected.
 
 ## Related
-- [[wiki/api-protocols/jwt-practice|JWT in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/algorithm-confusion|JWT Algorithm Confusion]] — related coverage in the same cluster
-- [[wiki/api-protocols/jku-attacks|JKU Attacks]] — related coverage in the same cluster
-- [[wiki/api-protocols/none-algorithm|JWT none Algorithm]] — related coverage in the same cluster
-- [[wiki/api-protocols/json-web-tokens|JWT]] — related coverage in the same cluster
-- [[wiki/identity/key-rotation|Key Rotation]] — related coverage in the same cluster
-- [[wiki/api-protocols/mtls|mTLS]] — related coverage in the same cluster
+- [[wiki/api-protocols/jwt-practice|JWT in Practice]]
+- [[wiki/api-protocols/algorithm-confusion|JWT Algorithm Confusion]]
+- [[wiki/api-protocols/jku-attacks|JKU Attacks]]
+- [[wiki/api-protocols/none-algorithm|JWT none Algorithm]]
+- [[wiki/api-protocols/json-web-tokens|JWT]]
+- [[wiki/identity/key-rotation|Key Rotation]]
+- [[wiki/api-protocols/mtls|mTLS]]

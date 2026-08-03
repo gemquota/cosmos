@@ -22,11 +22,11 @@ Cache invalidation decides when cached copies become stale and how they get refr
 - RSIS3 relevance: the dashboard reads generated JSON snapshots — hash-named or versioned snapshot files avoid stale telemetry after regeneration, and TTLs on live queries prevent the dashboard from hammering the MyKB daemon.
 
 ## Related
-- [[wiki/devops-infra/backup-strategies-3-2-1|Backup Strategies: 3-2-1]] — related coverage in the same cluster
-- [[wiki/devops-infra/progressive-sync-strategies|Progressive Sync Strategies]] — related coverage in the same cluster
-- [[wiki/cloud-infra/cloud-migration-strategies|Cloud Migration Strategies]] — related coverage in the same cluster
-- [[wiki/cloud-infra/snapshot-strategies|Snapshot Strategies]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/backup-strategies-3-2-1|Backup Strategies: 3-2-1]]
+- [[wiki/devops-infra/progressive-sync-strategies|Progressive Sync Strategies]]
+- [[wiki/cloud-infra/cloud-migration-strategies|Cloud Migration Strategies]]
+- [[wiki/cloud-infra/snapshot-strategies|Snapshot Strategies]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

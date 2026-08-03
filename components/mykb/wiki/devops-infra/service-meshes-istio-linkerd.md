@@ -23,10 +23,10 @@ Service meshes add a dedicated infrastructure layer for service-to-service commu
 - RSIS3 relevance: if cosmos components grow into many services, a mesh gives uniform mTLS and retry policy — the same consistency RSIS3 wants between loops — at the cost of a layer to operate.
 
 ## Related
-- [[wiki/devops-infra/service-mesh-sidecars|Service Mesh Sidecars]] — related coverage in the same cluster
-- [[wiki/devops-infra/service-accounts-and-identities|Service Accounts & Identities]] — related coverage in the same cluster
-- [[wiki/cloud-infra/service-discovery-dns-based|DNS-Based Service Discovery]] — related coverage in the same cluster
-- [[wiki/cloud-infra/function-as-a-service|Function-as-a-Service]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/service-mesh-sidecars|Service Mesh Sidecars]]
+- [[wiki/devops-infra/service-accounts-and-identities|Service Accounts & Identities]]
+- [[wiki/cloud-infra/service-discovery-dns-based|DNS-Based Service Discovery]]
+- [[wiki/cloud-infra/function-as-a-service|Function-as-a-Service]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

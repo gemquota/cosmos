@@ -21,10 +21,10 @@ Zero-trust access proxies (Cloudflare Access, Google IAP, Pomerium, Tailscale) r
 - RSIS3 relevance: the wiki and dashboard are exactly the internal surfaces zero-trust proxies protect — identity-gated, audited access instead of a network trust boundary.
 
 ## Related
-- [[wiki/devops-infra/reverse-proxies|Reverse Proxies]] — related coverage in the same cluster
-- [[wiki/devops-infra/zero-trust-networking-revisited|Zero Trust Networking]] — related coverage in the same cluster
-- [[wiki/cloud-infra/remote-access-methods|Remote Access Methods]] — related coverage in the same cluster
-- [[wiki/infrastructure/zero-downtime-deploys|Zero-Downtime Deploys]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/reverse-proxies|Reverse Proxies]]
+- [[wiki/devops-infra/zero-trust-networking-revisited|Zero Trust Networking]]
+- [[wiki/cloud-infra/remote-access-methods|Remote Access Methods]]
+- [[wiki/infrastructure/zero-downtime-deploys|Zero-Downtime Deploys]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

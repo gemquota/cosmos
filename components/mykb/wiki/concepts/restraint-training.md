@@ -24,5 +24,5 @@ Restraint training teaches agents to avoid side effects, tampering, and excessiv
 - [[wiki/concepts/side-effects-problem|Side Effects Problem]] — the target
 - [[wiki/agent-systems/harmless-ai|Harmless AI]] — the disposition
 - [[wiki/concepts/adversarial-training-ai|Adversarial Training for AI]] — the hardening companion
-- [[wiki/concepts/mild-optimization|Mild Optimization]] — the full treatment of this theme
-- [[wiki/agent-systems/risk-bounded-agents|Risk-Bounded Agents]] — existing graph context
+- [[wiki/concepts/mild-optimization|Mild Optimization]]
+- [[wiki/agent-systems/risk-bounded-agents|Risk-Bounded Agents]]

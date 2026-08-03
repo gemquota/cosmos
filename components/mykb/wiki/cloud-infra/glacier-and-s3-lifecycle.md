@@ -25,5 +25,3 @@ S3 lifecycle policies automate object transitions — from Standard to IA/Glacie
 - [[wiki/os-shell/process-signals-and-lifecycle|Process Signals & Lifecycle]]
 - [[wiki/cloud-infra/snapshot-lifecycle-policies|Snapshot Lifecycle Policies]]
 - [[wiki/infrastructure/pod-lifecycle|Pod Lifecycle]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

@@ -17,15 +17,15 @@ Model license risks arise when models, data, or outputs are used in ways their l
 - Concrete example: a team prototypes with a research-only model and moves it to production without review; a copyleft-trained model creates obligations the team does not realize; a provider's terms claim ownership of outputs, conflicting with a customer's needs; the inventory flags each before use.
 - Failure modes: license changes between model versions; fine-tuning models whose terms prohibit derivatives; output ownership ambiguity biting downstream customers; terms read once and forgotten; shadow usage (a team downloads a model outside the inventory).
 - Tradeoffs: permissive models (open weights) reduce risk at the cost of capability or support; restrictive models maximize capability choice and risk; the mature pattern is a license inventory, deployment gates, and legal review for high-risk terms.
-- Operational notes: inventory at ingestion, gate deployments, and re-check on version upgrades.
+- Operational notes: inventory at ingestion, gate deployments, and re-check on version upgrades. Assign a named owner and review cadence to each inventory entry, since unowned entries decay into shadow usage.
 - RSIS3 relevance: the bundle's tooling choices carry license obligations — the same inventory-and-gate discipline for its models.
 
-- Re-check licenses on every model version upgrade, since terms can change between releases.
+- Re-check licenses on every model version upgrade, since terms can change between releases; compare the new terms against the original use case, not just the diff.
 - Watch for shadow usage outside the inventory, and make the inventory a deployment prerequisite.
 ## Related
 - [[wiki/decisions/license-compliance-ai|License Compliance for AI]] — the practice
 - [[wiki/decisions/data-license-issues|Data License Issues]] — the data side
 - [[wiki/decisions/ip-and-ai|Intellectual Property and AI]] — the IP frame
 - [[wiki/decisions/model-licensing|Model Licensing]] — the decision
-- [[wiki/concepts/responsible-scaling|Responsible Scaling]] — the full treatment of this theme
-- [[wiki/infrastructure/data-license-and-usage|Data License And Usage]] — existing graph context
+- [[wiki/concepts/responsible-scaling|Responsible Scaling]]
+- [[wiki/infrastructure/data-license-and-usage|Data License And Usage]]

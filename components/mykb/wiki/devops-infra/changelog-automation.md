@@ -21,10 +21,10 @@ Changelog automation derives release notes from commit history, PR titles, or is
 - RSIS3 relevance: RSIS3 versions its own protocols and parameters — automated changelogs make loop-evolution history auditable, so a regression can be traced to the exact change that introduced it.
 
 ## Related
-- [[wiki/cloud-infra/storage-tiering-automation|Storage Tiering Automation]] — related coverage in the same cluster
-- [[wiki/devops-infra/semantic-release-automation|Semantic Release Automation]] — related coverage in the same cluster
-- [[wiki/devops-infra/database-failover-automation|Database Failover Automation]] — related coverage in the same cluster
-- [[wiki/devops-infra/changelog-practices|Changelog Practices]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/cloud-infra/storage-tiering-automation|Storage Tiering Automation]]
+- [[wiki/devops-infra/semantic-release-automation|Semantic Release Automation]]
+- [[wiki/devops-infra/database-failover-automation|Database Failover Automation]]
+- [[wiki/devops-infra/changelog-practices|Changelog Practices]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

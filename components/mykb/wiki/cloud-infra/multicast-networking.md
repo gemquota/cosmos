@@ -26,5 +26,3 @@ Multicast delivers one stream to many receivers efficiently — video distributi
 - [[wiki/infrastructure/vlan-networking|VLAN Networking]]
 - [[wiki/infrastructure/software-defined-networking|Software-Defined Networking]]
 - [[wiki/devops-infra/grpc-and-protobuf-networking|gRPC & Protobuf Networking]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

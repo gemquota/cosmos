@@ -27,4 +27,3 @@ Frontmatter linting checks every article's metadata block: required fields prese
 - [[wiki/dev-tools/markdown-linting|Markdown Linting]]
 - [[wiki/data-storage/open-knowledge-format|Open Knowledge Format]]
 - [[wiki/concepts/promotion-checklist|Promotion Checklist]]
-- [[wiki/dev-tools/frontmatter-linting|Frontmatter Linting]]

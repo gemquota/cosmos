@@ -21,7 +21,7 @@ Elicitation techniques extract knowledge a model may possess but not show: caref
 
 ## Related
 - [[wiki/concepts/knowledge-probing|Knowledge Probing]] — the core method
-- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]] — note
+- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]]
 - [[wiki/agent-systems/hidden-goals|Hidden Goals]] — what may stay hidden
 - [[wiki/pulses/capability-probes|Capability Probes]] — capability side
-- [[wiki/agent-systems/introspection-ai|Introspection in AI]] — the full treatment of this theme
+- [[wiki/agent-systems/introspection-ai|Introspection in AI]]

@@ -25,10 +25,10 @@ Operational tradeoffs: the durable fix is parameterized queries — input can ne
 RSIS3/mykb relevance: blind injection is a good worked example for RSIS3's security synthesis notes: the lesson is that hiding output is not a control, only parameterization is, and that principle transfers to all query-building code.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/header-injection|Header Injection]] — related coverage in the same cluster
-- [[wiki/api-protocols/crlf-injection|CRLF Injection]] — related coverage in the same cluster
-- [[wiki/api-protocols/response-splitting|Response Splitting]] — related coverage in the same cluster
-- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/command-injection|Command Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/ldap-injection|LDAP Injection]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/header-injection|Header Injection]]
+- [[wiki/api-protocols/crlf-injection|CRLF Injection]]
+- [[wiki/api-protocols/response-splitting|Response Splitting]]
+- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]]
+- [[wiki/security-auth/command-injection|Command Injection]]
+- [[wiki/security-auth/ldap-injection|LDAP Injection]]

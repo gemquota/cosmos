@@ -20,10 +20,10 @@ Network interface bonding combines multiple physical NICs into one logical inter
 - For mykb: bonding is the host-level reliability link — it connects to network observability (what to watch on a bond), interface policy, and the physical cabling it aggregates.
 
 ## Related
-- [[wiki/devops-infra/network-observability|Network Observability]] — related coverage in the same cluster
-- [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]] — related coverage in the same cluster
-- [[wiki/infrastructure/network-function-virtualization|Network Function Virtualization]] — related coverage in the same cluster
-- [[wiki/infrastructure/network-policy|Network Policy]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
+- [[wiki/devops-infra/network-observability|Network Observability]]
+- [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]]
+- [[wiki/infrastructure/network-function-virtualization|Network Function Virtualization]]
+- [[wiki/infrastructure/network-policy|Network Policy]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

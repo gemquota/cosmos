@@ -24,5 +24,5 @@ Tail risks are outcomes in the far tails of probability distributions: rare and 
 - [[wiki/concepts/worst-case-reasoning|Worst-Case Reasoning]] — the decision rule
 - [[wiki/concepts/expected-value-reasoning|Expected Value Reasoning]] — the counterweight
 - [[wiki/concepts/existential-risk|Existential Risk]] — the ultimate tail
-- [[wiki/concepts/capability-forecasting|Capability Forecasting]] — the full treatment of this theme
-- [[wiki/concepts/calibration|Calibration]] — existing graph context
+- [[wiki/concepts/capability-forecasting|Capability Forecasting]]
+- [[wiki/concepts/calibration|Calibration]]

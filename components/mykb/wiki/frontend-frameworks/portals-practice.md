@@ -19,10 +19,10 @@ Portals render a component's children into a DOM node that lives outside the com
 - RSIS3/mykb relevance: the unified dashboard's overlays (article previews, graph tooltips) portal into a top-level layer to escape view clipping; the discipline of managing focus and cleanup explicitly mirrors RSIS3's rule that escaping one containment boundary requires re-asserting invariants at the new one.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/controlled-components|Controlled Components]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/uncontrolled-components|Uncontrolled Components]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/refs-practice|Refs in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-components|Web Components]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/controlled-components|Controlled Components]]
+- [[wiki/frontend-frameworks/uncontrolled-components|Uncontrolled Components]]
+- [[wiki/frontend-frameworks/refs-practice|Refs in Practice]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/web-components|Web Components]]
+- [[wiki/web-platforms/state-management|State Management]]

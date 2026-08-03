@@ -21,11 +21,11 @@ restic and Borg are deduplicating, encrypted backup tools for filesystem trees. 
 - RSIS3/mykb relevance: restic/Borg are the tooling layer for the wiki's 3-2-1 strategy — an encrypted, deduplicated snapshot of the markdown store gives RSIS3 a recoverable memory that survives machine loss.
 
 ## Related
-- [[wiki/shell-environment/unix-text-processing-tools|Unix Text Processing Tools]] — related coverage in the same cluster
-- [[wiki/devops-infra/backup-strategies-3-2-1|Backup Strategies: 3-2-1]] — related coverage in the same cluster
-- [[wiki/os-shell/checksums-and-hashing-tools|Checksums & Hashing]] — related coverage in the same cluster
-- [[wiki/devops-infra/fault-injection-tools|Fault Injection Tools]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/shell-environment/unix-text-processing-tools|Unix Text Processing Tools]]
+- [[wiki/devops-infra/backup-strategies-3-2-1|Backup Strategies: 3-2-1]]
+- [[wiki/os-shell/checksums-and-hashing-tools|Checksums & Hashing]]
+- [[wiki/devops-infra/fault-injection-tools|Fault Injection Tools]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -25,10 +25,9 @@ Operational tradeoffs: adding rel="noopener" to every external link and defaulti
 RSIS3/mykb relevance: the dashboard's external links and any popup-based auth must follow the noopener rule; documenting it lets RSIS3's checks scan link attributes.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/clickjacking-defense|Clickjacking Defense]] — related coverage in the same cluster
-- [[wiki/api-protocols/iframe-sandboxing|iframe Sandboxing]] — related coverage in the same cluster
-- [[wiki/api-protocols/popup-security|Popup Security]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors|CORS]] — related coverage in the same cluster
-- [[wiki/security-auth/security-headers|Security Headers]] — related coverage in the same cluster
-- [[wiki/security-auth/content-security-policy|Content Security Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/clickjacking-defense|Clickjacking Defense]]
+- [[wiki/api-protocols/iframe-sandboxing|iframe Sandboxing]]
+- [[wiki/api-protocols/cors|CORS]]
+- [[wiki/security-auth/security-headers|Security Headers]]
+- [[wiki/security-auth/content-security-policy|Content Security Policy]]

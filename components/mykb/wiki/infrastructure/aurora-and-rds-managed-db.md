@@ -21,8 +21,8 @@ AWS RDS and Aurora are managed relational database services that remove the oper
 - Managed services trade some control for operational simplicity and built-in high availability. The decision framework: if you need exotic engine features, kernel-level control, or maximum cost optimization, self-managed or raw RDS may fit; if you need reliability without the operations team, Aurora's storage-replicated design is hard to beat.
 - For mykb: this is the reference node for the managed-db branch of the data-storage cluster, connecting replication, backup, and migration concepts to a concrete AWS implementation.
 
-## Related
 
+## Related
 - [[wiki/data-storage/replication-strategies|Replication Strategies]] — replication under the hood
 - [[wiki/data-storage/backup-strategies|Backup Strategies]] — automated backups
 - [[wiki/data-storage/read-replicas-and-scaling|Read Replicas And Scaling]] — Aurora read scaling

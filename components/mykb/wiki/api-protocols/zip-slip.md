@@ -19,10 +19,10 @@ Zip Slip is a path-traversal vulnerability in archive extraction: a malicious zi
 - RSIS3/mykb relevance: MyKB's import and snapshot features are archive consumers; the standing rule is to extract only into a dedicated directory with canonical path checks and a symlink policy, mirroring RSIS3's hygiene of validating untrusted input before it touches persistent state.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/cache-poisoning|Cache Poisoning]] — related coverage in the same cluster
-- [[wiki/api-protocols/request-smuggling|Request Smuggling]] — related coverage in the same cluster
-- [[wiki/api-protocols/ssrf-practice|SSRF Attacks]] — related coverage in the same cluster
-- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/deserialization-attacks|Deserialization Attacks]] — related coverage in the same cluster
-- [[wiki/security-auth/privilege-escalation|Privilege Escalation]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/cache-poisoning|Cache Poisoning]]
+- [[wiki/api-protocols/request-smuggling|Request Smuggling]]
+- [[wiki/api-protocols/ssrf-practice|SSRF Attacks]]
+- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]]
+- [[wiki/security-auth/deserialization-attacks|Deserialization Attacks]]
+- [[wiki/security-auth/privilege-escalation|Privilege Escalation]]

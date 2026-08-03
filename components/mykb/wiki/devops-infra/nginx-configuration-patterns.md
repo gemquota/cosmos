@@ -21,9 +21,9 @@ NGINX configuration patterns are the recurring structures for routing, proxying,
 - RSIS3 relevance: the dashboard and API endpoints behind NGINX follow these patterns — correct caching, timeouts, and rate limits keep RSIS3's frontend healthy under bursty load.
 
 ## Related
-- [[wiki/cloud-infra/serverless-computing-patterns|Serverless Computing Patterns]] — related coverage in the same cluster
-- [[wiki/devops-infra/configuration-management-revisited|Configuration Management]] — related coverage in the same cluster
-- [[wiki/devops-infra/haproxy-vs-nginx|HAProxy vs NGINX]] — related coverage in the same cluster
-- [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]] — related coverage in the same cluster
+- [[wiki/cloud-infra/serverless-computing-patterns|Serverless Computing Patterns]]
+- [[wiki/devops-infra/configuration-management-revisited|Configuration Management]]
+- [[wiki/devops-infra/haproxy-vs-nginx|HAProxy vs NGINX]]
+- [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

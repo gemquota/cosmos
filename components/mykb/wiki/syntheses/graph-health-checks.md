@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Graph Health Checks"
 description: "Automated checks that verify a knowledge graph's structural integrity"
 tags: ["graph-health", "checks", "verification", "knowledge"]

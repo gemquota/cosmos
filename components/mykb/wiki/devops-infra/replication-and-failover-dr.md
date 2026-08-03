@@ -23,10 +23,10 @@ Replication copies data to multiple locations for availability; failover switche
 - RSIS3 relevance: the MyKB store's availability story is the same — decide the RPO/RTO, pick replication mode, and drill the failover before the first real loss.
 
 ## Related
-- [[wiki/infrastructure/redundancy-and-failover-dc|Datacenter Redundancy & Failover]] — related coverage in the same cluster
-- [[wiki/devops-infra/database-failover-automation|Database Failover Automation]] — related coverage in the same cluster
-- [[wiki/devops-infra/replication|Replication]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/infrastructure/redundancy-and-failover-dc|Datacenter Redundancy & Failover]]
+- [[wiki/devops-infra/database-failover-automation|Database Failover Automation]]
+- [[wiki/devops-infra/replication|Replication]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -23,6 +23,3 @@ Private Link / private endpoints give services private IPs inside your VPC, so t
 - [[wiki/cloud-infra/virtual-private-clouds|Virtual Private Clouds]]
 - [[wiki/cloud-infra/ipv6-link-local-addresses|IPv6 Link-Local Addresses]]
 - [[wiki/os-shell/link-layer-ethernet-and-arp|Link Layer, Ethernet & ARP]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

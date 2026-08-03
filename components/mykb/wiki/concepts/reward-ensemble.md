@@ -24,5 +24,5 @@ Reward ensembles average several reward models (or uncertainty-aware variants) t
 - [[wiki/concepts/reward-uncertainty|Reward Uncertainty]] — the signal ensembles give
 - [[wiki/concepts/reward-model-gaming|Reward Model Gaming]] — what ensembles resist
 - [[wiki/concepts/impact-measures|Impact Measures]] — the ensemble use case
-- [[wiki/concepts/rlaif|RLAIF (RL from AI Feedback)]] — the full treatment of this theme
-- [[wiki/ai-ml/reward-model|Reward Model]] — existing graph context
+- [[wiki/concepts/rlaif|RLAIF (RL from AI Feedback)]]
+- [[wiki/ai-ml/reward-model|Reward Model]]

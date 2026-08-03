@@ -22,8 +22,8 @@ ClickHouse, Druid, and Pinot are columnar engines for real-time and high-concurr
 - Operational notes: benchmark with the real query mix, watch segment/part health, and size for the serving latency budget.
 - RSIS3 relevance: telemetry from the wiki (pulses, sync history) at scale could land in one of these engines — the choice depends on whether the queries are deep SQL (ClickHouse) or dashboard-fast (Druid/Pinot).
 
-## Related
 
+## Related
 - [[wiki/data-storage/olap-vs-oltp|OLAP vs OLTP]] — OLAP orientation of all three
 - [[wiki/data-storage/columnar-storage|Columnar Storage]] — columnar engine mechanics
 - [[wiki/data-storage/pinot-real-time-analytics|Pinot Real Time Analytics]] — Pinot specifics

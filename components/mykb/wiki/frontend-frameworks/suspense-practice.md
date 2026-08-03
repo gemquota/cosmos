@@ -19,10 +19,9 @@ Suspense is React's declarative mechanism for waiting: a component that needs as
 - RSIS3/mykb relevance: the dashboard's embedded views (wiki browser, knowledge graph) load asynchronously; treating each as a Suspense boundary with a transition preserves interactivity while data streams in — the same progressive-enhancement discipline RSIS3 applies to telemetry rendering.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/concurrent-rendering|Concurrent Rendering]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/starttransition|startTransition]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/suspense-practice|Suspense in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/concurrent-rendering|Concurrent Rendering]]
+- [[wiki/frontend-frameworks/starttransition|startTransition]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]
+- [[wiki/web-platforms/state-management|State Management]]

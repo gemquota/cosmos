@@ -25,10 +25,10 @@ Operational tradeoffs: nosniff is a one-line, zero-cost header with broad modern
 RSIS3/mykb relevance: the wiki hosts generated HTML snapshots; ensuring the static host sends nosniff plus correct types is a standing check in the deployment practice.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/template-injection|Template Injection]] — related coverage in the same cluster
-- [[wiki/api-protocols/sql-injection-practice|SQL Injection]] — related coverage in the same cluster
-- [[wiki/api-protocols/xml-injection|XML Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/command-injection|Command Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/ldap-injection|LDAP Injection]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/template-injection|Template Injection]]
+- [[wiki/api-protocols/sql-injection-practice|SQL Injection]]
+- [[wiki/api-protocols/xml-injection|XML Injection]]
+- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]]
+- [[wiki/security-auth/command-injection|Command Injection]]
+- [[wiki/security-auth/ldap-injection|LDAP Injection]]

@@ -22,10 +22,10 @@ OPA (Open Policy Agent) and Kyverno are the two dominant policy engines for Kube
 - RSIS3 relevance: the same policy-as-code idea applies inside RSIS3 — encode registry invariants and state-guardrails as testable rules the loops must pass, with audit mode while new rules are unproven.
 
 ## Related
-- [[wiki/devops-infra/gatekeeper-and-policy-as-code|Gatekeeper & Policy as Code]] — related coverage in the same cluster
-- [[wiki/infrastructure/network-policy|Network Policy]] — related coverage in the same cluster
-- [[wiki/os-shell/regex-engines|Regex Engines]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/gatekeeper-and-policy-as-code|Gatekeeper & Policy as Code]]
+- [[wiki/infrastructure/network-policy|Network Policy]]
+- [[wiki/os-shell/regex-engines|Regex Engines]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

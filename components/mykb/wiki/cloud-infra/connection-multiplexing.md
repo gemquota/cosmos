@@ -19,14 +19,10 @@ Connection multiplexing carries many logical streams over one physical connectio
 - Operational tradeoffs: multiplexing trades connection count and handshake cost for flow-complexity and single-connection risk (one bad stream can still share a bottleneck); the standard pattern is HTTP/3 for edge, pooled connections for services, and careful pool sizing for databases.
 - RSIS3/mykb relevance: the wiki dashboard's API calls multiplex over HTTP/2 with pooled upstreams; this note records the pool sizing so the loop does not reintroduce per-request handshakes.
 - Protocol interplay: multiplexing changes how load balancers and proxies see connections; ensure keep-alive timeouts and connection limits are tuned for few, long-lived connections rather than many short ones.
-- Pool sizing: size connection pools from concurrency, not traffic volume; too few connections serialize requests and too many exhaust server file descriptors.
+- Pool sizing: size connection pools from concurrency, not traffic volume; too few connections serialize requests and too many exhaust server file descriptors. Set idle timeouts below the proxy's keep-alive so pooled sockets are not recycled mid-request.
 
 ## Related
 - [[wiki/cloud-infra/http-2-multiplexing|HTTP/2 Multiplexing]]
 - [[wiki/devops-infra/connection-pools|Connection Pools]]
 - [[wiki/devops-infra/connection-pooling|Connection Pooling]]
 - [[wiki/os-shell/tcp-connection-lifecycle|TCP Connections]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

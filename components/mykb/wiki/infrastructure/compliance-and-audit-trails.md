@@ -21,8 +21,8 @@ Audit trails are the records that make systems answerable: who did what, to whic
 - Balancing detail and cost: sample fine-grained access logs, keep policy-relevant events complete. Full-detail logging of every byte access is expensive; the standard design keeps policy-relevant events (admin, permission, security) complete and unconditional, while fine-grained access events can be sampled or aggregated — with the caveat that sampling reduces forensic value, so the sampling decision must be made with the compliance requirements in view.
 - For mykb: the node connects audit logging, compliance frameworks, and data lineage — the governance cluster's evidence layer.
 
-## Related
 
+## Related
 - [[wiki/security-auth/audit-logging|Audit Logging]] — existing note on audit logging
 - [[wiki/security-auth/compliance-frameworks|Compliance Frameworks]] — frameworks that demand audit trails
 - [[wiki/data-storage/data-lineage|Data Lineage]] — data movement history complements access history

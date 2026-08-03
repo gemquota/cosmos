@@ -21,11 +21,11 @@ Workload identity federation lets workloads authenticate to external services (c
 - RSIS3 relevance: cosmos's CI and daemon should use federated identity for cloud access — no static keys in the repo means a repo leak does not become an account compromise.
 
 ## Related
-- [[wiki/devops-infra/identity-aware-proxies|Identity-Aware Proxies]] — related coverage in the same cluster
-- [[wiki/devops-infra/cluster-federation-vs-hub-spoke|Federation vs Hub-Spoke]] — related coverage in the same cluster
-- [[wiki/infrastructure/workload-management-and-queues|Workload Management And Queues]] — related coverage in the same cluster
-- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/identity-distribution|Identity Distribution]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/identity-aware-proxies|Identity-Aware Proxies]]
+- [[wiki/devops-infra/cluster-federation-vs-hub-spoke|Federation vs Hub-Spoke]]
+- [[wiki/infrastructure/workload-management-and-queues|Workload Management And Queues]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/identity-distribution|Identity Distribution]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -21,9 +21,9 @@ Remote Direct Memory Access (RDMA) lets one host read or write another host's me
 - RSIS3/mykb relevance: when self-improvement cycles evaluate infrastructure choices, this node separates protocol choice from fabric guarantees so retrieval does not collapse RDMA into a single undifferentiated answer.
 
 ## Related
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]] — related coverage in the same cluster
-- [[wiki/cloud-infra/udp-vs-tcp|UDP vs TCP]] — related coverage in the same cluster
-- [[wiki/infrastructure/nvme-over-fabrics-tcp|NVMe over Fabrics (TCP)]] — related coverage in the same cluster
-- [[wiki/cloud-infra/tcp-retransmission|TCP Retransmission]] — related coverage in the same cluster
+- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
+- [[wiki/cloud-infra/udp-vs-tcp|UDP vs TCP]]
+- [[wiki/infrastructure/nvme-over-fabrics-tcp|NVMe over Fabrics (TCP)]]
+- [[wiki/cloud-infra/tcp-retransmission|TCP Retransmission]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

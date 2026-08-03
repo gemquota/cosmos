@@ -19,10 +19,10 @@ The synchronizer token pattern is the classic CSRF defense: the server generates
 - RSIS3/mykb relevance: the pattern is a template for any write-path validation that must prove the requester could read the source of truth: RSIS3's registry writes can require a token derived from the session state it is writing to, preventing blind cross-loop mutation.
 
 ## Related
-- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/sec-fetch-headers|Sec-Fetch Headers]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf-tokens|CSRF Tokens]] — related coverage in the same cluster
-- [[wiki/api-protocols/double-submit-cookie|Double-Submit Cookie]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf|CSRF]] — related coverage in the same cluster
-- [[wiki/security-auth/csrf-protection|CSRF Protection]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-headers|HTTP Headers]] — related coverage in the same cluster
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]]
+- [[wiki/api-protocols/sec-fetch-headers|Sec-Fetch Headers]]
+- [[wiki/api-protocols/csrf-tokens|CSRF Tokens]]
+- [[wiki/api-protocols/double-submit-cookie|Double-Submit Cookie]]
+- [[wiki/api-protocols/csrf|CSRF]]
+- [[wiki/security-auth/csrf-protection|CSRF Protection]]
+- [[wiki/api-protocols/http-headers|HTTP Headers]]

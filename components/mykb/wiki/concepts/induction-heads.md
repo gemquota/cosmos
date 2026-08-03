@@ -24,4 +24,4 @@ Induction heads are attention heads that detect a repeated token and attend to i
 - [[wiki/prompt-engineering/in-context-learning|In-Context Learning]] — the behavior
 - [[wiki/concepts/attention-mechanisms|Attention Mechanisms]] — the substrate
 - [[wiki/concepts/circuit-tracing|Circuit Tracing]] — how they were found
-- [[wiki/concepts/emergence-in-llms|Emergence in LLMs]] — the full treatment of this theme
+- [[wiki/concepts/emergence-in-llms|Emergence in LLMs]]

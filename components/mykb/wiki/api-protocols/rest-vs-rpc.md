@@ -20,10 +20,9 @@ REST and RPC disagree about what an API should model: REST organizes the world i
 - RSIS3/mykb relevance: MyKB and RSIS3 expose both shapes naturally: articles and registry entries are resources read through GET-style lookups, while loop actions (optimize, evolve, checkpoint) are commands; modeling them as a command layer over a resource store keeps the memory layer uniform and the action layer explicit.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-vs-graphql|REST vs GraphQL]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-vs-grpc|REST vs gRPC]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-vs-rpc|REST vs RPC]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-apis|REST APIs]] — related coverage in the same cluster
-- [[wiki/api-protocols/rpc-styles|RPC Styles]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql|GraphQL]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/rest-vs-graphql|REST vs GraphQL]]
+- [[wiki/api-protocols/rest-vs-grpc|REST vs gRPC]]
+- [[wiki/api-protocols/rest-apis|REST APIs]]
+- [[wiki/api-protocols/rpc-styles|RPC Styles]]
+- [[wiki/api-protocols/graphql|GraphQL]]

@@ -21,10 +21,10 @@ API compatibility policies decide which changes to a service contract are allowe
 - RSIS3 relevance: RSIS3 loops exchange structured artifacts (registry entries, pulses, checkpoints); treating those schemas as versioned APIs with compatibility policies prevents old cached state from breaking new loop versions during L2/L3 evolution.
 
 ## Related
-- [[wiki/devops-infra/api-gateways|API Gateways]] — related coverage in the same cluster
-- [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]] — related coverage in the same cluster
-- [[wiki/devops-infra/ingress-egress-policies|Ingress & Egress Policies]] — related coverage in the same cluster
-- [[wiki/devops-infra/api-gateway-patterns|API Gateway Patterns]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/api-gateways|API Gateways]]
+- [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]]
+- [[wiki/devops-infra/ingress-egress-policies|Ingress & Egress Policies]]
+- [[wiki/devops-infra/api-gateway-patterns|API Gateway Patterns]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

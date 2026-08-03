@@ -20,8 +20,8 @@ Btrfs is a modern copy-on-write (CoW) filesystem for Linux that bundles subvolum
 - RSIS3/mykb relevance: the snapshot-and-send model is the filesystem analog of MyKB's snapshot discipline — cheap, shareable point-in-time states with incremental transfer — and the same tradeoff (copy-on-write sharing vs. space accounting) appears in the knowledge graph's checkpoint design.
 
 ## Related
-- [[wiki/os-shell/zfs-features-and-snapshots|ZFS Features & Snapshots]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/os-shell/zfs-features-and-snapshots|ZFS Features & Snapshots]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

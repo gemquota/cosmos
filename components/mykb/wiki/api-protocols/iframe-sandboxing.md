@@ -25,10 +25,9 @@ Operational tradeoffs: sandboxing is cheap and layered: sandbox the frame, add C
 RSIS3/mykb relevance: the dashboard embeds mykb and SPACE views; if those embeds ever load third-party content, the sandbox token list is the standing contract to document and enforce.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/popup-security|Popup Security]] — related coverage in the same cluster
-- [[wiki/api-protocols/clickjacking-defense|Clickjacking Defense]] — related coverage in the same cluster
-- [[wiki/api-protocols/iframe-sandboxing|iframe Sandboxing]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors|CORS]] — related coverage in the same cluster
-- [[wiki/security-auth/security-headers|Security Headers]] — related coverage in the same cluster
-- [[wiki/security-auth/content-security-policy|Content Security Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/popup-security|Popup Security]]
+- [[wiki/api-protocols/clickjacking-defense|Clickjacking Defense]]
+- [[wiki/api-protocols/cors|CORS]]
+- [[wiki/security-auth/security-headers|Security Headers]]
+- [[wiki/security-auth/content-security-policy|Content Security Policy]]

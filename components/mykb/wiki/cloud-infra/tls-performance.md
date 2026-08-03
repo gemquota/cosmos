@@ -26,5 +26,3 @@ TLS performance is the cost of handshakes, cipher suites, and connection reuse: 
 - [[wiki/cloud-infra/mutual-tls-internal-services|Mutual TLS for Internal Services]]
 - [[wiki/os-shell/tls-and-https|TLS & HTTPS]]
 - [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

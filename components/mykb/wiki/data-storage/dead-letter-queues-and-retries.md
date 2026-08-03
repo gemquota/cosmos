@@ -20,8 +20,8 @@ A DLQ holds messages that repeatedly fail processing so they do not block the ma
 - Operational notes: monitor DLQ depth and age, document the replay procedure, and make consumers idempotent so replay is safe.
 - RSIS3 relevance: RSIS3's ingestion pipeline needs the same quarantine — a malformed article should not block the batch, and its error metadata should survive for repair and learning.
 
-## Related
 
+## Related
 - [[wiki/data-storage/dead-letter-queues|Dead Letter Queues]] — foundational note on DLQ mechanics
 - [[wiki/data-storage/backpressure|Backpressure]] — how slow consumers trigger failures upstream
 - [[wiki/data-storage/idempotent-writes-and-upserts|Idempotent Writes And Upserts]] — safe replay of DLQ records

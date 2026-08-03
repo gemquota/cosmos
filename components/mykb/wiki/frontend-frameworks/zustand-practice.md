@@ -19,10 +19,10 @@ Zustand is a minimal state library: a store is created with `create((set) => ({ 
 - RSIS3/mykb relevance: the dashboard's shared UI state (active view, filters, daemon status) is a natural Zustand store — selectable slices keep embedded widgets re-rendering precisely, mirroring RSIS3's separation of shared configuration from per-loop working state.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/jotai-practice|Jotai in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/recoil-practice|Recoil in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/mobx-practice|MobX in Practice]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/state-management-mobile|State Management Mobile]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/jotai-practice|Jotai in Practice]]
+- [[wiki/frontend-frameworks/recoil-practice|Recoil in Practice]]
+- [[wiki/frontend-frameworks/mobx-practice|MobX in Practice]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/frontend-frameworks/state-management-mobile|State Management Mobile]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]

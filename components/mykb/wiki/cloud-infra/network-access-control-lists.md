@@ -18,12 +18,10 @@ Network ACLs (NACLs) are stateless, subnet-level filters — in AWS they evaluat
 - Failure modes: forgetting ephemeral-port allows on stateless NACLs (connections fail one way); rule ordering mistakes where a broad allow shadows a deny; NACL/SG contradictions that are hard to debug (check both when traffic fails); and drifting rule sets from manual edits that diverge from IaC.
 - Operational tradeoffs: NACLs give subnet-wide control and DDoS-baseline filtering, but statelessness makes them error-prone; security groups remain the primary per-instance control. Keep NACLs minimal and stable, and remember that with stateful alternatives (GCP, Azure NSG), the ephemeral-port burden disappears.
 - RSIS3/mykb relevance: the wiki's subnet baselines use minimal NACLs plus group references; this note records the ephemeral-port rules the loop's IaC templates must preserve.
-- Change review: route NACL edits through the same review as security groups; stateless rules are easier to get wrong and harder to notice when wrong.
+- Change review: route NACL edits through the same review as security groups; stateless rules are easier to get wrong and harder to notice when wrong. On AWS, pair every stateless NACL change with a security-group check so the two layers agree.
 
 ## Related
 - [[wiki/devops-infra/network-observability|Network Observability]]
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/cloud-infra/congestion-control-algorithms|Congestion Control Algorithms]]
 - [[wiki/cloud-infra/flow-control|Flow Control]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

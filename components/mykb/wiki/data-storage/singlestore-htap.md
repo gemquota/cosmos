@@ -20,8 +20,8 @@ HTAP systems run operational and analytical workloads on one database, avoiding 
 - Operational notes: monitor rowstore/columnstore sync lag, isolate heavy queries, and benchmark both workload classes before committing.
 - RSIS3 relevance: wiki writes (captures) and reads (dashboards, analytics) could share one HTAP engine — fresh telemetry without a pipeline between.
 
-## Related
 
+## Related
 - [[wiki/data-storage/olap-vs-oltp|OLAP vs OLTP]] — the split HTAP tries to bridge
 - [[wiki/data-storage/real-time-personalization|Real Time Personalization]] — HTAP-powered feature
 - [[wiki/data-storage/read-replicas-and-scaling|Read Replicas And Scaling]] — alternative separation of workloads

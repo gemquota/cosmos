@@ -21,9 +21,9 @@ Node storage architecture describes how a Kubernetes node provides disk to conta
 - RSIS3 relevance: the wiki daemon's disk usage and the node's storage architecture explain sudden evictions or slow writes — RSIS3's operational notes should track disk pressure as a first-class signal.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]] — related coverage in the same cluster
-- [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]] — related coverage in the same cluster
-- [[wiki/devops-infra/storage-classes-and-provisioners|Storage Classes & Provisioners]] — related coverage in the same cluster
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]]
+- [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]]
+- [[wiki/devops-infra/storage-classes-and-provisioners|Storage Classes & Provisioners]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

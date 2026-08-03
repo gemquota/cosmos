@@ -26,5 +26,3 @@ Security group best practices turn the most misconfigured control in cloud netwo
 - [[wiki/devops-infra/on-call-practices|On-Call Practices]]
 - [[wiki/infrastructure/security-information-and-event-management|SIEM]]
 - [[wiki/cloud-infra/cloud-security-groups|Cloud Security Groups]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

@@ -1,8 +1,8 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Knowledge Acquisition Workflow: Open Threads"
 description: "Open threads on how captures become curated concepts, sources, and syntheses"
-tags: ["stub", "knowledge-acquisition", "open-questions"]
+tags: ["knowledge-acquisition", "open-questions"]
 timestamp: "2026-07-31T00:00:00Z"
 status: "growing"
 ---
@@ -26,4 +26,4 @@ The knowledge-acquisition workflow is the pipeline that turns raw captures into 
 - [[wiki/memory/knowledge-curation|Knowledge Curation]] — the curation half of acquisition
 - [[wiki/syntheses/knowledge-system|Knowledge System]] — the loop this stub asks about
 - [[wiki/questions/index|Open Questions]] — where these threads are tracked
-- [[wiki/syntheses/README|Syntheses]] — the namespace this stub belongs to
+- [[wiki/syntheses/index|Syntheses]] — the namespace this stub belongs to

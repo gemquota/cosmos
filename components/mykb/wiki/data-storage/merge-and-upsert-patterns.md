@@ -20,8 +20,8 @@ SQL MERGE (and INSERT ... ON CONFLICT) reconciles incoming rows against a target
 - Operational notes: document the merge key and policy per table, test replays, and monitor rows-affected for anomalies.
 - RSIS3 relevance: RSIS3's state updates (registry rows, checkpoint tables) are merge workloads — key design determines whether replays converge or corrupt.
 
-## Related
 
+## Related
 - [[wiki/data-storage/incremental-loading|Incremental Loading]] — merging is the incremental update step
 - [[wiki/data-storage/slowly-changing-dimensions|Slowly Changing Dimensions]] — Type 1/2 semantics via merges
 - [[wiki/data-storage/open-table-formats|Open Table Formats]] — ACID merges on the lakehouse

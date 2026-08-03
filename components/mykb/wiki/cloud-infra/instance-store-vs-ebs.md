@@ -22,7 +22,3 @@ Instance store is ephemeral, directly attached storage with enormous I/O; EBS is
 
 ## Related
 - [[wiki/cloud-infra/amazon-ebs-provisioning|Amazon EBS Provisioning]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

@@ -19,10 +19,10 @@ Angular Signals are the framework's granular reactivity primitives: a `signal()`
 - RSIS3/mykb relevance: signal-based state is a concrete instance of the declarative, derived-state discipline MyKB uses in its UI: define the source of truth once, derive everything else, and let the framework propagate invalidation — the same dependency-graph reasoning RSIS3 applies to loop state.
 
 ## Related
-- [[wiki/frontend-frameworks/solid-js-signals|Solid.js Signals]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/ng-zone|NgZone]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/change-detection|Change Detection]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/signal-based-state|Signal-Based State]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/solid-js-signals|Solid.js Signals]]
+- [[wiki/frontend-frameworks/ng-zone|NgZone]]
+- [[wiki/frontend-frameworks/change-detection|Change Detection]]
+- [[wiki/frontend-frameworks/signal-based-state|Signal-Based State]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

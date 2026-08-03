@@ -20,9 +20,9 @@ Intrusion detection systems (IDS) monitor host and network activity to find sign
 - For mykb: IDS is the detection tier — fail2ban (prevention) and honeypots (deception) are its siblings in the detection spectrum.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/os-shell/systemd-and-init-systems|systemd & Init Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/fail2ban-and-intrusion-prevention|fail2ban & Intrusion Prevention]] — related coverage in the same cluster
-- [[wiki/devops-infra/feature-flag-systems-revisited|Feature Flag Systems]] — related coverage in the same cluster
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/os-shell/systemd-and-init-systems|systemd & Init Systems]]
+- [[wiki/infrastructure/fail2ban-and-intrusion-prevention|fail2ban & Intrusion Prevention]]
+- [[wiki/devops-infra/feature-flag-systems-revisited|Feature Flag Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -22,9 +22,9 @@ Runbooks and playbooks are the operational documents that tell responders what t
 - RSIS3 relevance: cosmos's operational knowledge (daemon recovery, dashboard regeneration, wiki restore) should live as runbooks in the repo — RSIS3's loops can even reference them as executable procedures.
 
 ## Related
-- [[wiki/devops-infra/runbooks|Runbooks]] — related coverage in the same cluster
-- [[wiki/infrastructure/data-eng-runbooks|Data Eng Runbooks]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/runbooks|Runbooks]]
+- [[wiki/infrastructure/data-eng-runbooks|Data Eng Runbooks]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

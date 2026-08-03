@@ -20,9 +20,9 @@ Egress control manages the traffic leaving your network: which hosts may reach w
 - For mykb: the node connects the egress cluster — egress/ingress filters, reverse proxies, and ingress/egress policies — and the same "default-deny with reviewed exceptions" discipline applies to the RSIS3 bundle's own outbound calls (which endpoints may its workers contact?).
 
 ## Related
-- [[wiki/infrastructure/egress-and-ingress-filters|Egress & Ingress Filters]] — related coverage in the same cluster
-- [[wiki/devops-infra/reverse-proxies|Reverse Proxies]] — related coverage in the same cluster
-- [[wiki/infrastructure/tcpdump-filters-and-capture|tcpdump Filters & Capture]] — related coverage in the same cluster
-- [[wiki/devops-infra/ingress-egress-policies|Ingress & Egress Policies]] — related coverage in the same cluster
+- [[wiki/infrastructure/egress-and-ingress-filters|Egress & Ingress Filters]]
+- [[wiki/devops-infra/reverse-proxies|Reverse Proxies]]
+- [[wiki/infrastructure/tcpdump-filters-and-capture|tcpdump Filters & Capture]]
+- [[wiki/devops-infra/ingress-egress-policies|Ingress & Egress Policies]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

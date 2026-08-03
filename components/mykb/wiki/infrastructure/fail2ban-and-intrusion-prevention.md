@@ -20,8 +20,8 @@ fail2ban is an automated intrusion-prevention tool that watches service logs, de
 - For mykb: fail2ban sits in the intrusion-prevention cluster alongside IDS and honeypots — the automated-response tier of host defense.
 
 ## Related
-- [[wiki/infrastructure/intrusion-detection-systems|Intrusion Detection Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
+- [[wiki/infrastructure/intrusion-detection-systems|Intrusion Detection Systems]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

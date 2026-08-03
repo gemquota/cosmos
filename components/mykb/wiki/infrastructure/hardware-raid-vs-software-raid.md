@@ -20,8 +20,8 @@ Hardware RAID implements the RAID array on a dedicated controller card (with its
 - For mykb: the node connects RAID levels, storage systems, and the SDN analogy — the same "where does the intelligence live" question that the software-defined movement answers everywhere.
 
 ## Related
-- [[wiki/os-shell/raid-levels|RAID Levels]] — related coverage in the same cluster
-- [[wiki/infrastructure/software-defined-networking|Software-Defined Networking]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
+- [[wiki/os-shell/raid-levels|RAID Levels]]
+- [[wiki/infrastructure/software-defined-networking|Software-Defined Networking]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

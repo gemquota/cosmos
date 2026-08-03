@@ -21,9 +21,9 @@ Progressive rollout metrics are the health signals that gate each step of a grad
 - RSIS3 relevance: RSIS3's pulse telemetry is exactly this concept — the metrics that gate whether a new loop strategy is promoted, held, or reverted.
 
 ## Related
-- [[wiki/devops-infra/metrics-logs-traces|Metrics, Logs & Traces]] — related coverage in the same cluster
-- [[wiki/devops-infra/prometheus-and-metrics|Prometheus & Metrics]] — related coverage in the same cluster
-- [[wiki/devops-infra/progressive-delivery-models|Progressive Delivery Models]] — related coverage in the same cluster
-- [[wiki/devops-infra/progressive-sync-strategies|Progressive Sync Strategies]] — related coverage in the same cluster
+- [[wiki/devops-infra/metrics-logs-traces|Metrics, Logs & Traces]]
+- [[wiki/devops-infra/prometheus-and-metrics|Prometheus & Metrics]]
+- [[wiki/devops-infra/progressive-delivery-models|Progressive Delivery Models]]
+- [[wiki/devops-infra/progressive-sync-strategies|Progressive Sync Strategies]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

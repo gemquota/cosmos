@@ -27,5 +27,5 @@ Copyright and AI spans three questions: training on copyrighted works, ownership
 - [[wiki/decisions/data-license-issues|Data License Issues]] — the data side
 - [[wiki/concepts/attribution-ai|Attribution for AI]] — the credit mechanism
 - [[wiki/concepts/open-source-ai|Open Source AI]] — the alternative model
-- [[wiki/syntheses/knowledge-synthesis-pipelines|Knowledge Synthesis Pipelines]] — the full treatment of this theme
-- [[wiki/infrastructure/data-license-and-usage|Data License And Usage]] — existing graph context
+- [[wiki/syntheses/knowledge-synthesis-pipelines|Knowledge Synthesis Pipelines]]
+- [[wiki/infrastructure/data-license-and-usage|Data License And Usage]]

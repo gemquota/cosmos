@@ -19,10 +19,10 @@ Retry-After is the HTTP header a server uses to tell clients when it expects to 
 - RSIS3/mykb relevance: RSIS3 loop workers that poll the MyKB daemon or telemetry endpoints should honor Retry-After so a degraded storage layer recovers instead of being flooded; encoding the header value into checkpoint state also lets a restarted session resume the same backoff schedule.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/429-handling|Handling 429]] — related coverage in the same cluster
-- [[wiki/api-protocols/503-handling|Handling 503]] — related coverage in the same cluster
-- [[wiki/api-protocols/502-handling|Handling 502]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-status-codes|HTTP Status Codes]] — related coverage in the same cluster
-- [[wiki/api-protocols/retry-backoff|Retry & Backoff]] — related coverage in the same cluster
-- [[wiki/api-protocols/error-contract-design|Error Contract Design]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/429-handling|Handling 429]]
+- [[wiki/api-protocols/503-handling|Handling 503]]
+- [[wiki/api-protocols/502-handling|Handling 502]]
+- [[wiki/api-protocols/http-status-codes|HTTP Status Codes]]
+- [[wiki/api-protocols/retry-backoff|Retry & Backoff]]
+- [[wiki/api-protocols/error-contract-design|Error Contract Design]]

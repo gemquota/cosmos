@@ -24,5 +24,5 @@ X-risk frameworks decompose risk into components — probability, capability, in
 - [[wiki/concepts/catastrophic-risk|Catastrophic Risk]] — the broader class
 - [[wiki/concepts/risk-assessment-ai|Risk Assessment for AI]] — the applied method
 - [[wiki/concepts/tail-risks|Tail Risks]] — the probability layer
-- [[wiki/concepts/transformative-ai|Transformative AI]] — the full treatment of this theme
-- [[wiki/agent-systems/risk-bounded-agents|Risk-Bounded Agents]] — existing graph context
+- [[wiki/concepts/transformative-ai|Transformative AI]]
+- [[wiki/agent-systems/risk-bounded-agents|Risk-Bounded Agents]]

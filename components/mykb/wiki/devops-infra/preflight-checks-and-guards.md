@@ -21,9 +21,9 @@ Preflight checks and guards are validation gates that run before an action — a
 - RSIS3 relevance: RSIS3's loop runs should preflight too — verify the store is writable, telemetry targets reachable, and parameters valid before starting an experiment, so failures are clear and cheap.
 
 ## Related
-- [[wiki/devops-infra/deploy-safety-checks|Deploy Safety Checks]] — related coverage in the same cluster
-- [[wiki/devops-infra/deployment-verification-synthetic-checks|Deployment Verification & Synthetic Checks]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/deploy-safety-checks|Deploy Safety Checks]]
+- [[wiki/devops-infra/deployment-verification-synthetic-checks|Deployment Verification & Synthetic Checks]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

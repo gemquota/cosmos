@@ -27,5 +27,3 @@ A client VPN profile packages the configuration a user's device needs to connect
 - [[wiki/cloud-infra/site-to-site-vpn|Site-to-Site VPN]]
 - [[wiki/cloud-infra/vpn-tunnels|VPN Tunnels]]
 - [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

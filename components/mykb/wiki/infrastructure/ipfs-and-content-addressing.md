@@ -20,9 +20,9 @@ IPFS (InterPlanetary File System) is a distributed, peer-to-peer storage network
 - For mykb: the node connects content hashing/ETags (the same integrity logic at web scale), CDNs (the centralized availability answer), and storage systems — the tradeoff spectrum for content distribution.
 
 ## Related
-- [[wiki/devops-infra/content-hashing-and-etags|Content Hashing & ETags]] — related coverage in the same cluster
-- [[wiki/cloud-infra/content-delivery-networks|Content Delivery Networks]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
+- [[wiki/devops-infra/content-hashing-and-etags|Content Hashing & ETags]]
+- [[wiki/cloud-infra/content-delivery-networks|Content Delivery Networks]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -21,9 +21,9 @@ Patch management is the process of keeping software updated against known vulner
 - RSIS3 relevance: the cosmos stack (python, node, dashboard deps) should run the same continuous patch loop — RSIS3 can even treat patch cadence as one of its operational telemetry signals.
 
 ## Related
-- [[wiki/os-shell/logical-volume-management|Logical Volume Management]] — related coverage in the same cluster
-- [[wiki/devops-infra/helm-and-chart-management|Helm & Chart Management]] — related coverage in the same cluster
-- [[wiki/infrastructure/ssh-key-management|SSH Key Management]] — related coverage in the same cluster
-- [[wiki/infrastructure/security-information-and-event-management|SIEM]] — related coverage in the same cluster
+- [[wiki/os-shell/logical-volume-management|Logical Volume Management]]
+- [[wiki/devops-infra/helm-and-chart-management|Helm & Chart Management]]
+- [[wiki/infrastructure/ssh-key-management|SSH Key Management]]
+- [[wiki/infrastructure/security-information-and-event-management|SIEM]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -21,7 +21,7 @@ ApplicationSets generate ArgoCD Application resources from templates, replacing 
 - RSIS3 relevance: the same template-and-generate discipline applies to RSIS3's batch telemetry renders — generate dashboards and checkpoints from a declarative spec instead of hand-maintaining each artifact.
 
 ## Related
-- [[wiki/devops-infra/gitops-argocd|GitOps & ArgoCD]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/gitops-argocd|GitOps & ArgoCD]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

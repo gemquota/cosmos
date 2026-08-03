@@ -24,5 +24,5 @@ The utilitarian calculus aggregates wellbeing across all affected beings to iden
 - [[wiki/concepts/moral-weights|Moral Weights]] — the aggregation weights
 - [[wiki/concepts/consequentialism-ai|Consequentialism for AI]] — the broader frame
 - [[wiki/concepts/suffering-risk|Suffering Risk]] — the extreme application
-- [[wiki/concepts/value-specification|Value Specification]] — the full treatment of this theme
-- [[wiki/concepts/utility-functions|Utility Functions]] — existing graph context
+- [[wiki/concepts/value-specification|Value Specification]]
+- [[wiki/concepts/utility-functions|Utility Functions]]

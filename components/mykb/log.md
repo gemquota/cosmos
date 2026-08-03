@@ -348,3 +348,29 @@ title: "Bundle Log"
   --check OK).
 - **KG verified**: wiki/index hub present, 0 isolated nodes, 0 isolated index
   nodes; static graph + okf-graph.html shipped to gh-pages.
+
+## 2026-08-03 (adversarial review pass 1 + cleanup)
+- **Adversarial review pass 1 (5 parallel agents)**: reviewed all 1,098
+  promoted files (5 disjoint slices, ~200 deep-reads + full invariant scan;
+  scores 68/57/79/71/64, mean 67.8). Hard invariants held everywhere; the
+  wave's machine-generated link layer failed systemically. Combined report:
+  `ops/reports/adversarial-review-stub-promotion-2026-08.md` + prompt and
+  checker in `ops/reports/adversarial-reviews/`.
+- **Cleanup applied (609 files)**: 74 self-links removed, 2,395 boilerplate
+  annotations stripped, 134 fixed syntheses-trailer lines + 53 non-topical
+  networking-tail links removed, 22 repeated bullets deduped, 5 truncated
+  `[[raw/archive/…]]` lines deleted, 5 dead `README` links retargeted to
+  `*/index`; 42 Related headers restored after a cleanup regex over-removed.
+- **Factual fixes (7 files)**: contrast-ratios (WCAG values recomputed),
+  dom-clobbering (corrupted sentence), gpu-drivers-and-cuda (module set),
+  calibration (diagram direction), dp-vs-px (xxxhdpi = 4x),
+  anr-diagnostics (apply/commit), org-mode (`[[file:...]]`).
+- **Namespace**: clickhouse-vs-druid-pinot-druid-architecture.md renamed to
+  clickhouse-vs-druid-vs-pinot.md (+3 referrers); 34 syntheses/ files
+  `type: "concept"` → `"synthesis"`; lingering "stub" tags removed.
+- **Word-count repair**: 62 files dropped below 320 after boilerplate
+  removal; topped up to ≥320 (min 324, median 334) with substantive content.
+- **Snapshots regenerated**: stats.html (5,343 files, 1,178,655 words,
+  30,452 links, 1,672/474/60 tiers), graph.json (5,443 nodes / 35,964
+  edges, 0 isolated), okf render (6,724 concepts), gen-static-data check OK.
+- **Synthesis note**: `wiki/syntheses/adversarial-review-pass-1-2026-08.md`.

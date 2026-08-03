@@ -25,5 +25,3 @@ Storage locks and retention policies enforce how long data must live and who can
 - [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]]
 - [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]]
 - [[wiki/devops-infra/storage-classes-and-provisioners|Storage Classes & Provisioners]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

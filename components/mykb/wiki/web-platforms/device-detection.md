@@ -25,8 +25,6 @@ Device detection infers hardware and capabilities from user-agent strings or cli
 ## Related
 - [[wiki/web-platforms/responsive-design-systems|Responsive Design Systems]]
 - [[wiki/web-platforms/user-agent-parsing|User-Agent Parsing]]
-- [[wiki/web-platforms/device-detection|Device Detection]]
-- [[wiki/web-platforms/user-agent-parsing|User-Agent Parsing]]
 - [[wiki/web-platforms/web-apis|Web APIs]]
 - [[wiki/web-platforms/browser-engines|Browser Engines]]
 - [[wiki/web-platforms/web-standards|Web Standards]]

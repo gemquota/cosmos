@@ -22,9 +22,9 @@ SSH key management covers the full lifecycle of public-key authentication: gener
 - RSIS3/mykb relevance: self-improvement loops that provision agents need this lifecycle so that ephemeral automation does not accumulate permanent credentials; this node supplies the rotation and audit rules retrievals should attach to any key.
 
 ## Related
-- [[wiki/os-shell/logical-volume-management|Logical Volume Management]] — related coverage in the same cluster
-- [[wiki/devops-infra/helm-and-chart-management|Helm & Chart Management]] — related coverage in the same cluster
-- [[wiki/infrastructure/ssh-tunneling-and-port-forwarding|SSH Tunneling & Port Forwarding]] — related coverage in the same cluster
-- [[wiki/infrastructure/security-information-and-event-management|SIEM]] — related coverage in the same cluster
+- [[wiki/os-shell/logical-volume-management|Logical Volume Management]]
+- [[wiki/devops-infra/helm-and-chart-management|Helm & Chart Management]]
+- [[wiki/infrastructure/ssh-tunneling-and-port-forwarding|SSH Tunneling & Port Forwarding]]
+- [[wiki/infrastructure/security-information-and-event-management|SIEM]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

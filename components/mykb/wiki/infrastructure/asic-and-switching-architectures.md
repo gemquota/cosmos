@@ -20,8 +20,8 @@ ASIC-based switching architectures use fixed-function silicon — application-sp
 - For mykb: switching architecture knowledge grounds the adjacent topics — flow tables and offloads, VXLAN overlays, and software-defined networking all assume a particular ASIC pipeline, and understanding the silicon explains why certain SDN features are cheap and others impossible.
 
 ## Related
-- [[wiki/cloud-infra/availability-zone-architectures|Availability Zone Architectures]] — related coverage in the same cluster
-- [[wiki/os-shell/context-switching|Context Switching]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
+- [[wiki/cloud-infra/availability-zone-architectures|Availability Zone Architectures]]
+- [[wiki/os-shell/context-switching|Context Switching]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

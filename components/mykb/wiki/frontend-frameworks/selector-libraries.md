@@ -19,10 +19,10 @@ Selector libraries let components subscribe to slices of shared state instead of
 - RSIS3/mykb relevance: the dashboard's telemetry views are the selector use case: memoized slices (success rate per loop, pulse counts per window) computed once from raw state and subscribed narrowly — the same derived-metric discipline RSIS3 uses, where aggregates are recomputed from raw telemetry and cached until inputs change.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/derived-state|Derived State]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/selectors-practice|Selectors in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/memoization-practice|Memoization Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/derived-state|Derived State]]
+- [[wiki/frontend-frameworks/selectors-practice|Selectors in Practice]]
+- [[wiki/frontend-frameworks/memoization-practice|Memoization Practice]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]]

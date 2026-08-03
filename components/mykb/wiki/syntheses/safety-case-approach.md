@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Safety Case Approach"
 description: "Structuring safety justification as explicit cases"
 tags: ["safety-case", "assurance", "safety"]
@@ -26,4 +26,4 @@ The safety case approach documents, in an explicit argument structure, why a sys
 - [[wiki/syntheses/audit-frameworks-ai|AI Audit Frameworks]] — the external layer
 - [[wiki/concepts/dangerous-capability-evals|Dangerous Capability Evals]] — the evidence
 - [[wiki/concepts/responsible-scaling|Responsible Scaling]] — the policy frame
-- [[wiki/testing/ai-safety-evals|Ai Safety Evals]] — existing graph context
+- [[wiki/testing/ai-safety-evals|Ai Safety Evals]]

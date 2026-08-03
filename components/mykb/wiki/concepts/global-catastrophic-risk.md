@@ -24,4 +24,4 @@ Global catastrophic risk (GCR) is risk of harm severe enough to degrade civiliza
 - [[wiki/concepts/existential-risk|Existential Risk]] — the extreme form
 - [[wiki/concepts/tail-risks|Tail Risks]] — the distribution shape
 - [[wiki/concepts/multipolar-scenarios|Multipolar Scenarios]] — a GCR path
-- [[wiki/agent-systems/risk-bounded-agents|Risk-Bounded Agents]] — existing graph context
+- [[wiki/agent-systems/risk-bounded-agents|Risk-Bounded Agents]]

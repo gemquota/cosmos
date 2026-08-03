@@ -25,10 +25,10 @@ Operational tradeoffs: M2M tokens trade setup complexity for expiry, scoping, an
 RSIS3/mykb relevance: this is the standing pattern for RSIS3's own integrations; documenting the M2M token contract (grant, scopes, caching, rotation) keeps every loop consistent.
 
 ## Related
-- [[wiki/api-protocols/auth-flows-web|Auth Flows on the Web]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-keys-vs-tokens|API Keys vs Tokens]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-basic-auth|API Basic Auth]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-digest-auth|API Digest Auth]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-authentication-methods|API Authentication Methods]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-keys|API Keys]] — related coverage in the same cluster
-- [[wiki/api-protocols/basic-authentication|Basic Authentication]] — related coverage in the same cluster
+- [[wiki/api-protocols/auth-flows-web|Auth Flows on the Web]]
+- [[wiki/api-protocols/api-keys-vs-tokens|API Keys vs Tokens]]
+- [[wiki/api-protocols/api-basic-auth|API Basic Auth]]
+- [[wiki/api-protocols/api-digest-auth|API Digest Auth]]
+- [[wiki/api-protocols/api-authentication-methods|API Authentication Methods]]
+- [[wiki/api-protocols/api-keys|API Keys]]
+- [[wiki/api-protocols/basic-authentication|Basic Authentication]]

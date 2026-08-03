@@ -25,10 +25,10 @@ Operational tradeoffs: bearer tokens are trivially simple for every client and l
 RSIS3/mykb relevance: RSIS3's check-practices can flag any credential that is bearer-style without expiry; documenting the token lifecycle contract here gives the loop a concrete checklist.
 
 ## Related
-- [[wiki/api-protocols/auth-flows-web|Auth Flows on the Web]] — related coverage in the same cluster
-- [[wiki/api-protocols/m2m-tokens|Machine-to-Machine Tokens]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-keys-vs-tokens|API Keys vs Tokens]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-basic-auth|API Basic Auth]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-authentication-methods|API Authentication Methods]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-keys|API Keys]] — related coverage in the same cluster
-- [[wiki/api-protocols/basic-authentication|Basic Authentication]] — related coverage in the same cluster
+- [[wiki/api-protocols/auth-flows-web|Auth Flows on the Web]]
+- [[wiki/api-protocols/m2m-tokens|Machine-to-Machine Tokens]]
+- [[wiki/api-protocols/api-keys-vs-tokens|API Keys vs Tokens]]
+- [[wiki/api-protocols/api-basic-auth|API Basic Auth]]
+- [[wiki/api-protocols/api-authentication-methods|API Authentication Methods]]
+- [[wiki/api-protocols/api-keys|API Keys]]
+- [[wiki/api-protocols/basic-authentication|Basic Authentication]]

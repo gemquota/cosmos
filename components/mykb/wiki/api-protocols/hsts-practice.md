@@ -25,10 +25,10 @@ Operational tradeoffs: the safe rollout is incremental: serve HTTPS everywhere f
 RSIS3/mykb relevance: the deployed dashboards run behind GitHub Pages which already forces HTTPS; documenting the HSTS policy (and its max-age rollout) gives RSIS3's deployment checks a concrete header assertion.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/csp-headers|CSP Headers]] — related coverage in the same cluster
-- [[wiki/api-protocols/referrer-policy|Referrer Policy]] — related coverage in the same cluster
-- [[wiki/api-protocols/x-frame-options|X-Frame-Options]] — related coverage in the same cluster
-- [[wiki/security-auth/security-headers|Security Headers]] — related coverage in the same cluster
-- [[wiki/security-auth/content-security-policy|Content Security Policy]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/csp-headers|CSP Headers]]
+- [[wiki/api-protocols/referrer-policy|Referrer Policy]]
+- [[wiki/api-protocols/x-frame-options|X-Frame-Options]]
+- [[wiki/security-auth/security-headers|Security Headers]]
+- [[wiki/security-auth/content-security-policy|Content Security Policy]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

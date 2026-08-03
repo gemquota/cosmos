@@ -21,9 +21,9 @@ Stateful application patterns cover how workloads with persistent data run on Ku
 - RSIS3 relevance: the wiki store and checkpoint volume are exactly the stateful workload — stable identity, durable PVCs, and a rehearsed recovery path.
 
 ## Related
-- [[wiki/devops-infra/web-application-firewalls|Web Application Firewalls]] — related coverage in the same cluster
-- [[wiki/cloud-infra/serverless-computing-patterns|Serverless Computing Patterns]] — related coverage in the same cluster
-- [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]] — related coverage in the same cluster
-- [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]] — related coverage in the same cluster
+- [[wiki/devops-infra/web-application-firewalls|Web Application Firewalls]]
+- [[wiki/cloud-infra/serverless-computing-patterns|Serverless Computing Patterns]]
+- [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]]
+- [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

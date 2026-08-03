@@ -19,9 +19,9 @@ Nagle's algorithm and delayed ACK are two TCP optimizations that coalesce small 
 - Operational tradeoffs: both algorithms are pure wins for bulk transfers (large downloads, streaming) where coalescing saves packets without adding perceptible latency, and pure costs for latency-sensitive small-message exchanges. The practice rules: leave defaults for bulk traffic; set `TCP_NODELAY` on request/response and interactive sockets; pair it with application-level message batching so you do not emit one packet per byte; and measure with `tcpdump`/Wireshark (look for the ACK-wait stalls) before blaming the network. RSIS3/mykb relevance: the daemon's API and agent-callback traffic is request/response — the classic Nagle/delayed-ACK victim; disabling Nagle on those sockets and batching telemetry writes is the transport-level counterpart to loop batching discipline.
 
 ## Related
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]] — related coverage in the same cluster
-- [[wiki/cloud-infra/udp-vs-tcp|UDP vs TCP]] — related coverage in the same cluster
-- [[wiki/cloud-infra/tcp-retransmission|TCP Retransmission]] — related coverage in the same cluster
-- [[wiki/infrastructure/nvme-over-fabrics-tcp|NVMe over Fabrics (TCP)]] — related coverage in the same cluster
+- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
+- [[wiki/cloud-infra/udp-vs-tcp|UDP vs TCP]]
+- [[wiki/cloud-infra/tcp-retransmission|TCP Retransmission]]
+- [[wiki/infrastructure/nvme-over-fabrics-tcp|NVMe over Fabrics (TCP)]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

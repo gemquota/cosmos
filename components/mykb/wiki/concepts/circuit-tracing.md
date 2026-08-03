@@ -24,5 +24,5 @@ Circuit tracing locates the attention heads, MLPs, and connections that implemen
 - [[wiki/concepts/activation-patching|Activation Patching]] — the main tool
 - [[wiki/concepts/mechanistic-locality|Mechanistic Locality]] — what makes tracing tractable
 - [[wiki/concepts/induction-heads|Induction Heads]] — a traced circuit
-- [[wiki/concepts/grokking|Grokking]] — the full treatment of this theme
-- [[wiki/ai-ml/probing|Probing]] — existing graph context
+- [[wiki/concepts/grokking|Grokking]]
+- [[wiki/ai-ml/probing|Probing]]

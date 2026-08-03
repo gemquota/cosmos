@@ -19,8 +19,8 @@ A cognitive architecture is the overall blueprint of an intelligent system: its 
 - For agentic systems the architecture question is practical: where does memory live, who can write to it, how does a failure in one loop propagate, and what monitors the monitors? These are design decisions, not implementation details.
 - RSIS3 relevance: the L1-L3 loop structure, the persistent mykb layer, and the SPACE ideation engine are exactly the perception-action-memory-metacognition division, and its usage practices are the discipline that keeps the components coordinated. Architecture reviews of RSIS3 should ask the same questions asked of SOAR or ACT-R: what behaviors are structurally possible, and which are structurally precluded?
 
-## Related
 
+## Related
 - [[wiki/agent-systems/agent-loop|Agent Loop]] — the control cycle at the architecture's core
 - [[wiki/concepts/executive-function|Executive Function]] — the control layer of the architecture
 - [[wiki/concepts/working-memory|Working Memory]] — a standard architectural component

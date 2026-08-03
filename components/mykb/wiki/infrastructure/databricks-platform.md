@@ -21,8 +21,8 @@ Databricks is the reference implementation of the lakehouse pattern: a managed p
 - It is the reference implementation of the lakehouse pattern with open APIs on top. The important architectural choice: Delta Lake, Spark, and MLflow are open (the formats are not lock-in), so the platform competes on managed experience rather than proprietary formats — and the tradeoff is that open formats mean the performance features are mostly open too, which is what makes the comparison with Snowflake (proprietary engine, managed warehouse) a real design choice.
 - For mykb: the node anchors the lakehouse branch — connecting lakehouse architecture, open table formats, and SQL-on-lakehouse to a concrete platform.
 
-## Related
 
+## Related
 - [[wiki/data-storage/lakehouse-architecture|Lakehouse Architecture]] — lakehouse pattern in practice
 - [[wiki/data-storage/open-table-formats|Open Table Formats]] — Delta as an open format
 - [[wiki/data-storage/delta-lake-and-merge-operations|Delta Lake And Merge Operations]] — Delta Lake specifics

@@ -21,9 +21,9 @@ The Container Network Interface (CNI) defines how Kubernetes and other container
 - RSIS3 relevance: if RSIS3's services (wiki daemon, dashboard) run on Kubernetes, understanding CNI explains where latency, MTU, and policy failures come from when retrieval or sync calls slow down.
 
 ## Related
-- [[wiki/devops-infra/network-observability|Network Observability]] — related coverage in the same cluster
-- [[wiki/devops-infra/container-runtimes|Container Runtimes]] — related coverage in the same cluster
-- [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]] — related coverage in the same cluster
-- [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]] — related coverage in the same cluster
+- [[wiki/devops-infra/network-observability|Network Observability]]
+- [[wiki/devops-infra/container-runtimes|Container Runtimes]]
+- [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]]
+- [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

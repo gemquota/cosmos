@@ -23,10 +23,10 @@ Writing scripts that survive quoting, globbing, unset variables, and failure. Ro
 - **RSIS3 relevance** — the repo's build and snapshot scripts (gen-static-data.py, build_graph.py) run under these rules: quoting and pipefail protection matter because they process wiki filenames that contain spaces and special characters, and a robust wrapper around each generator is what keeps a single malformed note from silently breaking the whole snapshot.
 
 ## Related
-- [[wiki/shell-environment/shell-environments-and-rc-files|Shell Environments & RC Files]] — related coverage in the same cluster
-- [[wiki/os-shell/shell-scripting|Shell Scripting]] — related coverage in the same cluster
-- [[wiki/os-shell/arrays-in-shell|Arrays in Bash/Zsh]] — related coverage in the same cluster
-- [[wiki/os-shell/errexit-and-shell-options|Errexit & Shell Options]] — related coverage in the same cluster
-- [[wiki/shell-environment/terminal-multiplexers-tmux|Terminal Multiplexers: tmux]] — related coverage in the same cluster
+- [[wiki/shell-environment/shell-environments-and-rc-files|Shell Environments & RC Files]]
+- [[wiki/os-shell/shell-scripting|Shell Scripting]]
+- [[wiki/os-shell/arrays-in-shell|Arrays in Bash/Zsh]]
+- [[wiki/os-shell/errexit-and-shell-options|Errexit & Shell Options]]
+- [[wiki/shell-environment/terminal-multiplexers-tmux|Terminal Multiplexers: tmux]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

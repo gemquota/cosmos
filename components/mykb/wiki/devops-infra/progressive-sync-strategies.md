@@ -21,11 +21,11 @@ Progressive sync strategies stage how configuration and application state propag
 - RSIS3 relevance: when RSIS3 updates shared state or config across the ecosystem, progressive sync applies the same discipline — push to a subset, verify telemetry, then propagate.
 
 ## Related
-- [[wiki/devops-infra/cache-invalidation-strategies|Cache Invalidation Strategies]] — related coverage in the same cluster
-- [[wiki/devops-infra/backup-strategies-3-2-1|Backup Strategies: 3-2-1]] — related coverage in the same cluster
-- [[wiki/cloud-infra/cloud-migration-strategies|Cloud Migration Strategies]] — related coverage in the same cluster
-- [[wiki/devops-infra/progressive-delivery-models|Progressive Delivery Models]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/cache-invalidation-strategies|Cache Invalidation Strategies]]
+- [[wiki/devops-infra/backup-strategies-3-2-1|Backup Strategies: 3-2-1]]
+- [[wiki/cloud-infra/cloud-migration-strategies|Cloud Migration Strategies]]
+- [[wiki/devops-infra/progressive-delivery-models|Progressive Delivery Models]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

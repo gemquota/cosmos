@@ -18,7 +18,7 @@ Split-horizon DNS serves different answers for the same name depending on where 
 - Failure modes: overlapping zones shadowing each other (the wrong resolver wins); a private zone that forgets to include public names, breaking external access from inside; cache poisoning between views when resolvers are shared; and split-brain documentation where the internal and public records diverge silently.
 - Operational tradeoffs: split-horizon buys clean internal naming and traffic containment at the cost of operational complexity — every record exists twice, and resolver selection decides which view users get. Keep views in sync (pipeline), test from both sides, and document which resolver each network uses.
 - RSIS3/mykb relevance: the wiki's VPC uses private hosted zones with split views; this note records the sync procedure the loop follows when records change.
-- Synchronization: generate internal and external views from the same source of truth; manual dual maintenance is how the two views diverge.
+- Synchronization: generate internal and external views from the same source of truth; manual dual maintenance is how the two views diverge. Add a drift check that compares both views after every zone edit.
 
 ## Related
 - [[wiki/cloud-infra/dns-resolution-process|DNS Resolution Process]]
@@ -26,5 +26,3 @@ Split-horizon DNS serves different answers for the same name depending on where 
 - [[wiki/cloud-infra/vpn-split-tunneling|VPN Split Tunneling]]
 - [[wiki/cloud-infra/dns-management|DNS Management]]
 - [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

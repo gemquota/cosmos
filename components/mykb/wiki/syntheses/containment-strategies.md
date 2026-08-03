@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Containment Strategies"
 description: "Isolating AI systems to bound their impact"
 tags: ["containment", "isolation", "safety"]

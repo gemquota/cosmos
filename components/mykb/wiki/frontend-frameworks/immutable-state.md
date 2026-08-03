@@ -19,10 +19,10 @@ Immutable state is the discipline of never mutating existing state objects: ever
 - RSIS3/mykb relevance: MyKB's knowledge graph and RSIS3's registry are event-sourced: each write appends a new state, and rebuilds replay history — the immutable-state discipline is what makes snapshot generation and rollback correct without locks.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/state-machines-web|State Machines on the Web]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/xstate-practice|XState in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/finite-state-uis|Finite State UIs]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/software-engineering/reactive-programming|Reactive Programming]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/state-machines-web|State Machines on the Web]]
+- [[wiki/frontend-frameworks/xstate-practice|XState in Practice]]
+- [[wiki/frontend-frameworks/finite-state-uis|Finite State UIs]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/software-engineering/reactive-programming|Reactive Programming]]

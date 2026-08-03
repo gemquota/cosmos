@@ -21,10 +21,10 @@ Database failover automation moves primary database role to a replica automatica
 - RSIS3 relevance: the MyKB store, if database-backed, needs the same failover design — retrieval continuity for the loops depends on it.
 
 ## Related
-- [[wiki/cloud-infra/storage-tiering-automation|Storage Tiering Automation]] — related coverage in the same cluster
-- [[wiki/infrastructure/redundancy-and-failover-dc|Datacenter Redundancy & Failover]] — related coverage in the same cluster
-- [[wiki/devops-infra/replication-and-failover-dr|Replication & Failover DR]] — related coverage in the same cluster
-- [[wiki/devops-infra/database-indexing|Database Indexing]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/cloud-infra/storage-tiering-automation|Storage Tiering Automation]]
+- [[wiki/infrastructure/redundancy-and-failover-dc|Datacenter Redundancy & Failover]]
+- [[wiki/devops-infra/replication-and-failover-dr|Replication & Failover DR]]
+- [[wiki/devops-infra/database-indexing|Database Indexing]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

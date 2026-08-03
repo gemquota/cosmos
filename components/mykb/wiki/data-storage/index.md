@@ -64,7 +64,7 @@ Part of [[wiki/index|Wiki Index]]. 461 pages.
 - [[wiki/data-storage/citation-necessity|Citation Necessity]] — Deciding which claims need a source at all
 - [[wiki/data-storage/citation-placement|Citation Placement]] — Where in an article a source should be attached
 - [[wiki/data-storage/clickhouse-and-columnar-oltp|ClickHouse and Columnar OLTP]] — Ultra-fast columnar analytics for high-volume queries
-- [[wiki/data-storage/clickhouse-vs-druid-pinot-druid-architecture|ClickHouse vs Druid vs Pinot]] — Comparing columnar engines for real-time and high-concurrency analytics
+- [[wiki/data-storage/clickhouse-vs-druid-vs-pinot|ClickHouse vs Druid vs Pinot]] — Comparing columnar engines for real-time and high-concurrency analytics
 - [[wiki/data-storage/clustered-tables|Clustered Tables]] — Heap versus clustered-index table organization
 - [[wiki/data-storage/code-in-wiki|Code in the Wiki]] — The convention for code blocks and inline code in articles
 - [[wiki/data-storage/cohort-and-retention-analytics|Cohort and Retention Analytics]] — Tracking groups of users over time

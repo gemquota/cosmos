@@ -21,11 +21,11 @@ Trivy scans container images, filesystems, and repositories for vulnerabilities 
 - RSIS3 relevance: cosmos's daemon and dashboard images should pass the same scan gate — RSIS3's operational notes can treat CVE debt as one of its telemetry signals.
 
 ## Related
-- [[wiki/devops-infra/image-signing-and-notary|Image Signing & Notary]] — related coverage in the same cluster
-- [[wiki/devops-infra/golden-images-and-image-baking|Golden Images & Image Baking]] — related coverage in the same cluster
-- [[wiki/infrastructure/container-scanning|Container Scanning]] — related coverage in the same cluster
-- [[wiki/infrastructure/docker-image-optimization|Docker Image Optimization]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/image-signing-and-notary|Image Signing & Notary]]
+- [[wiki/devops-infra/golden-images-and-image-baking|Golden Images & Image Baking]]
+- [[wiki/infrastructure/container-scanning|Container Scanning]]
+- [[wiki/infrastructure/docker-image-optimization|Docker Image Optimization]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

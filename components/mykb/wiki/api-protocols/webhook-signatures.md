@@ -19,10 +19,10 @@ Webhook signatures prove that a delivery genuinely came from the producer and wa
 - RSIS3/mykb relevance: webhook-style callbacks in RSIS3 (session captures, loop notifications) should carry the same signatures so a compromised or spoofed endpoint cannot inject false knowledge into MyKB — authenticity at the ingestion boundary protects the memory layer's integrity.
 
 ## Related
-- [[wiki/api-protocols/webhooks-practice|Webhooks in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhook-events|Webhook Events]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhook-topics|Webhook Topics]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhook-subscriptions|Webhook Subscriptions]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhooks|Webhooks]] — related coverage in the same cluster
-- [[wiki/api-protocols/at-least-once-delivery|At-Least-Once Delivery]] — related coverage in the same cluster
-- [[wiki/api-protocols/retry-backoff|Retry & Backoff]] — related coverage in the same cluster
+- [[wiki/api-protocols/webhooks-practice|Webhooks in Practice]]
+- [[wiki/api-protocols/webhook-events|Webhook Events]]
+- [[wiki/api-protocols/webhook-topics|Webhook Topics]]
+- [[wiki/api-protocols/webhook-subscriptions|Webhook Subscriptions]]
+- [[wiki/api-protocols/webhooks|Webhooks]]
+- [[wiki/api-protocols/at-least-once-delivery|At-Least-Once Delivery]]
+- [[wiki/api-protocols/retry-backoff|Retry & Backoff]]

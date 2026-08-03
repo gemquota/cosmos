@@ -24,4 +24,4 @@ Open source AI safety debates whether releasing models and weights helps safety 
 - [[wiki/decisions/open-weights-debate|Open Weights Debate]] — the weights debate
 - [[wiki/decisions/weight-release-policies|Weight Release Policies]] — the process
 - [[wiki/concepts/dual-use-research|Dual-Use Research]] — the frame
-- [[wiki/ai-ml/open-weights-models|Open Weights Models]] — existing graph context
+- [[wiki/ai-ml/open-weights-models|Open Weights Models]]

@@ -21,8 +21,8 @@ Anonymization removes or perturbs identifiers so individuals cannot be re-identi
 - Differential privacy adds calibrated noise and is the strongest formal guarantee for aggregates. It is the standard for statistics and ML over sensitive data, with the tradeoff being the privacy budget: more privacy, more noise, less accurate results — a deliberate and tunable choice rather than a silent one.
 - For mykb: the node connects privacy-by-design, tokenization/masking (the reversible alternatives), and the GDPR/CCPA regulatory drivers.
 
-## Related
 
+## Related
 - [[wiki/security-auth/privacy-by-design|Privacy by Design]] — privacy principles in design
 - [[wiki/security-auth/data-breach-response|Data Breach Response]] — why anonymization reduces breach impact
 - [[wiki/infrastructure/tokenization-and-masking|Tokenization And Masking]] — reversible protection alternatives

@@ -19,8 +19,8 @@ Thermal throttling is the CPU protecting itself from heat damage by cutting freq
 - Operational tradeoffs: the power/thermal envelope is a triangle: performance, power, and heat — pick two. Undervolting and power capping reduce heat and energy at some throughput cost; aggressive turbo buys peak performance at the cost of thermal headroom and energy. The practice rules: measure sustained frequency with `turbostat` under your real workload (not just peak), size cooling to sustained TDP rather than marketing turbo, monitor temperature trends (`sensors`/IPMI) and power-limit throttling counters (`rdmsr 0x1FC`-style or RAPL), and set power limits deliberately where density matters. RSIS3/mykb relevance: RSIS3's batch indexing loops are sustained-load jobs — exactly the workloads that heat-soak; scheduling heavy work with thermal headroom and monitoring frequency collapse keeps batch runtime predictable, mirroring the loop-hygiene rule that long jobs must account for environmental constraints.
 
 ## Related
-- [[wiki/infrastructure/power-and-cooling-datacenter|Power & Cooling in the Datacenter]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/infrastructure/power-and-cooling-datacenter|Power & Cooling in the Datacenter]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

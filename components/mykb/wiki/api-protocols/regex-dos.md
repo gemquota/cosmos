@@ -25,10 +25,10 @@ Operational tradeoffs: the durable fix is avoiding backtracking-prone patterns a
 RSIS3/mykb relevance: the wiki's validation and parsing code should audit regexes for backtracking; documenting the linear-time rule gives RSIS3's checks a concrete pattern list to grep for.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/decompression-bombs|Decompression Bombs]] — related coverage in the same cluster
-- [[wiki/api-protocols/billion-laughs|Billion Laughs]] — related coverage in the same cluster
-- [[wiki/api-protocols/entity-expansion|Entity Expansion]] — related coverage in the same cluster
-- [[wiki/security-auth/cve-disclosures|CVE Disclosures]] — related coverage in the same cluster
-- [[wiki/api-protocols/rate-limiting|Rate Limiting]] — related coverage in the same cluster
-- [[wiki/api-protocols/backpressure|Backpressure]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/decompression-bombs|Decompression Bombs]]
+- [[wiki/api-protocols/billion-laughs|Billion Laughs]]
+- [[wiki/api-protocols/entity-expansion|Entity Expansion]]
+- [[wiki/security-auth/cve-disclosures|CVE Disclosures]]
+- [[wiki/api-protocols/rate-limiting|Rate Limiting]]
+- [[wiki/api-protocols/backpressure|Backpressure]]

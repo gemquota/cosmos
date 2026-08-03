@@ -25,4 +25,4 @@ Value alignment problems span specification (what to value), learning (how to in
 - [[wiki/concepts/value-learning-problems|Value Learning Problems]] — the learning branch
 - [[wiki/concepts/value-drift|Value Drift]] — the stability branch
 - [[wiki/concepts/moral-uncertainty|Moral Uncertainty]] — the normative branch
-- [[wiki/concepts/utility-functions|Utility Functions]] — existing graph context
+- [[wiki/concepts/utility-functions|Utility Functions]]

@@ -25,10 +25,10 @@ Operational tradeoffs: tight timeouts bound worst-case latency and protect gatew
 RSIS3/mykb relevance: when RSIS3 loops call external services during self-improvement cycles, documenting per-call deadlines and the 504 behavior of the gateway keeps the loops from over-retrying and double-executing actions.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/quota-headers|Quota Headers]] — related coverage in the same cluster
-- [[wiki/api-protocols/retry-after-web|Retry-After]] — related coverage in the same cluster
-- [[wiki/api-protocols/429-handling|Handling 429]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-status-codes|HTTP Status Codes]] — related coverage in the same cluster
-- [[wiki/api-protocols/retry-backoff|Retry & Backoff]] — related coverage in the same cluster
-- [[wiki/api-protocols/error-contract-design|Error Contract Design]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/quota-headers|Quota Headers]]
+- [[wiki/api-protocols/retry-after-web|Retry-After]]
+- [[wiki/api-protocols/429-handling|Handling 429]]
+- [[wiki/api-protocols/http-status-codes|HTTP Status Codes]]
+- [[wiki/api-protocols/retry-backoff|Retry & Backoff]]
+- [[wiki/api-protocols/error-contract-design|Error Contract Design]]

@@ -25,10 +25,8 @@ Operational tradeoffs: the discipline is declare-always and declare-correctly: e
 RSIS3/mykb relevance: the wiki's APIs should pin content types in their contracts; documenting the declaration rule keeps RSIS3's client code from guessing and the security checks from missing sniffing risk.
 
 ## Related
-- [[wiki/api-protocols/http-fundamentals|HTTP Fundamentals]] — related coverage in the same cluster
-- [[wiki/api-protocols/charset-encodings|Charset Encodings]] — related coverage in the same cluster
-- [[wiki/api-protocols/mime-types|MIME Types]] — related coverage in the same cluster
-- [[wiki/api-protocols/charset-encodings|Charset Encodings]] — related coverage in the same cluster
-- [[wiki/api-protocols/content-negotiation|Content Negotiation]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-compression|HTTP Compression]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-headers|HTTP Headers]] — related coverage in the same cluster
+- [[wiki/api-protocols/http-fundamentals|HTTP Fundamentals]]
+- [[wiki/api-protocols/charset-encodings|Charset Encodings]]
+- [[wiki/api-protocols/content-negotiation|Content Negotiation]]
+- [[wiki/api-protocols/http-compression|HTTP Compression]]
+- [[wiki/api-protocols/http-headers|HTTP Headers]]

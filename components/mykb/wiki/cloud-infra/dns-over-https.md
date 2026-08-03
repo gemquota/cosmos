@@ -25,5 +25,3 @@ DNS-over-HTTPS (DoH) encrypts DNS queries inside HTTPS, hiding them from network
 - [[wiki/cloud-infra/https-and-tls|HTTPS & TLS]]
 - [[wiki/cloud-infra/dns-zone-transfers|DNS Zone Transfers]]
 - [[wiki/cloud-infra/split-horizon-dns|Split-Horizon DNS]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

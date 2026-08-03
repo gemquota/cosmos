@@ -21,11 +21,11 @@ Image signing cryptographically binds a container image to its builder so consum
 - RSIS3 relevance: signed cosmos artifacts (dashboard bundles, packaged tools) let RSIS3 loops verify provenance — later loops know which code produced which output.
 
 ## Related
-- [[wiki/devops-infra/trivy-and-image-scanning|Trivy & Image Scanning]] — related coverage in the same cluster
-- [[wiki/devops-infra/package-signing-and-repositories|Package Signing & Repositories]] — related coverage in the same cluster
-- [[wiki/infrastructure/docker-image-optimization|Docker Image Optimization]] — related coverage in the same cluster
-- [[wiki/devops-infra/golden-images-and-image-baking|Golden Images & Image Baking]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/trivy-and-image-scanning|Trivy & Image Scanning]]
+- [[wiki/devops-infra/package-signing-and-repositories|Package Signing & Repositories]]
+- [[wiki/infrastructure/docker-image-optimization|Docker Image Optimization]]
+- [[wiki/devops-infra/golden-images-and-image-baking|Golden Images & Image Baking]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

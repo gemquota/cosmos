@@ -24,5 +24,5 @@ Trojan attacks embed hidden malicious behavior into models during training or fi
 - [[wiki/concepts/weight-poisoning|Weight Poisoning]] — the mechanism
 - [[wiki/decisions/open-weights|Open Weights]] — the exposure
 - [[wiki/concepts/supply-chain-attacks-ai|Supply-Chain Attacks on AI]] — the delivery
-- [[wiki/concepts/ai-safety-for-rsi|AI Safety for RSI]] — the full treatment of this theme
-- [[wiki/ai-ml/data-poisoning|Data Poisoning]] — existing graph context
+- [[wiki/concepts/ai-safety-for-rsi|AI Safety for RSI]]
+- [[wiki/ai-ml/data-poisoning|Data Poisoning]]

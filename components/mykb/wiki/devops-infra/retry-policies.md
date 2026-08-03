@@ -21,11 +21,11 @@ Retry policies define when, how often, and with what backoff a failed operation 
 - RSIS3 relevance: RSIS3's calls to the wiki daemon and LLM providers need the same policy — bounded jittered retries with an explicit give-up so loop telemetry reflects real failures instead of retry storms.
 
 ## Related
-- [[wiki/devops-infra/ingress-egress-policies|Ingress & Egress Policies]] — related coverage in the same cluster
-- [[wiki/devops-infra/network-policies-kubernetes|Kubernetes Network Policies]] — related coverage in the same cluster
-- [[wiki/devops-infra/escalation-policies|Escalation Policies]] — related coverage in the same cluster
-- [[wiki/cloud-infra/snapshot-lifecycle-policies|Snapshot Lifecycle Policies]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/ingress-egress-policies|Ingress & Egress Policies]]
+- [[wiki/devops-infra/network-policies-kubernetes|Kubernetes Network Policies]]
+- [[wiki/devops-infra/escalation-policies|Escalation Policies]]
+- [[wiki/cloud-infra/snapshot-lifecycle-policies|Snapshot Lifecycle Policies]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

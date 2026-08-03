@@ -26,4 +26,3 @@ Indirect injection hides instructions inside content the model consumes on the s
 - [[wiki/prompt-engineering/prompt-leakage|Prompt Leakage]] — A frequent outcome of indirect injection
 - [[wiki/prompt-engineering/retrieval-prompting|Retrieval Prompting]] — The RAG pattern that exposes systems
 - [[wiki/ai-ml/guardrails|Guardrails]] — Runtime filtering of retrieved content
-- [[raw/archive/session-artifacts-2026-07/topics/security|security — Data-channel trust boundaries

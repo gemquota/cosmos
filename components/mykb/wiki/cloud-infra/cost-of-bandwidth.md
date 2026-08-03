@@ -25,7 +25,3 @@ Bandwidth costs are the hidden budget-buster of cloud: egress is priced per GB (
 - [[wiki/cloud-infra/bandwidth-vs-throughput|Bandwidth vs Throughput]]
 - [[wiki/infrastructure/bandwidth-allocation|Bandwidth Allocation]]
 - [[wiki/cloud-infra/cloud-cost-optimization|Cloud Cost Optimization]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

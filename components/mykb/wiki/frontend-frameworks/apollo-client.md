@@ -19,10 +19,10 @@ Apollo Client is a full-featured GraphQL client for React and other frameworks, 
 - RSIS3/mykb relevance: the normalized cache is a client-side mirror of MyKB's entity graph: one source of truth for each entity, updated in place, so every widget reading a pulse or article stays consistent — the same identity discipline the knowledge graph enforces server-side.
 
 ## Related
-- [[wiki/api-protocols/graphql-basics|GraphQL Basics]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/urql-practice|urql in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/relay-practice|Relay in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/rtk-query|RTK Query]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql|GraphQL]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-queries-mutations|GraphQL Queries & Mutations]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]] — related coverage in the same cluster
+- [[wiki/api-protocols/graphql-basics|GraphQL Basics]]
+- [[wiki/frontend-frameworks/urql-practice|urql in Practice]]
+- [[wiki/frontend-frameworks/relay-practice|Relay in Practice]]
+- [[wiki/frontend-frameworks/rtk-query|RTK Query]]
+- [[wiki/api-protocols/graphql|GraphQL]]
+- [[wiki/api-protocols/graphql-queries-mutations|GraphQL Queries & Mutations]]
+- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]]

@@ -18,12 +18,12 @@ Microtasks are the queue drained after each task, before rendering: promise reso
 - Tradeoffs: microtasks give fast, ordered async continuations at the cost of starving rendering when overused; macrotasks (setTimeout, scheduler) yield to the browser; the mature pattern is microtasks for coordination and macrotasks for yielding heavy work.
 - Operational notes: watch for frozen paint with promise-heavy code, and use task scheduling APIs to yield.
 - RSIS3 relevance: the dashboard's reactive updates should avoid microtask storms so telemetry refreshes never delay paint.
+- Debouncing anti-pattern: using promise chains or queueMicrotask as a throttle still starves rendering because the drain never yields between scheduled items; a microtask-based debounce can postpone paint for an entire burst. Throttle with setTimeout, rAF, or scheduler.yield so the browser gets a rendering checkpoint, and keep promise chains in production code bounded in length.
 
 ## Related
-- [[wiki/web-platforms/javascript-event-loop|JavaScript Event Loop]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/macrotasks|Macrotasks]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/task-queues|Task Queues]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/microtasks|Microtasks]] — related coverage in the same cluster
-- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-apis|Web APIs]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-components|Web Components]] — related coverage in the same cluster
+- [[wiki/web-platforms/javascript-event-loop|JavaScript Event Loop]]
+- [[wiki/js-ts-ecosystem/macrotasks|Macrotasks]]
+- [[wiki/js-ts-ecosystem/task-queues|Task Queues]]
+- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]]
+- [[wiki/web-platforms/web-apis|Web APIs]]
+- [[wiki/web-platforms/web-components|Web Components]]

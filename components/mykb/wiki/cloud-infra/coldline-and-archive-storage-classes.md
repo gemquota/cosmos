@@ -18,12 +18,10 @@ Coldline (GCP), Archive (GCP), and the equivalent cold classes on AWS/Azure are 
 - Failure modes: restoring frequently from archive (retrieval fees dwarf the storage savings); lifecycle rules moving objects before the minimum duration (early-deletion charges); access patterns changing (a "cold" bucket that analytics reads weekly is over-tiered); and applications assuming instant access to archived objects.
 - Operational tradeoffs: tier by measured access frequency and restore RTO requirements; coldline is a safe default for quarterly-recovery data, archive for yearly; automation (lifecycle policies) beats manual tiering, and restore-time/cost should be tested annually, not assumed.
 - RSIS3/mykb relevance: the wiki's backup tiers are documented with access telemetry, so the loop's retention reviews move tiers based on real restore patterns.
-- Restore rehearsal: test archive restore end-to-end annually with a representative object; the retrieval path is the part of the design nobody verifies until it is urgent.
+- Restore rehearsal: test archive restore end-to-end annually with a representative object; the retrieval path is the part of the design nobody verifies until it is urgent. Include the e-discovery workflow in the rehearsal so legal deadlines are not the first test.
 
 ## Related
 - [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]]
 - [[wiki/devops-infra/storage-classes-and-provisioners|Storage Classes & Provisioners]]
 - [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

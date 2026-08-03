@@ -21,9 +21,9 @@ Staging-prod parity is the principle that the staging environment matches produc
 - RSIS3 relevance: cosmos's wiki and dashboard staging should mirror production — same build, same data shape — so a dashboard change is validated against the environment it will actually run in.
 
 ## Related
-- [[wiki/infrastructure/data-environments-dev-staging-prod|Data Environments Dev Staging Prod]] — related coverage in the same cluster
-- [[wiki/infrastructure/prod-like-data-environments|Prod Like Data Environments]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/infrastructure/data-environments-dev-staging-prod|Data Environments Dev Staging Prod]]
+- [[wiki/infrastructure/prod-like-data-environments|Prod Like Data Environments]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

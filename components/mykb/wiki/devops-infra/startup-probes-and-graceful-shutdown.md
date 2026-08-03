@@ -22,9 +22,9 @@ Startup probes protect slow-booting containers from premature restarts, and grac
 - RSIS3 relevance: the wiki daemon's startup (open the store, build indexes) and shutdown (flush state, drain requests) map directly to startup probes and preStop — a graceful daemon makes RSIS3's restarts safe.
 
 ## Related
-- [[wiki/infrastructure/startup-probes|Startup Probes]] — related coverage in the same cluster
-- [[wiki/infrastructure/graceful-termination|Graceful Termination]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/infrastructure/startup-probes|Startup Probes]]
+- [[wiki/infrastructure/graceful-termination|Graceful Termination]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -26,6 +26,3 @@ IPv6 link-local addresses (fe80::/10) are auto-generated, scope-limited addresse
 - [[wiki/cloud-infra/private-link-and-private-endpoints|Private Link & Private Endpoints]]
 - [[wiki/devops-infra/local-persistent-volumes|Local Persistent Volumes]]
 - [[wiki/os-shell/ip-addresses-and-subnetting|IP Addressing & Subnetting]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

@@ -17,7 +17,7 @@ IP and AI covers patents, copyright, trade secrets, and database rights across m
 - Concrete example: a lab patents a novel training method, keeps its data pipeline as a trade secret, licenses its model under terms that restrict redistribution, and documents the copyright status of outputs; a counterpart that documents nothing discovers its pipeline was exposed by a contractor.
 - Failure modes: assuming ownership where contracts are silent; trade-secret leakage through logs, support, or contractors; patent disclosures that forfeit secrecy; database rights ignored for curated corpora; jurisdictions disagreeing on AI inventorship and authorship.
 - Tradeoffs: aggressive IP protection (patents, secrecy) protects value at the cost of openness and disclosure; the alternative, open licensing, trades protection for community and adoption; the mature pattern is explicit IP mapping per asset class with documented decisions.
-- Operational notes: keep an IP register, document ownership per asset, and review contracts for AI clauses.
+- Operational notes: keep an IP register, document ownership per asset, and review contracts for AI clauses. Review the register on acquisition, contractor changes, and model releases, since each event shifts what is owned.
 - RSIS3 relevance: the bundle's provenance and licensing notes are IP hygiene — the same documentation discipline applied to its artifacts.
 
 - Document the IP posture per asset so ownership questions never depend on memory or a single person.
@@ -26,5 +26,5 @@ IP and AI covers patents, copyright, trade secrets, and database rights across m
 - [[wiki/decisions/patent-issues-ai|Patent Issues for AI]] — the patent slice
 - [[wiki/decisions/trade-secrets-ai|Trade Secrets in AI]] — the secrecy slice
 - [[wiki/decisions/model-licensing|Model Licensing]] — the contract layer
-- [[wiki/syntheses/knowledge-synthesis-pipelines|Knowledge Synthesis Pipelines]] — the full treatment of this theme
-- [[wiki/infrastructure/data-license-and-usage|Data License And Usage]] — existing graph context
+- [[wiki/syntheses/knowledge-synthesis-pipelines|Knowledge Synthesis Pipelines]]
+- [[wiki/infrastructure/data-license-and-usage|Data License And Usage]]

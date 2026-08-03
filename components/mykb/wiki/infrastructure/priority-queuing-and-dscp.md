@@ -19,8 +19,8 @@ Priority queuing and DSCP are the marking-and-servicing machinery of QoS: DSCP (
 - For mykb: the node is the marking/servicing pair in the QoS cluster — it connects traffic shaping, bufferbloat (the problem QoS manages), and bandwidth allocation (the policy QoS implements).
 
 ## Related
-- [[wiki/devops-infra/priority-classes-and-preemption|Priority Classes & Preemption]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
+- [[wiki/devops-infra/priority-classes-and-preemption|Priority Classes & Preemption]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

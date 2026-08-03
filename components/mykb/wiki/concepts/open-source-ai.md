@@ -24,5 +24,5 @@ Open source AI publishes source code and often weights under permissive licenses
 - [[wiki/concepts/open-source-safety|Open Source AI Safety]] — the safety debate
 - [[wiki/concepts/open-source-governance-ai|Open Source AI Governance]] — the governance
 - [[wiki/decisions/model-licensing|Model Licensing]] — the terms
-- [[wiki/concepts/compute-governance|Compute Governance]] — the full treatment of this theme
-- [[wiki/ai-ml/open-weights-models|Open Weights Models]] — existing graph context
+- [[wiki/concepts/compute-governance|Compute Governance]]
+- [[wiki/ai-ml/open-weights-models|Open Weights Models]]

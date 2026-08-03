@@ -20,13 +20,12 @@ Scroll behavior controls how scrolling happens — instant jumps vs smooth anima
 - RSIS3/mykb relevance: the wiki browser animates note navigation smoothly but respects prefers-reduced-motion, and the scroll-snap gallery in the OKF graph view is documented in this note.
 - Focus and accessibility: after programmatic scrolling, move focus to the target (or manage aria) so keyboard and screen-reader users land where the viewport went.
 - Performance: smooth scrolling across thousands of layout-affecting elements can jank; prefer scroll-margin-top on targets and transform-only scroll effects.
-- Scroll margins: add scroll-margin-top to sticky-header targets so anchored sections do not hide under the header; the visual offset is part of the scroll UX, not an afterthought.
+- Scroll margins: add scroll-margin-top to sticky-header targets so anchored sections do not hide under the header; the visual offset is part of the scroll UX, not an afterthought. Test scroll snap with keyboard focus, since snap containers can trap focus in unexpected places.
 
 ## Related
 - [[wiki/web-platforms/virtual-scrolling|Virtual Scrolling]]
 - [[wiki/web-platforms/scroll-snap|Scroll Snap]]
 - [[wiki/web-platforms/sticky-position|position: sticky]]
-- [[wiki/web-platforms/scroll-behavior|scroll-behavior CSS]]
 - [[wiki/web-platforms/css-layout|CSS Layout]]
 - [[wiki/web-platforms/web-accessibility|Web Accessibility]]
 - [[wiki/web-platforms/dom-manipulation|DOM Manipulation]]

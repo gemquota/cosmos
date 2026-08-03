@@ -20,8 +20,8 @@ A schema change is backward compatible if consumers running old code can read da
 - Operational notes: run compatibility checks in CI, keep the schema registry the source of truth, and document the versioning policy.
 - RSIS3 relevance: RSIS3's internal artifacts (pulses, checkpoints) evolve schemas — backward-compatible changes let old loops read new state during L2/L3 transitions.
 
-## Related
 
+## Related
 - [[wiki/data-storage/schema-evolution|Schema Evolution]] — schema evolution
 - [[wiki/data-storage/schema-migrations|Schema Migrations]] — migration practice
 - [[wiki/data-storage/additive-vs-breaking-changes|Additive vs Breaking Changes]] — the taxonomy

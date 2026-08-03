@@ -25,10 +25,10 @@ Operational tradeoffs: the durable fix is rejecting or encoding CR, LF, and NUL 
 RSIS3/mykb relevance: this is a canonical "validate at the boundary" rule for the wiki's redirect and logging code; encoding it here gives RSIS3's security reviews a concrete input list to test.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/response-splitting|Response Splitting]] — related coverage in the same cluster
-- [[wiki/api-protocols/content-sniffing|Content Sniffing Attacks]] — related coverage in the same cluster
-- [[wiki/api-protocols/template-injection|Template Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/command-injection|Command Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/ldap-injection|LDAP Injection]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/response-splitting|Response Splitting]]
+- [[wiki/api-protocols/content-sniffing|Content Sniffing Attacks]]
+- [[wiki/api-protocols/template-injection|Template Injection]]
+- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]]
+- [[wiki/security-auth/command-injection|Command Injection]]
+- [[wiki/security-auth/ldap-injection|LDAP Injection]]

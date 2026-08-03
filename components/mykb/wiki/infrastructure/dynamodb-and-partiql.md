@@ -21,8 +21,8 @@ DynamoDB is AWS's fully managed key-value and document database, built for singl
 - GSIs, on-demand capacity, and DAX caching support scaling; hot keys and scans are the classic pitfalls. GSIs trade storage and write cost for alternative read paths; on-demand capacity auto-scales (at a premium vs provisioned); DAX (a managed cache) absorbs hot read workloads. The classic failures: hot keys (one key absorbing disproportionate traffic, overwhelming its partition), scans that grow with table size, and GSI throttling when the base table's writes exceed the index's capacity.
 - For mykb: the node anchors the AWS NoSQL branch — key-value stores, consistent hashing, and partition-pruning concepts connect to this concrete implementation.
 
-## Related
 
+## Related
 - [[wiki/data-storage/key-value-stores|Key-Value Stores]] — key-value fundamentals
 - [[wiki/data-storage/consistent-hashing|Consistent Hashing]] — distribution under the hood
 - [[wiki/data-storage/partition-pruning-and-zone-maps|Partition Pruning And Zone Maps]] — querying by key

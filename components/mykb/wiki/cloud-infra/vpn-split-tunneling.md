@@ -18,7 +18,7 @@ Split tunneling routes only specified traffic through the VPN while the rest use
 - Failure modes: DNS leaks (queries for internal names going to public resolvers); split-route gaps (a new internal subnet not in the list breaks access); full-tunnel performance complaints (all traffic hairpins through HQ); and policy bypass when users can toggle tunneling or the client is not enforced.
 - Operational tradeoffs: split tunneling is the UX and performance winner for general use; full tunneling is the compliance winner where inspection is mandatory. The middle path: split by default with enforced full-tunnel profiles for sensitive roles, and DNS explicitly scoped in both.
 - RSIS3/mykb relevance: the wiki's admin VPN splits out only management ranges with scoped DNS; this note records the route/DNS policy the loop checks when access issues surface.
-- Policy enforcement: manage split/full tunneling through the client configuration and prevent user overrides where compliance requires inspection; a toggle is a policy bypass.
+- Policy enforcement: manage split/full tunneling through the client configuration and prevent user overrides where compliance requires inspection; a toggle is a policy bypass. Document the split route list wherever it changes, since a missing subnet is an outage that looks like DNS, and verify the client route table after every profile update.
 
 ## Related
 - [[wiki/cloud-infra/vpn-technologies|VPN Technologies]]
@@ -26,5 +26,3 @@ Split tunneling routes only specified traffic through the VPN while the rest use
 - [[wiki/cloud-infra/client-vpn-profile|Client VPN Profiles]]
 - [[wiki/cloud-infra/vpn-tunnels|VPN Tunnels]]
 - [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

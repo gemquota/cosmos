@@ -22,9 +22,9 @@ HAProxy and NGINX are the two workhorse reverse proxies: HAProxy is a purpose-bu
 - RSIS3 relevance: whichever proxy fronts the dashboard or API, its health checks and timeouts define how RSIS3's observability sees availability — a bad check hides real failures.
 
 ## Related
-- [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]] — related coverage in the same cluster
-- [[wiki/devops-infra/nginx|Nginx]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]]
+- [[wiki/devops-infra/nginx|Nginx]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

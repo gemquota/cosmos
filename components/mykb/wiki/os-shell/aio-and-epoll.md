@@ -19,8 +19,8 @@ epoll and AIO are the Linux kernel's two answers to the same problem — keeping
 - Operational tradeoffs: epoll is the right tool for network I/O and mixed workloads — simple, robust, and universally applicable — while native AIO only pays off for high-throughput, aligned, O_DIRECT storage workloads where the synchronous syscall cost and cache behavior dominate. Modern guidance: prefer io_uring, which unifies both models (readiness and completion, buffered and direct), or use epoll for sockets and libaio only where benchmarks justify it. RSIS3/mykb relevance: the daemon's telemetry ingestion and graph rebuilds are I/O-bound; choosing completion-based I/O with proper alignment mirrors the loop hygiene rule that batch work should overlap with compute rather than block it.
 
 ## Related
-- [[wiki/os-shell/select-poll-epoll-comparison|select, poll & epoll]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/os-shell/select-poll-epoll-comparison|select, poll & epoll]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

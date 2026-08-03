@@ -73,7 +73,7 @@ Agent session → hooks (post-tool-use.py, session-stop.py)
 
 ## 2. Content Quality
 
-### Word-Count Histogram (5,342 content pages)
+### Word-Count Histogram (5,343 content pages)
 
 | Bucket | Count |
 |--------|-------|
@@ -81,9 +81,9 @@ Agent session → hooks (post-tool-use.py, session-stop.py)
 | 50-99 | 877 |
 | 100-199 | 1,545 |
 | 200-299 | 1,162 |
-| 300-399 | 1,129 |
-| 400-499 | 390 |
-| 500-749 | 148 |
+| 300-399 | 1,198 |
+| 400-499 | 414 |
+| 500-749 | 56 |
 | 750-999 | 0 |
 | 1000+ | 4 |
 
@@ -91,17 +91,17 @@ Agent session → hooks (post-tool-use.py, session-stop.py)
 
 | Threshold | Files ≥ threshold |
 |-----------|-------------------|
-| 50 | 5,255 |
-| 100 | 4,378 |
-| 150 | 3,251 |
-| 200 | 2,833 |
-| 300 | **1,671** |
-| 400 | **542** |
-| 500 | **152** |
+| 50 | 5,256 |
+| 100 | 4,379 |
+| 150 | 3,252 |
+| 200 | 2,834 |
+| 300 | **1,672** |
+| 400 | **474** |
+| 500 | **60** |
 | 750 | 4 |
 | 1000 | 4 |
 
-**Totals:** 1,194,331 words · median 210/file · mean 223.6/file · 30,729 links · 114 zero-link files (2.1%)
+**Totals:** 1,178,655 words · median 210/file · mean 220.6/file · 30,452 links · 117 zero-link files (2.2%)
 
 ### Status Distribution
 
@@ -110,7 +110,7 @@ Agent session → hooks (post-tool-use.py, session-stop.py)
 | stub | 1,779 |
 | growing | 3,104 |
 | (none) | 445 |
-| stable | 10 |
+| stable | 11 |
 | completed / draft / active / seed | 1 each |
 
 ### Type Distribution
@@ -145,6 +145,7 @@ agents(168), design(145), quality(139), reliability(127)
 - **Navigation**: root `wiki/index.md` "Wiki Index — Where to Look" (13 families + lookup table); 99 uniform `index.md` pages generated for every folder (5,338 pages listed)
 - **Graph resolver fix**: exact-path wikilink resolution preferred over basename fallback in `build_graph.py`
 - **Stub promotion wave (1,098)**: every stub ≥120 body words promoted to 320+ words (median 391) by five parallel worker batches — tiers moved to 1,671/542/152; zero new broken links (diffed against baseline); 9 concepts files' stripped wikilinks restored
+- **Adversarial review pass 1 + cleanup**: 5 parallel reviewers scored the wave 57–79/100; cleanup removed 74 self-links, 2,395 boilerplate annotations, 134 syntheses-trailer links, 5 truncated + 5 dead links, fixed 6 factual errors, renamed 1 file, corrected 34 syntheses types, and topped 62 sub-320 files back up
 - Enrichment tooling (`enrich_links.py`, `build_index_pages.py`) for progressive enrichment
 
 ---
@@ -154,8 +155,8 @@ agents(168), design(145), quality(139), reliability(127)
 | Metric | Previous Audit | Current Audit |
 |--------|---------------|---------------|
 | Nodes | 2,340 | **5,443** |
-| Edges | 14,793 | **36,151** |
-| Average degree | 12.6 | **13.3** |
+| Edges | 14,793 | **35,964** |
+| Average degree | 12.6 | **13.2** |
 | Isolated nodes | 0 | **0** |
 | Broken wikilinks | 0 | **0** |
 
@@ -169,8 +170,8 @@ agents(168), design(145), quality(139), reliability(127)
 
 | Metric | Value |
 |--------|-------|
-| Concepts embedded | 6,723 (wiki + raw + ops) |
-| Cross-links | 30,729+ |
+| Concepts embedded | 6,724 (wiki + raw + ops) |
+| Cross-links | 30,452+ |
 | Views | graph, index, tags, catalog, files, stats |
 
 ### Top Hubs (degree)
@@ -304,8 +305,8 @@ The temporal engine (`temporal_engine.py`) wraps GitPython for automatic per-fil
 
 | Priority | Action | Status |
 |----------|--------|--------|
-| **P0** | Rebuild graph with tag/category edges | ✅ Done — 36,151 edges, 0 isolated |
-| **P1** | Enrich thin entities to 300+ words | 🔄 1,671 articles ≥300 words; 1,779 stubs remain |
+| **P0** | Rebuild graph with tag/category edges | ✅ Done — 35,964 edges, 0 isolated |
+| **P1** | Enrich thin entities to 300+ words | 🔄 1,672 articles ≥300 words; 1,779 stubs remain |
 | **P2** | Archive pointless stubs | ✅ Done — 858 archived total |
 | **P3** | Repair dead links | ✅ Done — 248 wikilinks + 797 markdown links + 5 index repoints |
 | **P4** | Stats hub with charts + tooltips | ✅ Done — 9 cards, 13+ charts |
@@ -322,15 +323,15 @@ The temporal engine (`temporal_engine.py`) wraps GitPython for automatic per-fil
 
 | Category | Score | Notes |
 |----------|-------|-------|
-| Content quality | 94/100 | 5,342 pages, 1,194K words, 1,671 full articles (≥300 words), 2.1% zero-link |
-| Graph connectivity | 98/100 | 36,151 edges, avg degree 13.3, 0 isolated, 0 broken links |
+| Content quality | 94/100 | 5,343 pages, 1,179K words, 1,672 full articles (≥300 words), 2.2% zero-link |
+| Graph connectivity | 98/100 | 35,964 edges, avg degree 13.2, 0 isolated, 0 broken links |
 | Search | 86/100 | Hybrid BM25+TF-IDF+RRF; runtime index; reranker removed |
 | Dashboard | 98/100 | 5 tabs + stats hub + OKF graph + "Where to Look" navigation (99 indexes) |
 | Code quality | 92/100 | Python-only, automated snapshot pipeline, resolver fix; stale config, no tests |
 | Security | 96/100 | No injection risks, read-only analysis, path guards |
 
 ### Key Strengths
-- 5,342 content pages and 1,194K words after the stub promotion wave (1,098 → growing)
+- 5,343 content pages and 1,179K words after the adversarial-review cleanup (self-links, boilerplate, dead links removed)
 - Link-clean wiki content (0 broken wikilinks, 0 broken markdown links)
 - Fully nested navigation: "Where to Look" root index + 99 folder index pages, 0 isolated graph nodes
 - Automated snapshot pipeline: stats hub, graph, OKF render, files index

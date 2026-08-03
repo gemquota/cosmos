@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Security Advisories"
 description: "Official notices about AI security vulnerabilities"
 tags: ["advisories", "security", "communication"]

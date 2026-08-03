@@ -21,10 +21,10 @@ Contract simulation environments emulate the external services a system depends 
 - RSIS3 relevance: RSIS3's loops calling external LLM APIs can use simulated providers for deterministic eval runs — same prompts, scripted failures — reserving live calls for acceptance.
 
 ## Related
-- [[wiki/shell-environment/shell-environments-and-rc-files|Shell Environments & RC Files]] — related coverage in the same cluster
-- [[wiki/devops-infra/contract-testing-deployments|Contract Testing Deployments]] — related coverage in the same cluster
-- [[wiki/devops-infra/ephemeral-environments|Ephemeral Environments]] — related coverage in the same cluster
-- [[wiki/cloud-infra/categories/aws-cloud/particle-simulation-2|Particle Simulation]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/shell-environment/shell-environments-and-rc-files|Shell Environments & RC Files]]
+- [[wiki/devops-infra/contract-testing-deployments|Contract Testing Deployments]]
+- [[wiki/devops-infra/ephemeral-environments|Ephemeral Environments]]
+- [[wiki/cloud-infra/categories/aws-cloud/particle-simulation-2|Particle Simulation]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

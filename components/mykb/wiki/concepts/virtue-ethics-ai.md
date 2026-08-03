@@ -24,5 +24,5 @@ Virtue-ethical AI asks what dispositions a system should embody: honesty, care, 
 - [[wiki/agent-systems/helpful-ai|Helpful AI]] — another virtue
 - [[wiki/agent-systems/hha-standards|HHH Standards]] — the virtue bundle
 - [[wiki/concepts/deontology-ai|Deontology for AI]] — the rule contrast
-- [[wiki/concepts/value-specification|Value Specification]] — the full treatment of this theme
-- [[wiki/concepts/utility-functions|Utility Functions]] — existing graph context
+- [[wiki/concepts/value-specification|Value Specification]]
+- [[wiki/concepts/utility-functions|Utility Functions]]

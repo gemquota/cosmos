@@ -22,9 +22,9 @@ Node affinity and taints/tolerations control where pods land: affinity expresses
 - RSIS3 relevance: if cosmos nodes differ (GPU for embeddings, fast disk for the store), affinity and taints keep workloads on the right hardware — and RSIS3's monitoring should flag pending pods caused by placement rules.
 
 ## Related
-- [[wiki/devops-infra/node-storage-architecture|Node Storage Architecture]] — related coverage in the same cluster
-- [[wiki/infrastructure/node-pools|Node Pools]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/node-storage-architecture|Node Storage Architecture]]
+- [[wiki/infrastructure/node-pools|Node Pools]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -19,8 +19,8 @@ Interrupt handlers run in a restricted context where sleeping is forbidden, so r
 - Operational tradeoffs: the tradeoff is latency versus safety: interrupt context is fast but severely restricted; softirqs are faster than workqueues but cannot sleep; workqueues are flexible but add scheduling latency and context-switch cost. Modern guidance: keep handlers minimal, use threaded IRQs or workqueues for anything nontrivial, and use per-CPU or bound workqueues where cache locality matters. RSIS3/mykb relevance: the top-half/bottom-half split is the kernel's version of fast-path/slow-path decomposition — handle the urgent acknowledgment inline, defer the expensive processing to a supervised queue, the same structure RSIS3 uses for L1 (fast corrections) versus L2/L3 (deep improvements).
 
 ## Related
-- [[wiki/os-shell/shell-trap-handlers|Trap Handlers]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/os-shell/shell-trap-handlers|Trap Handlers]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

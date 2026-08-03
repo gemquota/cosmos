@@ -18,12 +18,13 @@ SWC is a Rust-based TypeScript and JavaScript transpiler that powers many bundle
 - Tradeoffs: SWC trades Babel's mature plugin ecosystem for order-of-magnitude speed — for most projects the transform set is equivalent; the alternative, Babel, is slower and more extensible; the mature pattern is SWC for build speed with type checking handled separately.
 - Operational notes: run type checks separately, verify transforms on a representative codebase, and pin versions.
 - RSIS3 relevance: the dashboard's TS build benefits from SWC-speed transforms — with tsc --noEmit as the type gate.
+- Compatibility: SWC implements JavaScript proposals at its own pace, so verify decorators, pipeline operators, and stage-3 syntax against your actual targets before adopting them; run a conformance pass on the real module graph, keep experimental transforms pinned to the SWC version, and pair the build with tsc --noEmit since SWC strips types without checking them.
 
 ## Related
-- [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/esbuild-practice|esbuild in Practice]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/rollup-practice|Rollup in Practice]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/vite-practice|Vite in Practice]] — related coverage in the same cluster
-- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/hot-reload|Hot Reload]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]]
+- [[wiki/js-ts-ecosystem/esbuild-practice|esbuild in Practice]]
+- [[wiki/js-ts-ecosystem/rollup-practice|Rollup in Practice]]
+- [[wiki/js-ts-ecosystem/vite-practice|Vite in Practice]]
+- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]]
+- [[wiki/frontend-frameworks/hot-reload|Hot Reload]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

@@ -19,10 +19,10 @@ XState turns statecharts into executable, inspectable models: a machine is a pla
 - RSIS3/mykb relevance: XState is the reference implementation of RSIS3's own loop semantics — declared states, guarded transitions, entry actions, and spawned subprocesses — and the dashboard could reuse the same machine definitions to reflect loop status accurately.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/finite-state-uis|Finite State UIs]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/immutable-state|Immutable State]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/state-machines-web|State Machines on the Web]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/software-engineering/reactive-programming|Reactive Programming]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/finite-state-uis|Finite State UIs]]
+- [[wiki/frontend-frameworks/immutable-state|Immutable State]]
+- [[wiki/frontend-frameworks/state-machines-web|State Machines on the Web]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/software-engineering/reactive-programming|Reactive Programming]]

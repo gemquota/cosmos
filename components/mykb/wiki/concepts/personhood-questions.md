@@ -24,5 +24,5 @@ Personhood questions ask whether AI systems could qualify as persons — beings 
 - [[wiki/concepts/rights-for-ai|Rights for AI]] — the rights implications
 - [[wiki/concepts/moral-agency|Moral Agency]] — the agency side
 - [[wiki/agent-systems/accountability-ai|AI Accountability]] — the liability side
-- [[wiki/concepts/value-specification|Value Specification]] — the full treatment of this theme
-- [[wiki/concepts/utility-functions|Utility Functions]] — existing graph context
+- [[wiki/concepts/value-specification|Value Specification]]
+- [[wiki/concepts/utility-functions|Utility Functions]]

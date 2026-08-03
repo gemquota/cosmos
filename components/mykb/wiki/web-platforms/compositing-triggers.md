@@ -10,7 +10,6 @@ status: "growing"
 
 ## Summary
 
-
 Compositing is the final browser stage where painted layers are merged. Animating only compositor-friendly properties — transform and opacity — keeps frames off the main thread and avoids repaint cost per frame.
 
 ## Details

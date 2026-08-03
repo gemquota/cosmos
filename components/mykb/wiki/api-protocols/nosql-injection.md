@@ -25,10 +25,10 @@ Operational tradeoffs: the durable fix is to treat query input as data: build qu
 RSIS3/mykb relevance: the wiki's search and graph queries should reject $-prefixed operator injection; documenting the boundary rule gives RSIS3's security checks a concrete input test.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/second-order-injection|Second-Order Injection]] — related coverage in the same cluster
-- [[wiki/api-protocols/blind-injection|Blind Injection]] — related coverage in the same cluster
-- [[wiki/api-protocols/header-injection|Header Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/command-injection|Command Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/ldap-injection|LDAP Injection]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/second-order-injection|Second-Order Injection]]
+- [[wiki/api-protocols/blind-injection|Blind Injection]]
+- [[wiki/api-protocols/header-injection|Header Injection]]
+- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]]
+- [[wiki/security-auth/command-injection|Command Injection]]
+- [[wiki/security-auth/ldap-injection|LDAP Injection]]

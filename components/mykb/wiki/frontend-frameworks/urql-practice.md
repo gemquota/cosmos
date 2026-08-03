@@ -19,10 +19,10 @@ urql is a lightweight GraphQL client built on a pipeline of "exchanges" — plug
 - RSIS3/mykb relevance: the exchange pipeline is middleware discipline — auth, caching, retry, and logging as composable stages over one operation stream — the same layering RSIS3 applies to loop telemetry handling, and the cache choice mirrors the tradeoff between document-level and entity-level knowledge in MyKB's graph views.
 
 ## Related
-- [[wiki/api-protocols/graphql-basics|GraphQL Basics]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/relay-practice|Relay in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/rtk-query|RTK Query]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/apollo-client|Apollo Client]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql|GraphQL]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-queries-mutations|GraphQL Queries & Mutations]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]] — related coverage in the same cluster
+- [[wiki/api-protocols/graphql-basics|GraphQL Basics]]
+- [[wiki/frontend-frameworks/relay-practice|Relay in Practice]]
+- [[wiki/frontend-frameworks/rtk-query|RTK Query]]
+- [[wiki/frontend-frameworks/apollo-client|Apollo Client]]
+- [[wiki/api-protocols/graphql|GraphQL]]
+- [[wiki/api-protocols/graphql-queries-mutations|GraphQL Queries & Mutations]]
+- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]]

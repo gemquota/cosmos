@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Bug Bounties for AI"
 description: "Rewarding external researchers for finding AI vulnerabilities"
 tags: ["bug-bounty", "incentives", "security"]
@@ -26,5 +26,5 @@ Bug bounties pay researchers for finding and reporting vulnerabilities, includin
 - [[wiki/syntheses/external-red-teams|External Red Teams]] — the structured form
 - [[wiki/syntheses/responsible-disclosure-ai|Responsible Disclosure for AI]] — the norms
 - [[wiki/syntheses/security-advisories-ai|Security Advisories]] — the response
-- [[wiki/concepts/incident-driven-improvement|Incident-Driven Improvement]] — the full treatment of this theme
-- [[wiki/security-auth/bug-bounty|Bug Bounty]] — existing graph context
+- [[wiki/concepts/incident-driven-improvement|Incident-Driven Improvement]]
+- [[wiki/security-auth/bug-bounty|Bug Bounty]]

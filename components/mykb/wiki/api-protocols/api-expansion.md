@@ -25,10 +25,10 @@ Operational tradeoffs: expansion trades response size and server work for round 
 RSIS3/mykb relevance: the dashboard's knowledge-graph views are effectively an expanded resource (node plus neighbors); documenting the expand contract for the graph API keeps future L2 loop tooling from over-fetching.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/sparse-fieldsets|Sparse Fieldsets]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-pagination|API Pagination]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-filtering|API Filtering]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-query-parameters|REST Query Parameters]] — related coverage in the same cluster
-- [[wiki/api-protocols/offset-pagination|Offset Pagination]] — related coverage in the same cluster
-- [[wiki/api-protocols/cursor-pagination|Cursor Pagination]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/sparse-fieldsets|Sparse Fieldsets]]
+- [[wiki/api-protocols/api-pagination|API Pagination]]
+- [[wiki/api-protocols/api-filtering|API Filtering]]
+- [[wiki/api-protocols/rest-query-parameters|REST Query Parameters]]
+- [[wiki/api-protocols/offset-pagination|Offset Pagination]]
+- [[wiki/api-protocols/cursor-pagination|Cursor Pagination]]

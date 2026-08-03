@@ -19,10 +19,10 @@ Refs are React's escape hatch to the imperative world: a `useRef()` object holds
 - RSIS3/mykb relevance: refs are a controlled escape hatch — imperative access exactly where it is needed, bounded and explicit; RSIS3 applies the same principle to loop hooks that touch external systems, keeping imperative operations isolated instead of scattering them through declarative flows.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/portals-practice|Portals in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/controlled-components|Controlled Components]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/uncontrolled-components|Uncontrolled Components]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-components|Web Components]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/portals-practice|Portals in Practice]]
+- [[wiki/frontend-frameworks/controlled-components|Controlled Components]]
+- [[wiki/frontend-frameworks/uncontrolled-components|Uncontrolled Components]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/web-components|Web Components]]
+- [[wiki/web-platforms/state-management|State Management]]

@@ -21,8 +21,8 @@ Bug bounty programs invite external researchers to find vulnerabilities in excha
 - Operational notes: keep scope current, staff triage, and publish metrics so the program stays credible.
 - RSIS3 relevance: for mykb, a bounty-style disclosure policy with clear scope would fit a system holding sensitive memory data — the same coordination discipline for external reports.
 
-## Related
 
+## Related
 - [[wiki/security-auth/responsible-disclosure|Responsible Disclosure]] — the disclosure policy bounties rest on
 - [[wiki/security-auth/cve-disclosures|CVE Disclosures]] — published findings become CVEs
 - [[wiki/security-auth/security-training|Security Training]] — internal testing complements bounties

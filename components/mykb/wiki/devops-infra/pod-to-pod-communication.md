@@ -21,9 +21,9 @@ Pod-to-pod communication in Kubernetes flows through the cluster network: pods g
 - RSIS3 relevance: when RSIS3's loops call each other across pods, understanding the network path (CNI, Service, policy) explains intermittent failures that application logs miss.
 
 ## Related
-- [[wiki/devops-infra/pod-disruption-budgets|Pod Disruption Budgets]] — related coverage in the same cluster
-- [[wiki/infrastructure/pod-lifecycle|Pod Lifecycle]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/pod-disruption-budgets|Pod Disruption Budgets]]
+- [[wiki/infrastructure/pod-lifecycle|Pod Lifecycle]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

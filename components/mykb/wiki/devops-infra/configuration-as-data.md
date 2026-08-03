@@ -21,9 +21,9 @@ Configuration as data treats configuration as versionable, reviewable, machine-v
 - RSIS3 relevance: RSIS3's loop parameters and dashboard config are exactly this — storing them as versioned data lets L4/L5 experiments review, roll back, and reproduce parameter changes.
 
 ## Related
-- [[wiki/devops-infra/infrastructure-as-code-revisited|Infrastructure as Code]] — related coverage in the same cluster
-- [[wiki/devops-infra/configuration-management-revisited|Configuration Management]] — related coverage in the same cluster
-- [[wiki/devops-infra/envoy-data-plane|Envoy Data Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]] — related coverage in the same cluster
+- [[wiki/devops-infra/infrastructure-as-code-revisited|Infrastructure as Code]]
+- [[wiki/devops-infra/configuration-management-revisited|Configuration Management]]
+- [[wiki/devops-infra/envoy-data-plane|Envoy Data Plane]]
+- [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

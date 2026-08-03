@@ -22,10 +22,10 @@ SSH tunneling carries TCP traffic inside an encrypted SSH session, letting you r
 - RSIS3/mykb relevance: when loops need temporary encrypted access paths, this node reminds retrievals that tunnels are ephemeral transport, not durable architecture.
 
 ## Related
-- [[wiki/os-shell/nat-and-port-forwarding|NAT & Port Forwarding]] — related coverage in the same cluster
-- [[wiki/cloud-infra/vpn-split-tunneling|VPN Split Tunneling]] — related coverage in the same cluster
-- [[wiki/infrastructure/ssh-key-management|SSH Key Management]] — related coverage in the same cluster
-- [[wiki/os-shell/nmap-and-port-scanning|nmap & Port Scanning]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
+- [[wiki/os-shell/nat-and-port-forwarding|NAT & Port Forwarding]]
+- [[wiki/cloud-infra/vpn-split-tunneling|VPN Split Tunneling]]
+- [[wiki/infrastructure/ssh-key-management|SSH Key Management]]
+- [[wiki/os-shell/nmap-and-port-scanning|nmap & Port Scanning]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -24,5 +24,5 @@ Dictionary learning finds a sparse decomposition of a vector space: each activat
 - [[wiki/concepts/superposition-research|Superposition Research]] — why decomposition is needed
 - [[wiki/concepts/linear-probes|Linear Probes]] — the simpler cousin
 - [[wiki/concepts/polysemanticity|Polysemanticity]] — the motivation
-- [[wiki/agent-systems/introspection-ai|Introspection in AI]] — the full treatment of this theme
-- [[wiki/ai-ml/sparse-autoencoders|Sparse Autoencoders]] — existing graph context
+- [[wiki/agent-systems/introspection-ai|Introspection in AI]]
+- [[wiki/ai-ml/sparse-autoencoders|Sparse Autoencoders]]

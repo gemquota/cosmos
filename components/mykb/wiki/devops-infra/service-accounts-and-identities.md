@@ -22,10 +22,10 @@ Service accounts and workload identities give machine workloads an identity for 
 - RSIS3 relevance: cosmos's daemon and dashboard need identities, not passwords — workload identity keeps cloud access short-lived and scoped, matching the least-privilege discipline RSIS3 applies to its own state.
 
 ## Related
-- [[wiki/devops-infra/service-mesh-sidecars|Service Mesh Sidecars]] — related coverage in the same cluster
-- [[wiki/devops-infra/service-meshes-istio-linkerd|Service Meshes: Istio & Linkerd]] — related coverage in the same cluster
-- [[wiki/cloud-infra/service-discovery-dns-based|DNS-Based Service Discovery]] — related coverage in the same cluster
-- [[wiki/cloud-infra/function-as-a-service|Function-as-a-Service]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/service-mesh-sidecars|Service Mesh Sidecars]]
+- [[wiki/devops-infra/service-meshes-istio-linkerd|Service Meshes: Istio & Linkerd]]
+- [[wiki/cloud-infra/service-discovery-dns-based|DNS-Based Service Discovery]]
+- [[wiki/cloud-infra/function-as-a-service|Function-as-a-Service]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

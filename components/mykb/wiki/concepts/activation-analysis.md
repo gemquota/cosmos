@@ -24,5 +24,5 @@ Activation analysis inspects the values flowing through a model during a forward
 - [[wiki/concepts/probing-classifiers|Probing Classifiers]] — reading activations
 - [[wiki/concepts/neuron-interpretation|Neuron Interpretation]] — unit-level view
 - [[wiki/concepts/transformer-lens|TransformerLens]] — the tooling
-- [[wiki/agent-systems/introspection-ai|Introspection in AI]] — the full treatment of this theme
-- [[wiki/ai-ml/activation-engineering|Activation Engineering]] — existing graph context
+- [[wiki/agent-systems/introspection-ai|Introspection in AI]]
+- [[wiki/ai-ml/activation-engineering|Activation Engineering]]

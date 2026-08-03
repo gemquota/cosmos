@@ -21,9 +21,9 @@ Package signing and repository management secure the software supply chain below
 - RSIS3 relevance: the tools cosmos installs (python packages, node modules) are supply-chain inputs — signed, pinned, mirrored dependencies make loop runs reproducible and tamper-evident.
 
 ## Related
-- [[wiki/devops-infra/artifact-repositories-revisited|Artifact Repositories]] — related coverage in the same cluster
-- [[wiki/os-shell/package-managers-system-level|System-Level Package Managers]] — related coverage in the same cluster
-- [[wiki/devops-infra/image-signing-and-notary|Image Signing & Notary]] — related coverage in the same cluster
-- [[wiki/infrastructure/artifact-repositories|Artifact Repositories]] — related coverage in the same cluster
+- [[wiki/devops-infra/artifact-repositories-revisited|Artifact Repositories]]
+- [[wiki/os-shell/package-managers-system-level|System-Level Package Managers]]
+- [[wiki/devops-infra/image-signing-and-notary|Image Signing & Notary]]
+- [[wiki/infrastructure/artifact-repositories|Artifact Repositories]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

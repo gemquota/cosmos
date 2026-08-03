@@ -19,10 +19,10 @@ Webhook delivery is the mechanism by which a server pushes an HTTP request to a 
 - RSIS3/mykb relevance: RSIS3's loop events (pulse generation, checkpoint writes) are natural webhook subjects; modeling them as at-least-once deliveries with dedupe keys gives the system the same auditability and replay guarantees MyKB expects from its own event capture hooks.
 
 ## Related
-- [[wiki/api-protocols/webhooks-practice|Webhooks in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhook-retries|Webhook Retries]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhook-signatures|Webhook Signatures]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhook-events|Webhook Events]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhooks|Webhooks]] — related coverage in the same cluster
-- [[wiki/api-protocols/at-least-once-delivery|At-Least-Once Delivery]] — related coverage in the same cluster
-- [[wiki/api-protocols/retry-backoff|Retry & Backoff]] — related coverage in the same cluster
+- [[wiki/api-protocols/webhooks-practice|Webhooks in Practice]]
+- [[wiki/api-protocols/webhook-retries|Webhook Retries]]
+- [[wiki/api-protocols/webhook-signatures|Webhook Signatures]]
+- [[wiki/api-protocols/webhook-events|Webhook Events]]
+- [[wiki/api-protocols/webhooks|Webhooks]]
+- [[wiki/api-protocols/at-least-once-delivery|At-Least-Once Delivery]]
+- [[wiki/api-protocols/retry-backoff|Retry & Backoff]]

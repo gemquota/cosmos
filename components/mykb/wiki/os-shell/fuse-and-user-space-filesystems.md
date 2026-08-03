@@ -19,9 +19,9 @@ FUSE (Filesystem in Userspace) is a Linux kernel module that lets a normal users
 - Operational tradeoffs: FUSE's value is turning arbitrary backends into POSIX-compatible interfaces with zero client changes; the cost is a performance ceiling and a daemon that must be supervised like a service. The practice rules: enable kernel-side caching aggressively for read-heavy workloads, monitor the daemon's health (a hung FUSE process is a hung mount), prefer `direct_io` only when coherence demands it, and never expose a FUSE mount with `allow_other` on shared systems without authentication. RSIS3/mykb relevance: mounting the wiki corpus or search index via FUSE would let existing shell tooling treat the knowledge base as files; the tradeoff — POSIX convenience versus daemon reliability — is the same one RSIS3 weighs when wrapping services behind familiar interfaces.
 
 ## Related
-- [[wiki/os-shell/journaling-filesystems|Journaling Filesystems]] — related coverage in the same cluster
-- [[wiki/os-shell/copy-on-write-filesystems|Copy-on-Write Filesystems]] — related coverage in the same cluster
-- [[wiki/os-shell/disk-partitioning-and-filesystems|Disk Partitioning & Filesystems]] — related coverage in the same cluster
-- [[wiki/os-shell/immutable-filesystems|Immutable Filesystems]] — related coverage in the same cluster
+- [[wiki/os-shell/journaling-filesystems|Journaling Filesystems]]
+- [[wiki/os-shell/copy-on-write-filesystems|Copy-on-Write Filesystems]]
+- [[wiki/os-shell/disk-partitioning-and-filesystems|Disk Partitioning & Filesystems]]
+- [[wiki/os-shell/immutable-filesystems|Immutable Filesystems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

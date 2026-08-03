@@ -24,5 +24,5 @@ Rights-for-AI debates consider whether systems with sentience or agency should h
 - [[wiki/concepts/moral-patiency|Moral Patiency]] — the ethical layer
 - [[wiki/concepts/suffering-risk|Suffering Risk]] — the harm side
 - [[wiki/concepts/moral-status-questions|Moral Status Questions]] — the boundary
-- [[wiki/concepts/value-specification|Value Specification]] — the full treatment of this theme
-- [[wiki/concepts/utility-functions|Utility Functions]] — existing graph context
+- [[wiki/concepts/value-specification|Value Specification]]
+- [[wiki/concepts/utility-functions|Utility Functions]]

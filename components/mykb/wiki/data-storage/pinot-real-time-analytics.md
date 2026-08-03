@@ -23,7 +23,7 @@ A stub to be expanded into a full article; frames the concept and open questions
 ## Related
 
 - [[wiki/data-storage/stream-processing-engines|Stream Processing Engines]] — streaming ingestion path
-- [[wiki/data-storage/clickhouse-vs-druid-pinot-druid-architecture|Clickhouse Vs Druid Pinot Druid Architecture]] — engine comparison
+- [[wiki/data-storage/clickhouse-vs-druid-vs-pinot|Clickhouse Vs Druid Pinot Druid Architecture]] — engine comparison
 - [[wiki/data-storage/real-time-dashboards-and-alerts|Real Time Dashboards And Alerts]] — typical front end
 - [[wiki/data-storage/streaming-data-pipelines|Streaming Data Pipelines]] — feeding Pinot
 - [[wiki/data-storage/data-engineering-fundamentals|Data Engineering Fundamentals]] — core data engineering concepts

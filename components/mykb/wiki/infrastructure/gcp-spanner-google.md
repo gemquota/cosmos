@@ -21,8 +21,8 @@ Spanner is Google's globally distributed relational database: it combines the SQ
 - Schema changes and hotspots need careful key design; it is the flagship NewSQL managed service. Spanner made schema changes online (safe, non-blocking DDL) and handles huge scale, but its operational failure modes are all in the data model: bad key design creates hotspots and slow scans, and unbounded secondary-index churn can throttle the table.
 - For mykb: the node anchors the distributed-SQL branch — distributed transactions, TrueTime, and consistency semantics connect to this concrete implementation.
 
-## Related
 
+## Related
 - [[wiki/data-storage/distributed-transactions|Distributed Transactions]] — global transactions
 - [[wiki/data-storage/hybrid-logical-clocks-and-true-time|Hybrid Logical Clocks And True Time]] — TrueTime underpins consistency
 - [[wiki/data-storage/causal-consistency-and-strong-consistency|Causal Consistency And Strong Consistency]] — consistency guarantees

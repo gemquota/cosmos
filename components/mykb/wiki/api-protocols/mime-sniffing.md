@@ -25,10 +25,10 @@ Operational tradeoffs: nosniff is zero-cost and should be universal; the compani
 RSIS3/mykb relevance: the wiki's snapshot hosting must send nosniff and accurate types; documenting the header set gives RSIS3's deployment checks a fixed assertion.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/nosniff-header|X-Content-Type-Options nosniff]] — related coverage in the same cluster
-- [[wiki/api-protocols/hsts-practice|HSTS in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/csp-headers|CSP Headers]] — related coverage in the same cluster
-- [[wiki/security-auth/security-headers|Security Headers]] — related coverage in the same cluster
-- [[wiki/security-auth/content-security-policy|Content Security Policy]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/nosniff-header|X-Content-Type-Options nosniff]]
+- [[wiki/api-protocols/hsts-practice|HSTS in Practice]]
+- [[wiki/api-protocols/csp-headers|CSP Headers]]
+- [[wiki/security-auth/security-headers|Security Headers]]
+- [[wiki/security-auth/content-security-policy|Content Security Policy]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

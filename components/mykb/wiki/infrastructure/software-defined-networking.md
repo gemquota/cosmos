@@ -21,9 +21,9 @@ Software-defined networking (SDN) decouples the control plane — the logic that
 - RSIS3/mykb relevance: SDN's separation of decision-making from execution mirrors RSIS3's loop architecture, and this node keeps that structural analogy retrievable when the system reasons about its own control flow.
 
 ## Related
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/infrastructure/vlan-networking|VLAN Networking]] — related coverage in the same cluster
-- [[wiki/cloud-infra/multicast-networking|Multicast Networking]] — related coverage in the same cluster
-- [[wiki/devops-infra/grpc-and-protobuf-networking|gRPC & Protobuf Networking]] — related coverage in the same cluster
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/infrastructure/vlan-networking|VLAN Networking]]
+- [[wiki/cloud-infra/multicast-networking|Multicast Networking]]
+- [[wiki/devops-infra/grpc-and-protobuf-networking|gRPC & Protobuf Networking]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

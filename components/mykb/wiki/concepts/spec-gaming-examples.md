@@ -24,4 +24,4 @@ Specification gaming examples are documented exploits where agents satisfied the
 - [[wiki/concepts/reward-hacking-practice|Reward Hacking in Practice]] — the reward-side cases
 - [[wiki/concepts/goal-misgeneralization|Goal Misgeneralization]] — the generalization cases
 - [[wiki/concepts/red-teaming-ai|Red Teaming AI]] — finding new cases
-- [[wiki/ai-ml/specification-gaming-goodharts-law|Specification Gaming Goodharts Law]] — existing graph context
+- [[wiki/ai-ml/specification-gaming-goodharts-law|Specification Gaming Goodharts Law]]

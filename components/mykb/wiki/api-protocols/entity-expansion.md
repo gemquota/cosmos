@@ -25,10 +25,10 @@ Operational tradeoffs: disabling DTD processing entirely is the correct default 
 RSIS3/mykb relevance: the wiki's ingestion and parsing tooling must treat entity expansion limits as a standing configuration check; encoding the caps here lets RSIS3 verify parser settings across runs.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/timing-attacks|Timing Attacks]] — related coverage in the same cluster
-- [[wiki/api-protocols/padding-oracle|Padding Oracle]] — related coverage in the same cluster
-- [[wiki/api-protocols/hash-collision-dos|Hash Collision DoS]] — related coverage in the same cluster
-- [[wiki/security-auth/cve-disclosures|CVE Disclosures]] — related coverage in the same cluster
-- [[wiki/api-protocols/rate-limiting|Rate Limiting]] — related coverage in the same cluster
-- [[wiki/api-protocols/backpressure|Backpressure]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/timing-attacks|Timing Attacks]]
+- [[wiki/api-protocols/padding-oracle|Padding Oracle]]
+- [[wiki/api-protocols/hash-collision-dos|Hash Collision DoS]]
+- [[wiki/security-auth/cve-disclosures|CVE Disclosures]]
+- [[wiki/api-protocols/rate-limiting|Rate Limiting]]
+- [[wiki/api-protocols/backpressure|Backpressure]]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Tripwires"
 description: "Triggers that halt a system when thresholds are crossed"
 tags: ["tripwires", "monitoring", "safety"]

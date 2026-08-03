@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "External Red Teams"
 description: "Independent adversarial testers for AI systems"
 tags: ["red-teams", "external", "testing"]

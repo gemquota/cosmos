@@ -20,10 +20,10 @@ Precision Time Protocol (PTP, IEEE 1588) synchronizes clocks to sub-microsecond 
 - For mykb: PTP is the microsecond layer of the time-sync cluster — NTP (milliseconds), PTP (sub-microsecond), and time-sync-in-DC (the datacenter practice) form the spectrum.
 
 ## Related
-- [[wiki/cloud-infra/wireguard-protocol|WireGuard Protocol]] — related coverage in the same cluster
-- [[wiki/infrastructure/network-time-protocol|Network Time Protocol]] — related coverage in the same cluster
-- [[wiki/infrastructure/time-synchronization-in-dc|Time Synchronization in the Datacenter]] — related coverage in the same cluster
-- [[wiki/devops-infra/point-in-time-recovery|Point-in-Time Recovery]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
+- [[wiki/cloud-infra/wireguard-protocol|WireGuard Protocol]]
+- [[wiki/infrastructure/network-time-protocol|Network Time Protocol]]
+- [[wiki/infrastructure/time-synchronization-in-dc|Time Synchronization in the Datacenter]]
+- [[wiki/devops-infra/point-in-time-recovery|Point-in-Time Recovery]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

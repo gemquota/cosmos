@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Third-Party Audits"
 description: "Independent external reviews of AI systems"
 tags: ["third-party", "audits", "governance"]

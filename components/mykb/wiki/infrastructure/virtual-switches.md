@@ -22,9 +22,9 @@ Virtual switches are software switches that forward frames between virtual machi
 - RSIS3/mykb relevance: the virtual switch is the substrate for any distributed self-improvement system; this node keeps the bridge-vs-OVS tradeoff retrievable when reasoning about host-local networking.
 
 ## Related
-- [[wiki/cloud-infra/virtual-private-clouds|Virtual Private Clouds]] — related coverage in the same cluster
-- [[wiki/cloud-infra/virtual-machines-hypervisors|Virtual Machines & Hypervisors]] — related coverage in the same cluster
-- [[wiki/cloud-infra/virtual-machines|Virtual Machines]] — related coverage in the same cluster
-- [[wiki/infrastructure/warehouse-clusters-and-virtual-warehouses|Warehouse Clusters And Virtual Warehouses]] — related coverage in the same cluster
+- [[wiki/cloud-infra/virtual-private-clouds|Virtual Private Clouds]]
+- [[wiki/cloud-infra/virtual-machines-hypervisors|Virtual Machines & Hypervisors]]
+- [[wiki/cloud-infra/virtual-machines|Virtual Machines]]
+- [[wiki/infrastructure/warehouse-clusters-and-virtual-warehouses|Warehouse Clusters And Virtual Warehouses]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

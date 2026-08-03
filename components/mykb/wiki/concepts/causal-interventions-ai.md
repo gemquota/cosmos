@@ -23,6 +23,5 @@ Causal interventions edit a model's internal state (activations, weights, tokens
 - [[wiki/concepts/activation-patching|Activation Patching]] — the main method
 - [[wiki/concepts/circuit-analysis|Circuit Analysis]] — what interventions verify
 - [[wiki/concepts/activation-patching|activation-patching]] — the framing
-- [[wiki/concepts/causal-interventions-ai|causal-interventions-ai]] — statistical basis
-- [[wiki/agent-systems/introspection-ai|Introspection in AI]] — the full treatment of this theme
-- [[wiki/ai-ml/activation-engineering|Activation Engineering]] — existing graph context
+- [[wiki/agent-systems/introspection-ai|Introspection in AI]]
+- [[wiki/ai-ml/activation-engineering|Activation Engineering]]

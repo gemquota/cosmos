@@ -25,10 +25,10 @@ Operational tradeoffs: the durable fix is protocol normalization: reject request
 RSIS3/mykb relevance: any gateway the wiki deploys must normalize framing headers; documenting the CL/TE rule gives RSIS3's infra checks a concrete test.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/ssrf-practice|SSRF Attacks]] — related coverage in the same cluster
-- [[wiki/api-protocols/idor-web|IDOR on the Web]] — related coverage in the same cluster
-- [[wiki/api-protocols/mass-assignment|Mass Assignment]] — related coverage in the same cluster
-- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/deserialization-attacks|Deserialization Attacks]] — related coverage in the same cluster
-- [[wiki/security-auth/privilege-escalation|Privilege Escalation]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/ssrf-practice|SSRF Attacks]]
+- [[wiki/api-protocols/idor-web|IDOR on the Web]]
+- [[wiki/api-protocols/mass-assignment|Mass Assignment]]
+- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]]
+- [[wiki/security-auth/deserialization-attacks|Deserialization Attacks]]
+- [[wiki/security-auth/privilege-escalation|Privilege Escalation]]

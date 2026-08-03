@@ -23,6 +23,6 @@ Feature visualization optimizes inputs that maximally activate a neuron or featu
 - [[wiki/concepts/neuron-interpretation|Neuron Interpretation]] — the target
 - [[wiki/concepts/activation-analysis|Activation Analysis]] — the substrate
 - [[wiki/concepts/polysemanticity|Polysemanticity]] — why visuals mislead
-- [[wiki/concepts/superposition-research|superposition-research]] — note
-- [[wiki/agent-systems/introspection-ai|Introspection in AI]] — the full treatment of this theme
-- [[wiki/ai-ml/activation-engineering|Activation Engineering]] — existing graph context
+- [[wiki/concepts/superposition-research|superposition-research]]
+- [[wiki/agent-systems/introspection-ai|Introspection in AI]]
+- [[wiki/ai-ml/activation-engineering|Activation Engineering]]

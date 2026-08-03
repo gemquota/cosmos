@@ -25,10 +25,10 @@ Operational tradeoffs: credentialed CORS is required for SPAs that call APIs on 
 RSIS3/mykb relevance: if the hub dashboard calls an API cross-origin, the allowlist is infrastructure; documenting which origins are allowed and why keeps RSIS3-generated access reviews accurate.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors-wildcard|CORS Wildcards]] — related coverage in the same cluster
-- [[wiki/api-protocols/cross-origin-isolation|Cross-Origin Isolation]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors-preflight|CORS Preflight]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors|CORS]] — related coverage in the same cluster
-- [[wiki/security-auth/cors-policy|CORS Policy]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/cors-wildcard|CORS Wildcards]]
+- [[wiki/api-protocols/cross-origin-isolation|Cross-Origin Isolation]]
+- [[wiki/api-protocols/cors-preflight|CORS Preflight]]
+- [[wiki/api-protocols/cors|CORS]]
+- [[wiki/security-auth/cors-policy|CORS Policy]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

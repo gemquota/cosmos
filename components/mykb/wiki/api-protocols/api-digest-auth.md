@@ -25,10 +25,10 @@ Operational tradeoffs: digest avoids storing cleartext passwords at the server (
 RSIS3/mykb relevance: the wiki's API guidance should list digest auth as legacy-only so automation loops do not accidentally standardize on it when the goal is long-term credential hygiene.
 
 ## Related
-- [[wiki/api-protocols/auth-flows-web|Auth Flows on the Web]] — related coverage in the same cluster
-- [[wiki/api-protocols/bearer-tokens|Bearer Tokens]] — related coverage in the same cluster
-- [[wiki/api-protocols/m2m-tokens|Machine-to-Machine Tokens]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-keys-vs-tokens|API Keys vs Tokens]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-authentication-methods|API Authentication Methods]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-keys|API Keys]] — related coverage in the same cluster
-- [[wiki/api-protocols/basic-authentication|Basic Authentication]] — related coverage in the same cluster
+- [[wiki/api-protocols/auth-flows-web|Auth Flows on the Web]]
+- [[wiki/api-protocols/bearer-tokens|Bearer Tokens]]
+- [[wiki/api-protocols/m2m-tokens|Machine-to-Machine Tokens]]
+- [[wiki/api-protocols/api-keys-vs-tokens|API Keys vs Tokens]]
+- [[wiki/api-protocols/api-authentication-methods|API Authentication Methods]]
+- [[wiki/api-protocols/api-keys|API Keys]]
+- [[wiki/api-protocols/basic-authentication|Basic Authentication]]

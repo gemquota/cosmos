@@ -25,7 +25,6 @@ SVG animation moves vector graphics via SMIL, CSS, or the Web Animations API —
 - [[wiki/web-platforms/web-animations|Web Animations API]]
 - [[wiki/web-platforms/sprite-sheets|Sprite Sheets]]
 - [[wiki/web-platforms/inline-svg|Inline SVG]]
-- [[wiki/web-platforms/svg-animation|SVG Animation]]
 - [[wiki/web-platforms/web-apis|Web APIs]]
 - [[wiki/web-platforms/css-layout|CSS Layout]]
 - [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]]

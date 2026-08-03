@@ -20,9 +20,9 @@ Optical storage and tape are the archival tier of the storage hierarchy: media o
 - For mykb: tape and optical anchor the archival branch of the storage cluster — the cold end of the hot/cold tiering spectrum.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]] — related coverage in the same cluster
-- [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]] — related coverage in the same cluster
-- [[wiki/devops-infra/storage-classes-and-provisioners|Storage Classes & Provisioners]] — related coverage in the same cluster
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]]
+- [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]]
+- [[wiki/devops-infra/storage-classes-and-provisioners|Storage Classes & Provisioners]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

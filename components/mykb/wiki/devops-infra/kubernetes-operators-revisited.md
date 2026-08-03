@@ -21,9 +21,9 @@ Operators extend Kubernetes with domain knowledge: a controller plus CRDs that e
 - RSIS3 relevance: RSIS3's persistent components (MyKB store, checkpoint service) are exactly the stateful workloads where operator-style reconciliation — declare the desired state, heal drift — matches the L1 loop philosophy.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-scheduling|Kubernetes Scheduling]] — related coverage in the same cluster
-- [[wiki/devops-infra/network-policies-kubernetes|Kubernetes Network Policies]] — related coverage in the same cluster
-- [[wiki/infrastructure/kubernetes-operators|Kubernetes Operators]] — related coverage in the same cluster
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/kubernetes-scheduling|Kubernetes Scheduling]]
+- [[wiki/devops-infra/network-policies-kubernetes|Kubernetes Network Policies]]
+- [[wiki/infrastructure/kubernetes-operators|Kubernetes Operators]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

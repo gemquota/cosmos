@@ -21,8 +21,8 @@ SFP and its higher-speed relatives (SFP+, SFP28, QSFP, QSFP-DD, OSFP) are hot-sw
 - RSIS3/mykb relevance: when self-improvement cycles tune the physical layer, this node reminds retrievals that the module and the fiber are separate failure domains and that DOM telemetry is the observability signal to track.
 
 ## Related
-- [[wiki/infrastructure/optical-storage-tape|Optical Storage & Tape]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
+- [[wiki/infrastructure/optical-storage-tape|Optical Storage & Tape]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

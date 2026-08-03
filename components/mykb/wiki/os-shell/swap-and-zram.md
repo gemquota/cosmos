@@ -20,8 +20,8 @@ Swap gives the kernel a place to park cold pages when memory pressure rises: a d
 - RSIS3/mykb relevance: RSIS3's batch loops (indexing, graph rebuilds) are memory-spiky; giving the daemon a bounded cgroup with zram-backed swap and pressure alerts mirrors the loop-hygiene rule that bursts must be absorbed without taking down the knowledge store.
 
 ## Related
-- [[wiki/os-shell/swap-space|Swap Space]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/os-shell/swap-space|Swap Space]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

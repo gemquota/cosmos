@@ -27,7 +27,6 @@ prefers-contrast signals the user's OS-level contrast preference — more, less,
 - [[wiki/web-platforms/css-variables-theming|CSS Variables and Theming]]
 - [[wiki/web-platforms/prefers-color-scheme|prefers-color-scheme]]
 - [[wiki/web-platforms/dark-mode-practice|Dark Mode Practice]]
-- [[wiki/web-platforms/prefers-contrast|prefers-contrast]]
 - [[wiki/mobile-platform/dark-mode-support|Dark Mode Support]]
 - [[wiki/frontend-frameworks/material-design|Material Design]]
 - [[wiki/web-platforms/web-accessibility|Web Accessibility]]

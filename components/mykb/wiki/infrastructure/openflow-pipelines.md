@@ -20,8 +20,8 @@ OpenFlow pipelines are the match-action flow-table architecture that lets a soft
 - For mykb: OpenFlow pipelines are the mechanism node of the SDN cluster — flow tables and offloads (the hardware), SDN controllers (the software), and programmable pipelines (the successor) all connect here.
 
 ## Related
-- [[wiki/devops-infra/log-aggregation-pipelines|Log Aggregation Pipelines]] — related coverage in the same cluster
-- [[wiki/devops-infra/continuous-delivery-pipelines|Continuous Delivery Pipelines]] — related coverage in the same cluster
-- [[wiki/os-shell/text-processing-pipelines|Text Processing Pipelines]] — related coverage in the same cluster
+- [[wiki/devops-infra/log-aggregation-pipelines|Log Aggregation Pipelines]]
+- [[wiki/devops-infra/continuous-delivery-pipelines|Continuous Delivery Pipelines]]
+- [[wiki/os-shell/text-processing-pipelines|Text Processing Pipelines]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

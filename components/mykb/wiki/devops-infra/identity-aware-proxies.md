@@ -21,10 +21,10 @@ Identity-aware proxies (IAPs) put authentication and authorization in front of a
 - RSIS3 relevance: the wiki daemon and dashboard are exactly the internal tools an IAP protects — SSO-gated access with verified identity headers beats homegrown auth for a personal knowledge base.
 
 ## Related
-- [[wiki/devops-infra/reverse-proxies|Reverse Proxies]] — related coverage in the same cluster
-- [[wiki/devops-infra/workload-identity-federation|Workload Identity Federation]] — related coverage in the same cluster
-- [[wiki/devops-infra/zero-trust-access-proxies|Zero Trust Access Proxies]] — related coverage in the same cluster
-- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/identity-distribution|Identity Distribution]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/reverse-proxies|Reverse Proxies]]
+- [[wiki/devops-infra/workload-identity-federation|Workload Identity Federation]]
+- [[wiki/devops-infra/zero-trust-access-proxies|Zero Trust Access Proxies]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/identity-distribution|Identity Distribution]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

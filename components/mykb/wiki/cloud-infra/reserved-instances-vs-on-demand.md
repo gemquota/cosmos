@@ -26,7 +26,3 @@ Reserved instances and savings plans commit to capacity or spend in exchange for
 - [[wiki/cloud-infra/burstable-instances|Burstable Instances]]
 - [[wiki/infrastructure/on-demand-vs-reserved-compute|On Demand Vs Reserved Compute]]
 - [[wiki/cloud-infra/demand-forecasting|Demand Forecasting]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

@@ -20,8 +20,8 @@ Dimension tables hold the descriptive attributes — who, what, where, when — 
 - Operational notes: document the grain per fact, govern dimension changes, and test that joins never multiply fact rows.
 - RSIS3 relevance: the wiki's analytics (article counts by status, tag, date) form a natural star schema — dimensions are tags and statuses, and the grain decision prevents double-counted metrics.
 
-## Related
 
+## Related
 - [[wiki/data-storage/dimensional-modeling|Dimensional Modeling]] — core modeling reference
 - [[wiki/data-storage/surrogate-keys|Surrogate vs Natural Keys]] — stable keys for dimension rows
 - [[wiki/data-storage/fact-tables-and-measures|Fact Tables And Measures]] — the counterpart table type

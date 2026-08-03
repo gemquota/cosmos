@@ -21,8 +21,8 @@ Dark launching ships code behind flags or routes so it runs in production withou
 - RSIS3 relevance: RSIS3's L2 improvement proposals can dark-launch — run the proposed strategy in shadow mode against live pulse data, compare outcomes, and promote only proven changes.
 
 ## Related
-- [[wiki/infrastructure/snapshot-and-clone-techniques|Snapshot & Clone Techniques]] — related coverage in the same cluster
-- [[wiki/infrastructure/data-anonymization-techniques|Data Anonymization Techniques]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/infrastructure/snapshot-and-clone-techniques|Snapshot & Clone Techniques]]
+- [[wiki/infrastructure/data-anonymization-techniques|Data Anonymization Techniques]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -25,10 +25,8 @@ Operational tradeoffs: stapling is free performance and should be on for every T
 RSIS3/mykb relevance: the deployed dashboards terminate TLS via their host; documenting the stapling configuration and must-staple choice gives RSIS3's ops checks a concrete TLS assertion.
 
 ## Related
-- [[wiki/api-protocols/tls-https|TLS and HTTPS]] — related coverage in the same cluster
-- [[wiki/api-protocols/certificate-chains|Certificate Chains]] — related coverage in the same cluster
-- [[wiki/api-protocols/ocsp-stapling|OCSP Stapling]] — related coverage in the same cluster
-- [[wiki/api-protocols/certificate-chains|Certificate Chains]] — related coverage in the same cluster
-- [[wiki/api-protocols/tls-certificates|TLS Certificates]] — related coverage in the same cluster
-- [[wiki/api-protocols/tls-handshake|TLS Handshake]] — related coverage in the same cluster
-- [[wiki/api-protocols/mtls|mTLS]] — related coverage in the same cluster
+- [[wiki/api-protocols/tls-https|TLS and HTTPS]]
+- [[wiki/api-protocols/certificate-chains|Certificate Chains]]
+- [[wiki/api-protocols/tls-certificates|TLS Certificates]]
+- [[wiki/api-protocols/tls-handshake|TLS Handshake]]
+- [[wiki/api-protocols/mtls|mTLS]]

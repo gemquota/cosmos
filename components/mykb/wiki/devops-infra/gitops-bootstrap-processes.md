@@ -21,10 +21,10 @@ GitOps bootstrap processes bring a cluster or environment from empty to fully ma
 - RSIS3 relevance: a fresh cosmos deployment should follow the same idea — one documented, scripted bootstrap that brings up the wiki daemon, dashboard build, and their config from the repo alone.
 
 ## Related
-- [[wiki/devops-infra/gitops-argocd|GitOps & ArgoCD]] — related coverage in the same cluster
-- [[wiki/devops-infra/gitops-multi-env-patterns|GitOps Multi-Env Patterns]] — related coverage in the same cluster
-- [[wiki/infrastructure/dataset-release-processes|Dataset Release Processes]] — related coverage in the same cluster
-- [[wiki/os-shell/daemon-processes|Daemon Processes]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/gitops-argocd|GitOps & ArgoCD]]
+- [[wiki/devops-infra/gitops-multi-env-patterns|GitOps Multi-Env Patterns]]
+- [[wiki/infrastructure/dataset-release-processes|Dataset Release Processes]]
+- [[wiki/os-shell/daemon-processes|Daemon Processes]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

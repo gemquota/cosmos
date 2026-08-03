@@ -20,11 +20,11 @@ North-south traffic flows between users and the datacenter (in through the edge,
 - For mykb: the node connects traffic shaping, QoS, and mirroring to the architectural question of what the network is actually carrying — the volume split determines the design.
 
 ## Related
-- [[wiki/infrastructure/traffic-shaping-and-qos|Traffic Shaping & QoS]] — related coverage in the same cluster
-- [[wiki/devops-infra/traffic-shifting-and-splitting|Traffic Shifting & Splitting]] — related coverage in the same cluster
-- [[wiki/infrastructure/north-star-metrics|North Star Metrics]] — related coverage in the same cluster
-- [[wiki/devops-infra/mirroring-and-shadow-traffic|Mirroring & Shadow Traffic]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
+- [[wiki/infrastructure/traffic-shaping-and-qos|Traffic Shaping & QoS]]
+- [[wiki/devops-infra/traffic-shifting-and-splitting|Traffic Shifting & Splitting]]
+- [[wiki/infrastructure/north-star-metrics|North Star Metrics]]
+- [[wiki/devops-infra/mirroring-and-shadow-traffic|Mirroring & Shadow Traffic]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

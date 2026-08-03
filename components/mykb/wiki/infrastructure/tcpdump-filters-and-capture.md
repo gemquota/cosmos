@@ -22,9 +22,9 @@ tcpdump filters are Berkeley Packet Filter (BPF) expressions that select which p
 - RSIS3/mykb relevance: precise capture is the observability primitive that validates network claims; this node supplies the filter vocabulary loops need to define what "the right packets" means before starting a capture.
 
 ## Related
-- [[wiki/infrastructure/egress-and-ingress-filters|Egress & Ingress Filters]] — related coverage in the same cluster
-- [[wiki/infrastructure/packet-analysis-with-tcpdump|Packet Analysis with tcpdump]] — related coverage in the same cluster
-- [[wiki/infrastructure/egress-proxies-and-filters|Egress Proxies & Filters]] — related coverage in the same cluster
-- [[wiki/infrastructure/tcpdump-and-wireshark|tcpdump & Wireshark]] — related coverage in the same cluster
+- [[wiki/infrastructure/egress-and-ingress-filters|Egress & Ingress Filters]]
+- [[wiki/infrastructure/packet-analysis-with-tcpdump|Packet Analysis with tcpdump]]
+- [[wiki/infrastructure/egress-proxies-and-filters|Egress Proxies & Filters]]
+- [[wiki/infrastructure/tcpdump-and-wireshark|tcpdump & Wireshark]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

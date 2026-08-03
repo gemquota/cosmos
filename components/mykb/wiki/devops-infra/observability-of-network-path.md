@@ -21,9 +21,9 @@ Observability of the network path traces what happens to a request between clien
 - RSIS3 relevance: when RSIS3 reports a slow dashboard or failed retrieval, path observability separates network, proxy, and daemon causes — matching the loop discipline of evidence before action.
 
 ## Related
-- [[wiki/devops-infra/network-observability|Network Observability]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
-- [[wiki/os-shell/path-resolution-and-symlinks|Path Resolution & Symlinks]] — related coverage in the same cluster
-- [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]] — related coverage in the same cluster
+- [[wiki/devops-infra/network-observability|Network Observability]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
+- [[wiki/os-shell/path-resolution-and-symlinks|Path Resolution & Symlinks]]
+- [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

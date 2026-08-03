@@ -22,9 +22,9 @@ Compression reduces transfer size for text payloads. Brotli is Google's modern a
 - RSIS3 relevance: the dashboard and wiki pages are static text — precompressing generated HTML and JSON with Brotli cuts egress and load time without touching the content pipeline.
 
 ## Related
-- [[wiki/infrastructure/compression-in-storage|Compression in Storage]] — related coverage in the same cluster
-- [[wiki/os-shell/compression-tools|Compression Tools]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/infrastructure/compression-in-storage|Compression in Storage]]
+- [[wiki/os-shell/compression-tools|Compression Tools]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

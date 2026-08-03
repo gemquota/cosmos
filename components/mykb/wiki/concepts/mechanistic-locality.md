@@ -22,7 +22,7 @@ Mechanistic locality is the empirical finding that behaviors are usually impleme
 ## Related
 - [[wiki/concepts/circuit-analysis|Circuit Analysis]] — what locality enables
 - [[wiki/concepts/activation-patching|Activation Patching]] — the evidence tool
-- [[wiki/concepts/circuit-tracing|circuit-tracing]] — note
+- [[wiki/concepts/circuit-tracing|circuit-tracing]]
 - [[wiki/syntheses/audit-frameworks-ai|AI Audit Frameworks]] — why locality aids auditing
-- [[wiki/concepts/grokking|Grokking]] — the full treatment of this theme
-- [[wiki/ai-ml/probing|Probing]] — existing graph context
+- [[wiki/concepts/grokking|Grokking]]
+- [[wiki/ai-ml/probing|Probing]]

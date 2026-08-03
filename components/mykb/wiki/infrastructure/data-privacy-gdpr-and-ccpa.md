@@ -21,8 +21,8 @@ GDPR (EU) and CCPA/CPRA (California) are the two most influential privacy regime
 - Engineering impact: PII tagging, lineage for erasure, masking in dev, and contracts with processors. Tag data as PII at the schema level (classification labels), build lineage so erasure can trace a person's data through copies and derivatives, mask PII in development environments so the raw data does not spread, and contract with processors (cloud vendors, analytics tools) to bind them to the same obligations — since a breach or violation at a processor is your violation.
 - For mykb: the node is the legal floor under privacy-by-design and responsible use, and the engineering patterns (classification, lineage, retention) are the governance cluster's core.
 
-## Related
 
+## Related
 - [[wiki/security-auth/privacy-by-design|Privacy by Design]] — design principle behind compliance
 - [[wiki/security-auth/data-classification|Data Classification]] — finding personal data to govern
 - [[wiki/infrastructure/data-classification-labels|Data Classification Labels]] — labels that mark personal data

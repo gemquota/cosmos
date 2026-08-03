@@ -21,10 +21,10 @@ Service virtualization replaces real downstream services with simulated versions
 - RSIS3 relevance: cosmos can virtualize external APIs (LLM providers, hosting services) for deterministic eval runs — scripted successes and failures — reserving live calls for acceptance.
 
 ## Related
-- [[wiki/devops-infra/service-mesh-sidecars|Service Mesh Sidecars]] — related coverage in the same cluster
-- [[wiki/infrastructure/network-function-virtualization|Network Function Virtualization]] — related coverage in the same cluster
-- [[wiki/devops-infra/service-meshes-istio-linkerd|Service Meshes: Istio & Linkerd]] — related coverage in the same cluster
-- [[wiki/cloud-infra/function-as-a-service|Function-as-a-Service]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/service-mesh-sidecars|Service Mesh Sidecars]]
+- [[wiki/infrastructure/network-function-virtualization|Network Function Virtualization]]
+- [[wiki/devops-infra/service-meshes-istio-linkerd|Service Meshes: Istio & Linkerd]]
+- [[wiki/cloud-infra/function-as-a-service|Function-as-a-Service]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

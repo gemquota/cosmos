@@ -21,8 +21,8 @@ Data ethics is the normative layer above legal compliance: collecting, analyzing
 - The failure modes: ethics-washing (a privacy policy that promises more than the engineering delivers), the compliance trap (treating "legal" as "ethical"), and the responsibility vacuum (no named owner for the data's ethical consequences).
 - RSIS3-style reflection fits here: periodically reviewing what the knowledge graph records about people and why. The wiki's own data practices — what it captures, who is named, how long records persist — deserve the same audit discipline as any analytics pipeline.
 
-## Related
 
+## Related
 - [[wiki/security-auth/privacy-by-design|Privacy by Design]] — privacy as an ethical baseline
 - [[wiki/infrastructure/data-privacy-gdpr-and-ccpa|Data Privacy Gdpr And Ccpa]] — legal floor for responsible use
 - [[wiki/infrastructure/data-governance-frameworks|Data Governance Frameworks]] — structure for ethical decisions

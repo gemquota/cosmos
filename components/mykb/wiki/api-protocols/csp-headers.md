@@ -25,10 +25,10 @@ Operational tradeoffs: strict CSP is the strongest single XSS mitigation and can
 RSIS3/mykb relevance: the dashboard loads Tailwind and Chart.js; its CSP contract — self plus a couple of trusted CDNs, nonce for inline config — is a concrete policy RSIS3's deployment checks can assert.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/referrer-policy|Referrer Policy]] — related coverage in the same cluster
-- [[wiki/api-protocols/x-frame-options|X-Frame-Options]] — related coverage in the same cluster
-- [[wiki/api-protocols/mime-sniffing|MIME Sniffing]] — related coverage in the same cluster
-- [[wiki/security-auth/security-headers|Security Headers]] — related coverage in the same cluster
-- [[wiki/security-auth/content-security-policy|Content Security Policy]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/referrer-policy|Referrer Policy]]
+- [[wiki/api-protocols/x-frame-options|X-Frame-Options]]
+- [[wiki/api-protocols/mime-sniffing|MIME Sniffing]]
+- [[wiki/security-auth/security-headers|Security Headers]]
+- [[wiki/security-auth/content-security-policy|Content Security Policy]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

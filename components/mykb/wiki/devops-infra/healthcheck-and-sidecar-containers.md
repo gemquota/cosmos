@@ -22,9 +22,9 @@ Health checks tell the orchestrator whether a container is alive and ready; side
 - RSIS3 relevance: if the wiki daemon runs with sidecars (logging, TLS), the same health contract tells RSIS3's monitoring when retrieval is truly available versus merely alive.
 
 ## Related
-- [[wiki/os-shell/containers-vs-vms|Containers vs VMs]] — related coverage in the same cluster
-- [[wiki/devops-infra/init-containers-and-hooks|Init Containers & Hooks]] — related coverage in the same cluster
-- [[wiki/infrastructure/sidecar-pattern|Sidecar Pattern]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/os-shell/containers-vs-vms|Containers vs VMs]]
+- [[wiki/devops-infra/init-containers-and-hooks|Init Containers & Hooks]]
+- [[wiki/infrastructure/sidecar-pattern|Sidecar Pattern]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

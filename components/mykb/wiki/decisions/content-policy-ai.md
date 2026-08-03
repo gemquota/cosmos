@@ -27,5 +27,5 @@ Content policy specifies what outputs are allowed — violent, sexual, hateful, 
 - [[wiki/decisions/child-safety-ai|Child Safety and AI]] — the strictest domain
 - [[wiki/decisions/abuse-detection-ai|Abuse Detection]] — the enforcement
 - [[wiki/concepts/content-authentication|Content Authentication]] — the provenance side
-- [[wiki/concepts/oversight|Oversight]] — the full treatment of this theme
-- [[wiki/ai-ml/guardrails-and-safety|Guardrails And Safety]] — existing graph context
+- [[wiki/concepts/oversight|Oversight]]
+- [[wiki/ai-ml/guardrails-and-safety|Guardrails And Safety]]

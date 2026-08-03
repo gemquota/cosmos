@@ -24,5 +24,5 @@ Activation patching runs a model on input A, then replays activations from input
 - [[wiki/concepts/circuit-analysis|Circuit Analysis]] — what it builds
 - [[wiki/concepts/causal-interventions-ai|causal-interventions-ai]] — related tool
 - [[wiki/concepts/transformer-lens|TransformerLens]] — tooling support
-- [[wiki/agent-systems/introspection-ai|Introspection in AI]] — the full treatment of this theme
-- [[wiki/ai-ml/activation-engineering|Activation Engineering]] — existing graph context
+- [[wiki/agent-systems/introspection-ai|Introspection in AI]]
+- [[wiki/ai-ml/activation-engineering|Activation Engineering]]

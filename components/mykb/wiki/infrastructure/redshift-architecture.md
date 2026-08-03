@@ -21,8 +21,8 @@ Redshift is AWS's petabyte-scale data warehouse built on a massively parallel pr
 - Classic choices: distribution style (even/key/all), sort keys, and encoding per column. These are made at table creation and are expensive to change later (redistribution rewrites the table), which is why the tuning happens in the schema-design phase, not after deployment — the classic failure is the table created with default distribution that meets its first query pattern and then performs badly as the workload evolves.
 - For mykb: the node anchors the AWS warehouse branch — MPP mechanics, zone maps, and warehouse optimization connect to this concrete implementation.
 
-## Related
 
+## Related
 - [[wiki/data-storage/massively-parallel-processing|Massively Parallel Processing]] — MPP architecture basics
 - [[wiki/data-storage/data-warehouse|Data Warehouse]] — warehouse fundamentals
 - [[wiki/data-storage/partition-pruning-and-zone-maps|Partition Pruning And Zone Maps]] — zone maps as Redshift's skip layer

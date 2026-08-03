@@ -18,11 +18,7 @@ MTU is the largest packet a link carries (typically 1500 bytes, jumbo 9000 on in
 - Failure modes: assuming 1500 everywhere (tunnels, PPPoE, carrier networks reduce it); ICMP filtered, breaking PMTUD (allow ICMP type 3 code 4); inconsistent MTU across a path causing mystery packet loss at exactly the fragment threshold; and IPv6 deployments with no MSS clamping path.
 - Operational tradeoffs: standardize on 1500 for internet-facing paths and 9000 internally where the whole path supports it; document MTU per segment and verify with ping -M do sweeps. When encapsulation is involved, set the tenant MTU deliberately rather than discovering black holes in production.
 - RSIS3/mykb relevance: the wiki's tunneled lab networks record per-link MTUs and MSS clamps, so the loop's connectivity tests start from known-good values.
-- Verification: probe each segment with df-bit ping sweeps at decreasing sizes to find the path MTU; the sweep is minutes of work that prevents the classic black-hole outage.
+- Verification: probe each segment with df-bit ping sweeps at decreasing sizes to find the path MTU; the sweep is minutes of work that prevents the classic black-hole outage. Record the discovered MTU per link in the wiki so later sweeps have a baseline to diff against.
 
 ## Related
 - [[wiki/os-shell/memory-fragmentation|Memory Fragmentation]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

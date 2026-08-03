@@ -19,9 +19,9 @@ Accelerator observability is the practice of collecting and acting on metrics fo
 - For RSIS3/mykb: accelerator observability is the GPU analog of the telemetry coverage the RSIS3 practices mandate — you cannot improve what you do not measure, and the same loop-closure logic (collect, detect, act, verify) applies to hardware fleets.
 
 ## Related
-- [[wiki/devops-infra/network-observability|Network Observability]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-of-network-path|Observability of the Network Path]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-observability|Storage Observability]] — related coverage in the same cluster
+- [[wiki/devops-infra/network-observability|Network Observability]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
+- [[wiki/devops-infra/observability-of-network-path|Observability of the Network Path]]
+- [[wiki/infrastructure/storage-observability|Storage Observability]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
