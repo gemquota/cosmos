@@ -188,3 +188,182 @@ Part of [[wiki/index|Wiki Index]]. 176 pages.
 - [[wiki/agent-systems/value-locking|Value Locking]] — Freezing a value system against change
 - [[wiki/agent-systems/verifier-agents|Verifier Agents]] — Agents that check outputs for correctness, safety, or compliance
 - [[wiki/agent-systems/voting-agents|Voting Agents]] — Aggregating multiple agent answers through voting to reach a final decision
+
+## Concepts
+
+- [A/B Testing Agents](a-b-testing-agents.md) — A/B Testing Agents
+- [AI Accountability](accountability-ai.md) — AI Accountability
+- [Action-Observation Loop](action-observation-loop.md) — Action-Observation Loop
+- [Adversarial Self-Play](adversarial-self-play.md) — Adversarial Self-Play
+- [Agent Bootstrapping](agent-bootstrapping.md) — Agent Bootstrapping
+- [Agent Cancellation](agent-cancellation.md) — Agent Cancellation
+- [Agent Consensus](agent-consensus.md) — Agent Consensus
+- [Agent Cost Optimization](agent-cost-optimization.md) — Agent Cost Optimization
+- [Agent Ensembling](agent-ensembling.md) — Agent Ensembling
+- [Agent Evaluation](agent-evaluation.md) — Agent Evaluation
+- [Agent Factories](agent-factories.md) — Agent Factories
+- [Agent Logs and Audits](agent-logs-and-audits.md) — Agent Logs and Audits
+- [Agent Loop](agent-loop.md) — Agent Loop
+- [Agent Memory Systems](agent-memory-systems.md) — Agent Memory Systems
+- [Agent Observability](agent-observability.md) — Agent Observability
+- [Agent Orchestration Frameworks](agent-orchestration-frameworks.md) — Agent Orchestration Frameworks
+- [Agent Pipelines](agent-pipelines.md) — Agent Pipelines
+- [Agent Planning Systems](agent-planning-systems.md) — Agent Planning Systems
+- [Agent Prioritization](agent-prioritization.md) — Agent Prioritization
+- [Agent Run Inspectors](agent-run-inspectors.md) — Agent Run Inspectors
+- [Agent Runtime Security](agent-runtime-security.md) — Agent Runtime Security
+- [Agent Sandboxing Variants](agent-sandboxing-variants.md) — Agent Sandboxing Variants
+- [Agent Sandboxing](agent-sandboxing.md) — Agent Sandboxing
+- [Agent State Machines](agent-state-machines.md) — Agent State Machines
+- [Agent Supervision](agent-supervision.md) — Agent Supervision
+- [Agent Templates](agent-templates.md) — Agent Templates
+- [Agent Testing Strategies](agent-testing-strategies.md) — Agent Testing Strategies
+- [Agent Timeouts](agent-timeouts.md) — Agent Timeouts
+- [Agent Trace Visualization](agent-trace-visualization.md) — Agent Trace Visualization
+- [EU AI Act](ai-act.md) — EU AI Act
+- [AI Governance](ai-governance.md) — AI Governance
+- [AI Regulation](ai-regulation.md) — AI Regulation
+- [AI Researcher Agents](ai-researcher-agents.md) — AI Researcher Agents
+- [Approval-Based Agents](approval-based-agents.md) — Approval-Based Agents
+- [Approval Workflows](approval-workflows-wiki.md) — Approval Workflows
+- [Autonomous Agents](autonomous-agents.md) — Autonomous Agents
+- [Autonomy Levels](autonomy-levels.md) — Autonomy Levels
+- [Backpressure for Agents](backpressure-agents.md) — Backpressure for Agents
+- [Behavior Trees](behavior-trees.md) — Behavior Trees
+- [Blackboard Architecture](blackboard-architecture.md) — Blackboard Architecture
+- [Bounded Agents](bounded-agents.md) — Bounded Agents
+- [Browser and Computer Agents](browser-and-computer-agents.md) — Browser and Computer Agents
+- [Budget and Quota Control](budget-and-quota-control.md) — Budget and Quota Control
+- [Canary Deployments for Agents](canary-deployments-agents.md) — Canary Deployments for Agents
+- [Checkpointing Agent Runs](checkpointing-agent-runs.md) — Checkpointing Agent Runs
+- [Circuit Breakers for Agents](circuit-breakers-for-agents.md) — Circuit Breakers for Agents
+- [Code Execution Environments](code-execution-environments.md) — Code Execution Environments
+- [Code Generation Agents](code-generation-agents-revisited.md) — Code Generation Agents
+- [Code Repair Agents](code-repair-agents.md) — Code Repair Agents
+- [Commitment Devices](commitment-devices-ai.md) — Commitment Devices
+- [Commitment Problems](commitment-problems.md) — Commitment Problems
+- [Corrigibility Training](corrigibility-training.md) — Corrigibility Training
+- [Covert Reasoning](covert-reasoning.md) — Covert Reasoning
+- [Creative Writing Agents](creative-writing-agents.md) — Creative Writing Agents
+- [Credible Commitments](credible-commitments.md) — Credible Commitments
+- [Crisis Monitoring](crisis-monitoring.md) — Crisis Monitoring
+- [Critic Agents](critic-agents.md) — Critic Agents
+- [Curriculum Self-Improvement](curriculum-self-improvement.md) — Curriculum Self-Improvement
+- [Customer Support Agents](customer-support-agents.md) — Customer Support Agents
+- [Data Science Agents](data-science-agents.md) — Data Science Agents
+- [Deception Research](deception-research-ai.md) — Deception Research
+- [Decision Reports](decision-reports.md) — Decision Reports
+- [Degraded Mode Operations](degraded-mode-operations.md) — Degraded Mode Operations
+- [Delegation and Handoffs](delegation-and-handoffs.md) — Delegation and Handoffs
+- [Discount Factor in AI](discount-factor-ai.md) — Discount Factor in AI
+- [Discounting in Practice](discounting-practice.md) — Discounting in Practice
+- [Documentation Agents](documentation-agents.md) — Documentation Agents
+- [Endpoint Health Checks](endpoint-health-checks.md) — Endpoint Health Checks
+- [Escalation Handling](escalation-handling.md) — Escalation Handling
+- [Explainable AI](explainability-ai.md) — Explainable AI
+- [Explainable Decisions](explainable-decisions.md) — Explainable Decisions
+- [Exponential Backoff for LLMs](exponential-backoff-llm.md) — Exponential Backoff for LLMs
+- [Feature Flags for Agents](feature-flags-for-agents.md) — Feature Flags for Agents
+- [Finance Agents](finance-agents.md) — Finance Agents
+- [Generator-Verifier Loop](generator-verifier-loop.md) — Generator-Verifier Loop
+- [Goal Decomposition](goal-decomposition.md) — Goal Decomposition
+- [Goal Disclosure](goal-disclosure.md) — Goal Disclosure
+- [Goal Locking](goal-locking.md) — Goal Locking
+- [Harmless AI](harmless-ai.md) — Harmless AI
+- [Helpful AI](helpful-ai.md) — Helpful AI
+- [HHH Standards](hha-standards.md) — HHH Standards
+- [Hidden Goals](hidden-goals.md) — Hidden Goals
+- [Hidden Reasoning](hidden-reasoning.md) — Hidden Reasoning
+- [Hierarchical Agents](hierarchical-agents.md) — Hierarchical Agents
+- [Honest AI](honest-ai.md) — Honest AI
+- [Honest Signaling](honest-signaling.md) — Honest Signaling
+- [Horizon Length](horizon-length.md) — Horizon Length
+- [Human-in-the-Loop Approvals](human-in-the-loop-approvals.md) — Human-in-the-Loop Approvals
+- [Idempotent Agent Actions](idempotent-agent-actions.md) — Idempotent Agent Actions
+- [Identity and Continuity](identity-and-continuity.md) — Identity and Continuity
+- [Inference-Time Reasoning](inference-time-reasoning.md) — Inference-Time Reasoning
+- [Instruction Following](instruction-following.md) — Instruction Following
+- [Instruction Hierarchy](instruction-hierarchy.md) — Instruction Hierarchy
+- [Introspection in AI](introspection-ai.md) — Introspection in AI
+- [Iterative Self-Improvement](iterative-self-improvement.md) — Iterative Self-Improvement
+- [Justification in AI](justification-ai.md) — Justification in AI
+- [Legal Accountability for AI](legal-accountability.md) — Legal Accountability for AI
+- [Legal Agents](legal-agents.md) — Legal Agents
+- [Lobotomized Optimizers](lobotomized-optimizers.md) — Lobotomized Optimizers
+- [Loops](loops.md) — Loops
+- [AI Lying](lying-ai.md) — AI Lying
+- [Market-Based Agent Coordination](market-based-agent-coordination.md) — Market-Based Agent Coordination
+- [Medical AI Agents](medical-ai-agents.md) — Medical AI Agents
+- [Meta-Cognition in Agents](meta-cognition-in-agents.md) — Meta-Cognition in Agents
+- [Model Fallback Chains](model-fallback-chains.md) — Model Fallback Chains
+- [Model Routing Rules](model-routing-rules.md) — Model Routing Rules
+- [Multi-Agent Orchestration](multi-agent-orchestration.md) — Multi-Agent Orchestration
+- [Multi-Agent Systems](multi-agent-systems.md) — Multi-Agent Systems
+- [Myopia in AI](myopia-ai.md) — Myopia in AI
+- [Myopic Reward](myopic-reward.md) — Myopic Reward
+- [Near-Term Myopia](near-term-myopia.md) — Near-Term Myopia
+- [Noticeboards](noticeboards.md) — Noticeboards
+- [Obedient AI](obedient-ai.md) — Obedient AI
+- [Obfuscation in AI](obfuscation-ai.md) — Obfuscation in AI
+- [Offline Agent Testing](offline-agent-testing.md) — Offline Agent Testing
+- [Partial Failure Handling](partial-failure-handling.md) — Partial Failure Handling
+- [Plan-Execute-Observe](plan-execute-observe.md) — Plan-Execute-Observe
+- [Planning Systems](planning-systems.md) — Planning Systems
+- [Precommitment in AI](precommitment-ai.md) — Precommitment in AI
+- [Priority Weights](priority-weights.md) — Priority Weights
+- [Provider Failover](provider-failover.md) — Provider Failover
+- [Queue Management](queue-management.md) — Queue Management
+- [Queueing Agents](queueing-agents.md) — Queueing Agents
+- [Rate Limiter Design](rate-limiter-design.md) — Rate Limiter Design
+- [Rationale Generation](rationale-generation.md) — Rationale Generation
+- [Recruiting Agents](recruiting-agents.md) — Recruiting Agents
+- [Recursive Feedback Loops](recursive-feedback-loops.md) — Recursive Feedback Loops
+- [Recursive Self-Improvement](recursive-self-improvement.md) — Recursive Self-Improvement
+- [Reflection Agents](reflection-agents.md) — Reflection Agents
+- [Requests Pages](requests-pages.md) — Requests Pages
+- [Research Agents](research-agents.md) — Research Agents
+- [AI Responsibility](responsibility-ai.md) — AI Responsibility
+- [Retry and Backoff Patterns](retry-and-backoff-patterns.md) — Retry and Backoff Patterns
+- [Retry Jitter](retry-jitter.md) — Retry Jitter
+- [Retry Strategies](retry-strategies.md) — Retry Strategies
+- [Review Queues](review-queues-wiki.md) — Review Queues
+- [Reward Locking](reward-locking.md) — Reward Locking
+- [Risk-Bounded Agents](risk-bounded-agents.md) — Risk-Bounded Agents
+- [Rollback and Recovery](rollback-and-recovery.md) — Rollback and Recovery
+- [Sales Agents](sales-agents.md) — Sales Agents
+- [Satisficing Agents](satisficing-agents.md) — Satisficing Agents
+- [Scaffold Loops](scaffold-loops.md) — Scaffold Loops
+- [Self-Correction](self-correction.md) — Self-Correction
+- [Self-Critique](self-critique.md) — Self-Critique
+- [Self-Evaluation](self-evaluation.md) — Self-Evaluation
+- [Self-Modeling](self-modeling.md) — Self-Modeling
+- [Self-Play](self-play.md) — Self-Play
+- [Self-Reflection Loops](self-reflection-loops.md) — Self-Reflection Loops
+- [Session Replay for Agents](session-replay-agents.md) — Session Replay for Agents
+- [Session State Machine](session-state-machine.md) — Session State Machine
+- [Shadow Mode Evaluation](shadow-mode-evaluation.md) — Shadow Mode Evaluation
+- [Signaling in AI](signaling-ai.md) — Signaling in AI
+- [Simulation Environments for Agents](simulation-environments-agents.md) — Simulation Environments for Agents
+- [Skill Acquisition Loops](skill-acquisition-loops.md) — Skill Acquisition Loops
+- [Sophistry](sophistry.md) — Sophistry
+- [Stated vs Hidden Goals](stated-vs-hidden-goals.md) — Stated vs Hidden Goals
+- [Static Analysis Agents](static-analysis-agents.md) — Static Analysis Agents
+- [Steganography in AI](steganography-ai.md) — Steganography in AI
+- [Strategic Deception](strategic-deception.md) — Strategic Deception
+- [Sub-Agent Delegation](sub-agent-delegation.md) — Sub-Agent Delegation
+- [Summarization Agents](summarization-agents.md) — Summarization Agents
+- [Supervisor Pattern and Swarm](supervisor-pattern-swarm.md) — Supervisor Pattern and Swarm
+- [Task Scheduling for Agents](task-scheduling-agents.md) — Task Scheduling for Agents
+- [Telemetry for Agents](telemetry-for-agents.md) — Telemetry for Agents
+- [Test-Time Compute](test-time-compute.md) — Test-Time Compute
+- [Testing Agents](testing-agents.md) — Testing Agents
+- [Time Consistency](time-consistency-ai.md) — Time Consistency
+- [Tool Selection Policies](tool-selection-policies.md) — Tool Selection Policies
+- [Tool Use Patterns](tool-use-patterns.md) — Tool Use Patterns
+- [Translation Agents](translation-agents.md) — Translation Agents
+- [Transparency in AI](transparency-ai.md) — Transparency in AI
+- [Triage Workflow](triage-workflow.md) — Triage Workflow
+- [Truthfulness in AI](truthfulness-ai.md) — Truthfulness in AI
+- [Value Locking](value-locking.md) — Value Locking
+- [Verifier Agents](verifier-agents.md) — Verifier Agents
+- [Voting Agents](voting-agents.md) — Voting Agents

@@ -24,3 +24,18 @@ Part of [[wiki/index|Wiki Index]]. 12 pages.
 - [[wiki/pulses/self-improvement-spirals|Self-Improvement Spirals]] — Accelerating or collapsing improvement loops
 - [[wiki/pulses/self-ratings|Self-Ratings]] — Informal judgments a system makes about its own quality
 - [[wiki/pulses/self-reports-vs-measures|Self-Reports vs Measures]] — The gap between what a system says about itself and what is measured
+
+## Concepts
+
+- [Capability Measurement](capability-measurement.md) — Capability Measurement
+- [Capability Probes](capability-probes.md) — Capability Probes
+- [Improvement Metrics](improvement-metrics.md) — Improvement Metrics
+- [Improvement Velocity](improvement-velocity.md) — Improvement Velocity
+- [Pulse 9999: End-to-end verification](pulse-9999.md) — Pulse 9999: End-to-end verification
+- [Pulse — Audit Resolution](pulse-audit-resolution.md) — Pulse — Audit Resolution
+- [Recursive Improvement Loops](recursive-improvement-loops.md) — Recursive Improvement Loops
+- [Self-Benchmarking](self-benchmarking.md) — Self-Benchmarking
+- [Self-Evaluation Scores](self-evaluation-scores.md) — Self-Evaluation Scores
+- [Self-Improvement Spirals](self-improvement-spirals.md) — Self-Improvement Spirals
+- [Self-Ratings](self-ratings.md) — Self-Ratings
+- [Self-Reports vs Measures](self-reports-vs-measures.md) — Self-Reports vs Measures

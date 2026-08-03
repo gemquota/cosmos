@@ -191,3 +191,182 @@ Part of [[wiki/index|Wiki Index]]. 177 pages.
 - [[wiki/os-shell/xfs-and-ext4|XFS & ext4]] — The two battle-tested Linux filesystems and when to pick each
 - [[wiki/os-shell/zfs-features-and-snapshots|ZFS Features & Snapshots]] — Copy-on-write pools, checksums, snapshots, and scrubs
 - [[wiki/os-shell/zsh-configuration|Zsh Configuration]] — Customizing the Z shell: rc files, prompts, completions, and plugins
+
+## Concepts
+
+- [Access Control Lists](access-control-lists.md) — Access Control Lists
+- [AIO & epoll](aio-and-epoll.md) — AIO & epoll
+- [Algorithms](algorithms.md) — Algorithms
+- [ANSI Escape Sequences](ansi-escape-sequences.md) — ANSI Escape Sequences
+- [Arrays in Bash/Zsh](arrays-in-shell.md) — Arrays in Bash/Zsh
+- [Awk Text Processing](awk-text-processing.md) — Awk Text Processing
+- [Block Devices & Partitions](block-devices-and-partitions.md) — Block Devices & Partitions
+- [Boot Process & Firmware](boot-process-and-firmware.md) — Boot Process & Firmware
+- [Boot Process](boot-process.md) — Boot Process
+- [Brace Expansion](brace-expansion.md) — Brace Expansion
+- [Btrfs Features & Limitations](btrfs-features-and-limitations.md) — Btrfs Features & Limitations
+- [Cgroups & Namespaces](cgroups-and-namespaces.md) — Cgroups & Namespaces
+- [cgroups & Resource Control](cgroups-and-resource-control.md) — cgroups & Resource Control
+- [Checksums & Hashing](checksums-and-hashing-tools.md) — Checksums & Hashing
+- [Command-Line Interfaces](command-line-interfaces.md) — Command-Line Interfaces
+- [Command Substitution](command-substitution.md) — Command Substitution
+- [Compression Tools](compression-tools.md) — Compression Tools
+- [Containers vs VMs](containers-vs-vms.md) — Containers vs VMs
+- [Context Switching](context-switching.md) — Context Switching
+- [Copy-on-Write Filesystems](copy-on-write-filesystems.md) — Copy-on-Write Filesystems
+- [Copy-on-Write](copy-on-write.md) — Copy-on-Write
+- [CPU Governors & Frequency Scaling](cpu-governors-and-frequency-scaling.md) — CPU Governors & Frequency Scaling
+- [Cron & Scheduled Tasks](cron-and-scheduled-tasks.md) — Cron & Scheduled Tasks
+- [Cron & Scheduling](cron-and-schedulers.md) — Cron & Scheduling
+- [curl & HTTP Clients](curl-and-http-clients.md) — curl & HTTP Clients
+- [Column Tools](cut-paste-and-column-tools.md) — Column Tools
+- [Daemon Processes](daemon-processes.md) — Daemon Processes
+- [Device Drivers & udev](device-drivers-and-udev.md) — Device Drivers & udev
+- [Device Drivers](device-drivers.md) — Device Drivers
+- [DHCP & IP Allocation](dhcp-and-ip-allocation.md) — DHCP & IP Allocation
+- [diff & patch](diff-and-patch.md) — diff & patch
+- [dig & DNS Tools](dig-and-dns-tools.md) — dig & DNS Tools
+- [Disk Partitioning & Filesystems](disk-partitioning-and-filesystems.md) — Disk Partitioning & Filesystems
+- [DNS Resolution](dns-resolution.md) — DNS Resolution
+- [Dotfiles](dotfiles.md) — Dotfiles
+- [eBPF & XDP](ebpf-and-xdp.md) — eBPF & XDP
+- [Environment Variables](environment-variables.md) — Environment Variables
+- [Errexit & Shell Options](errexit-and-shell-options.md) — Errexit & Shell Options
+- [Exit Codes](exit-codes.md) — Exit Codes
+- [File Descriptors](file-descriptors.md) — File Descriptors
+- [File Locking](file-locking.md) — File Locking
+- [Filesystem Design](filesystem-design.md) — Filesystem Design
+- [Filesystem Hierarchy](filesystem-hierarchy.md) — Filesystem Hierarchy
+- [Filesystem Mounts](filesystem-mounts.md) — Filesystem Mounts
+- [Filesystem Permissions & umask](filesystem-permissions-and-umask.md) — Filesystem Permissions & umask
+- [Filesystem Types](filesystem-types.md) — Filesystem Types
+- [find](find-command.md) — find
+- [Firewalls & netfilter](firewalls-and-netfilter.md) — Firewalls & netfilter
+- [Fork, Exec & Process Creation](fork-exec-and-process-creation.md) — Fork, Exec & Process Creation
+- [FUSE & User-Space Filesystems](fuse-and-user-space-filesystems.md) — FUSE & User-Space Filesystems
+- [Glob Patterns](glob-patterns.md) — Glob Patterns
+- [Grep Patterns](grep-patterns.md) — Grep Patterns
+- [Hard Links](hard-links.md) — Hard Links
+- [head, tail & less](head-tail-and-less.md) — head, tail & less
+- [Here Documents](here-documents.md) — Here Documents
+- [HTTP Basics](http-basics.md) — HTTP Basics
+- [ICMP & Diagnostics](icmp-and-network-diagnostics.md) — ICMP & Diagnostics
+- [Immutable Filesystems](immutable-filesystems.md) — Immutable Filesystems
+- [Init Systems & Runlevels](init-systems-and-runlevels.md) — Init Systems & Runlevels
+- [initramfs](initramfs.md) — initramfs
+- [Inodes & Filesystem Metadata](inodes-and-filesystem-metadata.md) — Inodes & Filesystem Metadata
+- [Interactive vs Non-Interactive Shells](interactive-vs-noninteractive-shells.md) — Interactive vs Non-Interactive Shells
+- [Interrupt Handlers & Workqueues](interrupt-handlers-and-workqueues.md) — Interrupt Handlers & Workqueues
+- [io_uring & Async I/O](io-uring-and-async-io.md) — io_uring & Async I/O
+- [IP Addressing & Subnetting](ip-addresses-and-subnetting.md) — IP Addressing & Subnetting
+- [Job Control & Background Tasks](job-control-and-background-tasks.md) — Job Control & Background Tasks
+- [Job Control](job-control.md) — Job Control
+- [Journaling Filesystems](journaling-filesystems.md) — Journaling Filesystems
+- [jq](jq-json-processing.md) — jq
+- [Kernel Architecture](kernel-architecture.md) — Kernel Architecture
+- [Kernel Modules & Loading](kernel-modules-and-loading.md) — Kernel Modules & Loading
+- [Kernel Modules](kernel-modules.md) — Kernel Modules
+- [Kernel vs User Space](kernel-space-vs-user-space.md) — Kernel vs User Space
+- [KVM & QEMU](kvm-and-qemu.md) — KVM & QEMU
+- [Link Layer, Ethernet & ARP](link-layer-ethernet-and-arp.md) — Link Layer, Ethernet & ARP
+- [Linux Capabilities & SELinux](linux-capabilities-and-selinux.md) — Linux Capabilities & SELinux
+- [Linux Namespaces](linux-namespaces.md) — Linux Namespaces
+- [Logical Volume Management](logical-volume-management.md) — Logical Volume Management
+- [mdadm & LVM2](mdadm-and-lvm2.md) — mdadm & LVM2
+- [Memory Allocation](memory-allocation.md) — Memory Allocation
+- [Memory Fragmentation](memory-fragmentation.md) — Memory Fragmentation
+- [Memory Management & Paging](memory-management-paging.md) — Memory Management & Paging
+- [Memory-Mapped Files](memory-mapped-files.md) — Memory-Mapped Files
+- [Message Queues](message-queues.md) — Message Queues
+- [Named Pipes (FIFOs)](named-pipes-fifos.md) — Named Pipes (FIFOs)
+- [Namespace Networking](namespace-networking.md) — Namespace Networking
+- [NAT & Port Forwarding](nat-and-port-forwarding.md) — NAT & Port Forwarding
+- [netcat & Raw Sockets](netcat-and-raw-sockets.md) — netcat & Raw Sockets
+- [Network Sockets](network-sockets.md) — Network Sockets
+- [nmap & Port Scanning](nmap-and-port-scanning.md) — nmap & Port Scanning
+- [Non-Blocking Sockets](non-blocking-sockets.md) — Non-Blocking Sockets
+- [NUMA & CPU Topology](numa-and-cpu-topology.md) — NUMA & CPU Topology
+- [OOM Killer & Memory Pressure](oom-killer-and-memory-pressure.md) — OOM Killer & Memory Pressure
+- [OSI Model & TCP/IP](osi-model-and-tcp-ip.md) — OSI Model & TCP/IP
+- [System-Level Package Managers](package-managers-system-level.md) — System-Level Package Managers
+- [Packet Analysis](packet-analysis-and-capture.md) — Packet Analysis
+- [Page Tables](page-tables.md) — Page Tables
+- [Paging](paging.md) — Paging
+- [Parameter Expansion](parameter-expansion.md) — Parameter Expansion
+- [Path Resolution](path-resolution.md) — Path Resolution
+- [PCIe Topology](pci-e-topology.md) — PCIe Topology
+- [Permissions Model](permissions-model.md) — Permissions Model
+- [Process Groups & Sessions](process-groups-and-sessions.md) — Process Groups & Sessions
+- [Process Management](process-management.md) — Process Management
+- [Process Priorities & Niceness](process-priorities-and-nice.md) — Process Priorities & Niceness
+- [Process Scheduling](process-scheduling.md) — Process Scheduling
+- [Process Signals & Lifecycle](process-signals-and-lifecycle.md) — Process Signals & Lifecycle
+- [Process Signals](process-signals.md) — Process Signals
+- [Process Substitution](process-substitution.md) — Process Substitution
+- [Process Supervision](process-supervision.md) — Process Supervision
+- [procfs & sysfs](procfs-and-sysfs.md) — procfs & sysfs
+- [PTYs & Pseudo-Terminals](pty-and-pseudo-terminals.md) — PTYs & Pseudo-Terminals
+- [Quoting Rules](quoting-rules.md) — Quoting Rules
+- [RAID Levels](raid-levels.md) — RAID Levels
+- [RCU & Read-Copy-Update](rcu-and-read-copy-update.md) — RCU & Read-Copy-Update
+- [Readline & Line Editing](readline-and-line-editing.md) — Readline & Line Editing
+- [Regex Engines](regex-engines.md) — Regex Engines
+- [Resource Utilization Analysis](resource-utilization-analysis.md) — Resource Utilization Analysis
+- [Routing & Forwarding](routing-and-forwarding.md) — Routing & Forwarding
+- [rsync](rsync-synchronization.md) — rsync
+- [runc & crun](runc-and-crun.md) — runc & crun
+- [Sed Editing](sed-editing.md) — Sed Editing
+- [select, poll & epoll](select-poll-epoll-comparison.md) — select, poll & epoll
+- [Semaphores](semaphores.md) — Semaphores
+- [Shared Memory](shared-memory.md) — Shared Memory
+- [Shell Aliases](shell-aliases.md) — Shell Aliases
+- [Shell Completion](shell-completion.md) — Shell Completion
+- [Shell Expansion Order](shell-expansion-order.md) — Shell Expansion Order
+- [Shell Functions](shell-functions.md) — Shell Functions
+- [Shell Scripting](shell-scripting.md) — Shell Scripting
+- [Trap Handlers](shell-trap-handlers.md) — Trap Handlers
+- [Socket Options & Tuning](socket-options-and-tuning.md) — Socket Options & Tuning
+- [sort & uniq](sort-and-uniq.md) — sort & uniq
+- [Special File Bits](special-file-bits.md) — Special File Bits
+- [Spinlocks & Mutexes](spinlocks-and-mutexes.md) — Spinlocks & Mutexes
+- [SSH & Remote Access](ssh-and-remote-access.md) — SSH & Remote Access
+- [Stdin Stdout Stderr](stdin-stdout-stderr.md) — Stdin Stdout Stderr
+- [strace & Dynamic Tracing](strace-and-dynamic-tracing.md) — strace & Dynamic Tracing
+- [sudo & Privilege Escalation](sudo-and-privilege-escalation.md) — sudo & Privilege Escalation
+- [Swap & zram](swap-and-zram.md) — Swap & zram
+- [Swap Space](swap-space.md) — Swap Space
+- [Symlinks](symlinks.md) — Symlinks
+- [Syscalls & Trap Handling](syscalls-and-trap-handling.md) — Syscalls & Trap Handling
+- [System Calls](syscalls.md) — System Calls
+- [Syslog & Logging](syslog-and-logging.md) — Syslog & Logging
+- [System Monitoring](system-monitoring-tools.md) — System Monitoring
+- [systemd & Init Systems](systemd-and-init-systems.md) — systemd & Init Systems
+- [systemd-journal](systemd-journal.md) — systemd-journal
+- [Systemd Units](systemd-units.md) — Systemd Units
+- [tar & Archiving](tar-and-archive-tools.md) — tar & Archiving
+- [TCP Connections](tcp-connection-lifecycle.md) — TCP Connections
+- [TCP Keepalive](tcp-keepalive.md) — TCP Keepalive
+- [TCP Nagle & Delayed ACK](tcp-nagle-and-delayed-ack.md) — TCP Nagle & Delayed ACK
+- [TCP Ports & Services](tcp-ports-and-services.md) — TCP Ports & Services
+- [tcpdump](tcpdump.md) — tcpdump
+- [Terminal Emulators](terminal-emulators.md) — Terminal Emulators
+- [Text Processing Pipelines](text-processing-pipelines.md) — Text Processing Pipelines
+- [Thermal Throttling & Power](thermal-throttling-and-power.md) — Thermal Throttling & Power
+- [Threads & Concurrency](threads-and-concurrency.md) — Threads & Concurrency
+- [TLB & Caching](tlb-cache.md) — TLB & Caching
+- [TLS & HTTPS](tls-and-https.md) — TLS & HTTPS
+- [tmpfs & RAM Disks](tmpfs-and-ramdisks.md) — tmpfs & RAM Disks
+- [Tmux Sessions](tmux-sessions.md) — Tmux Sessions
+- [UDP & Datagrams](udp-and-datagrams.md) — UDP & Datagrams
+- [Resource Limits](ulimit-and-resource-limits.md) — Resource Limits
+- [Umask](umask.md) — Umask
+- [Unix Domain Sockets](unix-domain-sockets.md) — Unix Domain Sockets
+- [Unix Philosophy](unix-philosophy.md) — Unix Philosophy
+- [Users and Groups](users-and-groups.md) — Users and Groups
+- [Users, Groups & ACLs](users-groups-and-acls.md) — Users, Groups & ACLs
+- [Virtual Memory](virtual-memory.md) — Virtual Memory
+- [Wireshark & tshark](wireshark-and-tshark.md) — Wireshark & tshark
+- [xargs](xargs.md) — xargs
+- [XFS & ext4](xfs-and-ext4.md) — XFS & ext4
+- [ZFS Features & Snapshots](zfs-features-and-snapshots.md) — ZFS Features & Snapshots
+- [Zsh Configuration](zsh-configuration.md) — Zsh Configuration

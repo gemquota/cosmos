@@ -13,3 +13,7 @@ Part of [[wiki/index|Wiki Index]]. 1 pages.
 
 ## Pages
 - [[wiki/ops/gap-report|Gap Analysis Report]] — Auto-generated knowledge gap analysis
+
+## Concepts
+
+- [Gap Analysis Report](gap-report.md) — Gap Analysis Report

@@ -13,3 +13,7 @@ Part of [[wiki/index|Wiki Index]]. 1 pages.
 
 ## Pages
 - [[wiki/sources/codebase-analysis|Codebase Analysis — RSIS3 + mykb + myrsikb]] — Deep analysis of all three triad codebases: architecture, implementation status, and integration points
+
+## Concepts
+
+- [Codebase Analysis — RSIS3 + mykb + myrsikb](codebase-analysis.md) — Codebase Analysis — RSIS3 + mykb + myrsikb

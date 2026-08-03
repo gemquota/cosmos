@@ -476,3 +476,467 @@ Part of [[wiki/index|Wiki Index]]. 461 pages.
 - [[wiki/data-storage/yaml-frontmatter|YAML Frontmatter]] — YAML metadata block at the top of markdown files for titles, tags, and fields
 - [[wiki/data-storage/z-ordering-and-data-skipping|Z-Ordering and Data Skipping]] — Multidimensional clustering that makes scans skip irrelevant files
 - [[wiki/data-storage/zero-downtime-migrations|Zero-Downtime Migrations]] — Changing schemas without stopping services
+
+## Concepts
+
+- [A/B Testing Analytics](a-b-testing-analytics.md) — A/B Testing Analytics
+- [Accumulating Snapshot Facts](accumulating-snapshot-facts.md) — Accumulating Snapshot Facts
+- [ACID Transactions](acid-transactions.md) — ACID Transactions
+- [Adaptive Query Execution](adaptive-query-execution.md) — Adaptive Query Execution
+- [Additive vs Breaking Changes](additive-vs-breaking-changes.md) — Additive vs Breaking Changes
+- [Aggregation Levels](aggregation-levels.md) — Aggregation Levels
+- [Airflow and Workflow Orchestration](airflow-and-workflow-orchestration.md) — Airflow and Workflow Orchestration
+- [Analytics](analytics.md) — Analytics
+- [Anomaly Detection in Metrics](anomaly-detection-in-metrics.md) — Anomaly Detection in Metrics
+- [Anti-Entropy and Hinted Handoff](anti-entropy-and-hinted-handoff.md) — Anti-Entropy and Hinted Handoff
+- [Apache Arrow and In-Memory Analytics](apache-arrow-and-in-memory.md) — Apache Arrow and In-Memory Analytics
+- [Approximate Queries and HyperLogLog](approx-queries-and-hyperloglog.md) — Approximate Queries and HyperLogLog
+- [Attribution Models](attribution-models.md) — Attribution Models
+- [Avro and Protobuf Serialization](avro-and-protobuf-serialization.md) — Avro and Protobuf Serialization
+- [B-Trees and LSM Trees](b-tree-and-lsm-trees.md) — B-Trees and LSM Trees
+- [B-Tree Indexing](b-tree-indexing.md) — B-Tree Indexing
+- [Backfilling](backfilling.md) — Backfilling
+- [Backpressure and Flow Control](backpressure-and-flow-control.md) — Backpressure and Flow Control
+- [Backpressure](backpressure.md) — Backpressure
+- [Backup, Restore, and PITR Revisited](backup-restore-and-pitr-revisited.md) — Backup, Restore, and PITR Revisited
+- [Backup Strategies](backup-strategies.md) — Backup Strategies
+- [Backward Compatible Schema Changes](backward-compatible-schema-changes.md) — Backward Compatible Schema Changes
+- [Batch vs Stream Processing](batch-vs-stream-processing.md) — Batch vs Stream Processing
+- [Bayesian Experiment Analysis](bayesian-experiment-analysis.md) — Bayesian Experiment Analysis
+- [Benchmarking and Tuned Queries](benchmarking-and-tuned-queries.md) — Benchmarking and Tuned Queries
+- [Bitmap Indexes](bitmap-indexes.md) — Bitmap Indexes
+- [Bloom Filters and Skipping](bloom-filters-and-skipping.md) — Bloom Filters and Skipping
+- [BM25](bm25.md) — BM25
+- [Broadcast Joins and Bucketing](broadcast-joins-and-bucketing.md) — Broadcast Joins and Bucketing
+- [Bronze, Silver, Gold Layers](bronze-silver-gold.md) — Bronze, Silver, Gold Layers
+- [Bucketing and Clustering in Tables](bucketing-and-clustering-in-tables.md) — Bucketing and Clustering in Tables
+- [Buffer Pool Management](buffer-pool-management.md) — Buffer Pool Management
+- [Bulk vs Streaming Ingestion](bulk-vs-streaming-ingestion.md) — Bulk vs Streaming Ingestion
+- [Business Intelligence Dashboards](business-intelligence-dashboards.md) — Business Intelligence Dashboards
+- [Cache-Aside and Write-Through](cache-aside-and-write-through.md) — Cache-Aside and Write-Through
+- [Cache Eviction Policies](cache-eviction-policies.md) — Cache Eviction Policies
+- [Caching Strategies](caching-strategies.md) — Caching Strategies
+- [CAP Theorem](cap-theorem.md) — CAP Theorem
+- [Case Studies](case-studies-wiki.md) — Case Studies
+- [Causal and Strong Consistency](causal-consistency-and-strong-consistency.md) — Causal and Strong Consistency
+- [Change Data Capture](cdc-change-data-capture.md) — Change Data Capture
+- [Change Data Capture](change-data-capture.md) — Change Data Capture
+- [Changepoint Detection and Seasonality](changepoint-detection-and-seasonality.md) — Changepoint Detection and Seasonality
+- [Checkpointing and Recovery in Flink](checkpointing-and-recovery-flink.md) — Checkpointing and Recovery in Flink
+- [ChromaDB](chromadb.md) — ChromaDB
+- [Chunking Strategies](chunking-strategies.md) — Chunking Strategies
+- [Churn Prediction Features](churn-prediction-features.md) — Churn Prediction Features
+- [Citation Necessity](citation-necessity.md) — Citation Necessity
+- [Citation Placement](citation-placement.md) — Citation Placement
+- [ClickHouse and Columnar OLTP](clickhouse-and-columnar-oltp.md) — ClickHouse and Columnar OLTP
+- [ClickHouse vs Druid vs Pinot](clickhouse-vs-druid-vs-pinot.md) — ClickHouse vs Druid vs Pinot
+- [Clustered Tables](clustered-tables.md) — Clustered Tables
+- [Code in the Wiki](code-in-wiki.md) — Code in the Wiki
+- [Cohort and Retention Analytics](cohort-and-retention-analytics.md) — Cohort and Retention Analytics
+- [Collaborative and Content Filtering](collaborative-and-content-filtering.md) — Collaborative and Content Filtering
+- [Column-Level Lineage](column-level-lineage.md) — Column-Level Lineage
+- [Column Pruning and Vectorized Reads](column-pruning-and-vectorized-reads.md) — Column Pruning and Vectorized Reads
+- [Columnar Storage Formats](columnar-storage-formats.md) — Columnar Storage Formats
+- [Columnar Storage](columnar-storage.md) — Columnar Storage
+- [Compaction and Retention in Kafka](compaction-and-retention-kafka.md) — Compaction and Retention in Kafka
+- [Composite Indexes](composite-indexes.md) — Composite Indexes
+- [Compression Codecs](compression-codecs.md) — Compression Codecs
+- [Conflict-Free Replicated Data Types](conflict-free-replicated-data-types.md) — Conflict-Free Replicated Data Types
+- [Conformed Dimensions](conformed-dimensions.md) — Conformed Dimensions
+- [Connectors](connectors.md) — Connectors
+- [Consistency Models](consistency-models.md) — Consistency Models
+- [Consistent Hashing and Ring Topology](consistent-hashing-and-ring-topology.md) — Consistent Hashing and Ring Topology
+- [Consistent Hashing](consistent-hashing.md) — Consistent Hashing
+- [Consumer Groups and Offsets](consumer-groups-and-offsets.md) — Consumer Groups and Offsets
+- [Consumer Rebalancing and Assignment](consumer-rebalancing-and-assignment.md) — Consumer Rebalancing and Assignment
+- [Content-Addressable Storage](content-addressable-storage.md) — Content-Addressable Storage
+- [Continuous Aggregates and Materialized Views](continuous-aggregates-and-materialized-views.md) — Continuous Aggregates and Materialized Views
+- [Contract Testing for Data](contract-testing-data.md) — Contract Testing for Data
+- [Cooperative Rebalancing](cooperative-rebalancing.md) — Cooperative Rebalancing
+- [Cosine Similarity](cosine-similarity.md) — Cosine Similarity
+- [Cost-Based Query Optimization](cost-based-query-optimization.md) — Cost-Based Query Optimization
+- [Cost Model and Cardinality Estimation](cost-model-and-cardinality-estimation.md) — Cost Model and Cardinality Estimation
+- [Count-Min Sketch and Bloom Variants](count-min-sketch-and-bloom-variants.md) — Count-Min Sketch and Bloom Variants
+- [Covering Indexes](covering-indexes.md) — Covering Indexes
+- [Crash Recovery](crash-recovery.md) — Crash Recovery
+- [CRDTs](crdts.md) — CRDTs
+- [Cross-Database Joins](cross-database-joins.md) — Cross-Database Joins
+- [CSV Injection Risks](csv-injection-risks.md) — CSV Injection Risks
+- [CSV vs Parquet Tradeoffs](csv-parquet-tradeoffs.md) — CSV vs Parquet Tradeoffs
+- [CTEs and Query Rewrites](cte-and-query-rewrites.md) — CTEs and Query Rewrites
+- [Data Catalogs and Metadata](data-catalogs-and-metadata.md) — Data Catalogs and Metadata
+- [Data Compression Techniques](data-compression-techniques.md) — Data Compression Techniques
+- [Data Contracts and Agreements](data-contracts-and-agreements.md) — Data Contracts and Agreements
+- [Data Contracts](data-contracts.md) — Data Contracts
+- [Data Engineering Fundamentals](data-engineering-fundamentals.md) — Data Engineering Fundamentals
+- [Data Federation and Virtualization](data-federation-and-virtualization.md) — Data Federation and Virtualization
+- [Data Federation](data-federation.md) — Data Federation
+- [Data Import/Export Patterns](data-import-export-patterns.md) — Data Import/Export Patterns
+- [Data Lake Architecture](data-lake-architecture.md) — Data Lake Architecture
+- [Data Lake File Layouts](data-lake-file-layouts.md) — Data Lake File Layouts
+- [Data Lake Zones and Layouts](data-lake-zones-and-layouts.md) — Data Lake Zones and Layouts
+- [Data Lake](data-lake.md) — Data Lake
+- [Data Lifecycle Management](data-lifecycle-management.md) — Data Lifecycle Management
+- [Data Lineage and Provenance](data-lineage-and-provenance.md) — Data Lineage and Provenance
+- [Data Lineage](data-lineage.md) — Data Lineage
+- [Data Modeling: Star Schema](data-modeling-star-schema.md) — Data Modeling: Star Schema
+- [Data Modeling](data-modeling.md) — Data Modeling
+- [Data Observability and Monitoring](data-observability-and-monitoring.md) — Data Observability and Monitoring
+- [Data Observability](data-observability.md) — Data Observability
+- [Data Pipeline Orchestration](data-pipeline-orchestration.md) — Data Pipeline Orchestration
+- [Data Pipeline Testing](data-pipeline-testing.md) — Data Pipeline Testing
+- [Data Profiling and Validation](data-profiling-and-validation.md) — Data Profiling and Validation
+- [Data Profiling](data-profiling.md) — Data Profiling
+- [Data Quality Checks](data-quality-checks.md) — Data Quality Checks
+- [Data Quality Dimensions](data-quality-dimensions.md) — Data Quality Dimensions
+- [Data Reset Strategies](data-reset-strategies.md) — Data Reset Strategies
+- [Data Retention and Lifecycle](data-retention-and-lifecycle.md) — Data Retention and Lifecycle
+- [Data Sampling and Approximate Queries](data-sampling-and-approximate-queries.md) — Data Sampling and Approximate Queries
+- [Data Skew and Salting](data-skew-and-salting.md) — Data Skew and Salting
+- [Data Testing Frameworks](data-testing-frameworks.md) — Data Testing Frameworks
+- [Data Validation Before Promotion](data-validation-before-promotion.md) — Data Validation Before Promotion
+- [Data Vault Modeling](data-vault-modeling.md) — Data Vault Modeling
+- [Data Versioning and Branching](data-versioning-and-branching.md) — Data Versioning and Branching
+- [Data Versioning Models](data-versioning-models.md) — Data Versioning Models
+- [Data Versioning](data-versioning.md) — Data Versioning
+- [Data Warehouse Benchmarks](data-warehouse-benchmarks.md) — Data Warehouse Benchmarks
+- [Data Warehouse](data-warehouse.md) — Data Warehouse
+- [Data Warehousing Concepts](data-warehousing-concepts.md) — Data Warehousing Concepts
+- [Database Constraints](database-constraints.md) — Database Constraints
+- [Database Normalization](database-normalization.md) — Database Normalization
+- [Database Performance Monitoring](database-performance-monitoring.md) — Database Performance Monitoring
+- [Database Replication Revisited](database-replication-revisited.md) — Database Replication Revisited
+- [DataFrames in Production](dataframes-in-production.md) — DataFrames in Production
+- [dbt and Analytics Engineering](dbt-and-analytics-engineering.md) — dbt and Analytics Engineering
+- [Dead Letter Data and Repair Pipelines](dead-letter-data-and-repair-pipelines.md) — Dead Letter Data and Repair Pipelines
+- [Dead Letter Queues and Retries](dead-letter-queues-and-retries.md) — Dead Letter Queues and Retries
+- [Dead Letter Queues](dead-letter-queues.md) — Dead Letter Queues
+- [Dead Letter Topics and DLQ](dead-letter-topics-and-dlq.md) — Dead Letter Topics and DLQ
+- [Deadlock Detection](deadlock-detection.md) — Deadlock Detection
+- [Debezium and CDC Tools](debezium-and-cdc-tools.md) — Debezium and CDC Tools
+- [Deduplication](deduplication.md) — Deduplication
+- [Degenerate Dimensions](degenerate-dimensions.md) — Degenerate Dimensions
+- [Delta Lake and Merge Operations](delta-lake-and-merge-operations.md) — Delta Lake and Merge Operations
+- [Denormalization](denormalization.md) — Denormalization
+- [Diagrams in the Wiki](diagrams-in-wiki.md) — Diagrams in the Wiki
+- [Dimension Tables and Grains](dimension-tables-and-grains.md) — Dimension Tables and Grains
+- [Dimensional Modeling](dimensional-modeling.md) — Dimensional Modeling
+- [Disaster Recovery](disaster-recovery.md) — Disaster Recovery
+- [Distinct Count and Cardinality Sketches](distinct-count-and-cardinality-sketches.md) — Distinct Count and Cardinality Sketches
+- [Distributed Query Engines](distributed-query-engines.md) — Distributed Query Engines
+- [Distributed Transactions and 2PC](distributed-transactions-and-2pc.md) — Distributed Transactions and 2PC
+- [Distributed Transactions](distributed-transactions.md) — Distributed Transactions
+- [Document Databases](document-databases.md) — Document Databases
+- [Document Stores](document-stores.md) — Document Stores
+- [Dot Product](dot-product.md) — Dot Product
+- [Downsampling and Retention Policies](downsampling-and-retention-policies.md) — Downsampling and Retention Policies
+- [DQ Frameworks and Great Expectations](dq-frameworks-and-great-expectations.md) — DQ Frameworks and Great Expectations
+- [Drill-Through and Slicing](drill-through-and-slicing.md) — Drill-Through and Slicing
+- [DuckDB and Embedded Analytics](duckdb-and-embedded-analytics.md) — DuckDB and Embedded Analytics
+- [Edit Distance](edit-distance.md) — Edit Distance
+- [Elasticsearch](elasticsearch.md) — Elasticsearch
+- [Embeddings](embeddings.md) — Embeddings
+- [Encoding and Dictionary Encoding](encoding-and-dictionary-encoding.md) — Encoding and Dictionary Encoding
+- [Entity Resolution](entity-resolution.md) — Entity Resolution
+- [ETL vs ELT](etl-vs-elt.md) — ETL vs ELT
+- [Euclidean Distance](euclidean-distance.md) — Euclidean Distance
+- [Evaluation Metrics for Recommendations](evaluation-metrics-for-recommendations.md) — Evaluation Metrics for Recommendations
+- [Event Sourcing Databases](event-sourcing-databases.md) — Event Sourcing Databases
+- [Event Streaming Platforms](event-streaming-platforms.md) — Event Streaming Platforms
+- [Event Time vs Processing Time](event-time-vs-processing-time.md) — Event Time vs Processing Time
+- [Eventual Consistency and Conflict Resolution](eventual-consistency-and-conflict-resolution.md) — Eventual Consistency and Conflict Resolution
+- [Exactly-Once Processing](exactly-once-processing.md) — Exactly-Once Processing
+- [Exactly-Once Semantics and Transactions](exactly-once-semantics-transactions.md) — Exactly-Once Semantics and Transactions
+- [Exactly-Once Semantics](exactly-once-semantics.md) — Exactly-Once Semantics
+- [Examples in the Wiki](examples-in-wiki.md) — Examples in the Wiki
+- [Excel and Spreadsheet Data](excel-and-spreadsheet-data.md) — Excel and Spreadsheet Data
+- [Expand-Contract Migrations](expand-contract-migrations.md) — Expand-Contract Migrations
+- [Experiment Analysis Methods](experiment-analysis-methods.md) — Experiment Analysis Methods
+- [Explain Plans and Profiling](explain-plans-and-profiling.md) — Explain Plans and Profiling
+- [Fact Tables and Measures](fact-tables-and-measures.md) — Fact Tables and Measures
+- [Factless Fact Tables](factless-fact-tables.md) — Factless Fact Tables
+- [FAISS](faiss.md) — FAISS
+- [FAQ Articles](faq-articles.md) — FAQ Articles
+- [Feature Stores and ML Features](feature-stores-and-ml-features.md) — Feature Stores and ML Features
+- [Federated Queries Across Sources](federated-queries-across-sources.md) — Federated Queries Across Sources
+- [File Format Selection Metrics](file-format-selection-metrics.md) — File Format Selection Metrics
+- [Fivetran and Airbyte](fivetran-and-airbyte.md) — Fivetran and Airbyte
+- [Fixture Data and Seeding](fixture-data-and-seeding.md) — Fixture Data and Seeding
+- [Flink SQL and Windows](flink-sql-and-windows.md) — Flink SQL and Windows
+- [Flink Stream Processing](flink-stream-processing.md) — Flink Stream Processing
+- [Flyway and Liquibase](flyway-and-liquibase.md) — Flyway and Liquibase
+- [Footnote Style](footnote-style-wiki.md) — Footnote Style
+- [Forecasting Baselines and Models](forecasting-baselines-and-models.md) — Forecasting Baselines and Models
+- [Full-Text Search and Tokenization](full-text-search-and-tokenization.md) — Full-Text Search and Tokenization
+- [Funnel and Path Analysis](funnel-and-path-analysis.md) — Funnel and Path Analysis
+- [Glossaries](glossaries-wiki.md) — Glossaries
+- [Gossip Protocols and Distributed Consensus](gossip-protocols-and-distributed-consensus.md) — Gossip Protocols and Distributed Consensus
+- [Grain and Additivity](grain-and-additivity.md) — Grain and Additivity
+- [Graph and Time-Series Databases](graph-databases-timeseries-databases.md) — Graph and Time-Series Databases
+- [Hash Indexes](hash-indexes.md) — Hash Indexes
+- [Hinted Handoff and Repair Paths](hint-handoff-and-repair-paths.md) — Hinted Handoff and Repair Paths
+- [Hive Tables and Partitioning](hive-tables-and-partitioning.md) — Hive Tables and Partitioning
+- [HNSW](hnsw.md) — HNSW
+- [Hot and Cold Data Tiering](hot-and-cold-data-tiering.md) — Hot and Cold Data Tiering
+- [Apache Hudi and Incremental Views](hudi-and-incremental-views.md) — Apache Hudi and Incremental Views
+- [Hybrid Logical Clocks and TrueTime](hybrid-logical-clocks-and-true-time.md) — Hybrid Logical Clocks and TrueTime
+- [Hybrid Search](hybrid-search.md) — Hybrid Search
+- [Iceberg Table Format and Versioning](iceberg-table-format-and-versioning.md) — Iceberg Table Format and Versioning
+- [Idempotent Ingestion](idempotent-ingestion.md) — Idempotent Ingestion
+- [Idempotent Producers and Consumers](idempotent-producers-and-consumers.md) — Idempotent Producers and Consumers
+- [Idempotent Writes and Upserts](idempotent-writes-and-upserts.md) — Idempotent Writes and Upserts
+- [Images in the Wiki](images-in-wiki.md) — Images in the Wiki
+- [Implicit vs Explicit Feedback](implicit-vs-explicit-feedback.md) — Implicit vs Explicit Feedback
+- [In-Memory Databases](in-memory-databases.md) — In-Memory Databases
+- [Incremental Loading Strategies](incremental-loading-strategies.md) — Incremental Loading Strategies
+- [Incremental Loading](incremental-loading.md) — Incremental Loading
+- [Index Maintenance](index-maintenance.md) — Index Maintenance
+- [Indexes](indexes-wiki.md) — Indexes
+- [Indexes](indexes.md) — Indexes
+- [Indexing Strategies Revisited](indexing-strategies-revisited.md) — Indexing Strategies Revisited
+- [Infobox Practice](infobox-practice.md) — Infobox Practice
+- [Inline Citation Style](inline-citation-style.md) — Inline Citation Style
+- [Inverted Index](inverted-index.md) — Inverted Index
+- [IVF Index](ivf.md) — IVF Index
+- [Jaccard Similarity](jaccard-similarity.md) — Jaccard Similarity
+- [Join Algorithms](join-algorithms.md) — Join Algorithms
+- [Join Strategies in Streams](join-strategies-in-streams.md) — Join Strategies in Streams
+- [JSON and Semi-Structured Data](json-and-semi-structured-data.md) — JSON and Semi-Structured Data
+- [JSON-LD](json-ld.md) — JSON-LD
+- [JSON Lines and NDJSON](json-lines-and-ndjson.md) — JSON Lines and NDJSON
+- [Kafka and Event Streams](kafka-and-event-streams.md) — Kafka and Event Streams
+- [Kafka Architecture and Partitioning](kafka-architecture-and-partitioning.md) — Kafka Architecture and Partitioning
+- [Kafka Connect and Connector Pools](kafka-connect-and-connector-pools.md) — Kafka Connect and Connector Pools
+- [Kafka Streams and ksqlDB](kafka-streams-and-ksql.md) — Kafka Streams and ksqlDB
+- [Kafka Transactions and Atomicity](kafka-transactions-and-atomicity.md) — Kafka Transactions and Atomicity
+- [Kappa Architecture](kappa-architecture.md) — Kappa Architecture
+- [Key-Value Stores](key-value-stores.md) — Key-Value Stores
+- [Kimball vs Inmon](kimball-vs-inmon.md) — Kimball vs Inmon
+- [Knowledge Graph](knowledge-graph.md) — Knowledge Graph
+- [ksqlDB and SQL Streaming](ksql-and-sql-streaming.md) — ksqlDB and SQL Streaming
+- [LAG and LEAD Analytics](lag-and-lead-analytics.md) — LAG and LEAD Analytics
+- [lakeFS and Git for Data](lakefs-and-git-for-data.md) — lakeFS and Git for Data
+- [Lakehouse Architecture](lakehouse-architecture.md) — Lakehouse Architecture
+- [Lakehouse Engines Comparison](lakehouse-engines-comparison.md) — Lakehouse Engines Comparison
+- [Lambda Architecture](lambda-architecture.md) — Lambda Architecture
+- [Last-Write-Wins and CRDTs](last-write-wins-and-crdts.md) — Last-Write-Wins and CRDTs
+- [Late Data and Triggers](late-data-and-triggers.md) — Late Data and Triggers
+- [Latent Dirichlet Allocation](latent-dirichlet-allocation.md) — Latent Dirichlet Allocation
+- [Latent Semantic Analysis](latent-semantic-analysis.md) — Latent Semantic Analysis
+- [Data Architecture Layers](layers.md) — Data Architecture Layers
+- [Leaderless Replication](leaderless-replication.md) — Leaderless Replication
+- [Learning to Rank and Features](learning-to-rank-and-features.md) — Learning to Rank and Features
+- [Lemmatization](lemmatization.md) — Lemmatization
+- [Lifetime Value Models](lifetime-value-models.md) — Lifetime Value Models
+- [Locality-Sensitive Hashing](locality-sensitive-hashing.md) — Locality-Sensitive Hashing
+- [Lock Granularity](lock-granularity.md) — Lock Granularity
+- [Log Collection & Aggregation](log-collection-and-aggregation.md) — Log Collection & Aggregation
+- [Log Compaction and Keys](log-compaction-and-keys.md) — Log Compaction and Keys
+- [Logical Clocks and Timestamps](logical-clocks-and-timestamps.md) — Logical Clocks and Timestamps
+- [Logical Replication](logical-replication.md) — Logical Replication
+- [LSM Trees](lsm-trees.md) — LSM Trees
+- [Lucene](lucene.md) — Lucene
+- [Massively Parallel Processing](massively-parallel-processing.md) — Massively Parallel Processing
+- [Materialize and Differential Dataflow](materialize-and-differential-dataflow.md) — Materialize and Differential Dataflow
+- [Materialized Views and Incremental Refresh](materialized-views-and-incremental-refresh.md) — Materialized Views and Incremental Refresh
+- [Materialized Views](materialized-views.md) — Materialized Views
+- [Maxwell and Binlog Parsers](maxwell-and-binlog-parsers.md) — Maxwell and Binlog Parsers
+- [Medallion Architecture](medallion-architecture.md) — Medallion Architecture
+- [Memcached vs Redis](memcached-vs-redis.md) — Memcached vs Redis
+- [Merge and Upsert Patterns](merge-and-upsert-patterns.md) — Merge and Upsert Patterns
+- [Mermaid in the Wiki](mermaid-in-wiki.md) — Mermaid in the Wiki
+- [Message Queues](message-queues.md) — Message Queues
+- [Metadata Filtering](metadata-filtering.md) — Metadata Filtering
+- [Metastore and Iceberg Catalog](metastore-and-catalog-iceberg.md) — Metastore and Iceberg Catalog
+- [Data Modeling Methodology](methodology.md) — Data Modeling Methodology
+- [Milvus](milvus.md) — Milvus
+- [MinHash](minhash.md) — MinHash
+- [MonetDB and DuckDB Comparison](monetdb-and-duckdb-comparison.md) — MonetDB and DuckDB Comparison
+- [MongoDB Data Modeling](mongodb-data-modeling.md) — MongoDB Data Modeling
+- [MPP Engines and Distributed SQL](mpp-engines-and-distributed-sql.md) — MPP Engines and Distributed SQL
+- [Multi-Leader Replication](multi-leader-replication.md) — Multi-Leader Replication
+- [Multiple Comparisons Corrections](multiple-comparisons-corrections.md) — Multiple Comparisons Corrections
+- [Multiversion Concurrency Control](multiversion-concurrency-control.md) — Multiversion Concurrency Control
+- [MVCC and Isolation Levels](mvcc-and-isolation-levels.md) — MVCC and Isolation Levels
+- [N-grams](n-grams.md) — N-grams
+- [Named Entity Recognition](named-entity-recognition.md) — Named Entity Recognition
+- [Navigation Boxes](navigation-boxes.md) — Navigation Boxes
+- [Netezza and Vertica](netezza-and-vertica.md) — Netezza and Vertica
+- [NoSQL Data Models](nosql-data-models.md) — NoSQL Data Models
+- [NumPy Vectorization](numpy-vectorization.md) — NumPy Vectorization
+- [Object Storage](object-storage.md) — Object Storage
+- [Object Store Data Access](object-store-data-access.md) — Object Store Data Access
+- [Offline vs Online Stores](offline-vs-online-stores.md) — Offline vs Online Stores
+- [Offset Commits and Checkpointing](offset-commits-and-checkpointing.md) — Offset Commits and Checkpointing
+- [OLAP Cubes and Rollups](olap-cubes-and-rollups.md) — OLAP Cubes and Rollups
+- [OLAP vs OLTP](olap-vs-oltp.md) — OLAP vs OLTP
+- [Open Data Formats](open-data-formats.md) — Open Data Formats
+- [Open Knowledge Format](open-knowledge-format.md) — Open Knowledge Format
+- [Open Table Formats and Interoperability](open-table-formats-and-interoperability.md) — Open Table Formats and Interoperability
+- [Open Table Formats](open-table-formats.md) — Open Table Formats
+- [Optimistic Concurrency Control](optimistic-concurrency-control.md) — Optimistic Concurrency Control
+- [Oracle Analytics](oracle-analytics.md) — Oracle Analytics
+- [Ordering and Timestamp Assignment](ordering-and-timestamp-assignment.md) — Ordering and Timestamp Assignment
+- [Out-of-Order Data Handling](out-of-order-data-handling.md) — Out-of-Order Data Handling
+- [Outbox Pattern for Transactions](outbox-pattern-for-transactions.md) — Outbox Pattern for Transactions
+- [p-Values and Confidence Intervals](p-value-and-confidence-intervals.md) — p-Values and Confidence Intervals
+- [Pandas Performance](pandas-performance.md) — Pandas Performance
+- [Parquet and ORC](parquet-and-orc.md) — Parquet and ORC
+- [Partial Indexes](partial-indexes.md) — Partial Indexes
+- [Partition Pruning and Zone Maps](partition-pruning-and-zone-maps.md) — Partition Pruning and Zone Maps
+- [Partition Pruning](partition-pruning.md) — Partition Pruning
+- [Periodic Snapshot Facts](periodic-snapshot-facts.md) — Periodic Snapshot Facts
+- [Personalization Data Flows](personalization-data-flows.md) — Personalization Data Flows
+- [Physical Replication](physical-replication.md) — Physical Replication
+- [Pinecone](pinecone.md) — Pinecone
+- [Pinot Real-Time Analytics](pinot-real-time-analytics.md) — Pinot Real-Time Analytics
+- [Pipelines](pipelines.md) — Pipelines
+- [Pivoting and Unpivoting](pivoting-and-unpivoting.md) — Pivoting and Unpivoting
+- [Point-in-Time Recovery](point-in-time-recovery.md) — Point-in-Time Recovery
+- [Polars and DataFrames](polars-and-dataframes.md) — Polars and DataFrames
+- [Polystore Databases](polystore-databases.md) — Polystore Databases
+- [PostgreSQL tsvector](postgres-tsvector.md) — PostgreSQL tsvector
+- [Power and Sample Size](power-and-sample-size.md) — Power and Sample Size
+- [Precision, Recall, and NDCG](precision-recall-and-ndcg.md) — Precision, Recall, and NDCG
+- [Predicate Pushdown and Projection](predicate-pushdown-and-projection.md) — Predicate Pushdown and Projection
+- [Presto and Trino](presto-and-trino.md) — Presto and Trino
+- [Probabilistic Data Structures](probabilistic-data-structures.md) — Probabilistic Data Structures
+- [Processing Guarantees: At-Least-Once](processing-guarantees-at-least-once.md) — Processing Guarantees: At-Least-Once
+- [Product Quantization](product-quantization.md) — Product Quantization
+- [Property Graph](property-graph.md) — Property Graph
+- [Public Datasets](public-datasets.md) — Public Datasets
+- [Qdrant](qdrant.md) — Qdrant
+- [Quantile and Percentile Sketching](quantile-and-percentile-sketching.md) — Quantile and Percentile Sketching
+- [Quarantine and Bad Data Handling](quarantine-and-bad-data-handling.md) — Quarantine and Bad Data Handling
+- [Query Planning and Optimization](query-planning-and-optimization.md) — Query Planning and Optimization
+- [Query Tuning](query-tuning.md) — Query Tuning
+- [Quorum Protocols](quorum-protocols.md) — Quorum Protocols
+- [Quorum Reads and Writes](quorum-reads-and-writes.md) — Quorum Reads and Writes
+- [Raft Consensus](raft-consensus.md) — Raft Consensus
+- [Randomization and Stratification](randomization-and-stratification.md) — Randomization and Stratification
+- [Ranking and Tiling Window Functions](ranking-and-tiling-window-functions.md) — Ranking and Tiling Window Functions
+- [Raw Landing and Curated Zones](raw-landing-and-curated-zones.md) — Raw Landing and Curated Zones
+- [RDF](rdf.md) — RDF
+- [Read Replicas and Scaling](read-replicas-and-scaling.md) — Read Replicas and Scaling
+- [Real-Time Dashboards and Alerts](real-time-dashboards-and-alerts.md) — Real-Time Dashboards and Alerts
+- [Real-Time Personalization](real-time-personalization.md) — Real-Time Personalization
+- [Reciprocal Rank Fusion](reciprocal-rank-fusion.md) — Reciprocal Rank Fusion
+- [Recommendation Data Pipelines](recommendation-data-pipelines.md) — Recommendation Data Pipelines
+- [Record Linkage](record-linkage.md) — Record Linkage
+- [Redis and Caching Patterns](redis-and-caching-patterns.md) — Redis and Caching Patterns
+- [Reference Blocks](reference-blocks.md) — Reference Blocks
+- [Reference Lists](reference-lists.md) — Reference Lists
+- [Replication Mechanisms](replication-mechanisms.md) — Replication Mechanisms
+- [Replication Strategies](replication-strategies.md) — Replication Strategies
+- [Reporting and Analytics Tools](reporting-and-analytics-tools.md) — Reporting and Analytics Tools
+- [Reservoir Sampling and Streaming Stats](reservoir-sampling-and-streaming-stats.md) — Reservoir Sampling and Streaming Stats
+- [Resource Scheduling in Spark](resource-scheduling-in-spark.md) — Resource Scheduling in Spark
+- [Retrieval-Augmented Generation](retrieval-augmented-generation.md) — Retrieval-Augmented Generation
+- [RFM Analysis](rfm-analysis.md) — RFM Analysis
+- [Role-Playing Dimensions](role-playing-dimensions.md) — Role-Playing Dimensions
+- [Rollups and Drilldowns](rollups-and-drilldowns.md) — Rollups and Drilldowns
+- [RPO and RTO](rpo-and-rto.md) — RPO and RTO
+- [Saga Transactions and Compensations](saga-transactions-and-compensations.md) — Saga Transactions and Compensations
+- [SCD Type 2: Slowly Changing Dimensions](scd-type-2-slowly-changing-dimensions.md) — SCD Type 2: Slowly Changing Dimensions
+- [Schema Evolution in Streams](schema-evolution-in-streams.md) — Schema Evolution in Streams
+- [Schema Evolution](schema-evolution.md) — Schema Evolution
+- [Schema Migration Tools](schema-migration-tools.md) — Schema Migration Tools
+- [Schema Migrations](schema-migrations.md) — Schema Migrations
+- [Schema-on-Read vs Schema-on-Write](schema-on-read.md) — Schema-on-Read vs Schema-on-Write
+- [Schema Registry and Evolution](schema-registry-and-evolution.md) — Schema Registry and Evolution
+- [Scraping and Web Data](scraping-and-web-data.md) — Scraping and Web Data
+- [Search and Relevance Ranking](search-and-relevance-ranking.md) — Search and Relevance Ranking
+- [Search Engines: Elasticsearch](search-engines-elasticsearch.md) — Search Engines: Elasticsearch
+- [Segmentation and Clustering Analytics](segmentation-and-clustering-analytics.md) — Segmentation and Clustering Analytics
+- [Semantic Layers and Metrics](semantic-layers-and-metrics.md) — Semantic Layers and Metrics
+- [Semantic Search](semantic-search.md) — Semantic Search
+- [Sequential Testing](sequential-testing-data.md) — Sequential Testing
+- [Sessionization and Activity Windows](sessionization-and-activity-windows.md) — Sessionization and Activity Windows
+- [Sharding and Partitioning Revisited](sharding-and-partitioning-revisited.md) — Sharding and Partitioning Revisited
+- [Sharding Strategies](sharding-strategies.md) — Sharding Strategies
+- [SimHash](simhash.md) — SimHash
+- [SingleStore and HTAP](singlestore-htap.md) — SingleStore and HTAP
+- [Sketch-Based Analytics](sketch-based-analytics.md) — Sketch-Based Analytics
+- [Slowly Changing Dimensions](slowly-changing-dimensions.md) — Slowly Changing Dimensions
+- [Small File Problem and Compaction](small-file-problem-and-compaction.md) — Small File Problem and Compaction
+- [Snapshot Isolation and Time Travel](snapshot-isolation-and-timetravel.md) — Snapshot Isolation and Time Travel
+- [Soda and dbt Tests](soda-and-dbt-tests.md) — Soda and dbt Tests
+- [Source Formatting](source-formatting.md) — Source Formatting
+- [Spark: Batch and Streaming](spark-batch-and-streaming.md) — Spark: Batch and Streaming
+- [Spark Executors and Memory Planning](spark-executors-and-memory-planning.md) — Spark Executors and Memory Planning
+- [Spark SQL and DataFrames](spark-sql-and-dataframes.md) — Spark SQL and DataFrames
+- [Spark Structured Streaming](spark-structured-streaming.md) — Spark Structured Streaming
+- [Spark Tuning and Shuffle Optimization](spark-tuning-and-shuffle-optimization.md) — Spark Tuning and Shuffle Optimization
+- [SPARQL](sparql.md) — SPARQL
+- [Spatial Indexes](spatial-indexes.md) — Spatial Indexes
+- [SQL Engine Architecture](sql-engines.md) — SQL Engine Architecture
+- [SQL on Lakehouse](sql-on-lakehouse.md) — SQL on Lakehouse
+- [SQL Optimization Techniques](sql-optimization-techniques.md) — SQL Optimization Techniques
+- [SQL Server Analytics](sql-server-analytics.md) — SQL Server Analytics
+- [SQLite FTS5](sqlite-fts5.md) — SQLite FTS5
+- [Staging vs Mart Tables](staging-vs-mart-tables.md) — Staging vs Mart Tables
+- [StarRocks and Doris](starrocks-and-doris.md) — StarRocks and Doris
+- [Stateful Stream Processing](stateful-stream-processing.md) — Stateful Stream Processing
+- [Statistical Significance in Data](statistical-significance-in-data.md) — Statistical Significance in Data
+- [Statistics and Optimizer Hints](statistics-and-optimizer-hints.md) — Statistics and Optimizer Hints
+- [Stemming](stemming.md) — Stemming
+- [Stopwords](stopwords.md) — Stopwords
+- [Storage Engines](storage-engines.md) — Storage Engines
+- [Storage Tiering](storage-tiering.md) — Storage Tiering
+- [Stream Analytics Platforms](stream-analytics-platforms.md) — Stream Analytics Platforms
+- [Stream Processing Engines](stream-processing-engines.md) — Stream Processing Engines
+- [Stream Reprocessing and Backfills](stream-reprocessing-and-backfills.md) — Stream Reprocessing and Backfills
+- [Stream-Table Duality](stream-table-duality.md) — Stream-Table Duality
+- [Stream Windowing](stream-windowing.md) — Stream Windowing
+- [Streaming Data Pipelines](streaming-data-pipelines.md) — Streaming Data Pipelines
+- [Streaming Sinks and Sources](streaming-sinks-and-sources.md) — Streaming Sinks and Sources
+- [Stream Processing Libraries](streams-processing-libraries.md) — Stream Processing Libraries
+- [Surrogate and Natural Keys](surrogate-and-natural-keys.md) — Surrogate and Natural Keys
+- [Surrogate vs Natural Keys](surrogate-keys.md) — Surrogate vs Natural Keys
+- [Synthetic Data for Testing](synthetic-data-for-testing.md) — Synthetic Data for Testing
+- [Table Format Comparisons](table-format-comparisons.md) — Table Format Comparisons
+- [Table Health and Quality Metrics](table-health-and-quality-metrics.md) — Table Health and Quality Metrics
+- [Table Partitioning](table-partitioning.md) — Table Partitioning
+- [Tables in the Wiki](tables-in-wiki.md) — Tables in the Wiki
+- [Task Managers and Slots](task-managers-and-slots.md) — Task Managers and Slots
+- [Teradata and Legacy Warehouses](teradata-and-legacy-warehouses.md) — Teradata and Legacy Warehouses
+- [Test Data Generation](test-data-generation.md) — Test Data Generation
+- [TF-IDF](tf-idf.md) — TF-IDF
+- [Time Bucketing and Rollups](time-bucketing-and-rollups.md) — Time Bucketing and Rollups
+- [Time-Series Databases](time-series-databases.md) — Time-Series Databases
+- [Time-Series Queries and Gaps](time-series-queries-and-gaps.md) — Time-Series Queries and Gaps
+- [Time Travel Queries](time-travel-queries.md) — Time Travel Queries
+- [TimescaleDB and Postgres Extensions](timescaledb-and-postgres-extensions.md) — TimescaleDB and Postgres Extensions
+- [Tokenization](tokenization.md) — Tokenization
+- [Top-K and Heavy Hitters Algorithms](top-k-and-heavy-hitters-algorithms.md) — Top-K and Heavy Hitters Algorithms
+- [Topic Modeling](topic-modeling.md) — Topic Modeling
+- [TPC-H and TPC-DS](tpch-and-tpcds.md) — TPC-H and TPC-DS
+- [Transaction Isolation Levels](transaction-isolation-levels.md) — Transaction Isolation Levels
+- [Transactional Facts](transactional-facts.md) — Transactional Facts
+- [Transactional Outbox and CDC Relay](transactional-outbox-and-cdc-relay.md) — Transactional Outbox and CDC Relay
+- [Transactions and ACID Revisited](transactions-and-acid-revisited.md) — Transactions and ACID Revisited
+- [Triplestore](triplestore.md) — Triplestore
+- [Tutorials in the Wiki](tutorials-in-wiki.md) — Tutorials in the Wiki
+- [Two-Phase Commit](two-phase-commit.md) — Two-Phase Commit
+- [Two-Phase Locking](two-phase-locking.md) — Two-Phase Locking
+- [Uniform Tables and Format-Agnostic Engines](uniform-tables-and-format-agnostic-engines.md) — Uniform Tables and Format-Agnostic Engines
+- [Vacuuming & Compaction](vacuuming-and-compaction.md) — Vacuuming & Compaction
+- [Valkey and KeyDB](valkey-and-keydb.md) — Valkey and KeyDB
+- [Vector Clocks and Version Vectors](vector-clocks-and-version-vectors.md) — Vector Clocks and Version Vectors
+- [Vector Databases Revisited](vector-databases-revisited.md) — Vector Databases Revisited
+- [Vector Databases](vector-databases.md) — Vector Databases
+- [Vectorized Query Execution](vectorized-query-execution.md) — Vectorized Query Execution
+- [Virtual Nodes and Replication Factors](virtual-nodes-and-replication-factors.md) — Virtual Nodes and Replication Factors
+- [WAL and Consistency](wal-and-consistency.md) — WAL and Consistency
+- [Warehouse Optimization](warehouse-optimization.md) — Warehouse Optimization
+- [Watermarks and Idle Sources](watermarks-and-idle-sources.md) — Watermarks and Idle Sources
+- [Weaviate](weaviate.md) — Weaviate
+- [Wide-Column Stores](wide-column-stores.md) — Wide-Column Stores
+- [Window Functions in SQL](window-functions-in-sql.md) — Window Functions in SQL
+- [Windowed Joins and Temporal Joins](windowed-joins-and-temporal-joins.md) — Windowed Joins and Temporal Joins
+- [Windowing and Watermarks](windowing-and-watermarks.md) — Windowing and Watermarks
+- [Write-Ahead Logging](write-ahead-logging.md) — Write-Ahead Logging
+- [XML and Data Interchange](xml-and-data-interchange.md) — XML and Data Interchange
+- [YAML Frontmatter](yaml-frontmatter.md) — YAML Frontmatter
+- [Z-Ordering and Data Skipping](z-ordering-and-data-skipping.md) — Z-Ordering and Data Skipping
+- [Zero-Downtime Migrations](zero-downtime-migrations.md) — Zero-Downtime Migrations

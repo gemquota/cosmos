@@ -177,3 +177,165 @@ Part of [[wiki/index|Wiki Index]]. 162 pages.
 - [[wiki/web-platforms/woff2|WOFF2 Format]] — The compressed web font container format
 - [[wiki/web-platforms/xs-leaks|XS-Leaks]] — Cross-site information leaks through browser side channels
 - [[wiki/web-platforms/z-index-management|Z-Index Management]] — Controlling overlap order without stacking-context surprises
+
+## Concepts
+
+- [Web Accessibility](accessibility-web.md) — Web Accessibility
+- [Allowlist Validation](allowlist-validation.md) — Allowlist Validation
+- [aspect-ratio in CSS](aspect-ratio-css.md) — aspect-ratio in CSS
+- [Aspect Ratio for Images](aspect-ratio-images.md) — Aspect Ratio for Images
+- [Atomic Writes](atomic-writes.md) — Atomic Writes
+- [Browser Engines](browser-engines.md) — Browser Engines
+- [Browser Rendering Pipeline](browser-rendering-pipeline.md) — Browser Rendering Pipeline
+- [Can I Use in Practice](caniuse-practice.md) — Can I Use in Practice
+- [Canvas 2D API](canvas-2d.md) — Canvas 2D API
+- [clamp() in Practice](clamp-practice.md) — clamp() in Practice
+- [Color Blind Accessibility](color-blind-considerations.md) — Color Blind Accessibility
+- [color-mix() CSS](color-mix.md) — color-mix() CSS
+- [CSS Color Spaces](color-spaces.md) — CSS Color Spaces
+- [Component Architecture](component-architecture.md) — Component Architecture
+- [Compositing Triggers](compositing-triggers.md) — Compositing Triggers
+- [CSS Containment](contain-property.md) — CSS Containment
+- [Container Query Units](container-relative-units.md) — Container Query Units
+- [content-visibility CSS](content-visibility.md) — content-visibility CSS
+- [Contrast Ratios](contrast-ratios.md) — Contrast Ratios
+- [CSS Animations](css-animations.md) — CSS Animations
+- [CSS Architecture](css-architecture.md) — CSS Architecture
+- [CSS Grid in Practice](css-grid-practice.md) — CSS Grid in Practice
+- [CSS Layout](css-layout.md) — CSS Layout
+- [CSS Transforms](css-transforms.md) — CSS Transforms
+- [CSS Transitions](css-transitions.md) — CSS Transitions
+- [CSS Variables and Theming](css-variables-theming.md) — CSS Variables and Theming
+- [Cumulative Layout Shift](cumulative-layout-shift.md) — Cumulative Layout Shift
+- [Dark Mode Practice](dark-mode-practice.md) — Dark Mode Practice
+- [Date Formatting](date-formatting.md) — Date Formatting
+- [Denylist Validation](denylist-validation.md) — Denylist Validation
+- [Device Detection](device-detection.md) — Device Detection
+- [Device Pixel Ratio](device-pixel-ratio.md) — Device Pixel Ratio
+- [DNS Prefetch](dns-prefetch.md) — DNS Prefetch
+- [DOM and CSSOM](dom-and-cssom.md) — DOM and CSSOM
+- [DOM Clobbering](dom-clobbering.md) — DOM Clobbering
+- [DOM Manipulation](dom-manipulation.md) — DOM Manipulation
+- [DOM XSS](dom-xss.md) — DOM XSS
+- [Drag and Drop on the Web](drag-and-drop-web.md) — Drag and Drop on the Web
+- [em vs rem](em-vs-rem.md) — em vs rem
+- [Error Monitoring for the Web](error-monitoring-web.md) — Error Monitoring for the Web
+- [Evergreen Browsers](evergreen-browsers.md) — Evergreen Browsers
+- [CSS Feature Queries](feature-queries.md) — CSS Feature Queries
+- [File Locking](file-locks.md) — File Locking
+- [Flexbox in Practice](flexbox-practice.md) — Flexbox in Practice
+- [font-display: swap](font-display-swap.md) — font-display: swap
+- [Font Fallbacks](font-fallbacks.md) — Font Fallbacks
+- [Font Loading Strategy](font-loading-strategy.md) — Font Loading Strategy
+- [FOIT and Font Shift](font-shift.md) — FOIT and Font Shift
+- [Forms in Practice](forms-practice.md) — Forms in Practice
+- [Frame Budget](frame-budget.md) — Frame Budget
+- [Geolocation API](geolocation-api.md) — Geolocation API
+- [Graceful Enhancement](graceful-enhancement.md) — Graceful Enhancement
+- [HTML5 APIs](html5-apis.md) — HTML5 APIs
+- [Hydration Strategies](hydration-strategies.md) — Hydration Strategies
+- [Web Internationalization](i18n-web.md) — Web Internationalization
+- [Icon Fonts](icon-fonts.md) — Icon Fonts
+- [IndexedDB in Practice](indexeddb-practice.md) — IndexedDB in Practice
+- [Infinite Scroll in Practice](infinite-scroll-practice.md) — Infinite Scroll in Practice
+- [Inline SVG](inline-svg.md) — Inline SVG
+- [Input Latency](input-latency.md) — Input Latency
+- [Input Normalization](input-normalization.md) — Input Normalization
+- [Interaction to Next Paint](interaction-to-next-paint.md) — Interaction to Next Paint
+- [JavaScript Event Loop](javascript-event-loop.md) — JavaScript Event Loop
+- [JavaScript Runtimes](javascript-runtimes.md) — JavaScript Runtimes
+- [Localization Practice](l10n-practice.md) — Localization Practice
+- [Largest Contentful Paint](largest-contentful-paint.md) — Largest Contentful Paint
+- [Layout Triggers](layout-triggers.md) — Layout Triggers
+- [Lazy Loading in Practice](lazy-loading-practice.md) — Lazy Loading in Practice
+- [Link rel Attributes](link-rel-attributes.md) — Link rel Attributes
+- [Locale Data](locale-data.md) — Locale Data
+- [CSS Logical Properties](logical-properties.md) — CSS Logical Properties
+- [Machine Learning on the Web](machine-learning-web.md) — Machine Learning on the Web
+- [Media Queries in Practice](media-queries-practice.md) — Media Queries in Practice
+- [Message Formatting](message-formatting.md) — Message Formatting
+- [Minification Practice](minification-practice.md) — Minification Practice
+- [Mutation XSS](mutation-xss.md) — Mutation XSS
+- [Number Formatting](number-formatting.md) — Number Formatting
+- [OffscreenCanvas](offscreen-canvas.md) — OffscreenCanvas
+- [Output Encoding](output-encoding.md) — Output Encoding
+- [Paint Triggers](paint-triggers.md) — Paint Triggers
+- [Passkeys in Practice](passkeys-practice.md) — Passkeys in Practice
+- [Path Normalization](path-normalization.md) — Path Normalization
+- [Payment Request API](payment-request-api.md) — Payment Request API
+- [picture Element](picture-element.md) — picture Element
+- [Plural Rules](plural-rules.md) — Plural Rules
+- [pointer-events CSS](pointer-events-css.md) — pointer-events CSS
+- [Polyfills in Practice](polyfills-practice.md) — Polyfills in Practice
+- [Polyglot XSS](polyglot-xss.md) — Polyglot XSS
+- [Preconnect Practice](preconnect-practice.md) — Preconnect Practice
+- [prefers-color-scheme](prefers-color-scheme.md) — prefers-color-scheme
+- [prefers-contrast](prefers-contrast.md) — prefers-contrast
+- [Prefetch Practice](prefetch-practice.md) — Prefetch Practice
+- [Preload Practice](preload-practice.md) — Preload Practice
+- [Priority Hints](priority-hints.md) — Priority Hints
+- [Progressive Web Apps](progressive-web-apps.md) — Progressive Web Apps
+- [Prototype Pollution on the Web](prototype-pollution-web.md) — Prototype Pollution on the Web
+- [px vs rem](px-vs-rem.md) — px vs rem
+- [Race Conditions on the Web](race-conditions-web.md) — Race Conditions on the Web
+- [Realtime Collaboration](realtime-collaboration.md) — Realtime Collaboration
+- [Reflected XSS](reflected-xss.md) — Reflected XSS
+- [Render Blocking](render-blocking.md) — Render Blocking
+- [Repaint vs Reflow](repaint-vs-reflow.md) — Repaint vs Reflow
+- [Reserving Layout Space](reserved-space.md) — Reserving Layout Space
+- [Responsive Breakpoints](responsive-breakpoints.md) — Responsive Breakpoints
+- [Responsive Design Systems](responsive-design-systems.md) — Responsive Design Systems
+- [Responsive Units](responsive-units.md) — Responsive Units
+- [Retina Displays](retina-displays.md) — Retina Displays
+- [RTL Support](rtl-support.md) — RTL Support
+- [Safe HTML Rendering](safe-html-rendering.md) — Safe HTML Rendering
+- [Sanitization Practice](sanitization-practice.md) — Sanitization Practice
+- [scroll-behavior CSS](scroll-behavior.md) — scroll-behavior CSS
+- [Scroll Snap](scroll-snap.md) — Scroll Snap
+- [sizes Attribute](sizes-attribute.md) — sizes Attribute
+- [Speculative Loading](speculative-loading.md) — Speculative Loading
+- [Speech Synthesis on the Web](speech-synthesis-web.md) — Speech Synthesis on the Web
+- [Sprite Sheets](sprite-sheets.md) — Sprite Sheets
+- [srcset in Practice](srcset-practice.md) — srcset in Practice
+- [Stacking Contexts](stacking-contexts.md) — Stacking Contexts
+- [State Management](state-management.md) — State Management
+- [position: sticky](sticky-position.md) — position: sticky
+- [Stored XSS](stored-xss.md) — Stored XSS
+- [Streaming Rendering](streaming-rendering.md) — Streaming Rendering
+- [Font Subsetting](subsetting-fonts.md) — Font Subsetting
+- [@supports Rule](supports-rule.md) — @supports Rule
+- [SVG Animation](svg-animation.md) — SVG Animation
+- [SVG Scaling](svg-scaling.md) — SVG Scaling
+- [Symlink Following](symlink-following.md) — Symlink Following
+- [Template Escaping](template-escaping.md) — Template Escaping
+- [Timezone Handling](timezone-formatting.md) — Timezone Handling
+- [TOCTOU Vulnerabilities](toctou.md) — TOCTOU Vulnerabilities
+- [touch-action CSS](touch-action-css.md) — touch-action CSS
+- [Touch Gestures](touch-gestures.md) — Touch Gestures
+- [Unicode Normalization](unicode-normalization.md) — Unicode Normalization
+- [URL Normalization](url-normalization.md) — URL Normalization
+- [User-Agent Parsing](user-agent-parsing.md) — User-Agent Parsing
+- [Variable Fonts](variable-fonts.md) — Variable Fonts
+- [Virtual Scrolling](virtual-scrolling.md) — Virtual Scrolling
+- [vw and vh Units](vw-vh.md) — vw and vh Units
+- [Web Accessibility](web-accessibility.md) — Web Accessibility
+- [Web Animations API](web-animations.md) — Web Animations API
+- [Web APIs](web-apis.md) — Web APIs
+- [WebAssembly](web-assembly.md) — WebAssembly
+- [Web Authentication (WebAuthn)](web-authn.md) — Web Authentication (WebAuthn)
+- [Web Components](web-components.md) — Web Components
+- [Web Fonts](web-fonts.md) — Web Fonts
+- [Web Frameworks](web-frameworks.md) — Web Frameworks
+- [Web Notifications](web-notifications.md) — Web Notifications
+- [Web Performance Optimization](web-performance-optimization.md) — Web Performance Optimization
+- [Web Push](web-push.md) — Web Push
+- [Web Standards](web-standards.md) — Web Standards
+- [WebGL Basics](webgl-basics.md) — WebGL Basics
+- [WebGPU Compute](webgpu-compute.md) — WebGPU Compute
+- [WebP vs AVIF](webp-vs-avif.md) — WebP vs AVIF
+- [WebRTC in Practice](webrtc-practice.md) — WebRTC in Practice
+- [WebUSB in Practice](webusb-practice.md) — WebUSB in Practice
+- [will-change CSS](will-change.md) — will-change CSS
+- [WOFF2 Format](woff2.md) — WOFF2 Format
+- [XS-Leaks](xs-leaks.md) — XS-Leaks
+- [Z-Index Management](z-index-management.md) — Z-Index Management

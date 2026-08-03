@@ -17,7 +17,7 @@ Part of [[wiki/index|Wiki Index]]. 216 pages.
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/abzzfeuifjsdsrga|AbZzfeUiFJSdsrgA]] — API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ac-2|AC]] — Acronym referenced in session 019f321e
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/ach-2|ACH]] — Cache
+- ACH — Cache
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|ActionNode]] — Referenced in session 454634e7
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/addressfamily|AddressFamily]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/aec-2|AEC]] — Acronym referenced in session adc6df02
@@ -29,9 +29,9 @@ Part of [[wiki/index|Wiki Index]]. 216 pages.
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ambiguityassessment|AmbiguityAssessment]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/american-academy|American Academy]] — API — service communication interface, Authentication — identity verification, Bash — shell scripting language
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ansi-2|ANSI]] — Ansible
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/ant|ANT]] — Acronym referenced in session ce22f697
+- ANT — Acronym referenced in session ce22f697
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/anyclaw|AnyClaw]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/apa|APA]] — API — service communication interface, Authentication — identity verification
+- APA — API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/apex-individuals|Apex Individuals]] — AJAX — async web data exchange, API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/apexuser-2|ApexUser]] — Referenced in session 9d38ffb8
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/api-10|API]] — Acronym referenced in session 3ebbffaf
@@ -77,7 +77,7 @@ Part of [[wiki/index|Wiki Index]]. 216 pages.
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/billboardsprite|BillboardSprite]] — API — service communication interface, Authentication — identity verification, AWS — Amazon cloud services
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/bindabletexture|BindableTexture]] — API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/birth-rate-10|Birth Rate]] — Referenced in session 0c8d8673
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/bm|BM]] — API — service communication interface, Authentication — identity verification
+- BM — API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/bnwo|BNWO]] — (Black New World Order) — term referenced in session c35cb519. c35cb519
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/bomdwriw-2|BoMdwrIw]] — Referenced in session 019f6b68
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/bond-angle-2|Bond Angle]] — Referenced in session c8972324

@@ -84,3 +84,78 @@ Part of [[wiki/index|Wiki Index]]. 72 pages.
 - [[wiki/compositions/write-ahead-log|Write-Ahead Log]] — Persisting intent before applying changes so recovery is possible
 - [[wiki/compositions/write-skew|Write Skew]] — Two transactions writing different rows based on overlapping reads, breaking an invariant
 - [[wiki/compositions/zero-trust-architecture|Zero-Trust Architecture]] — Never trust, always verify: securing every request regardless of origin
+
+## Concepts
+
+- [Additive Migrations](additive-migrations.md) — Additive Migrations
+- [API Design Best Practices](api-design-best-practices.md) — API Design Best Practices
+- [API & Integration Pattern](api-integration.md) — API & Integration Pattern
+- [Authentication Patterns](authentication-patterns.md) — Authentication Patterns
+- [Authorization Models](authorization-models.md) — Authorization Models
+- [B-Tree Basics](b-tree-basics.md) — B-Tree Basics
+- [Backend Architecture Patterns](backend-architecture-patterns.md) — Backend Architecture Patterns
+- [Backup and Restore](backup-and-restore.md) — Backup and Restore
+- [Backward-Compatible Schema](backward-compatible-schema.md) — Backward-Compatible Schema
+- [Bounded Staleness](bounded-staleness.md) — Bounded Staleness
+- [Causal Consistency](causal-consistency.md) — Causal Consistency
+- [Compare-and-Swap](compare-and-swap.md) — Compare-and-Swap
+- [Conflict Resolution Strategies](conflict-resolution-strategies.md) — Conflict Resolution Strategies
+- [CRDT Practice](crdt-practice.md) — CRDT Practice
+- [Data Backfills](data-backfills.md) — Data Backfills
+- [Data & Storage Pattern](data-storage.md) — Data & Storage Pattern
+- [Database Migrations](database-migrations.md) — Database Migrations
+- [Denormalization Tradeoffs](denormalization-tradeoffs.md) — Denormalization Tradeoffs
+- [Dependency Scanning](dependency-scanning.md) — Dependency Scanning
+- [Development Workflow Pattern](dev-workflow.md) — Development Workflow Pattern
+- [DevOps & Deployment Pattern](devops-deployment.md) — DevOps & Deployment Pattern
+- [Dirty Reads](dirty-reads.md) — Dirty Reads
+- [Distributed Locks](distributed-locks.md) — Distributed Locks
+- [Dual Writes](dual-writes.md) — Dual Writes
+- [Eventual Consistency Practice](eventual-consistency-practice.md) — Eventual Consistency Practice
+- [EXPLAIN ANALYZE](explain-analyze.md) — EXPLAIN ANALYZE
+- [Feature Toggles](feature-toggles.md) — Feature Toggles
+- [Fencing Tokens](fencing-tokens.md) — Fencing Tokens
+- [Frontend Architecture](frontend-architecture.md) — Frontend Architecture
+- [Full-Stack Development](full-stack-development.md) — Full-Stack Development
+- [Idempotent Writes](idempotent-writes.md) — Idempotent Writes
+- [Identity Management](identity-management.md) — Identity Management
+- [Index Selection](index-selection.md) — Index Selection
+- [Index Types](index-types.md) — Index Types
+- [Lamport Clocks](lamport-clocks.md) — Lamport Clocks
+- [Programming Languages Reference](language-patterns.md) — Programming Languages Reference
+- [Last-Write-Wins](last-write-wins.md) — Last-Write-Wins
+- [Lease-Based Locks](lease-based-locks.md) — Lease-Based Locks
+- [Linearizability](linearizability.md) — Linearizability
+- [Lock-Free Structures](lock-free-structures.md) — Lock-Free Structures
+- [Lost Update Problem](lost-update-problem.md) — Lost Update Problem
+- [Monolith to Microservices](monolith-to-microservices.md) — Monolith to Microservices
+- [Monotonic Reads](monotonic-reads.md) — Monotonic Reads
+- [Normalization Forms](normalization-forms.md) — Normalization Forms
+- [Offline-First](offline-first.md) — Offline-First
+- [Operational Transform](operational-transform.md) — Operational Transform
+- [Pessimistic Locking](pessimistic-locking.md) — Pessimistic Locking
+- [Phantom Reads](phantom-reads.md) — Phantom Reads
+- [Query Optimization](query-optimization.md) — Query Optimization
+- [Query Plans](query-plans.md) — Query Plans
+- [Read Committed](read-committed.md) — Read Committed
+- [Read Uncommitted](read-uncommitted.md) — Read Uncommitted
+- [Read-Your-Writes](read-your-writes.md) — Read-Your-Writes
+- [Repeatable Read](repeatable-read.md) — Repeatable Read
+- [Schema Normalization](schema-normalization.md) — Schema Normalization
+- [Security & Authentication Pattern](security-authentication.md) — Security & Authentication Pattern
+- [Security Engineering](security-engineering.md) — Security Engineering
+- [Serializability](serializability.md) — Serializability
+- [Setup & Installation Pattern](setup-installation.md) — Setup & Installation Pattern
+- [Shift-Left Security](shift-left-security.md) — Shift-Left Security
+- [Slow Query Triage](slow-query-triage.md) — Slow Query Triage
+- [Snapshot Isolation](snapshot-isolation.md) — Snapshot Isolation
+- [Strangler Pattern](strangler-pattern.md) — Strangler Pattern
+- [Strong Consistency](strong-consistency.md) — Strong Consistency
+- [Sync Engines](sync-engines.md) — Sync Engines
+- [Threat Modeling](threat-modeling.md) — Threat Modeling
+- [Transaction Isolation Practice](transaction-isolation-practice.md) — Transaction Isolation Practice
+- [Vector Clocks](vector-clocks.md) — Vector Clocks
+- [Version Vectors](version-vectors.md) — Version Vectors
+- [Write-Ahead Log](write-ahead-log.md) — Write-Ahead Log
+- [Write Skew](write-skew.md) — Write Skew
+- [Zero-Trust Architecture](zero-trust-architecture.md) — Zero-Trust Architecture

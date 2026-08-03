@@ -40,4 +40,4 @@ One session recorded the term, categorized under Debugging, Frontend, and Shell,
 - [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
 - [[wiki/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
 - [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
-- [[wiki/shell-environment/categories/cli-tools/kh|Kh]]
+- Kh

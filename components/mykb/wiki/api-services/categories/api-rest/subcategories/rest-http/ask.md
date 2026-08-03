@@ -44,7 +44,7 @@ Flask suits small services, internal tools, and prototypes where a few routes an
 ## Related Concepts
 
 - [[wiki/api-protocols/rest-apis|REST APIs]] — the interface Flask services expose
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/flask|Flask]] — companion entity page
+-  — companion entity page
 - [[wiki/api-protocols/http-methods|HTTP Methods]] — the verbs routes handle
 - [[wiki/api-protocols/http-status-codes|HTTP Status Codes]] — response semantics
 

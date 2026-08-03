@@ -38,4 +38,4 @@ The entity belongs to a family of simulation parameters — see [[wiki/shell-env
 - [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
 - [[wiki/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
 - [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
-- [[wiki/shell-environment/categories/cli-tools/kh|Kh]]
+- Kh

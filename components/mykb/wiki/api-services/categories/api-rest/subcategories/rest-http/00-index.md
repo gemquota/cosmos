@@ -15,16 +15,16 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/aap-2|AAP]] — Acronym referenced in session 019f0796
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/aar|AAR]] — Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/aarrr|AARRR]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/abi|ABI]] — Scalability
+- ABI — Scalability
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/aborted|Aborted]] — API — service communication interface, Authentication — identity verification, Bash — shell scripting language
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/accr-2|ACCR]] — Acronym referenced in session 019ef769
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ace-core|Ace Core]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/acid|ACID]] — Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/acli|ACLI]] — CLI (Command Line Interface)
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/acs|ACS]] — Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface
+- ACLI — CLI (Command Line Interface)
+- ACS — Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/adb-2|Adb 2]]
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/adc|ADC]] — BroadcastReceiver
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/adp|ADP]] — Android — mobile development platform, API — service communication interface, Bash — shell scripting language
+- ADC — BroadcastReceiver
+- ADP — Android — mobile development platform, API — service communication interface, Bash — shell scripting language
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ae-2|AE]] — Acronym referenced in session 8f62822c
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/aegis|AEGIS]] — Acronym referenced in session 9d38ffb8
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/aes|AES]] — Acronym referenced in session 019f03b1
@@ -36,19 +36,19 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/als-2|ALS]] — Alias Lookup System — a custom CLI tool at ~/.d/als/ for alias resolution. 019f3f89
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/alter|ALTER]] — Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/alternative-protocols|Alternative Protocols]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/am-2|AM]] — YAML (YAML Ain't Markup Language)
+- AM — YAML (YAML Ain't Markup Language)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/amazinglaw-2|AmazingLaw]] — Referenced in session 0c8d8673
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-projection-2|Ambiguity Projection]] — Referenced in session 019f0366
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-system|Ambiguity System]] — API — service communication interface, Bash — shell scripting language, Deployment — release management
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity|Ambiguity]] — API — service communication interface, Bash — shell scripting language, Deployment — release management
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguityvector-2|AmbiguityVector]] — Referenced in session 019ef769
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/angle|ANGLE]] — Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ap|AP]] — FastAPI
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/apc-2|APC]] — Acronym referenced in session 019ee7e1
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/apex|APEX]] — Acronym referenced in session 9d38ffb8
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/apk-2|APK]] — Acronym referenced in session 019f3f89
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/app-2|APP]] — Acronym referenced in session 019efdfc
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/applyresult-2|ApplyResult]] — Referenced in session 019f2369
+- AP — FastAPI
+-  — Acronym referenced in session 019ee7e1
+-  — Acronym referenced in session 9d38ffb8
+-  — Acronym referenced in session 019f3f89
+-  — Acronym referenced in session 019efdfc
+-  — Referenced in session 019f2369
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/arch|ARCH]] — Elasticsearch
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/archivebuilder|ArchiveBuilder]] — Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/args|ARGS]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
@@ -61,7 +61,7 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/arrowleft|ArrowLeft]] — Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/arrowright|ArrowRight]] — Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/artifactcollector|ArtifactCollector]] — Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/as-2|AS]] — JavaScript
+- AS — JavaScript
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ascendfinding|AscendFinding]] — Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ascensionengine|AscensionEngine]] — Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/asi-2|ASI]] — Artificial Super Intelligence — a hypothetical AI surpassing human intelligence. 00b8d8ce
@@ -97,14 +97,14 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/basehttprequesthandler|BaseHTTPRequestHandler]] — HTTP (HyperText Transfer Protocol)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/bases|BASES]] — Android — mobile development platform, API — service communication interface, Bash — shell scripting language
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/batchorchestrator|BatchOrchestrator]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/bc|BC]] — Android — mobile development platform, API — service communication interface, Bash — shell scripting language
+- BC — Android — mobile development platform, API — service communication interface, Bash — shell scripting language
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/beat|BEAT]] — API — service communication interface, AWS — Amazon cloud services, Bash — shell scripting language
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/beautiful-expensive|Beautiful Expensive]] — API — service communication interface, Authentication — identity verification, AWS — Amazon cloud services
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/benchmarkharness-2|BenchmarkHarness]] — Referenced in session 019ec3a4
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/benchmarkjudge-2|BenchmarkJudge]] — Referenced in session 55599610
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/beta|BETA]] — API — service communication interface, Bash — shell scripting language
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/bf|BF]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/bfs|BFS]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
+- BF — Android — mobile development platform, API — service communication interface, Authentication — identity verification
+-  — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/bg|BG]] — WebGL (Web Graphics Library)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/big|BIG]] — Android — mobile development platform, API — service communication interface, AWS — Amazon cloud services
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/bigint|BigInt]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
@@ -132,8 +132,8 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/calledprocesserror-2|CalledProcessError]] — Error
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/cata-2|CATA]] — Acronym referenced in session 38797263
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/cd|CD]] — Acronym referenced in session 7a06f562
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/cdf|CDF]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ce|CE]] — Vercel
+- CDF — Android — mobile development platform, API — service communication interface, Authentication — identity verification
+- CE — Vercel
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ci-2|CI]] — Acronym referenced in session 019ebdb9
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/cilia|CILIA]] — Android — mobile development platform, API — service communication interface, Bash — shell scripting language
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/cipher-flow-graph-status|Cipher Flow Graph Status]] — IP (Internet Protocol)
@@ -169,11 +169,11 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/executive-ontology-shift|Executive Ontology Shift]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/eye-2|EYE]] — Acronym referenced in session 66f8ea88
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/fastapi-10|FastAPI]] — Referenced in session adc6df02
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/flask|Flask]] — Referenced in session 019f2765
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/flip|FLIP]] — IP (Internet Protocol)
+-  — Referenced in session 019f2765
+-  — IP (Internet Protocol)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/force-2|FORCE]] — Acronym referenced in session 412ac095
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/frontend-logic|Frontend Logic]] — API — service communication interface, Authentication — identity verification, Backend — server-side logic
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/fsm-2|FSM]] — Acronym referenced in session 01106e45
+- FSM — Acronym referenced in session 01106e45
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/functional-instrumental-goals|Functional Instrumental Goals]] — Go (Golang)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/gce-2|GCE]] — Gemini Context Engineer — a system/role for managing Gemini AI agent context and 7a06f562
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/gemini-bridge|Gemini Bridge]] — RubyGems
@@ -184,14 +184,14 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/goalgenerator|GoalGenerator]] — Go (Golang)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/goaltype|GoalType]] — Go (Golang)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/guide-2|GUIDE]] — Acronym referenced in session cff9c90f
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ha|HA]] — Hashing
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/harmonica-nexus|Harmonica Nexus]] — Harmonica Explorer
+- HA — Hashing
+-  — Harmonica Explorer
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/hexcheck|HexCheck]] — Referenced in session 019f7602
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/historical-aggregate|Historical Aggregate]] — API — service communication interface, Backend — server-side logic, Bash — shell scripting language
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/identitysnapshot|IdentitySnapshot]] — IDE (Integrated Development Environment)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ignoreconfig|IgnoreConfig]] — Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/imagedraw|ImageDraw]] — API — service communication interface, Authentication — identity verification, Backend — server-side logic
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/in-2|IN]] — Kotlin
+- IN — Kotlin
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ingestioncontext-2|IngestionContext]] — Context
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/intentroutingresult|IntentRoutingResult]] — Intent
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/json-10|JSON]] — Acronym referenced in session 81c5e6d2
@@ -203,7 +203,7 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/local|Local]] — Localization (l10n)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/mariadb|MariaDB]] — ADB (Android Debug Bridge)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/mass-2|MASS]] — Acronym referenced in session 09993b9d
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/mb-2|MB]] — Embedding
+- MB — Embedding
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/memoryevent-2|MemoryEvent]] — Referenced in session 019ebdc5
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/mockcanvas|MockCanvas]] — Canvas
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/moduleregistry|ModuleRegistry]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
@@ -214,7 +214,7 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/perspectivemesh|PerspectiveMesh]] — Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/pgid-10|PGID]] — Acronym referenced in session 05473df8
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/pid-2|PID]] — Acronym referenced in session 019f2765
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/pm|PM]] — npm (Node Package Manager)
+- PM — npm (Node Package Manager)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/prestige-particles|Prestige Particles]] — REST (Representational State Transfer)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/promptsession-2|PromptSession]] — Prompt
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/pycompileerror|PyCompileError]] — Error

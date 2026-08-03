@@ -20,8 +20,8 @@ Part of [[wiki/index|Wiki Index]]. 24 pages.
 - [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]] — Bash — shell scripting language, CLI — command-line tooling
 - [[wiki/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]] — Bash — shell scripting language, CLI — command-line tooling, CSS — web styling language
 - [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]] — Bash — shell scripting language, CLI — command-line tooling
-- [[wiki/shell-environment/categories/cli-tools/kh|KH]] — Bash — shell scripting language, CLI — command-line tooling
-- [[wiki/shell-environment/categories/cli-tools/lut|LUT]] — Bash — shell scripting language, CLI — command-line tooling
+- KH — Bash — shell scripting language, CLI — command-line tooling
+- LUT — Bash — shell scripting language, CLI — command-line tooling
 - [[wiki/shell-environment/categories/cli-tools/mass-max|Mass Max]] — Bash — shell scripting language, CLI — command-line tooling
 - [[wiki/shell-environment/categories/cli-tools/mass-min|Mass Min]] — Bash — shell scripting language, CLI — command-line tooling
 - [[wiki/shell-environment/categories/cli-tools/max|Max]] — Bash — shell scripting language, CLI — command-line tooling, CSS — web styling language

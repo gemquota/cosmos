@@ -13,7 +13,7 @@ Part of [[wiki/index|Wiki Index]]. 23 pages.
 
 ## Pages
 - [[wiki/shell-environment/categories/shell-cli/abbreviated-activity-history-2|Abbreviated Activity History]] — Activity
-- [[wiki/shell-environment/categories/shell-cli/adsr-2|ADSR]] — Acronym referenced in session 019ebd47
+- ADSR — Acronym referenced in session 019ebd47
 - [[wiki/shell-environment/categories/shell-cli/beautifulsoup4-2|BeautifulSoup4]] — Referenced in session 0c0a9b0f
 - [[wiki/shell-environment/categories/shell-cli/bpm-10|BPM]] — Acronym referenced in session 019f4b9a
 - [[wiki/shell-environment/categories/shell-cli/cellstate|CellState]] — Android — mobile development platform, API — service communication interface, Bash — shell scripting language

@@ -42,4 +42,4 @@ A hybrid approach also changes how results are validated: the approximated regim
 - [[wiki/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
 - [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
 - [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
-- [[wiki/shell-environment/categories/cli-tools/kh|Kh]]
+- Kh

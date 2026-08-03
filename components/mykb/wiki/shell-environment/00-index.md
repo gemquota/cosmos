@@ -24,3 +24,15 @@ Part of [[wiki/index|Wiki Index]]. 9 pages.
 - [[wiki/shell-environment/shell-scripting-robustness|Shell Scripting Robustness]] — Writing scripts that survive quoting, globbing, unset variables, and failure
 - [[wiki/shell-environment/terminal-multiplexers-tmux|Terminal Multiplexers: tmux]] — Sessions, windows, and panes for persistent terminals
 - [[wiki/shell-environment/unix-text-processing-tools|Unix Text Processing Tools]] — The grep, sed, awk, cut, sort, jq family for streaming text transformation
+
+## Concepts
+
+- [ADB Tooling](adb-tooling.md) — ADB Tooling
+- [APK Analysis](apk-analysis.md) — APK Analysis
+- [DEX Files](dex-files.md) — DEX Files
+- [Exit Codes & Error Handling](exit-codes-and-error-handling.md) — Exit Codes & Error Handling
+- [Gradle Builds](gradle-builds.md) — Gradle Builds
+- [Shell Environments & RC Files](shell-environments-and-rc-files.md) — Shell Environments & RC Files
+- [Shell Scripting Robustness](shell-scripting-robustness.md) — Shell Scripting Robustness
+- [Terminal Multiplexers: tmux](terminal-multiplexers-tmux.md) — Terminal Multiplexers: tmux
+- [Unix Text Processing Tools](unix-text-processing-tools.md) — Unix Text Processing Tools
