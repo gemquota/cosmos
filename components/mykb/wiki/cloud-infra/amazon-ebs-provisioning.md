@@ -4,23 +4,26 @@ title: "Amazon EBS Provisioning"
 description: "EBS volume types, sizing, and IOPS provisioning"
 tags: ["ebs", "aws", "block-storage", "provisioning"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Amazon EBS Provisioning
 
 ## Summary
-EBS volume types, sizing, and IOPS provisioning. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Amazon EBS provisioning is the discipline of choosing volume type, size, IOPS, and throughput to match a workload without overpaying or starving it. It is a capacity-planning exercise, not a storage purchase.
 
 ## Details
-- Definition anchor: EBS volume types, sizing, and IOPS provisioning.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: EBS offers general-purpose gp3/gp2, provisioned IOPS io2/io1, throughput-optimized st1, and cold hdd sc1; each has independent IOPS and throughput ceilings, and gp3 lets you provision IOPS/throughput separately from size. IOPS matter for random small I/O (databases), throughput for sequential large I/O (logs, analytics).
+- Concrete example: a PostgreSQL primary on io2 with 10,000 provisioned IOPS sized for peak write volume; a web app boot volume on gp3 with 3,000 IOPS baseline and 125 MB/s throughput; a data lake archive on sc1 where cold reads are acceptable. Right-sizing uses observed P99 IOPS and throughput, not instance type defaults.
+- Failure modes: over-provisioning IOPS that burst patterns never use (cost); under-provisioning causing queueing and latency spikes at peak; choosing size as the IOPS lever on gp2 (every GB adds IOPS, inflating cost); and ignoring multi-attach, snapshot throughput, and instance EBS-optimization limits when sizing.
+- Operational tradeoffs: gp3's decoupled IOPS is the default; io2 is for guaranteed, durable high IOPS; st1/sc1 only for sequential workloads. Snapshots are volume-level and count toward restore time and cost — keep snapshots on a lifecycle policy and test restore RTOs.
+- RSIS3/mykb relevance: instance telemetry (queue depth, IOPS utilization) feeds the rack; this note records the sizing decision rules the loop uses when provisioning storage for experiments.
+- Monitoring: track EBS metrics (VolumeQueueLength, VolumeRead/WriteBytes, BurstBalance) per volume; sustained queue length is the signal that IOPS are exhausted, not a failed disk.
+- Cost review: compare gp3 with custom IOPS vs io2 at each workload's P99; most workloads can save 30-50% by moving from io1/io2 to tuned gp3.
 
 ## Related
-- [[wiki/cloud-infra/instance-store-vs-ebs|Instance Store vs EBS]] — related coverage in the same cluster
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/cloud-infra/instance-store-vs-ebs|Instance Store vs EBS]]
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

@@ -4,19 +4,19 @@ title: "Interrupt Handlers & Workqueues"
 description: "Deferring work from interrupt context to kernel threads"
 tags: ["interrupts", "workqueue", "kernel", "irq"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Interrupt Handlers & Workqueues
 
 ## Summary
-Deferring work from interrupt context to kernel threads. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Interrupt handlers run in a restricted context where sleeping is forbidden, so real work must be deferred. The kernel's deferral machinery — softirqs, tasklets (legacy), and especially workqueues — moves that work into process context, where it can sleep, block on locks, and run on dedicated kernel threads. Understanding the split between "top half" (interrupt handler) and "bottom half" (deferred work) is the foundation of driver design.
 
 ## Details
-- Definition anchor: Deferring work from interrupt context to kernel threads.
-- Open questions: how this interacts with adjacent operating systems and shell environments topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: when hardware raises an interrupt, the kernel runs the registered handler (top half) in interrupt context: interrupts are masked, no sleeping or locking is allowed, and the handler must be fast — typically just acknowledging the device and recording state. Deferred processing (bottom half) happens in one of several forms: softirqs run in interrupt-like context with limited preemption; tasklets build on softirqs with per-CPU queues; and workqueues run in process context on kernel threads (`kworker`), where the code may sleep, allocate memory, and take mutexes. The API is `INIT_WORK`/`queue_work`/`schedule_work`, and drivers defer everything from "process the received packet" to "complete the USB transfer" this way.
+- Concrete examples: a network driver's interrupt handler copies the ring-buffer index and schedules a softirq (`napi_schedule`) to process packets; an NVMe driver's handler acknowledges the completion and defers callback processing to a workqueue; a USB driver queues work to complete a read request that needs to copy data to user space; drivers use `request_irq` with `IRQF_SHARED` for shared lines and threadable IRQs (`request_threaded_irq`) when the entire handler can run as a kernel thread.
+- Failure modes: the classic failures are doing too much in interrupt context — sleeping in a handler (`kmalloc(GFP_KERNEL)` or a mutex there causes a kernel oops/BUG), unbounded loops that starve other interrupts, and races between the top half and the workqueue that accesses the same state without proper synchronization (the workqueue runs later on a possibly different CPU). Workqueue misuse — scheduling the same work item while it is pending, unbounded queuing under load — causes pile-ups; and latency-sensitive drivers that defer too much add unacceptable delay.
+- Operational tradeoffs: the tradeoff is latency versus safety: interrupt context is fast but severely restricted; softirqs are faster than workqueues but cannot sleep; workqueues are flexible but add scheduling latency and context-switch cost. Modern guidance: keep handlers minimal, use threaded IRQs or workqueues for anything nontrivial, and use per-CPU or bound workqueues where cache locality matters. RSIS3/mykb relevance: the top-half/bottom-half split is the kernel's version of fast-path/slow-path decomposition — handle the urgent acknowledgment inline, defer the expensive processing to a supervised queue, the same structure RSIS3 uses for L1 (fast corrections) versus L2/L3 (deep improvements).
 
 ## Related
 - [[wiki/os-shell/shell-trap-handlers|Trap Handlers]] — related coverage in the same cluster

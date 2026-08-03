@@ -4,17 +4,20 @@ title: "Task Queues"
 description: "How the event loop prioritizes queued work"
 tags: ["javascript", "event-loop", "queues", "async"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 # Task Queues
 
 ## Summary
-How the event loop prioritizes queued work. A stub in the mykb wiki that frames the concept and the questions to expand into a full article.
+Task queues describe how the event loop prioritizes queued work: tasks (macrotasks) run one at a time, the microtask queue drains between them, and rendering checkpoints interleave — the order and fairness of these queues decide whether a page stays responsive.
 
 ## Details
-- The event loop services task queues in defined order
-- Rendering and microtask checkpoints interleave between tasks
-- Open question — how do agents reason about task starvation?
+- Mechanism: the event loop selects the next task from the task queue, runs it to completion, drains the microtask queue, then performs rendering and repeats; timers, I/O, and events enqueue tasks; promise callbacks enqueue microtasks; task sources can have distinct queues with browser-defined prioritization.
+- Concrete example: a click handler schedules a setTimeout and resolves a promise — the promise continuation runs first (microtask drain), then the timer task; heavy work in a task delays rendering until the task ends; scheduler.yield and setTimeout(0) re-queue work as tasks, giving rendering a chance.
+- Failure modes: task starvation — a flood of high-priority tasks delaying timers and rendering; microtask floods delaying the next task; assuming strict FIFO ordering across sources (the spec allows prioritization); timer throttling in background tabs; long tasks blocking input.
+- Tradeoffs: the task/microtask split gives the browser its responsiveness model — microtasks for prompt continuations, tasks for yielding; the alternative, a single queue, is simpler and blocks; the mature pattern is chunking work into tasks and keeping microtask drains short.
+- Operational notes: measure long tasks, chunk heavy loops, and keep promise chains bounded.
+- RSIS3 relevance: the dashboard's event-driven updates depend on queue fairness — knowing the order explains jank and delayed renders.
 
 ## Related
 - [[wiki/web-platforms/javascript-event-loop|JavaScript Event Loop]] — related coverage in the same cluster

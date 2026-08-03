@@ -4,19 +4,20 @@ title: "Data Plane vs Control Plane"
 description: "Separating packet forwarding from routing and policy decisions"
 tags: ["control-plane", "data-plane", "networking", "architecture"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Data Plane vs Control Plane
 
 ## Summary
-Separating packet forwarding from routing and policy decisions. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+The data plane and control plane split is the organizing principle of networked systems: the data plane handles the fast, repetitive, per-packet (or per-request) work, while the control plane handles the slow, decision-making work of configuring the data plane. In networking, the data plane forwards packets at line rate and the control plane runs routing protocols and programs the forwarding tables; the same split reappears in Kubernetes, service meshes, and SDN.
 
 ## Details
-- Definition anchor: Separating packet forwarding from routing and policy decisions.
-- Open questions: how this interacts with adjacent datacenter and network infrastructure topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- In a switch or router, the data plane is the hardware path every packet traverses — parse, lookup, edit, queue, transmit — executing against tables that are already programmed. The control plane is where the intelligence lives: routing protocols (OSPF, BGP) exchange topology information, compute routes, and write the forwarding tables that the data plane reads. The separation is what makes both halves good at their jobs: the data plane is optimized to do one thing at extreme speed with no thinking, and the control plane can afford to think slowly because it is not in the per-packet path.
+- The same architecture organizes software systems. Kubernetes: the control plane (API server, scheduler, controllers) reconciles desired state, while the kubelets on nodes (the data-plane-ish layer) execute pod operations; the design's resilience comes from the control plane being replaceable without interrupting the workloads. Service meshes: the control plane (Istiod, Envoy xDS) computes routing and policy, and the sidecar data plane (Envoy) executes it per request. SDN: a centralized controller (control plane) programs OpenFlow/P4 switches (data plane) — the split made explicit as an architecture.
+- The design rules: the data plane must be fast, deterministic, and resilient to control-plane outages — it should keep forwarding on its last-known tables even if the controller dies (the control plane failing should degrade configuration, not forwarding). The control plane must be consistent and auditable, because its decisions propagate to every data-plane element.
+- Failure modes: control-plane overload (routing flaps or controller churn overwhelm the control plane, and the data plane runs on stale state), data-plane bugs (a forwarding bug is invisible to control-plane monitoring), and coupling violations (a control-plane feature leaking into the per-packet path destroys the performance budget).
+- For mykb: the split is the lens for the whole SDN and networking cluster — flow tables, OpenFlow pipelines, and VXLAN all inherit this architecture, and it also generalizes to the RSIS3 loops (the check-practices verifier is the control plane; the pass execution is the data plane).
 
 ## Related
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster

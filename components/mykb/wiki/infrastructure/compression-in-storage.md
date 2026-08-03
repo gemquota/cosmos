@@ -4,19 +4,20 @@ title: "Compression in Storage"
 description: "Inline and post-process compression to shrink stored data"
 tags: ["compression", "storage", "capacity", "filesystem"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Compression in Storage
 
 ## Summary
-Inline and post-process compression to shrink stored data. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Compression in storage shrinks data before it is written (inline) or after it is written (post-process), trading CPU cycles and latency for capacity. It is one of the highest-leverage capacity levers in storage systems: text, logs, and databases routinely compress 2-10x, and compression is effectively free when the data is already being moved through a CPU on the write path.
 
 ## Details
-- Definition anchor: Inline and post-process compression to shrink stored data.
-- Open questions: how this interacts with adjacent datacenter and network infrastructure topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Inline compression runs on the write path: the data is compressed before hitting disk, so the compressed form is all that is ever stored — capacity savings are immediate, and the read path decompresses on access. Post-process compression runs as a background job on data already written (common in backup and archival systems), which avoids write-path latency but temporarily stores the uncompressed data and needs a job scheduler and enough headroom to rewrite. Hybrids combine both: inline for known-compressible data, post-process for everything else.
+- The algorithm choice is the main engineering decision. Fast, symmetric algorithms (LZ4, Zstd at low levels, Snappy) prioritize throughput — they compress modestly (1.5-3x on typical data) but add microseconds; heavy algorithms (Zstd at high levels, gzip, bzip2) reach 3-10x on compressible data but cost CPU and latency, which matters on the read path when every access must decompress. Zstd's position in the middle — near-LZ4 speed with near-gzip ratios, plus a built-in dictionary mode for small records — has made it the default modern choice. The tradeoff is always data-dependent: logs and JSON compress dramatically; already-compressed formats (JPEG, video, encrypted data) compress to almost nothing and waste CPU if forced.
+- Where compression lives matters: filesystem-level (btrfs/zfs transparent compression), block-level (storage arrays compressing in silicon), database-level (columnar compression — the foundation of warehouse efficiency, where per-column dictionaries and run-length encoding give 10-100x on repetitive columns), and object-level (cloud storage classes with compression options). Each layer has different visibility: database and filesystem compression are automatic and transparent; application-level compression gives the developer control but requires every reader to decompress.
+- Failure modes: compressing incompressible data (wasted CPU, no savings — mitigated by compressibility checks and skip thresholds), CPU saturation on the read path for hot data (the decompression cost exceeds the I/O savings), and fragmentation or alignment overhead in block devices.
+- For mykb: compression connects to the storage cluster — block/file storage, deduplication (its sibling), and capacity planning — and the same compress-vs-skip logic applies to the wiki's own artifacts (text compresses well; PNGs and videos do not).
 
 ## Related
 - [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster

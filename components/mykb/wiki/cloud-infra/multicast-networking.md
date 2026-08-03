@@ -4,24 +4,27 @@ title: "Multicast Networking"
 description: "One-to-many delivery using group membership protocols like IGMP"
 tags: ["multicast", "igmp", "networking", "streaming"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Multicast Networking
 
 ## Summary
-One-to-many delivery using group membership protocols like IGMP. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Multicast delivers one stream to many receivers efficiently — video distribution, financial market data, cluster membership (VXLAN, etcd-style discovery). Cloud platforms generally do not support multicast in VPCs, which forces architectures to emulate it (unicast fan-out, overlay multicast) or avoid it.
 
 ## Details
-- Definition anchor: One-to-many delivery using group membership protocols like IGMP.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: senders send once to a group address (224.0.0.0/4, ff00::/8); routers replicate along a tree to subscribers (IGMP for host membership, PIM for routing). Efficiency is the payoff — one packet per link instead of per receiver; the cost is protocol complexity (group management, tree state, timing) and limited cloud support.
+- Concrete example: a trading floor fans market data to hundreds of terminals with multicast at wire speed; a datacenter uses multicast for VM-to-VM discovery (VXLAN head-end replication is the unicast emulation); a video platform uses multicast only on campus networks and unicast/CDN elsewhere because the internet does not route multicast.
+- Failure modes: cloud VPCs silently dropping multicast (design for unicast or overlay); IGMP snooping misconfigs on switches causing intermittent drops; group addresses colliding or leaking across tenants; and multicast storms from misconfigured sources saturating links.
+- Operational tradeoffs: where multicast is unavailable (most cloud), replicate with unicast fan-out (list distribution, pub/sub brokers) and accept the bandwidth cost; overlay multicast (a broker or mesh) restores efficiency at latency and complexity cost. Choose based on group size and scale — small groups are cheaper with unicast.
+- RSIS3/mykb relevance: the wiki's distributed-cache experiments document unicast fan-out designs, since cloud environments in this deployment do not support multicast.
+- Broker alternative: where multicast is unavailable, a pub/sub broker with topic filtering replicates the fan-out pattern at predictable cost; choose it when group membership is dynamic.
+- Group hygiene: document every multicast group address and its purpose; address collisions across applications are invisible until traffic mixes.
 
 ## Related
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/infrastructure/vlan-networking|VLAN Networking]] — related coverage in the same cluster
-- [[wiki/infrastructure/software-defined-networking|Software-Defined Networking]] — related coverage in the same cluster
-- [[wiki/devops-infra/grpc-and-protobuf-networking|gRPC & Protobuf Networking]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/infrastructure/vlan-networking|VLAN Networking]]
+- [[wiki/infrastructure/software-defined-networking|Software-Defined Networking]]
+- [[wiki/devops-infra/grpc-and-protobuf-networking|gRPC & Protobuf Networking]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

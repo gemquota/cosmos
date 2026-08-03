@@ -4,23 +4,26 @@ title: "Point of Presence"
 description: "Physical network facilities where providers interconnect with last-mile networks"
 tags: ["pop", "networking", "edge", "cdn"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Point of Presence
 
 ## Summary
-Physical network facilities where providers interconnect with last-mile networks. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+A point of presence (PoP) is a provider's local facility where traffic enters their network — the physical anchor of CDN, DNS, and edge compute. PoP density determines how close users get to cached content and how well DDoS is absorbed.
 
 ## Details
-- Definition anchor: Physical network facilities where providers interconnect with last-mile networks.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: providers lease space in colocation facilities worldwide, each with routers, caches, and (increasingly) compute; anycast or DNS routing sends users to the nearest PoP; caches store popular content, origin shields fetch the rest; edge functions run at the PoP, so "the edge" is literally where the user meets the network.
+- Concrete example: a CDN with 300+ PoPs serves a Tokyo user from Tokyo, not the US origin — 150ms becomes 5ms for cached assets; a DNS anycast network answers queries at the closest PoP, making resolution fast everywhere; DDoS traffic is dropped at the PoP boundary, far from origin.
+- Failure modes: PoP congestion degrading one region (routing may not shift traffic promptly); cache misses at cold PoPs causing origin load spikes; geo-IP routing sending users to a farther PoP when the nearest is degraded; and edge compute at PoPs having different limits than the origin platform, breaking deployment assumptions.
+- Operational tradeoffs: more PoPs mean better latency and absorption but more surface to operate (or pay for); managed CDNs bundle this at per-GB cost. Decide what must be at the PoP (cache, DNS, small compute) vs origin (stateful, heavy compute) and verify with real user telemetry per region.
+- RSIS3/mykb relevance: the wiki's edge deployment tracks per-PoP cache-hit and latency metrics, feeding the loop's decisions about what moves to the edge.
+- Latency verification: use RUM per PoP to confirm users actually land where routing intends; geo-IP and anycast can disagree with the nearest PoP.
+- Failover rehearsal: simulate a PoP outage and confirm traffic shifts; the routing convergence time is the number that matters for availability.
 
 ## Related
-- [[wiki/devops-infra/point-in-time-recovery|Point-in-Time Recovery]] — related coverage in the same cluster
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/devops-infra/point-in-time-recovery|Point-in-Time Recovery]]
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

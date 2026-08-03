@@ -4,19 +4,22 @@ title: "tcpdump & Wireshark"
 description: "Capture and analysis workflow from CLI filters to GUI dissection"
 tags: ["tcpdump", "wireshark", "capture", "analysis"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # tcpdump & Wireshark
 
 ## Summary
-Capture and analysis workflow from CLI filters to GUI dissection. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+tcpdump and Wireshark form the canonical packet-analysis workflow: tcpdump captures and filters packets on the CLI, and Wireshark (or its terminal sibling tshark) dissects, follows, and visualizes them. Together they turn "the network is slow" into a specific, reproducible sequence of packets.
 
 ## Details
-- Definition anchor: Capture and analysis workflow from CLI filters to GUI dissection.
-- Open questions: how this interacts with adjacent datacenter and network infrastructure topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: both tools read packets through libpcap, which taps the interface at the data-link layer; tcpdump applies BPF filter expressions before capture to keep only relevant traffic, while Wireshark dissects the full capture with protocol decoders that reconstruct conversations.
+- Typical workflow: capture on the server with a narrow filter (`tcpdump -i eth0 -w server.pcap host 10.0.0.5 and tcp port 443`), capture at both ends if possible, then open the file in Wireshark, use "Follow TCP Stream" to see the conversation, and use statistics (conversations, endpoints, IO graphs) to find retransmissions and gaps.
+- Concrete example: a user reports intermittent latency to an API. A capture shows TCP retransmissions and duplicate ACKs on the receive side while the send side shows nothing unusual, pointing to packet loss on the path rather than application slowness — confirmed by checking drop counters and switch errors.
+- Failure modes: capturing on the wrong interface or missing VLAN tags and tunnels makes filters miss traffic; buffer overruns drop packets silently (`tcpdump: dropped packets`); timestamps without sub-second precision or with clock skew corrupt RTT analysis; and running a verbose capture on a busy production interface adds load and perturbs the very behavior being measured.
+- Tradeoffs: tcpdump is fast, scriptable, and available everywhere, but its output is hard to read for complex protocols; Wireshark's GUI and decoders are powerful but heavyweight for automation — tshark fills the middle ground. Capture files are also a privacy and compliance concern: packet payloads may contain credentials or PII.
+- Operational practice: cap capture file size with rotation, use `-nn` to avoid DNS lookups, always record the capture time and interface, and prefer capturing at the endpoint closest to the suspected fault before adding taps.
+- RSIS3/mykb relevance: packet-level evidence is the ground truth loops use to validate network hypotheses; this node keeps the capture-and-dissect workflow retrievable so telemetry claims can be checked against actual bytes.
 
 ## Related
 - [[wiki/infrastructure/packet-analysis-with-tcpdump|Packet Analysis with tcpdump]] — related coverage in the same cluster

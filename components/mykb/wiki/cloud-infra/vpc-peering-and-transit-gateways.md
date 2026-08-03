@@ -4,24 +4,27 @@ title: "VPC Peering & Transit Gateways"
 description: "Connecting VPCs directly or through central transit routing"
 tags: ["vpc", "peering", "transit", "networking"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # VPC Peering & Transit Gateways
 
 ## Summary
-Connecting VPCs directly or through central transit routing. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+VPC peering connects two VPCs directly; transit gateways connect many through a hub. Peering is simple and free but non-transitive (a-b-c does not connect a-c); transit gateways centralize routing, inspection, and inter-region connectivity at a cost and complexity premium.
 
 ## Details
-- Definition anchor: Connecting VPCs directly or through central transit routing.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: peering is a private connection between two VPCs with mutually added routes (non-transitive, per-pair); transit gateways (AWS TGW, Azure virtual WAN, GCP via shared VPC/cloud routers) route between many attachments (VPCs, VPN, Direct Connect, inter-region) with route tables and inspection attachment points.
+- Concrete example: two VPCs that share a database peer directly — cheap and simple; ten VPCs needing a shared service hub use a transit gateway so each spoke peers once with the hub; a security requirement to inspect all east-west traffic routes everything through a firewall attachment on the TGW.
+- Failure modes: CIDR overlap between peered VPCs (routes conflict or vanish); forgetting that peering is non-transitive and routing breaks at the third hop; TGW route-table misconfiguration black-holing spokes; and cost/bandwidth surprises — inter-region TGW traffic bills, and hub architectures concentrate failure and bandwidth.
+- Operational tradeoffs: peering wins for few, stable pairs; transit hubs win for scale and inspection but add per-attachment pricing and a single routing authority. The pattern is peering for tight pairs and transit for hub-spoke, with CIDR uniqueness enforced across the estate.
+- RSIS3/mykb relevance: the wiki's environment map uses peering for shared services and a transit hub for the fleet; this note records the routing model the loop preserves when adding VPCs.
+- Route hygiene: document every peering route and TGW attachment in the IPAM/network map; an undocumented route is an incident waiting for a network change to expose it.
+- Bandwidth note: TGW and peering have bandwidth ceilings per attachment; verify the ceiling against the workload before routing bulk traffic through the hub.
 
 ## Related
-- [[wiki/cloud-infra/peering-and-transit|Peering & Transit]] — related coverage in the same cluster
-- [[wiki/devops-infra/api-gateways|API Gateways]] — related coverage in the same cluster
-- [[wiki/cloud-infra/aws-vpc-design|AWS VPC Design]] — related coverage in the same cluster
-- [[wiki/cloud-infra/gcp-vpc-and-cloud-nat|GCP VPC & Cloud NAT]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/cloud-infra/peering-and-transit|Peering & Transit]]
+- [[wiki/devops-infra/api-gateways|API Gateways]]
+- [[wiki/cloud-infra/aws-vpc-design|AWS VPC Design]]
+- [[wiki/cloud-infra/gcp-vpc-and-cloud-nat|GCP VPC & Cloud NAT]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

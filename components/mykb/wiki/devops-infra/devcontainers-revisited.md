@@ -4,19 +4,21 @@ title: "Devcontainers"
 description: "Containerized development environments defined in config"
 tags: ["devcontainer", "containers", "development", "vscode"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Devcontainers
 
 ## Summary
-Containerized development environments defined in config. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Devcontainers package the entire development environment — toolchain, dependencies, extensions, and config — into a container described in `devcontainer.json`, so every contributor gets the same environment from a repository. "Revisited" reflects the current state: devcontainers are now a mature standard (VS Code, JetBrains, Codespaces, GitHub CLI) used for reproducible development and even CI parity.
 
 ## Details
-- Definition anchor: Containerized development environments defined in config.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: `devcontainer.json` declares the base image, features (language toolchains), post-create commands, mount points, forwarded ports, and extensions; the tooling builds or pulls the image, starts the container, mounts the workspace, and connects the editor; features compose additional layers without custom Dockerfiles.
+- Concrete example: a Python repo with a devcontainer pinning Python 3.12, uv, and a formatter; a contributor clones and opens it — no local Python install needed; CI reuses the same image so "works on my machine" disappears; Codespaces provisions the identical environment in the cloud.
+- Failure modes: image drift — base images change and break builds, so pin digests and rebuild periodically; slow first builds when every dependency is compiled from scratch (cache layers and prebuilt images fix this); permission and mount issues on different host filesystems (bind-mount ownership); features that conflict or install different versions than documented; environment parity illusion — the container matches CI, not production, so platform-specific bugs still leak.
+- Tradeoffs: devcontainers trade image build and maintenance effort for onboarding speed and reproducibility; the alternative (setup scripts) drifts by nature; the middle path is a base image plus thin per-repo overlays.
+- Operational notes: keep devcontainer config reviewed like code, test image builds in CI, and document the escape hatch for environment-specific debugging.
+- RSIS3 relevance: the cosmos repo's three components could standardize on one devcontainer so any loop iteration runs against a known toolchain, removing environment variables from reproducibility concerns.
 
 ## Related
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster

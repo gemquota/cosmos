@@ -4,19 +4,21 @@ title: "SBOMs & Syft"
 description: "Machine-readable bills of materials for container images"
 tags: ["sbom", "syft", "supply-chain", "security"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # SBOMs & Syft
 
 ## Summary
-Machine-readable bills of materials for container images. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+A Software Bill of Materials (SBOM) lists every component in an artifact — packages, versions, licenses, hashes, and dependency relationships — making the supply chain visible. Syft generates SBOMs from images and filesystems; Grype scans them for vulnerabilities; together they give CI a continuous answer to what is in the artifact and what is known-bad.
 
 ## Details
-- Definition anchor: Machine-readable bills of materials for container images.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: Syft inspects a container image or directory and produces an SBOM (CycloneDX or SPDX); Grype matches the component list against vulnerability databases; the SBOM is attached to the artifact (attested with signatures) and stored with it; consumers and scanners can audit any artifact's contents without re-inspecting it.
+- Concrete example: CI runs `syft scan image:latest` producing `sbom.cdx.json`, then `grype` reports CVEs with severity; the pipeline fails on critical vulnerabilities; the SBOM is published alongside the image and signed with Cosign; a post-release audit answers which images contain a newly disclosed CVE by querying SBOMs.
+- Failure modes: SBOMs generated once and never updated — they describe the artifact at build time, so a base-image update invalidates them; scanning that is not enforced (SBOM exists, nothing acts on it); vulnerability databases lagging, so fresh CVEs are missed; SBOM formats and fields that vary, breaking downstream tooling; false positives from version-only matching without fix-version context.
+- Tradeoffs: SBOMs add build time, storage, and toolchain complexity but provide the provenance and audit trail that incident response needs; the alternative — asking what is in an image after a compromise — is too late; the maturity path is generate, sign, store, scan, and alert, in that order.
+- Operational notes: attach SBOMs to every release artifact, enforce scanning gates, and keep SBOMs retrievable for at least the artifact's retention window.
+- RSIS3 relevance: cosmos's artifacts (dashboard bundles, daemon images) should carry SBOMs so RSIS3 can assess the exposure of its own stack when a CVE lands.
 
 ## Related
 - [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster

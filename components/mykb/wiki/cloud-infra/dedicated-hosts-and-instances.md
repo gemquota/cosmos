@@ -4,26 +4,28 @@ title: "Dedicated Hosts & Instances"
 description: "Single-tenant servers for compliance and performance isolation"
 tags: ["dedicated-hosts", "tenancy", "cloud", "compliance"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Dedicated Hosts & Instances
 
 ## Summary
-Single-tenant servers for compliance and performance isolation. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Dedicated hosts and instances give a customer exclusive use of a physical server: for licensing (per-core/per-socket), compliance (no noisy neighbors), or predictable placement. They cost more than shared tenancy and matter only when those constraints are real.
 
 ## Details
-- Definition anchor: Single-tenant servers for compliance and performance isolation.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: dedicated hosts (AWS) and isolated VMs (GCP sole-tenant nodes, Azure dedicated hosts) guarantee an entire physical machine: instance placement is controlled, host affinity can pin instances, and capacity is reserved on that host; dedicated instances (AWS) give exclusive tenancy of the host without placement control, costing the same premium with fewer features.
+- Concrete example: an Oracle or Windows Server license tied to sockets/cores forces dedicated hosts so the physical core count matches licensing; a regulated workload demands sole tenancy to exclude other customers; a latency-critical pair wants host affinity so instances share the same NUMA/network path.
+- Failure modes: paying for dedicated tenancy without a licensing or compliance driver (pure cost); confusing dedicated instances with dedicated hosts and losing placement control; host-level maintenance events taking down all pinned instances at once (plan for host replacement); and capacity assumptions — dedicated hosts reserve a whole host, wasting unused vCPUs.
+- Operational tradeoffs: the premium buys isolation and placement control, not performance (shared tenancy is usually equal or better price-performance); use savings plans/reserved coverage on hosts and keep host pools sized for failover. Re-evaluate annually — licensing deals change.
+- RSIS3/mykb relevance: the wiki's compliance-sensitive workloads are on dedicated hosts with a placement diagram; this note documents the justification so the loop does not spread dedicated tenancy by default.
+- Utilization: track host-level vCPU utilization; a dedicated host at 20% utilization is the clearest sign the licensing rationale should be re-audited.
 
 ## Related
-- [[wiki/infrastructure/bastion-hosts-and-jump-boxes|Bastion Hosts & Jump Boxes]] — related coverage in the same cluster
-- [[wiki/cloud-infra/reserved-instances-vs-on-demand|Reserved vs On-Demand Instances]] — related coverage in the same cluster
-- [[wiki/cloud-infra/spot-instances|Spot Instances]] — related coverage in the same cluster
-- [[wiki/cloud-infra/burstable-instances|Burstable Instances]] — related coverage in the same cluster
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/infrastructure/bastion-hosts-and-jump-boxes|Bastion Hosts & Jump Boxes]]
+- [[wiki/cloud-infra/reserved-instances-vs-on-demand|Reserved vs On-Demand Instances]]
+- [[wiki/cloud-infra/spot-instances|Spot Instances]]
+- [[wiki/cloud-infra/burstable-instances|Burstable Instances]]
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

@@ -4,19 +4,21 @@ title: "Backup Tools: restic & Borg"
 description: "Deduplicating encrypted backups with restic and Borg"
 tags: ["restic", "borg", "backup", "encryption"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Backup Tools: restic & Borg
 
 ## Summary
-Deduplicating encrypted backups with restic and Borg. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+restic and Borg are deduplicating, encrypted backup tools for filesystem trees. Both split data into chunks, store each chunk once, encrypt with a user key, and support retention-based pruning; restic targets heterogeneous remote backends (S3, B2, SFTP, local), while Borg is optimized for local or SSH destinations with its own append-only repo format.
 
 ## Details
-- Definition anchor: Deduplicating encrypted backups with restic and Borg.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: content-defined chunking splits files into variable-size blocks, so a small edit to a large file changes only the affected chunks; chunk indexes and snapshots let a restore reconstruct any point in time; encryption keys stay local, so the remote never sees plaintext names or contents.
+- Concrete example: `restic backup ~/data --repo s3:...` followed by `restic forget --keep-daily 7 --keep-monthly 6 --prune`; Borg uses `borg create repo::host-{now} ~/data` and `borg prune`. Both are cron-friendly and support pre/post hooks for consistent database dumps.
+- Failure modes: losing the repository password makes the backup unrecoverable — store the key in a secrets manager and test a restore from a cold environment; interrupted prunes or pruning bugs can waste space or corrupt the index, so run `restic check` or `borg check`; backing up a live database without a coherent snapshot captures torn state, so back up a consistent dump or snapshot first.
+- Tradeoffs: dedup makes these tools cheap for versioned file trees but less useful for already-compressed media; encryption and chunking add CPU cost; both are single-writer, so concurrent backups to one repo need locking. Borg's dedup and compression are tighter for local repos; restic wins on backend variety and cloud object-storage friendliness.
+- Operational notes: test restores from the actual remote, monitor repo growth, and set retention before the repo balloons past budget.
+- RSIS3/mykb relevance: restic/Borg are the tooling layer for the wiki's 3-2-1 strategy — an encrypted, deduplicated snapshot of the markdown store gives RSIS3 a recoverable memory that survives machine loss.
 
 ## Related
 - [[wiki/shell-environment/unix-text-processing-tools|Unix Text Processing Tools]] — related coverage in the same cluster

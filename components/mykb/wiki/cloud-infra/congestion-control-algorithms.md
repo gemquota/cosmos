@@ -4,24 +4,26 @@ title: "Congestion Control Algorithms"
 description: "CUBIC, Reno, BBR and how senders adapt rate to network conditions"
 tags: ["congestion", "tcp", "bbr", "networking"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Congestion Control Algorithms
 
 ## Summary
-CUBIC, Reno, BBR and how senders adapt rate to network conditions. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Congestion control is TCP's (and QUIC's) mechanism for finding and respecting the network's available capacity: send more until loss, then back off. Algorithm choice (CUBIC, BBR, Reno, compound) changes throughput and latency profiles, especially over high-BDP and lossy paths.
 
 ## Details
-- Definition anchor: CUBIC, Reno, BBR and how senders adapt rate to network conditions.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: senders probe bandwidth by increasing window (additive increase) and react to loss (multiplicative decrease); CUBIC grows the window with a cubic function for fast recovery; BBR models bottleneck bandwidth and RTT instead of reacting to loss, maintaining throughput over lossy links; Reno/Vegas are the older AIMD baselines. QUIC runs its own congestion control in user space with similar algorithms.
+- Concrete example: a 1 Gbps, 100ms RTT link with 1% loss: CUBIC collapses toward a few Mbps while BBR sustains near line rate; file-transfer services and CDNs tune algorithms or use parallel flows for exactly this reason; cloud inter-region replication typically measures a big win switching from default CUBIC to BBR.
+- Failure modes: algorithms tuned for one regime misbehaving in another (BBR's initial probing can burst; CUBIC's fairness with competing Reno flows); kernel defaults lagging modern defaults (enable ECN, BBR where available); and blaming the network when the algorithm, buffer, or window scale is the actual limiter.
+- Operational tradeoffs: for bulk transfers over lossy long-haul paths, BBR-class control wins; for interactive latency, congestion control matters less than queueing/buffering — use ECN, pacing, and correct window sizing first. Test per path, since cloud topologies and middleboxes differ.
+- RSIS3/mykb relevance: the wiki's sync jobs between regions record algorithm-vs-throughput comparisons, so the loop's replication planner enables BBR-class control on paths where it measurably wins.
+- Kernel policy: enable modern defaults (BBR where supported, ECN, large windows) at the OS level; application-level tuning cannot rescue a kernel stuck on legacy defaults.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/os-shell/algorithms|Algorithms]] — related coverage in the same cluster
-- [[wiki/cloud-infra/flow-control|Flow Control]] — related coverage in the same cluster
-- [[wiki/cloud-infra/network-access-control-lists|Network Access Control Lists]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/os-shell/algorithms|Algorithms]]
+- [[wiki/cloud-infra/flow-control|Flow Control]]
+- [[wiki/cloud-infra/network-access-control-lists|Network Access Control Lists]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

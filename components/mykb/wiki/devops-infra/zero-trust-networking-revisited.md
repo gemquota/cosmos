@@ -4,19 +4,21 @@ title: "Zero Trust Networking"
 description: "Never trust network location; authenticate and authorize every request"
 tags: ["zero-trust", "security", "networking", "identity"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Zero Trust Networking
 
 ## Summary
-Never trust network location; authenticate and authorize every request. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Zero-trust networking is the model where no network is trusted by default: every request is authenticated, authorized, and encrypted, whether it crosses the public internet or stays inside the data center. "Revisited" reflects its maturity — from a buzzword to a concrete stack of identity-aware proxies, mTLS service meshes, and device posture checks.
 
 ## Details
-- Definition anchor: Never trust network location; authenticate and authorize every request.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: identity and policy replace network location as the trust basis; north-south access goes through identity-aware proxies, east-west traffic gets mTLS from service meshes or network overlays (Tailscale, Cilium), and every decision is logged; network segments and firewalls become defense-in-depth, not the boundary.
+- Concrete example: an internal app reachable only through an access proxy that checks SSO and device posture; service-to-service calls encrypted and authenticated via mTLS in the mesh; a remote worker reaching the service through an overlay network with per-identity policy — no VPN, no full-network access.
+- Failure modes: partial adoption — some services exempted from mTLS, creating trusted paths attackers find; identity sprawl where service accounts and human identities are not distinct, weakening audit; performance overhead from per-request checks and encryption; policy complexity that makes teams default to allow-all; legacy systems that cannot participate, becoming the weak link.
+- Tradeoffs: zero trust shrinks the blast radius of any compromise to the authenticated identities involved, but it is operationally heavier than perimeter security — identity infrastructure, certificate rotation, policy management; the alternative, network trust, is simpler and catastrophically flat once breached; adoption is a journey: access proxies first, then mTLS for internal traffic.
+- Operational notes: adopt incrementally, audit identity decisions, keep certificates rotating, and test what happens when the identity provider fails.
+- RSIS3 relevance: the cosmos deployment (dashboard, daemon, wiki) benefits from zero-trust principles — every access authenticated and scoped, internal calls mTLS-verified — matching RSIS3's own guardrail philosophy.
 
 ## Related
 - [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster

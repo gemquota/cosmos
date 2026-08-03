@@ -4,25 +4,28 @@ title: "Bandwidth vs Throughput"
 description: "Theoretical link capacity versus realized application data rate"
 tags: ["bandwidth", "throughput", "networking", "capacity"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Bandwidth vs Throughput
 
 ## Summary
-Theoretical link capacity versus realized application data rate. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Bandwidth is the capacity of a link (bits per second); throughput is what actually transfers after overhead, loss, and protocol limits. Confusing the two causes both over-provisioned bills and underperforming claims.
 
 ## Details
-- Definition anchor: Theoretical link capacity versus realized application data rate.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: bandwidth is the negotiated or advertised link rate; throughput = bandwidth × efficiency, where efficiency loses to TCP window/round-trip time limits, congestion loss, protocol overhead (headers, TLS), and application behavior. The theoretical max for a TCP flow is roughly window size ÷ RTT, which is why high-RTT links need large windows (BDP).
+- Concrete example: a 1 Gbps link with 100ms RTT and a 64KB TCP window tops out near 5 Mbps without window scaling — a classic WAN surprise; the same link carries 900+ Mbps with HTTP/2 + congestion control tuned and multiple flows. Cloud egress bills on bytes actually moved, so "10 Gbps" networking rarely moves 10 Gbps of application data.
+- Failure modes: sizing links by bandwidth while the bottleneck is latency or loss (packet loss halves throughput via TCP backoff); saturating one flow while others starve (fairness); ignoring duplex mismatches and NIC offload settings in physical contexts; and measuring throughput with small transfers that never reach steady state.
+- Operational tradeoffs: raise throughput by removing loss, increasing window/BDP, parallelizing flows, and compressing — not just buying bandwidth; monitor both utilization and achieved throughput per path, and use TCP-friendly tuning for high-latency interconnects.
+- RSIS3/mykb relevance: the wiki's cross-region sync measurements record achieved throughput vs link rate, giving the loop realistic capacity numbers for planning replication jobs.
+- Testing: measure with parallel flows and large transfers (iperf-style), not single-stream curl, to see the practical ceiling; the single-stream number misleads for most services.
+- Overhead accounting: subtract protocol and retransmission overhead when sizing; a link at 95% utilization is already oversubscribed in practice.
 
 ## Related
-- [[wiki/infrastructure/throughput-of-storage|Storage Throughput]] — related coverage in the same cluster
-- [[wiki/infrastructure/bandwidth-allocation|Bandwidth Allocation]] — related coverage in the same cluster
-- [[wiki/cloud-infra/cost-of-bandwidth|Cost of Bandwidth]] — related coverage in the same cluster
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/infrastructure/throughput-of-storage|Storage Throughput]]
+- [[wiki/infrastructure/bandwidth-allocation|Bandwidth Allocation]]
+- [[wiki/cloud-infra/cost-of-bandwidth|Cost of Bandwidth]]
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

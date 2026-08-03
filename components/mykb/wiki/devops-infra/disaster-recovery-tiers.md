@@ -4,19 +4,21 @@ title: "Disaster Recovery Tiers"
 description: "The RTO/RPO spectrum from tape to synchronous mirroring"
 tags: ["dr", "tiers", "rto", "rpo"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Disaster Recovery Tiers
 
 ## Summary
-The RTO/RPO spectrum from tape to synchronous mirroring. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Disaster recovery tiers classify systems by how much downtime and data loss they can tolerate, and therefore how much DR machinery they get. RTO (time to restore service) and RPO (maximum acceptable data loss) define the tiers; a tier map allocates replication, backups, failover, and testing effort proportionally to business criticality.
 
 ## Details
-- Definition anchor: The RTO/RPO spectrum from tape to synchronous mirroring.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: each service declares RTO and RPO targets; tiers bundle the matching tooling — Tier 1 (minutes RTO/RPO) gets synchronous replication, automated failover, and continuous testing; Tier 2 (hours) gets asynchronous replication and runbook-driven recovery; Tier 3 (days) gets periodic backups and manual restore. The tier is the contract that justifies cost.
+- Concrete example: an online payment service in Tier 1 with multi-region synchronous replicas and automated failover; an internal reporting database in Tier 2 with hourly backups and a documented recovery runbook; archived logs in Tier 3 with monthly snapshots restored on demand.
+- Failure modes: mislabeling — a service treated as Tier 3 that actually needs hours of recovery (the tier map must be reviewed as systems change); RTO met while RPO is silently violated (restores lose the last window of writes); untested tier assumptions where the "automated" failover has never run; over-provisioning every system at Tier 1, which makes DR unaffordable and untestable.
+- Tradeoffs: tighter tiers cost more in replication, storage, and testing time; looser tiers save money but lengthen outages; the tiering conversation forces explicit product decisions about which data and downtime actually matter.
+- Operational notes: rehearse each tier's recovery path in game days, monitor that recovery tooling (replication lag, backup freshness) stays within tier bounds, and revisit tiers when systems change.
+- RSIS3 relevance: RSIS3's memory store and checkpoints deserve an explicit tier — cheap RPO for the wiki (git pushes) and a defined recovery path for state files.
 
 ## Related
 - [[wiki/cloud-infra/azure-blob-access-tiers|Azure Blob Access Tiers]] — related coverage in the same cluster

@@ -4,24 +4,27 @@ title: "Cloud Security Groups"
 description: "Stateful instance-level firewall rules on AWS and cloud platforms"
 tags: ["security-groups", "firewall", "aws", "cloud"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # Cloud Security Groups
 
 ## Summary
-Stateful instance-level firewall rules on AWS and cloud platforms. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+Cloud security groups are stateful, instance-level firewalls (AWS SG, GCP firewall rules, Azure NSGs in part) that filter traffic by port/protocol/source. They are the primary network control plane for workloads — and the top source of accidental exposure when rules drift.
 
 ## Details
-- Definition anchor: Stateful instance-level firewall rules on AWS and cloud platforms.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: rules allow inbound/outbound by protocol, port, and source (CIDR, security group, or service tag); responses to allowed traffic are automatically permitted (stateful). In AWS, SGs are per-enumeration of rules with implicit deny; GCP firewall rules are hierarchical with priority; Azure NSGs use priority numbers and are subnet/NIC-scoped.
+- Concrete example: an app SG allows 443 from the load-balancer SG and 22 from a bastion SG only; the database SG allows 5432 from the app SG. Using group references instead of CIDRs means adding a server to the app tier automatically inherits the rules — and removing it drops them.
+- Failure modes: 0.0.0.0/0 on management ports (22, 3389, 5432) — the most common breach vector; rules referencing stale CIDRs after environments move; duplicate/conflicting rules that shadow intended policy; and drift between IaC and console edits that makes the source of truth lie.
+- Operational tradeoffs: groups are cheap, stateful, and per-application — the right default filter — but they are not a substitute for identity-aware controls (IAM), network inspection (firewalls), or logging. Treat security groups as code: review diffs, minimize rule count, and use group-to-group references.
+- RSIS3/mykb relevance: the wiki's environment templates encode security groups as code with a documented rule vocabulary, so loop-provisioned workloads inherit a safe baseline.
+- Default posture: start with deny-all per environment and open rules only as services require; a permissive starter template is how the first exposure ships.
+- Deny-by-default: delete default allow rules where the platform creates them; a fresh environment should start closed and open only what is needed.
 
 ## Related
-- [[wiki/cloud-infra/cloud-providers-aws-azure-gcp|Cloud Providers: AWS, Azure, GCP]] — related coverage in the same cluster
-- [[wiki/cloud-infra/multi-cloud-hybrid-cloud|Multi-Cloud & Hybrid Cloud]] — related coverage in the same cluster
-- [[wiki/os-shell/users-groups-and-acls|Users, Groups & ACLs]] — related coverage in the same cluster
-- [[wiki/infrastructure/security-information-and-event-management|SIEM]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/cloud-infra/cloud-providers-aws-azure-gcp|Cloud Providers: AWS, Azure, GCP]]
+- [[wiki/cloud-infra/multi-cloud-hybrid-cloud|Multi-Cloud & Hybrid Cloud]]
+- [[wiki/os-shell/users-groups-and-acls|Users, Groups & ACLs]]
+- [[wiki/infrastructure/security-information-and-event-management|SIEM]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

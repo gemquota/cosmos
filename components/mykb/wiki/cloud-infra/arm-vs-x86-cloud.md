@@ -4,24 +4,27 @@ title: "ARM vs x86 in the Cloud"
 description: "Graviton-class ARM instances versus x86 performance and cost"
 tags: ["arm", "x86", "graviton", "cloud"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
-
 # ARM vs x86 in the Cloud
 
 ## Summary
-Graviton-class ARM instances versus x86 performance and cost. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+
+ARM and x86 cloud instances compete on price-performance: ARM (Graviton, Ampere, AWS, GCP Tau) typically delivers better performance per dollar for scale-out workloads, while x86 retains ecosystem breadth, licensing familiarity, and AVX-512-class features.
 
 ## Details
-- Definition anchor: Graviton-class ARM instances versus x86 performance and cost.
-- Open questions: how this interacts with adjacent cloud networking and provider services topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: ARM's simpler microarchitecture and lower power give high per-core efficiency; Graviton3/4 and Ampere Altra offer up to 64 cores; x86 (Xeon, EPYC) pairs wider software compatibility with features like AVX-512/AMX. Most code is portable via compiled languages or JIT runtimes, but native dependencies, SIMD paths, and binaries must be rebuilt for aarch64.
+- Concrete example: a container fleet of stateless API services recompiled for arm64 runs on Graviton instances at meaningfully lower cost per request; a Python/Node workload (interpreted, portable) migrates trivially, while a C++ library with hand-written x86 SIMD needs a rebuild and re-benchmark.
+- Failure modes: assuming portability — closed-source binaries, old OS images, and developer machines on x86 mask problems until deployment; licensing models priced per core/socket penalizing 64-core ARM VMs; and performance cliffs where a workload is memory-bandwidth bound in ways the smaller ARM cache hierarchies expose.
+- Operational tradeoffs: ARM is the default for new scale-out greenfield work; keep x86 for compatibility-critical or licensing-bound workloads and always measure your own latency distribution, not vendor benchmarks. Mixed fleets let you migrate service by service.
+- RSIS3/mykb relevance: the wiki records benchmark and porting notes per service family, so the loop's capacity planner can propose ARM migration where telemetry shows clear wins.
+- Migration order: port the largest, most portable service first to prove the economics, then widen; a small win on an odd service proves nothing.
+- Licensing check: verify per-core pricing before adopting 64-core ARM shapes; a license cost that scales with cores can erase the compute savings.
 
 ## Related
-- [[wiki/cloud-infra/cloud-providers-aws-azure-gcp|Cloud Providers: AWS, Azure, GCP]] — related coverage in the same cluster
-- [[wiki/cloud-infra/multi-cloud-hybrid-cloud|Multi-Cloud & Hybrid Cloud]] — related coverage in the same cluster
-- [[wiki/cloud-infra/cloud-security-groups|Cloud Security Groups]] — related coverage in the same cluster
-- [[wiki/cloud-infra/gcp-vpc-and-cloud-nat|GCP VPC & Cloud NAT]] — related coverage in the same cluster
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
+- [[wiki/cloud-infra/cloud-providers-aws-azure-gcp|Cloud Providers: AWS, Azure, GCP]]
+- [[wiki/cloud-infra/multi-cloud-hybrid-cloud|Multi-Cloud & Hybrid Cloud]]
+- [[wiki/cloud-infra/cloud-security-groups|Cloud Security Groups]]
+- [[wiki/cloud-infra/gcp-vpc-and-cloud-nat|GCP VPC & Cloud NAT]]
+- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
+- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

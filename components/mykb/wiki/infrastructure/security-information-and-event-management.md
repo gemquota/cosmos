@@ -4,19 +4,21 @@ title: "SIEM"
 description: "Centralizing logs and alerts for security investigation"
 tags: ["splunk", "siem", "security", "logs"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # SIEM
 
 ## Summary
-Centralizing logs and alerts for security investigation. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+A SIEM centralizes logs, events, and alerts from across the estate and turns them into searchable, correlatable evidence for security investigation. It is the aggregation layer that converts "did anything happen?" into "what happened, in what order, and is it still happening?" — the backbone of modern security operations centers.
 
 ## Details
-- Definition anchor: Centralizing logs and alerts for security investigation.
-- Open questions: how this interacts with adjacent datacenter and network infrastructure topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Pipeline: agents and forwarders collect logs, normalize them into a common schema, and ship them to the indexer; correlation rules and analytics then turn indexed events into alerts, and case management tracks them to resolution.
+- Core features: full-text and structured search (SPL in Splunk, KQL in Elastic), correlation of events across sources and time windows, alert rules with thresholds and suppression, dashboards, and retention tiers that balance cost against compliance requirements.
+- Concrete examples: correlating failed logins followed by a successful one from a new geolocation, detecting credential dumping by matching unusual process spawns against a baseline, and replaying the full kill chain from firewall, EDR, and authentication logs during an incident.
+- Failure modes: alert fatigue from noisy rules that trains analysts to ignore everything; log-source gaps that leave blind spots; timestamp and timezone skew across appliances; ingestion lag that breaks time-window correlations; rules that silently reference removed fields; and retention policies driven by license cost rather than investigation need.
+- Tradeoffs: centralizing everything simplifies correlation but concentrates cost and privacy risk; edge analytics reduce egress but fragment the view. Signature rules are cheap and precise but miss novel attacks, while anomaly detection finds outliers but generates more false positives.
+- RSIS3/mykb relevance: the SIEM's triage loop — collect, correlate, alert, investigate, tune rules — is a direct analogue of RSIS3's L1 action loop, and this node keeps that analogy retrievable for telemetry design.
 
 ## Related
 - [[wiki/os-shell/logical-volume-management|Logical Volume Management]] — related coverage in the same cluster

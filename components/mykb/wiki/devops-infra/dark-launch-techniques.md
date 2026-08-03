@@ -4,19 +4,21 @@ title: "Dark Launch Techniques"
 description: "Running new code paths invisibly behind flags before exposure"
 tags: ["dark-launch", "feature-flags", "testing", "releases"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Dark Launch Techniques
 
 ## Summary
-Running new code paths invisibly behind flags before exposure. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Dark launching ships code behind flags or routes so it runs in production without being visible to users: the new path executes, is logged and measured, but the user-visible result still comes from the old path. It de-risks rewrites by validating behavior under real production load before flipping the switch.
 
 ## Details
-- Definition anchor: Running new code paths invisibly behind flags before exposure.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: the request enters the system and a flag decides which implementation to call; in dark mode the new implementation runs alongside and its result is compared or discarded; telemetry compares outcomes, latencies, and errors; rollout flips the flag once confidence is proven.
+- Concrete example: a search rewrite — live traffic is sent to both the old and new rankers; the UI shows the old result while the new one is scored and logged; offline analysis measures agreement and quality; a canary-style flip then moves real users over gradually.
+- Failure modes: dark code with side effects — a "read-only" comparison path that writes to the database or sends emails duplicates effects; unbounded resource cost when the dark path doubles CPU, memory, or API spend — size it like a real rollout; measurement bias when the dark path lacks the same inputs (e.g. no feedback loop), so it looks better or worse than it will be live; flag config drift where the dark path silently becomes the live path after a cleanup.
+- Tradeoffs: dark launching gives real-traffic validation without user impact but doubles compute and adds code complexity that must be maintained until the flip; it complements — rather than replaces — canaries, which expose the new path to real users gradually.
+- Operational notes: make dark paths observably tagged (span attributes, log fields), add budget and error alerts before enabling, and schedule removal of the old path after the flip.
+- RSIS3 relevance: RSIS3's L2 improvement proposals can dark-launch — run the proposed strategy in shadow mode against live pulse data, compare outcomes, and promote only proven changes.
 
 ## Related
 - [[wiki/infrastructure/snapshot-and-clone-techniques|Snapshot & Clone Techniques]] — related coverage in the same cluster

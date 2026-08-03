@@ -4,19 +4,21 @@ title: "Rate Limiting at the Edge"
 description: "Token-bucket limits enforced in CDN, gateway, or reverse proxy layers"
 tags: ["rate-limiting", "edge", "gateway", "api"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Rate Limiting at the Edge
 
 ## Summary
-Token-bucket limits enforced in CDN, gateway, or reverse proxy layers. This stub frames the concept and its place in the mykb Systems & Infrastructure cluster; expand it into a full article with worked examples, failure modes, and verified sources.
+Rate limiting at the edge protects services before requests consume backend resources: CDN and gateway layers (Cloudflare, Fastly, nginx, Envoy) enforce request budgets per client, path, or token, rejecting or shaping excess traffic. Edge enforcement is the first line of defense against abuse, scraping, and traffic spikes.
 
 ## Details
-- Definition anchor: Token-bucket limits enforced in CDN, gateway, or reverse proxy layers.
-- Open questions: how this interacts with adjacent delivery, reliability, and Kubernetes operations topics, the failure modes that matter, and the operational tradeoffs to document.
-- Ties to RSIS3/mykb: keeping this node discoverable makes it easier to surface from related protocols and tooling during retrieval.
-- Next step: verify sources and promote to a growing article with protocol or configuration detail.
+- Mechanism: the edge tracks request rates per key (IP, user, API token, path) in a distributed counter or token bucket; limits are configured with burst allowances and rejection behavior (429, retry-after, queueing); policies differentiate classes of traffic — logged-in users get higher budgets than anonymous ones.
+- Concrete example: a CDN rule allowing 100 requests/minute per IP for the public API and 10/minute for unauthenticated search; a gateway token bucket of 5,000 requests/hour per API key with a 429 and Retry-After on excess; bot protection rules that rate-limit known scraping patterns at the edge.
+- Failure modes: IP-based limits behind NAT or shared egress punishing legitimate users; per-IP limits trivially bypassed by distributed attackers; rate limiting that kicks in during legitimate spikes (launch day), blocking real users — set limits from capacity, not habit; backend still overwhelmed because the edge limit is too generous or keyed incorrectly; 429 handling that is not client-visible, causing silent retry storms.
+- Tradeoffs: edge rate limiting is cheap to operate and scales with the CDN, but it lacks backend context (per-user quotas, business rules); the common stack is edge limits for abuse and coarse protection plus service-level limits for fine-grained, business-aware quotas; the tradeoff is where enforcement lives versus what it can know.
+- Operational notes: monitor 429 rates and limit hits, size limits from real capacity, and make rejection responses actionable.
+- RSIS3 relevance: the dashboard and wiki API behind an edge benefit from limits that keep scrapers and misbehaving clients from starving the daemon — a config change, not a code change.
 
 ## Related
 - [[wiki/cloud-infra/cdns-and-edge-networking|CDNs & Edge Networking]] — related coverage in the same cluster
