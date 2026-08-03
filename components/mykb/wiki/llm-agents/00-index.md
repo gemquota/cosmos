@@ -71,3 +71,75 @@ Part of [[wiki/index|Wiki Index]]. 59 pages.
 - [[wiki/llm-agents/video-understanding-models|Video Understanding Models]] — Models that process video for captioning, search, and question answering
 - [[wiki/llm-agents/vision-language-models|Vision-Language Models]] — Models that jointly process images and text for captioning, QA, and grounding
 - [[wiki/llm-agents/voice-agents|Voice Agents]] — Agents that converse through speech recognition and synthesis in real time
+
+## Concepts
+
+- [Agent Logs](agent-logs.md) — Agent Logs
+- [Agent Personas](agent-personas.md) — Agent Personas
+- [Agent Telemetry Schema](agent-telemetry-schema.md) — Agent Telemetry Schema
+- [Agent Versioning](agent-versioning.md) — Agent Versioning
+- [Agentic Loops](agentic-loops.md) — Agentic Loops
+- [Agentic Workflows](agentic-workflows.md) — Agentic Workflows
+- [API Key Management for LLMs](api-key-management-llm.md) — API Key Management for LLMs
+- [Approval Gates](approval-gates.md) — Approval Gates
+- [Audio and Multimodal Models](audio-models-multimodal-models.md) — Audio and Multimodal Models
+- [Building Effective Agents](building-effective-agents.md) — Building Effective Agents
+- [Chain of Thought](chain-of-thought.md) — Chain of Thought
+- [Code-Generation Agents](code-generation-agents.md) — Code-Generation Agents
+- [Consent and Privacy Agents](consent-and-privacy-agents.md) — Consent and Privacy Agents
+- [Context Management](context-management.md) — Context Management
+- [Conversation History Management](conversation-history-management.md) — Conversation History Management
+- [Cross-Modal Retrieval](cross-modal-retrieval.md) — Cross-Modal Retrieval
+- [Data Minimization Agents](data-minimization-agents.md) — Data Minimization Agents
+- [Debate Agents](debate-agents.md) — Debate Agents
+- [Deterministic Replay](deterministic-replay.md) — Deterministic Replay
+- [Dialog State Tracking](dialog-state-tracking.md) — Dialog State Tracking
+- [Don't Build Multi-Agents](dont-build-multi-agents.md) — Don't Build Multi-Agents
+- [Episodic Memory for Agents](episodic-memory-agents.md) — Episodic Memory for Agents
+- [Expert Consultation](expert-consultation.md) — Expert Consultation
+- [Graph Engineering](graph-engineering.md) — Graph Engineering
+- [Grounding Vision to Text](grounding-vision-to-text.md) — Grounding Vision to Text
+- [Hallucination Mitigation](hallucination-mitigation.md) — Hallucination Mitigation
+- [Handoff Protocol](handoff-protocol.md) — Handoff Protocol
+- [Human-in-the-Loop](human-in-the-loop.md) — Human-in-the-Loop
+- [Inference Caching](inference-caching.md) — Inference Caching
+- [Interleaved Modalities](interleaved-modalities.md) — Interleaved Modalities
+- [LangGraph Graph API](langgraph-graph-api.md) — LangGraph Graph API
+- [LLM Gateway and Routing](llm-gateway-and-routing.md) — LLM Gateway and Routing
+- [Loop Engineering](loop-engineering.md) — Loop Engineering
+- [Loop Specification](loop-specification.md) — Loop Specification
+- [Memory-Augmented Agents](memory-augmented-agents.md) — Memory-Augmented Agents
+- [Memory Consolidation for Agents](memory-consolidation-agents.md) — Memory Consolidation for Agents
+- [Agentic Memory Hierarchy](memory-hierarchy-agentic.md) — Agentic Memory Hierarchy
+- [Multi-Agent Research Systems](multi-agent-research-systems.md) — Multi-Agent Research Systems
+- [How and When to Build Multi-Agent Systems](multi-agent-systems-guide.md) — How and When to Build Multi-Agent Systems
+- [Multimodal Evaluation](multimodal-evaluation.md) — Multimodal Evaluation
+- [OCR and Document AI](ocr-and-document-ai.md) — OCR and Document AI
+- [Permission Model](permission-model.md) — Permission Model
+- [Permissioning and Approvals](permissioning-and-approvals.md) — Permissioning and Approvals
+- [Policy Enforcement](policy-enforcement.md) — Policy Enforcement
+- [Prompt Caching](prompt-caching.md) — Prompt Caching
+- [Prompt Engineering vs Loop Engineering vs Graph Engineering](prompt-loop-graph-layers.md) — Prompt Engineering vs Loop Engineering vs Graph Engineering
+- [RAG Agent](rag-agent.md) — RAG Agent
+- [Realtime API Latency](realtime-api-latency.md) — Realtime API Latency
+- [Reflexion](reflexion.md) — Reflexion
+- [Retention Policies for Agents](retention-policies-agents.md) — Retention Policies for Agents
+- [Reward Hacking](reward-hacking.md) — Reward Hacking
+- [Self-Consistency Voting](self-consistency-voting.md) — Self-Consistency Voting
+- [Self-Consistency](self-consistency.md) — Self-Consistency
+- [Self-Reflection Agents](self-reflection-agents.md) — Self-Reflection Agents
+- [Semantic Caching](semantic-caching.md) — Semantic Caching
+- [Semantic Memory for Agents](semantic-memory-agents.md) — Semantic Memory for Agents
+- [Speech Recognition Systems](speech-recognition-systems.md) — Speech Recognition Systems
+- [Stop Conditions](stop-conditions.md) — Stop Conditions
+- [Streaming Responses with SSE](streaming-responses-sse.md) — Streaming Responses with SSE
+- [Success Criteria](success-criteria.md) — Success Criteria
+- [Text-to-Speech for LLMs](text-to-speech-llm.md) — Text-to-Speech for LLMs
+- [Tool Registry](tool-registry.md) — Tool Registry
+- [Tool Use and Function Calling](tool-use-function-calling.md) — Tool Use and Function Calling
+- [Traceability](traceability.md) — Traceability
+- [Tree of Thought](tree-of-thought.md) — Tree of Thought
+- [User Confirmation Flows](user-confirmation-flows.md) — User Confirmation Flows
+- [Video Understanding Models](video-understanding-models.md) — Video Understanding Models
+- [Vision-Language Models](vision-language-models.md) — Vision-Language Models
+- [Voice Agents](voice-agents.md) — Voice Agents

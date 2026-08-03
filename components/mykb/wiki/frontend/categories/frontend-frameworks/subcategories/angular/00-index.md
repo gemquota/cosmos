@@ -28,7 +28,7 @@ Part of [[wiki/index|Wiki Index]]. 35 pages.
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/blob-10|BLOB]] — Acronym referenced in session 65db591e
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/bond-angle-preference|Bond Angle Preference]] — Angular — TypeScript web framework, API — service communication interface, Authentication — identity verification
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/build|BUILD]] — esbuild
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/cac-2|CAC]] — Cache
+- CAC — Cache
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/canvaspool-2|CanvasPool]] — Canvas
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/cdn-10|CDN]] — Acronym referenced in session 511f2a52
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/chaos-drawer|Chaos Drawer]] — Referenced in session a39de5db

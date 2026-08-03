@@ -193,3 +193,187 @@ Part of [[wiki/index|Wiki Index]]. 181 pages.
 - [[wiki/ai-ml/transformer-architecture|Transformer Architecture]] — The attention-based neural network architecture that underlies virtually all modern LLMs
 - [[wiki/ai-ml/tree-of-thought-search|Tree of Thought Search]] — Exploring multiple reasoning branches and backtracking to better answers
 - [[wiki/ai-ml/vector-database-sharding|Vector Database Sharding]] — Partitioning a vector index across nodes to scale beyond a single machine
+
+## Concepts
+
+- [Activation Engineering](activation-engineering.md) — Activation Engineering
+- [Agentic RAG](agentic-rag.md) — Agentic RAG
+- [Alignment and Values](alignment-and-values.md) — Alignment and Values
+- [Arena Ranking](arena-ranking.md) — Arena Ranking
+- [Article Health Scores](article-health-scores.md) — Article Health Scores
+- [Article Score](article-score.md) — Article Score
+- [Attention Mechanism](attention-mechanism.md) — Attention Mechanism
+- [Attention Patterns](attention-patterns.md) — Attention Patterns
+- [Benchmark Gaming](benchmark-gaming.md) — Benchmark Gaming
+- [Best-of-N Sampling](best-of-n-sampling.md) — Best-of-N Sampling
+- [Binary Quantization](binary-quantization.md) — Binary Quantization
+- [BM25 and Hybrid Fusion](bm25-hybrid-fusion.md) — BM25 and Hybrid Fusion
+- [Byte-Pair Encoding](byte-pair-encoding.md) — Byte-Pair Encoding
+- [Calibration and Confidence](calibration-and-confidence.md) — Calibration and Confidence
+- [Capability Controls](capability-controls.md) — Capability Controls
+- [Catastrophic Forgetting Mitigation](catastrophic-forgetting-mitigation.md) — Catastrophic Forgetting Mitigation
+- [Catastrophic Forgetting](catastrophic-forgetting.md) — Catastrophic Forgetting
+- [Centrality Weighting](centrality-weighting.md) — Centrality Weighting
+- [Chinchilla Law](chinchilla-law.md) — Chinchilla Law
+- [Citations and Provenance](citations-and-provenance.md) — Citations and Provenance
+- [Clarity Score](clarity-score.md) — Clarity Score
+- [Claude](claude.md) — Claude
+- [Closed Model Moat](closed-models-moat.md) — Closed Model Moat
+- [Code Benchmarks](code-benchmarks.md) — Code Benchmarks
+- [ColBERT Model](colbert-model.md) — ColBERT Model
+- [Comprehension Score](comprehension-score.md) — Comprehension Score
+- [Conciseness Score](conciseness-score.md) — Conciseness Score
+- [Constitutional AI](constitutional-ai.md) — Constitutional AI
+- [Content Moderation Pipelines](content-moderation-pipelines.md) — Content Moderation Pipelines
+- [Content Score](content-score.md) — Content Score
+- [Contextual Retrieval](contextual-retrieval.md) — Contextual Retrieval
+- [Continual Learning](continual-learning.md) — Continual Learning
+- [Corrigibility and Shutdown](corrigibility-shutdown-problem.md) — Corrigibility and Shutdown
+- [Curriculum Learning for LLMs](curriculum-learning-llm.md) — Curriculum Learning for LLMs
+- [Data Contamination](data-contamination.md) — Data Contamination
+- [Data Deduplication for LLMs](data-deduplication-llm.md) — Data Deduplication for LLMs
+- [Data Filtering](data-filtering.md) — Data Filtering
+- [Data Labeling Workflows](data-labeling-workflows.md) — Data Labeling Workflows
+- [Data Poisoning](data-poisoning.md) — Data Poisoning
+- [Debate Protocols](debate-protocols.md) — Debate Protocols
+- [Deceptively Aligned Models](deceptively-aligned-models.md) — Deceptively Aligned Models
+- [DeepSeek](deepseek.md) — DeepSeek
+- [Dense Passage Retrieval (DPR)](dense-passage-retrieval.md) — Dense Passage Retrieval (DPR)
+- [Direct Preference Optimization](direct-preference-optimization.md) — Direct Preference Optimization
+- [Dot Product Similarity](dot-product-similarity.md) — Dot Product Similarity
+- [DPO](dpo.md) — DPO
+- [Embedding Regression](embedding-regression.md) — Embedding Regression
+- [Embedding Alignment](embeddings-alignment.md) — Embedding Alignment
+- [Embeddings and Vector Search](embeddings-and-vector-search.md) — Embeddings and Vector Search
+- [Euclidean and Manhattan Distance](euclidean-distance-manhattan.md) — Euclidean and Manhattan Distance
+- [Evaluation RAG as a Service](evaluation-rag-as-a-service.md) — Evaluation RAG as a Service
+- [Evaluation Sandboxes](evaluation-sandboxes.md) — Evaluation Sandboxes
+- [Feedforward Layer](feedforward-layer.md) — Feedforward Layer
+- [Few-Shot and In-Context Learning](few-shot-and-in-context-learning.md) — Few-Shot and In-Context Learning
+- [Fine-Tuning Data Curation](fine-tuning-data-curation.md) — Fine-Tuning Data Curation
+- [Fine-Tuning](fine-tuning.md) — Fine-Tuning
+- [Gemini](gemini.md) — Gemini
+- [General Intelligence Benchmarks](general-intelligence-benchmarks.md) — General Intelligence Benchmarks
+- [GPT-4](gpt-4.md) — GPT-4
+- [GPT-4o, Claude, and Gemini](gpt-4o-claude-gemini.md) — GPT-4o, Claude, and Gemini
+- [Graph Density Metrics](graph-density-metrics.md) — Graph Density Metrics
+- [Grok and o1-Style Reasoning](grok-o1-style.md) — Grok and o1-Style Reasoning
+- [Grounded Generation](grounded-generation.md) — Grounded Generation
+- [Grounding and Factuality](grounding-and-factuality.md) — Grounding and Factuality
+- [Guardrails and Safety](guardrails-and-safety.md) — Guardrails and Safety
+- [Guardrails](guardrails.md) — Guardrails
+- [Hallucination Benchmarks](hallucination-benchmarks.md) — Hallucination Benchmarks
+- [HNSW Index](hnsw-index.md) — HNSW Index
+- [Human Feedback Collection](human-feedback-collection.md) — Human Feedback Collection
+- [Hybrid Search Systems](hybrid-search-systems.md) — Hybrid Search Systems
+- [Hypothetical Document Embeddings (HyDE)](hypothetical-document-embeddings.md) — Hypothetical Document Embeddings (HyDE)
+- [Index Rebuild Strategies](index-rebuild-strategies.md) — Index Rebuild Strategies
+- [Inner Misalignment](inner-misalignment.md) — Inner Misalignment
+- [Instruction Datasets](instruction-datasets.md) — Instruction Datasets
+- [Instruction Following Benchmarks](instruction-following-benchmarks.md) — Instruction Following Benchmarks
+- [Instruction Tuning](instruction-tuning.md) — Instruction Tuning
+- [Instrumental Convergence](instrumental-convergence.md) — Instrumental Convergence
+- [Interpretability Tools](interpretability-tools.md) — Interpretability Tools
+- [Interpretability](interpretability.md) — Interpretability
+- [Iterated Amplification](iterated-amplification.md) — Iterated Amplification
+- [IVF Index](ivf-index.md) — IVF Index
+- [Jailbreaks](jailbreaks.md) — Jailbreaks
+- [KTO, GRPO, and Contextual RL](kto-grpo-contextual-rl.md) — KTO, GRPO, and Contextual RL
+- [KV-Cache Management](kv-cache-management.md) — KV-Cache Management
+- [Late Chunking](late-chunking.md) — Late Chunking
+- [Layer Norm](layer-norm.md) — Layer Norm
+- [Link Diversity](link-diversity.md) — Link Diversity
+- [Link Score](link-score.md) — Link Score
+- [Llama, Mistral, and DeepSeek](llama-mistral-deepseek.md) — Llama, Mistral, and DeepSeek
+- [Llama](llama.md) — Llama
+- [LLM-as-Judge](llm-as-judge.md) — LLM-as-Judge
+- [LLM Evaluation, Serving, and LLMOps](llm-evaluation-model-serving-llmops.md) — LLM Evaluation, Serving, and LLMOps
+- [LLM Fine-Tuning](llm-fine-tuning.md) — LLM Fine-Tuning
+- [LLM Latency Optimization](llm-latency-optimization.md) — LLM Latency Optimization
+- [LLM Leaderboards](llm-leaderboards.md) — LLM Leaderboards
+- [LLM Safety Policies](llm-safety-policies.md) — LLM Safety Policies
+- [LLMOps CI/CD](llmops-ci-cd.md) — LLMOps CI/CD
+- [Logit Lens](logit-lens.md) — Logit Lens
+- [Mechanistic Interpretability](mechanistic-interpretability.md) — Mechanistic Interpretability
+- [Mesa-Optimization](mesa-optimization.md) — Mesa-Optimization
+- [Meta-Prompting](meta-prompting.md) — Meta-Prompting
+- [Metadata Score](metadata-score.md) — Metadata Score
+- [Cosine Similarity Metric](metric-space-cosine.md) — Cosine Similarity Metric
+- [Mistral](mistral.md) — Mistral
+- [Model Capabilities Frontier](model-capabilities-frontier.md) — Model Capabilities Frontier
+- [Model Cards](model-cards.md) — Model Cards
+- [Model Evaluation Metrics](model-evaluation-metrics.md) — Model Evaluation Metrics
+- [Model Family Comparisons](model-family-comparisons.md) — Model Family Comparisons
+- [Model Monitoring](model-monitoring.md) — Model Monitoring
+- [Model Quantization](model-quantization.md) — Model Quantization
+- [Model Selection Strategies](model-selection-strategies.md) — Model Selection Strategies
+- [Model Stealing](model-stealing.md) — Model Stealing
+- [Model Versioning and Registry](model-versioning-and-registry.md) — Model Versioning and Registry
+- [Model Watermarking](model-watermarking.md) — Model Watermarking
+- [Multi-Head Attention](multi-head-attention.md) — Multi-Head Attention
+- [Multi-Hop Retrieval](multi-hop-retrieval.md) — Multi-Hop Retrieval
+- [Open-Weight Models](open-weights-models.md) — Open-Weight Models
+- [Orthogonality Thesis](orthogonality-thesis.md) — Orthogonality Thesis
+- [Outer Alignment](outer-alignment.md) — Outer Alignment
+- [Oversight Mechanisms](oversight-mechanisms.md) — Oversight Mechanisms
+- [Pairwise Comparisons](pairwise-comparisons.md) — Pairwise Comparisons
+- [Parent Document Retrieval](parent-document-retrieval.md) — Parent Document Retrieval
+- [Phi and Command R](phi-command-r.md) — Phi and Command R
+- [Positional Encoding](positional-encoding.md) — Positional Encoding
+- [PPO](ppo.md) — PPO
+- [Preference Datasets](preference-datasets.md) — Preference Datasets
+- [Preference Optimization](preference-optimization.md) — Preference Optimization
+- [Preference Tuning](preference-tuning.md) — Preference Tuning
+- [Probing](probing.md) — Probing
+- [Prompt Injection](prompt-injection.md) — Prompt Injection
+- [Provenance and Disclosure](provenance-and-disclosure.md) — Provenance and Disclosure
+- [Quality Filtering](quality-filtering.md) — Quality Filtering
+- [Quantisation](quantisation.md) — Quantisation
+- [Query Decomposition](query-decomposition.md) — Query Decomposition
+- [Query Transformations](query-transformations.md) — Query Transformations
+- [Qwen and Gemma](qwen-gemma.md) — Qwen and Gemma
+- [RAG Benchmarks](rag-benchmarks.md) — RAG Benchmarks
+- [Readability Score](readability-score.md) — Readability Score
+- [Reasoning Models](reasoning-models.md) — Reasoning Models
+- [Recursive Retrieval](recursive-retrieval.md) — Recursive Retrieval
+- [Recursive Reward Modeling](recursive-reward-modeling.md) — Recursive Reward Modeling
+- [Reinforcement Learning from Human Feedback](reinforcement-learning-from-human-feedback.md) — Reinforcement Learning from Human Feedback
+- [Rejection Sampling](rejection-sampling.md) — Rejection Sampling
+- [Reranking Strategies](reranking-strategies.md) — Reranking Strategies
+- [Residual Connections](residual-connections.md) — Residual Connections
+- [Retention Score](retention-score.md) — Retention Score
+- [Reward Hacking Prevention](reward-hacking-prevention.md) — Reward Hacking Prevention
+- [Reward Model Training](reward-model-training.md) — Reward Model Training
+- [Reward Model](reward-model.md) — Reward Model
+- [Reward Modeling](reward-modeling.md) — Reward Modeling
+- [RLHF Stages](rlhf-stages.md) — RLHF Stages
+- [RLHF](rlhf.md) — RLHF
+- [Rotary Embeddings](rotary-embeddings.md) — Rotary Embeddings
+- [ROUGE, BLEU, and BERTScore](rouge-bleu-bert-score.md) — ROUGE, BLEU, and BERTScore
+- [Rubric-Based Evaluation](rubric-based-evaluation.md) — Rubric-Based Evaluation
+- [Safety Benchmarks](safety-benchmarks.md) — Safety Benchmarks
+- [Scalar Quantization](scalar-quantization.md) — Scalar Quantization
+- [Scaling Laws](scaling-laws.md) — Scaling Laws
+- [Score Components](score-components.md) — Score Components
+- [Self-Attention](self-attention.md) — Self-Attention
+- [Semantic Operator Similarity](semantic-operator-similarity.md) — Semantic Operator Similarity
+- [SentencePiece](sentencepiece.md) — SentencePiece
+- [SFT](sft.md) — SFT
+- [Shard Theory](shard-theory.md) — Shard Theory
+- [Small-to-Big Retrieval](small-to-big-retrieval.md) — Small-to-Big Retrieval
+- [Sparse Autoencoders](sparse-autoencoders.md) — Sparse Autoencoders
+- [Specification Gaming and Goodhart](specification-gaming-goodharts-law.md) — Specification Gaming and Goodhart
+- [Speculative Decoding](speculative-decoding.md) — Speculative Decoding
+- [Structured Output Generation](structured-output-generation.md) — Structured Output Generation
+- [Subword Tokenization](subword-tokenization.md) — Subword Tokenization
+- [Supervised Fine-Tuning](supervised-fine-tuning.md) — Supervised Fine-Tuning
+- [SWE-bench](swe-bench.md) — SWE-bench
+- [Sycophancy](sycophancy.md) — Sycophancy
+- [Synthetic Data Generation](synthetic-data-generation.md) — Synthetic Data Generation
+- [Synthetic Data Recipes](synthetic-data-recipe.md) — Synthetic Data Recipes
+- [Tokenization Strategies](tokenization-strategies.md) — Tokenization Strategies
+- [Tool Use Benchmarks](tool-use-benchmarks.md) — Tool Use Benchmarks
+- [Transformer Architecture and Attention](transformer-architecture-attention-mechanisms.md) — Transformer Architecture and Attention
+- [Transformer Architecture](transformer-architecture.md) — Transformer Architecture
+- [Tree of Thought Search](tree-of-thought-search.md) — Tree of Thought Search
+- [Vector Database Sharding](vector-database-sharding.md) — Vector Database Sharding

@@ -179,3 +179,170 @@ Part of [[wiki/index|Wiki Index]]. 164 pages.
 - [[wiki/software-engineering/value-objects|Value Objects]] — Immutable objects defined by their values, not their identity
 - [[wiki/software-engineering/velocity-metrics|Velocity Metrics]] — Measuring delivered story points per iteration for forecasting
 - [[wiki/software-engineering/visitor-pattern|Visitor Pattern]] — Adding operations to an object structure without changing its classes
+
+## Concepts
+
+- [Acceptance Criteria](acceptance-criteria.md) — Acceptance Criteria
+- [Actor Model](actor-model.md) — Actor Model
+- [Adapter Pattern](adapter-pattern.md) — Adapter Pattern
+- [Aggregates](aggregates.md) — Aggregates
+- [Agile Ceremonies](agile-ceremonies.md) — Agile Ceremonies
+- [Agile Methodology](agile-methodology.md) — Agile Methodology
+- [Application Services](application-services.md) — Application Services
+- [Architecture Decision Records](architecture-decision-records.md) — Architecture Decision Records
+- [Async/Await Patterns](async-await-patterns.md) — Async/Await Patterns
+- [Asynchronous Patterns](asynchronous-patterns.md) — Asynchronous Patterns
+- [At-Least-Once Delivery](at-least-once.md) — At-Least-Once Delivery
+- [At-Most-Once Delivery](at-most-once.md) — At-Most-Once Delivery
+- [Backlog Grooming](backlog-grooming.md) — Backlog Grooming
+- [Backoff Cap](backoff-cap.md) — Backoff Cap
+- [Backpressure Spec](backpressure-spec.md) — Backpressure Spec
+- [Bridge Pattern](bridge-pattern.md) — Bridge Pattern
+- [Builder Pattern](builder-pattern.md) — Builder Pattern
+- [Bus Factor](bus-factor.md) — Bus Factor
+- [Chain of Responsibility](chain-of-responsibility.md) — Chain of Responsibility
+- [Choreography vs Orchestration](choreography-vs-orchestration.md) — Choreography vs Orchestration
+- [Circuit Breaker Libraries](circuit-breaker-libs.md) — Circuit Breaker Libraries
+- [Clean Architecture Practice](clean-architecture-practice.md) — Clean Architecture Practice
+- [Clean Architecture](clean-architecture.md) — Clean Architecture
+- [Code Formatters](code-formatters.md) — Code Formatters
+- [Code Generation](code-generation.md) — Code Generation
+- [Code Ownership](code-ownership.md) — Code Ownership
+- [Code Review](code-review.md) — Code Review
+- [Code Smells](code-smells.md) — Code Smells
+- [Coding Standards](coding-standards.md) — Coding Standards
+- [Command Pattern](command-pattern.md) — Command Pattern
+- [Command Query Separation](command-query-separation.md) — Command Query Separation
+- [Compensating Transactions](compensating-transactions.md) — Compensating Transactions
+- [Composite Pattern](composite-pattern.md) — Composite Pattern
+- [Composition Over Inheritance](composition-over-inheritance.md) — Composition Over Inheritance
+- [Concurrency Models](concurrency-models.md) — Concurrency Models
+- [Consumer Groups](consumer-groups.md) — Consumer Groups
+- [CQRS Pattern](cqrs-pattern.md) — CQRS Pattern
+- [CQRS Practice](cqrs-practice.md) — CQRS Practice
+- [Debugging Methodology](debugging-methodology.md) — Debugging Methodology
+- [Decorator Pattern](decorator-pattern.md) — Decorator Pattern
+- [Deduplication Queues](deduplication-queues.md) — Deduplication Queues
+- [Delivery Guarantees](delivery-guarantees.md) — Delivery Guarantees
+- [Denormalization Practice](denormalization-practice.md) — Denormalization Practice
+- [Dependency Injection](dependency-injection.md) — Dependency Injection
+- [Developer Experience](developer-experience.md) — Developer Experience
+- [Documentation as Code](documentation-as-code.md) — Documentation as Code
+- [Domain-Driven Design](domain-driven-design.md) — Domain-Driven Design
+- [Domain Services](domain-services.md) — Domain Services
+- [Entities vs Value Objects](entities-vs-value-objects.md) — Entities vs Value Objects
+- [Estimation Techniques](estimation-techniques.md) — Estimation Techniques
+- [Event-Carried State](event-carried-state.md) — Event-Carried State
+- [Event-Driven Architecture](event-driven-architecture.md) — Event-Driven Architecture
+- [Event-Driven Design](event-driven-design.md) — Event-Driven Design
+- [Event Loops](event-loops.md) — Event Loops
+- [Event Notification](event-notification.md) — Event Notification
+- [Event Sourcing Practice](event-sourcing-practice.md) — Event Sourcing Practice
+- [Exactly-Once Claims](exactly-once-claims.md) — Exactly-Once Claims
+- [Exponential Backoff Practice](exponential-backoff-practice.md) — Exponential Backoff Practice
+- [Facade Pattern](facade-pattern.md) — Facade Pattern
+- [Factory Pattern](factory-pattern.md) — Factory Pattern
+- [Flyweight Pattern](flyweight-pattern.md) — Flyweight Pattern
+- [Functional Programming Principles](functional-programming-principles.md) — Functional Programming Principles
+- [Functional Programming](functional-programming.md) — Functional Programming
+- [Git Workflows](git-workflows.md) — Git Workflows
+- [Hexagonal Architecture](hexagonal-architecture.md) — Hexagonal Architecture
+- [Immutability Practice](immutability-practice.md) — Immutability Practice
+- [Inbox Pattern](inbox-pattern.md) — Inbox Pattern
+- [Internal Developer Platforms](internal-developer-platforms.md) — Internal Developer Platforms
+- [Interpreter Pattern](interpreter-pattern.md) — Interpreter Pattern
+- [Inversion of Control](inversion-of-control.md) — Inversion of Control
+- [Iterator Pattern](iterator-pattern.md) — Iterator Pattern
+- [Jitter Practice](jitter-practice.md) — Jitter Practice
+- [Kanban Method](kanban-method.md) — Kanban Method
+- [Key Hashing](key-hashing.md) — Key Hashing
+- [Lag Monitoring](lag-monitoring.md) — Lag Monitoring
+- [Layered Architecture](layered-architecture.md) — Layered Architecture
+- [Lean Software Development](lean-software-development.md) — Lean Software Development
+- [Legacy Code Strategies](legacy-code-strategies.md) — Legacy Code Strategies
+- [Linting Practice](linting-practice.md) — Linting Practice
+- [Logging Strategies](logging-strategies.md) — Logging Strategies
+- [Mediator Pattern](mediator-pattern.md) — Mediator Pattern
+- [Memento Pattern](memento-pattern.md) — Memento Pattern
+- [Message Passing](message-passing.md) — Message Passing
+- [Metrics and Monitoring](metrics-and-monitoring.md) — Metrics and Monitoring
+- [Microkernel Architecture](microkernel-architecture.md) — Microkernel Architecture
+- [Microservices Architecture](microservices-architecture.md) — Microservices Architecture
+- [Mob Programming](mob-programming.md) — Mob Programming
+- [Modular Monoliths](modular-monoliths.md) — Modular Monoliths
+- [Monorepo Strategies](monorepo-strategies.md) — Monorepo Strategies
+- [Null Object Pattern](null-object-pattern.md) — Null Object Pattern
+- [Object-Oriented Principles](object-oriented-principles.md) — Object-Oriented Principles
+- [Object-Oriented Programming](object-oriented-programming.md) — Object-Oriented Programming
+- [Object Pool](object-pool.md) — Object Pool
+- [Observability Practice](observability-practice.md) — Observability Practice
+- [Observer Pattern](observer-pattern.md) — Observer Pattern
+- [Offset Management](offset-management.md) — Offset Management
+- [Onboarding Docs](onboarding-docs.md) — Onboarding Docs
+- [Onion Architecture](onion-architecture.md) — Onion Architecture
+- [Outbox Pattern](outbox-pattern.md) — Outbox Pattern
+- [Outbox Table](outbox-table.md) — Outbox Table
+- [Pair Programming](pair-programming.md) — Pair Programming
+- [Partitioning Strategies](partitioning-strategies.md) — Partitioning Strategies
+- [Performance Engineering](performance-engineering.md) — Performance Engineering
+- [Pipeline Architecture](pipeline-architecture.md) — Pipeline Architecture
+- [Planning Poker](planning-poker.md) — Planning Poker
+- [Poison Messages](poison-messages.md) — Poison Messages
+- [Ports and Adapters](ports-and-adapters.md) — Ports and Adapters
+- [Process Manager Pattern](process-manager-pattern.md) — Process Manager Pattern
+- [Profiling and Optimization](profiling-and-optimization.md) — Profiling and Optimization
+- [Project Scaffolding](project-scaffolding.md) — Project Scaffolding
+- [Projections](projections.md) — Projections
+- [Promises vs Callbacks](promises-vs-callbacks.md) — Promises vs Callbacks
+- [Prototype Pattern](prototype-pattern.md) — Prototype Pattern
+- [Proxy Pattern](proxy-pattern.md) — Proxy Pattern
+- [Pure Functions](pure-functions.md) — Pure Functions
+- [Reactive Programming](reactive-programming.md) — Reactive Programming
+- [Reactive Streams](reactive-streams.md) — Reactive Streams
+- [Read Models](read-models.md) — Read Models
+- [Rebalancing](rebalancing.md) — Rebalancing
+- [Refactoring Techniques](refactoring-techniques.md) — Refactoring Techniques
+- [Refactoring](refactoring.md) — Refactoring
+- [Referential Transparency](referential-transparency.md) — Referential Transparency
+- [Reliability Engineering](reliability-engineering.md) — Reliability Engineering
+- [Repositories Pattern](repositories-pattern.md) — Repositories Pattern
+- [Requirements Engineering](requirements-engineering.md) — Requirements Engineering
+- [Resilience Libraries](resilience-libs.md) — Resilience Libraries
+- [Retry-After](retry-after.md) — Retry-After
+- [Retry Patterns](retry-patterns.md) — Retry Patterns
+- [Retry Queues](retry-queues.md) — Retry Queues
+- [Saga Choreography](saga-choreography.md) — Saga Choreography
+- [Saga Orchestration](saga-orchestration.md) — Saga Orchestration
+- [Scheduled Retries](scheduled-retries.md) — Scheduled Retries
+- [Scrum Framework](scrum-framework.md) — Scrum Framework
+- [Service Discovery](service-discovery.md) — Service Discovery
+- [Service Locator](service-locator.md) — Service Locator
+- [Shared Nothing](shared-nothing.md) — Shared Nothing
+- [Side Effect Isolation](side-effect-isolation.md) — Side Effect Isolation
+- [Singleton Pitfalls](singleton-pitfalls.md) — Singleton Pitfalls
+- [Software Design Principles](software-design-principles.md) — Software Design Principles
+- [Software Estimation](software-estimation.md) — Software Estimation
+- [SOLID Principles](solid-principles.md) — SOLID Principles
+- [Specification by Example](specification-by-example.md) — Specification by Example
+- [Sprint Planning](sprint-planning.md) — Sprint Planning
+- [State Pattern](state-pattern.md) — State Pattern
+- [Static Analysis Tools](static-analysis-tools.md) — Static Analysis Tools
+- [Static Analysis](static-analysis.md) — Static Analysis
+- [Story Points](story-points.md) — Story Points
+- [Strategy Pattern](strategy-pattern.md) — Strategy Pattern
+- [Technical Debt Management](technical-debt-management.md) — Technical Debt Management
+- [Technical Debt](technical-debt.md) — Technical Debt
+- [Template Method](template-method.md) — Template Method
+- [Thread Pools](thread-pools.md) — Thread Pools
+- [Transactional Outbox](transactional-outbox.md) — Transactional Outbox
+- [Type Systems in Practice](type-systems-in-practice.md) — Type Systems in Practice
+- [Type Systems](type-systems.md) — Type Systems
+- [Unit of Work](unit-of-work.md) — Unit of Work
+- [Unit Testing Practice](unit-testing-practice.md) — Unit Testing Practice
+- [Usability Testing](usability-testing.md) — Usability Testing
+- [Use Case Layer](use-case-layer.md) — Use Case Layer
+- [User Research Methods](user-research-methods.md) — User Research Methods
+- [User Stories](user-stories.md) — User Stories
+- [Value Objects](value-objects.md) — Value Objects
+- [Velocity Metrics](velocity-metrics.md) — Velocity Metrics
+- [Visitor Pattern](visitor-pattern.md) — Visitor Pattern

@@ -87,3 +87,81 @@ Part of [[wiki/index|Wiki Index]]. 75 pages.
 - [[wiki/ml-frameworks/vllm|vLLM]] — A high-throughput inference and serving engine for LLMs, optimized with PagedAttention
 - [[wiki/ml-frameworks/wandb-and-experiment-tracking|W&B and Experiment Tracking]] — Platforms that log metrics, artifacts, and hyperparameters for training experiments
 - [[wiki/ml-frameworks/zero-stage|ZeRO Stages]] — DeepSpeed optimization levels that shard optimizer state, gradients, and parameters across GPUs
+
+## Concepts
+
+- [Anthropic API](anthropic-api.md) — Anthropic API
+- [Anthropic SDK](anthropic-sdk.md) — Anthropic SDK
+- [Batching Strategies](batching-strategies.md) — Batching Strategies
+- [BF16 Training](bf16-training.md) — BF16 Training
+- [Chat Completions](chat-completions.md) — Chat Completions
+- [Checkpointing During Training](checkpointing-training.md) — Checkpointing During Training
+- [Compiler Optimizations for LLMs](compiler-optimizations-llm.md) — Compiler Optimizations for LLMs
+- [Context Distillation](context-distillation.md) — Context Distillation
+- [Continuous Batching](continuous-batching.md) — Continuous Batching
+- [Data Loaders and Pipelines](data-loaders-and-pipelines.md) — Data Loaders and Pipelines
+- [DeepSpeed](deepspeed.md) — DeepSpeed
+- [Dense vs Sparse Models](dense-vs-sparse-models.md) — Dense vs Sparse Models
+- [Distillation vs Quantization](distillation-vs-quantization.md) — Distillation vs Quantization
+- [DSPy, AutoGen, and CrewAI](dspy-autogen-crewai.md) — DSPy, AutoGen, and CrewAI
+- [Edge Inference](edge-inference.md) — Edge Inference
+- [Embeddings API](embeddings-api.md) — Embeddings API
+- [Evaluation During Training](evaluation-during-training.md) — Evaluation During Training
+- [Flash Attention](flash-attention.md) — Flash Attention
+- [Google Gemini](google-gemini.md) — Google Gemini
+- [Gradient Accumulation](gradient-accumulation.md) — Gradient Accumulation
+- [Haystack](haystack.md) — Haystack
+- [Hugging Face](hugging-face.md) — Hugging Face
+- [Inference Engines](inference-engines.md) — Inference Engines
+- [JAX](jax.md) — JAX
+- [Kernels and Inference Optimization](kernels-and-inference-optimization.md) — Kernels and Inference Optimization
+- [LangChain Framework](langchain-framework.md) — LangChain Framework
+- [LangChain](langchain.md) — LangChain
+- [LangGraph and LlamaIndex](langgraph-llamaindex.md) — LangGraph and LlamaIndex
+- [LiteLLM](litellm.md) — LiteLLM
+- [llama.cpp](llama-cpp.md) — llama.cpp
+- [LlamaIndex](llamaindex.md) — LlamaIndex
+- [Long Context Techniques](long-context-techniques.md) — Long Context Techniques
+- [LoRA Adapters](lora-adapters.md) — LoRA Adapters
+- [Low-Rank Adaptation (LoRA)](low-rank-adaptation.md) — Low-Rank Adaptation (LoRA)
+- [Mixed Precision Training](mixed-precision-training.md) — Mixed Precision Training
+- [MLflow Model Registry](mlflow-model-registry.md) — MLflow Model Registry
+- [Model Composition](model-composition.md) — Model Composition
+- [Model Merging](model-merging.md) — Model Merging
+- [Mixture-of-Experts Architectures](moe-architectures.md) — Mixture-of-Experts Architectures
+- [Ollama](ollama.md) — Ollama
+- [On-Device LLMs](on-device-llm.md) — On-Device LLMs
+- [ONNX Runtime](onnx-runtime.md) — ONNX Runtime
+- [ONNX](onnx.md) — ONNX
+- [OpenAI API](openai-api.md) — OpenAI API
+- [OpenAI SDK](openai-sdk.md) — OpenAI SDK
+- [OpenRouter and Prompt Caching](openrouter-prompt-caching.md) — OpenRouter and Prompt Caching
+- [Paged Attention](paged-attention.md) — Paged Attention
+- [PEFT Methods](peft-methods.md) — PEFT Methods
+- [Pipeline Parallelism](pipeline-parallelism.md) — Pipeline Parallelism
+- [Prefill and Decode](prefill-and-decode.md) — Prefill and Decode
+- [Prefill/Decode Disaggregation](prefill-decode-disaggregation.md) — Prefill/Decode Disaggregation
+- [Pruning and Sparsity](pruning-and-sparsity.md) — Pruning and Sparsity
+- [PyTorch](pytorch.md) — PyTorch
+- [QLoRA and Adapter Merging](qlora-adapter-merging.md) — QLoRA and Adapter Merging
+- [Rate Limit Engineering](rate-limit-engineering.md) — Rate Limit Engineering
+- [RoPE and Sliding Window Attention](rope-embeddings-sliding-window.md) — RoPE and Sliding Window Attention
+- [Routing Models](routing-models.md) — Routing Models
+- [Training Runs](runs.md) — Training Runs
+- [Semantic Kernel](semantic-kernel.md) — Semantic Kernel
+- [Server-Sent Events](server-sent-events.md) — Server-Sent Events
+- [Serverless Inference](serverless-inference.md) — Serverless Inference
+- [Sharded Data Parallelism](sharding-data-parallel.md) — Sharded Data Parallelism
+- [Small Language Models](small-language-models.md) — Small Language Models
+- [Sparse Experts](sparse-experts.md) — Sparse Experts
+- [Streaming Responses](streaming-responses.md) — Streaming Responses
+- [Tensor Parallelism](tensor-parallelism.md) — Tensor Parallelism
+- [TensorFlow](tensorflow.md) — TensorFlow
+- [TensorRT-LLM](tensorrt-llm.md) — TensorRT-LLM
+- [Text Generation Inference](tgi.md) — Text Generation Inference
+- [Token Accounting and Cost](token-accounting-and-cost.md) — Token Accounting and Cost
+- [Tool Schemas](tool-schemas.md) — Tool Schemas
+- [TVM and LLVM](tvm-and-llvm.md) — TVM and LLVM
+- [vLLM](vllm.md) — vLLM
+- [W&B and Experiment Tracking](wandb-and-experiment-tracking.md) — W&B and Experiment Tracking
+- [ZeRO Stages](zero-stage.md) — ZeRO Stages
