@@ -23,7 +23,7 @@ The entity is recorded because the sessions touched change management directly, 
 Change records also power automation. Continuous integration rebuilds and tests on every change; infrastructure-as-code diffs show exactly what a deployment will alter; and incident reviews bisect change history to find the commit that introduced a regression. The discipline of small, well-described changes is what makes all of this work, because a change that cannot be understood cannot be reviewed, tested, or rolled back cleanly.
 
 The value of a change record is only as good as its completeness: a diff without its context, or a log entry without an actor, raises more questions than it answers, which is why the sessions emphasized capturing the full picture at the moment of the change.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Changes
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Changes
 
 ## Related Entities
 

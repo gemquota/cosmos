@@ -13,7 +13,7 @@ resource: ""
 
 Analyzing appears in 1 session(s) categorized as API. Related topics: ide, logging, monitoring, orm, rest.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Analyzing
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Analyzing
 
 ## Overview
 

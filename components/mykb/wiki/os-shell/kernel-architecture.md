@@ -1,5 +1,6 @@
 ---
 type: "concept"
+hub: true
 title: "Kernel Architecture"
 description: "The monolithic kernel and its core subsystems"
 tags: ["kernel", "architecture", "linux", "subsystems"]

@@ -13,7 +13,7 @@ resource: ""
 
 BETA appears in 1 session(s) categorized as API, Debugging, Shell. Related topics: acronym, api, bash.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Beta
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Beta
 
 ## Overview
 

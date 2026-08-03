@@ -13,7 +13,7 @@ Gradle — the primary build system for Android projects. Sessions show build co
 
 **Related topics:** ajax, android, angular, api, auth, authentication
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Ad 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Ad 2
 
 ## Related Entities
 

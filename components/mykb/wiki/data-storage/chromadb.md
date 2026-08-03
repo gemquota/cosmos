@@ -22,4 +22,4 @@ ChromaDB is an open-source, Python-first vector database that runs embedded or a
 - [[wiki/data-storage/embeddings|Embeddings]] — documents are embedded on add
 - [[wiki/data-storage/metadata-filtering|Metadata Filtering]] — filters over stored metadatas
 - [[wiki/data-storage/retrieval-augmented-generation|Retrieval-Augmented Generation]] — ChromaDB's typical use case
-- [[wiki/data-storage/index|Data Storage]] — vector database family
+- [[wiki/data-storage/00-index|Data Storage]] — vector database family

@@ -9,7 +9,7 @@ resource: ""
 ---
 ## Zciuoq 2
 ZciuOq appears in 2 session(s) categorized as API, Frontend, Shell. Related topics: api, bash, cli, css.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Overview
 ZciuOq is an unresolved token extracted from two sessions categorized under API, Frontend, and Shell. Like other session-mined identifiers in the shell-cli cluster, its meaning is not defined in the available evidence, so this page anchors the raw token with its co-occurring entities and tags. Recording the token as-is preserves the graph edges that a future session may need when the canonical term is discovered, while avoiding the risk of inventing a definition.
 ## Working Interpretation

@@ -21,7 +21,7 @@ The category spread across three sessions — API, Cloud, Frontend, Mobile, Secu
 
 The page records the term across both senses so future sessions can attach the specific model, renderer, or simulation involved. Keeping the source and units attached to each value prevents the silent unit errors that distort both models and simulations.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Bond Angle 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Bond Angle 2
 
 ## Related Entities
 

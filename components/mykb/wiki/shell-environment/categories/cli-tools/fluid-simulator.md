@@ -13,7 +13,7 @@ status: "growing"
 
 Fluid Simulator appears in 1 session(s) categorized as Debugging, Frontend, Shell. Related topics: bash, cli, css.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Cli Tools]]
 
 ## Overview
 

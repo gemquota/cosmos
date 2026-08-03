@@ -19,7 +19,7 @@ Good field names are stable, lowercase, and dot-separated, like http.request.dur
 
 Consistency matters across producers: the same event from different components must use the same names and types, or dashboards break silently. Validation at ingestion rejects unknown fields and wrong types, and a schema registry documents and versions the fields so changes are coordinated rather than accidental.
 
-The fields feed the collection machinery recorded in [[wiki/shell-environment/categories/web-dev/subcategories/css-html/engine-telemetry-core|Engine Telemetry Core]], and their values drive the scoring and thresholds recorded in [[wiki/shell-environment/categories/web-dev/subcategories/css-html/score|Score]]. The entry belongs to the [[wiki/web-platforms/index|Web Dev]] domain of this knowledge base.
+The fields feed the collection machinery recorded in [[wiki/shell-environment/categories/web-dev/subcategories/css-html/engine-telemetry-core|Engine Telemetry Core]], and their values drive the scoring and thresholds recorded in [[wiki/shell-environment/categories/web-dev/subcategories/css-html/score|Score]]. The entry belongs to the [[wiki/web-platforms/00-index|Web Dev]] domain of this knowledge base.
 
 The entry serves as the reference for field naming and typing across the wiki's telemetry pages, so producers and dashboards stay aligned.
 
@@ -27,7 +27,7 @@ The entry closes with a practical rule: when a field's meaning changes, version 
 
 The same discipline applies to logs: stable keys, consistent levels, and bounded values keep the data usable.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Telemetry Fields
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Telemetry Fields
 
 ## Related Entities
 

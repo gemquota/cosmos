@@ -13,7 +13,7 @@ status: "growing"
 
 ChatMessage appears in 2 session(s) categorized as API, Mobile, Security. Related topics: android, api, auth, authentication.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Auth Security › Chatmessage 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Auth Security › Chatmessage 2
 
 ## Overview
 
@@ -25,7 +25,7 @@ A chat message moves through states: composed by the client, sent to the API, de
 
 ## Security and Authentication
 
-Chat content is sensitive, so the surrounding concerns are encryption in transit and at rest, and authorization for every read or write. The auth and authentication tags reflect the identity flows that gate message access: sessions, tokens, and user scopes determine who can send to a channel and who can read history. On Android, messages may be held in local storage and synced, which raises device-level security questions as well. [[wiki/android-core/index|Android Core]] documents the mobile platform, [[wiki/api-services/index|API Services]] covers the message transport interfaces, and [[wiki/security/index|Security]] groups the identity and encryption guidance.
+Chat content is sensitive, so the surrounding concerns are encryption in transit and at rest, and authorization for every read or write. The auth and authentication tags reflect the identity flows that gate message access: sessions, tokens, and user scopes determine who can send to a channel and who can read history. On Android, messages may be held in local storage and synced, which raises device-level security questions as well. [[wiki/android-core/00-index|Android Core]] documents the mobile platform, [[wiki/api-services/00-index|API Services]] covers the message transport interfaces, and [[wiki/security/00-index|Security]] groups the identity and encryption guidance.
 
 ## Session Context
 

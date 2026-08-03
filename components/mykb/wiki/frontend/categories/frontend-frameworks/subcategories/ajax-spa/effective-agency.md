@@ -25,7 +25,7 @@ The measure of effective agency is outcome, not effort: an agent that asks for h
 
 Sessions contrast effective agency with activity for its own sake, and the entry records the distinction so that evaluation focuses on results rather than visible effort.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Effective Agency
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Effective Agency
 
 ## Related Entities
 

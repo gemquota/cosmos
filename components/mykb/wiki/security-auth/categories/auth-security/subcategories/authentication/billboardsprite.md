@@ -21,7 +21,7 @@ In the sessions where this entity appeared, the sprite was most likely part of a
 
 
 The technique also generalizes beyond sprites: any flat element that must face a viewer, such as labels, icons, or minimap markers, can reuse the same orientation math. Performance gains come from replacing many small meshes with a few textured quads, and modern engines handle the sorting and batching automatically. Understanding billboards is a small but useful part of any rendering pipeline, and the concept shows up across game and visualization code alike.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Billboardsprite
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Billboardsprite
 
 ## Related Entities
 

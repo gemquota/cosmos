@@ -11,7 +11,7 @@ Structured data storage system. Sessions show relational and NoSQL patterns incl
 
 **Related technologies:** api, auth, bootstrap, bug, cli, css, database
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Overview
 

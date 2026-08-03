@@ -13,7 +13,7 @@ status: "growing"
 
 Causal Integrity is referenced in 1 session(s). Related tags: cli, ide, orm.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Causal Integrity
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Causal Integrity
 
 ## Overview
 
@@ -21,7 +21,7 @@ Causal integrity is the property that effects in a system trace back to the caus
 
 ## Causal Dependencies
 
-A system has causal integrity when every observable state change has an identifiable cause and causes happen before their effects. In databases this maps to transaction ordering and foreign-key consistency: a child row must not appear before its parent, and an update must not overwrite newer data with older data. The [[wiki/development/categories/data-tools/subcategories/orm/index|ORM]] layer encodes these dependencies as relationships between objects, and the mapping layer decides when to insert, update, or delete in an order that satisfies the constraints.
+A system has causal integrity when every observable state change has an identifiable cause and causes happen before their effects. In databases this maps to transaction ordering and foreign-key consistency: a child row must not appear before its parent, and an update must not overwrite newer data with older data. The [[wiki/development/categories/data-tools/subcategories/orm/00-index|ORM]] layer encodes these dependencies as relationships between objects, and the mapping layer decides when to insert, update, or delete in an order that satisfies the constraints.
 
 ## Integrity in ORM Workflows
 

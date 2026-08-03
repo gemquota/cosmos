@@ -14,7 +14,7 @@ Express.js — a minimal Node.js web framework used for API server implementatio
 
 **Related topics:** api, auth, aws, backend
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Blank Expression
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Blank Expression
 
 ## Overview
 

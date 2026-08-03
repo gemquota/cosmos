@@ -14,7 +14,7 @@ Harmonica Explorer — a music exploration project for touchscreen devices. Allo
 
 **Related topics:** api, bug, cli, css
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Overview
 

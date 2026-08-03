@@ -11,7 +11,7 @@ resource: ""
 
 A game-related ranking or progression system where "prestige" refers to resetting progress in exchange for permanent bonuses or recognition.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Prestigesystem
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Prestigesystem
 
 ## Related Entities
 

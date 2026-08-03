@@ -25,6 +25,6 @@ IndexedDB is the browser's transactional database for large, structured data. It
 - [[wiki/frontend/web-storage|Web Storage]] — the lighter-weight alternative
 - [[wiki/frontend/service-workers|Service Workers]] — offline pipelines built on IndexedDB
 - [[wiki/frontend/fetch-api|Fetch API]] — data indexed after fetching
-- [[wiki/data-storage/index|Data Storage]] — broader storage architecture
+- [[wiki/data-storage/00-index|Data Storage]] — broader storage architecture
 - [[wiki/web-platforms/progressive-web-apps|Progressive Web Apps]] — offline experiences using it
 - [[wiki/frontend/progressive-web-apps|Progressive Web Apps]] — the app layer over IndexedDB

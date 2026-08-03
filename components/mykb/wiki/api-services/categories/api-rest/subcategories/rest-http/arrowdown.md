@@ -13,7 +13,7 @@ resource: ""
 
 ArrowDown appears in 1 session(s) categorized as API, Cloud, Frontend, Mobile. Related topics: android, angular, api, aws.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Arrowdown
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Arrowdown
 
 ## Overview
 

@@ -13,7 +13,7 @@ resource: ""
 
 FederatedEventTarget appears in 4 session(s) categorized as API, Cloud, Frontend, Mobile, Security. Related topics: android, angular, api, auth, aws, bootstrap, bun.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Angular Ui
 
 ## Overview
 

@@ -25,4 +25,4 @@ Word2Vec learns dense word vectors from large corpora using either skip-gram (pr
 - [[wiki/meta-learning/glove|GloVe]] — the matrix-factorization alternative
 - [[wiki/meta-learning/sentence-transformers|Sentence Transformers]] — contextual successors
 - [[wiki/meta-learning/transfer-learning|Transfer Learning]] — pretrained vectors transfer across tasks
-- [[wiki/meta-learning/index|Meta-Learning]] — representation learning family
+- [[wiki/meta-learning/00-index|Meta-Learning]] — representation learning family

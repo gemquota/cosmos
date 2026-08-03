@@ -14,7 +14,7 @@ Telemetry — automated data collection for system monitoring. Sessions referenc
 
 **Related topics:** api, bash, bug, ci/cd, cli, css, dom
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Overview
 

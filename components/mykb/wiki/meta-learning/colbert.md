@@ -26,4 +26,4 @@ ColBERT computes separate token embeddings for query and document, then scores m
 - [[wiki/meta-learning/cross-encoder|Cross-Encoder]] — the stronger, slower baseline
 - [[wiki/meta-learning/sentence-transformers|Sentence Transformers]] — the framework hosting ColBERT variants
 - [[wiki/data-storage/retrieval-augmented-generation|Retrieval-Augmented Generation]] — ColBERT reranking improves RAG
-- [[wiki/meta-learning/index|Meta-Learning]] — retrieval model family
+- [[wiki/meta-learning/00-index|Meta-Learning]] — retrieval model family

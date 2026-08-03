@@ -13,7 +13,7 @@ resource: ""
 
 ANGLE appears in 1 session(s) categorized as API, Frontend, Mobile. Related topics: acronym, android, angular, api.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Angle
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Angle
 
 ## Overview
 

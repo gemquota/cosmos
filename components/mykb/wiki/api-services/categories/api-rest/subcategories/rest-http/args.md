@@ -14,7 +14,7 @@ ARGS — Arguments. Values passed to a function or command.
 
 **Related topics:** android, api, auth
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Args
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Args
 
 ## Overview
 

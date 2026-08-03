@@ -14,7 +14,7 @@ Token — a unit of text processed by an LLM. Sessions show token counting, cont
 
 **Related topics:** api, auth, bash, bug
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Token Util
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Token Util
 
 ## Overview
 

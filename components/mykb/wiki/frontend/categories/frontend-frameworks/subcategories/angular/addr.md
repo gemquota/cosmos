@@ -13,7 +13,7 @@ ADDR — Address. A memory or network address reference.
 
 **Related topics:** ajax, alpine, android, angular
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Addr
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Addr
 
 ## Related Entities
 

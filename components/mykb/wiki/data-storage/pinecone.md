@@ -27,4 +27,4 @@ Pinecone is a fully managed vector database: upload embeddings, define namespace
 - [[wiki/data-storage/embeddings|Embeddings]] — the payload Pinecone indexes
 - [[wiki/data-storage/metadata-filtering|Metadata Filtering]] — namespaces and filters for scoping
 - [[wiki/data-storage/hybrid-search|Hybrid Search]] — sparse-dense fusion support
-- [[wiki/data-storage/index|Data Storage]] — vector database family
+- [[wiki/data-storage/00-index|Data Storage]] — vector database family

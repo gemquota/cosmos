@@ -14,7 +14,7 @@ AEC — Architecture, Engineering, and Construction. An industry sector referenc
 
 **Related topics:** android, api, auth, authentication
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Auth Security › Aec 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Auth Security › Aec 2
 
 ## Overview
 
@@ -26,7 +26,7 @@ AEC software deals with large, versioned artifacts: building models, blueprints,
 
 ## Software Concerns
 
-Because a single project can involve dozens of organizations, authentication and authorization are not optional: every user must be mapped to a project role, and changes must be attributable. Sessions touching AEC therefore tend to discuss identity flows alongside the domain logic. [[wiki/android-core/index|Android Core]] documents the mobile platform where field apps run, [[wiki/api-services/index|API Services]] covers the interfaces those apps consume, and [[wiki/security/index|Security]] groups the authentication material that governs access. The broader [[wiki/web-platforms/index|Web Platforms]] tree holds the browser-based project portals common in the sector.
+Because a single project can involve dozens of organizations, authentication and authorization are not optional: every user must be mapped to a project role, and changes must be attributable. Sessions touching AEC therefore tend to discuss identity flows alongside the domain logic. [[wiki/android-core/00-index|Android Core]] documents the mobile platform where field apps run, [[wiki/api-services/00-index|API Services]] covers the interfaces those apps consume, and [[wiki/security/00-index|Security]] groups the authentication material that governs access. The broader [[wiki/web-platforms/00-index|Web Platforms]] tree holds the browser-based project portals common in the sector.
 
 ## Session Context
 

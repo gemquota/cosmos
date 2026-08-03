@@ -13,7 +13,7 @@ status: "growing"
 
 Analysis appears in 3 session(s) categorized as API, Frontend, Language, Shell. Related topics: bash, html, http, ide, isr, orm, python, rest, spa.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Analysis 2
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Analysis 2
 
 ## Overview
 

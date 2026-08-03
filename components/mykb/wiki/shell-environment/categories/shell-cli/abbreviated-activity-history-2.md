@@ -14,7 +14,7 @@ Activity — an Android component representing a single screen with a user inter
 
 **Related topics:** android, api, aws, bash, bug, cli, documentation
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Shell Cli
 
 ## Activity History in Android
 

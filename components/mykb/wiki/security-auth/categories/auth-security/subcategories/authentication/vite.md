@@ -13,7 +13,7 @@ resource: ""
 Vite is a build tool and development server for modern web projects. Fast HMR, native ES module imports, and optimized builds via Rollup. The primary build tool for the web viewer.
 Referenced in session 05473df8
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Vite
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Vite
 
 ## Related Entities
 

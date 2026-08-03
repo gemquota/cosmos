@@ -13,7 +13,7 @@ status: "growing"
 
 David Chalmers is referenced in 1 session(s). Related tags: ast, guid, ide, orm, spa.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › David Chalmers
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › David Chalmers
 
 ## The Philosopher
 

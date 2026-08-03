@@ -18,13 +18,13 @@ NoSQL systems trade some relational guarantees for scale or flexibility: documen
 
 Query optimization involves reading execution plans, adding covering indexes, avoiding full table scans, and keeping hot paths in cache. Transactions with ACID properties keep multi-step updates consistent, while eventual consistency models in distributed systems trade immediate consistency for availability. Backups, retention policies, and encryption at rest are operational requirements in any deployment.
 
-In agent sessions, database work is often part of backend development, from [[wiki/web-platforms/index|Api Rest]] services to the broader [[wiki/devops-infra/mysql|Mysql]], [[wiki/data-storage/entities/dynamodb|Dynamodb]], and [[wiki/devops-infra/mongodb|Mongodb]] entries in this knowledge base. A [[wiki/data-storage/entities/database-schema-audit|Database Schema Audit]] helps catch drift between the model and the schema before it reaches production.
+In agent sessions, database work is often part of backend development, from [[wiki/web-platforms/00-index|Api Rest]] services to the broader [[wiki/devops-infra/mysql|Mysql]], [[wiki/data-storage/entities/dynamodb|Dynamodb]], and [[wiki/devops-infra/mongodb|Mongodb]] entries in this knowledge base. A [[wiki/data-storage/entities/database-schema-audit|Database Schema Audit]] helps catch drift between the model and the schema before it reaches production.
 
 Documentation of the schema, a data dictionary, and a changelog for migrations reduce the risk that the database becomes an undocumented dependency that no one can safely change.
 
 Observability of the database, slow-query logs, and connection pooling, is as important as the schema itself, since performance problems usually announce themselves through latency before they break features.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Data
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Data
 
 ## Related Entities
 

@@ -54,7 +54,7 @@ jobs:
 A typical push to main runs: checkout and setup, dependency install from cache, lint and type checks, unit tests on a matrix of versions, build and publish artifacts, then a conditional deploy to staging (and to production only on tags). Each stage writes machine-readable output so the summary page renders pass/fail at a glance, and any failed stage stops the pipeline before artifacts are published.
 
 
-See also: [[wiki/devops-infra/index|DevOps & Infrastructure]], [[wiki/development/index|Development]]
+See also: [[wiki/devops-infra/00-index|DevOps & Infrastructure]], [[wiki/development/00-index|Development]]
 
 ## Related Concepts
 

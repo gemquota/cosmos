@@ -1,0 +1,191 @@
+---
+type: "index"
+hub: true
+title: "Memory Index"
+description: "Listing of the memory/ folder (177 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
+# Memory
+
+Part of [[wiki/index|Wiki Index]]. 177 pages.
+
+## Pages
+- [[wiki/memory/acronym-mnemonics|Acronym Mnemonics]] — First-letter memory aids such as acronyms and acrostics
+- [[wiki/memory/active-recall|Active Recall]] — Learning technique of retrieving information from memory instead of passively rereading it
+- [[wiki/memory/anchoring-effect|Anchoring Effect]] — Judgments biased toward an initial reference value
+- [[wiki/memory/anki-workflow|Anki Workflow]] — End-to-end practice of importing, reviewing, and maintaining cards in Anki
+- [[wiki/memory/atomic-notes-practice|Atomic Notes Practice]] — Writing one idea per note to keep a knowledge graph composable
+- [[wiki/memory/atomic-notes|Atomic Notes]] — Notes that contain exactly one idea, making them linkable and reusable
+- [[wiki/memory/attention-and-cognition|Attention and Cognition]] — How selective attention allocates processing resources and shapes cognition
+- [[wiki/memory/autobiographical-memory|Autobiographical Memory]] — Memory of one's own life events and their personal meaning
+- [[wiki/memory/autobiographical-reasoning|Autobiographical Reasoning]] — Drawing connections between life events and the self to derive meaning
+- [[wiki/memory/availability-heuristic|Availability Heuristic]] — Judging frequency or probability by how easily examples come to mind
+- [[wiki/memory/backlinks-research|Backlinks Research]] — Evidence and practice around using incoming links to navigate and discover notes
+- [[wiki/memory/backlinks|Backlinks]] — Inbound references to a page that reveal how other notes point to it
+- [[wiki/memory/bayesian-brain|Bayesian Brain]] — Thesis that the brain represents uncertainty and updates beliefs by Bayes' rule
+- [[wiki/memory/belief-updating|Belief Updating]] — Revising beliefs when new evidence arrives, well or badly
+- [[wiki/memory/bottom-up-processing|Bottom-Up Processing]] — Perception driven by the raw features of sensory input, without prior expectation
+- [[wiki/memory/calibration-of-judgment|Calibration of Judgment]] — The match between subjective confidence and actual accuracy
+- [[wiki/memory/card-design-practice|Card Design Practice]] — Concrete heuristics for writing high-quality spaced-repetition cards
+- [[wiki/memory/childhood-amnesia|Childhood Amnesia]] — The near-total lack of episodic memories from the first years of life
+- [[wiki/memory/chunk-size-effects|Chunk Size Effects]] — How the size and structure of chunks shape working-memory capacity
+- [[wiki/memory/chunking-and-encoding|Chunking and Encoding]] — Grouping information into meaningful units to fit more into working memory
+- [[wiki/memory/cloze-deletion|Cloze Deletion]] — Flashcard type where key parts of a sentence are blanked for recall
+- [[wiki/memory/cognitive-flexibility|Cognitive Flexibility]] — Capacity to shift between perspectives, tasks, or strategies
+- [[wiki/memory/cognitive-load-theory|Cognitive Load Theory]] — Instructional theory built on working-memory limits and schema-based long-term memory
+- [[wiki/memory/cognitive-offloading|Cognitive Offloading]] — Using the environment and tools to reduce internal cognitive demands
+- [[wiki/memory/collective-intelligence|Collective Intelligence]] — Group capacity to solve problems that exceeds any individual member
+- [[wiki/memory/concept-formation|Concept Formation]] — How categories and abstract ideas are built from examples and experience
+- [[wiki/memory/concept-map-research|Concept Map Research]] — Studies on concept maps as learning, assessment, and knowledge-organization tools
+- [[wiki/memory/concept-mapping|Concept Mapping]] — Diagram that links concepts with labeled relations to expose a domain's structure
+- [[wiki/memory/conceptual-change|Conceptual Change]] — Deep restructuring of concepts rather than mere accretion of facts
+- [[wiki/memory/constructive-episodic-simulation|Constructive Episodic Simulation]] — Theory that memory recombines episodic details to simulate the future
+- [[wiki/memory/context-dependent-memory|Context-Dependent Memory]] — Better recall when the environment matches the encoding environment
+- [[wiki/memory/cornell-notes|Cornell Notes]] — Two-column note format with a cue column, note area, and summary row for active review
+- [[wiki/memory/counterfactual-reasoning|Counterfactual Reasoning]] — Imagining alternatives to what happened, 'what if' thinking
+- [[wiki/memory/decay-theory|Decay Theory]] — Forgetting as the fading of memory traces over time
+- [[wiki/memory/delay-of-gratification|Delay of Gratification]] — Choosing larger later rewards over smaller immediate ones
+- [[wiki/memory/deliberate-practice|Deliberate Practice]] — Structured, goal-directed practice with immediate feedback aimed at the edge of ability
+- [[wiki/memory/desirable-difficulties|Desirable Difficulties]] — Conditions that slow initial learning but improve long-term retention and transfer
+- [[wiki/memory/digit-span-test|Digit Span Test]] — Classic working-memory measure: repeat back digit sequences of increasing length
+- [[wiki/memory/digital-garden-practice|Digital Garden Practice]] — Publishing notes in progressive states of maturity instead of finished posts
+- [[wiki/memory/digital-garden|Digital Garden]] — Public or semi-public personal wiki of evergreen notes that grow through iteration
+- [[wiki/memory/distributed-cognition|Distributed Cognition]] — Cognition spread across people, tools, and environments
+- [[wiki/memory/documentation-practices|Documentation Practices]] — Habits and standards for writing durable, findable documentation
+- [[wiki/memory/dual-coding-theory|Dual Coding Theory]] — Paivio's account of memory through separate verbal and imagery systems
+- [[wiki/memory/elaborative-interrogation|Elaborative Interrogation]] — Asking why questions to connect new facts with existing knowledge
+- [[wiki/memory/embodied-cognition|Embodied Cognition]] — Cognition shaped by the body's morphology, sensorimotor systems, and action
+- [[wiki/memory/emotional-regulation|Emotional Regulation]] — Processes by which people influence which emotions they have and how they express them
+- [[wiki/memory/encoding-retrieval-match|Encoding-Retrieval Match]] — The principle that retrieval benefits from overlap with encoding conditions
+- [[wiki/memory/encoding-specificity|Encoding Specificity]] — Tulving's principle: retrieval succeeds when cues match encoding conditions
+- [[wiki/memory/environmental-reinstatement|Environmental Reinstatement]] — Returning to the physical environment of learning to cue recall
+- [[wiki/memory/episodic-future-thinking|Episodic Future Thinking]] — Imagining specific future events using the episodic memory system
+- [[wiki/memory/evergreen-note-taking|Evergreen Note-Taking]] — Writing durable notes that are independently meaningful and develop over time
+- [[wiki/memory/evergreen-notes|Evergreen Notes]] — Permanent notes written for reuse: atomic, linked, and continuously maintained
+- [[wiki/memory/expectancy-effects|Expectancy Effects]] — Prior expectations shaping perception, memory, and performance
+- [[wiki/memory/extended-mind|Extended Mind]] — Clark and Chalmers' claim that external resources can constitute mental processes
+- [[wiki/memory/externalization-of-knowledge|Externalization of Knowledge]] — Encoding knowledge into durable external artifacts such as notes, docs, and models
+- [[wiki/memory/false-memory-formation|False Memory Formation]] — Remembering events that did not happen, or differently than they did
+- [[wiki/memory/flashbulb-memory|Flashbulb Memory]] — Vivid, detailed recollections of learning about shocking public events
+- [[wiki/memory/flashcard-design|Flashcard Design]] — Principles for writing flashcards that trigger retrieval instead of recognition
+- [[wiki/memory/folksonomy|Folksonomy]] — User-generated, flat tagging of items that emerges bottom-up instead of from a controlled hierarchy
+- [[wiki/memory/forgetting-curve|Forgetting Curve]] — The exponential decline of memory strength over time without review
+- [[wiki/memory/forward-models|Forward Models]] — Internal models that predict the sensory consequences of actions
+- [[wiki/memory/generation-effect|Generation Effect]] — Producing information oneself improves memory more than reading it
+- [[wiki/memory/generative-models|Generative Models]] — Models that can produce data or predictions, central to predictive and model-based accounts
+- [[wiki/memory/gist-extraction|Gist Extraction]] — Reducing material to its central meaning while discarding surface detail
+- [[wiki/memory/git-for-notes|Git for Notes]] — Using git version control for note repositories to get history, diffs, and rollback
+- [[wiki/memory/graph-notes|Graph Notes]] — Practice of managing notes as a graph where links define structure instead of folders
+- [[wiki/memory/grit-research|Grit Research]] — Study of perseverance and passion for long-term goals
+- [[wiki/memory/habit-vs-goal-directed|Habit vs Goal-Directed Control]] — Dual systems of action: automatic stimulus-response habits vs deliberative goals
+- [[wiki/memory/handwritten-vs-typed-notes|Handwritten vs Typed Notes]] — Whether pen or keyboard better supports encoding and later recall
+- [[wiki/memory/hindsight-bias|Hindsight Bias]] — Seeing past events as more predictable than they were
+- [[wiki/memory/imagination-and-memory|Imagination and Memory]] — Shared cognitive machinery for imagining events and remembering them
+- [[wiki/memory/incremental-reading|Incremental Reading]] — Reading texts progressively through spaced, extractable chunks
+- [[wiki/memory/information-architecture|Information Architecture]] — Design of how information is organized, labeled, and navigated in a system
+- [[wiki/memory/interference-theory|Interference Theory]] — Forgetting caused by competing memories rather than simple decay
+- [[wiki/memory/interleaved-practice|Interleaved Practice]] — Mixing different topics or problem types within a practice session
+- [[wiki/memory/internal-models|Internal Models]] — Stored representations of how the world, body, or others behave
+- [[wiki/memory/inverse-models|Inverse Models]] — Internal models that compute the actions needed to reach desired outcomes
+- [[wiki/memory/just-in-time-learning|Just-in-Time Learning]] — Learning a skill or fact exactly when a task requires it rather than in advance
+- [[wiki/memory/keyword-method|Keyword Method]] — Vocabulary mnemonic linking a foreign word to a similar-sounding keyword image
+- [[wiki/memory/knowledge-articulation|Knowledge Articulation]] — Making tacit understanding explicit through language, diagrams, or explanation
+- [[wiki/memory/knowledge-capture|Knowledge Capture]] — The act of getting external information into a knowledge system while it is still fresh
+- [[wiki/memory/knowledge-curation|Knowledge Curation]] — Deliberate selection, organization, and maintenance of knowledge items so they stay useful over time
+- [[wiki/memory/knowledge-integration|Knowledge Integration]] — Weaving separate ideas into coherent, connected understanding
+- [[wiki/memory/knowledge-map-research|Knowledge Map Research]] — Evidence on maps of knowledge: concept maps, mind maps, and argument maps
+- [[wiki/memory/knowledge-representation|Knowledge Representation]] — Formal schemes — logic, graphs, frames, vectors — for encoding knowledge in systems
+- [[wiki/memory/leitner-system|Leitner System]] — Box-based spaced repetition using error-driven movement between review boxes
+- [[wiki/memory/literate-programming|Literate Programming]] — Weaving executable code and prose explanations into a single document
+- [[wiki/memory/logseq|Logseq]] — Outliner-based, local-first note app with block-level links and a graph view
+- [[wiki/memory/long-term-memory-architecture|Long-Term Memory Architecture]] — How durable knowledge is organized into declarative and nondeclarative systems
+- [[wiki/memory/matrix-notes|Matrix Notes]] — Note-taking in a table with topics as rows and aspects as columns
+- [[wiki/memory/memory-and-identity|Memory and Identity]] — How autobiographical memory constitutes the sense of a continuous self
+- [[wiki/memory/memory-consolidation|Memory Consolidation]] — Process by which fragile new memories are stabilized and integrated into long-term knowledge
+- [[wiki/memory/memory-organisation|Memory Organisation]] — Structures and conventions that arrange memories so they can be found and reused
+- [[wiki/memory/memory-palace|Memory Palace]] — Method of loci: placing to-be-remembered items along a familiar spatial route
+- [[wiki/memory/memory-retrieval-curves|Memory Retrieval Curves]] — Curves describing how recall probability decays with time since last review
+- [[wiki/memory/memory-schema-effects|Memory Schema Effects]] — How prior knowledge structures bias what is encoded and recalled
+- [[wiki/memory/memory-updating|Memory Updating]] — Revising stored memories when new evidence arrives
+- [[wiki/memory/mental-models|Mental Models]] — Internal working representations of how things work, used for reasoning and prediction
+- [[wiki/memory/mental-time-travel|Mental Time Travel]] — Projecting consciousness into the past and future using episodic memory
+- [[wiki/memory/metacognition-and-monitoring|Metacognition and Monitoring]] — Knowledge and regulation of one's own cognitive processes
+- [[wiki/memory/method-of-loci|Method of Loci]] — Memory technique of placing items along a familiar spatial route
+- [[wiki/memory/mind-mapping|Mind Mapping]] — Radial diagram that organizes ideas around a central topic with branching associations
+- [[wiki/memory/misinformation-effect|Misinformation Effect]] — Post-event information altering or implanting memory of the event
+- [[wiki/memory/mnemonic-techniques|Mnemonic Techniques]] — Structured memory aids that add meaning, imagery, or order to material
+- [[wiki/memory/mnemonics-research|Mnemonics Research]] — Evidence base for memory aids that elaborate, organize, or peg information
+- [[wiki/memory/model-based-cognition|Model-Based Cognition]] — Thinking and planning that uses internal models of the environment
+- [[wiki/memory/mood-congruent-memory|Mood-Congruent Memory]] — Tendency to recall material whose emotional tone matches current mood
+- [[wiki/memory/motor-learning|Motor Learning]] — Acquisition and refinement of movement skills through practice and feedback
+- [[wiki/memory/music-cued-memory|Music-Cued Memory]] — Songs evoking strong autobiographical and emotional recall
+- [[wiki/memory/narrative-identity|Narrative Identity]] — Identity constructed through the internalized life story
+- [[wiki/memory/note-taking-methods|Note-Taking Methods]] — Family of structured practices for capturing information during learning and work
+- [[wiki/memory/note-taking-research|Note-Taking Research]] — Evidence on how note-taking affects encoding, storage, and review
+- [[wiki/memory/number-shape-system|Number Shape System]] — Mnemonic mapping digits to visual shapes for remembering numbers
+- [[wiki/memory/obsidian|Obsidian]] — Local-first markdown note app whose linking, backlinks, and graph views suit networked notes
+- [[wiki/memory/odor-cued-memory|Odor-Cued Memory]] — Scents acting as powerful cues for autobiographical recall
+- [[wiki/memory/ontology-design-principles|Ontology Design Principles]] — Guidelines for building clean, usable concept and relation vocabularies
+- [[wiki/memory/ontology-design|Ontology Design]] — Modeling a domain's concepts, types, and relations into a formal, shareable schema
+- [[wiki/memory/org-mode|Org Mode]] — Emacs plain-text outlining and note system with agenda, links, and literate programming
+- [[wiki/memory/outline-notes|Outline Notes]] — Hierarchical indented note-taking that mirrors source structure
+- [[wiki/memory/para-method|PARA Method]] — Organization system that files notes into Projects, Areas, Resources, and Archives
+- [[wiki/memory/peg-system|Peg System]] — Mnemonic that attaches list items to fixed number-word pegs
+- [[wiki/memory/perception-as-inference|Perception as Inference]] — Helmholtzian view that perception is unconscious inference from cues and priors
+- [[wiki/memory/personal-knowledge-management|Personal Knowledge Management]] — Practice of capturing, organizing, and retrieving one's own knowledge for reuse
+- [[wiki/memory/posttraumatic-growth|Posttraumatic Growth]] — Positive psychological change reported after struggling with adversity
+- [[wiki/memory/precision-weighting|Precision Weighting]] — Gaining prediction errors by their reliability when updating beliefs
+- [[wiki/memory/predictive-coding|Predictive Coding]] — Computational account of perception as hierarchical prediction-error correction
+- [[wiki/memory/predictive-processing|Predictive Processing]] — Framework where the brain minimizes prediction error by generating and revising models
+- [[wiki/memory/prior-knowledge-activation|Prior Knowledge Activation]] — Bringing existing knowledge to bear before and during new learning
+- [[wiki/memory/proactive-interference|Proactive Interference]] — Older memories impair retrieval of newer, similar material
+- [[wiki/memory/progressive-summarization|Progressive Summarization]] — Layering increasingly compressed summaries on a note so its essence surfaces at each revisit
+- [[wiki/memory/prospective-memory|Prospective Memory]] — Remembering to perform intended actions in the future
+- [[wiki/memory/provenance|Provenance]] — Recorded origin and chain of custody for knowledge items, enabling trust and auditability
+- [[wiki/memory/reconsolidation|Reconsolidation]] — Retrieved memories becoming labile and needing restabilization
+- [[wiki/memory/reinstatement-of-context|Reinstatement of Context]] — Restoring study context to improve retrieval of learned material
+- [[wiki/memory/reminiscence-bump|Reminiscence Bump]] — Disproportionate recall of autobiographical events from adolescence and early adulthood
+- [[wiki/memory/representativeness-heuristic|Representativeness Heuristic]] — Judging probability by similarity to a stereotype or prototype
+- [[wiki/memory/resilience-research|Resilience Research]] — Why some people adapt well under adversity and how resilience develops
+- [[wiki/memory/retrieval-induced-forgetting|Retrieval-Induced Forgetting]] — Retrieving some memories suppressing access to related competing ones
+- [[wiki/memory/retrieval-practice|Retrieval Practice]] — Actively recalling information to strengthen memory rather than restudying it
+- [[wiki/memory/retroactive-interference|Retroactive Interference]] — New memories impair retrieval of older, similar material
+- [[wiki/memory/scene-construction|Scene Construction]] — Building rich mental scenes as the basis of remembering and imagining
+- [[wiki/memory/schema-theory|Schema Theory]] — Organized knowledge structures that guide comprehension, memory, and inference
+- [[wiki/memory/schemas-and-stereotypes|Schemas and Stereotypes]] — Knowledge structures about groups that shape perception, memory, and judgment
+- [[wiki/memory/second-brain-method|Second Brain Method]] — Building an external knowledge system (capture, organize, distill, express)
+- [[wiki/memory/self-control-research|Self-Control Research]] — Empirical study of overriding impulses in favor of longer-term goals
+- [[wiki/memory/self-explanation|Self-Explanation]] — Explaining material to oneself to build deeper understanding
+- [[wiki/memory/self-regulated-learning|Self-Regulated Learning]] — Learners planning, monitoring, and adapting their own learning processes
+- [[wiki/memory/semantic-networks|Semantic Networks]] — Graphs of concepts connected by labeled relations, used in cognition and computing
+- [[wiki/memory/semantic-prospection|Semantic Prospection]] — Predicting future events from general knowledge rather than episodic simulation
+- [[wiki/memory/serial-position-effect|Serial Position Effect]] — Better recall of the first and last items of a list, weaker middle
+- [[wiki/memory/situated-cognition|Situated Cognition]] — Cognition bound to context, activity, and culture rather than abstract rules
+- [[wiki/memory/sketchnoting|Sketchnoting]] — Live visual note-taking combining text, icons, and layout
+- [[wiki/memory/sleep-and-memory|Sleep and Memory]] — How sleep consolidates, reorganizes, and protects memories
+- [[wiki/memory/source-memory|Source Memory]] — Remembering where, when, and from whom information came
+- [[wiki/memory/spaced-memorization|Spaced Memorization]] — Applying spaced-repetition scheduling to deliberate memorization
+- [[wiki/memory/spaced-repetition-systems|Spaced Repetition Systems]] — Schedulers that time reviews at expanding intervals to combat forgetting
+- [[wiki/memory/spaced-repetition|Spaced Repetition]] — Learning technique that schedules reviews at expanding intervals to maximize long-term retention
+- [[wiki/memory/spacing-effect|Spacing Effect]] — Distributed practice producing better retention than massed practice
+- [[wiki/memory/state-dependent-memory|State-Dependent Memory]] — Recall influenced by matching internal physiological or emotional states
+- [[wiki/memory/story-method|Story Method]] — Mnemonic that weaves list items into a single narrative
+- [[wiki/memory/summarization-cognition|Summarization Cognition]] — Cognitive processes underlying condensing texts into shorter faithful versions
+- [[wiki/memory/synaptic-consolidation|Synaptic Consolidation]] — Rapid cellular strengthening of memory traces within minutes to hours
+- [[wiki/memory/systems-consolidation|Systems Consolidation]] — Gradual reorganization of memories from hippocampus to neocortex over time
+- [[wiki/memory/taxonomy|Taxonomy]] — Hierarchical classification of a domain into ordered categories used for organization and retrieval
+- [[wiki/memory/testing-effect|Testing Effect]] — The finding that retrieving information improves long-term retention more than restudying
+- [[wiki/memory/tip-of-the-tongue|Tip-of-the-Tongue State]] — Felt near-access to a memory that cannot be fully retrieved
+- [[wiki/memory/top-down-processing|Top-Down Processing]] — Perception and cognition shaped by expectations, knowledge, and context
+- [[wiki/memory/transactive-memory|Transactive Memory]] — Shared system where group members specialize in remembering different domains
+- [[wiki/memory/transfer-appropriate-processing|Transfer-Appropriate Processing]] — Memory best when encoding and retrieval processes overlap
+- [[wiki/memory/transfer-of-learning|Transfer of Learning]] — Applying knowledge or skill from one context to another
+- [[wiki/memory/visual-note-taking|Visual Note-Taking]] — Notes that combine drawing, layout, and text to capture and structure ideas
+- [[wiki/memory/wiki-science|Wiki Science]] — Study of how wikis and collaborative knowledge bases grow, stay coherent, and resist degradation
+- [[wiki/memory/willpower-research|Willpower Research]] — Scientific study of self-control as a limited or flexible resource
+- [[wiki/memory/working-memory-capacity|Working Memory Capacity]] — The individual limit on information that can be held and processed at once
+- [[wiki/memory/working-memory-model|Working Memory Model]] — Baddeley's multicomponent account of the small capacity system that holds and manipulates information online
+- [[wiki/memory/zettelkasten-method|Zettelkasten Method]] — Slip-box note system of atomic notes linked into a web of thought
+- [[wiki/memory/zettelkasten|Zettelkasten]] — Note-taking method built on atomic, linked, permanent notes that grow into a web of thought

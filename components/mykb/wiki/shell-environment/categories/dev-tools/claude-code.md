@@ -13,7 +13,7 @@ resource: ""
 
 Claude Code appears in 1 session(s) categorized as Shell. Related topics: bash, bootstrap, bun, ide, json.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Dev Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Dev Tools]]
 
 ## Overview
 

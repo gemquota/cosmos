@@ -27,4 +27,4 @@ Cosine similarity scores vectors by the angle between them, ignoring magnitude �
 - [[wiki/data-storage/embeddings|Embeddings]] — the vectors cosine compares
 - [[wiki/data-storage/semantic-search|Semantic Search]] — ranking by cosine is the core operation
 - [[wiki/data-storage/vector-databases|Vector Databases]] — stores vectors under a chosen metric
-- [[wiki/data-storage/index|Data Storage]] — similarity metrics
+- [[wiki/data-storage/00-index|Data Storage]] — similarity metrics

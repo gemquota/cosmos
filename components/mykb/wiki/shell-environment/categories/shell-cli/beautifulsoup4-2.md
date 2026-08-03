@@ -13,7 +13,7 @@ resource: ""
 
 BeautifulSoup4 appears in 2 session(s) categorized as API, Frontend, Mobile, Security, Shell. Related topics: android, angular, api, auth, bash, cdn, cli.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/00-index|Shell Cli
 
 ## Overview
 

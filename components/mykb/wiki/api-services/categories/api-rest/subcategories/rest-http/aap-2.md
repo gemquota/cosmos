@@ -20,7 +20,7 @@ The recommended practice for future sessions is to resolve the acronym from cont
 
 **Related topics:** android, api, auth, authentication, aws, backend, bootstrap, cli
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Aap 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Aap 2
 
 ## Related Entities
 

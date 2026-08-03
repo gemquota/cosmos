@@ -26,5 +26,5 @@ Active recall means testing yourself — retrieving an answer from memory — ra
 - [[wiki/memory/memory-consolidation|Memory Consolidation]] — retrieval practice strengthens consolidation
 - [[wiki/memory/cornell-notes|Cornell Notes]] — a note format built around self-quizzing
 - [[wiki/memory/note-taking-methods|Note-Taking Methods]] — methods that embed retrieval prompts
-- [[wiki/meta-learning/index|Meta-Learning]] — metacognitive strategies like self-testing
-- [[wiki/reflections/index|Reflections]] — RSIS3's retrospective memory records
+- [[wiki/meta-learning/00-index|Meta-Learning]] — metacognitive strategies like self-testing
+- [[wiki/reflections/00-index|Reflections]] — RSIS3's retrospective memory records

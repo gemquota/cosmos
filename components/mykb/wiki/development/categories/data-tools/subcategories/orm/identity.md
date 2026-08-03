@@ -23,7 +23,7 @@ Both readings share a theme: identity determines how tools and systems recognize
 The IDE reading is anchored by the sessions, but the page keeps the Identity title because the entity record was created from those sessions and the surrounding data-tools vocabulary. Readers should check the tags and related entities to see which sense applies: the development-tooling context for IDEs, or the object-relational context for entity keys and equality. Recording both meanings on one page is a deliberate choice that preserves the session evidence without discarding the connection that the ORM neighbors imply.
 **Related topics:** ide, isr, orm, rest
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Identity
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Identity
 
 ## Related Entities
 

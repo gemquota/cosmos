@@ -1,5 +1,6 @@
 ---
 type: "concept"
+hub: true
 title: "Web Security (OWASP)"
 description: "The OWASP Top 10 and cheat sheets as the baseline threat model for web applications"
 tags: ["security", "owasp", "xss", "injection", "web"]

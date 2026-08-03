@@ -10,7 +10,7 @@ resource: ""
 
 ## Bond Law
 
-**Domain:** DevOps & Infrastructure › [[wiki/web-platforms/index|Infrastructure]] › [[wiki/web-platforms/index|Scripts]]
+**Domain:** DevOps & Infrastructure › [[wiki/web-platforms/00-index|Infrastructure]] › [[wiki/web-platforms/00-index|Scripts]]
 
 ## Related Entities
 

@@ -11,7 +11,7 @@ Asynchronous JavaScript and XML — technique for making asynchronous HTTP reque
 
 **Related technologies:** ajax, android, api
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Ajax
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Ajax
 
 ## Overview
 

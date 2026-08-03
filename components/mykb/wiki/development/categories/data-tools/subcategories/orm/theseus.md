@@ -21,7 +21,7 @@ ORMs make the question concrete through identity maps and entity lifecycle manag
 
 The page records the concept as a lens for these problems, and future sessions can attach the specific framework and identity failures observed. Recognizing the pattern early — during architecture reviews and refactors — prevents identity assumptions from hardening into bugs. Identity decisions deserve explicit review at every boundary.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Theseus
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Theseus
 
 ## Related Entities
 

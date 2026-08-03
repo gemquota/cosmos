@@ -13,7 +13,7 @@ status: "growing"
 
 APA appears in 1 session(s) categorized as API, Security. Related topics: acronym, api, auth, authentication.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Apa
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Apa
 
 ## Overview
 
@@ -21,7 +21,7 @@ APA is an acronym entity with several common expansions, and the session evidenc
 
 ## Session Context
 
-A single session captured the term, categorized as API and Security with related tags auth and authentication. That placement suggests the acronym appeared in documentation, configuration, or an error message during identity or service-interface work rather than as a product being built. For wiki purposes, the page exists so that a future session hitting the same string can retrieve the session associations quickly. The [[wiki/api-services/index|API Services]] tree documents the service-interface material, [[wiki/security/index|Security]] holds the authentication and authorization content, and [[wiki/web-platforms/index|Web Platforms]] records the broader client-server stack in which both appear.
+A single session captured the term, categorized as API and Security with related tags auth and authentication. That placement suggests the acronym appeared in documentation, configuration, or an error message during identity or service-interface work rather than as a product being built. For wiki purposes, the page exists so that a future session hitting the same string can retrieve the session associations quickly. The [[wiki/api-services/00-index|API Services]] tree documents the service-interface material, [[wiki/security/00-index|Security]] holds the authentication and authorization content, and [[wiki/web-platforms/00-index|Web Platforms]] records the broader client-server stack in which both appear.
 
 ## Acronym Handling
 

@@ -14,7 +14,7 @@ Flask — a lightweight Python WSGI web framework for simpler API endpoints and 
 
 **Related topics:** android, api, auth
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Ask
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Ask
 
 ## Overview
 

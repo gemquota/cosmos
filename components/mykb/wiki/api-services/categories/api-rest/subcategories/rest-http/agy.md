@@ -23,7 +23,7 @@ The related entities below list the neighboring API client records observed in t
 
 
 Tool validation of this kind fits the broader practice of reproducible environments: pin versions, record checksums, and document how each tool was obtained. When a session records that a binary was checked, the outcome — whether it ran, what it printed, and what changed afterwards — is the durable fact worth preserving. This page preserves the identifier and its context so that those details can be located later.
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Agy
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Agy
 
 ## Related Entities
 

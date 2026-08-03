@@ -13,7 +13,7 @@ status: "growing"
 
 InsecureRequestWarning appears in 6 session(s) categorized as API, Cloud, Frontend, Mobile, Security, Shell. Related topics: ajax, android, angular, api, auth, authentication, azure, bash, cdn, cli.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Insecurerequestwarning 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Insecurerequestwarning 2
 
 ## What It Is
 

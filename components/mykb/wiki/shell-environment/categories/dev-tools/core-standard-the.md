@@ -19,13 +19,13 @@ Core standards typically cover formatting and linting, naming conventions, commi
 
 Standards pay off most in debugging and onboarding: when every environment matches the core standard, a failure in one place reproduces elsewhere, and a new contributor can trust that the documented setup is correct. Deviations are tracked and either fixed or explicitly justified, rather than accumulated silently.
 
-In sessions, the term appears alongside debugging, frontend, and shell topics, where the standard spans the IDE, the shell scripts that build and run the project, and the frontend code itself. The entry connects to the [[wiki/shell-environment/categories/dev-tools/hard-rules|Hard Rules]] and [[wiki/shell-environment/categories/dev-tools/claude-code|Claude Code]] entries in the [[wiki/web-platforms/index|Dev Tools]] domain.
+In sessions, the term appears alongside debugging, frontend, and shell topics, where the standard spans the IDE, the shell scripts that build and run the project, and the frontend code itself. The entry connects to the [[wiki/shell-environment/categories/dev-tools/hard-rules|Hard Rules]] and [[wiki/shell-environment/categories/dev-tools/claude-code|Claude Code]] entries in the [[wiki/web-platforms/00-index|Dev Tools]] domain.
 
 The name of the entry is awkward, but the concept is durable, and the page serves as the place where a project's baseline conventions are recorded and linked.
 
 The standard is reviewed periodically, and changes are deliberate: a new baseline is a decision with migration cost, not an accident of tooling updates.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Dev Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Dev Tools]]
 
 ## Related Entities
 

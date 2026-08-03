@@ -13,7 +13,7 @@ Physics Engine — software simulating physical systems (gravity, collision, for
 
 **Related topics:** ajax, android, api, auth
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Physicsconfig
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Physicsconfig
 
 ## Related Entities
 

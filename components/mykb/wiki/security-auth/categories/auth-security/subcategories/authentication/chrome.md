@@ -21,7 +21,7 @@ The Shell tag suggests automation: Chrome can be driven headlessly or through th
 
 
 Automation is worth calling out separately: headless Chrome and the DevTools protocol let teams run the same browser in CI, take screenshots, and exercise flows that are hard to test any other way. That is how the Shell tag connects to the browser. The combination of an interactive debugger and a scriptable runtime is why Chrome appears so often in session records like this one.
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Chrome
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Chrome
 
 ## Related Entities
 

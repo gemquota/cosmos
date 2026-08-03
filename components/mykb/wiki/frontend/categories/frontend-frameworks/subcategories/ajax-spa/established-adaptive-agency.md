@@ -14,7 +14,7 @@ An adaptive agency is a system that adjusts its own behavior in response to chan
 
 **Related topics:** api, auth, cdn, cli
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Established Adaptive Agency
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Established Adaptive Agency
 
 ## Overview
 

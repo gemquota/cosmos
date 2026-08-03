@@ -13,7 +13,7 @@ status: "growing"
 
 Thomas Nagel is referenced in 1 session(s). Related tags: ast, ide, orm, spa.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Thomas Nagel
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Thomas Nagel
 
 ## Overview
 

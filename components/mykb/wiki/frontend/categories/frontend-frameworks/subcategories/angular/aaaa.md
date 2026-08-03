@@ -13,7 +13,7 @@ AAAA — an abbreviation referenced in agent sessions.
 
 **Related topics:** ajax, android, angular, api
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Aaaa
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Aaaa
 
 ## Related Entities
 

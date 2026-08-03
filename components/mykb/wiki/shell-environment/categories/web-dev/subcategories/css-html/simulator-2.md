@@ -13,7 +13,7 @@ status: "growing"
 
 Simulator appears in 1 session(s) categorized as Debugging, Frontend, Shell. Related topics: bash, cli, css, dom, feature.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Simulator 2
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Simulator 2
 
 ## What a Simulator Is
 

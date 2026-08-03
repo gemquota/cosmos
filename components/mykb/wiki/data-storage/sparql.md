@@ -30,7 +30,7 @@ SPARQL is the W3C query language for RDF data: pattern matching over triples wit
 - [[wiki/data-storage/json-ld|JSON-LD]]
 - [[wiki/data-storage/knowledge-graph|Knowledge Graph]]
 - [[wiki/memory/ontology-design|Ontology Design]]
-- [[wiki/data-storage/index|Data Storage]]
+- [[wiki/data-storage/00-index|Data Storage]]
 - [[wiki/concepts/promotion-readiness|Promotion Readiness]]
 - [[wiki/ai-ml/article-health-scores|Article Health Scores]]
 - [[wiki/concepts/explainers|Explainers]]

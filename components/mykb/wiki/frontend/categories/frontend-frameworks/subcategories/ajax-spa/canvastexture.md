@@ -18,11 +18,11 @@ CanvasTexture is a related concept from WebGL and Three.js: a texture created fr
 
 For data visualization, canvas scales well to large numbers of points because drawing bypasses the DOM tree. The mykb graph viewer uses a canvas-backed force-directed layout to render knowledge graph nodes and edges, updating positions each frame as the simulation settles. Interaction, such as dragging nodes and hovering, requires mapping pointer coordinates into the canvas coordinate space.
 
-Performance considerations include capping the device pixel ratio for crisp rendering, avoiding expensive allocations inside the animation loop, and redrawing only dirty regions when the scene is mostly static. Accessibility is a limitation: canvas content is invisible to assistive technology unless a fallback or DOM mirror is provided. Similar rendering techniques appear in the [[wiki/shell-environment/categories/web-dev/subcategories/css-html/diffusion-simulator|Diffusion Simulator]] and other canvas-based entries in the [[wiki/web-platforms/index|Frontend Frameworks]] domain.
+Performance considerations include capping the device pixel ratio for crisp rendering, avoiding expensive allocations inside the animation loop, and redrawing only dirty regions when the scene is mostly static. Accessibility is a limitation: canvas content is invisible to assistive technology unless a fallback or DOM mirror is provided. Similar rendering techniques appear in the [[wiki/shell-environment/categories/web-dev/subcategories/css-html/diffusion-simulator|Diffusion Simulator]] and other canvas-based entries in the [[wiki/web-platforms/00-index|Frontend Frameworks]] domain.
 
 For the knowledge graph specifically, canvas rendering keeps interaction smooth even as the node count grows, which is why the viewer relies on it rather than on DOM markup.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Canvastexture
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Canvastexture
 
 ## Related Entities
 

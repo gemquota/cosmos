@@ -26,4 +26,4 @@ A bi-encoder runs the query and each document through the same encoder independe
 - [[wiki/meta-learning/cross-encoder|Cross-Encoder]] — the reranking counterpart
 - [[wiki/meta-learning/colbert|ColBERT]] — the late-interaction middle ground
 - [[wiki/data-storage/vector-databases|Vector Databases]] — where bi-encoder vectors are indexed
-- [[wiki/meta-learning/index|Meta-Learning]] — retrieval model family
+- [[wiki/meta-learning/00-index|Meta-Learning]] — retrieval model family

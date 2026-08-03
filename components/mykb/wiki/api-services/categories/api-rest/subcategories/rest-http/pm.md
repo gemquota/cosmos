@@ -13,7 +13,7 @@ npm (Node Package Manager) — the default package manager for Node.js. Sessions
 
 **Related topics:** android, api, backend
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Pm
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Pm
 
 ## Related Entities
 

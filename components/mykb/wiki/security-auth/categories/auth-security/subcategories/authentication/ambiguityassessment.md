@@ -21,7 +21,7 @@ The component sits at the intersection of those concerns, and its related entiti
 
 
 The assessment output is usually consumed by a policy: threshold-based, where scores above a cut-off act immediately and scores below it pause; ranking-based, where the top candidate is presented for confirmation; or budget-based, where the system may spend a limited number of clarifying questions. Recording which policy was applied, and the score that drove it, makes the behavior auditable and tunable across sessions, which is exactly what the recursive improvement loops in this ecosystem look for.
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/index|Auth Security › Ambiguityassessment
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Ambiguityassessment
 
 ## Related Entities
 

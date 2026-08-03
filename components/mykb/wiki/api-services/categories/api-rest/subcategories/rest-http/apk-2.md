@@ -14,7 +14,7 @@ APK — Android Package Kit. The installation file format for Android apps.
 
 **Related topics:** android, api, auth, backend
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Apk 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Apk 2
 
 ## Overview
 
@@ -30,7 +30,7 @@ Installing an APK requires either a store channel or explicit user consent, and 
 
 ## Related Concepts
 
-The APK sits at the center of Android distribution: [[wiki/android-core/dynamic-features|dynamic features]] extend the base APK with on-demand modules, and the [[wiki/android-core/index|Android Core]] cluster documents the platform concepts that the package format wraps. Sessions categorized the term under API, auth, and backend tags because installing and inspecting packages is often part of testing an app against a backend service, including verifying authentication flows on the device itself.
+The APK sits at the center of Android distribution: [[wiki/android-core/dynamic-features|dynamic features]] extend the base APK with on-demand modules, and the [[wiki/android-core/00-index|Android Core]] cluster documents the platform concepts that the package format wraps. Sessions categorized the term under API, auth, and backend tags because installing and inspecting packages is often part of testing an app against a backend service, including verifying authentication flows on the device itself.
 
 ## Related Entities
 

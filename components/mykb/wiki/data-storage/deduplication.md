@@ -29,7 +29,7 @@ Deduplication finds and merges records that are the same entity or content, whet
 - [[wiki/data-storage/entity-resolution|Entity Resolution]]
 - [[wiki/data-storage/minhash|MinHash]]
 - [[wiki/memory/knowledge-curation|Knowledge Curation]]
-- [[wiki/data-storage/index|Data Storage]]
+- [[wiki/data-storage/00-index|Data Storage]]
 - [[wiki/concepts/promotion-readiness|Promotion Readiness]]
 - [[wiki/dev-tools/global-link-check|Global Link Check]]
 - [[wiki/concepts/explainers|Explainers]]

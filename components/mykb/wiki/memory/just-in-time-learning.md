@@ -26,4 +26,4 @@ Just-in-time learning delays study until the moment of need: look up the API, te
 - [[wiki/memory/spaced-repetition|Spaced Repetition]] — scheduled review vs on-demand lookup
 - [[wiki/memory/active-recall|Active Recall]] — retrieval practice vs retrieval from a search engine
 - [[wiki/memory/personal-knowledge-management|Personal Knowledge Management]] — a PKM that supports lookup on demand
-- [[wiki/questions/index|Open Questions]] — questions that trigger just-in-time research
+- [[wiki/questions/00-index|Open Questions]] — questions that trigger just-in-time research

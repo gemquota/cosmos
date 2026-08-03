@@ -29,7 +29,7 @@ A triplestore is a database whose storage and indexes are designed around RDF tr
 - [[wiki/data-storage/sparql|SPARQL]]
 - [[wiki/data-storage/property-graph|Property Graph]]
 - [[wiki/data-storage/knowledge-graph|Knowledge Graph]]
-- [[wiki/data-storage/index|Data Storage]]
+- [[wiki/data-storage/00-index|Data Storage]]
 - [[wiki/concepts/promotion-readiness|Promotion Readiness]]
 - [[wiki/dev-tools/global-link-check|Global Link Check]]
 - [[wiki/concepts/decision-guides|Decision Guides]]

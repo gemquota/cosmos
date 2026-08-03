@@ -13,7 +13,7 @@ Canvas — an HTML5 element for drawing 2D graphics via JavaScript. Used in the 
 
 **Related topics:** ajax, android, angular, api, auth, aws, bash, bootstrap
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Canvaspool 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Canvaspool 2
 
 ## Related Entities
 

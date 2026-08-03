@@ -33,7 +33,7 @@ ITEMS is recorded here as an acronym entity referenced in a single session, alon
 
 ## Scripting Patterns
 
-Working with items in Bash typically means treating them as lines or filenames: `for item in ...` loops, `while read` loops over lists, and `jq` extraction of arrays from JSON responses. Robust scripts quote every expansion, handle empty lists explicitly, and accumulate errors instead of aborting on the first failure. The debugging tag on this page points at the usual failure modes — unquoted names with spaces, missing delimiters, and items that change while the script runs. The [[wiki/infrastructure/categories/aws/index|AWS]] cluster documents the cloud resources such scripts manage, and [[wiki/os-shell/index|OS & Shell]] covers the loop and quoting conventions that keep them correct.
+Working with items in Bash typically means treating them as lines or filenames: `for item in ...` loops, `while read` loops over lists, and `jq` extraction of arrays from JSON responses. Robust scripts quote every expansion, handle empty lists explicitly, and accumulate errors instead of aborting on the first failure. The debugging tag on this page points at the usual failure modes — unquoted names with spaces, missing delimiters, and items that change while the script runs. The [[wiki/infrastructure/categories/aws/00-index|AWS]] cluster documents the cloud resources such scripts manage, and [[wiki/os-shell/00-index|OS & Shell]] covers the loop and quoting conventions that keep them correct.
 
 ## Session Context
 
@@ -41,6 +41,6 @@ The single recorded session categorized the term under Cloud, Debugging, and She
 
 ## Related Concepts
 
-- [[wiki/infrastructure/categories/aws/index|AWS]] — cloud resources the session touched
-- [[wiki/os-shell/index|OS & Shell]] — shell looping and quoting patterns
-- [[wiki/shell-environment/index|Shell Environment]] — terminal tooling for item processing
+- [[wiki/infrastructure/categories/aws/00-index|AWS]] — cloud resources the session touched
+- [[wiki/os-shell/00-index|OS & Shell]] — shell looping and quoting patterns
+- [[wiki/shell-environment/00-index|Shell Environment]] — terminal tooling for item processing

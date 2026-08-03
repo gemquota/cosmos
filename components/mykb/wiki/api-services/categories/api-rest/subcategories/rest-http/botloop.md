@@ -13,7 +13,7 @@ resource: ""
 
 BotLoop appears in 1 session(s) categorized as API, Mobile, Security, Shell. Related topics: android, api, auth, bash.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Botloop
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Botloop
 
 ## Overview
 

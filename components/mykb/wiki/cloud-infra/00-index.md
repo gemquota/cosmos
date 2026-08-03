@@ -1,0 +1,150 @@
+---
+type: "index"
+hub: true
+title: "Cloud Infra Index"
+description: "Listing of the cloud-infra/ folder (136 pages)."
+tags: ["index"]
+timestamp: "2026-08-03T00:00:00Z"
+---
+
+# Cloud Infra
+
+Part of [[wiki/index|Wiki Index]]. 136 pages.
+
+## Pages
+- [[wiki/cloud-infra/amazon-ebs-provisioning|Amazon EBS Provisioning]] — EBS volume types, sizing, and IOPS provisioning
+- [[wiki/cloud-infra/amd-epyc-and-intel-xeon|AMD EPYC & Intel Xeon]] — Serving as the x86 workhorses of modern cloud instances
+- [[wiki/cloud-infra/anycast-routing|Anycast Routing]] — Advertising the same IP from multiple locations so clients reach the nearest one
+- [[wiki/cloud-infra/arm-vs-x86-cloud|ARM vs x86 in the Cloud]] — Graviton-class ARM instances versus x86 performance and cost
+- [[wiki/cloud-infra/author-credentials|Author Credentials]] — Checking who wrote a source and why they are credible
+- [[wiki/cloud-infra/authoritative-and-recursive-resolvers|Authoritative & Recursive Resolvers]] — The two resolver roles and how queries flow between them
+- [[wiki/cloud-infra/autoscaling|Autoscaling]] — Automatically adjusting compute capacity to demand through horizontal, vertical, and predictive scaling policies
+- [[wiki/cloud-infra/availability-zone-architectures|Availability Zone Architectures]] — Placing workloads across AZs for failure independence
+- [[wiki/cloud-infra/availability-zones|Availability Zones]] — Isolated failure domains within a cloud region that make multi-AZ architectures resilient
+- [[wiki/cloud-infra/aws-vpc-design|AWS VPC Design]] — Subnets, route tables, IGW, and NAT layout for production AWS networks
+- [[wiki/cloud-infra/azure-blob-access-tiers|Azure Blob Access Tiers]] — Hot, cool, cold, and archive tiers for blobs
+- [[wiki/cloud-infra/azure-managed-disks|Azure Managed Disks]] — Managed SSD/HDD tiers and their redundancy options
+- [[wiki/cloud-infra/azure-vnet-and-nsg|Azure VNet & NSGs]] — Virtual networks, subnets, and network security groups on Azure
+- [[wiki/cloud-infra/bandwidth-vs-throughput|Bandwidth vs Throughput]] — Theoretical link capacity versus realized application data rate
+- [[wiki/cloud-infra/bgp-routing|BGP Routing]] — The path-vector protocol that interconnects autonomous systems
+- [[wiki/cloud-infra/block-device-mapping-gcp|Block Device Mapping on GCP]] — GCE disks, snapshots, and attachment semantics
+- [[wiki/cloud-infra/budget-alerts|Budget Alerts]] — Threshold-based notifications that catch runaway cloud spend before the bill arrives
+- [[wiki/cloud-infra/burstable-instances|Burstable Instances]] — CPU credits that allow short bursts above baseline
+- [[wiki/cloud-infra/capacity-planning-costs|Capacity Planning & Costs]] — Right-sizing and forecasting to control cloud spend
+- [[wiki/cloud-infra/capacity-planning|Capacity Planning]] — Forecasting resource demand and sizing infrastructure to meet it within budget and risk tolerance
+- [[wiki/cloud-infra/cdns-and-edge-networking|CDNs & Edge Networking]] — Distributed caches and compute that move content closer to users
+- [[wiki/cloud-infra/certificate-pinning-infra|Certificate Pinning in Infrastructure]] — Storing and rotating pinned leaf or intermediate certificates for internal TLS
+- [[wiki/cloud-infra/certificate-transparency|Certificate Transparency]] — Append-only public logs that audit issued TLS certificates
+- [[wiki/cloud-infra/client-vpn-profile|Client VPN Profiles]] — Per-user VPN configurations for remote access to private networks
+- [[wiki/cloud-infra/cloud-cost-optimization|Cloud Cost Optimization]] — Reducing cloud spend through rightsizing, commitments, lifecycle policies, and waste elimination
+- [[wiki/cloud-infra/cloud-emulators|Cloud Emulators]] — Local software that mimics cloud services (S3, Lambda, Pub/Sub) for development and testing
+- [[wiki/cloud-infra/cloud-migration-strategies|Cloud Migration Strategies]] — The seven Rs of moving workloads to the cloud: rehost, replatform, refactor, and beyond
+- [[wiki/cloud-infra/cloud-providers-aws-azure-gcp|Cloud Providers: AWS, Azure, GCP]] — The three major clouds and their shared service patterns
+- [[wiki/cloud-infra/cloud-security-groups|Cloud Security Groups]] — Stateful instance-level firewall rules on AWS and cloud platforms
+- [[wiki/cloud-infra/cold-storage|Cold Storage]] — The cheapest storage tier for rarely accessed data, with slower retrieval and retrieval fees
+- [[wiki/cloud-infra/coldline-and-archive-storage-classes|Coldline & Archive Storage Classes]] — Low-cost access patterns for rarely read data
+- [[wiki/cloud-infra/compute-autoscaling|Compute Autoscaling]] — Adding and removing capacity in response to demand
+- [[wiki/cloud-infra/compute-shapes-and-skus|Compute Shapes & SKUs]] — The family of instance sizes and their ratio tradeoffs
+- [[wiki/cloud-infra/congestion-control-algorithms|Congestion Control Algorithms]] — CUBIC, Reno, BBR and how senders adapt rate to network conditions
+- [[wiki/cloud-infra/connection-multiplexing|Connection Multiplexing]] — Sharing one transport connection across many concurrent streams
+- [[wiki/cloud-infra/content-delivery-networks|Content Delivery Networks]] — Geographically distributed proxy networks that cache content at the edge to cut latency and protect origins
+- [[wiki/cloud-infra/cost-of-bandwidth|Cost of Bandwidth]] — Egress pricing and how bandwidth shapes cloud architecture
+- [[wiki/cloud-infra/data-archiving|Data Archiving]] — Retaining data long-term for compliance, audit, or historical value with retrieval-friendly organization
+- [[wiki/cloud-infra/data-residency-and-locality|Data Residency & Locality]] — Where data physically lives and the laws that follow it
+- [[wiki/cloud-infra/dedicated-hosts-and-instances|Dedicated Hosts & Instances]] — Single-tenant servers for compliance and performance isolation
+- [[wiki/cloud-infra/demand-forecasting|Demand Forecasting]] — Predicting future traffic and resource demand using history, seasonality, and business signals
+- [[wiki/cloud-infra/dhcp-and-ipam|DHCP & IPAM]] — Dynamic address assignment and IP address management at fleet scale
+- [[wiki/cloud-infra/direct-connect|Direct Connect]] — Dedicated private network links from on-premises data centers to cloud providers
+- [[wiki/cloud-infra/dns-management|DNS Management]] — Operating the domain name system: zones, record types, TTLs, routing policies, and DNSSEC for production domains
+- [[wiki/cloud-infra/dns-over-https|DNS over HTTPS]] — Encrypting DNS queries inside HTTPS to resist snooping and injection
+- [[wiki/cloud-infra/dns-resolution-process|DNS Resolution Process]] — From resolver to authoritative server: how names become addresses
+- [[wiki/cloud-infra/dns-zone-transfers|DNS Zone Transfers]] — AXFR/IXFR replication between authoritative name servers
+- [[wiki/cloud-infra/dnssec-and-validation|DNSSEC & Validation]] — Authenticating DNS answers with signed zone records and chain-of-trust validation
+- [[wiki/cloud-infra/domain-trust|Domain Trust]] — Trusting sources by the domain they are hosted on
+- [[wiki/cloud-infra/edge-computing|Edge Computing]] — Running compute close to users at CDN points of presence instead of centralized regions
+- [[wiki/cloud-infra/edge-locations|Edge Locations]] — PoPs closer to users where CDNs and serverless runtimes cache and execute
+- [[wiki/cloud-infra/finops-practices|FinOps Practices]] — The operational discipline of managing cloud cost: visibility, allocation, and continuous optimization
+- [[wiki/cloud-infra/flow-control|Flow Control]] — Receiver-window based pacing that prevents sender overflow of buffers
+- [[wiki/cloud-infra/flow-logs-and-analysis|Flow Logs & Analysis]] — Capturing network metadata for security and cost analysis
+- [[wiki/cloud-infra/function-as-a-service|Function-as-a-Service]] — Serverless execution of single-purpose functions, billed per invocation and scaled to zero
+- [[wiki/cloud-infra/function-execution-lifecycle|Function Execution Lifecycle]] — Cold starts, warm pools, and the life of a serverless invocation
+- [[wiki/cloud-infra/gcp-vpc-and-cloud-nat|GCP VPC & Cloud NAT]] — Global VPCs, firewall rules, and managed NAT for GCP
+- [[wiki/cloud-infra/gcs-nearline-and-coldline|GCS Nearline & Coldline]] — Google Cloud storage classes between hot and archive
+- [[wiki/cloud-infra/glacier-and-s3-lifecycle|Glacier & S3 Lifecycle]] — Automating transitions to archive tiers with lifecycle rules
+- [[wiki/cloud-infra/graviton-and-aws|Graviton & AWS]] — AWS custom ARM silicon for cost-effective compute
+- [[wiki/cloud-infra/handshakes|Handshakes]] — The protocol negotiations that establish secure, synchronized sessions
+- [[wiki/cloud-infra/http-2-multiplexing|HTTP/2 Multiplexing]] — Concurrent streams over one connection with head-of-line tradeoffs
+- [[wiki/cloud-infra/http-3-0-rtt|HTTP/3 0-RTT]] — Resumed QUIC sessions that send data before the round trip
+- [[wiki/cloud-infra/http-protocols|HTTP Protocols]] — The evolution from HTTP/1.1 to HTTP/2 and HTTP/3
+- [[wiki/cloud-infra/https-and-tls|HTTPS & TLS]] — How TLS authenticates servers and encrypts web traffic
+- [[wiki/cloud-infra/instance-store-vs-ebs|Instance Store vs EBS]] — Ephemeral local disks versus networked durable volumes
+- [[wiki/cloud-infra/ipsec-tunnels|IPsec Tunnels]] — Suite-based VPN protection for IP packets with IKE negotiation
+- [[wiki/cloud-infra/ipv6-adoption|IPv6 Adoption]] — Address exhaustion, transition mechanisms, and the state of IPv6 rollout
+- [[wiki/cloud-infra/ipv6-link-local-addresses|IPv6 Link-Local Addresses]] — fe80:: addresses used for neighbor discovery and automatic configuration
+- [[wiki/cloud-infra/latencies-rtt-and-jitter|Latency, RTT & Jitter]] — Measuring round-trip time, variability, and their effect on protocols
+- [[wiki/cloud-infra/latency-optimization|Latency Optimization]] — Techniques to reduce request latency: caching, edge placement, protocols, and tracing-driven tuning
+- [[wiki/cloud-infra/legal-hold-and-preservation|Legal Hold & Preservation]] — Freezing data during litigation or investigation
+- [[wiki/cloud-infra/lift-and-shift|Lift-and-Shift]] — Migrating workloads to the cloud with minimal changes, replicating the old architecture as-is
+- [[wiki/cloud-infra/mtu-and-fragmentation|MTU & Fragmentation]] — Maximum transmission unit limits and how oversized packets get handled
+- [[wiki/cloud-infra/multi-cloud-hybrid-cloud|Multi-Cloud & Hybrid Cloud]] — Operating across providers and between cloud and on-prem
+- [[wiki/cloud-infra/multi-cloud-strategy|Multi-Cloud Strategy]] — Deliberate use of multiple cloud providers for resilience, best-of-breed services, or cost leverage
+- [[wiki/cloud-infra/multicast-networking|Multicast Networking]] — One-to-many delivery using group membership protocols like IGMP
+- [[wiki/cloud-infra/mutual-tls-internal-services|Mutual TLS for Internal Services]] — mTLS identity verification between services using client certificates
+- [[wiki/cloud-infra/nat-gateways|NAT Gateways]] — Managed network address translation that gives private resources outbound internet access without inbound exposure
+- [[wiki/cloud-infra/network-access-control-lists|Network Access Control Lists]] — Stateless subnet-level filtering rules on cloud networks
+- [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]] — SNAT, DNAT, masquerade, and hairpin translation behaviors
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — The layered model, addressing, and packet flow that underpin all networked systems
+- [[wiki/cloud-infra/object-lock-and-worm|Object Lock & WORM]] — Write-once-read-many protection on object storage
+- [[wiki/cloud-infra/object-storage-protocols|Object Storage Protocols]] — HTTP-based storage of immutable blobs with metadata
+- [[wiki/cloud-infra/object-storage|Object Storage]] — Scalable storage for unstructured data addressed by keys, with high durability and S3-compatible APIs
+- [[wiki/cloud-infra/parameter-stores-aws-ssm-azure-keyvault-gcp-secretmanager|Cloud Parameter Stores]] — SSM, Key Vault, and Secret Manager as central config stores
+- [[wiki/cloud-infra/peering-and-transit|Peering and Transit]] — Connecting separate networks — VPCs, clouds, or data centers — through direct peering or transit hubs
+- [[wiki/cloud-infra/point-of-presence|Point of Presence]] — Physical network facilities where providers interconnect with last-mile networks
+- [[wiki/cloud-infra/preemptible-vm-workloads|Preemptible VM Workloads]] — Designing stateless, checkpointed work for interruptible VMs
+- [[wiki/cloud-infra/private-link-and-private-endpoints|Private Link & Private Endpoints]] — Reaching cloud services over private IPs without public exposure
+- [[wiki/cloud-infra/publisher-trust|Publisher Trust]] — Evaluating the organization behind a source
+- [[wiki/cloud-infra/quic-and-http3|QUIC & HTTP/3]] — The UDP-based transport with built-in TLS 1.3 and its HTTP/3 mapping
+- [[wiki/cloud-infra/quota-management|Quota Management]] — Hard per-account limits on cloud resources that prevent runaway consumption and enforce governance
+- [[wiki/cloud-infra/re-platforming|Re-platforming]] — Migrating with targeted upgrades to managed services without rewriting application code
+- [[wiki/cloud-infra/remote-access-methods|Remote Access Methods]] — SSH, VPNs, RDP, and bastions as ways into private networks
+- [[wiki/cloud-infra/reputation-score|Reputation Score]] — The sub-score rating a source's or article's standing
+- [[wiki/cloud-infra/reserved-capacity|Reserved Capacity]] — Committed-use discounts that trade flexibility for predictable, lower compute pricing
+- [[wiki/cloud-infra/reserved-instances-vs-on-demand|Reserved vs On-Demand Instances]] — Trading flexibility for price with commitment-based pricing
+- [[wiki/cloud-infra/resource-tagging|Resource Tagging]] — Labeling cloud resources with metadata for cost allocation, ownership, and automation
+- [[wiki/cloud-infra/right-sizing|Right-Sizing]] — Adjusting instance and resource sizes to match actual workload demand, cutting waste without sacrificing headroom
+- [[wiki/cloud-infra/savings-plans|Savings Plans]] — Flexible hourly commitments that discount compute spend
+- [[wiki/cloud-infra/security-group-best-practices|Security Group Best Practices]] — Least-privilege rules, tagging, and audit habits for security groups
+- [[wiki/cloud-infra/serverless-computing-patterns|Serverless Computing Patterns]] — Event-driven functions and managed runtimes without servers
+- [[wiki/cloud-infra/service-discovery-dns-based|DNS-Based Service Discovery]] — SRV records and convention-based discovery for services
+- [[wiki/cloud-infra/site-to-site-vpn|Site-to-Site VPN]] — Persistent encrypted links between offices and clouds
+- [[wiki/cloud-infra/snapshot-lifecycle-policies|Snapshot Lifecycle Policies]] — Automating snapshot creation, retention, and deletion
+- [[wiki/cloud-infra/snapshot-strategies|Snapshot Strategies]] — Scheduling point-in-time copies of volumes and databases for recovery and rollback
+- [[wiki/cloud-infra/source-vetting|Source Vetting]] — Evaluating whether a source is trustworthy enough to cite
+- [[wiki/cloud-infra/sovereignty-and-compliance-storage|Sovereignty & Compliance Storage]] — Jurisdiction-aware storage for regulated industries
+- [[wiki/cloud-infra/split-horizon-dns|Split-Horizon DNS]] — Serving different answers for internal and external clients
+- [[wiki/cloud-infra/spot-and-preemptible|Spot & Preemptible Instances]] — Interruptible capacity at a discount and how to use it
+- [[wiki/cloud-infra/spot-instances|Spot Instances]] — Interruptible, discounted cloud compute that trades reliability for cost on fault-tolerant workloads
+- [[wiki/cloud-infra/spot-market-behavior|Spot Market Behavior]] — How spot prices fluctuate with supply, demand, and interruption
+- [[wiki/cloud-infra/storage-locks-and-retention|Storage Locks & Retention]] — Preventing deletion or modification for compliance
+- [[wiki/cloud-infra/storage-tiering-automation|Storage Tiering Automation]] — Moving data between hot, warm, and cold tiers automatically
+- [[wiki/cloud-infra/storage-tiering|Storage Tiering]] — Moving data between hot, warm, and cold storage classes as access frequency changes
+- [[wiki/cloud-infra/strangler-fig-pattern|Strangler Fig Pattern]] — Incrementally replacing a legacy system piece by piece until the new system fully takes over
+- [[wiki/cloud-infra/subnet-design|Subnet Design]] — Dividing VPC address space into subnets for availability, tiers, and routing control
+- [[wiki/cloud-infra/subnetting-cidr|Subnetting & CIDR]] — Prefix math that carves networks into addressable subnets
+- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]] — How the Internet protocol suite carries data between applications
+- [[wiki/cloud-infra/tcp-retransmission|TCP Retransmission]] — How TCP detects loss via ACK timeouts and fast retransmit
+- [[wiki/cloud-infra/tls-1-3-session-resumption|TLS 1.3 Session Resumption]] — PSK-based resumption and 0-RTT handshakes in TLS 1.3
+- [[wiki/cloud-infra/tls-performance|TLS Performance]] — Handshake cost, session reuse, and hardware acceleration
+- [[wiki/cloud-infra/trust-score|Trust Score]] — The composite rating of how much a source or article should be trusted
+- [[wiki/cloud-infra/udp-vs-tcp|UDP vs TCP]] — Reliable streams versus datagrams and when each transport fits
+- [[wiki/cloud-infra/virtual-machines-hypervisors|Virtual Machines & Hypervisors]] — Hardware virtualization and the software that provides it
+- [[wiki/cloud-infra/virtual-machines|Virtual Machines]] — Hardware-virtualized compute instances that remain the unit of infrastructure-as-a-service (IaaS)
+- [[wiki/cloud-infra/virtual-private-clouds|Virtual Private Clouds]] — Isolated network slices inside public cloud regions
+- [[wiki/cloud-infra/vpc-networking|VPC Networking]] — Private virtual networks in the cloud: CIDR ranges, subnets, routing, and isolation
+- [[wiki/cloud-infra/vpc-peering-and-transit-gateways|VPC Peering & Transit Gateways]] — Connecting VPCs directly or through central transit routing
+- [[wiki/cloud-infra/vpn-split-tunneling|VPN Split Tunneling]] — Sending only some traffic through the VPN tunnel
+- [[wiki/cloud-infra/vpn-technologies|VPN Technologies]] — Tunnels that extend private networks across untrusted links
+- [[wiki/cloud-infra/vpn-tunnels|VPN Tunnels]] — Encrypted site-to-site connections between on-premises networks and cloud VPCs
+- [[wiki/cloud-infra/warm-storage|Warm Storage]] — A middle storage tier for data accessed occasionally, cheaper than hot and faster than cold
+- [[wiki/cloud-infra/wireguard-protocol|WireGuard Protocol]] — A minimal, auditable VPN protocol built on modern cryptography
+- [[wiki/cloud-infra/zones-and-regions|Zones & Regions]] — Geographic isolation units that structure cloud redundancy

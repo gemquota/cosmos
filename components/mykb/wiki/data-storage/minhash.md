@@ -26,5 +26,5 @@ MinHash estimates the Jaccard similarity of two sets from a few minimum-hash val
 - [[wiki/data-storage/simhash|SimHash]] — the alternative text-fingerprint scheme
 - [[wiki/data-storage/jaccard-similarity|Jaccard Similarity]] — the quantity MinHash estimates
 - [[wiki/data-storage/deduplication|Deduplication]] — MinHash's main application
-- [[wiki/data-storage/index|Data Storage]] — similarity techniques
+- [[wiki/data-storage/00-index|Data Storage]] — similarity techniques
 - [[wiki/data-storage/embeddings|Embeddings]] — the vector-space alternative to set fingerprinting

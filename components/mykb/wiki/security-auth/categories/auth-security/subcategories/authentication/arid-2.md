@@ -21,7 +21,7 @@ When a later session does establish the expansion, this page can be updated in p
 
 
 The same approach applies to any identifier that arrives without documentation: record the token verbatim, keep the session reference, and capture the tags and neighbors that describe where it appeared. That evidence is cheap to collect and invaluable later, and it avoids the two failure modes of guessing wrong and losing the trail. This page is an example of the pattern rather than a special case.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Arid 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Arid 2
 
 ## Related Entities
 

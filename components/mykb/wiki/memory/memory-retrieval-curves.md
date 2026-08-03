@@ -26,4 +26,4 @@ Memory retrieval curves — forgetting curves — show recall probability fallin
 - [[wiki/memory/active-recall|Active Recall]] — retrieval events that flatten the curve
 - [[wiki/memory/memory-consolidation|Memory Consolidation]] — the process behind curve flattening
 - [[wiki/memory/just-in-time-learning|Just-in-Time Learning]] — lookup-based alternative to curve scheduling
-- [[wiki/meta-learning/index|Meta-Learning]] — learning science that studies the curves
+- [[wiki/meta-learning/00-index|Meta-Learning]] — learning science that studies the curves

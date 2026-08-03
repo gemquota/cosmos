@@ -16,13 +16,13 @@ Activities are started with startActivity() or startActivityForResult(), service
 
 Implicit intents enable deep linking: an app can declare intent filters for actions such as VIEW or SEND, and the system presents matching apps to the user. PendingIntents wrap an Intent with a permission grant so that other applications can perform the action on the app's behalf later, which is how notifications and alarms launch tasks. Security considerations include restricting exported components, validating data from implicit intents, and avoiding the leakage of sensitive extras to other apps.
 
-Because intents decouple components, they are central to Android navigation, widget updates, and inter-app communication. The patterns recorded in the [[wiki/web-platforms/index|Cli Tools]] domain show intent distribution and orchestration recurring in agent sessions, from simple activity launches to complex multi-component workflows.
+Because intents decouple components, they are central to Android navigation, widget updates, and inter-app communication. The patterns recorded in the [[wiki/web-platforms/00-index|Cli Tools]] domain show intent distribution and orchestration recurring in agent sessions, from simple activity launches to complex multi-component workflows.
 
 **Related technologies:** cli, ide, queue, terminal
 
 Sessions also record intent-related debugging: logging the action and extras, checking the manifest for missing filters, and verifying that the target package exists before dispatch.
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Cli Tools]]
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Cli Tools]]
 
 ## Related Entities
 

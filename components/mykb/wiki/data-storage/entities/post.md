@@ -14,7 +14,7 @@ PostgreSQL — a powerful, open-source relational database. Sessions show schema
 
 **Related topics:** android, api, aws
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Post
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Post
 
 ## Overview
 

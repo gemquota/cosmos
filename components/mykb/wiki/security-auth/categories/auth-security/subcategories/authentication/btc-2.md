@@ -14,7 +14,7 @@ BTC — Bitcoin. A decentralized cryptocurrency.
 
 **Related topics:** android, api, auth, authentication, bash, bug
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Auth Security › Btc 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Auth Security › Btc 2
 
 ## The Asset
 

@@ -14,7 +14,7 @@ DX — Developer Experience. Referenced in tooling and workflow optimization ses
 
 **Related topics:** ajax, android, api
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Dx
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Dx
 
 ## Overview
 

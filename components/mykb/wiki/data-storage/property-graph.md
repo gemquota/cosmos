@@ -33,7 +33,7 @@ A property graph stores nodes and edges that both carry key-value properties, wi
 - [[wiki/data-storage/knowledge-graph|Knowledge Graph]]
 - [[wiki/memory/graph-notes|Graph Notes]]
 - [[wiki/meta-learning/node2vec|Node2Vec]]
-- [[wiki/data-storage/index|Data Storage]]
+- [[wiki/data-storage/00-index|Data Storage]]
 - [[wiki/concepts/promotion-readiness|Promotion Readiness]]
 - [[wiki/dev-tools/global-link-check|Global Link Check]]
 - [[wiki/concepts/explainers|Explainers]]

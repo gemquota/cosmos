@@ -26,4 +26,4 @@ Named entity recognition (NER) finds spans in text and labels them as people, or
 - [[wiki/data-storage/knowledge-graph|Knowledge Graph]] — NER is the graph's front end
 - [[wiki/data-storage/topic-modeling|Topic Modeling]] — document-level themes vs span-level entities
 - [[wiki/data-storage/embeddings|Embeddings]] — contextual embeddings power modern NER
-- [[wiki/data-storage/index|Data Storage]] — NLP extraction family
+- [[wiki/data-storage/00-index|Data Storage]] — NLP extraction family

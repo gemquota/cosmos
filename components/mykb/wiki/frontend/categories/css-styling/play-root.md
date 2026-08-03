@@ -21,7 +21,7 @@ Whichever reading applies, the identifier behaves like an anchor: it names the p
 
 
 Roots are where configuration and state concentrate, which is both a strength and a risk. Centralizing playback logic in one root makes behavior predictable and testable, but it also means a single bug can break the whole player. Defensive practices — validating sources, handling errors per component, and logging state transitions — keep the root reliable. The identifier is worth remembering because it names the seam between the UI and the media pipeline.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Related Entities
 

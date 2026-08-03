@@ -13,7 +13,7 @@ Go (Golang) — a compiled, concurrent programming language by Google. Noted for
 
 **Related topics:** android, api, auth, backend
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Goalgenerator
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Goalgenerator
 
 ## Related Entities
 

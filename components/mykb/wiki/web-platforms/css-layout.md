@@ -1,5 +1,6 @@
 ---
 type: "concept"
+hub: true
 title: "CSS Layout"
 description: "The mechanisms — flexbox, grid, floats — that position elements on the page"
 tags: ["css", "layout", "flexbox", "grid"]

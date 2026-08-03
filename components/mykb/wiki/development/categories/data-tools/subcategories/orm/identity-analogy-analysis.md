@@ -14,7 +14,7 @@ IDE (Integrated Development Environment) — a software application for software
 
 **Related topics:** ide, isr, orm, rest
 
-**Domain:** Development Tools › [[wiki/web-platforms/index|Development]] › [[wiki/web-platforms/index|Data Tools]] › Identity Analogy Analysis
+**Domain:** Development Tools › [[wiki/web-platforms/00-index|Development]] › [[wiki/web-platforms/00-index|Data Tools]] › Identity Analogy Analysis
 
 ## Overview
 

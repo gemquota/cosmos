@@ -13,7 +13,7 @@ resource: ""
 
 Viz appears in 1 session(s) categorized as Frontend, Language, Shell. Related topics: bash, html, http, python.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Viz
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Viz
 
 ## Overview
 

@@ -28,4 +28,4 @@ Reciprocal rank fusion (RRF) merges several ranked lists by summing `1/(k + rank
 - [[wiki/data-storage/cosine-similarity|Cosine Similarity]] — the score metric RRF deliberately ignores
 - [[wiki/data-storage/vector-databases|Vector Databases]] — provides the vector-ranked list
 - [[wiki/syntheses/knowledge-system|Knowledge System]] — retrieval fusion supports the knowledge loop
-- [[wiki/data-storage/index|Data Storage]] — home of ranking and fusion tech
+- [[wiki/data-storage/00-index|Data Storage]] — home of ranking and fusion tech

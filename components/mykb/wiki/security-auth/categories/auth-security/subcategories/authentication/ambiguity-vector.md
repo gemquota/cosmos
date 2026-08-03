@@ -13,7 +13,7 @@ resource: ""
 
 Ambiguity Vector appears in 1 session(s) categorized as API, Cloud, Security. Related topics: api, auth, authentication, aws.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Ambiguity Vector
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Ambiguity Vector
 
 ## Overview
 

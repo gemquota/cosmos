@@ -30,4 +30,4 @@ Self-Explanation — Explaining material to oneself to build deeper understandin
 - [[wiki/memory/generation-effect|Generation Effect]] — production benefit
 - [[wiki/meta-learning/self-concept-research|Self-Concept Research]] — adjacent stub in this cluster
 - [[wiki/meta-learning/categories/cycles/subcategories/self-improvement/self-improvement-cycles|Self-Improvement Cycles]] — existing wiki article
-- [[wiki/meta-learning/categories/cycles/subcategories/self-improvement/index|Index]] — existing wiki article
+- [[wiki/meta-learning/categories/cycles/subcategories/self-improvement/00-index|Index]] — existing wiki article

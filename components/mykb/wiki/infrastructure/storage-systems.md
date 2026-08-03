@@ -1,5 +1,6 @@
 ---
 type: "concept"
+hub: true
 title: "Storage Systems"
 description: "The spectrum from RAM to tape and the systems that serve data"
 tags: ["storage", "systems", "architecture", "data"]

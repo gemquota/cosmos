@@ -14,7 +14,7 @@ resource: ""
 Claude is an AI assistant created by Anthropic. Known for helpfulness, harmlessness, and honesty. Used via the Anthropic API for text generation and analysis.
 Referenced in session 019f06a8
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Dev Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Dev Tools]]
 
 ## Overview
 

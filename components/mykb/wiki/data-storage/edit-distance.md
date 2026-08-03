@@ -22,4 +22,4 @@ Edit distance, most commonly Levenshtein distance, counts the minimal insertions
 - [[wiki/data-storage/n-grams|N-grams]] — character n-grams approximate edit distance cheaply
 - [[wiki/data-storage/deduplication|Deduplication]] — fuzzy duplicate detection
 - [[wiki/data-storage/semantic-search|Semantic Search]] — lexical fuzzy matching as a search layer
-- [[wiki/data-storage/index|Data Storage]] — string similarity family
+- [[wiki/data-storage/00-index|Data Storage]] — string similarity family

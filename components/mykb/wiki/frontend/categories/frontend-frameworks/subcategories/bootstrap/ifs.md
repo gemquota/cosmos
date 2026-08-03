@@ -12,7 +12,7 @@ resource: ""
 
 IFS appears in 1 session(s) categorized as API, Security. Related topics: acronym, api, auth, bootstrap.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Ifs
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Ifs
 
 ## Related Entities
 

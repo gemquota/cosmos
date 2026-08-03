@@ -9,7 +9,7 @@ status: "growing"
 ---
 ## Gdzlbzebp 2
 GdZLBZEBP appears in 2 session(s) categorized as API, Frontend, Shell. Related topics: api, bash, cli, css.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Overview
 GdZLBZEBP is a session-derived identifier: an opaque string recorded in agent sessions and preserved as a wiki page so future sessions can resolve it. The page appears in two sessions categorized as API, Frontend, and Shell, with related topics api, bash, cli, and css. Opaque identifiers like this arise from generated names, hashes, or internal tooling, and the wiki's job is to keep them findable rather than to guess their meaning.
 ## Opaque Identifiers

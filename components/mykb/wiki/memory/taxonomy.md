@@ -26,5 +26,5 @@ A taxonomy organizes a domain into a hierarchical tree of categories, from broad
 - [[wiki/memory/information-architecture|Information Architecture]] — the discipline taxonomies serve
 - [[wiki/data-storage/topic-modeling|Topic Modeling]] — data-driven alternative to manual taxonomy
 - [[wiki/memory/wiki-science|Wiki Science]] — how wikis handle taxonomy vs linking
-- [[wiki/data-storage/index|Data Storage]] — a taxonomy branch in mykb's wiki
+- [[wiki/data-storage/00-index|Data Storage]] — a taxonomy branch in mykb's wiki
 - [[wiki/concepts/mykb-analysis|Mykb Analysis]] — analyzes mykb's domain classification

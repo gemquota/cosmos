@@ -21,7 +21,7 @@ The same discipline applies to any short name in a knowledge base. The related e
 
 
 The same principle extends to error handling in general: systems should record what actually happened, not what the observer wishes had happened. When a token is ambiguous, preserving the raw identifier alongside session metadata creates a starting point for future disambiguation. If later sessions establish a concrete meaning, the page can be updated with the expansion and its links broadened, which is exactly how this knowledge base evolves.
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Bad 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Bad 2
 
 ## Related Entities
 

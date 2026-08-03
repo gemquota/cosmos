@@ -22,4 +22,4 @@ Graph embeddings map nodes (or whole graphs) into vector space so structural sim
 - [[wiki/data-storage/knowledge-graph|Knowledge Graph]] — the graph structure being embedded
 - [[wiki/data-storage/embeddings|Embeddings]] — the general representation concept
 - [[wiki/data-storage/property-graph|Property Graph]] — an input graph type for embedding
-- [[wiki/meta-learning/index|Meta-Learning]] — representation learning family
+- [[wiki/meta-learning/00-index|Meta-Learning]] — representation learning family

@@ -13,7 +13,7 @@ Harmonica Explorer — a music exploration project for touchscreen devices. Allo
 
 **Related topics:** android, angular, api, aws
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Harmonica Nexus
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Harmonica Nexus
 
 ## Related Entities
 

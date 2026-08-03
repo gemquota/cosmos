@@ -11,7 +11,7 @@ Application event recording. Sessions show structured logging patterns for debug
 
 **Related technologies:** api, auth, bug, dom
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Css Styling]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Css Styling]]
 
 ## Overview
 

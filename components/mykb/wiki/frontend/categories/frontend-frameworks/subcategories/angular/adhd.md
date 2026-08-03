@@ -13,7 +13,7 @@ ADHD — Attention Deficit Hyperactivity Disorder. Referenced in cognitive scien
 
 **Related topics:** angular, api, auth
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Adhd
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Adhd
 
 ## Related Entities
 

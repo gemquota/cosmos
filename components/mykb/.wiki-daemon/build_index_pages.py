@@ -27,14 +27,16 @@ def main():
         adir = os.path.join(WIKI, area)
         if not os.path.isdir(adir) or area in ('daily',):
             continue
-        idx = os.path.join(adir, 'index.md')
+        idx = os.path.join(adir, '00-index.md')   # directory landing page sorts first
+        if not os.path.exists(idx):
+            idx = os.path.join(adir, 'index.md')   # legacy fallback (root wiki dir)
         if not os.path.exists(idx):
             idx = os.path.join(adir, 'README.md')
         if not os.path.exists(idx):
             continue
         entries = []
         for fn in sorted(os.listdir(adir)):
-            if not fn.endswith('.md') or fn in ('index.md', 'README.md'):
+            if not fn.endswith('.md') or fn in ('00-index.md', 'index.md', 'README.md'):
                 continue
             full = os.path.join(adir, fn)
             if not os.path.isfile(full):

@@ -10,7 +10,7 @@ resource: ""
 ## Rest
 REST (Representational State Transfer) is an architectural style for designing networked applications. Uses HTTP methods (GET, POST, PUT, DELETE) for CRUD operations.
 Acronym referenced in session 019f1a6b
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Overview
 REST is an architectural style for networked applications that treats the system as a set of addressable resources manipulated over HTTP. Resources are identified by URLs, and the standard methods — GET, POST, PUT, PATCH, and DELETE — map onto read and write operations. The style emphasizes stateless requests, self-describing messages, and a uniform interface, which keeps clients simple and lets servers evolve representations independently.
 ## Details

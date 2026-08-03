@@ -14,7 +14,7 @@ Serverless computing — a cloud execution model where the provider manages infr
 
 **Related topics:** android, auth, bash, bug, bun, http, python, shell
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/00-index|Shell Cli
 
 ## Overview
 

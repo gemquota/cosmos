@@ -27,4 +27,4 @@ Latent semantic analysis (LSA) applies singular value decomposition to a term-do
 - [[wiki/data-storage/topic-modeling|Topic Modeling]] — LSA as an early topic approach
 - [[wiki/data-storage/tf-idf|TF-IDF]] — the weighting that feeds LSA
 - [[wiki/data-storage/embeddings|Embeddings]] — the modern descendant of LSA spaces
-- [[wiki/data-storage/index|Data Storage]] — semantic techniques
+- [[wiki/data-storage/00-index|Data Storage]] — semantic techniques

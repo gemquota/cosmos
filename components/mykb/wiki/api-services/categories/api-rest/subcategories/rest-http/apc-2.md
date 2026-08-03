@@ -25,7 +25,7 @@ The related entities below list the neighboring API client records observed in t
 From an engineering perspective, the useful habit is to record expansions the moment an acronym is introduced. Session-derived pages are the fallback when that habit was missed: they preserve the identifier, the session, and the surrounding tags, which is often enough to recover the intended meaning later. The two expansions recorded here are a good example of how a single acronym can legitimately have multiple readings.
 **Related topics:** android, api, auth, aws, bash
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/index|Api Clients › Apc 2
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Apc 2
 
 ## Related Entities
 

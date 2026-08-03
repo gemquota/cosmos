@@ -13,7 +13,7 @@ resource: ""
 
 Sand Memory appears in 1 session(s) categorized as Debugging, Frontend, Shell. Related topics: bash, cli, css, dom.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Sand Memory
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Sand Memory
 
 ## Overview
 

@@ -13,7 +13,7 @@ resource: ""
 
 Bonus Acquisition Debugger appears in 1 session(s) categorized as API, Debugging, Mobile, Security. Related topics: android, api, auth.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/index|Android Core]] › [[wiki/web-platforms/index|Api Clients › Bonus Acquisition Debugger
+**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Bonus Acquisition Debugger
 
 ## Overview
 
@@ -33,7 +33,7 @@ The session tags place this tool in API, mobile, and security contexts: acquisit
 
 - [[wiki/dev-tools/debuggers|Debuggers]] — tooling that inspects program state
 - [[wiki/dev-tools/profilers|Profilers]] — measuring where acquisition logic spends time
-- [[wiki/software-engineering/index|Software Engineering]] — rule design and process gates
+- [[wiki/software-engineering/00-index|Software Engineering]] — rule design and process gates
 
 ## Related Entities
 

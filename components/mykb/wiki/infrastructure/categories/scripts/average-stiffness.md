@@ -13,7 +13,7 @@ RAG (Retrieval-Augmented Generation) — a pattern combining information retriev
 
 **Related topics:** aws, bash, bug, cli
 
-**Domain:** DevOps & Infrastructure › [[wiki/web-platforms/index|Infrastructure]] › [[wiki/web-platforms/index|Scripts]]
+**Domain:** DevOps & Infrastructure › [[wiki/web-platforms/00-index|Infrastructure]] › [[wiki/web-platforms/00-index|Scripts]]
 
 ## Related Entities
 

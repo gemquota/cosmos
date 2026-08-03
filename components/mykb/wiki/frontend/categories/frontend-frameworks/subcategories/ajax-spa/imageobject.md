@@ -19,13 +19,13 @@ Applications load images over the network, which introduces concerns beyond the 
 
 Security interacts with images in several ways. Uploaded images must be validated so that crafted files cannot exploit decoder bugs, and SVG uploads can carry scripts unless sanitized. Hotlinking and scraping are controlled through CDN policies and authentication, and privacy rules require consent before tracking which images a user views.
 
-Accessibility requires meaningful alt text, and layout stability improves when dimensions are declared so the page does not shift as images load. The term appears in sessions covering API, security, and shell topics, where images are fetched, verified, and processed by scripts. Related patterns live under [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/canvastexture|Canvastexture]] in the [[wiki/web-platforms/index|Frontend Frameworks]] domain.
+Accessibility requires meaningful alt text, and layout stability improves when dimensions are declared so the page does not shift as images load. The term appears in sessions covering API, security, and shell topics, where images are fetched, verified, and processed by scripts. Related patterns live under [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/canvastexture|Canvastexture]] in the [[wiki/web-platforms/00-index|Frontend Frameworks]] domain.
 
 Tooling such as image optimizers, CDN transform parameters, and accessibility checkers turn these principles into automated checks in the build pipeline.
 
 The session notes treat the image object as both a UI asset and a data contract, since the same properties that drive display also drive search and accessibility.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Imageobject
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Imageobject
 
 ## Related Entities
 

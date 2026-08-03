@@ -13,7 +13,7 @@ resource: ""
 
 Hard Rules appears in 1 session(s) categorized as Debugging, Frontend, Shell. Related topics: bash, frontend, ide.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Dev Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Dev Tools]]
 
 ## Overview
 
@@ -38,7 +38,7 @@ Teams hit trouble when hard rules block legitimate work or when they are added w
 ## Related Concepts
 
 - [[wiki/dev-tools/conventional-commits|Conventional Commits]] — enforced commit conventions
-- [[wiki/software-engineering/index|Software Engineering]] — process gates and standards
+- [[wiki/software-engineering/00-index|Software Engineering]] — process gates and standards
 
 ## Related Entities
 

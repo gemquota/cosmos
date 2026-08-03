@@ -14,7 +14,7 @@ JetBrains — a software development company known for IDEs (IntelliJ IDEA, PyCh
 
 **Related topics:** ajax, android, angular, api, auth, authentication, aws, babel
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Jetbrains 10
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Jetbrains 10
 
 ## Overview
 
@@ -26,7 +26,7 @@ The value of JetBrains IDEs lies in deep static analysis: the editor understands
 
 ## Tooling Integration
 
-JetBrains tools plug into the wider ecosystem: they manage run configurations for backends, integrate with cloud tooling such as AWS, and drive CLI workflows from inside the IDE. The session tags (ajax, android, angular, api, auth, aws, bash, cdn, cli) describe a full-stack session run from within this kind of environment — frontend frameworks, mobile targets, API calls, and shell commands all within reach of one tool. For wiki navigation, [[wiki/development/index|Development]] records the language and tooling patterns, [[wiki/android-core/index|Android Core]] covers the mobile side, and [[wiki/js-ts-ecosystem/index|JS/TS Ecosystem]] documents the web stack that WebStorm and its plugins support.
+JetBrains tools plug into the wider ecosystem: they manage run configurations for backends, integrate with cloud tooling such as AWS, and drive CLI workflows from inside the IDE. The session tags (ajax, android, angular, api, auth, aws, bash, cdn, cli) describe a full-stack session run from within this kind of environment — frontend frameworks, mobile targets, API calls, and shell commands all within reach of one tool. For wiki navigation, [[wiki/development/00-index|Development]] records the language and tooling patterns, [[wiki/android-core/00-index|Android Core]] covers the mobile side, and [[wiki/js-ts-ecosystem/00-index|JS/TS Ecosystem]] documents the web stack that WebStorm and its plugins support.
 
 ## Session Context
 

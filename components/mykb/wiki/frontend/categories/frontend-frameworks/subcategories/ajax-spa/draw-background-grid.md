@@ -13,7 +13,7 @@ status: "growing"
 
 Draw Background Grid appears in 1 session(s) categorized as API, Backend, Shell. Related topics: ajax, api, backend, bash.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Draw Background Grid
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Draw Background Grid
 
 ## Overview
 

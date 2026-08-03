@@ -22,4 +22,4 @@ Lemmatization maps inflected words to their dictionary lemma ('better' → 'good
 - [[wiki/data-storage/tokenization|Tokenization]] — the preceding pipeline step
 - [[wiki/data-storage/stopwords|Stopwords]] — often removed before lemmatization
 - [[wiki/data-storage/tf-idf|TF-IDF]] — lemmatized terms feed weighting
-- [[wiki/data-storage/index|Data Storage]] — text normalization
+- [[wiki/data-storage/00-index|Data Storage]] — text normalization

@@ -27,4 +27,4 @@ The dot product a·b = sum(a_i * b_i) is the simplest vector similarity: high wh
 - [[wiki/data-storage/euclidean-distance|Euclidean Distance]] — the geometric distance alternative
 - [[wiki/data-storage/embeddings|Embeddings]] — the vectors being multiplied
 - [[wiki/data-storage/vector-databases|Vector Databases]] — metric choice happens at index creation
-- [[wiki/data-storage/index|Data Storage]] — similarity metrics
+- [[wiki/data-storage/00-index|Data Storage]] — similarity metrics

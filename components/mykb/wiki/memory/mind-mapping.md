@@ -26,4 +26,4 @@ Mind mapping draws a central idea with branching topics and sub-topics radiating
 - [[wiki/memory/graph-notes|Graph Notes]] — networked note graphs generalize mind maps
 - [[wiki/memory/note-taking-methods|Note-Taking Methods]] — mind mapping among the visual methods
 - [[wiki/syntheses/knowledge-synthesis|Knowledge Synthesis]] — maps can be inputs to synthesis
-- [[wiki/reflections/index|Reflections]] — visual mapping of retrospective insights
+- [[wiki/reflections/00-index|Reflections]] — visual mapping of retrospective insights

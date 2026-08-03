@@ -28,4 +28,4 @@ Lucene is the Java full-text search library underpinning Elasticsearch and Solr,
 - [[wiki/data-storage/elasticsearch|Elasticsearch]] — the distributed engine built on Lucene
 - [[wiki/data-storage/tf-idf|TF-IDF]] — the classic similarity Lucene also supports
 - [[wiki/data-storage/tokenization|Tokenization]] — the analyzer step before indexing
-- [[wiki/data-storage/index|Data Storage]] — search libraries
+- [[wiki/data-storage/00-index|Data Storage]] — search libraries

@@ -9,7 +9,7 @@ status: "growing"
 ---
 ## Iterative 2
 Iterative appears in 2 session(s) categorized as API, Shell, Version Control. Related topics: api, bash, bootstrap, ci/cd, cli, documentation, dom, git.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Overview
 Iterative describes work organized as repeated cycles: build a little, check the result, adjust, and repeat. The page was recorded in two sessions categorized as API, Shell, and Version Control, with related topics api, bash, bootstrap, ci/cd, cli, documentation, dom, and git. Iterative practice shows up in coding, in agent workflows, and in delivery pipelines.
 ## The Loop

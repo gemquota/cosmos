@@ -10,7 +10,7 @@ resource: ""
 
 ## Memoryconfig
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Memoryconfig
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Memoryconfig
 
 ## Related Entities
 

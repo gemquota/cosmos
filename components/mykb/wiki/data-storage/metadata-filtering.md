@@ -26,5 +26,5 @@ Metadata filtering restricts vector or lexical search to items satisfying struct
 - [[wiki/data-storage/open-knowledge-format|Open Knowledge Format]] — standardizes metadata fields for filtering
 - [[wiki/data-storage/hybrid-search|Hybrid Search]] — filters apply to both lexical and vector halves
 - [[wiki/memory/provenance|Provenance]] — a metadata dimension worth filtering on
-- [[wiki/data-storage/index|Data Storage]] — directory home for storage and search tech
-- [[wiki/questions/index|Open Questions]] — filtering questions worth resolving
+- [[wiki/data-storage/00-index|Data Storage]] — directory home for storage and search tech
+- [[wiki/questions/00-index|Open Questions]] — filtering questions worth resolving

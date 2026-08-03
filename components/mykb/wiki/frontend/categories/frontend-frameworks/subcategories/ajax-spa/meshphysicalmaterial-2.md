@@ -13,7 +13,7 @@ resource: ""
 
 MeshPhysicalMaterial appears in 2 session(s) categorized as API, Cloud, Mobile, Security. Related topics: ajax, android, api, auth, aws.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Meshphysicalmaterial 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Meshphysicalmaterial 2
 
 ## Overview
 

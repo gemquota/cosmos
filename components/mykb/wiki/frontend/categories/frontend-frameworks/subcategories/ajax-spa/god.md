@@ -18,7 +18,7 @@ Concurrency is a defining feature. Goroutines are cheap, concurrent functions mu
 
 The toolchain is a model of simplicity: go build compiles, go test runs tests with built-in benchmarking, gofmt formats code deterministically, and go vet catches common mistakes. Modules with a go.mod file pin dependencies, and the module proxy makes builds reproducible.
 
-Go is a popular choice for CLI tools, API servers, network daemons, and infrastructure software, where its performance, small binaries, and easy concurrency matter. Its tooling fits naturally with the [[wiki/web-platforms/index|Cli Tools]] and [[wiki/web-platforms/index|Frontend Frameworks]] domains recorded in this knowledge base, where sessions note its use for performance-sensitive components.
+Go is a popular choice for CLI tools, API servers, network daemons, and infrastructure software, where its performance, small binaries, and easy concurrency matter. Its tooling fits naturally with the [[wiki/web-platforms/00-index|Cli Tools]] and [[wiki/web-platforms/00-index|Frontend Frameworks]] domains recorded in this knowledge base, where sessions note its use for performance-sensitive components.
 
 The wiki's sessions note Go specifically for components where startup time, memory use, or deployment simplicity outweighs the convenience of interpreted languages.
 
@@ -26,7 +26,7 @@ Go's error handling is explicit: functions return errors to be checked, and the 
 
 The language's package system and module cache also make builds fast, which matters when a CLI tool is rebuilt frequently during development.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › God
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › God
 
 ## Related Entities
 

@@ -14,7 +14,7 @@ ECMAScript Modules (ESM) — a standard module system for JavaScript using impor
 
 **Related topics:** ajax, android, api, auth
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Esm 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Esm 2
 
 ## Overview
 

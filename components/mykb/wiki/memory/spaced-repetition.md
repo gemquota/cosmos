@@ -27,4 +27,4 @@ Spaced repetition schedules reviews of an item just before it would be forgotten
 - [[wiki/memory/just-in-time-learning|Just-in-Time Learning]] — an alternative to scheduled review
 - [[wiki/memory/personal-knowledge-management|Personal Knowledge Management]] — the practice spaced repetition serves
 - [[wiki/memory/README|Memory Layer]] — where scheduled re-reviews would surface memories
-- [[wiki/meta-learning/index|Meta-Learning]] — learning-to-learn patterns that use spacing
+- [[wiki/meta-learning/00-index|Meta-Learning]] — learning-to-learn patterns that use spacing

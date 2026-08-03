@@ -12,10 +12,10 @@ TimelineRenderer appears in 3 session(s) categorized as API, Backend, Cloud, Dat
 A timeline renderer is a component that draws time-ordered events as a visual timeline: a horizontal axis, event markers, and labels that make sequences and durations legible. Timelines appear in dashboards for deployment history, session logs, analytics, and project planning.
 The core of a renderer is the mapping from time to screen coordinates. A scale maps timestamps to x positions, handling ranges from seconds to years, and the renderer lays out overlapping events to avoid collisions. Data typically comes from an API or database as a list of events with start, end, and metadata, which the renderer groups, sorts, and styles.
 Rendering choices depend on scale. For small timelines, the DOM with styled elements is simple and accessible; for large or dense datasets, canvas or SVG gives better performance and richer control. Interactivity, hovering for details, clicking through to the underlying record, and zooming the time range, requires the renderer to keep the mapping from screen coordinates back to data.
-The term appears across sessions touching frontend visualization, backend data sources, cloud infrastructure, and debugging, which reflects how universal time-based traces are. Related telemetry and data entries live in the [[wiki/web-platforms/index|Shell Cli]] domain and the [[wiki/web-platforms/index|Css Styling]] domain of this knowledge base.
+The term appears across sessions touching frontend visualization, backend data sources, cloud infrastructure, and debugging, which reflects how universal time-based traces are. Related telemetry and data entries live in the [[wiki/web-platforms/00-index|Shell Cli]] domain and the [[wiki/web-platforms/00-index|Css Styling]] domain of this knowledge base.
 The entry serves as a reference for time-based visualization components, and its patterns apply to any view that maps ordered events to a two-dimensional surface.
 Sessions record the renderer as a reusable component, and the entry generalizes the layout, interaction, and performance lessons so that future timeline features do not start from scratch.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Related Entities
 - [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
 - [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]

@@ -27,4 +27,4 @@ Product quantization splits each vector into sub-vectors, learns a small codeboo
 - [[wiki/data-storage/ivf|IVF Index]] — clustering usually paired with PQ
 - [[wiki/data-storage/faiss|FAISS]] — where PQ is implemented and tuned
 - [[wiki/data-storage/vector-databases|Vector Databases]] — the systems that ship PQ options
-- [[wiki/data-storage/index|Data Storage]] — ANN compression family
+- [[wiki/data-storage/00-index|Data Storage]] — ANN compression family

@@ -12,7 +12,7 @@ resource: ""
 
 Wiki Index appears in 1 session(s) categorized as Frontend, Mobile. Related topics: ajax, alpine, android, angular, ansible.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Wiki Index
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Wiki Index
 
 ## Related Entities
 

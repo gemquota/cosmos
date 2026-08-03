@@ -26,4 +26,4 @@ Stopwords are very common words (the, and, is) that carry little retrieval signa
 - [[wiki/data-storage/stemming|Stemming]] — another normalization step in the same pipeline
 - [[wiki/data-storage/tf-idf|TF-IDF]] — stopwords barely affect IDF but waste space
 - [[wiki/data-storage/bm25|BM25]] — BM25 downweights but may keep stopwords
-- [[wiki/data-storage/index|Data Storage]] — text preprocessing
+- [[wiki/data-storage/00-index|Data Storage]] — text preprocessing

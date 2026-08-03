@@ -28,4 +28,4 @@ Hybrid search runs a keyword retriever and a vector retriever in parallel, then 
 - [[wiki/data-storage/qdrant|Qdrant]] — a vector database with built-in hybrid support
 - [[wiki/data-storage/weaviate|Weaviate]] — a vector database with built-in hybrid search
 - [[wiki/syntheses/knowledge-system|Knowledge System]] — the loop hybrid search makes accessible
-- [[wiki/data-storage/index|Data Storage]] — home of the hybrid search stack
+- [[wiki/data-storage/00-index|Data Storage]] — home of the hybrid search stack

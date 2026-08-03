@@ -27,5 +27,5 @@ Ontology design defines the vocabulary of a domain: its classes, properties, and
 - [[wiki/data-storage/json-ld|JSON-LD]] — JSON serialization for ontology-linked data
 - [[wiki/data-storage/sparql|SPARQL]] — querying data structured by an ontology
 - [[wiki/data-storage/knowledge-graph|Knowledge Graph]] — the graph an ontology schematizes
-- [[wiki/data-storage/index|Data Storage]] — the storage-tech namespace for ontologies
+- [[wiki/data-storage/00-index|Data Storage]] — the storage-tech namespace for ontologies
 - [[wiki/concepts/triad-architecture|Triad Architecture]] — mykb's typing scheme in the triad context

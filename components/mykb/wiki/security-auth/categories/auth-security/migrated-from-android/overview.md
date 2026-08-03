@@ -1,5 +1,6 @@
 ---
 type: "domain"
+hub: true
 title: "Overview"
 ---
 

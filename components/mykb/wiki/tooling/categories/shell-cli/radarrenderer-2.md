@@ -9,7 +9,7 @@ status: "growing"
 ---
 ## Radarrenderer 2
 RadarRenderer appears in 3 session(s) categorized as API, Backend, Cloud, Database, Debugging, Frontend, Security, Shell. Related topics: api, auth, aws, backend, bash, bootstrap, cli, css, database.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Tooling]] › [[wiki/web-platforms/index|Shell Cli]]
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Overview
 RadarRenderer is a rendering component whose name suggests it draws radar-style visualizations — polar plots of range, bearing, or multi-axis metrics. Across three sessions it was referenced in API, Backend, Cloud, Database, Debugging, Frontend, Security, and Shell contexts, which paints a full-stack picture: a service fetches data from a database through an API, a renderer draws it, and shell tooling drives or debugs the pipeline, all hosted on cloud infrastructure.
 ## Rendering Role

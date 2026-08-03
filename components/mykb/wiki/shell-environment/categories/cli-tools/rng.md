@@ -21,7 +21,7 @@ In frontend and shell work, RNG appears in shuffle logic, procedural content, sa
 
 
 Choosing a generator depends on the job: a fast, low-quality PRNG for visual effects where pattern is harmless; a high-quality PRNG with a long period for simulation; a cryptographically secure generator for anything security-related. Reproducibility practices — seeding, logging the seed, and making it a CLI flag — turn randomness from a debugging nuisance into a controlled variable. The Frontend tag suggests shuffle and sampling uses, where visible repetition is the usual complaint.
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Cli Tools]]
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Cli Tools]]
 
 ## Related Entities
 

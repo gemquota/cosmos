@@ -25,5 +25,5 @@ The knowledge-acquisition workflow is the pipeline that turns raw captures into 
 - [[wiki/syntheses/knowledge-synthesis|Knowledge Synthesis]] — the terminal step of the acquisition workflow
 - [[wiki/memory/knowledge-curation|Knowledge Curation]] — the curation half of acquisition
 - [[wiki/syntheses/knowledge-system|Knowledge System]] — the loop this stub asks about
-- [[wiki/questions/index|Open Questions]] — where these threads are tracked
-- [[wiki/syntheses/index|Syntheses]] — the namespace this stub belongs to
+- [[wiki/questions/00-index|Open Questions]] — where these threads are tracked
+- [[wiki/syntheses/00-index|Syntheses]] — the namespace this stub belongs to

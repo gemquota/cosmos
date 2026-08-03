@@ -14,7 +14,7 @@ DS — Data Science or Data Structure. Referenced in technical sessions.
 
 **Related topics:** ajax, android, api
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Ds
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Ds
 
 ## Overview
 
@@ -40,8 +40,8 @@ DS is an overloaded abbreviation: in algorithm-heavy work it means data structur
 
 ## Related Concepts
 
-- [[wiki/data-storage/index|Data Storage]] — how structured data persists
-- [[wiki/ai-ml/index|AI and ML]] — the data science domain
+- [[wiki/data-storage/00-index|Data Storage]] — how structured data persists
+- [[wiki/ai-ml/00-index|AI and ML]] — the data science domain
 - [[wiki/ai-ml/interpretability|Interpretability]] — making models explainable
 - [[wiki/data-storage/entity-resolution|Entity Resolution]] — cleaning and matching records
 

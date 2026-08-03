@@ -13,7 +13,7 @@ status: "growing"
 
 Ambiguity Projection appears in 2 session(s) categorized as API, Backend, Debugging, Security, Shell. Related topics: api, auth, backend, bash.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Ambiguity Projection 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Ambiguity Projection 2
 
 ## Overview
 

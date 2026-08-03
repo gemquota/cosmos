@@ -13,7 +13,7 @@ status: "growing"
 
 Refinement appears in 1 session(s) categorized as Shell, Version Control. Related topics: bash, ci/cd, documentation, dom, git.
 
-**Domain:** OS & Shell › [[wiki/web-platforms/index|Shell Environment]] › [[wiki/web-platforms/index|Web Dev]] › Refinement
+**Domain:** OS & Shell › [[wiki/web-platforms/00-index|Shell Environment]] › [[wiki/web-platforms/00-index|Web Dev]] › Refinement
 
 ## Overview
 

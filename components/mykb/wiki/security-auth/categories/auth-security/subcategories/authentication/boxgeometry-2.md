@@ -21,7 +21,7 @@ The sessions recorded this entity in API, cloud, mobile, and security contexts, 
 
 
 Boxes also serve as the primitive for collision detection and spatial partitioning in many engines: a bounding box around an object cheaply tests whether two objects can possibly overlap before any precise calculation runs. The same math powers octrees and bounding volume hierarchies that accelerate rendering and physics. Understanding BoxGeometry is therefore not just about drawing a cube but about a family of techniques that build on the axis-aligned box.
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Security Auth]] › [[wiki/web-platforms/index|Auth Security]] › Boxgeometry 2
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Boxgeometry 2
 
 ## Related Entities
 

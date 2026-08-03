@@ -21,7 +21,7 @@ Good practice is to cap rounds explicitly, record the distribution rather than o
 
 This page preserves the session token verbatim, consistent with the entity series, and future sessions can extend it with the specific loop being measured once the source session makes the referent clear.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Api Services]] › [[wiki/web-platforms/index|Api Rest]] › Avg Rounds
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Api Services]] › [[wiki/web-platforms/00-index|Api Rest]] › Avg Rounds
 
 ## Related Entities
 

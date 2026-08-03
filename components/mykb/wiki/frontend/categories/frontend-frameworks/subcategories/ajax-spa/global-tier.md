@@ -13,7 +13,7 @@ resource: ""
 
 Global Tier appears in 1 session(s) categorized as API, Security. Related topics: api, auth, cdn, cli.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/index|Frontend]] › [[wiki/web-platforms/index|Frontend Frameworks]] › Global Tier
+**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Global Tier
 
 ## Overview
 

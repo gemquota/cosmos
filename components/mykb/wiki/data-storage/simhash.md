@@ -28,5 +28,5 @@ SimHash converts a document into a fixed-size bit fingerprint such that similar 
 - [[wiki/data-storage/minhash|MinHash]] — the set-similarity alternative
 - [[wiki/data-storage/deduplication|Deduplication]] — the application SimHash serves
 - [[wiki/data-storage/edit-distance|Edit Distance]] — a different notion of text closeness
-- [[wiki/data-storage/index|Data Storage]] — similarity techniques
+- [[wiki/data-storage/00-index|Data Storage]] — similarity techniques
 - [[wiki/memory/knowledge-curation|Knowledge Curation]] — near-duplicate detection serves curation
