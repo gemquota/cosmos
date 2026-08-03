@@ -21,10 +21,10 @@ Dependency mapping records which components depend on which — services, librar
 - RSIS3 relevance: RSIS3's loop ecosystem is a dependency graph — mapping which loops consume which state makes a change to a shared registry's format assessable before it breaks downstream loops.
 
 ## Related
-- [[wiki/cloud-infra/block-device-mapping-gcp|Block Device Mapping on GCP]] — related coverage in the same cluster
-- [[wiki/devops-infra/renovate-and-dependency-updates|Renovate & Dependency Updates]] — related coverage in the same cluster
-- [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/cloud-infra/block-device-mapping-gcp|Block Device Mapping on GCP]]
+- [[wiki/devops-infra/renovate-and-dependency-updates|Renovate & Dependency Updates]]
+- [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

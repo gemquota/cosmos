@@ -22,11 +22,11 @@ Ignition and cloud-init are the two first-boot provisioning systems for Linux in
 - RSIS3 relevance: wherever cosmos nodes boot, deterministic first-boot config means a replacement wiki daemon host reaches the same state without manual recovery steps.
 
 ## Related
-- [[wiki/devops-infra/envoy-data-plane|Envoy Data Plane]] — related coverage in the same cluster
-- [[wiki/infrastructure/data-plane-versus-control-plane|Data Plane vs Control Plane]] — related coverage in the same cluster
-- [[wiki/cloud-infra/data-archiving|Data Archiving]] — related coverage in the same cluster
-- [[wiki/infrastructure/data-deduplication-in-storage|Data Deduplication in Storage]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/envoy-data-plane|Envoy Data Plane]]
+- [[wiki/infrastructure/data-plane-versus-control-plane|Data Plane vs Control Plane]]
+- [[wiki/cloud-infra/data-archiving|Data Archiving]]
+- [[wiki/infrastructure/data-deduplication-in-storage|Data Deduplication in Storage]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

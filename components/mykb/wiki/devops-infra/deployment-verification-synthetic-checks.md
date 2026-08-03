@@ -21,10 +21,10 @@ Synthetic checks verify deployments by probing the system as a user would, from 
 - RSIS3 relevance: after RSIS3 regenerates its dashboard or upgrades the wiki daemon, a synthetic check of the published pages verifies the artifact pipeline end to end.
 
 ## Related
-- [[wiki/devops-infra/deploy-safety-checks|Deploy Safety Checks]] — related coverage in the same cluster
-- [[wiki/devops-infra/preflight-checks-and-guards|Preflight Checks & Guards]] — related coverage in the same cluster
-- [[wiki/infrastructure/data-deployment-strategies|Data Deployment Strategies]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/deploy-safety-checks|Deploy Safety Checks]]
+- [[wiki/devops-infra/preflight-checks-and-guards|Preflight Checks & Guards]]
+- [[wiki/infrastructure/data-deployment-strategies|Data Deployment Strategies]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

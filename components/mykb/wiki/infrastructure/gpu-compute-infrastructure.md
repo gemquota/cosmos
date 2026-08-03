@@ -19,9 +19,9 @@ GPU compute infrastructure is the practice of treating GPUs as schedulable, shar
 - For mykb: the node anchors the GPU cluster — drivers/CUDA, observability, and container tooling all plug into this scheduling story.
 
 ## Related
-- [[wiki/devops-infra/infrastructure-as-code-revisited|Infrastructure as Code]] — related coverage in the same cluster
-- [[wiki/cloud-infra/compute-autoscaling|Compute Autoscaling]] — related coverage in the same cluster
-- [[wiki/infrastructure/gpu-drivers-and-cuda|GPU Drivers & CUDA]] — related coverage in the same cluster
-- [[wiki/devops-infra/infrastructure-drift-detection|Infrastructure Drift Detection]] — related coverage in the same cluster
+- [[wiki/devops-infra/infrastructure-as-code-revisited|Infrastructure as Code]]
+- [[wiki/cloud-infra/compute-autoscaling|Compute Autoscaling]]
+- [[wiki/infrastructure/gpu-drivers-and-cuda|GPU Drivers & CUDA]]
+- [[wiki/devops-infra/infrastructure-drift-detection|Infrastructure Drift Detection]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

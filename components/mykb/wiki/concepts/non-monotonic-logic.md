@@ -20,8 +20,8 @@ Non-monotonic logic formalizes reasoning where new information can retract previ
 - Open question: integrating non-monotonic rules with LLM inference — LLMs reason non-monotonically in practice (they revise with new context) but without the guarantees or semantics of the formal systems.
 - RSIS3 relevance: synthesis consolidation is non-monotonic — a new synthesis can retract or qualify an earlier one, and the wiki's revision history is the formal record of that non-monotonic process.
 
-## Related
 
+## Related
 - [[wiki/concepts/defeasible-reasoning|Defeasible Reasoning]] — the applied counterpart
 - [[wiki/concepts/answer-set-programming|Answer Set Programming]] — the computational embodiment
 - [[wiki/concepts/abductive-reasoning|Abductive Reasoning]] — non-monotonic hypothesis inference

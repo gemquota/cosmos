@@ -25,4 +25,4 @@ Architecture Decision Records (ADRs) capture significant technical decisions —
 - [[wiki/software-engineering/documentation-as-code|Documentation as Code]] — ADRs are decisions written and reviewed like code
 - [[wiki/software-engineering/domain-driven-design|Domain-Driven Design]] — boundary decisions are classic ADR material
 - [[wiki/memory/provenance|Provenance]] — ADRs record why a design was chosen
-- [[wiki/sources/README|Sources]] — decision provenance belongs with source records
+- [[wiki/sources/index|Sources]] — decision provenance belongs with source records

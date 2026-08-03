@@ -25,5 +25,5 @@ Regularization in practice includes weight decay, dropout, label smoothing, earl
 - [[wiki/concepts/dropout-practice|Dropout in Practice]] — the classic
 - [[wiki/concepts/early-stopping|Early Stopping]] — the patience tool
 - [[wiki/concepts/label-smoothing|Label Smoothing]] — the calibration tool
-- [[wiki/concepts/grokking|Grokking]] — the full treatment of this theme
-- [[wiki/ml-frameworks/evaluation-during-training|Evaluation During Training]] — existing graph context
+- [[wiki/concepts/grokking|Grokking]]
+- [[wiki/ml-frameworks/evaluation-during-training|Evaluation During Training]]

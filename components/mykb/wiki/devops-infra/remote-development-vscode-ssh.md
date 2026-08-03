@@ -21,11 +21,11 @@ Remote development with VS Code SSH attaches a full editor experience — Intell
 - RSIS3 relevance: cosmos's multi-component repo benefits from a defined remote dev setup so any contributor's loop runs against the same toolchain as CI.
 
 ## Related
-- [[wiki/cloud-infra/remote-access-methods|Remote Access Methods]] — related coverage in the same cluster
-- [[wiki/infrastructure/ssh-tunneling-and-port-forwarding|SSH Tunneling & Port Forwarding]] — related coverage in the same cluster
-- [[wiki/os-shell/ssh-and-remote-access|SSH & Remote Access]] — related coverage in the same cluster
-- [[wiki/infrastructure/ssh-key-management|SSH Key Management]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/cloud-infra/remote-access-methods|Remote Access Methods]]
+- [[wiki/infrastructure/ssh-tunneling-and-port-forwarding|SSH Tunneling & Port Forwarding]]
+- [[wiki/os-shell/ssh-and-remote-access|SSH & Remote Access]]
+- [[wiki/infrastructure/ssh-key-management|SSH Key Management]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

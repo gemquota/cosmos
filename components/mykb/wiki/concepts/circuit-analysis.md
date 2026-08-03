@@ -24,5 +24,5 @@ Circuit analysis identifies the small subnetworks (circuits) that implement beha
 - [[wiki/concepts/induction-heads|Induction Heads]] — a famous circuit
 - [[wiki/concepts/causal-interventions-ai|Causal Interventions in AI]] — the verification method
 - [[wiki/concepts/mechanistic-locality|Mechanistic Locality]] — why circuits are local
-- [[wiki/concepts/grokking|Grokking]] — the full treatment of this theme
-- [[wiki/ai-ml/probing|Probing]] — existing graph context
+- [[wiki/concepts/grokking|Grokking]]
+- [[wiki/ai-ml/probing|Probing]]

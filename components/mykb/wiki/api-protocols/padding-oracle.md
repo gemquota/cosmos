@@ -25,10 +25,10 @@ Operational tradeoffs: switching to AEAD (AES-GCM or ChaCha20-Poly1305) removes 
 RSIS3/mykb relevance: any encrypted state in the wiki stack (cookies, cached secrets) should use AEAD; documenting the "no CBC without Encrypt-then-MAC, no distinguishable errors" rule gives RSIS3's crypto reviews a clear standard.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/hash-collision-dos|Hash Collision DoS]] — related coverage in the same cluster
-- [[wiki/api-protocols/regex-dos|ReDoS Attacks]] — related coverage in the same cluster
-- [[wiki/api-protocols/decompression-bombs|Decompression Bombs]] — related coverage in the same cluster
-- [[wiki/security-auth/cve-disclosures|CVE Disclosures]] — related coverage in the same cluster
-- [[wiki/api-protocols/rate-limiting|Rate Limiting]] — related coverage in the same cluster
-- [[wiki/api-protocols/backpressure|Backpressure]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/hash-collision-dos|Hash Collision DoS]]
+- [[wiki/api-protocols/regex-dos|ReDoS Attacks]]
+- [[wiki/api-protocols/decompression-bombs|Decompression Bombs]]
+- [[wiki/security-auth/cve-disclosures|CVE Disclosures]]
+- [[wiki/api-protocols/rate-limiting|Rate Limiting]]
+- [[wiki/api-protocols/backpressure|Backpressure]]

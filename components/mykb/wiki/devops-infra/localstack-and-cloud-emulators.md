@@ -21,9 +21,9 @@ LocalStack and cloud emulators run mock implementations of cloud services (S3, D
 - RSIS3 relevance: cosmos can use emulators to test the wiki daemon's cloud integrations (object storage backup, static hosting) in CI, reserving real-cloud runs for acceptance.
 
 ## Related
-- [[wiki/cloud-infra/cloud-providers-aws-azure-gcp|Cloud Providers: AWS, Azure, GCP]] — related coverage in the same cluster
-- [[wiki/cloud-infra/multi-cloud-hybrid-cloud|Multi-Cloud & Hybrid Cloud]] — related coverage in the same cluster
-- [[wiki/cloud-infra/cloud-security-groups|Cloud Security Groups]] — related coverage in the same cluster
-- [[wiki/cloud-infra/gcp-vpc-and-cloud-nat|GCP VPC & Cloud NAT]] — related coverage in the same cluster
+- [[wiki/cloud-infra/cloud-providers-aws-azure-gcp|Cloud Providers: AWS, Azure, GCP]]
+- [[wiki/cloud-infra/multi-cloud-hybrid-cloud|Multi-Cloud & Hybrid Cloud]]
+- [[wiki/cloud-infra/cloud-security-groups|Cloud Security Groups]]
+- [[wiki/cloud-infra/gcp-vpc-and-cloud-nat|GCP VPC & Cloud NAT]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -20,8 +20,8 @@ Fact tables store the numeric core of a star schema: measures (additive, semi-ad
 - Operational notes: document grain and additivity per fact, test that aggregations do not multiply rows, and review new measures for type.
 - RSIS3 relevance: wiki analytics (article reads, curation events by status and tag) are natural facts — declaring grain and additivity prevents double-counted dashboard metrics.
 
-## Related
 
+## Related
 - [[wiki/data-storage/dimensional-modeling|Dimensional Modeling]] — fact/dimension design as a whole
 - [[wiki/data-storage/dimension-tables-and-grains|Dimension Tables And Grains]] — the grain story from the dimension side
 - [[wiki/data-storage/factless-fact-tables|Factless Fact Tables]] — facts that carry no measures

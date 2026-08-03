@@ -25,10 +25,8 @@ Operational tradeoffs: strict throttling protects capacity and revenue but adds 
 RSIS3/mykb relevance: RSIS3 loops calling external model APIs must obey documented throttle tiers; encoding the Retry-After contract here keeps the loops' backoff logic aligned with provider limits.
 
 ## Related
-- [[wiki/api-protocols/rate-limiting-api|Rate Limiting for APIs]] — related coverage in the same cluster
-- [[wiki/api-protocols/throttling-vs-debouncing|Throttling vs Debouncing]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-throttling|API Throttling]] — related coverage in the same cluster
-- [[wiki/api-protocols/throttling-vs-debouncing|Throttling vs Debouncing]] — related coverage in the same cluster
-- [[wiki/api-protocols/rate-limiting|Rate Limiting]] — related coverage in the same cluster
-- [[wiki/api-protocols/rate-limit-algorithms|Rate Limit Algorithms]] — related coverage in the same cluster
-- [[wiki/api-protocols/rate-limit-headers|Rate Limit Headers]] — related coverage in the same cluster
+- [[wiki/api-protocols/rate-limiting-api|Rate Limiting for APIs]]
+- [[wiki/api-protocols/throttling-vs-debouncing|Throttling vs Debouncing]]
+- [[wiki/api-protocols/rate-limiting|Rate Limiting]]
+- [[wiki/api-protocols/rate-limit-algorithms|Rate Limit Algorithms]]
+- [[wiki/api-protocols/rate-limit-headers|Rate Limit Headers]]

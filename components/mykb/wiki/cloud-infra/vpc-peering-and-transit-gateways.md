@@ -26,5 +26,3 @@ VPC peering connects two VPCs directly; transit gateways connect many through a 
 - [[wiki/devops-infra/api-gateways|API Gateways]]
 - [[wiki/cloud-infra/aws-vpc-design|AWS VPC Design]]
 - [[wiki/cloud-infra/gcp-vpc-and-cloud-nat|GCP VPC & Cloud NAT]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

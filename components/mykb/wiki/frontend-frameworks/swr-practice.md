@@ -19,10 +19,10 @@ SWR is a React data-fetching library named after the stale-while-revalidate cach
 - RSIS3/mykb relevance: MyKB's search and telemetry views fit SWR's model perfectly — cache results per query term, show last-known data instantly, revalidate in the background as the daemon updates — mirroring RSIS3's stale-while-revalidate approach to derived metrics that are expensive to recompute.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/async-state|Async State]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/data-fetching-libs|Data Fetching Libraries]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/react-query-practice|TanStack Query Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-apis|REST APIs]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql|GraphQL]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/async-state|Async State]]
+- [[wiki/frontend-frameworks/data-fetching-libs|Data Fetching Libraries]]
+- [[wiki/frontend-frameworks/react-query-practice|TanStack Query Practice]]
+- [[wiki/api-protocols/rest-apis|REST APIs]]
+- [[wiki/api-protocols/graphql|GraphQL]]
+- [[wiki/web-platforms/state-management|State Management]]

@@ -20,8 +20,8 @@ Surrogate keys are meaningless system-generated identifiers; natural keys come f
 - Operational notes: enforce natural-key uniqueness, document the mapping, and test reissued-key scenarios.
 - RSIS3 relevance: wiki entity rows need the same discipline — a stable internal id with the slug as the natural key keeps renames and history safe.
 
-## Related
 
+## Related
 - [[wiki/data-storage/surrogate-keys|Surrogate vs Natural Keys]] — existing note on surrogate keys
 - [[wiki/data-storage/entity-resolution|Entity Resolution]] — matching records when keys are messy
 - [[wiki/data-storage/scd-type-2-slowly-changing-dimensions|Scd Type 2 Slowly Changing Dimensions]] — surrogates enable versioning

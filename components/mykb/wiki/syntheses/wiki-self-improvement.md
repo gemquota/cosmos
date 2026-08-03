@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Wiki Self-Improvement"
 description: "A knowledge base that improves its own structure and coverage"
 tags: ["wiki", "self-improvement", "knowledge", "digital-garden"]

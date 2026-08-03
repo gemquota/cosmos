@@ -24,5 +24,5 @@ Evaluation frameworks organize how models are tested: which capabilities, which 
 - [[wiki/concepts/safety-evals-practice|Safety Evals Practice]] — the safety subset
 - [[wiki/concepts/capability-classification|Capability Classification]] — the tiering use
 - [[wiki/concepts/eval-contamination|Eval Contamination]] — the integrity risk
-- [[wiki/agent-systems/self-evaluation|Self-Evaluation]] — the full treatment of this theme
-- [[wiki/testing/ai-safety-evals|Ai Safety Evals]] — existing graph context
+- [[wiki/agent-systems/self-evaluation|Self-Evaluation]]
+- [[wiki/testing/ai-safety-evals|Ai Safety Evals]]

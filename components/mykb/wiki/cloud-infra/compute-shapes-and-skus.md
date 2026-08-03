@@ -25,6 +25,3 @@ Compute shapes/SKUs are the instance catalog — CPU generation, vCPU count, mem
 - [[wiki/cloud-infra/compute-autoscaling|Compute Autoscaling]]
 - [[wiki/infrastructure/gpu-compute-infrastructure|GPU Compute Infrastructure]]
 - [[wiki/infrastructure/on-demand-vs-reserved-compute|On Demand Vs Reserved Compute]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

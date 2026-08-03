@@ -25,10 +25,10 @@ Operational tradeoffs: disabling DTD and entity processing entirely is the safe 
 RSIS3/mykb relevance: this is a canonical failure mode for the wiki's ingestion tooling — any parser that touches untrusted documents needs entity limits; encoding the limits here lets check-practices verify parser configuration.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/entity-expansion|Entity Expansion]] — related coverage in the same cluster
-- [[wiki/api-protocols/timing-attacks|Timing Attacks]] — related coverage in the same cluster
-- [[wiki/api-protocols/padding-oracle|Padding Oracle]] — related coverage in the same cluster
-- [[wiki/security-auth/cve-disclosures|CVE Disclosures]] — related coverage in the same cluster
-- [[wiki/api-protocols/rate-limiting|Rate Limiting]] — related coverage in the same cluster
-- [[wiki/api-protocols/backpressure|Backpressure]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/entity-expansion|Entity Expansion]]
+- [[wiki/api-protocols/timing-attacks|Timing Attacks]]
+- [[wiki/api-protocols/padding-oracle|Padding Oracle]]
+- [[wiki/security-auth/cve-disclosures|CVE Disclosures]]
+- [[wiki/api-protocols/rate-limiting|Rate Limiting]]
+- [[wiki/api-protocols/backpressure|Backpressure]]

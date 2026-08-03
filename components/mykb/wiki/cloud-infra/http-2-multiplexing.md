@@ -27,5 +27,3 @@ HTTP/2 multiplexing sends many requests over one TCP connection using binary fra
 - [[wiki/devops-infra/http-caching-directives|HTTP Caching Directives]]
 - [[wiki/os-shell/curl-and-http-clients|curl & HTTP Clients]]
 - [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

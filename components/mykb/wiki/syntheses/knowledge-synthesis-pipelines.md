@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Knowledge Synthesis Pipelines"
 description: "Automated pipelines that turn raw captures into linked knowledge"
 tags: ["synthesis", "pipelines", "knowledge", "automation"]

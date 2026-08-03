@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Transparency Reports"
 description: "Regular public reports on AI system behavior and incidents"
 tags: ["transparency", "reports", "governance"]

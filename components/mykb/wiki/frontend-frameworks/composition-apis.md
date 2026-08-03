@@ -19,10 +19,10 @@ Composition APIs organize component logic as functions rather than scattering it
 - RSIS3/mykb relevance: composable, single-responsibility functions mirror RSIS3's L1 loop discipline: each capability (fetch, derive, persist) as an independent, reusable unit with explicit inputs and outputs, so the dashboard UI and the knowledge layer both stay modular as features accumulate.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/hooks-practice|Hooks in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/hoc-patterns|Higher-Order Components]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/context-api|Context API]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/hooks-practice|Hooks in Practice]]
+- [[wiki/frontend-frameworks/hoc-patterns|Higher-Order Components]]
+- [[wiki/frontend-frameworks/context-api|Context API]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

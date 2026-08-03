@@ -20,11 +20,11 @@ Bandwidth allocation is the problem of dividing limited link capacity among comp
 - For mykb: bandwidth allocation is the networking analog of resource budgeting everywhere — the same fairness-vs-efficiency tension appears in memory allocation, storage QoS, and the RSIS3 loop's own compute budgeting.
 
 ## Related
-- [[wiki/cloud-infra/bandwidth-vs-throughput|Bandwidth vs Throughput]] — related coverage in the same cluster
-- [[wiki/cloud-infra/cost-of-bandwidth|Cost of Bandwidth]] — related coverage in the same cluster
-- [[wiki/os-shell/dhcp-and-ip-allocation|DHCP & IP Allocation]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-allocation|Memory Allocation]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
+- [[wiki/cloud-infra/bandwidth-vs-throughput|Bandwidth vs Throughput]]
+- [[wiki/cloud-infra/cost-of-bandwidth|Cost of Bandwidth]]
+- [[wiki/os-shell/dhcp-and-ip-allocation|DHCP & IP Allocation]]
+- [[wiki/os-shell/memory-allocation|Memory Allocation]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

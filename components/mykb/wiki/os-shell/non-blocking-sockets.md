@@ -19,11 +19,11 @@ A non-blocking socket returns immediately from `read`, `write`, `accept`, and `c
 - Operational tradeoffs: non-blocking sockets trade programmer convenience for scalability: the code becomes stateful (partial writes, in-flight connects, queue per connection), but a single thread can serve tens of thousands of connections. The alternatives — a thread per connection or io_uring — shift the tradeoff differently: threads simplify code but burn memory and context switches; io_uring moves the completion model into the kernel. The practice rules: always handle `EAGAIN` by returning to the event loop, track partial writes explicitly, and prefer higher-level event frameworks unless you are building the server yourself. RSIS3/mykb relevance: the daemon's API and telemetry sockets should be non-blocking under an event loop so one slow client cannot stall graph rebuilds — the same backpressure discipline RSIS3 applies to loop queues.
 
 ## Related
-- [[wiki/infrastructure/non-production-data-refresh|Non Production Data Refresh]] — related coverage in the same cluster
-- [[wiki/os-shell/netcat-and-raw-sockets|netcat & Raw Sockets]] — related coverage in the same cluster
-- [[wiki/os-shell/network-sockets|Network Sockets]] — related coverage in the same cluster
-- [[wiki/os-shell/unix-domain-sockets|Unix Domain Sockets]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/infrastructure/non-production-data-refresh|Non Production Data Refresh]]
+- [[wiki/os-shell/netcat-and-raw-sockets|netcat & Raw Sockets]]
+- [[wiki/os-shell/network-sockets|Network Sockets]]
+- [[wiki/os-shell/unix-domain-sockets|Unix Domain Sockets]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

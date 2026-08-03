@@ -24,5 +24,5 @@ TransformerLens (and successors) is an open library for hooking transformer inte
 - [[wiki/concepts/interpretability-libraries|Interpretability Libraries]] — the ecosystem
 - [[wiki/concepts/circuit-analysis|Circuit Analysis]] — the research goal
 - [[wiki/concepts/open-source-ai|Open Source AI]] — open tooling
-- [[wiki/agent-systems/introspection-ai|Introspection in AI]] — the full treatment of this theme
-- [[wiki/ai-ml/activation-engineering|Activation Engineering]] — existing graph context
+- [[wiki/agent-systems/introspection-ai|Introspection in AI]]
+- [[wiki/ai-ml/activation-engineering|Activation Engineering]]

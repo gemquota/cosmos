@@ -19,10 +19,10 @@ Selectors are pure functions that project a slice of state: `(state) => state.us
 - RSIS3/mykb relevance: derived dashboard metrics (success rate, pulse counts) are memoized selectors over raw telemetry; keeping them pure and cached per input window mirrors RSIS3's rule that aggregates are always recomputed from raw records, never stored as independent truth.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/memoization-practice|Memoization Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/use-callback|useCallback]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/use-memo|useMemo]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/memoization-practice|Memoization Practice]]
+- [[wiki/frontend-frameworks/use-callback|useCallback]]
+- [[wiki/frontend-frameworks/use-memo|useMemo]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]]

@@ -26,5 +26,3 @@ Anycast advertises the same IP from multiple locations and lets routers send eac
 - [[wiki/infrastructure/eventbridge-and-routing|Eventbridge And Routing]]
 - [[wiki/os-shell/routing-and-forwarding|Routing & Forwarding]]
 - [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

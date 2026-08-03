@@ -22,10 +22,10 @@ Terraform workspaces and modules are the two main structures for organizing infr
 - RSIS3 relevance: cosmos's infrastructure should follow the same structure — reusable modules for the wiki stack, separate state per environment — so promoting a change is a reviewed diff.
 
 ## Related
-- [[wiki/devops-infra/terraform-state-management|Terraform State Management]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-modules-and-loading|Kernel Modules & Loading]] — related coverage in the same cluster
-- [[wiki/devops-infra/terraform|Terraform]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-modules|Kernel Modules]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/terraform-state-management|Terraform State Management]]
+- [[wiki/os-shell/kernel-modules-and-loading|Kernel Modules & Loading]]
+- [[wiki/devops-infra/terraform|Terraform]]
+- [[wiki/os-shell/kernel-modules|Kernel Modules]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

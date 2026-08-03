@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Orphan Detection"
 description: "Finding nodes with no inbound links in a knowledge graph"
 tags: ["orphans", "knowledge-graph", "detection", "wiki"]

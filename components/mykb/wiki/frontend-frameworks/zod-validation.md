@@ -19,10 +19,10 @@ Zod is a TypeScript-first schema library: you declare a schema once — `z.objec
 - RSIS3/mykb relevance: the daemon's search and telemetry payloads are exactly Zod's target: parse at the boundary with inferred types flowing into the UI and loop code, so a malformed pulse or query is rejected with a structured error instead of corrupting the knowledge graph — mirroring RSIS3's typed-input invariants.
 
 ## Related
-- [[wiki/web-platforms/forms-practice|Forms in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/schema-coercion|Schema Coercion]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/form-libraries|Form Libraries]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/react-hook-form|React Hook Form]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-apis|Web APIs]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-accessibility|Web Accessibility]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
+- [[wiki/web-platforms/forms-practice|Forms in Practice]]
+- [[wiki/frontend-frameworks/schema-coercion|Schema Coercion]]
+- [[wiki/frontend-frameworks/form-libraries|Form Libraries]]
+- [[wiki/frontend-frameworks/react-hook-form|React Hook Form]]
+- [[wiki/web-platforms/web-apis|Web APIs]]
+- [[wiki/web-platforms/web-accessibility|Web Accessibility]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]

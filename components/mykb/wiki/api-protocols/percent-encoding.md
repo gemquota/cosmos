@@ -25,10 +25,10 @@ Operational tradeoffs: the robust pattern is decode once at the framework bounda
 RSIS3/mykb relevance: the wiki's link parser and API routing must decode consistently; documenting the decode-once rule gives RSIS3's security checks a concrete bypass test list.
 
 ## Related
-- [[wiki/api-protocols/http-fundamentals|HTTP Fundamentals]] — related coverage in the same cluster
-- [[wiki/api-protocols/punycode-domains|Punycode Domains]] — related coverage in the same cluster
-- [[wiki/api-protocols/url-structure|URL Structure]] — related coverage in the same cluster
-- [[wiki/api-protocols/uri-vs-url|URI vs URL]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-methods|HTTP Methods]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-headers|HTTP Headers]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/http-fundamentals|HTTP Fundamentals]]
+- [[wiki/api-protocols/punycode-domains|Punycode Domains]]
+- [[wiki/api-protocols/url-structure|URL Structure]]
+- [[wiki/api-protocols/uri-vs-url|URI vs URL]]
+- [[wiki/api-protocols/http-methods|HTTP Methods]]
+- [[wiki/api-protocols/http-headers|HTTP Headers]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

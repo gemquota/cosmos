@@ -19,11 +19,11 @@ NUMA (Non-Uniform Memory Access) describes multi-socket and many-core machines w
 - Operational tradeoffs: topology-aware scheduling is mostly automatic and beneficial — the kernel's defaults (sched domains, local allocation, automatic NUMA balancing) are right for most workloads — and the operational lever is *verification*: check `numactl --hardware`, `lstopo`, and `numastat` before assuming locality, and pin or interleave only when measurements justify it. The tradeoff for aggressive manual pinning is reduced load-balancing flexibility and complexity under cgroup/migration. RSIS3/mykb relevance: parallel loop workers on a big host benefit from the same locality discipline — keep a worker's memory, cache, and node together — mirroring how the wiki's batch jobs should pin work to the data they process.
 
 ## Related
-- [[wiki/os-shell/cpu-governors-and-frequency-scaling|CPU Governors & Frequency Scaling]] — related coverage in the same cluster
-- [[wiki/devops-infra/topology-spread-constraints|Topology Spread Constraints]] — related coverage in the same cluster
-- [[wiki/infrastructure/network-topology-design|Network Topology Design]] — related coverage in the same cluster
-- [[wiki/os-shell/pci-e-topology|PCIe Topology]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/os-shell/cpu-governors-and-frequency-scaling|CPU Governors & Frequency Scaling]]
+- [[wiki/devops-infra/topology-spread-constraints|Topology Spread Constraints]]
+- [[wiki/infrastructure/network-topology-design|Network Topology Design]]
+- [[wiki/os-shell/pci-e-topology|PCIe Topology]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -21,10 +21,10 @@ Semantic-release automates the entire release process from commit messages: it p
 - RSIS3 relevance: cosmos's artifact releases could ride the same automation — version, changelog, and publish derived from commit history, giving RSIS3 an auditable release trail.
 
 ## Related
-- [[wiki/cloud-infra/storage-tiering-automation|Storage Tiering Automation]] — related coverage in the same cluster
-- [[wiki/devops-infra/release-engineering-trains|Release Engineering Trains]] — related coverage in the same cluster
-- [[wiki/devops-infra/changelog-automation|Changelog Automation]] — related coverage in the same cluster
-- [[wiki/devops-infra/release-trains|Release Trains]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/cloud-infra/storage-tiering-automation|Storage Tiering Automation]]
+- [[wiki/devops-infra/release-engineering-trains|Release Engineering Trains]]
+- [[wiki/devops-infra/changelog-automation|Changelog Automation]]
+- [[wiki/devops-infra/release-trains|Release Trains]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

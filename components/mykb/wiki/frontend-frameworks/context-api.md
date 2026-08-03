@@ -19,10 +19,10 @@ React's Context API lets a component provide a value that any descendant can rea
 - RSIS3/mykb relevance: the unified dashboard passes shared context (selected pulse, active article, daemon status) to embedded views; treating that as stable context with memoized values keeps the wiki browser and graph responsive, mirroring RSIS3's rule that shared state should change rarely and propagate explicitly.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/composition-apis|Composition APIs]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/hooks-practice|Hooks in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/hoc-patterns|Higher-Order Components]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/composition-apis|Composition APIs]]
+- [[wiki/frontend-frameworks/hooks-practice|Hooks in Practice]]
+- [[wiki/frontend-frameworks/hoc-patterns|Higher-Order Components]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

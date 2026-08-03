@@ -20,10 +20,10 @@ The local identity model pairs users (numeric UIDs) and groups (GIDs) with discr
 - RSIS3/mykb relevance: the wiki's shared corpus is a classic ACL use case — many agents and humans with different roles (read-only editors, write-capable daemons); encoding that as groups plus a few ACL exceptions, and scripting it, mirrors RSIS3's principle that access policy should be declared and reproducible, not accumulated by hand.
 
 ## Related
-- [[wiki/cloud-infra/cloud-security-groups|Cloud Security Groups]] — related coverage in the same cluster
-- [[wiki/os-shell/users-and-groups|Users and Groups]] — related coverage in the same cluster
-- [[wiki/os-shell/process-groups-and-sessions|Process Groups & Sessions]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/cloud-infra/cloud-security-groups|Cloud Security Groups]]
+- [[wiki/os-shell/users-and-groups|Users and Groups]]
+- [[wiki/os-shell/process-groups-and-sessions|Process Groups & Sessions]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

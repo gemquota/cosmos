@@ -19,10 +19,10 @@ A third-party cookie is one set by an origin other than the site the user is vis
 - RSIS3/mykb relevance: the deprecation is a live example of external invariants changing under a system: like RSIS3 loops, web features that silently rely on ambient browser state need explicit re-validation when the platform shifts, and the memory layer should record such platform changes as durable lessons rather than incident trivia.
 
 ## Related
-- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/partitioned-cookies|Partitioned Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/cross-site-requests|Cross-Site Requests]] — related coverage in the same cluster
-- [[wiki/api-protocols/cookie-flags|Cookie Flags]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-cookies|HTTP Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf|CSRF]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]]
+- [[wiki/api-protocols/partitioned-cookies|Partitioned Cookies]]
+- [[wiki/api-protocols/cross-site-requests|Cross-Site Requests]]
+- [[wiki/api-protocols/cookie-flags|Cookie Flags]]
+- [[wiki/api-protocols/http-cookies|HTTP Cookies]]
+- [[wiki/api-protocols/csrf|CSRF]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

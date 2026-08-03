@@ -24,5 +24,3 @@ QUIC is a UDP-based transport with TLS 1.3, stream multiplexing, connection migr
 ## Related
 - [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
 - [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

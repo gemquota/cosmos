@@ -19,10 +19,10 @@ Path resolution is the kernel's walk from a path string to an inode: starting at
 - Operational tradeoffs: canonicalization buys determinism and security at the cost of a syscall-heavy walk and the TOCTOU window between check and use; the modern answer is `openat2`'s `RESOLVE_*` flags, which make the constraints part of the open itself. For scripts, `readlink -f`/`realpath` are the reliable tools, and the practice rules are: resolve before comparing paths, never trust a string prefix check without canonicalizing, and treat symlinks in untrusted writable directories as a security boundary. RSIS3/mykb relevance: wiki scripts that resolve article paths should canonicalize before writing so a stray symlink cannot redirect a write outside the corpus — the same containment MyKB's slug-to-file mapping promises.
 
 ## Related
-- [[wiki/cloud-infra/dns-resolution-process|DNS Resolution Process]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-of-network-path|Observability of the Network Path]] — related coverage in the same cluster
-- [[wiki/os-shell/path-resolution|Path Resolution]] — related coverage in the same cluster
-- [[wiki/os-shell/dns-resolution|DNS Resolution]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
+- [[wiki/cloud-infra/dns-resolution-process|DNS Resolution Process]]
+- [[wiki/devops-infra/observability-of-network-path|Observability of the Network Path]]
+- [[wiki/os-shell/path-resolution|Path Resolution]]
+- [[wiki/os-shell/dns-resolution|DNS Resolution]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -21,8 +21,7 @@ Expected value reasoning multiplies each outcome's value by its probability and 
 
 ## Related
 - [[wiki/concepts/expected-utility|Expected Utility]] — the formal engine
-- [[wiki/concepts/expected-value-reasoning|Expected Value Reasoning]] — see also
 - [[wiki/concepts/risk-benefit-analysis|Risk-Benefit Analysis]] — the applied form
 - [[wiki/concepts/utilitarian-calculus|Utilitarian Calculus]] — the aggregative form
-- [[wiki/concepts/off-switch-game|Off-Switch Game]] — the full treatment of this theme
-- [[wiki/concepts/utility-functions|Utility Functions]] — existing graph context
+- [[wiki/concepts/off-switch-game|Off-Switch Game]]
+- [[wiki/concepts/utility-functions|Utility Functions]]

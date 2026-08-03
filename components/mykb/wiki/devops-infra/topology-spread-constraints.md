@@ -21,10 +21,10 @@ Topology spread constraints distribute pods across failure domains — zones, re
 - RSIS3 relevance: if cosmos runs replicated services, spread constraints keep the wiki available when a zone fails — a small spec change with large availability impact.
 
 ## Related
-- [[wiki/os-shell/numa-and-cpu-topology|NUMA & CPU Topology]] — related coverage in the same cluster
-- [[wiki/infrastructure/network-topology-design|Network Topology Design]] — related coverage in the same cluster
-- [[wiki/os-shell/pci-e-topology|PCIe Topology]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/os-shell/numa-and-cpu-topology|NUMA & CPU Topology]]
+- [[wiki/infrastructure/network-topology-design|Network Topology Design]]
+- [[wiki/os-shell/pci-e-topology|PCIe Topology]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

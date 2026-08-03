@@ -21,11 +21,11 @@ Connection pools reuse a bounded set of TCP connections to a backend (database, 
 - RSIS3 relevance: RSIS3 agents issuing parallel mykb queries benefit from a shared pool so bursts of retrieval do not exhaust the wiki daemon's connection budget.
 
 ## Related
-- [[wiki/cloud-infra/connection-multiplexing|Connection Multiplexing]] — related coverage in the same cluster
-- [[wiki/devops-infra/connection-pooling|Connection Pooling]] — related coverage in the same cluster
-- [[wiki/devops-infra/worker-pools|Worker Pools]] — related coverage in the same cluster
-- [[wiki/infrastructure/node-pools|Node Pools]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/cloud-infra/connection-multiplexing|Connection Multiplexing]]
+- [[wiki/devops-infra/connection-pooling|Connection Pooling]]
+- [[wiki/devops-infra/worker-pools|Worker Pools]]
+- [[wiki/infrastructure/node-pools|Node Pools]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

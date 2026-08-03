@@ -19,10 +19,9 @@ Concurrent rendering is React's model of interruptible rendering: a render can b
 - RSIS3/mykb relevance: concurrent rendering is scheduling with priorities, exactly the way RSIS3's L2/L3 loops prioritize urgent corrections over long-running improvements; the discipline of pure, restartable work units maps directly to idempotent loop steps that can be re-run safely.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/starttransition|startTransition]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/suspense-practice|Suspense in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/concurrent-rendering|Concurrent Rendering]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/starttransition|startTransition]]
+- [[wiki/frontend-frameworks/suspense-practice|Suspense in Practice]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]
+- [[wiki/web-platforms/state-management|State Management]]

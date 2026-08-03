@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Dead-Link Repair"
 description: "Finding and fixing links that point nowhere"
 tags: ["dead-links", "repair", "link-rot", "wiki"]

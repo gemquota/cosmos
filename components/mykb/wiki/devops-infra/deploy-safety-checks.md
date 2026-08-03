@@ -21,10 +21,10 @@ Deploy safety checks are automated gates evaluated before, during, and after a r
 - RSIS3 relevance: RSIS3's own upgrades (new loop versions, parameter migrations) deserve the same gates — validate the new artifacts and observe telemetry before trusting them in the live loop.
 
 ## Related
-- [[wiki/devops-infra/deployment-verification-synthetic-checks|Deployment Verification & Synthetic Checks]] — related coverage in the same cluster
-- [[wiki/devops-infra/smoke-tests-after-deploy|Smoke Tests After Deploy]] — related coverage in the same cluster
-- [[wiki/devops-infra/preflight-checks-and-guards|Preflight Checks & Guards]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/deployment-verification-synthetic-checks|Deployment Verification & Synthetic Checks]]
+- [[wiki/devops-infra/smoke-tests-after-deploy|Smoke Tests After Deploy]]
+- [[wiki/devops-infra/preflight-checks-and-guards|Preflight Checks & Guards]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

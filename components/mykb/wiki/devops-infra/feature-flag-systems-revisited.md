@@ -21,9 +21,9 @@ Feature flags decouple deployment from release: code ships behind a flag, and th
 - RSIS3 relevance: RSIS3's experimental strategies are natural feature flags — evaluate a new L2 behavior for a fraction of tasks, compare telemetry, and kill-switch it if pulses degrade.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/os-shell/systemd-and-init-systems|systemd & Init Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/intrusion-detection-systems|Intrusion Detection Systems]] — related coverage in the same cluster
-- [[wiki/devops-infra/dotenv-vs-config-systems|dotenv vs Config Systems]] — related coverage in the same cluster
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/os-shell/systemd-and-init-systems|systemd & Init Systems]]
+- [[wiki/infrastructure/intrusion-detection-systems|Intrusion Detection Systems]]
+- [[wiki/devops-infra/dotenv-vs-config-systems|dotenv vs Config Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

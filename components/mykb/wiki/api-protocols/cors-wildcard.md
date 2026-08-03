@@ -25,10 +25,10 @@ Operational tradeoffs: the wildcard is zero-maintenance and cache-friendly, whic
 RSIS3/mykb relevance: the dashboard's public snapshots can use the wildcard; its authenticated APIs must not. Documenting which endpoints are public versus credentialed keeps the CORS policy auditable in check-practices runs.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/cross-origin-isolation|Cross-Origin Isolation]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors-preflight|CORS Preflight]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors-credentials|CORS with Credentials]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors|CORS]] — related coverage in the same cluster
-- [[wiki/security-auth/cors-policy|CORS Policy]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/cross-origin-isolation|Cross-Origin Isolation]]
+- [[wiki/api-protocols/cors-preflight|CORS Preflight]]
+- [[wiki/api-protocols/cors-credentials|CORS with Credentials]]
+- [[wiki/api-protocols/cors|CORS]]
+- [[wiki/security-auth/cors-policy|CORS Policy]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

@@ -18,11 +18,8 @@ Object lock (S3), WORM (Azure immutability, GCP retention policies) make objects
 - Failure modes: forgetting versioning, making object lock impossible; retention periods misconfigured (years too long, blocking storage reclamation); legal holds without release procedures accumulating forever; and object lock applied to a bucket where lifecycle rules conflict, causing unexpected retains or denials.
 - Operational tradeoffs: immutability guarantees integrity at the cost of operational flexibility — plan retention durations with legal/compliance input and test the governance release path; compliance locks are a strong deterrent to insider deletion and ransomware (delete-key attacks can still lock out access, so protect credentials separately).
 - RSIS3/mykb relevance: the wiki's evidence and backup buckets use object lock; this note records the retention matrix and release runbook the loop consults before changing lifecycle policies.
-- Cost modeling: immutability grows storage monotonically until retention expires; model the growth when setting periods so the compliance feature does not become a surprise bill.
+- Cost modeling: immutability grows storage monotonically until retention expires; model the growth when setting periods so the compliance feature does not become a surprise bill. Review lock coverage quarterly — new buckets without versioning create enforcement gaps.
 
 ## Related
 - [[wiki/cloud-infra/object-storage-protocols|Object Storage Protocols]]
 - [[wiki/cloud-infra/object-storage|Object Storage]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

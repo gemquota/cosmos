@@ -25,10 +25,10 @@ Operational tradeoffs: isolation is the strongest client-side boundary available
 RSIS3/mykb relevance: if the dashboard needs shared-memory features or wants maximal hardening, the COOP+COEP contract is the documented state to target; recording it lets RSIS3 check the headers on deployment.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors-preflight|CORS Preflight]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors-credentials|CORS with Credentials]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors-wildcard|CORS Wildcards]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors|CORS]] — related coverage in the same cluster
-- [[wiki/security-auth/cors-policy|CORS Policy]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/cors-preflight|CORS Preflight]]
+- [[wiki/api-protocols/cors-credentials|CORS with Credentials]]
+- [[wiki/api-protocols/cors-wildcard|CORS Wildcards]]
+- [[wiki/api-protocols/cors|CORS]]
+- [[wiki/security-auth/cors-policy|CORS Policy]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

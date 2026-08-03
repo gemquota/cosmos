@@ -20,10 +20,10 @@ Datacenter redundancy is the discipline of having no single points of failure in
 - For mykb: the node anchors the availability branch of the infrastructure cluster — DR replication, database failover automation, and time synchronization all connect here.
 
 ## Related
-- [[wiki/devops-infra/replication-and-failover-dr|Replication & Failover DR]] — related coverage in the same cluster
-- [[wiki/devops-infra/database-failover-automation|Database Failover Automation]] — related coverage in the same cluster
-- [[wiki/infrastructure/time-synchronization-in-dc|Time Synchronization in the Datacenter]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
+- [[wiki/devops-infra/replication-and-failover-dr|Replication & Failover DR]]
+- [[wiki/devops-infra/database-failover-automation|Database Failover Automation]]
+- [[wiki/infrastructure/time-synchronization-in-dc|Time Synchronization in the Datacenter]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

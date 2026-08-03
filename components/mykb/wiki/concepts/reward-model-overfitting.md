@@ -24,5 +24,5 @@ Reward models overfit when they memorize annotator quirks or dataset artifacts i
 - [[wiki/concepts/overfitting-llm|Overfitting in LLMs]] — the general failure
 - [[wiki/concepts/reward-model-gaming|Reward Model Gaming]] — the consequence
 - [[wiki/concepts/eval-contamination|Eval Contamination]] — data leak
-- [[wiki/concepts/rlaif|RLAIF (RL from AI Feedback)]] — the full treatment of this theme
-- [[wiki/ai-ml/reward-model-training|Reward Model Training]] — existing graph context
+- [[wiki/concepts/rlaif|RLAIF (RL from AI Feedback)]]
+- [[wiki/ai-ml/reward-model-training|Reward Model Training]]

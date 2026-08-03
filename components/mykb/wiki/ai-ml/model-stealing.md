@@ -26,4 +26,3 @@ Model stealing attacks reconstruct a model's behaviour (distillation) or expose 
 - [[wiki/ai-ml/data-poisoning|Data Poisoning]] — The training-side counterpart
 - [[wiki/ai-ml/gpt-4|GPT-4]] — A frequent target of extraction research
 - [[wiki/ml-frameworks/openai-api|OpenAI API]] — The exposed surface
-- [[raw/archive/session-artifacts-2026-07/topics/security|security — Security-domain classification

@@ -24,6 +24,3 @@ Preemptible/spot VM workloads are interruptible by design — preemptible instan
 ## Related
 - [[wiki/cloud-infra/spot-and-preemptible|Spot & Preemptible Instances]]
 - [[wiki/infrastructure/stateful-workloads|Stateful Workloads]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

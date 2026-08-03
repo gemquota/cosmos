@@ -20,8 +20,8 @@ Stream processing libraries like Kafka Streams embed processing inside your appl
 - Operational notes: monitor consumer lag and state store size, test exactly-once behavior under restarts, and document the processing topology.
 - RSIS3 relevance: RSIS3's event processing (pulse aggregation, curation counts) fits a library-level stream processor — embedded, easy to operate, exactly-once where it matters.
 
-## Related
 
+## Related
 - [[wiki/data-storage/stream-processing-engines|Stream Processing Engines]] — platform engines
 - [[wiki/data-storage/exactly-once-semantics|Exactly-Once Semantics]] — guarantee spectrum
 - [[wiki/data-storage/kafka-streams-and-ksql|Kafka Streams And Ksql]] — Kafka Streams specifics

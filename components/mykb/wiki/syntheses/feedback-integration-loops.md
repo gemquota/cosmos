@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Feedback Integration Loops"
 description: "Mechanisms that convert feedback into durable system changes"
 tags: ["feedback", "integration", "loops", "improvement"]

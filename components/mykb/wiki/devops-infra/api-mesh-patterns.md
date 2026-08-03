@@ -21,9 +21,9 @@ API mesh patterns compose multiple API gateways and service-mesh layers so that 
 - RSIS3 relevance: RSIS3 loops call internal services (the MyKB daemon, SPACE engine); explicit mesh boundaries and retry policies between components keep one degraded loop from flooding the others with retries.
 
 ## Related
-- [[wiki/devops-infra/api-gateways|API Gateways]] — related coverage in the same cluster
-- [[wiki/devops-infra/service-mesh-sidecars|Service Mesh Sidecars]] — related coverage in the same cluster
-- [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]] — related coverage in the same cluster
-- [[wiki/devops-infra/api-compatibility-policies|API Compatibility Policies]] — related coverage in the same cluster
+- [[wiki/devops-infra/api-gateways|API Gateways]]
+- [[wiki/devops-infra/service-mesh-sidecars|Service Mesh Sidecars]]
+- [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]]
+- [[wiki/devops-infra/api-compatibility-policies|API Compatibility Policies]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

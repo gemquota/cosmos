@@ -19,10 +19,9 @@ The Vue Composition API organizes component logic inside a `setup()` function (o
 - RSIS3/mykb relevance: composables are the frontend version of RSIS3's modular loop functions — self-contained units that own their state, derivation, and lifecycle, composable in any order — and the same single-responsibility rule applies to both layers of the stack.
 
 ## Related
-- [[wiki/frontend-frameworks/vue-ecosystem|Vue Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/vue-reactivity|Vue Reactivity]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/reactivity-pitfalls|Reactivity Pitfalls]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/vue-composition-api|Vue Composition API]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/vue-ecosystem|Vue Ecosystem]]
+- [[wiki/frontend-frameworks/vue-reactivity|Vue Reactivity]]
+- [[wiki/frontend-frameworks/reactivity-pitfalls|Reactivity Pitfalls]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

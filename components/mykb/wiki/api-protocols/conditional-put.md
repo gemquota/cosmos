@@ -25,10 +25,8 @@ Operational tradeoffs: conditional PUTs add one round trip (read before write) a
 RSIS3/mykb relevance: concurrent RSIS3 loops editing the same wiki page are exactly this race; the standing rule is "read, edit, conditional PUT with ETag, merge on 412" — a pattern already natural to the wiki's revision model.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/error-codes-api|Error Codes in APIs]] — related coverage in the same cluster
-- [[wiki/api-protocols/conditional-put|Conditional PUT]] — related coverage in the same cluster
-- [[wiki/api-protocols/error-codes-api|Error Codes in APIs]] — related coverage in the same cluster
-- [[wiki/api-protocols/error-contract-design|Error Contract Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/problem-details|Problem Details]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-conditional-requests|HTTP Conditional Requests]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/error-codes-api|Error Codes in APIs]]
+- [[wiki/api-protocols/error-contract-design|Error Contract Design]]
+- [[wiki/api-protocols/problem-details|Problem Details]]
+- [[wiki/api-protocols/http-conditional-requests|HTTP Conditional Requests]]

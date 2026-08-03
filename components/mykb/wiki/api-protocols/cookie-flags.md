@@ -25,10 +25,10 @@ Operational tradeoffs: the secure baseline is Secure plus HttpOnly plus SameSite
 RSIS3/mykb relevance: the dashboard's session handling should follow the Secure+HttpOnly+SameSite=Lax baseline; documenting the flag policy gives RSIS3's security checks a concrete assertion to verify.
 
 ## Related
-- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/secure-flag|Secure Cookie Flag]] — related coverage in the same cluster
-- [[wiki/api-protocols/httponly-flag|HttpOnly Cookie Flag]] — related coverage in the same cluster
-- [[wiki/api-protocols/samesite-lax-strict|SameSite Lax vs Strict]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-cookies|HTTP Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf|CSRF]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]]
+- [[wiki/api-protocols/secure-flag|Secure Cookie Flag]]
+- [[wiki/api-protocols/httponly-flag|HttpOnly Cookie Flag]]
+- [[wiki/api-protocols/samesite-lax-strict|SameSite Lax vs Strict]]
+- [[wiki/api-protocols/http-cookies|HTTP Cookies]]
+- [[wiki/api-protocols/csrf|CSRF]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

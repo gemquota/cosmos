@@ -3340,7 +3340,7 @@
  "wiki/data-storage/citation-necessity.md",
  "wiki/data-storage/citation-placement.md",
  "wiki/data-storage/clickhouse-and-columnar-oltp.md",
- "wiki/data-storage/clickhouse-vs-druid-pinot-druid-architecture.md",
+ "wiki/data-storage/clickhouse-vs-druid-vs-pinot.md",
  "wiki/data-storage/clustered-tables.md",
  "wiki/data-storage/code-in-wiki.md",
  "wiki/data-storage/cohort-and-retention-analytics.md",

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Post-Pass Consolidation"
 description: "Settling a work pass into durable structure before the next one"
 tags: ["consolidation", "passes", "knowledge", "process"]

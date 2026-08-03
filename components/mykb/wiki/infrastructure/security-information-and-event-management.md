@@ -21,9 +21,9 @@ A SIEM centralizes logs, events, and alerts from across the estate and turns the
 - RSIS3/mykb relevance: the SIEM's triage loop — collect, correlate, alert, investigate, tune rules — is a direct analogue of RSIS3's L1 action loop, and this node keeps that analogy retrievable for telemetry design.
 
 ## Related
-- [[wiki/os-shell/logical-volume-management|Logical Volume Management]] — related coverage in the same cluster
-- [[wiki/devops-infra/helm-and-chart-management|Helm & Chart Management]] — related coverage in the same cluster
-- [[wiki/infrastructure/ssh-key-management|SSH Key Management]] — related coverage in the same cluster
-- [[wiki/cloud-infra/cloud-security-groups|Cloud Security Groups]] — related coverage in the same cluster
+- [[wiki/os-shell/logical-volume-management|Logical Volume Management]]
+- [[wiki/devops-infra/helm-and-chart-management|Helm & Chart Management]]
+- [[wiki/infrastructure/ssh-key-management|SSH Key Management]]
+- [[wiki/cloud-infra/cloud-security-groups|Cloud Security Groups]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

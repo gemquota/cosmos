@@ -22,10 +22,10 @@ tcpdump and Wireshark form the canonical packet-analysis workflow: tcpdump captu
 - RSIS3/mykb relevance: packet-level evidence is the ground truth loops use to validate network hypotheses; this node keeps the capture-and-dissect workflow retrievable so telemetry claims can be checked against actual bytes.
 
 ## Related
-- [[wiki/infrastructure/packet-analysis-with-tcpdump|Packet Analysis with tcpdump]] — related coverage in the same cluster
-- [[wiki/infrastructure/tcpdump-filters-and-capture|tcpdump Filters & Capture]] — related coverage in the same cluster
-- [[wiki/os-shell/tcpdump|tcpdump]] — related coverage in the same cluster
-- [[wiki/os-shell/wireshark-and-tshark|Wireshark & tshark]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
+- [[wiki/infrastructure/packet-analysis-with-tcpdump|Packet Analysis with tcpdump]]
+- [[wiki/infrastructure/tcpdump-filters-and-capture|tcpdump Filters & Capture]]
+- [[wiki/os-shell/tcpdump|tcpdump]]
+- [[wiki/os-shell/wireshark-and-tshark|Wireshark & tshark]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

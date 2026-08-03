@@ -21,8 +21,8 @@ Server-side request forgery (SSRF) lets an attacker make the server fetch URLs o
 - Operational notes: centralize URL fetching behind one validated library, test bypass techniques, and keep metadata endpoints unreachable from fetch hosts.
 - RSIS3 relevance: any URL-fetching tool (link previews, scrapers, webhooks) in the wiki must implement SSRF guardrails — outbound requests are a trust boundary like any other.
 
-## Related
 
+## Related
 - [[wiki/security-auth/xml-external-entities|XML External Entities]] — XXE can trigger SSRF
 - [[wiki/security-auth/network-segmentation|Network Segmentation]] — limiting internal reachability
 - [[wiki/api-protocols/webhooks|Webhooks]] — inbound URL-driven requests need validation

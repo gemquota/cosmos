@@ -24,4 +24,3 @@ Delay of gratification is the capacity to forgo an immediate reward for a larger
 - [[wiki/meta-learning/self-control-research|Self-Control Research]] — the broader research program
 - [[wiki/meta-learning/temporal-motivation-theory|Temporal Motivation Theory]] — value discounts over time
 - [[wiki/meta-learning/goal-intentions|Goal Intentions]] — implementation intentions support delay
-- [[wiki/meta-learning/delay-of-gratification|Delay of Gratification]] — self-reference for the construct

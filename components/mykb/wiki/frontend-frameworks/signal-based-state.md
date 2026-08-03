@@ -19,10 +19,10 @@ Signal-based state is a model where state lives in fine-grained reactive cells �
 - RSIS3/mykb relevance: signals are dependency-tracked invalidation, the same primitive RSIS3 uses to decide which derived metrics and checkpoints must refresh when a registry entry changes — a shared conceptual foundation between the dashboard's UI and the loop's state engine.
 
 ## Related
-- [[wiki/frontend-frameworks/solid-js-signals|Solid.js Signals]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/observable-pattern|Observable Pattern]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/rxjs-practice|RxJS in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/angular-signals|Angular Signals]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/solid-js-signals|Solid.js Signals]]
+- [[wiki/frontend-frameworks/observable-pattern|Observable Pattern]]
+- [[wiki/frontend-frameworks/rxjs-practice|RxJS in Practice]]
+- [[wiki/frontend-frameworks/angular-signals|Angular Signals]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

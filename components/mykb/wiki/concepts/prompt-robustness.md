@@ -24,5 +24,5 @@ Prompt robustness is a language model's tendency to behave consistently across r
 - [[wiki/concepts/adversarial-robustness|Adversarial Robustness]] — the attack angle
 - [[wiki/concepts/context-robustness|Context Robustness]] — the context angle
 - [[wiki/concepts/task-robustness|Task Robustness]] — the task angle
-- [[wiki/agent-systems/inference-time-reasoning|Inference-Time Reasoning]] — the full treatment of this theme
-- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]] — existing graph context
+- [[wiki/agent-systems/inference-time-reasoning|Inference-Time Reasoning]]
+- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]]

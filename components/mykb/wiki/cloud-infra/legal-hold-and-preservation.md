@@ -21,8 +21,3 @@ Legal hold freezes data from deletion or modification when litigation or investi
 - Hold audit: reconcile active holds against retention policies quarterly; the intersection is where deletion automation and legal obligations collide.
 - Release authority: define who may release a hold and require written confirmation; an unauthorized release is a spoliation event with legal consequences.
 
-## Related
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

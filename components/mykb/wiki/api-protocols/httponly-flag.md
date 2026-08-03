@@ -25,10 +25,10 @@ Operational tradeoffs: HttpOnly costs nothing and breaks almost nothing — the 
 RSIS3/mykb relevance: the dashboard's session cookie must be HttpOnly; documenting the flag set lets RSIS3's security checks assert it on every auth response rather than relying on memory.
 
 ## Related
-- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/samesite-lax-strict|SameSite Lax vs Strict]] — related coverage in the same cluster
-- [[wiki/api-protocols/cookie-prefixes|Cookie Prefixes]] — related coverage in the same cluster
-- [[wiki/api-protocols/cookie-scoping|Cookie Scoping]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-cookies|HTTP Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf|CSRF]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]]
+- [[wiki/api-protocols/samesite-lax-strict|SameSite Lax vs Strict]]
+- [[wiki/api-protocols/cookie-prefixes|Cookie Prefixes]]
+- [[wiki/api-protocols/cookie-scoping|Cookie Scoping]]
+- [[wiki/api-protocols/http-cookies|HTTP Cookies]]
+- [[wiki/api-protocols/csrf|CSRF]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

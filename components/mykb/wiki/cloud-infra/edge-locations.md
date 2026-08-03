@@ -26,5 +26,3 @@ Edge locations are the distributed points where a provider terminates user traff
 - [[wiki/devops-infra/rate-limiting-at-edge|Rate Limiting at the Edge]]
 - [[wiki/cloud-infra/edge-computing|Edge Computing]]
 - [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

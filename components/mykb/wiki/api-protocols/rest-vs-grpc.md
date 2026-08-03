@@ -20,10 +20,9 @@ REST and gRPC represent two poles of API design: REST sends self-describing JSON
 - RSIS3/mykb relevance: RSIS3 loops exchange structured artifacts between Python services; a typed contract (protobuf or validated JSON Schema) keeps registry entries and pulses machine-verifiable, and streaming fits telemetry flows that push many small updates without polling.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-vs-rpc|REST vs RPC]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-vs-graphql|REST vs GraphQL]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-vs-grpc|REST vs gRPC]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-apis|REST APIs]] — related coverage in the same cluster
-- [[wiki/api-protocols/rpc-styles|RPC Styles]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql|GraphQL]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/rest-vs-rpc|REST vs RPC]]
+- [[wiki/api-protocols/rest-vs-graphql|REST vs GraphQL]]
+- [[wiki/api-protocols/rest-apis|REST APIs]]
+- [[wiki/api-protocols/rpc-styles|RPC Styles]]
+- [[wiki/api-protocols/graphql|GraphQL]]

@@ -21,10 +21,10 @@ Golden images are pre-baked, hardened base images — OS, security patches, agen
 - RSIS3 relevance: cosmos services benefit from the same discipline — a known, reproducible base for the daemon and dashboard serving ensures new instances behave like tested ones.
 
 ## Related
-- [[wiki/devops-infra/container-images-oci|Container Images (OCI)]] — related coverage in the same cluster
-- [[wiki/devops-infra/image-signing-and-notary|Image Signing & Notary]] — related coverage in the same cluster
-- [[wiki/devops-infra/trivy-and-image-scanning|Trivy & Image Scanning]] — related coverage in the same cluster
-- [[wiki/devops-infra/golden-signals|Golden Signals]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/container-images-oci|Container Images (OCI)]]
+- [[wiki/devops-infra/image-signing-and-notary|Image Signing & Notary]]
+- [[wiki/devops-infra/trivy-and-image-scanning|Trivy & Image Scanning]]
+- [[wiki/devops-infra/golden-signals|Golden Signals]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

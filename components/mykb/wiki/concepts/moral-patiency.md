@@ -24,5 +24,5 @@ Moral patiency asks who or what deserves moral consideration — humans, animals
 - [[wiki/concepts/suffering-risk|Suffering Risk]] — the patiency-weighted risk
 - [[wiki/concepts/rights-for-ai|Rights for AI]] — patiency's legal face
 - [[wiki/concepts/moral-weights|Moral Weights]] — the comparative layer
-- [[wiki/concepts/value-specification|Value Specification]] — the full treatment of this theme
-- [[wiki/concepts/utility-functions|Utility Functions]] — existing graph context
+- [[wiki/concepts/value-specification|Value Specification]]
+- [[wiki/concepts/utility-functions|Utility Functions]]

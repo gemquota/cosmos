@@ -18,12 +18,13 @@ Rollup is a tree-shaking-first bundler for libraries and applications: ESM input
 - Tradeoffs: Rollup's output precision and tree shaking suit published libraries; esbuild bundles faster but with less aggressive dead-code elimination; webpack carries ecosystem depth; the mature pattern is Rollup for libraries, Vite/Rollup for apps, and esbuild where raw speed wins.
 - Operational notes: verify tree shaking with bundle analysis, test all output formats, and pin peer dependencies as external.
 - RSIS3 relevance: if cosmos publishes the dashboard as a reusable component or library, Rollup's ESM/CJS outputs and tree shaking keep the artifact lean.
+- Output control: preserveModules keeps the source file structure for library consumers, and explicit chunkFileNames and assetFileNames stabilize long-term caching; publish sourcemaps with the library so downstream debugging works, set external and peerDependencies explicitly so the consumer's copy is used instead of a bundled duplicate, since two copies of a package break instanceof checks and stateful singletons.
 
 ## Related
-- [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/vite-practice|Vite in Practice]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/webpack-practice|Webpack in Practice]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/parcel-practice|Parcel in Practice]] — related coverage in the same cluster
-- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/hot-reload|Hot Reload]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]]
+- [[wiki/js-ts-ecosystem/vite-practice|Vite in Practice]]
+- [[wiki/js-ts-ecosystem/webpack-practice|Webpack in Practice]]
+- [[wiki/js-ts-ecosystem/parcel-practice|Parcel in Practice]]
+- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]]
+- [[wiki/frontend-frameworks/hot-reload|Hot Reload]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

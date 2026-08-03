@@ -26,5 +26,3 @@ Snapshot lifecycle policies automate snapshot creation, retention, and deletion 
 - [[wiki/cloud-infra/function-execution-lifecycle|Function Execution Lifecycle]]
 - [[wiki/devops-infra/ingress-egress-policies|Ingress & Egress Policies]]
 - [[wiki/devops-infra/network-policies-kubernetes|Kubernetes Network Policies]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

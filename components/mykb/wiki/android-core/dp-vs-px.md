@@ -10,7 +10,7 @@ source: []
 
 # DP vs PX
 
-dp (density-independent pixels) normalizes sizes across screen densities: 1dp is 1px on mdpi and 3px on xxxhdpi. sp scales text with the user font-size setting, so text uses sp and geometry uses dp.
+dp (density-independent pixels) normalizes sizes across screen densities: 1dp is 1px on mdpi and 4px on xxxhdpi. sp scales text with the user font-size setting, so text uses sp and geometry uses dp.
 - Converting: px = dp * density, where density is the bucket factor.
 - Use sp for text so accessibility font scaling works.
 - Never mix: fixed px layouts break on high-density screens.
@@ -26,8 +26,8 @@ dp (density-independent pixels) normalizes sizes across screen densities: 1dp is
 - **Compose** — Jetpack Compose uses dp by default for layout and sp for text units; the same density rules apply, with `LocalDensity` providing the current conversion factors; tests should run at multiple densities (mdpi, xxhdpi) and at maximum font scale to catch unit mistakes early.
 - **mykb relevance** — the same lesson generalizes: any UI artifact the wiki documents (dashboard embeds, web views) should specify units that adapt to the viewing context rather than fixed pixels, keeping accessibility and density variation first-class.
 
-## Related
 
+## Related
 - [[wiki/android-core/density-buckets|Density Buckets]] — dp values select bucket resources
 - [[wiki/frontend-frameworks/responsive-design|Responsive Design]] — density independence is foundational
 - [[wiki/mobile-platform/mobile-accessibility|Mobile Accessibility]] — sp text honors user font settings

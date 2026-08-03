@@ -21,9 +21,9 @@ Renovate (and Dependabot) automate dependency updates: they watch package manife
 - RSIS3 relevance: cosmos's dependencies (python, node) should ride the same continuous-update loop — RSIS3's own patch cadence signal benefits when the underlying stack stays current.
 
 ## Related
-- [[wiki/devops-infra/dependency-mapping-and-blast-radius|Dependency Mapping & Blast Radius]] — related coverage in the same cluster
-- [[wiki/devops-infra/os-updates-and-immutable-images|OS Updates & Immutable Images]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/dependency-mapping-and-blast-radius|Dependency Mapping & Blast Radius]]
+- [[wiki/devops-infra/os-updates-and-immutable-images|OS Updates & Immutable Images]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

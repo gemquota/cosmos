@@ -22,9 +22,9 @@ The 0-255 exit status contract and set -e style error propagation. Exit codes ar
 - **RSIS3 relevance** — RSIS3's automation runs shell pipelines for builds, snapshot regeneration, and practice checks; each run's exit status is the first signal the loop logs, so the telemetry layer should record status, stderr tail, and the failing pipeline stage — an exit-0 run with corrupted output is worse than a loud failure.
 
 ## Related
-- [[wiki/devops-infra/slo-and-error-budgets|SLOs & Error Budgets]] — related coverage in the same cluster
-- [[wiki/os-shell/syscalls-and-trap-handling|Syscalls & Trap Handling]] — related coverage in the same cluster
-- [[wiki/os-shell/exit-codes|Exit Codes]] — related coverage in the same cluster
-- [[wiki/devops-infra/error-budgets|Error Budgets]] — related coverage in the same cluster
+- [[wiki/devops-infra/slo-and-error-budgets|SLOs & Error Budgets]]
+- [[wiki/os-shell/syscalls-and-trap-handling|Syscalls & Trap Handling]]
+- [[wiki/os-shell/exit-codes|Exit Codes]]
+- [[wiki/devops-infra/error-budgets|Error Budgets]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

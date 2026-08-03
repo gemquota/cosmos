@@ -21,9 +21,9 @@ GitOps multi-environment patterns structure how one set of manifests becomes dev
 - RSIS3 relevance: cosmos's own environments (dev wiki, published dashboard) benefit from the same overlay structure so promoting a dashboard build or wiki update is a reviewed diff.
 
 ## Related
-- [[wiki/devops-infra/gitops-argocd|GitOps & ArgoCD]] — related coverage in the same cluster
-- [[wiki/cloud-infra/multi-cloud-hybrid-cloud|Multi-Cloud & Hybrid Cloud]] — related coverage in the same cluster
-- [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]] — related coverage in the same cluster
-- [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]] — related coverage in the same cluster
+- [[wiki/devops-infra/gitops-argocd|GitOps & ArgoCD]]
+- [[wiki/cloud-infra/multi-cloud-hybrid-cloud|Multi-Cloud & Hybrid Cloud]]
+- [[wiki/devops-infra/nginx-configuration-patterns|NGINX Configuration Patterns]]
+- [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

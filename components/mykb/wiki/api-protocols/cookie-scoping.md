@@ -25,10 +25,10 @@ Operational tradeoffs: the narrowest scope (host-only, Path=/, Secure, SameSite=
 RSIS3/mykb relevance: the wiki's auth boundary is a single host, so the standing rule is host-only cookies; documenting the scope contract prevents future "convenience" widening during refactors.
 
 ## Related
-- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/domain-cookies|Domain Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/path-cookies|Path Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/third-party-cookies|Third-Party Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-cookies|HTTP Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf|CSRF]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]]
+- [[wiki/api-protocols/domain-cookies|Domain Cookies]]
+- [[wiki/api-protocols/path-cookies|Path Cookies]]
+- [[wiki/api-protocols/third-party-cookies|Third-Party Cookies]]
+- [[wiki/api-protocols/http-cookies|HTTP Cookies]]
+- [[wiki/api-protocols/csrf|CSRF]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

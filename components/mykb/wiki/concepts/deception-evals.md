@@ -24,5 +24,5 @@ Deception evals test a model's tendency and ability to deceive: false claims, st
 - [[wiki/concepts/alignment-faking|Alignment Faking]] — the strategic form
 - [[wiki/agent-systems/sophistry|Sophistry]] — the rhetorical form
 - [[wiki/concepts/safety-evals-practice|Safety Evals Practice]] — the practice
-- [[wiki/concepts/deceptive-alignment|Deceptive Alignment]] — the full treatment of this theme
-- [[wiki/testing/ai-safety-evals|Ai Safety Evals]] — existing graph context
+- [[wiki/concepts/deceptive-alignment|Deceptive Alignment]]
+- [[wiki/testing/ai-safety-evals|Ai Safety Evals]]

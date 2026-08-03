@@ -25,10 +25,10 @@ Operational tradeoffs: emitting quota headers costs a counter read per request a
 RSIS3/mykb relevance: RSIS3 loops calling external APIs should read quota headers and pace accordingly; documenting the header contract for internal APIs keeps loop backoff aligned.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/retry-after-web|Retry-After]] — related coverage in the same cluster
-- [[wiki/api-protocols/429-handling|Handling 429]] — related coverage in the same cluster
-- [[wiki/api-protocols/503-handling|Handling 503]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-status-codes|HTTP Status Codes]] — related coverage in the same cluster
-- [[wiki/api-protocols/retry-backoff|Retry & Backoff]] — related coverage in the same cluster
-- [[wiki/api-protocols/error-contract-design|Error Contract Design]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/retry-after-web|Retry-After]]
+- [[wiki/api-protocols/429-handling|Handling 429]]
+- [[wiki/api-protocols/503-handling|Handling 503]]
+- [[wiki/api-protocols/http-status-codes|HTTP Status Codes]]
+- [[wiki/api-protocols/retry-backoff|Retry & Backoff]]
+- [[wiki/api-protocols/error-contract-design|Error Contract Design]]

@@ -25,10 +25,10 @@ Operational tradeoffs: rotation schedules trade key hygiene against operational 
 RSIS3/mykb relevance: the wiki's token validation should handle multi-key JWKS gracefully; documenting the rotation cadence and overlap rule keeps RSIS3's loops from caching keys past rotation.
 
 ## Related
-- [[wiki/api-protocols/jwt-practice|JWT in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/jti-claims|JWT ID Claims]] — related coverage in the same cluster
-- [[wiki/api-protocols/scope-validation|Scope Validation]] — related coverage in the same cluster
-- [[wiki/api-protocols/audience-claims|Audience Claims]] — related coverage in the same cluster
-- [[wiki/api-protocols/json-web-tokens|JWT]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2-scopes|OAuth Scopes]] — related coverage in the same cluster
-- [[wiki/identity/jwks|JWKS]] — related coverage in the same cluster
+- [[wiki/api-protocols/jwt-practice|JWT in Practice]]
+- [[wiki/api-protocols/jti-claims|JWT ID Claims]]
+- [[wiki/api-protocols/scope-validation|Scope Validation]]
+- [[wiki/api-protocols/audience-claims|Audience Claims]]
+- [[wiki/api-protocols/json-web-tokens|JWT]]
+- [[wiki/api-protocols/oauth2-scopes|OAuth Scopes]]
+- [[wiki/identity/jwks|JWKS]]

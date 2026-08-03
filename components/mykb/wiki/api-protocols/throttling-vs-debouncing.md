@@ -19,10 +19,8 @@ Throttling and debouncing are the two standard strategies for taming high-freque
 - RSIS3/mykb relevance: the same choice governs telemetry and pulse writing: throttle high-frequency loop metrics so the dashboard stays smooth, debounce expensive knowledge-graph recomputes so they happen once per quiet period, and use rAF-style sampling for anything that feeds a render loop.
 
 ## Related
-- [[wiki/api-protocols/rate-limiting-api|Rate Limiting for APIs]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-throttling|API Throttling]] — related coverage in the same cluster
-- [[wiki/api-protocols/throttling-vs-debouncing|Throttling vs Debouncing]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-throttling|API Throttling]] — related coverage in the same cluster
-- [[wiki/api-protocols/rate-limiting|Rate Limiting]] — related coverage in the same cluster
-- [[wiki/api-protocols/rate-limit-algorithms|Rate Limit Algorithms]] — related coverage in the same cluster
-- [[wiki/api-protocols/rate-limit-headers|Rate Limit Headers]] — related coverage in the same cluster
+- [[wiki/api-protocols/rate-limiting-api|Rate Limiting for APIs]]
+- [[wiki/api-protocols/api-throttling|API Throttling]]
+- [[wiki/api-protocols/rate-limiting|Rate Limiting]]
+- [[wiki/api-protocols/rate-limit-algorithms|Rate Limit Algorithms]]
+- [[wiki/api-protocols/rate-limit-headers|Rate Limit Headers]]

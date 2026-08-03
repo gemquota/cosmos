@@ -20,8 +20,8 @@ SCD Type 2 adds a new row whenever a tracked attribute changes, preserving the o
 - Operational notes: track tracked-attribute lists explicitly, index effective dates, and test historical joins in CI.
 - RSIS3 relevance: the wiki's entity and status history are naturally Type 2 — preserving versioned truth is what makes the knowledge graph auditable.
 
-## Related
 
+## Related
 - [[wiki/data-storage/slowly-changing-dimensions|Slowly Changing Dimensions]] — existing note on SCD family
 - [[wiki/data-storage/surrogate-keys|Surrogate vs Natural Keys]] — versioning requires surrogate keys
 - [[wiki/data-storage/dimension-tables-and-grains|Dimension Tables And Grains]] — dimension design fundamentals

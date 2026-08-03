@@ -24,5 +24,5 @@ Moral weights assign relative moral significance across beings and values — e.
 - [[wiki/concepts/suffering-risk|Suffering Risk]] — the weighted outcome
 - [[wiki/concepts/expected-value-reasoning|Expected Value Reasoning]] — the calculus
 - [[wiki/concepts/moral-status-questions|Moral Status Questions]] — the boundary question
-- [[wiki/concepts/value-specification|Value Specification]] — the full treatment of this theme
-- [[wiki/ai-ml/shard-theory|Shard Theory]] — existing graph context
+- [[wiki/concepts/value-specification|Value Specification]]
+- [[wiki/ai-ml/shard-theory|Shard Theory]]

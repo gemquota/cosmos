@@ -25,10 +25,10 @@ Operational tradeoffs: partitioning trades cross-site functionality for privacy;
 RSIS3/mykb relevance: the dashboard embeds third-party widgets; documenting which cookies are partitioned and which are first-party keeps the privacy posture auditable in RSIS3's checks.
 
 ## Related
-- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/cross-site-requests|Cross-Site Requests]] — related coverage in the same cluster
-- [[wiki/api-protocols/cookie-flags|Cookie Flags]] — related coverage in the same cluster
-- [[wiki/api-protocols/secure-flag|Secure Cookie Flag]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-cookies|HTTP Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf|CSRF]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]]
+- [[wiki/api-protocols/cross-site-requests|Cross-Site Requests]]
+- [[wiki/api-protocols/cookie-flags|Cookie Flags]]
+- [[wiki/api-protocols/secure-flag|Secure Cookie Flag]]
+- [[wiki/api-protocols/http-cookies|HTTP Cookies]]
+- [[wiki/api-protocols/csrf|CSRF]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

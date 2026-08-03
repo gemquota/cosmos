@@ -19,8 +19,8 @@ select, poll, and epoll are the Linux APIs for waiting on many file descriptors 
 - Operational tradeoffs: epoll's scaling wins come with complexity: registration state, edge-trigger semantics, and readiness-vs-completion confusion (epoll tells you "ready", not "done" — that is io_uring's job). The practice rules: use epoll (or a library built on it) for any server with more than a few hundred connections, prefer level-triggered unless you understand edge semantics, set `RLIMIT_NOFILE` deliberately, and audit fd usage under load. RSIS3/mykb relevance: the daemon's many client connections (dashboard, agents, CLI) are an epoll-class workload; choosing the right readiness model keeps one slow client from blocking the loop, mirroring RSIS3's backpressure discipline.
 
 ## Related
-- [[wiki/os-shell/aio-and-epoll|AIO & epoll]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/os-shell/aio-and-epoll|AIO & epoll]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

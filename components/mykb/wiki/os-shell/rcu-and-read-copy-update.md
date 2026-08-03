@@ -19,9 +19,9 @@ RCU (Read-Copy-Update) is a synchronization mechanism that makes reads of shared
 - Operational tradeoffs: RCU trades writer complexity for reader performance — the read path becomes as cheap as an ordinary dereference with no cache-line bouncing, which is why it scales so well, while writers pay for copying and for grace-period latency (the deferred-free window). It is the right tool for read-mostly data updated rarely (tables, caches, registries); for write-heavy data, locks or per-CPU structures are simpler. The practice rules: keep read-side sections short and non-sleeping, always pair publication with `synchronize_rcu`/`call_rcu` before freeing, and prefer library implementations over hand-rolled ones. RSIS3/mykb relevance: RCU is the canonical read-mostly pattern — the wiki's link graph and the loop registry are read far more than written, and RCU-style "publish new version, defer reclamation" is exactly how MyKB should swap indexes without blocking readers.
 
 ## Related
-- [[wiki/os-shell/copy-on-write-filesystems|Copy-on-Write Filesystems]] — related coverage in the same cluster
-- [[wiki/os-shell/copy-on-write|Copy-on-Write]] — related coverage in the same cluster
-- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/physics-update|Physics Update]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
+- [[wiki/os-shell/copy-on-write-filesystems|Copy-on-Write Filesystems]]
+- [[wiki/os-shell/copy-on-write|Copy-on-Write]]
+- [[wiki/shell-environment/categories/web-dev/subcategories/css-html/physics-update|Physics Update]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

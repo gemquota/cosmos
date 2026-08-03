@@ -21,8 +21,8 @@ MongoDB's availability architecture is the replica set: a small cluster of mongo
 - Schema design (embedded vs referenced) drives performance more than cluster size. MongoDB's document model rewards embedding (related data in one document — one operation, atomic, local) over referencing (joins via $lookup — slower, more round trips); the design decision of what to embed is the single biggest performance lever, and a mis-modeled schema cannot be fixed by adding cluster capacity. The failure modes: unbounded document growth (embedded arrays that never stop growing), $lookup-heavy designs (the "join" tax), and hot shard keys in sharded clusters.
 - For mykb: the node anchors the MongoDB branch — document stores, replica-set roots, and data modeling connect here.
 
-## Related
 
+## Related
 - [[wiki/data-storage/document-stores|Document Stores]] — document model
 - [[wiki/data-storage/multi-leader-replication|Multi-Leader Replication]] — replica set topology roots
 - [[wiki/data-storage/mongodb-data-modeling|Mongodb Data Modeling]] — modeling for MongoDB

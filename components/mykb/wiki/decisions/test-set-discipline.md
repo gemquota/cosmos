@@ -25,5 +25,5 @@ Test set discipline means the final test data is never used for training, tuning
 - [[wiki/concepts/benchmark-contamination|Benchmark Contamination]] — the violation
 - [[wiki/concepts/test-set-leakage|Test Set Leakage]] — the leak
 - [[wiki/concepts/evals-practice-ai|Evals Practice]] — the norms
-- [[wiki/agent-systems/self-evaluation|Self-Evaluation]] — the full treatment of this theme
-- [[wiki/ai-ml/model-selection-strategies|Model Selection Strategies]] — existing graph context
+- [[wiki/agent-systems/self-evaluation|Self-Evaluation]]
+- [[wiki/ai-ml/model-selection-strategies|Model Selection Strategies]]

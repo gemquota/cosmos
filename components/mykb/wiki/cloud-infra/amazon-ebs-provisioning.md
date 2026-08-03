@@ -18,12 +18,8 @@ Amazon EBS provisioning is the discipline of choosing volume type, size, IOPS, a
 - Failure modes: over-provisioning IOPS that burst patterns never use (cost); under-provisioning causing queueing and latency spikes at peak; choosing size as the IOPS lever on gp2 (every GB adds IOPS, inflating cost); and ignoring multi-attach, snapshot throughput, and instance EBS-optimization limits when sizing.
 - Operational tradeoffs: gp3's decoupled IOPS is the default; io2 is for guaranteed, durable high IOPS; st1/sc1 only for sequential workloads. Snapshots are volume-level and count toward restore time and cost — keep snapshots on a lifecycle policy and test restore RTOs.
 - RSIS3/mykb relevance: instance telemetry (queue depth, IOPS utilization) feeds the rack; this note records the sizing decision rules the loop uses when provisioning storage for experiments.
-- Monitoring: track EBS metrics (VolumeQueueLength, VolumeRead/WriteBytes, BurstBalance) per volume; sustained queue length is the signal that IOPS are exhausted, not a failed disk.
-- Cost review: compare gp3 with custom IOPS vs io2 at each workload's P99; most workloads can save 30-50% by moving from io1/io2 to tuned gp3.
+- Monitoring: track EBS metrics (VolumeQueueLength, VolumeRead/WriteBytes, BurstBalance) per volume; sustained queue length is the signal that IOPS are exhausted, not a failed disk. Base alarm thresholds on steady-state P99 rather than averages so queue buildup surfaces early.
+- Cost review: compare gp3 with custom IOPS vs io2 at each workload's P99; most workloads can save 30-50% by moving from io1/io2 to tuned gp3. Multi-attach and fast snapshot restore change the sizing math for clustered databases and DR drills.
 
 ## Related
 - [[wiki/cloud-infra/instance-store-vs-ebs|Instance Store vs EBS]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

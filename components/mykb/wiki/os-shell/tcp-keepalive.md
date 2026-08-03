@@ -19,9 +19,9 @@ TCP keepalive is the mechanism that detects dead or unreachable peers: after a s
 - Operational tradeoffs: keepalive trades a tiny amount of traffic (one small probe per interval per idle connection) for bounded failure detection; the knobs are the idle time (tune to your real idle pattern), interval, and count (tune to your network's loss tolerance). The practice rules: enable it on long-lived connections, set `TCP_KEEPIDLE` well below both your app timeout and the middlebox's NAT timeout, bound the total with `TCP_USER_TIMEOUT`, and treat keepalive as the transport-level complement to application heartbeats — not a replacement. RSIS3/mykb relevance: the daemon's agent and dashboard connections are long-lived; tuned keepalive plus application-level heartbeats ensures a dead agent is evicted and its loops reassigned — mirroring the loop registry's liveness discipline.
 
 ## Related
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]] — related coverage in the same cluster
-- [[wiki/cloud-infra/udp-vs-tcp|UDP vs TCP]] — related coverage in the same cluster
-- [[wiki/cloud-infra/tcp-retransmission|TCP Retransmission]] — related coverage in the same cluster
-- [[wiki/infrastructure/nvme-over-fabrics-tcp|NVMe over Fabrics (TCP)]] — related coverage in the same cluster
+- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
+- [[wiki/cloud-infra/udp-vs-tcp|UDP vs TCP]]
+- [[wiki/cloud-infra/tcp-retransmission|TCP Retransmission]]
+- [[wiki/infrastructure/nvme-over-fabrics-tcp|NVMe over Fabrics (TCP)]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

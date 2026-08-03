@@ -19,10 +19,10 @@ The observable pattern models data as streams of values over time: a producer em
 - RSIS3/mykb relevance: pulse and telemetry streams are natural observables — each loop emits values over time, and the dashboard subscribes with operators (throttle, sample, switch to latest), mirroring how RSIS3 treats telemetry as an event stream with bounded consumption.
 
 ## Related
-- [[wiki/frontend-frameworks/solid-js-signals|Solid.js Signals]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/rxjs-practice|RxJS in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/angular-signals|Angular Signals]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/ng-zone|NgZone]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/solid-js-signals|Solid.js Signals]]
+- [[wiki/frontend-frameworks/rxjs-practice|RxJS in Practice]]
+- [[wiki/frontend-frameworks/angular-signals|Angular Signals]]
+- [[wiki/frontend-frameworks/ng-zone|NgZone]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

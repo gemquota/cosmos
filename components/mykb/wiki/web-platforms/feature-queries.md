@@ -25,7 +25,6 @@ status: "growing"
 - [[wiki/web-platforms/responsive-design-systems|Responsive Design Systems]]
 - [[wiki/web-platforms/supports-rule|@supports Rule]]
 - [[wiki/web-platforms/media-queries-practice|Media Queries in Practice]]
-- [[wiki/web-platforms/feature-queries|CSS Feature Queries]]
 - [[wiki/frontend-frameworks/responsive-design|Responsive Design]]
 - [[wiki/web-platforms/css-layout|CSS Layout]]
 - [[wiki/web-platforms/web-standards|Web Standards]]

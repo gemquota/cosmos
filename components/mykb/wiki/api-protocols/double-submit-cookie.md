@@ -25,10 +25,10 @@ Operational tradeoffs: double-submit is the cheapest scalable CSRF defense and w
 RSIS3/mykb relevance: if the dashboard ships a cookie-based SPA, double-submit with a session-bound token is the documented baseline; RSIS3's security checks can assert the comparison exists on every state-changing route.
 
 ## Related
-- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/synchronizer-token|Synchronizer Token Pattern]] — related coverage in the same cluster
-- [[wiki/api-protocols/sec-fetch-headers|Sec-Fetch Headers]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf-tokens|CSRF Tokens]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf|CSRF]] — related coverage in the same cluster
-- [[wiki/security-auth/csrf-protection|CSRF Protection]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-headers|HTTP Headers]] — related coverage in the same cluster
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]]
+- [[wiki/api-protocols/synchronizer-token|Synchronizer Token Pattern]]
+- [[wiki/api-protocols/sec-fetch-headers|Sec-Fetch Headers]]
+- [[wiki/api-protocols/csrf-tokens|CSRF Tokens]]
+- [[wiki/api-protocols/csrf|CSRF]]
+- [[wiki/security-auth/csrf-protection|CSRF Protection]]
+- [[wiki/api-protocols/http-headers|HTTP Headers]]

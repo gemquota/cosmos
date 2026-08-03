@@ -20,8 +20,8 @@ ZFS is a copy-on-write (CoW) filesystem and volume manager in one: it pools disk
 - RSIS3/mykb relevance: ZFS snapshots are the storage mirror of MyKB's snapshot discipline — cheap point-in-time states with incremental transfer and verified integrity; the scrub concept (proactively validate every block) is exactly what the wiki's snapshot verification scripts do for the corpus.
 
 ## Related
-- [[wiki/os-shell/btrfs-features-and-limitations|Btrfs Features & Limitations]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/os-shell/btrfs-features-and-limitations|Btrfs Features & Limitations]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

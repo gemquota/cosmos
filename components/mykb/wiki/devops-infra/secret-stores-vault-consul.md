@@ -22,9 +22,9 @@ Secret stores centralize secrets — API keys, tokens, passwords, certificates �
 - RSIS3 relevance: cosmos's tokens (deployment, daemon credentials) belong in a store with short TTLs — RSIS3's operational notes should record where they live and how they rotate.
 
 ## Related
-- [[wiki/cloud-infra/parameter-stores-aws-ssm-azure-keyvault-gcp-secretmanager|Cloud Parameter Stores]] — related coverage in the same cluster
-- [[wiki/infrastructure/secret-rotation|Secret Rotation]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/cloud-infra/parameter-stores-aws-ssm-azure-keyvault-gcp-secretmanager|Cloud Parameter Stores]]
+- [[wiki/infrastructure/secret-rotation|Secret Rotation]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

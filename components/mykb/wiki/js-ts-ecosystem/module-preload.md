@@ -18,12 +18,13 @@ modulepreload fetches and parses ES module graphs before they are needed, parall
 - Tradeoffs: modulepreload trades startup bandwidth for runtime latency — the module is fetched early so execution is fast; the alternative, on-demand loading, is leaner and slower; the mature pattern is preloading the initial graph and critical split points, not everything.
 - Operational notes: audit the preload list per build, measure fetch timing, and verify preloads match imports.
 - RSIS3 relevance: the dashboard can preload its entry module graph so first interaction after load is instant — the hint that removes the module waterfall.
+- Resource-hint details: modulepreload differs from prefetch — prefetch is a low-priority hint for future navigation while modulepreload fetches at high priority now; add crossorigin when the module is loaded cross-origin so the preload uses the same credentials mode as the import, and prefer preloading over inlining for shared dependencies that multiple routes reuse.
 
 ## Related
-- [[wiki/js-ts-ecosystem/typescript-systems|TypeScript Systems]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/import-maps|Import Maps]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/commonjs-vs-esm|CommonJS vs ESM]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/dynamic-import|Dynamic Import]] — related coverage in the same cluster
-- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-standards|Web Standards]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/js-ts-ecosystem/typescript-systems|TypeScript Systems]]
+- [[wiki/js-ts-ecosystem/import-maps|Import Maps]]
+- [[wiki/js-ts-ecosystem/commonjs-vs-esm|CommonJS vs ESM]]
+- [[wiki/js-ts-ecosystem/dynamic-import|Dynamic Import]]
+- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]]
+- [[wiki/web-platforms/web-standards|Web Standards]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

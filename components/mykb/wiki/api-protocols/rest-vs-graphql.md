@@ -25,10 +25,9 @@ Operational tradeoffs: REST is easier to cache, monitor, and version per-resourc
 RSIS3/mykb relevance: the dashboard's telemetry views are client-shaped; documenting whether each view uses REST collections or GraphQL queries keeps RSIS3 tooling aligned with the actual contract.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-vs-grpc|REST vs gRPC]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-vs-rpc|REST vs RPC]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-vs-graphql|REST vs GraphQL]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-apis|REST APIs]] — related coverage in the same cluster
-- [[wiki/api-protocols/rpc-styles|RPC Styles]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql|GraphQL]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/rest-vs-grpc|REST vs gRPC]]
+- [[wiki/api-protocols/rest-vs-rpc|REST vs RPC]]
+- [[wiki/api-protocols/rest-apis|REST APIs]]
+- [[wiki/api-protocols/rpc-styles|RPC Styles]]
+- [[wiki/api-protocols/graphql|GraphQL]]

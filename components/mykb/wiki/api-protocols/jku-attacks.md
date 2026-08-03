@@ -25,10 +25,10 @@ Operational tradeoffs: supporting jku requires per-issuer URL allowlists, redire
 RSIS3/mykb relevance: JWT verification code should default to reject-on-jku; documenting that rule gives RSIS3's security reviews a concrete header policy to check.
 
 ## Related
-- [[wiki/api-protocols/jwt-practice|JWT in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/none-algorithm|JWT none Algorithm]] — related coverage in the same cluster
-- [[wiki/api-protocols/weak-hash-jwt|Weak Hashes in JWT]] — related coverage in the same cluster
-- [[wiki/api-protocols/algorithm-confusion|JWT Algorithm Confusion]] — related coverage in the same cluster
-- [[wiki/api-protocols/json-web-tokens|JWT]] — related coverage in the same cluster
-- [[wiki/identity/key-rotation|Key Rotation]] — related coverage in the same cluster
-- [[wiki/api-protocols/mtls|mTLS]] — related coverage in the same cluster
+- [[wiki/api-protocols/jwt-practice|JWT in Practice]]
+- [[wiki/api-protocols/none-algorithm|JWT none Algorithm]]
+- [[wiki/api-protocols/weak-hash-jwt|Weak Hashes in JWT]]
+- [[wiki/api-protocols/algorithm-confusion|JWT Algorithm Confusion]]
+- [[wiki/api-protocols/json-web-tokens|JWT]]
+- [[wiki/identity/key-rotation|Key Rotation]]
+- [[wiki/api-protocols/mtls|mTLS]]

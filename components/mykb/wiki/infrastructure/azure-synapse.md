@@ -21,8 +21,8 @@ Azure Synapse Analytics is Microsoft's unified analytics platform, combining ded
 - It competes as Azure's hub for lakehouse and warehouse workloads with tight Microsoft ecosystem integration. If the stack is already Microsoft-centric (Entra ID, Power BI, Purview governance, ADLS storage), Synapse's integration is its moat; against Snowflake or Databricks, the comparison is about engine flexibility, cost model, and ecosystem fit rather than raw capability.
 - For mykb: the node anchors the Azure branch of the warehouse/lakehouse cluster and connects MPP, lakehouse, and migration concepts to a concrete implementation.
 
-## Related
 
+## Related
 - [[wiki/data-storage/data-warehouse|Data Warehouse]] — warehouse fundamentals
 - [[wiki/data-storage/massively-parallel-processing|Massively Parallel Processing]] — MPP model used by SQL pools
 - [[wiki/data-storage/sql-on-lakehouse|Sql On Lakehouse]] — serverless SQL over lake files

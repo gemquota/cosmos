@@ -20,8 +20,8 @@ CPU frequency scaling (DVFS, dynamic voltage and frequency scaling) lets the ker
 - RSIS3/mykb relevance: RSIS3 loop workers doing periodic telemetry and graph rebuilds are bursty workloads where frequency ramping latency matters less than thermal headroom; the same principle — let a feedback controller choose operating points instead of pinning extremes — mirrors how loop parameters are tuned rather than hardcoded.
 
 ## Related
-- [[wiki/os-shell/numa-and-cpu-topology|NUMA & CPU Topology]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/os-shell/numa-and-cpu-topology|NUMA & CPU Topology]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

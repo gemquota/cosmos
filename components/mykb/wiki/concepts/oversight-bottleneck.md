@@ -24,4 +24,4 @@ The oversight bottleneck is the constraint that humans cannot review every actio
 - [[wiki/concepts/human-supervision-limits|Human Supervision Limits]] — the root constraint
 - [[wiki/agent-systems/approval-based-agents|Approval-Based Agents]] — the design response
 - [[wiki/concepts/automated-machine-learning|Automated Machine Learning (AutoML)]] — the automation pressure
-- [[wiki/agent-systems/agent-supervision|Agent Supervision]] — existing graph context
+- [[wiki/agent-systems/agent-supervision|Agent Supervision]]

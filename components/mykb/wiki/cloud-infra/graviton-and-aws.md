@@ -18,13 +18,10 @@ AWS Graviton processors are ARM-based instances (M6g, C6g, R6g, and successors) 
 - Failure modes: assuming portability — C/C++ with SIMD intrinsics, assembly, and closed binaries silently fail or misbehave on arm64; licensing priced per vCPU/socket that penalizes Graviton's core counts; dev machines on x86 masking build issues until deploy; and measuring only throughput while tail latency regresses on specific workloads.
 - Operational tradeoffs: Graviton is the default starting point for new greenfield workloads on AWS; the migration path is per-service: rebuild, test in a shadow fleet, compare real metrics, then cut over. Keep a small x86 baseline for compatibility-bound services and revisit as vendor support improves.
 - RSIS3/mykb relevance: the wiki records per-service Graviton migration results, so the loop's capacity planner applies ARM first where telemetry already proved the win.
-- Shadow fleet: validate Graviton in a shadow deployment before cutover; real traffic exposes the portability issues benchmarks miss.
+- Shadow fleet: validate Graviton in a shadow deployment before cutover; real traffic exposes the portability issues benchmarks miss. Include a latency-sensitive service in the cohort, since arm64 regressions are workload-specific.
 
 ## Related
 - [[wiki/cloud-infra/cloud-providers-aws-azure-gcp|Cloud Providers: AWS, Azure, GCP]]
 - [[wiki/cloud-infra/aws-vpc-design|AWS VPC Design]]
 - [[wiki/cloud-infra/parameter-stores-aws-ssm-azure-keyvault-gcp-secretmanager|Cloud Parameter Stores]]
 - [[wiki/infrastructure/aws-msk-and-managed-kafka|Aws Msk And Managed Kafka]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

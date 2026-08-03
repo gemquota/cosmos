@@ -26,6 +26,3 @@ Azure Blob access tiers (hot, cool, cold, archive) trade cost for latency: hot f
 - [[wiki/cloud-infra/remote-access-methods|Remote Access Methods]]
 - [[wiki/devops-infra/zero-trust-access-proxies|Zero Trust Access Proxies]]
 - [[wiki/infrastructure/azure-synapse|Azure Synapse]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

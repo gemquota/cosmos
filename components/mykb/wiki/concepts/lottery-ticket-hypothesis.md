@@ -20,8 +20,8 @@ The lottery ticket hypothesis claims dense networks contain sparse subnetworks (
 - RSIS3 relevance: sparse, meaningful links are the graph's 'winning ticket' structure. A wiki's knowledge graph is dense with potential links but only a few are load-bearing; pruning experiments on the graph can reveal the minimal link structure that preserves retrieval quality.
 
 ## Related
-- [[wiki/concepts/sae-research|sae-research]] — note
+- [[wiki/concepts/sae-research|sae-research]]
 - [[wiki/concepts/neural-architecture-search|Neural Architecture Search]] — the search connection
 - [[wiki/concepts/regularization-practice|Regularization in Practice]] — the pruning context
 - [[wiki/concepts/minimal-description-length|Minimum Description Length]] — the simplicity frame
-- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]] — existing graph context
+- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]]

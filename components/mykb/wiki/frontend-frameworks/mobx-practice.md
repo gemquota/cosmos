@@ -19,10 +19,10 @@ MobX is an observable-based state library: plain objects and arrays are wrapped 
 - RSIS3/mykb relevance: MobX's reaction graph is a miniature RSIS3: state changes propagate through declared dependencies to derived outputs, batched and ordered — the same discipline RSIS3 applies to loop outputs, where a pulse write automatically invalidates every metric that reads it.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/redux-practice|Redux in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/zustand-practice|Zustand in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/jotai-practice|Jotai in Practice]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/state-management-mobile|State Management Mobile]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/redux-practice|Redux in Practice]]
+- [[wiki/frontend-frameworks/zustand-practice|Zustand in Practice]]
+- [[wiki/frontend-frameworks/jotai-practice|Jotai in Practice]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/frontend-frameworks/state-management-mobile|State Management Mobile]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]

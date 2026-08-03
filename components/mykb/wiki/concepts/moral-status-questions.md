@@ -24,5 +24,5 @@ Moral status questions ask which entities have intrinsic moral standing and why:
 - [[wiki/concepts/personhood-questions|Personhood Questions]] — the legal-philosophical layer
 - [[wiki/concepts/rights-for-ai|Rights for AI]] — the implications
 - [[wiki/concepts/suffering-risk|Suffering Risk]] — why status matters
-- [[wiki/concepts/value-specification|Value Specification]] — the full treatment of this theme
-- [[wiki/concepts/utility-functions|Utility Functions]] — existing graph context
+- [[wiki/concepts/value-specification|Value Specification]]
+- [[wiki/concepts/utility-functions|Utility Functions]]

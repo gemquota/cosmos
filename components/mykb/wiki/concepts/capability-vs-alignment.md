@@ -24,5 +24,5 @@ Capability is what a system can do; alignment is whether its objectives serve th
 - [[wiki/pulses/capability-measurement|Capability Measurement]] — measuring can-do
 - [[wiki/concepts/misalignment-risk|Misalignment Risk]] — the combined risk
 - [[wiki/concepts/alignment-tax-practice|Alignment Tax in Practice]] — the tradeoff
-- [[wiki/concepts/alignment-tax|Alignment Tax]] — the full treatment of this theme
-- [[wiki/concepts/calibration|Calibration]] — existing graph context
+- [[wiki/concepts/alignment-tax|Alignment Tax]]
+- [[wiki/concepts/calibration|Calibration]]

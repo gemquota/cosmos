@@ -24,5 +24,5 @@ Moral agency is the capacity to act morally or be held responsible for actions. 
 - [[wiki/agent-systems/responsibility-ai|AI Responsibility]] — the accountability layer
 - [[wiki/agent-systems/accountability-ai|AI Accountability]] — the institutional layer
 - [[wiki/concepts/personhood-questions|Personhood Questions]] — the status question
-- [[wiki/concepts/value-specification|Value Specification]] — the full treatment of this theme
-- [[wiki/concepts/utility-functions|Utility Functions]] — existing graph context
+- [[wiki/concepts/value-specification|Value Specification]]
+- [[wiki/concepts/utility-functions|Utility Functions]]

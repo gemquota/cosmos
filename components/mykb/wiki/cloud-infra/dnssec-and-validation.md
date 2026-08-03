@@ -24,5 +24,3 @@ DNSSEC cryptographically signs DNS records so resolvers can verify answers came 
 ## Related
 - [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
 - [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

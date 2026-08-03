@@ -21,9 +21,9 @@ PersistentVolumeClaims (PVCs) are the user-facing request for storage in Kuberne
 - RSIS3 relevance: the wiki store and checkpoints running on PVCs need the reclaim policy and backup plan set deliberately — a claim deletion is a data-deletion decision.
 
 ## Related
-- [[wiki/os-shell/logical-volume-management|Logical Volume Management]] — related coverage in the same cluster
-- [[wiki/devops-infra/local-persistent-volumes|Local Persistent Volumes]] — related coverage in the same cluster
-- [[wiki/infrastructure/persistent-volumes|Persistent Volumes]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/os-shell/logical-volume-management|Logical Volume Management]]
+- [[wiki/devops-infra/local-persistent-volumes|Local Persistent Volumes]]
+- [[wiki/infrastructure/persistent-volumes|Persistent Volumes]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

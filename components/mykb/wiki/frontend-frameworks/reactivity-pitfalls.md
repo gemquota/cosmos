@@ -19,10 +19,9 @@ Reactivity pitfalls are the recurring ways reactive UIs break: lost tracking (re
 - RSIS3/mykb relevance: the pitfalls are a warning against hidden dependencies in any reactive system, including RSIS3 loops: reads of registry state that bypass the declared dependency map silently freeze derived outputs, which is why RSIS3 check-practices verifies that telemetry and checkpoints derive from declared inputs.
 
 ## Related
-- [[wiki/frontend-frameworks/vue-ecosystem|Vue Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/vue-composition-api|Vue Composition API]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/vue-reactivity|Vue Reactivity]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/reactivity-pitfalls|Reactivity Pitfalls]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/vue-ecosystem|Vue Ecosystem]]
+- [[wiki/frontend-frameworks/vue-composition-api|Vue Composition API]]
+- [[wiki/frontend-frameworks/vue-reactivity|Vue Reactivity]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

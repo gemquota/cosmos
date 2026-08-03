@@ -23,9 +23,9 @@ Progressive delivery models — canary, blue-green, ring-based, dark launch — 
 - RSIS3 relevance: RSIS3's strategy changes are progressive deliveries of behavior — a canary-style evaluation of new parameters, with pulse telemetry as the gate, mirrors these models directly.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-networking-models|Kubernetes Networking Models]] — related coverage in the same cluster
-- [[wiki/devops-infra/continuous-delivery-pipelines|Continuous Delivery Pipelines]] — related coverage in the same cluster
-- [[wiki/devops-infra/progressive-rollout-metrics|Progressive Rollout Metrics]] — related coverage in the same cluster
-- [[wiki/devops-infra/progressive-sync-strategies|Progressive Sync Strategies]] — related coverage in the same cluster
+- [[wiki/devops-infra/kubernetes-networking-models|Kubernetes Networking Models]]
+- [[wiki/devops-infra/continuous-delivery-pipelines|Continuous Delivery Pipelines]]
+- [[wiki/devops-infra/progressive-rollout-metrics|Progressive Rollout Metrics]]
+- [[wiki/devops-infra/progressive-sync-strategies|Progressive Sync Strategies]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

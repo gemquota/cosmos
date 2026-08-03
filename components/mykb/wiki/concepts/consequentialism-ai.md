@@ -24,5 +24,5 @@ Consequentialist AI ethics judges actions by outcomes: maximize expected good, m
 - [[wiki/concepts/utilitarian-calculus|Utilitarian Calculus]] — the aggregative form
 - [[wiki/concepts/deontology-ai|Deontology for AI]] — the contrasting frame
 - [[wiki/concepts/side-effects-problem|Side Effects Problem]] — the consequence blind spot
-- [[wiki/concepts/value-specification|Value Specification]] — the full treatment of this theme
-- [[wiki/concepts/utility-functions|Utility Functions]] — existing graph context
+- [[wiki/concepts/value-specification|Value Specification]]
+- [[wiki/concepts/utility-functions|Utility Functions]]

@@ -19,10 +19,10 @@ TanStack Query (formerly React Query) is the de facto server-state library for R
 - RSIS3/mykb relevance: MyKB's dashboard is the textbook workload: search results, article lookups, and graph nodes keyed by query, invalidated when the knowledge graph rebuilds — TanStack Query's cache-and-invalidate model would replace the ad-hoc fetch state with declared server-state semantics.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/swr-practice|SWR in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/async-state|Async State]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/data-fetching-libs|Data Fetching Libraries]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-apis|REST APIs]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql|GraphQL]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/swr-practice|SWR in Practice]]
+- [[wiki/frontend-frameworks/async-state|Async State]]
+- [[wiki/frontend-frameworks/data-fetching-libs|Data Fetching Libraries]]
+- [[wiki/api-protocols/rest-apis|REST APIs]]
+- [[wiki/api-protocols/graphql|GraphQL]]
+- [[wiki/web-platforms/state-management|State Management]]

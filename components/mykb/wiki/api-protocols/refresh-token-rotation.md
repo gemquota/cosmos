@@ -25,10 +25,7 @@ Operational tradeoffs: rotation adds a write per refresh and requires the client
 RSIS3/mykb relevance: RSIS3's own refresh handling should implement rotation; documenting the contract (rotate, reuse-detect, revoke family) keeps loop sessions from going stale or staying stolen.
 
 ## Related
-- [[wiki/api-protocols/token-refresh-strategies|Token Refresh Strategies]] — related coverage in the same cluster
-- [[wiki/api-protocols/refresh-token-rotation|Refresh Token Rotation]] — related coverage in the same cluster
-- [[wiki/api-protocols/refresh-token-rotation|Refresh Token Rotation]] — related coverage in the same cluster
-- [[wiki/api-protocols/refresh-token-rotation|Refresh Token Rotation]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2-refresh-tokens|Refresh Tokens]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2|OAuth 2.0]] — related coverage in the same cluster
-- [[wiki/identity/refresh-tokens|Refresh Tokens]] — related coverage in the same cluster
+- [[wiki/api-protocols/token-refresh-strategies|Token Refresh Strategies]]
+- [[wiki/api-protocols/oauth2-refresh-tokens|Refresh Tokens]]
+- [[wiki/api-protocols/oauth2|OAuth 2.0]]
+- [[wiki/identity/refresh-tokens|Refresh Tokens]]

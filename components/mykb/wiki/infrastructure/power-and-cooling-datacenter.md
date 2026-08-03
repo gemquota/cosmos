@@ -20,8 +20,8 @@ Power and cooling are the physical substrate of every datacenter: the power chai
 - For mykb: power and cooling anchor the facilities branch of the infrastructure cluster — thermal throttling (the server's reaction), colocation, and rack-and-stack all connect here.
 
 ## Related
-- [[wiki/os-shell/thermal-throttling-and-power|Thermal Throttling & Power]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
+- [[wiki/os-shell/thermal-throttling-and-power|Thermal Throttling & Power]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

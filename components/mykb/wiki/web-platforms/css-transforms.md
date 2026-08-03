@@ -26,7 +26,6 @@ CSS transforms (translate, rotate, scale, skew, matrix) move and reshape element
 - [[wiki/web-platforms/web-animations|Web Animations API]]
 - [[wiki/web-platforms/css-transitions|CSS Transitions]]
 - [[wiki/web-platforms/css-animations|CSS Animations]]
-- [[wiki/web-platforms/css-transforms|CSS Transforms]]
 - [[wiki/web-platforms/css-layout|CSS Layout]]
 - [[wiki/web-platforms/component-architecture|Component Architecture]]
 - [[wiki/web-platforms/web-apis|Web APIs]]

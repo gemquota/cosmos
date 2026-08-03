@@ -21,10 +21,10 @@ Rate limiting at the edge protects services before requests consume backend reso
 - RSIS3 relevance: the dashboard and wiki API behind an edge benefit from limits that keep scrapers and misbehaving clients from starving the daemon — a config change, not a code change.
 
 ## Related
-- [[wiki/cloud-infra/cdns-and-edge-networking|CDNs & Edge Networking]] — related coverage in the same cluster
-- [[wiki/cloud-infra/edge-locations|Edge Locations]] — related coverage in the same cluster
-- [[wiki/cloud-infra/edge-computing|Edge Computing]] — related coverage in the same cluster
-- [[wiki/infrastructure/data-encryption-at-rest|Data Encryption At Rest]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/cloud-infra/cdns-and-edge-networking|CDNs & Edge Networking]]
+- [[wiki/cloud-infra/edge-locations|Edge Locations]]
+- [[wiki/cloud-infra/edge-computing|Edge Computing]]
+- [[wiki/infrastructure/data-encryption-at-rest|Data Encryption At Rest]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

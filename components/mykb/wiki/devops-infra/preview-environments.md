@@ -21,10 +21,10 @@ Preview environments are short-lived deployments of a branch or PR, reachable at
 - RSIS3 relevance: the cosmos dashboard previews per change fit RSIS3's experimental philosophy — validate in an isolated, disposable copy before promoting to the live wiki.
 
 ## Related
-- [[wiki/shell-environment/shell-environments-and-rc-files|Shell Environments & RC Files]] — related coverage in the same cluster
-- [[wiki/devops-infra/ephemeral-environments|Ephemeral Environments]] — related coverage in the same cluster
-- [[wiki/devops-infra/development-environments-as-code|Development Environments as Code]] — related coverage in the same cluster
-- [[wiki/infrastructure/data-environments-dev-staging-prod|Data Environments Dev Staging Prod]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/shell-environment/shell-environments-and-rc-files|Shell Environments & RC Files]]
+- [[wiki/devops-infra/ephemeral-environments|Ephemeral Environments]]
+- [[wiki/devops-infra/development-environments-as-code|Development Environments as Code]]
+- [[wiki/infrastructure/data-environments-dev-staging-prod|Data Environments Dev Staging Prod]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

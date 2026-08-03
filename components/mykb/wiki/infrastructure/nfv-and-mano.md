@@ -20,7 +20,7 @@ NFV (network function virtualization) runs network functions — firewalls, load
 - For mykb: NFV & MANO connect the virtualization and networking clusters — the orchestration view of the network-function story, complementing the NFV node's function view.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

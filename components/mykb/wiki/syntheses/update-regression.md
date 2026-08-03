@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Update Regression"
 description: "New versions performing worse on old capabilities"
 tags: ["regression", "updates", "testing"]

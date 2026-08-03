@@ -19,10 +19,10 @@ A higher-order component (HOC) is a function that takes a component and returns 
 - RSIS3/mykb relevance: the HOC-to-hooks migration is a case study in how explicit data flow beats invisible wrappers: RSIS3's own rule that dependencies should be visible and composable (functions over inheritance, wrappers over magic) is the same principle, keeping the dashboard's components traceable as features accumulate.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/context-api|Context API]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/composition-apis|Composition APIs]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/hooks-practice|Hooks in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/context-api|Context API]]
+- [[wiki/frontend-frameworks/composition-apis|Composition APIs]]
+- [[wiki/frontend-frameworks/hooks-practice|Hooks in Practice]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

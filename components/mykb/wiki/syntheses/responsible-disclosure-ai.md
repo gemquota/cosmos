@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Responsible Disclosure for AI"
 description: "Norms for disclosing AI vulnerabilities safely"
 tags: ["disclosure", "security", "norms"]

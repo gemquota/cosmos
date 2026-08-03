@@ -21,11 +21,11 @@ Traffic shaping and QoS manage how latency and throughput are distributed across
 - RSIS3/mykb relevance: priority logic is a recurring theme in self-improvement loops that allocate scarce resources; this node supplies the queueing vocabulary loops can reuse when reasoning about scheduling attention and compute.
 
 ## Related
-- [[wiki/devops-infra/traffic-shifting-and-splitting|Traffic Shifting & Splitting]] — related coverage in the same cluster
-- [[wiki/devops-infra/mirroring-and-shadow-traffic|Mirroring & Shadow Traffic]] — related coverage in the same cluster
-- [[wiki/infrastructure/east-west-vs-north-south-traffic|East-West vs North-South Traffic]] — related coverage in the same cluster
-- [[wiki/infrastructure/traffic-engineering|Traffic Engineering]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
+- [[wiki/devops-infra/traffic-shifting-and-splitting|Traffic Shifting & Splitting]]
+- [[wiki/devops-infra/mirroring-and-shadow-traffic|Mirroring & Shadow Traffic]]
+- [[wiki/infrastructure/east-west-vs-north-south-traffic|East-West vs North-South Traffic]]
+- [[wiki/infrastructure/traffic-engineering|Traffic Engineering]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

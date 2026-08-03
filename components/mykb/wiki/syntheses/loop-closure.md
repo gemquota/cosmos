@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Loop Closure"
 description: "Ensuring improvement loops terminate with durable change"
 tags: ["loop-closure", "feedback", "process", "knowledge"]

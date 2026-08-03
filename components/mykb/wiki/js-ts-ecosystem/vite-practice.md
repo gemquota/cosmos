@@ -18,12 +18,13 @@ Vite is a dev-server-first build tool: it serves unbundled native ESM in develop
 - Tradeoffs: Vite trades webpack's universality for a dramatically better dev experience and simpler config; the cost is production-build delegation and some ecosystem gaps; the mature pattern is Vite for new apps and webpack where legacy plugins bind.
 - Operational notes: pin the version, test prod builds in CI, and keep the dev/prod parity checked.
 - RSIS3 relevance: the dashboard's frontend is a natural Vite app — instant dev feedback and Rollup-optimized production output.
+- Config surface: most projects only need server.proxy for dev, env-var handling, and build.rollupOptions for production; resist adding plugins the defaults cover, keep the config small so upgrades stay cheap, and verify dev/prod parity in CI because the esbuild dev transforms and Rollup production output can drift on exotic syntax.
 
 ## Related
-- [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/webpack-practice|Webpack in Practice]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/parcel-practice|Parcel in Practice]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/turbopack-practice|Turbopack in Practice]] — related coverage in the same cluster
-- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/hot-reload|Hot Reload]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]]
+- [[wiki/js-ts-ecosystem/webpack-practice|Webpack in Practice]]
+- [[wiki/js-ts-ecosystem/parcel-practice|Parcel in Practice]]
+- [[wiki/js-ts-ecosystem/turbopack-practice|Turbopack in Practice]]
+- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]]
+- [[wiki/frontend-frameworks/hot-reload|Hot Reload]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

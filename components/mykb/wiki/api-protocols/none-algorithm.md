@@ -25,10 +25,10 @@ Operational tradeoffs: alg=none should never be enabled in production verificati
 RSIS3/mykb relevance: JWT verification code in the wiki stack must reject none by construction; documenting the allowlist rule gives RSIS3's security reviews a first-line assertion.
 
 ## Related
-- [[wiki/api-protocols/jwt-practice|JWT in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/weak-hash-jwt|Weak Hashes in JWT]] — related coverage in the same cluster
-- [[wiki/api-protocols/algorithm-confusion|JWT Algorithm Confusion]] — related coverage in the same cluster
-- [[wiki/api-protocols/jku-attacks|JKU Attacks]] — related coverage in the same cluster
-- [[wiki/api-protocols/json-web-tokens|JWT]] — related coverage in the same cluster
-- [[wiki/identity/key-rotation|Key Rotation]] — related coverage in the same cluster
-- [[wiki/api-protocols/mtls|mTLS]] — related coverage in the same cluster
+- [[wiki/api-protocols/jwt-practice|JWT in Practice]]
+- [[wiki/api-protocols/weak-hash-jwt|Weak Hashes in JWT]]
+- [[wiki/api-protocols/algorithm-confusion|JWT Algorithm Confusion]]
+- [[wiki/api-protocols/jku-attacks|JKU Attacks]]
+- [[wiki/api-protocols/json-web-tokens|JWT]]
+- [[wiki/identity/key-rotation|Key Rotation]]
+- [[wiki/api-protocols/mtls|mTLS]]

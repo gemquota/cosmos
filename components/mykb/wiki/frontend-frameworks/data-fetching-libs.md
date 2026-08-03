@@ -19,10 +19,10 @@ Data fetching libraries are layers over `fetch` that own the hard parts of serve
 - RSIS3/mykb relevance: MyKB's search and graph dashboard are textbook server-state surfaces: query keys for search terms, cached article lookups, and invalidation on knowledge-graph rebuild would eliminate most of the ad-hoc loading logic, matching RSIS3's principle that state ownership should be explicit and centralized.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/react-query-practice|TanStack Query Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/swr-practice|SWR in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/async-state|Async State]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-apis|REST APIs]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql|GraphQL]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/react-query-practice|TanStack Query Practice]]
+- [[wiki/frontend-frameworks/swr-practice|SWR in Practice]]
+- [[wiki/frontend-frameworks/async-state|Async State]]
+- [[wiki/api-protocols/rest-apis|REST APIs]]
+- [[wiki/api-protocols/graphql|GraphQL]]
+- [[wiki/web-platforms/state-management|State Management]]

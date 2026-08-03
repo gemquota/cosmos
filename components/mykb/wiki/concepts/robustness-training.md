@@ -26,5 +26,5 @@ Robustness training builds models that perform well across perturbations, distri
 - [[wiki/concepts/adversarial-robustness|Adversarial Robustness]] — the adversarial property
 - [[wiki/concepts/distribution-shift-ai|Distribution Shift in AI]] — the challenge
 - [[wiki/concepts/brittleness-ai|AI Brittleness]] — the failure to avoid
-- [[wiki/agent-systems/adversarial-self-play|Adversarial Self-Play]] — the full treatment of this theme
-- [[wiki/prompt-engineering/red-teaming|Red Teaming]] — existing graph context
+- [[wiki/agent-systems/adversarial-self-play|Adversarial Self-Play]]
+- [[wiki/prompt-engineering/red-teaming|Red Teaming]]

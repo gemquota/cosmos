@@ -19,10 +19,7 @@ Session invalidation is the server-side act of making an issued session unusable
 - RSIS3/mykb relevance: RSIS3 sessions and loop checkpoints are analogous: evicting stale state and rotating credentials on security events is the same discipline as checkpoint rotation in the registry, keeping old artifacts from being trusted after they should be dead.
 
 ## Related
-- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/session-invalidation|Session Invalidation]] — related coverage in the same cluster
-- [[wiki/api-protocols/session-invalidation|Session Invalidation]] — related coverage in the same cluster
-- [[wiki/api-protocols/session-invalidation|Session Invalidation]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-cookies|HTTP Cookies]] — related coverage in the same cluster
-- [[wiki/identity/session-management|Session Management]] — related coverage in the same cluster
-- [[wiki/identity/session-hijacking|Session Hijacking]] — related coverage in the same cluster
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]]
+- [[wiki/api-protocols/http-cookies|HTTP Cookies]]
+- [[wiki/identity/session-management|Session Management]]
+- [[wiki/identity/session-hijacking|Session Hijacking]]

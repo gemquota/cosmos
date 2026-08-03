@@ -20,8 +20,8 @@ A DLQ topic captures records that failed processing after retries, preserving th
 - Operational notes: monitor DLQ depth and age, cap DLQ retention deliberately, and test the replay path in drills.
 - RSIS3 relevance: RSIS3's ingestion pipeline benefits from the same quarantine — a malformed article should be inspectable and replayable, not a silent loss.
 
-## Related
 
+## Related
 - [[wiki/data-storage/dead-letter-queues|Dead Letter Queues]] — DLQ fundamentals
 - [[wiki/data-storage/dead-letter-queues-and-retries|Dead Letter Queues and Retries]] — retry policies
 - [[wiki/data-storage/dead-letter-data-and-repair-pipelines|Dead Letter Data and Repair Pipelines]] — repair flows

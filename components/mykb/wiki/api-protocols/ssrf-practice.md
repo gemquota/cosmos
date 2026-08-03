@@ -19,10 +19,10 @@ Server-Side Request Forgery (SSRF) is an attack where the attacker controls the 
 - RSIS3/mykb relevance: RSIS3 loop tools that fetch URLs or webhook targets must scope egress the same way: treat every tool-fetch as an attacker-influenced request and route it through the same allow-list and proxy discipline.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/idor-web|IDOR on the Web]] — related coverage in the same cluster
-- [[wiki/api-protocols/mass-assignment|Mass Assignment]] — related coverage in the same cluster
-- [[wiki/api-protocols/insecure-deserialization|Insecure Deserialization]] — related coverage in the same cluster
-- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/deserialization-attacks|Deserialization Attacks]] — related coverage in the same cluster
-- [[wiki/security-auth/privilege-escalation|Privilege Escalation]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/idor-web|IDOR on the Web]]
+- [[wiki/api-protocols/mass-assignment|Mass Assignment]]
+- [[wiki/api-protocols/insecure-deserialization|Insecure Deserialization]]
+- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]]
+- [[wiki/security-auth/deserialization-attacks|Deserialization Attacks]]
+- [[wiki/security-auth/privilege-escalation|Privilege Escalation]]

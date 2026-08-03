@@ -25,10 +25,10 @@ Operational tradeoffs: storing jtis adds a small write per token and a lookup pe
 RSIS3/mykb relevance: RSIS3 loops that issue or validate tokens should include jti in their audit trail; documenting the claim contract lets the loop correlate a token's use across services.
 
 ## Related
-- [[wiki/api-protocols/jwt-practice|JWT in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/scope-validation|Scope Validation]] — related coverage in the same cluster
-- [[wiki/api-protocols/audience-claims|Audience Claims]] — related coverage in the same cluster
-- [[wiki/api-protocols/issuer-validation|Issuer Validation]] — related coverage in the same cluster
-- [[wiki/api-protocols/json-web-tokens|JWT]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2-scopes|OAuth Scopes]] — related coverage in the same cluster
-- [[wiki/identity/jwks|JWKS]] — related coverage in the same cluster
+- [[wiki/api-protocols/jwt-practice|JWT in Practice]]
+- [[wiki/api-protocols/scope-validation|Scope Validation]]
+- [[wiki/api-protocols/audience-claims|Audience Claims]]
+- [[wiki/api-protocols/issuer-validation|Issuer Validation]]
+- [[wiki/api-protocols/json-web-tokens|JWT]]
+- [[wiki/api-protocols/oauth2-scopes|OAuth Scopes]]
+- [[wiki/identity/jwks|JWKS]]

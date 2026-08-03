@@ -21,9 +21,9 @@ Traffic engineering plans and steers how traffic flows across a network so that 
 - RSIS3/mykb relevance: capacity planning is a standing concern for loops that grow the knowledge store across machines; this node keeps the demand-versus-topology framing retrievable so scaling decisions consider where traffic can actually flow.
 
 ## Related
-- [[wiki/devops-infra/chaos-engineering-revisited|Chaos Engineering]] — related coverage in the same cluster
-- [[wiki/devops-infra/site-reliability-engineering-revisited|Site Reliability Engineering]] — related coverage in the same cluster
-- [[wiki/infrastructure/traffic-shaping-and-qos|Traffic Shaping & QoS]] — related coverage in the same cluster
-- [[wiki/devops-infra/release-engineering-trains|Release Engineering Trains]] — related coverage in the same cluster
+- [[wiki/devops-infra/chaos-engineering-revisited|Chaos Engineering]]
+- [[wiki/devops-infra/site-reliability-engineering-revisited|Site Reliability Engineering]]
+- [[wiki/infrastructure/traffic-shaping-and-qos|Traffic Shaping & QoS]]
+- [[wiki/devops-infra/release-engineering-trains|Release Engineering Trains]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

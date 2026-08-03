@@ -24,6 +24,6 @@ Polysemanticity is the phenomenon where a single unit responds to many unrelated
 - [[wiki/concepts/superposition-research|Superposition Research]] — the cause
 - [[wiki/concepts/dictionary-learning-ai|Dictionary Learning for AI]] — the fix
 - [[wiki/concepts/neuron-interpretation|Neuron Interpretation]] — the level that misleads
-- [[wiki/agent-systems/introspection-ai|Introspection in AI]] — the full treatment of this theme
-- [[wiki/ai-ml/activation-engineering|Activation Engineering]] — existing graph context
+- [[wiki/agent-systems/introspection-ai|Introspection in AI]]
+- [[wiki/ai-ml/activation-engineering|Activation Engineering]]
 - [[wiki/ai-ml/sparse-autoencoders|Sparse Autoencoders]]

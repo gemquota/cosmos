@@ -20,10 +20,10 @@ Network budgeting is planning capacity, growth, and cost for the network: foreca
 - For mykb: network budgeting connects observability (the measurement input), bandwidth costs, and topology design — the planning layer over the physical network.
 
 ## Related
-- [[wiki/devops-infra/network-observability|Network Observability]] — related coverage in the same cluster
-- [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]] — related coverage in the same cluster
-- [[wiki/infrastructure/network-interface-bonding|Network Interface Bonding]] — related coverage in the same cluster
-- [[wiki/infrastructure/network-policy|Network Policy]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
+- [[wiki/devops-infra/network-observability|Network Observability]]
+- [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]]
+- [[wiki/infrastructure/network-interface-bonding|Network Interface Bonding]]
+- [[wiki/infrastructure/network-policy|Network Policy]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

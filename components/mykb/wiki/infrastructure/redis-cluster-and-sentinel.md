@@ -21,8 +21,8 @@ Redis Cluster and Sentinel are the two ways to make Redis survive beyond a singl
 - Use sentinel for small HA setups, cluster for multi-node scale; both change ops complexity. Sentinel is right when the dataset fits one node and the requirement is availability; Cluster is right when capacity or write throughput exceeds one node. Both add operational surface: Sentinel adds the sentinel processes themselves (a second system to operate), Cluster adds slot management, rebalancing, and the client-version coordination.
 - For mykb: the node anchors the Redis branch of the data-storage cluster — caching strategies, replication, and consistent hashing all connect here.
 
-## Related
 
+## Related
 - [[wiki/data-storage/caching-strategies|Caching Strategies]] — Redis's main job
 - [[wiki/data-storage/consistent-hashing|Consistent Hashing]] — slot-based hashing
 - [[wiki/data-storage/replication-strategies|Replication Strategies]] — replication behind failover

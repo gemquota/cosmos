@@ -19,10 +19,10 @@ Timing attacks are side-channel attacks that recover secrets by measuring how lo
 - RSIS3/mykb relevance: any secret comparison in the RSIS3 stack — API tokens, registry checksums, webhook signature verification — should use constant-time primitives, and loop hygiene should treat hand-rolled equality as a review flag, since a leak in the memory layer's auth path compromises everything downstream.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/padding-oracle|Padding Oracle]] — related coverage in the same cluster
-- [[wiki/api-protocols/hash-collision-dos|Hash Collision DoS]] — related coverage in the same cluster
-- [[wiki/api-protocols/regex-dos|ReDoS Attacks]] — related coverage in the same cluster
-- [[wiki/security-auth/cve-disclosures|CVE Disclosures]] — related coverage in the same cluster
-- [[wiki/api-protocols/rate-limiting|Rate Limiting]] — related coverage in the same cluster
-- [[wiki/api-protocols/backpressure|Backpressure]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/padding-oracle|Padding Oracle]]
+- [[wiki/api-protocols/hash-collision-dos|Hash Collision DoS]]
+- [[wiki/api-protocols/regex-dos|ReDoS Attacks]]
+- [[wiki/security-auth/cve-disclosures|CVE Disclosures]]
+- [[wiki/api-protocols/rate-limiting|Rate Limiting]]
+- [[wiki/api-protocols/backpressure|Backpressure]]

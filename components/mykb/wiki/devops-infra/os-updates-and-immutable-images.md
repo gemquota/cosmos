@@ -22,10 +22,10 @@ OS update strategy is the decision between patching in place and rebuilding: mut
 - RSIS3 relevance: cosmos's dashboard and daemon should ship as immutable artifacts — rebuild, test, promote — so RSIS3 never debugs an instance whose state drifted from the build.
 
 ## Related
-- [[wiki/devops-infra/container-images-oci|Container Images (OCI)]] — related coverage in the same cluster
-- [[wiki/os-shell/immutable-filesystems|Immutable Filesystems]] — related coverage in the same cluster
-- [[wiki/devops-infra/renovate-and-dependency-updates|Renovate & Dependency Updates]] — related coverage in the same cluster
-- [[wiki/infrastructure/immutable-infrastructure|Immutable Infrastructure]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/container-images-oci|Container Images (OCI)]]
+- [[wiki/os-shell/immutable-filesystems|Immutable Filesystems]]
+- [[wiki/devops-infra/renovate-and-dependency-updates|Renovate & Dependency Updates]]
+- [[wiki/infrastructure/immutable-infrastructure|Immutable Infrastructure]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

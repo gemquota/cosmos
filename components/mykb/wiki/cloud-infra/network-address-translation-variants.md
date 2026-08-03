@@ -26,5 +26,3 @@ NAT variants — static (1:1), dynamic (many:few), NAPT/port address translation
 - [[wiki/infrastructure/network-function-virtualization|Network Function Virtualization]]
 - [[wiki/infrastructure/network-policy|Network Policy]]
 - [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

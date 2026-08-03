@@ -19,7 +19,7 @@ Spinlocks and mutexes are the two fundamental locking primitives: a spinlock bus
 - Operational tradeoffs: spinlocks are fast when contention is rare and hold times are nanoseconds, but wasteful when many CPUs spin on a contended lock; mutexes cost a context switch per handoff but scale to long or contended sections. The practice rules: measure contention before optimizing (perf lock, lockstat), keep critical sections minimal, prefer RCU or per-CPU structures for read-mostly data, and let lockdep validate ordering in debug builds. RSIS3/mykb relevance: RSIS3's registry and checkpoint writes are a locking design problem: spinlock-style optimism for short updates, mutex-style serialization for long rebuilds, and the same deadlock/inversion discipline applies to loop coordination.
 
 ## Related
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -19,10 +19,10 @@ The SameSite attribute tells the browser when a cookie may accompany cross-site 
 - RSIS3/mykb relevance: the SameSite decision parallels memory-layer trust boundaries: treat cookies like session state in MyKB's daemon, scope them tightly, and never rely on a single header for authorization — defense in depth (SameSite plus tokens plus origin checks) mirrors how RSIS3 gates cross-loop writes.
 
 ## Related
-- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/cookie-prefixes|Cookie Prefixes]] — related coverage in the same cluster
-- [[wiki/api-protocols/cookie-scoping|Cookie Scoping]] — related coverage in the same cluster
-- [[wiki/api-protocols/domain-cookies|Domain Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-cookies|HTTP Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf|CSRF]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]]
+- [[wiki/api-protocols/cookie-prefixes|Cookie Prefixes]]
+- [[wiki/api-protocols/cookie-scoping|Cookie Scoping]]
+- [[wiki/api-protocols/domain-cookies|Domain Cookies]]
+- [[wiki/api-protocols/http-cookies|HTTP Cookies]]
+- [[wiki/api-protocols/csrf|CSRF]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

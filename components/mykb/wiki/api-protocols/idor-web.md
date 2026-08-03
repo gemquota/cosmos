@@ -25,10 +25,10 @@ Operational tradeoffs: centralizing authorization (policy layer or per-object ca
 RSIS3/mykb relevance: the wiki API's note, graph, and pulse endpoints are object-addressed; documenting the owner-bound query rule gives RSIS3's security reviews a pattern to assert on every resource route.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/mass-assignment|Mass Assignment]] — related coverage in the same cluster
-- [[wiki/api-protocols/insecure-deserialization|Insecure Deserialization]] — related coverage in the same cluster
-- [[wiki/api-protocols/file-upload-security|File Upload Security]] — related coverage in the same cluster
-- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/deserialization-attacks|Deserialization Attacks]] — related coverage in the same cluster
-- [[wiki/security-auth/privilege-escalation|Privilege Escalation]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/mass-assignment|Mass Assignment]]
+- [[wiki/api-protocols/insecure-deserialization|Insecure Deserialization]]
+- [[wiki/api-protocols/file-upload-security|File Upload Security]]
+- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]]
+- [[wiki/security-auth/deserialization-attacks|Deserialization Attacks]]
+- [[wiki/security-auth/privilege-escalation|Privilege Escalation]]

@@ -25,10 +25,10 @@ Operational tradeoffs: explicit permit lists add boilerplate per endpoint but ma
 RSIS3/mykb relevance: any RSIS3-generated CRUD endpoint must define its writable fields explicitly; documenting the permit-list rule lets check-practices verify bindings across services.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/insecure-deserialization|Insecure Deserialization]] — related coverage in the same cluster
-- [[wiki/api-protocols/file-upload-security|File Upload Security]] — related coverage in the same cluster
-- [[wiki/api-protocols/zip-slip|Zip Slip]] — related coverage in the same cluster
-- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/deserialization-attacks|Deserialization Attacks]] — related coverage in the same cluster
-- [[wiki/security-auth/privilege-escalation|Privilege Escalation]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/insecure-deserialization|Insecure Deserialization]]
+- [[wiki/api-protocols/file-upload-security|File Upload Security]]
+- [[wiki/api-protocols/zip-slip|Zip Slip]]
+- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]]
+- [[wiki/security-auth/deserialization-attacks|Deserialization Attacks]]
+- [[wiki/security-auth/privilege-escalation|Privilege Escalation]]

@@ -25,7 +25,6 @@ Sprite sheets pack many images into one file so a page loads one request and pos
 - [[wiki/web-platforms/web-animations|Web Animations API]]
 - [[wiki/web-platforms/inline-svg|Inline SVG]]
 - [[wiki/web-platforms/svg-animation|SVG Animation]]
-- [[wiki/web-platforms/sprite-sheets|Sprite Sheets]]
 - [[wiki/web-platforms/web-apis|Web APIs]]
 - [[wiki/web-platforms/css-layout|CSS Layout]]
 - [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]]

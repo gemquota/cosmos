@@ -19,8 +19,8 @@ Socket options are the per-socket knobs that tune how the kernel handles a conne
 - Operational tradeoffs: the knobs are cheap to set and powerful, but every option is a tradeoff — bigger buffers buy throughput at latency/memory cost, aggressive ACK/NO_DELAY buys latency at packet-count cost, and reuse options buy bind flexibility at fairness cost. The practice rules: set the few options that match your protocol (NO_DELAY for request/response, reuseport for multi-worker, keepalive tuned for your idle tolerance), verify with `ss -o`/`netstat -s`, and treat sysctl-wide tuning (`net.core.rmem_max`, `net.ipv4.tcp_*`) as capacity work, not per-connection fixes. RSIS3/mykb relevance: the daemon's API sockets should set `TCP_NODELAY` and tuned keepalive so dashboard requests and agent callbacks never wait on Nagle or die silently on dead connections — the transport-level mirror of loop timeout discipline.
 
 ## Related
-- [[wiki/os-shell/errexit-and-shell-options|Errexit & Shell Options]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/os-shell/errexit-and-shell-options|Errexit & Shell Options]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

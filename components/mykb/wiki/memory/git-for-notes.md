@@ -26,4 +26,4 @@ Git for notes means keeping a markdown knowledge base in a git repository so eve
 - [[wiki/memory/provenance|Provenance]] — git history doubles as provenance
 - [[wiki/memory/org-mode|Org Mode]] — plain-text systems version cleanly
 - [[wiki/memory/personal-knowledge-management|Personal Knowledge Management]] — versioned PKM survives mistakes
-- [[wiki/sources/README|Sources]] — the namespace whose history matters most
+- [[wiki/sources/index|Sources]] — the namespace whose history matters most

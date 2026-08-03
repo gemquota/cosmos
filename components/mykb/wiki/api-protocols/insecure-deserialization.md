@@ -25,10 +25,10 @@ Operational tradeoffs: the durable fix is to stop deserializing untrusted data: 
 RSIS3/mykb relevance: the wiki's ingestion tooling should never unpickle or ObjectInputStream-unserialize untrusted artifacts; documenting the no-native-deserialization rule gives RSIS3's checks a hard line to enforce.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/file-upload-security|File Upload Security]] — related coverage in the same cluster
-- [[wiki/api-protocols/zip-slip|Zip Slip]] — related coverage in the same cluster
-- [[wiki/api-protocols/cache-poisoning|Cache Poisoning]] — related coverage in the same cluster
-- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/deserialization-attacks|Deserialization Attacks]] — related coverage in the same cluster
-- [[wiki/security-auth/privilege-escalation|Privilege Escalation]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/file-upload-security|File Upload Security]]
+- [[wiki/api-protocols/zip-slip|Zip Slip]]
+- [[wiki/api-protocols/cache-poisoning|Cache Poisoning]]
+- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]]
+- [[wiki/security-auth/deserialization-attacks|Deserialization Attacks]]
+- [[wiki/security-auth/privilege-escalation|Privilege Escalation]]

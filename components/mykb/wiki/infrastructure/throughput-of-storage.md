@@ -22,9 +22,9 @@ Storage throughput is the bandwidth side of storage performance: how many bytes 
 - RSIS3/mykb relevance: when loops reason about data movement — snapshots, consolidation, migration — this node supplies the distinction between rated bandwidth and achieved throughput so capacity plans use realistic numbers.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]] — related coverage in the same cluster
-- [[wiki/cloud-infra/bandwidth-vs-throughput|Bandwidth vs Throughput]] — related coverage in the same cluster
-- [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]] — related coverage in the same cluster
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]]
+- [[wiki/cloud-infra/bandwidth-vs-throughput|Bandwidth vs Throughput]]
+- [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

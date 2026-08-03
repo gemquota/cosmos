@@ -24,4 +24,4 @@ Misalignment risk is the chance that a system's behavior diverges from intent in
 - [[wiki/concepts/subtle-misalignment|Subtle Misalignment]] — the sneaky middle
 - [[wiki/concepts/specification-problems|Specification Problems]] — the root cause
 - [[wiki/concepts/deceptive-alignment|Deceptive Alignment]] — the worst case
-- [[wiki/testing/ai-safety-evals|Ai Safety Evals]] — existing graph context
+- [[wiki/testing/ai-safety-evals|Ai Safety Evals]]

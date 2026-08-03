@@ -22,10 +22,10 @@ Linear tape remains the workhorse for long-term, low-cost retention: data writte
 - RSIS3/mykb relevance: for loops that decide what to persist and how long to keep it, tape is the canonical "cold tier" pattern; this node keeps the access-pattern tradeoffs retrievable so archival decisions are not made by price per GB alone.
 
 ## Related
-- [[wiki/devops-infra/backup-strategies-3-2-1|Backup Strategies: 3-2-1]] — related coverage in the same cluster
-- [[wiki/devops-infra/backup-tools-restic-borg|Backup Tools: restic & Borg]] — related coverage in the same cluster
-- [[wiki/infrastructure/optical-storage-tape|Optical Storage & Tape]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
+- [[wiki/devops-infra/backup-strategies-3-2-1|Backup Strategies: 3-2-1]]
+- [[wiki/devops-infra/backup-tools-restic-borg|Backup Tools: restic & Borg]]
+- [[wiki/infrastructure/optical-storage-tape|Optical Storage & Tape]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

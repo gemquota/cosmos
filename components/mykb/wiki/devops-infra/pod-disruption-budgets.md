@@ -21,10 +21,10 @@ PodDisruptionBudgets (PDBs) cap how many pods of a workload may be voluntarily e
 - RSIS3 relevance: if the wiki daemon runs replicated, a PDB keeps retrieval available during node maintenance — a small config that prevents a big outage.
 
 ## Related
-- [[wiki/devops-infra/slo-and-error-budgets|SLOs & Error Budgets]] — related coverage in the same cluster
-- [[wiki/devops-infra/pod-to-pod-communication|Pod-to-Pod Communication]] — related coverage in the same cluster
-- [[wiki/devops-infra/error-budgets|Error Budgets]] — related coverage in the same cluster
-- [[wiki/infrastructure/pod-lifecycle|Pod Lifecycle]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/slo-and-error-budgets|SLOs & Error Budgets]]
+- [[wiki/devops-infra/pod-to-pod-communication|Pod-to-Pod Communication]]
+- [[wiki/devops-infra/error-budgets|Error Budgets]]
+- [[wiki/infrastructure/pod-lifecycle|Pod Lifecycle]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

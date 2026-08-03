@@ -18,12 +18,13 @@ Webpack is the configurable bundler with the richest plugin ecosystem: loaders, 
 - Tradeoffs: webpack trades speed and simplicity for ecosystem depth — the most compatible bundler for legacy complexity; the alternative, Vite/Turbopack/esbuild, is faster and simpler where the ecosystem allows; the mature pattern is webpack for compatibility-bound projects and native tools elsewhere.
 - Operational notes: keep config reviewed, measure build time, and plan migration when plugin needs shrink.
 - RSIS3 relevance: the dashboard should only take on webpack's weight if plugins demand it — otherwise the native tools serve better.
+- Performance levers: enable persistent caching and cache isolation so incremental builds stay fast, split configuration by mode and environment, and inspect the module graph with stats output before optimizing — most slow builds come from a few large dependencies or a misconfigured resolver, not the bundler itself.
 
 ## Related
-- [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/parcel-practice|Parcel in Practice]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/turbopack-practice|Turbopack in Practice]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/babel-practice|Babel in Practice]] — related coverage in the same cluster
-- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/hot-reload|Hot Reload]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]]
+- [[wiki/js-ts-ecosystem/parcel-practice|Parcel in Practice]]
+- [[wiki/js-ts-ecosystem/turbopack-practice|Turbopack in Practice]]
+- [[wiki/js-ts-ecosystem/babel-practice|Babel in Practice]]
+- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]]
+- [[wiki/frontend-frameworks/hot-reload|Hot Reload]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

@@ -20,9 +20,9 @@ Disk partitioning divides a physical disk into addressable regions described by 
 - RSIS3/mykb relevance: partitioning is the disk's registry — a structured map that must stay consistent or the whole system is unreadable; MyKB's wiki index plays the same role for articles, which is why index corruption and snapshot drift are treated as first-class failures.
 
 ## Related
-- [[wiki/os-shell/journaling-filesystems|Journaling Filesystems]] — related coverage in the same cluster
-- [[wiki/os-shell/copy-on-write-filesystems|Copy-on-Write Filesystems]] — related coverage in the same cluster
-- [[wiki/os-shell/fuse-and-user-space-filesystems|FUSE & User-Space Filesystems]] — related coverage in the same cluster
-- [[wiki/os-shell/immutable-filesystems|Immutable Filesystems]] — related coverage in the same cluster
+- [[wiki/os-shell/journaling-filesystems|Journaling Filesystems]]
+- [[wiki/os-shell/copy-on-write-filesystems|Copy-on-Write Filesystems]]
+- [[wiki/os-shell/fuse-and-user-space-filesystems|FUSE & User-Space Filesystems]]
+- [[wiki/os-shell/immutable-filesystems|Immutable Filesystems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

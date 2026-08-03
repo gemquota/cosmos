@@ -19,13 +19,9 @@ Bandwidth is the capacity of a link (bits per second); throughput is what actual
 - Operational tradeoffs: raise throughput by removing loss, increasing window/BDP, parallelizing flows, and compressing — not just buying bandwidth; monitor both utilization and achieved throughput per path, and use TCP-friendly tuning for high-latency interconnects.
 - RSIS3/mykb relevance: the wiki's cross-region sync measurements record achieved throughput vs link rate, giving the loop realistic capacity numbers for planning replication jobs.
 - Testing: measure with parallel flows and large transfers (iperf-style), not single-stream curl, to see the practical ceiling; the single-stream number misleads for most services.
-- Overhead accounting: subtract protocol and retransmission overhead when sizing; a link at 95% utilization is already oversubscribed in practice.
+- Overhead accounting: subtract protocol and retransmission overhead when sizing; a link at 95% utilization is already oversubscribed in practice. Base capacity decisions on achieved-throughput dashboards per path, not interface counters.
 
 ## Related
 - [[wiki/infrastructure/throughput-of-storage|Storage Throughput]]
 - [[wiki/infrastructure/bandwidth-allocation|Bandwidth Allocation]]
 - [[wiki/cloud-infra/cost-of-bandwidth|Cost of Bandwidth]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

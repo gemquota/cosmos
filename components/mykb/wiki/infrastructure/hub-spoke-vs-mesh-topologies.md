@@ -20,10 +20,10 @@ Hub-spoke and mesh are the two poles of interconnect design: hub-spoke routes al
 - For mykb: the topology question recurs across the wiki's networking and service clusters — this node is the general lens for hub-spoke/federation and mesh/service-mesh decisions.
 
 ## Related
-- [[wiki/devops-infra/service-mesh-sidecars|Service Mesh Sidecars]] — related coverage in the same cluster
-- [[wiki/devops-infra/cluster-federation-vs-hub-spoke|Federation vs Hub-Spoke]] — related coverage in the same cluster
-- [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]] — related coverage in the same cluster
-- [[wiki/infrastructure/service-mesh|Service Mesh]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
+- [[wiki/devops-infra/service-mesh-sidecars|Service Mesh Sidecars]]
+- [[wiki/devops-infra/cluster-federation-vs-hub-spoke|Federation vs Hub-Spoke]]
+- [[wiki/devops-infra/api-mesh-patterns|API Mesh Patterns]]
+- [[wiki/infrastructure/service-mesh|Service Mesh]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -25,5 +25,5 @@ Generalization issues are the many ways performance fails to transfer: overfitti
 - [[wiki/concepts/shortcut-learning|Shortcut Learning]] — the mechanism
 - [[wiki/concepts/distribution-shift-ai|Distribution Shift in AI]] — the deployment side
 - [[wiki/concepts/memorization-vs-generalization|Memorization vs Generalization]] — the core distinction
-- [[wiki/concepts/goal-misgeneralization|Goal Misgeneralization]] — the full treatment of this theme
-- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]] — existing graph context
+- [[wiki/concepts/goal-misgeneralization|Goal Misgeneralization]]
+- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]]

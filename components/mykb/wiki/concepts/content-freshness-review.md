@@ -25,4 +25,3 @@ A content freshness review checks each article for dated claims, changed APIs, d
 - [[wiki/concepts/stale-articles|Stale Articles]]
 - [[wiki/api-services/source-review-schedules|Source Review Schedules]]
 - [[wiki/api-services/link-rot-monitoring|Link-Rot Monitoring]]
-- [[wiki/concepts/content-freshness-review|Content Freshness Review]]

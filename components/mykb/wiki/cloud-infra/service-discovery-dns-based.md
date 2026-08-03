@@ -25,5 +25,3 @@ DNS-based service discovery maps service names to addresses so clients do not ha
 - [[wiki/devops-infra/service-mesh-sidecars|Service Mesh Sidecars]]
 - [[wiki/cloud-infra/dns-over-https|DNS over HTTPS]]
 - [[wiki/devops-infra/service-meshes-istio-linkerd|Service Meshes: Istio & Linkerd]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

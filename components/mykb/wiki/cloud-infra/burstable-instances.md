@@ -25,7 +25,3 @@ Burstable instances (AWS t-family, Azure B-series) accumulate CPU credits during
 - [[wiki/cloud-infra/dedicated-hosts-and-instances|Dedicated Hosts & Instances]]
 - [[wiki/cloud-infra/reserved-instances-vs-on-demand|Reserved vs On-Demand Instances]]
 - [[wiki/cloud-infra/spot-instances|Spot Instances]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

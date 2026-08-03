@@ -20,8 +20,8 @@ Time travel reads a consistent snapshot of a table as of an earlier timestamp or
 - Operational notes: set retention deliberately, monitor snapshot counts, and test snapshot-based recovery in drills.
 - RSIS3 relevance: RSIS3's state and checkpoint tables could use time travel — a bad loop step becomes a snapshot read away instead of a replay.
 
-## Related
 
+## Related
 - [[wiki/data-storage/data-versioning|Data Versioning]] — versioning as the mechanism behind time travel
 - [[wiki/data-storage/point-in-time-recovery|Point-in-Time Recovery]] — database-side recovery analog
 - [[wiki/data-storage/snapshot-isolation-and-timetravel|Snapshot Isolation And Timetravel]] — MVCC foundations

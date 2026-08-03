@@ -19,10 +19,10 @@ Hooks in practice are governed by two rules — call hooks at the top level and 
 - RSIS3/mykb relevance: hooks are dependency tracking with explicit invalidation — the same shape as RSIS3 loop dependencies; a custom hook that fetches MyKB search results should declare its deps (term, debounce, page) exactly, mirroring how loop outputs declare which registry inputs they read.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/hoc-patterns|Higher-Order Components]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/context-api|Context API]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/composition-apis|Composition APIs]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/hoc-patterns|Higher-Order Components]]
+- [[wiki/frontend-frameworks/context-api|Context API]]
+- [[wiki/frontend-frameworks/composition-apis|Composition APIs]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

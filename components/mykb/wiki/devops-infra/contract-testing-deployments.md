@@ -21,10 +21,10 @@ Contract testing validates that a consumer and provider agree on the message sha
 - RSIS3 relevance: the interfaces between RSIS3 loops (registry writes, pulse emissions, mykb queries) are internal contracts — contract-testing them makes loop upgrades safe to deploy independently.
 
 ## Related
-- [[wiki/devops-infra/contract-simulation-environments|Contract Simulation Environments]] — related coverage in the same cluster
-- [[wiki/infrastructure/blue-green-deployments|Blue-Green Deployments]] — related coverage in the same cluster
-- [[wiki/infrastructure/canary-deployments|Canary Deployments]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/contract-simulation-environments|Contract Simulation Environments]]
+- [[wiki/infrastructure/blue-green-deployments|Blue-Green Deployments]]
+- [[wiki/infrastructure/canary-deployments|Canary Deployments]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

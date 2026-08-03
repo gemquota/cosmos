@@ -20,9 +20,9 @@ Delay-tolerant networking (DTN) is the protocol family for networks where the as
 - For mykb: DTN is the extreme case that clarifies the internet's assumptions — the sibling networking nodes (fundamentals, VLANs, SDN) all assume the connected, low-delay regime DTN abandons, and the contrast is the lesson.
 
 ## Related
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/infrastructure/vlan-networking|VLAN Networking]] — related coverage in the same cluster
-- [[wiki/cloud-infra/multicast-networking|Multicast Networking]] — related coverage in the same cluster
-- [[wiki/infrastructure/software-defined-networking|Software-Defined Networking]] — related coverage in the same cluster
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/infrastructure/vlan-networking|VLAN Networking]]
+- [[wiki/cloud-infra/multicast-networking|Multicast Networking]]
+- [[wiki/infrastructure/software-defined-networking|Software-Defined Networking]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

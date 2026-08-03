@@ -24,4 +24,4 @@ Reward model error is the gap between what a reward model scores and what humans
 - [[wiki/concepts/reward-model-issues|Reward Model Issues]] — the umbrella
 - [[wiki/concepts/calibration|Calibration]] — the measurement
 - [[wiki/concepts/out-of-distribution|Out-of-Distribution]] — where error lives
-- [[wiki/concepts/rlaif|RLAIF (RL from AI Feedback)]] — the full treatment of this theme
+- [[wiki/concepts/rlaif|RLAIF (RL from AI Feedback)]]

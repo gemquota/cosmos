@@ -25,10 +25,10 @@ Operational tradeoffs: rich filter syntax (OData, RSQL) is powerful but has a le
 RSIS3/mykb relevance: mykb's TF-IDF search and graph queries are themselves filtering APIs; documenting their filter contract lets RSIS3 loops query memory precisely instead of over-fetching.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-sorting|API Sorting]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-expansion|API Expansion]] — related coverage in the same cluster
-- [[wiki/api-protocols/sparse-fieldsets|Sparse Fieldsets]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-query-parameters|REST Query Parameters]] — related coverage in the same cluster
-- [[wiki/api-protocols/offset-pagination|Offset Pagination]] — related coverage in the same cluster
-- [[wiki/api-protocols/cursor-pagination|Cursor Pagination]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/api-sorting|API Sorting]]
+- [[wiki/api-protocols/api-expansion|API Expansion]]
+- [[wiki/api-protocols/sparse-fieldsets|Sparse Fieldsets]]
+- [[wiki/api-protocols/rest-query-parameters|REST Query Parameters]]
+- [[wiki/api-protocols/offset-pagination|Offset Pagination]]
+- [[wiki/api-protocols/cursor-pagination|Cursor Pagination]]

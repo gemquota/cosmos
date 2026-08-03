@@ -24,5 +24,5 @@ Superposition research studies how neural networks store more features than dime
 - [[wiki/concepts/dictionary-learning-ai|Dictionary Learning for AI]] — the recovery method
 - [[wiki/concepts/feature-double-counting|Feature Double-Counting]] — a failure mode
 - [[wiki/concepts/sae-research|SAE Research]] — empirical side
-- [[wiki/agent-systems/introspection-ai|Introspection in AI]] — the full treatment of this theme
-- [[wiki/ai-ml/sparse-autoencoders|Sparse Autoencoders]] — existing graph context
+- [[wiki/agent-systems/introspection-ai|Introspection in AI]]
+- [[wiki/ai-ml/sparse-autoencoders|Sparse Autoencoders]]

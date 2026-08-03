@@ -21,11 +21,11 @@ Traffic shifting and splitting control what fraction of requests reach which ver
 - RSIS3 relevance: RSIS3's strategy changes can reuse traffic-style evaluation — split tasks between the current and candidate behavior by weight, compare outcomes, and shift as confidence grows.
 
 ## Related
-- [[wiki/infrastructure/traffic-shaping-and-qos|Traffic Shaping & QoS]] — related coverage in the same cluster
-- [[wiki/devops-infra/mirroring-and-shadow-traffic|Mirroring & Shadow Traffic]] — related coverage in the same cluster
-- [[wiki/infrastructure/east-west-vs-north-south-traffic|East-West vs North-South Traffic]] — related coverage in the same cluster
-- [[wiki/infrastructure/traffic-engineering|Traffic Engineering]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/infrastructure/traffic-shaping-and-qos|Traffic Shaping & QoS]]
+- [[wiki/devops-infra/mirroring-and-shadow-traffic|Mirroring & Shadow Traffic]]
+- [[wiki/infrastructure/east-west-vs-north-south-traffic|East-West vs North-South Traffic]]
+- [[wiki/infrastructure/traffic-engineering|Traffic Engineering]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

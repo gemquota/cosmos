@@ -25,10 +25,10 @@ Operational tradeoffs: distinct audiences per service make validation precise bu
 RSIS3/mykb relevance: when RSIS3 adds a new API consumer, the checklist item "does the new service validate aud?" is the kind of durable rule that belongs in a synthesis note and check-practices.
 
 ## Related
-- [[wiki/api-protocols/jwt-practice|JWT in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/issuer-validation|Issuer Validation]] — related coverage in the same cluster
-- [[wiki/api-protocols/introspection-endpoint|Token Introspection]] — related coverage in the same cluster
-- [[wiki/api-protocols/jwks-rotation|JWKS Rotation]] — related coverage in the same cluster
-- [[wiki/api-protocols/json-web-tokens|JWT]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2-scopes|OAuth Scopes]] — related coverage in the same cluster
-- [[wiki/identity/jwks|JWKS]] — related coverage in the same cluster
+- [[wiki/api-protocols/jwt-practice|JWT in Practice]]
+- [[wiki/api-protocols/issuer-validation|Issuer Validation]]
+- [[wiki/api-protocols/introspection-endpoint|Token Introspection]]
+- [[wiki/api-protocols/jwks-rotation|JWKS Rotation]]
+- [[wiki/api-protocols/json-web-tokens|JWT]]
+- [[wiki/api-protocols/oauth2-scopes|OAuth Scopes]]
+- [[wiki/identity/jwks|JWKS]]

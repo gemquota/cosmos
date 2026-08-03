@@ -22,10 +22,10 @@ emptyDir and ConfigMap volumes cover the ephemeral and configuration storage nee
 - RSIS3 relevance: the wiki daemon's scratch and config needs map directly — ephemeral caches in emptyDir, config in ConfigMaps, durable data in PVCs.
 
 ## Related
-- [[wiki/devops-infra/local-persistent-volumes|Local Persistent Volumes]] — related coverage in the same cluster
-- [[wiki/devops-infra/configmaps-and-secrets-rotation|ConfigMaps & Secrets Rotation]] — related coverage in the same cluster
-- [[wiki/infrastructure/persistent-volumes|Persistent Volumes]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/local-persistent-volumes|Local Persistent Volumes]]
+- [[wiki/devops-infra/configmaps-and-secrets-rotation|ConfigMaps & Secrets Rotation]]
+- [[wiki/infrastructure/persistent-volumes|Persistent Volumes]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

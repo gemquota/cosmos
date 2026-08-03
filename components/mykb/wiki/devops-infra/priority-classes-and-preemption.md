@@ -21,11 +21,11 @@ PriorityClasses and preemption govern which pods win when resources are scarce: 
 - RSIS3 relevance: if cosmos runs time-critical jobs (dashboard builds, telemetry collection) alongside batch work, priorities keep the critical path scheduled when nodes fill up.
 
 ## Related
-- [[wiki/infrastructure/priority-queuing-and-dscp|Priority Queuing & DSCP]] — related coverage in the same cluster
-- [[wiki/devops-infra/storage-classes-and-provisioners|Storage Classes & Provisioners]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-classes|Storage Classes]] — related coverage in the same cluster
-- [[wiki/cloud-infra/coldline-and-archive-storage-classes|Coldline & Archive Storage Classes]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/infrastructure/priority-queuing-and-dscp|Priority Queuing & DSCP]]
+- [[wiki/devops-infra/storage-classes-and-provisioners|Storage Classes & Provisioners]]
+- [[wiki/infrastructure/storage-classes|Storage Classes]]
+- [[wiki/cloud-infra/coldline-and-archive-storage-classes|Coldline & Archive Storage Classes]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

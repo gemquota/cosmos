@@ -26,4 +26,3 @@ The operational posture should treat training data as a supply chain: checksums,
 - [[wiki/prompt-engineering/red-teaming|Red Teaming]] — Probing for planted backdoors
 - [[wiki/ai-ml/sft|SFT]] — The training stage attackers target
 - [[wiki/ai-ml/fine-tuning|Fine-Tuning]] — The activity that exposes the supply chain
-- [[raw/archive/session-artifacts-2026-07/topics/security|security — Supply-chain security domain

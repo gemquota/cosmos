@@ -26,5 +26,3 @@ TCP retransmission is how the protocol recovers from lost segments: timers trigg
 - [[wiki/cloud-infra/udp-vs-tcp|UDP vs TCP]]
 - [[wiki/infrastructure/nvme-over-fabrics-tcp|NVMe over Fabrics (TCP)]]
 - [[wiki/os-shell/tcp-keepalive|TCP Keepalive]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

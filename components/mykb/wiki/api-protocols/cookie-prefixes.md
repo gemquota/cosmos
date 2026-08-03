@@ -25,10 +25,10 @@ Operational tradeoffs: __Host- is the strongest, safest choice for session and a
 RSIS3/mykb relevance: prefixing session cookies is a concrete, checkable rule for the dashboard; encoding it here means RSIS3 security reviews can assert cookie names rather than debate flag settings.
 
 ## Related
-- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/cookie-scoping|Cookie Scoping]] — related coverage in the same cluster
-- [[wiki/api-protocols/domain-cookies|Domain Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/path-cookies|Path Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-cookies|HTTP Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf|CSRF]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]]
+- [[wiki/api-protocols/cookie-scoping|Cookie Scoping]]
+- [[wiki/api-protocols/domain-cookies|Domain Cookies]]
+- [[wiki/api-protocols/path-cookies|Path Cookies]]
+- [[wiki/api-protocols/http-cookies|HTTP Cookies]]
+- [[wiki/api-protocols/csrf|CSRF]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

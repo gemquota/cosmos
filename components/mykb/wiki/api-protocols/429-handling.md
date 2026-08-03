@@ -25,10 +25,10 @@ Operational tradeoffs: server-side, strict limits protect capacity but anger int
 RSIS3/mykb relevance: RSIS3 loops that call external LLM APIs during ideation must encode 429 plus Retry-After handling into their retry protocols; capturing the effective limits as wiki facts keeps the loops' backoff tuned.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/503-handling|Handling 503]] — related coverage in the same cluster
-- [[wiki/api-protocols/502-handling|Handling 502]] — related coverage in the same cluster
-- [[wiki/api-protocols/504-handling|Handling 504]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-status-codes|HTTP Status Codes]] — related coverage in the same cluster
-- [[wiki/api-protocols/retry-backoff|Retry & Backoff]] — related coverage in the same cluster
-- [[wiki/api-protocols/error-contract-design|Error Contract Design]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/503-handling|Handling 503]]
+- [[wiki/api-protocols/502-handling|Handling 502]]
+- [[wiki/api-protocols/504-handling|Handling 504]]
+- [[wiki/api-protocols/http-status-codes|HTTP Status Codes]]
+- [[wiki/api-protocols/retry-backoff|Retry & Backoff]]
+- [[wiki/api-protocols/error-contract-design|Error Contract Design]]

@@ -19,10 +19,10 @@ Template injection (SSTI on the server, CSTI on the client) occurs when attacker
 - RSIS3/mykb relevance: MyKB renders article content and search snippets; any template pass over stored content is a template-injection surface, so the renderer must treat article bodies as data and escape at output, mirroring RSIS3's rule that untrusted input never becomes executable structure.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/sql-injection-practice|SQL Injection]] — related coverage in the same cluster
-- [[wiki/api-protocols/xml-injection|XML Injection]] — related coverage in the same cluster
-- [[wiki/api-protocols/nosql-injection|NoSQL Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/command-injection|Command Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/ldap-injection|LDAP Injection]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/sql-injection-practice|SQL Injection]]
+- [[wiki/api-protocols/xml-injection|XML Injection]]
+- [[wiki/api-protocols/nosql-injection|NoSQL Injection]]
+- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]]
+- [[wiki/security-auth/command-injection|Command Injection]]
+- [[wiki/security-auth/ldap-injection|LDAP Injection]]

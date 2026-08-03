@@ -19,10 +19,10 @@ Recoil is a React state library built on a dependency graph of atoms (state unit
 - RSIS3/mykb relevance: the atom/selector graph is the same shape as RSIS3's registry-and-derived-metrics model: declared sources, derived outputs that invalidate automatically, and a dependency graph that is inspectable — the ideal structure for the dashboard's telemetry views.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/mobx-practice|MobX in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/redux-practice|Redux in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/zustand-practice|Zustand in Practice]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/state-management-mobile|State Management Mobile]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/mobx-practice|MobX in Practice]]
+- [[wiki/frontend-frameworks/redux-practice|Redux in Practice]]
+- [[wiki/frontend-frameworks/zustand-practice|Zustand in Practice]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/frontend-frameworks/state-management-mobile|State Management Mobile]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]

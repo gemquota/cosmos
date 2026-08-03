@@ -26,5 +26,3 @@ HTTP/3 runs HTTP semantics over QUIC, a UDP-based transport with TLS 1.3 built i
 - [[wiki/devops-infra/http-caching-directives|HTTP Caching Directives]]
 - [[wiki/os-shell/curl-and-http-clients|curl & HTTP Clients]]
 - [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

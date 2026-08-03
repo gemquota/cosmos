@@ -25,10 +25,8 @@ Operational tradeoffs: including intermediates costs a few kilobytes per handsha
 RSIS3/mykb relevance: mykb's deployed sites are TLS-terminated; documenting the expected chain and expiry-monitoring rule keeps the ops loop from rediscovering broken-chain failures.
 
 ## Related
-- [[wiki/api-protocols/tls-https|TLS and HTTPS]] — related coverage in the same cluster
-- [[wiki/api-protocols/ocsp-stapling|OCSP Stapling]] — related coverage in the same cluster
-- [[wiki/api-protocols/certificate-chains|Certificate Chains]] — related coverage in the same cluster
-- [[wiki/api-protocols/ocsp-stapling|OCSP Stapling]] — related coverage in the same cluster
-- [[wiki/api-protocols/tls-certificates|TLS Certificates]] — related coverage in the same cluster
-- [[wiki/api-protocols/tls-handshake|TLS Handshake]] — related coverage in the same cluster
-- [[wiki/api-protocols/mtls|mTLS]] — related coverage in the same cluster
+- [[wiki/api-protocols/tls-https|TLS and HTTPS]]
+- [[wiki/api-protocols/ocsp-stapling|OCSP Stapling]]
+- [[wiki/api-protocols/tls-certificates|TLS Certificates]]
+- [[wiki/api-protocols/tls-handshake|TLS Handshake]]
+- [[wiki/api-protocols/mtls|mTLS]]

@@ -20,10 +20,10 @@ Flow tables and offloads move packet-processing decisions from general-purpose C
 - For mykb: flow tables are the mechanism under the SDN and OpenFlow cluster — they connect flow control, flow logs, and ASIC pipelines into one story.
 
 ## Related
-- [[wiki/cloud-infra/flow-control|Flow Control]] — related coverage in the same cluster
-- [[wiki/cloud-infra/flow-logs-and-analysis|Flow Logs & Analysis]] — related coverage in the same cluster
-- [[wiki/os-shell/page-tables|Page Tables]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
+- [[wiki/cloud-infra/flow-control|Flow Control]]
+- [[wiki/cloud-infra/flow-logs-and-analysis|Flow Logs & Analysis]]
+- [[wiki/os-shell/page-tables|Page Tables]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

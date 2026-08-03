@@ -25,10 +25,9 @@ Operational tradeoffs: the flow has more moving parts than implicit or client cr
 RSIS3/mykb relevance: if the hub dashboard adds OIDC login, the code flow plus PKCE plus state validation pattern is the standing rule to encode, so RSIS3-generated security reviews check the callback handler's state check.
 
 ## Related
-- [[wiki/api-protocols/auth-flows-web|Auth Flows on the Web]] — related coverage in the same cluster
-- [[wiki/api-protocols/device-flow|Device Authorization Flow]] — related coverage in the same cluster
-- [[wiki/api-protocols/client-credentials-flow|Client Credentials Flow]] — related coverage in the same cluster
-- [[wiki/api-protocols/authorization-code-flow|Authorization Code Flow]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2|OAuth 2.0]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2-client-credentials|Client Credentials]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2-authorization-code|Authorization Code Flow]] — related coverage in the same cluster
+- [[wiki/api-protocols/auth-flows-web|Auth Flows on the Web]]
+- [[wiki/api-protocols/device-flow|Device Authorization Flow]]
+- [[wiki/api-protocols/client-credentials-flow|Client Credentials Flow]]
+- [[wiki/api-protocols/oauth2|OAuth 2.0]]
+- [[wiki/api-protocols/oauth2-client-credentials|Client Credentials]]
+- [[wiki/api-protocols/oauth2-authorization-code|Authorization Code Flow]]

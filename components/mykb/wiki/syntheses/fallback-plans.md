@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Fallback Plans"
 description: "Prepared responses when systems fail"
 tags: ["fallback", "plans", "reliability"]

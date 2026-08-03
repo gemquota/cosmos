@@ -25,10 +25,9 @@ Operational tradeoffs: frame-ancestors is stricter and more expressive than X-Fr
 RSIS3/mykb relevance: the unified dashboard embeds mykb and SPACE views same-origin; its framing policy is a concrete case of the SAMEORIGIN choice and a reusable example for security reviews.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/iframe-sandboxing|iframe Sandboxing]] — related coverage in the same cluster
-- [[wiki/api-protocols/popup-security|Popup Security]] — related coverage in the same cluster
-- [[wiki/api-protocols/clickjacking-defense|Clickjacking Defense]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors|CORS]] — related coverage in the same cluster
-- [[wiki/security-auth/security-headers|Security Headers]] — related coverage in the same cluster
-- [[wiki/security-auth/content-security-policy|Content Security Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/iframe-sandboxing|iframe Sandboxing]]
+- [[wiki/api-protocols/popup-security|Popup Security]]
+- [[wiki/api-protocols/cors|CORS]]
+- [[wiki/security-auth/security-headers|Security Headers]]
+- [[wiki/security-auth/content-security-policy|Content Security Policy]]

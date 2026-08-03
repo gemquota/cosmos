@@ -25,10 +25,8 @@ Operational tradeoffs: standardizing on UTF-8 everywhere (transport, storage, te
 RSIS3/mykb relevance: the wiki stores Markdown with frontmatter; a standing rule that all mykb files are UTF-8 and all APIs declare charset prevents silent corruption during RSIS3 consolidation writes.
 
 ## Related
-- [[wiki/api-protocols/http-fundamentals|HTTP Fundamentals]] — related coverage in the same cluster
-- [[wiki/api-protocols/mime-types|MIME Types]] — related coverage in the same cluster
-- [[wiki/api-protocols/charset-encodings|Charset Encodings]] — related coverage in the same cluster
-- [[wiki/api-protocols/mime-types|MIME Types]] — related coverage in the same cluster
-- [[wiki/api-protocols/content-negotiation|Content Negotiation]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-compression|HTTP Compression]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-headers|HTTP Headers]] — related coverage in the same cluster
+- [[wiki/api-protocols/http-fundamentals|HTTP Fundamentals]]
+- [[wiki/api-protocols/mime-types|MIME Types]]
+- [[wiki/api-protocols/content-negotiation|Content Negotiation]]
+- [[wiki/api-protocols/http-compression|HTTP Compression]]
+- [[wiki/api-protocols/http-headers|HTTP Headers]]

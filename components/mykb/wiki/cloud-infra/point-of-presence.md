@@ -23,7 +23,3 @@ A point of presence (PoP) is a provider's local facility where traffic enters th
 
 ## Related
 - [[wiki/devops-infra/point-in-time-recovery|Point-in-Time Recovery]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

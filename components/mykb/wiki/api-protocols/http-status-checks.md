@@ -28,6 +28,5 @@ RSIS3/mykb relevance: the wiki's link-checker and the dashboard's health views a
 - [[wiki/api-services/dead-link-detection|Dead Link Detection]]
 - [[wiki/api-services/link-rot-monitoring|Link-Rot Monitoring]]
 - [[wiki/cloud-infra/source-vetting|Source Vetting]]
-- [[wiki/api-protocols/http-status-checks|HTTP Status Checks]]
 - [[wiki/api-protocols/url-formatting|URL Formatting]]
 - [[wiki/concepts/verifiability-score|Verifiability Score]]

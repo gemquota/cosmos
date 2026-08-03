@@ -24,4 +24,4 @@ The goal content thesis concerns what learned optimizers' goals actually look li
 - [[wiki/concepts/basic-ai-goals|Basic AI Goals]] — content claims
 - [[wiki/concepts/deceptive-alignment|Deceptive Alignment]] — the adversarial reading
 - [[wiki/concepts/goal-specification|Goal Specification]] — design response
-- [[wiki/ai-ml/instrumental-convergence|Instrumental Convergence]] — existing graph context
+- [[wiki/ai-ml/instrumental-convergence|Instrumental Convergence]]

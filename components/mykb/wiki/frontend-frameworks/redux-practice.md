@@ -19,10 +19,10 @@ Redux is the archetypal unidirectional state architecture: a single store holds 
 - RSIS3/mykb relevance: Redux's event-sourced store is the closest frontend analog to RSIS3's registry: every mutation is a logged, replayable transition, and derived metrics come from memoized selectors over the raw state — the same append-only discipline MyKB uses for its knowledge graph.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/zustand-practice|Zustand in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/jotai-practice|Jotai in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/recoil-practice|Recoil in Practice]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/state-management-mobile|State Management Mobile]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/zustand-practice|Zustand in Practice]]
+- [[wiki/frontend-frameworks/jotai-practice|Jotai in Practice]]
+- [[wiki/frontend-frameworks/recoil-practice|Recoil in Practice]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/frontend-frameworks/state-management-mobile|State Management Mobile]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]

@@ -19,10 +19,10 @@ XML injection is the insertion of markup, attributes, or entity declarations int
 - RSIS3/mykb relevance: MyKB ingests and exports structured artifacts; any XML-capable path in the pipeline should apply the same hardened-parser rule, treating documents as data, never as structure to trust, so an uploaded artifact cannot become a file-read or SSRF primitive inside the memory layer.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/nosql-injection|NoSQL Injection]] — related coverage in the same cluster
-- [[wiki/api-protocols/second-order-injection|Second-Order Injection]] — related coverage in the same cluster
-- [[wiki/api-protocols/blind-injection|Blind Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/command-injection|Command Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/ldap-injection|LDAP Injection]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/nosql-injection|NoSQL Injection]]
+- [[wiki/api-protocols/second-order-injection|Second-Order Injection]]
+- [[wiki/api-protocols/blind-injection|Blind Injection]]
+- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]]
+- [[wiki/security-auth/command-injection|Command Injection]]
+- [[wiki/security-auth/ldap-injection|LDAP Injection]]

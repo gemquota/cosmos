@@ -21,11 +21,11 @@ Two patterns dominate multi-cluster Kubernetes management. Federation (KubeFed) 
 - RSIS3 relevance: RSIS3's multiple instances (dev versus prod knowledge bases) map naturally to hub-spoke — a central control repo pushes configuration to independent instances while each keeps local state.
 
 ## Related
-- [[wiki/infrastructure/hub-spoke-vs-mesh-topologies|Hub-Spoke vs Mesh Topologies]] — related coverage in the same cluster
-- [[wiki/devops-infra/workload-identity-federation|Workload Identity Federation]] — related coverage in the same cluster
-- [[wiki/infrastructure/redis-cluster-and-sentinel|Redis Cluster And Sentinel]] — related coverage in the same cluster
-- [[wiki/devops-infra/multi-cluster-management|Multi-Cluster Management]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/infrastructure/hub-spoke-vs-mesh-topologies|Hub-Spoke vs Mesh Topologies]]
+- [[wiki/devops-infra/workload-identity-federation|Workload Identity Federation]]
+- [[wiki/infrastructure/redis-cluster-and-sentinel|Redis Cluster And Sentinel]]
+- [[wiki/devops-infra/multi-cluster-management|Multi-Cluster Management]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

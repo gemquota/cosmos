@@ -22,8 +22,8 @@ SCSI is a command/response architecture that defines how hosts issue I/O to stor
 - RSIS3/mykb relevance: self-improvement cycles that tune storage subsystems need this node to distinguish command semantics from transport, avoiding confusion between SCSI-level errors and fabric-level problems.
 
 ## Related
-- [[wiki/cloud-infra/http-protocols|HTTP Protocols]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
-- [[wiki/cloud-infra/object-storage-protocols|Object Storage Protocols]] — related coverage in the same cluster
+- [[wiki/cloud-infra/http-protocols|HTTP Protocols]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
+- [[wiki/cloud-infra/object-storage-protocols|Object Storage Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

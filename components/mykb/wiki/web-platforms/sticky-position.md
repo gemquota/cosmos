@@ -24,7 +24,6 @@ position: sticky pins an element to the viewport within its containing block aft
 - [[wiki/web-platforms/virtual-scrolling|Virtual Scrolling]]
 - [[wiki/web-platforms/scroll-behavior|scroll-behavior CSS]]
 - [[wiki/web-platforms/scroll-snap|Scroll Snap]]
-- [[wiki/web-platforms/sticky-position|position: sticky]]
 - [[wiki/web-platforms/css-layout|CSS Layout]]
 - [[wiki/web-platforms/web-accessibility|Web Accessibility]]
 - [[wiki/web-platforms/dom-manipulation|DOM Manipulation]]
