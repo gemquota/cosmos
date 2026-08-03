@@ -19,10 +19,10 @@ The Secure attribute on a cookie instructs the browser to send it only over HTTP
 - RSIS3/mykb relevance: session and API credentials issued by the MyKB daemon or RSIS3 service boundaries should always carry Secure plus HttpOnly; the flag discipline mirrors the broader rule that credentials must never travel outside a trusted transport channel.
 
 ## Related
-- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/httponly-flag|HttpOnly Cookie Flag]] — related coverage in the same cluster
-- [[wiki/api-protocols/samesite-lax-strict|SameSite Lax vs Strict]] — related coverage in the same cluster
-- [[wiki/api-protocols/cookie-prefixes|Cookie Prefixes]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-cookies|HTTP Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf|CSRF]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]]
+- [[wiki/api-protocols/httponly-flag|HttpOnly Cookie Flag]]
+- [[wiki/api-protocols/samesite-lax-strict|SameSite Lax vs Strict]]
+- [[wiki/api-protocols/cookie-prefixes|Cookie Prefixes]]
+- [[wiki/api-protocols/http-cookies|HTTP Cookies]]
+- [[wiki/api-protocols/csrf|CSRF]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

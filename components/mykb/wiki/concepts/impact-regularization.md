@@ -24,5 +24,5 @@ Impact regularization adds a penalty term discouraging large or irreversible cha
 - [[wiki/concepts/side-effects-problem|Side Effects Problem]] — the target
 - [[wiki/concepts/restraint-training|Restraint Training]] — the training-time cousin
 - [[wiki/concepts/conservatism-ai|Conservatism in AI Design]] — the stance
-- [[wiki/concepts/mild-optimization|Mild Optimization]] — the full treatment of this theme
-- [[wiki/concepts/calibration|Calibration]] — existing graph context
+- [[wiki/concepts/mild-optimization|Mild Optimization]]
+- [[wiki/concepts/calibration|Calibration]]

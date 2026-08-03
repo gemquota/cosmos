@@ -25,10 +25,8 @@ Operational tradeoffs: spec-first (write the contract, then implement) makes gen
 RSIS3/mykb relevance: the wiki itself is hand-maintained knowledge; a standing practice of regenerating derived snapshots from sources (as gen-static-data.py does) is the same spec-first discipline docs generators formalize.
 
 ## Related
-- [[wiki/api-protocols/openapi-spec|OpenAPI Specification]] — related coverage in the same cluster
-- [[wiki/api-protocols/client-libraries|API Client Libraries]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-docs-generators|API Docs Generators]] — related coverage in the same cluster
-- [[wiki/api-protocols/client-libraries|API Client Libraries]] — related coverage in the same cluster
-- [[wiki/api-protocols/openapi|OpenAPI]] — related coverage in the same cluster
-- [[wiki/api-protocols/sdk-generation|SDK Generation]] — related coverage in the same cluster
-- [[wiki/api-protocols/contract-testing|Contract Testing]] — related coverage in the same cluster
+- [[wiki/api-protocols/openapi-spec|OpenAPI Specification]]
+- [[wiki/api-protocols/client-libraries|API Client Libraries]]
+- [[wiki/api-protocols/openapi|OpenAPI]]
+- [[wiki/api-protocols/sdk-generation|SDK Generation]]
+- [[wiki/api-protocols/contract-testing|Contract Testing]]

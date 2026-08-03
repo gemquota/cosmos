@@ -18,13 +18,10 @@ Parameter stores — AWS SSM Parameter Store, Azure Key Vault, GCP Secret Manage
 - Failure modes: secrets in plaintext parameter-store tiers (priced cheap, dangerous); access policies too broad (any lambda can read any secret); rotation without dependent-service coordination (apps caching old values break); throttling (Key Vault's default limits) under high-frequency reads; and secret sprawl when teams bypass the store for "speed".
 - Operational tradeoffs: central stores trade a small dependency for auditability and rotation; the pattern is least-privilege per service, versioned secrets, and rotation tested in staging. Cache values with short TTLs to absorb throttling, and treat the store itself as crown-jewel infrastructure with locked-down control-plane access.
 - RSIS3/mykb relevance: the wiki's deployments read configuration and secrets from a parameter store with per-service IAM; this note records the naming and rotation conventions the loop's tooling reuses.
-- Secret rotation: automate rotation with a schedule and dependent-service coordination; a rotated secret no consumer knows about is an outage with good intentions.
+- Secret rotation: automate rotation with a schedule and dependent-service coordination; a rotated secret no consumer knows about is an outage with good intentions. Version secrets by label so consumers resolve the current value without redeploys.
 
 ## Related
 - [[wiki/cloud-infra/cloud-providers-aws-azure-gcp|Cloud Providers: AWS, Azure, GCP]]
 - [[wiki/cloud-infra/aws-vpc-design|AWS VPC Design]]
 - [[wiki/cloud-infra/gcp-vpc-and-cloud-nat|GCP VPC & Cloud NAT]]
 - [[wiki/infrastructure/azure-synapse|Azure Synapse]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

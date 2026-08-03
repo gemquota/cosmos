@@ -21,7 +21,7 @@ Operator SDK and controller-runtime are the standard frameworks for building Kub
 - RSIS3 relevance: if cosmos builds operator-style automation for its stateful services, controller-runtime discipline — idempotent reconcile, status reporting — is the same loop discipline RSIS3 applies to its own L1 action loop.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

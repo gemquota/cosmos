@@ -26,5 +26,3 @@ DNS zone transfers (AXFR/IXFR) replicate a zone from a primary to secondary name
 - [[wiki/cloud-infra/availability-zone-architectures|Availability Zone Architectures]]
 - [[wiki/cloud-infra/dns-over-https|DNS over HTTPS]]
 - [[wiki/cloud-infra/split-horizon-dns|Split-Horizon DNS]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

@@ -26,4 +26,3 @@ Prompt leakage is the information-disclosure outcome of prompt injection: an att
 - [[wiki/prompt-engineering/indirect-injection|Indirect Injection]] — Leakage arriving via retrieved content
 - [[wiki/ai-ml/guardrails|Guardrails]] — Output rails that can block leaked text
 - [[wiki/prompt-engineering/logit-bias|Logit Bias]] — Token-level blocking of sensitive phrases
-- [[raw/archive/session-artifacts-2026-07/topics/security|security — Disclosure as a security concern

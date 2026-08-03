@@ -19,10 +19,10 @@ Webhook retries are the redelivery policy that governs what happens when a webho
 - RSIS3/mykb relevance: RSIS3 loop notifications and MyKB session-capture callbacks should adopt the same policy: classify errors, back off with jitter, dedupe by event ID, and dead-letter what cannot be delivered, so a failing sink never stalls the memory layer or silently drops knowledge.
 
 ## Related
-- [[wiki/api-protocols/webhooks-practice|Webhooks in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhook-signatures|Webhook Signatures]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhook-events|Webhook Events]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhook-topics|Webhook Topics]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhooks|Webhooks]] — related coverage in the same cluster
-- [[wiki/api-protocols/at-least-once-delivery|At-Least-Once Delivery]] — related coverage in the same cluster
-- [[wiki/api-protocols/retry-backoff|Retry & Backoff]] — related coverage in the same cluster
+- [[wiki/api-protocols/webhooks-practice|Webhooks in Practice]]
+- [[wiki/api-protocols/webhook-signatures|Webhook Signatures]]
+- [[wiki/api-protocols/webhook-events|Webhook Events]]
+- [[wiki/api-protocols/webhook-topics|Webhook Topics]]
+- [[wiki/api-protocols/webhooks|Webhooks]]
+- [[wiki/api-protocols/at-least-once-delivery|At-Least-Once Delivery]]
+- [[wiki/api-protocols/retry-backoff|Retry & Backoff]]

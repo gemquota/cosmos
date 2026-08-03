@@ -21,10 +21,10 @@ Gatekeeper (and OPA/Rego generally) enforces policy as code on Kubernetes: admis
 - RSIS3 relevance: the same pattern applies to RSIS3's own workflows — encode guardrails (state invariants, telemetry coverage) as testable policies that the loops check, just as Gatekeeper checks cluster requests.
 
 ## Related
-- [[wiki/devops-infra/infrastructure-as-code-revisited|Infrastructure as Code]] — related coverage in the same cluster
-- [[wiki/devops-infra/development-environments-as-code|Development Environments as Code]] — related coverage in the same cluster
-- [[wiki/devops-infra/configuration-as-data|Configuration as Data]] — related coverage in the same cluster
-- [[wiki/infrastructure/infrastructure-as-code|Infrastructure as Code]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/infrastructure-as-code-revisited|Infrastructure as Code]]
+- [[wiki/devops-infra/development-environments-as-code|Development Environments as Code]]
+- [[wiki/devops-infra/configuration-as-data|Configuration as Data]]
+- [[wiki/infrastructure/infrastructure-as-code|Infrastructure as Code]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

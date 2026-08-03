@@ -24,5 +24,5 @@ Coherent extrapolated volition (CEV) is the hypothetical outcome of humans becom
 - [[wiki/concepts/value-alignment-problems|Value Alignment Problems]] — why it's hard
 - [[wiki/concepts/preference-updating|Preference Updating]] — the dynamic rule
 - [[wiki/agent-systems/value-locking|Value Locking]] — the static alternative
-- [[wiki/concepts/value-specification|Value Specification]] — the full treatment of this theme
-- [[wiki/concepts/utility-functions|Utility Functions]] — existing graph context
+- [[wiki/concepts/value-specification|Value Specification]]
+- [[wiki/concepts/utility-functions|Utility Functions]]

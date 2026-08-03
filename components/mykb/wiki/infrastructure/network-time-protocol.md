@@ -20,9 +20,9 @@ Network Time Protocol (NTP) synchronizes computer clocks to UTC within milliseco
 - For mykb: NTP is the millisecond-scale member of the time-sync cluster — the sibling Precision Time Protocol (PTP) does microseconds-to-nanoseconds in the datacenter, and clock drift is the underlying problem both solve.
 
 ## Related
-- [[wiki/cloud-infra/wireguard-protocol|WireGuard Protocol]] — related coverage in the same cluster
-- [[wiki/devops-infra/network-observability|Network Observability]] — related coverage in the same cluster
-- [[wiki/infrastructure/precision-time-protocol|Precision Time Protocol]] — related coverage in the same cluster
-- [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]] — related coverage in the same cluster
+- [[wiki/cloud-infra/wireguard-protocol|WireGuard Protocol]]
+- [[wiki/devops-infra/network-observability|Network Observability]]
+- [[wiki/infrastructure/precision-time-protocol|Precision Time Protocol]]
+- [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

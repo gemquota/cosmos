@@ -24,5 +24,5 @@ Neuron interpretation studies what individual neurons or attention heads respond
 - [[wiki/concepts/monosemanticity|Monosemanticity]] — the clean ideal
 - [[wiki/concepts/feature-visualization|Feature Visualization]] — visualizing selectivity
 - [[wiki/concepts/sae-research|SAE Research]] — the modern method
-- [[wiki/agent-systems/introspection-ai|Introspection in AI]] — the full treatment of this theme
-- [[wiki/ai-ml/activation-engineering|Activation Engineering]] — existing graph context
+- [[wiki/agent-systems/introspection-ai|Introspection in AI]]
+- [[wiki/ai-ml/activation-engineering|Activation Engineering]]

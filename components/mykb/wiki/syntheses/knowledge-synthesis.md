@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Knowledge Synthesis"
 description: "Integrating multiple sources or concepts into a coherent new conclusion, framework, or insight"
 tags: ["synthesis", "knowledge", "integration", "insight", "method"]

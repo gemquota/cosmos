@@ -20,8 +20,8 @@ An idempotent write produces the same final state no matter how many times it is
 - Operational notes: test replay behavior in CI, monitor dedup hit rates, and document the key per entity.
 - RSIS3 relevance: RSIS3's state writes (checkpoints, registry updates) need idempotency so a retried loop step cannot corrupt state — the same upsert discipline as any ingestion pipeline.
 
-## Related
 
+## Related
 - [[wiki/data-storage/idempotent-ingestion|Idempotent Ingestion]] — existing note on idempotent ingestion
 - [[wiki/data-storage/deduplication|Deduplication]] — removing duplicate events before writes
 - [[wiki/data-storage/merge-and-upsert-patterns|Merge And Upsert Patterns]] — how merges express idempotent writes

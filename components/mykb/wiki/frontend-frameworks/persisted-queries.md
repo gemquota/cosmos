@@ -19,10 +19,10 @@ Persisted queries let clients send a stable hash instead of a full GraphQL docum
 - RSIS3/mykb relevance: the manifest discipline — an approved, versioned set of operations — is exactly how RSIS3 treats loop configuration: changes are reviewed, versioned, and deployed together, so the runtime only ever executes known-good operations.
 
 ## Related
-- [[wiki/api-protocols/graphql-basics|GraphQL Basics]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/query-depth-limit|Query Depth Limits]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/graphql-aliases|GraphQL Aliases]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/graphql-variables|GraphQL Variables]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql|GraphQL]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-security|GraphQL Security]] — related coverage in the same cluster
+- [[wiki/api-protocols/graphql-basics|GraphQL Basics]]
+- [[wiki/frontend-frameworks/query-depth-limit|Query Depth Limits]]
+- [[wiki/frontend-frameworks/graphql-aliases|GraphQL Aliases]]
+- [[wiki/frontend-frameworks/graphql-variables|GraphQL Variables]]
+- [[wiki/api-protocols/graphql|GraphQL]]
+- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]]
+- [[wiki/api-protocols/graphql-security|GraphQL Security]]

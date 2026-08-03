@@ -19,10 +19,10 @@ A URL is a structured string with five components — scheme, authority, path, q
 - RSIS3/mykb relevance: MyKB's lookup and graph tools operate on slugs and paths; treating them through one canonical URL parser keeps wikilink resolution, search, and the daemon's API consistent, and prevents encoded-path tricks from escaping the wiki's root namespace.
 
 ## Related
-- [[wiki/api-protocols/http-fundamentals|HTTP Fundamentals]] — related coverage in the same cluster
-- [[wiki/api-protocols/uri-vs-url|URI vs URL]] — related coverage in the same cluster
-- [[wiki/api-protocols/percent-encoding|Percent-Encoding]] — related coverage in the same cluster
-- [[wiki/api-protocols/punycode-domains|Punycode Domains]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-methods|HTTP Methods]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-headers|HTTP Headers]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/http-fundamentals|HTTP Fundamentals]]
+- [[wiki/api-protocols/uri-vs-url|URI vs URL]]
+- [[wiki/api-protocols/percent-encoding|Percent-Encoding]]
+- [[wiki/api-protocols/punycode-domains|Punycode Domains]]
+- [[wiki/api-protocols/http-methods|HTTP Methods]]
+- [[wiki/api-protocols/http-headers|HTTP Headers]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

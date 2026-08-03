@@ -23,5 +23,5 @@ Dangerous capability evals test for skills whose misuse is severe: bioweapon syn
 - [[wiki/concepts/cyber-risk-evals|Cyber Risk Evals]] — the cyber domain
 - [[wiki/concepts/safety-evals-practice|Safety Evals Practice]] — the practice
 - [[wiki/concepts/capability-classification|Capability Classification]] — the tiering
-- [[wiki/concepts/responsible-scaling|Responsible Scaling]] — the full treatment of this theme
-- [[wiki/testing/ai-safety-evals|Ai Safety Evals]] — existing graph context
+- [[wiki/concepts/responsible-scaling|Responsible Scaling]]
+- [[wiki/testing/ai-safety-evals|Ai Safety Evals]]

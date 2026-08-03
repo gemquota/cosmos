@@ -21,8 +21,8 @@ Data governance frameworks are the structures for deciding who can do what with 
 - Good governance is an enabler: clear owners and contracts speed up safe self-serve analytics. The counterintuitive result: teams move faster with governance than without, because "can I use this data?" has an answer instead of a stall, and the answer is backed by an owner who knows the data. Governance that only blocks is misdesigned; governance that clarifies is a productivity tool.
 - For mykb: the node anchors the governance cluster — ownership, dictionaries, warehouse governance, and access requests are its sub-topics.
 
-## Related
 
+## Related
 - [[wiki/security-auth/compliance-frameworks|Compliance Frameworks]] — compliance side of governance
 - [[wiki/infrastructure/data-ownership-and-stewardship|Data Ownership And Stewardship]] — assigning accountability
 - [[wiki/infrastructure/data-dictionary-and-glossary|Data Dictionary And Glossary]] — the vocabulary governance needs

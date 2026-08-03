@@ -24,5 +24,5 @@ Side constraints are hard limits an optimizer must respect regardless of objecti
 - [[wiki/concepts/deontology-ai|Deontology for AI]] — the ethical root
 - [[wiki/concepts/lexicographic-priorities|Lexicographic Priorities]] — the priority form
 - [[wiki/concepts/impact-measures|Impact Measures]] — the measurement form
-- [[wiki/concepts/mild-optimization|Mild Optimization]] — the full treatment of this theme
-- [[wiki/concepts/utility-functions|Utility Functions]] — existing graph context
+- [[wiki/concepts/mild-optimization|Mild Optimization]]
+- [[wiki/concepts/utility-functions|Utility Functions]]

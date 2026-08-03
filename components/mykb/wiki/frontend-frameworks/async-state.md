@@ -19,10 +19,10 @@ Async state is the modeling of an asynchronous operation's lifecycle in the UI: 
 - RSIS3/mykb relevance: MyKB's search and graph views are async surfaces; modeling their pending/success/error states explicitly keeps the dashboard honest about the daemon's health, mirroring how RSIS3 tracks loop phases as first-class state rather than ad-hoc booleans.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/data-fetching-libs|Data Fetching Libraries]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/react-query-practice|TanStack Query Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/swr-practice|SWR in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-apis|REST APIs]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql|GraphQL]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/data-fetching-libs|Data Fetching Libraries]]
+- [[wiki/frontend-frameworks/react-query-practice|TanStack Query Practice]]
+- [[wiki/frontend-frameworks/swr-practice|SWR in Practice]]
+- [[wiki/api-protocols/rest-apis|REST APIs]]
+- [[wiki/api-protocols/graphql|GraphQL]]
+- [[wiki/web-platforms/state-management|State Management]]

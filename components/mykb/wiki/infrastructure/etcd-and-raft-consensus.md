@@ -21,8 +21,8 @@ etcd is a distributed key-value store that uses the Raft consensus algorithm to 
 - Keep etcd small, fast, and well-backed-up; it is the source of truth for the control plane. The operational rules: place it on fast disks (fsync latency is the write bottleneck), keep it on dedicated nodes or at least dedicated resources (its disk and network contention starve the control plane), size the cluster at 3 or 5 nodes (odd numbers maximize fault tolerance per node), and back it up — because if etcd is lost, the entire Kubernetes cluster's state is lost with it.
 - For mykb: the node anchors the coordination cluster — Raft mechanics, quorum, and Zookeeper as the alternative.
 
-## Related
 
+## Related
 - [[wiki/data-storage/raft-consensus|Raft Consensus]] — Raft algorithm notes
 - [[wiki/infrastructure/service-discovery-patterns|Service Discovery Patterns]] — discovery via etcd
 - [[wiki/infrastructure/zookeeper-and-coordination|Zookeeper And Coordination]] — alternative coordination service

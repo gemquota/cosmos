@@ -25,10 +25,10 @@ Operational tradeoffs: introspection adds latency per request and load on the au
 RSIS3/mykb relevance: RSIS3 service-to-service calls should verify tokens consistently — either local JWT checks or introspection; documenting which services introspect and their cache TTL keeps the authorization model auditable.
 
 ## Related
-- [[wiki/api-protocols/jwt-practice|JWT in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/jwks-rotation|JWKS Rotation]] — related coverage in the same cluster
-- [[wiki/api-protocols/jti-claims|JWT ID Claims]] — related coverage in the same cluster
-- [[wiki/api-protocols/scope-validation|Scope Validation]] — related coverage in the same cluster
-- [[wiki/api-protocols/json-web-tokens|JWT]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2-scopes|OAuth Scopes]] — related coverage in the same cluster
-- [[wiki/identity/jwks|JWKS]] — related coverage in the same cluster
+- [[wiki/api-protocols/jwt-practice|JWT in Practice]]
+- [[wiki/api-protocols/jwks-rotation|JWKS Rotation]]
+- [[wiki/api-protocols/jti-claims|JWT ID Claims]]
+- [[wiki/api-protocols/scope-validation|Scope Validation]]
+- [[wiki/api-protocols/json-web-tokens|JWT]]
+- [[wiki/api-protocols/oauth2-scopes|OAuth Scopes]]
+- [[wiki/identity/jwks|JWKS]]

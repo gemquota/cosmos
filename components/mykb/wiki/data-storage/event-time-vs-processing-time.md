@@ -20,8 +20,8 @@ Event time is when an event happened; processing time is when the streaming engi
 - Operational notes: monitor watermark lag and late-data drop rates, validate timestamps at ingestion, and replay jobs to verify determinism.
 - RSIS3 relevance: RSIS3's pulse and sync history have event timestamps — event-time aggregation keeps loop statistics correct across replays.
 
-## Related
 
+## Related
 - [[wiki/data-storage/stream-windowing|Stream Windowing]] — time-based windows
 - [[wiki/data-storage/windowing-and-watermarks|Windowing And Watermarks]] — watermark mapping
 - [[wiki/data-storage/out-of-order-data-handling|Out Of Order Data Handling]] — why event time is hard

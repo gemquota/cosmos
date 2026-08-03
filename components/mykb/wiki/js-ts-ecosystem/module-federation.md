@@ -18,12 +18,11 @@ Module Federation shares code across separately built applications at runtime: a
 - Tradeoffs: federation trades deployment independence and runtime composition for coupling, integrity risk, and complexity; the alternative, a single build, is simpler and safer; the mature pattern is few stable remotes, explicit sharing, and robust failure handling.
 - Operational notes: pin shared versions, monitor remote load failures, and keep remotes' public surfaces versioned.
 - RSIS3 relevance: the unified dashboard could federate the component views (RSIS3, MyKB, SPACE) so each team ships independently — with shared-dependency and integrity discipline.
+- Sharing discipline: declare shared modules with explicit version ranges and singleton semantics so stateful libraries (React, Redux-style stores) resolve to one copy; treat the remote's exposed surface as a versioned API, test the shell against old and new remote builds together, and ship a fallback module so a failing remote degrades to a stub instead of taking down the host.
 
 ## Related
-- [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/federated-components|Federated Components]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/module-federation|Module Federation]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/federated-components|Federated Components]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
-- [[wiki/web-platforms/component-architecture|Component Architecture]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-components|Web Components]] — related coverage in the same cluster
+- [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]]
+- [[wiki/js-ts-ecosystem/federated-components|Federated Components]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]
+- [[wiki/web-platforms/component-architecture|Component Architecture]]
+- [[wiki/web-platforms/web-components|Web Components]]

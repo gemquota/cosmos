@@ -18,12 +18,8 @@ Savings Plans are AWS's flexible commitment model: commit to $/hour of compute s
 - Failure modes: over-committing on uncertain or seasonal workloads; forgetting that SPs cover compute usage, not storage/data-transfer; regional or family lock-in with EC2 Instance SPs; and coverage drift — unused commitment is wasted even though it is "flexible".
 - Operational tradeoffs: commitment buys 15-70% discounts; the discipline is to model the floor (stable baseline across teams) and buy against it, reviewing coverage monthly. Prefer Compute SPs for flexibility unless the deepest discount on a fixed fleet outweighs it.
 - RSIS3/mykb relevance: the wiki's cost model tracks savings-plan coverage vs actual usage; the loop's quarterly reviews adjust commitments from that data instead of annual guesswork.
-- Coverage tooling: AWS provides utilization and coverage reports; alert when coverage drops below the target so the loop buys/reshapes commitments from data, not budgets.
-- Lifecycle: set a quarterly review calendar — the 3-year commitment is a financial instrument, and usage shifts make stale commitments the most common waste.
+- Coverage tooling: AWS provides utilization and coverage reports; alert when coverage drops below the target so the loop buys/reshapes commitments from data, not budgets. Watch expiring plans nine months out to avoid a cliff back to on-demand.
+- Lifecycle: set a quarterly review calendar — the 3-year commitment is a financial instrument, and usage shifts make stale commitments the most common waste. Model what a reshaped commitment would cover at the new baseline first, since conversions trigger fresh terms.
 
 ## Related
 - [[wiki/devops-infra/rollback-plans|Rollback Plans]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

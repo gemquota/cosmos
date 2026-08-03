@@ -24,5 +24,5 @@ Distributional robustness aims for acceptable performance across a defined famil
 - [[wiki/concepts/robustness-training|Robustness Training]] — the method
 - [[wiki/concepts/adversarial-robustness|Adversarial Robustness]] — the adversarial family
 - [[wiki/concepts/ood-generalization|OOD Generalization]] — the empirical measure
-- [[wiki/concepts/goal-misgeneralization|Goal Misgeneralization]] — the full treatment of this theme
-- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]] — existing graph context
+- [[wiki/concepts/goal-misgeneralization|Goal Misgeneralization]]
+- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]]

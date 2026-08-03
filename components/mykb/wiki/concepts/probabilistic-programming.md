@@ -20,8 +20,8 @@ Probabilistic programming languages let developers describe generative models as
 - Open question: inference scalability for large models — current engines struggle with the deep, large models that agent systems need, which is why agent world models are often approximated with neural networks rather than exact posteriors.
 - RSIS3 relevance: the system's own estimates — "will this pass improve the metric?", "is this synthesis sound?" — are probabilistic claims, and a probabilistic-programming frame makes them explicit posteriors with uncertainty rather than confident point estimates.
 
-## Related
 
+## Related
 - [[wiki/concepts/bayesian-networks|Bayesian Networks]] — the graphical model family
 - [[wiki/concepts/constraint-logic-programming|Constraint Logic Programming]] — the logical sibling
 - [[wiki/concepts/markov-decision-processes|Markov Decision Processes]] — sequential decision models

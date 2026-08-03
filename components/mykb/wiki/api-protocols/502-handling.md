@@ -25,11 +25,11 @@ Operational tradeoffs: enabling proxy retries adds latency and can double-execut
 RSIS3/mykb relevance: the dashboard's telemetry views treat 5xx clusters as L1 loop inputs; documenting which upstream generates 502s turns raw error rates into actionable failure-mode notes.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/504-handling|Handling 504]] — related coverage in the same cluster
-- [[wiki/api-protocols/quota-headers|Quota Headers]] — related coverage in the same cluster
-- [[wiki/api-protocols/retry-after-web|Retry-After]] — related coverage in the same cluster
-- [[wiki/api-protocols/429-handling|Handling 429]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-status-codes|HTTP Status Codes]] — related coverage in the same cluster
-- [[wiki/api-protocols/retry-backoff|Retry & Backoff]] — related coverage in the same cluster
-- [[wiki/api-protocols/error-contract-design|Error Contract Design]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/504-handling|Handling 504]]
+- [[wiki/api-protocols/quota-headers|Quota Headers]]
+- [[wiki/api-protocols/retry-after-web|Retry-After]]
+- [[wiki/api-protocols/429-handling|Handling 429]]
+- [[wiki/api-protocols/http-status-codes|HTTP Status Codes]]
+- [[wiki/api-protocols/retry-backoff|Retry & Backoff]]
+- [[wiki/api-protocols/error-contract-design|Error Contract Design]]

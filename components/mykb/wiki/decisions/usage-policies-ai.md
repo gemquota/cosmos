@@ -26,5 +26,5 @@ Usage policies define permitted and prohibited uses of AI systems, from API term
 - [[wiki/decisions/content-policy-ai|Content Policy for AI]] — the content layer
 - [[wiki/decisions/api-access-policies|API Access Policies]] — the access layer
 - [[wiki/decisions/responsible-ai-labs|Responsible AI Labs]] — the institutional side
-- [[wiki/concepts/responsible-scaling|Responsible Scaling]] — the full treatment of this theme
-- [[wiki/ai-ml/llm-safety-policies|Llm Safety Policies]] — existing graph context
+- [[wiki/concepts/responsible-scaling|Responsible Scaling]]
+- [[wiki/ai-ml/llm-safety-policies|Llm Safety Policies]]

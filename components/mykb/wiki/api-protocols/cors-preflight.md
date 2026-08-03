@@ -25,10 +25,10 @@ Operational tradeoffs: preflights add a round trip per new cross-origin call, wh
 RSIS3/mykb relevance: the dashboard's cross-origin API calls depend on a correct preflight contract; documenting the allowed methods and headers lets RSIS3 verify the gateway config against the actual client usage.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors-credentials|CORS with Credentials]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors-wildcard|CORS Wildcards]] — related coverage in the same cluster
-- [[wiki/api-protocols/cross-origin-isolation|Cross-Origin Isolation]] — related coverage in the same cluster
-- [[wiki/api-protocols/cors|CORS]] — related coverage in the same cluster
-- [[wiki/security-auth/cors-policy|CORS Policy]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/cors-credentials|CORS with Credentials]]
+- [[wiki/api-protocols/cors-wildcard|CORS Wildcards]]
+- [[wiki/api-protocols/cross-origin-isolation|Cross-Origin Isolation]]
+- [[wiki/api-protocols/cors|CORS]]
+- [[wiki/security-auth/cors-policy|CORS Policy]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

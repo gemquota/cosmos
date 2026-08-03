@@ -21,11 +21,11 @@ Registry garbage collection and retention manage the lifecycle of stored contain
 - RSIS3 relevance: cosmos's own image retention should keep enough history for rollback of the dashboard and daemon — the same rule as for any production artifact.
 
 ## Related
-- [[wiki/cloud-infra/storage-locks-and-retention|Storage Locks & Retention]] — related coverage in the same cluster
-- [[wiki/infrastructure/confluent-cloud-and-schema-registry|Confluent Cloud And Schema Registry]] — related coverage in the same cluster
-- [[wiki/infrastructure/glue-schema-registry|Glue Schema Registry]] — related coverage in the same cluster
-- [[wiki/infrastructure/nacos-and-service-registry|Nacos And Service Registry]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/cloud-infra/storage-locks-and-retention|Storage Locks & Retention]]
+- [[wiki/infrastructure/confluent-cloud-and-schema-registry|Confluent Cloud And Schema Registry]]
+- [[wiki/infrastructure/glue-schema-registry|Glue Schema Registry]]
+- [[wiki/infrastructure/nacos-and-service-registry|Nacos And Service Registry]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

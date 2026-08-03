@@ -24,8 +24,6 @@ A stacking context is a paint-domain boundary: elements inside it are painted as
 ## Related
 - [[wiki/web-platforms/css-architecture|CSS Architecture]]
 - [[wiki/web-platforms/z-index-management|Z-Index Management]]
-- [[wiki/web-platforms/stacking-contexts|Stacking Contexts]]
-- [[wiki/web-platforms/z-index-management|Z-Index Management]]
 - [[wiki/web-platforms/css-layout|CSS Layout]]
 - [[wiki/web-platforms/component-architecture|Component Architecture]]
 - [[wiki/web-platforms/web-components|Web Components]]

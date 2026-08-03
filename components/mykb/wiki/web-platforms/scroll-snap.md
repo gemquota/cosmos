@@ -26,7 +26,6 @@ CSS scroll snap makes scrolling rest on defined positions — whole slides, grid
 - [[wiki/web-platforms/virtual-scrolling|Virtual Scrolling]]
 - [[wiki/web-platforms/sticky-position|position: sticky]]
 - [[wiki/web-platforms/scroll-behavior|scroll-behavior CSS]]
-- [[wiki/web-platforms/scroll-snap|Scroll Snap]]
 - [[wiki/web-platforms/css-layout|CSS Layout]]
 - [[wiki/web-platforms/web-accessibility|Web Accessibility]]
 - [[wiki/web-platforms/dom-manipulation|DOM Manipulation]]

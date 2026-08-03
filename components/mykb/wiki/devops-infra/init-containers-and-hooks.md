@@ -22,9 +22,9 @@ Init containers run to completion before a pod's main containers start — fetch
 - RSIS3 relevance: the wiki daemon's startup (check the store, render indexes) and shutdown (flush state, drain requests) map directly to init containers and preStop hooks.
 
 ## Related
-- [[wiki/os-shell/containers-vs-vms|Containers vs VMs]] — related coverage in the same cluster
-- [[wiki/os-shell/systemd-and-init-systems|systemd & Init Systems]] — related coverage in the same cluster
-- [[wiki/devops-infra/provisioners-packer-cloud-init|Provisioners: Packer & cloud-init]] — related coverage in the same cluster
-- [[wiki/devops-infra/healthcheck-and-sidecar-containers|Healthcheck & Sidecar Containers]] — related coverage in the same cluster
+- [[wiki/os-shell/containers-vs-vms|Containers vs VMs]]
+- [[wiki/os-shell/systemd-and-init-systems|systemd & Init Systems]]
+- [[wiki/devops-infra/provisioners-packer-cloud-init|Provisioners: Packer & cloud-init]]
+- [[wiki/devops-infra/healthcheck-and-sidecar-containers|Healthcheck & Sidecar Containers]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

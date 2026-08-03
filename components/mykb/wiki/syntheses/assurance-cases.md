@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Assurance Cases"
 description: "Structured arguments that a system meets safety goals"
 tags: ["assurance", "cases", "safety"]

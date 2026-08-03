@@ -19,10 +19,10 @@ status: "growing"
 - RSIS3/mykb relevance: stable callback identities are about minimizing spurious re-execution of dependents — the same concern RSIS3 has when a derived metric re-runs because its input function reference changed without any semantic change; stable, declared dependencies prevent recomputation churn.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/use-memo|useMemo]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/pure-components|Pure Components]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/re-render-causes|Re-Render Causes]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/use-memo|useMemo]]
+- [[wiki/frontend-frameworks/pure-components|Pure Components]]
+- [[wiki/frontend-frameworks/re-render-causes|Re-Render Causes]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]]

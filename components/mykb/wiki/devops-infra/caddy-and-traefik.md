@@ -21,9 +21,9 @@ Caddy and Traefik are modern reverse proxies that remove the two most error-pron
 - RSIS3 relevance: the dashboard and MyKB daemon are exactly the local services where automatic TLS and label-based discovery remove manual proxy upkeep from RSIS3's operational loops.
 
 ## Related
-- [[wiki/devops-infra/caddy|Caddy]] — related coverage in the same cluster
-- [[wiki/devops-infra/traefik|Traefik]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/caddy|Caddy]]
+- [[wiki/devops-infra/traefik|Traefik]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

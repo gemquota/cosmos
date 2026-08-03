@@ -20,9 +20,9 @@ Scheduling recurring jobs is the operating system's oldest automation problem, a
 - RSIS3/mykb relevance: the wiki's snapshot and graph-rebuild jobs are scheduled tasks; treating them as systemd timers with `Persistent=true`, journal logging, and failure alerts mirrors RSIS3's checkpoint discipline — scheduled work must be observable and recoverable, not fire-and-forget.
 
 ## Related
-- [[wiki/os-shell/job-control-and-background-tasks|Job Control & Background Tasks]] — related coverage in the same cluster
-- [[wiki/devops-infra/scheduled-jobs|Scheduled Jobs]] — related coverage in the same cluster
-- [[wiki/os-shell/cron-and-schedulers|Cron & Scheduling]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
+- [[wiki/os-shell/job-control-and-background-tasks|Job Control & Background Tasks]]
+- [[wiki/devops-infra/scheduled-jobs|Scheduled Jobs]]
+- [[wiki/os-shell/cron-and-schedulers|Cron & Scheduling]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

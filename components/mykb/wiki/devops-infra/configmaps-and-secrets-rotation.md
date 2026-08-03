@@ -21,9 +21,9 @@ Kubernetes ConfigMaps and Secrets deliver configuration and sensitive data to po
 - RSIS3 relevance: MyKB daemon credentials and API tokens follow the same lifecycle — rotation planning belongs in the operational playbook and the policy notes belong in mykb.
 
 ## Related
-- [[wiki/devops-infra/secrets-management-revisited|Secrets Management]] — related coverage in the same cluster
-- [[wiki/devops-infra/volumes-emptydir-and-configmaps|emptyDir & ConfigMap Volumes]] — related coverage in the same cluster
-- [[wiki/infrastructure/secret-rotation|Secret Rotation]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/secrets-management-revisited|Secrets Management]]
+- [[wiki/devops-infra/volumes-emptydir-and-configmaps|emptyDir & ConfigMap Volumes]]
+- [[wiki/infrastructure/secret-rotation|Secret Rotation]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

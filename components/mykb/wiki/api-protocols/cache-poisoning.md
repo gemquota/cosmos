@@ -25,10 +25,10 @@ Operational tradeoffs: caching is essential for cost and latency, so the goal is
 RSIS3/mykb relevance: dashboard asset caching is a small-scale instance; the standing rule "what the cache key excludes is attacker-visible" transfers directly to the wiki's static hosting setup.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/request-smuggling|Request Smuggling]] — related coverage in the same cluster
-- [[wiki/api-protocols/ssrf-practice|SSRF Attacks]] — related coverage in the same cluster
-- [[wiki/api-protocols/idor-web|IDOR on the Web]] — related coverage in the same cluster
-- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/deserialization-attacks|Deserialization Attacks]] — related coverage in the same cluster
-- [[wiki/security-auth/privilege-escalation|Privilege Escalation]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/request-smuggling|Request Smuggling]]
+- [[wiki/api-protocols/ssrf-practice|SSRF Attacks]]
+- [[wiki/api-protocols/idor-web|IDOR on the Web]]
+- [[wiki/security-auth/ssrf-prevention|SSRF Prevention]]
+- [[wiki/security-auth/deserialization-attacks|Deserialization Attacks]]
+- [[wiki/security-auth/privilege-escalation|Privilege Escalation]]

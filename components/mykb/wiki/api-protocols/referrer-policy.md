@@ -25,10 +25,10 @@ Operational tradeoffs: strict-origin-when-cross-origin is the right default — 
 RSIS3/mykb relevance: the dashboard's links and any share URLs should follow the strict-origin policy; documenting it lets RSIS3's header checks assert the policy on all responses.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/x-frame-options|X-Frame-Options]] — related coverage in the same cluster
-- [[wiki/api-protocols/mime-sniffing|MIME Sniffing]] — related coverage in the same cluster
-- [[wiki/api-protocols/nosniff-header|X-Content-Type-Options nosniff]] — related coverage in the same cluster
-- [[wiki/security-auth/security-headers|Security Headers]] — related coverage in the same cluster
-- [[wiki/security-auth/content-security-policy|Content Security Policy]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/x-frame-options|X-Frame-Options]]
+- [[wiki/api-protocols/mime-sniffing|MIME Sniffing]]
+- [[wiki/api-protocols/nosniff-header|X-Content-Type-Options nosniff]]
+- [[wiki/security-auth/security-headers|Security Headers]]
+- [[wiki/security-auth/content-security-policy|Content Security Policy]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

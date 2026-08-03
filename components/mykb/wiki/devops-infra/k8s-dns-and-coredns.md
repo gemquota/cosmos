@@ -21,10 +21,10 @@ DNS in Kubernetes maps service names to cluster IPs: CoreDNS runs as the cluster
 - RSIS3 relevance: if cosmos services resolve each other by DNS, a CoreDNS hiccup explains "the daemon is unreachable" failures — RSIS3's monitoring should distinguish DNS failures from service failures.
 
 ## Related
-- [[wiki/cloud-infra/dns-resolution-process|DNS Resolution Process]] — related coverage in the same cluster
-- [[wiki/cloud-infra/dns-over-https|DNS over HTTPS]] — related coverage in the same cluster
-- [[wiki/cloud-infra/dns-zone-transfers|DNS Zone Transfers]] — related coverage in the same cluster
-- [[wiki/cloud-infra/dns-management|DNS Management]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/cloud-infra/dns-resolution-process|DNS Resolution Process]]
+- [[wiki/cloud-infra/dns-over-https|DNS over HTTPS]]
+- [[wiki/cloud-infra/dns-zone-transfers|DNS Zone Transfers]]
+- [[wiki/cloud-infra/dns-management|DNS Management]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

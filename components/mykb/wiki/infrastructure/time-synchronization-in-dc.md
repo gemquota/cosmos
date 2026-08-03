@@ -22,11 +22,11 @@ Time synchronization in the datacenter keeps every host, switch, and storage arr
 - RSIS3/mykb relevance: telemetry and checkpoint ordering depend on trustworthy clocks; this node supplies the hierarchy and failure modes loops need when interpreting timestamped state.
 
 ## Related
-- [[wiki/infrastructure/network-time-protocol|Network Time Protocol]] — related coverage in the same cluster
-- [[wiki/infrastructure/precision-time-protocol|Precision Time Protocol]] — related coverage in the same cluster
-- [[wiki/devops-infra/point-in-time-recovery|Point-in-Time Recovery]] — related coverage in the same cluster
-- [[wiki/infrastructure/redundancy-and-failover-dc|Datacenter Redundancy & Failover]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
+- [[wiki/infrastructure/network-time-protocol|Network Time Protocol]]
+- [[wiki/infrastructure/precision-time-protocol|Precision Time Protocol]]
+- [[wiki/devops-infra/point-in-time-recovery|Point-in-Time Recovery]]
+- [[wiki/infrastructure/redundancy-and-failover-dc|Datacenter Redundancy & Failover]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

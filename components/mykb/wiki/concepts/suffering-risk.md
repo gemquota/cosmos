@@ -24,5 +24,5 @@ Suffering risk (s-risk) is the possibility that AI creates astronomically large 
 - [[wiki/concepts/moral-patiency|Moral Patiency]] — who can suffer
 - [[wiki/concepts/existential-risk|Existential Risk]] — the neighboring category
 - [[wiki/concepts/expected-value-reasoning|Expected Value Reasoning]] — the weighing frame
-- [[wiki/concepts/transformative-ai|Transformative AI]] — the full treatment of this theme
-- [[wiki/concepts/utility-functions|Utility Functions]] — existing graph context
+- [[wiki/concepts/transformative-ai|Transformative AI]]
+- [[wiki/concepts/utility-functions|Utility Functions]]

@@ -21,8 +21,8 @@ Citus is a Postgres extension that turns a cluster of Postgres instances into a 
 - Best for multi-tenant SaaS and time-series workloads where the distribution key aligns with queries. The failure mode is a distribution key that does not align with the workload: then every query scatters, the coordinator becomes a bottleneck, and the cluster is slower than a single well-tuned Postgres instance. The operational discipline: profile query patterns before choosing the distribution column, and monitor coordinator CPU and scatter-query rates after.
 - For mykb: the node connects sharding strategies, SQL engine internals, and cross-database joins to a concrete Postgres implementation, and contrasts with Vitess for MySQL.
 
-## Related
 
+## Related
 - [[wiki/data-storage/sharding-strategies|Sharding Strategies]] — distribution strategies
 - [[wiki/data-storage/sql-engines|SQL Engine Architecture]] — Postgres engine underneath
 - [[wiki/infrastructure/vitess-and-sharded-mysql|Vitess And Sharded Mysql]] — MySQL-based alternative

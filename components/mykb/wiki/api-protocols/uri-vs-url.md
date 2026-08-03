@@ -19,10 +19,10 @@ URI (Uniform Resource Identifier) is the umbrella term: a string that identifies
 - RSIS3/mykb relevance: MyKB's wikilinks are URI-style references to articles; keeping the slug stable and treating the filesystem path as a locator means the knowledge graph stays valid across reorgs — exactly the identifier-versus-locator discipline this distinction teaches.
 
 ## Related
-- [[wiki/api-protocols/http-fundamentals|HTTP Fundamentals]] — related coverage in the same cluster
-- [[wiki/api-protocols/percent-encoding|Percent-Encoding]] — related coverage in the same cluster
-- [[wiki/api-protocols/punycode-domains|Punycode Domains]] — related coverage in the same cluster
-- [[wiki/api-protocols/url-structure|URL Structure]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-methods|HTTP Methods]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-headers|HTTP Headers]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/http-fundamentals|HTTP Fundamentals]]
+- [[wiki/api-protocols/percent-encoding|Percent-Encoding]]
+- [[wiki/api-protocols/punycode-domains|Punycode Domains]]
+- [[wiki/api-protocols/url-structure|URL Structure]]
+- [[wiki/api-protocols/http-methods|HTTP Methods]]
+- [[wiki/api-protocols/http-headers|HTTP Headers]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

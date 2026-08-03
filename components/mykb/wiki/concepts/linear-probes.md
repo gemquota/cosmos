@@ -24,5 +24,5 @@ Linear probes train a linear classifier on layer activations to test whether a c
 - [[wiki/concepts/monosemanticity|Monosemanticity]] — the ideal probe result
 - [[wiki/concepts/feature-visualization|Feature Visualization]] — visual counterpart
 - [[wiki/concepts/dictionary-learning-ai|Dictionary Learning for AI]] — feature decomposition
-- [[wiki/agent-systems/introspection-ai|Introspection in AI]] — the full treatment of this theme
-- [[wiki/ai-ml/probing|Probing]] — existing graph context
+- [[wiki/agent-systems/introspection-ai|Introspection in AI]]
+- [[wiki/ai-ml/probing|Probing]]

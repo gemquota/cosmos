@@ -21,8 +21,8 @@ Encryption at rest protects files, tables, and backups from physical or unauthor
 - Key management, rotation, and access logging matter more than the cipher choice; escrow and compliance affect key custody. AES-256 is settled; the operational questions are who holds keys (cloud KMS vs self-managed vs HSM), how rotation works (automated, with old keys retained for old data), whether keys are escrowed (recovery vs losing the keys = losing the data), and how compliance requirements (data residency, key separation for multi-tenant systems) constrain custody.
 - For mykb: the node is the at-rest counterpart to TLS (in transit), with tokenization/masking as the usable-data alternatives and audit trails proving the controls.
 
-## Related
 
+## Related
 - [[wiki/security-auth/tls-encryption|TLS Encryption]] — encryption in transit, the counterpart
 - [[wiki/security-auth/data-classification|Data Classification]] — deciding what needs encryption
 - [[wiki/infrastructure/tokenization-and-masking|Tokenization And Masking]] — alternatives for usable-but-protected data

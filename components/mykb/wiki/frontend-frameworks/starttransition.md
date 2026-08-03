@@ -19,10 +19,9 @@ status: "growing"
 - RSIS3/mykb relevance: transition scheduling is priority-aware work management: RSIS3's loops face the same choice between urgent corrections (L1) and deferrable improvements (L2/L3), and the discipline of interruptible, restartable work units maps directly to idempotent loop steps.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/suspense-practice|Suspense in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/concurrent-rendering|Concurrent Rendering]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/starttransition|startTransition]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/suspense-practice|Suspense in Practice]]
+- [[wiki/frontend-frameworks/concurrent-rendering|Concurrent Rendering]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]
+- [[wiki/web-platforms/state-management|State Management]]

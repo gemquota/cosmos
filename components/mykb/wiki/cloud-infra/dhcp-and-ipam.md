@@ -19,11 +19,7 @@ DHCP hands out IP addresses and network configuration automatically; IPAM (IP ad
 - Operational tradeoffs: DHCP is the default for endpoint mobility; static addressing still wins for servers and appliances where identity must not change. The discipline is IPAM-first: plan the space, automate reservations, and reconcile actual usage against the record regularly.
 - RSIS3/mykb relevance: lab networks for experiments use a documented IPAM plan from this note so the loop's provisioning never collides with reserved ranges.
 - Conflict detection: run periodic IPAM reconciliation against actual lease tables; silent drift between the plan and reality is how duplicate-address incidents start.
-- Scope documentation: record lease times and reservations per scope; the DHCP config is the network's contract with every device.
+- Scope documentation: record lease times and reservations per scope; the DHCP config is the network's contract with every device. Set lease time proportional to endpoint churn — short for guest Wi-Fi, long for fixed kiosks.
 
 ## Related
 - [[wiki/os-shell/dhcp-and-ip-allocation|DHCP & IP Allocation]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

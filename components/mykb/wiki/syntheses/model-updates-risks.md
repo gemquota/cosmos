@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Model Update Risks"
 description: "Risks introduced when models are updated"
 tags: ["model-updates", "risks", "deployment"]
@@ -26,5 +26,5 @@ Model update risks arise when a new model version changes behavior in unexpected
 - [[wiki/syntheses/deployment-safety|Deployment Safety]] — the discipline
 - [[wiki/syntheses/monitored-deployment|Monitored Deployment]] — the watch
 - [[wiki/syntheses/fallback-plans|Fallback Plans]] — the safety net
-- [[wiki/decisions/auto-update-mechanisms|Auto-Update Mechanisms]] — the full treatment of this theme
-- [[wiki/devops-infra/patch-management-revisited|Patch Management Revisited]] — existing graph context
+- [[wiki/decisions/auto-update-mechanisms|Auto-Update Mechanisms]]
+- [[wiki/devops-infra/patch-management-revisited|Patch Management Revisited]]

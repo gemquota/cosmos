@@ -19,10 +19,10 @@ SQL injection is the injection of SQL syntax through unsanitized input into dyna
 - RSIS3/mykb relevance: MyKB's TF-IDF search and knowledge graph queries are built from user search text; keeping those queries parameterized is a standing invariant, and RSIS3 loop hygiene should treat any dynamic SQL construction as a review flag, since memory-layer compromise corrupts everything that reads it.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/xml-injection|XML Injection]] — related coverage in the same cluster
-- [[wiki/api-protocols/nosql-injection|NoSQL Injection]] — related coverage in the same cluster
-- [[wiki/api-protocols/second-order-injection|Second-Order Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/command-injection|Command Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/ldap-injection|LDAP Injection]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/xml-injection|XML Injection]]
+- [[wiki/api-protocols/nosql-injection|NoSQL Injection]]
+- [[wiki/api-protocols/second-order-injection|Second-Order Injection]]
+- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]]
+- [[wiki/security-auth/command-injection|Command Injection]]
+- [[wiki/security-auth/ldap-injection|LDAP Injection]]

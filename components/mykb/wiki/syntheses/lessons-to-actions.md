@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Lessons to Actions"
 description: "Converting lessons learned into concrete implemented changes"
 tags: ["lessons", "actions", "improvement", "process"]

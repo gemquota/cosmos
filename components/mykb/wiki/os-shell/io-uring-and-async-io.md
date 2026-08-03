@@ -19,8 +19,8 @@ io_uring is Linux's modern asynchronous I/O interface, designed to minimize the 
 - Operational tradeoffs: io_uring's wins are real — fewer syscalls, true async completion for both storage and sockets, and features (registered files, fixed buffers, poll) that reduce per-I/O overhead — but they come with complexity: ring management, feature probing, kernel-version checks, and a programming model that is easy to get subtly wrong. The pragmatic path: use high-level libraries (liburing, `tokio-uring`, RocksDB's wrapper) rather than the raw interface, probe kernel support at runtime with fallbacks to epoll/thread pools, and measure before adopting. RSIS3/mykb relevance: the daemon's graph rebuilds and telemetry writes are batch I/O; adopting io_uring-style batched, completion-driven I/O where it is available mirrors RSIS3's principle of amortizing fixed costs across batch work.
 
 ## Related
-- [[wiki/infrastructure/io-latency-and-iops|IO Latency & IOPS]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/infrastructure/io-latency-and-iops|IO Latency & IOPS]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

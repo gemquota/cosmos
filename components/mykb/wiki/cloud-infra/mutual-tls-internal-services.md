@@ -18,7 +18,7 @@ Mutual TLS (mTLS) authenticates both ends of a connection: the client presents a
 - Failure modes: CA/key management failures taking down all services (the CA is now the crown jewel — protect and rotate); certificate rotation without client updates breaking connections (use SPIFFE-style short-lived certs); SAN/subject mismatches causing validation failures; and mTLS giving a false sense of security when authorization still keys off insecure claims.
 - Operational tradeoffs: mTLS buys strong identity and defense-in-depth at PKI operational cost; a mesh automates it but adds infrastructure; raw mTLS is fine for small, stable service counts. Keep the CA offline/HSM-backed, rotate signing keys, and test revocation paths.
 - RSIS3/mykb relevance: the wiki's internal APIs enforce mTLS from a dedicated CA; this note records the CA layout and rotation runbook the loop's certificate automation follows.
-- Revocation path: define what happens when a client certificate is compromised — CRL/OCSP or short-lived certs with fast expiry; without a revocation story, mTLS is a false promise.
+- Revocation path: define what happens when a client certificate is compromised — CRL/OCSP or short-lived certs with fast expiry; without a revocation story, mTLS is a false promise. Exercise the revocation path in staging before relying on it during an incident.
 
 ## Related
 - [[wiki/cloud-infra/https-and-tls|HTTPS & TLS]]
@@ -26,5 +26,3 @@ Mutual TLS (mTLS) authenticates both ends of a connection: the client presents a
 - [[wiki/cloud-infra/tls-performance|TLS Performance]]
 - [[wiki/os-shell/tcp-ports-and-services|TCP Ports & Services]]
 - [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

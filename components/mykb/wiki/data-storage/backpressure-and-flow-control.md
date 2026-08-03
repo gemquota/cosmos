@@ -20,8 +20,8 @@ Backpressure propagates a slow downstream condition upstream so producers or ope
 - Operational notes: monitor queue depth and consumer lag, define overflow policies per stage, and test slow-consumer scenarios.
 - RSIS3 relevance: RSIS3's pipelines (acquisition, sync) need the same flow control — a slow curation stage should throttle ingestion rather than accumulate an unbounded backlog.
 
-## Related
 
+## Related
 - [[wiki/data-storage/backpressure|Backpressure]] — existing note on the same mechanism
 - [[wiki/data-storage/message-queues|Message Queues]] — queues absorb bursts but need limits
 - [[wiki/data-storage/dead-letter-queues-and-retries|Dead Letter Queues And Retries]] — overflow behavior once limits are exceeded

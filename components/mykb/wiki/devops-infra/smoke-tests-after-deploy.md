@@ -21,8 +21,8 @@ Smoke tests after deploy are quick, shallow checks that the new version actually
 - RSIS3 relevance: after cosmos regenerates its dashboard or upgrades the daemon, a smoke check of the published pages and store endpoints verifies the artifact pipeline end to end.
 
 ## Related
-- [[wiki/devops-infra/deploy-safety-checks|Deploy Safety Checks]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/deploy-safety-checks|Deploy Safety Checks]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

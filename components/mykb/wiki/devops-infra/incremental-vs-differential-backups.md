@@ -21,8 +21,8 @@ Incremental backups store only changes since the last backup of any kind; differ
 - RSIS3 relevance: the wiki's git history is effectively an incremental chain — every commit is a recoverable point, but the restore path should be rehearsed, exactly as with tape or object-storage chains.
 
 ## Related
-- [[wiki/devops-infra/backups|Backups]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/devops-infra/backups|Backups]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

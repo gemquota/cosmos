@@ -19,10 +19,10 @@ Second-order injection is an attack where a payload is stored harmlessly at writ
 - RSIS3/mykb relevance: MyKB stores arbitrary article content and metadata, and RSIS3 loops read that state back; the second-order principle says the memory layer must sanitize on read, at each render and export path, not just at ingest, so knowledge artifacts cannot turn into executable payloads downstream.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/blind-injection|Blind Injection]] — related coverage in the same cluster
-- [[wiki/api-protocols/header-injection|Header Injection]] — related coverage in the same cluster
-- [[wiki/api-protocols/crlf-injection|CRLF Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/command-injection|Command Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/ldap-injection|LDAP Injection]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/blind-injection|Blind Injection]]
+- [[wiki/api-protocols/header-injection|Header Injection]]
+- [[wiki/api-protocols/crlf-injection|CRLF Injection]]
+- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]]
+- [[wiki/security-auth/command-injection|Command Injection]]
+- [[wiki/security-auth/ldap-injection|LDAP Injection]]

@@ -25,10 +25,8 @@ Operational tradeoffs: generated clients trade integration speed for churn — e
 RSIS3/mykb relevance: RSIS3's own tooling should call mykb's APIs through generated clients where they exist, so contract drift surfaces as compile errors instead of silent runtime mismatches.
 
 ## Related
-- [[wiki/api-protocols/openapi-spec|OpenAPI Specification]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-docs-generators|API Docs Generators]] — related coverage in the same cluster
-- [[wiki/api-protocols/client-libraries|API Client Libraries]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-docs-generators|API Docs Generators]] — related coverage in the same cluster
-- [[wiki/api-protocols/openapi|OpenAPI]] — related coverage in the same cluster
-- [[wiki/api-protocols/sdk-generation|SDK Generation]] — related coverage in the same cluster
-- [[wiki/api-protocols/contract-testing|Contract Testing]] — related coverage in the same cluster
+- [[wiki/api-protocols/openapi-spec|OpenAPI Specification]]
+- [[wiki/api-protocols/api-docs-generators|API Docs Generators]]
+- [[wiki/api-protocols/openapi|OpenAPI]]
+- [[wiki/api-protocols/sdk-generation|SDK Generation]]
+- [[wiki/api-protocols/contract-testing|Contract Testing]]

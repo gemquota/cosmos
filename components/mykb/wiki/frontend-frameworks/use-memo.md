@@ -19,10 +19,10 @@ status: "growing"
 - RSIS3/mykb relevance: the dashboard's derived telemetry (aggregates over pulses) is exactly what `useMemo`-style caching protects: recompute only when the raw records or the selected window change, mirroring RSIS3's rule that derived metrics cache until their inputs change.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/pure-components|Pure Components]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/re-render-causes|Re-Render Causes]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/context-rendering|Context and Rendering]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/pure-components|Pure Components]]
+- [[wiki/frontend-frameworks/re-render-causes|Re-Render Causes]]
+- [[wiki/frontend-frameworks/context-rendering|Context and Rendering]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]]

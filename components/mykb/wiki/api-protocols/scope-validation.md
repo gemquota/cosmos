@@ -19,10 +19,10 @@ Scope validation is the practice of checking that the scopes attached to a token
 - RSIS3/mykb relevance: RSIS3 loop components exchange tokens between services; validating scopes at each boundary, not just the edge, mirrors the loop hygiene rule that every consumer re-checks invariants instead of trusting upstream state.
 
 ## Related
-- [[wiki/api-protocols/jwt-practice|JWT in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/audience-claims|Audience Claims]] — related coverage in the same cluster
-- [[wiki/api-protocols/issuer-validation|Issuer Validation]] — related coverage in the same cluster
-- [[wiki/api-protocols/introspection-endpoint|Token Introspection]] — related coverage in the same cluster
-- [[wiki/api-protocols/json-web-tokens|JWT]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2-scopes|OAuth Scopes]] — related coverage in the same cluster
-- [[wiki/identity/jwks|JWKS]] — related coverage in the same cluster
+- [[wiki/api-protocols/jwt-practice|JWT in Practice]]
+- [[wiki/api-protocols/audience-claims|Audience Claims]]
+- [[wiki/api-protocols/issuer-validation|Issuer Validation]]
+- [[wiki/api-protocols/introspection-endpoint|Token Introspection]]
+- [[wiki/api-protocols/json-web-tokens|JWT]]
+- [[wiki/api-protocols/oauth2-scopes|OAuth Scopes]]
+- [[wiki/identity/jwks|JWKS]]

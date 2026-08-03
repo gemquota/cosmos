@@ -18,12 +18,13 @@ Parcel is a zero-configuration bundler with built-in asset handling: it transfor
 - Tradeoffs: Parcel trades configuration for convention — the fastest path to a working build, at the cost of control; the alternative, webpack, is explicit and powerful; the mature pattern is Parcel for convention-following projects and a configurable bundler when requirements diverge.
 - Operational notes: pin the version, review generated output for asset handling, and keep configuration additions documented.
 - RSIS3 relevance: the dashboard's static build could ride Parcel's zero-config path — but its small surface may not need a bundler at all.
+- Targets and pipelines: Parcel builds multiple targets (browser, node, electron) from one source with different output conditions, and named pipelines in .parcelrc customize file handling when the defaults do not fit; keep the cache directory on fast storage and clear it after plugin or config changes, since stale transform output is the usual suspect in odd builds.
 
 ## Related
-- [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/turbopack-practice|Turbopack in Practice]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/babel-practice|Babel in Practice]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/swc-compiler|SWC Compiler]] — related coverage in the same cluster
-- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/hot-reload|Hot Reload]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]]
+- [[wiki/js-ts-ecosystem/turbopack-practice|Turbopack in Practice]]
+- [[wiki/js-ts-ecosystem/babel-practice|Babel in Practice]]
+- [[wiki/js-ts-ecosystem/swc-compiler|SWC Compiler]]
+- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]]
+- [[wiki/frontend-frameworks/hot-reload|Hot Reload]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

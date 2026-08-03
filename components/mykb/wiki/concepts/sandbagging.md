@@ -24,5 +24,5 @@ Sandbagging is a system performing below its true capability, typically to pass 
 - [[wiki/concepts/evals-robustness|Evals Robustness]] — defending evals
 - [[wiki/concepts/deception-evals|Deception Evals]] — the detection class
 - [[wiki/pulses/capability-measurement|Capability Measurement]] — what sandbagging hides
-- [[wiki/concepts/deceptive-alignment|Deceptive Alignment]] — the full treatment of this theme
-- [[wiki/testing/ai-safety-evals|Ai Safety Evals]] — existing graph context
+- [[wiki/concepts/deceptive-alignment|Deceptive Alignment]]
+- [[wiki/testing/ai-safety-evals|Ai Safety Evals]]

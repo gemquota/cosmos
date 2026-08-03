@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Restricted Deployment"
 description: "Limiting where or how an AI system can be used"
 tags: ["restricted", "deployment", "limits"]

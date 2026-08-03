@@ -20,11 +20,12 @@ Turbopack is the Rust-based incremental bundler from the Next.js team: it caches
 - RSIS3 relevance: the dashboard build benefits from Turbopack's incremental cache — fast iteration keeps the loop tight.
 
 - Keep a webpack fallback while Turbopack matures, so a plugin gap does not block the build.
+- Cache hygiene: Turbopack's persistent cache is the source of both its speed and its sharp edges; after upgrades, flag changes, or transform changes, clear the cache and rebuild from scratch so stale compilations cannot ship, verify production output matches dev output when cache-dependent behavior is suspected, and keep the cache out of CI layers that prune it mid-build.
 ## Related
-- [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/babel-practice|Babel in Practice]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/swc-compiler|SWC Compiler]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/esbuild-practice|esbuild in Practice]] — related coverage in the same cluster
-- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/hot-reload|Hot Reload]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]]
+- [[wiki/js-ts-ecosystem/babel-practice|Babel in Practice]]
+- [[wiki/js-ts-ecosystem/swc-compiler|SWC Compiler]]
+- [[wiki/js-ts-ecosystem/esbuild-practice|esbuild in Practice]]
+- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]]
+- [[wiki/frontend-frameworks/hot-reload|Hot Reload]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

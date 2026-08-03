@@ -25,10 +25,10 @@ Operational tradeoffs: 503 with Retry-After trades short-term unavailability for
 RSIS3/mykb relevance: RSIS3 check-practices runs can treat sustained 503 rates as a signal that an L1 loop's action produced overload; documenting the Retry-After contract makes those postmortems reproducible.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/502-handling|Handling 502]] — related coverage in the same cluster
-- [[wiki/api-protocols/504-handling|Handling 504]] — related coverage in the same cluster
-- [[wiki/api-protocols/quota-headers|Quota Headers]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-status-codes|HTTP Status Codes]] — related coverage in the same cluster
-- [[wiki/api-protocols/retry-backoff|Retry & Backoff]] — related coverage in the same cluster
-- [[wiki/api-protocols/error-contract-design|Error Contract Design]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/502-handling|Handling 502]]
+- [[wiki/api-protocols/504-handling|Handling 504]]
+- [[wiki/api-protocols/quota-headers|Quota Headers]]
+- [[wiki/api-protocols/http-status-codes|HTTP Status Codes]]
+- [[wiki/api-protocols/retry-backoff|Retry & Backoff]]
+- [[wiki/api-protocols/error-contract-design|Error Contract Design]]

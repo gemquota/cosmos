@@ -19,9 +19,9 @@ A network namespace is a kernel-isolated copy of the network stack: its own inte
 - Operational tradeoffs: namespaces give hard isolation at near-zero performance cost — they are kernel objects, not VMs — but they complicate debugging (the `ss`, `tcpdump`, and `iptables` you run must target the right namespace with `ip netns exec`) and require deliberate plumbing (veth, bridge, NAT) that VM-style isolation provides out of the box. The practice rules: script namespace creation idempotently, never move a physical NIC you are not prepared to lose, use `ip netns exec` for all inspection commands, and pair namespaces with routing and firewall policy explicitly rather than assuming defaults. RSIS3/mykb relevance: namespace isolation is compartmentalization — each agent loop or service boundary gets its own network state, mirroring RSIS3's rule that one loop's traffic and failures must not leak into another's.
 
 ## Related
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/infrastructure/vlan-networking|VLAN Networking]] — related coverage in the same cluster
-- [[wiki/cloud-infra/multicast-networking|Multicast Networking]] — related coverage in the same cluster
-- [[wiki/infrastructure/software-defined-networking|Software-Defined Networking]] — related coverage in the same cluster
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/infrastructure/vlan-networking|VLAN Networking]]
+- [[wiki/cloud-infra/multicast-networking|Multicast Networking]]
+- [[wiki/infrastructure/software-defined-networking|Software-Defined Networking]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

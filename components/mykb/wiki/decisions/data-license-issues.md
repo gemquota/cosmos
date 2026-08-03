@@ -25,7 +25,7 @@ Data license issues arise when training data is used beyond its license terms �
 - Prefer clearly licensed sources for anything that may be redistributed, and document the license of every raw capture at ingestion time.
 ## Related
 - [[wiki/decisions/copyright-and-ai|Copyright and AI]] — the headline issue
-- [[wiki/syntheses/evidence-and-provenance|Evidence and Provenance: Open Threads]] — note
+- [[wiki/syntheses/evidence-and-provenance|Evidence and Provenance: Open Threads]]
 - [[wiki/decisions/model-license-risks|Model License Risks]] — the model side
 - [[wiki/syntheses/evidence-and-provenance|Evidence and Provenance: Open Threads]] — the wiki practice
-- [[wiki/syntheses/knowledge-synthesis-pipelines|Knowledge Synthesis Pipelines]] — the full treatment of this theme
+- [[wiki/syntheses/knowledge-synthesis-pipelines|Knowledge Synthesis Pipelines]]

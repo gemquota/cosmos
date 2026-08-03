@@ -20,10 +20,10 @@ Resource utilization analysis is the practice of reading CPU, memory, disk, and 
 - RSIS3/mykb relevance: RSIS3's batch loops (graph rebuilds, TF-IDF indexing) are exactly the workloads that benefit: check CPU vs. I/O saturation before scaling, and record utilization baselines with telemetry so loop regression is visible in the dashboard — the same counters, tracked over time.
 
 ## Related
-- [[wiki/infrastructure/packet-analysis-with-tcpdump|Packet Analysis with tcpdump]] — related coverage in the same cluster
-- [[wiki/devops-infra/custom-resource-definitions|Custom Resource Definitions]] — related coverage in the same cluster
-- [[wiki/cloud-infra/flow-logs-and-analysis|Flow Logs & Analysis]] — related coverage in the same cluster
-- [[wiki/cloud-infra/resource-tagging|Resource Tagging]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
+- [[wiki/infrastructure/packet-analysis-with-tcpdump|Packet Analysis with tcpdump]]
+- [[wiki/devops-infra/custom-resource-definitions|Custom Resource Definitions]]
+- [[wiki/cloud-infra/flow-logs-and-analysis|Flow Logs & Analysis]]
+- [[wiki/cloud-infra/resource-tagging|Resource Tagging]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

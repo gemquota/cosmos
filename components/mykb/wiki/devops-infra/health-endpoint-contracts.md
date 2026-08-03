@@ -21,8 +21,8 @@ Health endpoint contracts standardize how services expose liveness, readiness, a
 - RSIS3 relevance: the wiki daemon and dashboard should expose the same liveness/readiness contract so RSIS3's monitoring and any LB can decide availability without guessing.
 
 ## Related
-- [[wiki/infrastructure/health-check-patterns|Health Check Patterns]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/infrastructure/health-check-patterns|Health Check Patterns]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

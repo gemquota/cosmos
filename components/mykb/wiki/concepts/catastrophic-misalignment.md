@@ -24,5 +24,5 @@ Catastrophic misalignment is misalignment whose consequences are extreme: loss o
 - [[wiki/concepts/existential-risk|Existential Risk]] — the frame
 - [[wiki/concepts/x-risk-frameworks|X-Risk Frameworks]] — the analysis tools
 - [[wiki/concepts/global-catastrophic-risk|Global Catastrophic Risk]] — the broad class
-- [[wiki/concepts/deceptive-alignment|Deceptive Alignment]] — the full treatment of this theme
-- [[wiki/testing/ai-safety-evals|Ai Safety Evals]] — existing graph context
+- [[wiki/concepts/deceptive-alignment|Deceptive Alignment]]
+- [[wiki/testing/ai-safety-evals|Ai Safety Evals]]

@@ -21,10 +21,10 @@ IO latency and IOPS are the two numbers that describe storage performance: IOPS 
 - For mykb: the node anchors the storage-performance cluster — IO sizing, latency budgets, and async I/O all connect here.
 
 ## Related
-- [[wiki/os-shell/io-uring-and-async-io|io_uring & Async I/O]] — related coverage in the same cluster
-- [[wiki/cloud-infra/latency-optimization|Latency Optimization]] — related coverage in the same cluster
-- [[wiki/infrastructure/pipeline-sla-and-latency-budgets|Pipeline Sla And Latency Budgets]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
+- [[wiki/os-shell/io-uring-and-async-io|io_uring & Async I/O]]
+- [[wiki/cloud-infra/latency-optimization|Latency Optimization]]
+- [[wiki/infrastructure/pipeline-sla-and-latency-budgets|Pipeline Sla And Latency Budgets]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

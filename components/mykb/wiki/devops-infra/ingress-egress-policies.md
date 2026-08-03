@@ -21,9 +21,9 @@ Ingress and egress policies control what traffic may enter and leave a workload 
 - RSIS3 relevance: if cosmos services run on Kubernetes, ingress-egress policies bound what a compromised wiki daemon could reach — and RSIS3's own loops should have explicit allowed paths between components.
 
 ## Related
-- [[wiki/infrastructure/egress-and-ingress-filters|Egress & Ingress Filters]] — related coverage in the same cluster
-- [[wiki/devops-infra/ingress-controllers|Ingress Controllers]] — related coverage in the same cluster
-- [[wiki/devops-infra/network-policies-kubernetes|Kubernetes Network Policies]] — related coverage in the same cluster
-- [[wiki/infrastructure/egress-proxies-and-filters|Egress Proxies & Filters]] — related coverage in the same cluster
+- [[wiki/infrastructure/egress-and-ingress-filters|Egress & Ingress Filters]]
+- [[wiki/devops-infra/ingress-controllers|Ingress Controllers]]
+- [[wiki/devops-infra/network-policies-kubernetes|Kubernetes Network Policies]]
+- [[wiki/infrastructure/egress-proxies-and-filters|Egress Proxies & Filters]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

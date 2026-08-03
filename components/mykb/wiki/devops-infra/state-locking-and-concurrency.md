@@ -21,10 +21,10 @@ State locking and concurrency control prevent two writers from corrupting shared
 - RSIS3 relevance: RSIS3's registry and state files need the same protection — concurrent loops writing checkpoints should fail loudly or coordinate, never silently overwrite each other's progress.
 
 ## Related
-- [[wiki/devops-infra/terraform-state-management|Terraform State Management]] — related coverage in the same cluster
-- [[wiki/devops-infra/optimistic-locking|Optimistic Locking]] — related coverage in the same cluster
-- [[wiki/infrastructure/query-timeouts-and-concurrency-limits|Query Timeouts And Concurrency Limits]] — related coverage in the same cluster
-- [[wiki/os-shell/file-locking|File Locking]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/terraform-state-management|Terraform State Management]]
+- [[wiki/devops-infra/optimistic-locking|Optimistic Locking]]
+- [[wiki/infrastructure/query-timeouts-and-concurrency-limits|Query Timeouts And Concurrency Limits]]
+- [[wiki/os-shell/file-locking|File Locking]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -20,8 +20,8 @@ NVMe multipath gives a host multiple physical paths to the same NVMe namespace �
 - For mykb: NVMe multipath is the reliability layer over the NVMe cluster — it connects NVMe & NVMe-oF, NVMe-oF TCP, and storage systems.
 
 ## Related
-- [[wiki/infrastructure/nvme-and-nvme-of|NVMe & NVMe-oF]] — related coverage in the same cluster
-- [[wiki/infrastructure/nvme-over-fabrics-tcp|NVMe over Fabrics (TCP)]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
+- [[wiki/infrastructure/nvme-and-nvme-of|NVMe & NVMe-oF]]
+- [[wiki/infrastructure/nvme-over-fabrics-tcp|NVMe over Fabrics (TCP)]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -19,10 +19,10 @@ Yup is a JavaScript schema validation library that describes object shapes and t
 - RSIS3/mykb relevance: MyKB's form-like surfaces (filters, settings) benefit from a single schema that drives both UI validation and daemon request validation, so the client and server agree on shape — the same single-source-of-truth rule RSIS3 applies to registry schemas.
 
 ## Related
-- [[wiki/web-platforms/forms-practice|Forms in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/zod-validation|Zod Validation]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/schema-coercion|Schema Coercion]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/form-libraries|Form Libraries]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-apis|Web APIs]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-accessibility|Web Accessibility]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
+- [[wiki/web-platforms/forms-practice|Forms in Practice]]
+- [[wiki/frontend-frameworks/zod-validation|Zod Validation]]
+- [[wiki/frontend-frameworks/schema-coercion|Schema Coercion]]
+- [[wiki/frontend-frameworks/form-libraries|Form Libraries]]
+- [[wiki/web-platforms/web-apis|Web APIs]]
+- [[wiki/web-platforms/web-accessibility|Web Accessibility]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]

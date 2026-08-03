@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Deployment Safety"
 description: "Practices for shipping AI systems without harm"
 tags: ["deployment", "safety", "practice"]

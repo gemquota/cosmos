@@ -20,10 +20,10 @@ Loadable kernel modules (LKMs) let the kernel gain functionality without a reboo
 - RSIS3/mykb relevance: module loading is dependency resolution with a registry (modprobe alias tables, modules.dep) — the same discipline as the wiki's link graph, where a new capability (driver, article) registers aliases so lookup by identifier (device ID, concept name) finds the right implementation automatically.
 
 ## Related
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/devops-infra/terraform-workspaces-and-modules|Terraform Workspaces & Modules]] — related coverage in the same cluster
-- [[wiki/infrastructure/kernel-bypass-networking|Kernel-Bypass Networking]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-modules|Kernel Modules]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/devops-infra/terraform-workspaces-and-modules|Terraform Workspaces & Modules]]
+- [[wiki/infrastructure/kernel-bypass-networking|Kernel-Bypass Networking]]
+- [[wiki/os-shell/kernel-modules|Kernel Modules]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -19,10 +19,10 @@ Form libraries remove the boilerplate of managing form state by hand: they own f
 - RSIS3/mykb relevance: the unified dashboard's filters and article editor are forms in disguise; a schema-driven form library would give MyKB the same single-source-of-truth for input shape that RSIS3 demands for registry entries — declared types and validation in one place.
 
 ## Related
-- [[wiki/web-platforms/forms-practice|Forms in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/react-hook-form|React Hook Form]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/yup-schemas|Yup Schemas]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/zod-validation|Zod Validation]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-apis|Web APIs]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-accessibility|Web Accessibility]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
+- [[wiki/web-platforms/forms-practice|Forms in Practice]]
+- [[wiki/frontend-frameworks/react-hook-form|React Hook Form]]
+- [[wiki/frontend-frameworks/yup-schemas|Yup Schemas]]
+- [[wiki/frontend-frameworks/zod-validation|Zod Validation]]
+- [[wiki/web-platforms/web-apis|Web APIs]]
+- [[wiki/web-platforms/web-accessibility|Web Accessibility]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]

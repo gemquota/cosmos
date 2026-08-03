@@ -19,10 +19,10 @@ Finite state UIs model every condition a screen can be in as a named state with 
 - RSIS3/mykb relevance: RSIS3's loops are state machines in spirit — each loop has phases with guarded transitions; modeling the dashboard's views (loading, live, degraded, offline) as finite states keeps the UI honest about the system's actual condition, the same way the registry tracks loop state explicitly.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/immutable-state|Immutable State]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/state-machines-web|State Machines on the Web]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/xstate-practice|XState in Practice]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/software-engineering/reactive-programming|Reactive Programming]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/immutable-state|Immutable State]]
+- [[wiki/frontend-frameworks/state-machines-web|State Machines on the Web]]
+- [[wiki/frontend-frameworks/xstate-practice|XState in Practice]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/software-engineering/reactive-programming|Reactive Programming]]

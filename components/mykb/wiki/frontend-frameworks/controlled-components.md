@@ -19,10 +19,10 @@ A controlled component is an input whose displayed value is owned by React state
 - RSIS3/mykb relevance: controlled inputs are declarative single-source-of-truth discipline applied to the DOM; MyKB's search and article editors use the same model so the displayed query, the URL, and the daemon's search request always agree — mirroring RSIS3's rule that derived outputs never drift from their source state.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/uncontrolled-components|Uncontrolled Components]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/refs-practice|Refs in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/portals-practice|Portals in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-components|Web Components]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/uncontrolled-components|Uncontrolled Components]]
+- [[wiki/frontend-frameworks/refs-practice|Refs in Practice]]
+- [[wiki/frontend-frameworks/portals-practice|Portals in Practice]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/web-components|Web Components]]
+- [[wiki/web-platforms/state-management|State Management]]

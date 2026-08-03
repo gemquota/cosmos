@@ -24,4 +24,4 @@ Intent alignment is the property that a system's objectives match what the desig
 - [[wiki/concepts/specification-gaming|Specification Gaming]] — the failure mode
 - [[wiki/concepts/goal-specification|Goal Specification]] — the problem statement
 - [[wiki/concepts/alignment-tax|Alignment Tax]] — the cost
-- [[wiki/concepts/calibration|Calibration]] — existing graph context
+- [[wiki/concepts/calibration|Calibration]]

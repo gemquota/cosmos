@@ -24,5 +24,5 @@ Early stopping halts training when a validation metric stops improving, trading 
 - [[wiki/concepts/overfitting-llm|Overfitting in LLMs]] — what it prevents
 - [[wiki/decisions/model-selection-practice|Model Selection in Practice]] — the broader choice
 - [[wiki/decisions/eval-splits|eval-splits]] — the signal
-- [[wiki/concepts/grokking|Grokking]] — the full treatment of this theme
-- [[wiki/ml-frameworks/evaluation-during-training|Evaluation During Training]] — existing graph context
+- [[wiki/concepts/grokking|Grokking]]
+- [[wiki/ml-frameworks/evaluation-during-training|Evaluation During Training]]

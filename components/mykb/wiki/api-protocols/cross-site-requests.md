@@ -25,10 +25,10 @@ Operational tradeoffs: SameSite=Lax is the cheap baseline that kills most CSRF w
 RSIS3/mykb relevance: any wiki automation that POSTs with cookies must understand this asymmetry; documenting the "CORS stops reads, SameSite/tokens stop writes" rule keeps RSIS3's web-automation security notes consistent.
 
 ## Related
-- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/cookie-flags|Cookie Flags]] — related coverage in the same cluster
-- [[wiki/api-protocols/secure-flag|Secure Cookie Flag]] — related coverage in the same cluster
-- [[wiki/api-protocols/httponly-flag|HttpOnly Cookie Flag]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-cookies|HTTP Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf|CSRF]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]]
+- [[wiki/api-protocols/cookie-flags|Cookie Flags]]
+- [[wiki/api-protocols/secure-flag|Secure Cookie Flag]]
+- [[wiki/api-protocols/httponly-flag|HttpOnly Cookie Flag]]
+- [[wiki/api-protocols/http-cookies|HTTP Cookies]]
+- [[wiki/api-protocols/csrf|CSRF]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

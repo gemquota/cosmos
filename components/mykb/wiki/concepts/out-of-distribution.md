@@ -24,5 +24,5 @@ Out-of-distribution (OOD) inputs are examples that fall outside the training dis
 - [[wiki/concepts/distribution-shift-ai|Distribution Shift in AI]] — the general phenomenon
 - [[wiki/concepts/brittleness-ai|AI Brittleness]] — the failure
 - [[wiki/concepts/context-robustness|Context Robustness]] — the practical angle
-- [[wiki/concepts/goal-misgeneralization|Goal Misgeneralization]] — the full treatment of this theme
-- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]] — existing graph context
+- [[wiki/concepts/goal-misgeneralization|Goal Misgeneralization]]
+- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]]

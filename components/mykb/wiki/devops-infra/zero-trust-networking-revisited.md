@@ -21,9 +21,9 @@ Zero-trust networking is the model where no network is trusted by default: every
 - RSIS3 relevance: the cosmos deployment (dashboard, daemon, wiki) benefits from zero-trust principles — every access authenticated and scoped, internal calls mTLS-verified — matching RSIS3's own guardrail philosophy.
 
 ## Related
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]] — related coverage in the same cluster
-- [[wiki/infrastructure/vlan-networking|VLAN Networking]] — related coverage in the same cluster
-- [[wiki/devops-infra/zero-trust-access-proxies|Zero Trust Access Proxies]] — related coverage in the same cluster
-- [[wiki/cloud-infra/multicast-networking|Multicast Networking]] — related coverage in the same cluster
+- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
+- [[wiki/infrastructure/vlan-networking|VLAN Networking]]
+- [[wiki/devops-infra/zero-trust-access-proxies|Zero Trust Access Proxies]]
+- [[wiki/cloud-infra/multicast-networking|Multicast Networking]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

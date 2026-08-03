@@ -24,8 +24,6 @@ The CSS pointer-events property controls whether an element is a target for poin
 ## Related
 - [[wiki/web-platforms/touch-gestures|Touch Gestures]]
 - [[wiki/web-platforms/touch-action-css|touch-action CSS]]
-- [[wiki/web-platforms/pointer-events-css|pointer-events CSS]]
-- [[wiki/web-platforms/touch-action-css|touch-action CSS]]
 - [[wiki/web-platforms/css-layout|CSS Layout]]
 - [[wiki/web-platforms/web-accessibility|Web Accessibility]]
 - [[wiki/android-core/gesture-input|Gesture Input]]

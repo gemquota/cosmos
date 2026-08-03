@@ -19,10 +19,10 @@ Webhook topics are the named categories of events a producer offers for subscrip
 - RSIS3/mykb relevance: RSIS3's pulse and checkpoint events are natural topics; defining a stable topic vocabulary for knowledge events (article.created, synthesis.promoted) gives MyKB consumers the same opt-in granularity and keeps the graph update fan-out predictable as the wiki grows.
 
 ## Related
-- [[wiki/api-protocols/webhooks-practice|Webhooks in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhook-subscriptions|Webhook Subscriptions]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhook-delivery|Webhook Delivery]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhook-retries|Webhook Retries]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhooks|Webhooks]] — related coverage in the same cluster
-- [[wiki/api-protocols/at-least-once-delivery|At-Least-Once Delivery]] — related coverage in the same cluster
-- [[wiki/api-protocols/retry-backoff|Retry & Backoff]] — related coverage in the same cluster
+- [[wiki/api-protocols/webhooks-practice|Webhooks in Practice]]
+- [[wiki/api-protocols/webhook-subscriptions|Webhook Subscriptions]]
+- [[wiki/api-protocols/webhook-delivery|Webhook Delivery]]
+- [[wiki/api-protocols/webhook-retries|Webhook Retries]]
+- [[wiki/api-protocols/webhooks|Webhooks]]
+- [[wiki/api-protocols/at-least-once-delivery|At-Least-Once Delivery]]
+- [[wiki/api-protocols/retry-backoff|Retry & Backoff]]

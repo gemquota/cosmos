@@ -21,9 +21,9 @@ Development environments as code means every environment — local, preview, sta
 - RSIS3 relevance: the cosmos repo's components (RSIS3, MyKB, SPACE) benefit from one declarative environment definition so every loop experiment runs against the same stack, making results comparable.
 
 ## Related
-- [[wiki/devops-infra/infrastructure-as-code-revisited|Infrastructure as Code]] — related coverage in the same cluster
-- [[wiki/shell-environment/shell-environments-and-rc-files|Shell Environments & RC Files]] — related coverage in the same cluster
-- [[wiki/devops-infra/gatekeeper-and-policy-as-code|Gatekeeper & Policy as Code]] — related coverage in the same cluster
-- [[wiki/devops-infra/configuration-as-data|Configuration as Data]] — related coverage in the same cluster
+- [[wiki/devops-infra/infrastructure-as-code-revisited|Infrastructure as Code]]
+- [[wiki/shell-environment/shell-environments-and-rc-files|Shell Environments & RC Files]]
+- [[wiki/devops-infra/gatekeeper-and-policy-as-code|Gatekeeper & Policy as Code]]
+- [[wiki/devops-infra/configuration-as-data|Configuration as Data]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

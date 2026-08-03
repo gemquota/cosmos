@@ -19,10 +19,10 @@ GraphQL batching is the practice of sending multiple operations in fewer HTTP re
 - RSIS3/mykb relevance: the daemon could batch MyKB lookups (article, graph node, related links) for the dashboard; the lesson is to enforce per-operation budgets inside the batch and treat each operation as an independently costed unit, the same way RSIS3 accounts for each loop's work even when runs are coalesced.
 
 ## Related
-- [[wiki/api-protocols/graphql-basics|GraphQL Basics]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/graphql-caching|GraphQL Caching]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/persisted-queries|Persisted GraphQL Queries]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/query-depth-limit|Query Depth Limits]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql|GraphQL]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-security|GraphQL Security]] — related coverage in the same cluster
+- [[wiki/api-protocols/graphql-basics|GraphQL Basics]]
+- [[wiki/frontend-frameworks/graphql-caching|GraphQL Caching]]
+- [[wiki/frontend-frameworks/persisted-queries|Persisted GraphQL Queries]]
+- [[wiki/frontend-frameworks/query-depth-limit|Query Depth Limits]]
+- [[wiki/api-protocols/graphql|GraphQL]]
+- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]]
+- [[wiki/api-protocols/graphql-security|GraphQL Security]]

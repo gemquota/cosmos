@@ -20,9 +20,9 @@ Immutable filesystems make the operating system's root read-only, so the base sy
 - RSIS3/mykb relevance: the wiki's snapshot discipline is immutability applied to knowledge: read-only, versioned corpus states with atomic promotion and rollback, exactly the ostree model — and the same "verify before deploy, roll back on mismatch" loop is what RSIS3 checkpoints encode.
 
 ## Related
-- [[wiki/os-shell/journaling-filesystems|Journaling Filesystems]] — related coverage in the same cluster
-- [[wiki/os-shell/copy-on-write-filesystems|Copy-on-Write Filesystems]] — related coverage in the same cluster
-- [[wiki/os-shell/disk-partitioning-and-filesystems|Disk Partitioning & Filesystems]] — related coverage in the same cluster
-- [[wiki/os-shell/fuse-and-user-space-filesystems|FUSE & User-Space Filesystems]] — related coverage in the same cluster
+- [[wiki/os-shell/journaling-filesystems|Journaling Filesystems]]
+- [[wiki/os-shell/copy-on-write-filesystems|Copy-on-Write Filesystems]]
+- [[wiki/os-shell/disk-partitioning-and-filesystems|Disk Partitioning & Filesystems]]
+- [[wiki/os-shell/fuse-and-user-space-filesystems|FUSE & User-Space Filesystems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

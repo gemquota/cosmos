@@ -24,5 +24,5 @@ Overfitting in LLMs is the model fitting training specifics — exact text, form
 - [[wiki/concepts/memorization-vs-generalization|Memorization vs Generalization]] — the spectrum
 - [[wiki/concepts/benchmark-contamination|Benchmark Contamination]] — the benchmark symptom
 - [[wiki/concepts/regularization-practice|Regularization in Practice]] — the mitigation
-- [[wiki/concepts/grokking|Grokking]] — the full treatment of this theme
-- [[wiki/ai-ml/data-contamination|Data Contamination]] — existing graph context
+- [[wiki/concepts/grokking|Grokking]]
+- [[wiki/ai-ml/data-contamination|Data Contamination]]

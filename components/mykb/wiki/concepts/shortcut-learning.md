@@ -24,5 +24,5 @@ Shortcut learning is models exploiting superficial cues that correlate with labe
 - [[wiki/concepts/simplicity-bias|Simplicity Bias]] — the learning bias
 - [[wiki/concepts/confounder-learning|Confounder Learning]] — the causal form
 - [[wiki/concepts/robustness-training|Robustness Training]] — the countermeasure
-- [[wiki/concepts/goal-misgeneralization|Goal Misgeneralization]] — the full treatment of this theme
-- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]] — existing graph context
+- [[wiki/concepts/goal-misgeneralization|Goal Misgeneralization]]
+- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]]

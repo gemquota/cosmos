@@ -19,10 +19,10 @@ Memoization is caching the result of an expensive computation keyed by its input
 - RSIS3/mykb relevance: memoized selectors are how the dashboard derives graph stats and loop success rates from raw telemetry; caching the derivation per input slice (window, loop) keeps the render cheap, exactly as RSIS3 caches derived metrics until their raw inputs change.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/use-callback|useCallback]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/use-memo|useMemo]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/pure-components|Pure Components]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/use-callback|useCallback]]
+- [[wiki/frontend-frameworks/use-memo|useMemo]]
+- [[wiki/frontend-frameworks/pure-components|Pure Components]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]]

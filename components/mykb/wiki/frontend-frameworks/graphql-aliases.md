@@ -19,10 +19,10 @@ GraphQL aliases let a client rename a field in the response by writing `aliasNam
 - RSIS3/mykb relevance: MyKB's graph queries compare metrics across time windows — a natural alias use case; the operational lesson is that any query-cost discipline in the daemon's API must count aliased executions, mirroring RSIS3's rule that resource budgets are enforced at the point of actual work.
 
 ## Related
-- [[wiki/api-protocols/graphql-basics|GraphQL Basics]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/graphql-variables|GraphQL Variables]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/graphql-directives|GraphQL Directives]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/graphql-batching|GraphQL Batching]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql|GraphQL]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-security|GraphQL Security]] — related coverage in the same cluster
+- [[wiki/api-protocols/graphql-basics|GraphQL Basics]]
+- [[wiki/frontend-frameworks/graphql-variables|GraphQL Variables]]
+- [[wiki/frontend-frameworks/graphql-directives|GraphQL Directives]]
+- [[wiki/frontend-frameworks/graphql-batching|GraphQL Batching]]
+- [[wiki/api-protocols/graphql|GraphQL]]
+- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]]
+- [[wiki/api-protocols/graphql-security|GraphQL Security]]

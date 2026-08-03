@@ -20,10 +20,10 @@ Packet capture performance is the art of capturing every packet at line rate wit
 - For mykb: capture performance is the engineering layer under the tcpdump cluster — filters, packet analysis, and the capture tooling all build on getting packets to disk losslessly.
 
 ## Related
-- [[wiki/infrastructure/packet-analysis-with-tcpdump|Packet Analysis with tcpdump]] — related coverage in the same cluster
-- [[wiki/infrastructure/tcpdump-filters-and-capture|tcpdump Filters & Capture]] — related coverage in the same cluster
-- [[wiki/cloud-infra/tls-performance|TLS Performance]] — related coverage in the same cluster
-- [[wiki/os-shell/packet-analysis-and-capture|Packet Analysis]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
+- [[wiki/infrastructure/packet-analysis-with-tcpdump|Packet Analysis with tcpdump]]
+- [[wiki/infrastructure/tcpdump-filters-and-capture|tcpdump Filters & Capture]]
+- [[wiki/cloud-infra/tls-performance|TLS Performance]]
+- [[wiki/os-shell/packet-analysis-and-capture|Packet Analysis]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

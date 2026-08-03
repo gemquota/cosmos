@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Knowledge Graph Maintenance"
 description: "Keeping a knowledge graph consistent, connected, and current"
 tags: ["knowledge-graph", "maintenance", "data-quality", "wikis"]

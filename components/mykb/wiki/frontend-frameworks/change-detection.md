@@ -19,10 +19,10 @@ Change detection is the mechanism by which a UI framework discovers that state c
 - RSIS3/mykb relevance: change detection is the UI counterpart of RSIS3's dependency tracking: knowing what to invalidate when state changes is the same problem as knowing which loop outputs depend on which registry entries, and fine-grained invalidation is the discipline MyKB's graph views rely on.
 
 ## Related
-- [[wiki/frontend-frameworks/solid-js-signals|Solid.js Signals]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/signal-based-state|Signal-Based State]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/observable-pattern|Observable Pattern]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/rxjs-practice|RxJS in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/solid-js-signals|Solid.js Signals]]
+- [[wiki/frontend-frameworks/signal-based-state|Signal-Based State]]
+- [[wiki/frontend-frameworks/observable-pattern|Observable Pattern]]
+- [[wiki/frontend-frameworks/rxjs-practice|RxJS in Practice]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

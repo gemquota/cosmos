@@ -21,11 +21,11 @@ Disaster recovery tiers classify systems by how much downtime and data loss they
 - RSIS3 relevance: RSIS3's memory store and checkpoints deserve an explicit tier — cheap RPO for the wiki (git pushes) and a defined recovery path for state files.
 
 ## Related
-- [[wiki/cloud-infra/azure-blob-access-tiers|Azure Blob Access Tiers]] — related coverage in the same cluster
-- [[wiki/devops-infra/disaster-recovery|Disaster Recovery]] — related coverage in the same cluster
-- [[wiki/devops-infra/point-in-time-recovery|Point-in-Time Recovery]] — related coverage in the same cluster
-- [[wiki/infrastructure/pulsar-architecture-and-tiers|Pulsar Architecture And Tiers]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/devops-infra/observability-pillars|Observability Pillars]] — related coverage in the same cluster
+- [[wiki/cloud-infra/azure-blob-access-tiers|Azure Blob Access Tiers]]
+- [[wiki/devops-infra/disaster-recovery|Disaster Recovery]]
+- [[wiki/devops-infra/point-in-time-recovery|Point-in-Time Recovery]]
+- [[wiki/infrastructure/pulsar-architecture-and-tiers|Pulsar Architecture And Tiers]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/devops-infra/observability-pillars|Observability Pillars]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

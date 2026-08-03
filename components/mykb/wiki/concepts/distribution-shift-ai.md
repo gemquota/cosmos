@@ -24,5 +24,5 @@ Distribution shift is the mismatch between the data a model saw in training and 
 - [[wiki/concepts/distributional-robustness|Distributional Robustness]] — the property
 - [[wiki/concepts/brittleness-ai|AI Brittleness]] — the failure mode
 - [[wiki/syntheses/monitored-deployment|Monitored Deployment]] — the operational response
-- [[wiki/concepts/goal-misgeneralization|Goal Misgeneralization]] — the full treatment of this theme
-- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]] — existing graph context
+- [[wiki/concepts/goal-misgeneralization|Goal Misgeneralization]]
+- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]]

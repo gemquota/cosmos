@@ -19,10 +19,10 @@ Jotai is a minimal state library for React built around atoms: tiny, independent
 - RSIS3/mykb relevance: Jotai's derived atoms are the client-side equivalent of RSIS3's derived metrics: declare sources once, derive everything else reactively, and let the invalidation graph do the work — the dashboard's filter, search, and selection state fits this model directly.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/recoil-practice|Recoil in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/mobx-practice|MobX in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/redux-practice|Redux in Practice]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/state-management-mobile|State Management Mobile]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/recoil-practice|Recoil in Practice]]
+- [[wiki/frontend-frameworks/mobx-practice|MobX in Practice]]
+- [[wiki/frontend-frameworks/redux-practice|Redux in Practice]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/frontend-frameworks/state-management-mobile|State Management Mobile]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]

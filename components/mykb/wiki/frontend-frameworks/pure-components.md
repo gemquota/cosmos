@@ -19,10 +19,10 @@ A pure component renders the same output for the same props and state, and nothi
 - RSIS3/mykb relevance: pure rendering is functional determinism — the same discipline RSIS3 demands of loop steps (same inputs, same outputs, no hidden state), which is what makes checkpoints and replays correct; the dashboard's widgets should render purely from telemetry so identical data always paints an identical view.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/re-render-causes|Re-Render Causes]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/context-rendering|Context and Rendering]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/selector-libraries|Selector Libraries]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/re-render-causes|Re-Render Causes]]
+- [[wiki/frontend-frameworks/context-rendering|Context and Rendering]]
+- [[wiki/frontend-frameworks/selector-libraries|Selector Libraries]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]]

@@ -20,9 +20,9 @@ The NVIDIA Container Toolkit is the software that makes GPUs usable inside conta
 - For mykb: the toolkit is the containerization layer under GPU infrastructure — it connects container runtimes, OCI images, and the device-plugin story.
 
 ## Related
-- [[wiki/devops-infra/container-runtimes|Container Runtimes]] — related coverage in the same cluster
-- [[wiki/devops-infra/container-images-oci|Container Images (OCI)]] — related coverage in the same cluster
-- [[wiki/devops-infra/container-network-interfaces|Container Network Interfaces]] — related coverage in the same cluster
-- [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]] — related coverage in the same cluster
+- [[wiki/devops-infra/container-runtimes|Container Runtimes]]
+- [[wiki/devops-infra/container-images-oci|Container Images (OCI)]]
+- [[wiki/devops-infra/container-network-interfaces|Container Network Interfaces]]
+- [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

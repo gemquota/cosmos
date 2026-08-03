@@ -21,8 +21,8 @@ Admission control is the last gate before a Kubernetes API request is persisted:
 - RSIS3/mykb relevance: the same gate-and-default pattern applies to RSIS3 loop pipelines — validate inputs before they are persisted, default what the loops forget, and fail closed on unknown request shapes rather than letting corrupt state enter the registry.
 
 ## Related
-- [[wiki/devops-infra/ingress-controllers|Ingress Controllers]] — related coverage in the same cluster
-- [[wiki/infrastructure/sdn-controllers|SDN Controllers]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/ingress-controllers|Ingress Controllers]]
+- [[wiki/infrastructure/sdn-controllers|SDN Controllers]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

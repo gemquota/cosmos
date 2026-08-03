@@ -24,4 +24,4 @@ Reward models learn to approximate human judgment from comparison data, and they
 - [[wiki/concepts/reward-model-gaming|Reward Model Gaming]] — the adversarial side
 - [[wiki/concepts/preference-learning-issues|Preference Learning Issues]] — the data side
 - [[wiki/concepts/rlaif|RLAIF (RL from AI Feedback)]] — the AI-feedback variant
-- [[wiki/ai-ml/reward-model|Reward Model]] — existing graph context
+- [[wiki/ai-ml/reward-model|Reward Model]]

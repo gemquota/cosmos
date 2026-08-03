@@ -26,7 +26,6 @@ Prototype pollution lets an attacker add or modify properties on Object.prototyp
 - [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
 - [[wiki/web-platforms/xs-leaks|XS-Leaks]]
 - [[wiki/web-platforms/dom-clobbering|DOM Clobbering]]
-- [[wiki/web-platforms/prototype-pollution-web|Prototype Pollution on the Web]]
 - [[wiki/web-platforms/web-apis|Web APIs]]
 - [[wiki/web-platforms/dom-manipulation|DOM Manipulation]]
 - [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]]

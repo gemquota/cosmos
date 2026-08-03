@@ -24,5 +24,5 @@ Probing classifiers are small models trained on a model's internal activations t
 - [[wiki/concepts/activation-analysis|Activation Analysis]] — the data being probed
 - [[wiki/concepts/polysemanticity|Polysemanticity]] — why probes mislead
 - [[wiki/concepts/feature-double-counting|Feature Double-Counting]] — probe confound
-- [[wiki/agent-systems/introspection-ai|Introspection in AI]] — the full treatment of this theme
-- [[wiki/ai-ml/probing|Probing]] — existing graph context
+- [[wiki/agent-systems/introspection-ai|Introspection in AI]]
+- [[wiki/ai-ml/probing|Probing]]

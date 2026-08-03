@@ -26,7 +26,6 @@ prefers-color-scheme matches the OS-level light/dark preference, letting sites s
 - [[wiki/web-platforms/css-variables-theming|CSS Variables and Theming]]
 - [[wiki/web-platforms/dark-mode-practice|Dark Mode Practice]]
 - [[wiki/web-platforms/prefers-contrast|prefers-contrast]]
-- [[wiki/web-platforms/prefers-color-scheme|prefers-color-scheme]]
 - [[wiki/mobile-platform/dark-mode-support|Dark Mode Support]]
 - [[wiki/frontend-frameworks/material-design|Material Design]]
 - [[wiki/web-platforms/web-accessibility|Web Accessibility]]

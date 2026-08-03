@@ -25,10 +25,10 @@ Operational tradeoffs: enforcing limits requires streaming decompression with a 
 RSIS3/mykb relevance: the wiki's ingestion pipeline should treat any compressed artifact as untrusted; documenting the byte-cap and ratio-cap contract here gives RSIS3's check-practices a concrete limit to verify.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/billion-laughs|Billion Laughs]] — related coverage in the same cluster
-- [[wiki/api-protocols/entity-expansion|Entity Expansion]] — related coverage in the same cluster
-- [[wiki/api-protocols/timing-attacks|Timing Attacks]] — related coverage in the same cluster
-- [[wiki/security-auth/cve-disclosures|CVE Disclosures]] — related coverage in the same cluster
-- [[wiki/api-protocols/rate-limiting|Rate Limiting]] — related coverage in the same cluster
-- [[wiki/api-protocols/backpressure|Backpressure]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/billion-laughs|Billion Laughs]]
+- [[wiki/api-protocols/entity-expansion|Entity Expansion]]
+- [[wiki/api-protocols/timing-attacks|Timing Attacks]]
+- [[wiki/security-auth/cve-disclosures|CVE Disclosures]]
+- [[wiki/api-protocols/rate-limiting|Rate Limiting]]
+- [[wiki/api-protocols/backpressure|Backpressure]]

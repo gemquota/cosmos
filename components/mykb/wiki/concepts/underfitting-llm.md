@@ -24,4 +24,4 @@ Underfitting is a model failing to capture structure present in its training dat
 - [[wiki/concepts/capability-jumps|Capability Jumps]] — the scaling cure
 - [[wiki/agent-systems/skill-acquisition-loops|Skill Acquisition Loops]] — the improvement path
 - [[wiki/concepts/temperature-scaling|Temperature Scaling]] — a calibration symptom
-- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]] — existing graph context
+- [[wiki/agent-systems/agent-evaluation|Agent Evaluation]]

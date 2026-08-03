@@ -20,8 +20,8 @@ Snapshot isolation gives each transaction a consistent view of committed data at
 - Operational notes: monitor version bloat and retention, test long-query-versus-writer behavior, and define the time-travel window per table.
 - RSIS3 relevance: RSIS3's state snapshots benefit from the same idea — a bad loop step can be rolled back by reading the prior snapshot instead of replaying history.
 
-## Related
 
+## Related
 - [[wiki/data-storage/multiversion-concurrency-control|Multiversion Concurrency Control]] — MVCC mechanics
 - [[wiki/data-storage/transaction-isolation-levels|Transaction Isolation Levels]] — isolation level spectrum
 - [[wiki/data-storage/time-travel-queries|Time Travel Queries]] — query-side time travel

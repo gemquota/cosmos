@@ -19,10 +19,10 @@ An uncontrolled component is an input whose value lives in the DOM rather than i
 - RSIS3/mykb relevance: the dashboard's article editor and search box face the same choice: read-on-demand (uncontrolled) keeps typing cheap, while controlled state is needed where the value drives derived UI (previews, counts) — matching RSIS3's principle of reading state only where and when it is needed.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/refs-practice|Refs in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/portals-practice|Portals in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/controlled-components|Controlled Components]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-components|Web Components]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/refs-practice|Refs in Practice]]
+- [[wiki/frontend-frameworks/portals-practice|Portals in Practice]]
+- [[wiki/frontend-frameworks/controlled-components|Controlled Components]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/web-components|Web Components]]
+- [[wiki/web-platforms/state-management|State Management]]

@@ -20,10 +20,10 @@ When a Linux system runs out of reclaimable memory, the kernel's OOM killer pick
 - RSIS3/mykb relevance: RSIS3's batch loops are exactly the kind of workload that gets OOM-killed under pressure; the discipline of bounding per-loop memory (like cgroup limits and `oom_score_adj` on the daemon) mirrors the loop-hygiene rule that one runaway worker must not take down the knowledge store.
 
 ## Related
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-allocation|Memory Allocation]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-fragmentation|Memory Fragmentation]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-mapped-files|Memory-Mapped Files]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
+- [[wiki/os-shell/memory-allocation|Memory Allocation]]
+- [[wiki/os-shell/memory-fragmentation|Memory Fragmentation]]
+- [[wiki/os-shell/memory-mapped-files|Memory-Mapped Files]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

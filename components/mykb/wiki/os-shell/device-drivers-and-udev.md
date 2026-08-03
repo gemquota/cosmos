@@ -19,10 +19,10 @@ Device drivers are the kernel modules that make hardware usable, and udev is the
 - Operational tradeoffs: udev's predictability costs complexity — a rules engine plus event daemon is more moving parts than the old static `/dev` tree — but the payoff is stable device naming, dynamic permission management, and hotplug handling that static setups cannot provide. The practice rules: prefer existing distro rules and the `uaccess`/`seat` mechanism over custom scripts, keep custom rules minimal and well-commented, and validate with `udevadm test` before deploying. RSIS3/mykb relevance: the wiki's daemon and build tooling depend on predictable device and mount paths; the same principle — stable names derived from attributes, not order of appearance — applies to how MyKB identifies articles by slug rather than by position.
 
 ## Related
-- [[wiki/infrastructure/gpu-drivers-and-cuda|GPU Drivers & CUDA]] — related coverage in the same cluster
-- [[wiki/cloud-infra/block-device-mapping-gcp|Block Device Mapping on GCP]] — related coverage in the same cluster
-- [[wiki/os-shell/device-drivers|Device Drivers]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/infrastructure/gpu-drivers-and-cuda|GPU Drivers & CUDA]]
+- [[wiki/cloud-infra/block-device-mapping-gcp|Block Device Mapping on GCP]]
+- [[wiki/os-shell/device-drivers|Device Drivers]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

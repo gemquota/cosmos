@@ -25,10 +25,10 @@ Operational tradeoffs: keys are simplest to implement and debug — one header, 
 RSIS3/mykb relevance: RSIS3 loops that call the wiki daemon or external LLM APIs should standardize on short-lived tokens where possible and treat static keys as flagged credentials in check-practices runs.
 
 ## Related
-- [[wiki/api-protocols/auth-flows-web|Auth Flows on the Web]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-basic-auth|API Basic Auth]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-digest-auth|API Digest Auth]] — related coverage in the same cluster
-- [[wiki/api-protocols/bearer-tokens|Bearer Tokens]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-authentication-methods|API Authentication Methods]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-keys|API Keys]] — related coverage in the same cluster
-- [[wiki/api-protocols/basic-authentication|Basic Authentication]] — related coverage in the same cluster
+- [[wiki/api-protocols/auth-flows-web|Auth Flows on the Web]]
+- [[wiki/api-protocols/api-basic-auth|API Basic Auth]]
+- [[wiki/api-protocols/api-digest-auth|API Digest Auth]]
+- [[wiki/api-protocols/bearer-tokens|Bearer Tokens]]
+- [[wiki/api-protocols/api-authentication-methods|API Authentication Methods]]
+- [[wiki/api-protocols/api-keys|API Keys]]
+- [[wiki/api-protocols/basic-authentication|Basic Authentication]]

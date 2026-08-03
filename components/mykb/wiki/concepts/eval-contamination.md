@@ -24,5 +24,5 @@ Eval contamination covers all ways evaluation validity is corrupted: leaked data
 - [[wiki/concepts/evals-gaming|Evals Gaming]] — the deliberate form
 - [[wiki/concepts/train-test-contamination|Train-Test Contamination]] — the data form
 - [[wiki/pulses/improvement-metrics|Improvement Metrics]] — the Goodhart context
-- [[wiki/agent-systems/self-evaluation|Self-Evaluation]] — the full treatment of this theme
-- [[wiki/ai-ml/data-contamination|Data Contamination]] — existing graph context
+- [[wiki/agent-systems/self-evaluation|Self-Evaluation]]
+- [[wiki/ai-ml/data-contamination|Data Contamination]]

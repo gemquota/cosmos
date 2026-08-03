@@ -19,10 +19,10 @@ PCIe (Peripheral Component Interconnect Express) is the serial bus hierarchy tha
 - Operational tradeoffs: topology knowledge buys performance: placing high-bandwidth devices on direct root-port links, spreading devices across root ports for parallel traffic, and matching generation/width expectations. The tradeoffs are motherboard cost (more root ports/switches) and the complexity of verifying negotiated speeds (`lspci -vv`, `lspci -nnk`) versus rated speeds. The practice rules: check `lspci -tv` and negotiated link stats before performance troubleshooting, keep peer-to-peer workloads (GPU training, NVMe caching) on the same hierarchy, and treat shared-chipset devices as contended by design. RSIS3/mykb relevance: the daemon's storage and GPU-adjacent workloads benefit from topology awareness — placing hot data and compute on the same bus hierarchy mirrors the locality discipline RSIS3 applies to memory and cache.
 
 ## Related
-- [[wiki/os-shell/numa-and-cpu-topology|NUMA & CPU Topology]] — related coverage in the same cluster
-- [[wiki/devops-infra/topology-spread-constraints|Topology Spread Constraints]] — related coverage in the same cluster
-- [[wiki/infrastructure/network-topology-design|Network Topology Design]] — related coverage in the same cluster
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/os-shell/numa-and-cpu-topology|NUMA & CPU Topology]]
+- [[wiki/devops-infra/topology-spread-constraints|Topology Spread Constraints]]
+- [[wiki/infrastructure/network-topology-design|Network Topology Design]]
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

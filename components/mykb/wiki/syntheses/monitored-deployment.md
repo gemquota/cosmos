@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Monitored Deployment"
 description: "Running systems under active observation"
 tags: ["monitored", "deployment", "observability"]

@@ -19,10 +19,10 @@ Webhook events are the structured payloads a producer delivers to subscribers �
 - RSIS3/mykb relevance: MyKB's session capture and RSIS3's pulse records are event streams; giving them stable event envelopes (id, type, timestamp, versioned data) means the knowledge graph can replay, dedupe, and evolve schemas without corrupting historical state — the same discipline webhook consumers depend on.
 
 ## Related
-- [[wiki/api-protocols/webhooks-practice|Webhooks in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhook-topics|Webhook Topics]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhook-subscriptions|Webhook Subscriptions]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhook-delivery|Webhook Delivery]] — related coverage in the same cluster
-- [[wiki/api-protocols/webhooks|Webhooks]] — related coverage in the same cluster
-- [[wiki/api-protocols/at-least-once-delivery|At-Least-Once Delivery]] — related coverage in the same cluster
-- [[wiki/api-protocols/retry-backoff|Retry & Backoff]] — related coverage in the same cluster
+- [[wiki/api-protocols/webhooks-practice|Webhooks in Practice]]
+- [[wiki/api-protocols/webhook-topics|Webhook Topics]]
+- [[wiki/api-protocols/webhook-subscriptions|Webhook Subscriptions]]
+- [[wiki/api-protocols/webhook-delivery|Webhook Delivery]]
+- [[wiki/api-protocols/webhooks|Webhooks]]
+- [[wiki/api-protocols/at-least-once-delivery|At-Least-Once Delivery]]
+- [[wiki/api-protocols/retry-backoff|Retry & Backoff]]

@@ -21,9 +21,9 @@ Kubernetes NetworkPolicy is the built-in mechanism for segmenting pod traffic: i
 - RSIS3 relevance: if cosmos services share a cluster, NetworkPolicy bounds what a compromised wiki daemon could reach and what the loops can call — worth mapping before it matters.
 
 ## Related
-- [[wiki/devops-infra/network-observability|Network Observability]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
-- [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]] — related coverage in the same cluster
-- [[wiki/infrastructure/network-interface-bonding|Network Interface Bonding]] — related coverage in the same cluster
+- [[wiki/devops-infra/network-observability|Network Observability]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
+- [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]]
+- [[wiki/infrastructure/network-interface-bonding|Network Interface Bonding]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

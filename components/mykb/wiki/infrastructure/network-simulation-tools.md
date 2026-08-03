@@ -20,10 +20,10 @@ Network simulation tools model topologies and protocols in software before anyth
 - For mykb: the node pairs with Mininet (emulation) — together they are the virtual testbed for the topology-design and protocol nodes.
 
 ## Related
-- [[wiki/devops-infra/network-observability|Network Observability]] — related coverage in the same cluster
-- [[wiki/shell-environment/unix-text-processing-tools|Unix Text Processing Tools]] — related coverage in the same cluster
-- [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]] — related coverage in the same cluster
-- [[wiki/cloud-infra/categories/aws-cloud/particle-simulation-2|Particle Simulation]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
+- [[wiki/devops-infra/network-observability|Network Observability]]
+- [[wiki/shell-environment/unix-text-processing-tools|Unix Text Processing Tools]]
+- [[wiki/cloud-infra/network-address-translation-variants|NAT Variants]]
+- [[wiki/cloud-infra/categories/aws-cloud/particle-simulation-2|Particle Simulation]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

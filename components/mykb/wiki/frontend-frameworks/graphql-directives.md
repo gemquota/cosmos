@@ -19,10 +19,10 @@ GraphQL directives are annotations that alter how a query executes. The built-in
 - RSIS3/mykb relevance: declarative policy via directives mirrors RSIS3's approach of encoding rules in configuration rather than scattering checks through loop code; the discipline is to keep custom directives few, documented, and testable so the graph API's behavior stays auditable.
 
 ## Related
-- [[wiki/api-protocols/graphql-basics|GraphQL Basics]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/graphql-batching|GraphQL Batching]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/graphql-caching|GraphQL Caching]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/persisted-queries|Persisted GraphQL Queries]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql|GraphQL]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-security|GraphQL Security]] — related coverage in the same cluster
+- [[wiki/api-protocols/graphql-basics|GraphQL Basics]]
+- [[wiki/frontend-frameworks/graphql-batching|GraphQL Batching]]
+- [[wiki/frontend-frameworks/graphql-caching|GraphQL Caching]]
+- [[wiki/frontend-frameworks/persisted-queries|Persisted GraphQL Queries]]
+- [[wiki/api-protocols/graphql|GraphQL]]
+- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]]
+- [[wiki/api-protocols/graphql-security|GraphQL Security]]

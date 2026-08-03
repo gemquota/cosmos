@@ -25,10 +25,10 @@ Operational tradeoffs: strict algorithm pinning breaks clients that rotate signi
 RSIS3/mykb relevance: algorithm confusion is a canonical "verify the verifier" failure; documenting the pinned-alg rule in mykb lets RSIS3-generated security reviews check token validation code mechanically.
 
 ## Related
-- [[wiki/api-protocols/jwt-practice|JWT in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/jku-attacks|JKU Attacks]] — related coverage in the same cluster
-- [[wiki/api-protocols/none-algorithm|JWT none Algorithm]] — related coverage in the same cluster
-- [[wiki/api-protocols/weak-hash-jwt|Weak Hashes in JWT]] — related coverage in the same cluster
-- [[wiki/api-protocols/json-web-tokens|JWT]] — related coverage in the same cluster
-- [[wiki/identity/key-rotation|Key Rotation]] — related coverage in the same cluster
-- [[wiki/api-protocols/mtls|mTLS]] — related coverage in the same cluster
+- [[wiki/api-protocols/jwt-practice|JWT in Practice]]
+- [[wiki/api-protocols/jku-attacks|JKU Attacks]]
+- [[wiki/api-protocols/none-algorithm|JWT none Algorithm]]
+- [[wiki/api-protocols/weak-hash-jwt|Weak Hashes in JWT]]
+- [[wiki/api-protocols/json-web-tokens|JWT]]
+- [[wiki/identity/key-rotation|Key Rotation]]
+- [[wiki/api-protocols/mtls|mTLS]]

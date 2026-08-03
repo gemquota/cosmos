@@ -19,10 +19,10 @@ Sec-Fetch-* headers, collectively called Fetch Metadata, let servers see the con
 - RSIS3/mykb relevance: the pattern — use ambient request context as a cheap pre-check before costly validation — mirrors RSIS3 loop hygiene where telemetry headers annotate pulse data, letting the dashboard reject malformed or cross-loop writes before they reach the knowledge graph.
 
 ## Related
-- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf-tokens|CSRF Tokens]] — related coverage in the same cluster
-- [[wiki/api-protocols/double-submit-cookie|Double-Submit Cookie]] — related coverage in the same cluster
-- [[wiki/api-protocols/synchronizer-token|Synchronizer Token Pattern]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf|CSRF]] — related coverage in the same cluster
-- [[wiki/security-auth/csrf-protection|CSRF Protection]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-headers|HTTP Headers]] — related coverage in the same cluster
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]]
+- [[wiki/api-protocols/csrf-tokens|CSRF Tokens]]
+- [[wiki/api-protocols/double-submit-cookie|Double-Submit Cookie]]
+- [[wiki/api-protocols/synchronizer-token|Synchronizer Token Pattern]]
+- [[wiki/api-protocols/csrf|CSRF]]
+- [[wiki/security-auth/csrf-protection|CSRF Protection]]
+- [[wiki/api-protocols/http-headers|HTTP Headers]]

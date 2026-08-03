@@ -25,10 +25,9 @@ Operational tradeoffs: the flow trades setup complexity for security — no pass
 RSIS3/mykb relevance: headless RSIS3 automation that needs user-context tokens (for example accessing a user's data) can use the device flow from a terminal; documenting the polling contract keeps the loop from violating slow_down rules.
 
 ## Related
-- [[wiki/api-protocols/auth-flows-web|Auth Flows on the Web]] — related coverage in the same cluster
-- [[wiki/api-protocols/client-credentials-flow|Client Credentials Flow]] — related coverage in the same cluster
-- [[wiki/api-protocols/authorization-code-flow|Authorization Code Flow]] — related coverage in the same cluster
-- [[wiki/api-protocols/device-flow|Device Authorization Flow]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2|OAuth 2.0]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2-client-credentials|Client Credentials]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2-authorization-code|Authorization Code Flow]] — related coverage in the same cluster
+- [[wiki/api-protocols/auth-flows-web|Auth Flows on the Web]]
+- [[wiki/api-protocols/client-credentials-flow|Client Credentials Flow]]
+- [[wiki/api-protocols/authorization-code-flow|Authorization Code Flow]]
+- [[wiki/api-protocols/oauth2|OAuth 2.0]]
+- [[wiki/api-protocols/oauth2-client-credentials|Client Credentials]]
+- [[wiki/api-protocols/oauth2-authorization-code|Authorization Code Flow]]

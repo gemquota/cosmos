@@ -19,10 +19,10 @@ React Hook Form (RHF) manages form state through registration instead of control
 - RSIS3/mykb relevance: the unified dashboard's filter forms and the article editor could use RHF's registration model to keep typing cheap in the embedded views; the deeper lesson is reading state on demand instead of re-rendering on every change — the same batching discipline RSIS3 applies to telemetry consumption.
 
 ## Related
-- [[wiki/web-platforms/forms-practice|Forms in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/yup-schemas|Yup Schemas]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/zod-validation|Zod Validation]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/schema-coercion|Schema Coercion]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-apis|Web APIs]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-accessibility|Web Accessibility]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
+- [[wiki/web-platforms/forms-practice|Forms in Practice]]
+- [[wiki/frontend-frameworks/yup-schemas|Yup Schemas]]
+- [[wiki/frontend-frameworks/zod-validation|Zod Validation]]
+- [[wiki/frontend-frameworks/schema-coercion|Schema Coercion]]
+- [[wiki/web-platforms/web-apis|Web APIs]]
+- [[wiki/web-platforms/web-accessibility|Web Accessibility]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]

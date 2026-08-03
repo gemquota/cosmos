@@ -25,10 +25,10 @@ Operational tradeoffs: server-side sorting keeps clients thin and orders stable 
 RSIS3/mykb relevance: the dashboard's pulse and graph views sort telemetry; documenting the sort contract keeps dashboard queries and RSIS3 analysis scripts consistent about tie-breaking.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-expansion|API Expansion]] — related coverage in the same cluster
-- [[wiki/api-protocols/sparse-fieldsets|Sparse Fieldsets]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-pagination|API Pagination]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-query-parameters|REST Query Parameters]] — related coverage in the same cluster
-- [[wiki/api-protocols/offset-pagination|Offset Pagination]] — related coverage in the same cluster
-- [[wiki/api-protocols/cursor-pagination|Cursor Pagination]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/api-expansion|API Expansion]]
+- [[wiki/api-protocols/sparse-fieldsets|Sparse Fieldsets]]
+- [[wiki/api-protocols/api-pagination|API Pagination]]
+- [[wiki/api-protocols/rest-query-parameters|REST Query Parameters]]
+- [[wiki/api-protocols/offset-pagination|Offset Pagination]]
+- [[wiki/api-protocols/cursor-pagination|Cursor Pagination]]

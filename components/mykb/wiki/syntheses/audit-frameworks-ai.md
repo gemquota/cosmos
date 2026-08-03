@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "AI Audit Frameworks"
 description: "Structured methods for auditing AI systems"
 tags: ["audits", "frameworks", "governance"]

@@ -25,10 +25,8 @@ Operational tradeoffs: designing a small, stable code taxonomy costs a little up
 RSIS3/mykb relevance: RSIS3 loops branch on error codes when calling external APIs; documenting the code taxonomy for wiki and dashboard services lets the loops handle retryable versus terminal errors uniformly.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/conditional-put|Conditional PUT]] — related coverage in the same cluster
-- [[wiki/api-protocols/error-codes-api|Error Codes in APIs]] — related coverage in the same cluster
-- [[wiki/api-protocols/conditional-put|Conditional PUT]] — related coverage in the same cluster
-- [[wiki/api-protocols/error-contract-design|Error Contract Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/problem-details|Problem Details]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-conditional-requests|HTTP Conditional Requests]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/conditional-put|Conditional PUT]]
+- [[wiki/api-protocols/error-contract-design|Error Contract Design]]
+- [[wiki/api-protocols/problem-details|Problem Details]]
+- [[wiki/api-protocols/http-conditional-requests|HTTP Conditional Requests]]

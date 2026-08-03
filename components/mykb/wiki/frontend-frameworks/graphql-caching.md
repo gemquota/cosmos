@@ -19,10 +19,10 @@ GraphQL caching is harder than REST caching because every query is a different s
 - RSIS3/mykb relevance: MyKB's entity graph is the server-side version of a normalized cache: stable entity IDs, explicit links, and invalidation on rebuild; applying the same discipline client-side keeps the dashboard's article and graph views consistent without refetch storms.
 
 ## Related
-- [[wiki/api-protocols/graphql-basics|GraphQL Basics]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/persisted-queries|Persisted GraphQL Queries]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/query-depth-limit|Query Depth Limits]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/graphql-aliases|GraphQL Aliases]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql|GraphQL]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-security|GraphQL Security]] — related coverage in the same cluster
+- [[wiki/api-protocols/graphql-basics|GraphQL Basics]]
+- [[wiki/frontend-frameworks/persisted-queries|Persisted GraphQL Queries]]
+- [[wiki/frontend-frameworks/query-depth-limit|Query Depth Limits]]
+- [[wiki/frontend-frameworks/graphql-aliases|GraphQL Aliases]]
+- [[wiki/api-protocols/graphql|GraphQL]]
+- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]]
+- [[wiki/api-protocols/graphql-security|GraphQL Security]]

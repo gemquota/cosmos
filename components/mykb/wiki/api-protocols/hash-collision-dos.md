@@ -25,10 +25,10 @@ Operational tradeoffs: randomized seeding costs nothing at runtime and is the st
 RSIS3/mykb relevance: any wiki tooling that parses untrusted payloads into maps should note the runtime's hash seeding; documenting the defense lets RSIS3 check dependency and runtime configuration.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/regex-dos|ReDoS Attacks]] — related coverage in the same cluster
-- [[wiki/api-protocols/decompression-bombs|Decompression Bombs]] — related coverage in the same cluster
-- [[wiki/api-protocols/billion-laughs|Billion Laughs]] — related coverage in the same cluster
-- [[wiki/security-auth/cve-disclosures|CVE Disclosures]] — related coverage in the same cluster
-- [[wiki/api-protocols/rate-limiting|Rate Limiting]] — related coverage in the same cluster
-- [[wiki/api-protocols/backpressure|Backpressure]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/regex-dos|ReDoS Attacks]]
+- [[wiki/api-protocols/decompression-bombs|Decompression Bombs]]
+- [[wiki/api-protocols/billion-laughs|Billion Laughs]]
+- [[wiki/security-auth/cve-disclosures|CVE Disclosures]]
+- [[wiki/api-protocols/rate-limiting|Rate Limiting]]
+- [[wiki/api-protocols/backpressure|Backpressure]]

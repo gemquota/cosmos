@@ -19,11 +19,7 @@ Latency is the time for a packet to traverse a path, RTT is the round trip, and 
 - Operational tradeoffs: latency is bought with geography (edge, CDN, region choice), jitter with buffer and congestion control, and both with architecture (fewer round trips, caching, prefetch). Instrument the full path (client → edge → origin) and track p95/p99, not averages.
 - RSIS3/mykb relevance: the wiki's global latency dashboard feeds the loop's placement reviews, which weigh region proximity against residency constraints.
 - Measurement vantage: instrument both server-side and client-side (RUM); server-side RTT misses the last mile where jitter and loss actually live.
-- Budgeting: set latency budgets per user-facing path and trace each hop; the p95 stack-up of five 20ms hops is the number to manage.
+- Budgeting: set latency budgets per user-facing path and trace each hop; the p95 stack-up of five 20ms hops is the number to manage. Include client-side queueing in the budget, since device-level delays dominate on mobile.
 
 ## Related
 - [[wiki/cloud-infra/http-3-0-rtt|HTTP/3 0-RTT]]
-- [[wiki/cloud-infra/networking-fundamentals|Networking Fundamentals]]
-- [[wiki/cloud-infra/tcp-ip-stack|TCP/IP Stack]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

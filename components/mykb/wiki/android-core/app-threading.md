@@ -26,8 +26,8 @@ Android UI runs on a single main thread; network and disk work must move to back
 - **Tooling** — StrictMode flags accidental main-thread IO during development (disk read/write and network violations log as soon as they happen); systrace and Perfetto show where frames actually go; and a main-thread watchdog (periodic runnable with a stack dump on stall) catches near-ANR stalls in production before the system's own timeout fires.
 - **RSIS3 relevance** — any Android capture or telemetry hook RSIS3 runs inherits these rules: keep the capture path non-blocking (async uploads, batched writes), scope work to the app's lifecycle, and treat main-thread stalls as loop health events rather than silent failures.
 
-## Related
 
+## Related
 - [[wiki/android-core/kotlin-coroutines|Kotlin Coroutines]] — structured concurrency replaces raw threads
 - [[wiki/android-core/anr-diagnostics|ANR Diagnostics]] — blocking the main thread is the ANR cause
 - [[wiki/android-core/memory-leak-patterns|Memory Leak Patterns]] — threads leak when not shut down

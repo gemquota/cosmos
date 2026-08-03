@@ -18,12 +18,13 @@ Import maps map bare module specifiers (react, lodash) to URLs in the browser, l
 - Tradeoffs: import maps eliminate bundler-generated dependency graphs for simple setups — faster, more cacheable, closer to the platform — at the cost of losing tree shaking, minification, and build-time optimization; the mature pattern is import maps for dependency resolution plus a bundler for application code.
 - Operational notes: keep the map versioned, add SRI where feasible, and test module loading order.
 - RSIS3 relevance: the dashboard could use an import map for its few external dependencies — native ESM resolution with cacheable URLs, no bundler step for vendors.
+- Resolution details: the browser matches the longest specifier prefix, so directory mappings must end with a slash to match subpaths; multiple import map scripts merge with later entries extending earlier ones, invalid entries are ignored, and only the first map per document is authoritative in some engines — audit the effective map at runtime instead of trusting source order.
 
 ## Related
-- [[wiki/js-ts-ecosystem/typescript-systems|TypeScript Systems]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/commonjs-vs-esm|CommonJS vs ESM]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/dynamic-import|Dynamic Import]] — related coverage in the same cluster
-- [[wiki/js-ts-ecosystem/top-level-await|Top-Level Await]] — related coverage in the same cluster
-- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-standards|Web Standards]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-frameworks|Web Frameworks]] — related coverage in the same cluster
+- [[wiki/js-ts-ecosystem/typescript-systems|TypeScript Systems]]
+- [[wiki/js-ts-ecosystem/commonjs-vs-esm|CommonJS vs ESM]]
+- [[wiki/js-ts-ecosystem/dynamic-import|Dynamic Import]]
+- [[wiki/js-ts-ecosystem/top-level-await|Top-Level Await]]
+- [[wiki/web-platforms/javascript-runtimes|JavaScript Runtimes]]
+- [[wiki/web-platforms/web-standards|Web Standards]]
+- [[wiki/web-platforms/web-frameworks|Web Frameworks]]

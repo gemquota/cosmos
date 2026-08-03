@@ -20,9 +20,9 @@ Clock drift is the gradual divergence of a machine's clock from true time, cause
 - For mykb: the node connects to the time-synchronization cluster — NTP, PTP, and time-sync-in-datacenter — and clock drift is the shared underlying enemy of all of them.
 
 ## Related
-- [[wiki/devops-infra/infrastructure-drift-detection|Infrastructure Drift Detection]] — related coverage in the same cluster
-- [[wiki/infrastructure/configuration-drift|Configuration Drift]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]] — related coverage in the same cluster
+- [[wiki/devops-infra/infrastructure-drift-detection|Infrastructure Drift Detection]]
+- [[wiki/infrastructure/configuration-drift|Configuration Drift]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/ospf-protocols|OSPF Protocols]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

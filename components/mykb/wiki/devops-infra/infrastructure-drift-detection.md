@@ -21,10 +21,10 @@ Infrastructure drift is the difference between declared configuration (Terraform
 - RSIS3 relevance: RSIS3's state files can drift from their schemas the same way — a drift check on registry invariants and checkpoints catches loops that mutated state outside the declared format.
 
 ## Related
-- [[wiki/devops-infra/infrastructure-as-code-revisited|Infrastructure as Code]] — related coverage in the same cluster
-- [[wiki/infrastructure/intrusion-detection-systems|Intrusion Detection Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/gpu-compute-infrastructure|GPU Compute Infrastructure]] — related coverage in the same cluster
-- [[wiki/infrastructure/configuration-drift|Configuration Drift]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/infrastructure-as-code-revisited|Infrastructure as Code]]
+- [[wiki/infrastructure/intrusion-detection-systems|Intrusion Detection Systems]]
+- [[wiki/infrastructure/gpu-compute-infrastructure|GPU Compute Infrastructure]]
+- [[wiki/infrastructure/configuration-drift|Configuration Drift]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

@@ -19,10 +19,8 @@ TCP and UDP are the two transport protocols of the IP suite, and they make oppos
 - RSIS3/mykb relevance: RSIS3 telemetry and pulse streams are freshness-sensitive, so they fit UDP or QUIC-style loss-tolerant delivery, while registry and knowledge-graph writes must be TCP-reliable — a useful mnemonic that state you can recompute may travel fast, but state that is authoritative must travel reliably.
 
 ## Related
-- [[wiki/api-protocols/dns-fundamentals|DNS Fundamentals]] — related coverage in the same cluster
-- [[wiki/api-protocols/ipv4-vs-ipv6|IPv4 vs IPv6]] — related coverage in the same cluster
-- [[wiki/api-protocols/tcp-vs-udp|TCP vs UDP]] — related coverage in the same cluster
-- [[wiki/api-protocols/ipv4-vs-ipv6|IPv4 vs IPv6]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-keep-alive|HTTP Keep-Alive]] — related coverage in the same cluster
-- [[wiki/api-protocols/dns-load-balancing|DNS Load Balancing]] — related coverage in the same cluster
-- [[wiki/api-protocols/load-balancing|Load Balancing]] — related coverage in the same cluster
+- [[wiki/api-protocols/dns-fundamentals|DNS Fundamentals]]
+- [[wiki/api-protocols/ipv4-vs-ipv6|IPv4 vs IPv6]]
+- [[wiki/api-protocols/http-keep-alive|HTTP Keep-Alive]]
+- [[wiki/api-protocols/dns-load-balancing|DNS Load Balancing]]
+- [[wiki/api-protocols/load-balancing|Load Balancing]]

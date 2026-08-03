@@ -20,8 +20,8 @@ The loopback interface (lo) and the Linux bridge are two different answers to th
 - For mykb: the node anchors the Linux-virtual-networking cluster — namespaces, capabilities, and the container network stack all build on lo and the bridge.
 
 ## Related
-- [[wiki/os-shell/linux-capabilities-and-selinux|Linux Capabilities & SELinux]] — related coverage in the same cluster
-- [[wiki/os-shell/linux-namespaces|Linux Namespaces]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
+- [[wiki/os-shell/linux-capabilities-and-selinux|Linux Capabilities & SELinux]]
+- [[wiki/os-shell/linux-namespaces|Linux Namespaces]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

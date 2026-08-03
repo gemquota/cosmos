@@ -19,10 +19,10 @@ Context and rendering is the study of how a context value change propagates thro
 - RSIS3/mykb relevance: the propagation model is dependency tracking in miniature: know exactly which consumers depend on which slices of shared state, and isolate high-churn values so one loop's updates do not re-render the whole dashboard — the same containment RSIS3 applies to L1 pulse writes versus stable registry state.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/selector-libraries|Selector Libraries]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/derived-state|Derived State]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/selectors-practice|Selectors in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/selector-libraries|Selector Libraries]]
+- [[wiki/frontend-frameworks/derived-state|Derived State]]
+- [[wiki/frontend-frameworks/selectors-practice|Selectors in Practice]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]]

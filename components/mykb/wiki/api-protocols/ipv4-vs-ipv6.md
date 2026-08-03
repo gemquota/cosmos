@@ -25,10 +25,8 @@ Operational tradeoffs: IPv6 requires no NAT and simplifies addressing at scale, 
 RSIS3/mykb relevance: the wiki's hosted services sit behind GitHub Pages' CDN; documenting the family handling (CDN terminates both, app sees one) keeps RSIS3's network notes honest about what the app actually observes.
 
 ## Related
-- [[wiki/api-protocols/dns-fundamentals|DNS Fundamentals]] — related coverage in the same cluster
-- [[wiki/api-protocols/tcp-vs-udp|TCP vs UDP]] — related coverage in the same cluster
-- [[wiki/api-protocols/ipv4-vs-ipv6|IPv4 vs IPv6]] — related coverage in the same cluster
-- [[wiki/api-protocols/tcp-vs-udp|TCP vs UDP]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-keep-alive|HTTP Keep-Alive]] — related coverage in the same cluster
-- [[wiki/api-protocols/dns-load-balancing|DNS Load Balancing]] — related coverage in the same cluster
-- [[wiki/api-protocols/load-balancing|Load Balancing]] — related coverage in the same cluster
+- [[wiki/api-protocols/dns-fundamentals|DNS Fundamentals]]
+- [[wiki/api-protocols/tcp-vs-udp|TCP vs UDP]]
+- [[wiki/api-protocols/http-keep-alive|HTTP Keep-Alive]]
+- [[wiki/api-protocols/dns-load-balancing|DNS Load Balancing]]
+- [[wiki/api-protocols/load-balancing|Load Balancing]]

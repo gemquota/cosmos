@@ -20,9 +20,9 @@ Compression in storage shrinks data before it is written (inline) or after it is
 - For mykb: compression connects to the storage cluster — block/file storage, deduplication (its sibling), and capacity planning — and the same compress-vs-skip logic applies to the wiki's own artifacts (text compresses well; PNGs and videos do not).
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]] — related coverage in the same cluster
-- [[wiki/devops-infra/compression-and-brotli|Compression & Brotli]] — related coverage in the same cluster
-- [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]] — related coverage in the same cluster
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/infrastructure/block-storage-file-storage|Block vs File Storage]]
+- [[wiki/devops-infra/compression-and-brotli|Compression & Brotli]]
+- [[wiki/devops-infra/container-storage-interfaces|Container Storage Interfaces]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

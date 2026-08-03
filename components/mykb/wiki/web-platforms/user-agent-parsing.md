@@ -19,13 +19,11 @@ User-agent parsing extracts browser, OS, and device from the UA string — a fre
 - Operational tradeoffs: for server-side choice, prefer Client Hints with UA fallback; for client-side, use feature detection and navigator properties (userAgentData where available); keep parser datasets versioned and re-test quarterly against a fresh UA corpus.
 - RSIS3/mykb relevance: the wiki analytics tags sessions from userAgentData with UA fallback, and this note records the parse corpus the loop refreshes.
 - Privacy note: UA and hints are fingerprinting signals; minimize retention, especially for cross-site analytics, and consider aggregating instead of storing raw strings.
-- Bot handling: detect bots separately (crawler lists, behavior) from human cohorts so analytics and rate limits do not misfire on either group.
+- Bot handling: detect bots separately (crawler lists, behavior) from human cohorts so analytics and rate limits do not misfire on either group. Keep the bot list current and re-check it when traffic patterns shift after a launch.
 - Structured alternative: prefer navigator.userAgentData and Client Hints where available, falling back to parsing; structured fields change less often than the UA token soup.
 
 ## Related
 - [[wiki/web-platforms/responsive-design-systems|Responsive Design Systems]]
-- [[wiki/web-platforms/device-detection|Device Detection]]
-- [[wiki/web-platforms/user-agent-parsing|User-Agent Parsing]]
 - [[wiki/web-platforms/device-detection|Device Detection]]
 - [[wiki/web-platforms/web-apis|Web APIs]]
 - [[wiki/web-platforms/browser-engines|Browser Engines]]

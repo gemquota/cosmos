@@ -19,10 +19,10 @@ GraphQL variables are the typed parameters that keep dynamic values out of the q
 - RSIS3/mykb relevance: MyKB's daemon queries (search term, article id, window) should all be parameterized — the same discipline as SQL parameterization, applied to GraphQL — keeping the request documents stable and the values validated, which is exactly how RSIS3 separates code from data.
 
 ## Related
-- [[wiki/api-protocols/graphql-basics|GraphQL Basics]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/graphql-directives|GraphQL Directives]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/graphql-batching|GraphQL Batching]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/graphql-caching|GraphQL Caching]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql|GraphQL]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/graphql-security|GraphQL Security]] — related coverage in the same cluster
+- [[wiki/api-protocols/graphql-basics|GraphQL Basics]]
+- [[wiki/frontend-frameworks/graphql-directives|GraphQL Directives]]
+- [[wiki/frontend-frameworks/graphql-batching|GraphQL Batching]]
+- [[wiki/frontend-frameworks/graphql-caching|GraphQL Caching]]
+- [[wiki/api-protocols/graphql|GraphQL]]
+- [[wiki/api-protocols/graphql-schema-design|GraphQL Schema Design]]
+- [[wiki/api-protocols/graphql-security|GraphQL Security]]

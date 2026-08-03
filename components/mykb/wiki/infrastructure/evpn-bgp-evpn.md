@@ -20,7 +20,7 @@ EVPN (Ethernet VPN) uses BGP as the control plane to distribute MAC and IP reach
 - For mykb: EVPN is the meeting point of the overlay cluster — VXLAN overlays, BGP, and SDN all converge on this control-plane design.
 
 ## Related
-- [[wiki/cloud-infra/bgp-routing|BGP Routing]] — related coverage in the same cluster
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
+- [[wiki/cloud-infra/bgp-routing|BGP Routing]]
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

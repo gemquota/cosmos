@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Patch Management for AI"
 description: "Processes for fixing vulnerabilities across AI systems"
 tags: ["patch", "management", "security"]

@@ -25,10 +25,10 @@ Operational tradeoffs: CSRF tokens are the reliable defense when cookies are the
 RSIS3/mykb relevance: any web form the wiki or dashboard exposes needs the token pattern; documenting the synchronizer-token contract here lets RSIS3 verify that every state-changing route validates the token.
 
 ## Related
-- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/double-submit-cookie|Double-Submit Cookie]] — related coverage in the same cluster
-- [[wiki/api-protocols/synchronizer-token|Synchronizer Token Pattern]] — related coverage in the same cluster
-- [[wiki/api-protocols/sec-fetch-headers|Sec-Fetch Headers]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf|CSRF]] — related coverage in the same cluster
-- [[wiki/security-auth/csrf-protection|CSRF Protection]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-headers|HTTP Headers]] — related coverage in the same cluster
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]]
+- [[wiki/api-protocols/double-submit-cookie|Double-Submit Cookie]]
+- [[wiki/api-protocols/synchronizer-token|Synchronizer Token Pattern]]
+- [[wiki/api-protocols/sec-fetch-headers|Sec-Fetch Headers]]
+- [[wiki/api-protocols/csrf|CSRF]]
+- [[wiki/security-auth/csrf-protection|CSRF Protection]]
+- [[wiki/api-protocols/http-headers|HTTP Headers]]

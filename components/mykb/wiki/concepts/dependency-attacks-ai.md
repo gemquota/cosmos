@@ -22,6 +22,5 @@ Dependency attacks exploit trusted libraries or services that AI systems rely on
 - [[wiki/concepts/package-attacks-ai|Package Attacks]] — the package vector
 - [[wiki/concepts/supply-chain-attacks-ai|Supply-Chain Attacks on AI]] — the class
 - [[wiki/syntheses/patch-management-ai|Patch Management for AI]] — the upkeep
-- [[wiki/concepts/dependency-attacks-ai|dependency-attacks-ai]] — note
-- [[wiki/decisions/self-hosting|Self-Hosting]] — the full treatment of this theme
-- [[wiki/devops-infra/supply-chain-attestations|Supply Chain Attestations]] — existing graph context
+- [[wiki/decisions/self-hosting|Self-Hosting]]
+- [[wiki/devops-infra/supply-chain-attestations|Supply Chain Attestations]]

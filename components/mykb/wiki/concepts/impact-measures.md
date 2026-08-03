@@ -24,5 +24,5 @@ Impact measures estimate the disturbance an agent causes, enabling penalties for
 - [[wiki/concepts/side-effects-problem|Side Effects Problem]] — the problem form
 - [[wiki/concepts/restraint-training|Restraint Training]] — the training form
 - [[wiki/concepts/power-seeking-ai|Power-Seeking AI]] — the escalation it bounds
-- [[wiki/concepts/mild-optimization|Mild Optimization]] — the full treatment of this theme
-- [[wiki/concepts/calibration|Calibration]] — existing graph context
+- [[wiki/concepts/mild-optimization|Mild Optimization]]
+- [[wiki/concepts/calibration|Calibration]]

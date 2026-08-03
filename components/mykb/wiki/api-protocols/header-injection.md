@@ -25,10 +25,10 @@ Operational tradeoffs: the durable fix is to validate and encode at the boundary
 RSIS3/mykb relevance: the rule "never echo input into headers without boundary validation" belongs in the wiki's security synthesis notes; RSIS3's checks can grep for raw input in header construction.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/crlf-injection|CRLF Injection]] — related coverage in the same cluster
-- [[wiki/api-protocols/response-splitting|Response Splitting]] — related coverage in the same cluster
-- [[wiki/api-protocols/content-sniffing|Content Sniffing Attacks]] — related coverage in the same cluster
-- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]] — related coverage in the same cluster
-- [[wiki/security-auth/command-injection|Command Injection]] — related coverage in the same cluster
-- [[wiki/security-auth/ldap-injection|LDAP Injection]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/crlf-injection|CRLF Injection]]
+- [[wiki/api-protocols/response-splitting|Response Splitting]]
+- [[wiki/api-protocols/content-sniffing|Content Sniffing Attacks]]
+- [[wiki/security-auth/sql-injection-prevention|SQL Injection Prevention]]
+- [[wiki/security-auth/command-injection|Command Injection]]
+- [[wiki/security-auth/ldap-injection|LDAP Injection]]

@@ -25,10 +25,10 @@ Operational tradeoffs: the header costs nothing, has no meaningful downside for 
 RSIS3/mykb relevance: the dashboard and wiki hosting should send nosniff on all responses; documenting the header as a standing assertion lets RSIS3's deployment checks fail the build when it's missing.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/hsts-practice|HSTS in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/csp-headers|CSP Headers]] — related coverage in the same cluster
-- [[wiki/api-protocols/referrer-policy|Referrer Policy]] — related coverage in the same cluster
-- [[wiki/security-auth/security-headers|Security Headers]] — related coverage in the same cluster
-- [[wiki/security-auth/content-security-policy|Content Security Policy]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/hsts-practice|HSTS in Practice]]
+- [[wiki/api-protocols/csp-headers|CSP Headers]]
+- [[wiki/api-protocols/referrer-policy|Referrer Policy]]
+- [[wiki/security-auth/security-headers|Security Headers]]
+- [[wiki/security-auth/content-security-policy|Content Security Policy]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

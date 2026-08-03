@@ -25,10 +25,10 @@ Operational tradeoffs: strict issuer allowlists complicate multi-issuer migratio
 RSIS3/mykb relevance: RSIS3's token validation checklist should include "iss pinned per environment"; documenting the allowlist here gives the loop a concrete configuration to verify.
 
 ## Related
-- [[wiki/api-protocols/jwt-practice|JWT in Practice]] — related coverage in the same cluster
-- [[wiki/api-protocols/introspection-endpoint|Token Introspection]] — related coverage in the same cluster
-- [[wiki/api-protocols/jwks-rotation|JWKS Rotation]] — related coverage in the same cluster
-- [[wiki/api-protocols/jti-claims|JWT ID Claims]] — related coverage in the same cluster
-- [[wiki/api-protocols/json-web-tokens|JWT]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2-scopes|OAuth Scopes]] — related coverage in the same cluster
-- [[wiki/identity/jwks|JWKS]] — related coverage in the same cluster
+- [[wiki/api-protocols/jwt-practice|JWT in Practice]]
+- [[wiki/api-protocols/introspection-endpoint|Token Introspection]]
+- [[wiki/api-protocols/jwks-rotation|JWKS Rotation]]
+- [[wiki/api-protocols/jti-claims|JWT ID Claims]]
+- [[wiki/api-protocols/json-web-tokens|JWT]]
+- [[wiki/api-protocols/oauth2-scopes|OAuth Scopes]]
+- [[wiki/identity/jwks|JWKS]]

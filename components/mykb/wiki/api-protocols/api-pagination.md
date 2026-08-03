@@ -25,10 +25,10 @@ Operational tradeoffs: offset pagination is easy to implement, debug, and jump t
 RSIS3/mykb relevance: the wiki graph and search APIs paginate node lists; cursor-style contracts prevent RSIS3 loops from double-counting nodes during consolidation sweeps.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-filtering|API Filtering]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-sorting|API Sorting]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-expansion|API Expansion]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-query-parameters|REST Query Parameters]] — related coverage in the same cluster
-- [[wiki/api-protocols/offset-pagination|Offset Pagination]] — related coverage in the same cluster
-- [[wiki/api-protocols/cursor-pagination|Cursor Pagination]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/api-filtering|API Filtering]]
+- [[wiki/api-protocols/api-sorting|API Sorting]]
+- [[wiki/api-protocols/api-expansion|API Expansion]]
+- [[wiki/api-protocols/rest-query-parameters|REST Query Parameters]]
+- [[wiki/api-protocols/offset-pagination|Offset Pagination]]
+- [[wiki/api-protocols/cursor-pagination|Cursor Pagination]]

@@ -22,9 +22,9 @@ Multi-cluster management covers running and governing several Kubernetes cluster
 - RSIS3 relevance: if cosmos runs multiple instances (dev, prod wiki), multi-cluster discipline keeps their configs in sync while isolating failure — the same management pattern the hub dashboard uses for separate projects.
 
 ## Related
-- [[wiki/os-shell/logical-volume-management|Logical Volume Management]] — related coverage in the same cluster
-- [[wiki/devops-infra/helm-and-chart-management|Helm & Chart Management]] — related coverage in the same cluster
-- [[wiki/infrastructure/ssh-key-management|SSH Key Management]] — related coverage in the same cluster
-- [[wiki/infrastructure/security-information-and-event-management|SIEM]] — related coverage in the same cluster
+- [[wiki/os-shell/logical-volume-management|Logical Volume Management]]
+- [[wiki/devops-infra/helm-and-chart-management|Helm & Chart Management]]
+- [[wiki/infrastructure/ssh-key-management|SSH Key Management]]
+- [[wiki/infrastructure/security-information-and-event-management|SIEM]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

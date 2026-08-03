@@ -19,10 +19,10 @@ Derived state is any value computed from source state rather than stored alongsi
 - RSIS3/mykb relevance: MyKB's graph stats and RSIS3's success rates are derived from pulse data; computing them with memoized selectors from the raw records, never storing them as independent state, keeps the dashboard consistent with the source of truth and matches the loop hygiene rule that telemetry aggregates are always recomputed from raw telemetry.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/selectors-practice|Selectors in Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/memoization-practice|Memoization Practice]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/use-callback|useCallback]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/selectors-practice|Selectors in Practice]]
+- [[wiki/frontend-frameworks/memoization-practice|Memoization Practice]]
+- [[wiki/frontend-frameworks/use-callback|useCallback]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]]

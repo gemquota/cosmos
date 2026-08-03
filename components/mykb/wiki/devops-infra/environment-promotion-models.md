@@ -22,10 +22,10 @@ Environment promotion models define how configuration and artifacts move from de
 - RSIS3 relevance: RSIS3's own releases (loop versions, dashboard builds) should follow artifact promotion — the same generated dashboard bundle promoted to preview and production with only config differing.
 
 ## Related
-- [[wiki/devops-infra/kubernetes-networking-models|Kubernetes Networking Models]] — related coverage in the same cluster
-- [[wiki/devops-infra/progressive-delivery-models|Progressive Delivery Models]] — related coverage in the same cluster
-- [[wiki/infrastructure/data-maturity-models|Data Maturity Models]] — related coverage in the same cluster
-- [[wiki/infrastructure/t-shirt-sizing-and-resource-models|T Shirt Sizing And Resource Models]] — related coverage in the same cluster
-- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]] — related coverage in the same cluster
+- [[wiki/devops-infra/kubernetes-networking-models|Kubernetes Networking Models]]
+- [[wiki/devops-infra/progressive-delivery-models|Progressive Delivery Models]]
+- [[wiki/infrastructure/data-maturity-models|Data Maturity Models]]
+- [[wiki/infrastructure/t-shirt-sizing-and-resource-models|T Shirt Sizing And Resource Models]]
+- [[wiki/devops-infra/kubernetes-control-plane|Kubernetes Control Plane]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

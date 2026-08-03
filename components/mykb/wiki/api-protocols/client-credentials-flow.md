@@ -25,10 +25,9 @@ Operational tradeoffs: client credentials are simple and auditable — the clien
 RSIS3/mykb relevance: this is the canonical grant for RSIS3's own service-to-service calls; the standing rule is scoped client credentials plus secret rotation plus token caching, all of which belong in the wiki's API synthesis notes.
 
 ## Related
-- [[wiki/api-protocols/auth-flows-web|Auth Flows on the Web]] — related coverage in the same cluster
-- [[wiki/api-protocols/authorization-code-flow|Authorization Code Flow]] — related coverage in the same cluster
-- [[wiki/api-protocols/device-flow|Device Authorization Flow]] — related coverage in the same cluster
-- [[wiki/api-protocols/client-credentials-flow|Client Credentials Flow]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2|OAuth 2.0]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2-client-credentials|Client Credentials]] — related coverage in the same cluster
-- [[wiki/api-protocols/oauth2-authorization-code|Authorization Code Flow]] — related coverage in the same cluster
+- [[wiki/api-protocols/auth-flows-web|Auth Flows on the Web]]
+- [[wiki/api-protocols/authorization-code-flow|Authorization Code Flow]]
+- [[wiki/api-protocols/device-flow|Device Authorization Flow]]
+- [[wiki/api-protocols/oauth2|OAuth 2.0]]
+- [[wiki/api-protocols/oauth2-client-credentials|Client Credentials]]
+- [[wiki/api-protocols/oauth2-authorization-code|Authorization Code Flow]]

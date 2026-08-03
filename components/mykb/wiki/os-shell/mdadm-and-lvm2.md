@@ -20,7 +20,7 @@ mdadm and LVM2 are the two classic Linux storage layers that sit between raw dis
 - RSIS3/mykb relevance: layered storage with explicit metadata mirrors MyKB's layering — raw files, index, snapshots — where each layer's metadata must be backed up and reconstructable, and the failure discipline (detect, alert, rebuild) is exactly what the wiki's snapshot verification scripts encode.
 
 ## Related
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

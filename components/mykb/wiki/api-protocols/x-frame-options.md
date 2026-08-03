@@ -19,10 +19,10 @@ X-Frame-Options is the legacy HTTP response header that tells browsers whether a
 - RSIS3/mykb relevance: the MyKB and RSIS3 dashboards are embedded in the unified dashboard; defining which origins may frame them (self-only, plus the deployment origin) is a standing security posture, and the header choice is a small, durable part of the platform's hardening checklist.
 
 ## Related
-- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]] — related coverage in the same cluster
-- [[wiki/api-protocols/mime-sniffing|MIME Sniffing]] — related coverage in the same cluster
-- [[wiki/api-protocols/nosniff-header|X-Content-Type-Options nosniff]] — related coverage in the same cluster
-- [[wiki/api-protocols/hsts-practice|HSTS in Practice]] — related coverage in the same cluster
-- [[wiki/security-auth/security-headers|Security Headers]] — related coverage in the same cluster
-- [[wiki/security-auth/content-security-policy|Content Security Policy]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/web-security-owasp|Web Security (OWASP)]]
+- [[wiki/api-protocols/mime-sniffing|MIME Sniffing]]
+- [[wiki/api-protocols/nosniff-header|X-Content-Type-Options nosniff]]
+- [[wiki/api-protocols/hsts-practice|HSTS in Practice]]
+- [[wiki/security-auth/security-headers|Security Headers]]
+- [[wiki/security-auth/content-security-policy|Content Security Policy]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

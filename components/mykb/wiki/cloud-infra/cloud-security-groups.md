@@ -26,5 +26,3 @@ Cloud security groups are stateful, instance-level firewalls (AWS SG, GCP firewa
 - [[wiki/cloud-infra/multi-cloud-hybrid-cloud|Multi-Cloud & Hybrid Cloud]]
 - [[wiki/os-shell/users-groups-and-acls|Users, Groups & ACLs]]
 - [[wiki/infrastructure/security-information-and-event-management|SIEM]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

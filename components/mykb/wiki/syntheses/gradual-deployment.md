@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "synthesis"
 title: "Gradual Deployment"
 description: "Rolling out AI systems in stages"
 tags: ["gradual", "deployment", "staging"]

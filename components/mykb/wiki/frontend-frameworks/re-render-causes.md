@@ -19,10 +19,10 @@ Re-render causes are the inputs that make a React component render again: local 
 - RSIS3/mykb relevance: re-render attribution is dependency analysis: knowing exactly which UI consumers depend on which slices of state is the same mapping RSIS3 keeps between registry entries and loop outputs, and the discipline (trace the dependency, fix at the source) applies to both.
 
 ## Related
-- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/context-rendering|Context and Rendering]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/selector-libraries|Selector Libraries]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/derived-state|Derived State]] — related coverage in the same cluster
-- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]] — related coverage in the same cluster
-- [[wiki/web-platforms/state-management|State Management]] — related coverage in the same cluster
-- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]] — related coverage in the same cluster
+- [[wiki/frontend-frameworks/react-ecosystem|React Ecosystem]]
+- [[wiki/frontend-frameworks/context-rendering|Context and Rendering]]
+- [[wiki/frontend-frameworks/selector-libraries|Selector Libraries]]
+- [[wiki/frontend-frameworks/derived-state|Derived State]]
+- [[wiki/frontend-frameworks/declarative-ui|Declarative UI]]
+- [[wiki/web-platforms/state-management|State Management]]
+- [[wiki/web-platforms/web-performance-optimization|Web Performance Optimization]]

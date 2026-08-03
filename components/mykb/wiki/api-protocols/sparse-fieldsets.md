@@ -19,10 +19,10 @@ Sparse fieldsets let a client request only the fields it actually needs, typical
 - RSIS3/mykb relevance: the same projection discipline applies to MyKB's knowledge graph and search APIs — letting dashboard views request only the fields they render (titles, links, timestamps) keeps graph queries fast as the wiki grows, mirroring RSIS3's principle of reading only what each loop needs.
 
 ## Related
-- [[wiki/api-protocols/rest-api-design|REST API Design]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-pagination|API Pagination]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-filtering|API Filtering]] — related coverage in the same cluster
-- [[wiki/api-protocols/api-sorting|API Sorting]] — related coverage in the same cluster
-- [[wiki/api-protocols/rest-query-parameters|REST Query Parameters]] — related coverage in the same cluster
-- [[wiki/api-protocols/offset-pagination|Offset Pagination]] — related coverage in the same cluster
-- [[wiki/api-protocols/cursor-pagination|Cursor Pagination]] — related coverage in the same cluster
+- [[wiki/api-protocols/rest-api-design|REST API Design]]
+- [[wiki/api-protocols/api-pagination|API Pagination]]
+- [[wiki/api-protocols/api-filtering|API Filtering]]
+- [[wiki/api-protocols/api-sorting|API Sorting]]
+- [[wiki/api-protocols/rest-query-parameters|REST Query Parameters]]
+- [[wiki/api-protocols/offset-pagination|Offset Pagination]]
+- [[wiki/api-protocols/cursor-pagination|Cursor Pagination]]

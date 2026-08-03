@@ -26,5 +26,3 @@ ARM and x86 cloud instances compete on price-performance: ARM (Graviton, Ampere,
 - [[wiki/cloud-infra/multi-cloud-hybrid-cloud|Multi-Cloud & Hybrid Cloud]]
 - [[wiki/cloud-infra/cloud-security-groups|Cloud Security Groups]]
 - [[wiki/cloud-infra/gcp-vpc-and-cloud-nat|GCP VPC & Cloud NAT]]
-- [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]]
-- [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]]

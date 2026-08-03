@@ -25,10 +25,10 @@ Operational tradeoffs: keep Path=/ for session and auth cookies — narrow paths
 RSIS3/mykb relevance: the dashboard and wiki share a host; documenting that session cookies use Path=/ with security enforced elsewhere prevents a future "Path as security" mistake in code review.
 
 ## Related
-- [[wiki/api-protocols/secure-cookies|Secure Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/third-party-cookies|Third-Party Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/partitioned-cookies|Partitioned Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/cross-site-requests|Cross-Site Requests]] — related coverage in the same cluster
-- [[wiki/api-protocols/http-cookies|HTTP Cookies]] — related coverage in the same cluster
-- [[wiki/api-protocols/csrf|CSRF]] — related coverage in the same cluster
-- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]] — related coverage in the same cluster
+- [[wiki/api-protocols/secure-cookies|Secure Cookies]]
+- [[wiki/api-protocols/third-party-cookies|Third-Party Cookies]]
+- [[wiki/api-protocols/partitioned-cookies|Partitioned Cookies]]
+- [[wiki/api-protocols/cross-site-requests|Cross-Site Requests]]
+- [[wiki/api-protocols/http-cookies|HTTP Cookies]]
+- [[wiki/api-protocols/csrf|CSRF]]
+- [[wiki/security-auth/same-origin-policy|Same-Origin Policy]]

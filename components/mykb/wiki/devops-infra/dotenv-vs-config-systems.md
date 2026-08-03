@@ -22,9 +22,9 @@ dotenv files and full configuration systems solve adjacent problems: .env keeps 
 - RSIS3 relevance: RSIS3's local runs can use dotenv for developer ergonomics while production configuration (daemon tokens, dashboard endpoints) belongs in the config system layer.
 
 ## Related
-- [[wiki/infrastructure/storage-systems|Storage Systems]] — related coverage in the same cluster
-- [[wiki/os-shell/systemd-and-init-systems|systemd & Init Systems]] — related coverage in the same cluster
-- [[wiki/infrastructure/intrusion-detection-systems|Intrusion Detection Systems]] — related coverage in the same cluster
-- [[wiki/devops-infra/feature-flag-systems-revisited|Feature Flag Systems]] — related coverage in the same cluster
+- [[wiki/infrastructure/storage-systems|Storage Systems]]
+- [[wiki/os-shell/systemd-and-init-systems|systemd & Init Systems]]
+- [[wiki/infrastructure/intrusion-detection-systems|Intrusion Detection Systems]]
+- [[wiki/devops-infra/feature-flag-systems-revisited|Feature Flag Systems]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to

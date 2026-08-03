@@ -20,7 +20,7 @@ ext4 and XFS are the two battle-tested Linux filesystems for general-purpose sto
 - RSIS3/mykb relevance: the wiki corpus is many small files (a workflow that suits either, slightly favoring ext4's metadata handling) while snapshot archives are large sequential files (XFS territory); matching the filesystem to the data shape is the same sizing discipline RSIS3 applies to registry and checkpoint storage.
 
 ## Related
-- [[wiki/os-shell/kernel-architecture|Kernel Architecture]] — related coverage in the same cluster
-- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]] — related coverage in the same cluster
+- [[wiki/os-shell/kernel-architecture|Kernel Architecture]]
+- [[wiki/os-shell/memory-management-paging|Memory Management & Paging]]
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow]] — how stubs grow into full articles in mykb
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — the curation loop this stub belongs to
