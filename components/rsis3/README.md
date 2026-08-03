@@ -104,6 +104,23 @@ Config (env-overridable, `rsis/config.py` → `ToolConfig`):
 | `RSIS_APPROVAL_MODE` | `interactive` | `auto`/`interactive`/`api`/`deny` |
 | `RSIS_APPROVAL_THRESHOLD` | `high` | risk level requiring approval |
 
+## LLM Cost Ledger & Budget Cap
+
+Every evaluator LLM call is accounted in a persistent ledger
+(`.rsis/costs.jsonl`) with a local price table ($/1M tokens) — no provider
+billing API needed. The ledger replays on startup so budget caps hold across
+separate loop processes (`run`, `evolve`, `optimize`, ...).
+
+- `python -m rsis status` prints current spend / budget state.
+- `python -m rsis run --goal X --budget-cap 0.50` caps a session in USD.
+- `RSIS_BUDGET_CAP_USD` env var sets the global cap; `RSIS_COST_LOG` relocates
+  the ledger.
+
+Enforcement is two-stage: a pre-flight `guard_budget` refuses an evaluator
+call when the estimate would cross the cap, and a persistent
+`budget_exceeded` latch stops new sessions once spend reaches the cap
+(fail-closed).
+
 ## Project Structure
 
 ```

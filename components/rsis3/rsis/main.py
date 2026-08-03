@@ -40,7 +40,7 @@ from rsis.memory import MemoryManager
 from rsis.practices import run_checks as run_practice_checks
 from rsis.recovery import FailureInjector, RecoveryManager
 from rsis.resource_monitor import ResourceEnforcer, ResourceSeverity
-from rsis.telemetry import TelemetryCollector, WorkspaceMonitor
+from rsis.telemetry import TelemetryCollector, WorkspaceMonitor, default_ledger
 from rsis.timeout import Budget, deadline, TimeoutError
 
 
@@ -102,6 +102,13 @@ def cmd_init(args: argparse.Namespace) -> int:
 
 def cmd_run(args: argparse.Namespace) -> int:
     telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    ledger = default_ledger()
+    if args.budget_cap is not None:
+        CONFIG.budget_cap_usd = args.budget_cap
+        ledger.budget_cap_usd = max(0.0, args.budget_cap)
+        ledger.budget_exceeded = (
+            ledger.budget_cap_usd > 0
+            and ledger.total_cost() >= ledger.budget_cap_usd)
 
     enforcer.set_callbacks(
         on_halt=lambda msg: setattr(enforcer, '_halt_requested', True),
@@ -115,6 +122,13 @@ def cmd_run(args: argparse.Namespace) -> int:
         limit_msg = enforcer.check_before_operation()
         if limit_msg:
             print(f"  ⚠ Resource limit: {limit_msg}")
+            return 1
+
+        if ledger.budget_exceeded:
+            cap = CONFIG.budget_cap_usd
+            cap_str = (f"${cap:.4f}" if cap < 1 else f"${cap:.2f}")
+            print(f"  ⚠ LLM budget cap ({cap_str}) already "
+                  f"spent (${ledger.total_cost():.4f}) — refusing new LLM work")
             return 1
 
         l2 = L2ImprovementLoop(
@@ -151,6 +165,8 @@ def cmd_run(args: argparse.Namespace) -> int:
         l1 = L1ActionLoop(telemetry=telemetry, checkpoint_mgr=checkpoint)
         l1_result = l1.execute(goal)
         print(f"  L1 steps: {l1_result.steps_taken}")
+        print("  Cost ledger:")
+        print(ledger.report())
 
     except TimeoutError as e:
         print(f"  ✗ Session timed out: {e}")
@@ -468,6 +484,17 @@ def cmd_status(args: argparse.Namespace) -> int:
     print(f"RSIS v{__version__}")
     print(f"  Workspace: {CONFIG.workspace_dir}")
 
+    ledger = default_ledger()
+    snap = ledger.snapshot()
+    print(f"  LLM spend: ${snap['llm']['cost']:.4f} "
+          f"({snap['llm']['calls']} calls, "
+          f"{snap['llm']['tokens_in'] + snap['llm']['tokens_out']} tokens)")
+    cap = snap['budget_cap_usd']
+    cap_str = ("unlimited" if cap <= 0
+               else f"${cap:.4f}" if cap < 1 else f"${cap:.2f}")
+    print(f"  Budget: {cap_str} cap "
+          f"({'EXCEEDED' if snap['budget_exceeded'] else 'ok'})")
+
     checkpoint = CheckpointManager(CONFIG.workspace_dir)
     if Path(CONFIG.workspace_dir, ".git").exists():
         print("  Git repo: initialised")
@@ -630,6 +657,8 @@ def main() -> int:
 
     p_run = sub.add_parser("run", help="Run improvement session")
     p_run.add_argument("--goal", "-g", default="self-improve the codebase")
+    p_run.add_argument("--budget-cap", type=float, default=None,
+                       help="Hard LLM cost cap in USD for this session (0=unlimited)")
     p_run.set_defaults(func=cmd_run)
 
     p_evolve = sub.add_parser("evolve", help="Run L3 evolution cycle")

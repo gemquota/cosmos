@@ -230,6 +230,10 @@ class RSISConfig:
     telemetry_dir: str = ".rsis/telemetry"
     telemetry_flush_interval_s: int = 5
 
+    # LLM cost accounting (persistent ledger + hard budget cap)
+    cost_log: str = ".rsis/costs.jsonl"
+    budget_cap_usd: float = 0.0           # 0 = unlimited
+
     # Logging
     log_level: str = "INFO"
     log_file: Optional[str] = ".rsis/rsis.log"
@@ -344,6 +348,10 @@ def load_config() -> RSISConfig:
         cfg.log_level = os.environ["RSIS_LOG_LEVEL"]
     if "RSIS_EVALUATOR_MODEL" in os.environ:
         cfg.evaluator.model = os.environ["RSIS_EVALUATOR_MODEL"]
+    if "RSIS_BUDGET_CAP_USD" in os.environ:
+        cfg.budget_cap_usd = float(os.environ["RSIS_BUDGET_CAP_USD"])
+    if "RSIS_COST_LOG" in os.environ:
+        cfg.cost_log = os.environ["RSIS_COST_LOG"]
     if "RSIS_TOOLS_ENABLED" in os.environ:
         cfg.tools.enabled = os.environ["RSIS_TOOLS_ENABLED"].lower() in ("1", "true", "yes")
     if "RSIS_SANDBOX_BACKEND" in os.environ:

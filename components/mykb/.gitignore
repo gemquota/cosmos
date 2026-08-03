@@ -8,6 +8,7 @@
 .wiki-daemon/search_index.json
 .wiki-daemon/search_meta.json
 .wiki-daemon/search_vectors.npy
+.wiki-daemon/search_sem.npy
 .wiki-daemon/graph.json
 .wiki-daemon/backlinks.json
 .wiki-daemon/timeline.json
