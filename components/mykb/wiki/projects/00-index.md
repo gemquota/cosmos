@@ -13,3 +13,7 @@ Part of [[wiki/index|Wiki Index]]. 1 pages.
 
 ## Pages
 - [[wiki/projects/triad-integration|Triad Integration — RSIS3 + mykb + myrsikb]] — Making mykb the long-term memory and knowledge substrate for RSIS3 while keeping them as separate codebases
+
+## Concepts
+
+- [Triad Integration — RSIS3 + mykb + myrsikb](triad-integration.md) — Triad Integration — RSIS3 + mykb + myrsikb

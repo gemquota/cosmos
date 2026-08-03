@@ -290,3 +290,281 @@ Part of [[wiki/index|Wiki Index]]. 275 pages.
 - [[wiki/api-protocols/x-frame-options|X-Frame-Options]] — Legacy header that prevents a page from being embedded in frames
 - [[wiki/api-protocols/xml-injection|XML Injection]] — Inserting markup or entities into XML documents and parsers
 - [[wiki/api-protocols/zip-slip|Zip Slip]] — Path traversal via archive entries that escape the extraction directory
+
+## Concepts
+
+- [301 vs 302](301-vs-302.md) — 301 vs 302
+- [401 vs 403](401-vs-403.md) — 401 vs 403
+- [404 vs 410](404-vs-410.md) — 404 vs 410
+- [Handling 429](429-handling.md) — Handling 429
+- [Handling 502](502-handling.md) — Handling 502
+- [Handling 503](503-handling.md) — Handling 503
+- [Handling 504](504-handling.md) — Handling 504
+- [Access Dates](access-dates.md) — Access Dates
+- [JWT Algorithm Confusion](algorithm-confusion.md) — JWT Algorithm Confusion
+- [API Analytics](api-analytics.md) — API Analytics
+- [API Authentication Methods](api-authentication-methods.md) — API Authentication Methods
+- [API Backward Compatibility](api-backward-compatibility.md) — API Backward Compatibility
+- [API Basic Auth](api-basic-auth.md) — API Basic Auth
+- [API Deprecation](api-deprecation.md) — API Deprecation
+- [Design-First APIs](api-design-first.md) — Design-First APIs
+- [API Digest Auth](api-digest-auth.md) — API Digest Auth
+- [API Docs Generators](api-docs-generators.md) — API Docs Generators
+- [API Expansion](api-expansion.md) — API Expansion
+- [API Filtering](api-filtering.md) — API Filtering
+- [API Gateway Practice](api-gateway-practice.md) — API Gateway Practice
+- [API Gateway](api-gateway.md) — API Gateway
+- [API Keys vs Tokens](api-keys-vs-tokens.md) — API Keys vs Tokens
+- [API Keys](api-keys.md) — API Keys
+- [API Pagination](api-pagination.md) — API Pagination
+- [API Sorting](api-sorting.md) — API Sorting
+- [API Throttling](api-throttling.md) — API Throttling
+- [API Versioning Practice](api-versioning-practice.md) — API Versioning Practice
+- [API Versioning](api-versioning.md) — API Versioning
+- [Archive Timestamps](archive-timestamps.md) — Archive Timestamps
+- [Archive URLs](archive-urls.md) — Archive URLs
+- [AsyncAPI Specification](asyncapi-spec.md) — AsyncAPI Specification
+- [AsyncAPI](asyncapi.md) — AsyncAPI
+- [At-Least-Once Delivery](at-least-once-delivery.md) — At-Least-Once Delivery
+- [Audience Claims](audience-claims.md) — Audience Claims
+- [Auth Flows on the Web](auth-flows-web.md) — Auth Flows on the Web
+- [Authorization Code Flow](authorization-code-flow.md) — Authorization Code Flow
+- [Backend for Frontend](backend-for-frontend.md) — Backend for Frontend
+- [Backpressure](backpressure.md) — Backpressure
+- [Basic Authentication](basic-authentication.md) — Basic Authentication
+- [Bearer Tokens](bearer-tokens.md) — Bearer Tokens
+- [Billion Laughs](billion-laughs.md) — Billion Laughs
+- [Blind Injection](blind-injection.md) — Blind Injection
+- [Bulkhead Pattern](bulkhead-pattern.md) — Bulkhead Pattern
+- [Cache Poisoning](cache-poisoning.md) — Cache Poisoning
+- [CDN Architecture](cdn-architecture.md) — CDN Architecture
+- [Certificate Chains](certificate-chains.md) — Certificate Chains
+- [Charset Encodings](charset-encodings.md) — Charset Encodings
+- [Chunked Transfer Encoding](chunked-transfer-encoding.md) — Chunked Transfer Encoding
+- [Circuit Breaker](circuit-breaker.md) — Circuit Breaker
+- [Clickjacking Defense](clickjacking-defense.md) — Clickjacking Defense
+- [Client Credentials Flow](client-credentials-flow.md) — Client Credentials Flow
+- [API Client Libraries](client-libraries.md) — API Client Libraries
+- [Concurrency Limits](concurrency-limits.md) — Concurrency Limits
+- [Conditional PUT](conditional-put.md) — Conditional PUT
+- [Content Negotiation](content-negotiation.md) — Content Negotiation
+- [Content Sniffing](content-sniffing.md) — Content Sniffing
+- [Contract Testing](contract-testing.md) — Contract Testing
+- [Cookie Flags](cookie-flags.md) — Cookie Flags
+- [Cookie Prefixes](cookie-prefixes.md) — Cookie Prefixes
+- [Cookie Scoping](cookie-scoping.md) — Cookie Scoping
+- [CORS with Credentials](cors-credentials.md) — CORS with Credentials
+- [CORS Preflight](cors-preflight.md) — CORS Preflight
+- [CORS Wildcards](cors-wildcard.md) — CORS Wildcards
+- [CORS](cors.md) — CORS
+- [CQRS](cqrs.md) — CQRS
+- [CRLF Injection](crlf-injection.md) — CRLF Injection
+- [Cross-Origin Isolation](cross-origin-isolation.md) — Cross-Origin Isolation
+- [Cross-Site Requests](cross-site-requests.md) — Cross-Site Requests
+- [Content Security Policy](csp-headers.md) — Content Security Policy
+- [CSRF Tokens](csrf-tokens.md) — CSRF Tokens
+- [CSRF](csrf.md) — CSRF
+- [Cursor Pagination](cursor-pagination.md) — Cursor Pagination
+- [Deadline Propagation](deadline-propagation.md) — Deadline Propagation
+- [Decompression Bombs](decompression-bombs.md) — Decompression Bombs
+- [Device Authorization Flow](device-flow.md) — Device Authorization Flow
+- [DNS Fundamentals](dns-fundamentals.md) — DNS Fundamentals
+- [DNS Load Balancing](dns-load-balancing.md) — DNS Load Balancing
+- [DNS SRV Records](dns-srv-records.md) — DNS SRV Records
+- [Domain Cookies](domain-cookies.md) — Domain Cookies
+- [Double-Submit Cookie](double-submit-cookie.md) — Double-Submit Cookie
+- [Entity Expansion](entity-expansion.md) — Entity Expansion
+- [Error Codes in APIs](error-codes-api.md) — Error Codes in APIs
+- [Error Contract Design](error-contract-design.md) — Error Contract Design
+- [Event-Driven APIs](event-driven-apis.md) — Event-Driven APIs
+- [Event Sourcing](event-sourcing.md) — Event Sourcing
+- [Exponential Backoff](exponential-backoff.md) — Exponential Backoff
+- [File Upload Security](file-upload-security.md) — File Upload Security
+- [Graceful Shutdown](graceful-shutdown.md) — Graceful Shutdown
+- [GraphQL Basics](graphql-basics.md) — GraphQL Basics
+- [GraphQL Connections](graphql-connections.md) — GraphQL Connections
+- [GraphQL Error Handling](graphql-error-handling.md) — GraphQL Error Handling
+- [GraphQL Federation](graphql-federation.md) — GraphQL Federation
+- [GraphQL Fragments](graphql-fragments.md) — GraphQL Fragments
+- [GraphQL N+1 Problem](graphql-n-plus-one.md) — GraphQL N+1 Problem
+- [GraphQL Queries & Mutations](graphql-queries-mutations.md) — GraphQL Queries & Mutations
+- [GraphQL Resolvers](graphql-resolvers.md) — GraphQL Resolvers
+- [GraphQL Schema Design](graphql-schema-design.md) — GraphQL Schema Design
+- [GraphQL Security](graphql-security.md) — GraphQL Security
+- [GraphQL Subscriptions](graphql-subscriptions.md) — GraphQL Subscriptions
+- [GraphQL](graphql.md) — GraphQL
+- [gRPC APIs](grpc-apis.md) — gRPC APIs
+- [gRPC Deadlines](grpc-deadlines.md) — gRPC Deadlines
+- [gRPC Gateway](grpc-gateway.md) — gRPC Gateway
+- [gRPC Interceptors](grpc-interceptors.md) — gRPC Interceptors
+- [gRPC Load Balancing](grpc-load-balancing.md) — gRPC Load Balancing
+- [gRPC Metadata](grpc-metadata.md) — gRPC Metadata
+- [gRPC Status Codes](grpc-status-codes.md) — gRPC Status Codes
+- [gRPC Streaming](grpc-streaming.md) — gRPC Streaming
+- [gRPC-Web](grpc-web.md) — gRPC-Web
+- [gRPC](grpc.md) — gRPC
+- [Hash Collision DoS](hash-collision-dos.md) — Hash Collision DoS
+- [HATEOAS](hateoas.md) — HATEOAS
+- [Header Injection](header-injection.md) — Header Injection
+- [Health Checks](health-checks.md) — Health Checks
+- [HPACK](hpack.md) — HPACK
+- [HSTS in Practice](hsts-practice.md) — HSTS in Practice
+- [HTTP Caching](http-caching.md) — HTTP Caching
+- [HTTP Compression](http-compression.md) — HTTP Compression
+- [HTTP Conditional Requests](http-conditional-requests.md) — HTTP Conditional Requests
+- [HTTP Cookies](http-cookies.md) — HTTP Cookies
+- [HTTP Fundamentals](http-fundamentals.md) — HTTP Fundamentals
+- [HTTP Headers](http-headers.md) — HTTP Headers
+- [HTTP Keep-Alive](http-keep-alive.md) — HTTP Keep-Alive
+- [HTTP Methods](http-methods.md) — HTTP Methods
+- [HTTP Parameter Pollution](http-parameter-pollution.md) — HTTP Parameter Pollution
+- [HTTP Status Checks](http-status-checks.md) — HTTP Status Checks
+- [HTTP Status Codes](http-status-codes.md) — HTTP Status Codes
+- [HTTP/2 Flow Control](http2-flow-control.md) — HTTP/2 Flow Control
+- [HTTP/2 Multiplexing](http2-multiplexing.md) — HTTP/2 Multiplexing
+- [HTTP/2](http2.md) — HTTP/2
+- [HTTP/3 and QUIC](http3-quic.md) — HTTP/3 and QUIC
+- [HTTP/3](http3.md) — HTTP/3
+- [HttpOnly Cookie Flag](httponly-flag.md) — HttpOnly Cookie Flag
+- [Idempotency Keys](idempotency-keys.md) — Idempotency Keys
+- [Idempotency](idempotency.md) — Idempotency
+- [IDOR on the Web](idor-web.md) — IDOR on the Web
+- [iframe Sandboxing](iframe-sandboxing.md) — iframe Sandboxing
+- [Insecure Deserialization](insecure-deserialization.md) — Insecure Deserialization
+- [Token Introspection](introspection-endpoint.md) — Token Introspection
+- [IPv4 vs IPv6](ipv4-vs-ipv6.md) — IPv4 vs IPv6
+- [Issuer Validation](issuer-validation.md) — Issuer Validation
+- [Jitter](jitter.md) — Jitter
+- [JKU Attacks](jku-attacks.md) — JKU Attacks
+- [JSON:API](json-api-spec.md) — JSON:API
+- [JSON Patch](json-patch.md) — JSON Patch
+- [JSON-RPC](json-rpc.md) — JSON-RPC
+- [JSON Schema Validation](json-schema-validation.md) — JSON Schema Validation
+- [JSON Schema](json-schema.md) — JSON Schema
+- [JWT](json-web-tokens.md) — JWT
+- [JWT ID Claims](jti-claims.md) — JWT ID Claims
+- [JWKS Rotation](jwks-rotation.md) — JWKS Rotation
+- [JWT in Practice](jwt-practice.md) — JWT in Practice
+- [Apache Kafka](kafka.md) — Apache Kafka
+- [Keyset Pagination](keyset-pagination.md) — Keyset Pagination
+- [Liveness Probes](liveness-probes.md) — Liveness Probes
+- [Load Balancing](load-balancing.md) — Load Balancing
+- [Load Shedding](load-shedding.md) — Load Shedding
+- [Machine-to-Machine Tokens](m2m-tokens.md) — Machine-to-Machine Tokens
+- [Mass Assignment](mass-assignment.md) — Mass Assignment
+- [Media Type Versioning](media-type-versioning.md) — Media Type Versioning
+- [Message Queues](message-queues.md) — Message Queues
+- [MIME Sniffing](mime-sniffing.md) — MIME Sniffing
+- [MIME Types](mime-types.md) — MIME Types
+- [MQTT](mqtt.md) — MQTT
+- [mTLS](mtls.md) — mTLS
+- [NDJSON Streaming](ndjson-streaming.md) — NDJSON Streaming
+- [JWT none Algorithm](none-algorithm.md) — JWT none Algorithm
+- [X-Content-Type-Options nosniff](nosniff-header.md) — X-Content-Type-Options nosniff
+- [NoSQL Injection](nosql-injection.md) — NoSQL Injection
+- [Authorization Code Flow](oauth2-authorization-code.md) — Authorization Code Flow
+- [Client Credentials](oauth2-client-credentials.md) — Client Credentials
+- [PKCE](oauth2-pkce.md) — PKCE
+- [Refresh Tokens](oauth2-refresh-tokens.md) — Refresh Tokens
+- [OAuth Scopes](oauth2-scopes.md) — OAuth Scopes
+- [OAuth 2.0](oauth2.md) — OAuth 2.0
+- [OCSP Stapling](ocsp-stapling.md) — OCSP Stapling
+- [Offset Pagination](offset-pagination.md) — Offset Pagination
+- [OpenAPI Specification](openapi-spec.md) — OpenAPI Specification
+- [OpenAPI](openapi.md) — OpenAPI
+- [OpenID Connect](openid-connect.md) — OpenID Connect
+- [Optimistic Concurrency](optimistic-concurrency.md) — Optimistic Concurrency
+- [Padding Oracle](padding-oracle.md) — Padding Oracle
+- [Parameter Pollution](parameter-pollution.md) — Parameter Pollution
+- [Partitioned Cookies](partitioned-cookies.md) — Partitioned Cookies
+- [Path Cookies](path-cookies.md) — Path Cookies
+- [Percent-Encoding](percent-encoding.md) — Percent-Encoding
+- [PKCE Flow](pkce-flow.md) — PKCE Flow
+- [Popup Security](popup-security.md) — Popup Security
+- [Problem Details](problem-details.md) — Problem Details
+- [Protocol Buffers](protobuf-serialization.md) — Protocol Buffers
+- [Protocol Buffers](protobuf.md) — Protocol Buffers
+- [Punycode Domains](punycode-domains.md) — Punycode Domains
+- [QUIC](quic.md) — QUIC
+- [Quota Headers](quota-headers.md) — Quota Headers
+- [RabbitMQ](rabbitmq.md) — RabbitMQ
+- [Rate Limit Algorithms](rate-limit-algorithms.md) — Rate Limit Algorithms
+- [Rate Limit Headers](rate-limit-headers.md) — Rate Limit Headers
+- [Rate Limiting for APIs](rate-limiting-api.md) — Rate Limiting for APIs
+- [Rate Limiting](rate-limiting.md) — Rate Limiting
+- [Readiness Probes](readiness-probes.md) — Readiness Probes
+- [Redis Streams](redis-streams.md) — Redis Streams
+- [Referrer Policy](referrer-policy.md) — Referrer Policy
+- [Refresh Token Rotation](refresh-token-rotation.md) — Refresh Token Rotation
+- [ReDoS Attacks](regex-dos.md) — ReDoS Attacks
+- [Request Smuggling](request-smuggling.md) — Request Smuggling
+- [Response Envelopes](response-envelopes.md) — Response Envelopes
+- [Response Splitting](response-splitting.md) — Response Splitting
+- [REST API Design](rest-api-design.md) — REST API Design
+- [REST APIs](rest-apis.md) — REST APIs
+- [REST Maturity Model](rest-maturity-model.md) — REST Maturity Model
+- [REST Non-CRUD Actions](rest-non-crud-actions.md) — REST Non-CRUD Actions
+- [REST Partial Updates](rest-partial-updates.md) — REST Partial Updates
+- [REST Query Parameters](rest-query-parameters.md) — REST Query Parameters
+- [REST Resource Design](rest-resource-design.md) — REST Resource Design
+- [REST vs GraphQL](rest-vs-graphql.md) — REST vs GraphQL
+- [REST vs gRPC](rest-vs-grpc.md) — REST vs gRPC
+- [REST vs RPC](rest-vs-rpc.md) — REST vs RPC
+- [Retry-After](retry-after-web.md) — Retry-After
+- [Retry & Backoff](retry-backoff.md) — Retry & Backoff
+- [Retry Policies](retry-policies.md) — Retry Policies
+- [RPC Styles](rpc-styles.md) — RPC Styles
+- [Saga Pattern](saga-pattern.md) — Saga Pattern
+- [SameSite Lax vs Strict](samesite-lax-strict.md) — SameSite Lax vs Strict
+- [Scope Validation](scope-validation.md) — Scope Validation
+- [SDK Generation](sdk-generation.md) — SDK Generation
+- [Sec-Fetch Headers](sec-fetch-headers.md) — Sec-Fetch Headers
+- [Second-Order Injection](second-order-injection.md) — Second-Order Injection
+- [Secure Cookies](secure-cookies.md) — Secure Cookies
+- [Secure Cookie Flag](secure-flag.md) — Secure Cookie Flag
+- [SemVer for APIs](semver-for-apis.md) — SemVer for APIs
+- [Server-Sent Events](server-sent-events.md) — Server-Sent Events
+- [Service Mesh](service-mesh.md) — Service Mesh
+- [Session Invalidation](session-invalidation.md) — Session Invalidation
+- [Source Dates](source-dates.md) — Source Dates
+- [Sparse Fieldsets](sparse-fieldsets.md) — Sparse Fieldsets
+- [SQL Injection](sql-injection-practice.md) — SQL Injection
+- [Server-Sent Events (SSE)](sse-streaming.md) — Server-Sent Events (SSE)
+- [SSRF Attacks](ssrf-practice.md) — SSRF Attacks
+- [Streaming APIs](streaming-apis.md) — Streaming APIs
+- [Synchronizer Token Pattern](synchronizer-token.md) — Synchronizer Token Pattern
+- [TCP vs UDP](tcp-vs-udp.md) — TCP vs UDP
+- [Template Injection](template-injection.md) — Template Injection
+- [Third-Party Cookies](third-party-cookies.md) — Third-Party Cookies
+- [Throttling vs Debouncing](throttling-vs-debouncing.md) — Throttling vs Debouncing
+- [Timeouts](timeouts.md) — Timeouts
+- [Timing Attacks](timing-attacks.md) — Timing Attacks
+- [TLS Certificates](tls-certificates.md) — TLS Certificates
+- [TLS Handshake](tls-handshake.md) — TLS Handshake
+- [TLS and HTTPS](tls-https.md) — TLS and HTTPS
+- [Token Refresh Strategies](token-refresh-strategies.md) — Token Refresh Strategies
+- [URI vs URL](uri-vs-url.md) — URI vs URL
+- [URL Deduplication](url-deduplication.md) — URL Deduplication
+- [URL Formatting](url-formatting.md) — URL Formatting
+- [URL Normalization](url-normalization-wiki.md) — URL Normalization
+- [URL Structure](url-structure.md) — URL Structure
+- [Weak Hashes in JWT](weak-hash-jwt.md) — Weak Hashes in JWT
+- [Web Security (OWASP)](web-security-owasp.md) — Web Security (OWASP)
+- [Webhook Delivery](webhook-delivery.md) — Webhook Delivery
+- [Webhook Events](webhook-events.md) — Webhook Events
+- [Webhook Retries](webhook-retries.md) — Webhook Retries
+- [Webhook Signatures](webhook-signatures.md) — Webhook Signatures
+- [Webhook Subscriptions](webhook-subscriptions.md) — Webhook Subscriptions
+- [Webhook Topics](webhook-topics.md) — Webhook Topics
+- [Webhooks in Practice](webhooks-practice.md) — Webhooks in Practice
+- [Webhooks](webhooks.md) — Webhooks
+- [WebSocket Broadcast](websocket-broadcast.md) — WebSocket Broadcast
+- [WebSocket Frames](websocket-frames.md) — WebSocket Frames
+- [WebSocket Handshake](websocket-handshake.md) — WebSocket Handshake
+- [WebSocket Protocols](websocket-protocols.md) — WebSocket Protocols
+- [WebSocket Reconnection](websocket-reconnection.md) — WebSocket Reconnection
+- [WebSocket Security](websocket-security.md) — WebSocket Security
+- [WebSockets](websockets.md) — WebSockets
+- [X-Frame-Options](x-frame-options.md) — X-Frame-Options
+- [XML Injection](xml-injection.md) — XML Injection
+- [Zip Slip](zip-slip.md) — Zip Slip

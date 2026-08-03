@@ -174,3 +174,168 @@ Part of [[wiki/index|Wiki Index]]. 162 pages.
 - [[wiki/meta-learning/willpower-research|Willpower Research]] — Scientific study of self-control, ego depletion, and the limits of voluntary effort
 - [[wiki/meta-learning/word2vec|Word2Vec]] — Shallow neural models learning dense word vectors from local context
 - [[wiki/meta-learning/zone-of-proximal-development|Zone of Proximal Development]] — Vygotsky's gap between solo ability and ability with assistance
+
+## Concepts
+
+- [Academic Emotions](academic-emotions.md) — Academic Emotions
+- [Academic Self-Concept](academic-self-concept.md) — Academic Self-Concept
+- [Achievement Emotion Theory](achievement-emotion-theory.md) — Achievement Emotion Theory
+- [Achievement Goal Theory](achievement-goal-theory.md) — Achievement Goal Theory
+- [Adaptive Learning Systems](adaptive-learning-systems.md) — Adaptive Learning Systems
+- [Agentic Engagement](agentic-engagement.md) — Agentic Engagement
+- [Approach-Avoidance Motivation](approach-avoidance-motivation.md) — Approach-Avoidance Motivation
+- [Athlete Cognition](athlete-cognition.md) — Athlete Cognition
+- [Attribution Theory](attribution-theory.md) — Attribution Theory
+- [Automaticity Research](automaticity-research.md) — Automaticity Research
+- [Autonomy Support](autonomy-support.md) — Autonomy Support
+- [Behavioral Engagement](behavioral-engagement.md) — Behavioral Engagement
+- [Bi-Encoder](bi-encoder.md) — Bi-Encoder
+- [Boredom Research](boredom-research.md) — Boredom Research
+- [Calibration Training](calibration-training.md) — Calibration Training
+- [Category Learning](category-learning.md) — Category Learning
+- [Chess Expertise](chess-expertise.md) — Chess Expertise
+- [Choice Architecture](choice-architecture.md) — Choice Architecture
+- [Cluster Analysis](cluster-analysis.md) — Cluster Analysis
+- [Coach Feedback](coach-feedback.md) — Coach Feedback
+- [Cognitive Apprenticeship](cognitive-apprenticeship.md) — Cognitive Apprenticeship
+- [Cognitive Diagnosis Models](cognitive-diagnosis-models.md) — Cognitive Diagnosis Models
+- [Cognitive Engagement](cognitive-engagement.md) — Cognitive Engagement
+- [ColBERT](colbert.md) — ColBERT
+- [Commitment Devices](commitment-devices.md) — Commitment Devices
+- [Communities of Practice](communities-of-practice.md) — Communities of Practice
+- [Competence Need](competence-need.md) — Competence Need
+- [Confidence Ratings](confidence-ratings.md) — Confidence Ratings
+- [Corrective Feedback Types](corrective-feedback-types.md) — Corrective Feedback Types
+- [Creative Expertise](creative-expertise.md) — Creative Expertise
+- [Cross-Encoder](cross-encoder.md) — Cross-Encoder
+- [Cue-Routine-Reward](cue-routine-reward.md) — Cue-Routine-Reward
+- [Curiosity-Driven Learning](curiosity-driven-learning.md) — Curiosity-Driven Learning
+- [Curriculum Learning](curriculum-learning.md) — Curriculum Learning
+- [Delay of Gratification](delay-of-gratification.md) — Delay of Gratification
+- [Deliberate Play](deliberate-play.md) — Deliberate Play
+- [Diagnostic Expertise](diagnostic-expertise.md) — Diagnostic Expertise
+- [Directive Feedback](directive-feedback.md) — Directive Feedback
+- [Discovery Learning](discovery-learning.md) — Discovery Learning
+- [Double-Loop Learning](double-loop-learning.md) — Double-Loop Learning
+- [Educational Data Mining](educational-data-mining.md) — Educational Data Mining
+- [Effort Praise](effort-praise.md) — Effort Praise
+- [Embedding Alignment](embedding-alignment.md) — Embedding Alignment
+- [Emotional Engagement](emotional-engagement.md) — Emotional Engagement
+- [Emotional Regulation](emotional-regulation.md) — Emotional Regulation
+- [Engagement Research](engagement-research.md) — Engagement Research
+- [Engineering Intuition](engineering-intuition.md) — Engineering Intuition
+- [Epistemic Curiosity](epistemic-curiosity.md) — Epistemic Curiosity
+- [Error-Driven Learning](error-driven-learning.md) — Error-Driven Learning
+- [Expectancy-Value Theory](expectancy-value-theory.md) — Expectancy-Value Theory
+- [Experiential Learning](experiential-learning.md) — Experiential Learning
+- [Expertise Transfer](expertise-transfer.md) — Expertise Transfer
+- [Explanation-Based Learning](explanation-based-learning.md) — Explanation-Based Learning
+- [Explanatory Style](explanatory-style.md) — Explanatory Style
+- [Facilitative Feedback](facilitative-feedback.md) — Facilitative Feedback
+- [Feedback Frequency](feedback-frequency.md) — Feedback Frequency
+- [Feedback Sandwich](feedback-sandwich.md) — Feedback Sandwich
+- [Feedback Timing](feedback-timing.md) — Feedback Timing
+- [Feedforward](feedforward.md) — Feedforward
+- [Fitts-Posner Model](fitts-posner-model.md) — Fitts-Posner Model
+- [Flow State](flow-state.md) — Flow State
+- [Forecasting Research](forecasting-research.md) — Forecasting Research
+- [Formative Assessment](formative-assessment.md) — Formative Assessment
+- [Friction Design](friction-design.md) — Friction Design
+- [Future Time Perspective](future-time-perspective.md) — Future Time Perspective
+- [Generalist vs Specialist](generalist-vs-specialist.md) — Generalist vs Specialist
+- [GloVe](glove.md) — GloVe
+- [Goal Intentions](goal-intentions.md) — Goal Intentions
+- [Grammar Induction](grammar-induction.md) — Grammar Induction
+- [Graph Embeddings](graph-embeddings.md) — Graph Embeddings
+- [Grit Research](grit-research.md) — Grit Research
+- [Habit Loops](habit-loops.md) — Habit Loops
+- [Habit Stacking](habit-stacking.md) — Habit Stacking
+- [Habit vs Goal-Directed Control](habit-vs-goal-directed.md) — Habit vs Goal-Directed Control
+- [Identity Development](identity-development.md) — Identity Development
+- [Individual Interest](individual-interest.md) — Individual Interest
+- [Information-Seeking Behavior](information-seeking-behavior.md) — Information-Seeking Behavior
+- [Inquiry-Based Learning](inquiry-based-learning.md) — Inquiry-Based Learning
+- [Intelligent Tutoring Systems](intelligent-tutoring-systems.md) — Intelligent Tutoring Systems
+- [Interest Theory](interest-theory.md) — Interest Theory
+- [Interpreter Training](interpreter-training.md) — Interpreter Training
+- [Intrinsic Motivation](intrinsic-motivation.md) — Intrinsic Motivation
+- [Item Response Theory](item-response-theory.md) — Item Response Theory
+- [Knowledge Compilation](knowledge-compilation.md) — Knowledge Compilation
+- [Knowledge Distillation](knowledge-distillation.md) — Knowledge Distillation
+- [Knowledge Tracing](knowledge-tracing.md) — Knowledge Tracing
+- [Learned Optimism](learned-optimism.md) — Learned Optimism
+- [Learning Analytics](learning-analytics.md) — Learning Analytics
+- [Learning Curves](learning-curves.md) — Learning Curves
+- [Mastery Experiences](mastery-experiences.md) — Mastery Experiences
+- [Mastery Goals](mastery-goals.md) — Mastery Goals
+- [Mastery Learning](mastery-learning.md) — Mastery Learning
+- [Medical Expertise](medical-expertise.md) — Medical Expertise
+- [Model-Based Learning](model-based-learning.md) — Model-Based Learning
+- [Model-Free Learning](model-free-learning.md) — Model-Free Learning
+- [Motivation Internalization](motivation-internalization.md) — Motivation Internalization
+- [Motor Learning](motor-learning.md) — Motor Learning
+- [Musician Practice](musician-practice.md) — Musician Practice
+- [Narrow Expertise](narrow-expertise.md) — Narrow Expertise
+- [Neuroplasticity](neuroplasticity.md) — Neuroplasticity
+- [Node2Vec](node2vec.md) — Node2Vec
+- [Novelty Detection](novelty-detection.md) — Novelty Detection
+- [Novelty Seeking](novelty-seeking.md) — Novelty Seeking
+- [Nudges](nudges.md) — Nudges
+- [Organizational Learning](organizational-learning.md) — Organizational Learning
+- [Outcome Expectancy](outcome-expectancy.md) — Outcome Expectancy
+- [Pattern Recognition Expertise](pattern-recognition-expertise.md) — Pattern Recognition Expertise
+- [Pattern Recognition Learning](pattern-recognition-learning.md) — Pattern Recognition Learning
+- [Peer Assessment](peer-assessment.md) — Peer Assessment
+- [Perceptual Curiosity](perceptual-curiosity.md) — Perceptual Curiosity
+- [Perceptual Expertise](perceptual-expertise.md) — Perceptual Expertise
+- [Performance Goals](performance-goals.md) — Performance Goals
+- [Personalized Learning](personalized-learning.md) — Personalized Learning
+- [Polymath Research](polymath-research.md) — Polymath Research
+- [Possible Selves](possible-selves.md) — Possible Selves
+- [Posttraumatic Growth](posttraumatic-growth.md) — Posttraumatic Growth
+- [Power Law of Practice](power-law-of-practice.md) — Power Law of Practice
+- [Praise Research](praise-research.md) — Praise Research
+- [Precommitment](precommitment.md) — Precommitment
+- [Prediction Error Signal](prediction-error-signal.md) — Prediction Error Signal
+- [Problem-Based Learning](problem-based-learning.md) — Problem-Based Learning
+- [Proceduralization](proceduralization.md) — Proceduralization
+- [Procrastination Research](procrastination-research.md) — Procrastination Research
+- [Project-Based Learning](project-based-learning.md) — Project-Based Learning
+- [Purposeful Practice](purposeful-practice.md) — Purposeful Practice
+- [Reflective Practice](reflective-practice.md) — Reflective Practice
+- [Relatedness Need](relatedness-need.md) — Relatedness Need
+- [Resilience Research](resilience-research.md) — Resilience Research
+- [Reward Prediction Error](reward-prediction-error.md) — Reward Prediction Error
+- [Risk Literacy](risk-literacy.md) — Risk Literacy
+- [Rubicon Model](rubicon-model.md) — Rubicon Model
+- [Scaffolding Learning](scaffolding-learning.md) — Scaffolding Learning
+- [Self-Assessment Accuracy](self-assessment-accuracy.md) — Self-Assessment Accuracy
+- [Self-Concept Research](self-concept-research.md) — Self-Concept Research
+- [Self-Control Research](self-control-research.md) — Self-Control Research
+- [Self-Determination Theory](self-determination-theory.md) — Self-Determination Theory
+- [Self-Grading](self-grading.md) — Self-Grading
+- [Sentence Transformers](sentence-transformers.md) — Sentence Transformers
+- [Sequence Learning](sequence-learning.md) — Sequence Learning
+- [Sight-Reading Cognition](sight-reading-cognition.md) — Sight-Reading Cognition
+- [Situational Interest](situational-interest.md) — Situational Interest
+- [Skill Acquisition Stages](skill-acquisition-stages.md) — Skill Acquisition Stages
+- [Social Accountability](social-accountability.md) — Social Accountability
+- [Social Learning Theory](social-learning-theory.md) — Social Learning Theory
+- [Statistical Learning](statistical-learning.md) — Statistical Learning
+- [Subjective Task Value](subjective-task-value.md) — Subjective Task Value
+- [T-Shaped Skills](t-shaped-skills.md) — T-Shaped Skills
+- [Task Initiation](task-initiation.md) — Task Initiation
+- [Task Persistence](task-persistence.md) — Task Persistence
+- [Temporal Motivation Theory](temporal-motivation-theory.md) — Temporal Motivation Theory
+- [Temptation Bundling](temptation-bundling.md) — Temptation Bundling
+- [Test Anxiety](test-anxiety.md) — Test Anxiety
+- [Theory of Mind](theory-of-mind.md) — Theory of Mind
+- [Threshold Concepts](threshold-concepts.md) — Threshold Concepts
+- [Tiny Habits](tiny-habits.md) — Tiny Habits
+- [Transfer Learning](transfer-learning.md) — Transfer Learning
+- [Verbal Persuasion](verbal-persuasion.md) — Verbal Persuasion
+- [Vicarious Experience](vicarious-experience.md) — Vicarious Experience
+- [Volitional Control](volitional-control.md) — Volitional Control
+- [Willpower Research](willpower-research.md) — Willpower Research
+- [Word2Vec](word2vec.md) — Word2Vec
+- [Zone of Proximal Development](zone-of-proximal-development.md) — Zone of Proximal Development

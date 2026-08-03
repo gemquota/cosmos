@@ -453,3 +453,22 @@ title: "Bundle Log"
   directory so landing pages lead the listing.
 - **Snapshots regenerated**: build_graph (5,439 nodes / 35,249 edges), okf render
   (6,818 concepts), gen-static-data check OK (6,842 md files).
+
+## 2026-08-03 (loop & graph engineering ingest — 14 sources)
+- **Ingested 14 external articles** on the prompt → context → harness → loop → graph
+  progression into 10 new concept notes in `wiki/llm-agents/` plus an enriched
+  `context-engineering.md` and a synthesis:
+  - `agentic-loops` (Willison), `loop-engineering` (Osmani + Firecrawl),
+    `loop-specification` (arXiv:2607.00038), `graph-engineering`
+    (explainx + TrueFoundry + AI Builder Club), `prompt-loop-graph-layers`
+    (MarkTechPost), `building-effective-agents` + `multi-agent-research-systems`
+    (Anthropic), `dont-build-multi-agents` (Cognition),
+    `multi-agent-systems-guide` + `langgraph-graph-api` (LangChain)
+  - Synthesis: `wiki/syntheses/loop-graph-engineering-wave-2026-08.md`
+  - Enriched `wiki/prompt-engineering/context-engineering.md` with context rot,
+    compaction, structured note-taking, just-in-time retrieval, and right-altitude
+    prompting from Anthropic's context engineering post
+- **Archived junk entity** `frontend/.../ajax-spa/loop-engineering.md` →
+  `raw/archive/junk-entities-2026-08c/` (session-corpus entity shadowing the real
+  concept name); inbound links existed only in the auto-generated index
+- **All new notes ≥320 body words**; wikilinks verified resolvable

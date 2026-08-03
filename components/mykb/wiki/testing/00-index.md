@@ -161,3 +161,152 @@ Part of [[wiki/index|Wiki Index]]. 146 pages.
 - [[wiki/testing/vulnerability-disclosure-ai|Vulnerability Disclosure for AI]] — Processes for researchers to report AI vulnerabilities responsibly
 - [[wiki/testing/vulnerability-scanning|Vulnerability Scanning]] — Automated scanning of dependencies and apps for known weaknesses
 - [[wiki/testing/white-box-testing|White-Box Testing]] — Testing internal logic and code paths directly
+
+## Concepts
+
+- [Acceptance Testing](acceptance-testing.md) — Acceptance Testing
+- [Accessibility Testing](accessibility-testing.md) — Accessibility Testing
+- [Adversarial ML Threats](adversarial-ml-threats.md) — Adversarial ML Threats
+- [Adversarial Suffixes](adversarial-suffixes.md) — Adversarial Suffixes
+- [Agent Evaluations](agent-evaluations.md) — Agent Evaluations
+- [AI Governance Frameworks](ai-governance-frameworks.md) — AI Governance Frameworks
+- [AI Safety Evaluations](ai-safety-evals.md) — AI Safety Evaluations
+- [Algorithmic Impact Assessments](algorithmic-impact-assessments.md) — Algorithmic Impact Assessments
+- [API Key Theft](api-key-theft.md) — API Key Theft
+- [API Testing](api-testing.md) — API Testing
+- [Approval Testing](approval-testing.md) — Approval Testing
+- [Asynchronous Testing](async-testing.md) — Asynchronous Testing
+- [Authentication Testing](authentication-testing.md) — Authentication Testing
+- [Behavior-Driven Development](behavior-driven-development.md) — Behavior-Driven Development
+- [Benchmark Design and Agent Contracts](benchmark-design-agent-contracts.md) — Benchmark Design and Agent Contracts
+- [Bias and Fairness Evaluation](bias-and-fairness-eval.md) — Bias and Fairness Evaluation
+- [Black-Box Testing](black-box-testing.md) — Black-Box Testing
+- [Boundary Value Analysis](boundary-value-analysis.md) — Boundary Value Analysis
+- [Branch Coverage](branch-coverage.md) — Branch Coverage
+- [Chaos Engineering](chaos-engineering.md) — Chaos Engineering
+- [Characterization Testing](characterization-testing.md) — Characterization Testing
+- [CI Quality Gates](ci-quality-gates.md) — CI Quality Gates
+- [Code Review for Tests](code-review-for-tests.md) — Code Review for Tests
+- [Compatibility Testing](compatibility-testing.md) — Compatibility Testing
+- [Component Testing](component-testing.md) — Component Testing
+- [Consumer-Driven Contracts](consumer-driven-contracts.md) — Consumer-Driven Contracts
+- [Containerized Test Environments](containerized-test-environments.md) — Containerized Test Environments
+- [Contract Testing](contract-testing.md) — Contract Testing
+- [Cost-per-Token Trade-offs](cost-per-token-tradeoffs.md) — Cost-per-Token Trade-offs
+- [Coverage Metrics](coverage-metrics.md) — Coverage Metrics
+- [Data Poisoning of LLMs](data-poisoning-llm.md) — Data Poisoning of LLMs
+- [Database Migration Testing](database-migration-testing.md) — Database Migration Testing
+- [Database Seeding](database-seeding.md) — Database Seeding
+- [Database Testing](database-testing.md) — Database Testing
+- [Decision Table Testing](decision-table-testing.md) — Decision Table Testing
+- [Dependency Pinning for Models](dependency-pinning-models.md) — Dependency Pinning for Models
+- [Device Farm Testing](device-farm-testing.md) — Device Farm Testing
+- [Diff Coverage](diff-coverage.md) — Diff Coverage
+- [Differential Privacy for LLMs](differential-privacy-llm.md) — Differential Privacy for LLMs
+- [Differential Testing](differential-testing.md) — Differential Testing
+- [Drift Detection for Models](drift-detection-for-models.md) — Drift Detection for Models
+- [Encrypted Inference](encrypted-inference.md) — Encrypted Inference
+- [End-to-End Testing](end-to-end-testing.md) — End-to-End Testing
+- [Ephemeral Environments](ephemeral-environments.md) — Ephemeral Environments
+- [Equivalence Partitioning](equivalence-partitioning.md) — Equivalence Partitioning
+- [Error Guessing](error-guessing.md) — Error Guessing
+- [Eval Sets](eval-sets.md) — Eval Sets
+- [Evals Harness](evals-harness.md) — Evals Harness
+- [Exploratory Testing](exploratory-testing.md) — Exploratory Testing
+- [Factories and Fixtures](factories-and-fixtures.md) — Factories and Fixtures
+- [Fake Data Generators](fake-data-generators.md) — Fake Data Generators
+- [Fakes](fakes.md) — Fakes
+- [Fault Injection](fault-injection.md) — Fault Injection
+- [Federated Learning](federated-learning.md) — Federated Learning
+- [Flaky Tests](flaky-tests.md) — Flaky Tests
+- [Fuzz Testing](fuzzing.md) — Fuzz Testing
+- [Golden File Management](golden-file-management.md) — Golden File Management
+- [Golden Test Sets](golden-test-sets.md) — Golden Test Sets
+- [Golden Tests](golden-tests.md) — Golden Tests
+- [Grammar-Based Testing](grammar-based-testing.md) — Grammar-Based Testing
+- [In-Memory Databases](in-memory-databases.md) — In-Memory Databases
+- [Indirect Prompt Injection](indirect-prompt-injection.md) — Indirect Prompt Injection
+- [Integration Testing](integration-testing.md) — Integration Testing
+- [Jailbreak Techniques](jailbreak-techniques.md) — Jailbreak Techniques
+- [Latency Budgets and Throughput Calibration](latency-budgets-throughput-calibration.md) — Latency Budgets and Throughput Calibration
+- [Legacy Code Testing](legacy-code-testing.md) — Legacy Code Testing
+- [LLM Evaluation](llm-evaluation.md) — LLM Evaluation
+- [LLM Regression Testing](llm-regression-testing.md) — LLM Regression Testing
+- [Load Testing](load-testing.md) — Load Testing
+- [Manual Testing](manual-testing.md) — Manual Testing
+- [Many-Shot Jailbreaking](many-shot-jailbreaking.md) — Many-Shot Jailbreaking
+- [Measuring Test ROI](measuring-test-roi.md) — Measuring Test ROI
+- [Membership Inference Attacks](membership-inference-attacks.md) — Membership Inference Attacks
+- [Metamorphic Testing](metamorphic-testing.md) — Metamorphic Testing
+- [Mobile Testing](mobile-testing.md) — Mobile Testing
+- [Mocking Frameworks](mocking-frameworks.md) — Mocking Frameworks
+- [Mocking](mocking.md) — Mocking
+- [Model-Based Testing](model-based-testing.md) — Model-Based Testing
+- [Model Cards and Datasheets](model-cards-and-datasheets.md) — Model Cards and Datasheets
+- [Model Poisoning](model-poisoning.md) — Model Poisoning
+- [Model Vulnerability Scanning](model-scanning-ai-vulnerabilities.md) — Model Vulnerability Scanning
+- [Model Stealing Attacks](model-stealing-attacks.md) — Model Stealing Attacks
+- [Mutation Testing](mutation-testing.md) — Mutation Testing
+- [Negative Testing](negative-testing.md) — Negative Testing
+- [Offline Testing](offline-testing.md) — Offline Testing
+- [Page Object Model](page-object-model.md) — Page Object Model
+- [Pairwise Testing](pairwise-testing.md) — Pairwise Testing
+- [Parametrized Tests](parametrized-tests.md) — Parametrized Tests
+- [Penetration Testing](penetration-testing.md) — Penetration Testing
+- [Performance Budgets](performance-budgets.md) — Performance Budgets
+- [Performance Testing](performance-testing.md) — Performance Testing
+- [Privacy-Preserving ML](privacy-preserving-ml.md) — Privacy-Preserving ML
+- [Prompt Leakage Detection](prompt-leakage-detection.md) — Prompt Leakage Detection
+- [Prompt Recovery Attacks](prompt-recovery-attacks.md) — Prompt Recovery Attacks
+- [Property-Based Testing](property-based-testing.md) — Property-Based Testing
+- [Quota Exhaustion Attacks](quota-exhaustion-attacks.md) — Quota Exhaustion Attacks
+- [Rate Limit Bypass](rate-limit-bypass-llm.md) — Rate Limit Bypass
+- [Recovery Testing](recovery-testing.md) — Recovery Testing
+- [Red Team Processes](red-team-processes.md) — Red Team Processes
+- [Regression Test Selection](regression-test-selection.md) — Regression Test Selection
+- [Regression Testing for LLMs](regression-testing-for-llms.md) — Regression Testing for LLMs
+- [Regression Testing](regression-testing.md) — Regression Testing
+- [Response Time Percentiles](response-time-percentiles.md) — Response Time Percentiles
+- [Responsible AI Principles](responsible-ai-principles.md) — Responsible AI Principles
+- [Risk-Based Testing](risk-based-testing.md) — Risk-Based Testing
+- [Runtime Observability for Agents](runtime-observability-agent.md) — Runtime Observability for Agents
+- [SBOM for Models](sbom-for-models.md) — SBOM for Models
+- [Schema Contract Validation](schema-contract-validation.md) — Schema Contract Validation
+- [Screen Reader Testing](screen-reader-testing.md) — Screen Reader Testing
+- [Secure Enclave Inference](secure-enclaves-inference.md) — Secure Enclave Inference
+- [Security Testing](security-testing.md) — Security Testing
+- [Service Virtualization](service-virtualization.md) — Service Virtualization
+- [Session-Based Testing](session-based-testing.md) — Session-Based Testing
+- [Smoke Testing](smoke-testing.md) — Smoke Testing
+- [Snapshot Testing](snapshot-testing.md) — Snapshot Testing
+- [Soak Testing](soak-testing.md) — Soak Testing
+- [Spies](spies.md) — Spies
+- [Spike Testing](spike-testing.md) — Spike Testing
+- [State Transition Testing](state-transition-testing.md) — State Transition Testing
+- [Stress Testing](stress-testing.md) — Stress Testing
+- [Stubbing](stubbing.md) — Stubbing
+- [LLM Supply Chain Dependencies](supply-chain-llm-deps.md) — LLM Supply Chain Dependencies
+- [Test Configuration Management](test-configuration-management.md) — Test Configuration Management
+- [Test Data Management](test-data-management.md) — Test Data Management
+- [Test Doubles](test-doubles.md) — Test Doubles
+- [Test-Driven Development](test-driven-development.md) — Test-Driven Development
+- [Test Environments](test-environments.md) — Test Environments
+- [Test Frameworks](test-frameworks.md) — Test Frameworks
+- [Test Isolation](test-isolation.md) — Test Isolation
+- [Test Oracles](test-oracles.md) — Test Oracles
+- [Test Ordering](test-ordering.md) — Test Ordering
+- [Test Parallelism](test-parallelism.md) — Test Parallelism
+- [Test Prioritization](test-prioritization.md) — Test Prioritization
+- [Test Pyramid](test-pyramid.md) — Test Pyramid
+- [Test Timeouts](test-timeouts.md) — Test Timeouts
+- [Test Trophy](test-trophy.md) — Test Trophy
+- [Testability](testability.md) — Testability
+- [Token Usage Tracking](token-usage-tracking.md) — Token Usage Tracking
+- [Traces and Spans](traces-spans.md) — Traces and Spans
+- [UI Testing](ui-testing.md) — UI Testing
+- [Unit Testing](unit-testing.md) — Unit Testing
+- [Visual Regression Testing](visual-regression-testing.md) — Visual Regression Testing
+- [Volume Testing](volume-testing.md) — Volume Testing
+- [Vulnerability Disclosure for AI](vulnerability-disclosure-ai.md) — Vulnerability Disclosure for AI
+- [Vulnerability Scanning](vulnerability-scanning.md) — Vulnerability Scanning
+- [White-Box Testing](white-box-testing.md) — White-Box Testing

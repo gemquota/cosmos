@@ -44,5 +44,4 @@ Practical techniques include counting tokens with the provider's tokenizer befor
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-projection-2|Ambiguity Projection 2]]
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-system|Ambiguity System]]
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity|Ambiguity]]
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ap|Ap]]
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/apex|Apex]]
+- Ap

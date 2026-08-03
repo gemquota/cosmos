@@ -221,3 +221,215 @@ Part of [[wiki/index|Wiki Index]]. 209 pages.
 - [[wiki/infrastructure/workload-management-and-queues|Workload Management and Queues]] — Scheduling and prioritizing queries across shared compute
 - [[wiki/infrastructure/zero-downtime-deploys|Zero-Downtime Deploys]] — Deployment techniques that keep services available while new versions take over
 - [[wiki/infrastructure/zookeeper-and-coordination|ZooKeeper and Coordination]] — Legacy distributed coordination service with a hierarchical namespace
+
+## Concepts
+
+- [Accelerator Observability](accelerator-observability.md) — Accelerator Observability
+- [Ambassador Pattern](ambassador-pattern.md) — Ambassador Pattern
+- [Analytics Engineering Role](analytics-engineering-role.md) — Analytics Engineering Role
+- [Analytics Maturity Assessment](analytics-maturity-assessment.md) — Analytics Maturity Assessment
+- [Artifact Repositories](artifact-repositories.md) — Artifact Repositories
+- [ASIC & Switching Architectures](asic-and-switching-architectures.md) — ASIC & Switching Architectures
+- [Aurora and RDS Managed Databases](aurora-and-rds-managed-db.md) — Aurora and RDS Managed Databases
+- [AWS MSK and Managed Kafka](aws-msk-and-managed-kafka.md) — AWS MSK and Managed Kafka
+- [Azure Event Hubs](azure-event-hubs.md) — Azure Event Hubs
+- [Azure Synapse Analytics](azure-synapse.md) — Azure Synapse Analytics
+- [Bandwidth Allocation](bandwidth-allocation.md) — Bandwidth Allocation
+- [Bare Metal vs Cloud](bare-metal-vs-cloud.md) — Bare Metal vs Cloud
+- [Bastion Hosts & Jump Boxes](bastion-hosts-and-jump-boxes.md) — Bastion Hosts & Jump Boxes
+- [BigQuery Architecture](bigquery-architecture.md) — BigQuery Architecture
+- [Block vs File Storage](block-storage-file-storage.md) — Block vs File Storage
+- [Blue-Green Deployments](blue-green-deployments.md) — Blue-Green Deployments
+- [Bufferbloat & Queueing](bufferbloat-and-queueing.md) — Bufferbloat & Queueing
+- [Bulkhead Pattern](bulkhead-pattern.md) — Bulkhead Pattern
+- [Canary Deployments](canary-deployments.md) — Canary Deployments
+- [Cassandra and ScyllaDB](cassandra-and-scylladb.md) — Cassandra and ScyllaDB
+- [CI/CD for Data](ci-cd-for-data.md) — CI/CD for Data
+- [Circuit Breaker Pattern](circuit-breaker-pattern.md) — Circuit Breaker Pattern
+- [Citus and Postgres Sharding](citus-and-postgres-sharding.md) — Citus and Postgres Sharding
+- [Clock Drift & NTP](clock-drift-and-ntp.md) — Clock Drift & NTP
+- [CockroachDB and YugabyteDB](cockroachdb-and-yugabytedb.md) — CockroachDB and YugabyteDB
+- [Colocation & Racks](colocation-and-racks.md) — Colocation & Racks
+- [Column-Level Security](column-level-security.md) — Column-Level Security
+- [Compliance and Audit Trails](compliance-and-audit-trails.md) — Compliance and Audit Trails
+- [Compression in Storage](compression-in-storage.md) — Compression in Storage
+- [Configuration Drift](configuration-drift.md) — Configuration Drift
+- [Configuration Management](configuration-management.md) — Configuration Management
+- [Confluent Cloud and Schema Registry](confluent-cloud-and-schema-registry.md) — Confluent Cloud and Schema Registry
+- [Container Registries](container-registries.md) — Container Registries
+- [Container Scanning](container-scanning.md) — Container Scanning
+- [Container Scheduling](container-scheduling.md) — Container Scheduling
+- [Containerization](containerization.md) — Containerization
+- [Counter Metrics](counter-metrics.md) — Counter Metrics
+- [Data Access Requests](data-access-requests.md) — Data Access Requests
+- [Data Anonymization Techniques](data-anonymization-techniques.md) — Data Anonymization Techniques
+- [Data Architecture Review](data-architecture-review.md) — Data Architecture Review
+- [Data Backlog and Roadmap](data-backlog-and-roadmap.md) — Data Backlog and Roadmap
+- [Data Classification Labels](data-classification-labels.md) — Data Classification Labels
+- [Data Deduplication in Storage](data-deduplication-in-storage.md) — Data Deduplication in Storage
+- [Data Deployment Strategies](data-deployment-strategies.md) — Data Deployment Strategies
+- [Data Design Docs](data-design-docs.md) — Data Design Docs
+- [Data Dictionary and Glossary](data-dictionary-and-glossary.md) — Data Dictionary and Glossary
+- [Data Encryption at Rest](data-encryption-at-rest.md) — Data Encryption at Rest
+- [Data Engineering Runbooks](data-eng-runbooks.md) — Data Engineering Runbooks
+- [Data Engineering Skills Matrix](data-eng-skills-matrix.md) — Data Engineering Skills Matrix
+- [Data Environments: Dev, Staging, Prod](data-environments-dev-staging-prod.md) — Data Environments: Dev, Staging, Prod
+- [Data Ethics and Responsible Use](data-ethics-and-responsible-use.md) — Data Ethics and Responsible Use
+- [Data Freshness and SLA Tracking](data-freshness-and-sla-tracking.md) — Data Freshness and SLA Tracking
+- [Data Governance Frameworks](data-governance-frameworks.md) — Data Governance Frameworks
+- [Data License and Usage](data-license-and-usage.md) — Data License and Usage
+- [Data Marketplaces](data-marketplaces.md) — Data Marketplaces
+- [Data Maturity Models](data-maturity-models.md) — Data Maturity Models
+- [Data Mesh vs Data Fabric](data-mesh-vs-data-fabric.md) — Data Mesh vs Data Fabric
+- [Data Onboarding Docs](data-onboarding-docs.md) — Data Onboarding Docs
+- [Data Ownership and Stewardship](data-ownership-and-stewardship.md) — Data Ownership and Stewardship
+- [Data Plane vs Control Plane](data-plane-versus-control-plane.md) — Data Plane vs Control Plane
+- [Data Platform Team Structures](data-platform-team-structures.md) — Data Platform Team Structures
+- [Data Privacy: GDPR and CCPA](data-privacy-gdpr-and-ccpa.md) — Data Privacy: GDPR and CCPA
+- [Data RFC Process](data-rfc-process.md) — Data RFC Process
+- [Data Sharing Agreements](data-sharing-agreements.md) — Data Sharing Agreements
+- [Data Team Topologies](data-team-topologies.md) — Data Team Topologies
+- [Data Warehouse Governance](data-warehouse-governance.md) — Data Warehouse Governance
+- [Databricks Platform](databricks-platform.md) — Databricks Platform
+- [Dataset Release Processes](dataset-release-processes.md) — Dataset Release Processes
+- [dbt Environments and Jobs](dbt-environments-and-jobs.md) — dbt Environments and Jobs
+- [Delay-Tolerant Networking](delay-tolerant-networking.md) — Delay-Tolerant Networking
+- [Docker Image Optimization](docker-image-optimization.md) — Docker Image Optimization
+- [DPDK & Solarflare](dpdk-and-solarflare.md) — DPDK & Solarflare
+- [Dynamic Data Masking](dynamic-data-masking.md) — Dynamic Data Masking
+- [DynamoDB and PartiQL](dynamodb-and-partiql.md) — DynamoDB and PartiQL
+- [East-West vs North-South Traffic](east-west-vs-north-south-traffic.md) — East-West vs North-South Traffic
+- [Egress & Ingress Filters](egress-and-ingress-filters.md) — Egress & Ingress Filters
+- [Egress Proxies & Filters](egress-proxies-and-filters.md) — Egress Proxies & Filters
+- [Embedded Analytics](embedded-analytics.md) — Embedded Analytics
+- [Erasure Coding](erasure-coding.md) — Erasure Coding
+- [etcd and Raft Consensus](etcd-and-raft-consensus.md) — etcd and Raft Consensus
+- [ETL Observability and Alerting](etl-observability-and-alerting.md) — ETL Observability and Alerting
+- [EventBridge and Event Routing](eventbridge-and-routing.md) — EventBridge and Event Routing
+- [EVPN & BGP-EVPN](evpn-bgp-evpn.md) — EVPN & BGP-EVPN
+- [fail2ban & Intrusion Prevention](fail2ban-and-intrusion-prevention.md) — fail2ban & Intrusion Prevention
+- [Fiber vs Copper](fiber-vs-copper.md) — Fiber vs Copper
+- [Flow Tables & Offloads](flow-tables-and-offloads.md) — Flow Tables & Offloads
+- [FPGA Acceleration](fpga-acceleration.md) — FPGA Acceleration
+- [Google Cloud Spanner](gcp-spanner-google.md) — Google Cloud Spanner
+- [Glue Schema Registry](glue-schema-registry.md) — Glue Schema Registry
+- [Goal-Based Metrics](goal-based-metrics.md) — Goal-Based Metrics
+- [Google Pub/Sub](google-pubsub.md) — Google Pub/Sub
+- [GPU Compute Infrastructure](gpu-compute-infrastructure.md) — GPU Compute Infrastructure
+- [GPU Drivers & CUDA](gpu-drivers-and-cuda.md) — GPU Drivers & CUDA
+- [GPUs for Inference](gpus-for-inference.md) — GPUs for Inference
+- [Graceful Termination](graceful-termination.md) — Graceful Termination
+- [Guardrail Metrics](guardrail-metrics.md) — Guardrail Metrics
+- [Hardware RAID vs Software RAID](hardware-raid-vs-software-raid.md) — Hardware RAID vs Software RAID
+- [Health Check Patterns](health-check-patterns.md) — Health Check Patterns
+- [Honeypots & Deception](honeypots-and-deception-network.md) — Honeypots & Deception
+- [Hub-Spoke vs Mesh Topologies](hub-spoke-vs-mesh-topologies.md) — Hub-Spoke vs Mesh Topologies
+- [Immutable Infrastructure](immutable-infrastructure.md) — Immutable Infrastructure
+- [Infrastructure as Code](infrastructure-as-code.md) — Infrastructure as Code
+- [Intrusion Detection Systems](intrusion-detection-systems.md) — Intrusion Detection Systems
+- [IO Latency & IOPS](io-latency-and-iops.md) — IO Latency & IOPS
+- [IPFS & Content Addressing](ipfs-and-content-addressing.md) — IPFS & Content Addressing
+- [iSCSI & SAN](iscsi-and-san.md) — iSCSI & SAN
+- [Kafka vs Pulsar vs Redpanda](kafka-vs-pulsar-vs-redpanda.md) — Kafka vs Pulsar vs Redpanda
+- [Kernel-Bypass Networking](kernel-bypass-networking.md) — Kernel-Bypass Networking
+- [Kinesis and Kinesis Analytics](kinesis-and-kinesis-analytics.md) — Kinesis and Kinesis Analytics
+- [KPI Definition and Alignment](kpi-definition-and-alignment.md) — KPI Definition and Alignment
+- [Kubernetes Operators](kubernetes-operators.md) — Kubernetes Operators
+- [Lagging vs Leading Indicators](lagging-vs-leading-indicators.md) — Lagging vs Leading Indicators
+- [Loopback vs Linux Bridge](loopback-vs-linux-bridge.md) — Loopback vs Linux Bridge
+- [Metric Definition Catalog](metric-definition-catalog.md) — Metric Definition Catalog
+- [Metric Naming Conventions](metric-naming-conventions.md) — Metric Naming Conventions
+- [Microsegmentation](microsegmentation-revisited.md) — Microsegmentation
+- [Mininet & Emulation](mininet-and-emulation.md) — Mininet & Emulation
+- [MongoDB Atlas and Replica Sets](mongodb-atlas-and-replica-sets.md) — MongoDB Atlas and Replica Sets
+- [Nacos and Service Registry](nacos-and-service-registry.md) — Nacos and Service Registry
+- [Network Budgeting](network-budgeting.md) — Network Budgeting
+- [Network Cabling & Standards](network-cabling-and-standards.md) — Network Cabling & Standards
+- [Network Function Virtualization](network-function-virtualization.md) — Network Function Virtualization
+- [Network Interface Bonding](network-interface-bonding.md) — Network Interface Bonding
+- [Network Policy](network-policy.md) — Network Policy
+- [Network Simulation Tools](network-simulation-tools.md) — Network Simulation Tools
+- [Network Time Protocol](network-time-protocol.md) — Network Time Protocol
+- [Network Topology Design](network-topology-design.md) — Network Topology Design
+- [NFS & SMB (NAS)](nfs-and-smb-nas.md) — NFS & SMB (NAS)
+- [NFV & MANO](nfv-and-mano.md) — NFV & MANO
+- [Node Pools](node-pools.md) — Node Pools
+- [Non-Production Data Refresh](non-production-data-refresh.md) — Non-Production Data Refresh
+- [North Star Metrics](north-star-metrics.md) — North Star Metrics
+- [NVIDIA Container Toolkit](nvidia-container-toolkit.md) — NVIDIA Container Toolkit
+- [NVMe & NVMe-oF](nvme-and-nvme-of.md) — NVMe & NVMe-oF
+- [NVMe Multipath](nvme-multipath.md) — NVMe Multipath
+- [NVMe over Fabrics (TCP)](nvme-over-fabrics-tcp.md) — NVMe over Fabrics (TCP)
+- [On-Demand vs Reserved Compute](on-demand-vs-reserved-compute.md) — On-Demand vs Reserved Compute
+- [OpenFlow Pipelines](openflow-pipelines.md) — OpenFlow Pipelines
+- [Optical Storage & Tape](optical-storage-tape.md) — Optical Storage & Tape
+- [OSPF Protocols](ospf-protocols.md) — OSPF Protocols
+- [Packet Analysis with tcpdump](packet-analysis-with-tcpdump.md) — Packet Analysis with tcpdump
+- [Packet Capture Performance](packet-capture-performance.md) — Packet Capture Performance
+- [Persistent Volumes](persistent-volumes.md) — Persistent Volumes
+- [Pipeline Caching](pipeline-caching.md) — Pipeline Caching
+- [Pipeline SLA and Latency Budgets](pipeline-sla-and-latency-budgets.md) — Pipeline SLA and Latency Budgets
+- [Pod Lifecycle](pod-lifecycle.md) — Pod Lifecycle
+- [Power & Cooling in the Datacenter](power-and-cooling-datacenter.md) — Power & Cooling in the Datacenter
+- [Precision Time Protocol](precision-time-protocol.md) — Precision Time Protocol
+- [Priority Queuing & DSCP](priority-queuing-and-dscp.md) — Priority Queuing & DSCP
+- [Probe Design](probe-design.md) — Probe Design
+- [Prod-Like Data Environments](prod-like-data-environments.md) — Prod-Like Data Environments
+- [Pulsar Architecture and Tiered Storage](pulsar-architecture-and-tiers.md) — Pulsar Architecture and Tiered Storage
+- [Query Timeouts and Concurrency Limits](query-timeouts-and-concurrency-limits.md) — Query Timeouts and Concurrency Limits
+- [RabbitMQ vs Kafka vs SQS](rabbitmq-vs-kafka-vs-sqs.md) — RabbitMQ vs Kafka vs SQS
+- [Rack & Stack Layout](rack-and-stack-layout.md) — Rack & Stack Layout
+- [RDMA & InfiniBand](rdma-and-infiniband.md) — RDMA & InfiniBand
+- [Redis Cluster and Sentinel](redis-cluster-and-sentinel.md) — Redis Cluster and Sentinel
+- [Redshift Architecture](redshift-architecture.md) — Redshift Architecture
+- [Datacenter Redundancy & Failover](redundancy-and-failover-dc.md) — Datacenter Redundancy & Failover
+- [Retry with Backoff](retry-with-backoff.md) — Retry with Backoff
+- [RoCE & RDMA over TCP](roce-and-rdma-over-tcp.md) — RoCE & RDMA over TCP
+- [Rolling Restarts](rolling-restarts.md) — Rolling Restarts
+- [Row-Level Security](row-level-security.md) — Row-Level Security
+- [Schema Change Management and Branching](schema-change-management-and-branching.md) — Schema Change Management and Branching
+- [Schema Migrations](schema-migrations.md) — Schema Migrations
+- [SCSI & SAS Protocols](scsi-and-sas-protocols.md) — SCSI & SAS Protocols
+- [SDN Controllers](sdn-controllers.md) — SDN Controllers
+- [Secret Rotation](secret-rotation.md) — Secret Rotation
+- [SIEM](security-information-and-event-management.md) — SIEM
+- [Self-Serve Analytics](self-serve-analytics.md) — Self-Serve Analytics
+- [Serverless Data Platforms](serverless-data-platforms.md) — Serverless Data Platforms
+- [Service Discovery Patterns](service-discovery-patterns.md) — Service Discovery Patterns
+- [Service Mesh](service-mesh.md) — Service Mesh
+- [SFP & Optical Transceivers](sfp-and-optical-transceivers.md) — SFP & Optical Transceivers
+- [SFTP and Data Transfer](sftp-and-data-transfer.md) — SFTP and Data Transfer
+- [Sidecar Pattern](sidecar-pattern.md) — Sidecar Pattern
+- [Snapshot & Clone Techniques](snapshot-and-clone-techniques.md) — Snapshot & Clone Techniques
+- [Snowflake Architecture](snowflake-architecture.md) — Snowflake Architecture
+- [Software-Defined Networking](software-defined-networking.md) — Software-Defined Networking
+- [SQS and SNS Fanout](sqs-and-sns-fanout.md) — SQS and SNS Fanout
+- [SSH Key Management](ssh-key-management.md) — SSH Key Management
+- [SSH Tunneling & Port Forwarding](ssh-tunneling-and-port-forwarding.md) — SSH Tunneling & Port Forwarding
+- [Startup Probes](startup-probes.md) — Startup Probes
+- [Stateful Workloads](stateful-workloads.md) — Stateful Workloads
+- [Storage Classes](storage-classes.md) — Storage Classes
+- [Storage Networks: Fibre Channel](storage-networks-fibre-channel.md) — Storage Networks: Fibre Channel
+- [Storage Observability](storage-observability.md) — Storage Observability
+- [Storage Systems](storage-systems.md) — Storage Systems
+- [T-Shirt Sizing and Resource Models](t-shirt-sizing-and-resource-models.md) — T-Shirt Sizing and Resource Models
+- [Tape Backup & Archival](tape-backup-and-archival.md) — Tape Backup & Archival
+- [tcpdump & Wireshark](tcpdump-and-wireshark.md) — tcpdump & Wireshark
+- [tcpdump Filters & Capture](tcpdump-filters-and-capture.md) — tcpdump Filters & Capture
+- [Teaming & Link Aggregation](teaming-and-lag.md) — Teaming & Link Aggregation
+- [Third-Party Data Sourcing](third-party-data-sourcing.md) — Third-Party Data Sourcing
+- [Storage Throughput](throughput-of-storage.md) — Storage Throughput
+- [TiDB and NewSQL](tidb-and-new-sql.md) — TiDB and NewSQL
+- [Time Synchronization in the Datacenter](time-synchronization-in-dc.md) — Time Synchronization in the Datacenter
+- [Tokenization and Masking](tokenization-and-masking.md) — Tokenization and Masking
+- [Traffic Engineering](traffic-engineering.md) — Traffic Engineering
+- [Traffic Shaping & QoS](traffic-shaping-and-qos.md) — Traffic Shaping & QoS
+- [Virtual Switches](virtual-switches.md) — Virtual Switches
+- [Vitess and Sharded MySQL](vitess-and-sharded-mysql.md) — Vitess and Sharded MySQL
+- [VLAN Networking](vlan-networking.md) — VLAN Networking
+- [VXLAN Overlays](vxlan-overlays.md) — VXLAN Overlays
+- [Warehouse Clusters and Virtual Warehouses](warehouse-clusters-and-virtual-warehouses.md) — Warehouse Clusters and Virtual Warehouses
+- [Warehouse Migration](warehouse-migration.md) — Warehouse Migration
+- [Workload Management and Queues](workload-management-and-queues.md) — Workload Management and Queues
+- [Zero-Downtime Deploys](zero-downtime-deploys.md) — Zero-Downtime Deploys
+- [ZooKeeper and Coordination](zookeeper-and-coordination.md) — ZooKeeper and Coordination

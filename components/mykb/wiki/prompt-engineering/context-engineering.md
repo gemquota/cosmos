@@ -31,3 +31,12 @@ Context engineering treats the model context as a designed artifact: what inform
 - [[wiki/prompt-engineering/context-injection|Context Injection]] — related concept in this cluster
 - [[wiki/memory/knowledge-curation|Knowledge Curation]] — the curation pipeline
 - [[wiki/prompt-engineering/token-budgets|Token Budgets]] — context budgeting
+
+## Long-Horizon Techniques
+Anthropic's "Effective context engineering for AI agents" details three techniques for tasks whose token count exceeds the context window:
+- **Context rot** — as tokens in the window increase, the model's recall and long-range reasoning degrade (n² pairwise attention relationships, training distributions dominated by short sequences); context is a finite resource with diminishing marginal returns, not a hard cliff.
+- **Compaction** — summarizing a conversation nearing the limit and reinitiating with the summary; the art is selecting what to keep, and the safest lightweight form is clearing redundant tool results.
+- **Structured note-taking (agentic memory)** — writing notes to a persistent store outside the window and pulling them back later; Claude playing Pokémon shows maps, tallies, and strategy notes surviving context resets.
+- **Sub-agent architectures** — specialized sub-agents explore with clean windows and return condensed summaries (1,000-2,000 tokens), isolating search context from the lead agent.
+- **Just-in-time retrieval** — maintaining lightweight identifiers (file paths, queries, URLs) and loading data at runtime via tools, instead of pre-embedding everything up front; a hybrid (CLAUDE.md dropped in, glob/grep fetched live) balances speed and freshness.
+- **Right altitude** — prompts that are neither brittle if-else scaffolds nor vague guidance; organize into labeled sections (background, instructions, tool guidance, output description) and curate diverse canonical examples rather than laundry-list edge cases.

@@ -13,3 +13,7 @@ Part of [[wiki/index|Wiki Index]]. 1 pages.
 
 ## Pages
 - [[wiki/plans/plan-autonomy-loop|Plan: Build Full Autonomy Loop]] — Connect PulseScheduler to PulseEngine so the system runs autonomously on a cron-like schedule
+
+## Concepts
+
+- [Plan: Build Full Autonomy Loop](plan-autonomy-loop.md) — Plan: Build Full Autonomy Loop

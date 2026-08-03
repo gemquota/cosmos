@@ -42,4 +42,4 @@ Simulation output is only as trustworthy as its validation: a classic check is t
 - [[wiki/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
 - [[wiki/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
 - [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
-- [[wiki/shell-environment/categories/cli-tools/kh|Kh]]
+- Kh

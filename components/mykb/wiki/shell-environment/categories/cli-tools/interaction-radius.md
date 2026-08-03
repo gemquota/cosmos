@@ -44,5 +44,5 @@ Hit-testing tells you where events land, but measuring the radius means testing 
 - [[wiki/shell-environment/categories/cli-tools/glow-intensity|Glow Intensity]]
 - [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
 - [[wiki/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
-- [[wiki/shell-environment/categories/cli-tools/kh|Kh]]
+- Kh
 

@@ -41,4 +41,4 @@ The entity is tagged bash, bootstrap, and bun, pointing to a shell-oriented impl
 - [[wiki/shell-environment/categories/cli-tools/gravity-sim|Gravity Sim]]
 - [[wiki/shell-environment/categories/cli-tools/hybrid-gravity|Hybrid Gravity]]
 - [[wiki/shell-environment/categories/cli-tools/interaction-radius|Interaction Radius]]
-- [[wiki/shell-environment/categories/cli-tools/kh|Kh]]
+- Kh

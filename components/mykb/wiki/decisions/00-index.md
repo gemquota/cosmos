@@ -45,3 +45,39 @@ Part of [[wiki/index|Wiki Index]]. 33 pages.
 - [[wiki/decisions/usage-policies-ai|AI Usage Policies]] — Terms governing how AI systems may be used
 - [[wiki/decisions/versioning-of-selves|Versioning of Selves]] — Tracking identity and continuity across successive self-modifications
 - [[wiki/decisions/weight-release-policies|Weight Release Policies]] — Procedures for deciding when and how to release weights
+
+## Concepts
+
+- [Abuse Detection](abuse-detection-ai.md) — Abuse Detection
+- [API Access Policies](api-access-policies.md) — API Access Policies
+- [Auto-Update Mechanisms](auto-update-mechanisms.md) — Auto-Update Mechanisms
+- [Bootstrapping Compilers](bootstrapping-compilers.md) — Bootstrapping Compilers
+- [Checkpoint Selection](checkpoint-selection.md) — Checkpoint Selection
+- [Child Safety and AI](child-safety-ai.md) — Child Safety and AI
+- [chose TypeORM because it has the best TypeScript support](chose-typeorm-because-it-has-the-best-typescript-support.md) — chose TypeORM because it has the best TypeScript support
+- [Closed Models](closed-models.md) — Closed Models
+- [Content Policy for AI](content-policy-ai.md) — Content Policy for AI
+- [Copyright and AI](copyright-and-ai.md) — Copyright and AI
+- [Data License Issues](data-license-issues.md) — Data License Issues
+- [decided to use SQLite for the local database because it re](decided-to-use-sqlite-for-the-local-database-because-it-re.md) — decided to use SQLite for the local database because it re
+- [Eval Splits](eval-splits.md) — Eval Splits
+- [Frontier Lab Practices](frontier-lab-practices.md) — Frontier Lab Practices
+- [Intellectual Property and AI](ip-and-ai.md) — Intellectual Property and AI
+- [Kernel Rewriting](kernel-rewriting.md) — Kernel Rewriting
+- [License Compliance for AI](license-compliance-ai.md) — License Compliance for AI
+- [Memory Surgery](memory-surgery.md) — Memory Surgery
+- [Model License Risks](model-license-risks.md) — Model License Risks
+- [Model Licensing](model-licensing.md) — Model Licensing
+- [Model Selection in Practice](model-selection-practice.md) — Model Selection in Practice
+- [Open Weights Debate](open-weights-debate.md) — Open Weights Debate
+- [Open Weights](open-weights.md) — Open Weights
+- [Patent Issues for AI](patent-issues-ai.md) — Patent Issues for AI
+- [Responsible AI Labs](responsible-ai-labs.md) — Responsible AI Labs
+- [AI Safety Policies](safety-policies-ai.md) — AI Safety Policies
+- [Self-Hosting](self-hosting.md) — Self-Hosting
+- [Self-Improving Compilers](self-improving-compilers.md) — Self-Improving Compilers
+- [Test Set Discipline](test-set-discipline.md) — Test Set Discipline
+- [Trade Secrets in AI](trade-secrets-ai.md) — Trade Secrets in AI
+- [AI Usage Policies](usage-policies-ai.md) — AI Usage Policies
+- [Versioning of Selves](versioning-of-selves.md) — Versioning of Selves
+- [Weight Release Policies](weight-release-policies.md) — Weight Release Policies

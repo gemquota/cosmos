@@ -32,6 +32,5 @@ The related entities for this page, including the ambiguity and ambiguity-system
 - [[wiki/agent-systems/categories/agents/subcategories/agent-core/agent-active|Agent Active]]
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity-system|Ambiguity System]]
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ambiguity|Ambiguity]]
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ap|Ap]]
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/apex|Apex]]
+- Ap
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/audioctx|Audioctx]]

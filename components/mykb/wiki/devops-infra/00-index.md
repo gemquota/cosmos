@@ -255,3 +255,244 @@ Part of [[wiki/index|Wiki Index]]. 240 pages.
 - [[wiki/devops-infra/writing-sprints|Writing Sprints]] — Time-boxed sessions focused on writing articles
 - [[wiki/devops-infra/zero-trust-access-proxies|Zero Trust Access Proxies]] — Proxies that verify identity and device posture before granting app access
 - [[wiki/devops-infra/zero-trust-networking-revisited|Zero Trust Networking]] — Never trust network location; authenticate and authorize every request
+
+## Concepts
+
+- [ACID](acid.md) — ACID
+- [Admission Controllers & Webhooks](admission-controllers-and-webhooks.md) — Admission Controllers & Webhooks
+- [Alert Fatigue](alert-fatigue.md) — Alert Fatigue
+- [Ansible & Puppet](ansible-and-puppet.md) — Ansible & Puppet
+- [API Compatibility Policies](api-compatibility-policies.md) — API Compatibility Policies
+- [API Gateway Patterns](api-gateway-patterns.md) — API Gateway Patterns
+- [API Gateways](api-gateways.md) — API Gateways
+- [API Mesh Patterns](api-mesh-patterns.md) — API Mesh Patterns
+- [Archive Days](archive-days.md) — Archive Days
+- [ArgoCD ApplicationSets](argocd-applicationsets.md) — ArgoCD ApplicationSets
+- [Artifact Repositories](artifact-repositories-revisited.md) — Artifact Repositories
+- [Audit Days](audit-days.md) — Audit Days
+- [Automated Rollbacks](automated-rollbacks.md) — Automated Rollbacks
+- [Backup Strategies: 3-2-1](backup-strategies-3-2-1.md) — Backup Strategies: 3-2-1
+- [Backup Tools: restic & Borg](backup-tools-restic-borg.md) — Backup Tools: restic & Borg
+- [Backups](backups.md) — Backups
+- [Build Caching & Artifacts](build-caching-and-artifacts.md) — Build Caching & Artifacts
+- [Cache Invalidation Strategies](cache-invalidation-strategies.md) — Cache Invalidation Strategies
+- [Caddy & Traefik](caddy-and-traefik.md) — Caddy & Traefik
+- [Caddy](caddy.md) — Caddy
+- [Canary & Blue-Green Deploys](canary-and-blue-green-revisited.md) — Canary & Blue-Green Deploys
+- [Changelog Automation](changelog-automation.md) — Changelog Automation
+- [Changelog Practices](changelog-practices.md) — Changelog Practices
+- [Chaos Engineering](chaos-engineering-revisited.md) — Chaos Engineering
+- [Chaos Engineering](chaos-engineering.md) — Chaos Engineering
+- [CI/CD Best Practices](ci-cd-best-practices.md) — CI/CD Best Practices
+- [Cleanup Days](cleanup-days.md) — Cleanup Days
+- [ClickHouse](clickhouse.md) — ClickHouse
+- [Cloudflare](cloudflare.md) — Cloudflare
+- [Federation vs Hub-Spoke](cluster-federation-vs-hub-spoke.md) — Federation vs Hub-Spoke
+- [Compression & Brotli](compression-and-brotli.md) — Compression & Brotli
+- [ConfigMaps & Secrets Rotation](configmaps-and-secrets-rotation.md) — ConfigMaps & Secrets Rotation
+- [Configuration as Data](configuration-as-data.md) — Configuration as Data
+- [Configuration Management](configuration-management-revisited.md) — Configuration Management
+- [Connection Pooling](connection-pooling.md) — Connection Pooling
+- [Connection Pools](connection-pools.md) — Connection Pools
+- [Container Images (OCI)](container-images-oci.md) — Container Images (OCI)
+- [Container Network Interfaces](container-network-interfaces.md) — Container Network Interfaces
+- [Container Registries](container-registries-revisited.md) — Container Registries
+- [Container Runtimes](container-runtimes.md) — Container Runtimes
+- [Container Storage Interfaces](container-storage-interfaces.md) — Container Storage Interfaces
+- [containerd](containerd.md) — containerd
+- [Content Camps](content-camps.md) — Content Camps
+- [Content Hashing & ETags](content-hashing-and-etags.md) — Content Hashing & ETags
+- [Continuous Delivery Pipelines](continuous-delivery-pipelines.md) — Continuous Delivery Pipelines
+- [Contract Simulation Environments](contract-simulation-environments.md) — Contract Simulation Environments
+- [Contract Testing Deployments](contract-testing-deployments.md) — Contract Testing Deployments
+- [Cosign & Sigstore](cosign-and-sigstore.md) — Cosign & Sigstore
+- [Curation Sprints](curation-sprints.md) — Curation Sprints
+- [Custom Resource Definitions](custom-resource-definitions.md) — Custom Resource Definitions
+- [Dark Launch Techniques](dark-launch-techniques.md) — Dark Launch Techniques
+- [Database Failover Automation](database-failover-automation.md) — Database Failover Automation
+- [Database Indexing](database-indexing.md) — Database Indexing
+- [Dependency Mapping & Blast Radius](dependency-mapping-and-blast-radius.md) — Dependency Mapping & Blast Radius
+- [Deploy Safety Checks](deploy-safety-checks.md) — Deploy Safety Checks
+- [Deployment Verification & Synthetic Checks](deployment-verification-synthetic-checks.md) — Deployment Verification & Synthetic Checks
+- [Devcontainers](devcontainers-revisited.md) — Devcontainers
+- [Development Environments as Code](development-environments-as-code.md) — Development Environments as Code
+- [Disaster Recovery Tiers](disaster-recovery-tiers.md) — Disaster Recovery Tiers
+- [Disaster Recovery](disaster-recovery.md) — Disaster Recovery
+- [Distributed Tracing](distributed-tracing-revisited.md) — Distributed Tracing
+- [Distributed Tracing](distributed-tracing.md) — Distributed Tracing
+- [Docker Compose](docker-compose.md) — Docker Compose
+- [dotenv vs Config Systems](dotenv-vs-config-systems.md) — dotenv vs Config Systems
+- [DuckDB](duckdb.md) — DuckDB
+- [Edit Sprints](edit-sprints.md) — Edit Sprints
+- [Environment Variable Management](env-var-management.md) — Environment Variable Management
+- [Environment Promotion Models](environment-promotion-models.md) — Environment Promotion Models
+- [Envoy Data Plane](envoy-data-plane.md) — Envoy Data Plane
+- [Envoy](envoy.md) — Envoy
+- [Ephemeral Environments](ephemeral-environments.md) — Ephemeral Environments
+- [Error Budgets](error-budgets.md) — Error Budgets
+- [Escalation Policies](escalation-policies.md) — Escalation Policies
+- [Event Streaming](event-streaming.md) — Event Streaming
+- [Fault Injection Tools](fault-injection-tools.md) — Fault Injection Tools
+- [Feature Flag Systems](feature-flag-systems-revisited.md) — Feature Flag Systems
+- [Feature Flags](feature-flags.md) — Feature Flags
+- [First-Boot Configuration](first-boot-configuration.md) — First-Boot Configuration
+- [Game Days & Failure Drills](game-days-and-failure-drills.md) — Game Days & Failure Drills
+- [Gatekeeper & Policy as Code](gatekeeper-and-policy-as-code.md) — Gatekeeper & Policy as Code
+- [GitHub Actions](github-actions.md) — GitHub Actions
+- [GitOps & ArgoCD](gitops-argocd.md) — GitOps & ArgoCD
+- [GitOps Bootstrap Processes](gitops-bootstrap-processes.md) — GitOps Bootstrap Processes
+- [GitOps Multi-Env Patterns](gitops-multi-env-patterns.md) — GitOps Multi-Env Patterns
+- [Golden Images & Image Baking](golden-images-and-image-baking.md) — Golden Images & Image Baking
+- [Golden Signals](golden-signals.md) — Golden Signals
+- [Grafana Dashboards](grafana-dashboards.md) — Grafana Dashboards
+- [gRPC & Protobuf Networking](grpc-and-protobuf-networking.md) — gRPC & Protobuf Networking
+- [HAProxy vs NGINX](haproxy-vs-nginx.md) — HAProxy vs NGINX
+- [Health Endpoint Contracts](health-endpoint-contracts.md) — Health Endpoint Contracts
+- [Healthcheck & Sidecar Containers](healthcheck-and-sidecar-containers.md) — Healthcheck & Sidecar Containers
+- [Helm & Chart Management](helm-and-chart-management.md) — Helm & Chart Management
+- [Helm](helm.md) — Helm
+- [hostPath & SubPath Volumes](hostpath-and-subpath.md) — hostPath & SubPath Volumes
+- [HTTP Caching Directives](http-caching-directives.md) — HTTP Caching Directives
+- [Identity-Aware Proxies](identity-aware-proxies.md) — Identity-Aware Proxies
+- [Ignition & User Data](ignition-and-user-data.md) — Ignition & User Data
+- [Image Signing & Notary](image-signing-and-notary.md) — Image Signing & Notary
+- [Incident Response](incident-response-revisited.md) — Incident Response
+- [Incident Response](incident-response.md) — Incident Response
+- [Incremental vs Differential Backups](incremental-vs-differential-backups.md) — Incremental vs Differential Backups
+- [Infrastructure as Code](infrastructure-as-code-revisited.md) — Infrastructure as Code
+- [Infrastructure Drift Detection](infrastructure-drift-detection.md) — Infrastructure Drift Detection
+- [Ingress Controllers](ingress-controllers.md) — Ingress Controllers
+- [Ingress & Egress Policies](ingress-egress-policies.md) — Ingress & Egress Policies
+- [Init Containers & Hooks](init-containers-and-hooks.md) — Init Containers & Hooks
+- [Isolation Levels](isolation-levels.md) — Isolation Levels
+- [Istio](istio.md) — Istio
+- [Kubernetes DNS & CoreDNS](k8s-dns-and-coredns.md) — Kubernetes DNS & CoreDNS
+- [Kubernetes Control Plane](kubernetes-control-plane.md) — Kubernetes Control Plane
+- [Kubernetes Networking Models](kubernetes-networking-models.md) — Kubernetes Networking Models
+- [Kubernetes Operators](kubernetes-operators-revisited.md) — Kubernetes Operators
+- [Kubernetes Scheduling](kubernetes-scheduling.md) — Kubernetes Scheduling
+- [Kubernetes](kubernetes.md) — Kubernetes
+- [Kustomize](kustomize.md) — Kustomize
+- [Leader Election & Quorum](leader-election-and-quorum.md) — Leader Election & Quorum
+- [Link-Fix Sprints](link-fix-sprints.md) — Link-Fix Sprints
+- [Load Balancing L4-L7](load-balancing-l4-l7.md) — Load Balancing L4-L7
+- [Load Balancing](load-balancing.md) — Load Balancing
+- [Local Persistent Volumes](local-persistent-volumes.md) — Local Persistent Volumes
+- [LocalStack & Cloud Emulators](localstack-and-cloud-emulators.md) — LocalStack & Cloud Emulators
+- [Log Aggregation Pipelines](log-aggregation-pipelines.md) — Log Aggregation Pipelines
+- [Log Aggregation](log-aggregation.md) — Log Aggregation
+- [Maintenance Days](maintenance-days.md) — Maintenance Days
+- [Message Broker Patterns](message-broker-patterns.md) — Message Broker Patterns
+- [Metrics, Logs & Traces](metrics-logs-traces.md) — Metrics, Logs & Traces
+- [Mirroring & Proxying Registries](mirroring-and-proxying-registries.md) — Mirroring & Proxying Registries
+- [Mirroring & Shadow Traffic](mirroring-and-shadow-traffic.md) — Mirroring & Shadow Traffic
+- [MongoDB](mongodb.md) — MongoDB
+- [Monitoring Dashboards](monitoring-dashboards.md) — Monitoring Dashboards
+- [Multi-Cluster Management](multi-cluster-management.md) — Multi-Cluster Management
+- [Mutating & Validating Policies](mutating-and-validating-policies.md) — Mutating & Validating Policies
+- [MySQL](mysql.md) — MySQL
+- [Network Observability](network-observability.md) — Network Observability
+- [Kubernetes Network Policies](network-policies-kubernetes.md) — Kubernetes Network Policies
+- [NGINX Configuration Patterns](nginx-configuration-patterns.md) — NGINX Configuration Patterns
+- [Nginx](nginx.md) — Nginx
+- [Node Affinity & Taints](node-affinity-and-taints.md) — Node Affinity & Taints
+- [Node Storage Architecture](node-storage-architecture.md) — Node Storage Architecture
+- [Observability of the Network Path](observability-of-network-path.md) — Observability of the Network Path
+- [Observability Pillars](observability-pillars.md) — Observability Pillars
+- [Observability](observability.md) — Observability
+- [On-Call Practices](on-call-practices.md) — On-Call Practices
+- [On-Call Rotations](on-call-rotations.md) — On-Call Rotations
+- [OpenTofu & Forks](open-tofu-forks.md) — OpenTofu & Forks
+- [OpenTelemetry Instrumentation](opentelemetry-instrumentation.md) — OpenTelemetry Instrumentation
+- [Operator SDK & Controller Runtime](operator-sdk-and-controller-runtime.md) — Operator SDK & Controller Runtime
+- [Optimistic Locking](optimistic-locking.md) — Optimistic Locking
+- [OS Updates & Immutable Images](os-updates-and-immutable-images.md) — OS Updates & Immutable Images
+- [Package Signing & Repositories](package-signing-and-repositories.md) — Package Signing & Repositories
+- [Partitioning](partitioning.md) — Partitioning
+- [Patch Management](patch-management-revisited.md) — Patch Management
+- [Persistent Volume Claims](persistent-volume-claims.md) — Persistent Volume Claims
+- [Pod Disruption Budgets](pod-disruption-budgets.md) — Pod Disruption Budgets
+- [Pod-to-Pod Communication](pod-to-pod-communication.md) — Pod-to-Pod Communication
+- [Podman](podman.md) — Podman
+- [Point-in-Time Recovery](point-in-time-recovery.md) — Point-in-Time Recovery
+- [Policy Engines: OPA & Kyverno](policy-engines-opa-kyverno.md) — Policy Engines: OPA & Kyverno
+- [PostgreSQL](postgresql.md) — PostgreSQL
+- [Postmortem Culture](postmortem-culture.md) — Postmortem Culture
+- [Postmortems & Blameless Culture](postmortems-and-blameless.md) — Postmortems & Blameless Culture
+- [Preflight Checks & Guards](preflight-checks-and-guards.md) — Preflight Checks & Guards
+- [Priority Classes & Preemption](priority-classes-and-preemption.md) — Priority Classes & Preemption
+- [Progressive Delivery Models](progressive-delivery-models.md) — Progressive Delivery Models
+- [Progressive Rollout Metrics](progressive-rollout-metrics.md) — Progressive Rollout Metrics
+- [Progressive Sync Strategies](progressive-sync-strategies.md) — Progressive Sync Strategies
+- [Prometheus & Metrics](prometheus-and-metrics.md) — Prometheus & Metrics
+- [Provisioners: Packer & cloud-init](provisioners-packer-cloud-init.md) — Provisioners: Packer & cloud-init
+- [Pub/Sub Messaging](pub-sub-messaging.md) — Pub/Sub Messaging
+- [Publish Days](publish-days.md) — Publish Days
+- [Pulumi & Crossplane](pulumi-and-crossplane.md) — Pulumi & Crossplane
+- [Quality Days](quality-days.md) — Quality Days
+- [Query Planning](query-planning.md) — Query Planning
+- [Rate Limiting at the Edge](rate-limiting-at-edge.md) — Rate Limiting at the Edge
+- [Readiness vs Liveness Probes](readiness-vs-liveness-revisited.md) — Readiness vs Liveness Probes
+- [Refresh Days](refresh-days.md) — Refresh Days
+- [Registry GC & Retention](registry-gc-and-retention.md) — Registry GC & Retention
+- [Release Days](release-days.md) — Release Days
+- [Release Engineering](release-engineering.md) — Release Engineering
+- [Release Trains](release-trains.md) — Release Trains
+- [Release Versioning](release-versioning.md) — Release Versioning
+- [Remote Development: VS Code & SSH](remote-development-vscode-ssh.md) — Remote Development: VS Code & SSH
+- [Renovate & Dependency Updates](renovate-and-dependency-updates.md) — Renovate & Dependency Updates
+- [Replication & Failover DR](replication-and-failover-dr.md) — Replication & Failover DR
+- [Replication](replication.md) — Replication
+- [Retry Policies](retry-policies.md) — Retry Policies
+- [Reverse Proxies](reverse-proxies.md) — Reverse Proxies
+- [Review Sprints](review-sprints.md) — Review Sprints
+- [Rollback Plans](rollback-plans.md) — Rollback Plans
+- [Root Cause Analysis](root-cause-analysis.md) — Root Cause Analysis
+- [RTO & RPO](rto-and-rpo.md) — RTO & RPO
+- [Runbooks](runbooks.md) — Runbooks
+- [SBOMs & Syft](sbom-and-syft.md) — SBOMs & Syft
+- [Scheduled Jobs](scheduled-jobs.md) — Scheduled Jobs
+- [Secret Stores: Vault & Consul](secret-stores-vault-consul.md) — Secret Stores: Vault & Consul
+- [Secrets Management](secrets-management-revisited.md) — Secrets Management
+- [Semantic Release Automation](semantic-release-automation.md) — Semantic Release Automation
+- [Service Accounts & Identities](service-accounts-and-identities.md) — Service Accounts & Identities
+- [Service Mesh Sidecars](service-mesh-sidecars.md) — Service Mesh Sidecars
+- [Service Meshes: Istio & Linkerd](service-meshes-istio-linkerd.md) — Service Meshes: Istio & Linkerd
+- [Service Virtualization](service-virtualization.md) — Service Virtualization
+- [Severity Levels](severity-levels.md) — Severity Levels
+- [Sharding](sharding.md) — Sharding
+- [Site Reliability Engineering](site-reliability-engineering-revisited.md) — Site Reliability Engineering
+- [Site Reliability Engineering](site-reliability-engineering.md) — Site Reliability Engineering
+- [SLOs & Error Budgets](slo-and-error-budgets.md) — SLOs & Error Budgets
+- [Smoke Tests After Deploy](smoke-tests-after-deploy.md) — Smoke Tests After Deploy
+- [SQLite](sqlite.md) — SQLite
+- [Staging-Prod Parity](staging-prod-parity.md) — Staging-Prod Parity
+- [Startup Probes & Graceful Shutdown](startup-probes-and-graceful-shutdown.md) — Startup Probes & Graceful Shutdown
+- [State Locking & Concurrency](state-locking-and-concurrency.md) — State Locking & Concurrency
+- [Stateful Application Patterns](stateful-application-patterns.md) — Stateful Application Patterns
+- [Storage Classes & Provisioners](storage-classes-and-provisioners.md) — Storage Classes & Provisioners
+- [Stream Processing](stream-processing.md) — Stream Processing
+- [Supply Chain Attestations](supply-chain-attestations.md) — Supply Chain Attestations
+- [Sync Policies & Waves](sync-policies-and-waves.md) — Sync Policies & Waves
+- [Terraform State Management](terraform-state-management.md) — Terraform State Management
+- [Terraform Workspaces & Modules](terraform-workspaces-and-modules.md) — Terraform Workspaces & Modules
+- [Terraform](terraform.md) — Terraform
+- [Terraform State Management](tfstate-management.md) — Terraform State Management
+- [Timeouts & Deadlines](timeouts-and-deadlines.md) — Timeouts & Deadlines
+- [Topology Spread Constraints](topology-spread-constraints.md) — Topology Spread Constraints
+- [Traefik](traefik.md) — Traefik
+- [Traffic Shifting & Splitting](traffic-shifting-and-splitting.md) — Traffic Shifting & Splitting
+- [Database Transactions](transactions.md) — Database Transactions
+- [Trivy & Image Scanning](trivy-and-image-scanning.md) — Trivy & Image Scanning
+- [Update Days](update-days.md) — Update Days
+- [Versioning APIs in SDKs](versioning-apis-in-sdks.md) — Versioning APIs in SDKs
+- [emptyDir & ConfigMap Volumes](volumes-emptydir-and-configmaps.md) — emptyDir & ConfigMap Volumes
+- [Vulnerability Fix Cadence](vulnerability-fix-cadence.md) — Vulnerability Fix Cadence
+- [Web Application Firewalls](web-application-firewalls.md) — Web Application Firewalls
+- [WebSocket Proxying](websocket-proxying.md) — WebSocket Proxying
+- [Wiki Hackathons](wiki-hackathons.md) — Wiki Hackathons
+- [Worker Pools](worker-pools.md) — Worker Pools
+- [Workload Identity Federation](workload-identity-federation.md) — Workload Identity Federation
+- [Writing Sprints](writing-sprints.md) — Writing Sprints
+- [Zero Trust Access Proxies](zero-trust-access-proxies.md) — Zero Trust Access Proxies
+- [Zero Trust Networking](zero-trust-networking-revisited.md) — Zero Trust Networking

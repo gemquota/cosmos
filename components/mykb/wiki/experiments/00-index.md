@@ -13,3 +13,7 @@ Part of [[wiki/index|Wiki Index]]. 1 pages.
 
 ## Pages
 - [[wiki/experiments/exp-stub-scanner-vs-pytest|Experiment: StubScanner vs pytest for --fast mode]] — Comparing AST-based StubScanner (0.3s) vs subprocess pytest (5-10s) for pulse engine fast health checks
+
+## Concepts
+
+- [Experiment: StubScanner vs pytest for --fast mode](exp-stub-scanner-vs-pytest.md) — Experiment: StubScanner vs pytest for --fast mode

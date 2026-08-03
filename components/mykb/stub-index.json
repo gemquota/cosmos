@@ -1,7 +1,7 @@
 {
- "generated": "2026-08-03T09:01Z",
+ "generated": "2026-08-03T11:49Z",
  "floor": 320,
- "total": 3870,
+ "total": 3850,
  "stubs": [
   {
    "path": "wiki/agent-systems/a-b-testing-agents.md",
@@ -9679,7 +9679,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/aborted.md",
    "title": "Aborted",
-   "words": 303,
+   "words": 301,
    "status": "growing",
    "type": "entity",
    "tags": [
@@ -9689,46 +9689,6 @@
     "auth",
     "bash",
     "bug"
-   ],
-   "area": "api-services",
-   "domain": "",
-   "super": "api-rest",
-   "category": "rest-http",
-   "sub": ""
-  },
-  {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/acli.md",
-   "title": "ACLI",
-   "words": 302,
-   "status": "growing",
-   "type": "entity",
-   "tags": [
-    "entity",
-    "acronym",
-    "android",
-    "api",
-    "ast",
-    "auth"
-   ],
-   "area": "api-services",
-   "domain": "",
-   "super": "api-rest",
-   "category": "rest-http",
-   "sub": ""
-  },
-  {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/adc.md",
-   "title": "ADC",
-   "words": 315,
-   "status": "growing",
-   "type": "entity",
-   "tags": [
-    "entity",
-    "acronym",
-    "android",
-    "api",
-    "ast",
-    "auth"
    ],
    "area": "api-services",
    "domain": "",
@@ -9759,7 +9719,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/aegis.md",
    "title": "AEGIS",
-   "words": 36,
+   "words": 34,
    "status": "none",
    "type": "entity",
    "tags": [
@@ -10135,7 +10095,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/audio.md",
    "title": "Audio",
-   "words": 36,
+   "words": 34,
    "status": "none",
    "type": "entity",
    "tags": [
@@ -10239,7 +10199,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/automated-monitor.md",
    "title": "Automated Monitor",
-   "words": 38,
+   "words": 36,
    "status": "none",
    "type": "entity",
    "tags": [
@@ -10259,7 +10219,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/avg-rounds.md",
    "title": "Avg Rounds",
-   "words": 301,
+   "words": 299,
    "status": "growing",
    "type": "entity",
    "tags": [
@@ -10279,7 +10239,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/baby-profile.md",
    "title": "Baby Profile",
-   "words": 305,
+   "words": 303,
    "status": "growing",
    "type": "entity",
    "tags": [
@@ -10329,26 +10289,6 @@
     "ast",
     "auth",
     "aws"
-   ],
-   "area": "api-services",
-   "domain": "",
-   "super": "api-rest",
-   "category": "rest-http",
-   "sub": ""
-  },
-  {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/bc.md",
-   "title": "BC",
-   "words": 305,
-   "status": "growing",
-   "type": "entity",
-   "tags": [
-    "entity",
-    "acronym",
-    "android",
-    "api",
-    "ast",
-    "bash"
    ],
    "area": "api-services",
    "domain": "",
@@ -10407,7 +10347,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/beta.md",
    "title": "BETA",
-   "words": 318,
+   "words": 316,
    "status": "growing",
    "type": "entity",
    "tags": [
@@ -10417,26 +10357,6 @@
     "ast",
     "bash",
     "bug"
-   ],
-   "area": "api-services",
-   "domain": "",
-   "super": "api-rest",
-   "category": "rest-http",
-   "sub": ""
-  },
-  {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/bfs.md",
-   "title": "BFS",
-   "words": 48,
-   "status": "none",
-   "type": "entity",
-   "tags": [
-    "entity",
-    "acronym",
-    "android",
-    "api",
-    "ast",
-    "auth"
    ],
    "area": "api-services",
    "domain": "",
@@ -10807,46 +10727,6 @@
     "api",
     "ast",
     "auth"
-   ],
-   "area": "api-services",
-   "domain": "",
-   "super": "api-rest",
-   "category": "rest-http",
-   "sub": ""
-  },
-  {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/cdf.md",
-   "title": "CDF",
-   "words": 51,
-   "status": "none",
-   "type": "entity",
-   "tags": [
-    "entity",
-    "acronym",
-    "android",
-    "api",
-    "ast",
-    "auth"
-   ],
-   "area": "api-services",
-   "domain": "",
-   "super": "api-rest",
-   "category": "rest-http",
-   "sub": ""
-  },
-  {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/ce.md",
-   "title": "CE",
-   "words": 54,
-   "status": "none",
-   "type": "entity",
-   "tags": [
-    "entity",
-    "acronym",
-    "android",
-    "angular",
-    "api",
-    "ast"
    ],
    "area": "api-services",
    "domain": "",
@@ -11605,7 +11485,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/flask.md",
    "title": "Flask",
-   "words": 60,
+   "words": 58,
    "status": "none",
    "type": "entity",
    "tags": [
@@ -11668,7 +11548,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/frontend-logic.md",
    "title": "Frontend Logic",
-   "words": 56,
+   "words": 54,
    "status": "none",
    "type": "entity",
    "tags": [
@@ -11678,30 +11558,6 @@
     "auth",
     "backend",
     "bash"
-   ],
-   "area": "api-services",
-   "domain": "",
-   "super": "api-rest",
-   "category": "rest-http",
-   "sub": ""
-  },
-  {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/fsm-2.md",
-   "title": "FSM",
-   "words": 175,
-   "status": "none",
-   "type": "entity",
-   "tags": [
-    "acronym",
-    "android",
-    "api",
-    "ast",
-    "auth",
-    "backend",
-    "bash",
-    "bootstrap",
-    "css",
-    "entity"
    ],
    "area": "api-services",
    "domain": "",
@@ -11752,7 +11608,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/gemini-bridge.md",
    "title": "Gemini Bridge",
-   "words": 54,
+   "words": 52,
    "status": "none",
    "type": "entity",
    "tags": [
@@ -11816,7 +11672,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/generate-stencil.md",
    "title": "Generate Stencil",
-   "words": 56,
+   "words": 54,
    "status": "none",
    "type": "entity",
    "tags": [
@@ -11836,7 +11692,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/getting-started.md",
    "title": "Getting Started",
-   "words": 38,
+   "words": 36,
    "status": "none",
    "type": "entity",
    "tags": [
@@ -11917,26 +11773,6 @@
    "sub": ""
   },
   {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/ha.md",
-   "title": "HA",
-   "words": 59,
-   "status": "none",
-   "type": "entity",
-   "tags": [
-    "entity",
-    "acronym",
-    "android",
-    "angular",
-    "api",
-    "ast"
-   ],
-   "area": "api-services",
-   "domain": "",
-   "super": "api-rest",
-   "category": "rest-http",
-   "sub": ""
-  },
-  {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/harmonica-nexus.md",
    "title": "Harmonica Nexus",
    "words": 60,
@@ -11979,7 +11815,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/historical-aggregate.md",
    "title": "Historical Aggregate",
-   "words": 55,
+   "words": 53,
    "status": "none",
    "type": "entity",
    "tags": [
@@ -12039,7 +11875,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/imagedraw.md",
    "title": "ImageDraw",
-   "words": 53,
+   "words": 51,
    "status": "none",
    "type": "entity",
    "tags": [
@@ -12049,27 +11885,6 @@
     "auth",
     "backend",
     "bash"
-   ],
-   "area": "api-services",
-   "domain": "",
-   "super": "api-rest",
-   "category": "rest-http",
-   "sub": ""
-  },
-  {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/in-2.md",
-   "title": "IN",
-   "words": 61,
-   "status": "none",
-   "type": "entity",
-   "tags": [
-    "acronym",
-    "android",
-    "api",
-    "ast",
-    "auth",
-    "bug",
-    "entity"
    ],
    "area": "api-services",
    "domain": "",
@@ -12316,27 +12131,6 @@
    "sub": ""
   },
   {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/mb-2.md",
-   "title": "MB",
-   "words": 62,
-   "status": "none",
-   "type": "entity",
-   "tags": [
-    "acronym",
-    "android",
-    "api",
-    "ast",
-    "auth",
-    "bash",
-    "entity"
-   ],
-   "area": "api-services",
-   "domain": "",
-   "super": "api-rest",
-   "category": "rest-http",
-   "sub": ""
-  },
-  {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/memoryevent-2.md",
    "title": "MemoryEvent",
    "words": 224,
@@ -12548,29 +12342,9 @@
    "sub": ""
   },
   {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/pm.md",
-   "title": "PM",
-   "words": 59,
-   "status": "none",
-   "type": "entity",
-   "tags": [
-    "entity",
-    "acronym",
-    "android",
-    "api",
-    "ast",
-    "backend"
-   ],
-   "area": "api-services",
-   "domain": "",
-   "super": "api-rest",
-   "category": "rest-http",
-   "sub": ""
-  },
-  {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/prestige-particles.md",
    "title": "Prestige Particles",
-   "words": 62,
+   "words": 60,
    "status": "none",
    "type": "entity",
    "tags": [
@@ -12634,7 +12408,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/questionqualityindex.md",
    "title": "QuestionQualityIndex",
-   "words": 53,
+   "words": 51,
    "status": "none",
    "type": "entity",
    "tags": [
@@ -12743,7 +12517,7 @@
   {
    "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/serving-flask.md",
    "title": "Serving Flask",
-   "words": 58,
+   "words": 56,
    "status": "none",
    "type": "entity",
    "tags": [
@@ -28466,7 +28240,7 @@
   {
    "path": "wiki/data-storage/entities/data.md",
    "title": "DATA",
-   "words": 313,
+   "words": 311,
    "status": "growing",
    "type": "entity",
    "tags": [
@@ -39022,27 +38796,6 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/abc-2.md",
-   "title": "ABC",
-   "words": 41,
-   "status": "none",
-   "type": "entity",
-   "tags": [
-    "acronym",
-    "ajax",
-    "android",
-    "api",
-    "ast",
-    "auth",
-    "entity"
-   ],
-   "area": "frontend",
-   "domain": "",
-   "super": "frontend-frameworks",
-   "category": "ajax-spa",
-   "sub": ""
-  },
-  {
    "path": "wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10.md",
    "title": "ACE",
    "words": 231,
@@ -39140,26 +38893,6 @@
    "status": "growing",
    "type": "entity",
    "tags": [],
-   "area": "frontend",
-   "domain": "",
-   "super": "frontend-frameworks",
-   "category": "ajax-spa",
-   "sub": ""
-  },
-  {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/amb.md",
-   "title": "AMB",
-   "words": 39,
-   "status": "none",
-   "type": "entity",
-   "tags": [
-    "entity",
-    "acronym",
-    "ajax",
-    "api",
-    "ast",
-    "aws"
-   ],
    "area": "frontend",
    "domain": "",
    "super": "frontend-frameworks",
@@ -39417,26 +39150,6 @@
     "aws",
     "bash",
     "entity"
-   ],
-   "area": "frontend",
-   "domain": "",
-   "super": "frontend-frameworks",
-   "category": "ajax-spa",
-   "sub": ""
-  },
-  {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/fft.md",
-   "title": "FFT",
-   "words": 303,
-   "status": "growing",
-   "type": "entity",
-   "tags": [
-    "entity",
-    "acronym",
-    "ajax",
-    "api",
-    "ast",
-    "aws"
    ],
    "area": "frontend",
    "domain": "",
@@ -39722,26 +39435,6 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/loop-engineering.md",
-   "title": "Loop Engineering",
-   "words": 306,
-   "status": "growing",
-   "type": "entity",
-   "tags": [
-    "entity",
-    "api",
-    "ast",
-    "auth",
-    "bash",
-    "cdn"
-   ],
-   "area": "frontend",
-   "domain": "",
-   "super": "frontend-frameworks",
-   "category": "ajax-spa",
-   "sub": ""
-  },
-  {
    "path": "wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/mainview.md",
    "title": "MainView",
    "words": 300,
@@ -39754,26 +39447,6 @@
     "api",
     "ast",
     "auth"
-   ],
-   "area": "frontend",
-   "domain": "",
-   "super": "frontend-frameworks",
-   "category": "ajax-spa",
-   "sub": ""
-  },
-  {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/mid.md",
-   "title": "MID",
-   "words": 308,
-   "status": "growing",
-   "type": "entity",
-   "tags": [
-    "entity",
-    "acronym",
-    "api",
-    "ast",
-    "bash",
-    "cdn"
    ],
    "area": "frontend",
    "domain": "",
@@ -40211,28 +39884,6 @@
     "api",
     "ast",
     "auth"
-   ],
-   "area": "frontend",
-   "domain": "",
-   "super": "frontend-frameworks",
-   "category": "angular",
-   "sub": ""
-  },
-  {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/cac-2.md",
-   "title": "CAC",
-   "words": 65,
-   "status": "none",
-   "type": "entity",
-   "tags": [
-    "acronym",
-    "ajax",
-    "android",
-    "angular",
-    "api",
-    "ast",
-    "auth",
-    "entity"
    ],
    "area": "frontend",
    "domain": "",
@@ -45434,7 +45085,7 @@
   {
    "path": "wiki/llm-agents/categories/llm-topics/subcategories/llm-specs/language-spec.md",
    "title": "Language Spec",
-   "words": 307,
+   "words": 305,
    "status": "growing",
    "type": "entity",
    "tags": [
@@ -45480,7 +45131,7 @@
   {
    "path": "wiki/llm-agents/categories/llm-topics/subcategories/llm-specs/token-util.md",
    "title": "Token Util",
-   "words": 306,
+   "words": 304,
    "status": "growing",
    "type": "entity",
    "tags": [
@@ -45490,6 +45141,26 @@
     "auth",
     "bash",
     "bug"
+   ],
+   "area": "llm-agents",
+   "domain": "",
+   "super": "llm-topics",
+   "category": "llm-specs",
+   "sub": ""
+  },
+  {
+   "path": "wiki/llm-agents/categories/llm-topics/subcategories/llm-specs/tokenbudget.md",
+   "title": "TokenBudget",
+   "words": 318,
+   "status": "growing",
+   "type": "entity",
+   "tags": [
+    "entity",
+    "api",
+    "ast",
+    "auth",
+    "aws",
+    "bash"
    ],
    "area": "llm-agents",
    "domain": "",
@@ -55908,24 +55579,6 @@
    "sub": ""
   },
   {
-   "path": "wiki/prompt-engineering/context-engineering.md",
-   "title": "Context Engineering",
-   "words": 235,
-   "status": "growing",
-   "type": "concept",
-   "tags": [
-    "context",
-    "prompting",
-    "engineering",
-    "llm"
-   ],
-   "area": "prompt-engineering",
-   "domain": "",
-   "super": "",
-   "category": "",
-   "sub": ""
-  },
-  {
    "path": "wiki/prompt-engineering/context-injection.md",
    "title": "Context Injection",
    "words": 79,
@@ -57757,26 +57410,6 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/ant.md",
-   "title": "ANT",
-   "words": 49,
-   "status": "none",
-   "type": "entity",
-   "tags": [
-    "entity",
-    "acronym",
-    "api",
-    "ast",
-    "auth",
-    "authentication"
-   ],
-   "area": "security-auth",
-   "domain": "",
-   "super": "auth-security",
-   "category": "authentication",
-   "sub": ""
-  },
-  {
    "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/anyclaw.md",
    "title": "AnyClaw",
    "words": 309,
@@ -57785,26 +57418,6 @@
    "tags": [
     "entity",
     "android",
-    "api",
-    "ast",
-    "auth",
-    "authentication"
-   ],
-   "area": "security-auth",
-   "domain": "",
-   "super": "auth-security",
-   "category": "authentication",
-   "sub": ""
-  },
-  {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/apa.md",
-   "title": "APA",
-   "words": 318,
-   "status": "growing",
-   "type": "entity",
-   "tags": [
-    "entity",
-    "acronym",
     "api",
     "ast",
     "auth",
@@ -58163,26 +57776,6 @@
     "auth",
     "authentication",
     "bootstrap"
-   ],
-   "area": "security-auth",
-   "domain": "",
-   "super": "auth-security",
-   "category": "authentication",
-   "sub": ""
-  },
-  {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/bm.md",
-   "title": "BM",
-   "words": 317,
-   "status": "growing",
-   "type": "entity",
-   "tags": [
-    "entity",
-    "acronym",
-    "api",
-    "ast",
-    "auth",
-    "authentication"
    ],
    "area": "security-auth",
    "domain": "",
