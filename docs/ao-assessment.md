@@ -1,7 +1,7 @@
 # AO (Agent OS) — Inclusion Assessment for COSMOS
 
 **Date:** 2026-08-03
-**Status:** Assessment complete — selective harvest recommended
+**Status:** Assessment complete — Phase A harvest implemented (2026-08-03)
 **Subject:** `~/dev/codex/ao` — "Agent OS", a pure-Python multi-agent runtime (~6.9k LOC)
 **Synthesis:** `components/mykb/wiki/syntheses/ao-agent-os-integration-assessment.md`
 
@@ -85,6 +85,10 @@ dashboard. **Do** selectively port modules into RSIS3's execution layer:
 
 - **Phase A (now):** sandbox + tool allowlists + HITL approval gate wired
   into `rsis/loop_l1.py` (and the `ToolCall`/checkpoint path), config-gated.
+  **Done 2026-08-03:** `components/rsis3/rsis/tools/` (sandbox, hitl,
+  manager, workspace_tools) + `ToolConfig` in `rsis/config.py`; L1 routes
+  through the manager with allowlists, path containment, HITL modes
+  (auto/interactive/api/deny), and redacted audit logs.
 - **Phase B:** extend RSIS3 telemetry with the cost ledger + budget cap;
   optionally add sqlite-vec semantic search to MyKB.
 - **Phase C:** adopt scheduler patterns (priority, cycle detection, DAG pool)
