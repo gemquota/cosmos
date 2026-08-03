@@ -1,0 +1,2 @@
+{"ts": 1785793557.5484674, "agent": "l1", "tool": "run_code", "args": "{\"code\": \"print(40+2)\"}", "risk": "write", "status": "ok", "output": "42", "latency_s": 0.019}
+{"ts": 1785793557.5500681, "agent": "l1", "tool": "run_code", "args": "{\"code\": \"that executes os.system('id')\"}", "risk": "write", "status": "denied", "output": "blocked by operator approval (HITL)", "latency_s": null}

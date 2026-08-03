@@ -61,6 +61,7 @@ class L2Config:
     """Per-Session Improvement Loop."""
     max_improvement_attempts: int = 5
     session_timeout_s: int = 1800  # 30 min
+    parallel_candidates: int = 0   # 0 = sequential; N = DAG fan-out (multi-agent)
 
 
 @dataclass
@@ -364,6 +365,8 @@ def load_config() -> RSISConfig:
         cfg.tools.approval_mode = os.environ["RSIS_APPROVAL_MODE"]
     if "RSIS_APPROVAL_THRESHOLD" in os.environ:
         cfg.tools.approval_threshold = os.environ["RSIS_APPROVAL_THRESHOLD"]
+    if "RSIS_L2_PARALLEL" in os.environ:
+        cfg.l2.parallel_candidates = int(os.environ["RSIS_L2_PARALLEL"])
     return _apply_tuned_state(cfg)
 
 

@@ -1,0 +1,2 @@
+{"ts": 1785793557.5272288, "agent": "l1", "tool": "run_code", "risk": "MEDIUM", "args": "{\"code\": \"print(40+2)\"}", "approved": true, "approval_type": "AUTO_APPROVED"}
+{"ts": 1785793557.5498617, "agent": "l1", "tool": "run_code", "risk": "CRITICAL", "args": "{\"code\": \"that executes os.system('id')\"}", "approved": false, "approval_type": "OPERATOR_DENY"}
