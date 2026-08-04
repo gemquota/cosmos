@@ -72,6 +72,21 @@ Second harvest wave, safety/resilience. Durable patterns:
 4. **Config surface stays env/CLI gated:** `l2.parallel_retries`,
    `RSIS_L2_PARALLEL_RETRIES`, `--parallel-retries`; default 0 = off.
 
+## files.json enrichment (2026-08-04)
+Wiki browser regression fix: the UI shipped Type grouping, Content/Meta
+split, and home metrics that read enriched metadata (`state.meta[f].type` /
+`.title` / `.tags`), but `files.json` was generated as a flat path list — so
+every document collapsed into a single "other" bucket and the Types metric
+was empty. Durable patterns:
+1. **Snapshots must match the UI's data contract.** The browser accepts
+   `[{path, type, title, tags}]`; generators must emit it. Shared
+   `frontmatter.py` keeps the daemon builder (`build_files_index.py`) and
+   the deploy snapshot (`gen-static-data.py`) byte-consistent.
+2. **Index builders must agree on membership + order.** Both generators must
+   skip dot-directories, include self-docs (`mykb-code.md`/`mykb-content.md`),
+   and sort by path — otherwise `gen-static-data.py --check` fails after the
+   daemon regenerates.
+
 ## Related
 - [[wiki/syntheses/nine-loop-stack-implementation|Nine-Loop Stack Implementation & Dashboard Wiring]]
 - [[wiki/syntheses/loop-graph-engineering-wave-2026-08|Loop & Graph Engineering Wave]]

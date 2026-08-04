@@ -157,7 +157,7 @@ mykb/
 | Endpoint | Method | Description |
 |----------|--------|-------------|
 | `/` | GET | Serve markdown files as HTML |
-| `/files.json` | GET | List all .md files (recursive) |
+| `/files.json` | GET | Enriched index of all `.md` files (recursive): path/type/title/tags |
 | `/api/file?path=` | GET | Return raw file content |
 | `/api/search?q=` | GET | TF-IDF search across all docs |
 | `/api/v2/search?q=` | GET | Enhanced TF-IDF search |
