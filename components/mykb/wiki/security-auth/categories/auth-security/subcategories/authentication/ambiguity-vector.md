@@ -2,7 +2,7 @@
 status: "growing"
 type: "entity"
 title: "Ambiguity Vector"
-description: "API — service communication interface, Authentication — identity verification, AWS — Amazon cloud services"
+description: "Ambiguity Vector"
 tags: ["entity", "api", "ast", "auth", "authentication", "aws"]
 timestamp: "2026-07-19T22:41:41Z"
 resource: ""
@@ -34,13 +34,13 @@ Security reviews treat ambiguity vectors as risk because attackers exploit doubl
 
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ambiguityassessment|AmbiguityAssessment]] — scoring ambiguity before acting on it
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/attack-surface|Attack Surface]] — ambiguity vectors widen the surface attackers can probe
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/authentication-10|Authentication 10]] — identity flows where double readings are common
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/authenticatio|Authentication 10]] — identity flows where double readings are common
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied]] — the outcome when ambiguity resolves toward denial
 
 ## Related Entities
 
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automati|Automatic 10]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]

@@ -2,7 +2,7 @@
 status: "growing"
 type: "entity"
 title: "AudioWorklet"
-description: "Android — mobile development platform, API — service communication interface, Authentication — identity verification"
+description: "AudioWorklet"
 tags: ["entity", "android", "api", "ast", "auth", "aws"]
 timestamp: "2026-07-19T22:41:41Z"
 resource: ""

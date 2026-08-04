@@ -21,6 +21,6 @@ The tag pattern — api, bash, cli, css, entity — places FgRX in the shell-too
 - Mark the page `growing` when the definition is confirmed and add the real description and related concepts at that point.
 - Log the resolution decision in the weekly review so the merge history stays auditable.
 ## Related Entities
-- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- Busuj
 - [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
 - [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

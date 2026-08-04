@@ -19,6 +19,6 @@ The tags expose the supporting stack: a backend API serves the data, a database 
 ## Session Context
 Three sessions referenced RadarRenderer, so it is treated as a recurring component rather than a one-off name. This page anchors the radar-visualization thread in the tooling cluster; related entities below are the other shell-cli pages captured in the same session set.
 ## Related Entities
-- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- Busuj
 - [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
 - [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

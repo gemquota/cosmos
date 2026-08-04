@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "Avg Ambiguity"
-description: "API — service communication interface, Authentication — identity verification, Bash — shell scripting language"
+description: "Avg Ambiguity"
 tags: ["entity", "api", "ast", "auth", "bash", "bug"]
 timestamp: "2026-07-19T22:41:42Z"
 status: "growing"

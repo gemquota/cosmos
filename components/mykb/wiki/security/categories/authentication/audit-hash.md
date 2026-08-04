@@ -27,11 +27,11 @@ Integrity checking works because of the avalanche property: changing a single bi
 
 ## Related Entities
 
-- [[wiki/security/categories/authentication/baxdxuoc|Baxdxuoc]]
-- [[wiki/security/categories/authentication/blizkl9u|Blizkl9U]]
-- [[wiki/security/categories/authentication/bmxbydqu|Bmxbydqu]]
+- Baxdxuoc
+- Blizkl9U
+- Bmxbydqu
 - [[wiki/security/categories/authentication/canvasrenderer-2|Canvasrenderer 2]]
-- [[wiki/security/categories/authentication/cbvrzdvz|Cbvrzdvz]]
-- [[wiki/security/categories/authentication/ccdy9tdr|Ccdy9Tdr]]
-- [[wiki/security/categories/authentication/chlxaaiu|Chlxaaiu]]
+- Cbvrzdvz
+- Ccdy9Tdr
+- Chlxaaiu
 - [[wiki/security/categories/authentication/codebase-audit|Codebase Audit]]

@@ -40,4 +40,4 @@ The name also carries a general meaning in dev tooling: bootstrapping is the pro
 - [[wiki/shell-environment/categories/dev-tools/frontend-app-builder-use|Frontend App Builder Use]]
 - [[wiki/shell-environment/categories/dev-tools/hard-rules|Hard Rules]]
 - [[wiki/shell-environment/categories/dev-tools/image-gen|Image Gen]]
-- [[wiki/shell-environment/categories/dev-tools/jul|Jul]]
+- Jul

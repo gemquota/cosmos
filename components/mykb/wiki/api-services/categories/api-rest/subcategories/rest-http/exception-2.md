@@ -33,5 +33,5 @@ An exception is a language-level signal raised when code encounters an error con
 - [[wiki/api-protocols/error-codes-api|Error Codes API]] — coding failures for clients
 - [[wiki/shell-environment/exit-codes-and-error-handling|Exit Codes and Error Handling]] — process-level failures
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/connectionerror|ConnectionError]] — network exception subtype
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/valueerror-10|ValueError]] — invalid value exception
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/valueerro|ValueError]] — invalid value exception
 - [[wiki/dev-tools/debug-logging|Debug Logging]] — logging exception paths

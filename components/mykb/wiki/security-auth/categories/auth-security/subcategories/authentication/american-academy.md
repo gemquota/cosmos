@@ -2,7 +2,7 @@
 status: "growing"
 type: "entity"
 title: "American Academy"
-description: "API — service communication interface, Authentication — identity verification, Bash — shell scripting language"
+description: "American Academy"
 tags: ["entity", "api", "ast", "auth", "authentication", "bash"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""
@@ -45,7 +45,7 @@ Because the session mixed API, Security, and Shell, the most plausible reading i
 ## Related Entities
 
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automati|Automatic 10]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]

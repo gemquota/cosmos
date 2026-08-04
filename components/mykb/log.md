@@ -491,3 +491,31 @@ title: "Bundle Log"
 - **MyKB semantic search**: `search_fusion.py` gains hashed n-gram embeddings (blake2b, 256-dim, signed, L2-normalized) as a third RRF signal; `query --semantic` mode + `/api/v2/search/semantic` endpoint; old indexes degrade gracefully; `.gitignore` covers `search_sem.npy`; index rebuilt (27,893 chunks)
 - **Docs**: RSIS3 README cost-ledger section; search_fusion docstring updated
 - **Synthesis extended**: `wiki/syntheses/ao-agent-os-integration-assessment.md` gains Phase B patterns (persistent ledger replay, two-stage enforcement, client-side token baselines, offline hashed n-grams, checkpoint-manager test hygiene, lock/deque port pitfalls)
+
+## 2026-08-03 (500-stub expansion pass + categorization cleanup)
+- **500 stub expansions (5 parallel workers × 100)**: selected the 500 smallest
+  stubs (≤85 words) across 21 areas into disjoint slices; workers expanded all
+  surviving files to ≥320 body words (min 320, max ~450) with full OKF
+  structure (Summary / Details / Related). One worker hit a provider rate limit
+  at 78/100 and the remaining 22 were completed inline; 4 of its targets
+  (busuj, kksrylf3, game, session) were template junk and archived instead.
+- **Stats impact**: 300+/400+/500+ tiers 1,695/468/50 → 2,174/483/51; total
+  words 1,170,691 → 1,305,666; stubs remaining 3,850 → 3,348.
+- **Deletion review — 21 junk entities archived** to
+  `raw/archive/junk-entities-2026-08d/`: opaque-identifier auto-captured
+  entities (ccdy9tdr, cbvrzdvz, bmxbydqu, blizkl9u, chlxaaiu, baxdxuoc,
+  bamttoyw, bwvqxgoo, bxgubd3, abzzfeuifjsdsrga, bomdwriw-2, lqbukrrrqqquu-2,
+  gdzlbzebp-2, xqkvrxdvvvddddvvv-2, hmg9zr-2, dgsrcgyrd, jul) and template-only
+  entities (busuj, kksrylf3, game, session). 63 files had dead links stripped.
+- **Categorization/nesting fixes**: moved `css-styling/mcp` → `api-protocols/mcp`
+  and `css-styling/skills` → `llm-agents/skills`; archived duplicate
+  `tooling/shell-cli/rest` (canonical `api-protocols/rest-apis`); renamed 61
+  `*-10` collision files to their canonical names (fastapi-10→fastapi,
+  json-10→json, css-10→css, etc.) with all wikilinks retargeted; scrubbed 172
+  stale "API — service communication interface" template descriptions to
+  real summaries; repaired 8 broken frontmatters (1 worker-write + 7 from a
+  description-fix regression, verified via `okf validate`).
+- **Snapshots regenerated**: stats.html (5,271 files, 1,305,666 words,
+  29,814 links, 5,396/35,454 graph), graph.json, stub-index.json (3,348),
+  stub-audit.html (3,326), okf render (6,830 concepts), gen-static-data check OK
+  (6,854 md files). Link check: only the 3 known intentional false positives.

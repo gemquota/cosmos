@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "GPT"
-description: "API — service communication interface, Authentication — identity verification, Bash — shell scripting language"
+description: "GPT"
 tags: ["entity", "acronym", "api", "ast", "auth", "bash"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""

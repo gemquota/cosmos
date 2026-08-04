@@ -16,6 +16,6 @@ The page records the error type and the handling patterns; future sessions shoul
 **Related topics:** api, bash, bug, bun, cli, css
 **Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Related Entities
-- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- Busuj
 - [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
 - [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

@@ -61,4 +61,4 @@ Referenced in 3 session(s):
 - [[wiki/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
 - [[wiki/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
 - [[wiki/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
-- [[wiki/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
+- Dgsrcgyrd

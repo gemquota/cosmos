@@ -22,6 +22,6 @@ The mixed-case spelling and the surrounding identifier-shaped neighbors (long al
 ## Graph Position
 The related-entities list places ZciuOq among identifiers that co-occur in the same sessions, so any future resolution should start by reading those neighbors. Because the token is stable across two sessions, it is likely a real symbol rather than a one-off typo, which raises the value of resolving it. Until then, the page continues to contribute its edges to the knowledge graph without asserting a false definition.
 ## Related Entities
-- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- Busuj
 - [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
 - [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

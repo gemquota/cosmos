@@ -2,7 +2,7 @@
 status: "growing"
 type: "entity"
 title: "BEAT"
-description: "API — service communication interface, AWS — Amazon cloud services, Bash — shell scripting language"
+description: "BEAT"
 tags: ["entity", "acronym", "api", "ast", "aws", "bash"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""

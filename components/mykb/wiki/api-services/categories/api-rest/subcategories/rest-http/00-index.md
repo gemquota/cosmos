@@ -67,7 +67,7 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/asi-2|ASI]] — Artificial Super Intelligence — a hypothetical AI surpassing human intelligence. 00b8d8ce
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ask|ASK]] — Flask
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/asm|ASM]] — WebAssembly
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ast-10|AST]] — Acronym referenced in session c88fb179
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/as|AST]] — Acronym referenced in session c88fb179
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/astr-2|ASTR]] — Acronym referenced in session 7d1e3877
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/at|AT]] — Matplotlib
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/atp|ATP]] — Matplotlib
@@ -92,7 +92,7 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/baby-brain-analysis-interface-2|Baby Brain Analysis Interface]] — Referenced in session 019f0796
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/baby-profile|Baby Profile]] — API — service communication interface, Authentication — identity verification, AWS — Amazon cloud services
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/bad-2|BAD]] — Acronym referenced in session 019f312f
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/bamttoyw|BaMTTOYw]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
+- BaMTTOYw — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/base-2|BASE]] — Acronym referenced in session 019f4bd5
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/basehttprequesthandler|BaseHTTPRequestHandler]] — HTTP (HyperText Transfer Protocol)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/bases|BASES]] — Android — mobile development platform, API — service communication interface, Bash — shell scripting language
@@ -112,7 +112,7 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/biol-2|BIOL]] — Acronym referenced in session 38797263
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/biological-naturalism|Biological Naturalism]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/blank-expression|Blank Expression]] — Express.js
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/blinkmacsystemfont-10|BlinkMacSystemFont]] — Referenced in session 673e6311
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/blinkmacsystemfon|BlinkMacSystemFont]] — Referenced in session 673e6311
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/blue-2|BLUE]] — Acronym referenced in session b64e57b1
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/bold-2|BOLD]] — Acronym referenced in session 019ef2c6
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/bolditalic-2|BoldItalic]] — Referenced in session dd8c2400
@@ -127,8 +127,8 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/buildid|BuildID]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/but|BUT]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/buy|BUY]] — Android — mobile development platform, API — service communication interface, AWS — Amazon cloud services
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/bwvqxgoo|BwVqxgOO]] — Go (Golang)
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/bxgubd3|BxgUbd3]] — D3.js
+- BwVqxgOO — Go (Golang)
+- BxgUbd3 — D3.js
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/calledprocesserror-2|CalledProcessError]] — Error
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/cata-2|CATA]] — Acronym referenced in session 38797263
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/cd|CD]] — Acronym referenced in session 7a06f562
@@ -145,7 +145,7 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/cond-2|COND]] — Acronym referenced in session d77d6658
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/connectionerror|ConnectionError]] — Error
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/context-efficiency|Context Efficiency]] — Context
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/conversationhistory-10|ConversationHistory]] — Referenced in session d3507371
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/conversationhistor|ConversationHistory]] — Referenced in session d3507371
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/convexauthstate|ConvexAuthState]] — Authentication
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/count-2|COUNT]] — Acronym referenced in session 37ab37aa
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/crisismonitor|CrisisMonitor]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
@@ -168,7 +168,7 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/exception-2|Exception]] — Referenced in session dd75982d
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/executive-ontology-shift|Executive Ontology Shift]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/eye-2|EYE]] — Acronym referenced in session 66f8ea88
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/fastapi-10|FastAPI]] — Referenced in session adc6df02
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/fastap|FastAPI]] — Referenced in session adc6df02
 -  — Referenced in session 019f2765
 -  — IP (Internet Protocol)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/force-2|FORCE]] — Acronym referenced in session 412ac095
@@ -178,7 +178,7 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/gce-2|GCE]] — Gemini Context Engineer — a system/role for managing Gemini AI agent context and 7a06f562
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/gemini-bridge|Gemini Bridge]] — RubyGems
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/gemma|GEMMA]] — RubyGems
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/gemmaharness-10|GemmaHarness]] — RubyGems
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/gemmaharnes|GemmaHarness]] — RubyGems
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/generate-stencil|Generate Stencil]] — API — service communication interface, Authentication — identity verification, Backend — server-side logic
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/getting-started|Getting Started]] — API — service communication interface, Authentication — identity verification, Bash — shell scripting language
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/goalgenerator|GoalGenerator]] — Go (Golang)
@@ -194,7 +194,7 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - IN — Kotlin
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/ingestioncontext-2|IngestionContext]] — Context
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/intentroutingresult|IntentRoutingResult]] — Intent
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/json-10|JSON]] — Acronym referenced in session 81c5e6d2
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/jso|JSON]] — Acronym referenced in session 81c5e6d2
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/jsonl|JSONL]] — JSON (JavaScript Object Notation)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/keyerror|KeyError]] — Error
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/last-2|LAST]] — Elasticsearch
@@ -212,7 +212,7 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/oscillatornode|OscillatorNode]] — Android — mobile development platform, API — service communication interface, AWS — Amazon cloud services
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/performing-test|Performing Test]] — Android — mobile development platform, API — service communication interface, Backend — server-side logic
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/perspectivemesh|PerspectiveMesh]] — Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/pgid-10|PGID]] — Acronym referenced in session 05473df8
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/pgi|PGID]] — Acronym referenced in session 05473df8
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/pid-2|PID]] — Acronym referenced in session 019f2765
 - PM — npm (Node Package Manager)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/prestige-particles|Prestige Particles]] — REST (Representational State Transfer)
@@ -221,7 +221,7 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/questionqualityindex|QuestionQualityIndex]] — API — service communication interface, Authentication — identity verification, AWS — Amazon cloud services
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/raw-output-2|Raw Output]] — Referenced in session 6cc3ed28
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/referenceerror-2|ReferenceError]] — Error
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/repomapper-10|RepoMapper]] — Referenced in session 3ebbffaf
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/repomappe|RepoMapper]] — Referenced in session 3ebbffaf
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/restoring-directories|Restoring Directories]] — REST (Representational State Transfer)
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/serving-flask|Serving Flask]] — Flask
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/simplehttp-2|SimpleHTTP]] — HTTP (HyperText Transfer Protocol)
@@ -232,5 +232,5 @@ Part of [[wiki/index|Wiki Index]]. 222 pages.
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/testing-preparation|Testing Preparation]] — Testing
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/testschema|TestSchema]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/thought-stream-2|Thought Stream]] — Referenced in session f323f1aa
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/user-input-10|User Input]] — Referenced in session e3700b7f
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/valueerror-10|ValueError]] — Error
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/user-inpu|User Input]] — Referenced in session e3700b7f
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/valueerro|ValueError]] — Error

@@ -1,14 +1,12 @@
 ---
 type: "entity"
 title: "BETA"
-status: "growing"
-description: "API — service communication interface, Bash — shell scripting language"
+description: "A beta release or beta phase of software preceding general availability"
 tags: ["entity", "acronym", "api", "ast", "bash", "bug"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""
+status: "growing"
 ---
-
-
 ## Beta
 
 BETA appears in 1 session(s) categorized as API, Debugging, Shell. Related topics: acronym, api, bash.

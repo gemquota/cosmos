@@ -2,7 +2,7 @@
 type: "entity"
 title: "ARGS"
 status: "growing"
-description: "Android — mobile development platform, API — service communication interface, Authentication — identity verification"
+description: "ARGS"
 tags: ["entity", "acronym", "android", "api", "ast", "auth"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""

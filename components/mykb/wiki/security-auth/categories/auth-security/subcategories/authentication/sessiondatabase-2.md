@@ -1,27 +1,35 @@
 ---
 type: "entity"
 title: "SessionDatabase"
-description: "Database"
-tags: ["android", "api", "ast", "auth", "authentication", "babel", "entity"]
-timestamp: "2026-07-19T22:41:39Z"
 resource: ""
 ---
+description: "The store that persists sessions and their state across requests and restarts"
+tags: ["android", "api", "ast", "auth", "authentication", "entity", "sessions", "database"]
+timestamp: "2026-07-19T22:41:42Z"
 
-## Sessiondatabase 2
+# SessionDatabase
 
-Database — an organized collection of structured data. Sessions show relational and NoSQL patterns including schema design, migration scripts, and query optimization.
+## Summary
+A session database is the store that persists sessions and their state so that requests can be associated with a user across time, restarts, and replicas. It matters because in-memory session state breaks under restarts, load balancing, and multi-node deployments. A proper session store makes authentication and state durable and scalable, so it is a critical piece of the identity stack.
 
-**Related topics:** android, api, auth, authentication, babel
+## Details
+- **Definition** — a session database maps session identifiers to state such as user identity, expiry, and custom data.
+- **Consistency** — sessions are read and written frequently, so the store must balance consistency, latency, and availability.
+- **Expiry** — sessions need TTLs and cleanup so abandoned sessions do not accumulate into unbounded storage.
+- **Revocation** — invalidating sessions on logout, password change, or compromise requires fast targeted deletes.
+- **Scaling** — sharding by session ID and replicating for durability keep the store healthy as session volume grows.
+- **Failover** — losing the session store logs everyone out; replication and recovery plans protect availability.
+- **Common failure modes** — unbounded growth, stale sessions surviving revocation, and hot keys when one user has many sessions.
+- **Worked example** — a login service writes a session row with a TTL; every authenticated request reads it, and logout deletes it before the TTL.
+- **Practical relevance** — a durable session store is the foundation of reliable, scalable authentication.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Sessiondatabase 2
-
-## Related Entities
-
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+- **Sessions vs tokens** — the store may hold full session state or only references, depending on whether state lives server-side or in the token.
+- **Monitoring** — tracking store latency, size, and hit rates reveals when sessions become a bottleneck.
+- **Security** — session records are sensitive; access, retention, and logging must follow the same rules as credentials.
+## Related
+- [[wiki/data-storage/sessionization-and-activity-windows|Sessionization and Activity Windows]] — session boundaries
+- [[wiki/identity/session-management|Session Management]] — lifecycle and policy
+- [[wiki/data-storage/logical-replication|Logical Replication]] — durable copies
+- [[wiki/data-storage/cache-eviction-policies|Cache Eviction Policies]] — expiry mechanics
+- [[wiki/api-protocols/session-invalidation|Session Invalidation]] — revocation
+- [[wiki/data-storage/backup-restore-and-pitr-revisited|Backup and Restore]] — recovery

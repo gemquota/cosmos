@@ -31,6 +31,6 @@ SpT3saZ8 is an opaque token recorded from API, frontend, and shell sessions. Its
 - [[wiki/llm-agents/agent-logs|Agent Logs]] — the transcripts that carry the evidence
 - [[wiki/api-protocols/api-keys|API Keys]] — opaque credentials with a similar shape
 ## Related Entities
-- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- Busuj
 - [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
 - [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

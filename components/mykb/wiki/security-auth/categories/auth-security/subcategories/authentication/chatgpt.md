@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "ChatGPT"
-description: "Android — mobile development platform, API — service communication interface, Authentication — identity verification"
+description: "ChatGPT"
 tags: ["entity", "android", "api", "ast", "auth", "authentication"]
 timestamp: "2026-07-19T22:41:40Z"
 resource: ""

@@ -33,5 +33,5 @@ DoubleSide describes geometry or materials rendered on both faces — front and 
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/draw-error|Draw Error]] — when faces vanish
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/mockcanvas|MockCanvas]] — testing draw paths
 - [[wiki/web-platforms/canvas-2d|Canvas 2D]] — 2D drawing surface
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/bxgubd3|BxgUbd3]] — visualization rendering
+- BxgUbd3 — visualization rendering
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/frontend-logic|Frontend Logic]] — client-side rendering

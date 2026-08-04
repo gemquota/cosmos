@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "Avg Rounds"
-description: "API — service communication interface, Authentication — identity verification, Bash — shell scripting language"
+description: "Avg Rounds"
 tags: ["entity", "api", "ast", "auth", "bash", "bug"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""

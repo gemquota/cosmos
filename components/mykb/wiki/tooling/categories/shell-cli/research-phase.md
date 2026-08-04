@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "Research Phase"
-description: "API — service communication interface, Bash — shell scripting language, CDN — content delivery network"
+description: "Research Phase"
 tags: ["entity", "api", "ast", "bash", "cdn", "cli"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""
@@ -18,6 +18,6 @@ The phase also produces the exit criteria for the next phase: what must be known
 Research output should be explicit: a written record of the options, evidence, and open questions, so the next phase starts from a shared understanding rather than a fresh guess.
 **Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Related Entities
-- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- Busuj
 - [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
 - [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

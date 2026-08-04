@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-03T12:51Z",
+ "generated": "2026-08-04T00:00Z",
  "components": {
   "mykb": {
    "files": 6877,
@@ -9,7 +9,7 @@
    "files": 292
   },
   "rsis3": {
-   "files": 79
+   "files": 81
   }
  },
  "telemetry": {

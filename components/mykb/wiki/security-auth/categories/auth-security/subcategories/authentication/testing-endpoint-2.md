@@ -1,27 +1,35 @@
 ---
 type: "entity"
 title: "Testing Endpoint"
-description: "Testing"
-tags: ["android", "api", "ast", "auth", "authentication", "aws", "bash", "entity"]
-timestamp: "2026-07-19T22:41:40Z"
 resource: ""
 ---
+description: "Exercising HTTP endpoints with realistic requests and assertions"
+tags: ["android", "api", "ast", "auth", "authentication", "aws", "bash", "entity", "testing", "http"]
+timestamp: "2026-07-19T22:41:42Z"
 
-## Testing Endpoint 2
+# Testing Endpoint
 
-Testing — software validation to ensure correctness. Sessions show unit tests (pytest/jest), integration tests, and end-to-end testing patterns.
+## Summary
+Testing an endpoint means exercising its HTTP surface with realistic requests and asserting on status, headers, and bodies. It matters because endpoints are contracts: every change in behavior is visible to clients. Systematic endpoint tests catch regressions before users do and document the API's behavior for the whole team.
 
-**Related topics:** android, api, auth, authentication, aws, bash
+## Details
+- **Definition** — endpoint tests send requests through the real HTTP stack and verify the full response, including status, headers, and payload.
+- **Method and path** — tests should cover each method and path combination, including variants with and without parameters.
+- **Auth cases** — unauthenticated, authenticated, and wrong-scope requests belong in the suite because authorization is a common failure point.
+- **Payload validation** — request and response bodies should be validated against schemas, not just eyeballed.
+- **Error paths** — 4xx and 5xx responses deserve the same test attention as success, including validation failures and missing resources.
+- **Fixtures** — deterministic fixtures for users, data, and tokens keep tests repeatable across environments.
+- **Common failure modes** — testing only happy paths, asserting on status without checking the body, and tests coupled to exact response ordering.
+- **Worked example** — a profile endpoint test posts credentials, gets a token, fetches a profile, and asserts both the 200 response body and the 401 case without a token.
+- **Practical relevance** — endpoint tests are the fastest comprehensive check that an API still honors its contract.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Testing Endpoint 2
-
-## Related Entities
-
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+- **Contract stability** — endpoint tests double as living documentation of the API's behavior for clients and reviewers.
+- **Data isolation** — each test should create its own fixtures so ordering and parallel runs do not interfere.
+- **Speed** — endpoint tests should stay fast enough to run in every commit, making contract regressions visible immediately.
+## Related
+- [[wiki/testing/api-testing|API Testing]] — the broader practice
+- [[wiki/testing/authentication-testing|Authentication Testing]] — credential flows
+- [[wiki/testing/end-to-end-testing|End-to-End Testing]] — full-stack coverage
+- [[wiki/testing/contract-testing|Contract Testing]] — client-server agreement
+- [[wiki/api-protocols/http-status-codes|HTTP Status Codes]] — response semantics
+- [[wiki/testing/test-configuration-management|Test Configuration Management]] — environment setup

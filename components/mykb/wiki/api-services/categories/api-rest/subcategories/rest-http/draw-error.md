@@ -32,6 +32,6 @@ A draw error is a rendering failure in which drawing operations produce wrong, p
 - [[wiki/web-platforms/canvas-2d|Canvas 2D]] — the drawing surface
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/mockcanvas|MockCanvas]] — testing draw logic
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/debugoverlay|DebugOverlay]] — visualizing draw state
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/bxgubd3|BxgUbd3]] — D3.js rendering
+- BxgUbd3 — D3.js rendering
 - [[wiki/testing/characterization-testing|Characterization Testing]] — locking rendering behavior
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/frontend-logic|Frontend Logic]] — the drawing code location

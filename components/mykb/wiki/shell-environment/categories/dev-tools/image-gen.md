@@ -40,4 +40,4 @@ One session recorded Image Gen under Debugging, Frontend, and Shell. This page a
 - [[wiki/shell-environment/categories/dev-tools/evolver|Evolver]]
 - [[wiki/shell-environment/categories/dev-tools/frontend-app-builder-use|Frontend App Builder Use]]
 - [[wiki/shell-environment/categories/dev-tools/hard-rules|Hard Rules]]
-- [[wiki/shell-environment/categories/dev-tools/jul|Jul]]
+- Jul

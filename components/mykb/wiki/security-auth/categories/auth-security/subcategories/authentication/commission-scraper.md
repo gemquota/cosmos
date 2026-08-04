@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "Commission Scraper"
-description: "API — service communication interface, Authentication — identity verification, Bash — shell scripting language"
+description: "Commission Scraper"
 tags: ["entity", "api", "auth", "authentication", "bash", "cli"]
 timestamp: "2026-07-19T22:41:43Z"
 resource: ""
@@ -26,7 +26,7 @@ The page records the pattern so future sessions can attach the specific source, 
 ## Related Entities
 
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automati|Automatic 10]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]

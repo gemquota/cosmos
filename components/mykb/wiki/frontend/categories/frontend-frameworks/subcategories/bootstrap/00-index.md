@@ -35,4 +35,4 @@ Part of [[wiki/index|Wiki Index]]. 24 pages.
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/recursive-self|Recursive Self]] — API — service communication interface, Backend — server-side logic, Bash — shell scripting language
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/touchinput-2|TouchInput]] — Referenced in session 019ebdeb
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/webglrenderer-2|WebGLRenderer]] — WebGL (Web Graphics Library)
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/you-10|You]] — Referenced in session 4150d09b
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/yo|You]] — Referenced in session 4150d09b

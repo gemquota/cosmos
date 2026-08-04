@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "ACID"
-description: "Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface"
+description: "ACID"
 tags: ["entity", "acronym", "android", "angular", "api", "ast"]
 timestamp: "2026-07-19T22:41:41Z"
 status: "growing"

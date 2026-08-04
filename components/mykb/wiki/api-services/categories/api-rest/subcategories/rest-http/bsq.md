@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "BSQ"
-description: "API — service communication interface, Backend — server-side logic, Bash — shell scripting language"
+description: "BSQ"
 tags: ["entity", "acronym", "api", "ast", "backend", "bash"]
 timestamp: "2026-07-19T22:41:41Z"
 status: "growing"

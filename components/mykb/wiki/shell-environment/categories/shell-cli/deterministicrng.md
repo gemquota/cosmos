@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "DeterministicRNG"
-description: "Android — mobile development platform, API — service communication interface, Bash — shell scripting language"
+description: "The takeaway is that determinism is a contract between the generator, its seed, and the platforms that consume it. Tests and simulations that depend on reproduc"
 tags: ["entity", "android", "api", "ast", "bash", "cli"]
 timestamp: "2026-07-19T22:41:42Z"
 status: "growing"

@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "BridgedSession"
-description: "API — service communication interface, Authentication — identity verification, Backend — server-side logic"
+description: "BridgedSession"
 tags: ["entity", "api", "ast", "auth", "backend", "bash"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""

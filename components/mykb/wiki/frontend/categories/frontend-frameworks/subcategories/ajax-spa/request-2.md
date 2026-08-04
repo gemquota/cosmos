@@ -1,27 +1,38 @@
 ---
 type: "entity"
 title: "Request"
-description: "Referenced in session 0118cc5d"
-tags: ["ajax", "api", "ast", "auth", "authentication", "bootstrap", "bug", "cli", "cloud", "dom", "entity", "spa"]
+description: "Request: HTTP request lifecycle and handling in SPAs"
+tags: ["ajax", "api", "ast", "auth", "authentication", "bootstrap", "bug", "cli", "cloud", "dom", "entity", "spa", "http"]
 timestamp: "2026-07-19T22:41:39Z"
 resource: ""
 ---
 
-## Request 2
+# Request
 
-Request — an HTTP or API request object. Represents incoming network requests in server-side contexts with methods, headers, and body parsing.
+## Summary
 
-**Related topics:** ajax, api, auth, authentication, bootstrap, bug, cli, cloud
+Request is the ajax-spa entity for HTTP requests in single-page applications: how clients construct, send, and handle them. Request handling spans methods, headers, bodies, caching, and errors. It matters because every SPA feature ultimately depends on reliable request behavior. Requests are the contract between the SPA and its backend; both sides must honor it.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Request 2
+## Details
 
-## Related Entities
+- **Definition** — An HTTP request carries a method, target, headers, and optional body from client to server, and receives a response.
+- **Methods** — GET, POST, PUT, PATCH, and DELETE map to read, create, replace, update, and remove semantics.
+- **Headers** — Content types, auth tokens, and cache directives shape how both sides interpret the exchange.
+- **Bodies** — Serialization formats and size limits govern the payload; validation catches malformed data early.
+- **Errors** — Status codes signal outcomes; clients must distinguish retryable from permanent failures. Clients should also surface the failed request context, such as URL and status, so users and logs can trace the failure.
+- **Worked example** — A login form POSTs credentials, stores the returned token, and retries once on a network failure.
+- **Failure modes** — Missing credentials, unhandled timeouts, and responses whose shape drifts from the client model break SPAs.
+- **Practical relevance** — Request abstractions, like serialized queues, exist to make these interactions predictable.
+- **Abort handling** — Cancelled requests must not update state after unmount, preventing race conditions in the UI.
+- **Retry policy** — Retries belong on idempotent requests, with backoff, and must not duplicate side effects.
+- **Security headers** — Consistent headers for auth, content type, and cross-origin settings keep requests valid and safe.
+- **Interceptors** — Centralizing headers, logging, and error handling in interceptors keeps individual call sites simple.
 
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]
+## Related
+
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/serialized-request-queue|Serialized Request Queue]] — ordering request execution
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecure Request Warning]] — mixed-content request hazards
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/interaction-locks|Interaction Locks]] — guarding UI during requests
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/00-index|AJAX SPA Index]] — cluster index page
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/captcha-detected|Captcha Detected]] — blocked request handling
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/context-updates|Context Updates]] — state after responses

@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "Beautiful Expensive"
-description: "API — service communication interface, Authentication — identity verification, AWS — Amazon cloud services"
+description: "Beautiful Expensive"
 tags: ["entity", "api", "ast", "auth", "aws", "backend"]
 timestamp: "2026-07-19T22:41:42Z"
 status: "growing"
