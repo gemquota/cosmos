@@ -36,4 +36,4 @@ EAGLE is a speculative decoding method that accelerates LLM inference by draftin
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/gce-2|GCE]] — managing model context
 - [[wiki/testing/agent-evaluations|Agent Evaluations]] — measuring accelerated inference
 - [[wiki/concepts/calibration|Calibration]] — verifying output quality
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/gemmaharnes|GemmaHarness]] — running model evaluations
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/gemmaharness|GemmaHarness]] — running model evaluations

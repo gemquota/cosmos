@@ -18,7 +18,7 @@ Validation usually runs in two layers: the client provides immediate feedback th
 
 Date-of-birth is also sensitive personal information. Privacy regulations such as GDPR treat it as personal data, which affects consent, retention, and access controls. Many products derive age from the stored date rather than storing age itself, since age changes and is less precise. Age gating and eligibility checks depend on accurate calculation from the stored value.
 
-Localization affects how the date is displayed and entered: some locales use day-month-year, others month-day-year, and some use non-Gregorian calendars. Bad handling produces the kind of validation errors documented in [[wiki/frontend/categories/css-styling/importerro|Importerror 10]], and good handling keeps the field consistent across the whole [[wiki/web-platforms/00-index|Css Styling]] toolchain.
+Localization affects how the date is displayed and entered: some locales use day-month-year, others month-day-year, and some use non-Gregorian calendars. Bad handling produces the kind of validation errors documented in [[wiki/frontend/categories/css-styling/importerror|Importerror 10]], and good handling keeps the field consistent across the whole [[wiki/web-platforms/00-index|Css Styling]] toolchain.
 
 Automated tests that exercise leap years, timezone boundaries, and locale-specific formats catch the majority of date-handling defects before they reach users.
 
@@ -28,11 +28,11 @@ From a data-processing view, the field is a textbook case of the validate, norma
 
 ## Related Entities
 
-- [[wiki/frontend/categories/css-styling/importerro|Importerror 10]]
-- [[wiki/frontend/categories/css-styling/cs|Css 10]]
+- [[wiki/frontend/categories/css-styling/importerror|Importerror 10]]
+- [[wiki/frontend/categories/css-styling/css|Css 10]]
 - [[wiki/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
 - [[wiki/frontend/categories/css-styling/database-2|Database 2]]
 - [[wiki/frontend/categories/css-styling/display-2|Display 2]]
-- [[wiki/frontend/categories/css-styling/htm|Html 10]]
+- [[wiki/frontend/categories/css-styling/html|Html 10]]
 - [[wiki/frontend/categories/css-styling/reference-2|Reference 2]]
 - [[wiki/frontend/categories/css-styling/telemetry-2|Telemetry 2]]

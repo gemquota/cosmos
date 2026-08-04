@@ -15,7 +15,7 @@ Part of [[wiki/index|Wiki Index]]. 23 pages.
 - [[wiki/shell-environment/categories/shell-cli/abbreviated-activity-history-2|Abbreviated Activity History]] — Activity
 - ADSR — Acronym referenced in session 019ebd47
 - [[wiki/shell-environment/categories/shell-cli/beautifulsoup4-2|BeautifulSoup4]] — Referenced in session 0c0a9b0f
-- [[wiki/shell-environment/categories/shell-cli/bp|BPM]] — Acronym referenced in session 019f4b9a
+- [[wiki/shell-environment/categories/shell-cli/bpm|BPM]] — Acronym referenced in session 019f4b9a
 - [[wiki/shell-environment/categories/shell-cli/cellstate|CellState]] — Android — mobile development platform, API — service communication interface, Bash — shell scripting language
 - [[wiki/shell-environment/categories/shell-cli/cellsystem|CellSystem]] — Android — mobile development platform, API — service communication interface, Bash — shell scripting language
 - [[wiki/shell-environment/categories/shell-cli/celltype|CellType]] — Android — mobile development platform, API — service communication interface, Bash — shell scripting language
