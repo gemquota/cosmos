@@ -106,6 +106,8 @@ def cmd_run(args: argparse.Namespace) -> int:
     telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
     if args.parallel is not None:
         CONFIG.l2.parallel_candidates = args.parallel
+    if getattr(args, "parallel_retries", None) is not None:
+        CONFIG.l2.parallel_retries = args.parallel_retries
     ledger = default_ledger()
     if args.budget_cap is not None:
         CONFIG.budget_cap_usd = args.budget_cap
@@ -677,6 +679,8 @@ def main() -> int:
                        help="Hard LLM cost cap in USD for this session (0=unlimited)")
     p_run.add_argument("--parallel", type=int, default=None,
                        help="Fan out N parallel L2 candidates (DAG multi-agent)")
+    p_run.add_argument("--parallel-retries", type=int, default=None,
+                       help="Per-candidate retry budget for parallel L2 (0=fail fast)")
     p_run.set_defaults(func=cmd_run)
 
     p_evolve = sub.add_parser("evolve", help="Run L3 evolution cycle")

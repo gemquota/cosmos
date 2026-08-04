@@ -28,10 +28,13 @@ from __future__ import annotations
 
 import concurrent.futures
 import logging
+import random
 import time
 from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any, Callable, Optional
+
+from rsis.error_classifier import is_retryable
 
 logger = logging.getLogger(__name__)
 
@@ -55,6 +58,8 @@ class TaskNode:
     status: TaskStatus = TaskStatus.PENDING
     result: Any = None
     error: str | None = None
+    attempts: int = 0                # completed executions of this node
+    retry_at: float = 0.0           # earliest wall-clock time for a retry
     started_at: float = 0.0
     finished_at: float = 0.0
 
@@ -67,10 +72,17 @@ class DAGWorkerPool:
     """Concurrent DAG dispatcher: N worker threads + dynamic routing."""
 
     def __init__(self, num_workers: int = 4,
-                 on_event: Optional[Callable[[dict], None]] = None):
+                 on_event: Optional[Callable[[dict], None]] = None,
+                 max_retries: int = 0,
+                 retry_base_delay_s: float = 0.5,
+                 retry_max_delay_s: float = 30.0):
         self.num_workers = max(1, num_workers)
         self.tasks: dict[str, TaskNode] = {}
         self.on_event = on_event      # optional traceability hook
+        self.max_retries = max(0, int(max_retries))        # 0 = fail fast
+        self.retry_base_delay_s = max(0.0, retry_base_delay_s)
+        self.retry_max_delay_s = max(self.retry_base_delay_s,
+                                     retry_max_delay_s)
 
     # ------------------------------------------------------------------ #
     def add_task(self, task_id: str, role: str, payload: dict[str, Any],
@@ -107,9 +119,13 @@ class DAGWorkerPool:
             while remaining:
                 # --- fan-out: dispatch every currently-ready task ------- #
                 dispatch_made = False
+                waiting_backoff = False
                 for tid in list(remaining):
                     task = self.tasks[tid]
                     if tid in queued or not self._is_ready(task):
+                        continue
+                    if task.retry_at > time.time():
+                        waiting_backoff = True      # keep the deadlock guard quiet
                         continue
                     failed_dep = next(
                         (d for d in task.depends_on
@@ -122,6 +138,7 @@ class DAGWorkerPool:
                         continue
                     task.status = TaskStatus.RUNNING
                     task.started_at = time.time()
+                    task.retry_at = 0.0
                     queued[tid] = pool.submit(executor, task)
                     dispatch_made = True
 
@@ -136,14 +153,28 @@ class DAGWorkerPool:
                     try:
                         task.result = future.result()
                         task.status = TaskStatus.COMPLETED
+                        remaining.discard(tid)
                     except Exception as exc:
-                        task.status = TaskStatus.FAILED
                         task.error = str(exc)
-                        logger.warning("DAG task %s (%s) failed: %s",
-                                       tid, task.role, exc)
+                        retrying = (task.attempts < self.max_retries
+                                    and is_retryable(exc))
+                        if retrying:
+                            task.attempts += 1
+                            delay = self._retry_delay(task.attempts)
+                            task.status = TaskStatus.PENDING
+                            task.retry_at = time.time() + delay
+                            logger.warning(
+                                "DAG task %s (%s) failed (%d/%d); retrying "
+                                "in %.2fs: %s", tid, task.role,
+                                task.attempts, self.max_retries, delay, exc)
+                            self._emit_retry(task, exc, delay)
+                        else:
+                            task.status = TaskStatus.FAILED
+                            logger.warning("DAG task %s (%s) failed: %s",
+                                           tid, task.role, exc)
+                            remaining.discard(tid)
                     self._emit(task)
                     del queued[tid]
-                    remaining.discard(tid)
 
                 if not remaining:
                     break
@@ -154,7 +185,7 @@ class DAGWorkerPool:
                     continue
 
                 # --- deadlock guard: nothing dispatchable, nothing in flight
-                if not dispatch_made and not queued:
+                if not dispatch_made and not queued and not waiting_backoff:
                     stuck = sorted(t for t in remaining)
                     raise RuntimeError(
                         f"DAG deadlock detected — unresolvable "
@@ -170,8 +201,30 @@ class DAGWorkerPool:
                                  if t.status == TaskStatus.COMPLETED),
                 "failed": sum(1 for t in self.tasks.values()
                               if t.status == TaskStatus.FAILED),
+                "retries": sum(t.attempts for t in self.tasks.values()),
             })
         return self.tasks
+
+    # ------------------------------------------------------------------ #
+    def _retry_delay(self, attempt: int) -> float:
+        """Exponential backoff with full jitter, capped (AO-style)."""
+        exp = self.retry_base_delay_s * (2 ** (attempt - 1))
+        return min(self.retry_max_delay_s, random.uniform(0.0, exp))
+
+    # ------------------------------------------------------------------ #
+    def _emit_retry(self, task: TaskNode, exc: Exception,
+                    delay: float) -> None:
+        """Push a retry traceability event (if wired)."""
+        if self.on_event is not None:
+            self.on_event({
+                "kind": "dag_task_retrying",
+                "task_id": task.task_id,
+                "role": task.role,
+                "attempt": task.attempts,
+                "max_retries": self.max_retries,
+                "delay_s": round(delay, 3),
+                "error": str(exc),
+            })
 
     # ------------------------------------------------------------------ #
     def _emit(self, task: TaskNode) -> None:
@@ -224,6 +277,28 @@ def run_demo() -> int:
     assert all(statuses[f"coder-{i}"] == "COMPLETED" for i in range(3))
     assert statuses["reviewer"] == "COMPLETED"
     print("  reviewer result:", pool.tasks["reviewer"].result)
+
+    # Retry budget: transient failures retry with backoff; fatal abort.
+    rp = DAGWorkerPool(num_workers=2, max_retries=2,
+                       retry_base_delay_s=0.01, retry_max_delay_s=0.05)
+    rp.add_task("flaky", "flaky", {})
+    rp.add_task("fatal", "fatal", {})
+    attempts = {"flaky": 0, "fatal": 0}
+
+    def run_retry(task):
+        attempts[task.task_id] += 1
+        if task.task_id == "flaky" and attempts["flaky"] < 3:
+            raise TimeoutError("connection timed out")
+        if task.task_id == "fatal":
+            raise ValueError("invalid_api_key")
+        return "ok"
+
+    rp.run_pipeline(run_retry)
+    assert rp.tasks["flaky"].status == TaskStatus.COMPLETED,         "transient failure should recover via retry"
+    assert rp.tasks["fatal"].status == TaskStatus.FAILED,         "fatal failure must not be retried"
+    print(f"  retry: flaky recovered after {attempts['flaky']} runs "
+          f"({rp.tasks['flaky'].attempts} retries); "
+          f"fatal aborted without retry (attempts={attempts['fatal']})")
 
     # Deadlock guard: circular dependency must raise.
     bad = DAGWorkerPool(num_workers=2)
