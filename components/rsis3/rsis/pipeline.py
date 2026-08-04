@@ -122,11 +122,12 @@ class DAGWorkerPool:
                 waiting_backoff = False
                 for tid in list(remaining):
                     task = self.tasks[tid]
-                    if tid in queued or not self._is_ready(task):
+                    if tid in queued:
                         continue
-                    if task.retry_at > time.time():
-                        waiting_backoff = True      # keep the deadlock guard quiet
-                        continue
+                    # Failed dependencies fail the dependent outright. This
+                    # must run before readiness (which only accepts
+                    # COMPLETED deps) so dependents settle instead of
+                    # tripping the deadlock guard.
                     failed_dep = next(
                         (d for d in task.depends_on
                          if self.tasks[d].status == TaskStatus.FAILED), None)
@@ -135,6 +136,11 @@ class DAGWorkerPool:
                         task.error = f"dependency failed: {failed_dep}"
                         self._emit(task)
                         remaining.discard(tid)
+                        continue
+                    if not self._is_ready(task):
+                        continue
+                    if task.retry_at > time.time():
+                        waiting_backoff = True      # keep the deadlock guard quiet
                         continue
                     task.status = TaskStatus.RUNNING
                     task.started_at = time.time()
