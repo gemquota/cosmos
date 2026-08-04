@@ -9,6 +9,11 @@ exists on the deployed site. Run from the repo root, then commit.
 import json, os, subprocess, sys, datetime
 from pathlib import Path
 
+# Shared OKF frontmatter parser (enriched files.json entries).
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                'components/mykb/.wiki-daemon'))
+from frontmatter import entry_for  # noqa: E402
+
 RSIS3 = 'components/rsis3'
 
 def tracked(prefix=None):
@@ -27,7 +32,15 @@ md = sorted((p[len(prefix):] if p.startswith(prefix) else p)
 # --check validates the committed snapshots without rewriting them.
 write = '--check' not in sys.argv
 if write:
-    json.dump(md, open('components/mykb/files.json', 'w'), indent=1)
+    entries = []
+    for rel in md:
+        try:
+            text = open('components/mykb/' + rel, encoding='utf-8',
+                        errors='ignore').read()
+        except OSError:
+            text = ''
+        entries.append(entry_for(rel, text))
+    json.dump(entries, open('components/mykb/files.json', 'w'), indent=1)
 
 allf = [p for p in tracked() if visible(p) and os.path.exists(p)]
 def count(prefix):
@@ -189,8 +202,11 @@ print(f'loops.json: {len(loops_out)} loops (runs: '
 # Validation mode for CI/deploy: exit non-zero if the snapshot is inconsistent.
 if '--check' in sys.argv:
     on_disk = json.load(open('components/mykb/files.json'))
-    bad = [p for p in on_disk if p.startswith('components/') or not os.path.exists('components/mykb/' + p)]
-    ok = on_disk == md and not bad
+    on_disk_paths = ([e.get('path', '') for e in on_disk]
+                     if on_disk and isinstance(on_disk[0], dict) else on_disk)
+    bad = [p for p in on_disk_paths
+           if p.startswith('components/') or not os.path.exists('components/mykb/' + p)]
+    ok = on_disk_paths == md and not bad
     eco2 = json.load(open(f'{RSIS3}/dashboard/ecosystem.json'))
     ok = ok and eco2['components']['mykb']['md'] == len(md) and eco2['components']['mykb']['files'] == count('components/mykb')
     # loops.json: all ten ids present with required keys and consistent statuses

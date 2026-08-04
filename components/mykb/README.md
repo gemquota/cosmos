@@ -35,6 +35,8 @@ Guide]] first: it explains the mental model, the layers, and how to navigate.
 - `daily/`: daily notes
 - `graph.json`: static knowledge-graph export (nodes + edges)
 - `files.json`, `wiki/index.json`: static indexes for hosting without the daemon
+  (`files.json` is enriched: `{path, type, title, tags}` per file, driving the
+  Content/Meta split, Type grouping, and home metrics)
 
 ## Operations
 

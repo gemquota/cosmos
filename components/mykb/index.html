@@ -1046,9 +1046,10 @@ body {
       <div class="control-group">
         <span class="control-name">View</span>
         <div class="seg" id="meta-seg" role="group" aria-label="Show content or meta pages">
-          <button type="button" class="seg-btn" id="meta-seg-content" data-meta="0" title="Wiki knowledge pages">Content</button>
-          <button type="button" class="seg-btn" id="meta-seg-meta" data-meta="1" title="System guidance: syntheses, protocols, ops, templates">Meta</button>
+          <button type="button" class="seg-btn" id="meta-seg-content" data-meta="0" title="Wiki knowledge pages">&#128218; Content</button>
+          <button type="button" class="seg-btn" id="meta-seg-meta" data-meta="1" title="System guidance: syntheses, protocols, ops, templates">&#9881; Meta</button>
         </div>
+        <div class="meta-hint" id="meta-hint">Wiki knowledge</div>
       </div>
     </div>
     <div class="sidebar-tabs" role="tablist" aria-label="Navigate">
@@ -2025,6 +2026,8 @@ function syncMetaToggle() {
   metaContentBtn.classList.toggle('active', !showMeta);
   metaMetaBtn.classList.toggle('active', showMeta);
   updateSearchScope();
+  var hint = document.getElementById('meta-hint');
+  if (hint) hint.textContent = showMeta ? 'System guidance' : 'Wiki knowledge';
 }
 function setMetaMode(on) {
   if (on === showMeta) return;

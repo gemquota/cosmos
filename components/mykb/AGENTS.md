@@ -97,7 +97,7 @@ Dashboard URL: `http://127.0.0.1:8826`
 | Endpoint | Method | Purpose |
 |----------|--------|---------|
 | `/` | GET | Serves `index.html` (SPA viewer) |
-| `/files.json` | GET | Lists all `.md` files in the bundle |
+| `/files.json` | GET | Enriched index of all `.md` files: `{path, type, title, tags}` |
 | `/api/file?path=<rel>` | GET | Serves raw markdown content |
 | `/api/stats` | GET | System statistics |
 | `/api/v2/search/hybrid?q=` | GET | Hybrid search (BM25 + TF-IDF) |
