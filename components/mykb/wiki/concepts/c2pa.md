@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "C2PA"
 description: "The Coalition for Content Provenance and Authenticity standard"
 tags: ["c2pa", "provenance", "standards"]

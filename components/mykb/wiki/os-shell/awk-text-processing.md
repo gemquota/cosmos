@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Awk Text Processing"
 description: "The awk language for pattern-scanning and field-oriented processing of text files"
 tags: ["awk", "text", "scripts", "fields"]

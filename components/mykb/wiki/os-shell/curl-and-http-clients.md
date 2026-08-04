@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "curl & HTTP Clients"
 description: "Request flags, headers, and scripting"
 tags: ["curl", "http", "cli", "rest"]

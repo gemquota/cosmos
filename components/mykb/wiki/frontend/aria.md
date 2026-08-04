@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "ARIA"
 description: "Roles, states, and properties for accessibility semantics"
 tags: [accessibility", "aria", "a11y", "semantics", "web-platform"]

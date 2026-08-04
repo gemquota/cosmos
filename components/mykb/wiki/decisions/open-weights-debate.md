@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Open Weights Debate"
 description: "The contested tradeoffs of releasing model weights"
 tags: ["open-weights", "debate", "policy"]

@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Integrity"
 description: "Integrity: correctness and consistency of data enforced by constraints, transactions, and validation"
 tags: ["entity", "cli", "ide", "orm", "data-integrity"]

@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Explaining Consciousness"
 description: "Explaining consciousness: easy problems, the hard problem, and candidate explanatory frameworks"
 tags: ["ast", "entity", "guid", "ide", "orm", "spa", "consciousness"]

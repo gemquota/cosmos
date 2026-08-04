@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Child Safety and AI"
 description: "Protecting children from AI-enabled harm"
 tags: ["child-safety", "safety", "policy"]

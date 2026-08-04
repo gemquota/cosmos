@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Kubernetes DNS & CoreDNS"
 description: "Cluster DNS resolution, headless services, and CoreDNS plugins"
 tags: ["kubernetes", "dns", "coredns", "service-discovery"]

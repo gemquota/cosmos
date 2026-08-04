@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "tcpdump"
 description: "Capture syntax, filters, and common patterns"
 tags: ["tcpdump", "capture", "filters", "cli"]

@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Particle Simulation"
 description: "Particle System"
 tags: ["android", "angular", "api", "ast", "aws", "bash", "cli", "cloud", "css", "entity"]

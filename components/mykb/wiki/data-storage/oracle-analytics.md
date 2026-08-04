@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Oracle Analytics"
 description: "Oracle's data warehouse and analytics stack"
 tags: ["oracle", "analytics", "warehouse", "exadata"]

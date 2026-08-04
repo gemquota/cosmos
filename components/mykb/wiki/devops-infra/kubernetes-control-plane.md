@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 hub: true
 title: "Kubernetes Control Plane"
 description: "The API, scheduler, and controllers that drive cluster state"

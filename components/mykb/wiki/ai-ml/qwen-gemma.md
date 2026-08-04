@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Qwen and Gemma"
 description: "Open-weight model families from Alibaba and Google with strong multilingual and small-model variants"
 tags: ["models", "open-weights", "multilingual"]

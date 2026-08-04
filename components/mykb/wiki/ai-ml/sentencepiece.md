@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "SentencePiece"
 description: "A library for language-independent subword tokenization (BPE or Unigram), used by many multilingual models"
 tags: ["sentencepiece", "tokenization", "libraries"]

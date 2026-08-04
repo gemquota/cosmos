@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Kafka Connect and Connector Pools"
 description: "The framework for running Kafka source/sink connectors at scale"
 tags: ["kafka-connect", "connectors", "kafka", "integration"]

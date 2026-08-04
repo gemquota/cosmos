@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Kubernetes"
 description: "Portable container-orchestration platform for deploying, scaling, and managing containerized workloads"
 tags: ["kubernetes", "containers", "orchestration", "devops", "cloud"]

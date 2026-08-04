@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "MASS"
 description: "Multi-agent system: multiple agents cooperating or competing toward goals"
 tags: ["entity", "acronym", "agents", "multi-agent", "systems"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Azure Event Hubs"
 description: "Azure's high-throughput event ingestion service with Kafka compatibility"
 tags: ["event-hubs", "azure", "event-streaming", "ingestion"]

@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Analyzing"
 description: "IDE — code editor environment, Logging — application logging, Monitoring — system observability"
 tags: ["entity", "ide", "logging", "monitoring", "orm", "rest"]

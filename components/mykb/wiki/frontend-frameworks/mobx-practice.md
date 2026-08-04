@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "MobX in Practice"
 description: "Observable-based state with automatic reactions"
 tags: ["mobx", "state", "observables", "frontend"]

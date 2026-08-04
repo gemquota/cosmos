@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "AWS Lambda"
 description: "AWS's Functions-as-a-Service: event-driven functions scaling to zero with per-invocation billing"
 tags: ["aws", "lambda", "serverless", "faas", "cloud"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "OpenRouter and Prompt Caching"
 description: "Multi-provider API gateway plus automatic caching of shared prompt prefixes to cut cost and latency"
 tags: ["caching", "routing", "cost"]

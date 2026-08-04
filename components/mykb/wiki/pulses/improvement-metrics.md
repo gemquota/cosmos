@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "pulse"
 title: "Improvement Metrics"
 description: "The quantities used to judge whether a system is getting better"
 tags: ["metrics", "improvement", "evaluation"]

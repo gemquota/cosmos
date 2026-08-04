@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Anthropic API"
 description: "Anthropic's hosted API for Claude models, with emphasis on safety, long contexts, and tool use"
 tags: ["anthropic-api", "apis", "claude", "llm"]

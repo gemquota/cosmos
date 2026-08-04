@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "TVM and LLVM"
 description: "Compiler infrastructure used to generate and optimize machine code for ML workloads"
 tags: ["tvm-llvm", "compilers", "ml", "optimization"]

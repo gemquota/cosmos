@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Bootstrapping Compilers"
 description: "Compilers that compile their own compiler"
 tags: ["bootstrapping", "compilers", "self-hosting", "pl"]

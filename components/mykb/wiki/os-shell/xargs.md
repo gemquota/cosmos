@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "xargs"
 description: "Building command lines, -0, -n, -I, and batching"
 tags: ["xargs", "command-line", "batching", "pipes"]

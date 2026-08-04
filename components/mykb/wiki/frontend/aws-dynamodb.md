@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "AWS DynamoDB"
 description: "Serverless key-value and document database with single-digit-millisecond latency at scale"
 tags: ["aws", "dynamodb", "nosql", "database", "serverless"]

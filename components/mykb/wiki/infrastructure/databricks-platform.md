@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Databricks Platform"
 description: "Unified lakehouse platform built on Spark with Delta Lake and managed ML"
 tags: ["databricks", "spark", "lakehouse", "delta"]

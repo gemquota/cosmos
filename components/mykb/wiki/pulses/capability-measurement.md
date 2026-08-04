@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "pulse"
 title: "Capability Measurement"
 description: "Methods for estimating what an AI system can actually do"
 tags: ["capabilities", "measurement", "evals"]

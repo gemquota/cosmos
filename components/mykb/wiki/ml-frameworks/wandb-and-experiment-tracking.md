@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "W&B and Experiment Tracking"
 description: "Platforms that log metrics, artifacts, and hyperparameters for training experiments"
 tags: ["tracking", "experiments", "mlops"]

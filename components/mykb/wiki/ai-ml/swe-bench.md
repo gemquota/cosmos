@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "SWE-bench"
 description: "Benchmark that evaluates models on resolving real GitHub issues with full repositories"
 tags: ["benchmarks", "code", "agents"]

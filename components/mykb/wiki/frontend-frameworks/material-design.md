@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Material Design"
 description: "Google open design system for adaptive, expressive interfaces across Android, web, and Flutter"
 tags: ["design", "material", "ui", "design-system", "theming"]

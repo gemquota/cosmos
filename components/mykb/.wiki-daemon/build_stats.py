@@ -488,7 +488,7 @@ code{background:#0d1424;border:1px solid #1e293b;border-radius:4px;padding:1px 5
 <script>
 const STATS = __STATS_JSON__;
 const PALETTE = ['#a78bfa','#2dd4bf','#fbbf24','#f472b6','#60a5fa','#34d399','#fb923c','#a3e635','#38bdf8','#e879f9'];
-const COLORS = {growing:'#a78bfa', stub:'#64748b', stable:'#2dd4bf', none:'#475569'};
+const COLORS = {growing:'#a78bfa', stub:'#fbbf24', stable:'#2dd4bf', none:'#94a3b8', completed:'#34d399', draft:'#fb923c', active:'#38bdf8', seed:'#e879f9'};
 
 function fmt(n){ return Number(n).toLocaleString('en-US'); }
 function short(s){ return s.length > 28 ? '…' + s.slice(-27) : s; }
@@ -611,7 +611,7 @@ function charts(){
     options:{indexAxis:'y', plugins:{legend:{display:false}}, scales:{x:{beginAtZero:true}}}});
 
   const st = STATS.status;
-  new Chart(document.getElementById('status-c'), {type:'doughnut', data:{labels:st.map(s=>s.label), datasets:[{data:st.map(s=>s.count), backgroundColor:st.map(s=>COLORS[s.label]||'#475569')}]},
+  new Chart(document.getElementById('status-c'), {type:'doughnut', data:{labels:st.map(s=>s.label), datasets:[{data:st.map(s=>s.count), backgroundColor:st.map((s,i)=>COLORS[s.label]||PALETTE[i%PALETTE.length])}]},
     options:{plugins:{legend:{position:'right'}}}});
 
   const ty = STATS.types;
@@ -642,7 +642,7 @@ function charts(){
   ]}, options:{scales:{y:{beginAtZero:true}}}});
 
   const sm = STATS.status_by_month;
-  const smColors = {growing:'#a78bfa', stub:'#64748b', stable:'#2dd4bf', other:'#475569'};
+  const smColors = {growing:'#a78bfa', stub:'#fbbf24', stable:'#2dd4bf', other:'#94a3b8'};
   new Chart(document.getElementById('sm-c'), {type:'bar', data:{labels:sm.labels, datasets:sm.datasets.map(d=>({label:d.label, data:d.counts, backgroundColor:smColors[d.label]||'#475569'}))},
     options:{scales:{x:{stacked:true}, y:{stacked:true,beginAtZero:true}}}});
 
@@ -677,7 +677,7 @@ function charts(){
   const sc = STATS.scatter;
   new Chart(document.getElementById('scatter-c'), {type:'scatter', data:{datasets:[
     {label:'growing', data:sc.filter(p=>p.s==='growing').map(p=>({x:p.x,y:p.y})), backgroundColor:'#a78bfa', pointRadius:2.5},
-    {label:'stub', data:sc.filter(p=>p.s==='stub').map(p=>({x:p.x,y:p.y})), backgroundColor:'#64748b', pointRadius:2.5},
+    {label:'stub', data:sc.filter(p=>p.s==='stub').map(p=>({x:p.x,y:p.y})), backgroundColor:'#fbbf24', pointRadius:2.5},
     {label:'other', data:sc.filter(p=>p.s!=='growing'&&p.s!=='stub').map(p=>({x:p.x,y:p.y})), backgroundColor:'#2dd4bf', pointRadius:2.5},
   ]}, options:{scales:{x:{title:{display:true,text:'body words'}}, y:{title:{display:true,text:'wikilinks'}}}}});
 }

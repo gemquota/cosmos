@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Phi and Command R"
 description: "Microsoft Phi small models and Cohere Command R enterprise models with specialized trade-offs"
 tags: ["models", "small-models", "enterprise"]

@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Missing Content"
 resource: ""
 ---

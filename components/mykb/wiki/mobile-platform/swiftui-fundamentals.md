@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "SwiftUI Fundamentals"
 description: "Apple's declarative UI framework: views, state, modifiers, and the SwiftUI data flow"
 tags: ["swiftui", "apple", "ios", "declarative", "ui"]

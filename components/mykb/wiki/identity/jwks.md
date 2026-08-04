@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "JWKS"
 description: "JSON Web Key Sets publishing the public keys used to verify signed JWTs"
 tags: ["jwks", "jwt", "keys", "oidc"]

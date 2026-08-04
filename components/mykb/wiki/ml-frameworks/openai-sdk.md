@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "OpenAI SDK"
 description: "Official client libraries for calling OpenAI chat, completion, embedding, and assistant APIs"
 tags: ["api", "sdk", "openai"]

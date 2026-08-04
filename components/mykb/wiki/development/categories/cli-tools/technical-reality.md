@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Technical Reality"
 description: "Technical reality: verifying actual system behavior through execution and measurement"
 tags: ["entity", "ast", "bug", "cli", "edge", "ide", "verification"]

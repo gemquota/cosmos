@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "SAML Assertions"
 description: "XML statements issued by identity providers that carry authentication, attribute, and authorization data"
 tags: ["saml", "assertions", "xml", "sso", "federation"]

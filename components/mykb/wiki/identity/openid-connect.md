@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "OpenID Connect"
 description: "Identity layer on OAuth 2.0 that issues signed ID tokens describing the authenticated user"
 tags: ["oidc", "openid-connect", "identity", "oauth2", "sso"]

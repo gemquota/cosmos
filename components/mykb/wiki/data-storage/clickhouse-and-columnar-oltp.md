@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "ClickHouse and Columnar OLTP"
 description: "Ultra-fast columnar analytics for high-volume queries"
 tags: ["clickhouse", "columnar", "olap", "performance"]

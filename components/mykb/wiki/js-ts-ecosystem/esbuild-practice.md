@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "esbuild in Practice"
 description: "Extremely fast JavaScript bundler written in Go"
 tags: ["esbuild", "bundlers", "javascript", "tooling"]

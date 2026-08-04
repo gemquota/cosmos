@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "ZFS Features & Snapshots"
 description: "Copy-on-write pools, checksums, snapshots, and scrubs"
 tags: ["zfs", "filesystem", "snapshots", "storage"]

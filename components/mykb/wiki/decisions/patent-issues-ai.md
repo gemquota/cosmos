@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Patent Issues for AI"
 description: "How patents apply to AI inventions"
 tags: ["patents", "ai", "legal"]

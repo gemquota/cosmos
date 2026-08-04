@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Consciousness Inquiry"
 description: "Consciousness inquiry: structured investigation of subjective experience and its mechanisms"
 tags: ["entity", "ide", "orm", "consciousness", "inquiry"]

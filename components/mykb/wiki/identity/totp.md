@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "TOTP"
 description: "Time-based one-time passwords generated from a shared secret and the current time"
 tags: ["totp", "otp", "mfa", "rfc6238"]

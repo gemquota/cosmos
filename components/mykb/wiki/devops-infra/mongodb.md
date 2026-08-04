@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "MongoDB"
 description: "Document-oriented NoSQL database storing flexible BSON documents with horizontal scaling"
 tags: ["mongodb", "nosql", "document-db", "database", "data"]

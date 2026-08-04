@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Node2Vec"
 description: "Random-walk method learning node embeddings that balance homophily and structural roles"
 tags: ["node2vec", "graph-embeddings", "random-walk", "representation"]

@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Simulation Laws"
 description: "The rules and invariants that govern a simulation's behavior"
 tags: ["entity", "simulation", "rules", "models", "fidelity"]

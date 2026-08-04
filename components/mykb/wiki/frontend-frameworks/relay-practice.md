@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Relay in Practice"
 description: "Colocated-fragment GraphQL client from Meta"
 tags: ["graphql", "relay", "fragments", "frontend"]

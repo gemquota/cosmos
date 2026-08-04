@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Cognitive"
 description: "Cognitive: cognitive load and mental ergonomics in CLI and IDE tooling"
 tags: ["entity", "ast", "bug", "cli", "edge", "ide", "cognitive-load"]

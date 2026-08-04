@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "React Hook Form"
 description: "Uncontrolled form state with registration-based hooks"
 tags: ["react", "forms", "validation", "frontend"]

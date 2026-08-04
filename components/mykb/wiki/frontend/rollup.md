@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Rollup"
 description: "ES-module-first bundling with strong tree shaking"
 tags: [rollup", "bundlers", "es-modules", "build-tools", "javascript"]

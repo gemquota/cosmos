@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Mistral"
 description: "Mistral AI's open-weight and commercial LLM family, known for efficiency and strong small models"
 tags: ["mistral", "llm", "open-weights", "models"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Azure Synapse Analytics"
 description: "Microsoft's unified analytics service spanning SQL pools, Spark, and Pipelines"
 tags: ["synapse", "azure", "warehouse", "lakehouse"]

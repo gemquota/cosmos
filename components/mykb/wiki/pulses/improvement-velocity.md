@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "pulse"
 title: "Improvement Velocity"
 description: "How fast a system's measured quality increases over time"
 tags: ["improvement", "metrics", "velocity"]

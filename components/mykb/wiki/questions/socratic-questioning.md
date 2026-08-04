@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Socratic Questioning"
 description: "Dialectical questioning that draws out and examines assumptions"
 tags: ["questioning", "dialogue", "critical-thinking"]

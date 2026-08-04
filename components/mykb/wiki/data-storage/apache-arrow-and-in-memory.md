@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Apache Arrow and In-Memory Analytics"
 description: "A columnar in-memory format for fast data interchange and compute"
 tags: ["arrow", "in-memory", "columnar", "dataframes"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "DeepSeek"
 description: "DeepSeek's open-weight LLM family, notable for competitive frontier-level performance and efficiency innovations"
 tags: ["deepseek", "llm", "open-weights", "models"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Test Set Discipline"
 description: "The practice of keeping test data untouched until final evaluation"
 tags: ["test-set", "discipline", "evals"]

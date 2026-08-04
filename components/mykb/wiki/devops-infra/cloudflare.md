@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Cloudflare"
 description: "CDN, DNS, edge-compute, and security platform sitting in front of web properties"
 tags: ["cloudflare", "cdn", "dns", "edge", "security"]

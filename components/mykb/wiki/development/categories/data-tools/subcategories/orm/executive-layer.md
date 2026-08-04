@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Executive Layer"
 description: "CLI — command-line tooling, IDE — code editor environment, ORM — object-relational mapping"
 tags: ["entity", "cli", "ide", "orm"]

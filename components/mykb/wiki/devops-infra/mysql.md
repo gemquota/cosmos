@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "MySQL"
 description: "Widely deployed open-source relational database powering many web applications"
 tags: ["mysql", "database", "sql", "relational", "data"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Prisma"
 description: "Type-safe TypeScript ORM with schema-first modeling, migrations, and query client generation"
 tags: ["prisma", "orm", "typescript", "database", "node"]

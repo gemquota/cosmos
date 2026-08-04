@@ -50,10 +50,36 @@ them.
    (sqlite-vec, docker, fastapi) degrade gracefully but are untested in this
    environment.
 
+## Phase D1 implementation patterns (2026-08-04)
+Second harvest wave, safety/resilience. Durable patterns:
+1. **Retry = classification + budget + terminal-attempt success.** A retry
+   policy is three things: an error classifier (transient/rate-limit vs
+   fatal), a bounded budget, and a success definition based on the terminal
+   attempt — otherwise a recovered retry still reports failure. RSIS3 now
+   has `rsis/error_classifier.py` (`classify_error` / `classify_error_text` /
+   `is_retryable`) and L1 enforces `l1.max_retries` (fatal fails fast;
+   recovered retries return success).
+2. **Worker pools take retry budgets, not retry logic.** `DAGWorkerPool`
+   gained `max_retries` + `retry_base_delay_s`/`retry_max_delay_s`
+   (exponential backoff, full jitter), classifies failures at the pool
+   boundary, emits `dag_task_retrying` events, and keeps the deadlock guard
+   backoff-aware. Default `max_retries=0` preserves fail-fast behavior.
+3. **Text-path classification needs syntax markers.** AO only treats
+   SyntaxError as fatal via `isinstance`; stringified tool errors (L1's
+   `ToolCall.error`) miss it. Extend the text path with
+   syntaxerror/syntax error/invalid syntax tokens so fail-fast works on
+   real tool output.
+4. **Config surface stays env/CLI gated:** `l2.parallel_retries`,
+   `RSIS_L2_PARALLEL_RETRIES`, `--parallel-retries`; default 0 = off.
+
 ## Related
 - [[wiki/syntheses/nine-loop-stack-implementation|Nine-Loop Stack Implementation & Dashboard Wiring]]
 - [[wiki/syntheses/loop-graph-engineering-wave-2026-08|Loop & Graph Engineering Wave]]
 - [[wiki/syntheses/cosmos-dashboard-mykb-integration|Cosmos Dashboard & MyKB Integration Patterns]]
+- [[wiki/syntheses/parallel-agent-acquisition|Parallel Agent Acquisition & Writer Reliability]]
+- [[wiki/agent-systems/agent-pipelines|Agent Pipelines]]
+- [[wiki/agent-systems/agent-prioritization|Agent Prioritization]]
+- [[wiki/agent-systems/queueing-agents|Queueing Agents]]
 - [[wiki/llm-agents/approval-gates|Approval Gates]]
 - [[wiki/llm-agents/human-in-the-loop|Human in the Loop]]
 - [[wiki/llm-agents/handoff-protocol|Handoff Protocol]]
@@ -131,3 +157,37 @@ RSIS3, and offline semantic retrieval in the mykb search engine.
    telemetry port deadlocked (snapshot() re-acquiring its own Lock via
    budget_remaining()) and crashed on `deque[-20:]` — both caught only by
    running the full e2e path, not unit-level smoke checks.
+
+## Phase C implementation patterns (2026-08-04)
+The third harvest wave: AO's scheduler + DAG worker pool, wired into RSIS3's
+L2 as an optional parallel session. Durable patterns:
+1. **Fan-out is bounded by the existing budget, not a new one.** Parallel
+   mode takes `n = clamp(parallel_candidates, 2, budget.max_iterations)` and
+   each coder still calls `budget.tick()`; the persistent cost ledger and its
+   pre-flight `guard_budget` gate every evaluator call exactly as in
+   sequential mode (a refused call becomes a FAIL candidate — fail-closed,
+   no partial writes).
+2. **The DAG fan-in is the immutable evaluator, not the pool.** Parallelism
+   must never bypass the verification gate: N coders fan out, the fan-in task
+   routes every candidate through the same `EvaluatorClient.evaluate()` and
+   only a PASS candidate is applied. The pool only parallelises generation;
+   acceptance policy is unchanged.
+3. **Re-dispatch after settle, then judge deadlock.** A DAG loop that checks
+   "nothing in flight and nothing dispatchable → deadlock" immediately after
+   collecting settled futures is wrong: a completed dependency can unlock new
+   tasks in the same pass. The pool must re-run the fan-out pass after any
+   settle before raising; the guard then only fires on genuinely stuck
+   graphs (circular/missing deps).
+4. **Scheduler guards protect the review wave.** Fan-in reviews run through
+   `AgentScheduler` (depth cap + directed-edge cycle detection) so a
+   repeating coder↔reviewer hand-off aborts the branch instead of spinning;
+   a guard-rejected review fails closed to a FAIL candidate.
+5. **Telemetry must expose the DAG shape.** `on_event` bridges per-task
+   status/latency (`dag_task`) plus a `dag_complete` summary into the
+   existing telemetry stream, and the session records `l2_parallel_start`
+   with the candidate count — the dashboards can then distinguish parallel
+   fan-out from sequential attempts without new surfaces.
+6. **CLI flag overrides config; env var feeds config.** `--parallel N`
+   overrides `L2Config.parallel_candidates` at `cmd_run` time; `RSIS_L2_PARALLEL`
+   feeds the same field at load. Default stays `0` (sequential), so the
+   behaviour is opt-in and reversible.

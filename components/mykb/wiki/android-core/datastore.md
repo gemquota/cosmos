@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "DataStore"
 description: "Jetpack DataStore: coroutine-based preferences and proto storage"
 tags: ["android", "datastore", "storage", "kotlin"]

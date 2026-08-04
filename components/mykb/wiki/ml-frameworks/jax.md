@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "JAX"
 description: "Google's numerical library with autodiff and XLA compilation, popular for ML research and TPU training"
 tags: ["jax", "deep-learning", "framework", "research"]

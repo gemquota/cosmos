@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Unknown Unknowns"
 description: "Absences of knowledge so complete we cannot even formulate them"
 tags: ["uncertainty", "ignorance", "risk"]

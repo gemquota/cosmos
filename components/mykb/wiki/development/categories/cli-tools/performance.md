@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Performance"
 description: "Performance"
 tags: ["entity", "ast", "bug", "cli", "edge", "ide"]

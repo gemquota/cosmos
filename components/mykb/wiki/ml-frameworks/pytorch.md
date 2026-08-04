@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "PyTorch"
 description: "Meta's Python deep-learning framework, the de facto standard for training and serving LLMs"
 tags: ["pytorch", "deep-learning", "framework"]

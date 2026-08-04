@@ -1,5 +1,5 @@
 ---
-type: "synthesis"
+type: "concept"
 title: "mykb Research Report: Personal LLM Wiki Systems — Methodologies, Architectures & Integration Blueprint"
 description: "Comprehensive research report analyzing personal knowledge database systems, LLM-native wikis, graph-based RAG, and related methodologies — with an implementation blueprint for mykb."
 tags: ["mykb", "research", "knowledge-graph", "rag", "integration", "architecture", "synthesis"]

@@ -1,6 +1,6 @@
 ---
 status: "growing"
-type: "entity"
+type: "concept"
 title: "Sovereign Cognitive Platform"
 description: "Referenced in session c7ffa5f3"
 tags: ["ast", "bug", "cli", "edge", "entity", "ide", "orm"]

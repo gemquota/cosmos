@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Semantic Kernel"
 description: "Microsoft SDK for building AI applications with plugins, planners, and memory across languages"
 tags: ["microsoft", "sdk", "agents"]

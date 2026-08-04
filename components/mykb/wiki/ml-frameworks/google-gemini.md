@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Google Gemini"
 description: "Google's hosted API for Gemini models via the Generative Language API and Vertex AI"
 tags: ["google-gemini", "apis", "gemini", "llm"]

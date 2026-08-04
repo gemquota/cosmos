@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Ollama"
 description: "A local-first runtime for serving open-weight models with a simple API and CLI"
 tags: ["ollama", "local-models", "inference", "llm"]

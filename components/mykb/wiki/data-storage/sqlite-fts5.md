@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "SQLite FTS5"
 description: "Full-text search extension built into SQLite with BM25 ranking"
 tags: ["sqlite", "fts5", "full-text", "embedded"]

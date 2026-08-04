@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Flink Stream Processing"
 description: "A stateful, fault-tolerant engine for true streaming"
 tags: ["flink", "streaming", "state", "exactly-once"]

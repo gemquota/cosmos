@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Systemd Units"
 description: "The declarative service, socket, timer, and mount definitions supervised by systemd"
 tags: ["systemd", "services", "init", "supervision"]

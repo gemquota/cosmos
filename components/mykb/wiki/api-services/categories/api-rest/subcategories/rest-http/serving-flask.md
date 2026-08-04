@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Serving Flask"
 description: "Running Flask applications in production behind a WSGI server"
 tags: ["entity", "flask", "wsgi", "deployment", "backend"]

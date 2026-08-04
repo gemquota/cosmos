@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "systemd-journal"
 description: "journald, journalctl, and structured logs"
 tags: ["systemd", "journald", "journalctl", "logs"]

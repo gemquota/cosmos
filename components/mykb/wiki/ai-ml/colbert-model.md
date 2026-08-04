@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "ColBERT Model"
 description: "Retrieval model that scores query-document pairs with token-level late interaction instead of a single vector"
 tags: ["retrieval", "embeddings", "ranking"]

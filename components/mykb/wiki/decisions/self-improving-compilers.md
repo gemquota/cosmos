@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Self-Improving Compilers"
 description: "Compilers that use their own output to optimize themselves"
 tags: ["compilers", "self-improvement", "bootstrapping", "pl"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Versioning of Selves"
 description: "Tracking identity and continuity across successive self-modifications"
 tags: ["versioning", "identity", "self-modification", "continuity"]

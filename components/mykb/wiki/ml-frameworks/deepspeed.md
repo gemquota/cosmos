@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "DeepSpeed"
 description: "Microsoft library for distributed training and inference of very large models"
 tags: ["distributed", "training", "scaling"]

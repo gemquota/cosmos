@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "dbt Environments and Jobs"
 description: "Managing dbt projects across dev, staging, and prod"
 tags: ["dbt", "environments", "jobs", "analytics-engineering"]

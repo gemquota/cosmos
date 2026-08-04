@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "RDF"
 description: "W3C data model representing facts as subject-predicate-object triples"
 tags: ["rdf", "linked-data", "triples", "semantic-web"]

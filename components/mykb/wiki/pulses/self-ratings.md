@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "pulse"
 title: "Self-Ratings"
 description: "Informal judgments a system makes about its own quality"
 tags: ["self-evaluation", "ratings", "metacognition"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "rsync"
 description: "Incremental sync, remote copies, and key flags"
 tags: ["rsync", "sync", "backup", "remote"]

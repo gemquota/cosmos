@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Prestige Particles"
 description: "Granular reputation or achievement signals awarded and accumulated in a system"
 tags: ["entity", "reputation", "gamification", "signals", "rewards"]

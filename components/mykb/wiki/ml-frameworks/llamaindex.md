@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "LlamaIndex"
 description: "A data framework for connecting LLMs to enterprise and personal data via indexing and retrieval"
 tags: ["llamaindex", "rag", "retrieval", "framework"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Flutter Rendering"
 description: "How Flutter paints pixels: Dart widgets, RenderObjects, layers, and the engine"
 tags: ["flutter", "rendering", "dart", "mobile", "ui"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "vLLM"
 description: "A high-throughput inference and serving engine for LLMs, optimized with PagedAttention"
 tags: ["vllm", "inference", "serving", "llm"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "SWC Compiler"
 description: "Rust-based TypeScript and JavaScript transpiler"
 tags: ["swc", "compilers", "typescript", "tooling"]

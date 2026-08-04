@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Terraform"
 description: "Declarative infrastructure-as-code tool for provisioning cloud resources reproducibly"
 tags: ["terraform", "iac", "devops", "cloud", "infrastructure"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Auto-Update Mechanisms"
 description: "Systems that update themselves in production"
 tags: ["auto-update", "self-maintenance", "systems", "reliability"]

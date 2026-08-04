@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "FAISS"
 description: "Facebook's library for efficient similarity search and clustering of dense vectors"
 tags: ["faiss", "ann", "similarity-search", "library"]

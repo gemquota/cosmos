@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Reality"
 description: "Reality: grounding work in actual system state rather than assumptions"
 tags: ["entity", "ast", "bug", "cli", "edge", "ide", "ground-truth"]

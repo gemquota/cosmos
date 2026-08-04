@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "urql in Practice"
 description: "Lightweight, exchange-based GraphQL client"
 tags: ["graphql", "urql", "frontend", "libraries"]

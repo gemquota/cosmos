@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Delta Lake and Merge Operations"
 description: "ACID table format with transactional MERGE on object storage"
 tags: ["delta-lake", "merge", "acid", "lakehouse"]

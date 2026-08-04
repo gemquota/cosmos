@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Caddy"
 description: "Web server and reverse proxy with automatic HTTPS via Let's Encrypt by default"
 tags: ["caddy", "webserver", "reverse-proxy", "tls", "go"]

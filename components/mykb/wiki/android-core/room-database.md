@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Room Database"
 description: "SQLite object mapper with compile-time query validation and Flow support"
 tags: ["android", "room", "sqlite", "database"]

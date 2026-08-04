@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Spark: Batch and Streaming"
 description: "Unified large-scale processing on one engine"
 tags: ["spark", "batch", "streaming", "distributed-compute"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "runc & crun"
 description: "Low-level OCI runtime implementations"
 tags: ["oci", "runc", "crun", "containers"]
