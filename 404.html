@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Not found</title>
+<style>body{font-family:sans-serif;background:#0f1118;color:#e0e0e0;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0}.box{text-align:center;padding:2rem}h1{font-size:1.5rem;margin:0 0 .5rem}a{color:#7b2fff;text-decoration:none}a:hover{color:#a855f7}p{color:#888;font-size:.9rem}</style>
+</head>
+<body>
+<div class="box" id="msg" style="display:none">
+<h1>404</h1>
+<p>Page not found.</p>
+<p><a href="./">Return to the COSMOS dashboard</a></p>
+</div>
+<script>
+(function () {
+  var p = location.pathname;
+  if (p.indexOf('/components/mykb/') === -1) {
+    var idx = p.indexOf('/mykb/');
+    if (idx !== -1) {
+      location.replace(p.slice(0, idx) + '/components/mykb/' + p.slice(idx + 6));
+      return;
+    }
+  }
+  document.getElementById('msg').style.display = 'block';
+})();
+</script>
+</body>
+</html>
