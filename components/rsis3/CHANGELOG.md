@@ -1,4 +1,27 @@
 
+## [0.4.2] — 2026-08-04
+
+### Added
+- Phase D1 (Agent OS wave 2): `rsis/error_classifier.py` — transient /
+  rate-limit / fatal classification (`classify_error`, `classify_error_text`,
+  `is_retryable`), ported from AO and stdlib-only
+- `DAGWorkerPool` retry support (`rsis/pipeline.py`): per-task retry budget
+  (`max_retries`, default 0 = fail fast), exponential backoff with full
+  jitter (base/max delay caps), retryable-vs-fatal gating via the error
+  classifier, `dag_task_retrying` traceability events, retry-aware deadlock
+  guard, and retry counts in `dag_complete`
+- L1 retry policy: `l1.max_retries` is now enforced — consecutive retry
+  beats stop at the budget, and non-retryable (fatal) tool failures fail
+  fast instead of spinning retry beats
+- Parallel L2: `l2.parallel_retries` config (env `RSIS_L2_PARALLEL_RETRIES`,
+  CLI `--parallel-retries`) feeds the DAG pool's per-candidate retry budget
+
+### Verified
+- `python -m rsis pipeline` demo now asserts retry recovery (transient
+  failure recovers after budgeted retries) and fatal fail-fast
+- All changed modules byte-compile; error classifier semantics match the AO
+  reference (`kernel/error_classifier.py`)
+
 ## [0.4.1] — 2026-08-01
 
 ### Added

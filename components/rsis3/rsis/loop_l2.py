@@ -198,7 +198,8 @@ class L2ImprovementLoop:
         ))
 
         pool = DAGWorkerPool(num_workers=min(n, 4),
-                             on_event=self._dag_event)
+                             on_event=self._dag_event,
+                             max_retries=self.config.parallel_retries)
         pool.add_task("planner", "planner", {"goal": goal})
         for i in range(n):
             pool.add_task(f"coder-{i}", "coder", {"attempt": i + 1},

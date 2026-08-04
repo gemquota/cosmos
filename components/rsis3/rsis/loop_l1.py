@@ -12,6 +12,7 @@ from typing import Any, Callable, Optional
 
 from rsis.checkpoint import CheckpointManager
 from rsis.config import CONFIG
+from rsis.error_classifier import is_retryable
 from rsis.telemetry import TelemetryCollector, TelemetryEvent
 from rsis.tools import ToolManager, default_tool_manager
 
@@ -121,7 +122,13 @@ class L1ActionLoop:
             context["last_result"] = call.result
             context["last_error"] = call.error
 
-        success = not any(c.error for c in tool_calls)
+        # A recovered retry is a success: the terminal attempt decides.
+        # Tasks with no tool calls (nothing matched) count as complete.
+        real_calls = [c for c in tool_calls if c.name not in ("retry", "noop")]
+        if real_calls:
+            success = not real_calls[-1].error
+        else:
+            success = True
 
         self.telemetry.record(TelemetryEvent(
             event_type="l1_complete",
@@ -146,10 +153,19 @@ class L1ActionLoop:
         task must name a tool; unmatched tasks complete instead of spinning
         on an arbitrary default.
         """
-        # If the last call failed, try a simpler approach
+        # If the last call failed, retry only transient/rate-limit errors,
+        # bounded by l1.max_retries (L4-tunable). Fatal errors fail fast.
         if previous_calls and previous_calls[-1].error:
+            last = previous_calls[-1]
+            retries = sum(1 for c in previous_calls if c.name == "retry")
+            if retries >= self.config.max_retries:
+                logger.info("L1 retry budget exhausted (%d)", retries)
+                return None, {}
+            if not is_retryable(last.error):
+                logger.info("L1 non-retryable failure: %s", last.error[:80])
+                return None, {}
             logger.info("Retrying after failure...")
-            return "retry", {"previous_error": previous_calls[-1].error}
+            return "retry", {"previous_error": last.error}
 
         if self.tool_manager is not None:
             candidates = self.tool_manager.list_tools(self.agent_name)
