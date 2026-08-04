@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Dev"
 description: "Dev: developer workflows spanning terminals, editors, and automation queues"
 tags: ["entity", "ast", "cli", "ide", "queue", "terminal", "workflow"]

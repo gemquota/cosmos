@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Spark Structured Streaming"
 description: "Micro-batch and continuous processing on the Spark engine"
 tags: ["spark", "streaming", "micro-batch", "structured-streaming"]

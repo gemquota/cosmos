@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Wonder and Learning"
 description: "Awe and curiosity as starting points of inquiry"
 tags: ["wonder", "curiosity", "learning"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Open Weights"
 description: "Releasing model weights for anyone to use"
 tags: ["open-weights", "release", "models"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Hilt DI"
 description: "Dagger-based dependency injection tuned for Android"
 tags: ["android", "di", "dagger", "hilt"]

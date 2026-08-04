@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "JSON-LD"
 description: "JSON syntax for linked data that embeds graphs and IRIs in ordinary JSON"
 tags: ["json-ld", "linked-data", "rdf", "semantic-web"]

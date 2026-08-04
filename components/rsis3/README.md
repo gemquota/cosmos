@@ -67,8 +67,17 @@ python -m rsis init
 # Run a self-improvement session
 python -m rsis run --goal "add error handling to utils.py"
 
+# Fan out N parallel L2 candidates (DAG multi-agent)
+python -m rsis run --goal "add error handling to utils.py" --parallel 3
+# ...with a per-candidate retry budget (transient failures back off & retry)
+python -m rsis run --goal "add error handling to utils.py" --parallel 3 --parallel-retries 2
+
 # Run an L3 evolution cycle
 python -m rsis evolve
+
+# Scheduler / DAG demos
+python -m rsis scheduler
+python -m rsis pipeline
 
 # Check system status
 python -m rsis status
@@ -121,6 +130,33 @@ call when the estimate would cross the cap, and a persistent
 `budget_exceeded` latch stops new sessions once spend reaches the cap
 (fail-closed).
 
+## Agent Scheduler & DAG Pipeline (multi-agent L2)
+
+Two execution primitives ported from the Agent OS kernel
+(`kernel/scheduler.py`, `kernel/parallel_pipeline.py`) power optional
+multi-agent L2 runs:
+
+- **`rsis/scheduler.py` — AgentScheduler.** Priority-queue scheduling
+  (CRITICAL preempts background work; equal priorities stay strictly FIFO via
+  a monotonic sequence tie-breaker) with recursion guards: a hard depth cap
+  and directed-edge cycle detection (same role/description hand-off repeated
+  more than `cycle_limit` times aborts the branch). One failing agent never
+  kills the loop — FAILED results are recorded and the queue drains.
+- **`rsis/pipeline.py` — DAGWorkerPool.** Fan-out/fan-in over N worker
+  threads: a task dispatches only when every `depends_on` task is COMPLETED,
+  a concurrency cap bounds in-flight LLM calls, circular/missing dependencies
+  raise instead of hanging, and a failed task marks its dependents FAILED.
+  Per-task status/latency can be emitted to telemetry via an `on_event` hook.
+
+**Parallel L2 sessions:** `python -m rsis run --parallel N` (or
+`RSIS_L2_PARALLEL=N`) runs the L2 loop as a DAG — planner → N parallel
+coders → fan-in reviewer. Every candidate still passes through the immutable
+evaluator gate (only a PASS candidate is applied), the review wave runs
+through the AgentScheduler with depth/cycle guards, and the cost ledger +
+budget caps apply per call exactly as in sequential mode. Telemetry records
+`l2_parallel_start`, `dag_task`/`dag_complete`, and `l2_complete` events.
+The default (`parallel_candidates=0`) remains the sequential L2 loop.
+
 ## Project Structure
 
 ```
@@ -129,6 +165,8 @@ rsis/
 │   ├── __init__.py        # Package metadata
 │   ├── config.py          # Configuration & resource limits
 │   ├── checkpoint.py      # Git-based checkpoint/rollback
+│   ├── scheduler.py       # Priority queue + recursion guards (AO port)
+│   ├── pipeline.py        # DAG fan-out/fan-in worker pool (AO port)
 │   ├── telemetry.py       # Workspace telemetry collection
 │   ├── evaluator.py       # Evaluator subprocess client
 │   ├── loop_l1.py         # L1 Action Loop

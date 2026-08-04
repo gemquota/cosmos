@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Raft Consensus"
 description: "Log-based leader election and replication protocol"
 tags: ["raft", "consensus", "distributed-systems", "replication"]

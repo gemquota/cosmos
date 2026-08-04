@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Swift Language"
 description: "Apple modern language for iOS, macOS, and server work"
 tags: ["swift", "apple", "language", "ios"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Google Pub/Sub"
 description: "Serverless, globally available event ingestion with at-least-once delivery"
 tags: ["pubsub", "gcp", "messaging", "event-streaming"]

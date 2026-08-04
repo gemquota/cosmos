@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Btrfs Features & Limitations"
 description: "Subvolumes, snapshots, and RAID on the copy-on-write filesystem"
 tags: ["btrfs", "filesystem", "snapshots", "linux"]

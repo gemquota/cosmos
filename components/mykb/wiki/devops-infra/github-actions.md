@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "GitHub Actions"
 description: "Event-driven CI/CD platform running workflows on GitHub repositories for build, test, and deploy"
 tags: ["github-actions", "ci-cd", "devops", "automation", "workflows"]

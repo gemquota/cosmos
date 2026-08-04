@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "LangGraph Graph API"
 description: "State, nodes, and edges in LangGraph: message-passing super-steps, StateGraph, schemas, and reducers"
 tags: ["langgraph", "graph-api", "stategraph", "state", "nodes", "edges", "reducers"]

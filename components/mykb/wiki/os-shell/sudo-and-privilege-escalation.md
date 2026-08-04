@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "sudo & Privilege Escalation"
 description: "sudoers, privilege separation, and alternatives"
 tags: ["sudo", "privilege", "security", "sudoers"]

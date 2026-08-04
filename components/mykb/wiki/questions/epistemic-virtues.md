@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Epistemic Virtues"
 description: "Character traits that support good knowing: curiosity, humility, rigor"
 tags: ["epistemology", "virtues", "character"]

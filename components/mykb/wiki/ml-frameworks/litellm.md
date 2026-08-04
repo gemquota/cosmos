@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "LiteLLM"
 description: "Proxy and SDK that normalizes hundreds of LLM providers behind one OpenAI-compatible interface"
 tags: ["proxy", "routing", "multi-vendor"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "WorkManager"
 description: "Guaranteed, constraint-aware scheduler for deferrable background work"
 tags: ["android", "background", "workmanager", "jobs"]

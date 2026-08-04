@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Zustand in Practice"
 description: "Minimal external store hooks for React state"
 tags: ["zustand", "state", "react", "frontend"]

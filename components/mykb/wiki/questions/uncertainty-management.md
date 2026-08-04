@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Uncertainty Management"
 description: "Practical strategies for deciding and acting under uncertainty"
 tags: ["uncertainty", "management", "practice"]

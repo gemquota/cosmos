@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "SSH & Remote Access"
 description: "Key auth, agent, config, and tunnels"
 tags: ["ssh", "remote", "key-auth", "tunnels", "security"]

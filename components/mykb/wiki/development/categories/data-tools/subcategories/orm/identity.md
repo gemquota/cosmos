@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Identity"
 description: "IDE (Integrated Development Environment)"
 tags: ["entity", "ide", "isr", "orm", "rest"]

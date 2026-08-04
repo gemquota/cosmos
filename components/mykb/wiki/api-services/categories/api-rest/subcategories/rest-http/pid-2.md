@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "PID"
 description: "Process ID: the operating system identifier for a running process"
 tags: ["entity", "acronym", "process", "os", "pid"]

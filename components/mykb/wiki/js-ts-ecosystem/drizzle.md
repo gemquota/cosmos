@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Drizzle ORM"
 description: "SQL-first, lightweight TypeScript ORM that keeps queries close to SQL with full type inference"
 tags: ["drizzle", "orm", "typescript", "sql", "database"]

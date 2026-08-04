@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Paradox"
 description: "IDE — code editor environment, ORM — object-relational mapping, REST — API design pattern"
 tags: ["entity", "ide", "isr", "orm", "rest"]

@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "LM"
 description: "Language model: a model trained to predict and generate natural language"
 tags: ["entity", "acronym", "llm", "language-model", "generation"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Envoy"
 description: "High-performance L4/L7 proxy used for service mesh data planes, gateways, and edge routing"
 tags: ["envoy", "proxy", "service-mesh", "networking", "devops"]

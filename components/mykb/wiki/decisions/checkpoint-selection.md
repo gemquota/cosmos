@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Checkpoint Selection"
 description: "Choosing which training states to keep and use"
 tags: ["checkpoints", "training", "selection"]

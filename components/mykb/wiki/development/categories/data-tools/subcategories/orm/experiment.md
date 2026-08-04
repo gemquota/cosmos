@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Experiment"
 description: "Experiment: hypothesis-driven change with instrumentation, logging, and monitoring"
 tags: ["entity", "ide", "logging", "monitoring", "orm", "rest", "experimentation"]

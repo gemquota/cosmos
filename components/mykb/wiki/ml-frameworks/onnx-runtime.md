@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "ONNX Runtime"
 description: "Cross-platform inference engine that runs models in the Open Neural Network Exchange format"
 tags: ["inference", "interop", "runtime"]

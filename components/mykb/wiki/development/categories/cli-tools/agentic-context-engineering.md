@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Agentic Context Engineering"
 description: "Agent"
 status: "growing"

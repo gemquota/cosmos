@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "XState in Practice"
 description: "Authoring executable statecharts with XState"
 tags: ["xstate", "state-machines", "frontend", "patterns"]

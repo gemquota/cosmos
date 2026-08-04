@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Model Selection in Practice"
 description: "How teams choose models for deployment"
 tags: ["model-selection", "practice", "deployment"]

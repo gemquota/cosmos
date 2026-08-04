@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "DuckDB and Embedded Analytics"
 description: "In-process analytical SQL with zero infrastructure"
 tags: ["duckdb", "embedded", "analytics", "sql"]

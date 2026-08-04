@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Sovereign Orchestrator"
 description: "Sovereign orchestrator: autonomous planning and coordination with owned state and boundaries"
 tags: ["entity", "ast", "bug", "cli", "edge", "ide", "orchestration"]

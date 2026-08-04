@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Sentence Transformers"
 description: "Framework for embedding sentences and paragraphs with transformer models"
 tags: ["sentence-transformers", "embeddings", "bert", "semantic"]

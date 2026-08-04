@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "pulse"
 title: "Recursive Improvement Loops"
 description: "Loops where a system's improvement feeds back into further improvement"
 tags: ["rsi", "loops", "self-improvement"]

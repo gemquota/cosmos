@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Word2Vec"
 description: "Shallow neural models learning dense word vectors from local context"
 tags: ["word2vec", "embeddings", "nlp", "representation"]

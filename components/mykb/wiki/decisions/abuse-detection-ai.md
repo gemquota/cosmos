@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Abuse Detection"
 description: "Detecting misuse of AI systems"
 tags: ["abuse", "detection", "safety"]

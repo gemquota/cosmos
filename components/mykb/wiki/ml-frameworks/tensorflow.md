@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "TensorFlow"
 description: "Google's ML framework with production serving focus, used across Google's model stack"
 tags: ["tensorflow", "deep-learning", "framework"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Apollo Client"
 description: "Full-featured GraphQL client with normalized caching"
 tags: ["graphql", "apollo", "caching", "frontend"]

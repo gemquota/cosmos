@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "ClickHouse"
 description: "Columnar OLAP database for fast analytical queries over large event datasets"
 tags: ["clickhouse", "olap", "columnar", "analytics", "database"]

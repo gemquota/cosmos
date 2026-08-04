@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "ArgoCD ApplicationSets"
 description: "Template-driven generation of ArgoCD applications at scale"
 tags: ["argocd", "applicationset", "gitops", "kubernetes"]

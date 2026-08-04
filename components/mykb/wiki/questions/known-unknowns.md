@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Known Unknowns"
 description: "Gaps we are aware of and can formulate as questions"
 tags: ["uncertainty", "knowledge", "taxonomy"]

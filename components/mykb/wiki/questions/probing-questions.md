@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Probing Questions"
 description: "Follow-up questions that push beneath surface answers"
 tags: ["questions", "probing", "depth"]

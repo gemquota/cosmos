@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "AI Safety Policies"
 description: "Written rules governing AI safety practices"
 tags: ["safety", "policies", "governance"]

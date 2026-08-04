@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "SQL Server Analytics"
 description: "Analytics capabilities of Microsoft SQL Server"
 tags: ["sql-server", "microsoft", "analytics", "columnstore"]

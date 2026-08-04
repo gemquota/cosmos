@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "NVIDIA Container Toolkit"
 description: "Exposing GPUs to containers with driver injection and CDI"
 tags: ["nvidia", "containers", "gpu", "cdi"]

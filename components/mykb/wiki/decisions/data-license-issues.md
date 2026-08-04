@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Data License Issues"
 description: "Legal problems from training data terms"
 tags: ["data", "licenses", "legal"]

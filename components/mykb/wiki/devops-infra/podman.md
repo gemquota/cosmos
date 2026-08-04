@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Podman"
 description: "Daemonless, rootless container engine compatible with OCI images and the Docker CLI"
 tags: ["podman", "containers", "oci", "linux", "devops"]

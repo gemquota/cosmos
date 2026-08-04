@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "ColBERT"
 description: "Late-interaction retriever scoring query-document pairs token-by-token"
 tags: ["colbert", "retrieval", "reranking", "late-interaction"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "MongoDB Data Modeling"
 description: "Embedding vs referencing documents for performance"
 tags: ["mongodb", "data-modeling", "documents", "schema"]

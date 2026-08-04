@@ -519,3 +519,33 @@ title: "Bundle Log"
   29,814 links, 5,396/35,454 graph), graph.json, stub-index.json (3,348),
   stub-audit.html (3,326), okf render (6,830 concepts), gen-static-data check OK
   (6,854 md files). Link check: only the 3 known intentional false positives.
+
+## 2026-08-04 (Phase C — AO scheduler + DAG pool into RSIS3 L2)
+- **AgentScheduler** (`rsis/scheduler.py`): priority-queue scheduling
+  (CRITICAL preempts; equal priorities strictly FIFO via a monotonic
+  sequence tie-breaker) with recursion guards — hard depth cap +
+  directed-edge cycle detection, so a repeating coder↔reviewer hand-off
+  aborts the branch instead of spinning
+- **DAGWorkerPool** (`rsis/pipeline.py`): fan-out/fan-in over N worker
+  threads with dependency-readiness dispatch, concurrency cap on in-flight
+  LLM calls, failed tasks marking dependents FAILED, and a deadlock guard
+  that re-dispatches after settles before raising; `on_event` bridges
+  `dag_task`/`dag_complete` telemetry
+- **Parallel L2 sessions**: `python -m rsis run --parallel N` (or
+  `RSIS_L2_PARALLEL=N`) runs planner → N coders → fan-in reviewer; every
+  candidate still passes the immutable evaluator gate (only PASS applies),
+  cost ledger + budget caps enforced per call exactly as in sequential
+  mode; default remains sequential (opt-in, reversible)
+- **Docs**: RSIS3 README scheduler/pipeline + parallel-L2 section;
+  `docs/ao-assessment.md` Phase C status (harvest complete, A–C)
+- **Synthesis extended**: `wiki/syntheses/ao-agent-os-integration-assessment.md`
+  gains Phase C patterns (budget-bounded fan-out, immutable-evaluator
+  fan-in, re-dispatch-after-settle before deadlock, scheduler-guarded
+  review wave, DAG-shape telemetry, CLI-over-config / env-over-config)
+- **2026-08-04 — Phase D1: Agent OS wave 2 (retry resilience).** Ported
+  `error_classifier.py` into RSIS3; L1 now enforces `l1.max_retries` with
+  fatal fail-fast and terminal-attempt success; `DAGWorkerPool` gained
+  retry budgets + exponential backoff with jitter and `dag_task_retrying`
+  events; L2 parallel candidates retry via `parallel_retries` /
+  `RSIS_L2_PARALLEL_RETRIES` / `--parallel-retries` (default 0 = off).
+  Verified via `python -m rsis pipeline` demo assertions + direct checks.

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Apache Hudi and Incremental Views"
 description: "Table format with record-level upserts and incremental processing"
 tags: ["hudi", "upserts", "incremental", "lakehouse"]

@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Consciousness"
 description: "Referenced in session 791ec3a4"
 tags: ["ast", "entity", "guid", "ide", "orm", "spa"]

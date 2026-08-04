@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Yup Schemas"
 description: "Declarative object schema validation for forms and payloads"
 tags: ["yup", "validation", "schemas", "forms"]

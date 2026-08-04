@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Content Policy for AI"
 description: "Rules about what AI may generate"
 tags: ["content", "policy", "safety"]

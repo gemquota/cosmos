@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "pulse"
 title: "Self-Benchmarking"
 description: "Running internal benchmarks to measure one's own capability"
 tags: ["benchmarks", "self-evaluation", "measurement"]

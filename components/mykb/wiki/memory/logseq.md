@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Logseq"
 description: "Outliner-based, local-first note app with block-level links and a graph view"
 tags: ["logseq", "tool", "outliner", "pkm"]

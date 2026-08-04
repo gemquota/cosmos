@@ -62,6 +62,10 @@ class L2Config:
     max_improvement_attempts: int = 5
     session_timeout_s: int = 1800  # 30 min
     parallel_candidates: int = 0   # 0 = sequential; N = DAG fan-out (multi-agent)
+    parallel_retries: int = 0      # per-candidate retry budget (0 = fail fast)
+    priority_aging: float = 0.2    # effective-priority boost per wait-second (D2)
+    preemption_threshold: float = 5.0  # priority margin to cooperatively preempt (D2)
+    shared_memory: bool = True     # per-session SharedMemoryManager for candidates (D2)
 
 
 @dataclass
@@ -367,6 +371,16 @@ def load_config() -> RSISConfig:
         cfg.tools.approval_threshold = os.environ["RSIS_APPROVAL_THRESHOLD"]
     if "RSIS_L2_PARALLEL" in os.environ:
         cfg.l2.parallel_candidates = int(os.environ["RSIS_L2_PARALLEL"])
+    if "RSIS_L2_PARALLEL_RETRIES" in os.environ:
+        cfg.l2.parallel_retries = int(os.environ["RSIS_L2_PARALLEL_RETRIES"])
+    if "RSIS_L2_PRIORITY_AGING" in os.environ:
+        cfg.l2.priority_aging = float(os.environ["RSIS_L2_PRIORITY_AGING"])
+    if "RSIS_L2_PREEMPTION_THRESHOLD" in os.environ:
+        cfg.l2.preemption_threshold = float(
+            os.environ["RSIS_L2_PREEMPTION_THRESHOLD"])
+    if "RSIS_L2_SHARED_MEMORY" in os.environ:
+        cfg.l2.shared_memory = os.environ["RSIS_L2_SHARED_MEMORY"].lower() in (
+            "1", "true", "yes")
     return _apply_tuned_state(cfg)
 
 

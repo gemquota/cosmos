@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "SWR in Practice"
 description: "Stale-while-revalidate data fetching hooks"
 tags: ["swr", "data-fetching", "caching", "frontend"]

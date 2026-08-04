@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Zod Validation"
 description: "TypeScript-first runtime schema parsing and validation"
 tags: ["zod", "validation", "typescript", "schemas"]

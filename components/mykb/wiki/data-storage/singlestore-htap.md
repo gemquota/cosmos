@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "SingleStore and HTAP"
 description: "One engine for transactions and analytics (hybrid transactional/analytical processing)"
 tags: ["singlestore", "htap", "olap", "oltp"]

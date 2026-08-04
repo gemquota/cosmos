@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "RecyclerView"
 description: "Efficient list rendering with view recycling and ViewHolder pattern"
 tags: ["android", "lists", "ui", "recyclerview"]

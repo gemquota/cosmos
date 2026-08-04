@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Qdrant"
 description: "Rust vector database with strong payload filtering and hybrid search"
 tags: ["qdrant", "vector-database", "rust", "filtering"]

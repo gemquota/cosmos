@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Rollup in Practice"
 description: "Tree-shaking-first bundler for libraries and apps"
 tags: ["rollup", "bundlers", "javascript", "tooling"]

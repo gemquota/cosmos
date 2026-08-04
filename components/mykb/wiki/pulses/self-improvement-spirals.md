@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "pulse"
 title: "Self-Improvement Spirals"
 description: "Accelerating or collapsing improvement loops"
 tags: ["rsi", "spirals", "dynamics"]

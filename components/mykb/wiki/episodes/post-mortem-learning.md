@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "episode"
 title: "Post-Mortem Learning"
 description: "Structured review after failure to extract durable lessons"
 tags: ["learning", "failure", "review"]

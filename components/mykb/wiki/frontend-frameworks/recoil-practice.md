@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Recoil in Practice"
 description: "Atom and selector state graph for React"
 tags: ["recoil", "state", "react", "frontend"]

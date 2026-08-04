@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "LiveData"
 description: "Lifecycle-aware observable data holder"
 tags: ["android", "livedata", "observable", "lifecycle"]

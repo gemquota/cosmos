@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "React Native Architecture"
 description: "How React Native works: JS thread, native modules, bridge, and the New Architecture"
 tags: ["react-native", "architecture", "mobile", "javascript", "bridges"]

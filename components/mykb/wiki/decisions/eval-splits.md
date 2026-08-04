@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Eval Splits"
 description: "Partitioning data into train, validation, and test sets"
 tags: ["eval-splits", "data", "testing"]

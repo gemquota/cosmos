@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Ignorance Awareness"
 description: "Accurately recognizing the limits of one's own knowledge"
 tags: ["ignorance", "metacognition", "epistemology"]

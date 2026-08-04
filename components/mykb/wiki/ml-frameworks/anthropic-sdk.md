@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Anthropic SDK"
 description: "Official client libraries for the Claude API including Messages, streaming, and tool use"
 tags: ["api", "sdk", "claude"]

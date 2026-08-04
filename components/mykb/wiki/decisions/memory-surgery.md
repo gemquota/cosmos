@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Memory Surgery"
 description: "Deliberately editing an AI system's stored knowledge or memories"
 tags: ["memory", "editing", "safety", "agents"]

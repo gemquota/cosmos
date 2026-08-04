@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Redux in Practice"
 description: "Single-store unidirectional state with actions and reducers"
 tags: ["redux", "state", "frontend", "architecture"]

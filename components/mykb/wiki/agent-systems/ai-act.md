@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "EU AI Act"
 description: "The European Union's AI regulation"
 tags: ["eu-ai-act", "regulation", "europe"]

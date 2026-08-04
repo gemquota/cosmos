@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "PostgreSQL"
 description: "Advanced open-source relational database with strong consistency, extensions, and SQL standards"
 tags: ["postgresql", "database", "sql", "relational", "data"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Webpack in Practice"
 description: "Configurable bundler with a rich plugin ecosystem"
 tags: ["webpack", "bundlers", "javascript", "tooling"]

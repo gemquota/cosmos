@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Vercel"
 description: "Frontend cloud platform optimized for static and serverless Next.js-style deployments"
 tags: ["vercel", "hosting", "frontend", "jamstack", "nextjs"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "WireGuard Protocol"
 description: "A minimal, auditable VPN protocol built on modern cryptography"
 tags: ["wireguard", "vpn", "crypto", "protocol"]

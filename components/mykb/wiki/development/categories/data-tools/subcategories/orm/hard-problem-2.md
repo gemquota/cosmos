@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Hard Problem"
 status: "growing"
 description: "Referenced in session 791ec3a4"

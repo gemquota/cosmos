@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "TensorRT-LLM"
 description: "NVIDIA toolkit that compiles LLMs into highly optimized TensorRT engines for GPU serving"
 tags: ["nvidia", "inference", "gpu"]

@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Testing Preparation"
 description: "Setting up fixtures, environments, and data before test execution"
 tags: ["entity", "testing", "fixtures", "setup", "quality"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Diagnostic Questions"
 description: "Questions designed to reveal misconceptions and understanding states"
 tags: ["questions", "diagnosis", "assessment"]

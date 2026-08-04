@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "GPT-4"
 description: "OpenAI's flagship multimodal LLM family, the reference point for frontier capabilities and evaluation"
 tags: ["gpt-4", "openai", "llm", "models"]

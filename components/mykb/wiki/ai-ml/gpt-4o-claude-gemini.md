@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "GPT-4o, Claude, and Gemini"
 description: "The leading closed frontier model families from OpenAI, Anthropic, and Google"
 tags: ["models", "closed-models", "comparison"]

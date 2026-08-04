@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Pinecone"
 description: "Fully managed vector database service emphasizing scale and simplicity"
 tags: ["pinecone", "vector-database", "managed", "saas"]

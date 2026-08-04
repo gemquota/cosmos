@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Milvus"
 description: "Open-source distributed vector database for large-scale similarity search"
 tags: ["milvus", "vector-database", "ann", "distributed"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Weaviate"
 description: "Open-source vector database with built-in hybrid search and modules"
 tags: ["weaviate", "vector-database", "hybrid", "modules"]

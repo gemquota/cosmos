@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Wireshark & tshark"
 description: "GUI/CLI dissection and follow-stream workflows"
 tags: ["wireshark", "tshark", "analysis", "pcap"]

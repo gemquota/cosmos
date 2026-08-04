@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Helm"
 description: "Kubernetes package manager templating, versioning, and deploying applications as charts"
 tags: ["helm", "kubernetes", "charts", "packaging", "devops"]

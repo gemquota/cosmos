@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Experimental Metadata"
 description: "Experimental metadata: provenance, configuration, and lineage that make experiments reproducible"
 tags: ["ast", "entity", "guid", "ide", "orm", "spa", "metadata", "reproducibility"]

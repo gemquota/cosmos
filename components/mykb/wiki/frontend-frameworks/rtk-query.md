@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "RTK Query"
 description: "Redux Toolkit's data fetching and caching layer"
 tags: ["redux", "data-fetching", "rtk-query", "frontend"]

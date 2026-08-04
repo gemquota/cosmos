@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Gemini"
 description: "Google's LLM family spanning small to frontier sizes, deeply integrated with Google's cloud and Android ecosystems"
 tags: ["gemini", "google", "llm", "models"]

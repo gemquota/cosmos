@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Netlify"
 description: "All-in-one web hosting platform with git-based builds, forms, functions, and CDN"
 tags: ["netlify", "hosting", "frontend", "jamstack", "cd"]

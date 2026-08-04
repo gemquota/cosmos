@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Snowflake Architecture"
 description: "Three-layer warehouse: storage, compute, and cloud services"
 tags: ["snowflake", "warehouse", "cloud", "saas"]

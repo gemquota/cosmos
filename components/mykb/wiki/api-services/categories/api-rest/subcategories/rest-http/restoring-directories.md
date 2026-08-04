@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Restoring Directories"
 description: "Recovering directory structures and files from backups or version control"
 tags: ["entity", "backup", "restore", "filesystem", "recovery"]

@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Decryption"
 description: "Decryption: converting ciphertext back to plaintext with keys, algorithms, and modes of operation"
 tags: ["entity", "ide", "orm", "spa", "cryptography", "security"]

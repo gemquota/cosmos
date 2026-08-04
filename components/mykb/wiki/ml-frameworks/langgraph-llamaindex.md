@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "LangGraph and LlamaIndex"
 description: "Frameworks for graph-structured agent state and data-centric RAG pipelines respectively"
 tags: ["llamaindex", "rag", "agents"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Elasticsearch"
 description: "Distributed search and analytics engine built on Lucene"
 tags: ["elasticsearch", "search", "log-analysis", "distributed"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "KVM & QEMU"
 description: "The Linux hypervisor and the emulator that front-ends it"
 tags: ["kvm", "qemu", "virtualization", "linux"]

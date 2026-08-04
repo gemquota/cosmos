@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Grafana Dashboards"
 description: "Visualizing telemetry and the dashboard design loop"
 tags: ["grafana", "dashboards", "visualization", "metrics"]

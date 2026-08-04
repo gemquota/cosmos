@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Spark Executors and Memory Planning"
 description: "Right-sizing executor memory and cores for Spark jobs"
 tags: ["spark", "executors", "memory", "tuning"]

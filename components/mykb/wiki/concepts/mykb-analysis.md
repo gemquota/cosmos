@@ -1,5 +1,5 @@
 ---
-type: "synthesis"
+type: "concept"
 title: "mykb: Personal LLM Wiki — Analysis & Enrichment Theory"
 description: "Comprehensive analysis of the mykb personalized knowledge wiki system, its architecture, extraction pipeline, and strategies for active curation."
 tags: ["mykb", "synthesis", "theory", "knowledge-graph", "enrichment", "curation", "personal-wiki"]

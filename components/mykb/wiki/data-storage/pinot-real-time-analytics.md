@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Pinot Real-Time Analytics"
 description: "Low-latency OLAP serving engine for user-facing analytics"
 tags: ["pinot", "real-time", "olap", "serving"]

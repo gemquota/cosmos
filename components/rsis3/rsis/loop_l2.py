@@ -9,17 +9,21 @@ Phase 4: integrated with Budget, RecoveryManager, and ResourceEnforcer.
 
 import json
 import logging
+import queue
+import threading
 import time
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
 from rsis.checkpoint import CheckpointManager
 from rsis.config import CONFIG
+from rsis.event_bus import EventBus
 from rsis.evaluator import EvalResult, EvaluatorClient
 from rsis.loop_l1 import L1ActionLoop, L1Result, ToolCall
-from rsis.pipeline import DAGWorkerPool
+from rsis.priority_pool import PriorityWorkerPool
 from rsis.recovery import RecoveryManager
 from rsis.scheduler import AgentScheduler, Priority
+from rsis.shared_memory import SharedMemoryManager
 from rsis.telemetry import TelemetryCollector, TelemetryEvent
 from rsis.timeout import Budget, TimeoutError
 
@@ -197,14 +201,26 @@ class L2ImprovementLoop:
             metadata={"goal": goal, "candidates": n},
         ))
 
-        pool = DAGWorkerPool(num_workers=min(n, 4),
-                             on_event=self._dag_event)
-        pool.add_task("planner", "planner", {"goal": goal})
+        # Phase D2: priority pool + event bus + shared working memory.
+        bus = EventBus()
+        bridge_thread, bridge_stop, bridge_queue = self._start_bus_bridge(bus)
+        pool = PriorityWorkerPool(
+            num_workers=min(n, 4), event_bus=bus,
+            max_retries=self.config.parallel_retries,
+            aging_rate=self.config.priority_aging,
+            preemption_threshold=self.config.preemption_threshold)
+        pool.add_task("planner", "planner", {"goal": goal}, priority=10.0,
+                      max_retries=self.config.parallel_retries)
         for i in range(n):
             pool.add_task(f"coder-{i}", "coder", {"attempt": i + 1},
-                          depends_on=["planner"])
-        pool.add_task("fanin", "fanin",
-                      {}, depends_on=[f"coder-{i}" for i in range(n)])
+                          priority=5.0, depends_on=["planner"],
+                          max_retries=self.config.parallel_retries)
+        pool.add_task("fanin", "fanin", {},
+                      priority=1.0,
+                      depends_on=[f"coder-{i}" for i in range(n)],
+                      max_retries=self.config.parallel_retries)
+        shared = (SharedMemoryManager() if self.config.shared_memory
+                  else None)
 
         def run(task):
             if task.role == "planner":
@@ -212,8 +228,14 @@ class L2ImprovementLoop:
             if task.role == "coder":
                 if not budget.tick():
                     raise TimeoutError("L2 parallel budget exhausted")
-                return self._generate_candidate(
+                candidate = self._generate_candidate(
                     goal, task.payload["attempt"], [])
+                if shared is not None:
+                    shared.atomic_mutate(
+                        "l2.generated",
+                        lambda v, c=candidate: (v or []) + [c.description],
+                        task.task_id)
+                return candidate
             if task.role == "fanin":
                 candidates = [pool.tasks[f"coder-{i}"].result
                               for i in range(n)]
@@ -222,7 +244,7 @@ class L2ImprovementLoop:
             raise RuntimeError(f"unknown DAG role: {task.role}")
 
         try:
-            pool.run_pipeline(run)
+            pool.run(run)
         except Exception as e:
             logger.error("L2 parallel DAG failed: %s", e)
             self.recovery.record_failure()
@@ -231,6 +253,22 @@ class L2ImprovementLoop:
                 metadata={"success": False, "attempts": 0},
             ))
             return L2Result(success=False, error=str(e))
+        finally:
+            bridge_stop.set()
+            bridge_thread.join(timeout=2)
+            for event in bus.drain(bridge_queue):
+                self._record_bus_event(event)
+
+        if shared is not None:
+            generated = shared.read("l2.generated")
+            self.telemetry.record(TelemetryEvent(
+                event_type="l2_shared_memory",
+                metadata={
+                    "registers": len(shared.snapshot()),
+                    "generated": len(generated.value or []) if generated
+                    else 0,
+                },
+            ))
 
         reviews = pool.tasks["fanin"].result or {}
         applied = None
@@ -312,11 +350,30 @@ class L2ImprovementLoop:
         sched.run_event_loop()
         return reviews
 
-    def _dag_event(self, event: dict) -> None:
-        """Bridge DAG traceability events into workspace telemetry."""
+    def _start_bus_bridge(self, bus: EventBus):
+        """Drain worker.* pool events into workspace telemetry (daemon)."""
+        stop = threading.Event()
+        bridge_queue = bus.subscribe("worker.*")
+
+        def drain():
+            while not stop.is_set() or not bridge_queue.empty():
+                try:
+                    event = bridge_queue.get(timeout=0.1)
+                except queue.Empty:
+                    continue
+                self._record_bus_event(event)
+
+        thread = threading.Thread(target=drain, daemon=True,
+                                  name="rsis-event-bridge")
+        thread.start()
+        return thread, stop, bridge_queue
+
+    def _record_bus_event(self, event: dict) -> None:
+        """Bridge one pool event (worker.*) into workspace telemetry."""
+        payload = {k: v for k, v in event.items() if k not in ("topic", "ts")}
         self.telemetry.record(TelemetryEvent(
-            event_type=event.get("kind", "dag_task"),
-            metadata={k: v for k, v in event.items() if k != "kind"},
+            event_type=event.get("topic", "worker.event"),
+            metadata=payload,
         ))
 
     def _generate_candidate(

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Kafka Architecture and Partitioning"
 description: "Brokers, topics, partitions, and replication inside Kafka"
 tags: ["kafka", "architecture", "partitioning", "replication"]

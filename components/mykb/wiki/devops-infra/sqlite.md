@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "SQLite"
 description: "Embedded, zero-configuration SQL database stored in a single file"
 tags: ["sqlite", "database", "embedded", "sql", "local"]

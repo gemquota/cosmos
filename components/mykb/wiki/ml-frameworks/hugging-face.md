@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Hugging Face"
 description: "The hub, libraries, and community platform that standardizes model sharing and ML tooling"
 tags: ["hugging-face", "transformers", "ecosystem", "models"]

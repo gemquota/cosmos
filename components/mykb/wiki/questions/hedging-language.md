@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Hedging Language"
 description: "Words and phrases that qualify the strength of claims"
 tags: ["language", "uncertainty", "claims"]

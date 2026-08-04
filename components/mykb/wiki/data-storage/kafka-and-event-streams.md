@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Kafka and Event Streams"
 description: "The distributed log that became the standard for event streaming"
 tags: ["kafka", "event-streaming", "log", "messaging"]

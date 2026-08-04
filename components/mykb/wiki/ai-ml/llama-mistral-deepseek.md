@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Llama, Mistral, and DeepSeek"
 description: "Leading open-weights model families that anchor the open model ecosystem"
 tags: ["models", "open-weights", "comparison"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Kubernetes Networking Models"
 description: "How pods, services, and ingress connect in a cluster"
 tags: ["kubernetes", "networking", "cni", "services"]

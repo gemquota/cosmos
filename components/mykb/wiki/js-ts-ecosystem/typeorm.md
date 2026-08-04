@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "TypeORM"
 description: "Decorator-driven TypeScript ORM supporting active-record and data-mapper patterns"
 tags: ["typeorm", "orm", "typescript", "database", "node"]

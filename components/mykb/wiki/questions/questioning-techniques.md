@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Questioning Techniques"
 description: "Repertoire of question types used to probe understanding"
 tags: ["questioning", "teaching", "dialogue"]

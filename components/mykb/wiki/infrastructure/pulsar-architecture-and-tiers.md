@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Pulsar Architecture and Tiered Storage"
 description: "Segment-based broker/storage separation with unbounded retention"
 tags: ["pulsar", "event-streaming", "tiered-storage", "architecture"]

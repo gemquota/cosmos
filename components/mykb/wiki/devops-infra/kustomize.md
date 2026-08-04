@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Kustomize"
 description: "Native Kubernetes manifest customization via overlays without templating"
 tags: ["kustomize", "kubernetes", "config", "devops", "overlays"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Text Generation Inference"
 description: "Hugging Face serving stack for LLMs with continuous batching and tensor parallelism built in"
 tags: ["huggingface", "serving", "inference"]

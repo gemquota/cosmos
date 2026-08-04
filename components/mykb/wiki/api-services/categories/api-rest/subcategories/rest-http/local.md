@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Local"
 description: "Localization (l10n): adapting software for language and regional conventions"
 tags: ["entity", "localization", "l10n", "i18n", "frontend"]

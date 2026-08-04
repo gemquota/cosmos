@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Camera X"
 description: "Jetpack camera library with use-case based API"
 tags: ["android", "camera", "camerax", "media"]

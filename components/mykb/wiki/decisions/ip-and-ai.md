@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Intellectual Property and AI"
 description: "The full IP landscape for AI systems"
 tags: ["ip", "ai", "legal"]

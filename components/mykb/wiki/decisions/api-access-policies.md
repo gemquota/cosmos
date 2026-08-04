@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "API Access Policies"
 description: "Terms governing access to model APIs"
 tags: ["api", "access", "policies"]
