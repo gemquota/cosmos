@@ -549,3 +549,17 @@ title: "Bundle Log"
   events; L2 parallel candidates retry via `parallel_retries` /
   `RSIS_L2_PARALLEL_RETRIES` / `--parallel-retries` (default 0 = off).
   Verified via `python -m rsis pipeline` demo assertions + direct checks.
+
+## 2026-08-04 (wiki regression fix — enriched files.json)
+- **Root cause**: the wiki UI (Type grouping, Content/Meta split, home
+  metrics) reads `state.meta[f].type/title/tags`, but `files.json` was a flat
+  path list — all 6,856 docs collapsed into one "other" bucket and the Types
+  metric read 0.
+- **Fix**: new shared `components/mykb/.wiki-daemon/frontmatter.py`; both
+  `build_files_index.py` and `gen-static-data.py` now emit enriched
+  `{path, type, title, tags}` entries (same membership/order/sort rules);
+  `gen-static-data.py --check` validates the enriched format.
+- **UI**: View control now shows a scope hint ("Wiki knowledge" /
+  "System guidance") and Content/Meta use 📖/⚙ icons; mobile drawer already
+  capped at 58vw. `check: OK (6856 entries, 0 bad)`; graph rebuilt
+  (5,397 nodes / 35,514 edges).
