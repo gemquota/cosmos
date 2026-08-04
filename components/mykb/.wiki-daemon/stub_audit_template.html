@@ -28,6 +28,8 @@ h1 { font-size:22px; font-weight:700; }
 .btn.copy { background:var(--accent-soft); color:var(--accent); border-color:var(--accent); }
 .filters { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:10px 0; font-size:12px; color:var(--muted); }
 .filters label { display:flex; align-items:center; gap:5px; cursor:pointer; }
+.sort-select { background:var(--panel); color:var(--text); border:1px solid var(--border); border-radius:6px; padding:4px 8px; font-size:12px; cursor:pointer; }
+.sort-select:focus { border-color:var(--accent); outline:none; }
 #results-panel { display:none; margin:12px 0; border:1px solid var(--border); border-radius:8px; background:var(--panel); }
 #results-panel.open { display:block; }
 .results-head { display:flex; justify-content:space-between; align-items:center; padding:10px 14px; border-bottom:1px solid var(--border); font-size:13px; font-weight:600; }
@@ -89,6 +91,15 @@ h1 { font-size:22px; font-weight:700; }
     <label><input type="checkbox" id="flt-stub" checked> status: stub</label>
     <label><input type="checkbox" id="flt-short" checked> &lt;320 words</label>
     <label><input type="checkbox" id="flt-cat" checked> categories/ subfolders</label>
+    <span style="flex:1"></span>
+    <label>sort:
+      <select id="sort-select" class="sort-select">
+        <option value="n">default order</option>
+        <option value="c">oldest first</option>
+        <option value="w">fewest words</option>
+        <option value="l">fewest links</option>
+      </select>
+    </label>
   </div>
 
   <div class="controls">
@@ -120,6 +131,7 @@ var CHOICES = {};
 try { var saved = JSON.parse(localStorage.getItem('stub-audit') || '{}'); CHOICES = saved; } catch(e) {}
 var filter = 'all';
 var catTargets = {};
+var sortBy = 'n';
 
 function esc(s) {
   return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -150,8 +162,22 @@ function visible() {
     return !/\/categories\/|\/subcategories\/|\/entities\//.test(it.p);
   });
 }
+function sorted(items) {
+  if (sortBy === 'n') return items;
+  return items.slice().sort(function(a, b) {
+    var va = a[sortBy], vb = b[sortBy];
+    if (sortBy === 'c') {
+      if (!va && !vb) return a.n - b.n;
+      if (!va) return 1;
+      if (!vb) return -1;
+    }
+    if (va < vb) return -1;
+    if (va > vb) return 1;
+    return a.n - b.n;
+  });
+}
 function render() {
-  var items = visible();
+  var items = sorted(visible());
   var done = ITEMS.filter(function(it){ return CHOICES[it.p]; }).length;
   var pct = Math.round(done / ITEMS.length * 100);
   document.getElementById('progress-fill').style.width = pct + '%';
@@ -172,7 +198,9 @@ function render() {
     var picker = '<div class="cat-picker" id="cp-' + esc(it.p) + '">' + pickerHTML(it) + '</div>';
     card.innerHTML =
       '<div class="top"><span class="num">' + it.n + '.</span><span class="title">' + esc(it.t) + '</span>' +
-      '<span class="badge">' + it.w + ' words</span><span class="badge' + (it.s === 'stub' ? ' warn' : '') + '">' + esc(it.s) + '</span></div>' +
+      '<span class="badge">' + it.w + ' words</span><span class="badge">' + it.l + ' links</span>' +
+      (it.c ? '<span class="badge">created ' + esc(it.c) + '</span>' : '') +
+      '<span class="badge' + (it.s === 'stub' ? ' warn' : '') + '">' + esc(it.s) + '</span></div>' +
       (it.d ? '<div class="desc">' + esc(it.d) + '</div>' : '') +
       '<div class="path">' + esc(it.p) + '</div>' +
       (it.x ? '<div class="snip">' + esc(it.x) + '…</div>' : '') +
@@ -297,6 +325,10 @@ document.querySelectorAll('.tab').forEach(function(t) {
 ['flt-stub','flt-short','flt-cat'].forEach(function(id) {
   document.getElementById(id).addEventListener('change', render);
 });
+document.getElementById('sort-select').addEventListener('change', function() {
+  sortBy = this.value;
+  render();
+});
 document.getElementById('show-results').addEventListener('click', showResults);
 document.getElementById('copy-results').addEventListener('click', function(){ showResults(); copyResults(); });
 document.getElementById('copy-results2').addEventListener('click', copyResults);
@@ -306,7 +338,7 @@ document.addEventListener('keydown', function(e) {
   if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
   var key = KEY_MAP[e.key];
   if (!key) return;
-  var first = ITEMS.find(function(it){ return !CHOICES[it.p]; });
+  var first = sorted(ITEMS).find(function(it){ return !CHOICES[it.p]; });
   if (!first) return;
   if (key === 'c') { setChoice(first.p, 'c'); openPicker(first.p); }
   else setChoice(first.p, key);
