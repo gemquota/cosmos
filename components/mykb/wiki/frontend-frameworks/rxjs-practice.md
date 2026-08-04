@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "RxJS in Practice"
 description: "Reactive extensions for composing async event streams"
 tags: ["rxjs", "observables", "streams", "frontend"]

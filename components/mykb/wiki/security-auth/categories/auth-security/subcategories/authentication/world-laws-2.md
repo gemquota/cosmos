@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "World Laws"
 resource: ""
 ---

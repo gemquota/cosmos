@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "iOS Platform"
 description: "Apple mobile OS: UIKit, SwiftUI, sandboxing, and the App Store"
 tags: ["ios", "apple", "mobile", "platform"]

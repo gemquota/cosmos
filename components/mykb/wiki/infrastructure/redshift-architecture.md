@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Redshift Architecture"
 description: "AWS's petabyte-scale MPP warehouse with leader and compute nodes"
 tags: ["redshift", "aws", "mpp", "warehouse"]

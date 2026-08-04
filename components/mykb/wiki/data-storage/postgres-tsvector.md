@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "PostgreSQL tsvector"
 description: "PostgreSQL's native full-text search over lexemes with ranking support"
 tags: ["postgres", "tsvector", "full-text", "sql"]

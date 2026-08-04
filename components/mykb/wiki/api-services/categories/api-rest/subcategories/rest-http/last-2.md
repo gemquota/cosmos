@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "LAST"
 description: "Elasticsearch"
 tags: ["acronym", "android", "api", "ast", "auth", "backend", "entity"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Helm & Chart Management"
 description: "Packaging and templating Kubernetes applications"
 tags: ["helm", "charts", "kubernetes", "packaging"]

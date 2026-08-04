@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "WebAuthn API"
 description: "W3C standard API for public-key credential registration and assertion in browsers and platforms"
 tags: ["webauthn", "w3c", "api", "fido", "authentication"]

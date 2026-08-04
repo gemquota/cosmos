@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "TestSchema"
 description: "Schema definitions used to validate test data and API payloads"
 tags: ["entity", "testing", "schema", "validation", "json"]

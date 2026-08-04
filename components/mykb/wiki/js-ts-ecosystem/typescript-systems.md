@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "TypeScript Systems"
 description: "TypeScript's type system in production: structural types, generics, inference, and configuration"
 tags: ["typescript", "types", "compilers", "javascript", "systems"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Claude"
 description: "Anthropic's frontier LLM family, known for long contexts, safety research, and agentic tool use"
 tags: ["claude", "anthropic", "llm", "models"]

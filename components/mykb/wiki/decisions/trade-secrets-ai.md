@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Trade Secrets in AI"
 description: "Keeping AI innovations secret as protection"
 tags: ["trade-secrets", "ai", "legal"]

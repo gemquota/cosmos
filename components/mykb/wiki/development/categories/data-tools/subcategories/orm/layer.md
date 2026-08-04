@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Layer"
 description: "Layer: horizontal architecture slices and the dependency rules that keep them clean"
 tags: ["entity", "cli", "ide", "orm", "architecture"]

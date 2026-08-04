@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Glue Schema Registry"
 description: "AWS-managed schema registry for streaming and message data"
 tags: ["glue", "schema-registry", "aws", "avro"]

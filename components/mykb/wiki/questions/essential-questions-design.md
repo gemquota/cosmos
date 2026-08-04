@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Essential Questions Design"
 description: "Framing curriculum around open questions that organize inquiry"
 tags: ["questions", "curriculum", "design"]

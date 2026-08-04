@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Traefik"
 description: "Cloud-native reverse proxy and ingress controller that auto-discovers containers and services"
 tags: ["traefik", "reverse-proxy", "kubernetes", "containers", "networking"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Kernel Rewriting"
 description: "Replacing or rewriting the core layer of a system while it runs"
 tags: ["kernel", "rewriting", "systems", "self-modification"]

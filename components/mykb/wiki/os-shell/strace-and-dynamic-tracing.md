@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "strace & Dynamic Tracing"
 description: "Syscall tracing with strace/ltrace and bpftrace"
 tags: ["strace", "tracing", "debugging", "bpftrace", "perf"]

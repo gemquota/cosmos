@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "mdadm & LVM2"
 description: "Linux software RAID and logical volume management tools"
 tags: ["mdadm", "lvm", "raid", "linux"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Knowledge Gaps"
 description: "Absences in understanding that question generation and acquisition target"
 tags: ["knowledge", "gaps", "learning"]

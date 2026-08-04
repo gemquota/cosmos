@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Tool Discipline"
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""

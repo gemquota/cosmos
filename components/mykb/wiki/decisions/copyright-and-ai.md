@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Copyright and AI"
 description: "How copyright law interacts with AI training and outputs"
 tags: ["copyright", "ai", "legal"]

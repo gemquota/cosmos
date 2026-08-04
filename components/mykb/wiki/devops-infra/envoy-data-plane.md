@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Envoy Data Plane"
 description: "The L3/L4/L7 proxy at the heart of modern service meshes"
 tags: ["envoy", "proxy", "data-plane", "service-mesh"]

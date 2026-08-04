@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Vite in Practice"
 description: "Dev-server-first build tool using native ES modules"
 tags: ["vite", "bundlers", "dev-server", "tooling"]

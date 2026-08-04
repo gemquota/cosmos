@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Flink SQL and Windows"
 description: "Declarative stream processing with windowed aggregations in Flink"
 tags: ["flink", "sql", "windowing", "stream-processing"]

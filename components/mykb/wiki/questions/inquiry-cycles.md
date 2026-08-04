@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Inquiry Cycles"
 description: "Iterative loops of questioning, investigation, and reflection"
 tags: ["inquiry", "cycles", "learning"]

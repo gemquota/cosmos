@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Llama"
 description: "Meta's family of open-weight LLMs, the de facto standard for local and self-hosted deployments"
 tags: ["llama", "meta", "open-weights", "llm"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "License Compliance for AI"
 description: "Practices for honoring AI software and data licenses"
 tags: ["license", "compliance", "practice"]

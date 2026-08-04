@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Question Generation"
 description: "Producing questions to drive inquiry, testing, and learning"
 tags: ["questions", "learning", "generation"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Surprise and Learning"
 description: "Unexpected outcomes as signals that trigger belief revision"
 tags: ["surprise", "learning", "prediction"]

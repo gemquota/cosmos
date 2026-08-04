@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Iceberg Table Format and Versioning"
 description: "Snapshot-based table format for ACID on the lake"
 tags: ["iceberg", "table-format", "snapshots", "lakehouse"]

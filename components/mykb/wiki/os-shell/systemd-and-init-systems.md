@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "systemd & Init Systems"
 description: "The first process and service supervision on Linux"
 tags: ["init", "systemd", "services", "boot"]

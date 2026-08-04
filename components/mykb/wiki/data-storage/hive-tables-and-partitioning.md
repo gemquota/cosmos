@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Hive Tables and Partitioning"
 description: "The legacy SQL-on-files model with static partitioning"
 tags: ["hive", "partitioning", "table-format", "warehouse"]

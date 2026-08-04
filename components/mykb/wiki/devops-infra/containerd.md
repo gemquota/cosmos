@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "containerd"
 description: "Industry-standard OCI container runtime managing image lifecycle and execution"
 tags: ["containerd", "containers", "oci", "runtime", "kubernetes"]

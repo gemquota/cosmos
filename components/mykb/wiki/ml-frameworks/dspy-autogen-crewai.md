@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "DSPy, AutoGen, and CrewAI"
 description: "Programmatic and multi-agent frameworks: DSPy optimizes prompts, AutoGen and CrewAI orchestrate agent teams"
 tags: ["autogen", "crewai", "multi-agent"]

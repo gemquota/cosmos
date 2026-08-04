@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Responsible AI Labs"
 description: "Labs institutionalizing responsible development"
 tags: ["responsible", "labs", "governance"]

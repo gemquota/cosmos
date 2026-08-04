@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Epistemic Uncertainty"
 description: "Uncertainty that stems from limited knowledge rather than inherent randomness"
 tags: ["uncertainty", "epistemology", "knowledge"]

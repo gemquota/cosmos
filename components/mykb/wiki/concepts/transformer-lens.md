@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "TransformerLens"
 description: "Libraries for hooking into transformer internals"
 tags: ["transformerlens", "interpretability", "tooling"]

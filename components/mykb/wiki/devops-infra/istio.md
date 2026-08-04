@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Istio"
 description: "Service mesh providing mTLS, traffic routing, observability, and policy for Kubernetes"
 tags: ["istio", "service-mesh", "kubernetes", "security", "traffic"]

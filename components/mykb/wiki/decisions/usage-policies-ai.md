@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "AI Usage Policies"
 description: "Terms governing how AI systems may be used"
 tags: ["usage", "policies", "governance"]

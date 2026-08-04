@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Hinge Questions"
 description: "Single checkpoints in a lesson where the class must answer to proceed"
 tags: ["questions", "teaching", "formative-assessment"]

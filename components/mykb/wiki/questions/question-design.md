@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Question Design"
 description: "Crafting questions that elicit the intended thinking or evidence"
 tags: ["questions", "design", "assessment"]

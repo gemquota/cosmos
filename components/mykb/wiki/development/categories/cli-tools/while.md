@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "While"
 description: "While loops: repetition control flow in scripting, CLI tools, and agent loops"
 tags: ["entity", "ast", "bug", "cli", "edge", "ide", "loops"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "SwiftUI"
 description: "Apple declarative UI framework with state-driven views"
 tags: ["ios", "swiftui", "ui", "declarative"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "llama.cpp"
 description: "A C/C++ inference engine for running quantized LLMs efficiently on CPU and GPU"
 tags: ["llama-cpp", "inference", "quantisation", "llm"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Frontier Lab Practices"
 description: "Internal safety and governance practices at leading labs"
 tags: ["frontier", "labs", "practices"]

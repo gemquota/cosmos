@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "BigQuery Architecture"
 description: "Serverless columnar warehouse with disaggregated storage and a petabit-scale query fabric"
 tags: ["bigquery", "gcp", "serverless", "warehouse"]

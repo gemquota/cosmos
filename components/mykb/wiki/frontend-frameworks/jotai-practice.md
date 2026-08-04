@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Jotai in Practice"
 description: "Atomic primitive-based state for React"
 tags: ["jotai", "state", "react", "frontend"]

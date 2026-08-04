@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Selective Chaos"
 description: "Referenced in session 75202bac"
 tags: ["entity", "angular", "api", "ast", "auth", "authentication"]

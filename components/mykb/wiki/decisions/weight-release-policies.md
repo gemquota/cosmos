@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Weight Release Policies"
 description: "Procedures for deciding when and how to release weights"
 tags: ["weights", "release", "policies"]

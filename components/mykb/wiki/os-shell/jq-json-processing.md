@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "jq"
 description: "Filtering and transforming JSON in pipelines"
 tags: ["jq", "json", "processing", "cli"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "XFS & ext4"
 description: "The two battle-tested Linux filesystems and when to pick each"
 tags: ["xfs", "ext4", "filesystem", "linux"]

@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "PromptSession"
 description: "A bounded, stateful interaction between a user or agent and a language model"
 tags: ["entity", "prompt", "session", "llm", "conversation"]

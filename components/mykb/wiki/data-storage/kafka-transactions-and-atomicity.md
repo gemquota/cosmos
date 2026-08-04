@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Kafka Transactions and Atomicity"
 description: "Atomic writes across multiple partitions in Kafka"
 tags: ["kafka", "transactions", "atomicity", "exactly-once"]

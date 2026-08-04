@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Redis and Caching Patterns"
 description: "In-memory data structures for speed"
 tags: ["redis", "caching", "in-memory", "performance"]

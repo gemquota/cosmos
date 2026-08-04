@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Stress Testing"
 description: "Testing a system under extreme load to find its breaking point"
 tags: ["entity", "testing", "load", "performance", "reliability"]

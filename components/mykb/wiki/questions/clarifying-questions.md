@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Clarifying Questions"
 description: "Questions that pin down meaning, scope, and definitions"
 tags: ["questions", "clarification", "communication"]

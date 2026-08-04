@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "State Isolation"
 description: "State isolation: scoping mutable state so components and processes cannot interfere"
 tags: ["entity", "ast", "bug", "cli", "edge", "ide", "state"]

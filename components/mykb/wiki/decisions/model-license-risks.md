@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Model License Risks"
 description: "Legal risks from model licensing terms"
 tags: ["licenses", "risk", "models"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Flutter Framework"
 description: "Google UI toolkit compiling Dart to native code, rendering its own UI across platforms"
 tags: ["flutter", "dart", "ui", "cross-platform", "widgets"]

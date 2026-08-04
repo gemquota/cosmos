@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Researching Experiment Context"
 description: "Context"
 tags: ["entity", "ide", "logging", "monitoring", "orm", "rest"]

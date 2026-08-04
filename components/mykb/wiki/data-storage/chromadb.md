@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "ChromaDB"
 description: "Embedded, Python-first vector database popular for local RAG prototypes"
 tags: ["chromadb", "vector-database", "python", "local"]

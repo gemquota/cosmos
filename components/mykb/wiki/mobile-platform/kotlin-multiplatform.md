@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Kotlin Multiplatform"
 description: "Sharing Kotlin logic across platforms with expect/actual, KMP tooling, and native UIs"
 tags: ["kotlin", "multiplatform", "mobile", "shared-logic", "android"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Self-Hosting"
 description: "A system that can build and run itself"
 tags: ["self-hosting", "bootstrapping", "compilers", "infrastructure"]

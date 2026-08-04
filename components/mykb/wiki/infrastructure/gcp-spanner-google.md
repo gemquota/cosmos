@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Google Cloud Spanner"
 description: "Globally distributed relational database with external consistency"
 tags: ["spanner", "gcp", "global", "distributed-sql"]

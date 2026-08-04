@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "SPARQL"
 description: "Query language for RDF graphs, the SQL of the semantic web"
 tags: ["sparql", "query", "rdf", "linked-data"]

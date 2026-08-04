@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "pulse"
 title: "Self-Evaluation Scores"
 description: "Numerical scores a system assigns to its own outputs"
 tags: ["self-evaluation", "scores", "telemetry"]

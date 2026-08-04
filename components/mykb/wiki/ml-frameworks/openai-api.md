@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "OpenAI API"
 description: "OpenAI's hosted API surface: chat completions, embeddings, fine-tuning, and tool calling"
 tags: ["openai-api", "apis", "llm"]

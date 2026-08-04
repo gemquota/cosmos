@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Teradata and Legacy Warehouses"
 description: "The MPP appliances that defined enterprise warehousing"
 tags: ["teradata", "legacy", "mpp", "warehouse"]

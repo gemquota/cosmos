@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "pulse"
 title: "Self-Reports vs Measures"
 description: "The gap between what a system says about itself and what is measured"
 tags: ["self-reports", "measurement", "calibration"]

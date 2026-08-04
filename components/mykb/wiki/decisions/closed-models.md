@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Closed Models"
 description: "Models available only through vendor APIs"
 tags: ["closed-models", "api", "frontier"]

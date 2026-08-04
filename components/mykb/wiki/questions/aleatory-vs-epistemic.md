@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Aleatory vs Epistemic Uncertainty"
 description: "Distinguishing irreducible randomness from reducible ignorance"
 tags: ["uncertainty", "probability", "risk"]

@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Philosophical Perspectives"
 description: "IDE — code editor environment, ORM — object-relational mapping, SPA — single-page application"
 tags: ["entity", "ast", "ide", "orm", "spa"]

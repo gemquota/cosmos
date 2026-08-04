@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "eBPF & XDP"
 description: "In-kernel programmable packet and tracing paths"
 tags: ["eBPF", "XDP", "kernel", "observability"]

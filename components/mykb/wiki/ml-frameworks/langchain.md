@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "LangChain"
 description: "A framework for composing LLM applications: chains, agents, retrieval, and integrations"
 tags: ["langchain", "llm", "framework", "agents"]

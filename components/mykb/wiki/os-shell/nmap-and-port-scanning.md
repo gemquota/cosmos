@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "nmap & Port Scanning"
 description: "Scan types and host discovery"
 tags: ["nmap", "scanning", "ports", "security"]

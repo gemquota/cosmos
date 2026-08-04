@@ -1,5 +1,5 @@
 ---
-type: "synthesis"
+type: "concept"
 title: "mykb Implementation Report: 6-Phase Buildout — Actual State, Architecture, and Results"
 description: "Post-implementation report documenting all 6 phases of the mykb intelligence buildout — architecture decisions, metrics, API surface, and future roadmap."
 tags: ["mykb", "implementation", "report", "architecture", "completed"]

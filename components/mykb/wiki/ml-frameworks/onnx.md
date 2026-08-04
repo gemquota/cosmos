@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "ONNX"
 description: "Open Neural Network Exchange: an open model format for interoperability across frameworks and runtimes"
 tags: ["onnx", "interoperability", "model-format"]

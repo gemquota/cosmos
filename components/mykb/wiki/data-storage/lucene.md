@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Lucene"
 description: "High-performance open-source full-text search library written in Java"
 tags: ["lucene", "search", "indexing", "fts"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Vite"
 description: "Dev server and build architecture on esbuild and Rollup"
 tags: [vite", "build-tools", "bundlers", "javascript", "tooling"]

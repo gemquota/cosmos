@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Google Cloud Run"
 description: "Serverless container platform on GCP scaling requests to zero with per-request billing"
 tags: ["google-cloud", "cloud-run", "serverless", "containers", "gcp"]

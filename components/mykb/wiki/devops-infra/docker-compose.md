@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Docker Compose"
 description: "Declarative local multi-container orchestration with a single YAML file"
 tags: ["docker", "compose", "containers", "devops", "local-dev"]

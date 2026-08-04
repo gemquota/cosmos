@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Search Engines: Elasticsearch"
 description: "Distributed full-text search and analytics over inverted indexes"
 tags: ["elasticsearch", "search", "inverted-index", "analytics"]

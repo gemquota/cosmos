@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "AWS S3"
 description: "Object storage service for files, static sites, backups, and data lakes with 99.999999999% durability"
 tags: ["aws", "s3", "storage", "objects", "cloud"]

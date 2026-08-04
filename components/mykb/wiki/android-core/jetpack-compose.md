@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Jetpack Compose"
 description: "Declarative Kotlin UI toolkit for Android with automatic recomposition and Material 3"
 tags: ["android", "compose", "ui", "declarative", "kotlin"]

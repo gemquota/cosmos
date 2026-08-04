@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "pulse"
 title: "Capability Probes"
 description: "Focused tests that detect specific capabilities"
 tags: ["probes", "capabilities", "evals"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Haystack"
 description: "Open-source framework for building production RAG and search pipelines with modular components"
 tags: ["rag", "framework", "search"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Spark SQL and DataFrames"
 description: "Declarative analytics on the Spark engine"
 tags: ["spark-sql", "dataframes", "spark", "analytics"]

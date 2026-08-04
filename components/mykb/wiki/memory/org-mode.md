@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Org Mode"
 description: "Emacs plain-text outlining and note system with agenda, links, and literate programming"
 tags: ["org-mode", "emacs", "outliner", "plain-text"]

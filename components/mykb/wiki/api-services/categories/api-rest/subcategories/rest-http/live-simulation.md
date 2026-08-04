@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Live Simulation"
 description: "Running a simulation in real time with interactive or streaming updates"
 tags: ["entity", "simulation", "realtime", "interactive", "testing"]

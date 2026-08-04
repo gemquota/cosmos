@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "netcat & Raw Sockets"
 description: "Port checks, piping, and ad-hoc connections"
 tags: ["netcat", "sockets", "network", "debugging"]

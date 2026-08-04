@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "LangChain Framework"
 description: "Popular framework for composing LLM calls with tools, retrievers, and memory into chains and agents"
 tags: ["framework", "agents", "llm"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "DuckDB"
 description: "In-process analytical database engine, 'SQLite for analytics', optimized for OLAP queries"
 tags: ["duckdb", "olap", "analytics", "embedded", "database"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "GloVe"
 description: "Word embeddings learned from global co-occurrence statistics via matrix factorization"
 tags: ["glove", "embeddings", "nlp", "representation"]

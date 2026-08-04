@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Turbopack in Practice"
 description: "Rust-based incremental bundler from the Next.js team"
 tags: ["turbopack", "bundlers", "rust", "tooling"]

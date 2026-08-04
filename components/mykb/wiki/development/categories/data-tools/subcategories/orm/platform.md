@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Platform"
 description: "Platform: shared foundations and internal products for data access and tooling"
 tags: ["entity", "cli", "ide", "orm", "platform-engineering"]

@@ -1,6 +1,6 @@
 ---
 status: "growing"
-type: "entity"
+type: "concept"
 title: "Integrated Information Theory"
 description: "Referenced in session 791ec3a4"
 tags: ["ast", "entity", "guid", "ide", "orm", "spa"]

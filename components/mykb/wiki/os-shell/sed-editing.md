@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Sed Editing"
 description: "The stream editor for scripted, non-interactive text transformations"
 tags: ["sed", "text", "stream", "editing"]

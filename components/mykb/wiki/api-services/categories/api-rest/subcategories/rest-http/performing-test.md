@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Performing Test"
 description: "Executing test cases against a system and collecting results"
 tags: ["entity", "testing", "execution", "ci", "quality"]

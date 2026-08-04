@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "WCAG"
 description: "Principles, guidelines, and conformance levels for accessibility"
 tags: [accessibility", "wcag", "standards", "a11y", "compliance"]

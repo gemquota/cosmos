@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Tmux Sessions"
 description: "Terminal multiplexing: persistent, detachable terminal sessions with panes and windows"
 tags: ["tmux", "terminal", "sessions", "multiplexer"]

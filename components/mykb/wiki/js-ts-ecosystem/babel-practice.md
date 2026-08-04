@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Babel in Practice"
 description: "Transpiling modern JavaScript to target-compatible output"
 tags: ["babel", "transpilers", "javascript", "tooling"]

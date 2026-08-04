@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "dig & DNS Tools"
 description: "dig/nslookup/host query workflows"
 tags: ["dig", "dns", "nslookup", "host"]

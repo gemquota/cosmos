@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "io_uring & Async I/O"
 description: "The high-performance asynchronous I/O interface on Linux"
 tags: ["io-uring", "async-io", "kernel", "performance"]

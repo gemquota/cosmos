@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "question"
 title: "Uncertainty Communication"
 description: "Conveying probability and confidence to audiences accurately"
 tags: ["uncertainty", "communication", "risk"]

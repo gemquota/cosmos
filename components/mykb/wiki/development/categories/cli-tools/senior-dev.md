@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Senior Dev"
 description: "Senior dev: experience-based judgment in architecture, review, mentoring, and ownership"
 tags: ["entity", "ast", "cli", "ide", "queue", "terminal", "seniority"]

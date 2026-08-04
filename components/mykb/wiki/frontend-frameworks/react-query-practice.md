@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "TanStack Query Practice"
 description: "Server-state caching with auto-refetch and invalidation"
 tags: ["react-query", "data-fetching", "caching", "frontend"]

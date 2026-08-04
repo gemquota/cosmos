@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Nginx"
 description: "High-performance web server and reverse proxy handling static content, TLS, caching, and load balancing"
 tags: ["nginx", "webserver", "reverse-proxy", "tls", "devops"]

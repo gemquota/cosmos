@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "decision"
 title: "Model Licensing"
 description: "Choosing license terms for model releases"
 tags: ["licensing", "models", "policy"]

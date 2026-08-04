@@ -1,5 +1,5 @@
 ---
-type: "entity"
+type: "concept"
 title: "Theories"
 description: "Theories: competing frameworks for explaining consciousness and how to evaluate them"
 tags: ["entity", "ast", "guid", "ide", "orm", "spa", "theories"]

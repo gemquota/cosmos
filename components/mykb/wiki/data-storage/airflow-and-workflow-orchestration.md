@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Airflow and Workflow Orchestration"
 description: "Scheduling and coordinating data workflows as code"
 tags: ["airflow", "orchestration", "dags", "scheduling"]

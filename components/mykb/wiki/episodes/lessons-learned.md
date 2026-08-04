@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "episode"
 title: "Lessons Learned"
 description: "Durable takeaways extracted from experience for future use"
 tags: ["lessons", "knowledge", "experience"]

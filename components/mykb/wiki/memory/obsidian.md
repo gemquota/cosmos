@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Obsidian"
 description: "Local-first markdown note app whose linking, backlinks, and graph views suit networked notes"
 tags: ["obsidian", "tool", "markdown", "pkm"]

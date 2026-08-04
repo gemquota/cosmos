@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "Parcel in Practice"
 description: "Zero-configuration bundler with built-in asset handling"
 tags: ["parcel", "bundlers", "javascript", "tooling"]

@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "episode"
 title: "After Action Review"
 description: "Team reflection ritual: what was expected, what happened, why, next time"
 tags: ["review", "teams", "reflection"]

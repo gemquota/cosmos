@@ -1,5 +1,5 @@
 ---
-type: "concept"
+type: "entity"
 title: "TimescaleDB and Postgres Extensions"
 description: "Time-series power inside Postgres"
 tags: ["timescaledb", "postgres", "time-series", "extensions"]
