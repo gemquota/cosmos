@@ -26,11 +26,11 @@ The entry appears alongside other error-type pages in the wiki, and its patterns
 
 ## Related Entities
 
-- [[wiki/frontend/categories/css-styling/cs|Css 10]]
+- [[wiki/frontend/categories/css-styling/css|Css 10]]
 - [[wiki/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
 - [[wiki/frontend/categories/css-styling/database-2|Database 2]]
 - [[wiki/frontend/categories/css-styling/display-2|Display 2]]
-- [[wiki/frontend/categories/css-styling/htm|Html 10]]
+- [[wiki/frontend/categories/css-styling/html|Html 10]]
 - [[wiki/frontend/categories/css-styling/reference-2|Reference 2]]
 - [[wiki/frontend/categories/css-styling/dob-2|Dob 2]]
 - [[wiki/frontend/categories/css-styling/telemetry-2|Telemetry 2]]

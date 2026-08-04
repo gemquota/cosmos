@@ -30,7 +30,7 @@ BigQuery is the angular-cluster entity for Google's serverless data warehouse: c
 
 ## Related
 
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/d|DB]] — database layer sibling
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/db|DB]] — database layer sibling
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/typeorm|TypeORM]] — typed data access
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/build|BUILD]] — cluster sibling page
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/00-index|Angular Index]] — cluster index page

@@ -34,38 +34,38 @@ Part of [[wiki/index|Wiki Index]]. 216 pages.
 - APA — API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/apex-individuals|Apex Individuals]] — AJAX — async web data exchange, API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/apexuser-2|ApexUser]] — Referenced in session 9d38ffb8
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/ap|API]] — Acronym referenced in session 3ebbffaf
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/api|API]] — Acronym referenced in session 3ebbffaf
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/approvalpolicy-2|ApprovalPolicy]] — Referenced in session 019ef46f
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/apt|APT]] — APT (Advanced Package Tool)
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ar-2|AR]] — Angular
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/archival-hash|Archival Hash]] — Hashing
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/argumentparser-2|ArgumentParser]] — Referenced in session fdc4b34f
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/arid-2|ARID]] — Acronym referenced in session 019ef7a2
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/arraybuffe|ArrayBuffer]] — Referenced in session 80c50c17
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/arraybuffer|ArrayBuffer]] — Referenced in session 80c50c17
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/asap|ASAP]] — API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/assertionerror|AssertionError]] — Error
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/asyncclient-2|AsyncClient]] — CLI (Command Line Interface)
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/asyncnetworkmanager-2|AsyncNetworkManager]] — Referenced in session fa9ee442
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/attack-surface|Attack Surface]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/attemptin|Attempting]] — Referenced in session 1509bc16
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/attempting|Attempting]] — Referenced in session 1509bc16
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/attributeerror|AttributeError]] — Error
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/audit-2|AUDIT]] — Acronym referenced in session 019f4fd2
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/audit-operational-checklist|Audit Operational Checklist]] — API — service communication interface, Authentication — identity verification
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/authenticatio|Authentication 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/authentication|Authentication 10]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/auto-upgrades|Auto Upgrades]] — API — service communication interface, Authentication — identity verification, AWS — Amazon cloud services
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/autogen|AutoGen]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/autoheale|AutoHealer]] — Referenced in session b39ce644
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automati|Automatic]] — Referenced in session 4150d09b
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/autohealer|AutoHealer]] — Referenced in session b39ce644
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic|Automatic]] — Referenced in session 4150d09b
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/autonomous-cognitive-engine|Autonomous Cognitive Engine]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/away-2|AWAY]] — Acronym referenced in session 019ef7a2
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/aw|AWS]] — Acronym referenced in session 019f417e
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/aws|AWS]] — Acronym referenced in session 019f417e
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/backpressuremanager|BackpressureManager]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/balance-data|Balance Data]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/balance-entry|Balance Entry]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/balances-error|Balances Error]] — Error
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/base-cost|Base Cost]] — API — service communication interface, Authentication — identity verification, AWS — Amazon cloud services
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/base-radius-2|Base Radius]] — Referenced in session c8972324
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/basemode|BaseModel]] — Referenced in session 81c5e6d2
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/basemodel|BaseModel]] — Referenced in session 81c5e6d2
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/bdsm-2|BDSM]] — Acronym referenced in session 00cdd849
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/be-2|BE]] — Babel
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/beach-2|BEACH]] — Acronym referenced in session 019ef7a2
@@ -76,7 +76,7 @@ Part of [[wiki/index|Wiki Index]]. 216 pages.
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/benchmarkresult-2|BenchmarkResult]] — Referenced in session 741cda75
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/billboardsprite|BillboardSprite]] — API — service communication interface, Authentication — identity verification, AWS — Amazon cloud services
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/bindabletexture|BindableTexture]] — API — service communication interface, Authentication — identity verification
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/birth-rat|Birth Rate]] — Referenced in session 0c8d8673
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/birth-rate|Birth Rate]] — Referenced in session 0c8d8673
 - BM — API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/bnwo|BNWO]] — (Black New World Order) — term referenced in session c35cb519. c35cb519
 - BoMdwrIw — Referenced in session 019f6b68
@@ -98,12 +98,12 @@ Part of [[wiki/index|Wiki Index]]. 216 pages.
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/changes|Changes]] — API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/chatgpt|ChatGPT]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/chatmessage-2|ChatMessage]] — Referenced in session 019ef769
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/checkpointmanage|CheckpointManager]] — Referenced in session d3507371
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/checkpointmanager|CheckpointManager]] — Referenced in session d3507371
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/child-growth-standards|Child Growth Standards]] — API — service communication interface, Authentication — identity verification, Bash — shell scripting language
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/chrome|Chrome]] — Android — mobile development platform, Authentication — identity verification, Bash — shell scripting language
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/cid-2|CID]] — Acronym referenced in session ae1325ab
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/circulardependencyerror-2|CircularDependencyError]] — Error
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/clid|CLIDE]] — Acronym referenced in session 454634e7
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/clide|CLIDE]] — Acronym referenced in session 454634e7
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/client-error-2|Client Error]] — CLI (Command Line Interface)
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/clientsession|ClientSession]] — CLI (Command Line Interface)
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/code-sync-issues|Code Sync Issues]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
@@ -115,14 +115,14 @@ Part of [[wiki/index|Wiki Index]]. 216 pages.
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/collected|Collected]] — API — service communication interface, Authentication — identity verification, CLI — command-line tooling
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/commission-scraper|Commission Scraper]] — API — service communication interface, Authentication — identity verification, Bash — shell scripting language
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/conceptual-focus-2|Conceptual Focus]] — Referenced in session 203f0209
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/configparse|ConfigParser]] — Referenced in session 5e38e7ec
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/configparser|ConfigParser]] — Referenced in session 5e38e7ec
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/configupdate|ConfigUpdate]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/connectionmanager|ConnectionManager]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/contextmanager|ContextManager]] — Context
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/core-init|Core Init]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/critical-instructions|Critical Instructions]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/csa-2|CSA]] — Acronym referenced in session e09affd9
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/da|DAG]] — Acronym referenced in session 81c5e6d2
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/dag|DAG]] — Acronym referenced in session 81c5e6d2
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/databaseconnection-2|DatabaseConnection]] — Database
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/debugging-balance-detection|Debugging Balance Detection]] — Referenced in session 6c24b886
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/decisiontracer|DecisionTracer]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
@@ -135,7 +135,7 @@ Part of [[wiki/index|Wiki Index]]. 216 pages.
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/dv-2|DV]] — Acronym referenced in session 00cdd849
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/dynamic-obstacles|Dynamic Obstacles]] — Referenced in session c3131b2c
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/embedcontentconfig|EmbedContentConfig]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/emergentparamengin|EmergentParamEngine]] — Referenced in session 80c50c17
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/emergentparamengine|EmergentParamEngine]] — Referenced in session 80c50c17
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/enemymodel|EnemyModel]] — API — service communication interface, Authentication — identity verification, AWS — Amazon cloud services
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/enter-acronymefinition|Enter Acronymefinition]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/eventbus-2|EventBus]] — Referenced in session 019f6cad
@@ -144,7 +144,7 @@ Part of [[wiki/index|Wiki Index]]. 216 pages.
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/finding-redirect-destinations|Finding Redirect Destinations]] — API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|FOV]] — Acronym referenced in session d3c1665e
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/full-2|FULL]] — Acronym referenced in session 11928ff2
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/gemin|Gemini]] — Referenced in session 4150d09b
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/gemini|Gemini]] — Referenced in session 4150d09b
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/gemini-web-2|Gemini Web]] — RubyGems
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/geminiclien|GeminiClient]] — RubyGems
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/goalanalysis|GoalAnalysis]] — Go (Golang)
@@ -158,13 +158,13 @@ Part of [[wiki/index|Wiki Index]]. 216 pages.
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/hfapi|HfApi]] — API (Application Programming Interface)
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/history-error|History Error]] — Error
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/iframestorageproxy|IframeStorageProxy]] — RAG (Retrieval-Augmented Generation)
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/insightengin|InsightEngine]] — Referenced in session 80c50c17
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/insightengine|InsightEngine]] — Referenced in session 80c50c17
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/instant-prompt|Instant Prompt]] — Prompt
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/intent-routing|Intent Routing]] — Intent
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/intentdag-2|IntentDAG]] — Intent
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/invalid-access-2|Invalid Access]] — Referenced in session 8f4285b7
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/lawsynergygraph-2|LawSynergyGraph]] — Amazon Web Services
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/lineagetracke|LineageTracker]] — Referenced in session 80c50c17
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/lineagetracker|LineageTracker]] — Referenced in session 80c50c17
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/login|Login]] — Referenced in session 0118cc5d
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ltc-2|LTC]] — Acronym referenced in session 055286d6
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/magicmock|MagicMock]] — Android — mobile development platform, API — service communication interface, Authentication — identity verification
@@ -186,7 +186,7 @@ Part of [[wiki/index|Wiki Index]]. 216 pages.
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/particle-life-2|Particle Life]] — Particle System
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/pcg-2|PCG]] — Acronym referenced in session b4e00d39
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/performancemetric|PerformanceMetric]] — Performance
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/persistenceengin|PersistenceEngine]] — Referenced in session 80c50c17
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/persistenceengine|PersistenceEngine]] — Referenced in session 80c50c17
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/policyengine|PolicyEngine]] — Android — mobile development platform, Authentication — identity verification, AWS — Amazon cloud services
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/prestige-bottleneck|Prestige Bottleneck]] — REST (Representational State Transfer)
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/probability-canvas-2|Probability Canvas]] — Canvas
@@ -202,14 +202,14 @@ Part of [[wiki/index|Wiki Index]]. 216 pages.
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]] — Referenced in session 75202bac
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/sessiondatabase-2|SessionDatabase]] — Database
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/set-2|SET]] — Acronym referenced in session 0118cc5d
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/sharedarraybuffe|SharedArrayBuffer]] — Referenced in session 80c50c17
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/sharedarraybuffer|SharedArrayBuffer]] — Referenced in session 80c50c17
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/sim-speed|Sim Speed]] — Angular — TypeScript web framework, API — service communication interface, Authentication — identity verification
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/simulation-hub|Simulation Hub]] — Simulation
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/spawn-rate-2|Spawn Rate]] — Referenced in session 8430185b
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/telemetrymanage|TelemetryManager]] — Referenced in session d3507371
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/telemetrymanager|TelemetryManager]] — Referenced in session d3507371
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/testclient-2|TestClient]] — CLI (Command Line Interface)
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/testing-endpoint-2|Testing Endpoint]] — Testing
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/timelineengin|TimelineEngine]] — Referenced in session 80c50c17
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/timelineengine|TimelineEngine]] — Referenced in session 80c50c17
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/tool-discipline|Tool Discipline]] — IP (Internet Protocol)
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/toolexecutor-2|ToolExecutor]] — Referenced in session 019ebdc5
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/transformplugincontext-2|TransformPluginContext]] — Context
@@ -218,12 +218,12 @@ Part of [[wiki/index|Wiki Index]]. 216 pages.
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/validationpipeline|ValidationPipeline]] — pip (Python Package Installer)
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/validationresult|ValidationResult]] — Validation
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/vector-emergent-physics-automata-2|Vector Emergent Physics Automata]] — Physics Engine
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/verbosit|Verbosity]] — Referenced in session ad7c240a
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/verbosity|Verbosity]] — Referenced in session ad7c240a
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/vite|Vite]] — Referenced in session 05473df8
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/waitin|Waiting]] — Referenced in session 1509bc16
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/waiting|Waiting]] — Referenced in session 1509bc16
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/web-audio-2|Web Audio]] — Referenced in session 019f0689
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/webgl2-2|WebGL2]] — WebGL (Web Graphics Library)
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/websocke|WebSocket]] — Referenced in session f110fe6e
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/websocket|WebSocket]] — Referenced in session f110fe6e
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/websockets|WebSockets]] — WebSocket
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/webwright-2|WebWright]] — Referenced in session dd75982d
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/world-laws-2|World Laws]] — Amazon Web Services
