@@ -34,6 +34,13 @@ cosmos dashboard          # Launch dashboard + all services
 - **Cosmos:** https://gemquota.github.io/cosmos/
 - **Hub:** https://gemquota.github.io/hub/ (all non-COSMOS projects)
 
+Short MyKB links (redirect to `components/mykb/`):
+- Wiki: https://gemquota.github.io/cosmos/mykb/
+- Stats: https://gemquota.github.io/cosmos/mykb/stats
+- Stub audit: https://gemquota.github.io/cosmos/mykb/stub-audit
+- Knowledge graph: https://gemquota.github.io/cosmos/mykb/graph
+- Deep wiki paths (e.g. `mykb/wiki/<path>.md`) redirect via the root `404.html`.
+
 ## Commands
 
 ```bash
