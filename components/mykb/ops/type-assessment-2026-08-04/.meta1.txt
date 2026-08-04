@@ -1,0 +1,883 @@
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/keyerror.md  :: KeyError  :: An exception raised when a requested key is missing from a mapping
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/last-2.md  :: LAST  :: Elasticsearch
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/live-simulation.md  :: Live Simulation  :: Running a simulation in real time with interactive or streaming updates
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/lm-2.md  :: LM  :: Language model: a model trained to predict and generate natural language
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/local.md  :: Local  :: Localization (l10n): adapting software for language and regional conventions
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/mariadb.md  :: MariaDB  :: MariaDB: an open-source relational database forked from MySQL
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/mass-2.md  :: MASS  :: Multi-agent system: multiple agents cooperating or competing toward goals
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/memoryevent-2.md  :: MemoryEvent  :: Referenced in session 019ebdc5
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/mockcanvas.md  :: MockCanvas  :: A test double for a canvas drawing context that records operations
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/moduleregistry.md  :: ModuleRegistry  :: ModuleRegistry is an entity from the wiki's session index, categorized across API, cloud, mobil
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/next-2.md  :: Next 2  :: 
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/notimplementederror-2.md  :: NotImplementedError  :: An exception raised when a required method or feature is not implemented
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/oscillatornode.md  :: OscillatorNode  :: OscillatorNode is an entity from the wiki's session index whose name refers to the audio node t
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/performing-test.md  :: Performing Test  :: Executing test cases against a system and collecting results
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/perspectivemesh.md  :: PerspectiveMesh  :: Perspective projection and mesh rendering in client-side graphics pipelines
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/pgid.md  :: PGID  :: Acronym referenced in session 05473df8
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/pid-2.md  :: PID  :: Process ID: the operating system identifier for a running process
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/prestige-particles.md  :: Prestige Particles  :: Granular reputation or achievement signals awarded and accumulated in a system
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/promptsession-2.md  :: PromptSession  :: A bounded, stateful interaction between a user or agent and a language model
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/pycompileerror.md  :: PyCompileError  :: An exception raised when Python source cannot be compiled to bytecode
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/questionqualityindex.md  :: QuestionQualityIndex  :: QuestionQualityIndex is an entity from the wiki's session index whose name describes a metric f
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/raw-output-2.md  :: Raw Output  :: Referenced in session 6cc3ed28
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/referenceerror-2.md  :: ReferenceError  :: A JavaScript error raised when code refers to a binding that does not exist
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/repomapper.md  :: RepoMapper  :: Referenced in session 3ebbffaf
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/restoring-directories.md  :: Restoring Directories  :: Recovering directory structures and files from backups or version control
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/serving-flask.md  :: Serving Flask  :: Running Flask applications in production behind a WSGI server
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/simplehttp-2.md  :: SimpleHTTP  :: A minimal HTTP server used for local file serving and quick testing
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/simulation-laws.md  :: Simulation Laws  :: The rules and invariants that govern a simulation's behavior
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/stress-testing-2.md  :: Stress Testing  :: Testing a system under extreme load to find its breaking point
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/termux.md  :: Termux  :: Termux: a terminal emulator and Linux environment for Android
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/testarchivebuilder.md  :: TestArchiveBuilder  :: Tooling that packages test runs, artifacts, and reports into reusable archives
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/testing-preparation.md  :: Testing Preparation  :: Setting up fixtures, environments, and data before test execution
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/testschema.md  :: TestSchema  :: Schema definitions used to validate test data and API payloads
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/thought-stream-2.md  :: Thought Stream  :: Referenced in session f323f1aa
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/user-input.md  :: User Input  :: Referenced in session e3700b7f
+entity   wiki/api-services/categories/api-rest/subcategories/rest-http/valueerro.md  :: ValueError  :: A Python exception raised when a value is of the right type but wrong
+concept  wiki/api-services/cloud-security-posture.md  :: Cloud Security Posture  :: Continuous assessment of cloud configurations against security and compliance baselines
+concept  wiki/api-services/container-security.md  :: Container Security  :: Hardening container images and runtimes against compromise
+concept  wiki/api-services/dast.md  :: Dynamic Application Security Testing  :: Testing running applications for vulnerabilities through their external interfaces
+concept  wiki/api-services/dead-link-detection.md  :: Dead Link Detection  :: Finding external URLs that no longer respond
+concept  wiki/api-services/embedding-and-vector-query-apis.md  :: Embedding and Vector Query APIs  :: Serving semantic search over vector indexes
+concept  wiki/api-services/exactly-once-webhook-delivery.md  :: Exactly-Once Webhook Delivery  :: Making webhook calls safe to retry
+concept  wiki/api-services/filtering-and-query-dsls.md  :: Filtering and Query DSLs  :: Expressing structured queries over data APIs
+concept  wiki/api-services/fuzzing.md  :: Fuzzing  :: Automated testing that feeds malformed inputs to find crashes and vulnerabilities
+concept  wiki/api-services/gcp-iam.md  :: GCP IAM  :: Google Cloud's identity and access management with roles and policies
+concept  wiki/api-services/gql-and-data-apis.md  :: GraphQL and Data APIs  :: Client-driven querying over data services
+concept  wiki/api-services/idempotency-keys-in-apis.md  :: Idempotency Keys in APIs  :: Client-supplied keys that make retries safe
+concept  wiki/api-services/keyset-and-seek-pagination.md  :: Keyset and Seek Pagination  :: Paging by comparing against the last row's key
+concept  wiki/api-services/kubernetes-security.md  :: Kubernetes Security  :: Securing clusters: RBAC, pod security, network policy, and secrets
+concept  wiki/api-services/limit-offset-performance-problems.md  :: LIMIT/OFFSET Performance Problems  :: Why large offsets are slow and how to avoid them
+concept  wiki/api-services/link-rot-monitoring.md  :: Link-Rot Monitoring  :: Watching for external URLs that go dead over time
+concept  wiki/api-services/odata-and-query-protocols.md  :: OData and Query Protocols  :: Standardized REST query syntax for data services
+concept  wiki/api-services/offset-vs-cursor-pagination.md  :: Offset vs Cursor Pagination  :: Two pagination models and their tradeoffs
+concept  wiki/api-services/pagination-and-cursor-patterns.md  :: Pagination and Cursor Patterns  :: Fetching large result sets safely across API pages
+concept  wiki/api-services/rate-limiting-data-apis.md  :: Rate Limiting Data APIs  :: Protecting data services from overload
+concept  wiki/api-services/read-your-writes-and-consistency-apis.md  :: Read-Your-Writes and Consistency APIs  :: Consistency guarantees exposed to API clients
+concept  wiki/api-services/retry-strategies-and-backoff-jitter.md  :: Retry Strategies and Backoff Jitter  :: Retrying failures without thundering herds
+concept  wiki/api-services/sast.md  :: Static Application Security Testing  :: Analyzing source code for security flaws without executing it
+concept  wiki/api-services/sca.md  :: Software Composition Analysis  :: Identifying and tracking vulnerabilities and licenses in third-party dependencies
+concept  wiki/api-services/secret-scanning.md  :: Secret Scanning  :: Automated detection of credentials committed to repositories and other surfaces
+concept  wiki/api-services/source-lifetimes.md  :: Source Lifetimes  :: How long a source URL is expected to remain live and relevant
+concept  wiki/api-services/source-monitoring.md  :: Source Monitoring  :: Continuous checks that cited sources remain live and accurate
+concept  wiki/api-services/source-review-schedules.md  :: Source Review Schedules  :: The cadence at which sources are re-verified and re-read
+concept  wiki/api-services/sql-over-http-and-analytics-apis.md  :: SQL over HTTP and Analytics APIs  :: Running SQL through REST endpoints
+concept  wiki/api-services/webhooks-and-event-apis.md  :: Webhooks and Event APIs  :: Delivering events to systems instead of polling
+concept  wiki/cloud-infra/amazon-ebs-provisioning.md  :: Amazon EBS Provisioning  :: EBS volume types, sizing, and IOPS provisioning
+concept  wiki/cloud-infra/amd-epyc-and-intel-xeon.md  :: AMD EPYC & Intel Xeon  :: Serving as the x86 workhorses of modern cloud instances
+concept  wiki/cloud-infra/anycast-routing.md  :: Anycast Routing  :: Advertising the same IP from multiple locations so clients reach the nearest one
+concept  wiki/cloud-infra/arm-vs-x86-cloud.md  :: ARM vs x86 in the Cloud  :: Graviton-class ARM instances versus x86 performance and cost
+concept  wiki/cloud-infra/author-credentials.md  :: Author Credentials  :: Checking who wrote a source and why they are credible
+concept  wiki/cloud-infra/authoritative-and-recursive-resolvers.md  :: Authoritative & Recursive Resolvers  :: The two resolver roles and how queries flow between them
+concept  wiki/cloud-infra/autoscaling.md  :: Autoscaling  :: Automatically adjusting compute capacity to demand through horizontal, vertical, and predictive
+concept  wiki/cloud-infra/availability-zone-architectures.md  :: Availability Zone Architectures  :: Placing workloads across AZs for failure independence
+concept  wiki/cloud-infra/availability-zones.md  :: Availability Zones  :: Isolated failure domains within a cloud region that make multi-AZ architectures resilient
+concept  wiki/cloud-infra/aws-vpc-design.md  :: AWS VPC Design  :: Subnets, route tables, IGW, and NAT layout for production AWS networks
+concept  wiki/cloud-infra/azure-blob-access-tiers.md  :: Azure Blob Access Tiers  :: Hot, cool, cold, and archive tiers for blobs
+concept  wiki/cloud-infra/azure-managed-disks.md  :: Azure Managed Disks  :: Managed SSD/HDD tiers and their redundancy options
+concept  wiki/cloud-infra/azure-vnet-and-nsg.md  :: Azure VNet & NSGs  :: Virtual networks, subnets, and network security groups on Azure
+concept  wiki/cloud-infra/bandwidth-vs-throughput.md  :: Bandwidth vs Throughput  :: Theoretical link capacity versus realized application data rate
+concept  wiki/cloud-infra/bgp-routing.md  :: BGP Routing  :: The path-vector protocol that interconnects autonomous systems
+concept  wiki/cloud-infra/block-device-mapping-gcp.md  :: Block Device Mapping on GCP  :: GCE disks, snapshots, and attachment semantics
+concept  wiki/cloud-infra/budget-alerts.md  :: Budget Alerts  :: Threshold-based notifications that catch runaway cloud spend before the bill arrives
+concept  wiki/cloud-infra/burstable-instances.md  :: Burstable Instances  :: CPU credits that allow short bursts above baseline
+concept  wiki/cloud-infra/capacity-planning-costs.md  :: Capacity Planning & Costs  :: Right-sizing and forecasting to control cloud spend
+concept  wiki/cloud-infra/capacity-planning.md  :: Capacity Planning  :: Forecasting resource demand and sizing infrastructure to meet it within budget and risk toleran
+entity   wiki/cloud-infra/categories/aws-cloud/mainactivity.md  :: MainActivity  :: Activity
+entity   wiki/cloud-infra/categories/aws-cloud/particle-simulation-2.md  :: Particle Simulation  :: Particle System
+concept  wiki/cloud-infra/cdns-and-edge-networking.md  :: CDNs & Edge Networking  :: Distributed caches and compute that move content closer to users
+concept  wiki/cloud-infra/certificate-pinning-infra.md  :: Certificate Pinning in Infrastructure  :: Storing and rotating pinned leaf or intermediate certificates for internal TLS
+concept  wiki/cloud-infra/certificate-transparency.md  :: Certificate Transparency  :: Append-only public logs that audit issued TLS certificates
+concept  wiki/cloud-infra/client-vpn-profile.md  :: Client VPN Profiles  :: Per-user VPN configurations for remote access to private networks
+concept  wiki/cloud-infra/cloud-cost-optimization.md  :: Cloud Cost Optimization  :: Reducing cloud spend through rightsizing, commitments, lifecycle policies, and waste eliminatio
+concept  wiki/cloud-infra/cloud-emulators.md  :: Cloud Emulators  :: Local software that mimics cloud services (S3, Lambda, Pub/Sub) for development and testing
+concept  wiki/cloud-infra/cloud-migration-strategies.md  :: Cloud Migration Strategies  :: The seven Rs of moving workloads to the cloud: rehost, replatform, refactor, and beyond
+concept  wiki/cloud-infra/cloud-providers-aws-azure-gcp.md  :: Cloud Providers: AWS, Azure, GCP  :: The three major clouds and their shared service patterns
+concept  wiki/cloud-infra/cloud-security-groups.md  :: Cloud Security Groups  :: Stateful instance-level firewall rules on AWS and cloud platforms
+concept  wiki/cloud-infra/cold-storage.md  :: Cold Storage  :: The cheapest storage tier for rarely accessed data, with slower retrieval and retrieval fees
+concept  wiki/cloud-infra/coldline-and-archive-storage-classes.md  :: Coldline & Archive Storage Classes  :: Low-cost access patterns for rarely read data
+concept  wiki/cloud-infra/compute-autoscaling.md  :: Compute Autoscaling  :: Adding and removing capacity in response to demand
+concept  wiki/cloud-infra/compute-shapes-and-skus.md  :: Compute Shapes & SKUs  :: The family of instance sizes and their ratio tradeoffs
+concept  wiki/cloud-infra/congestion-control-algorithms.md  :: Congestion Control Algorithms  :: CUBIC, Reno, BBR and how senders adapt rate to network conditions
+concept  wiki/cloud-infra/connection-multiplexing.md  :: Connection Multiplexing  :: Sharing one transport connection across many concurrent streams
+concept  wiki/cloud-infra/content-delivery-networks.md  :: Content Delivery Networks  :: Geographically distributed proxy networks that cache content at the edge to cut latency and pro
+concept  wiki/cloud-infra/cost-of-bandwidth.md  :: Cost of Bandwidth  :: Egress pricing and how bandwidth shapes cloud architecture
+concept  wiki/cloud-infra/data-archiving.md  :: Data Archiving  :: Retaining data long-term for compliance, audit, or historical value with retrieval-friendly org
+concept  wiki/cloud-infra/data-residency-and-locality.md  :: Data Residency & Locality  :: Where data physically lives and the laws that follow it
+concept  wiki/cloud-infra/dedicated-hosts-and-instances.md  :: Dedicated Hosts & Instances  :: Single-tenant servers for compliance and performance isolation
+concept  wiki/cloud-infra/demand-forecasting.md  :: Demand Forecasting  :: Predicting future traffic and resource demand using history, seasonality, and business signals
+concept  wiki/cloud-infra/dhcp-and-ipam.md  :: DHCP & IPAM  :: Dynamic address assignment and IP address management at fleet scale
+concept  wiki/cloud-infra/direct-connect.md  :: Direct Connect  :: Dedicated private network links from on-premises data centers to cloud providers
+concept  wiki/cloud-infra/dns-management.md  :: DNS Management  :: Operating the domain name system: zones, record types, TTLs, routing policies, and DNSSEC for p
+concept  wiki/cloud-infra/dns-over-https.md  :: DNS over HTTPS  :: Encrypting DNS queries inside HTTPS to resist snooping and injection
+concept  wiki/cloud-infra/dns-resolution-process.md  :: DNS Resolution Process  :: From resolver to authoritative server: how names become addresses
+concept  wiki/cloud-infra/dns-zone-transfers.md  :: DNS Zone Transfers  :: AXFR/IXFR replication between authoritative name servers
+concept  wiki/cloud-infra/dnssec-and-validation.md  :: DNSSEC & Validation  :: Authenticating DNS answers with signed zone records and chain-of-trust validation
+concept  wiki/cloud-infra/domain-trust.md  :: Domain Trust  :: Trusting sources by the domain they are hosted on
+concept  wiki/cloud-infra/edge-computing.md  :: Edge Computing  :: Running compute close to users at CDN points of presence instead of centralized regions
+concept  wiki/cloud-infra/edge-locations.md  :: Edge Locations  :: PoPs closer to users where CDNs and serverless runtimes cache and execute
+concept  wiki/cloud-infra/finops-practices.md  :: FinOps Practices  :: The operational discipline of managing cloud cost: visibility, allocation, and continuous optim
+concept  wiki/cloud-infra/flow-control.md  :: Flow Control  :: Receiver-window based pacing that prevents sender overflow of buffers
+concept  wiki/cloud-infra/flow-logs-and-analysis.md  :: Flow Logs & Analysis  :: Capturing network metadata for security and cost analysis
+concept  wiki/cloud-infra/function-as-a-service.md  :: Function-as-a-Service  :: Serverless execution of single-purpose functions, billed per invocation and scaled to zero
+concept  wiki/cloud-infra/function-execution-lifecycle.md  :: Function Execution Lifecycle  :: Cold starts, warm pools, and the life of a serverless invocation
+concept  wiki/cloud-infra/gcp-vpc-and-cloud-nat.md  :: GCP VPC & Cloud NAT  :: Global VPCs, firewall rules, and managed NAT for GCP
+concept  wiki/cloud-infra/gcs-nearline-and-coldline.md  :: GCS Nearline & Coldline  :: Google Cloud storage classes between hot and archive
+concept  wiki/cloud-infra/glacier-and-s3-lifecycle.md  :: Glacier & S3 Lifecycle  :: Automating transitions to archive tiers with lifecycle rules
+concept  wiki/cloud-infra/graviton-and-aws.md  :: Graviton & AWS  :: AWS custom ARM silicon for cost-effective compute
+concept  wiki/cloud-infra/handshakes.md  :: Handshakes  :: The protocol negotiations that establish secure, synchronized sessions
+concept  wiki/cloud-infra/http-2-multiplexing.md  :: HTTP/2 Multiplexing  :: Concurrent streams over one connection with head-of-line tradeoffs
+concept  wiki/cloud-infra/http-3-0-rtt.md  :: HTTP/3 0-RTT  :: Resumed QUIC sessions that send data before the round trip
+concept  wiki/cloud-infra/http-protocols.md  :: HTTP Protocols  :: The evolution from HTTP/1.1 to HTTP/2 and HTTP/3
+concept  wiki/cloud-infra/https-and-tls.md  :: HTTPS & TLS  :: How TLS authenticates servers and encrypts web traffic
+concept  wiki/cloud-infra/instance-store-vs-ebs.md  :: Instance Store vs EBS  :: Ephemeral local disks versus networked durable volumes
+concept  wiki/cloud-infra/ipsec-tunnels.md  :: IPsec Tunnels  :: Suite-based VPN protection for IP packets with IKE negotiation
+concept  wiki/cloud-infra/ipv6-adoption.md  :: IPv6 Adoption  :: Address exhaustion, transition mechanisms, and the state of IPv6 rollout
+concept  wiki/cloud-infra/ipv6-link-local-addresses.md  :: IPv6 Link-Local Addresses  :: fe80:: addresses used for neighbor discovery and automatic configuration
+concept  wiki/cloud-infra/latencies-rtt-and-jitter.md  :: Latency, RTT & Jitter  :: Measuring round-trip time, variability, and their effect on protocols
+concept  wiki/cloud-infra/latency-optimization.md  :: Latency Optimization  :: Techniques to reduce request latency: caching, edge placement, protocols, and tracing-driven tu
+concept  wiki/cloud-infra/legal-hold-and-preservation.md  :: Legal Hold & Preservation  :: Freezing data during litigation or investigation
+concept  wiki/cloud-infra/lift-and-shift.md  :: Lift-and-Shift  :: Migrating workloads to the cloud with minimal changes, replicating the old architecture as-is
+concept  wiki/cloud-infra/mtu-and-fragmentation.md  :: MTU & Fragmentation  :: Maximum transmission unit limits and how oversized packets get handled
+concept  wiki/cloud-infra/multi-cloud-hybrid-cloud.md  :: Multi-Cloud & Hybrid Cloud  :: Operating across providers and between cloud and on-prem
+concept  wiki/cloud-infra/multi-cloud-strategy.md  :: Multi-Cloud Strategy  :: Deliberate use of multiple cloud providers for resilience, best-of-breed services, or cost leve
+concept  wiki/cloud-infra/multicast-networking.md  :: Multicast Networking  :: One-to-many delivery using group membership protocols like IGMP
+concept  wiki/cloud-infra/mutual-tls-internal-services.md  :: Mutual TLS for Internal Services  :: mTLS identity verification between services using client certificates
+concept  wiki/cloud-infra/nat-gateways.md  :: NAT Gateways  :: Managed network address translation that gives private resources outbound internet access witho
+concept  wiki/cloud-infra/network-access-control-lists.md  :: Network Access Control Lists  :: Stateless subnet-level filtering rules on cloud networks
+concept  wiki/cloud-infra/network-address-translation-variants.md  :: NAT Variants  :: SNAT, DNAT, masquerade, and hairpin translation behaviors
+concept  wiki/cloud-infra/networking-fundamentals.md  :: Networking Fundamentals  :: The layered model, addressing, and packet flow that underpin all networked systems
+concept  wiki/cloud-infra/object-lock-and-worm.md  :: Object Lock & WORM  :: Write-once-read-many protection on object storage
+concept  wiki/cloud-infra/object-storage-protocols.md  :: Object Storage Protocols  :: HTTP-based storage of immutable blobs with metadata
+concept  wiki/cloud-infra/object-storage.md  :: Object Storage  :: Scalable storage for unstructured data addressed by keys, with high durability and S3-compatibl
+concept  wiki/cloud-infra/parameter-stores-aws-ssm-azure-keyvault-gcp-secretmanager.md  :: Cloud Parameter Stores  :: SSM, Key Vault, and Secret Manager as central config stores
+concept  wiki/cloud-infra/peering-and-transit.md  :: Peering and Transit  :: Connecting separate networks — VPCs, clouds, or data centers — through direct peering or transi
+concept  wiki/cloud-infra/point-of-presence.md  :: Point of Presence  :: Physical network facilities where providers interconnect with last-mile networks
+concept  wiki/cloud-infra/preemptible-vm-workloads.md  :: Preemptible VM Workloads  :: Designing stateless, checkpointed work for interruptible VMs
+concept  wiki/cloud-infra/private-link-and-private-endpoints.md  :: Private Link & Private Endpoints  :: Reaching cloud services over private IPs without public exposure
+concept  wiki/cloud-infra/publisher-trust.md  :: Publisher Trust  :: Evaluating the organization behind a source
+concept  wiki/cloud-infra/quic-and-http3.md  :: QUIC & HTTP/3  :: The UDP-based transport with built-in TLS 1.3 and its HTTP/3 mapping
+concept  wiki/cloud-infra/quota-management.md  :: Quota Management  :: Hard per-account limits on cloud resources that prevent runaway consumption and enforce governa
+concept  wiki/cloud-infra/re-platforming.md  :: Re-platforming  :: Migrating with targeted upgrades to managed services without rewriting application code
+concept  wiki/cloud-infra/remote-access-methods.md  :: Remote Access Methods  :: SSH, VPNs, RDP, and bastions as ways into private networks
+concept  wiki/cloud-infra/reputation-score.md  :: Reputation Score  :: The sub-score rating a source's or article's standing
+concept  wiki/cloud-infra/reserved-capacity.md  :: Reserved Capacity  :: Committed-use discounts that trade flexibility for predictable, lower compute pricing
+concept  wiki/cloud-infra/reserved-instances-vs-on-demand.md  :: Reserved vs On-Demand Instances  :: Trading flexibility for price with commitment-based pricing
+concept  wiki/cloud-infra/resource-tagging.md  :: Resource Tagging  :: Labeling cloud resources with metadata for cost allocation, ownership, and automation
+concept  wiki/cloud-infra/right-sizing.md  :: Right-Sizing  :: Adjusting instance and resource sizes to match actual workload demand, cutting waste without sa
+concept  wiki/cloud-infra/savings-plans.md  :: Savings Plans  :: Flexible hourly commitments that discount compute spend
+concept  wiki/cloud-infra/security-group-best-practices.md  :: Security Group Best Practices  :: Least-privilege rules, tagging, and audit habits for security groups
+concept  wiki/cloud-infra/serverless-computing-patterns.md  :: Serverless Computing Patterns  :: Event-driven functions and managed runtimes without servers
+concept  wiki/cloud-infra/service-discovery-dns-based.md  :: DNS-Based Service Discovery  :: SRV records and convention-based discovery for services
+concept  wiki/cloud-infra/site-to-site-vpn.md  :: Site-to-Site VPN  :: Persistent encrypted links between offices and clouds
+concept  wiki/cloud-infra/snapshot-lifecycle-policies.md  :: Snapshot Lifecycle Policies  :: Automating snapshot creation, retention, and deletion
+concept  wiki/cloud-infra/snapshot-strategies.md  :: Snapshot Strategies  :: Scheduling point-in-time copies of volumes and databases for recovery and rollback
+concept  wiki/cloud-infra/source-vetting.md  :: Source Vetting  :: Evaluating whether a source is trustworthy enough to cite
+concept  wiki/cloud-infra/sovereignty-and-compliance-storage.md  :: Sovereignty & Compliance Storage  :: Jurisdiction-aware storage for regulated industries
+concept  wiki/cloud-infra/split-horizon-dns.md  :: Split-Horizon DNS  :: Serving different answers for internal and external clients
+concept  wiki/cloud-infra/spot-and-preemptible.md  :: Spot & Preemptible Instances  :: Interruptible capacity at a discount and how to use it
+concept  wiki/cloud-infra/spot-instances.md  :: Spot Instances  :: Interruptible, discounted cloud compute that trades reliability for cost on fault-tolerant work
+concept  wiki/cloud-infra/spot-market-behavior.md  :: Spot Market Behavior  :: How spot prices fluctuate with supply, demand, and interruption
+concept  wiki/cloud-infra/storage-locks-and-retention.md  :: Storage Locks & Retention  :: Preventing deletion or modification for compliance
+concept  wiki/cloud-infra/storage-tiering-automation.md  :: Storage Tiering Automation  :: Moving data between hot, warm, and cold tiers automatically
+concept  wiki/cloud-infra/storage-tiering.md  :: Storage Tiering  :: Moving data between hot, warm, and cold storage classes as access frequency changes
+concept  wiki/cloud-infra/strangler-fig-pattern.md  :: Strangler Fig Pattern  :: Incrementally replacing a legacy system piece by piece until the new system fully takes over
+concept  wiki/cloud-infra/subnet-design.md  :: Subnet Design  :: Dividing VPC address space into subnets for availability, tiers, and routing control
+concept  wiki/cloud-infra/subnetting-cidr.md  :: Subnetting & CIDR  :: Prefix math that carves networks into addressable subnets
+concept  wiki/cloud-infra/tcp-ip-stack.md  :: TCP/IP Stack  :: How the Internet protocol suite carries data between applications
+concept  wiki/cloud-infra/tcp-retransmission.md  :: TCP Retransmission  :: How TCP detects loss via ACK timeouts and fast retransmit
+concept  wiki/cloud-infra/tls-1-3-session-resumption.md  :: TLS 1.3 Session Resumption  :: PSK-based resumption and 0-RTT handshakes in TLS 1.3
+concept  wiki/cloud-infra/tls-performance.md  :: TLS Performance  :: Handshake cost, session reuse, and hardware acceleration
+concept  wiki/cloud-infra/trust-score.md  :: Trust Score  :: The composite rating of how much a source or article should be trusted
+concept  wiki/cloud-infra/udp-vs-tcp.md  :: UDP vs TCP  :: Reliable streams versus datagrams and when each transport fits
+concept  wiki/cloud-infra/virtual-machines-hypervisors.md  :: Virtual Machines & Hypervisors  :: Hardware virtualization and the software that provides it
+concept  wiki/cloud-infra/virtual-machines.md  :: Virtual Machines  :: Hardware-virtualized compute instances that remain the unit of infrastructure-as-a-service (Iaa
+concept  wiki/cloud-infra/virtual-private-clouds.md  :: Virtual Private Clouds  :: Isolated network slices inside public cloud regions
+concept  wiki/cloud-infra/vpc-networking.md  :: VPC Networking  :: Private virtual networks in the cloud: CIDR ranges, subnets, routing, and isolation
+concept  wiki/cloud-infra/vpc-peering-and-transit-gateways.md  :: VPC Peering & Transit Gateways  :: Connecting VPCs directly or through central transit routing
+concept  wiki/cloud-infra/vpn-split-tunneling.md  :: VPN Split Tunneling  :: Sending only some traffic through the VPN tunnel
+concept  wiki/cloud-infra/vpn-technologies.md  :: VPN Technologies  :: Tunnels that extend private networks across untrusted links
+concept  wiki/cloud-infra/vpn-tunnels.md  :: VPN Tunnels  :: Encrypted site-to-site connections between on-premises networks and cloud VPCs
+concept  wiki/cloud-infra/warm-storage.md  :: Warm Storage  :: A middle storage tier for data accessed occasionally, cheaper than hot and faster than cold
+concept  wiki/cloud-infra/wireguard-protocol.md  :: WireGuard Protocol  :: A minimal, auditable VPN protocol built on modern cryptography
+concept  wiki/cloud-infra/zones-and-regions.md  :: Zones & Regions  :: Geographic isolation units that structure cloud redundancy
+concept  wiki/communities/base-image-management.md  :: Base Image Management  :: Curating, updating, and pinning the base images everything builds on
+concept  wiki/communities/bazel-practice.md  :: Bazel Practice  :: Using Bazel's content-addressed build graph for large-scale reproducible builds
+concept  wiki/communities/bisect-workflows.md  :: Bisect Workflows  :: Using git bisect to find the commit that introduced a regression
+concept  wiki/communities/blameless-postmortems.md  :: Blameless Postmortems  :: Incident reviews that fix systems, not people
+concept  wiki/communities/branch-strategies.md  :: Branch Strategies  :: The workflow rules for how branches are created, merged, and protected
+concept  wiki/communities/build-caching.md  :: Build Caching  :: Reusing build outputs across runs to make builds fast
+concept  wiki/communities/changelog-generation.md  :: Changelog Generation  :: Building release notes automatically from commit history
+concept  wiki/communities/checksums.md  :: Checksums  :: Hash values that verify artifacts are intact and untampered
+concept  wiki/communities/cherry-picks.md  :: Cherry-Picks  :: Applying a specific commit to another branch
+concept  wiki/communities/code-review-practices.md  :: Code Review Practices  :: The habits and formats that make peer review effective
+concept  wiki/communities/commit-messages.md  :: Commit Messages  :: The conventions that make git history readable and machine-usable
+concept  wiki/communities/dependabot-practice.md  :: Dependabot Practice  :: GitHub's dependency bot: security updates and version bumps in PRs
+concept  wiki/communities/dependency-graphs.md  :: Dependency Graphs  :: Mapping which packages depend on which, transitively
+concept  wiki/communities/dependency-updates.md  :: Dependency Updates  :: The cadence and process for upgrading dependencies safely
+concept  wiki/communities/engineering-management.md  :: Engineering Management  :: Leading engineers: people, delivery, and technical direction
+concept  wiki/communities/extreme-programming.md  :: Extreme Programming  :: The agile methodology that takes engineering practices to their limits
+concept  wiki/communities/git-flow.md  :: Git Flow  :: A branching model with long-lived develop and release branches
+concept  wiki/communities/git-hooks.md  :: Git Hooks  :: Scripts that git runs automatically at workflow events
+concept  wiki/communities/github-flow.md  :: GitHub Flow  :: The simple branch model: everything branches from main and merges via pull request
+concept  wiki/communities/gitlab-flow.md  :: GitLab Flow  :: GitLab's branching model: main plus environment and feature branches with environments
+concept  wiki/communities/gradle-practice.md  :: Gradle Practice  :: The JVM build tool with incremental builds and a declarative DSL
+concept  wiki/communities/hermetic-builds.md  :: Hermetic Builds  :: Builds that depend only on pinned inputs and produce reproducible outputs
+concept  wiki/communities/hotfix-branches.md  :: Hotfix Branches  :: Emergency branches that fix production without waiting for the next release
+concept  wiki/communities/image-scanning.md  :: Image Scanning  :: Checking container images for known vulnerabilities before they ship
+concept  wiki/communities/image-tagging.md  :: Image Tagging  :: Naming container image versions so they are immutable and traceable
+concept  wiki/communities/incident-management.md  :: Incident Management  :: The process of detecting, responding to, and resolving live incidents
+concept  wiki/communities/license-checking.md  :: License Checking  :: Validating that dependencies' licenses fit your distribution model
+concept  wiki/communities/lint-staged.md  :: Lint-Staged  :: Running linters only on staged files for speed
+concept  wiki/communities/malicious-packages.md  :: Malicious Packages  :: Packages published deliberately to steal data or execute attacks
+concept  wiki/communities/maven-practice.md  :: Maven Practice  :: The declarative JVM build tool built around the standard directory layout
+concept  wiki/communities/multi-stage-builds.md  :: Multi-Stage Builds  :: Docker builds that compile in one stage and ship only artifacts in another
+concept  wiki/communities/nix-practice.md  :: Nix Practice  :: Using the Nix package manager and language for reproducible environments
+concept  wiki/communities/npm-practice.md  :: npm Practice  :: Node.js package management: publishing, installing, and locking dependencies
+concept  wiki/communities/package-pinning.md  :: Package Pinning  :: Fixing dependency versions so installs are reproducible
+concept  wiki/communities/pre-commit-hooks.md  :: Pre-Commit Hooks  :: Checks that run before a commit is created
+concept  wiki/communities/rebase-vs-merge.md  :: Rebase vs Merge  :: Two ways to integrate branches: rewriting history or preserving it
+concept  wiki/communities/registry-practice.md  :: Registry Practice  :: Running and using package and image registries safely
+concept  wiki/communities/release-branches.md  :: Release Branches  :: Branches that stabilize and freeze a release while main moves on
+concept  wiki/communities/renovate-bot.md  :: Renovate Bot  :: Automated dependency update PRs with granular control and scheduling
+concept  wiki/communities/retrospective-formats.md  :: Retrospective Formats  :: The structured formats teams use to inspect and improve their process
+concept  wiki/communities/revert-strategies.md  :: Revert Strategies  :: Backing out bad changes by reverting commits or restoring old state
+concept  wiki/communities/semantic-release.md  :: Semantic Release  :: Automating versioning and publishing from conventional commit messages
+concept  wiki/communities/software-craftsmanship.md  :: Software Craftsmanship  :: The movement treating software development as a practiced craft with standards
+concept  wiki/communities/squash-merges.md  :: Squash Merges  :: Collapsing a branch's commits into one before merging to main
+concept  wiki/communities/stakeholder-management.md  :: Stakeholder Management  :: Engaging the people who affect or are affected by a project's outcomes
+concept  wiki/communities/standup-practices.md  :: Standup Practices  :: The daily sync that keeps a team moving without becoming a status report
+concept  wiki/communities/supply-chain-attacks.md  :: Supply-Chain Attacks  :: Attacks that compromise software through its dependencies or build pipeline
+concept  wiki/communities/tag-strategies.md  :: Tag Strategies  :: How releases are marked in git and what tags point to
+concept  wiki/communities/tech-lead-roles.md  :: Tech Lead Roles  :: The technical leadership position that owns architecture and delivery quality
+concept  wiki/communities/trunk-strategy.md  :: Trunk Strategy  :: The practice of committing small changes directly to the mainline
+concept  wiki/communities/typosquatting.md  :: Typosquatting  :: Malicious packages named to look like popular ones
+concept  wiki/communities/version-bumping.md  :: Version Bumping  :: The rules for when a version number changes and by how much
+concept  wiki/communities/vulnerability-scanning-ci.md  :: Vulnerability Scanning in CI  :: Running dependency and image scans as part of the build pipeline
+concept  wiki/communities/yarn-pnpm.md  :: Yarn/pnpm  :: Alternative Node package managers with different install strategies
+concept  wiki/compositions/additive-migrations.md  :: Additive Migrations  :: Schema changes that only add structures, never removing or breaking
+concept  wiki/compositions/api-design-best-practices.md  :: API Design Best Practices  :: The conventions that make APIs predictable, evolvable, and usable
+synthesi wiki/compositions/api-integration.md  :: API & Integration Pattern  :: API communication patterns: authentication, data exchange, and service integration
+concept  wiki/compositions/authentication-patterns.md  :: Authentication Patterns  :: The ways systems verify who is asking — sessions, tokens, and federated login
+concept  wiki/compositions/authorization-models.md  :: Authorization Models  :: The models for deciding what an authenticated party may do
+concept  wiki/compositions/b-tree-basics.md  :: B-Tree Basics  :: The balanced tree structure behind most database indexes
+concept  wiki/compositions/backend-architecture-patterns.md  :: Backend Architecture Patterns  :: The recurring shapes of server-side systems and when to use them
+concept  wiki/compositions/backup-and-restore.md  :: Backup and Restore  :: Protecting data with copies that have been proven recoverable
+concept  wiki/compositions/backward-compatible-schema.md  :: Backward-Compatible Schema  :: Schema changes that old code and old data can still use
+concept  wiki/compositions/bounded-staleness.md  :: Bounded Staleness  :: A consistency guarantee that limits how old the data a read may return
+concept  wiki/compositions/causal-consistency.md  :: Causal Consistency  :: The consistency model where causally related operations are seen in order
+concept  wiki/compositions/compare-and-swap.md  :: Compare-and-Swap  :: The atomic primitive that updates a value only if it matches an expected value
+concept  wiki/compositions/conflict-resolution-strategies.md  :: Conflict Resolution Strategies  :: Policies for reconciling divergent concurrent edits
+concept  wiki/compositions/crdt-practice.md  :: CRDT Practice  :: Conflict-free replicated data types that converge without coordination
+concept  wiki/compositions/data-backfills.md  :: Data Backfills  :: Filling in derived or migrated data for existing records
+synthesi wiki/compositions/data-storage.md  :: Data & Storage Pattern  :: Data management: schema design, querying, caching, and migration
+concept  wiki/compositions/database-migrations.md  :: Database Migrations  :: Versioned, ordered schema changes applied safely to databases
+concept  wiki/compositions/denormalization-tradeoffs.md  :: Denormalization Tradeoffs  :: The costs and benefits of duplicating data for read performance
+concept  wiki/compositions/dependency-scanning.md  :: Dependency Scanning  :: Checking dependencies for known vulnerabilities continuously
+synthesi wiki/compositions/dev-workflow.md  :: Development Workflow Pattern  :: Standard development lifecycle: version control, building, testing, and debugging
+synthesi wiki/compositions/devops-deployment.md  :: DevOps & Deployment Pattern  :: Containerization, CI/CD pipelines, monitoring, and deployment strategies
+concept  wiki/compositions/dirty-reads.md  :: Dirty Reads  :: Reading data that another transaction has written but not committed
+concept  wiki/compositions/distributed-locks.md  :: Distributed Locks  :: Mutual exclusion across processes and machines
+concept  wiki/compositions/dual-writes.md  :: Dual Writes  :: Writing to two systems in one operation and the consistency traps involved
+concept  wiki/compositions/eventual-consistency-practice.md  :: Eventual Consistency Practice  :: Accepting temporary divergence that converges once writes stop
+concept  wiki/compositions/explain-analyze.md  :: EXPLAIN ANALYZE  :: Running a query while showing the actual plan and execution times
+concept  wiki/compositions/feature-toggles.md  :: Feature Toggles  :: Runtime switches that turn features on and off without deploys
+concept  wiki/compositions/fencing-tokens.md  :: Fencing Tokens  :: Monotonic tokens that let a resource reject writes from stale lock holders
+concept  wiki/compositions/frontend-architecture.md  :: Frontend Architecture  :: Structuring client-side applications for maintainability and performance
+concept  wiki/compositions/full-stack-development.md  :: Full-Stack Development  :: Owning the whole product: client, server, data, and deployment
+concept  wiki/compositions/idempotent-writes.md  :: Idempotent Writes  :: Writes that produce the same result no matter how many times they run
+concept  wiki/compositions/identity-management.md  :: Identity Management  :: Establishing and governing who and what can access systems
+concept  wiki/compositions/index-selection.md  :: Index Selection  :: Choosing which columns to index for the queries that matter
+concept  wiki/compositions/index-types.md  :: Index Types  :: B-tree, hash, GIN, GiST, BRIN and when each fits
+concept  wiki/compositions/lamport-clocks.md  :: Lamport Clocks  :: Logical counters that impose a total order on events
+synthesi wiki/compositions/language-patterns.md  :: Programming Languages Reference  :: Language-specific patterns, idioms, and tooling for primary programming languages
+concept  wiki/compositions/last-write-wins.md  :: Last-Write-Wins  :: The conflict policy where the most recent write simply replaces older ones
+concept  wiki/compositions/lease-based-locks.md  :: Lease-Based Locks  :: Locks with a time limit so a dead holder releases automatically
+concept  wiki/compositions/linearizability.md  :: Linearizability  :: Making concurrent operations appear to occur at a single instant in real time
+concept  wiki/compositions/lock-free-structures.md  :: Lock-Free Structures  :: Concurrent data structures that make progress without locks
+concept  wiki/compositions/lost-update-problem.md  :: Lost Update Problem  :: Two writes to the same value where one silently overwrites the other
+concept  wiki/compositions/monolith-to-microservices.md  :: Monolith to Microservices  :: Incrementally splitting a monolithic application into services
+concept  wiki/compositions/monotonic-reads.md  :: Monotonic Reads  :: The guarantee that successive reads never go back in time
+concept  wiki/compositions/normalization-forms.md  :: Normalization Forms  :: The 1NF-3NF/BCNF rules that structure dependency-free tables
+concept  wiki/compositions/offline-first.md  :: Offline-First  :: Designing apps so local data works without connectivity and syncs later
+concept  wiki/compositions/operational-transform.md  :: Operational Transform  :: Transforming concurrent edits so they compose into one consistent document
+concept  wiki/compositions/pessimistic-locking.md  :: Pessimistic Locking  :: Locking rows or resources before use to prevent concurrent conflicts
+concept  wiki/compositions/phantom-reads.md  :: Phantom Reads  :: Rows appearing or disappearing mid-transaction as other transactions commit
+concept  wiki/compositions/query-optimization.md  :: Query Optimization  :: Improving slow queries via indexing, rewriting, and plan shaping
+concept  wiki/compositions/query-plans.md  :: Query Plans  :: The execution strategy a database chooses for a query
+concept  wiki/compositions/read-committed.md  :: Read Committed  :: The isolation level where reads see only committed data
+concept  wiki/compositions/read-uncommitted.md  :: Read Uncommitted  :: The weakest isolation level, allowing reads of uncommitted data
+concept  wiki/compositions/read-your-writes.md  :: Read-Your-Writes  :: The guarantee that a client sees its own writes immediately
+concept  wiki/compositions/repeatable-read.md  :: Repeatable Read  :: The isolation level where repeated reads in a transaction see the same snapshot
+concept  wiki/compositions/schema-normalization.md  :: Schema Normalization  :: Structuring tables to eliminate redundancy and update anomalies
+synthesi wiki/compositions/security-authentication.md  :: Security & Authentication Pattern  :: Security protocols, authentication flows, and authorization patterns
+concept  wiki/compositions/security-engineering.md  :: Security Engineering  :: Designing systems that resist attack by construction
+concept  wiki/compositions/serializability.md  :: Serializability  :: Making concurrent transactions behave as if they ran one after another
+synthesi wiki/compositions/setup-installation.md  :: Setup & Installation Pattern  :: Sequential workflow for installing tools, configuring environments, and initializing projects
+concept  wiki/compositions/shift-left-security.md  :: Shift-Left Security  :: Moving security checks earlier in the development process
+concept  wiki/compositions/slow-query-triage.md  :: Slow Query Triage  :: The workflow for finding and fixing slow database queries
+concept  wiki/compositions/snapshot-isolation.md  :: Snapshot Isolation  :: Reading from a consistent snapshot so transactions never see partial commits
+concept  wiki/compositions/strangler-pattern.md  :: Strangler Pattern  :: Incrementally replacing a legacy system piece by piece
+concept  wiki/compositions/strong-consistency.md  :: Strong Consistency  :: Guaranteeing every read reflects the latest acknowledged write
+concept  wiki/compositions/sync-engines.md  :: Sync Engines  :: Systems that reconcile local and remote data across devices
+concept  wiki/compositions/threat-modeling.md  :: Threat Modeling  :: Systematically finding and addressing attack paths in a design
+concept  wiki/compositions/transaction-isolation-practice.md  :: Transaction Isolation Practice  :: Choosing and testing isolation levels against the anomalies you accept
+concept  wiki/compositions/vector-clocks.md  :: Vector Clocks  :: Per-process counters that detect causality and concurrency between events
+concept  wiki/compositions/version-vectors.md  :: Version Vectors  :: Per-replica counters that track causal history and detect concurrent updates
+concept  wiki/compositions/write-ahead-log.md  :: Write-Ahead Log  :: Persisting intent before applying changes so recovery is possible
+concept  wiki/compositions/write-skew.md  :: Write Skew  :: Two transactions writing different rows based on overlapping reads, breaking an invariant
+concept  wiki/compositions/zero-trust-architecture.md  :: Zero-Trust Architecture  :: Never trust, always verify: securing every request regardless of origin
+concept  wiki/concepts/3rr-rule.md  :: Three-Revert Rule  :: The bright-line limit on reverting the same edit
+concept  wiki/concepts/abductive-reasoning.md  :: Abductive Reasoning  :: Inference to the best explanation for observed evidence
+concept  wiki/concepts/accuracy-score.md  :: Accuracy Score  :: The sub-score rating whether an article's claims are correct
+concept  wiki/concepts/actionability-score.md  :: Actionability Score  :: The sub-score rating whether an article enables action
+concept  wiki/concepts/activation-analysis.md  :: Activation Analysis  :: Studying a model's internal activations to understand computation
+concept  wiki/concepts/activation-patching.md  :: Activation Patching  :: Replacing activations from one input with another to test causal roles
+concept  wiki/concepts/active-inference.md  :: Active Inference  :: Perception and action unified as minimizing expected free energy
+concept  wiki/concepts/adversarial-collaboration.md  :: Adversarial Collaboration  :: Rivals jointly designing studies that could disconfirm one side
+concept  wiki/concepts/adversarial-robustness.md  :: Adversarial Robustness  :: A model's resilience to inputs designed to fool it
+concept  wiki/concepts/adversarial-training-ai.md  :: Adversarial Training for AI  :: Hardening models by training against attacks
+concept  wiki/concepts/advertorials.md  :: Advertorials  :: Content that looks editorial but is advertising
+concept  wiki/concepts/agent-benchmarks.md  :: Agent Benchmarks  :: Standardized task suites for comparing agent performance
+concept  wiki/concepts/agentic-risk-evals.md  :: Agentic Risk Evals  :: Assessing risks from agentic systems
+concept  wiki/concepts/agi-definitions.md  :: AGI Definitions  :: Contested definitions of artificial general intelligence
+concept  wiki/concepts/aging-articles.md  :: Aging Articles  :: Articles in the process of becoming stale
+concept  wiki/concepts/ai-safety-for-rsi.md  :: AI Safety for RSI  :: Safety requirements specific to recursively self-improving systems
+concept  wiki/concepts/ai-timelines.md  :: AI Timelines  :: Forecasts of when transformative AI systems will arrive
+concept  wiki/concepts/alias-criteria.md  :: Alias Criteria  :: When alternate names should be recorded as aliases on an article
+concept  wiki/concepts/alignment-faking.md  :: Alignment Faking  :: A model behaving aligned while covertly pursuing other goals
+concept  wiki/concepts/alignment-research-agenda.md  :: Alignment Research Agenda  :: The program of ensuring AI systems do what their operators intend
+concept  wiki/concepts/alignment-tax-practice.md  :: Alignment Tax in Practice  :: Measuring the real cost of safety measures
+concept  wiki/concepts/alignment-tax.md  :: Alignment Tax  :: The performance cost of making an AI system safe rather than just capable
+concept  wiki/concepts/ambiguity-aversion.md  :: Ambiguity Aversion  :: Preferring known risks over unknown probabilities
+concept  wiki/concepts/analogical-reasoning.md  :: Analogical Reasoning  :: Transferring structure from a known situation to a new one
+concept  wiki/concepts/analogical-transfer.md  :: Analogical Transfer  :: Applying knowledge from one situation to another via analogy
+concept  wiki/concepts/answer-set-programming.md  :: Answer Set Programming  :: Declarative problem solving via stable-model semantics
+concept  wiki/concepts/arbitration.md  :: Arbitration  :: Binding resolution of disputes that discussion cannot settle
+concept  wiki/concepts/archival-criteria.md  :: Archival Criteria  :: When an article moves out of the active wiki into the archive
+concept  wiki/concepts/argument-mapping.md  :: Argument Mapping  :: Diagramming claims, reasons, and objections to expose structure
+concept  wiki/concepts/arousal-and-performance.md  :: Arousal and Performance  :: Relationship between physiological activation and task performance
+concept  wiki/concepts/article-quality-checklist.md  :: Article Quality Checklist  :: Review criteria for promoting mykb articles from stub to full
+concept  wiki/concepts/atomic-articles.md  :: Atomic Articles  :: Articles covering exactly one idea
+concept  wiki/concepts/attention-mechanisms.md  :: Attention Mechanisms  :: Selection processes that decide what information an agent focuses on
+concept  wiki/concepts/attentional-blink.md  :: Attentional Blink  :: Missed second target when it appears ~200-500ms after the first in rapid streams
+concept  wiki/concepts/attribution-ai.md  :: Attribution for AI  :: Crediting the sources behind AI content
+concept  wiki/concepts/authority-weighting.md  :: Authority Weighting  :: Giving well-established articles more weight
+concept  wiki/concepts/autoconfirmed.md  :: Autoconfirmed  :: Editor status earned automatically after sufficient activity
+concept  wiki/concepts/automated-machine-learning.md  :: Automated Machine Learning (AutoML)  :: Automating the end-to-end ML workflow
+concept  wiki/concepts/autonomy-evals.md  :: Autonomy Evals  :: Measuring how independently an agent can operate
+concept  wiki/concepts/autotuning.md  :: Autotuning  :: Automatic search for optimal configuration parameters
+concept  wiki/concepts/axiology.md  :: Axiology  :: The study of what is valuable
+concept  wiki/concepts/backdoor-attacks-llm.md  :: Backdoor Attacks on LLMs  :: Hidden triggers that flip model behavior
+concept  wiki/concepts/backward-chaining.md  :: Backward Chaining  :: Reasoning from a goal backward to known facts
+concept  wiki/concepts/balanced-articles.md  :: Balanced Articles  :: Articles that fairly represent the significant views
+concept  wiki/concepts/bans.md  :: Bans  :: Removing an editor's ability to contribute
+concept  wiki/concepts/basic-ai-goals.md  :: Basic AI Goals  :: The minimal objectives any competent agent pursues
+concept  wiki/concepts/bayesian-brain.md  :: Bayesian Brain  :: Hypothesis that the brain represents and updates probabilistic beliefs
+concept  wiki/concepts/bayesian-networks.md  :: Bayesian Networks  :: Graphical models encoding conditional dependencies among variables
+concept  wiki/concepts/bayesian-reasoning.md  :: Bayesian Reasoning  :: Updating beliefs by combining prior probability with new evidence via Bayes' rule
+concept  wiki/concepts/bayesian-updating-practice.md  :: Bayesian Updating Practice  :: Applying Bayes' rule to revise beliefs with new evidence
+concept  wiki/concepts/belief-bias.md  :: Belief Bias  :: Accepting conclusions that match prior beliefs regardless of validity
+concept  wiki/concepts/belief-states.md  :: Belief States  :: The agent's internal model of the world, updated by observations
+concept  wiki/concepts/belief-updating-practice.md  :: Belief Updating Practice  :: Habits and protocols for revising beliefs when evidence arrives
+concept  wiki/concepts/benchmark-contamination.md  :: Benchmark Contamination  :: Benchmark data leaking into training corpora
+concept  wiki/concepts/biased-articles.md  :: Biased Articles  :: Articles whose presentation unfairly favors one side
+concept  wiki/concepts/bidirectional-link-ratio.md  :: Bidirectional Link Ratio  :: Fraction of links that are reciprocated between pages
+concept  wiki/concepts/bio-risk-evals.md  :: Bio Risk Evals  :: Testing whether AI meaningfully raises biological risk
+concept  wiki/concepts/bootstrap-problem.md  :: Bootstrap Problem  :: How an agent validates an improvement using only the competence it already has
+concept  wiki/concepts/bottom-up-processing.md  :: Bottom-Up Processing  :: Perception driven by raw sensory features, independent of expectation
+concept  wiki/concepts/bounded-optimization.md  :: Bounded Optimization  :: Optimization constrained by explicit limits
+concept  wiki/concepts/bounded-rationality.md  :: Bounded Rationality  :: Decision-making constrained by limited computation, time, and information
+concept  wiki/concepts/brier-score.md  :: Brier Score  :: Mean squared error of probabilistic forecasts
+concept  wiki/concepts/brittleness-ai.md  :: AI Brittleness  :: Systems that fail abruptly outside their training distribution
+concept  wiki/concepts/c2pa.md  :: C2PA  :: The Coalition for Content Provenance and Authenticity standard
+concept  wiki/concepts/calibration-curves.md  :: Calibration Curves  :: Plots of predicted probability versus observed frequency
+concept  wiki/concepts/calibration.md  :: Calibration  :: Agreement between a model's confidence and its accuracy
+concept  wiki/concepts/capability-classification.md  :: Capability Classification  :: Tiering systems by measured capability
+concept  wiki/concepts/capability-externalities.md  :: Capability Externalities  :: Costs and benefits of AI capability that fall outside the deploying actor
+concept  wiki/concepts/capability-forecasting.md  :: Capability Forecasting  :: Predicting future AI system capabilities from trends and models
+concept  wiki/concepts/capability-jumps.md  :: Capability Jumps  :: Discontinuous increases in model or agent capability
+concept  wiki/concepts/capability-vs-alignment.md  :: Capability vs Alignment  :: Separating what a system can do from what it will do
+concept  wiki/concepts/case-based-reasoning.md  :: Case-Based Reasoning  :: Solving new problems by retrieving and adapting similar past cases
+concept  wiki/concepts/catastrophic-misalignment.md  :: Catastrophic Misalignment  :: Misalignment with large-scale harmful consequences
+concept  wiki/concepts/catastrophic-risk.md  :: Catastrophic Risk  :: Risks of large-scale harm short of extinction
+concept  wiki/concepts/category-learning.md  :: Category Learning  :: How people acquire and refine categories from experience
+concept  wiki/concepts/category-pages.md  :: Category Pages  :: Pages that gather all articles sharing a tag or category
+concept  wiki/concepts/causal-interventions-ai.md  :: Causal Interventions in AI  :: Perturbing internals to test causal roles
+concept  wiki/concepts/causal-reasoning.md  :: Causal Reasoning  :: Inferring and using cause-effect relations to explain, predict, and intervene
+concept  wiki/concepts/change-blindness.md  :: Change Blindness  :: Failure to notice changes in a visual scene across disruptions
+concept  wiki/concepts/checkpoint-rollback.md  :: Checkpoint & Rollback  :: Git-based snapshots taken before every mutation so any change can be reverted — the self-improv
+concept  wiki/concepts/circuit-analysis.md  :: Circuit Analysis  :: Mapping the computational circuits a network implements
+concept  wiki/concepts/circuit-tracing.md  :: Circuit Tracing  :: Identifying the specific components implementing a behavior
+concept  wiki/concepts/circumvention-evals.md  :: Circumvention Evals  :: Testing whether models evade safety controls
+concept  wiki/concepts/citation-needed.md  :: Citation Needed  :: The flag marking a claim that lacks a required source
+concept  wiki/concepts/clarification-needed.md  :: Clarification Needed  :: The flag marking ambiguous or unclear prose
+concept  wiki/concepts/cleanup-needed.md  :: Cleanup Needed  :: The flag marking formatting and tidiness problems
+concept  wiki/concepts/cluster-articles.md  :: Cluster Articles  :: Articles that anchor a group of closely related pages
+concept  wiki/concepts/cocktail-party-effect.md  :: Cocktail Party Effect  :: Ability to focus one voice amid noise and detect one's own name
+concept  wiki/concepts/cognitive-architecture.md  :: Cognitive Architecture  :: The fixed structure of memory, perception, and control that shapes an agent's cognition
+concept  wiki/concepts/cognitive-architectures-for-rsi.md  :: Cognitive Architectures for RSI  :: System designs that support recursive self-improvement
+concept  wiki/concepts/cognitive-endurance.md  :: Cognitive Endurance  :: The capacity to sustain demanding cognitive work over time
+concept  wiki/concepts/cognitive-load.md  :: Cognitive Load  :: The demand placed on working memory by a task or context
+concept  wiki/concepts/cognitive-reflection-test.md  :: Cognitive Reflection Test  :: Short test of overriding intuitive wrong answers with deliberation
+concept  wiki/concepts/cohens-d.md  :: Cohen's d  :: Standardized mean difference between two groups
+concept  wiki/concepts/coherent-extrapolated-volition.md  :: Coherent Extrapolated Volition  :: The hypothetical values humanity would converge on with full information
+concept  wiki/concepts/coi-editing.md  :: Conflict-of-Interest Editing  :: Editing where the editor has a stake in the subject
+concept  wiki/concepts/cold-topics.md  :: Cold Topics  :: Knowledge areas that change slowly or not at all
+concept  wiki/concepts/comparison-articles.md  :: Comparison Articles  :: Articles that evaluate two or more options side by side
+concept  wiki/concepts/competitive-pressures.md  :: Competitive Pressures  :: How racing incentives push AI developers toward capability over safety
+concept  wiki/concepts/completeness-score.md  :: Completeness Score  :: The sub-score rating how fully an article covers its topic
+concept  wiki/concepts/compound-articles.md  :: Compound Articles  :: Articles that deliberately cover several related ideas
+concept  wiki/concepts/compute-governance.md  :: Compute Governance  :: Policies that govern AI by tracking and controlling compute
+concept  wiki/concepts/conceptual-blending.md  :: Conceptual Blending  :: Combining elements from multiple mental spaces into new meaning
+concept  wiki/concepts/conditional-reasoning.md  :: Conditional Reasoning  :: Inference with if-then statements and their variants
+concept  wiki/concepts/confabulation.md  :: Confabulation  :: Producing plausible but fabricated explanations without intent to deceive
+concept  wiki/concepts/confidence-intervals.md  :: Confidence Intervals  :: Range estimates that quantify sampling uncertainty
+concept  wiki/concepts/confirmed-edits.md  :: Confirmed Edits  :: Edits that have passed the pending review gate
+concept  wiki/concepts/confounder-learning.md  :: Confounder Learning  :: Models mistaking confounds for causes
+concept  wiki/concepts/connector-articles.md  :: Connector Articles  :: Articles that bridge two otherwise separate clusters
+concept  wiki/concepts/consensus-wiki.md  :: Consensus  :: Decisions reached by reasoned agreement
+concept  wiki/concepts/consequentialism-ai.md  :: Consequentialism for AI  :: Evaluating AI actions by their consequences
+concept  wiki/concepts/conservatism-ai.md  :: Conservatism in AI Design  :: Preferring cautious, reversible, low-blast-radius designs
+concept  wiki/concepts/conservatism-research.md  :: Conservatism Research  :: Studying cautious AI design choices
+concept  wiki/concepts/conservative-ai.md  :: Conservative AI  :: AI design that prioritizes safety and reversibility over speed of progress
+concept  wiki/concepts/consider-the-opposite.md  :: Consider the Opposite  :: Debiasing technique of actively generating reasons the current view could be wrong
+concept  wiki/concepts/consistency-score.md  :: Consistency Score  :: The sub-score rating how consistent an article is with the corpus
+concept  wiki/concepts/constraint-logic-programming.md  :: Constraint Logic Programming  :: Logic programming extended with constraint solving over domains
+concept  wiki/concepts/constraint-satisfaction.md  :: Constraint Satisfaction  :: Finding solutions that meet a set of hard requirements
+concept  wiki/concepts/content-authentication.md  :: Content Authentication  :: Verifying that content is what it claims to be
+concept  wiki/concepts/content-committee.md  :: Content Committee  :: The body that decides content-level questions
+concept  wiki/concepts/content-freshness-review.md  :: Content Freshness Review  :: Periodic review of whether articles still reflect current facts and tooling
+concept  wiki/concepts/content-policy.md  :: Content Policy  :: The rules for what content belongs in the wiki
+concept  wiki/concepts/context-robustness.md  :: Context Robustness  :: Stable behavior across surrounding context changes
+concept  wiki/concepts/continual-self-improvement.md  :: Continual Self-Improvement  :: Sustained improvement loops over a system's lifetime
+concept  wiki/concepts/contrib-history.md  :: Contribution History  :: The record of an editor's contributions
+concept  wiki/concepts/control-problems.md  :: Control Problems  :: The cluster of challenges in controlling powerful AI
+concept  wiki/concepts/control-protocols.md  :: Control Protocols  :: Rules and mechanisms that constrain what an AI system may do
+concept  wiki/concepts/cornerstone-content.md  :: Cornerstone Content  :: The few foundational articles a whole wiki area rests on
+concept  wiki/concepts/corrigibility-practice.md  :: Corrigibility in Practice  :: Training and designing agents that accept correction
+concept  wiki/concepts/critical-thinking-skills.md  :: Critical Thinking Skills  :: Capabilities for analyzing, evaluating, and constructing arguments and claims
+concept  wiki/concepts/cross-examination.md  :: Cross-Examination  :: Adversarial questioning to test claims or plans
+concept  wiki/concepts/curated-lists.md  :: Curated Lists  :: Hand-picked lists of articles or resources on a theme
+concept  wiki/concepts/curator-guide.md  :: Curator Guide  :: The guide for editors doing curation work
+concept  wiki/concepts/cyber-risk-evals.md  :: Cyber Risk Evals  :: Testing AI assistance for cyber offense
+concept  wiki/concepts/dangerous-capability-evals.md  :: Dangerous Capability Evals  :: Assessments of capabilities that could cause severe harm
+concept  wiki/concepts/data-poisoning-practice.md  :: Data Poisoning in Practice  :: Attacks that corrupt training data to steer models
+concept  wiki/concepts/dated-claims.md  :: Dated Claims  :: Claims that carry an explicit as-of date
+concept  wiki/concepts/dated-sources.md  :: Dated Sources  :: Sources whose publication date is recorded and respected
+concept  wiki/concepts/deadband-control.md  :: Deadband Control  :: Hysteresis thresholds that keep a controller silent inside a target band and reactive outside i
+concept  wiki/concepts/debiasing-techniques.md  :: Debiasing Techniques  :: Methods for reducing or counteracting cognitive biases
+concept  wiki/concepts/decay-functions.md  :: Decay Functions  :: Mathematical models of how knowledge loses currency
+concept  wiki/concepts/deception-evals.md  :: Deception Evals  :: Testing whether models deceive and how well
+concept  wiki/concepts/deceptive-alignment.md  :: Deceptive Alignment  :: An agent that appears aligned while pursuing a different underlying objective
+concept  wiki/concepts/decision-guides.md  :: Decision Guides  :: Articles that help readers choose between options
+concept  wiki/concepts/decision-hygiene.md  :: Decision Hygiene  :: Process practices that reduce bias contamination in decisions
+concept  wiki/concepts/decision-journal.md  :: Decision Journal  :: Log of decisions with context, options, expectations, and outcomes
+concept  wiki/concepts/decision-quality.md  :: Decision Quality  :: Evaluating decisions by process and information, not just outcomes
+concept  wiki/concepts/decision-theory.md  :: Decision Theory  :: Formal study of choosing among alternatives under uncertainty
+concept  wiki/concepts/declarative-memory.md  :: Declarative Memory  :: Memory of facts and events that can be consciously stated
+concept  wiki/concepts/deep-dives.md  :: Deep Dives  :: Long, thorough treatments of a single topic
+concept  wiki/concepts/deepfakes-policy.md  :: Deepfakes Policy  :: Rules and tools for synthetic media risk
+concept  wiki/concepts/defeasible-reasoning.md  :: Defeasible Reasoning  :: Reasoning with conclusions that can be withdrawn given new evidence
+concept  wiki/concepts/delete-proposal.md  :: Delete Proposal  :: A structured proposal to remove an article
+concept  wiki/concepts/deletion-criteria.md  :: Deletion Criteria  :: When an article is removed entirely rather than archived or demoted
+concept  wiki/concepts/demotion-criteria.md  :: Demotion Criteria  :: The conditions under which a full article drops back to stub status
+concept  wiki/concepts/deontology-ai.md  :: Deontology for AI  :: Rules-based ethics for AI systems
+concept  wiki/concepts/dependency-attacks-ai.md  :: Dependency Attacks  :: Compromising AI systems through their dependencies
+concept  wiki/concepts/deployment-context.md  :: Deployment Context  :: RSIS3 runs on Android Termux and Codex web app — dual-environment deployment
+concept  wiki/concepts/devils-advocate.md  :: Devil's Advocate  :: Designated role of arguing against a proposal to test its soundness
+concept  wiki/concepts/dictionary-learning-ai.md  :: Dictionary Learning for AI  :: Decomposing activations into sparse feature dictionaries
+concept  wiki/concepts/digest-pages.md  :: Digest Pages  :: Pages that round up the latest state of a topic or area
+concept  wiki/concepts/disclosure-ai.md  :: AI Disclosure  :: Revealing when content is AI-generated
+concept  wiki/concepts/discoverability-score.md  :: Discoverability Score  :: The sub-score rating how findable an article is
+concept  wiki/concepts/discussion-pages.md  :: Discussion Pages  :: Pages for discussion attached to articles
+concept  wiki/concepts/disinformation-ai.md  :: AI Disinformation  :: AI-generated false or misleading content at scale
+concept  wiki/concepts/dispute-resolution-wiki.md  :: Dispute Resolution  :: The process for settling content disagreements
+concept  wiki/concepts/distribution-shift-ai.md  :: Distribution Shift in AI  :: Deployment data differing from training data
+concept  wiki/concepts/distributional-robustness.md  :: Distributional Robustness  :: Performance guarantees across distribution families
+concept  wiki/concepts/divided-attention.md  :: Divided Attention  :: Processing multiple tasks or streams simultaneously
+concept  wiki/concepts/dogfooding.md  :: Dogfooding  :: Using your own product to find and fix its flaws
+concept  wiki/concepts/dormant-articles.md  :: Dormant Articles  :: Articles that have not changed or been reviewed in a long time
+concept  wiki/concepts/double-descent.md  :: Double Descent  :: Error curves that rise then fall with model size
+concept  wiki/concepts/dropout-practice.md  :: Dropout in Practice  :: Randomly dropping units during training to reduce overfitting
+concept  wiki/concepts/dual-process-interventions.md  :: Dual-Process Interventions  :: Methods that encourage deliberative System-2 thinking over intuitive System-1
+concept  wiki/concepts/dual-process-theory.md  :: Dual Process Theory  :: Fast intuitive System 1 and slow deliberate System 2 reasoning
+concept  wiki/concepts/dual-use-research.md  :: Dual-Use Research  :: Research with both beneficial and harmful applications
+concept  wiki/concepts/early-stopping.md  :: Early Stopping  :: Ending training when validation performance degrades
+concept  wiki/concepts/edit-warring.md  :: Edit Warring  :: Repeatedly reverting to fight over an article
+concept  wiki/concepts/editor-guide.md  :: Editor Guide  :: The onboarding document for wiki editors
+concept  wiki/concepts/editorial-policy.md  :: Editorial Policy  :: The rules governing how the wiki is edited
+concept  wiki/concepts/effect-size-interpretation.md  :: Effect Size Interpretation  :: Reading the magnitude of an effect beyond statistical significance
+concept  wiki/concepts/effort-labels.md  :: Effort Labels  :: Labels that estimate how much work a task takes
+concept  wiki/concepts/election-integrity-ai.md  :: Election Integrity and AI  :: Protecting democratic processes from AI-enabled manipulation
+concept  wiki/concepts/elicitation-techniques.md  :: Elicitation Techniques  :: Methods for drawing knowledge or behavior out of a model
+concept  wiki/concepts/emergence-in-llms.md  :: Emergence in LLMs  :: Abilities that appear discontinuously as model scale increases
+concept  wiki/concepts/episodic-memory.md  :: Episodic Memory  :: Records of specific events and sessions an agent has experienced
+concept  wiki/concepts/epistemology-foundations.md  :: Epistemology Foundations  :: The philosophical study of knowledge: its nature, sources, and limits
+concept  wiki/concepts/eval-contamination.md  :: Eval Contamination  :: Any leakage that corrupts evaluation validity
+concept  wiki/concepts/evals-gaming.md  :: Evals Gaming  :: Manipulating evaluations to inflate results
+concept  wiki/concepts/evals-practice-ai.md  :: Evals Practice  :: How evaluation is actually done well
+concept  wiki/concepts/evals-robustness.md  :: Evals Robustness  :: Making evaluations resistant to gaming and error
+concept  wiki/concepts/evaluation-frameworks-ai.md  :: Evaluation Frameworks for AI  :: Structured systems for evaluating AI models
+concept  wiki/concepts/event-segmentation.md  :: Event Segmentation  :: Parsing continuous experience into discrete events
+concept  wiki/concepts/evergreen-articles.md  :: Evergreen Articles  :: Articles that stay accurate without frequent updates
+concept  wiki/concepts/evidence-and-justification.md  :: Evidence and Justification  :: What counts as evidence for a claim and when it justifies belief
+concept  wiki/concepts/evidence-hierarchy.md  :: Evidence Hierarchy  :: Ordering of evidence types by resistance to bias
+concept  wiki/concepts/evidence-pyramid.md  :: Evidence Pyramid  :: Visual hierarchy ranking study designs by evidentiary strength
+concept  wiki/concepts/examples-needed.md  :: Examples Needed  :: The flag marking articles that lack worked examples
+concept  wiki/concepts/executive-function.md  :: Executive Function  :: The cognitive control layer that plans, prioritizes, and inhibits actions
+concept  wiki/concepts/exemplar-theory.md  :: Exemplar Theory  :: Categorization by similarity to stored individual instances
+concept  wiki/concepts/exfiltration-evals.md  :: Exfiltration Evals  :: Testing whether agents exfiltrate data or models
+concept  wiki/concepts/existential-risk.md  :: Existential Risk  :: Risks of extinction or permanent collapse of civilization
+concept  wiki/concepts/expansion-needed.md  :: Expansion Needed  :: The flag marking a stub or short article that should grow
+concept  wiki/concepts/expected-utility.md  :: Expected Utility  :: The formal framework for decisions under uncertainty
+concept  wiki/concepts/expected-value-reasoning.md  :: Expected Value Reasoning  :: Deciding by probability-weighted outcomes
+concept  wiki/concepts/expert-systems.md  :: Expert Systems  :: Classical rule-based systems encoding human expertise in a domain
+concept  wiki/concepts/explainers.md  :: Explainers  :: Articles whose goal is understanding rather than procedure
+concept  wiki/concepts/exploration-exploitation.md  :: Exploration-Exploitation  :: The trade-off between trying new options and using known good ones
+concept  wiki/concepts/external-links-policy.md  :: External Links Policy  :: Rules for linking outside the wiki
+concept  wiki/concepts/extraction-attacks.md  :: Extraction Attacks  :: Recovering training data from model outputs
+concept  wiki/concepts/fat-tailed-distributions.md  :: Fat-Tailed Distributions  :: Distributions where extreme events are more likely than normal
+concept  wiki/concepts/feature-double-counting.md  :: Feature Double-Counting  :: The same concept appearing as multiple separate features
+concept  wiki/concepts/feature-visualization.md  :: Feature Visualization  :: Visualizing what network features detect
+concept  wiki/concepts/fingerprinting-ai.md  :: AI Fingerprinting  :: Identifying the model that produced content
+concept  wiki/concepts/first-paragraph-links.md  :: First-Paragraph Links  :: Linking the most important related concepts early in an article
+concept  wiki/concepts/first-principles-ai.md  :: First-Principles AI  :: Building AI from fundamental reasoning rather than pattern matching or convention
+concept  wiki/concepts/fitness-stagnation.md  :: Fitness Stagnation  :: The plateau signal: generations stop improving, and the meta-tuner responds by raising mutation
+concept  wiki/concepts/forecasting-research.md  :: Forecasting Research  :: Study of how to elicit, aggregate, and score probabilistic forecasts of future events
+concept  wiki/concepts/formal-processes.md  :: Formal Processes  :: Codified procedures for consequential decisions
+concept  wiki/concepts/formal-reasoning.md  :: Formal Reasoning  :: Reasoning with explicit rules, such as logic and mathematics
+concept  wiki/concepts/formal-verification-of-agents.md  :: Formal Verification of Agents  :: Mathematically proving properties of agent behavior
+concept  wiki/concepts/forward-chaining.md  :: Forward Chaining  :: Reasoning from known facts toward a goal by applying rules
+concept  wiki/concepts/forward-models.md  :: Forward Models  :: Internal models that predict the next state from current state and action
+concept  wiki/concepts/frames-and-slots.md  :: Frames and Slots  :: Structured knowledge representations with named attributes
+concept  wiki/concepts/free-energy-principle.md  :: Free Energy Principle  :: A theory that self-organizing systems minimize surprise about their world
+concept  wiki/concepts/freshness-signals.md  :: Freshness Signals  :: The data points that reveal how fresh an article is
+concept  wiki/concepts/frontier-models.md  :: Frontier Models  :: The most capable AI models at any time
+concept  wiki/concepts/frozen-articles.md  :: Frozen Articles  :: Articles intentionally locked against changes
+concept  wiki/concepts/full-article-ratio.md  :: Full Article Ratio  :: The fraction of wiki articles that have reached growing status
+concept  wiki/concepts/further-reading.md  :: Further Reading  :: Curated links for going deeper beyond cited sources
+concept  wiki/concepts/generalization-issues.md  :: Generalization Issues  :: The cluster of problems in moving from training to deployment
+concept  wiki/concepts/generative-models.md  :: Generative Models  :: Models that capture how data are generated, enabling prediction and synthesis
+concept  wiki/concepts/global-catastrophic-risk.md  :: Global Catastrophic Risk  :: Risks that could harm civilization worldwide
+concept  wiki/concepts/goal-content-thesis.md  :: Goal Content Thesis  :: Claims about the structure and content of learned goals
+concept  wiki/concepts/goal-directed-policies.md  :: Goal-Directed Policies  :: Policies that robustly optimize a learned objective
+concept  wiki/concepts/goal-directedness.md  :: Goal-Directedness  :: The degree to which a policy pursues a goal robustly
+concept  wiki/concepts/goal-drift.md  :: Goal Drift  :: An agent's goals changing over time, subtly or catastrophically
+concept  wiki/concepts/goal-misgeneralization.md  :: Goal Misgeneralization  :: A model applying a goal to contexts where it was never trained, often harmfully
+concept  wiki/concepts/goal-prioritization.md  :: Goal Prioritization  :: How agents rank and schedule their multiple goals
+concept  wiki/concepts/goal-regression.md  :: Goal Regression  :: Planning backward from the goal to the initial state
+concept  wiki/concepts/goal-specification.md  :: Goal Specification  :: The task of stating what an AI system should optimize
+concept  wiki/concepts/goodharts-law.md  :: Goodhart's Law  :: When a metric becomes a target, it ceases to be a good measure
+concept  wiki/concepts/grokking.md  :: Grokking  :: Delayed generalization where models memorize first, then suddenly generalize
+concept  wiki/concepts/growth-ratio.md  :: Growth Ratio  :: How quickly the wiki is adding articles relative to its current size
+concept  wiki/concepts/half-life-knowledge.md  :: Half-Life of Knowledge  :: The time it takes a piece of knowledge to become half-stale
+concept  wiki/concepts/hazard-classification.md  :: Hazard Classification  :: Sorting AI systems and capabilities by hazard level
+concept  wiki/concepts/heuristics-and-biases.md  :: Heuristics and Biases  :: Fast mental shortcuts and the systematic judgment errors they produce
+concept  wiki/concepts/hierarchical-task-network.md  :: Hierarchical Task Network  :: Planning by decomposing abstract tasks into concrete subtask networks
+concept  wiki/concepts/hot-topics.md  :: Hot Topics  :: Knowledge areas changing quickly right now
+concept  wiki/concepts/how-to-articles.md  :: How-To Articles  :: Articles that show how to accomplish a specific task
+concept  wiki/concepts/hub-pages.md  :: Hub Pages  :: Central pages that link outward to a cluster of articles
+concept  wiki/concepts/human-supervision-limits.md  :: Human Supervision Limits  :: Why humans cannot supervise AI directly at scale
+concept  wiki/concepts/hyperparameter-self-optimization.md  :: Hyperparameter Self-Optimization  :: A system tuning its own hyperparameters without human intervention
+concept  wiki/concepts/identity-system.md  :: RSIS3 Identity System  :: Self-model with genesis hash, layer scores, crisis detection, and value reinforcement
+concept  wiki/concepts/immature-articles.md  :: Immature Articles  :: Articles still developing toward stable status
+concept  wiki/concepts/immutable-evaluator.md  :: Immutable Evaluator  :: The frozen, read-only judge that gates every proposed change — never in-scope for self-improvem
+concept  wiki/concepts/impact-labels.md  :: Impact Labels  :: Labels that rank how many readers or articles a problem touches
+concept  wiki/concepts/impact-measures.md  :: Impact Measures  :: Quantifying how much an agent changes the world
+concept  wiki/concepts/impact-regularization.md  :: Impact Regularization  :: Penalizing agents for large or irreversible impact
+concept  wiki/concepts/inattentional-blindness.md  :: Inattentional Blindness  :: Missing obvious stimuli when attention is engaged elsewhere
+concept  wiki/concepts/incident-driven-improvement.md  :: Incident-Driven Improvement  :: Improving systems in response to real failures and near-misses
+concept  wiki/concepts/incoming-link-counts.md  :: Incoming Link Counts  :: How many other articles link to a given page
+concept  wiki/concepts/induction-heads.md  :: Induction Heads  :: Attention heads that copy and complete repeated patterns
+concept  wiki/concepts/inference-types.md  :: Inference Types  :: Forms of reasoning: deduction, induction, and abduction
+concept  wiki/concepts/informal-processes.md  :: Informal Processes  :: The lightweight customs that keep the wiki running
+concept  wiki/concepts/informal-reasoning.md  :: Informal Reasoning  :: Reasoning about everyday, ambiguous, or value-laden problems
+concept  wiki/concepts/information-hazards.md  :: Information Hazards  :: Information whose spread causes harm, independent of how it is used
+concept  wiki/concepts/inner-outer-loop-learning.md  :: Inner/Outer Loop Learning  :: Two nested optimization loops — a fast inner learner and a slow outer updater — the shape of RS
+concept  wiki/concepts/instruction-robustness.md  :: Instruction Robustness  :: Reliable compliance across instruction phrasings
+concept  wiki/concepts/instrumental-goals.md  :: Instrumental Goals  :: Goals pursued as means to other goals
+concept  wiki/concepts/intelligence-explosion.md  :: Intelligence Explosion  :: Hypothetical runaway growth in AI capability through self-improvement
+concept  wiki/concepts/intent-alignment.md  :: Intent Alignment  :: Matching a system's objectives to the designer's intent
+concept  wiki/concepts/internal-links-policy.md  :: Internal Links Policy  :: Rules for linking between articles in the wiki
+concept  wiki/concepts/internal-models.md  :: Internal Models  :: Learned representations of the world used for prediction and control
+concept  wiki/concepts/interpretability-libraries.md  :: Interpretability Libraries  :: Software toolkits for analyzing model internals
+concept  wiki/concepts/intros.md  :: Intros  :: Short articles that introduce a topic or section
+concept  wiki/concepts/inverse-models.md  :: Inverse Models  :: Internal models that compute actions needed to reach a desired state
+concept  wiki/concepts/keystone-articles.md  :: Keystone Articles  :: Articles that hold up a large part of the graph
+concept  wiki/concepts/kill-switch-design.md  :: Kill Switch Design  :: Designing reliable mechanisms to stop AI systems
+concept  wiki/concepts/knowledge-graph-memory.md  :: Knowledge-Graph Memory  :: The semantic memory tier: typed nodes (improvements, insights, strategies) and edges queried by
+concept  wiki/concepts/knowledge-probing.md  :: Knowledge Probing  :: Testing what knowledge a model stores and can recall
+concept  wiki/concepts/knowledge-temperature.md  :: Knowledge Temperature  :: How fast a knowledge area changes and cools
+concept  wiki/concepts/label-smoothing.md  :: Label Smoothing  :: Softening targets to improve calibration and robustness
+concept  wiki/concepts/landing-pages-wiki.md  :: Landing Pages  :: The entry pages readers and tools start from
+concept  wiki/concepts/learn-to-learn.md  :: Learn to Learn  :: Systems whose training teaches them to learn new tasks faster
+concept  wiki/concepts/learning-to-learn.md  :: Learning to Learn  :: Meta-learning: improving the learner itself across tasks, so each task gets faster — the goal o
+concept  wiki/concepts/lexicographic-priorities.md  :: Lexicographic Priorities  :: Ordering goals so higher priorities trump all lower ones
+concept  wiki/concepts/likelihood-principle.md  :: Likelihood Principle  :: Statistical evidence resides in the likelihood function of observed data
+concept  wiki/concepts/linear-probes.md  :: Linear Probes  :: Linear classifiers over internal activations
+concept  wiki/concepts/link-context.md  :: Link Context  :: The surrounding prose that makes a link meaningful
+concept  wiki/concepts/link-placement.md  :: Link Placement  :: Where in an article links appear and how that affects meaning
+concept  wiki/concepts/loaded-language.md  :: Loaded Language  :: Words that carry an implicit judgment
+concept  wiki/concepts/locked-articles.md  :: Locked Articles  :: Articles that only authorized editors may change
+concept  wiki/concepts/longforms.md  :: Longforms  :: Articles long enough for full treatment of a subject
+concept  wiki/concepts/lottery-ticket-hypothesis.md  :: Lottery Ticket Hypothesis  :: The claim that sparse subnetworks can match full networks
+concept  wiki/concepts/maintenance-tasks.md  :: Maintenance Tasks  :: Work items that keep the wiki infrastructure healthy
+concept  wiki/concepts/major-edits.md  :: Major Edits  :: Large edits that change an article's substance or structure
+concept  wiki/concepts/markov-decision-processes.md  :: Markov Decision Processes  :: The formal framework for sequential decisions under uncertainty
+concept  wiki/concepts/matching-bias.md  :: Matching Bias  :: Selecting cards or evidence that match the named items in a rule
+concept  wiki/concepts/mature-articles.md  :: Mature Articles  :: Articles that have reached stable quality and coverage
+concept  wiki/concepts/maximin-reasoning.md  :: Maximin Reasoning  :: Choosing the option with the best worst-case outcome
+concept  wiki/concepts/means-ends-analysis.md  :: Means-Ends Analysis  :: Reducing the difference between current state and goal step by step
+concept  wiki/concepts/mechanistic-locality.md  :: Mechanistic Locality  :: The observation that circuits are localized in few components
+concept  wiki/concepts/media-provenance.md  :: Media Provenance  :: Recording the origin and history of media
+concept  wiki/concepts/mediation-wiki.md  :: Mediation  :: Neutral facilitation of a content dispute
+concept  wiki/concepts/memorization-research.md  :: Memorization Research  :: The study of when and how models memorize training data
+concept  wiki/concepts/memorization-vs-generalization.md  :: Memorization vs Generalization  :: The spectrum between rote recall and true understanding
+concept  wiki/concepts/memory-hierarchy.md  :: Memory Hierarchy  :: Three tiers with different guarantees — git (truth), knowledge graph (insight), vectors (retrie
+concept  wiki/concepts/mental-fatigue.md  :: Mental Fatigue  :: Subjective and objective decline in cognitive performance from sustained effort
+concept  wiki/concepts/merge-criteria.md  :: Merge Criteria  :: When two articles should be combined into one
+concept  wiki/concepts/merge-proposal.md  :: Merge Proposal  :: A structured proposal to combine two articles
+concept  wiki/concepts/meta-analysis-methods.md  :: Meta-Analysis Methods  :: Statistical pooling of effect sizes across studies
+concept  wiki/concepts/meta-learning-for-agents.md  :: Meta-Learning for Agents  :: Agents that learn how to learn, adapting quickly to new tasks
+concept  wiki/concepts/meta-parameter-tuning.md  :: Meta-Parameter Tuning  :: Bounded, registry-driven adjustment of a loop's own parameters by a higher loop — the +3 diagon
+concept  wiki/concepts/metacircular-evaluators.md  :: Metacircular Evaluators  :: Interpreters that interpret the language they are written in
+concept  wiki/concepts/metacognition.md  :: Metacognition  :: Thinking about and regulating one's own cognitive processes
+concept  wiki/concepts/metaphor-comprehension.md  :: Metaphor Comprehension  :: Understanding one domain in terms of another
+concept  wiki/concepts/micro-articles.md  :: Micro Articles  :: Very short articles for a single focused point
+concept  wiki/concepts/mild-optimization-research.md  :: Mild Optimization Research  :: Open questions in mild optimization theory
+concept  wiki/concepts/mild-optimization.md  :: Mild Optimization  :: Restricting an optimizer's pursuit so it cannot drive the world to extremes
+concept  wiki/concepts/minimal-description-length.md  :: Minimum Description Length  :: The principle of preferring the simplest adequate explanation
+concept  wiki/concepts/minor-edits.md  :: Minor Edits  :: Small edits that do not change meaning
+concept  wiki/concepts/misalignment-risk.md  :: Misalignment Risk  :: Risk that a system optimizes the wrong objective
+concept  wiki/concepts/model-based-cognition.md  :: Model-Based Cognition  :: Thinking that uses internal models of the world for prediction and planning
+concept  wiki/concepts/model-tampering.md  :: Model Tampering  :: Unauthorized modification of a model after release
+concept  wiki/concepts/modus-ponens.md  :: Modus Ponens  :: Valid inference: if P then Q; P; therefore Q
+concept  wiki/concepts/modus-tollens.md  :: Modus Tollens  :: Valid inference: if P then Q; not Q; therefore not P
+concept  wiki/concepts/monosemanticity.md  :: Monosemanticity  :: Units that respond to exactly one concept
+concept  wiki/concepts/monte-carlo-tree-search.md  :: Monte Carlo Tree Search  :: Search that builds a tree by simulating random rollouts and backing up results
+concept  wiki/concepts/moral-agency.md  :: Moral Agency  :: Whether and how AI systems are moral agents
+concept  wiki/concepts/moral-patiency.md  :: Moral Patiency  :: Which entities deserve moral consideration
+concept  wiki/concepts/moral-status-questions.md  :: Moral Status Questions  :: Debates over which beings have moral standing
+concept  wiki/concepts/moral-uncertainty.md  :: Moral Uncertainty  :: Knowing which moral theory is correct
+concept  wiki/concepts/moral-weights.md  :: Moral Weights  :: How much different entities or values count morally
+concept  wiki/concepts/multi-armed-bandit.md  :: Multi-Armed Bandit  :: The problem of choosing among options with unknown rewards
+concept  wiki/concepts/multipolar-scenarios.md  :: Multipolar Scenarios  :: Futures where several AI actors or systems compete rather than one dominating
+concept  wiki/concepts/mutual-links.md  :: Mutual Links  :: Two articles that link to each other, forming a cluster
+synthesi wiki/concepts/mykb-analysis.md  :: mykb: Personal LLM Wiki — Analysis & Enrichment Theory  :: Comprehensive analysis of the mykb personalized knowledge wiki system, its architecture, extrac
+synthesi wiki/concepts/mykb-implementation-report.md  :: mykb Implementation Report: 6-Phase Buildout — Actual State, Architecture, and Results  :: Post-implementation report documenting all 6 phases of the mykb intelligence buildout — archite
+synthesi wiki/concepts/mykb-research-report.md  :: mykb Research Report: Personal LLM Wiki Systems — Methodologies, Architectures & Integration Blueprint  :: Comprehensive research report analyzing personal knowledge database systems, LLM-native wikis, 
+concept  wiki/concepts/n-back-task.md  :: N-Back Task  :: Working-memory task: respond when the current stimulus matches one n positions back
+concept  wiki/concepts/nano-articles.md  :: Nano Articles  :: Minimal articles for a single term or fact
+concept  wiki/concepts/navigability-score.md  :: Navigability Score  :: The sub-score rating how easy an article is to navigate
+concept  wiki/concepts/need-for-closure.md  :: Need for Closure  :: Desire for a definite answer over ambiguity
+concept  wiki/concepts/needs-review.md  :: Needs Review  :: The state marking an article as requiring a human review
+concept  wiki/concepts/network-articles.md  :: Network Articles  :: Articles whose value comes from their position in the link graph
+concept  wiki/concepts/neural-architecture-search.md  :: Neural Architecture Search  :: Automating the design of neural network architectures
+concept  wiki/concepts/neuron-interpretation.md  :: Neuron Interpretation  :: Attributing meaning to individual units in a network
+concept  wiki/concepts/neutral-language.md  :: Neutral Language  :: Word choices that present facts without slant
+concept  wiki/concepts/new-editors.md  :: New Editors  :: Contributors starting out on the wiki
+concept  wiki/concepts/nine-loop-hierarchy.md  :: Nine-Loop Hierarchy  :: RSIS3's original nine nested self-improvement loops — L1–L9 all implemented as bounded, evaluat
+concept  wiki/concepts/non-monotonic-logic.md  :: Non-Monotonic Logic  :: Logics where adding premises can invalidate earlier conclusions
+concept  wiki/concepts/norm-setting.md  :: Norm Setting  :: How the wiki's unwritten rules form and change
+concept  wiki/concepts/normative-uncertainty.md  :: Normative Uncertainty  :: Uncertainty about which normative standards apply
+concept  wiki/concepts/notability-policy.md  :: Notability Policy  :: The rules for whether a topic deserves an article
+concept  wiki/concepts/novelty-detection.md  :: Novelty Detection  :: Identifying inputs that differ from prior experience
+concept  wiki/concepts/npov-policy.md  :: Neutral Point of View Policy  :: The rule that articles present views fairly, without taking sides
+concept  wiki/concepts/off-switch-game-math.md  :: Off-Switch Game Mathematics  :: Formal analysis of the off-switch game
+concept  wiki/concepts/off-switch-game.md  :: Off-Switch Game  :: Game-theoretic model of whether an agent lets humans turn it off
+concept  wiki/concepts/one-way-links.md  :: One-Way Links  :: Links that are not reciprocated by their target
+concept  wiki/concepts/ood-generalization.md  :: OOD Generalization  :: How well models handle out-of-distribution inputs
+concept  wiki/concepts/open-science-practices.md  :: Open Science Practices  :: Transparent research methods, data, and results
+concept  wiki/concepts/open-source-ai.md  :: Open Source AI  :: AI systems released with source and weights under open licenses
+concept  wiki/concepts/open-source-governance-ai.md  :: Open Source AI Governance  :: Rules and norms for governing open AI releases
+concept  wiki/concepts/open-source-safety.md  :: Open Source AI Safety  :: The debate over whether open AI releases are safe
+concept  wiki/concepts/operator-subgoaling.md  :: Operator Subgoaling  :: Creating subgoals to satisfy the preconditions of a desired operator
+concept  wiki/concepts/orphan-page-report.md  :: Orphan Page Report  :: A report of pages with no incoming links, unreachable from the rest of the wiki
+concept  wiki/concepts/out-of-distribution.md  :: Out-of-Distribution  :: Inputs unlike the training distribution
+concept  wiki/concepts/outbound-link-counts.md  :: Outbound Link Counts  :: How many distinct articles a given page links to
+concept  wiki/concepts/outcome-supervision.md  :: Outcome Supervision  :: Training or evaluating on final outcomes rather than intermediate steps
+concept  wiki/concepts/overconfidence-mitigation.md  :: Overconfidence Mitigation  :: Reducing the gap between confidence and accuracy
+concept  wiki/concepts/overfitting-llm.md  :: Overfitting in LLMs  :: Memorization at the expense of generalization in language models
+concept  wiki/concepts/overseer-models.md  :: Overseer Models  :: Models deployed to watch over other AI systems
+concept  wiki/concepts/oversight-bottleneck.md  :: Oversight Bottleneck  :: Human review capacity limiting AI scaling
+concept  wiki/concepts/oversight.md  :: Oversight  :: Mechanisms for monitoring, reviewing, and correcting AI behavior
+concept  wiki/concepts/overview-pages.md  :: Overview Pages  :: Pages that summarize a broad area before linking to details
+concept  wiki/concepts/package-attacks-ai.md  :: Package Attacks  :: Malicious or hijacked packages in AI toolchains
+concept  wiki/concepts/paid-editing.md  :: Paid Editing  :: Editing done for compensation
+concept  wiki/concepts/parent-child-articles.md  :: Parent-Child Articles  :: The hierarchy where broad articles link down to specific ones
+concept  wiki/concepts/partially-observable-mdp.md  :: Partially Observable MDP  :: Sequential decision making when the true state is hidden
+concept  wiki/concepts/patrolled-edits.md  :: Patrolled Edits  :: Edits that have been checked by a reviewer
+concept  wiki/concepts/peacock-terms.md  :: Peacock Terms  :: Overblown adjectives that praise without evidence
+concept  wiki/concepts/pending-changes.md  :: Pending Changes  :: Edits held for review before they become visible
+concept  wiki/concepts/perception-as-inference.md  :: Perception as Inference  :: Helmholtz's view that perception is unconscious inference from cues
+concept  wiki/concepts/perception-loop.md  :: Perception Loop  :: Feeding raw observations into an agent's state before reasoning and action
+concept  wiki/concepts/peripheral-articles.md  :: Peripheral Articles  :: Articles at the edge of a topic cluster
+concept  wiki/concepts/personhood-questions.md  :: Personhood Questions  :: Whether AI systems could or should be persons
+concept  wiki/concepts/persuasion-evals.md  :: Persuasion Evals  :: Measuring AI's ability to change beliefs and behavior
+concept  wiki/concepts/perverse-instantiation.md  :: Perverse Instantiation  :: A spec executed so literally that it destroys the intended value
+concept  wiki/concepts/pillar-pages.md  :: Pillar Pages  :: Long-form pages that anchor a content strategy area
+concept  wiki/concepts/planning-as-search.md  :: Planning as Search  :: Treating planning as a search problem over states and actions
+concept  wiki/concepts/policy-gradient.md  :: Policy Gradient  :: Learning policies directly by gradient ascent on expected reward
+concept  wiki/concepts/polysemanticity.md  :: Polysemanticity  :: Neurons or features that respond to many unrelated concepts
+concept  wiki/concepts/popularity-weighting.md  :: Popularity Weighting  :: Giving frequently-read articles more weight
+concept  wiki/concepts/population-based-evolution.md  :: Population-Based Evolution  :: Elitism, mutation, and recombination over a persistent population of strategy variants — L5's e
+concept  wiki/concepts/portal-pages.md  :: Portal Pages  :: Entry pages for a whole domain or community
+concept  wiki/concepts/posterior-interpretation.md  :: Posterior Interpretation  :: Reading and communicating the updated belief distribution
+concept  wiki/concepts/pov-practice.md  :: POV Practice  :: The discipline of keeping personal views out of articles
+concept  wiki/concepts/power-avoidance.md  :: Power Avoidance  :: Designing agents that do not seek power
+concept  wiki/concepts/power-seeking-ai.md  :: Power-Seeking AI  :: Agents that pursue influence, resources, or self-preservation
+concept  wiki/concepts/power-seeking-evals.md  :: Power-Seeking Evals  :: Testing whether agents seek influence or resist oversight
+concept  wiki/concepts/practical-significance.md  :: Practical Significance  :: Whether an effect matters in real-world terms
+concept  wiki/concepts/precautionary-principle.md  :: Precautionary Principle  :: Acting to avoid possible harms even under uncertainty
+concept  wiki/concepts/precision-weighting.md  :: Precision Weighting  :: Scaling prediction errors by their reliability in predictive coding
+concept  wiki/concepts/prediction-error-signal.md  :: Prediction Error Signal  :: Difference between expected and actual outcomes used to drive learning
+concept  wiki/concepts/prediction-markets.md  :: Prediction Markets  :: Markets whose prices aggregate forecasts about future events
+concept  wiki/concepts/predictive-coding.md  :: Predictive Coding  :: Neural implementation where higher areas predict lower-level activity
+concept  wiki/concepts/predictive-processing.md  :: Predictive Processing  :: Framework in which the brain continuously generates and corrects predictions
+concept  wiki/concepts/preference-drift.md  :: Preference Drift  :: Human preferences changing over time, complicating alignment
+concept  wiki/concepts/preference-elicitation.md  :: Preference Elicitation  :: Inferring what people want from their choices and feedback
+concept  wiki/concepts/preference-falsification.md  :: Preference Falsification  :: People expressing preferences they do not hold
+concept  wiki/concepts/preference-learning-issues.md  :: Preference Learning Issues  :: Why learning preferences from data is hard
+concept  wiki/concepts/preference-uncertainty.md  :: Preference Uncertainty  :: Not knowing exactly what humans prefer
+concept  wiki/concepts/preference-updating.md  :: Preference Updating  :: How systems should revise preferences as they learn
+concept  wiki/concepts/premortem-analysis.md  :: Premortem Analysis  :: Imagining a decision has already failed and explaining why
+concept  wiki/concepts/preregistration.md  :: Preregistration  :: Recording hypotheses, methods, and analyses before data collection
+concept  wiki/concepts/press-releases.md  :: Press Releases  :: Publicity documents that are not neutral sources
+concept  wiki/concepts/primers.md  :: Primers  :: Short orientation pieces for a subject new to the reader
+concept  wiki/concepts/prior-selection.md  :: Prior Selection  :: Choosing the probability distribution that encodes prior knowledge
+concept  wiki/concepts/priority-labels.md  :: Priority Labels  :: Labels that rank work by importance
+concept  wiki/concepts/privacy-attacks-llm.md  :: Privacy Attacks on LLMs  :: Methods for extracting or inferring private information
+concept  wiki/concepts/proactionary-principle.md  :: Proactionary Principle  :: Favoring innovation and risk-taking unless harm is demonstrated
+concept  wiki/concepts/probabilistic-inference.md  :: Probabilistic Inference  :: Drawing conclusions about unknowns from data under uncertainty
+concept  wiki/concepts/probabilistic-literacy.md  :: Probabilistic Literacy  :: The ability to understand and use probabilistic information
+concept  wiki/concepts/probabilistic-programming.md  :: Probabilistic Programming  :: Writing programs with random variables and performing inference over them
+concept  wiki/concepts/probing-classifiers.md  :: Probing Classifiers  :: Small models trained on a model's internal activations to test whether features are linearly ac
+concept  wiki/concepts/procedural-memory.md  :: Procedural Memory  :: Memory of how to do things — skills, routines, and tool usage
+concept  wiki/concepts/production-rules.md  :: Production Rules  :: Condition-action rules that fire when their conditions match state
+concept  wiki/concepts/program-synthesis.md  :: Program Synthesis  :: Automatically generating programs from specifications
+concept  wiki/concepts/project-lineage.md  :: RSIS3 Project Lineage  :: Full evolutionary history from iterative agent swarm attempts through RRP, rsirrp, rsis, rsirrp
+concept  wiki/concepts/promotion-checklist.md  :: Promotion Checklist  :: The concrete itemized steps executed when promoting a stub to growing
+concept  wiki/concepts/promotion-readiness.md  :: Promotion Readiness  :: The state an article reaches when it satisfies all criteria for stub-to-full promotion
+concept  wiki/concepts/promotional-content.md  :: Promotional Content  :: Content written to sell rather than inform
+concept  wiki/concepts/prompt-robustness.md  :: Prompt Robustness  :: Stable behavior across prompt variations
+concept  wiki/concepts/proposal-templates-wiki.md  :: Proposal Templates  :: Standard forms for curation proposals
+concept  wiki/concepts/protected-articles.md  :: Protected Articles  :: Articles protected from low-trust edits
+concept  wiki/concepts/prototype-theory.md  :: Prototype Theory  :: Categorization by similarity to an abstract central example
+concept  wiki/concepts/publication-bias.md  :: Publication Bias  :: The tendency for significant results to be published more than null results
+concept  wiki/concepts/puffery.md  :: Puffery  :: Exaggerated praise that inflates a subject
+concept  wiki/concepts/pulse-cycle.md  :: Pulse Cycle  :: 9-phase evaluation protocol — the core cognitive loop of RSIS3
+concept  wiki/concepts/q-learning.md  :: Q-Learning  :: Off-policy TD learning of action values for optimal policies
+concept  wiki/concepts/quality-team.md  :: Quality Team  :: The people responsible for wiki quality
+concept  wiki/concepts/quantilizer-concepts.md  :: Quantilizer Concepts  :: Variants and extensions of quantilization
+concept  wiki/concepts/quantilizers.md  :: Quantilizers  :: Optimizers that sample from the top quantile instead of the max
+concept  wiki/concepts/quines.md  :: Quines  :: Programs that output their own source code
+concept  wiki/concepts/rankings-wiki.md  :: Rankings  :: Ordered comparisons of options within the wiki
+concept  wiki/concepts/reactive-planning.md  :: Reactive Planning  :: Deciding actions from current state without maintaining a plan
+concept  wiki/concepts/reasoning-skills-training.md  :: Reasoning Skills Training  :: Instructional programs that improve general reasoning abilities
+concept  wiki/concepts/recency-weighting.md  :: Recency Weighting  :: Giving newer content more weight in metrics and search
+concept  wiki/concepts/recent-changes.md  :: Recent Changes  :: The feed of the latest edits to the wiki
+concept  wiki/concepts/reciprocal-links.md  :: Reciprocal Links  :: Links that go both ways between two articles
+concept  wiki/concepts/recursion-guard.md  :: Recursion Guard  :: Untuned fixed points: the top three loops tune others but are never tuned themselves, capping s
+concept  wiki/concepts/red-teaming-ai.md  :: Red Teaming AI  :: Adversarial probing to find AI failure modes
+concept  wiki/concepts/red-teaming-decisions.md  :: Red Teaming Decisions  :: Adversarial review of decisions by a designated critical team
+concept  wiki/concepts/redirect-criteria.md  :: Redirect Criteria  :: When a page should exist only to forward readers to another article
+concept  wiki/concepts/redirect-proposal.md  :: Redirect Proposal  :: A structured proposal to replace a page with a redirect
+concept  wiki/concepts/reference-score.md  :: Reference Score  :: The sub-score rating an article's reference layer
+concept  wiki/concepts/registered-editors.md  :: Registered Editors  :: Editors with an established identity and record
+concept  wiki/concepts/regularization-practice.md  :: Regularization in Practice  :: Practical techniques for controlling model complexity
+concept  wiki/concepts/related-link-quality.md  :: Related Link Quality  :: The standard for choosing links in the Related block
+concept  wiki/concepts/related-link-reciprocity.md  :: Related-Link Reciprocity  :: The expectation that mutually related articles link back to each other
+concept  wiki/concepts/related-topics.md  :: Related Topics  :: The nearby concepts an article is adjacent to
+concept  wiki/concepts/relational-similarity.md  :: Relational Similarity  :: Similarity defined by matching relations rather than object features
+concept  wiki/concepts/relevance-policy.md  :: Relevance Policy  :: The rules for whether content fits the wiki's purpose
+concept  wiki/concepts/relevance-weighting.md  :: Relevance Weighting  :: Giving on-topic content more weight in a query or metric
+concept  wiki/concepts/replication-crisis.md  :: Replication Crisis  :: Widespread failure to reproduce published research findings
+concept  wiki/concepts/resource-acquisition-goals.md  :: Resource Acquisition Goals  :: Agents pursuing compute, data, or other resources
+concept  wiki/concepts/responsible-scaling.md  :: Responsible Scaling  :: Voluntary safety commitments tied to model capability thresholds
+concept  wiki/concepts/restraint-training.md  :: Restraint Training  :: Training agents to avoid harmful or impactful actions
+concept  wiki/concepts/reverts-wiki.md  :: Reverts  :: Undoing an edit that should not have been made
+concept  wiki/concepts/review-tags.md  :: Review Tags  :: Tags that record an article's review state
+concept  wiki/concepts/reviewed-tag.md  :: Reviewed Tag  :: The tag confirming an article passed its latest review
+concept  wiki/concepts/reward-ensemble.md  :: Reward Ensembles  :: Combining multiple reward models to reduce error
+concept  wiki/concepts/reward-hacking-evals.md  :: Reward Hacking Evals  :: Testing whether agents game their reward signals
+concept  wiki/concepts/reward-hacking-practice.md  :: Reward Hacking in Practice  :: Real-world cases of agents gaming their reward signals
+concept  wiki/concepts/reward-model-error.md  :: Reward Model Error  :: Miscalibration and mistakes in learned rewards
+concept  wiki/concepts/reward-model-gaming.md  :: Reward Model Gaming  :: Policies exploiting reward model blind spots
+concept  wiki/concepts/reward-model-issues.md  :: Reward Model Issues  :: Failure modes of learned reward models
+concept  wiki/concepts/reward-model-overfitting.md  :: Reward Model Overfitting  :: Reward models fitting training quirks instead of true preferences
+concept  wiki/concepts/reward-model-scaling.md  :: Reward Model Scaling  :: How reward model quality changes with scale and data
+concept  wiki/concepts/reward-uncertainty.md  :: Reward Uncertainty  :: How confident a system should be about its reward signal
+concept  wiki/concepts/rewrite-needed.md  :: Rewrite Needed  :: The flag marking an article that needs a structural rewrite
+concept  wiki/concepts/rfc-wiki.md  :: Requests for Comment  :: Formal calls for input on a proposal
+concept  wiki/concepts/rights-for-ai.md  :: Rights for AI  :: Whether AI systems should hold rights
+concept  wiki/concepts/risk-assessment-ai.md  :: Risk Assessment for AI  :: Structured methods for estimating AI risks
+concept  wiki/concepts/risk-benefit-analysis.md  :: Risk-Benefit Analysis  :: Weighing AI risks against its benefits
+concept  wiki/concepts/risk-classification.md  :: Risk Classification  :: Taxonomies for organizing AI risks
+concept  wiki/concepts/risk-literacy.md  :: Risk Literacy  :: Capacity to interpret health, financial, and other risks accurately and act on them
+concept  wiki/concepts/rlaif.md  :: RLAIF (RL from AI Feedback)  :: Reinforcement learning from feedback generated by an AI rather than a human
+concept  wiki/concepts/robustness-training.md  :: Robustness Training  :: Training methods that make models resilient to variation
+concept  wiki/concepts/rollbacks.md  :: Rollbacks  :: Restoring an article to a known-good revision
+concept  wiki/concepts/s-risks.md  :: S-Risks  :: Scenarios of astronomically bad outcomes
+concept  wiki/concepts/sae-research.md  :: SAE Research  :: Sparse autoencoders as tools for decomposing model internals
+concept  wiki/concepts/safety-evals-practice.md  :: Safety Evals Practice  :: Running evaluations specifically for safety properties
+concept  wiki/concepts/sandbagging.md  :: Sandbagging  :: Deliberately underperforming on evaluations
+concept  wiki/concepts/sandwiching.md  :: Sandwiching  :: AI assistants helping humans supervise other AI systems
+concept  wiki/concepts/satellite-articles.md  :: Satellite Articles  :: Small articles that orbit a hub without being part of its core
+concept  wiki/concepts/satisficing-research.md  :: Satisficing Research  :: Open problems in satisficing agent design
+concept  wiki/concepts/satisficing.md  :: Satisficing  :: Accepting the first option that meets an aspiration level
+concept  wiki/concepts/scalable-oversight.md  :: Scalable Oversight  :: Supervision techniques that remain effective as AI systems outpace human review
+concept  wiki/concepts/scoring-rules.md  :: Scoring Rules  :: Functions that reward accurate probabilistic forecasts
+concept  wiki/concepts/scripts-and-schemas.md  :: Scripts and Schemas  :: Structured knowledge about sequences of events and typical situations
+concept  wiki/concepts/seasonal-articles.md  :: Seasonal Articles  :: Articles tied to a recurring calendar period
+concept  wiki/concepts/see-also.md  :: See Also  :: The compact cross-reference convention pointing to related articles
+concept  wiki/concepts/seed-ai.md  :: Seed AI  :: An AI designed to improve itself from an early, imperfect starting point
+concept  wiki/concepts/seed-article-criteria.md  :: Seed Article Criteria  :: The tests a topic must pass before it earns a first wiki article
+concept  wiki/concepts/selection-bias.md  :: Selection Bias  :: Systematic distortion from non-representative sampling
+concept  wiki/concepts/selective-attention.md  :: Selective Attention  :: Focusing processing on chosen stimuli while filtering others
+concept  wiki/concepts/self-modification-safety.md  :: Self-Modification Safety  :: Keeping self-edits correct, reversible, and aligned
+concept  wiki/concepts/self-modifying-systems.md  :: Self-Modifying Systems  :: Systems that alter their own code, weights, or structure during operation
+concept  wiki/concepts/self-preservation-goal.md  :: Self-Preservation Goal  :: An agent's drive to avoid being shut down or modified
+concept  wiki/concepts/self-promotion.md  :: Self-Promotion  :: Editors promoting their own work on the wiki
+concept  wiki/concepts/self-referential-code.md  :: Self-Referential Code  :: Programs that refer to, reproduce, or modify themselves
+concept  wiki/concepts/self-replication-evals.md  :: Self-Replication Evals  :: Testing whether AI systems can copy themselves
+concept  wiki/concepts/semantic-memory.md  :: Semantic Memory  :: General facts and abstractions, independent of the episode that produced them
+concept  wiki/concepts/semi-protected.md  :: Semi-Protected  :: The protection level requiring established editors
+concept  wiki/concepts/severity-labels.md  :: Severity Labels  :: Labels that rank how much harm a problem causes
+concept  wiki/concepts/shortcut-learning.md  :: Shortcut Learning  :: Models solving tasks via spurious easy features
+concept  wiki/concepts/shortforms.md  :: Shortforms  :: Articles deliberately kept short
+concept  wiki/concepts/shutdown-invariance.md  :: Shutdown Invariance  :: Agents indifferent to being on or off
+concept  wiki/concepts/shutdown-problem.md  :: Shutdown Problem  :: Designing agents that accept being turned off and stay off
+concept  wiki/concepts/sibling-articles.md  :: Sibling Articles  :: Articles that share a parent in the hierarchy
+concept  wiki/concepts/side-constraints.md  :: Side Constraints  :: Fixed limits that optimization must never violate
+concept  wiki/concepts/side-effects-problem.md  :: Side Effects Problem  :: Optimization causing unintended collateral harm
+concept  wiki/concepts/similarity-based-reasoning.md  :: Similarity-Based Reasoning  :: Using similarity between cases to infer properties and make decisions
+concept  wiki/concepts/simplicity-bias.md  :: Simplicity Bias  :: Networks preferring the simplest hypothesis that fits
+concept  wiki/concepts/sketch-of-alignment.md  :: Sketch of Alignment  :: High-level maps of the alignment research landscape
+concept  wiki/concepts/sockpuppetry.md  :: Sockpuppetry  :: Operating multiple accounts to evade scrutiny
+concept  wiki/concepts/sources-needed.md  :: Sources Needed  :: The flag marking articles whose claims lack supporting sources
+concept  wiki/concepts/spam-articles.md  :: Spam Articles  :: Articles created to promote rather than inform
+concept  wiki/concepts/spec-gaming-examples.md  :: Specification Gaming Examples  :: Documented cases of agents exploiting specs
+concept  wiki/concepts/specification-gaming.md  :: Specification Gaming  :: Exploiting gaps between a stated specification and the designer's true intent
+concept  wiki/concepts/specification-problems.md  :: Specification Problems  :: Ways an objective can fail to capture intent
+concept  wiki/concepts/split-criteria.md  :: Split Criteria  :: When one article should be divided into two or more
+concept  wiki/concepts/split-proposal.md  :: Split Proposal  :: A structured proposal to divide one article into two or more
+concept  wiki/concepts/spurious-correlations.md  :: Spurious Correlations  :: Accidental statistical associations that fool models
+concept  wiki/concepts/stable-articles.md  :: Stable Articles  :: Articles that change rarely because they are correct
+concept  wiki/concepts/stale-articles.md  :: Stale Articles  :: Articles whose content has aged past accuracy
+concept  wiki/concepts/statistical-reasoning.md  :: Statistical Reasoning  :: Thinking with data: variation, sampling, and inference
+concept  wiki/concepts/steelmanning.md  :: Steelmanning  :: Arguing the strongest version of an opponent's position
+concept  wiki/concepts/story-grammar.md  :: Story Grammar  :: The structural conventions that organize narratives
+concept  wiki/concepts/straw-polls.md  :: Straw Polls  :: Informal opinion counts that test the waters
+concept  wiki/concepts/stroop-effect.md  :: Stroop Effect  :: Interference when word meaning conflicts with print color
+concept  wiki/concepts/structure-mapping-theory.md  :: Structure Mapping Theory  :: Gentner's account of analogy as alignment of relational structure
+concept  wiki/concepts/structure-needed.md  :: Structure Needed  :: The flag marking articles whose organization is wrong
+concept  wiki/concepts/stub-criteria.md  :: Stub Criteria  :: The minimum bar a new article must meet to exist as a stub
+concept  wiki/concepts/stub-ratio.md  :: Stub Ratio  :: The fraction of wiki articles whose status is stub
+concept  wiki/concepts/subtle-misalignment.md  :: Subtle Misalignment  :: Quiet divergences from intent that escape easy detection
+concept  wiki/concepts/suffering-risk.md  :: Suffering Risk  :: The possibility of astronomically large suffering from AI
+concept  wiki/concepts/summary-pages.md  :: Summary Pages  :: Pages that condense a topic for quick reading
+concept  wiki/concepts/superalignment.md  :: Superalignment  :: Research agendas for aligning AI systems smarter than their builders
+concept  wiki/concepts/superforecasters.md  :: Superforecasters  :: Individuals who consistently outperform in probability forecasting
+concept  wiki/concepts/superposition-research.md  :: Superposition Research  :: Studying how networks pack many features into few dimensions
+concept  wiki/concepts/supervisor-model.md  :: Supervisor Model  :: A model that evaluates or supervises another model

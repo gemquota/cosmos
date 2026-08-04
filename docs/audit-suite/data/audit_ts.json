@@ -1,0 +1,1522 @@
+[
+ {
+  "path": "components/space/debug-session.ts",
+  "loc": 14,
+  "funcs": [
+   "for",
+   "if"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "./src/engine/core.js"
+  ]
+ },
+ {
+  "path": "components/space/scripts/run-rsi.ts",
+  "loc": 305,
+  "funcs": [
+   "has",
+   "if",
+   "is",
+   "itself",
+   "while"
+  ],
+  "classes": [
+   "entities"
+  ],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../src/index.js",
+   "fs",
+   "path"
+  ]
+ },
+ {
+  "path": "components/space/src/cli/commands/export.ts",
+  "loc": 45,
+  "funcs": [
+   "catch",
+   "exportCommand",
+   "for",
+   "if"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../data/framework-loader.js",
+   "../../export/index.js",
+   "../../types/index.js",
+   "chalk",
+   "fs",
+   "path"
+  ]
+ },
+ {
+  "path": "components/space/src/cli/commands/run.ts",
+  "loc": 50,
+  "funcs": [
+   "catch",
+   "if",
+   "runCommand"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../config/defaults.js",
+   "../../integration/git.js",
+   "../../storage/filesystem.js",
+   "../tui.js"
+  ]
+ },
+ {
+  "path": "components/space/src/cli/index.ts",
+  "loc": 311,
+  "funcs": [
+   "catch",
+   "for",
+   "green",
+   "if",
+   "log"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../config/defaults.js",
+   "../config/validation.js",
+   "../data/framework-loader.js",
+   "./commands/export.js",
+   "./commands/run.js",
+   "chalk",
+   "commander",
+   "fs",
+   "os",
+   "path"
+  ]
+ },
+ {
+  "path": "components/space/src/cli/tui.ts",
+  "loc": 186,
+  "funcs": [
+   "ask",
+   "catch",
+   "if",
+   "resumeTUI",
+   "runSessionLoop",
+   "runTUI",
+   "while"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../engine/core.js",
+   "../integration/git.js",
+   "../types/index.js",
+   "chalk",
+   "readline"
+  ]
+ },
+ {
+  "path": "components/space/src/config/defaults.ts",
+  "loc": 37,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [
+   "SpaceConfig"
+  ],
+  "enums": [],
+  "imports": [
+   "os",
+   "path"
+  ]
+ },
+ {
+  "path": "components/space/src/config/validation.ts",
+  "loc": 191,
+  "funcs": [
+   "assertValidConfig",
+   "configFromEnv",
+   "for",
+   "if",
+   "listEnvVars",
+   "validateConfig"
+  ],
+  "classes": [],
+  "interfaces": [
+   "ConfigValidationResult",
+   "ConfigError",
+   "ConfigWarning"
+  ],
+  "enums": [],
+  "imports": [
+   "./defaults.js"
+  ]
+ },
+ {
+  "path": "components/space/src/data/artifact-extractor.ts",
+  "loc": 659,
+  "funcs": [
+   "constructor",
+   "estimateConfidence",
+   "extractAttributes",
+   "extractAudienceLevel",
+   "extractBranching",
+   "extractCadence",
+   "extractCategories",
+   "extractCommunication",
+   "extractCompositionRules",
+   "extractConfigManagement",
+   "extractConstraints",
+   "extractDebtManagement",
+   "extractDecisionProcess",
+   "extractDecisions",
+   "extractDependencies",
+   "extractDeployment",
+   "extractDomain",
+   "extractEntities",
+   "extractEnvironments",
+   "extractFromAnswers",
+   "extractHardware",
+   "extractHierarchy",
+   "extractHierarchyStructure",
+   "extractIOContracts",
+   "extractIntegrations",
+   "extractMaintenance",
+   "extractMonitoring",
+   "extractPerformance",
+   "extractProcedures",
+   "extractQualityPractices",
+   "extractRelationships",
+   "extractScaffolding",
+   "extractSecurity",
+   "extractSoftwareStack",
+   "extractStewardship",
+   "extractTeamComposition",
+   "extractTerminology",
+   "extractTestingStrategy",
+   "for",
+   "if",
+   "registerDefaultPatterns"
+  ],
+  "classes": [
+   "ArtifactExtractor"
+  ],
+  "interfaces": [
+   "ExtractionResult",
+   "ExtractionWarning"
+  ],
+  "enums": [],
+  "imports": [
+   "../types/index.js",
+   "./artifact-keys.js"
+  ]
+ },
+ {
+  "path": "components/space/src/data/artifact-keys.ts",
+  "loc": 138,
+  "funcs": [
+   "findClosestKey",
+   "for",
+   "if",
+   "levenshteinDistance",
+   "validateArtifactDictionary",
+   "validateArtifactKey"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": []
+ },
+ {
+  "path": "components/space/src/data/artifact-mapping.ts",
+  "loc": 533,
+  "funcs": [
+   "accumulateArtifacts",
+   "computeConfidence",
+   "for",
+   "getArtifact"
+  ],
+  "classes": [],
+  "interfaces": [
+   "ArtifactMapping"
+  ],
+  "enums": [],
+  "imports": [
+   "../types/index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/data/artifact-tracker.ts",
+  "loc": 130,
+  "funcs": [
+   "artifactHash",
+   "detectStaleness",
+   "exportVersions",
+   "getVersionHistory",
+   "if",
+   "importVersions",
+   "recordUpdate",
+   "toISOString",
+   "whatIfAnalysis"
+  ],
+  "classes": [
+   "ArtifactTracker"
+  ],
+  "interfaces": [
+   "ArtifactVersion",
+   "StalenessReport"
+  ],
+  "enums": [],
+  "imports": [
+   "../types/index.js",
+   "crypto"
+  ]
+ },
+ {
+  "path": "components/space/src/data/framework-loader.ts",
+  "loc": 236,
+  "funcs": [
+   "catch",
+   "dfs",
+   "for",
+   "if",
+   "join",
+   "loadFrameworkFromV1",
+   "topologicalSort",
+   "validateFramework",
+   "while"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types/index.js",
+   "fs",
+   "path"
+  ]
+ },
+ {
+  "path": "components/space/src/engine/core.ts",
+  "loc": 377,
+  "funcs": [
+   "createSpace",
+   "emit",
+   "for",
+   "getArtifacts",
+   "getCurrentQuestion",
+   "getProgress",
+   "getStalenessReport",
+   "if",
+   "initProject",
+   "loadSession",
+   "on",
+   "resumeSession",
+   "saveSession",
+   "setStorageProvider",
+   "skipQuestion",
+   "startSession",
+   "submitAnswer"
+  ],
+  "classes": [],
+  "interfaces": [
+   "SpaceInstance"
+  ],
+  "enums": [],
+  "imports": [
+   "../config/defaults.js",
+   "../data/artifact-mapping.js",
+   "../data/artifact-tracker.js",
+   "../data/framework-loader.js",
+   "../storage/types.js",
+   "../types/index.js",
+   "./progress.js",
+   "./question-router.js",
+   "./session-manager.js",
+   "./snapshot-manager.js",
+   "./validator.js",
+   "crypto"
+  ]
+ },
+ {
+  "path": "components/space/src/engine/dependency-resolver.ts",
+  "loc": 81,
+  "funcs": [
+   "getAllSeriesStatuses",
+   "getBlockedSeries",
+   "getNextAvailableSeries",
+   "getSeriesStatus"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types/index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/engine/progress.ts",
+  "loc": 63,
+  "funcs": [
+   "computeProgressMetrics"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types/index.js",
+   "./dependency-resolver.js"
+  ]
+ },
+ {
+  "path": "components/space/src/engine/question-router.ts",
+  "loc": 166,
+  "funcs": [
+   "advanceToNextQuestion",
+   "findNextSeries",
+   "for",
+   "getCurrentQuestion",
+   "goToPreviousQuestion",
+   "if"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types/index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/engine/session-manager.ts",
+  "loc": 125,
+  "funcs": [
+   "completeRound",
+   "completeSeries",
+   "computeCompletionPct",
+   "createSession",
+   "deserializeSession",
+   "for",
+   "isRoundComplete",
+   "isSeriesComplete",
+   "markSessionCompleted",
+   "markSessionPaused",
+   "markSessionRunning",
+   "serializeSession",
+   "setAnswer",
+   "updateSessionTimestamp"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types/index.js",
+   "crypto"
+  ]
+ },
+ {
+  "path": "components/space/src/engine/snapshot-manager.ts",
+  "loc": 80,
+  "funcs": [
+   "constructor",
+   "createSnapshot",
+   "getLatest",
+   "if",
+   "listSnapshots",
+   "recover",
+   "restoreFromSnapshot"
+  ],
+  "classes": [
+   "SnapshotManager"
+  ],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../storage/types.js",
+   "../types/index.js",
+   "crypto"
+  ]
+ },
+ {
+  "path": "components/space/src/engine/validator.ts",
+  "loc": 43,
+  "funcs": [
+   "if",
+   "isQuestionAnswered",
+   "validateAnswer"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types/index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/export/formatters/diff-exporter.ts",
+  "loc": 83,
+  "funcs": [
+   "exportDiff",
+   "for",
+   "if",
+   "push"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../types/index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/export/formatters/html-exporter.ts",
+  "loc": 99,
+  "funcs": [
+   "escapeHtml",
+   "exportHTML",
+   "for",
+   "if"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../types/index.js",
+   "../index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/export/formatters/json-exporter.ts",
+  "loc": 59,
+  "funcs": [
+   "exportJSON",
+   "if"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../types/index.js",
+   "../index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/export/formatters/markdown-exporter.ts",
+  "loc": 104,
+  "funcs": [
+   "exportMarkdown",
+   "for",
+   "if"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../types/index.js",
+   "../index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/export/formatters/prompt-exporter.ts",
+  "loc": 57,
+  "funcs": [
+   "exportPrompt",
+   "if"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../types/index.js",
+   "../index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/export/formatters/yaml-exporter.ts",
+  "loc": 39,
+  "funcs": [
+   "exportYAML",
+   "if"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../types/index.js",
+   "../index.js",
+   "js-yaml"
+  ]
+ },
+ {
+  "path": "components/space/src/export/index.ts",
+  "loc": 117,
+  "funcs": [
+   "computeStaleness",
+   "exportDiff",
+   "exportSession",
+   "exportToFiles",
+   "for",
+   "if",
+   "switch"
+  ],
+  "classes": [],
+  "interfaces": [
+   "ExportResult",
+   "ExportMeta"
+  ],
+  "enums": [],
+  "imports": [
+   "../types/index.js",
+   "./formatters/diff-exporter.js",
+   "./formatters/html-exporter.js",
+   "./formatters/json-exporter.js",
+   "./formatters/markdown-exporter.js",
+   "./formatters/prompt-exporter.js",
+   "./formatters/yaml-exporter.js"
+  ]
+ },
+ {
+  "path": "components/space/src/i18n/index.ts",
+  "loc": 80,
+  "funcs": [
+   "for",
+   "getAvailableLocales",
+   "getLocale",
+   "getMessages",
+   "if",
+   "setLocale",
+   "t"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "./locales/en.js",
+   "./locales/es.js",
+   "./locales/fr.js",
+   "./types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/i18n/locales/en.ts",
+  "loc": 66,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/i18n/locales/es.ts",
+  "loc": 65,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/i18n/locales/fr.ts",
+  "loc": 65,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/i18n/types.ts",
+  "loc": 62,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [
+   "LocaleMessages",
+   "LocaleDefinition"
+  ],
+  "enums": [],
+  "imports": []
+ },
+ {
+  "path": "components/space/src/index.ts",
+  "loc": 24,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "./config/defaults.js",
+   "./config/validation.js",
+   "./data/artifact-extractor.js",
+   "./data/artifact-keys.js",
+   "./data/artifact-tracker.js",
+   "./engine/core.js",
+   "./i18n/index.js",
+   "./i18n/types.js",
+   "./types/index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/integration/git.ts",
+  "loc": 204,
+  "funcs": [
+   "autoCommit",
+   "commit",
+   "constructor",
+   "createBranch",
+   "createGitIntegration",
+   "diff",
+   "diffStats",
+   "for",
+   "getConfig",
+   "getDiffSummary",
+   "getStatus",
+   "init",
+   "isInitialized",
+   "log",
+   "pull",
+   "push",
+   "run",
+   "setConfig",
+   "stageAll",
+   "stageFiles",
+   "stash",
+   "stashPop",
+   "tag"
+  ],
+  "classes": [
+   "GitIntegration"
+  ],
+  "interfaces": [
+   "GitConfig",
+   "GitStatus",
+   "GitCommitResult"
+  ],
+  "enums": [],
+  "imports": [
+   "child_process",
+   "fs",
+   "path"
+  ]
+ },
+ {
+  "path": "components/space/src/intelligence/adaptive-router.ts",
+  "loc": 118,
+  "funcs": [
+   "analyzeRouting",
+   "if",
+   "shouldSkipQuestion"
+  ],
+  "classes": [],
+  "interfaces": [
+   "RoutingDecision"
+  ],
+  "enums": [],
+  "imports": [
+   "../types/index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/intelligence/analytics.ts",
+  "loc": 74,
+  "funcs": [
+   "computeSessionMetrics",
+   "for",
+   "if"
+  ],
+  "classes": [],
+  "interfaces": [
+   "SessionMetrics"
+  ],
+  "enums": [],
+  "imports": [
+   "../types/index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/intelligence/completeness-scorer.ts",
+  "loc": 78,
+  "funcs": [
+   "scoreCompleteness"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types/index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/intelligence/contradiction-detector.ts",
+  "loc": 224,
+  "funcs": [
+   "detectContradictions",
+   "for"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types/index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/intelligence/index.ts",
+  "loc": 37,
+  "funcs": [
+   "getIntelligenceReport"
+  ],
+  "classes": [],
+  "interfaces": [
+   "IntelligenceReport"
+  ],
+  "enums": [],
+  "imports": [
+   "../types/index.js",
+   "./adaptive-router.js",
+   "./analytics.js",
+   "./completeness-scorer.js",
+   "./contradiction-detector.js",
+   "./recommendations.js"
+  ]
+ },
+ {
+  "path": "components/space/src/intelligence/recommendations.ts",
+  "loc": 88,
+  "funcs": [
+   "for",
+   "generateRecommendations",
+   "if"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types/index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/llm/artifact-synthesizer.ts",
+  "loc": 43,
+  "funcs": [
+   "constructor",
+   "synthesize"
+  ],
+  "classes": [
+   "ArtifactSynthesizer"
+  ],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "./types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/llm/factory.ts",
+  "loc": 38,
+  "funcs": [
+   "createProvider",
+   "createTemplateProvider",
+   "switch"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../config/defaults.js",
+   "./providers/anthropic-provider.js",
+   "./providers/gemini-provider.js",
+   "./providers/mistral-provider.js",
+   "./providers/null-provider.js",
+   "./providers/ollama-provider.js",
+   "./providers/openai-provider.js",
+   "./providers/template-provider.js",
+   "./types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/llm/index.ts",
+  "loc": 14,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "./artifact-synthesizer.js",
+   "./factory.js",
+   "./providers/anthropic-provider.js",
+   "./providers/gemini-provider.js",
+   "./providers/mistral-provider.js",
+   "./providers/null-provider.js",
+   "./providers/ollama-provider.js",
+   "./providers/openai-provider.js",
+   "./providers/template-provider.js",
+   "./quality-scorer.js",
+   "./question-refiner.js",
+   "./spec-generator.js",
+   "./types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/llm/providers/anthropic-provider.ts",
+  "loc": 50,
+  "funcs": [
+   "complete",
+   "constructor",
+   "isAvailable"
+  ],
+  "classes": [
+   "AnthropicProvider"
+  ],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/llm/providers/gemini-provider.ts",
+  "loc": 49,
+  "funcs": [
+   "complete",
+   "constructor",
+   "isAvailable"
+  ],
+  "classes": [
+   "GeminiProvider"
+  ],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/llm/providers/mistral-provider.ts",
+  "loc": 51,
+  "funcs": [
+   "complete",
+   "constructor",
+   "isAvailable"
+  ],
+  "classes": [
+   "MistralProvider"
+  ],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/llm/providers/null-provider.ts",
+  "loc": 19,
+  "funcs": [
+   "complete",
+   "isAvailable"
+  ],
+  "classes": [
+   "NullProvider"
+  ],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/llm/providers/ollama-provider.ts",
+  "loc": 56,
+  "funcs": [
+   "complete",
+   "constructor",
+   "isAvailable"
+  ],
+  "classes": [
+   "OllamaProvider"
+  ],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/llm/providers/openai-provider.ts",
+  "loc": 52,
+  "funcs": [
+   "complete",
+   "constructor",
+   "isAvailable"
+  ],
+  "classes": [
+   "OpenAIProvider"
+  ],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/llm/providers/template-provider.ts",
+  "loc": 74,
+  "funcs": [
+   "complete",
+   "extractQuestion",
+   "for",
+   "isAvailable",
+   "match",
+   "parseArtifacts",
+   "refineQuestion",
+   "scoreQuality",
+   "synthesizeArtifact"
+  ],
+  "classes": [
+   "TemplateProvider"
+  ],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/llm/quality-scorer.ts",
+  "loc": 65,
+  "funcs": [
+   "Completeness",
+   "Specificity",
+   "constructor",
+   "scoreAnswer",
+   "scoreSession"
+  ],
+  "classes": [
+   "QualityScorer"
+  ],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "./types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/llm/question-refiner.ts",
+  "loc": 49,
+  "funcs": [
+   "constructor",
+   "refine",
+   "stringify"
+  ],
+  "classes": [
+   "QuestionRefiner"
+  ],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "./types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/llm/spec-generator.ts",
+  "loc": 37,
+  "funcs": [
+   "constructor",
+   "generate",
+   "stringify"
+  ],
+  "classes": [
+   "SpecificationGenerator"
+  ],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types/index.js",
+   "./types.js"
+  ]
+ },
+ {
+  "path": "components/space/src/llm/types.ts",
+  "loc": 21,
+  "funcs": [
+   "complete",
+   "isAvailable"
+  ],
+  "classes": [],
+  "interfaces": [
+   "LLMProvider",
+   "CompletionParams",
+   "CompletionResult"
+  ],
+  "enums": [],
+  "imports": []
+ },
+ {
+  "path": "components/space/src/sql.js.d.ts",
+  "loc": 21,
+  "funcs": [
+   "close",
+   "exec",
+   "export",
+   "initSqlJs",
+   "run"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": []
+ },
+ {
+  "path": "components/space/src/storage/filesystem.ts",
+  "loc": 222,
+  "funcs": [
+   "constructor",
+   "createProject",
+   "createSession",
+   "deleteProject",
+   "deleteSession",
+   "ensureDir",
+   "exportArchive",
+   "filter",
+   "findProjectForSession",
+   "for",
+   "getLatestSnapshot",
+   "getProject",
+   "getSession",
+   "if",
+   "importArchive",
+   "listProjects",
+   "listSessions",
+   "listSnapshots",
+   "projectDir",
+   "saveExport",
+   "saveNow",
+   "saveSnapshot",
+   "sessionDir",
+   "snapshotDir",
+   "start",
+   "stop",
+   "updateProject",
+   "updateSession"
+  ],
+  "classes": [
+   "AutoSaveManager",
+   "FileSystemStorage"
+  ],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types/index.js",
+   "./types.js",
+   "crypto",
+   "fs",
+   "path"
+  ]
+ },
+ {
+  "path": "components/space/src/storage/sqlite.ts",
+  "loc": 270,
+  "funcs": [
+   "close",
+   "constructor",
+   "create",
+   "createProject",
+   "createSession",
+   "deleteProject",
+   "deleteSession",
+   "ensureDir",
+   "exportArchive",
+   "for",
+   "getDbPath",
+   "getLatestSnapshot",
+   "getProject",
+   "getSession",
+   "importArchive",
+   "listProjects",
+   "listSessions",
+   "listSnapshots",
+   "persist",
+   "saveExport",
+   "saveSnapshot",
+   "updateProject",
+   "updateSession"
+  ],
+  "classes": [
+   "SQLiteStorage"
+  ],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types/index.js",
+   "./types.js",
+   "fs",
+   "path",
+   "sql.js"
+  ]
+ },
+ {
+  "path": "components/space/src/storage/types.ts",
+  "loc": 30,
+  "funcs": [
+   "createProject",
+   "createSession",
+   "deleteProject",
+   "deleteSession",
+   "exportArchive",
+   "getLatestSnapshot",
+   "getProject",
+   "getSession",
+   "importArchive",
+   "listProjects",
+   "listSessions",
+   "listSnapshots",
+   "saveExport",
+   "saveSnapshot",
+   "updateProject",
+   "updateSession"
+  ],
+  "classes": [],
+  "interfaces": [
+   "StorageProvider"
+  ],
+  "enums": [],
+  "imports": [
+   "../types/index.js"
+  ]
+ },
+ {
+  "path": "components/space/src/template/index.ts",
+  "loc": 3,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "./patterns.js",
+   "./resolver.js"
+  ]
+ },
+ {
+  "path": "components/space/src/template/patterns.ts",
+  "loc": 27,
+  "funcs": [
+   "extractTemplateVars",
+   "for",
+   "hasTemplateVars"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": []
+ },
+ {
+  "path": "components/space/src/template/resolver.ts",
+  "loc": 64,
+  "funcs": [
+   "getUnresolvedKeys",
+   "if",
+   "isResolved",
+   "resolveContextLines",
+   "resolveDocument",
+   "resolveTemplate",
+   "stringify"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../types/index.js",
+   "./patterns.js"
+  ]
+ },
+ {
+  "path": "components/space/src/types/index.ts",
+  "loc": 340,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [
+   "FrameworkDefinition",
+   "FrameworkMeta",
+   "DependencyGraph",
+   "DependencyNode",
+   "DependencyEdge",
+   "SeriesDefinition",
+   "RoundDefinition",
+   "OpenEndedQuestion",
+   "MultiChoice",
+   "SessionState",
+   "SessionMeta",
+   "AnswerEntry",
+   "ProgressState",
+   "ArtifactValue",
+   "LLMMetadata",
+   "Project",
+   "SessionSummary",
+   "ExportResult",
+   "ExportOptions",
+   "QuestionContext",
+   "SubmitResult",
+   "ProgressMetrics",
+   "ValidationResult",
+   "AnswerInput",
+   "QualityResult",
+   "CompletenessReport",
+   "Contradiction",
+   "Recommendation",
+   "Snapshot",
+   "ProjectArchive"
+  ],
+  "enums": [],
+  "imports": []
+ },
+ {
+  "path": "components/space/tests/unit/cli.test.ts",
+  "loc": 62,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../src/config/validation.js",
+   "vitest"
+  ]
+ },
+ {
+  "path": "components/space/tests/unit/consolidate.test.ts",
+  "loc": 73,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "child_process",
+   "fs",
+   "path",
+   "vitest"
+  ]
+ },
+ {
+  "path": "components/space/tests/unit/git-integration.test.ts",
+  "loc": 123,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../src/integration/git.js",
+   "fs",
+   "os",
+   "path",
+   "vitest"
+  ]
+ },
+ {
+  "path": "components/space/tests/unit/llm-providers.test.ts",
+  "loc": 130,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../src/config/defaults.js",
+   "../../src/llm/factory.js",
+   "../../src/llm/providers/gemini-provider.js",
+   "../../src/llm/providers/mistral-provider.js",
+   "../../src/llm/providers/null-provider.js",
+   "../../src/llm/providers/ollama-provider.js",
+   "../../src/llm/providers/template-provider.js",
+   "vitest"
+  ]
+ },
+ {
+  "path": "components/space/tests/unit/phase0.test.ts",
+  "loc": 96,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../src/config/defaults.js",
+   "../../src/data/artifact-mapping.js",
+   "../../src/data/framework-loader.js",
+   "../../src/types/index.js",
+   "vitest"
+  ]
+ },
+ {
+  "path": "components/space/tests/unit/phase1.test.ts",
+  "loc": 219,
+  "funcs": [
+   "while"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../src/engine/core.js",
+   "../../src/engine/dependency-resolver.js",
+   "../../src/engine/progress.js",
+   "../../src/engine/session-manager.js",
+   "../../src/engine/validator.js",
+   "../../src/types/index.js",
+   "vitest"
+  ]
+ },
+ {
+  "path": "components/space/tests/unit/phase2.test.ts",
+  "loc": 141,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../src/config/defaults.js",
+   "../../src/engine/core.js",
+   "../../src/llm/artifact-synthesizer.js",
+   "../../src/llm/factory.js",
+   "../../src/llm/providers/null-provider.js",
+   "../../src/llm/providers/template-provider.js",
+   "../../src/llm/quality-scorer.js",
+   "../../src/llm/question-refiner.js",
+   "../../src/llm/spec-generator.js",
+   "vitest"
+  ]
+ },
+ {
+  "path": "components/space/tests/unit/phase3.test.ts",
+  "loc": 111,
+  "funcs": [
+   "for",
+   "makeSession"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../src/engine/core.js",
+   "../../src/export/index.js",
+   "../../src/types/index.js",
+   "vitest"
+  ]
+ },
+ {
+  "path": "components/space/tests/unit/phase4.test.ts",
+  "loc": 70,
+  "funcs": [
+   "for"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../src/engine/core.js",
+   "vitest"
+  ]
+ },
+ {
+  "path": "components/space/tests/unit/phase5.test.ts",
+  "loc": 270,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../src/engine/core.js",
+   "../../src/storage/filesystem.js",
+   "../../src/types/index.js",
+   "fs",
+   "path",
+   "vitest"
+  ]
+ },
+ {
+  "path": "components/space/tests/unit/phase6.test.ts",
+  "loc": 154,
+  "funcs": [
+   "for"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../src/engine/core.js",
+   "../../src/intelligence/adaptive-router.js",
+   "../../src/intelligence/analytics.js",
+   "../../src/intelligence/completeness-scorer.js",
+   "../../src/intelligence/contradiction-detector.js",
+   "../../src/intelligence/index.js",
+   "../../src/intelligence/recommendations.js",
+   "../../src/types/index.js",
+   "vitest"
+  ]
+ },
+ {
+  "path": "components/space/tests/unit/snapshot.test.ts",
+  "loc": 144,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../src/engine/core.js",
+   "../../src/engine/snapshot-manager.js",
+   "../../src/storage/filesystem.js",
+   "fs",
+   "vitest"
+  ]
+ },
+ {
+  "path": "components/space/tests/unit/sqlite-storage.test.ts",
+  "loc": 237,
+  "funcs": [
+   "makeProject",
+   "makeSession",
+   "makeSnapshot"
+  ],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../src/storage/sqlite.js",
+   "../../src/types/index.js",
+   "fs",
+   "os",
+   "path",
+   "vitest"
+  ]
+ },
+ {
+  "path": "components/space/tests/unit/template.test.ts",
+  "loc": 142,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "../../src/template/patterns.js",
+   "../../src/template/resolver.js",
+   "../../src/types/index.js",
+   "vitest"
+  ]
+ },
+ {
+  "path": "components/space/vitest.config.ts",
+  "loc": 21,
+  "funcs": [],
+  "classes": [],
+  "interfaces": [],
+  "enums": [],
+  "imports": [
+   "vitest/config"
+  ]
+ }
+]
