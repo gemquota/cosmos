@@ -1,7 +1,8 @@
 # AO (Agent OS) — Inclusion Assessment for COSMOS
 
 **Date:** 2026-08-03
-**Status:** Assessment complete — Phase A harvest implemented (2026-08-03)
+**Status:** Assessment complete — Phases A–C harvest implemented
+  (A: 2026-08-03, B/C: 2026-08-04)
 **Subject:** `~/dev/codex/ao` — "Agent OS", a pure-Python multi-agent runtime (~6.9k LOC)
 **Synthesis:** `components/mykb/wiki/syntheses/ao-agent-os-integration-assessment.md`
 
@@ -91,8 +92,28 @@ dashboard. **Do** selectively port modules into RSIS3's execution layer:
   (auto/interactive/api/deny), and redacted audit logs.
 - **Phase B:** extend RSIS3 telemetry with the cost ledger + budget cap;
   optionally add sqlite-vec semantic search to MyKB.
+  **Done 2026-08-03:** persistent `CostLedger` in `rsis/telemetry.py`
+  (JSONL replay + `budget_exceeded` latch, pre-flight `guard_budget` on
+  every call, `--budget-cap`/env gates, spend/budget in `status`) and
+  offline hashed n-gram semantic search in mykb `search_fusion.py`
+  (blake2b, third RRF signal, no model/API, old indexes degrade).
 - **Phase C:** adopt scheduler patterns (priority, cycle detection, DAG pool)
   for multi-agent L2 improvement pipelines if parallel candidates are wanted.
+  **Done 2026-08-04:** `rsis/scheduler.py` (AgentScheduler — priority queue,
+  strict FIFO, depth cap + cycle guards) and `rsis/pipeline.py` (DAGWorkerPool
+  — fan-out/fan-in, dependency readiness, concurrency cap, deadlock guard),
+  wired into L2 as an optional parallel session (`--parallel N` /
+  `RSIS_L2_PARALLEL=N`): planner → N coders → fan-in reviewer, every candidate
+  still gated by the immutable evaluator, review wave depth/cycle guarded,
+  cost ledger + budget caps enforced per call. Default remains sequential.
+- **Phase D1 (safety/resilience):** port AO's error classifier into the
+  retry policy. **Done 2026-08-04:** `rsis/error_classifier.py`
+  (transient/rate-limit/fatal classification, text + exception paths), L1
+  enforces `l1.max_retries` with fatal fail-fast and terminal-attempt
+  success, and `DAGWorkerPool` takes a retry budget (`max_retries`, default
+  0 = fail fast) with exponential backoff + full jitter, `dag_task_retrying`
+  events, and a backoff-aware deadlock guard — fed by `l2.parallel_retries` /
+  `RSIS_L2_PARALLEL_RETRIES` / `--parallel-retries`.
 
 ## 5. Risks & Caveats
 
