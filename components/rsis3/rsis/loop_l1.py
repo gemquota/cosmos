@@ -187,14 +187,19 @@ class L1ActionLoop:
         if not self.tools:
             return None, {}
 
-        # Simple keyword routing for demo purposes
+        # Simple keyword routing for demo purposes: prefer keyword matches,
+        # fall back to any tool, and run each tool at most once per task
+        # (mirrors the sandboxed path, so a recovered retry stops cleanly
+        # instead of re-running the tool until the step budget).
         task_lower = task.lower()
-        for tool_name in self.tools:
-            if tool_name in task_lower:
+        matched = [name for name in self.tools if name in task_lower]
+        if not matched:
+            matched = list(self.tools)
+        for tool_name in matched:
+            if not any(c.name == tool_name and not c.error
+                       for c in previous_calls):
                 return tool_name, {"task": task, **context}
-
-        # Default: use first tool
-        return next(iter(self.tools)), {"task": task, **context}
+        return None, {}
 
     def _arguments_for(self, tool_name: str, task: str,
                        context: dict) -> dict:
