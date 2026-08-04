@@ -1,14 +1,12 @@
 ---
 type: "entity"
 title: "CellState"
-description: "Android — mobile development platform, API — service communication interface, Bash — shell scripting language"
+description: "The state of a single cell in a simulation, including position, contents, energy, and update rules"
 tags: ["entity", "android", "api", "ast", "bash", "cli"]
 timestamp: "2026-07-19T22:41:41Z"
 resource: ""
 status: "growing"
 ---
-
-
 ## Cellstate
 
 CellState appears in 1 session(s) categorized as API, Mobile, Shell. Related topics: android, api, bash, cli.

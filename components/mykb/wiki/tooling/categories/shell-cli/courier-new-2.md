@@ -31,6 +31,6 @@ Courier New is a monospace typeface long used in terminals, code editors, and pr
 - [[wiki/os-shell/command-line-interfaces|Command Line Interfaces]] — where monospace output is standard
 - [[wiki/frontend/categories/css-styling/00-index|CSS Styling]] — font stacks and code presentation
 ## Related Entities
-- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- Busuj
 - [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
 - [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "ArrowLeft"
-description: "Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface"
+description: "ArrowLeft"
 tags: ["entity", "android", "angular", "api", "ast", "aws"]
 timestamp: "2026-07-19T22:41:41Z"
 resource: ""

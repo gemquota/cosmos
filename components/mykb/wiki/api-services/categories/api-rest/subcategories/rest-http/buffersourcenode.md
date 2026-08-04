@@ -2,7 +2,7 @@
 status: "growing"
 type: "entity"
 title: "BufferSourceNode"
-description: "API — service communication interface, AWS — Amazon cloud services, Bash — shell scripting language"
+description: "BufferSourceNode"
 tags: ["entity", "api", "ast", "aws", "bash", "bug"]
 timestamp: "2026-07-19T22:41:41Z"
 resource: ""

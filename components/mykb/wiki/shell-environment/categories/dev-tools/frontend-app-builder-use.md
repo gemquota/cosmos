@@ -42,4 +42,4 @@ A good rule is to treat the builder as the source of conventions: staying within
 - [[wiki/shell-environment/categories/dev-tools/evolver|Evolver]]
 - [[wiki/shell-environment/categories/dev-tools/hard-rules|Hard Rules]]
 - [[wiki/shell-environment/categories/dev-tools/image-gen|Image Gen]]
-- [[wiki/shell-environment/categories/dev-tools/jul|Jul]]
+- Jul

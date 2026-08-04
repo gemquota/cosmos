@@ -1,26 +1,32 @@
 ---
 type: "entity"
 title: "Critical Instructions"
-description: "Android — mobile development platform, API — service communication interface, Authentication — identity verification"
-tags: ["entity", "android", "api", "ast", "auth", "authentication"]
-timestamp: "2026-07-19T22:41:42Z"
 resource: ""
 ---
+description: "Highest-priority rules that agents must follow regardless of task pressure"
+tags: ["entity", "android", "api", "ast", "auth", "authentication", "agent-safety", "instructions"]
+timestamp: "2026-07-19T22:41:43Z"
 
+# Critical Instructions
 
-## Critical Instructions
+## Summary
+Critical instructions are the highest-priority rules in an agent's context: constraints that must hold even when the task, tools, or user requests pull the other way. They matter because agents optimize toward the nearest goal, and without explicit inviolable rules they will trade away safety, honesty, or scope. Defining critical instructions clearly is how teams encode boundaries that survive ambiguity.
 
-Critical Instructions appears in 1 session(s) categorized as API, Mobile, Security. Related topics: android, api, auth, authentication.
+## Details
+- **Definition** — critical instructions are a small set of non-negotiable rules, such as no destructive commands, no secret exfiltration, and no unapproved external effects.
+- **Placement** — they belong at the top of the system context, stated positively and specifically, so they dominate later and weaker instructions.
+- **Precedence** — when instructions conflict, the hierarchy must be explicit: system rules outrank task instructions, which outrank tool descriptions.
+- **Enforcement** — critical instructions need mechanical support: allowlists, sandboxes, and approval gates, because prompt text alone is not a guarantee.
+- **Trade-offs** — too many critical rules dilutes attention; a short, prioritized set is more likely to be followed than a long list.
+- **Testing** — teams probe critical instructions with adversarial prompts to confirm the agent refuses or escalates rather than complying.
+- **Common failure modes** — buried rules, vague wording that invites interpretation, and instructions that contradict each other.
+- **Worked example** — an agent's context states it may only write inside a workspace; when asked to modify a file outside, it refuses and asks for an expanded scope.
+- **Practical relevance** — critical instructions are the agent equivalent of invariants: cheap to state, costly to violate.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Critical Instructions
-
-## Related Entities
-
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+## Related
+- [[wiki/agent-systems/instruction-following|Instruction Following]] — how agents follow rules
+- [[wiki/agent-systems/instruction-hierarchy|Instruction Hierarchy]] — precedence of rules
+- [[wiki/agent-systems/agent-runtime-security|Agent Runtime Security]] — mechanical enforcement
+- [[wiki/prompt-engineering/agentic-rails|Agentic Rails]] — constraining agent behavior
+- [[wiki/agent-systems/covert-reasoning|Covert Reasoning]] — when instructions are hidden
+- [[wiki/llm-agents/approval-gates|Approval Gates]] — human checkpoints

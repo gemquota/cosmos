@@ -1,27 +1,33 @@
 ---
 type: "entity"
 title: "DecompositionEngine"
-description: "Android — mobile development platform, API — service communication interface, Authentication — identity verification"
-tags: ["entity", "android", "api", "ast", "auth", "authentication"]
-timestamp: "2026-07-19T22:41:40Z"
 resource: ""
 ---
+description: "A component that breaks large goals or tasks into smaller, executable units"
+tags: ["entity", "android", "api", "ast", "auth", "authentication", "planning", "decomposition"]
+timestamp: "2026-07-19T22:41:42Z"
 
-## Decompositionengine
+# DecompositionEngine
 
-ACE ecosystem component — decomposes complex tasks into subtasks for parallel agent execution. Implements hierarchical task breakdown strategies.
+## Summary
+A decomposition engine is a component that splits a large goal or task into smaller, executable units that can be planned, assigned, and verified. It matters because monolithic tasks overwhelm both people and agents, while well-sized subtasks make progress measurable. Decomposition quality determines whether the resulting plan is realistic or merely detailed on the surface.
 
-**Related topics:** android, api, auth, authentication
+## Details
+- **Definition** — the engine takes a goal description and produces a structured breakdown: subtasks, dependencies, and completion criteria for each unit.
+- **Granularity** — units should be small enough to execute and verify independently, but large enough to avoid fragmentation and coordination overhead.
+- **Dependencies** — the breakdown records ordering constraints so work can be scheduled and parallelized correctly by humans or agents.
+- **Composition** — subtask results must be merged back into a coherent whole, which the engine should anticipate with explicit integration steps.
+- **Verification hooks** — attaching a check to each unit lets progress be validated instead of assumed, keeping the plan honest.
+- **Re-decomposition** — when a unit proves too large during execution, the engine should be able to split it further without invalidating the plan.
+- **Scope control** — decomposition should stop at units that are atomic for the context, avoiding infinite refinement.
+- **Common failure modes** — decomposition that hides the hard part in one oversized step, and plans that cannot be re-merged after parallel work.
+- **Worked example** — a release task decomposes into build, test, package, stage, and deploy units; each has a check, and the engine orders them as a pipeline.
+- **Practical relevance** — reliable decomposition is what turns ambitious goals into trackable work for both humans and agents.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Decompositionengine
-
-## Related Entities
-
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+## Related
+- [[wiki/agent-systems/goal-decomposition|Goal Decomposition]] — splitting goals
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — planning around subtasks
+- [[wiki/ai-ml/query-decomposition|Query Decomposition]] — splitting queries
+- [[wiki/agent-systems/task-scheduling-agents|Task Scheduling for Agents]] — ordering units
+- [[wiki/agent-systems/blackboard-architecture|Blackboard Architecture]] — merging partial results
+- [[wiki/llm-agents/agentic-workflows|Agentic Workflows]] — chaining units into a workflow

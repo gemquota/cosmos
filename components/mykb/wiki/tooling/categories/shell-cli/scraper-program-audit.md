@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "Scraper Program Audit"
-description: "API — service communication interface, Bash — shell scripting language, CDN — content delivery network"
+description: "Scraper Program Audit"
 tags: ["entity", "api", "ast", "bash", "cdn", "cli"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""
@@ -20,6 +20,6 @@ Practical checks include respecting backoff and retry-after responses, avoiding 
 Auditing also covers the security posture: not sending credentials where they are not needed, validating downloaded content, and limiting what the scraper can be pointed at. Operating within the target's terms and applicable law is the baseline. The general guidance here stays accurate regardless of the specific scraper the session examined.
 Audits are not one-time events: targets change their markup, add protections, or alter their terms, so the audit is repeated on a schedule or after failures. Keeping the scraper's scope explicit — what is fetched, how often, and where data lands — makes each re-audit fast. The cli and bash tags reflect that such programs are typically configured and run from the shell.
 ## Related Entities
-- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- Busuj
 - [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
 - [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

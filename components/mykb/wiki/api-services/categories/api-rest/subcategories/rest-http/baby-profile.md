@@ -2,7 +2,7 @@
 type: "entity"
 title: "Baby Profile"
 status: "growing"
-description: "API — service communication interface, Authentication — identity verification, AWS — Amazon cloud services"
+description: "Baby Profile"
 tags: ["entity", "api", "ast", "auth", "aws", "bash"]
 timestamp: "2026-07-19T22:41:41Z"
 resource: ""

@@ -2,7 +2,7 @@
 type: "entity"
 title: "Max Withdraw"
 status: "growing"
-description: "API — service communication interface, Authentication — identity verification, DOM — document object model"
+description: "Max Withdraw"
 tags: ["entity", "api", "ast", "auth", "bug", "dom"]
 timestamp: "2026-07-19T22:41:43Z"
 resource: ""
@@ -47,11 +47,11 @@ A user enters a withdrawal amount above the limit; the form flags the error imme
 
 ## Related Entities
 
-- [[wiki/frontend/categories/css-styling/importerror-10|Importerror 10]]
-- [[wiki/frontend/categories/css-styling/css-10|Css 10]]
+- [[wiki/frontend/categories/css-styling/importerro|Importerror 10]]
+- [[wiki/frontend/categories/css-styling/cs|Css 10]]
 - [[wiki/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
 - [[wiki/frontend/categories/css-styling/database-2|Database 2]]
 - [[wiki/frontend/categories/css-styling/display-2|Display 2]]
-- [[wiki/frontend/categories/css-styling/html-10|Html 10]]
+- [[wiki/frontend/categories/css-styling/htm|Html 10]]
 - [[wiki/frontend/categories/css-styling/reference-2|Reference 2]]
 - [[wiki/frontend/categories/css-styling/dob-2|Dob 2]]

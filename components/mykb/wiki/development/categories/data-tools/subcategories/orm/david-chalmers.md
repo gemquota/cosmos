@@ -44,7 +44,7 @@ Entity pages exist so that references like this one remain findable even when a 
 - [[wiki/development/categories/data-tools/subcategories/orm/consciousness-2|Consciousness 2]]
 - [[wiki/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
 - [[wiki/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
-- [[wiki/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
+- Dgsrcgyrd
 - [[wiki/development/categories/data-tools/subcategories/orm/easy-problems|Easy Problems]]
 - [[wiki/development/categories/data-tools/subcategories/orm/experiment|Experiment]]
 

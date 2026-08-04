@@ -1,27 +1,34 @@
 ---
 type: "entity"
 title: "Instant Prompt"
-description: "Prompt"
-tags: ["entity", "android", "api", "ast", "auth", "authentication"]
-timestamp: "2026-07-19T22:41:43Z"
 resource: ""
 ---
+description: "Pre-built, ready-to-use prompts that deliver consistent behavior with minimal latency"
+tags: ["entity", "android", "api", "ast", "auth", "authentication", "prompts", "llm"]
+timestamp: "2026-07-19T22:41:42Z"
 
-## Instant Prompt
+# Instant Prompt
 
-Prompt — the input text provided to an LLM to guide its output. Sessions show prompt engineering patterns, templates, and chaining.
+## Summary
+An instant prompt is a pre-assembled prompt that can be sent immediately, without per-request construction work, to get fast and consistent model behavior. It matters because prompt assembly and re-validation add latency and variance to every call. Caching, templating, and testing turn ad-hoc prompts into dependable, instant artifacts that teams can iterate on safely.
 
-**Related topics:** android, api, auth, authentication
+## Details
+- **Definition** — an instant prompt is a complete, validated prompt template with slots filled from request data, ready to send on demand.
+- **Latency** — pre-rendered prompts skip parsing and assembly work per request, shaving time from the critical path.
+- **Consistency** — fixed wording and ordering reduce the variance that hand-written per-request prompts introduce.
+- **Templating** — slots for user input must be escaped and bounded so injection and oversized context do not break behavior.
+- **Caching** — prompts reused across requests can be cached with their response when inputs are stable, cutting cost and latency further.
+- **Versioning** — prompt changes should be versioned and tested, since an "improved" prompt can silently change behavior.
+- **Common failure modes** — stale cached prompts, templates that leak user input unsanitized, and instant prompts that bypass safety review.
+- **Worked example** — a support classifier ships a fixed prompt template; requests fill one slot, the prompt is sent immediately, and the response is cached per category.
+- **Practical relevance** — instant prompts give applications predictable, fast, and reviewable LLM behavior at scale.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Instant Prompt
-
-## Related Entities
-
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+- **Review gates** — instant prompts benefit from the same review as code: diffs, tests, and rollout controls.
+- **Metrics** — tracking acceptance and failure rates per prompt version shows when a template degrades.
+## Related
+- [[wiki/prompt-engineering/few-shot-prompting|Few-Shot Prompting]] — example-driven templates
+- [[wiki/prompt-engineering/agentic-context-crafting|Agentic Context Crafting]] — building context
+- [[wiki/prompt-engineering/context-window-management|Context Window Management]] — bounded prompts
+- [[wiki/llm-agents/inference-caching|Inference Caching]] — reusing results
+- [[wiki/prompt-engineering/error-messages-llm|Error Messages for LLMs]] — failure handling
+- [[wiki/llm-agents/llm-gateway-and-routing|LLM Gateway and Routing]] — dispatching prompts

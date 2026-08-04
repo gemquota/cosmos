@@ -24,6 +24,6 @@ Shell-based tools load SimulationConfig from a path (`--config simulation.toml`)
 ## Context
 The entity is tagged ajax, android, api, auth, bash, and cli, indicating the config object surfaced in sessions that combine frontend or mobile interfaces with backend simulation services — a web UI submits parameters, an API validates them, and a CLI job runs the model. Its sibling tooling entities (dims, intent-distribution-engine, and related shell-cli nodes) come from the same session batch.
 ## Related Entities
-- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- Busuj
 - [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
 - [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

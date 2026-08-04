@@ -1,27 +1,33 @@
 ---
 type: "entity"
 title: "Simulation Hub"
-description: "Simulation"
-tags: ["entity", "android", "api", "ast", "auth", "authentication"]
-timestamp: "2026-07-19T22:41:43Z"
 resource: ""
 ---
+description: "A central service for launching, monitoring, and collecting results from simulation runs"
+tags: ["entity", "android", "api", "ast", "auth", "authentication", "simulation", "orchestration"]
+timestamp: "2026-07-19T22:41:42Z"
 
-## Simulation Hub
+# Simulation Hub
 
-Simulation — the computational modeling of real-world systems for analysis or prediction.
+## Summary
+A simulation hub is a central service that launches simulation runs, monitors their progress, and collects their results. It matters because simulations multiply quickly: many configurations, seeds, and scenarios need to run consistently and be compared fairly. Centralizing runs makes experiments reproducible, observable, and comparable. Without a hub, ad-hoc runs produce results that cannot be trusted or reused.
 
-**Related topics:** android, api, auth, authentication
+## Details
+- **Definition** — a hub orchestrates the lifecycle of simulation runs: submission, scheduling, execution, monitoring, and result collection.
+- **Configuration management** — each run records its parameters, seed, and version so results can be traced back to exactly what was executed.
+- **Scheduling** — the hub queues runs against available compute, bounding concurrency and prioritizing experiments by deadline or importance.
+- **Monitoring** — live progress, health, and resource usage per run let operators catch runaway or stalled simulations early.
+- **Result collection** — outputs, logs, and metrics are gathered into a common store with consistent naming for later analysis.
+- **Reproducibility** — pinning environment, code version, and random seeds means any run can be repeated and verified by a different operator.
+- **Comparison** — storing parameters alongside outcomes makes sweeping and head-to-head comparisons straightforward across runs.
+- **Common failure modes** — unlabeled runs that cannot be compared, silent environment drift between runs, and resource leaks from abandoned simulations.
+- **Worked example** — a team submits a sweep of agent-behavior simulations with different thresholds; the hub runs them in parallel, collects success rates, and produces a comparison table.
+- **Practical relevance** — a simulation hub turns ad-hoc experiments into a disciplined, repeatable research loop.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Simulation Hub
-
-## Related Entities
-
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+## Related
+- [[wiki/agent-systems/simulation-environments-agents|Simulation Environments for Agents]] — worlds being run
+- [[wiki/agent-systems/agent-run-inspectors|Agent Run Inspectors]] — inspecting individual runs
+- [[wiki/tooling/categories/shell-cli/overview|Shell CLI Overview]] — driving runs from the shell
+- [[wiki/testing/performance-testing|Performance Testing]] — comparing run behavior
+- [[wiki/software-engineering/metrics-and-monitoring|Metrics and Monitoring]] — observing runs
+- [[wiki/data-storage/log-collection-and-aggregation|Log Collection and Aggregation]] — collecting outputs

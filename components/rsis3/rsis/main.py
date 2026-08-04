@@ -38,9 +38,11 @@ from rsis.loop_l8 import MetaMetaLoop
 from rsis.loop_l9 import MMMLoop
 from rsis.memory import MemoryManager
 from rsis.practices import run_checks as run_practice_checks
+from rsis.pipeline import run_demo as run_pipeline_demo
 from rsis.recovery import FailureInjector, RecoveryManager
 from rsis.resource_monitor import ResourceEnforcer, ResourceSeverity
-from rsis.telemetry import TelemetryCollector, WorkspaceMonitor
+from rsis.scheduler import run_demo as run_scheduler_demo
+from rsis.telemetry import TelemetryCollector, WorkspaceMonitor, default_ledger
 from rsis.timeout import Budget, deadline, TimeoutError
 
 
@@ -102,6 +104,15 @@ def cmd_init(args: argparse.Namespace) -> int:
 
 def cmd_run(args: argparse.Namespace) -> int:
     telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    if args.parallel is not None:
+        CONFIG.l2.parallel_candidates = args.parallel
+    ledger = default_ledger()
+    if args.budget_cap is not None:
+        CONFIG.budget_cap_usd = args.budget_cap
+        ledger.budget_cap_usd = max(0.0, args.budget_cap)
+        ledger.budget_exceeded = (
+            ledger.budget_cap_usd > 0
+            and ledger.total_cost() >= ledger.budget_cap_usd)
 
     enforcer.set_callbacks(
         on_halt=lambda msg: setattr(enforcer, '_halt_requested', True),
@@ -115,6 +126,13 @@ def cmd_run(args: argparse.Namespace) -> int:
         limit_msg = enforcer.check_before_operation()
         if limit_msg:
             print(f"  ⚠ Resource limit: {limit_msg}")
+            return 1
+
+        if ledger.budget_exceeded:
+            cap = CONFIG.budget_cap_usd
+            cap_str = (f"${cap:.4f}" if cap < 1 else f"${cap:.2f}")
+            print(f"  ⚠ LLM budget cap ({cap_str}) already "
+                  f"spent (${ledger.total_cost():.4f}) — refusing new LLM work")
             return 1
 
         l2 = L2ImprovementLoop(
@@ -151,6 +169,8 @@ def cmd_run(args: argparse.Namespace) -> int:
         l1 = L1ActionLoop(telemetry=telemetry, checkpoint_mgr=checkpoint)
         l1_result = l1.execute(goal)
         print(f"  L1 steps: {l1_result.steps_taken}")
+        print("  Cost ledger:")
+        print(ledger.report())
 
     except TimeoutError as e:
         print(f"  ✗ Session timed out: {e}")
@@ -468,6 +488,17 @@ def cmd_status(args: argparse.Namespace) -> int:
     print(f"RSIS v{__version__}")
     print(f"  Workspace: {CONFIG.workspace_dir}")
 
+    ledger = default_ledger()
+    snap = ledger.snapshot()
+    print(f"  LLM spend: ${snap['llm']['cost']:.4f} "
+          f"({snap['llm']['calls']} calls, "
+          f"{snap['llm']['tokens_in'] + snap['llm']['tokens_out']} tokens)")
+    cap = snap['budget_cap_usd']
+    cap_str = ("unlimited" if cap <= 0
+               else f"${cap:.4f}" if cap < 1 else f"${cap:.2f}")
+    print(f"  Budget: {cap_str} cap "
+          f"({'EXCEEDED' if snap['budget_exceeded'] else 'ok'})")
+
     checkpoint = CheckpointManager(CONFIG.workspace_dir)
     if Path(CONFIG.workspace_dir, ".git").exists():
         print("  Git repo: initialised")
@@ -538,6 +569,18 @@ def cmd_check(args: argparse.Namespace) -> int:
 def cmd_check_practices(args: argparse.Namespace) -> int:
     """Enforce usage practices on the current workspace."""
     return run_practice_checks()
+
+
+def cmd_scheduler(args: argparse.Namespace) -> int:
+    """Run the agent scheduler demo (priority + FIFO + recursion guards)."""
+    print("RSIS agent scheduler demo")
+    return run_scheduler_demo()
+
+
+def cmd_pipeline(args: argparse.Namespace) -> int:
+    """Run the DAG worker pool demo (fan-out/fan-in + guards)."""
+    print("RSIS DAG pipeline demo")
+    return run_pipeline_demo()
 
 
 def cmd_recovery_test(args: argparse.Namespace) -> int:
@@ -630,6 +673,10 @@ def main() -> int:
 
     p_run = sub.add_parser("run", help="Run improvement session")
     p_run.add_argument("--goal", "-g", default="self-improve the codebase")
+    p_run.add_argument("--budget-cap", type=float, default=None,
+                       help="Hard LLM cost cap in USD for this session (0=unlimited)")
+    p_run.add_argument("--parallel", type=int, default=None,
+                       help="Fan out N parallel L2 candidates (DAG multi-agent)")
     p_run.set_defaults(func=cmd_run)
 
     p_evolve = sub.add_parser("evolve", help="Run L3 evolution cycle")
@@ -668,6 +715,14 @@ def main() -> int:
         "check-practices",
         help="Enforce usage practices on the current workspace")
     p_practices.set_defaults(func=cmd_check_practices)
+
+    p_scheduler = sub.add_parser("scheduler",
+                                 help="Agent scheduler demo (priority/FIFO/guards)")
+    p_scheduler.set_defaults(func=cmd_scheduler)
+
+    p_pipeline = sub.add_parser("pipeline",
+                                help="DAG worker pool demo (fan-out/fan-in)")
+    p_pipeline.set_defaults(func=cmd_pipeline)
 
     p_recovery = sub.add_parser("recovery-test",
                                 help="Test recovery mechanisms")

@@ -9,11 +9,13 @@ import json
 import logging
 import subprocess
 import sys
+import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
 
 from rsis.config import CONFIG
+from rsis.telemetry import CostLedger, default_ledger
 
 logger = logging.getLogger(__name__)
 
@@ -39,10 +41,12 @@ class EvalResult:
 class EvaluatorClient:
     """Client for the immutable evaluator subprocess."""
 
-    def __init__(self, evaluator_path: Optional[str] = None):
+    def __init__(self, evaluator_path: Optional[str] = None,
+                 ledger: Optional[CostLedger] = None):
         self._evaluator_path = Path(
             evaluator_path or CONFIG.evaluator.evaluator_path
         ).resolve()
+        self.ledger = ledger or default_ledger()
 
     def verify_integrity(self) -> str:
         """Compute and return the evaluator's SHA-256 digest."""
@@ -58,23 +62,54 @@ class EvaluatorClient:
                      candidate.get("description", "no description"))
 
         input_json = json.dumps(candidate)
+        # Token estimate (chars/4) — exact counts are unknowable client-side;
+        # the ledger needs a baseline for budget pre-flight and cost records.
+        in_tokens = max(1, (len(input_json) + 1200) // 4)
+        out_tokens = 200
+
+        # Hard cost cap: refuse the call when the budget is spent.
+        if not self.ledger.guard_budget(
+                CONFIG.evaluator.model, in_tokens, out_tokens):
+            logger.error("Evaluator call refused: LLM budget cap exceeded")
+            return EvalResult(
+                decision="FAIL",
+                rationale="LLM budget cap exceeded — evaluator call refused")
 
         try:
+            started = time.monotonic()
             r = subprocess.run(
                 [sys.executable, str(self._evaluator_path)],
                 input=input_json,
                 capture_output=True, text=True, timeout=60,
             )
+            latency_s = time.monotonic() - started
+            self.ledger.record_llm(
+                "evaluator", CONFIG.evaluator.model,
+                latency_s=latency_s,
+                usage={"prompt_tokens": in_tokens,
+                       "completion_tokens": out_tokens})
         except subprocess.TimeoutExpired:
             logger.error("Evaluator timed out")
+            self.ledger.record_llm(
+                "evaluator", CONFIG.evaluator.model,
+                usage={"prompt_tokens": in_tokens, "completion_tokens": 0},
+                error=True)
             return EvalResult(decision="FAIL", rationale="Evaluator timed out")
         except Exception as e:
             logger.error("Evaluator process error: %s", e)
+            self.ledger.record_llm(
+                "evaluator", CONFIG.evaluator.model,
+                usage={"prompt_tokens": in_tokens, "completion_tokens": 0},
+                error=True)
             return EvalResult(decision="FAIL", rationale=f"Process error: {e}")
 
         if r.returncode != 0:
             logger.error("Evaluator exited with code %d: %s",
                          r.returncode, r.stderr.strip())
+            self.ledger.record_llm(
+                "evaluator", CONFIG.evaluator.model,
+                usage={"prompt_tokens": in_tokens, "completion_tokens": 0},
+                error=True)
             return EvalResult(decision="FAIL", rationale=r.stderr.strip())
 
         try:

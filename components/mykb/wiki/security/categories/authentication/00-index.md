@@ -13,13 +13,13 @@ Part of [[wiki/index|Wiki Index]]. 17 pages.
 
 ## Pages
 - [[wiki/security/categories/authentication/audit-hash|Audit Hash]] — Hashing
-- [[wiki/security/categories/authentication/baxdxuoc|BaXDxuoc]] — Authentication — identity verification, AWS — Amazon cloud services, Bash — shell scripting language
-- [[wiki/security/categories/authentication/blizkl9u|BlizKl9U]] — Authentication — identity verification, AWS — Amazon cloud services
-- [[wiki/security/categories/authentication/bmxbydqu|BmXbyDQU]] — Authentication — identity verification, AWS — Amazon cloud services
+- BaXDxuoc — Authentication — identity verification, AWS — Amazon cloud services, Bash — shell scripting language
+- BlizKl9U — Authentication — identity verification, AWS — Amazon cloud services
+- BmXbyDQU — Authentication — identity verification, AWS — Amazon cloud services
 - [[wiki/security/categories/authentication/canvasrenderer-2|CanvasRenderer]] — Canvas
-- [[wiki/security/categories/authentication/cbvrzdvz|CbvrzdVz]] — Authentication — identity verification, AWS — Amazon cloud services, Bash — shell scripting language
-- [[wiki/security/categories/authentication/ccdy9tdr|CcdY9Tdr]] — Authentication — identity verification, AWS — Amazon cloud services
-- [[wiki/security/categories/authentication/chlxaaiu|ChlxAAiU]] — Authentication — identity verification, AWS — Amazon cloud services, Bash — shell scripting language
+- CbvrzdVz — Authentication — identity verification, AWS — Amazon cloud services, Bash — shell scripting language
+- CcdY9Tdr — Authentication — identity verification, AWS — Amazon cloud services
+- ChlxAAiU — Authentication — identity verification, AWS — Amazon cloud services, Bash — shell scripting language
 - [[wiki/security/categories/authentication/codebase-audit|Codebase Audit]] — Authentication — identity verification, AWS — Amazon cloud services, Bash — shell scripting language
 - [[wiki/security/categories/authentication/idle|IDLE]] — Authentication — identity verification, AWS — Amazon cloud services
 - [[wiki/security/categories/authentication/instructions|Instructions]] — Authentication — identity verification, CLI — command-line tooling, CSS — web styling language

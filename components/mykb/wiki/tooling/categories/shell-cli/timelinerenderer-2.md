@@ -17,6 +17,6 @@ The entry serves as a reference for time-based visualization components, and its
 Sessions record the renderer as a reusable component, and the entry generalizes the layout, interaction, and performance lessons so that future timeline features do not start from scratch.
 **Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Related Entities
-- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- Busuj
 - [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
 - [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

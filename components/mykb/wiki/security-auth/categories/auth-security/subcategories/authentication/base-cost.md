@@ -2,7 +2,7 @@
 type: "entity"
 title: "Base Cost"
 status: "growing"
-description: "API — service communication interface, Authentication — identity verification, AWS — Amazon cloud services"
+description: "Base Cost"
 tags: ["entity", "api", "ast", "auth", "authentication", "aws"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""
@@ -47,7 +47,7 @@ Chargeback and showback reports should split base from variable cost per team so
 ## Related Entities
 
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automati|Automatic 10]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]

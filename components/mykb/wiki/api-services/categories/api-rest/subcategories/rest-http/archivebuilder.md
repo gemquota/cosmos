@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "ArchiveBuilder"
-description: "Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface"
+description: "ArchiveBuilder"
 tags: ["entity", "android", "angular", "api", "ast", "auth"]
 timestamp: "2026-07-19T22:41:42Z"
 status: "growing"

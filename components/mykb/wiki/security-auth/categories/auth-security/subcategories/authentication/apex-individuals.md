@@ -2,7 +2,7 @@
 type: "entity"
 status: "growing"
 title: "Apex Individuals"
-description: "AJAX — async web data exchange, API — service communication interface, Authentication — identity verification"
+description: "Apex Individuals"
 tags: ["entity", "ajax", "api", "ast", "auth", "authentication"]
 timestamp: "2026-07-19T22:41:44Z"
 resource: ""
@@ -39,7 +39,7 @@ The entity is tagged ajax, api, auth, and authentication, so sessions likely sur
 ## Related Entities
 
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automati|Automatic 10]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]

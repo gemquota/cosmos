@@ -20,7 +20,7 @@ Part of [[wiki/index|Wiki Index]]. 12 pages.
 - [[wiki/shell-environment/categories/dev-tools/frontend-app-builder-use|Frontend App Builder Use]] — Bash — shell scripting language, Frontend — client-side UI, IDE — code editor environment
 - [[wiki/shell-environment/categories/dev-tools/hard-rules|Hard Rules]] — Bash — shell scripting language, Frontend — client-side UI, IDE — code editor environment
 - [[wiki/shell-environment/categories/dev-tools/image-gen|Image Gen]] — Bash — shell scripting language, Frontend — client-side UI, IDE — code editor environment
-- [[wiki/shell-environment/categories/dev-tools/jul|Jul]] — Bash — shell scripting language, Frontend — client-side UI, IDE — code editor environment
+- Jul — Bash — shell scripting language, Frontend — client-side UI, IDE — code editor environment
 - [[wiki/shell-environment/categories/dev-tools/jun|Jun]] — Bash — shell scripting language, IDE — code editor environment, JSON — data interchange format
 - [[wiki/shell-environment/categories/dev-tools/nah|Nah]] — Referenced in session 019f745e
 - [[wiki/shell-environment/categories/dev-tools/skill|Skill]] — Referenced in session 019f06a8

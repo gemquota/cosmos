@@ -16,6 +16,6 @@ Reliability completes the picture: routing decisions should be logged, handlers 
 **Related topics:** api, auth, aws, backend, cli, ide, queue, terminal
 **Domain:** Web Platforms › [[wiki/web-platforms/00-index|Tooling]] › [[wiki/web-platforms/00-index|Shell Cli]]
 ## Related Entities
-- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- Busuj
 - [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
-- [[wiki/tooling/categories/shell-cli/kksrylf3|Kksrylf3]]
+- Kksrylf3

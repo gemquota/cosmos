@@ -42,17 +42,17 @@ PBR results depend on the lighting environment. Recent Three.js releases use phy
 
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/webglrenderer-2|WebGLRenderer]] — the material pipeline
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/bufferattribute|BufferAttribute]] — geometry data the material shades
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/webgl-10|WebGL]] — the rendering context behind the material
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/webg|WebGL]] — the rendering context behind the material
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/canvastexture|CanvasTexture]] — a common source of texture maps
 - [[wiki/frontend/animation-performance|Animation Performance]] — keeping real-time PBR rendering smooth
 
 ## Related Entities
 
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ac|Ace 10]]
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrain|Jetbrains 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/cs|Csv 10]]
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]

@@ -1,27 +1,33 @@
 ---
 type: "entity"
 title: "MetricsCollector"
-description: "Android — mobile development platform, API — service communication interface, Authentication — identity verification"
-tags: ["entity", "android", "api", "ast", "auth", "authorization"]
-timestamp: "2026-07-19T22:41:42Z"
 resource: ""
 ---
+description: "The component that gathers, buffers, and forwards telemetry metrics from a system"
+tags: ["entity", "android", "api", "ast", "auth", "authorization", "telemetry", "metrics"]
+timestamp: "2026-07-19T22:41:43Z"
 
-## Metricscollector
+# MetricsCollector
 
-ACE ecosystem component — collects performance metrics and operational data from agent components.
+## Summary
+A metrics collector is the component that gathers measurements from a running system, buffers them, and forwards them to storage or dashboards. It matters because telemetry is only as good as its collection path: losses, latency, and high overhead silently corrupt the picture operators rely on. A well-designed collector balances coverage against cost and must never destabilize the system it observes.
 
-**Related topics:** android, api, auth, authorization
+## Details
+- **Definition** — a collector samples or receives metric events, aggregates them, and exports them on a schedule or on demand.
+- **Push vs pull** — pull-based collectors scrape endpoints, while push-based ones receive telemetry; each fits different topologies and security postures.
+- **Buffering** — local queues smooth over network outages, but unbounded buffers cause memory pressure and stale data on recovery.
+- **Aggregation** — pre-aggregating counters, histograms, and rates reduces export volume at the cost of losing raw detail.
+- **Cardinality control** — labels and dimensions multiply series; high-cardinality data is a common cause of storage and query blowup.
+- **Reliability** — the collection path must never crash the monitored process; failures should degrade to dropping metrics, not taking down the app.
+- **Sampling** — probabilistic sampling keeps volume bounded while preserving representative distributions for high-traffic systems.
+- **Common failure modes** — dropped samples during bursts, clock skew between hosts, and duplicate emission after retries.
+- **Worked example** — a service emits request counts and latencies to a local collector, which aggregates per-minute histograms and forwards them; dashboards query the aggregated series.
+- **Practical relevance** — trustworthy collection is the prerequisite for alerting, capacity planning, and observability.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Metricscollector
-
-## Related Entities
-
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+## Related
+- [[wiki/software-engineering/metrics-and-monitoring|Metrics and Monitoring]] — consuming collected data
+- [[wiki/data-storage/log-collection-and-aggregation|Log Collection and Aggregation]] — analogous pipeline
+- [[wiki/agent-systems/telemetry-for-agents|Telemetry for Agents]] — agent metrics
+- [[wiki/testing/token-usage-tracking|Token Usage Tracking]] — LLM-specific metrics
+- [[wiki/testing/traces-spans|Traces and Spans]] — correlated telemetry
+- [[wiki/software-engineering/logging-strategies|Logging Strategies]] — complementary signals

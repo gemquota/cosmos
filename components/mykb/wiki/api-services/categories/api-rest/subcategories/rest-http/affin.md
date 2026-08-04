@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "AFFIN"
-description: "Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface"
+description: "AFFIN"
 tags: ["entity", "acronym", "android", "angular", "api", "ast"]
 timestamp: "2026-07-19T22:41:41Z"
 resource: ""

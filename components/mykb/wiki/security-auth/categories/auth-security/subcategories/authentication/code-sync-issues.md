@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "Code Sync Issues"
-description: "Android — mobile development platform, API — service communication interface, Authentication — identity verification"
+description: "Code Sync Issues"
 tags: ["entity", "android", "api", "ast", "auth", "authentication"]
 timestamp: "2026-07-19T22:41:43Z"
 resource: ""

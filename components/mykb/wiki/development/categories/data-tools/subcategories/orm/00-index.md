@@ -19,7 +19,7 @@ Part of [[wiki/index|Wiki Index]]. 33 pages.
 - [[wiki/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]] — IDE — code editor environment, ORM — object-relational mapping
 - [[wiki/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]] — IDE — code editor environment, ORM — object-relational mapping, SPA — single-page application
 - [[wiki/development/categories/data-tools/subcategories/orm/decryption|Decryption]] — IDE — code editor environment, ORM — object-relational mapping, SPA — single-page application
-- [[wiki/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]] — IDE — code editor environment, ORM — object-relational mapping, SPA — single-page application
+- Dgsrcgyrd — IDE — code editor environment, ORM — object-relational mapping, SPA — single-page application
 - [[wiki/development/categories/data-tools/subcategories/orm/easy-problems|Easy Problems]] — IDE — code editor environment, ORM — object-relational mapping, SPA — single-page application
 - [[wiki/development/categories/data-tools/subcategories/orm/executive-layer|Executive Layer]] — CLI — command-line tooling, IDE — code editor environment, ORM — object-relational mapping
 - [[wiki/development/categories/data-tools/subcategories/orm/experiment|Experiment]] — IDE — code editor environment, Logging — application logging, Monitoring — system observability

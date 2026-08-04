@@ -472,3 +472,50 @@ title: "Bundle Log"
   `raw/archive/junk-entities-2026-08c/` (session-corpus entity shadowing the real
   concept name); inbound links existed only in the auto-generated index
 - **All new notes ≥320 body words**; wikilinks verified resolvable
+
+## 2026-08-03 (AO / Agent OS integration assessment)
+- **Assessed** `~/dev/codex/ao` (Agent OS, ~6.9k LOC pure-Python multi-agent runtime) for COSMOS inclusion; verified `ao run selftest` passes offline (graceful fallbacks for sqlite-vec/docker/fastapi)
+- **Assessment doc**: `docs/ao-assessment.md` — recommendation is selective harvest into RSIS3, not a fourth top-level component
+- **Synthesis**: `wiki/syntheses/ao-agent-os-integration-assessment.md` — harvest infrastructure (sandbox, HITL approvals, scheduler guards, cost ledger) into `rsis/loop_l1.py`, never duplicate memory/dashboard/telemetry surfaces
+- **Durable rules**: one memory (MyKB), one dashboard, one telemetry; vendor AO before relying on it (no git history); keep the immutable evaluator as the multi-agent verification gate
+
+## 2026-08-03 (Phase A — AO tool-layer port into RSIS3 L1)
+- **Ported** the Agent OS tool layer into `components/rsis3/rsis/tools/` (sandbox, hitl, manager, workspace_tools) and wired it into `rsis/loop_l1.py` with a `ToolConfig` gate: RestrictedPython/subprocess/Docker sandbox, per-agent allowlists, path containment, 5-level risk classifier with HITL modes (auto/interactive/api/deny), redacted audit logs (`.rsis/audit.jsonl`, `.rsis/hitl.jsonl`)
+- **Stub planner upgraded**: keyword consumed → remainder is payload; single-required-string and free-text (`run_code`) tools get the payload; each tool runs at most once per task; unmatched tasks complete
+- **Verified**: 12-point smoke suite (sandbox exec, destructive-code block, allowlist deny, path traversal, HITL thresholds, legacy path, audit/redaction) + full `cmd_run` end-to-end in a temp workspace + `status`/`check`/`check-practices` all green
+- **Docs**: RSIS3 README tool-layer section; `docs/ao-assessment.md` Phase A status
+- **Synthesis extended**: `wiki/syntheses/ao-agent-os-integration-assessment.md` gains Phase A implementation patterns
+
+## 2026-08-03 (Phase B — cost ledger + semantic search)
+- **RSIS3 cost ledger**: `CostLedger` in `rsis/telemetry.py` (price table, per-call estimates, persistent `.rsis/costs.jsonl` replay, `budget_exceeded` latch); `EvaluatorClient` records each call and pre-flights `guard_budget`; `cmd_run --budget-cap` + `RSIS_BUDGET_CAP_USD`/`RSIS_COST_LOG` env gates; `status` prints spend/budget. Verified: cap allows call 1 and refuses call 2; lowered cap across processes latches and refuses at startup
+- **MyKB semantic search**: `search_fusion.py` gains hashed n-gram embeddings (blake2b, 256-dim, signed, L2-normalized) as a third RRF signal; `query --semantic` mode + `/api/v2/search/semantic` endpoint; old indexes degrade gracefully; `.gitignore` covers `search_sem.npy`; index rebuilt (27,893 chunks)
+- **Docs**: RSIS3 README cost-ledger section; search_fusion docstring updated
+- **Synthesis extended**: `wiki/syntheses/ao-agent-os-integration-assessment.md` gains Phase B patterns (persistent ledger replay, two-stage enforcement, client-side token baselines, offline hashed n-grams, checkpoint-manager test hygiene, lock/deque port pitfalls)
+
+## 2026-08-03 (500-stub expansion pass + categorization cleanup)
+- **500 stub expansions (5 parallel workers × 100)**: selected the 500 smallest
+  stubs (≤85 words) across 21 areas into disjoint slices; workers expanded all
+  surviving files to ≥320 body words (min 320, max ~450) with full OKF
+  structure (Summary / Details / Related). One worker hit a provider rate limit
+  at 78/100 and the remaining 22 were completed inline; 4 of its targets
+  (busuj, kksrylf3, game, session) were template junk and archived instead.
+- **Stats impact**: 300+/400+/500+ tiers 1,695/468/50 → 2,174/483/51; total
+  words 1,170,691 → 1,305,666; stubs remaining 3,850 → 3,348.
+- **Deletion review — 21 junk entities archived** to
+  `raw/archive/junk-entities-2026-08d/`: opaque-identifier auto-captured
+  entities (ccdy9tdr, cbvrzdvz, bmxbydqu, blizkl9u, chlxaaiu, baxdxuoc,
+  bamttoyw, bwvqxgoo, bxgubd3, abzzfeuifjsdsrga, bomdwriw-2, lqbukrrrqqquu-2,
+  gdzlbzebp-2, xqkvrxdvvvddddvvv-2, hmg9zr-2, dgsrcgyrd, jul) and template-only
+  entities (busuj, kksrylf3, game, session). 63 files had dead links stripped.
+- **Categorization/nesting fixes**: moved `css-styling/mcp` → `api-protocols/mcp`
+  and `css-styling/skills` → `llm-agents/skills`; archived duplicate
+  `tooling/shell-cli/rest` (canonical `api-protocols/rest-apis`); renamed 61
+  `*-10` collision files to their canonical names (fastapi-10→fastapi,
+  json-10→json, css-10→css, etc.) with all wikilinks retargeted; scrubbed 172
+  stale "API — service communication interface" template descriptions to
+  real summaries; repaired 8 broken frontmatters (1 worker-write + 7 from a
+  description-fix regression, verified via `okf validate`).
+- **Snapshots regenerated**: stats.html (5,271 files, 1,305,666 words,
+  29,814 links, 5,396/35,454 graph), graph.json, stub-index.json (3,348),
+  stub-audit.html (3,326), okf render (6,830 concepts), gen-static-data check OK
+  (6,854 md files). Link check: only the 3 known intentional false positives.

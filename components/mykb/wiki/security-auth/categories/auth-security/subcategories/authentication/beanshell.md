@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "BeanShell"
-description: "Android — mobile development platform, API — service communication interface, Authentication — identity verification"
+description: "BeanShell"
 tags: ["entity", "android", "api", "ast", "auth", "authentication"]
 timestamp: "2026-07-19T22:41:40Z"
 resource: ""

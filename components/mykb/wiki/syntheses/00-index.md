@@ -2,17 +2,18 @@
 type: "index"
 hub: true
 title: "Syntheses Index"
-description: "Listing of the syntheses/ folder (44 pages)."
+description: "Listing of the syntheses/ folder (45 pages)."
 tags: ["index"]
 timestamp: "2026-08-03T00:00:00Z"
 ---
 
 # Syntheses
 
-Part of [[wiki/index|Wiki Index]]. 44 pages.
+Part of [[wiki/index|Wiki Index]]. 45 pages.
 
 ## Pages
 - [[wiki/syntheses/acquisition-pass-snapshot-ordering|Acquisition Passes & Snapshot Ordering]] — Durable rules for multi-worker acquisition rounds: stage untracked notes before regenerating files.json (it counts tracked files only), generators are idempotent and safe to re-run, and threshold buckets move predictably because fulls are capped at 400 words
+- [[wiki/syntheses/ao-agent-os-integration-assessment|AO (Agent OS) Integration Assessment — Selective Harvest Rules]] — Durable rules from assessing the Agent OS codebase for COSMOS: harvest infrastructure (sandbox, HITL approvals, scheduler guards, cost ledger) into RSIS3, never duplicate memory/dashboard/telemetry surfaces; Phase A sync tool-layer port patterns (allowlist + containment + audit triad, stub-planner argument discipline, config gates) and Phase B cost-ledger + semantic-search patterns (persistent ledger replay, two-stage budget enforcement, hashed n-gram embeddings, test hygiene)
 - [[wiki/syntheses/assurance-cases|Assurance Cases]] — Structured arguments that a system meets safety goals
 - [[wiki/syntheses/audit-frameworks-ai|AI Audit Frameworks]] — Structured methods for auditing AI systems
 - [[wiki/syntheses/bug-bounty-ai|Bug Bounties for AI]] — Rewarding external researchers for finding AI vulnerabilities
@@ -62,6 +63,7 @@ Part of [[wiki/index|Wiki Index]]. 44 pages.
 - [Acquisition Passes & Snapshot Ordering](acquisition-pass-snapshot-ordering.md) — Acquisition Passes & Snapshot Ordering
 - [Adversarial Review Pass 1 — Stub Promotion Wave Cleanup (2026-08)](adversarial-review-pass-1-2026-08.md) — Adversarial Review Pass 1 — Stub Promotion Wave Cleanup (2026-08)
 - [Adversarial Review Pass 3 — Claims Grounding, Link Hygiene & Near-Duplicate Merges (2026-08)](adversarial-review-pass-3-2026-08.md) — Adversarial Review Pass 3 — Claims Grounding, Link Hygiene & Near-Duplicate Merges (2026-08)
+- [AO (Agent OS) Integration Assessment — Selective Harvest Rules](ao-agent-os-integration-assessment.md) — AO (Agent OS) Integration Assessment — Selective Harvest Rules
 - [Assurance Cases](assurance-cases.md) — Assurance Cases
 - [AI Audit Frameworks](audit-frameworks-ai.md) — AI Audit Frameworks
 - [Bug Bounties for AI](bug-bounty-ai.md) — Bug Bounties for AI
@@ -98,6 +100,7 @@ Part of [[wiki/index|Wiki Index]]. 44 pages.
 - [Restricted Deployment](restricted-deployment.md) — Restricted Deployment
 - [Safety Case Approach](safety-case-approach.md) — Safety Case Approach
 - [Security Advisories](security-advisories-ai.md) — Security Advisories
+- [500-Stub Expansion Pass (2026-08-03)](stub-expansion-pass-500-2026-08.md) — 500-Stub Expansion Pass (2026-08-03)
 - [Stub Promotion Wave — 1,098 stubs → growing (2026-08)](stub-promotion-wave-2026-08.md) — Stub Promotion Wave — 1,098 stubs → growing (2026-08)
 - [Third-Party Audits](third-party-audits.md) — Third-Party Audits
 - [Transparency Reports](transparency-reports.md) — Transparency Reports

@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "AudioNode"
-description: "Android — mobile development platform, API — service communication interface, AWS — Amazon cloud services"
+description: "AudioNode"
 tags: ["entity", "android", "api", "ast", "aws", "bash"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""

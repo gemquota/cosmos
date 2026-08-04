@@ -23,7 +23,7 @@ The two-letter title AB is a common shorthand for Babel in session notes and con
 ## Related Entities
 ## Debugging Transforms
 When transformed code misbehaves, check the target list and the plugin order: `@babel/preset-env` output depends on both. Compare the original and emitted code in the build's source maps, and isolate whether the issue is syntax support, a missing polyfill, or a plugin misconfig. Reproducing with a minimal fixture makes the failure much easier to chase than debugging the full bundle.
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automati|Automatic 10]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]

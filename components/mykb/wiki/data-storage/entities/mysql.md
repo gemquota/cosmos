@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "MySQL"
-description: "Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface"
+description: "In short, MySQL remains a dependable choice when the data is inherently relational and the team values a mature ecosystem with predictable operational behavior."
 tags: ["entity", "android", "angular", "api", "ast", "auth"]
 timestamp: "2026-07-19T22:41:41Z"
 status: "growing"

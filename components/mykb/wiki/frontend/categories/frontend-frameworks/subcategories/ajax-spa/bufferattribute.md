@@ -2,7 +2,7 @@
 status: "growing"
 type: "entity"
 title: "BufferAttribute"
-description: "AJAX — async web data exchange, API — service communication interface, AWS — Amazon cloud services"
+description: "BufferAttribute"
 tags: ["entity", "ajax", "api", "ast", "aws", "bash"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""
@@ -40,16 +40,16 @@ Attributes are attached to a `BufferGeometry` with `setAttribute('position', new
 ## Related Concepts
 
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/webglrenderer-2|WebGLRenderer]] — the renderer that consumes geometry buffers
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/webgl-10|WebGL]] — the API that transfers buffers to the GPU
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/webg|WebGL]] — the API that transfers buffers to the GPU
 - [[wiki/js-ts-ecosystem/entities/typescript-patterns|TypeScript Patterns]] — typed-array idioms in Three.js code
 
 ## Related Entities
 
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ac|Ace 10]]
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrain|Jetbrains 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/cs|Csv 10]]
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]

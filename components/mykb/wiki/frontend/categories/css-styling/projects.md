@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "Projects"
-description: "API — service communication interface, Authentication — identity verification, DOM — document object model"
+description: "Projects"
 tags: ["entity", "api", "ast", "auth", "bug", "dom"]
 timestamp: "2026-07-19T22:41:43Z"
 resource: ""
@@ -21,7 +21,7 @@ Version control provides the history and collaboration layer. Branches isolate w
 
 Documentation captures the project's intent: a README explains how to run and test, and design notes record why decisions were made. Task tracking ties issues to commits so the history reads as a story of the project's evolution. Security practices, such as scanning dependencies for vulnerabilities and reviewing authorization boundaries, belong in every project regardless of size.
 
-The term appears in sessions categorized as API, Debugging, and Security, reflecting that project work is where these concerns meet: APIs are the contracts projects expose, debugging is how defects are found, and security is the discipline that protects the result. Related patterns live under [[wiki/frontend/categories/css-styling/importerror-10|Importerror 10]] and the [[wiki/web-platforms/00-index|Frontend]] domain.
+The term appears in sessions categorized as API, Debugging, and Security, reflecting that project work is where these concerns meet: APIs are the contracts projects expose, debugging is how defects are found, and security is the discipline that protects the result. Related patterns live under [[wiki/frontend/categories/css-styling/importerro|Importerror 10]] and the [[wiki/web-platforms/00-index|Frontend]] domain.
 
 The durable lesson is that project success depends less on tooling than on the discipline of recording decisions, verifying changes, and keeping the repository runnable by anyone at any time.
 
@@ -29,11 +29,11 @@ The durable lesson is that project success depends less on tooling than on the d
 
 ## Related Entities
 
-- [[wiki/frontend/categories/css-styling/importerror-10|Importerror 10]]
-- [[wiki/frontend/categories/css-styling/css-10|Css 10]]
+- [[wiki/frontend/categories/css-styling/importerro|Importerror 10]]
+- [[wiki/frontend/categories/css-styling/cs|Css 10]]
 - [[wiki/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
 - [[wiki/frontend/categories/css-styling/database-2|Database 2]]
 - [[wiki/frontend/categories/css-styling/display-2|Display 2]]
-- [[wiki/frontend/categories/css-styling/html-10|Html 10]]
+- [[wiki/frontend/categories/css-styling/htm|Html 10]]
 - [[wiki/frontend/categories/css-styling/reference-2|Reference 2]]
 - [[wiki/frontend/categories/css-styling/dob-2|Dob 2]]

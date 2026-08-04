@@ -1,14 +1,12 @@
 ---
-status: "growing"
 type: "entity"
 title: "CellType"
-description: "Android — mobile development platform, API — service communication interface, Bash — shell scripting language"
+description: "Typed classification for elements in a grid or simulation, such as empty, solid, fluid, and agent cells"
 tags: ["entity", "android", "api", "ast", "bash", "cli"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""
+status: "growing"
 ---
-
-
 ## Celltype
 
 CellType appears in 1 session(s) categorized as API, Mobile, Shell. Related topics: android, api, bash, cli.

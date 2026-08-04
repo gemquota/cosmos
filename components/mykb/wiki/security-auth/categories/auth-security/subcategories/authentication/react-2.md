@@ -1,27 +1,35 @@
 ---
 type: "entity"
 title: "ReAct"
-description: "Referenced in session 8ec60717"
-tags: ["android", "api", "ast", "auth", "authentication", "bigquery", "entity"]
-timestamp: "2026-07-19T22:41:39Z"
 resource: ""
 ---
+description: "The reason-and-act pattern that interleaves thinking with tool use in agents"
+tags: ["android", "api", "ast", "auth", "authentication", "bigquery", "entity", "agents", "reasoning"]
+timestamp: "2026-07-19T22:41:41Z"
 
+# ReAct
 
-## React 2
+## Summary
+ReAct is a prompting pattern for agents that interleaves reasoning steps with actions: the model thinks, acts, observes, and repeats until the goal is met. It matters because reasoning alone cannot change the world, and acting without reasoning wanders. ReAct couples the two, producing decisions that are grounded in real observations rather than assumption.
 
-React is a JavaScript library for building user interfaces, developed by Meta. Component-based, declarative, with a rich ecosystem including hooks, suspense, server components.
-Referenced in session 8ec60717
+## Details
+- **Definition** — the pattern alternates thought, action, and observation turns, building a trace that explains each step.
+- **Thought** — each cycle begins with a short reasoning step about what to do next and why.
+- **Action** — the model emits a structured tool call, such as a search, computation, or file operation.
+- **Observation** — the tool result feeds back into the context, grounding the next thought in reality.
+- **Trace value** — the interleaved record is inspectable, making the agent's process auditable and debuggable.
+- **Loop control** — budgets and stop conditions are essential, since the cycle can repeat indefinitely.
+- **Common failure modes** — the model repeating the same failed action, observation tokens overflowing the context, and loops without progress.
+- **Worked example** — an agent tasked with finding a package version thinks "search the registry", acts, observes the result, and either answers or plans the next query.
+- **Practical relevance** — ReAct is the backbone of many tool-using agents and a baseline pattern for grounded reasoning.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › React 2
-
-## Related Entities
-
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+- **Structured actions** — actions are usually emitted as tool calls or structured text, which the runtime parses and executes.
+- **Failure recovery** — the agent should change strategy after failed observations rather than repeating the same action.
+- **Context discipline** — old observations should be summarized or trimmed so the reasoning trace stays within the context budget.
+## Related
+- [[wiki/prompt-engineering/function-calling|Function Calling]] — structured actions
+- [[wiki/llm-agents/chain-of-thought|Chain of Thought]] — reasoning step pattern
+- [[wiki/agent-systems/action-observation-loop|Action-Observation Loop]] — cycle structure
+- [[wiki/llm-agents/agentic-loops|Agentic Loops]] — iterating to completion
+- [[wiki/ai-ml/reasoning-models|Reasoning Models]] — model-side reasoning
+- [[wiki/llm-agents/context-management|Context Management]] — keeping traces bounded

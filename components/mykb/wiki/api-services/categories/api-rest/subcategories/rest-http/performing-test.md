@@ -1,26 +1,38 @@
 ---
 type: "entity"
 title: "Performing Test"
-description: "Android — mobile development platform, API — service communication interface, Backend — server-side logic"
-tags: ["entity", "android", "api", "ast", "backend", "bash"]
+description: "Executing test cases against a system and collecting results"
+tags: ["entity", "testing", "execution", "ci", "quality"]
 timestamp: "2026-07-19T22:41:43Z"
 resource: ""
 ---
 
+# Performing Test
 
-## Performing Test
+## Summary
 
-Performing Test appears in 1 session(s) categorized as API, Backend, Mobile, Shell. Related topics: android, api, backend, bash.
+Performing a test means executing test cases against the system under test, collecting outcomes, and turning them into actionable results. It matters because test execution is where theoretical coverage becomes evidence: environment, ordering, and tooling decide whether results are trustworthy. A well-run test session isolates failures and produces artifacts others can inspect.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Performing Test
+## Details
 
-## Related Entities
+- **Definition** — Test execution drives the code or system through defined inputs and compares observed behavior with expected outcomes.
+- **Phases** — Setup prepares fixtures and state; the action invokes the behavior; teardown resets side effects so tests do not contaminate each other.
+- **Environment** — Deterministic environments — pinned dependencies, seeded data, clean containers — make results reproducible across runs and machines.
+- **Parallelism** — Running tests concurrently shortens feedback but requires isolation; shared databases, ports, and filesystems cause flaky failures.
+- **Result reporting** — Outcomes feed machine-readable reports with timings, logs, and failure traces, which CI and dashboards aggregate.
+- **Worked example** — A developer runs the API suite: setup seeds the database, tests hit endpoints through a test client, teardown resets state, and the report flags two regressions.
+- **Common failure modes** — Order-dependent tests, timeouts set too tight, environment drift, and ignored failing tests that rot the suite are frequent problems.
+- **Practical relevance** — Local runs, CI gates, and on-demand reruns all rely on the same discipline: tests that run cleanly and report clearly.
+- **Telemetry note** — Recorded in API, backend, and shell sessions, matching the command-line and CI contexts where suites actually execute.
+- **Quarantine** — Flaky tests should be quarantined and tracked rather than deleted or ignored, so stability improves without losing signal.
+- **Selective runs** — Impact analysis runs only tests touching changed code for fast feedback, with full suites on a slower gate.
+- **Worked example** — A pre-merge job runs unit tests in parallel shards, uploads the report, and blocks merge on regressions while allowing known-flaky quarantined tests to skip.
 
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aap-2|Aap 2
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aar|Aar
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aarrr|Aarrr
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/abi|Abi
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/accr-2|Accr 2
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/ace-core|Ace Core
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acid|Acid
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acli|Acli
+## Related
+
+- [[wiki/testing/api-testing|API Testing]] — testing service endpoints
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/testing-preparation|Testing Preparation]] — the setup before runs
+- [[wiki/testing/stress-testing|Stress Testing]] — loading beyond normal bounds
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/testarchivebuilder|TestArchiveBuilder]] — archiving run artifacts
+- [[wiki/testing/acceptance-testing|Acceptance Testing]] — validating user outcomes
+- [[wiki/testing/database-testing|Database Testing]] — data-layer verification
