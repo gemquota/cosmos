@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "Collected"
-description: "API — service communication interface, Authentication — identity verification, CLI — command-line tooling"
+description: "The takeaway is that collection pipelines succeed on governance as much as plumbing: knowing what was collected, from where, with what permissions, and how long"
 tags: ["entity", "api", "auth", "authentication", "cli", "cloud"]
 timestamp: "2026-07-19T22:41:41Z"
 status: "growing"
@@ -39,7 +39,7 @@ The takeaway is that collection pipelines succeed on governance as much as plumb
 ## Related Entities
 
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automati|Automatic 10]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]

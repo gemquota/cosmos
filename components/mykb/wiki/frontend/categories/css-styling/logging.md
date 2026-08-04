@@ -32,11 +32,11 @@ Logging is the practice of recording events emitted by an application so that be
 Effective logging follows a few habits: log at the right level, include correlation IDs, never log secrets or personal data in plain text, and add a log line where the failure first becomes detectable. Review logs during incident post-mortems to close gaps, and treat missing logs as bugs — if an event cannot be observed, it cannot be debugged or monitored.
 
 
-- [[wiki/frontend/categories/css-styling/importerror-10|Importerror 10]]
-- [[wiki/frontend/categories/css-styling/css-10|Css 10]]
+- [[wiki/frontend/categories/css-styling/importerro|Importerror 10]]
+- [[wiki/frontend/categories/css-styling/cs|Css 10]]
 - [[wiki/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
 - [[wiki/frontend/categories/css-styling/database-2|Database 2]]
 - [[wiki/frontend/categories/css-styling/display-2|Display 2]]
-- [[wiki/frontend/categories/css-styling/html-10|Html 10]]
+- [[wiki/frontend/categories/css-styling/htm|Html 10]]
 - [[wiki/frontend/categories/css-styling/reference-2|Reference 2]]
 - [[wiki/frontend/categories/css-styling/dob-2|Dob 2]]

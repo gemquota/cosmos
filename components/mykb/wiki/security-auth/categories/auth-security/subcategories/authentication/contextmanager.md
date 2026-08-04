@@ -1,27 +1,33 @@
 ---
 type: "entity"
 title: "ContextManager"
-description: "Context"
-tags: ["entity", "android", "api", "ast", "auth", "authentication"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""
 ---
+description: "Python's with-statement protocol for scoped resource setup and cleanup"
+tags: ["entity", "android", "api", "ast", "auth", "authentication", "python", "resources"]
 
-## Contextmanager
+# ContextManager
 
-Context — the information provided to an LLM alongside a query. Sessions show context window management, summarization, and pruning strategies.
+## Summary
+A context manager is an object that implements Python's with-statement protocol, guaranteeing that setup and cleanup wrap a block of code. It matters because resource leaks, from open files to held locks and transactions, are exactly the bugs that cleanup code forgets on error paths. Context managers make cleanup automatic and readable, so the happy path and the failure path share one guarantee.
 
-**Related topics:** android, api, auth, authentication
+## Details
+- **Definition** — a context manager provides enter and exit hooks; the with statement calls enter, runs the block, and always calls exit, even on exceptions.
+- **Protocol forms** — it can be written as a class with __enter__ and __exit__, or more concisely with the contextlib decorator on a generator function.
+- **Exception handling** — the exit method receives the exception type, value, and traceback, letting it suppress, wrap, or log failures as appropriate.
+- **Resource scoping** — files, sockets, locks, and database transactions are natural fits because their lifecycle should match a lexical block.
+- **Nesting** — multiple with statements or contextlib.ExitStack compose several resources with correct ordering and guaranteed cleanup.
+- **Setup failures** — cleanup must not run for resources that were never acquired, so acquisition order and tracking have to be explicit.
+- **Return values** — the as clause binds the managed resource to a name, giving the block a clear handle for the duration.
+- **Common failure modes** — cleanup code that itself raises and masks the original error, and resources whose scope extends beyond what the with block implies.
+- **Worked example** — a database session is opened in a with block, a transaction is committed on success and rolled back on error, and the connection returns to the pool automatically.
+- **Practical relevance** — context managers are the idiomatic way to make resource safety automatic in Python codebases.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Contextmanager
-
-## Related Entities
-
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+## Related
+- [[wiki/software-engineering/object-pool|Object Pool]] — resources returned to pools
+- [[wiki/web-platforms/file-locks|File Locks]] — scoped lock lifecycle
+- [[wiki/data-storage/acid-transactions|ACID Transactions]] — transactional cleanup
+- [[wiki/testing/unit-testing|Unit Testing]] — testing cleanup paths
+- [[wiki/software-engineering/code-review|Code Review]] — reviewing resource handling
+- [[wiki/testing/property-based-testing|Property-Based Testing]] — exercising error paths

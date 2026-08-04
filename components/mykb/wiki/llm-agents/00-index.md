@@ -130,6 +130,7 @@ Part of [[wiki/index|Wiki Index]]. 59 pages.
 - [Self-Reflection Agents](self-reflection-agents.md) — Self-Reflection Agents
 - [Semantic Caching](semantic-caching.md) — Semantic Caching
 - [Semantic Memory for Agents](semantic-memory-agents.md) — Semantic Memory for Agents
+- [Skills](skills.md) — Skills
 - [Speech Recognition Systems](speech-recognition-systems.md) — Speech Recognition Systems
 - [Stop Conditions](stop-conditions.md) — Stop Conditions
 - [Streaming Responses with SSE](streaming-responses-sse.md) — Streaming Responses with SSE

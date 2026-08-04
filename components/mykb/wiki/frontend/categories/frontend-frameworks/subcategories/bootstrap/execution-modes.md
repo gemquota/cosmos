@@ -1,26 +1,39 @@
 ---
 type: "entity"
 title: "Execution Modes"
-description: "API — service communication interface, Authentication — identity verification, Bash — shell scripting language"
-tags: ["entity", "api", "ast", "auth", "bash", "bootstrap"]
+description: "Execution Modes: environment-selected run behavior for development, testing, and production"
+tags: ["entity", "api", "ast", "auth", "bash", "bootstrap", "environments"]
 timestamp: "2026-07-19T22:41:41Z"
 resource: ""
 ---
 
+# Execution Modes
 
-## Execution Modes
+## Summary
 
-Execution Modes appears in 1 session(s) categorized as API, Security, Shell. Related topics: api, auth, bash, bootstrap.
+Execution Modes is the bootstrap-cluster entity for run-mode configuration: development, testing, and production behaviors selected by environment. Modes gate logging, validation, caching, and feature availability. They matter because the same code must behave differently without changing source. Mode discipline keeps the codebase honest about the difference between environments.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Frontend]] › [[wiki/web-platforms/00-index|Frontend Frameworks]] › Execution Modes
+## Details
 
-## Related Entities
+- **Definition** — An execution mode is a named configuration of runtime behavior, usually derived from the deployment environment.
+- **Common modes** — Development, test, and production modes each adjust verbosity, optimization, and safety checks.
+- **Mode selection** — Environment variables or build flags select the mode; selection must be explicit and auditable.
+- **Behavior deltas** — Modes change logging levels, source maps, caching, mock providers, and feature flags.
+- **Danger of drift** — When modes diverge too far, tests validate code that production never runs; parity matters. A mode matrix that names each behavior delta is the reference document that keeps the modes honest.
+- **Worked example** — Development mode enables hot reload and verbose logs; production disables both and enables minification.
+- **Failure modes** — Production mode accidentally enabled locally, secrets exposed by dev defaults, and mode-dependent bugs.
+- **Practical relevance** — Execution modes pair with decision types and global config to keep environment policy centralized.
+- **Mode matrix** — A documented matrix of behaviors per mode makes deltas explicit and reviewable.
+- **Parity testing** — Running the test suite in production-like mode catches mode-only failures.
+- **Audit logging** — Recording the active mode in logs explains environment-specific symptoms after the fact.
+- **Mode detection** — Detecting the environment from deployment metadata rather than convention avoids misclassifying containers and CI runners.
 
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/webglrenderer-2|Webglrenderer 2]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/you-10|You 10]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/circular-import-risk|Circular Import Risk]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/presetsystem-2|Presetsystem 2]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/probmap-2|Probmap 2]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/touchinput-2|Touchinput 2]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/decisiontype|Decisiontype]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/recursive-self|Recursive Self]]
+## Related
+
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/decisiontype|DecisionType]] — typed mode selection
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/best-for|Best For]] — choosing per-mode behavior
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/functionality-audit|Functionality Audit]] — verifying each mode
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/project-overview|Project Overview]] — documenting run modes
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/00-index|Bootstrap Index]] — cluster index page
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/project-overview|Project Overview]] — documenting modes
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/missing-complexity-slider|Missing Complexity Slider]] — mode complexity

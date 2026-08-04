@@ -30,7 +30,7 @@ MockCanvas is a test double that stands in for a canvas drawing context, recordi
 ## Related
 
 - [[wiki/web-platforms/canvas-2d|Canvas 2D]] — the API being mocked
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/bxgubd3|BxgUbd3]] — D3.js drawing over canvases
+- BxgUbd3 — D3.js drawing over canvases
 - [[wiki/testing/characterization-testing|Characterization Testing]] — locking in observed behavior
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/debugoverlay|DebugOverlay]] — debugging drawn output
 - [[wiki/testing/api-testing|API Testing]] — the broader test strategy

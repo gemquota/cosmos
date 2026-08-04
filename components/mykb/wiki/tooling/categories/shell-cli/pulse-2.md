@@ -23,6 +23,6 @@ The page anchors the pulse concept without claiming a specific product. Sessions
 ## Summary
 The takeaway is that periodic signals are only useful when receiver and sender agree on the contract: interval, timeout, and expected action when a pulse is missed. Monitoring, orchestration, and CLI tooling all benefit from exposing pulse state as data. Recording the chosen cadence and thresholds here keeps future sessions from rediscovering the same trade-offs.
 ## Related Entities
-- [[wiki/tooling/categories/shell-cli/busuj|Busuj]]
+- Busuj
 - [[wiki/tooling/categories/shell-cli/dims-2|Dims 2]]
 - [[wiki/tooling/categories/shell-cli/intent-distribution-engine-2|Intent Distribution Engine 2]]

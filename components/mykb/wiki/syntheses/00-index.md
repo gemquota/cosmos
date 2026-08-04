@@ -100,6 +100,7 @@ Part of [[wiki/index|Wiki Index]]. 45 pages.
 - [Restricted Deployment](restricted-deployment.md) — Restricted Deployment
 - [Safety Case Approach](safety-case-approach.md) — Safety Case Approach
 - [Security Advisories](security-advisories-ai.md) — Security Advisories
+- [500-Stub Expansion Pass (2026-08-03)](stub-expansion-pass-500-2026-08.md) — 500-Stub Expansion Pass (2026-08-03)
 - [Stub Promotion Wave — 1,098 stubs → growing (2026-08)](stub-promotion-wave-2026-08.md) — Stub Promotion Wave — 1,098 stubs → growing (2026-08)
 - [Third-Party Audits](third-party-audits.md) — Third-Party Audits
 - [Transparency Reports](transparency-reports.md) — Transparency Reports

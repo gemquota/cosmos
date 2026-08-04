@@ -2,7 +2,7 @@
 type: "entity"
 title: "AscendFinding"
 status: "growing"
-description: "Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface"
+description: "AscendFinding"
 tags: ["entity", "android", "angular", "api", "ast", "auth"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""

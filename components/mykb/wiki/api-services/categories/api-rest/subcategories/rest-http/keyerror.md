@@ -29,7 +29,7 @@ KeyError is a Python exception raised when code accesses a key that does not exi
 
 ## Related
 
-- [[wiki/api-services/categories/api-rest/subcategories/rest-http/valueerror-10|ValueError]] — sibling invalid-value error
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/valueerro|ValueError]] — sibling invalid-value error
 - [[wiki/api-services/categories/api-rest/subcategories/rest-http/exception-2|Exception]] — the exception family
 - [[wiki/api-protocols/json-schema|JSON Schema]] — validating required fields
 - [[wiki/api-protocols/json-schema-validation|JSON Schema Validation]] — catching shape drift

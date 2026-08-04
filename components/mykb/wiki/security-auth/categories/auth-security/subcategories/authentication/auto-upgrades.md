@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "Auto Upgrades"
-description: "API — service communication interface, Authentication — identity verification, AWS — Amazon cloud services"
+description: "Auto Upgrades"
 tags: ["entity", "api", "ast", "auth", "authentication", "aws"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""
@@ -26,7 +26,7 @@ Operational automation is the companion of technical safeguards: upgrade windows
 ## Related Entities
 
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automati|Automatic 10]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]

@@ -2,7 +2,7 @@
 status: "growing"
 type: "entity"
 title: "Bonus Acquisition Debugger"
-description: "Android — mobile development platform, API — service communication interface, Authentication — identity verification"
+description: "Bonus Acquisition Debugger"
 tags: ["entity", "android", "api", "ast", "auth", "bug"]
 timestamp: "2026-07-19T22:41:43Z"
 resource: ""

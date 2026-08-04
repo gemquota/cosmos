@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "AmbiguityAssessment"
-description: "Android — mobile development platform, API — service communication interface, Authentication — identity verification"
+description: "AmbiguityAssessment"
 tags: ["entity", "android", "api", "ast", "auth", "authentication"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""

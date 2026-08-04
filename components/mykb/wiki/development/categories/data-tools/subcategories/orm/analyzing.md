@@ -43,6 +43,6 @@ The takeaway is that analysis is a habit, not a tool: profile before optimizing,
 - [[wiki/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
 - [[wiki/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
 - [[wiki/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
-- [[wiki/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
+- Dgsrcgyrd
 - [[wiki/development/categories/data-tools/subcategories/orm/easy-problems|Easy Problems]]
 - [[wiki/development/categories/data-tools/subcategories/orm/experiment|Experiment]]

@@ -48,7 +48,7 @@ Cell Frontier suggests a boundary concept — the edge of a system, organization
 ## Related Entities
 
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automati|Automatic 10]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]

@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "ANGLE"
-description: "Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface"
+description: "ANGLE"
 tags: ["entity", "acronym", "android", "angular", "api", "ast"]
 timestamp: "2026-07-19T22:41:43Z"
 status: "growing"

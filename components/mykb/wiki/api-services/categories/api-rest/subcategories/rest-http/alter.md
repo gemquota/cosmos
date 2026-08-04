@@ -2,7 +2,7 @@
 type: "entity"
 title: "ALTER"
 status: "growing"
-description: "Android — mobile development platform, Angular — TypeScript web framework, API — service communication interface"
+description: "ALTER"
 tags: ["entity", "acronym", "android", "angular", "api", "ast"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""

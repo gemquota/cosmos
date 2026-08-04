@@ -2,7 +2,7 @@
 type: "entity"
 status: "growing"
 title: "MutationEngine"
-description: "Android — mobile development platform, API — service communication interface, Bash — shell scripting language"
+description: "MutationEngine"
 tags: ["entity", "android", "api", "ast", "bash", "cli"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""

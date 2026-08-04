@@ -1,14 +1,12 @@
 ---
 type: "entity"
 title: "MoleculeCatalog"
-description: "Android — mobile development platform, API — service communication interface, Bash — shell scripting language"
+description: "Catalogs of molecules enabling substructure search, property prediction, and reaction simulation"
 tags: ["entity", "android", "api", "ast", "bash", "cli"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""
 status: "growing"
 ---
-
-
 ## Moleculecatalog
 
 MoleculeCatalog appears in 1 session(s) categorized as API, Mobile, Shell. Related topics: android, api, bash, cli.

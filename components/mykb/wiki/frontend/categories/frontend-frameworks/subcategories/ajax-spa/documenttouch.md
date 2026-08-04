@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "DocumentTouch"
-description: "API — service communication interface, Authentication — identity verification, Bash — shell scripting language"
+description: "The takeaway is that input handling should be built on capability detection and progressive enhancement rather than browser assumptions. Legacy interfaces like "
 tags: ["entity", "api", "ast", "auth", "bash", "cdn"]
 timestamp: "2026-07-19T22:41:41Z"
 status: "growing"
@@ -38,11 +38,11 @@ The takeaway is that input handling should be built on capability detection and 
 
 ## Related Entities
 
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace-10|Ace 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ac|Ace 10]]
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|Aa]]
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/insecurerequestwarning-2|Insecurerequestwarning 2]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains-10|Jetbrains 10]]
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv-10|Csv 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrain|Jetbrains 10]]
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/cs|Csv 10]]
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/dataframe-2|Dataframe 2]]
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login 2]]
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|Langchain 2]]

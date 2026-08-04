@@ -1,27 +1,33 @@
 ---
 type: "entity"
 title: "GoogleSearch"
-description: "Go (Golang)"
-tags: ["entity", "api", "ast", "auth", "authentication", "bug"]
-timestamp: "2026-07-19T22:41:43Z"
 resource: ""
 ---
+description: "Programmatic access to Google search results through APIs or automated queries"
+tags: ["entity", "api", "ast", "auth", "authentication", "bug", "search", "automation"]
+timestamp: "2026-07-19T22:41:41Z"
 
-## Googlesearch
+# GoogleSearch
 
-Go (Golang) — a compiled, concurrent programming language by Google. Noted for performance-sensitive CLI tools and server-side applications.
+## Summary
+GoogleSearch refers to retrieving search results programmatically, either through an official API such as Custom Search JSON or through automated queries. It matters because search is a powerful tool for agents and tools that need fresh, external information they cannot get from local data. Programmatic search must respect rate limits, terms of service, and the same care given to any external dependency.
 
-**Related topics:** api, auth, authentication, bug
+## Details
+- **Definition** — programmatic search sends a query and returns ranked results, typically with titles, URLs, and snippets that applications can parse directly.
+- **Official APIs** — Custom Search JSON and similar APIs return structured results with predictable fields and quotas, at the cost of configuration and rate limits.
+- **Query design** — result quality depends heavily on query phrasing, operators, and site or language filters, so query engineering is part of the integration work.
+- **Rate limits** — search providers enforce quotas and throttling; clients must back off on 429 responses and cache aggressively to stay within them.
+- **Scraping risks** — automated queries against HTML pages are fragile, may violate terms of service, and can trigger blocking or captchas.
+- **Result quality** — snippets and rankings change over time, so cached results go stale and re-fetching is sometimes necessary for accuracy.
+- **Fallback behavior** — when the search provider fails or the quota is exhausted, the integration should degrade to local knowledge or a clear error.
+- **Common failure modes** — quota exhaustion at peak, parsing breakage when page structure changes, and results that bypass configured filters.
+- **Worked example** — an agent verifying a library version queries the search API with a site filter, parses the top snippet, and caches the answer for the session.
+- **Practical relevance** — dependable programmatic search extends an agent's reach to current, external information without manual browsing.
 
-**Domain:** Web Platforms › [[wiki/web-platforms/00-index|Security Auth]] › [[wiki/web-platforms/00-index|Auth Security]] › Googlesearch
-
-## Related Entities
-
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic-10|Automatic 10]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/sim-speed|Sim Speed]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/missing-content|Missing Content]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/searchtext|Searchtext]]
+## Related
+- [[wiki/data-storage/search-and-relevance-ranking|Search and Relevance Ranking]] — how results are ordered
+- [[wiki/api-protocols/rate-limiting|Rate Limiting]] — provider limits
+- [[wiki/api-protocols/api-keys|API Keys]] — authenticating search calls
+- [[wiki/api-protocols/api-throttling|API Throttling]] — staying under quotas
+- [[wiki/testing/api-testing|API Testing]] — testing search integrations
+- [[wiki/data-storage/full-text-search-and-tokenization|Full-Text Search and Tokenization]] — query mechanics

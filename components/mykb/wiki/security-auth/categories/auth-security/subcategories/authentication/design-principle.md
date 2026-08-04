@@ -1,27 +1,32 @@
 ---
 type: "entity"
 title: "Design Principle"
-description: "IP (Internet Protocol)"
-tags: ["entity", "android", "api", "ast", "auth", "authorization"]
-timestamp: "2026-07-19T22:41:42Z"
 resource: ""
 ---
+description: "A durable rule that guides architecture and implementation decisions"
+tags: ["entity", "android", "api", "ast", "auth", "authorization", "design", "architecture"]
+timestamp: "2026-07-19T22:41:43Z"
 
-## Design Principle
+# Design Principle
 
-IP (Internet Protocol) — the principal network protocol for routing packets across networks.
+## Summary
+A design principle is a durable rule that guides how a team makes architecture and implementation decisions. It matters because principles keep a codebase coherent as people and requirements change, and because decisions made without shared guidance accumulate into inconsistency. Unlike rules enforced by tools, principles shape judgment. To stay useful they must be few, concrete, and genuinely referenced in review.
 
-**Related topics:** android, api, auth, authorization
+## Details
+- **Definition** — a design principle expresses a preferred approach, such as "fail closed" or "prefer explicit over implicit", that decisions can be checked against.
+- **Trade-off guidance** — principles resolve recurring conflicts, such as simplicity versus flexibility, by stating which side to favor and when.
+- **Consistency** — teams that share principles produce systems that look like one system instead of a patchwork of individual preferences.
+- **Documentation** — principles live in short, accessible documents with rationale and examples, so new members can internalize them quickly.
+- **Enforcement** — some principles become automated checks, but most are applied in review, which requires everyone to understand them.
+- **Evolution** — principles should be revisited and retired when they no longer serve the system, not treated as permanent law.
+- **Common failure modes** — too many vague principles that contradict each other, and principles that drift from actual practice until they are decorative.
+- **Worked example** — a team adopts "default-deny for new permissions"; every new capability starts off and requires an explicit, reviewed decision to enable.
+- **Practical relevance** — a small set of living principles reduces decision fatigue and keeps security and architecture predictable over time.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Design Principle
-
-## Related Entities
-
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+## Related
+- [[wiki/software-engineering/architecture-decision-records|Architecture Decision Records]] — recording decisions
+- [[wiki/software-engineering/refactoring|Refactoring]] — applying principles to old code
+- [[wiki/software-engineering/code-review|Code Review]] — where principles are applied
+- [[wiki/testing/acceptance-testing|Acceptance Testing]] — verifying principle outcomes
+- [[wiki/software-engineering/object-oriented-programming|Object-Oriented Programming]] — common principle source
+- [[wiki/software-engineering/architecture-decision-records|Architecture Decision Records]] — rationale capture

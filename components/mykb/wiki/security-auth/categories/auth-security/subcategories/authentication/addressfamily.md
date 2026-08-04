@@ -2,7 +2,7 @@
 status: "growing"
 type: "entity"
 title: "AddressFamily"
-description: "Android — mobile development platform, API — service communication interface, Authentication — identity verification"
+description: "AddressFamily"
 tags: ["entity", "android", "api", "ast", "auth", "authentication"]
 timestamp: "2026-07-19T22:41:41Z"
 resource: ""

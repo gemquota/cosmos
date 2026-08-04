@@ -2,7 +2,7 @@
 status: "growing"
 type: "entity"
 title: "Ambiguity"
-description: "API — service communication interface, Bash — shell scripting language, Deployment — release management"
+description: "Ambiguity"
 tags: ["entity", "api", "ast", "bash", "deployment", "documentation"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""

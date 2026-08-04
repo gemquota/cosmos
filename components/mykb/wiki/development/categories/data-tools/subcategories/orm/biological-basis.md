@@ -39,6 +39,6 @@ Grounding theories in biology has practical consequences: it suggests which mech
 - [[wiki/development/categories/data-tools/subcategories/orm/consciousness-inquiry|Consciousness Inquiry]]
 - [[wiki/development/categories/data-tools/subcategories/orm/david-chalmers|David Chalmers]]
 - [[wiki/development/categories/data-tools/subcategories/orm/decryption|Decryption]]
-- [[wiki/development/categories/data-tools/subcategories/orm/dgsrcgyrd|Dgsrcgyrd]]
+- Dgsrcgyrd
 - [[wiki/development/categories/data-tools/subcategories/orm/easy-problems|Easy Problems]]
 - [[wiki/development/categories/data-tools/subcategories/orm/experiment|Experiment]]

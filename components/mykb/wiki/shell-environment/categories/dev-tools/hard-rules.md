@@ -49,4 +49,4 @@ Teams hit trouble when hard rules block legitimate work or when they are added w
 - [[wiki/shell-environment/categories/dev-tools/evolver|Evolver]]
 - [[wiki/shell-environment/categories/dev-tools/frontend-app-builder-use|Frontend App Builder Use]]
 - [[wiki/shell-environment/categories/dev-tools/image-gen|Image Gen]]
-- [[wiki/shell-environment/categories/dev-tools/jul|Jul]]
+- Jul

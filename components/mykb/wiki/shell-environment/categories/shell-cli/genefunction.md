@@ -1,14 +1,12 @@
 ---
 type: "entity"
 title: "GeneFunction"
-description: "Android — mobile development platform, API — service communication interface, Bash — shell scripting language"
+description: "Gene functions and cellular simulation mechanics for building and debugging simulation engines from the command line"
 tags: ["entity", "android", "api", "ast", "bash", "cli"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""
 status: "growing"
 ---
-
-
 ## Genefunction
 
 GeneFunction appears in 1 session(s) categorized as API, Mobile, Shell. Related topics: android, api, bash, cli.

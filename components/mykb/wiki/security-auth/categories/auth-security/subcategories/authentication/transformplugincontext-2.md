@@ -1,27 +1,35 @@
 ---
 type: "entity"
 title: "TransformPluginContext"
-description: "Context"
-tags: ["android", "angular", "api", "ast", "auth", "authentication", "cli", "cloud", "entity"]
-timestamp: "2026-07-19T22:41:39Z"
 resource: ""
 ---
+description: "The context object passed to build plugins for transforming modules"
+tags: ["android", "api", "ast", "auth", "authentication", "entity", "build-tools", "plugins"]
+timestamp: "2026-07-19T22:41:43Z"
 
-## Transformplugincontext 2
+# TransformPluginContext
 
-Context — the information provided to an LLM alongside a query. Sessions show context window management, summarization, and pruning strategies.
+## Summary
+A transform plugin context is the object passed to a build-tool plugin when it transforms a module, carrying the source, metadata, and utility methods. It matters because modern bundlers are extended through such plugins, and the context defines what a plugin may do. Understanding the context is how teams write correct, efficient transforms and debug build pipelines.
 
-**Related topics:** android, angular, api, auth, authentication, cli, cloud
+## Details
+- **Definition** — the context bundles the module's source, id, and metadata, plus helpers for emitting warnings, resolving, and sharing state.
+- **Source handling** — plugins read and return source text, optionally changing it, so transforms compose into a pipeline.
+- **Virtual modules** — plugins can synthesize modules that do not exist on disk, enabling features such as inlining and injection.
+- **Warnings and errors** — the context provides structured ways to surface issues that integrate with the build log.
+- **Shared state** — contexts let plugins persist data across modules in a build, enabling whole-bundle reasoning.
+- **Performance** — transforms run per module, so plugins must avoid unnecessary parsing and heavy per-file work.
+- **Common failure modes** — mutating shared state unsafely, producing source that breaks downstream parsers, and transforms that ignore error conditions.
+- **Worked example** — a plugin rewrites import paths in each module's source using the context's resolver, then returns the modified code.
+- **Practical relevance** — transform contexts are the seams where bundler ecosystems are extended and customized.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Transformplugincontext 2
-
-## Related Entities
-
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+- **Errors** — plugins should report errors with module context so users can locate the failing file quickly.
+- **Caching** — expensive transforms should be cached keyed by input hash to avoid rework in incremental builds.
+- **Composition** — transform order matters; plugins should be designed to compose predictably with others.
+## Related
+- [[wiki/js-ts-ecosystem/vite-practice|Vite Practice]] — plugin model
+- [[wiki/js-ts-ecosystem/webpack-practice|Webpack Practice]] — loader context
+- [[wiki/js-ts-ecosystem/rollup-practice|Rollup Practice]] — transform hooks
+- [[wiki/js-ts-ecosystem/esbuild-practice|esbuild Practice]] — fast transforms
+- [[wiki/js-ts-ecosystem/bundlers-and-build-tools|Bundlers and Build Tools]] — ecosystem
+- [[wiki/js-ts-ecosystem/commonjs-vs-esm|CommonJS vs ESM]] — module formats

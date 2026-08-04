@@ -1,7 +1,7 @@
 ---
 type: "entity"
 title: "Ambiguity System"
-description: "API — service communication interface, Bash — shell scripting language, Deployment — release management"
+description: "Ambiguity System"
 tags: ["entity", "api", "ast", "bash", "deployment", "documentation"]
 timestamp: "2026-07-19T22:41:42Z"
 resource: ""
