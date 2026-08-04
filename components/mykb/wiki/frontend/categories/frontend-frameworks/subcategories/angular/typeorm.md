@@ -32,5 +32,5 @@ TypeORM is a TypeScript object-relational mapping library that maps classes to d
 
 - [[wiki/decisions/chose-typeorm-because-it-has-the-best-typescript-support|Chose TypeORM Because It Has the Best TypeScript Support]] — the recorded decision
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/build|BUILD]] — build pipeline integration
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/d|DB]] — database layer entity
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/db|DB]] — database layer entity
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/angular/global-config|Global Config]] — connection configuration

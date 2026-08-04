@@ -14,10 +14,10 @@ Part of [[wiki/index|Wiki Index]]. 82 pages.
 ## Pages
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aa|AA]] — AJAX — async web data exchange, Android — mobile development platform, API — service communication interface
 - ABC — Acronym referenced in session 019ecf88
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ac|ACE]] — Acronym referenced in session c88fb179
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace|ACE]] — Acronym referenced in session c88fb179
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/adaptive-agency|Adaptive Agency]] — APT (Advanced Package Tool)
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/adaptivecontroller|AdaptiveController]] — APT (Advanced Package Tool)
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aes|AEST]] — Acronym referenced in session 5b1a5f15
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aest|AEST]] — Acronym referenced in session 5b1a5f15
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aff-2|AFF]] — Affiliate — an affiliate marketing scraping/auditing system. Files: check_sites. 121c60ae
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/agent-2|AGENT]] — Agent
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ajax|Ajax]]
@@ -25,7 +25,7 @@ Part of [[wiki/index|Wiki Index]]. 82 pages.
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aliyuncaptcha|AliyunCaptcha]] — APT (Advanced Package Tool)
 - AMB — AJAX — async web data exchange, API — service communication interface, AWS — Amazon cloud services
 -  — Referenced in session 019f66ba
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/applewebki|AppleWebKit]] — Referenced in session 5e38e7ec
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/applewebkit|AppleWebKit]] — Referenced in session 5e38e7ec
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/au-2|AU]] — Authentication
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/bluntspin|BluntSpin]] — AJAX — async web data exchange, Android — mobile development platform, API — service communication interface
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/bodyimageurl|BodyImageURL]] — AJAX — async web data exchange, Android — mobile development platform, API — service communication interface
@@ -41,7 +41,7 @@ Part of [[wiki/index|Wiki Index]]. 82 pages.
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/coherent-laser|Coherent Laser]] — AJAX — async web data exchange, Android — mobile development platform, API — service communication interface
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/context-updates|Context Updates]] — Context
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/crt|CRT]] — AJAX — async web data exchange, Android — mobile development platform, API — service communication interface
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/cs|CSV]] — Acronym referenced in session 203f0209
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv|CSV]] — Acronym referenced in session 203f0209
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ctrl-2|CTRL]] — Acronym referenced in session 89e039d9
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/cuntspin|CuntSpin]] — AJAX — async web data exchange, Android — mobile development platform, API — service communication interface
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/cve|CVE]] — AJAX — async web data exchange, Android — mobile development platform, API — service communication interface
@@ -77,7 +77,7 @@ Part of [[wiki/index|Wiki Index]]. 82 pages.
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-login-2|Invalid Login]] — Referenced in session fe448bc7
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/invalid-password|Invalid Password]] — AJAX — async web data exchange, Android — mobile development platform, API — service communication interface
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ip|IP]] — IP (Internet Protocol)
-- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrain|JetBrains]] — Referenced in session 8430185b
+- [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/jetbrains|JetBrains]] — Referenced in session 8430185b
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/langchain-2|LangChain]] — Referenced in session 019f1a6d
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/linearfilter|LinearFilter]] — AJAX — async web data exchange, Android — mobile development platform, API — service communication interface
 - [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/linearsegmentedcolormap|LinearSegmentedColormap]] — AJAX — async web data exchange, Android — mobile development platform, API — service communication interface

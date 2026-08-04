@@ -1,6 +1,6 @@
 ---
 type: "entity"
-title: "Waiting"
+title: "Attempting"
 description: "Referenced in session 1509bc16"
 tags: ["api", "auth", "authentication", "bug", "cli", "cloud", "entity"]
 timestamp: "2026-07-19T22:41:38Z"
@@ -8,13 +8,13 @@ resource: ""
 ---
 
 
-## Waiting 10
+## Attempting 10
 
 Referenced in session 1509bc16
 
 ## Related Entities
 - Authentication 10 (co-occurs in 10 session(s))
-- Attempting 10 (co-occurs in 10 session(s))
+- Waiting 10 (co-occurs in 10 session(s))
 - Verbosity 10 (co-occurs in 8 session(s))
 - Gemini 10 (co-occurs in 6 session(s))
 - You 10 (co-occurs in 6 session(s))
@@ -56,22 +56,21 @@ Referenced in 10 session(s):
 
 > 1. **system**: info:   Attempting to open authentication page in your browser. Otherwise naviga
 2. **system**: info: Waiting for authentication...
-3. **system**: info: Authentication succeeded
 
-> 5. **system**: info:   Attempting to open authentication page in your browser. Otherwise naviga
-6. **system**: info: Waiting for authentication...
-7. **system**: info: Authentication succeeded
+> 4. **system**: info: This request failed. Press F12 for diagnostics, or run /settings and chang
+5. **system**: info:   Attempting to open authentication page in your browser. Otherwise naviga
+6. **sys
 
-> 4. **system**: info:   Attempting to open authentication page in your browser. Otherwise naviga
-5. **system**: info: Waiting for authentication...
-6. **system**: info: Authentication succeeded
+> 3. **system**: info: This request failed. Press F12 for diagnostics, or run /settings and chang
+4. **system**: info:   Attempting to open authentication page in your browser. Otherwise naviga
+5. **sys
 
 **Domain:** Web Platforms › Security Auth › Auth Security
 
 ## Related
 
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/ab|Ab]]
-- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automati|Automatic 10]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/automatic|Automatic 10]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/fov-2|Fov 2]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/selective-chaos|Selective Chaos]]
 - [[wiki/security-auth/categories/auth-security/subcategories/authentication/rubenverborgh|Rubenverborgh]]

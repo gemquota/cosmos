@@ -35,11 +35,11 @@ The project appears in the css-styling cluster because its implementation is a w
 
 ## Related Entities
 
-- [[wiki/frontend/categories/css-styling/importerro|Importerror 10]]
-- [[wiki/frontend/categories/css-styling/cs|Css 10]]
+- [[wiki/frontend/categories/css-styling/importerror|Importerror 10]]
+- [[wiki/frontend/categories/css-styling/css|Css 10]]
 - [[wiki/frontend/categories/css-styling/complete-reference-2|Complete Reference 2]]
 - [[wiki/frontend/categories/css-styling/database-2|Database 2]]
 - [[wiki/frontend/categories/css-styling/display-2|Display 2]]
-- [[wiki/frontend/categories/css-styling/htm|Html 10]]
+- [[wiki/frontend/categories/css-styling/html|Html 10]]
 - [[wiki/frontend/categories/css-styling/reference-2|Reference 2]]
 - [[wiki/frontend/categories/css-styling/dob-2|Dob 2]]

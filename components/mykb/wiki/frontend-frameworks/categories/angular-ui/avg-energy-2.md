@@ -42,7 +42,7 @@ Avg Energy is an extracted entity whose exact referent was not pinned at extract
 - [[wiki/frontend-frameworks/categories/angular-ui/autonomous-iterative-mode-2|Autonomous Iterative Mode 2]]
 - [[wiki/frontend-frameworks/categories/angular-ui/avg-age-2|Avg Age 2]]
 - [[wiki/frontend-frameworks/categories/angular-ui/batch-2|Batch 2]]
-- [[wiki/frontend-frameworks/categories/angular-ui/dn|Dna 10]]
+- [[wiki/frontend-frameworks/categories/angular-ui/dna|Dna 10]]
 - [[wiki/frontend-frameworks/categories/angular-ui/harmonica-explorer-2|Harmonica Explorer 2]]
 - [[wiki/frontend-frameworks/categories/angular-ui/hidpi-2|Hidpi 2]]
 - [[wiki/frontend-frameworks/categories/angular-ui/hud-2|Hud 2]]

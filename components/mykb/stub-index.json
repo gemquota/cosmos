@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-03T23:10Z",
+ "generated": "2026-08-04T00:06Z",
  "floor": 320,
  "total": 3348,
  "stubs": [
@@ -2296,7 +2296,27 @@
    "sub": ""
   },
   {
-   "path": "wiki/ai-ml/categories/core-concepts/subcategories/ai-entities/a.md",
+   "path": "wiki/ai-ml/categories/core-concepts/subcategories/ai-entities/agi-2.md",
+   "title": "AGI",
+   "words": 312,
+   "status": "growing",
+   "type": "entity",
+   "tags": [
+    "acronym",
+    "android",
+    "api",
+    "ast",
+    "auth",
+    "entity"
+   ],
+   "area": "ai-ml",
+   "domain": "",
+   "super": "core-concepts",
+   "category": "ai-entities",
+   "sub": ""
+  },
+  {
+   "path": "wiki/ai-ml/categories/core-concepts/subcategories/ai-entities/ai.md",
    "title": "AI",
    "words": 215,
    "status": "none",
@@ -2310,26 +2330,6 @@
     "auth",
     "bash",
     "bug",
-    "entity"
-   ],
-   "area": "ai-ml",
-   "domain": "",
-   "super": "core-concepts",
-   "category": "ai-entities",
-   "sub": ""
-  },
-  {
-   "path": "wiki/ai-ml/categories/core-concepts/subcategories/ai-entities/agi-2.md",
-   "title": "AGI",
-   "words": 312,
-   "status": "growing",
-   "type": "entity",
-   "tags": [
-    "acronym",
-    "android",
-    "api",
-    "ast",
-    "auth",
     "entity"
    ],
    "area": "ai-ml",
@@ -8673,7 +8673,28 @@
    "sub": ""
   },
   {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/as.md",
+   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/asi-2.md",
+   "title": "ASI",
+   "words": 308,
+   "status": "growing",
+   "type": "entity",
+   "tags": [
+    "acronym",
+    "android",
+    "api",
+    "ast",
+    "auth",
+    "aws",
+    "entity"
+   ],
+   "area": "api-services",
+   "domain": "",
+   "super": "api-rest",
+   "category": "rest-http",
+   "sub": ""
+  },
+  {
+   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/ast.md",
    "title": "AST",
    "words": 214,
    "status": "none",
@@ -8687,27 +8708,6 @@
     "authentication",
     "backend",
     "bash",
-    "entity"
-   ],
-   "area": "api-services",
-   "domain": "",
-   "super": "api-rest",
-   "category": "rest-http",
-   "sub": ""
-  },
-  {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/asi-2.md",
-   "title": "ASI",
-   "words": 308,
-   "status": "growing",
-   "type": "entity",
-   "tags": [
-    "acronym",
-    "android",
-    "api",
-    "ast",
-    "auth",
-    "aws",
     "entity"
    ],
    "area": "api-services",
@@ -8934,7 +8934,14 @@
    "words": 316,
    "status": "growing",
    "type": "entity",
-   "tags": [],
+   "tags": [
+    "entity",
+    "acronym",
+    "api",
+    "ast",
+    "bash",
+    "bug"
+   ],
    "area": "api-services",
    "domain": "",
    "super": "api-rest",
@@ -9004,7 +9011,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/blinkmacsystemfon.md",
+   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/blinkmacsystemfont.md",
    "title": "BlinkMacSystemFont",
    "words": 187,
    "status": "none",
@@ -9148,7 +9155,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/conversationhistor.md",
+   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/conversationhistory.md",
    "title": "ConversationHistory",
    "words": 182,
    "status": "none",
@@ -9308,7 +9315,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/fastap.md",
+   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/fastapi.md",
    "title": "FastAPI",
    "words": 234,
    "status": "none",
@@ -9381,7 +9388,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/jso.md",
+   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/json.md",
    "title": "JSON",
    "words": 221,
    "status": "none",
@@ -9432,7 +9439,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/pgi.md",
+   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/pgid.md",
    "title": "PGID",
    "words": 186,
    "status": "none",
@@ -9480,7 +9487,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/repomappe.md",
+   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/repomapper.md",
    "title": "RepoMapper",
    "words": 217,
    "status": "none",
@@ -9527,7 +9534,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/user-inpu.md",
+   "path": "wiki/api-services/categories/api-rest/subcategories/rest-http/user-input.md",
    "title": "User Input",
    "words": 184,
    "status": "none",
@@ -29953,7 +29960,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/dev-tools/entities/githu.md",
+   "path": "wiki/dev-tools/entities/github.md",
    "title": "GitHub",
    "words": 237,
    "status": "none",
@@ -33145,7 +33152,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend-frameworks/categories/angular-ui/dn.md",
+   "path": "wiki/frontend-frameworks/categories/angular-ui/dna.md",
    "title": "DNA",
    "words": 236,
    "status": "none",
@@ -33246,7 +33253,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend-frameworks/categories/angular-ui/javascrip.md",
+   "path": "wiki/frontend-frameworks/categories/angular-ui/javascript.md",
    "title": "JavaScript",
    "words": 193,
    "status": "none",
@@ -34086,7 +34093,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/css-styling/cs.md",
+   "path": "wiki/frontend/categories/css-styling/css.md",
    "title": "CSS",
    "words": 206,
    "status": "none",
@@ -34255,7 +34262,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/css-styling/htm.md",
+   "path": "wiki/frontend/categories/css-styling/html.md",
    "title": "HTML",
    "words": 230,
    "status": "none",
@@ -34284,7 +34291,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/css-styling/importerro.md",
+   "path": "wiki/frontend/categories/css-styling/importerror.md",
    "title": "ImportError",
    "words": 316,
    "status": "growing",
@@ -34426,7 +34433,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ac.md",
+   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/ace.md",
    "title": "ACE",
    "words": 231,
    "status": "none",
@@ -34452,7 +34459,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aes.md",
+   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/aest.md",
    "title": "AEST",
    "words": 231,
    "status": "none",
@@ -34552,7 +34559,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/applewebki.md",
+   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/applewebkit.md",
    "title": "AppleWebKit",
    "words": 209,
    "status": "none",
@@ -34660,7 +34667,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/cs.md",
+   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/csv.md",
    "title": "CSV",
    "words": 254,
    "status": "none",
@@ -35107,7 +35114,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/blo.md",
+   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/blob.md",
    "title": "BLOB",
    "words": 180,
    "status": "none",
@@ -35132,7 +35139,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/cd.md",
+   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/cdn.md",
    "title": "CDN",
    "words": 201,
    "status": "none",
@@ -35156,7 +35163,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/cl.md",
+   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/cli.md",
    "title": "CLI",
    "words": 220,
    "status": "none",
@@ -35182,7 +35189,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/cp.md",
+   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/cpu.md",
    "title": "CPU",
    "words": 242,
    "status": "none",
@@ -35204,7 +35211,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/d.md",
+   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/db.md",
    "title": "DB",
    "words": 253,
    "status": "none",
@@ -35283,7 +35290,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/j.md",
+   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/js.md",
    "title": "JS",
    "words": 219,
    "status": "none",
@@ -35312,7 +35319,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/readfilearg.md",
+   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/readfileargs.md",
    "title": "ReadFileArgs",
    "words": 183,
    "status": "none",
@@ -35369,7 +35376,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/webg.md",
+   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/angular/webgl.md",
    "title": "WebGL",
    "words": 261,
    "status": "none",
@@ -35394,7 +35401,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/yo.md",
+   "path": "wiki/frontend/categories/frontend-frameworks/subcategories/bootstrap/you.md",
    "title": "You",
    "words": 285,
    "status": "none",
@@ -39593,7 +39600,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/llm-agents/categories/llm-topics/subcategories/llm-specs/ll.md",
+   "path": "wiki/llm-agents/categories/llm-topics/subcategories/llm-specs/llm.md",
    "title": "LLM",
    "words": 262,
    "status": "none",
@@ -40029,7 +40036,14 @@
    "words": 311,
    "status": "growing",
    "type": "entity",
-   "tags": [],
+   "tags": [
+    "entity",
+    "api",
+    "ast",
+    "bash",
+    "css",
+    "documentation"
+   ],
    "area": "llm-agents",
    "domain": "",
    "super": "",
@@ -50127,7 +50141,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/ap.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/api.md",
    "title": "API",
    "words": 235,
    "status": "none",
@@ -50216,7 +50230,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/arraybuffe.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/arraybuffer.md",
    "title": "ArrayBuffer",
    "words": 310,
    "status": "growing",
@@ -50263,7 +50277,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/attemptin.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/attempting.md",
    "title": "Attempting",
    "words": 270,
    "status": "none",
@@ -50347,7 +50361,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/automati.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/automatic.md",
    "title": "Automatic",
    "words": 258,
    "status": "none",
@@ -50370,7 +50384,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/aw.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/aws.md",
    "title": "AWS",
    "words": 207,
    "status": "none",
@@ -50414,7 +50428,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/basemode.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/basemodel.md",
    "title": "BaseModel",
    "words": 302,
    "status": "growing",
@@ -50655,7 +50669,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/clid.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/clide.md",
    "title": "CLIDE",
    "words": 227,
    "status": "none",
@@ -50812,7 +50826,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/configparse.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/configparser.md",
    "title": "ConfigParser",
    "words": 206,
    "status": "none",
@@ -50862,7 +50876,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/da.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/dag.md",
    "title": "DAG",
    "words": 190,
    "status": "none",
@@ -50949,7 +50963,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/emergentparamengin.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/emergentparamengine.md",
    "title": "EmergentParamEngine",
    "words": 219,
    "status": "none",
@@ -51037,7 +51051,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/gemin.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/gemini.md",
    "title": "Gemini",
    "words": 254,
    "status": "none",
@@ -51107,7 +51121,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/insightengin.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/insightengine.md",
    "title": "InsightEngine",
    "words": 230,
    "status": "none",
@@ -51152,7 +51166,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/lineagetracke.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/lineagetracker.md",
    "title": "LineageTracker",
    "words": 230,
    "status": "none",
@@ -51245,7 +51259,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/persistenceengin.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/persistenceengine.md",
    "title": "PersistenceEngine",
    "words": 219,
    "status": "none",
@@ -51312,7 +51326,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/sharedarraybuffe.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/sharedarraybuffer.md",
    "title": "SharedArrayBuffer",
    "words": 205,
    "status": "none",
@@ -51361,7 +51375,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/telemetrymanage.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/telemetrymanager.md",
    "title": "TelemetryManager",
    "words": 180,
    "status": "none",
@@ -51385,7 +51399,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/timelineengin.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/timelineengine.md",
    "title": "TimelineEngine",
    "words": 181,
    "status": "none",
@@ -51456,7 +51470,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/verbosit.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/verbosity.md",
    "title": "Verbosity",
    "words": 177,
    "status": "none",
@@ -51479,7 +51493,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/waitin.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/waiting.md",
    "title": "Waiting",
    "words": 263,
    "status": "none",
@@ -51500,7 +51514,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/websocke.md",
+   "path": "wiki/security-auth/categories/auth-security/subcategories/authentication/websocket.md",
    "title": "WebSocket",
    "words": 243,
    "status": "none",
@@ -53155,7 +53169,7 @@
    "sub": ""
   },
   {
-   "path": "wiki/shell-environment/categories/shell-cli/bp.md",
+   "path": "wiki/shell-environment/categories/shell-cli/bpm.md",
    "title": "BPM",
    "words": 256,
    "status": "none",
@@ -53184,7 +53198,14 @@
    "words": 306,
    "status": "growing",
    "type": "entity",
-   "tags": [],
+   "tags": [
+    "entity",
+    "android",
+    "api",
+    "ast",
+    "bash",
+    "cli"
+   ],
    "area": "shell-environment",
    "domain": "",
    "super": "shell-cli",
@@ -53197,7 +53218,14 @@
    "words": 307,
    "status": "growing",
    "type": "entity",
-   "tags": [],
+   "tags": [
+    "entity",
+    "android",
+    "api",
+    "ast",
+    "bash",
+    "cli"
+   ],
    "area": "shell-environment",
    "domain": "",
    "super": "shell-cli",
@@ -53210,7 +53238,14 @@
    "words": 305,
    "status": "growing",
    "type": "entity",
-   "tags": [],
+   "tags": [
+    "entity",
+    "android",
+    "api",
+    "ast",
+    "bash",
+    "cli"
+   ],
    "area": "shell-environment",
    "domain": "",
    "super": "shell-cli",
@@ -53269,7 +53304,14 @@
    "words": 305,
    "status": "growing",
    "type": "entity",
-   "tags": [],
+   "tags": [
+    "entity",
+    "android",
+    "api",
+    "ast",
+    "bash",
+    "cli"
+   ],
    "area": "shell-environment",
    "domain": "",
    "super": "shell-cli",
