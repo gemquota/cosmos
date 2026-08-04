@@ -17,6 +17,8 @@
   --accent: #2563eb;
   --accent-hover: #1d4ed8;
   --accent-soft: #dbeafe;
+  --meta-accent: #7c3aed;
+  --meta-accent-soft: #ede9fe;
   --border: #e3dfd6;
   --code-bg: #f0ede5;
   --code-text: #2a2825;
@@ -43,6 +45,8 @@
   --accent: #6b9aff;
   --accent-hover: #8baeff;
   --accent-soft: #0a1a3a;
+  --meta-accent: #9d7bff;
+  --meta-accent-soft: #241a4a;
   --border: #1a1a1a;
   --code-bg: #0a0a0a;
   --code-text: #d4d0c8;
@@ -69,6 +73,8 @@
   --accent: #6b9aff;
   --accent-hover: #8baeff;
   --accent-soft: #1e2a4a;
+  --meta-accent: #a78bfa;
+  --meta-accent-soft: #2a2145;
   --border: #2a2a30;
   --code-bg: #1e1e24;
   --code-text: #d4d0c8;
@@ -158,68 +164,138 @@ body {
   outline: none;
 }
 
-/* ── Sidebar header clickable ── */
-#sidebar-header-title h1 {
-  font-size: 18px;
-  margin: 0;
-}
-#sidebar-header-title .subtitle {
-  font-size: 11px;
-  color: var(--text-muted);
-  display: block;
-}
-#sidebar-header-title:hover .subtitle {
-  color: var(--accent);
-}
-
 #sidebar-overlay { display: none; }
 
 .sidebar-header {
-  padding: 20px 16px 12px;
+  padding: 14px 14px 10px;
   border-bottom: 1px solid var(--border);
   flex-shrink: 0;
+  display: block;
+}
+
+.sidebar-header-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 8px;
 }
 
 .sidebar-header-title {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  min-width: 0;
 }
 
 .sidebar-header-title:hover h1 { color: var(--accent); }
 
 .sidebar-header h1 {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
   letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .sidebar-header .subtitle {
-  font-size: 12px;
-  color: var(--text-soft);
+  font-size: 11px;
+  color: var(--text-muted);
   font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
+/* ── View controls row (theme + content/meta) ── */
+.view-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
 
-/* ── Sidebar header tabs ── */
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.control-name {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.control-divider {
+  width: 1px;
+  height: 18px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.seg {
+  display: flex;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.seg-btn {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-soft);
+  padding: 3px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .15s;
+  white-space: nowrap;
+}
+
+.seg-btn:hover { color: var(--text); }
+
+.seg-btn.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.meta-hint {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* Meta mode gets its own accent so Content vs Meta reads as two universes */
+#meta-seg .seg-btn.active[data-meta="1"] {
+  background: var(--meta-accent);
+  border-color: var(--meta-accent);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* ── Mode navigation ── */
 .sidebar-tabs {
   display: flex;
-  gap: 4px;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
+  gap: 3px;
+  padding: 8px 12px 10px;
+  flex-wrap: nowrap;
 }
 .sidebar-tab {
   flex: 1 1 auto;
-  background: transparent;
+  background: var(--code-bg);
   border: 1px solid var(--border);
   border-radius: 6px;
-  padding: 4px 10px;
+  padding: 4px 6px;
   font-size: 11px;
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-soft);
   cursor: pointer;
   transition: all .15s;
@@ -231,10 +307,10 @@ body {
   border-color: var(--accent);
 }
 .sidebar-tab.active {
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--accent);
+  color: #fff;
   border-color: var(--accent);
-  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 /* ── Sidebar toggle button ── */
@@ -295,13 +371,6 @@ body {
 }
 
 /* ── Dark mode toggle ── */
-.toggle-wrap {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-}
-
 .toggle-label {
   font-size: 13px;
   color: var(--text-soft);
@@ -334,8 +403,6 @@ body {
 
 
 [data-theme="dark"] .toggle-switch::after { transform: translateX(16px); }
-.toggle-switch.meta-on { background: var(--accent) !important; }
-.toggle-switch.meta-on::after { transform: translateX(16px) !important; }
 
 /* ── Search ── */
 #search-wrap {
@@ -399,7 +466,7 @@ body {
 
 .file-entry {
   display: block;
-  padding: 5px 16px;
+  padding: 4px 14px;
   font-size: 13px;
   color: var(--text);
   text-decoration: none;
@@ -430,7 +497,7 @@ body {
   display: flex;
   align-items: center;
   gap: 2px;
-  padding: 5px 16px 5px 12px;
+  padding: 4px 14px 4px 12px;
   font-size: 13px;
   color: var(--text);
   text-decoration: none;
@@ -518,6 +585,17 @@ body {
 .sidebar-section .dir-arrow.collapsed {
   transform: rotate(-90deg);
 }
+/* Static section labels (Search / Organize) */
+.section-label {
+  padding: 10px 14px 2px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  user-select: none;
+}
+
 .sidebar-section .dir-count {
   font-size: 9px;
   font-weight: 400;
@@ -526,6 +604,12 @@ body {
   color: var(--text-muted);
   margin-left: auto;
 }
+.recent-entries {
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--border);
+}
+
 .dir-entries {
   overflow: hidden;
   transition: max-height 0.2s ease;
@@ -560,6 +644,88 @@ body {
 
 .welcome h1 { font-size: 26px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.03em; }
 .welcome p { color: var(--text-soft); font-size: 15px; max-width: 380px; margin: 0 auto; }
+
+/* ── Home dashboard (informative empty state) ── */
+.home {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: left;
+  padding-top: 36px;
+}
+.home h1 { font-size: 30px; font-weight: 800; margin-bottom: 6px; }
+.home .home-tagline { font-size: 15px; color: var(--text-soft); margin: 0 0 22px; max-width: 560px; }
+.home-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.metric {
+  background: var(--sidebar-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.metric-value { display: block; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
+.metric-label { display: block; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-top: 2px; }
+.metric-sub { display: block; font-size: 11px; color: var(--text-soft); margin-top: 4px; }
+.home-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.home-action {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all .15s;
+}
+.home-action:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.home-section { margin-bottom: 22px; }
+.home-section h2 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin: 0 0 8px; }
+.home-recent-list { display: flex; flex-direction: column; gap: 2px; }
+.home-recent-item {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .12s;
+  border-left: 2px solid transparent;
+}
+.home-recent-item:hover { background: var(--hover-bg); border-left-color: var(--accent); }
+.home-recent-item .hr-type { font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-left: 8px; }
+.home-search-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.home-chip {
+  border: 1px solid var(--border);
+  background: var(--sidebar-bg);
+  color: var(--text-soft);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all .15s;
+}
+.home-chip:hover { color: var(--accent); border-color: var(--accent); }
+.home-context {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: 12px;
+  color: var(--text-muted);
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.home-context strong { color: var(--text-soft); font-weight: 600; }
+@media (max-width: 640px) {
+  .home { padding-top: 12px; }
+  .home-metrics { grid-template-columns: repeat(2, 1fr); }
+}
 
 /* ── Frontmatter Header Strip ── */
 .fm-header {
@@ -719,34 +885,41 @@ body {
   z-index: 5;
 }
 
+
+@media (hover: none), (pointer: coarse) {
+  .keyhint { display: none !important; }
+}
 /* ── Responsive ── */
 
 /* Group selector */
 .group-selector {
   display: flex;
-  gap: 2px;
-  padding: 6px 12px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
   border-bottom: 1px solid var(--border);
 }
+.group-selector .seg { flex: 1; }
 .group-btn {
   flex: 1;
+  border: none;
   background: transparent;
-  border: 1px solid var(--border);
   border-radius: 4px;
   padding: 3px 8px;
   font-size: 11px;
   font-family: inherit;
+  font-weight: 600;
   color: var(--text-soft);
   cursor: pointer;
   transition: all .15s;
+  white-space: nowrap;
 }
 .group-btn.active {
-  background: var(--accent-soft);
-  color: var(--accent);
-  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 .group-btn:hover:not(.active) {
-  background: var(--sidebar-bg);
   color: var(--text);
 }
 
@@ -808,8 +981,9 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 270px;
-    min-width: 270px;
+    width: 58vw;
+    min-width: 230px;
+    max-width: 330px;
     transform: translateX(-105%);
     z-index: 15;
     box-shadow: 4px 0 20px rgba(0,0,0,0.15);
@@ -817,7 +991,7 @@ body {
   }
 
   #sidebar.open { transform: translateX(0); }
-  #sidebar.collapsed { width: 270px; min-width: 270px; overflow-y: auto; border-right: 1px solid var(--border); }
+  #sidebar.collapsed { width: 58vw; min-width: 230px; max-width: 330px; overflow-y: auto; border-right: 1px solid var(--border); }
 
   #sidebar-overlay {
     display: none;
@@ -856,32 +1030,47 @@ body {
 
 <div id="sidebar">
   <div class="sidebar-header">
-    <div class="sidebar-tabs">
-      <button class="sidebar-tab active" data-tab="docs" title="Browse files">Docs</button>
-      <button class="sidebar-tab" data-tab="compositions" title="Instruction sets">Compositions</button>
+    <div class="sidebar-header-top">
+      <a href="#" id="sidebar-header-title" class="sidebar-header-title" style="cursor:pointer;">
+        <h1>mykb</h1>
+        <span class="subtitle" id="header-subtitle">RSIS3 memory &middot; wiki</span>
+      </a>
+    </div>
+    <div class="view-controls">
+      <div class="control-group" title="Cycle theme: light / dark / amoled">
+        <span class="control-name">Theme</span>
+        <span class="toggle-label" id="theme-label">&#9681;</span>
+        <div class="toggle-switch" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle theme (light / dark / amoled)"></div>
+      </div>
+      <div class="control-divider"></div>
+      <div class="control-group">
+        <span class="control-name">View</span>
+        <div class="seg" id="meta-seg" role="group" aria-label="Show content or meta pages">
+          <button type="button" class="seg-btn" id="meta-seg-content" data-meta="0" title="Wiki knowledge pages">Content</button>
+          <button type="button" class="seg-btn" id="meta-seg-meta" data-meta="1" title="System guidance: syntheses, protocols, ops, templates">Meta</button>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-tabs" role="tablist" aria-label="Navigate">
+      <button class="sidebar-tab active" data-tab="docs" title="Browse documents">Browse</button>
+      <button class="sidebar-tab" data-tab="compositions" title="Instruction sets">Compose</button>
       <button class="sidebar-tab" data-tab="search" title="Search entities">Search</button>
       <button class="sidebar-tab" data-tab="actions" title="Health, lint, build">Actions</button>
     </div>
-    <a href="#" id="sidebar-header-title" class="sidebar-header-title" style="cursor:pointer;">
-      <h1>mykb</h1>
-      <span class="subtitle" id="header-subtitle">RSIS3 memory &middot; wiki</span>
-    </a>
-    <div class="toggle-wrap">
-      <span class="toggle-label" id="theme-label">&#9681;</span>
-      <div class="toggle-switch" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle dark mode"></div>
-      <span class="toggle-label" id="meta-label" title="Show or hide wiki-meta pages (syntheses, pulses, logs, ops, audits)">&#128220;</span>
-      <div class="toggle-switch" id="meta-toggle" role="button" tabindex="0" aria-label="Toggle meta pages"></div>
-    </div>
   </div>
 
+  <div class="section-label">Search</div>
   <div id="search-wrap">
-    <input id="search-input" type="text" placeholder="Search documents&hellip;" spellcheck="false">
+    <input id="search-input" type="text" placeholder="Search Wiki&hellip;" spellcheck="false">
   </div>
   <div id="search-results"></div>
 
   <div class="group-selector" id="group-selector">
-    <button class="group-btn active" data-mode="type" id="group-type">By Type</button>
-    <button class="group-btn" data-mode="dir" id="group-dir">By Folder</button>
+    <span class="control-name">Group By</span>
+    <div class="seg" role="group" aria-label="Group documents by">
+      <button type="button" class="group-btn active" data-mode="type" id="group-type">Type</button>
+      <button type="button" class="group-btn" data-mode="dir" id="group-dir">Folder</button>
+    </div>
   </div>
   <div id="compositions-container" style="display:none;padding:4px;">
     <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;padding:0 4px;">Knowledge compositions — grouped entity patterns</div>
@@ -902,10 +1091,10 @@ body {
   <!-- Document viewer (default) -->
   <div id="content-doc" class="content-view">
     <div class="markdown-body">
-      <div class="welcome">
+      <div class="welcome home">
         <h1>mykb</h1>
-        <p>RSIS3 long-term memory &mdash; semantic knowledge database for the cognitive engine.</p>
-        <p style="font-size:13px;color:var(--text-soft);">Select a document from the sidebar to read it here. Graph view renders the wiki link graph from <code>graph.json</code>.</p>
+        <p class="home-tagline">Long-term semantic memory for RSIS3 &mdash; curated knowledge, operational protocols, and agent guidance.</p>
+        <p style="font-size:13px;color:var(--text-soft);">Loading the knowledge base&hellip;</p>
       </div>
     </div>
   </div>
@@ -1544,6 +1733,7 @@ function entitySearch(q) {
 
 var graphListenersAttached = false;
 var graphState = null;
+var graphStats = null;
 var graphCam = { x: 0, y: 0, zoom: 1 };
 var graphDrag = { active: false, sx: 0, sy: 0, cx: 0, cy: 0 };
 
@@ -1571,6 +1761,7 @@ function loadGraph() {
         canvas.width = W; canvas.height = H;
         
         info.textContent = g.nodes.length + ' nodes, ' + (g.edges ? g.edges.length : 0) + ' edges — rendering...';
+        graphStats = { nodes: g.nodes.length, edges: (g.edges || []).length };
         
         // Build nodes with random starting positions (scattered across a larger area)
         var layoutKey = 'graph_layout_' + g.nodes.length;
@@ -1760,6 +1951,14 @@ function loadGraph() {
 
 
 
+function recordRecent(filename) {
+  try {
+    var recents = (localStorage.getItem('md-recent') || '').split(',').filter(Boolean);
+    recents = [filename].concat(recents.filter(function(f) { return f !== filename; })).slice(0, 8);
+    localStorage.setItem('md-recent', recents.join(','));
+  } catch (e) {}
+}
+
 var content = document.getElementById('content');
 var contentDoc = document.getElementById('content-doc');
 var sidebar = document.getElementById('sidebar');
@@ -1812,27 +2011,37 @@ function isMetaFile(f) {
   return false;
 }
 function visibleFiles() {
-  if (showMeta) return state.files;
-  return state.files.filter(function(f) { return !isMetaFile(f); });
+  // Binary: content mode shows all content pages, meta mode shows all wiki-meta pages.
+  return state.files.filter(function(f) { return isMetaFile(f) === showMeta; });
 }
-var showMeta = localStorage.getItem('md-meta') !== 'off';
-var metaToggle = document.getElementById('meta-toggle');
-var metaLabel = document.getElementById('meta-label');
+var showMeta = localStorage.getItem('md-meta') === 'on';
+var metaSeg = document.getElementById('meta-seg');
+var metaContentBtn = document.getElementById('meta-seg-content');
+var metaMetaBtn = document.getElementById('meta-seg-meta');
+function updateSearchScope() {
+  if (searchInput) searchInput.placeholder = showMeta ? 'Search Meta…' : 'Search Wiki…';
+}
 function syncMetaToggle() {
-  metaToggle.classList.toggle('meta-on', showMeta);
-  metaLabel.title = showMeta ? 'Hide wiki-meta pages (syntheses, pulses, ops, logs)' : 'Show wiki-meta pages (syntheses, pulses, ops, logs)';
+  metaContentBtn.classList.toggle('active', !showMeta);
+  metaMetaBtn.classList.toggle('active', showMeta);
+  updateSearchScope();
 }
-function toggleMeta() {
-  showMeta = !showMeta;
+function setMetaMode(on) {
+  if (on === showMeta) return;
+  showMeta = !!on;
   localStorage.setItem('md-meta', showMeta ? 'on' : 'off');
   syncMetaToggle();
   renderSidebar();
   if (searchInput && searchInput.value) performSearch();
+  if (state.currentFile && visibleFiles().indexOf(state.currentFile) === -1) navigateHome();
 }
-metaToggle.addEventListener('click', toggleMeta);
-metaToggle.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMeta(); }
-});
+if (metaSeg) {
+  metaSeg.addEventListener('click', function(e) {
+    var btn = e.target.closest('.seg-btn');
+    if (!btn) return;
+    setMetaMode(btn.getAttribute('data-meta') === '1');
+  });
+}
 syncMetaToggle();
 
 /* ═══════════════════════════════════════════
@@ -2015,6 +2224,20 @@ searchInput.addEventListener('focus', function() {
   if (searchInput.value) performSearch();
 });
 
+function recordSearch(q) {
+  q = String(q || '').trim();
+  if (!q) return;
+  try {
+    var list = (localStorage.getItem('md-recent-searches') || '').split(',').filter(Boolean);
+    list = [q].concat(list.filter(function(x) { return x !== q; })).slice(0, 6);
+    localStorage.setItem('md-recent-searches', list.join(','));
+  } catch (e) {}
+}
+
+searchInput.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') recordSearch(searchInput.value);
+});
+
 function performSearch() {
   var query = searchInput.value.trim().toLowerCase();
   if (query.length < 2) {
@@ -2102,12 +2325,41 @@ function renderSidebar() {
   fileList.appendChild(home);
 
   var count = visibleFiles().length;
+  var modeLabel = showMeta ? 'Meta documents' : 'Documents';
   var sectionLabel = document.getElementById('files-section-label');
 
   // Limit rendering for performance - max 300 files
   var MAX_RENDER = 300;
-  if (sectionLabel) sectionLabel.textContent = 'Documents (' + count + ')' + (count > MAX_RENDER ? ' · showing first ' + MAX_RENDER : '');
+  if (sectionLabel) sectionLabel.textContent = modeLabel + ' (' + count + ')' + (count > MAX_RENDER ? ' · showing first ' + MAX_RENDER : '');
   var fileSubset = visibleFiles().slice(0, MAX_RENDER);
+
+  // Quick entry points: recent documents within the current view
+  var recentVisible = [];
+  try {
+    recentVisible = (localStorage.getItem('md-recent') || '').split(',').filter(function(f) {
+      return f && visibleFiles().indexOf(f) !== -1;
+    }).slice(0, 6);
+  } catch (e) {}
+  if (recentVisible.length > 0) {
+    var recentHeader = document.createElement('div');
+    recentHeader.className = 'sidebar-section';
+    var recentArrow = document.createElement('span');
+    recentArrow.className = 'dir-arrow collapsed';
+    recentArrow.textContent = '▼';
+    recentHeader.appendChild(recentArrow);
+    var recentLabel = document.createElement('span');
+    recentLabel.textContent = 'Recent';
+    recentHeader.appendChild(recentLabel);
+    var recentCount = document.createElement('span');
+    recentCount.className = 'dir-count';
+    recentCount.textContent = recentVisible.length;
+    recentHeader.appendChild(recentCount);
+    fileList.appendChild(recentHeader);
+    var recentWrap = document.createElement('div');
+    recentWrap.className = 'recent-entries';
+    recentVisible.forEach(function(f) { recentWrap.appendChild(renderFileEntry(f)); });
+    fileList.appendChild(recentWrap);
+  }
 
   // ---- Group By Type ----
   if (state.groupMode === 'type') {
@@ -2216,8 +2468,8 @@ function renderSidebar() {
 
   if (sectionLabel) {
     sectionLabel.textContent = dirs.length > 1
-      ? 'Documents (' + count + ' in ' + dirs.length + ' dirs)'
-      : 'Documents (' + count + ')';
+      ? modeLabel + ' (' + count + ' in ' + dirs.length + ' dirs)'
+      : modeLabel + ' (' + count + ')';
   }
 
   dirs.forEach(function(dir) {
@@ -2370,6 +2622,7 @@ function navigateTo(filename, anchor) {
 
   state.currentFile = filename;
   history.replaceState(null, '', '#' + encodeURIComponent(filename) + (anchor ? '#' + anchor : ''));
+  recordRecent(filename);
   renderSidebar();
 
   function afterRender() {
@@ -2427,7 +2680,8 @@ function renderContent(filename, md) {
 function resolveRoute() {
   var hash = window.location.hash.slice(1);
   if (!hash) {
-    if (state.files.length > 0 && !state.currentFile) { navigateTo(state.files[0]); }
+    var visible = visibleFiles();
+    if (visible.length > 0 && !state.currentFile) { navigateTo(visible[0]); }
     return;
   }
   var parts = hash.split('#');
@@ -2449,9 +2703,10 @@ function resolveRoute() {
     }
   }
 
-  // Unknown hash with no current file: navigate to first file
-  if (state.files.length > 0 && !state.currentFile) {
-    navigateTo(state.files[0]);
+  // Unknown hash with no current file: navigate to first visible file
+  var visible = visibleFiles();
+  if (visible.length > 0 && !state.currentFile) {
+    navigateTo(visible[0]);
   }
 }
 
@@ -2492,22 +2747,208 @@ window.addEventListener('resize', function() {
    Home
    ═══════════════════════════════════════════ */
 
+var IS_TOUCH = typeof window !== 'undefined' && (('ontouchstart' in window) || (navigator.maxTouchPoints || 0) > 0);
+var homeGraphFetching = false;
+
+function homeMetrics() {
+  var files = state.files;
+  var content = 0;
+  var metaCount = 0;
+  var types = {};
+  var dirs = {};
+  files.forEach(function(f) {
+    if (isMetaFile(f)) metaCount++; else content++;
+    var slash = f.lastIndexOf('/');
+    var dir = slash === -1 ? '(root)' : f.slice(0, slash);
+    dirs[dir] = true;
+    var t = state.meta[f] && state.meta[f].type;
+    if (t) types[t] = (types[t] || 0) + 1;
+  });
+  var typeCount = Object.keys(types).length;
+  var topTypes = Object.keys(types).sort(function(a, b) { return types[b] - types[a]; }).slice(0, 3);
+  return {
+    total: files.length,
+    content: content,
+    meta: metaCount,
+    dirs: Object.keys(dirs).length,
+    typeCount: typeCount,
+    topTypes: topTypes
+  };
+}
+
+function homeRecents() {
+  var visible = visibleFiles();
+  try {
+    return (localStorage.getItem('md-recent') || '').split(',').filter(function(f) { return f && visible.indexOf(f) !== -1; }).slice(0, 5);
+  } catch (e) { return []; }
+}
+
+function homeRecentSearches() {
+  try {
+    return (localStorage.getItem('md-recent-searches') || '').split(',').filter(Boolean).slice(0, 5);
+  } catch (e) { return []; }
+}
+
+function findProtocolFile() {
+  var visible = visibleFiles();
+  for (var i = 0; i < visible.length; i++) {
+    var f = visible[i];
+    var t = ((state.meta[f] && state.meta[f].type) || '').toLowerCase();
+    var p = f.toLowerCase();
+    if (t.indexOf('protocol') !== -1 || p.indexOf('/protocol') !== -1) return f;
+  }
+  return visible[0];
+}
+
+function setGraphCard(stats) {
+  var card = document.getElementById('metric-graph');
+  if (!card) return;
+  var v = card.querySelector('.metric-value');
+  var subEl = card.querySelector('.metric-sub');
+  if (stats) {
+    v.textContent = stats.nodes.toLocaleString();
+    subEl.textContent = stats.nodes + ' nodes \u00b7 ' + stats.edges + ' edges';
+  } else {
+    v.textContent = '\u2713';
+    subEl.textContent = 'link graph enabled';
+  }
+}
+
+function probeGraphStats() {
+  if (graphStats || homeGraphFetching) return;
+  homeGraphFetching = true;
+  fetch(KB_BASE + 'graph.json')
+    .then(function(r) { return r.json(); })
+    .then(function(g) {
+      homeGraphFetching = false;
+      if (g && g.nodes) {
+        graphStats = { nodes: g.nodes.length, edges: (g.edges || []).length };
+        setGraphCard(graphStats);
+      }
+    })
+    .catch(function() { homeGraphFetching = false; });
+}
+
 function navigateHome() {
   state.currentFile = '';
   history.replaceState(null, '', '#');
   renderSidebar();
-  document.title = 'md — documents';
+  document.title = 'md \u2014 documents';
   var sub = document.getElementById('header-subtitle');
   if (sub) sub.textContent = 'RSIS3 memory \u00b7 wiki';
+
+  var m = homeMetrics();
+  var recents = homeRecents();
+  var searches = homeRecentSearches();
+
+  var recentHtml = '';
+  if (recents.length > 0) {
+    recentHtml = '<div class="home-section"><h2>Recent Documents</h2><div class="home-recent-list">' +
+      recents.map(function(f) {
+        var clean = f.replace(/\.md$/i, '').split('/').pop();
+        var title = (state.meta[f] && state.meta[f].title) || clean;
+        var t = (state.meta[f] && state.meta[f].type) || '';
+        var badge = t ? '<span class="hr-type">' + escapeHtml(t) + '</span>' : '';
+        return '<a class="home-recent-item" href="#' + encodeURIComponent(f) + '" data-recent="' + encodeURIComponent(f) + '">' + escapeHtml(title) + badge + '</a>';
+      }).join('') +
+      '</div></div>';
+  }
+
+  var searchesHtml = '';
+  if (searches.length > 0) {
+    searchesHtml = '<div class="home-section"><h2>Recent Searches</h2><div class="home-search-chips">' +
+      searches.map(function(q) {
+        return '<button type="button" class="home-chip" data-search="' + escapeHtml(q) + '">' + escapeHtml(q) + '</button>';
+      }).join('') +
+      '</div></div>';
+  }
+
+  var hint = IS_TOUCH
+    ? 'Open the sidebar to browse the knowledge base.'
+    : 'Keyboard \u2014 Ctrl+K search \u00b7 Ctrl+B sidebar \u00b7 G graph \u00b7 H health';
+
   contentDoc.innerHTML = '' +
-    '<div class="markdown-body">' +
-    '<div class="welcome">' +
-    '<h1>mykb</h1>' +
-    '<p>RSIS3 long-term memory &mdash; semantic knowledge database.</p>' +
-    '<p style="font-size:13px;color:var(--text-soft);">Select a document from the sidebar, or press <strong>Ctrl+G</strong> for the knowledge graph.</p>' +
-    '</div>' +
-    '</div>';
+    '<div class="markdown-body"><div class="welcome home">' +
+      '<h1>mykb</h1>' +
+      '<p class="home-tagline">Long-term semantic memory for RSIS3 \u2014 curated knowledge, operational protocols, and agent guidance.</p>' +
+      '<div class="home-metrics">' +
+        '<div class="metric" id="metric-docs"><span class="metric-value">\u2026</span><span class="metric-label">Documents</span><span class="metric-sub"></span></div>' +
+        '<div class="metric" id="metric-types"><span class="metric-value">\u2026</span><span class="metric-label">Types</span><span class="metric-sub"></span></div>' +
+        '<div class="metric" id="metric-dirs"><span class="metric-value">\u2026</span><span class="metric-label">Folders</span><span class="metric-sub"></span></div>' +
+        '<div class="metric" id="metric-graph"><span class="metric-value">\u2026</span><span class="metric-label">Knowledge Graph</span><span class="metric-sub"></span></div>' +
+      '</div>' +
+      '<div class="home-actions">' +
+        '<button type="button" class="home-action" data-home="browse">Browse</button>' +
+        '<button type="button" class="home-action" data-home="search">Search</button>' +
+        '<button type="button" class="home-action" data-home="graph">Graph</button>' +
+        '<button type="button" class="home-action" data-home="protocols">Protocols</button>' +
+        '<button type="button" class="home-action" data-home="recent">Recent</button>' +
+      '</div>' +
+      recentHtml + searchesHtml +
+      '<div class="home-context">' +
+        '<span>Viewing <strong>' + (showMeta ? 'Meta' : 'Content') + '</strong></span>' +
+        '<span>Grouped by <strong>' + (state.groupMode === 'dir' ? 'Folder' : 'Type') + '</strong></span>' +
+        '<span>' + hint + '</span>' +
+      '</div>' +
+    '</div></div>';
+
+  var docsEl = document.getElementById('metric-docs');
+  if (docsEl) {
+    docsEl.querySelector('.metric-value').textContent = m.total.toLocaleString();
+    docsEl.querySelector('.metric-sub').textContent = m.content.toLocaleString() + ' content \u00b7 ' + m.meta.toLocaleString() + ' meta';
+  }
+  var typesEl = document.getElementById('metric-types');
+  if (typesEl) {
+    typesEl.querySelector('.metric-value').textContent = m.typeCount > 0 ? m.typeCount : '\u2014';
+    typesEl.querySelector('.metric-sub').textContent = m.topTypes.length > 0 ? m.topTypes.slice(0, 2).join(' \u00b7 ') : 'semantic metadata';
+  }
+  var dirsEl = document.getElementById('metric-dirs');
+  if (dirsEl) {
+    dirsEl.querySelector('.metric-value').textContent = m.dirs.toLocaleString();
+    dirsEl.querySelector('.metric-sub').textContent = 'folders';
+  }
+  setGraphCard(graphStats);
+  probeGraphStats();
 }
+
+contentDoc.addEventListener('click', function(e) {
+  var action = e.target.closest('.home-action');
+  if (action) {
+    e.preventDefault();
+    var act = action.getAttribute('data-home');
+    if (act === 'browse') {
+      openSidebar();
+      var t = document.querySelector('.sidebar-tab[data-tab="docs"]');
+      if (t) t.click();
+    } else if (act === 'search') {
+      openSidebar();
+      setTimeout(function() { searchInput.focus(); searchInput.select(); }, 60);
+    } else if (act === 'graph') {
+      switchContentView('graph');
+    } else if (act === 'protocols') {
+      var pf = findProtocolFile();
+      if (pf) navigateTo(pf);
+    } else if (act === 'recent') {
+      var r = homeRecents();
+      if (r.length > 0) navigateTo(r[0]);
+    }
+    return;
+  }
+  var recent = e.target.closest('[data-recent]');
+  if (recent) {
+    e.preventDefault();
+    navigateTo(decodeURIComponent(recent.getAttribute('data-recent')));
+    return;
+  }
+  var chip = e.target.closest('.home-chip');
+  if (chip) {
+    e.preventDefault();
+    searchInput.value = chip.getAttribute('data-search');
+    openSidebar();
+    performSearch();
+    searchInput.focus();
+  }
+});
 
 sidebarHeaderTitle.addEventListener('click', function(e) {
   e.preventDefault();
