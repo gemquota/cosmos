@@ -1,7 +1,7 @@
 ---
 type: "synthesis"
 title: "RSIS3 L3 cycle 5 — cross-session memory consolidation"
-description: "L3 evolution cycle 1: 2 insight(s), 1 strategy(ies), 48 redundancy candidate(s), 0 trend(s) consolidated into MyKB"
+description: "L3 evolution cycle 5: 2 insight(s), 1 strategy(ies), 48 redundancy candidate(s), 0 trend(s) consolidated into MyKB"
 tags: ["rsis3", "l3", "memory", "consolidation", "mykb"]
 timestamp: "2026-08-06T19:10:40Z"
 status: "growing"
