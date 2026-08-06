@@ -75637,6 +75637,19 @@
   ]
  },
  {
+  "path": "wiki/syntheses/mykb-guidance-ui-overhaul-2026-08-06.md",
+  "type": "synthesis",
+  "title": "MyKB Guidance UI Overhaul \u2014 navigation, article tools, graph repair",
+  "tags": [
+   "guidance",
+   "mykb-ui",
+   "knowledge-graph",
+   "navigation",
+   "article-toolbar",
+   "stub-triage"
+  ]
+ },
+ {
   "path": "wiki/syntheses/nested-loop-graph-and-zoom-fix.md",
   "type": "synthesis",
   "title": "Nested-Loop Graph & Zoom Direction Fix",

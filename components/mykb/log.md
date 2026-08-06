@@ -5,6 +5,18 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-06 (Loops tab honesty fix)
+- **Dashboard no longer lies about loop liveness**: the Loops tab rendered a
+  green ACTIVE badge for any loop whose static status was "implemented" —
+  which only means the code exists, not that anything is running. Since the
+  RSIS3 loops run on demand (CLI per session/cadence), nothing is
+  continuously active.
+- `gen-static-data.py` now derives a per-loop `runtime` field (RECENT = ran
+  within 24h, IDLE = ran before that, NOT RUN = never, n/a for L0) and the
+  dashboard renders that instead: RECENT (green), IDLE (amber), NOT RUN
+  (slate). The snapshot meta line states the freshness window. Regenerated
+  loops.json — all nine loops are IDLE (last run 2026-08-01).
+
 ## 2026-08-06 (Guidance UI overhaul)
 - **Home routing**: empty-hash loads now show the mykb home page (metrics,
   recents, quick actions) instead of jumping to the first file; the sidebar
