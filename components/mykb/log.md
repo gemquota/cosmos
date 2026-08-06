@@ -5,6 +5,16 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-06 (SPACE v2 spec import — recursive-self-improvement)
+- **Export updated**: `components/space/exports/recursive-self-improvement-specification.json`
+  replaced with the SPACE v2.0.0 export of session `sess_cdd506e4` (67/67
+  questions, 259 multi-choice options, 67 artifacts).
+- **Synthesis added**: `wiki/syntheses/recursive-self-improvement-spec-2026-08-06.md`
+  distills the spec — SPACE's domain identity, 10-entity core model,
+  session mechanics, technical substrate, and ops/process constraints.
+- **Cross-links**: syntheses index updated (46 pages) and
+  `wiki/agent-systems/recursive-self-improvement.md` now links the spec.
+
 ## 2026-08-06 (RSIS3 drive — loops until satisfied)
 - **New `python -m rsis drive`**: repeats a loop until its completion
   requirement is met. Per-loop predicates: L2 applied improvement, L3

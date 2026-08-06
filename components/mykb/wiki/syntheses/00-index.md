@@ -2,14 +2,14 @@
 type: "index"
 hub: true
 title: "Syntheses Index"
-description: "Listing of the syntheses/ folder (45 pages)."
+description: "Listing of the syntheses/ folder (46 pages)."
 tags: ["index"]
 timestamp: "2026-08-03T00:00:00Z"
 ---
 
 # Syntheses
 
-Part of [[wiki/index|Wiki Index]]. 45 pages.
+Part of [[wiki/index|Wiki Index]]. 46 pages.
 
 ## Pages
 - [[wiki/syntheses/acquisition-pass-snapshot-ordering|Acquisition Passes & Snapshot Ordering]] — Durable rules for multi-worker acquisition rounds: stage untracked notes before regenerating files.json (it counts tracked files only), generators are idempotent and safe to re-run, and threshold buckets move predictably because fulls are capped at 400 words
@@ -45,6 +45,7 @@ Part of [[wiki/index|Wiki Index]]. 45 pages.
 - [[wiki/syntheses/pass3-integration-depth-wave|Pass 3 — Integration & Depth Wave (8×400)]] — Eight parallel workers deepened and grew mykb by 3,200 files across AI, systems, data, cognition, dev culture, RSI/RSIS3 integration, curation, and frontend clusters — with the goal of making mykb fully integrated into RSIS3's decision-making
 - [[wiki/syntheses/patch-management-ai|Patch Management for AI]] — Processes for fixing vulnerabilities across AI systems
 - [[wiki/syntheses/post-pass-consolidation|Post-Pass Consolidation]] — Settling a work pass into durable structure before the next one
+- [[wiki/syntheses/recursive-self-improvement-spec-2026-08-06|Recursive Self-Improvement Specification — SPACE v2 Export]] — The completed 326-probe SPACE session (67/67 questions, 67 artifacts) that fixes what recursive self-improvement is and how RSIS3 should be built
 - [[wiki/syntheses/responsible-disclosure-ai|Responsible Disclosure for AI]] — Norms for disclosing AI vulnerabilities safely
 - [[wiki/syntheses/restricted-deployment|Restricted Deployment]] — Limiting where or how an AI system can be used
 - [[wiki/syntheses/safety-case-approach|Safety Case Approach]] — Structuring safety justification as explicit cases
@@ -96,6 +97,7 @@ Part of [[wiki/index|Wiki Index]]. 45 pages.
 - [Pass 3 — Integration & Depth Wave (8×400)](pass3-integration-depth-wave.md) — Pass 3 — Integration & Depth Wave (8×400)
 - [Patch Management for AI](patch-management-ai.md) — Patch Management for AI
 - [Post-Pass Consolidation](post-pass-consolidation.md) — Post-Pass Consolidation
+- [Recursive Self-Improvement Specification — SPACE v2 Export](recursive-self-improvement-spec-2026-08-06.md) — Recursive Self-Improvement Specification — SPACE v2 Export
 - [Responsible Disclosure for AI](responsible-disclosure-ai.md) — Responsible Disclosure for AI
 - [Restricted Deployment](restricted-deployment.md) — Restricted Deployment
 - [Safety Case Approach](safety-case-approach.md) — Safety Case Approach
