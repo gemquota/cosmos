@@ -13,7 +13,7 @@ resource: ""
 
 Round Workflow appears in 2 session(s) categorized as API, Frontend, Mobile, Security, Shell. Related topics: android, angular, api, auth, bash, bootstrap, cli, dom.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/web-platforms/00-index|Angular Ui]]
 
 ## Overview
 
@@ -41,11 +41,11 @@ A round workflow is an iterative way of working in which the same cycle — plan
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/aim-2|Aim 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/autonomous-iterative-mode-2|Autonomous Iterative Mode 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/avg-age-2|Avg Age 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/avg-energy-2|Avg Energy 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/batch-2|Batch 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/dna-10|Dna 10
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/harmonica-explorer-2|Harmonica Explorer 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/hidpi-2|Hidpi 2
+- [[wiki/frontend-frameworks/categories/angular-ui/aim-2|Aim 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/autonomous-iterative-mode-2|Autonomous Iterative Mode 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/avg-age-2|Avg Age 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/avg-energy-2|Avg Energy 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/batch-2|Batch 2]]
+- `Dna 10`
+- [[wiki/frontend-frameworks/categories/angular-ui/harmonica-explorer-2|Harmonica Explorer 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/hidpi-2|Hidpi 2]]

@@ -13,7 +13,7 @@ resource: ""
 
 ArrowDown appears in 1 session(s) categorized as API, Cloud, Frontend, Mobile. Related topics: android, angular, api, aws.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Arrowdown
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Arrowdown]]
 
 ## Overview
 
@@ -43,11 +43,11 @@ ArrowDown describes the downward-arrow interaction found in keyboard navigation 
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aap-2|Aap 2
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aar|Aar
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aarrr|Aarrr
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/abi|Abi
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/accr-2|Accr 2
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/ace-core|Ace Core
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acid|Acid
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acli|Acli
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aap-2|Aap 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aar|Aar]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aarrr|Aarrr]]
+- [[raw/archive/junk-entities-2026-08c/api-services/categories/api-rest/subcategories/rest-http/abi|Abi]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/accr-2|Accr 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ace-core|Ace Core]]
+- `Acid`
+- [[raw/archive/junk-entities-2026-08c/api-services/categories/api-rest/subcategories/rest-http/acli|Acli]]

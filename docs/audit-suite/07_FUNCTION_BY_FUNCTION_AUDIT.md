@@ -83,10 +83,12 @@
 | `extract_tags` | `text` | LOW |  |
 | `lint` | `return_json` | LOW |  |
 
-### `components/mykb/.wiki-daemon/link_check.py` (67 LOC)
+### `components/mykb/.wiki-daemon/link_check.py` (133 LOC)
 
 | Function | Args | Risk | Decorators |
 |----------|------|------|------------|
+| `dotseg` | `path` | LOW |  |
+| `Resolver.resolves` | `target`, `srcdir` | LOW |  |
 | `main` | `` | LOW |  |
 
 ### `components/mykb/.wiki-daemon/search_fusion.py` (576 LOC)

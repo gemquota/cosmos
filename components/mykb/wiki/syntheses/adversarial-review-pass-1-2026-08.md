@@ -32,7 +32,7 @@ errors. Combined report: `ops/reports/adversarial-review-stub-promotion-2026-08.
 - **Non-topical tail**: removed 53 networking-fundamentals / tcp-ip-stack
   links from non-networking cloud-infra files.
 - **Duplicates**: deduped 22 repeated bullets; **truncated links**: deleted
-  5 unclosed `[[raw/archive/…]]` lines; **dead links**: retargeted 5
+  5 unclosed ``…`aw/archive/…]]` lines; **dead links**: retargeted 5
   `sources|syntheses/README` links to `*/index`.
 - **Factual fixes (6 files)**: `web-platforms/contrast-ratios.md` (WCAG
   ratios recomputed — #777777 ≈ 4.48:1 fails, #757575 ≈ 4.61:1 passes,
@@ -41,7 +41,7 @@ errors. Combined report: `ops/reports/adversarial-review-stub-promotion-2026-08.
   module set, not a single `nvidia.ko`), `concepts/calibration.md`
   (reliability-diagram direction), `android-core/dp-vs-px.md` (xxxhdpi = 4x),
   `android-core/anr-diagnostics.md` (apply/commit nuance), plus
-  `memory/org-mode.md` (`[[file:...]]` placeholder).
+  `memory/org-mode.md` (``File:`...]]` placeholder).
 - **Namespace**: renamed
   `clickhouse-vs-druid-pinot-druid-architecture.md` →
   `clickhouse-vs-druid-vs-pinot.md` (+3 referrers); 34 `syntheses/` files

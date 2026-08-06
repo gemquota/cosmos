@@ -30,7 +30,7 @@ article with `status: growing`.
   character-class examples, file-link templates), not real edges.
 - **Worker link-preservation enforced**: 9 concepts files had valid
   `[[wikilinks]]` stripped by a worker; all were restored into `## Related`
-  sections with `[[wiki/…|Display]]` targets verified to exist on disk.
+  sections with ``Display`Display]]` targets verified to exist on disk.
 
 ## Process notes
 - **Rate limit ceiling reconfirmed**: with 4 concurrent workers, one hit the

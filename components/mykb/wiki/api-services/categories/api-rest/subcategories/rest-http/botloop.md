@@ -13,7 +13,7 @@ resource: ""
 
 BotLoop appears in 1 session(s) categorized as API, Mobile, Security, Shell. Related topics: android, api, auth, bash.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Botloop
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/web-platforms/00-index|Api Clients › Botloop]]
 
 ## Overview
 
@@ -48,11 +48,11 @@ A polling bot that watches a queue every 30 seconds, processes at most 50 items 
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aap-2|Aap 2
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aar|Aar
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aarrr|Aarrr
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/abi|Abi
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/accr-2|Accr 2
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/ace-core|Ace Core
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acid|Acid
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acli|Acli
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aap-2|Aap 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aar|Aar]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aarrr|Aarrr]]
+- [[raw/archive/junk-entities-2026-08c/api-services/categories/api-rest/subcategories/rest-http/abi|Abi]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/accr-2|Accr 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ace-core|Ace Core]]
+- `Acid`
+- [[raw/archive/junk-entities-2026-08c/api-services/categories/api-rest/subcategories/rest-http/acli|Acli]]

@@ -14,7 +14,7 @@ CSS (Cascading Style Sheets) — a stylesheet language for describing the presen
 
 **Related topics:** android, api, auth, bash, bug, cli
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Shell Cli
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/web-platforms/00-index|Shell Cli]]
 
 ## Overview
 
@@ -34,11 +34,11 @@ The session that recorded CS touched mobile, API, auth, and shell topics alongsi
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/abbreviated-activity-history-2|Abbreviated Activity History 2
-- [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/adsr-2|Adsr 2
-- [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/beautifulsoup4-2|Beautifulsoup4 2
-- [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/bpm-10|Bpm 10
-- [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/cellsystem|Cellsystem
-- [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/cellstate|Cellstate
-- [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/deterministicrng|Deterministicrng
-- [[wiki/web-platforms/supercategories/shell-environment/categories/shell-cli/genefunction|Genefunction
+- [[wiki/shell-environment/categories/shell-cli/abbreviated-activity-history-2|Abbreviated Activity History 2]]
+- [[raw/archive/junk-entities-2026-08c/shell-environment/categories/shell-cli/adsr-2|Adsr 2]]
+- [[wiki/shell-environment/categories/shell-cli/beautifulsoup4-2|Beautifulsoup4 2]]
+- `Bpm 10`
+- [[wiki/shell-environment/categories/shell-cli/cellsystem|Cellsystem]]
+- [[wiki/shell-environment/categories/shell-cli/cellstate|Cellstate]]
+- [[wiki/shell-environment/categories/shell-cli/deterministicrng|Deterministicrng]]
+- [[wiki/shell-environment/categories/shell-cli/genefunction|Genefunction]]

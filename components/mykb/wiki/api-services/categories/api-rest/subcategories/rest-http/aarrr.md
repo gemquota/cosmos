@@ -13,7 +13,7 @@ resource: ""
 
 AARRR appears in 1 session(s) categorized as API, Mobile, Security. Related topics: acronym, android, api, auth.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Aarrr
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/api-services/categories/api-rest/00-index|Api Clients › Aarrr]]
 
 ## Overview
 
@@ -35,11 +35,11 @@ Each stage is paired with metrics and experiments. Funnel analysis identifies wh
 The framework is most useful when each stage has a single well-defined metric and the funnel is measured on cohorts, not just aggregates. Dashboards typically show conversion rates between adjacent stages, letting teams see whether the bottleneck is reach, onboarding, or monetization. Experiments are then scoped to one stage at a time so that improvements are attributable. AARRR is also a communication tool: it gives product, engineering, and marketing a shared vocabulary for discussing growth, and it pairs naturally with activation-oriented techniques such as onboarding checklists, retention nudges, and referral incentives.
 
 
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aap-2|Aap 2
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aar|Aar
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/abi|Abi
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/accr-2|Accr 2
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/ace-core|Ace Core
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acid|Acid
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acli|Acli
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acs|Acs
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aap-2|Aap 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aar|Aar]]
+- [[raw/archive/junk-entities-2026-08c/api-services/categories/api-rest/subcategories/rest-http/abi|Abi]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/accr-2|Accr 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ace-core|Ace Core]]
+- `Acid`
+- [[raw/archive/junk-entities-2026-08c/api-services/categories/api-rest/subcategories/rest-http/acli|Acli]]
+- [[raw/archive/junk-entities-2026-08c/api-services/categories/api-rest/subcategories/rest-http/acs|Acs]]

@@ -40,7 +40,7 @@ Key conclusions:
   chunk, embed, index, retrieve, synthesize (see
   [[wiki/data-storage/semantic-search|semantic search]] and
   [[wiki/data-storage/hybrid-search|hybrid search]]).
-- **Linking is modelling** — the [[wiki/data-storage/knowledge-graph|knowledge
+- **Linking is modelling** — the [[wiki/data-storage/knowledge-graph|knowledge]]
   graph]] is emergent from markdown links; curation is mostly link repair
   ([[wiki/memory/knowledge-curation|knowledge curation]]).
 - **Stubs are a queue** — 300 stubs (`status: stub`) are the expansion

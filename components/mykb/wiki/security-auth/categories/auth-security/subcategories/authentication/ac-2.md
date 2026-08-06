@@ -23,15 +23,15 @@ Browsers require a user gesture before audio can start, so contexts are created 
 
 The entry is filed under authentication because the sessions that mentioned it combined audio features with sign-in and session work, but the technical content is entirely about the Web Audio API.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Ac 2
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/security-auth/categories/auth-security/00-index|Auth Security › Ac 2]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentswitchrecord|Agentswitchrecord
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied]]
+- [[raw/archive/junk-entities-2026-08c/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/agentswitchrecord|Agentswitchrecord]]

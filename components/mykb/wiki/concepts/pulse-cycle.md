@@ -50,10 +50,10 @@ Pulse cycles have a configurable deadline (`RSIS3_MAX_CYCLE_DURATION`, default 4
 ## Relation to Agent Loops
 The pulse cycle wraps the [[wiki/agent-systems/agent-loop|agent loop]]: each
 phase is a bounded agent loop over reasoning steps, and the whole cycle is one
-episode of [[wiki/agent-systems/recursive-self-improvement|recursive
+episode of [[wiki/agent-systems/recursive-self-improvement|recursive]]
 self-improvement]]. Decisions are governed by
 [[wiki/concepts/constraint-satisfaction|constraint satisfaction]] and
-evaluated with the discipline of [[wiki/testing/llm-evaluation|LLM
+evaluated with the discipline of [[wiki/testing/llm-evaluation|LLM]]
 evaluation]] — golden tests, eval sets, and regression suites map onto phase 9.
 ## Memory Writes
 Pulse outcomes land in [RSIS3 memory](../../ops/rsis3-memory-bridge.md) as typed

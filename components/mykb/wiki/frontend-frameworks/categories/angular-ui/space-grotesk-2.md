@@ -23,15 +23,15 @@ In sessions, the font appears across frontend and mobile work, where designers a
 
 The entry records the font as a dependency like any other: versioned, subset, and chosen deliberately so that branding does not silently degrade performance or accessibility.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/00-index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/frontend-frameworks/categories/angular-ui/00-index|Angular Ui]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/aim-2|Aim 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/autonomous-iterative-mode-2|Autonomous Iterative Mode 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/avg-age-2|Avg Age 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/avg-energy-2|Avg Energy 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/batch-2|Batch 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/dna-10|Dna 10
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/harmonica-explorer-2|Harmonica Explorer 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/hidpi-2|Hidpi 2
+- [[wiki/frontend-frameworks/categories/angular-ui/aim-2|Aim 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/autonomous-iterative-mode-2|Autonomous Iterative Mode 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/avg-age-2|Avg Age 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/avg-energy-2|Avg Energy 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/batch-2|Batch 2]]
+- `Dna 10`
+- [[wiki/frontend-frameworks/categories/angular-ui/harmonica-explorer-2|Harmonica Explorer 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/hidpi-2|Hidpi 2]]

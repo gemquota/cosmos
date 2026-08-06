@@ -23,15 +23,15 @@ The related entities below list the neighboring API client records observed in t
 
 
 Accretion also has a conceptual counterpart in knowledge and agent systems: ideas, files, and capabilities grow by accumulating related material over time. The knowledge base itself behaves this way, collecting session observations into entities that become richer with each pass. The physics meaning remains primary here, but the parallel explains why the acronym recurred in an API and mobile context where growth by accumulation is a useful mental model.
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Accr 2
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/api-services/categories/api-rest/00-index|Api Clients › Accr 2]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aap-2|Aap 2
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aar|Aar
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aarrr|Aarrr
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/abi|Abi
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/ace-core|Ace Core
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acid|Acid
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acli|Acli
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acs|Acs
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aap-2|Aap 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aar|Aar]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aarrr|Aarrr]]
+- [[raw/archive/junk-entities-2026-08c/api-services/categories/api-rest/subcategories/rest-http/abi|Abi]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ace-core|Ace Core]]
+- `Acid`
+- [[raw/archive/junk-entities-2026-08c/api-services/categories/api-rest/subcategories/rest-http/acli|Acli]]
+- [[raw/archive/junk-entities-2026-08c/api-services/categories/api-rest/subcategories/rest-http/acs|Acs]]

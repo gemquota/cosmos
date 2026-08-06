@@ -21,15 +21,15 @@ Parsing untrusted HTML also demands defensive practices: the parse tree is data,
 
 The page records the library and its role in the pipeline; future sessions should attach the specific scrapers, sources, and legal or rate-limit constraints observed. Logging fetch metadata — source, timestamp, and content hash — makes scraped datasets auditable and reproducible.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Beautifulsoup 2
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/security-auth/categories/auth-security/00-index|Auth Security › Beautifulsoup 2]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied]]
+- [[raw/archive/junk-entities-2026-08c/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig]]
