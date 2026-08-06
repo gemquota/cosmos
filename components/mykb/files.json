@@ -75798,6 +75798,20 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-pass-7-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 7 \u2014 ecosystem data contracts, validated at both gates",
+  "tags": [
+   "rsis3",
+   "passes",
+   "contracts",
+   "data-shapes",
+   "validation",
+   "telemetry",
+   "ci"
+  ]
+ },
+ {
   "path": "wiki/syntheses/safety-case-approach.md",
   "type": "synthesis",
   "title": "Safety Case Approach",
