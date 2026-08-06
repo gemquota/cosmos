@@ -1,6 +1,6 @@
 {
   "name": "@gemquota/space",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "SPACE — Superb Prompt Automatic Creation Engine",
   "type": "module",
   "main": "dist/index.js",

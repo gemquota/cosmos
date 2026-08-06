@@ -1,5 +1,5 @@
 import { randomUUID } from 'crypto';
-import type { SessionState, SessionMeta, ProgressState, AnswerEntry, ArtifactDictionary } from '../types/index.js';
+import type { SessionState } from '../types/index.js';
 
 export function createSession(project_id: string, framework_version: string = '2.0.0'): SessionState {
   const now = new Date().toISOString();

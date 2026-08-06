@@ -1,5 +1,5 @@
 import type { SessionState, ProgressMetrics, FrameworkDefinition } from '../types/index.js';
-import { getSeriesStatus, type SeriesStatus } from './dependency-resolver.js';
+import { getSeriesStatus } from './dependency-resolver.js';
 
 /**
  * Compute detailed progress metrics for a session

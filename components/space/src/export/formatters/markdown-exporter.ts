@@ -1,10 +1,4 @@
-import type {
-  SessionState,
-  ArtifactDictionary,
-  ExportOptions,
-  FrameworkDefinition,
-  SeriesDefinition,
-} from '../../types/index.js';
+import type { SessionState, ArtifactDictionary, ExportOptions, FrameworkDefinition } from '../../types/index.js';
 import type { ExportMeta } from '../index.js';
 
 export function exportMarkdown(

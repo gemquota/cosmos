@@ -7,7 +7,39 @@ import type {
   DependencyNode,
   DependencyEdge,
   SeriesDefinition,
+  RoundDefinition,
+  OpenEndedQuestion,
 } from '../types/index.js';
+
+interface SeriesJson {
+  id: number;
+  name: string;
+  description: string;
+  depends_on?: number[];
+  consumes?: string[];
+  provides?: string[];
+  x_rounds?: number;
+  y_open_ended_per_round?: number;
+  z_multi_choice_per_open?: number;
+}
+
+interface FrameworkJson {
+  meta: {
+    name: string;
+    description: string;
+    total_series: number;
+    total_rounds: number;
+    total_open_ended_questions: number;
+    total_multi_choice_followups: number;
+  };
+  dependency_chain: {
+    edges: Array<{ from: number; to: number; artifacts?: string[] }>;
+  };
+  dependency_graph: {
+    nodes: Array<{ series_id: number }>;
+    edges: Array<{ from: number; to: number }>;
+  };
+}
 
 /**
  * Load framework from v1 format files (framework.json + json/*.json)
@@ -24,11 +56,13 @@ export function loadFrameworkFromV1(frameworkDir: string, locale?: string): Fram
     throw new Error(`FRAMEWORK_NOT_FOUND: framework.json not found at ${frameworkJsonPath}`);
   }
 
-  let frameworkJson;
+  let frameworkJson: FrameworkJson;
   try {
-    frameworkJson = JSON.parse(readFileSync(frameworkJsonPath, 'utf-8'));
-  } catch (e: any) {
-    throw new Error(`FRAMEWORK_PARSE_ERROR: Invalid JSON in framework.json: ${e.message}`);
+    frameworkJson = JSON.parse(readFileSync(frameworkJsonPath, 'utf-8')) as FrameworkJson;
+  } catch (e: unknown) {
+    throw new Error(
+      `FRAMEWORK_PARSE_ERROR: Invalid JSON in framework.json: ${e instanceof Error ? e.message : String(e)}`,
+    );
   }
 
   // Load all series from json/ directory
@@ -55,11 +89,11 @@ export function loadFrameworkFromV1(frameworkDir: string, locale?: string): Fram
         throw new Error(`FRAMEWORK_INVALID: Series file not found: ${filePath}`);
       }
     }
-    let data;
+    let data: { series: SeriesJson; rounds: RoundDefinition[] };
     try {
-      data = JSON.parse(readFileSync(filePath, 'utf-8'));
-    } catch (e: any) {
-      throw new Error(`FRAMEWORK_PARSE_ERROR: Invalid JSON in ${file}: ${e.message}`);
+      data = JSON.parse(readFileSync(filePath, 'utf-8')) as { series: SeriesJson; rounds: RoundDefinition[] };
+    } catch (e: unknown) {
+      throw new Error(`FRAMEWORK_PARSE_ERROR: Invalid JSON in ${file}: ${e instanceof Error ? e.message : String(e)}`);
     }
     const s = data.series;
     series.push({
@@ -70,23 +104,23 @@ export function loadFrameworkFromV1(frameworkDir: string, locale?: string): Fram
       consumes: s.consumes || [],
       provides: s.provides || [],
       rounds: data.rounds,
-      x_rounds: s.x_rounds,
-      y_open_ended_per_round: s.y_open_ended_per_round,
-      z_multi_choice_per_open: s.z_multi_choice_per_open,
-      total_open_ended: data.rounds.reduce((sum: number, r: any) => sum + r.open_ended.length, 0),
+      x_rounds: s.x_rounds ?? 0,
+      y_open_ended_per_round: s.y_open_ended_per_round ?? 0,
+      z_multi_choice_per_open: s.z_multi_choice_per_open ?? 0,
+      total_open_ended: data.rounds.reduce((sum: number, r: RoundDefinition) => sum + r.open_ended.length, 0),
       total_multi_choice: data.rounds.reduce(
-        (sum: number, r: any) =>
-          sum + r.open_ended.reduce((s2: number, oe: any) => s2 + oe.follow_up_choices.length, 0),
+        (sum: number, r: RoundDefinition) =>
+          sum + r.open_ended.reduce((s2: number, oe: OpenEndedQuestion) => s2 + oe.follow_up_choices.length, 0),
         0,
       ),
     });
   }
 
   // Build dependency graph from framework.json edges
-  const edges: DependencyEdge[] = frameworkJson.dependency_chain.edges.map((e: any) => ({
+  const edges: DependencyEdge[] = frameworkJson.dependency_chain.edges.map((e) => ({
     from: e.from,
     to: e.to,
-    artifacts: e.artifacts,
+    artifacts: e.artifacts || [],
   }));
 
   const nodes: DependencyNode[] = series.map((s) => ({
@@ -212,7 +246,7 @@ export function topologicalSort(fw: FrameworkDefinition): number[] {
 
   for (const edge of fw.dependency_graph.edges) {
     inDegree.set(edge.to, (inDegree.get(edge.to) || 0) + 1);
-    adj.get(edge.from)!.push(edge.to);
+    adj.get(edge.from)?.push(edge.to);
   }
 
   const queue: number[] = [];
@@ -222,7 +256,8 @@ export function topologicalSort(fw: FrameworkDefinition): number[] {
 
   const result: number[] = [];
   while (queue.length > 0) {
-    const node = queue.shift()!;
+    const node = queue.shift();
+    if (node === undefined) break;
     result.push(node);
     for (const child of adj.get(node) || []) {
       const newDeg = (inDegree.get(child) || 1) - 1;

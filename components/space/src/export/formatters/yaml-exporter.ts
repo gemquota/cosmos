@@ -7,10 +7,10 @@ export function exportYAML(
   artifacts: ArtifactDictionary,
   framework: FrameworkDefinition,
   project_name: string,
-  opts: ExportOptions = {},
+  _opts: ExportOptions = {},
   staleness?: ExportMeta['staleness'],
 ): { content: string; filename: string; mime_type: string } {
-  const data: Record<string, any> = {
+  const data: Record<string, unknown> = {
     meta: {
       project_name,
       framework_version: framework.meta.version,

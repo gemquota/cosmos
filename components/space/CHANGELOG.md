@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.2.0] - 2026-08-06
+
+### Added
+- RSI Cycle 005: hosting-layer hardening
+  - `web/server.mjs` refactored into an exported `createApp({ projectsDir, port })`
+    factory — testable against an isolated projects dir, listens only as main;
+    dead `matchRoute`, `req_method` global, and unused storage removed
+  - `tests/unit/web-server.test.ts`: 7 tests covering CORS preflight, projects
+    CRUD, framework endpoints, static SPA, and 404s (157 total, 15 suites)
+  - `scripts/sync-static-data.mjs` populates `web/projects.json` so the static
+    SPA fallback lists real projects when the API server is unreachable
+  - CORS preflight handler for dashboard embeds (204 + allow headers)
+
+### Fixed
+- Project creation from the Cosmos dashboard embed (API fallback now only
+  serves GETs; mutations report failures instead of silently no-oping)
+- Sentry watch paths for mykb Dashboard/Graph retargeted to cosmos-local
+  `components/mykb`
+
+### Quality
+- ESLint warnings 74 → 24 (unused imports/args, catch bindings, non-null
+  assertions, typed JSON shapes, i18n `unknown` walk)
+- Prettier-clean across `src/` and `tests/`; typecheck stays clean
+
 ## [2.1.0] - 2026-07-29
 
 ### Added

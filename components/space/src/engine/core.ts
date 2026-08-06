@@ -7,11 +7,8 @@ import type {
   QuestionContext,
   SubmitResult,
   ArtifactDictionary,
-  ExportFormat,
-  ExportResult,
   ProgressMetrics,
   SpaceEvent,
-  Snapshot,
 } from '../types/index.js';
 import { loadFrameworkFromV1, validateFramework } from '../data/framework-loader.js';
 import { accumulateArtifacts } from '../data/artifact-mapping.js';
@@ -26,12 +23,12 @@ import {
   computeCompletionPct,
   serializeSession,
   deserializeSession,
-  updateSessionTimestamp,
 } from './session-manager.js';
-import { getCurrentQuestion, advanceToNextQuestion, goToPreviousQuestion } from './question-router.js';
+import { getCurrentQuestion, advanceToNextQuestion } from './question-router.js';
 import { validateAnswer } from './validator.js';
 import { computeProgressMetrics } from './progress.js';
 import { SnapshotManager } from './snapshot-manager.js';
+import type { StalenessReport } from '../data/artifact-tracker.js';
 import type { StorageProvider } from '../storage/types.js';
 
 type EventHandler = (event: SpaceEvent) => void;
@@ -54,7 +51,7 @@ export interface SpaceInstance {
   // Queries
   getProgress(session_id: string): ProgressMetrics | null;
   getArtifacts(session_id: string): ArtifactDictionary;
-  getStalenessReport(session_id: string): any;
+  getStalenessReport(session_id: string): StalenessReport | null;
 
   // Events
   on(event: string, handler: EventHandler): () => void;
@@ -101,7 +98,7 @@ export function createSpace(config?: Partial<SpaceConfig>): SpaceInstance {
     framework,
     sessions,
 
-    initProject(name: string, description?: string) {
+    initProject(name: string, _description?: string) {
       const id = `proj_${randomUUID().slice(0, 8)}`;
       return { id, name };
     },
@@ -114,7 +111,7 @@ export function createSpace(config?: Partial<SpaceConfig>): SpaceInstance {
       return session;
     },
 
-    resumeSession(session_id: string, project_id?: string): SessionState | null {
+    resumeSession(session_id: string, _project_id?: string): SessionState | null {
       const session = sessions.get(session_id);
       if (!session) return null;
 
@@ -230,7 +227,6 @@ export function createSpace(config?: Partial<SpaceConfig>): SpaceInstance {
 
       // Record previous artifact state for staleness detection
       const previousArtifacts = { ...session.artifacts };
-      const previousKeys = new Set(Object.keys(previousArtifacts));
 
       // Set answer
       setAnswer(session, question_id, seriesId, roundNum, open_ended, choice_id, selectedChoice?.text);
