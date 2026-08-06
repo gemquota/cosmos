@@ -21,6 +21,13 @@ Multi-agent orchestration is the coordination of multiple agents — specialists
 - RSIS3 uses sub-agent delegation (spawn_agent/invoke_agent) for isolated subtasks rather than always-on multi-agent chatter.
 - Worked example: a planner agent decomposes a task, a coder agent implements it, and a reviewer agent gates the result.
 
+- **Protocol design** — agents should exchange structured messages with declared schemas (task, context, expected result), so handoffs are parseable and replayable rather than free-form prose.
+- **Failure isolation** — a crashed worker must not kill the orchestration: timeouts, retries, and re-spawning with fresh context contain the blast radius.
+- **Traceability** — a shared trace id across all participating agents lets an operator replay the whole conversation after the fact, which is what makes orchestrated systems debuggable.
+- **Testability** — simulate orchestration runs with scripted agents to test the protocol before real agents are involved; most orchestration bugs are protocol bugs.
+
+- **Cost of orchestration** — coordination overhead grows with agent count and message volume; the orchestrator should batch, deduplicate, and route so the protocol does not become the bottleneck it was meant to eliminate.
+
 ## Related
 
 - [[wiki/llm-agents/debate-agents|Debate Agents]] — agents that critique each other's answers

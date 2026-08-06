@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Build the stub auditor index (stub-index.json) for the stub-auditor SPA.
+"""Build the stub index (stub-index.json) for the mykb app.
 
 Scans components/mykb/wiki and lists every file whose frontmatter status is
-'stub' or whose body word count is below 320, with metadata the auditor needs
+'stub' (the only reliable stub signal), with metadata the app needs
 (words, status, type, title, tags, area, inferred category path).
 
 Usage: python3 .wiki-daemon/build_stub_index.py
@@ -75,7 +75,7 @@ def main():
         fm = parse_frontmatter(text)
         words = body_words(text)
         status = fm.get('status', 'none')
-        if status == 'stub' or words < FLOOR:
+        if status == 'stub':
             base = os.path.splitext(os.path.basename(rel))[0]
             cat = category_path(rel)
             stubs.append({

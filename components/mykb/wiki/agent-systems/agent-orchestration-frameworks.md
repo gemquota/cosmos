@@ -21,6 +21,10 @@ Agent orchestration frameworks provide the runtime for agent workflows: state ma
 - **Selection criteria** — checkpointing, replay, observability, streaming, and the cost of vendor lock-in.
 - **mykb relevance** — orchestration choices affect how RSIS3-like recursion, memory writes, and approval gates get implemented.
 
+- **State and checkpoints** — the framework's state model determines crash recovery: checkpoints allow resume and replay, while stateless designs require external persistence.
+- **Human-in-the-loop support** — approval interrupts, pause and resume, and time travel are first-class in graph runtimes and awkward to retrofit elsewhere.
+- **Interoperability** — protocol-based tool connections reduce vendor lock-in and let agents reach tools across frameworks.
+- **Evaluation hooks** — frameworks that expose trace, replay, and eval APIs make it possible to test orchestration changes before they ship; lack of hooks forces black-box testing.
 ## Related
 - [[wiki/ml-frameworks/langgraph-llamaindex|LangGraph and LlamaIndex]] — graph runtime and data framework
 - [[wiki/ml-frameworks/dspy-autogen-crewai|DSPy, AutoGen, and CrewAI]] — code-first orchestration libraries

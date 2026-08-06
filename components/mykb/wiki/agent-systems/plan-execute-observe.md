@@ -21,6 +21,11 @@ Plan-execute-observe is the canonical agent control loop: generate a plan, execu
 - **Success criteria** — each step declares what would make it done, so the loop can stop early and escalate on repeated failure.
 - **mykb relevance** — RSIS3's nine-phase pulse protocol is a rich plan-execute-observe loop with explicit evaluation phases.
 
+- **Observation design** — the observe step should capture structured outcomes (result schema, error class, state delta), not just raw text; structured observations are what make replanning decisions testable.
+- **Replan triggers** — replan on failure, on evidence that the plan is drifting from reality, or on new information; bound the number of replans so the loop cannot churn forever.
+- **Retry vs replan** — transient errors warrant a retry of the same step; persistent mismatches between plan and world warrant a replan; conflating the two is a common failure.
+- **Stop early** — each step declares its success criterion, so the loop can terminate as soon as the goal is met instead of executing the remaining plan by inertia.
+
 ## Related
 - [[wiki/agent-systems/action-observation-loop|Action-Observation Loop]] — the existing loop concept
 - [[wiki/agent-systems/checkpointing-agent-runs|Checkpointing Agent Runs]] — durable state between loops

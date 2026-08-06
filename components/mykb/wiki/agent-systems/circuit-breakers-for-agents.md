@@ -21,6 +21,10 @@ A circuit breaker halts agent work when failure rates or error patterns cross a 
 - **Relationship to retries** — retries handle transient blips; the breaker handles persistent failure; both need clear thresholds.
 - **mykb relevance** — the circuit-breaker concept already exists in mykb's api-protocols and maps directly to agent run control.
 
+- **Half-open probing** — after a cooldown the breaker allows a limited probe; success closes it, failure reopens it, preventing flapping on a still-broken dependency.
+- **Breaker state as telemetry** — breaker open/close events are logged and surfaced, because a repeatedly tripping breaker is a signal about the dependency, not just the agent.
+- **Failure vs fault distinction** — the breaker trips on persistent failure patterns, not single faults; distinguishing transient noise from systemic breakage is what the thresholds encode.
+- **Human visibility** — an open breaker surfaces in the dashboard with the trip reason, so an operator can decide to intervene, repair the dependency, or force-reset with care.
 ## Related
 - [[wiki/agent-systems/agent-timeouts|Agent Timeouts]] — timeouts as trip conditions
 - [[wiki/agent-systems/degraded-mode-operations|Degraded Mode Operations]] — behavior while open

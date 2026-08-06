@@ -21,6 +21,12 @@ Sandboxing is the practice of running agent actions in an isolated environment �
 - RSIS3 runs shell work through bounded tools with restricted paths (its wiki write scope is itself a sandbox rule).
 - Worked example: a code-generation agent executes tests inside a container with network off; the host stays untouched.
 
+- **Isolation boundaries** — filesystem (read-only host, tmpfs workdir), network (egress allowlist or none), and process (user namespaces, seccomp) boundaries compose to define the blast radius.
+- **Escaping is the threat model** — sandboxes are tested by attempted escapes: path traversal, symlink tricks, environment leakage, and side channels; escape tests belong in CI.
+- **State lifecycle** — ephemeral sandboxes are wiped after each run unless artifacts are explicitly exported, preventing cross-run contamination.
+- **Verification** — the sandbox config is validated against a checklist before use: no host mounts, no privileged mode, no writable secrets.
+- **Approval pairing** — sandboxing contains the damage, but high-impact actions still pass an approval gate so a human decides on the boundary between contained and destructive.
+- **Logging inside the sandbox** — capture commands, outputs, and file changes from inside the sandbox so the audit trail survives even when the sandbox is destroyed.
 ## Related
 
 - [[wiki/llm-agents/permission-model|Permission Model]] — authorization that complements isolation

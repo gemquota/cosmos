@@ -20,6 +20,10 @@ Agent bootstrapping grows a small, imperfect agent into a stronger one by lettin
 - **Worked example** — a coding agent that writes helper scripts, caches solutions, and builds a personal knowledge base accelerates on repeated tasks.
 - **RSIS3/mykb relevance** — acquisition passes are knowledge bootstrapping: each pass makes the graph dense enough for the next pass to go deeper.
 
+- **Scaffold-first growth** — most bootstrapping happens at the scaffold level: prompts, tools, checklists, and memory get better even when the underlying model is frozen, so each improvement is verifiable per component.
+- **Verification gates** — a new tool or practice only persists if it measurably helps on a held-out task set; ungated bootstrapping drifts capability without evidence.
+- **Failure modes** — premature delegation, tool sprawl, and overfitting to past tasks all look like progress while compounding debt, so the bootstrapping loop needs the same hygiene as any codebase.
+- **Measure the loop** — track time-to-task, tool success rate, and knowledge reuse across bootstrapping iterations; flat metrics mean the loop is adding machinery without compounding capability.
 ## Related
 - [[wiki/concepts/seed-ai|Seed AI]] — the strong hypothesis
 - [[wiki/agent-systems/scaffold-loops|Scaffold Loops]] — vehicle of bootstrapping

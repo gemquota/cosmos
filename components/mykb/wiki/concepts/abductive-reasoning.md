@@ -19,7 +19,7 @@ Abductive reasoning infers the most plausible explanation for observed evidence 
 - Open questions: ranking explanations with LLM plausibility.
 
 ## Related
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — diagnosis as planning backward
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — diagnosis as planning backward
 - [[wiki/concepts/backward-chaining|Backward Chaining]] — the inference mechanics
 - [[wiki/concepts/defeasible-reasoning|Defeasible Reasoning]] — hypotheses can be defeated
 - [[wiki/concepts/bayesian-networks|Bayesian Networks]] — probabilistic abduction

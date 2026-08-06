@@ -21,7 +21,7 @@ Deontological AI ethics binds systems to rules and duties rather than optimizing
 ## Related
 - [[wiki/concepts/side-constraints|Side Constraints]] — the hybrid mechanism
 - [[wiki/concepts/consequentialism-ai|Consequentialism for AI]] — the contrasting frame
-- [[wiki/agent-systems/instruction-following|Instruction Following]] — the rules substrate
+- [[wiki/agent-systems/instruction-hierarchy|Instruction Hierarchy]] — the rules substrate
 - [[wiki/concepts/virtue-ethics-ai|Virtue Ethics for AI]] — the third frame
 - [[wiki/concepts/control-protocols|Control Protocols]]
 - [[wiki/concepts/utility-functions|Utility Functions]]

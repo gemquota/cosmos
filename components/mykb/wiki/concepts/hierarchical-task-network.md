@@ -21,7 +21,7 @@ Hierarchical task network (HTN) planning starts from an abstract task and decomp
 
 ## Related
 - [[wiki/agent-systems/goal-decomposition|Goal Decomposition]] — the informal version of HTN
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — the planning family
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — the planning family
 - [[wiki/concepts/operator-subgoaling|Operator Subgoaling]] — the subgoal mechanism
 - [[wiki/agent-systems/hierarchical-agents|Hierarchical Agents]] — the multi-agent analog
 - [[wiki/concepts/planning-as-search|Planning as Search]] — the search framing

@@ -1,62 +1,33 @@
 ---
 type: "entity"
 title: "AI"
-description: "Acronym referenced in session 13adc671"
-tags: ["acronym", "android", "angular", "api", "ast", "auth", "bash", "bug", "entity"]
+description: "Artificial Intelligence — the simulation of human intelligence by machines, primarily LLM-based agents in this corpus"
+tags: ["entity", "ai", "artificial-intelligence", "llm", "agents"]
 timestamp: "2026-07-19T22:41:37Z"
 resource: ""
+status: "growing"
 ---
 
+# AI
+
 ## Overview
+Artificial Intelligence is the simulation of human intelligence by machines. In mykb, the term primarily refers to LLM-based agents (Gemini, Claude, GPT) whose sessions generate the corpus data this wiki records. The acronym appears as a session topic tag, and this entity page resolves that usage to a stable definition.
 
-Artificial Intelligence — the simulation of human intelligence by machines. In mykb, this primarily refers to LLM-based agents (Gemini, Claude, GPT) that generate session data.
+## Key Ideas
+- **Scope in this corpus** — AI means the deployed agent systems and models whose transcripts and outputs populate sessions, not a single product; each named model is documented separately where its behavior matters.
+- **Capability spectrum** — the term covers narrow systems that excel at one task through to broad conversational agents; describing a system's actual capabilities beats relying on the label.
+- **LLM-centric practice** — retrieval, generation, tool use, and agent loops are the operating vocabulary; the AI entity page links to those mechanisms rather than duplicating them.
+- **Evaluation** — behavior is measured with benchmarks, evals, and session audits rather than asserted from marketing claims; this wiki keeps the evidence with the claim.
+- **Limits** — the term is used loosely in transcripts ("very capable AI"), so the record should distinguish fluent imitation from verified capability when that distinction matters.
 
-Acronym referenced in session 13adc671
+## Corpus Notes
+Session records tag topics as AI alongside API, authentication, and platform work. The entity page exists so that acronym usage in transcripts resolves to a stable definition, and future sessions can link capability and safety questions back to this note instead of re-explaining the term. Where the transcript refers to a specific model or framework, that name, not the generic acronym, is the anchor for further reading.
 
-## Related Entities
-- Api 10 (co-occurs in 6 session(s))
-- Basemodel 10 (co-occurs in 5 session(s))
-- Toolregistry 10 (co-occurs in 5 session(s))
-- Webgeminiclient 10 (co-occurs in 4 session(s))
-- Conversationhistory 10 (co-occurs in 4 session(s))
-
-
-## Domain Context
-- **Domain:** Mobile Platform
-- **Breadcrumb:** Mobile Platform › Android Core › Api Clients › Rest Api
-- **Category size:** 449 entities
-- **Overview:** [Api Clients](../../../../../../raw/archive/junk-entities-2026-08/ai-ml/categories/core-concepts/overview.md)
-
-## References
-
-Referenced in 10 session(s):
-
-- [android, api, ast, auth +1 (1293 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebcf6.md)
-
-- [android, api, ast, auth +1 (531 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebd25.md)
-
-- [android, api, ast, auth +1 (447 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdb5.md)
-
-- [android, api, ast, auth +1 (160 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdb9.md)
-
-- [android, api, ast, auth +1 (426 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebdc5.md)
-
-- [angular, api, ast, auth +1 (930 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebe43.md)
-
-- [android, angular, api, ast +1 (628 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ebe76.md)
-
-- [android, api, ast, auth +1 (1271 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec24a.md)
-
-- [api, ast, bash, bug +1 (20 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-019ec3a4.md)
-
-- [api, ast, bash, bug +1 (54 turns)](../../../../../../raw/archive/session-artifacts-2026-07/sessions/session-13adc671.md)
-
-
-> - **Turns**: 1293
-- **Tools**: {"user":37,"exec_command":1014,"wait_agent":1,"write_stdin":204,"update_plan":31,"apply_patch":6}
-
-> 62. **exec_command**: {"cmd": "cat /data/data/com.termux/files/home/dev/codex/2b/benchmarks/runs/gold_
-63. **exec_command**: {"cmd": "cat /data/data/com.termux/files/home/dev/codex/2b/benchmarks/failu
-
-> 63. **exec_command**: {"cmd": "cat /data/data/com.termux/files/home/dev/codex/2b/benchmarks/failure_an
-64. **exec_command**: {"cmd": "ls -la /data/data/com.termux/files/home/local_ai/llama.cpp/gemma-2
+- **Historical usage** — earlier corpus sessions use AI to mean any automated software with learning or reasoning; newer sessions are precise about model names and agent architectures, and this page bridges both usages.
+## Related
+- [[wiki/concepts/agi-definitions|AGI Definitions]] — the generality boundary
+- [[wiki/ai-ml/alignment-and-values|Alignment and Values]] — behavior tracking intent
+- [[wiki/ai-ml/attention-mechanism|Attention Mechanism]] — core mechanism of LLMs
+- [[wiki/agent-systems/autonomous-agents|Autonomous Agents]] — agent systems in this corpus
+- [[wiki/ai-ml/general-intelligence-benchmarks|General Intelligence Benchmarks]] — measuring capability
+- [[wiki/ai-ml/capability-controls|Capability Controls]] — bounding what systems can do

@@ -20,6 +20,14 @@ Introspection in AI is the system's access to its own internals — either genui
 - **Tooling** — probing classifiers, activation patching, and interpretability libraries build the mechanistic route.
 - **RSIS3 parallel** — pulse self-scores are behavioral introspection, treated as telemetry and cross-checked by external checks.
 
+- **What it is for** — introspection supports debugging (finding why a behavior occurred), oversight (verifying the system's account of itself), and self-repair (deciding what to fix).
+- **Inherent limits** — language models cannot read their own weights; verbal introspection is a reconstruction from learned patterns, which is why confabulation is the default failure rather than the exception.
+- **Division of labor** — introspection is the model-side view; mechanistic interpretability is the observer-side view, and the two should be cross-checked against each other.
+- **Practical pattern** — treat introspective reports as telemetry with unknown reliability: log them, compare them to external measures, and never let a self-report override an external check.
+- **Applications** — calibrated confidence, task selection, and deciding when to stop or ask for help all depend on introspection working at least approximately.
+
+- **Evaluation** — introspection quality is measured by how well self-reports predict externally observable behavior; systems whose self-reports do not track their actions are introspectively unreliable regardless of how fluent they sound.
+
 ## Related
 - [[wiki/agent-systems/self-modeling|Self-Modeling]] — the representational layer
 - [[wiki/concepts/probing-classifiers|Probing Classifiers]] — mechanistic access

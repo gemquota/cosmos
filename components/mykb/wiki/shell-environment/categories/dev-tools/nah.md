@@ -29,7 +29,7 @@ Nah represents the challenge of handling negation and rejection in agent interac
 ## Related
 - [[wiki/llm-agents/hallucination-mitigation|Hallucination Mitigation]] — responding to corrections
 - [[wiki/prompt-engineering/adversarial-prompts|Adversarial Prompts]] — hostile inputs
-- [[wiki/agent-systems/instruction-following|Instruction Following]] — respecting direction
+- [[wiki/agent-systems/instruction-hierarchy|Instruction Hierarchy]] — respecting direction
 - [[wiki/llm-agents/human-in-the-loop|Human in the Loop]] — user involvement
 - [[wiki/prompt-engineering/error-messages-llm|Error Messages for LLMs]] — clear feedback
 - [[wiki/agent-systems/agent-evaluation|Agent Evaluation]] — measuring responsiveness

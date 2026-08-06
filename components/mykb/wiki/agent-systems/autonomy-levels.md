@@ -21,6 +21,10 @@ Autonomy levels classify how much a system does by itself versus how much a huma
 - Worked example: a research agent autonomously searches and drafts, but requires an approval gate before publishing.
 - Failed autonomy is usually a calibration failure: overconfidence in bounds, not the model.
 
+- **Levels are a governance artifact** — assigning a level is a decision about trust, recorded in policy, not a property of the model; the level names the review and audit obligations that come with it.
+- **Escalation rules** — each level defines its own fallback: when the agent exceeds confidence bounds or hits a boundary, it drops to a lower level (more human review) rather than continuing unaided.
+- **Calibration** — failed autonomy is usually a calibration failure: overconfidence in the agent's bounds or the environment's stability, not a failure of the model itself.
+- **Worked example** — a research agent autonomously searches and drafts but requires an approval gate before publishing; the level describes the whole policy, not just the agent's abilities.
 ## Related
 
 - [[wiki/llm-agents/human-in-the-loop|Human-in-the-Loop]] — the human checkpoint pattern

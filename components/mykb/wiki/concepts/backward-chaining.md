@@ -19,7 +19,7 @@ Backward chaining starts from a goal and works backward, finding rules that coul
 - Open questions: backward chaining over LLM-generated rules.
 
 ## Related
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — goal-directed reasoning
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — goal-directed reasoning
 - [[wiki/concepts/goal-regression|Goal Regression]] — the planning analog
 - [[wiki/concepts/forward-chaining|Forward Chaining]] — the data-driven counterpart
 - [[wiki/concepts/abductive-reasoning|Abductive Reasoning]] — backward inference to explanations

@@ -21,6 +21,10 @@ Agent evaluation is the discipline of scoring agent behavior against datasets, t
 - Worked example: a refactor agent is evaluated on diff quality, test pass rate, and whether it touched out-of-scope files.
 - Evaluation data feeds back into mykb gap analysis to target weak areas.
 
+- **Eval sets evolve** — the task set should track the agent's actual workload; stale eval sets certify obsolete behaviors, so evals are versioned and re-weighted as capabilities change.
+- **Guardrail metrics** — safety incidents, out-of-scope actions, and refusal correctness are evaluated separately from task success, so a fast-but-unsafe agent cannot pass on accuracy alone.
+- **Regression harness** — a golden set of previously fixed bugs reruns on every change, catching regressions before they reach production.
+- **Environment fidelity** — the closer the eval harness matches production (real tools, real data, real latency), the more predictive the scores are; simulated environments are convenient but optimistic.
 ## Related
 - [[wiki/llm-agents/success-criteria|Success Criteria]] — the per-task targets evaluation checks
 - [[wiki/llm-agents/traceability|Traceability]] — linking outcomes back to actions for blame

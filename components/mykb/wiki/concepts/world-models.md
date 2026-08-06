@@ -26,7 +26,7 @@ World models are the agent's internal representation of how its environment work
 - For mykb, world models are documented as the predictive engine behind the perception loop and belief states.
 
 ## Related
-- [[wiki/agent-systems/planning-systems|Planning Systems]]
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]]
 - [[wiki/concepts/belief-states|Belief States]]
 - [[wiki/concepts/active-inference|Active Inference]]
 - [[wiki/concepts/free-energy-principle|Free Energy Principle]]

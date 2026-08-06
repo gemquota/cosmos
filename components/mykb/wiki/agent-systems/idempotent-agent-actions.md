@@ -21,6 +21,10 @@ An action is idempotent if executing it multiple times produces the same final s
 - **Failure modes** — non-idempotent payment or email actions repeated by a retry loop are the classic incident.
 - **mykb relevance** — RSIS3 checkpoint-rollback semantics assume actions can be replayed, which requires idempotent writes.
 
+- **Idempotency keys** — for non-idempotent operations, the caller generates a unique key per logical action and the service deduplicates by it, so a retried call with the same key has no second effect.
+- **Compensation as fallback** — when an action cannot be made idempotent, the alternative is a compensating action (undo, refund) that makes the sequence repeatable by design.
+- **Schema discipline** — tools should declare idempotency in their schemas so the planner and retry layer can treat repeatability as a first-class property instead of a guess.
+
 ## Related
 - [[wiki/prompt-engineering/tool-schema-design|Tool Schema Design]] — declaring idempotency in tool schemas
 - [[wiki/llm-agents/api-key-management-llm|API Key Management for LLMs]] — credentials for retried calls

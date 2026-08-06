@@ -31,4 +31,4 @@ Spaced Repetition Systems — Schedulers that time reviews at expanding interval
 - [[wiki/memory/spacing-effect|Spacing Effect]] — empirical basis
 - [[wiki/memory/flashcard-design|Flashcard Design]] — item quality
 - [[wiki/memory/spaced-repetition|Spaced Repetition]] — existing wiki article
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — existing wiki article
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — existing wiki article

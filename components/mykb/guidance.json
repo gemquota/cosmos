@@ -1,0 +1,398 @@
+{
+ "built": "2026-08-06T09:59:56+00:00",
+ "total": {
+  "pages": 5273,
+  "stubs": 1493,
+  "stub_pct": 28
+ },
+ "areas": [
+  {
+   "area": "concepts",
+   "pages": 635,
+   "stubs": 381,
+   "stub_pct": 60,
+   "avg_words": 207
+  },
+  {
+   "area": "data-storage",
+   "pages": 468,
+   "stubs": 203,
+   "stub_pct": 43,
+   "avg_words": 194
+  },
+  {
+   "area": "infrastructure",
+   "pages": 214,
+   "stubs": 80,
+   "stub_pct": 37,
+   "avg_words": 290
+  },
+  {
+   "area": "software-engineering",
+   "pages": 165,
+   "stubs": 77,
+   "stub_pct": 47,
+   "avg_words": 203
+  },
+  {
+   "area": "meta-learning",
+   "pages": 163,
+   "stubs": 72,
+   "stub_pct": 44,
+   "avg_words": 205
+  },
+  {
+   "area": "memory",
+   "pages": 177,
+   "stubs": 72,
+   "stub_pct": 41,
+   "avg_words": 216
+  },
+  {
+   "area": "ai-ml",
+   "pages": 188,
+   "stubs": 55,
+   "stub_pct": 29,
+   "avg_words": 244
+  },
+  {
+   "area": "tooling",
+   "pages": 93,
+   "stubs": 54,
+   "stub_pct": 58,
+   "avg_words": 193
+  },
+  {
+   "area": "dev-tools",
+   "pages": 131,
+   "stubs": 48,
+   "stub_pct": 37,
+   "avg_words": 230
+  },
+  {
+   "area": "compositions",
+   "pages": 72,
+   "stubs": 47,
+   "stub_pct": 65,
+   "avg_words": 156
+  },
+  {
+   "area": "devops-infra",
+   "pages": 237,
+   "stubs": 46,
+   "stub_pct": 19,
+   "avg_words": 270
+  },
+  {
+   "area": "communities",
+   "pages": 54,
+   "stubs": 43,
+   "stub_pct": 80,
+   "avg_words": 167
+  },
+  {
+   "area": "ml-frameworks",
+   "pages": 80,
+   "stubs": 43,
+   "stub_pct": 54,
+   "avg_words": 199
+  },
+  {
+   "area": "security-auth",
+   "pages": 260,
+   "stubs": 35,
+   "stub_pct": 13,
+   "avg_words": 289
+  },
+  {
+   "area": "android-core",
+   "pages": 60,
+   "stubs": 32,
+   "stub_pct": 53,
+   "avg_words": 186
+  },
+  {
+   "area": "testing",
+   "pages": 147,
+   "stubs": 21,
+   "stub_pct": 14,
+   "avg_words": 186
+  },
+  {
+   "area": "api-services",
+   "pages": 236,
+   "stubs": 21,
+   "stub_pct": 9,
+   "avg_words": 301
+  },
+  {
+   "area": "prompt-engineering",
+   "pages": 87,
+   "stubs": 20,
+   "stub_pct": 23,
+   "avg_words": 254
+  },
+  {
+   "area": "questions",
+   "pages": 22,
+   "stubs": 19,
+   "stub_pct": 86,
+   "avg_words": 124
+  },
+  {
+   "area": "mobile-platform",
+   "pages": 48,
+   "stubs": 19,
+   "stub_pct": 40,
+   "avg_words": 183
+  },
+  {
+   "area": "syntheses",
+   "pages": 54,
+   "stubs": 17,
+   "stub_pct": 31,
+   "avg_words": 303
+  },
+  {
+   "area": "decisions",
+   "pages": 33,
+   "stubs": 12,
+   "stub_pct": 36,
+   "avg_words": 226
+  },
+  {
+   "area": "security",
+   "pages": 35,
+   "stubs": 10,
+   "stub_pct": 29,
+   "avg_words": 239
+  },
+  {
+   "area": "cloud-infra",
+   "pages": 138,
+   "stubs": 10,
+   "stub_pct": 7,
+   "avg_words": 278
+  },
+  {
+   "area": "identity",
+   "pages": 35,
+   "stubs": 9,
+   "stub_pct": 26,
+   "avg_words": 323
+  },
+  {
+   "area": "api-protocols",
+   "pages": 277,
+   "stubs": 9,
+   "stub_pct": 3,
+   "avg_words": 319
+  },
+  {
+   "area": "pulses",
+   "pages": 12,
+   "stubs": 8,
+   "stub_pct": 67,
+   "avg_words": 178
+  },
+  {
+   "area": "os-shell",
+   "pages": 175,
+   "stubs": 6,
+   "stub_pct": 3,
+   "avg_words": 291
+  },
+  {
+   "area": "frontend",
+   "pages": 269,
+   "stubs": 5,
+   "stub_pct": 2,
+   "avg_words": 270
+  },
+  {
+   "area": "llm-agents",
+   "pages": 75,
+   "stubs": 4,
+   "stub_pct": 5,
+   "avg_words": 304
+  },
+  {
+   "area": "episodes",
+   "pages": 4,
+   "stubs": 3,
+   "stub_pct": 75,
+   "avg_words": 132
+  },
+  {
+   "area": "js-ts-ecosystem",
+   "pages": 24,
+   "stubs": 3,
+   "stub_pct": 12,
+   "avg_words": 295
+  },
+  {
+   "area": "frontend-frameworks",
+   "pages": 109,
+   "stubs": 3,
+   "stub_pct": 3,
+   "avg_words": 362
+  },
+  {
+   "area": "shell-environment",
+   "pages": 93,
+   "stubs": 3,
+   "stub_pct": 3,
+   "avg_words": 325
+  },
+  {
+   "area": "agent-systems",
+   "pages": 181,
+   "stubs": 2,
+   "stub_pct": 1,
+   "avg_words": 340
+  },
+  {
+   "area": "web-platforms",
+   "pages": 159,
+   "stubs": 1,
+   "stub_pct": 1,
+   "avg_words": 303
+  },
+  {
+   "area": "development",
+   "pages": 48,
+   "stubs": 0,
+   "stub_pct": 0,
+   "avg_words": 343
+  },
+  {
+   "area": "entities",
+   "pages": 8,
+   "stubs": 0,
+   "stub_pct": 0,
+   "avg_words": 235
+  },
+  {
+   "area": "experiments",
+   "pages": 1,
+   "stubs": 0,
+   "stub_pct": 0,
+   "avg_words": 135
+  },
+  {
+   "area": "ops",
+   "pages": 1,
+   "stubs": 0,
+   "stub_pct": 0,
+   "avg_words": 241
+  },
+  {
+   "area": "plans",
+   "pages": 1,
+   "stubs": 0,
+   "stub_pct": 0,
+   "avg_words": 138
+  },
+  {
+   "area": "profile.md",
+   "pages": 1,
+   "stubs": 0,
+   "stub_pct": 0,
+   "avg_words": 194
+  },
+  {
+   "area": "projects",
+   "pages": 1,
+   "stubs": 0,
+   "stub_pct": 0,
+   "avg_words": 250
+  },
+  {
+   "area": "reflections",
+   "pages": 1,
+   "stubs": 0,
+   "stub_pct": 0,
+   "avg_words": 264
+  },
+  {
+   "area": "sources",
+   "pages": 1,
+   "stubs": 0,
+   "stub_pct": 0,
+   "avg_words": 204
+  }
+ ],
+ "focus": [
+  {
+   "area": "concepts",
+   "pages": 635,
+   "stubs": 381,
+   "stub_pct": 60,
+   "note": "highest stub burden — prioritize enrichment"
+  },
+  {
+   "area": "data-storage",
+   "pages": 468,
+   "stubs": 203,
+   "stub_pct": 43,
+   "note": "stub backlog — next enrichment wave"
+  },
+  {
+   "area": "infrastructure",
+   "pages": 214,
+   "stubs": 80,
+   "stub_pct": 37,
+   "note": "stub backlog — next enrichment wave"
+  },
+  {
+   "area": "software-engineering",
+   "pages": 165,
+   "stubs": 77,
+   "stub_pct": 47,
+   "note": "stub backlog — next enrichment wave"
+  },
+  {
+   "area": "meta-learning",
+   "pages": 163,
+   "stubs": 72,
+   "stub_pct": 44,
+   "note": "stub backlog — next enrichment wave"
+  },
+  {
+   "area": "memory",
+   "pages": 177,
+   "stubs": 72,
+   "stub_pct": 41,
+   "note": "stub backlog — next enrichment wave"
+  },
+  {
+   "area": "ai-ml",
+   "pages": 188,
+   "stubs": 55,
+   "stub_pct": 29,
+   "note": "stub backlog — next enrichment wave"
+  },
+  {
+   "area": "tooling",
+   "pages": 93,
+   "stubs": 54,
+   "stub_pct": 58,
+   "note": "highest stub burden — prioritize enrichment"
+  },
+  {
+   "area": "dev-tools",
+   "pages": 131,
+   "stubs": 48,
+   "stub_pct": 37,
+   "note": "stub backlog — next enrichment wave"
+  },
+  {
+   "area": "compositions",
+   "pages": 72,
+   "stubs": 47,
+   "stub_pct": 65,
+   "note": "highest stub burden — prioritize enrichment"
+  }
+ ],
+ "queue": null
+}

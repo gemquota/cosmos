@@ -21,6 +21,10 @@ Budget and quota control caps what an agent may consume — tokens, dollars, API
 - **Accounting** — token-usage tracking and per-agent ledger entries make budget decisions data-driven.
 - **mykb relevance** — RSIS3 telemetry and cost accounting feed exactly this kind of quota control for its loops.
 
+- **Budget types** — hard caps (abort at limit), soft caps (warn and finalize), and tiered budgets (raise after verified performance) each fit different risk profiles.
+- **Auditable accounting** — every charge is logged against the run that caused it, so a budget breach traces to the responsible loop step rather than a vague monthly bill.
+- **Failure behavior** — when a budget is exhausted, the agent must degrade gracefully: checkpoint, write a summary, and escalate, never silently continue or corrupt state.
+- **Interplay with autonomy** — higher budgets enable longer autonomous runs, and approval gates often trigger at budget thresholds, so budget policy and autonomy policy are set together.
 ## Related
 - [[wiki/testing/token-usage-tracking|Token Usage Tracking]] — ledger for tokens
 - [[wiki/testing/cost-per-token-tradeoffs|Cost per Token Tradeoffs]] — unit economics of budgets

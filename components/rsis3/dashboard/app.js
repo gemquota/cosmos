@@ -330,6 +330,7 @@ document.addEventListener('mouseover', function(e){
   if(e.target.tagName==='CANVAS') return;
   var t = e.target.closest('[data-tt]');
   if(!t) return;
+  if(t.classList.contains('tb') && window.matchMedia && window.matchMedia('(hover: none)').matches) return;
   var key = t.getAttribute('data-tt');
   var existing = t.querySelector('.tooltip');
   if(existing) { existing.classList.add('show'); return; }
@@ -427,7 +428,7 @@ function getGraphInfo(name){
 }
 
 function getTabInfo(name){
-  var d={overview:'Summary stats, success rate, layer scores.',pulses:'20 pulses with embedded goals, conversations, and evaluation results.',kg:'Interactive knowledge graph.',graphs:'Full chart suite: decisions, trends, durations, constraints, radar.',constraints:'Constraint frequency and lock rate analysis.',loops:'Nine-loop stack: targets, tuned params, last signal, run counts (static snapshot from loops.json).',mykb:'Wiki browser + knowledge graph (lazy-loaded iframes).',space:'SPACE web UI + spec viewer (lazy-loaded iframes).'};
+  var d={overview:'Summary stats, success rate, layer scores.',pulses:'20 pulses with embedded goals, conversations, and evaluation results.',kg:'Interactive knowledge graph.',graphs:'Full chart suite: decisions, trends, durations, constraints, radar.',constraints:'Constraint frequency and lock rate analysis.',loops:'Nine-loop stack: targets, tuned params, last signal, run counts (static snapshot from loops.json).',mykb:'Wiki browser, knowledge graph, stats, guidance (stub review, feedback & research direction).',space:'SPACE web UI + spec viewer (lazy-loaded iframes).'};
   return '<h4>'+name.charAt(0).toUpperCase()+name.slice(1)+' Tab</h4><p>'+(d[name]||'Dashboard tab.')+'</p>';
 }
 

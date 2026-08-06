@@ -21,6 +21,10 @@ Market-based coordination allocates agent tasks and resources through prices rat
 - **Relationship to RLHF** — reward signals and markets both shape agent behavior through incentives; Goodhart's law applies to both.
 - **mykb relevance** — relevant when RSIS3-style systems outsource work to heterogeneous agent pools with cost constraints.
 
+- **Reserve prices** — a reserve price (minimum acceptable bid) prevents dumping work below cost and protects against collusive underpricing.
+- **Fairness and budgets** — unconstrained bidding concentrates work in well-resourced agents; per-agent budgets and diversity quotas keep the market from entrenching advantage.
+- **Auditability** — every bid, allocation, and price should be logged so the market's outcomes can be explained and challenged, which is what separates a market from a black box.
+
 ## Related
 - [[wiki/agent-systems/agent-consensus|Agent Consensus]] — alternative coordination mechanism
 - [[wiki/agent-systems/agent-cost-optimization|Agent Cost Optimization]] — cost as the market signal

@@ -23,6 +23,9 @@ An agent state machine defines the discrete states a run can be in — idle, pla
 - **Transition table** — states (idle, planning, acting, awaiting-approval, done, failed) with events that move between them; unexpected events route to error handling.
 - **Tooling** — LangGraph-style graphs encode states explicitly, making loops, retries, and human interrupts inspectable.
 
+- **Transition guards** — each transition carries a guard (permission, precondition, timeout) so illegal moves fail loudly instead of silently corrupting state.
+- **Recovery paths** — failed states define explicit recovery: retry with backoff, escalate to a human, or roll back; undefined failure paths are where hangs happen.
+- **Visualization** — rendering the state machine makes the agent's legal behaviors reviewable before deployment.
 ## Related
 - [[wiki/agent-systems/plan-execute-observe|Plan-Execute-Observe]] — the loop states formalize
 - [[wiki/agent-systems/session-state-machine|Session State Machine]] — existing state machine pattern

@@ -19677,6 +19677,38 @@
   ]
  },
  {
+  "path": "raw/archive/stub-audit-2026-08-06/agent-systems/honest-signaling.md",
+  "type": "concept",
+  "title": "Honest Signaling",
+  "tags": [
+   "honest",
+   "signaling",
+   "communication"
+  ]
+ },
+ {
+  "path": "raw/archive/stub-audit-2026-08-06/agent-systems/instruction-following.md",
+  "type": "concept",
+  "title": "Instruction Following",
+  "tags": [
+   "instruction-following",
+   "llm",
+   "compliance"
+  ]
+ },
+ {
+  "path": "raw/archive/stub-audit-2026-08-06/agent-systems/planning-systems.md",
+  "type": "concept",
+  "title": "Planning Systems",
+  "tags": [
+   "planning",
+   "architecture",
+   "search",
+   "agents",
+   "llm"
+  ]
+ },
+ {
   "path": "raw/assets/README.md",
   "type": "readme",
   "title": "assets directory",
@@ -20823,16 +20855,6 @@
   ]
  },
  {
-  "path": "wiki/agent-systems/honest-signaling.md",
-  "type": "concept",
-  "title": "Honest Signaling",
-  "tags": [
-   "honest",
-   "signaling",
-   "communication"
-  ]
- },
- {
   "path": "wiki/agent-systems/horizon-length.md",
   "type": "concept",
   "title": "Horizon Length",
@@ -20885,16 +20907,6 @@
    "inference",
    "llm",
    "chain-of-thought"
-  ]
- },
- {
-  "path": "wiki/agent-systems/instruction-following.md",
-  "type": "concept",
-  "title": "Instruction Following",
-  "tags": [
-   "instruction-following",
-   "llm",
-   "compliance"
   ]
  },
  {
@@ -21161,18 +21173,6 @@
    "loop",
    "planning",
    "control"
-  ]
- },
- {
-  "path": "wiki/agent-systems/planning-systems.md",
-  "type": "concept",
-  "title": "Planning Systems",
-  "tags": [
-   "planning",
-   "architecture",
-   "search",
-   "agents",
-   "llm"
   ]
  },
  {
@@ -22012,12 +22012,10 @@
   "type": "entity",
   "title": "AGI",
   "tags": [
-   "acronym",
-   "android",
-   "api",
-   "ast",
-   "auth",
-   "entity"
+   "entity",
+   "agi",
+   "artificial-intelligence",
+   "capability"
   ]
  },
  {
@@ -22025,15 +22023,11 @@
   "type": "entity",
   "title": "AI",
   "tags": [
-   "acronym",
-   "android",
-   "angular",
-   "api",
-   "ast",
-   "auth",
-   "bash",
-   "bug",
-   "entity"
+   "entity",
+   "ai",
+   "artificial-intelligence",
+   "llm",
+   "agents"
   ]
  },
  {
@@ -22634,7 +22628,8 @@
   "tags": [
    "hallucination",
    "benchmarks",
-   "safety"
+   "evaluation",
+   "factuality"
   ]
  },
  {

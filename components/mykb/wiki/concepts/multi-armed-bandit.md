@@ -21,7 +21,7 @@ The multi-armed bandit is the sequential decision problem where each pull of an 
 - RSIS3 relevance: choosing which improvement experiment to run next is a bandit problem — each candidate pass type is an arm with unknown payoff, and the loop should explore new pass types while exploiting the ones that have historically improved metrics.
 
 ## Related
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — bandits as a planning simplification
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — bandits as a planning simplification
 - [[wiki/concepts/exploration-exploitation|Exploration-Exploitation]] — the core trade-off
 - [[wiki/concepts/monte-carlo-tree-search|Monte Carlo Tree Search]] — bandits inside tree search
 - [[wiki/concepts/q-learning|Q-Learning]] — the full RL generalization

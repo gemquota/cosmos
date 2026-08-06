@@ -21,6 +21,9 @@ Browser and computer agents interact with the world through human interfaces —
 - **Worked example** — a form-filling agent logs in (via injected session, never passwords), fills fields, submits, and verifies the success page.
 - **mykb relevance** — relevant to RSIS3 workflows that must interact with web dashboards and external tools without APIs.
 
+- **Reliability engineering** — the interface is noisy and slow, so agents verify after every action: check the resulting page state, retry on transient failures, and stop when verification fails twice.
+- **Session hygiene** — credentials are injected per session and never typed from prompts; sessions are sandboxed and replayable for audit.
+- **Scope limits** — browser agents are often limited to a domain or task pattern, with navigation to out-of-scope hosts blocked; this contains the blast radius of a bad click.
 ## Related
 - [[wiki/agent-systems/agent-sandboxing-variants|Agent Sandboxing Variants]] — sandboxing browser agents
 - [[wiki/llm-agents/grounding-vision-to-text|Grounding Vision to Text]] — vision observations

@@ -26,4 +26,4 @@ Estimation techniques turn uncertain work into usable planning ranges — story 
 - [[wiki/software-engineering/agile-ceremonies|Agile Ceremonies]] — estimation happens inside sprint ceremonies
 - [[wiki/software-engineering/code-review|Code Review]] — review load should be included in estimates
 - [[wiki/memory/spaced-repetition|Spaced Repetition]] — scheduling analog for reviewing knowledge
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — agents plan under the same uncertainty
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — agents plan under the same uncertainty

@@ -21,6 +21,10 @@ Identity and continuity are what make an agent recognizably the same entity from
 - Continuity also implies change control: identity updates are versioned, not silent.
 - Worked example: a long-running wiki agent remembers its curation rules and past decisions across restarts.
 
+- **Trust and accountability** — continuity is a precondition for trust: an entity that forgets its commitments cannot keep them, and an entity that is not recognizably the same cannot be held accountable for past decisions.
+- **Failure modes** — identity breaks through restore-from-stale-snapshot (reverting to an earlier self), fork divergence (two sessions evolving different policies), and silent persona drift.
+- **Practical storage** — identity lives in a versioned, diffable file (goals, constraints, history) that is reloaded each session and itself subject to review, so identity changes are explicit rather than accidental.
+
 ## Related
 
 - [[wiki/llm-agents/agent-personas|Agent Personas]] — the surface expression of identity

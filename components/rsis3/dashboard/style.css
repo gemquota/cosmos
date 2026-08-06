@@ -11,37 +11,39 @@ body{background:#0f172a;color:#e2e8f0;font-family:ui-sans-serif,system-ui,sans-s
 .arrow.rot{transform:rotate(180deg)}
 
 .tooltip-wrap{position:relative;display:inline-block;cursor:help}
-.tooltip-wrap .tooltip{visibility:hidden;opacity:0;position:absolute;z-index:100;bottom:calc(100%+8px);left:50%;transform:translateX(-50%);background:#1e293b;border:1px solid #334155;border-radius:12px;padding:16px;width:320px;max-height:400px;overflow-y:auto;box-shadow:0 10px 40px rgba(0,0,0,0.5);transition:opacity .2s,visibility .2s;font-size:12px;line-height:1.6;color:#cbd5e1;text-align:left;cursor:default;pointer-events:auto}
-.tooltip-wrap .tooltip.show{visibility:visible;opacity:1}
-.tooltip-wrap .tooltip h4{color:#e2e8f0;font-size:13px;font-weight:700;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #334155}
-.tooltip-wrap .tooltip p{margin-bottom:6px;font-size:11px;line-height:1.5}
-.tooltip-wrap .tooltip table{width:100%;border-collapse:collapse;margin:6px 0;font-size:10px}
-.tooltip-wrap .tooltip table th,.tooltip-wrap .tooltip table td{padding:4px 6px;border:1px solid #334155;text-align:left}
-.tooltip-wrap .tooltip table th{background:#0f172a;color:#94a3b8;font-weight:600}
-.tooltip-wrap .tooltip table td{color:#cbd5e1}
-.tooltip-wrap .tooltip ul{margin:4px 0;padding-left:16px}
-.tooltip-wrap .tooltip .tt-metric{display:flex;justify-content:space-between;padding:2px 0;font-size:11px;border-bottom:1px solid #1e293b}
-.tooltip-wrap .tooltip .tt-metric .tt-label{color:#94a3b8}
-.tooltip-wrap .tooltip .tt-metric .tt-val{color:#e2e8f0;font-weight:600}
-.tooltip-wrap .tooltip.tt-wide{width:400px;max-height:500px}
-.tooltip-wrap .tooltip .tt-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0;padding:4px 0}
-.tooltip-wrap .tooltip .tt-grid-item{background:#0f172a;border-radius:6px;padding:6px;text-align:center}
-.tooltip-wrap .tooltip .tt-grid-item .tt-gv{font-size:16px;font-weight:700;color:#e2e8f0}
-.tooltip-wrap .tooltip .tt-grid-item .tt-gl{font-size:9px;color:#64748b;text-transform:uppercase}
-.tooltip-wrap .tooltip .tt-section{border-top:1px solid #1e293b;padding-top:6px;margin-top:6px}
-.tooltip-wrap .tooltip .tt-tag{display:inline-block;padding:1px 6px;border-radius:4px;font-size:9px;font-weight:600;margin:1px}
-.tooltip-wrap .tooltip .tt-tag.amber{background:rgba(245,158,11,0.15);color:#f59e0b;border:1px solid rgba(245,158,11,0.3)}
-.tooltip-wrap .tooltip .tt-tag.green{background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3)}
-.tooltip-wrap .tooltip .tt-tag.rose{background:rgba(244,67,54,0.15);color:#f43f5e;border:1px solid rgba(244,67,54,0.3)}
-.tooltip-wrap .tooltip .tt-tag.indigo{background:rgba(99,102,241,0.15);color:#818cf8;border:1px solid rgba(99,102,241,0.3)}
-.tooltip-wrap .tooltip .tt-minibar{display:flex;gap:4px;align-items:center;margin:4px 0;font-size:9px}
-.tooltip-wrap .tooltip .tt-minibar .tt-mb-label{width:80px;text-align:right;color:#94a3b8;flex-shrink:0}
-.tooltip-wrap .tooltip .tt-minibar .tt-mb-track{flex:1;height:10px;background:#1e293b;border-radius:5px;overflow:hidden}
-.tooltip-wrap .tooltip .tt-minibar .tt-mb-fill{height:100%;border-radius:5px;transition:width .3s}
-.tooltip-wrap .tooltip .tt-phase{display:inline-block;padding:0 5px;border-radius:3px;font-size:8px;font-weight:700;text-transform:uppercase}
-.tooltip-wrap .tooltip .tt-phase.oe{background:rgba(99,102,241,0.2);color:#818cf8}
-.tooltip-wrap .tooltip .tt-phase.mc{background:rgba(245,158,11,0.2);color:#fbbf24}
-.tooltip-wrap .tooltip .tt-phase.pb{background:rgba(16,185,129,0.2);color:#34d399}
+.tooltip{visibility:hidden;opacity:0;position:absolute;z-index:100;bottom:calc(100%+8px);left:50%;transform:translateX(-50%);background:#1e293b;border:1px solid #334155;border-radius:12px;padding:16px;width:320px;max-height:400px;overflow-y:auto;box-shadow:0 10px 40px rgba(0,0,0,0.5);transition:opacity .2s,visibility .2s;font-size:12px;line-height:1.6;color:#cbd5e1;text-align:left;cursor:default;pointer-events:auto}
+/* Nav-tab tooltips drop below the tab bar so they never clip off the top edge */
+.tb .tooltip{bottom:auto;top:calc(100%+8px)}
+.tooltip.show{visibility:visible;opacity:1}
+.tooltip h4{color:#e2e8f0;font-size:13px;font-weight:700;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #334155}
+.tooltip p{margin-bottom:6px;font-size:11px;line-height:1.5}
+.tooltip table{width:100%;border-collapse:collapse;margin:6px 0;font-size:10px}
+.tooltip table th,.tooltip table td{padding:4px 6px;border:1px solid #334155;text-align:left}
+.tooltip table th{background:#0f172a;color:#94a3b8;font-weight:600}
+.tooltip table td{color:#cbd5e1}
+.tooltip ul{margin:4px 0;padding-left:16px}
+.tooltip .tt-metric{display:flex;justify-content:space-between;padding:2px 0;font-size:11px;border-bottom:1px solid #1e293b}
+.tooltip .tt-metric .tt-label{color:#94a3b8}
+.tooltip .tt-metric .tt-val{color:#e2e8f0;font-weight:600}
+.tooltip.tt-wide{width:400px;max-height:500px}
+.tooltip .tt-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0;padding:4px 0}
+.tooltip .tt-grid-item{background:#0f172a;border-radius:6px;padding:6px;text-align:center}
+.tooltip .tt-grid-item .tt-gv{font-size:16px;font-weight:700;color:#e2e8f0}
+.tooltip .tt-grid-item .tt-gl{font-size:9px;color:#64748b;text-transform:uppercase}
+.tooltip .tt-section{border-top:1px solid #1e293b;padding-top:6px;margin-top:6px}
+.tooltip .tt-tag{display:inline-block;padding:1px 6px;border-radius:4px;font-size:9px;font-weight:600;margin:1px}
+.tooltip .tt-tag.amber{background:rgba(245,158,11,0.15);color:#f59e0b;border:1px solid rgba(245,158,11,0.3)}
+.tooltip .tt-tag.green{background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3)}
+.tooltip .tt-tag.rose{background:rgba(244,67,54,0.15);color:#f43f5e;border:1px solid rgba(244,67,54,0.3)}
+.tooltip .tt-tag.indigo{background:rgba(99,102,241,0.15);color:#818cf8;border:1px solid rgba(99,102,241,0.3)}
+.tooltip .tt-minibar{display:flex;gap:4px;align-items:center;margin:4px 0;font-size:9px}
+.tooltip .tt-minibar .tt-mb-label{width:80px;text-align:right;color:#94a3b8;flex-shrink:0}
+.tooltip .tt-minibar .tt-mb-track{flex:1;height:10px;background:#1e293b;border-radius:5px;overflow:hidden}
+.tooltip .tt-minibar .tt-mb-fill{height:100%;border-radius:5px;transition:width .3s}
+.tooltip .tt-phase{display:inline-block;padding:0 5px;border-radius:3px;font-size:8px;font-weight:700;text-transform:uppercase}
+.tooltip .tt-phase.oe{background:rgba(99,102,241,0.2);color:#818cf8}
+.tooltip .tt-phase.mc{background:rgba(245,158,11,0.2);color:#fbbf24}
+.tooltip .tt-phase.pb{background:rgba(16,185,129,0.2);color:#34d399}
 
 
 /* Dashboard responsive overrides */
