@@ -11,6 +11,7 @@ Usage:
     python -m rsis metacog           # L7 meta-cog loop (tunes L4 params)
     python -m rsis metameta          # L8 meta-meta loop (tunes L5 params)
     python -m rsis mmm               # L9 MMM loop (tunes L6 params)
+    python -m rsis drive --loop l4   # Run a loop until its completion requirement is met
     python -m rsis dashboard         # Start web dashboard
     python -m rsis status            # System overview
     python -m rsis check             # Check resource limits
@@ -460,6 +461,180 @@ def cmd_mmm(args: argparse.Namespace) -> int:
     return 0
 
 
+
+def _drive_cycle(loop_name, goal, telemetry, checkpoint, memory, evaluator,
+                 recovery, holder):
+    """Run one cycle of `loop_name`; return (done, satisfied, reason).
+
+    `done` is True when the loop reached a terminal state — either its
+    completion requirement is satisfied (satisfied=True) or it can make no
+    further progress on its own (satisfied=False, e.g. L2 ran out of
+    attempts or L4 has too few outcomes to tune).
+    """
+    if loop_name == "l2":
+        l2 = L2ImprovementLoop(
+            telemetry=telemetry, evaluator=evaluator,
+            checkpoint_mgr=checkpoint, recovery=recovery)
+        budget = Budget(
+            max_iterations=CONFIG.l2.max_improvement_attempts,
+            max_time_s=CONFIG.l2.session_timeout_s, label="L2 session")
+        with deadline(CONFIG.l2.session_timeout_s, "L2 session"):
+            result = l2.run_session(goal, budget=budget)
+        if result.success and result.applied:
+            return True, True, (
+                f"improvement applied after {result.attempts} attempt(s)")
+        if result.attempts >= CONFIG.l2.max_improvement_attempts:
+            return True, False, (
+                f"{result.attempts} attempt(s) with no applied improvement — "
+                "raise l2.max_improvement_attempts or adjust the goal")
+        return False, False, f"attempt {result.attempts} failed, retrying"
+
+    if loop_name == "l3":
+        l3 = L3EvolutionLoop(telemetry=telemetry, memory=memory)
+        budget = Budget(
+            max_iterations=1, max_time_s=CONFIG.l3.plateau_timeout_s,
+            label="L3 evolution")
+        with deadline(CONFIG.l3.plateau_timeout_s, "L3 evolution"):
+            result = l3.run_cycle(budget=budget)
+        if not result.success:
+            return True, False, f"L3 cycle failed: {result.error}"
+        # L3 always emits a routine budget strategy, so a plateau means no
+        # new insights, no redundancy prunes and no regression-driven focus
+        # strategies (i.e. only the routine "budget=..." entry).
+        converged = (result.insights_added == 0
+                     and len(result.strategies_evolved) <= 1
+                     and result.redundancies_pruned == 0)
+        if converged:
+            return True, True, (
+                "evolution plateau — no new insights, focus strategies or "
+                "redundancies to act on")
+        return False, False, (
+            f"added {result.insights_added} insight(s), "
+            f"{len(result.strategies_evolved)} strategy(ies), "
+            f"pruned {result.redundancies_pruned} redundancy(ies)")
+
+    if loop_name == "l4":
+        l4 = OptimizerLoop(telemetry=telemetry, memory=memory,
+                           evaluator=evaluator, checkpoint_mgr=checkpoint)
+        budget = Budget(
+            max_iterations=1, max_time_s=CONFIG.l4.cycle_timeout_s,
+            label="L4 optimizer")
+        with deadline(CONFIG.l4.cycle_timeout_s, "L4 optimizer"):
+            result = l4.run_cycle(budget=budget)
+        if not result.success:
+            return True, False, f"L4 cycle failed: {result.error}"
+        if result.skipped:
+            return True, False, (
+                f"only {result.outcome_stats.get('count', 0)} outcome(s) "
+                f"< l4.min_outcomes={CONFIG.l4.min_outcomes} — run L2 "
+                "sessions first")
+        if not result.changed:
+            sr = result.outcome_stats.get('success_rate', 0)
+            return True, True, (
+                f"success rate {sr:.2f} within target band "
+                f"[{CONFIG.l4.target_success_low:.2f}, "
+                f"{CONFIG.l4.target_success_high:.2f}] — no deltas proposed")
+        return False, False, (
+            f"tuned {len(result.deltas)} parameter(s), re-checking band")
+
+    if loop_name == "l5":
+        l5 = EvolutionLoop(telemetry=telemetry, memory=memory,
+                           evaluator=evaluator, checkpoint_mgr=checkpoint)
+        budget = Budget(
+            max_iterations=1, max_time_s=CONFIG.l5.cycle_timeout_s,
+            label="L5 evolution")
+        with deadline(CONFIG.l5.cycle_timeout_s, "L5 evolution"):
+            result = l5.run_cycle(budget=budget)
+        if not result.success:
+            return True, False, f"L5 cycle failed: {result.error}"
+        best = (result.best_strategy.get('fitness', 0.0)
+                if result.best_strategy else 0.0)
+        prev = holder.get('l5_best')
+        if prev is not None and best <= prev + 0.005:
+            return True, True, (
+                f"fitness plateau (best {best:.4f} vs previous {prev:.4f})")
+        holder['l5_best'] = best
+        return False, False, (
+            f"generation {result.generation} best fitness {best:.4f}, "
+            "continuing")
+
+    cls = {"l6": IdentityLoop, "l7": MetaCogLoop,
+           "l8": MetaMetaLoop, "l9": MMMLoop}[loop_name]
+    loop = cls(telemetry=telemetry, memory=memory, evaluator=evaluator,
+               checkpoint_mgr=checkpoint)
+    cfg = getattr(CONFIG, loop_name)
+    label = f"{loop_name.upper()} tuning"
+    budget = Budget(max_iterations=1, max_time_s=cfg.cycle_timeout_s,
+                    label=label)
+    with deadline(cfg.cycle_timeout_s, label):
+        result = loop.run_cycle(budget=budget)
+    if not result.success:
+        return True, False, f"{loop_name.upper()} cycle failed: {result.error}"
+    if not result.changed:
+        return True, True, "no tuning signal — band stable"
+    return False, False, f"applied deltas {result.deltas}, re-checking"
+
+
+def cmd_drive(args: argparse.Namespace) -> int:
+    """Drive a loop until its completion requirement is satisfied.
+
+    Each cycle runs the loop once (the same code path as the one-shot
+    commands); after every cycle the completion requirement for that loop is
+    checked and the driver stops when it is met, when the loop is terminally
+    stuck, or when the cycle/time budget runs out.
+    """
+    loop_name = (args.loop or "l2").strip().lower()
+    if loop_name not in ("l2", "l3", "l4", "l5", "l6", "l7", "l8", "l9"):
+        print(f"  ✗ Unknown loop '{args.loop}' — choose from l2..l9")
+        return 1
+
+    max_cycles = max(1, args.max_cycles or 10)
+    time_budget_s = float(args.timeout or 24 * 3600)
+    sleep_s = max(0.0, float(args.sleep or 0))
+    goal = args.goal or "self-improve the codebase"
+    holder = {}
+    started = time.time()
+
+    telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    enforcer.start()
+    telemetry.start()
+
+    try:
+        for cycle in range(1, max_cycles + 1):
+            if time.time() - started > time_budget_s:
+                print(f"  ⏱ Drive time budget ({time_budget_s:g}s) exhausted "
+                      f"after {cycle - 1} cycle(s) — requirement not satisfied")
+                return 2
+
+            print(f"  ▶ {loop_name.upper()} cycle {cycle}/{max_cycles}")
+            done, satisfied, reason = _drive_cycle(
+                loop_name, goal, telemetry, checkpoint, memory,
+                evaluator, recovery, holder)
+
+            if done:
+                if satisfied:
+                    print(f"  ✓ {loop_name.upper()} satisfied: {reason}")
+                    return 0
+                print(f"  ✗ {loop_name.upper()} terminal without "
+                      f"satisfaction: {reason}")
+                return 4
+
+            if sleep_s:
+                time.sleep(sleep_s)
+
+        print(f"  ✗ {loop_name.upper()} did not satisfy its completion "
+              f"requirement after {max_cycles} cycle(s)")
+        return 3
+    except TimeoutError as e:
+        print(f"  ✗ Drive cycle timed out: {e}")
+        return 1
+    except Exception as e:
+        print(f"  ✗ Drive failed: {e}")
+        return 1
+    finally:
+        telemetry.stop()
+        enforcer.stop()
+
 def cmd_dashboard(args: argparse.Namespace) -> int:
     host, port = args.host, args.port
     print(f"RSIS v{__version__} \u2014 Dashboard at http://{host}:{port}")
@@ -703,6 +878,20 @@ def main() -> int:
 
     p_mmm = sub.add_parser("mmm", help="Run L9 MMM loop (tunes L6 params)")
     p_mmm.set_defaults(func=cmd_mmm)
+
+    p_drive = sub.add_parser("drive",
+                             help="Run a loop until its completion requirement is satisfied")
+    p_drive.add_argument("--loop", "-l", default="l2",
+                         help="Loop to drive: l2..l9 (default: l2)")
+    p_drive.add_argument("--goal", "-g", default="self-improve the codebase",
+                         help="L2 goal (only used with --loop l2)")
+    p_drive.add_argument("--max-cycles", type=int, default=10,
+                         help="Maximum cycles before giving up (default: 10)")
+    p_drive.add_argument("--timeout", type=float, default=24 * 3600,
+                         help="Wall-clock budget in seconds (default: 86400)")
+    p_drive.add_argument("--sleep", type=float, default=0,
+                         help="Seconds to pause between cycles (default: 0)")
+    p_drive.set_defaults(func=cmd_drive)
 
     p_dash = sub.add_parser("dashboard", help="Start web dashboard")
     p_dash.add_argument("--host", default="127.0.0.1")

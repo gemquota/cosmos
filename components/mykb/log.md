@@ -5,6 +5,20 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-06 (RSIS3 drive — loops until satisfied)
+- **New `python -m rsis drive`**: repeats a loop until its completion
+  requirement is met. Per-loop predicates: L2 applied improvement, L3
+  consolidation plateau, L4 success rate inside the target band, L5 fitness
+  plateau, L6–L9 stable band. Guard rails `--max-cycles` / `--timeout` /
+  `--sleep`; exit codes 0 satisfied · 1 error · 2 time budget · 3 max
+  cycles · 4 terminal-stuck.
+- **Verified**: L3/L5/L6 satisfy immediately in an empty workspace; L4
+  reports terminal-stuck until `l4.min_outcomes` outcomes exist; all 49
+  pytest tests pass.
+- **Docs**: README "Drive Loops Until Satisfied" + usage-practices §6 with
+  cron/shell automation examples. Synthesis:
+  `wiki/syntheses/rsis-drive-until-satisfied-2026-08-06.md`.
+
 ## 2026-08-06 (Loops tab honesty fix)
 - **Dashboard no longer lies about loop liveness**: the Loops tab rendered a
   green ACTIVE badge for any loop whose static status was "implemented" —

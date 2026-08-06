@@ -75759,6 +75759,19 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis-drive-until-satisfied-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 drive \u2014 run loops automatically until completion requirements are satisfied",
+  "tags": [
+   "rsis3",
+   "loops",
+   "automation",
+   "drive",
+   "completion-requirements",
+   "scheduling"
+  ]
+ },
+ {
   "path": "wiki/syntheses/safety-case-approach.md",
   "type": "synthesis",
   "title": "Safety Case Approach",
