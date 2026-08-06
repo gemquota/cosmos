@@ -1,4 +1,4 @@
-# SPACE — Cycle 003 Completion Report
+# SPACE — Pass 003 Completion Report
 
 **Date:** 2026-07-29
 **Status:** ✅ Complete
@@ -7,7 +7,7 @@
 
 ## Executive Summary
 
-Cycle 003 executed all 10 targeted improvements identified in the Cycle 003 audit. The focus was on **wiring existing but disconnected components** into the engine, CLI, and export pipeline, plus building the **localization/i18n infrastructure** from scratch.
+Pass 003 executed all 10 targeted improvements identified in the Pass 003 audit. The focus was on **wiring existing but disconnected components** into the engine, CLI, and export pipeline, plus building the **localization/i18n infrastructure** from scratch.
 
 ## What Changed
 
@@ -37,11 +37,11 @@ Cycle 003 executed all 10 targeted improvements identified in the Cycle 003 audi
 | Suite | Tests | Status |
 |-------|:-----:|:------:|
 | All suites | 142/142 | ✅ Passing |
-| New tests for cycle items | 12 | ✅ Passing |
+| New tests for pass items | 12 | ✅ Passing |
 
 ## Key Metrics
 
-| Metric | Cycle 003 |
+| Metric | Pass 003 |
 |--------|:---------:|
 | Source files | 57 → 62 |
 | Tests passing | 142 |

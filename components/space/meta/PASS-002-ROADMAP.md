@@ -1,7 +1,7 @@
 # SPACE — Improvement Roadmap & Development Plan
 
 **Project:** Superb Prompt Automatic Creation Engine (SPACE)
-**Based on:** Structured Prompt Creation Framework audit (`meta/CYCLE-001-AUDIT.md`)
+**Based on:** Structured Prompt Creation Framework audit (`meta/PASS-001-AUDIT.md`)
 **Created:** 2026-07-25
 **Version:** 1.0.0
 
@@ -284,8 +284,8 @@ See `dev/phase-6-intelligence.md` for atomic task breakdown.
 
 | Document | Location | Description |
 |----------|----------|-------------|
-| Audit Report | `meta/CYCLE-001-AUDIT.md` | Original framework analysis |
-| **This Roadmap** | `meta/CYCLE-002-ROADMAP.md` | Master improvement plan |
+| Audit Report | `meta/PASS-001-AUDIT.md` | Original framework analysis |
+| **This Roadmap** | `meta/PASS-002-ROADMAP.md` | Master improvement plan |
 | Architecture Spec | `meta/specs/01-data-schema.md` | Data model and schema |
 | Architecture Spec | `meta/specs/02-architecture.md` | System architecture |
 | API Design | `meta/specs/04-api-design.md` | CLI and API interfaces |

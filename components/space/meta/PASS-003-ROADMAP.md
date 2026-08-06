@@ -1,7 +1,7 @@
-# SPACE — RSI Cycle-003 Improvement Roadmap & Development Plan
+# SPACE — RSI Pass-003 Improvement Roadmap & Development Plan
 
 **Date:** 2026-07-29
-**Based on:** meta/CYCLE-003-AUDIT.md
+**Based on:** meta/PASS-003-AUDIT.md
 **Status:** In Progress — 10 improvements to implement
 
 ---

@@ -1,8 +1,8 @@
-# SPACE — RSI Cycle-005 Review
+# SPACE — RSI Pass-005 Review
 
 **Project:** @gemquota/space
 **Date:** 2026-08-06
-**Cycle:** RSI Cycle 005 (Pass 005)
+**Pass:** RSI Pass 005
 **Test Suites:** 15 | **Tests:** 157/157 Passing
 **Build:** TypeScript strict ✓ | ESLint 24 warnings (0 errors) | Prettier ✓
 
@@ -10,7 +10,7 @@
 
 ## Executive Summary
 
-Cycle 005 hardened the hosting layer that carries SPACE in the Cosmos
+Pass 005 hardened the hosting layer that carries SPACE in the Cosmos
 dashboard. The web server became testable and tested (7 new tests), the
 static fallback is populated by a generator, sentry watches point at
 cosmos-local mykb, lint warnings dropped 74 → 24, and versioning/docs now
@@ -56,7 +56,7 @@ reflect the hosted reality (v2.2.0).
 - Prettier clean across `src/` + `tests/`.
 
 ### ✅ Item 6: Versioning & docs
-- v2.2.0, CHANGELOG Cycle 005 entry, README "Hosted web server" section
+- v2.2.0, CHANGELOG Pass 005 entry, README "Hosted web server" section
   documenting the API fallback chain, CORS, and the sync script.
 
 ## Build Verification
@@ -71,7 +71,7 @@ reflect the hosted reality (v2.2.0).
 
 ## Test Growth
 
-| Cycle | Test Files | Tests |
+| Pass | Test Files | Tests |
 |:-----:|:----------:|:-----:|
 | 001 | ~10 | ~92 |
 | 002 | 11 | 112 |
@@ -90,4 +90,4 @@ reflect the hosted reality (v2.2.0).
 
 ---
 
-*Generated: 2026-08-06 | @gemquota/space v2.2.0 — RSI Cycle 005 Review*
+*Generated: 2026-08-06 | @gemquota/space v2.2.0 — RSI Pass 005 Review*

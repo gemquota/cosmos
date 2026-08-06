@@ -1,8 +1,8 @@
-# SPACE — RSI Cycle-005 Comprehensive Audit Report
+# SPACE — RSI Pass-005 Comprehensive Audit Report
 
 **Project:** Superb Prompt Automatic Creation Engine (SPACE)
 **Date:** 2026-08-06
-**Cycle:** RSI Cycle 005 (Pass 005)
+**Pass:** RSI Pass 005
 **Codebase:** 60 source files, 14 test files, 150 tests passing
 **Build:** TypeScript strict ✓ | ESLint 0 errors (74 warnings) | Prettier 1 file off
 **Hosting:** web/server.mjs :8888 · meta-viewer :8899 · embedded in Cosmos dashboard
@@ -11,18 +11,18 @@
 
 ## Executive Summary
 
-Cycle 004 delivered production-readiness tooling. Since then SPACE was
+Pass 004 delivered production-readiness tooling. Since then SPACE was
 integrated into the Cosmos dashboard as a hosted component: the vanilla
 `web/index.html` SPA + `web/server.mjs` Node API, the `meta-viewer.html`
 pass viewer, and sentry watches. Pass 005 audits the **hosting layer** that
-Cycle 004 never touched (it predates the cosmos integration) plus the
+Pass 004 never touched (it predates the cosmos integration) plus the
 engineering gaps the web UI uncovered — including the project-creation bug
 fixed in `3c0eee81` (CORS preflight + API fallback), which shipped because
 the web server had zero automated tests.
 
 ### Key Metrics
 
-| Metric | Cycle 004 | Cycle 005 Target |
+| Metric | Pass 004 | Pass 005 Target |
 |--------|:---------:|:----------------:|
 | Tests passing | 150 | 165+ |
 | Web-server tests | 0 | 12+ |
@@ -88,13 +88,13 @@ not Prettier-clean.
 
 ## Section 5: Docs & Versioning Drift
 
-**Current state:** package.json `2.1.0` / CHANGELOG top entry is Cycle 003;
+**Current state:** package.json `2.1.0` / CHANGELOG top entry is Pass 003;
 nothing documents the cosmos hosting layer (`web/server.mjs`, CORS, embed
 fallback). README describes the legacy `space serve` CLI path only.
 `meta-viewer.html`'s DOCUMENTS registry and welcome card hardcode the latest
-pass, so each cycle requires a manual edit.
+pass, so each pass requires a manual edit.
 
-**Required:** bump to `2.2.0`, CHANGELOG Cycle 005 entry, README section on
+**Required:** bump to `2.2.0`, CHANGELOG Pass 005 entry, README section on
 the hosted web server + dashboard embed, and register Pass 005 in the viewer.
 
 ---
@@ -111,10 +111,10 @@ the hosted web server + dashboard embed, and register Pass 005 in the viewer.
 | 6 | Lint warnings 74 → <25 | Quality | M | 🟡 Medium |
 | 7 | Prettier format pass | Quality | S | 🟡 Medium |
 | 8 | Version 2.2.0 + CHANGELOG + README | Docs | S | 🟡 Medium |
-| 9 | Pass 005 viewer registration + cycle docs | Docs | S | 🟡 Medium |
+| 9 | Pass 005 viewer registration + pass docs | Docs | S | 🟡 Medium |
 
 **Total estimated effort:** 2-3 days
 
 ---
 
-*Generated: 2026-08-06 | SPACE v2.1.0 — RSI Cycle 005 Audit*
+*Generated: 2026-08-06 | SPACE v2.1.0 — RSI Pass 005 Audit*

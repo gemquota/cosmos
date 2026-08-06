@@ -1,14 +1,14 @@
-# SPACE — Cycle 004 Improvement Roadmap
+# SPACE — Pass 004 Improvement Roadmap
 
 **Date:** 2026-07-29
-**Based on:** `meta/CYCLE-004-AUDIT.md`
+**Based on:** `meta/PASS-004-AUDIT.md`
 **Status:** Complete
 
 ---
 
 ## Overview
 
-Cycle 004 shifts focus from feature development to **production readiness**. After Cycles 001-003 built the complete engine, CLI, export pipeline, storage, intelligence, and i18n infrastructure, Cycle 004 targets code quality tooling, documentation, testing coverage, developer experience, and infrastructure monitoring.
+Pass 004 shifts focus from feature development to **production readiness**. After Passes 001-003 built the complete engine, CLI, export pipeline, storage, intelligence, and i18n infrastructure, Pass 004 targets code quality tooling, documentation, testing coverage, developer experience, and infrastructure monitoring.
 
 ## Improvement Items
 

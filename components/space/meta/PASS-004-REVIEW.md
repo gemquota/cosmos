@@ -1,4 +1,4 @@
-# SPACE — RSI Cycle-004 Completion & Review
+# SPACE — RSI Pass-004 Completion & Review
 
 **Project:** @gemquota/space (formerly space-cli)
 **Completed:** 2026-07-29
@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-Cycle 004 shifted focus from feature development to **production readiness** — code quality tooling, documentation, testing coverage, and developer experience.
+Pass 004 shifted focus from feature development to **production readiness** — code quality tooling, documentation, testing coverage, and developer experience.
 
 ## What Changed
 
@@ -80,7 +80,7 @@ Cycle 004 shifted focus from feature development to **production readiness** —
 
 ## Test Growth
 
-| Cycle | Test Files | Tests |
+| Pass | Test Files | Tests |
 |:-----:|:----------:|:-----:|
 | 001 | ~10 | ~92 |
 | 002 | 11 | 112 |
@@ -98,4 +98,4 @@ Cycle 004 shifted focus from feature development to **production readiness** —
 
 ---
 
-*Generated: 2026-07-29 | @gemquota/space v2.1.0 — RSI Cycle 004 Complete*
+*Generated: 2026-07-29 | @gemquota/space v2.1.0 — RSI Pass 004 Complete*

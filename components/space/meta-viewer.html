@@ -167,27 +167,27 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 <script>
 const DOCUMENTS = [
   // Reports (Audits, Roadmaps, Reviews)
-    { file:'CYCLES-OVERVIEW.md', title:'Passes Overview', group:'__passes_overview__', icon:'📊', cat:'overview' },
-  { file:'CYCLE-001-AUDIT.md', title:'Pass 001 Audit', group:'Pass 001', icon:'🔍', cat:'audit' },
-  { file:'CYCLE-001-ROADMAP.md', title:'Pass 001 Roadmap', group:'Pass 001', icon:'🗺️', cat:'roadmap' },
-  { file:'CYCLE-001-REVIEW.md', title:'Pass 001 Review', group:'Pass 001', icon:'✅', cat:'review' },
-  { file:'CYCLE-001-COMPLETION.md', title:'Pass 001 Completion', group:'Pass 001', icon:'📋', cat:'review' },
-  { file:'CYCLE-002-AUDIT.md', title:'Pass 002 Audit', group:'Pass 002', icon:'🔍', cat:'audit' },
-  { file:'CYCLE-003-AUDIT.md', title:'Pass 003 Audit', group:'Pass 003', icon:'🔍', cat:'audit' },
-  { file:'CYCLE-002-ROADMAP.md', title:'Pass 002 Roadmap', group:'Pass 002', icon:'🗺️', cat:'roadmap' },
-  { file:'CYCLE-002-REVIEW.md', title:'Pass 002 Review', group:'Pass 002', icon:'✅', cat:'review' },
-  { file:'CYCLE-002-COMPLETION.md', title:'Pass 002 Completion', group:'Pass 002', icon:'✅', cat:'review' },
-  { file:'CYCLE-003-ROADMAP.md', title:'Pass 003 Roadmap', group:'Pass 003', icon:'🗺️', cat:'roadmap' },
-    { file:'CYCLE-003-REVIEW.md', title:'Pass 003 Review', group:'Pass 003', icon:'✅', cat:'review' },
-  { file:'CYCLE-003-COMPLETION.md', title:'Pass 003 Completion', group:'Pass 003', icon:'📋', cat:'review' },
-    { file:'CYCLE-004-AUDIT.md', title:'Pass 004 Audit', group:'Pass 004', icon:'🔍', cat:'audit' },
-  { file:'CYCLE-004-ROADMAP.md', title:'Pass 004 Roadmap', group:'Pass 004', icon:'🗺️', cat:'roadmap' },
-    { file:'CYCLE-004-REVIEW.md', title:'Pass 004 Review', group:'Pass 004', icon:'✅', cat:'review' },
-  { file:'CYCLE-004-COMPLETION.md', title:'Pass 004 Completion', group:'Pass 004', icon:'📋', cat:'review' },
-  { file:'CYCLE-005-AUDIT.md', title:'Pass 005 Audit', group:'Pass 005', icon:'🔍', cat:'audit' },
-  { file:'CYCLE-005-ROADMAP.md', title:'Pass 005 Roadmap', group:'Pass 005', icon:'🗺️', cat:'roadmap' },
-  { file:'CYCLE-005-REVIEW.md', title:'Pass 005 Review', group:'Pass 005', icon:'✅', cat:'review' },
-  { file:'CYCLE-005-COMPLETION.md', title:'Pass 005 Completion', group:'Pass 005', icon:'📋', cat:'review' },
+    { file:'PASSES-OVERVIEW.md', title:'Passes Overview', group:'__passes_overview__', icon:'📊', cat:'overview' },
+  { file:'PASS-001-AUDIT.md', title:'Pass 001 Audit', group:'Pass 001', icon:'🔍', cat:'audit' },
+  { file:'PASS-001-ROADMAP.md', title:'Pass 001 Roadmap', group:'Pass 001', icon:'🗺️', cat:'roadmap' },
+  { file:'PASS-001-REVIEW.md', title:'Pass 001 Review', group:'Pass 001', icon:'✅', cat:'review' },
+  { file:'PASS-001-COMPLETION.md', title:'Pass 001 Completion', group:'Pass 001', icon:'📋', cat:'review' },
+  { file:'PASS-002-AUDIT.md', title:'Pass 002 Audit', group:'Pass 002', icon:'🔍', cat:'audit' },
+  { file:'PASS-003-AUDIT.md', title:'Pass 003 Audit', group:'Pass 003', icon:'🔍', cat:'audit' },
+  { file:'PASS-002-ROADMAP.md', title:'Pass 002 Roadmap', group:'Pass 002', icon:'🗺️', cat:'roadmap' },
+  { file:'PASS-002-REVIEW.md', title:'Pass 002 Review', group:'Pass 002', icon:'✅', cat:'review' },
+  { file:'PASS-002-COMPLETION.md', title:'Pass 002 Completion', group:'Pass 002', icon:'✅', cat:'review' },
+  { file:'PASS-003-ROADMAP.md', title:'Pass 003 Roadmap', group:'Pass 003', icon:'🗺️', cat:'roadmap' },
+    { file:'PASS-003-REVIEW.md', title:'Pass 003 Review', group:'Pass 003', icon:'✅', cat:'review' },
+  { file:'PASS-003-COMPLETION.md', title:'Pass 003 Completion', group:'Pass 003', icon:'📋', cat:'review' },
+    { file:'PASS-004-AUDIT.md', title:'Pass 004 Audit', group:'Pass 004', icon:'🔍', cat:'audit' },
+  { file:'PASS-004-ROADMAP.md', title:'Pass 004 Roadmap', group:'Pass 004', icon:'🗺️', cat:'roadmap' },
+    { file:'PASS-004-REVIEW.md', title:'Pass 004 Review', group:'Pass 004', icon:'✅', cat:'review' },
+  { file:'PASS-004-COMPLETION.md', title:'Pass 004 Completion', group:'Pass 004', icon:'📋', cat:'review' },
+  { file:'PASS-005-AUDIT.md', title:'Pass 005 Audit', group:'Pass 005', icon:'🔍', cat:'audit' },
+  { file:'PASS-005-ROADMAP.md', title:'Pass 005 Roadmap', group:'Pass 005', icon:'🗺️', cat:'roadmap' },
+  { file:'PASS-005-REVIEW.md', title:'Pass 005 Review', group:'Pass 005', icon:'✅', cat:'review' },
+  { file:'PASS-005-COMPLETION.md', title:'Pass 005 Completion', group:'Pass 005', icon:'📋', cat:'review' },
 
   // Dev Docs
   { file:'project-status.md', title:'Project Status', group:'Development', icon:'📊', cat:'dev' },
@@ -269,7 +269,7 @@ function buildSidebar(filter='') {
   for (const d of DOCUMENTS) {
     if (q && !d.title.toLowerCase().includes(q) && !d.group.toLowerCase().includes(q)) continue;
     // Latest mode: only show Pass 004 docs
-    if (filterMode === 'latest' && !d.file.includes('CYCLE-005')) continue;
+    if (filterMode === 'latest' && !d.file.includes('PASS-005')) continue;
     if (!groups[d.group]) groups[d.group] = [];
     groups[d.group].push(d);
   }
@@ -432,11 +432,11 @@ if (!loadFromHash()) {
       <h1 style="font-size:24px;margin-bottom:8px">SPACE Meta Documents</h1>
       <p style="color:var(--text-secondary);margin-bottom:20px">Browse phase audit reports, improvement roadmaps, development phase guides, and technical specifications.</p>
       <div style="display:flex;flex-direction:column;gap:8px;text-align:left">
-        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('CYCLE-005-AUDIT.md','Pass 005 Audit','audit')">
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('PASS-005-AUDIT.md','Pass 005 Audit','audit')">
           <span style="font-size:20px">🔍</span>
           <div><div style="font-weight:600;font-size:13px">Latest Audit</div><div style="font-size:11px;color:var(--text-muted)">Pass 005 — hosting-layer hardening: testable web server, static fallback, watch paths</div></div>
         </div>
-        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('CYCLE-005-REVIEW.md','Pass 005 Review','review')">
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('PASS-005-REVIEW.md','Pass 005 Review','review')">
           <span style="font-size:20px">✅</span>
           <div><div style="font-weight:600;font-size:13px">Latest Completion Review</div><div style="font-size:11px;color:var(--text-muted)">Pass 005 — 157 tests, web-server suite, lint 74→24, v2.2.0</div></div>
         </div>
