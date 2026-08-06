@@ -75785,6 +75785,19 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-pass-6-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 6 \u2014 five full cycles across L1\u2013L9",
+  "tags": [
+   "rsis3",
+   "passes",
+   "loops",
+   "resource-pressure",
+   "telemetry",
+   "checkpoints"
+  ]
+ },
+ {
   "path": "wiki/syntheses/safety-case-approach.md",
   "type": "synthesis",
   "title": "Safety Case Approach",

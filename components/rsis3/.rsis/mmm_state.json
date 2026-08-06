@@ -66,7 +66,52 @@
       },
       "accepted": true,
       "signal": "widen"
+    },
+    {
+      "cycle": 8,
+      "deltas": {
+        "l6.shrink_below": 0.0,
+        "l6.grow_above": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 9,
+      "deltas": {
+        "l6.shrink_below": 0.0,
+        "l6.grow_above": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 10,
+      "deltas": {
+        "l6.shrink_below": 0.0,
+        "l6.grow_above": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 11,
+      "deltas": {
+        "l6.shrink_below": 0.0,
+        "l6.grow_above": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 12,
+      "deltas": {
+        "l6.shrink_below": 0.0,
+        "l6.grow_above": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
     }
   ],
-  "cycle": 7
+  "cycle": 12
 }

@@ -1,5 +1,5 @@
 {
-  "generation": 12,
+  "generation": 18,
   "population": [
     {
       "id": "strategy-budget-1",
@@ -8,8 +8,8 @@
         "budget_factor": 1.0,
         "focus": "general"
       },
-      "fitness": 0.43257142857142855,
-      "evals": 12
+      "fitness": 0.244,
+      "evals": 18
     },
     {
       "id": "strategy-seed-1",
@@ -18,11 +18,11 @@
         "budget_factor": 1.0,
         "focus": "general"
       },
-      "fitness": 0.43257142857142855,
-      "evals": 12
+      "fitness": 0.244,
+      "evals": 18
     },
     {
-      "id": "strategy-g12-cross-250",
+      "id": "strategy-g18-cross-250",
       "params": {
         "l2_attempts": 5,
         "budget_factor": 1.0,
@@ -33,7 +33,7 @@
       "lineage": "strategy-budget-1xstrategy-seed-1"
     },
     {
-      "id": "strategy-g12-1-89",
+      "id": "strategy-g18-1-89",
       "params": {
         "l2_attempts": 4,
         "budget_factor": 1.0,
@@ -137,6 +137,54 @@
       "generation": 12,
       "avg_fitness": 0.2812,
       "best_fitness": 0.4326,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 13,
+      "avg_fitness": 0.2812,
+      "best_fitness": 0.4326,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 14,
+      "avg_fitness": 0.2886,
+      "best_fitness": 0.444,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 15,
+      "avg_fitness": 0.2779,
+      "best_fitness": 0.4275,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 16,
+      "avg_fitness": 0.2561,
+      "best_fitness": 0.394,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 17,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 18,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
       "population": 4,
       "accepted": true,
       "signal": "evolve"

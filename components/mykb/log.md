@@ -5,6 +5,24 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-06 (RSIS3 pass 7 — data contracts, validated at both gates)
+- **Contracts**: `contracts/README.md` documents the six shared shapes
+  (OKF frontmatter, files.json, ecosystem.json, loops.json, telemetry JSONL,
+  SPACE framework); `contracts/validate.py` enforces them (stdlib only).
+  Wired into `gen-static-data.py --check` (deploy/CI) and `check-practices`
+  (new `telemetry contract` check mirrors section 5; 100 files / 359 events /
+  0 malformed). `--check` now separates contract FAILs from snapshot staleness
+  (caught the pass-6 synthesis missing from files.json).
+- **Batch**: 5 cycles × L1–L9 = 40 executions, +5 net starts per loop, 0 errors.
+  Telemetry now L1=16, L2=16, L3=14, L4=14, L5=18, L6=15, L7=13, L8=13, L9=12
+  (the +1 on L3–L8 is a partial aborted cycle from a mis-set disk override).
+  Disk rule learned: `RSIS_DISK_USAGE_PCT` replaces the limit, not the measured
+  value — use 100 when the device is ~100% full.
+- **Snapshots**: graph regenerated, files.json 6,867 entries, `--check` OK
+  (0 contract FAIL). Synthesis added: `wiki/syntheses/rsis3-pass-7-2026-08-06.md`;
+  syntheses index updated (48 pages). Design doc:
+  `docs/superpowers/specs/2026-08-06-cosmos-integration-5-passes-design.md`.
+
 ## 2026-08-06 (RSIS3 pass 6 — five full cycles, L1–L9)
 - **Cycles run**: 5 full RSIS3 cycles = 40 loop executions (`run` for L1/L2,
   one-shot `evolve`/`optimize`/`strategies`/`identity`/`metacog`/`metameta`/`mmm`
