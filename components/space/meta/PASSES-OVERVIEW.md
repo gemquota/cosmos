@@ -1,7 +1,7 @@
 # SPACE — Passes Overview
 
-**Updated:** Pass 005 (2026-08-06)
-**Total Documents:** 20 pass docs across 5 passes
+**Updated:** Pass 007 (2026-08-06)
+**Total Documents:** 28 pass docs across 7 passes
 
 ---
 
@@ -14,6 +14,9 @@
 | 003 | Integration & i18n | Wiring improvements, localization, adaptive router, staleness detection | 142 | ✅ Complete |
 | 004 | Production Readiness | ESLint, Prettier, README, CI/CD, CLI tests, Sentry heartbeat | 150 | ✅ Complete |
 | 005 | Hosting Layer | Testable web server + tests, static fallback, cosmos watch paths, lint 74→24, v2.2.0 | 157 | ✅ Complete |
+| 006 | RSIS3 Loop Batch (executed) | Full L1–L9 batch, 40 executions, +5/loop, disk-override env + logger fix | — | ✅ Complete |
+| 007 | Data Contracts & Validation | 6 documented shapes, stdlib validator wired into `--check` + `check-practices` | — | ✅ Complete |
+
 
 ---
 
@@ -105,3 +108,7 @@ docs (CHANGELOG + README hosting section).
 | npm package (`@gemquota/space`) | ✅ | Pass 004 |
 | Sentry heartbeat monitor | ✅ | Pass 004 |
 | 150+ tests across 14 suites | ✅ | Pass 004 |
+---
+
+> Passes 006–007 are RSIS3 loop passes recorded in this ledger (tests column n/a);
+> pass 006 was executed and pushed before the integration arc and is backfilled here.
