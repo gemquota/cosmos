@@ -20,6 +20,14 @@ Self-modeling is an agent's representation of its own state, goals, capabilities
 - **RSIS3 example** — the identity system and pulse telemetry are the triad's self-model: layers, scores, and crisis state.
 - **Relation to RSI** — versioning-of-selves and memory-surgery presuppose an explicit self-model that survives changes.
 
+- **Content** — a self-model covers capabilities (what can I do), limits (what will fail), state (what is true now), goals, and history (what was decided).
+- **Uses** — task selection (accept or decline based on predicted success), resource planning, and refusal all depend on an accurate self-model.
+- **Failure modes** — an overconfident self-model causes overreach; an underconfident one causes costly deferral; both are errors in the same representation.
+- **Calibration loop** — the self-model should be updated from measured performance (what actually succeeded) rather than from claims, keeping it honest over time.
+- **Prerequisite for RSI** — safe self-modification requires representing the self that will change; without a self-model, modifications are blind edits.
+
+- **Relation to introspection** — self-modeling is the static representation (the map); introspection is the dynamic access (reading the territory); a system needs both, and each can be wrong independently.
+
 ## Related
 - [[wiki/agent-systems/introspection-ai|Introspection in AI]] — first-person access
 - [[wiki/agent-systems/identity-and-continuity|Identity and Continuity]] — persistence over time

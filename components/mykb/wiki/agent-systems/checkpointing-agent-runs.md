@@ -23,6 +23,8 @@ Checkpointing saves the full state of an agent run — context, plan position, t
 - **What to store** — full agent state (context, tool results, step index) plus the version IDs of prompts and models, so a resume is bit-identical.
 - **Cost** — checkpoint size grows with context; periodic and event-triggered checkpoints balance overhead against recovery granularity.
 
+- **Checkpoint hygiene** — checkpoints must be restorable and tested: a checkpoint that cannot restore is worse than none, so recovery drills are part of the routine.
+- **Version coupling** — prompts and model versions are stored with the checkpoint, because resuming with different versions is not a bit-identical resume.
 ## Related
 - [[wiki/concepts/checkpoint-rollback|Checkpoint & Rollback]] — the checkpoint-rollback concept
 - [[wiki/agent-systems/rollback-and-recovery|Rollback and Recovery]] — restoring from checkpoints

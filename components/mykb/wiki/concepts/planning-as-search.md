@@ -22,7 +22,7 @@ Planning as search frames planning as searching a state space: nodes are states,
 - RSIS3 relevance: an improvement pass that enumerates candidate changes, evaluates their predicted effect, and picks the best path to a target state is planning as search over the space of passes.
 
 ## Related
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — the architecture that uses search
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — the architecture that uses search
 - [[wiki/concepts/means-ends-analysis|Means-Ends Analysis]] — a heuristic search strategy
 - [[wiki/concepts/monte-carlo-tree-search|Monte Carlo Tree Search]] — sampling-based search
 - [[wiki/concepts/forward-chaining|Forward Chaining]] — search forward from the start

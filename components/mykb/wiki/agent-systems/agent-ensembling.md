@@ -21,6 +21,10 @@ Agent ensembling runs several agents or model variants on the same task and comb
 - **Diminishing returns** — gains shrink after a few members; correlated models (same family) add less diversity.
 - **mykb relevance** — voting agents and self-consistency are existing mykb topics; ensembles are the general pattern behind them.
 
+- **Diversity is the lever** — ensembles improve most when members err independently; same-family models correlate, so diversity comes from different families, temperatures, prompts, or decomposition strategies.
+- **Cost-aware sizing** — N members multiply inference cost, so size the ensemble from an error-reduction curve rather than a fixed count, and use a smaller ensemble for easy queries.
+- **Failure handling** — a tied vote or conflicting verifier verdict should route to escalation or abstention rather than a random pick.
+- **Calibration benefit** — disagreements between ensemble members can estimate uncertainty: high agreement signals confidence, wide disagreement signals ambiguity that should be flagged.
 ## Related
 - [[wiki/agent-systems/voting-agents|Voting Agents]] — agents voting on answers
 - [[wiki/agent-systems/verifier-agents|Verifier Agents]] — verification as selection

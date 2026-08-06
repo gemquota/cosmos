@@ -21,6 +21,11 @@ Retry strategies govern what an agent does when a step fails: how many times to 
 - RSIS3's L1 loop treats tool failure as an observation, feeds it to retry logic, and logs the full sequence for traceability.
 - Worked example: a rate-limited API call retries with backoff three times, then the agent switches to a cached result.
 
+- **Escalation ladder** — the strategy is a ladder: retry with backoff, fall back to a cached or alternative result, degrade scope, then fail with a precise report; each rung has its own trigger.
+- **Error classification** — the policy table maps error classes (transient, permanent, unknown) to actions; misclassifying permanent errors as transient is how retry loops burn budget.
+- **Concurrency discipline** — do not retry the same call from multiple threads in parallel; serialized retries preserve ordering and prevent duplicate side effects.
+- **Policy as code** — retry strategies belong in the runtime configuration, versioned and observable, not scattered through prompts where they cannot be tested.
+
 ## Related
 
 - [[wiki/llm-agents/deterministic-replay|Deterministic Replay]] — re-running failed steps for debugging

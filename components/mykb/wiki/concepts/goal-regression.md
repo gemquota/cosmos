@@ -21,7 +21,7 @@ Goal regression plans backward: start from the goal conditions and find the last
 - RSIS3 relevance: an improvement pass that starts from the desired outcome ("telemetry complete, constraints satisfied") and works backward to the minimal set of changes is goal regression applied to self-improvement.
 
 ## Related
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — the planning family
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — the planning family
 - [[wiki/agent-systems/goal-decomposition|Goal Decomposition]] — goals split during regression
 - [[wiki/concepts/backward-chaining|Backward Chaining]] — the logic-inference analog
 - [[wiki/concepts/operator-subgoaling|Operator Subgoaling]] — precondition subgoals

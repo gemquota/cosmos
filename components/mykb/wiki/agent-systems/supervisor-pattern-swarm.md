@@ -21,6 +21,12 @@ The supervisor pattern concentrates planning in one agent that delegates to spec
 - **Selection** — choose supervisor when correctness is critical and audit needed; choose swarm when throughput and diversity of views matter.
 - **mykb relevance** — RSIS3's executive planner is a supervisor over its pulse phases and sub-agents.
 
+- **Failure handling** — a supervisor is a single point of failure (its crash stalls everyone); swarms degrade gracefully but can fragment without a coordinator.
+- **Cost profiles** — supervisors serialize planning (cheap in tokens, slow in wall-clock); swarms parallelize (fast, but multiply context and coordination overhead).
+- **Telemetry** — coordination events (task issued, result returned, disagreement escalated) should be logged in both styles; it is the only way to explain emergent behavior later.
+
+- **Blended practice** — the common production pattern is a supervisor over a worker pool with swarm-like parallelism inside a domain, preserving auditability where it matters and parallelism where it pays.
+
 ## Related
 - [[wiki/agent-systems/agent-consensus|Agent Consensus]] — swarm decision-making
 - [[wiki/agent-systems/voting-agents|Voting Agents]] — swarm-style aggregation

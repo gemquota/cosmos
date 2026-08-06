@@ -20,6 +20,13 @@ Self-play trains an agent by competing or cooperating with copies of itself, gen
 - **Modern use** — adversarial training for safety (red vs blue), and self-play for consistency in LLM debate.
 - **RSIS3 parallel** — pulses 'compete' with past pulses: telemetry and outcomes are compared across iterations to select better practices.
 
+- **Variants** — symmetric self-play (both sides identical), asymmetric (red team vs blue team), and league play (a population of agents) cover different training needs.
+- **Equilibrium risk** — self-play can converge to degenerate equilibria (both sides exploiting a quirk); regularization and diverse opponents mitigate this.
+- **Safety use** — adversarial self-play trains robustness by letting an attacker agent probe the defender, producing failure modes that static evals miss.
+- **Efficiency** — self-play generates unlimited training data at the cost of compute and distribution collapse risk; it is not free data, it is expensive data with a bias.
+
+- **Measurement** — the value of self-play is measured by transfer: does the policy trained in self-play perform on the real task or evaluation distribution, not just on the self-play game itself.
+
 ## Related
 - [[wiki/agent-systems/adversarial-self-play|Adversarial Self-Play]] — competitive variant
 - [[wiki/agent-systems/curriculum-self-improvement|Curriculum Self-Improvement]] — ordering self-generated tasks

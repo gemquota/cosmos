@@ -21,6 +21,10 @@ Agent observability captures traces of every decision, tool call, token, and sta
 - **Cost** — observability adds latency and storage; sampling and redaction balance fidelity with cost and privacy.
 - **mykb relevance** — RSIS3 telemetry, checkpoint commits, and pulse evaluation logs are exactly this pattern applied to a self-modifying system.
 
+- **Correlation IDs** — a run ID threaded through every log line and trace span ties the whole execution together for replay and audit.
+- **Privacy and redaction** — prompts, tool arguments, and outputs may contain sensitive data; redaction and sampling policies keep observability from becoming a data leak.
+- **Trace-to-eval feedback** — traces are the raw material for eval sets: real failures become regression scenarios, closing the loop between production and testing.
+- **Failure-first design** — instrument the failure paths (retries, timeouts, denials) as carefully as the success path, because observability is bought for the incidents you cannot yet predict.
 ## Related
 - [[wiki/agent-systems/agent-logs-and-audits|Agent Logs and Audits]] — structured records for review
 - [[wiki/testing/traces-spans|Traces and Spans]] — the tracing model

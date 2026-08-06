@@ -37,11 +37,18 @@ cosmos dashboard          # Launch dashboard + all services
 Short MyKB links (redirect to `components/mykb/`):
 - Wiki: https://gemquota.github.io/cosmos/mykb/
 - Stats: https://gemquota.github.io/cosmos/mykb/stats
-- Stub audit: https://gemquota.github.io/cosmos/mykb/stub-audit
+- Guidance: https://gemquota.github.io/cosmos/mykb/#guidance
+- Stub audit (redirects to Guidance): https://gemquota.github.io/cosmos/mykb/stub-audit
 - Knowledge graph: https://gemquota.github.io/cosmos/mykb/graph
 - Deep wiki paths (e.g. `mykb/wiki/<path>.md`) redirect via the root `404.html`.
 
 ## Commands
+
+The dashboard (components/rsis3/dashboard/index.html) replicates the CLI:
+the **MyKB → Guidance** view hosts the live guide (area direction, research &
+feedback queue, stub triage with Save Queue, Plan / Apply + manifest, Rebuild
+static), and Overview/Pulses/KG/Graphs/Constraints/Loops mirror `cosmos status`
+telemetry.
 
 ```bash
 cosmos dashboard   # Launch web dashboard + services
@@ -49,6 +56,13 @@ cosmos status      # Show component status
 cosmos start       # Start component servers
 cosmos stop        # Stop component servers
 cosmos logs        # Tail service logs
+cosmos guidance open  # Open the Guidance UI (direction, feedback, stub triage)
+cosmos guidance status  # Show guidance + stub queue status
+cosmos guidance build  # Rebuild guidance.json + stub-review.json
+cosmos stubs open  # Open the Guidance UI (alias of guidance open)
+cosmos stubs plan  # Preview the queued stub decisions
+cosmos stubs apply # Execute the queue + emit the inference manifest
+cosmos stubs build # Rebuild the static stub data
 ```
 
 ## Structure

@@ -21,6 +21,12 @@ Retry-and-backoff is the standard response to transient failures — rate limits
 - **Distinction from agent loops** — retries repeat one call; agent loops re-plan whole actions; both need stop conditions.
 - **mykb relevance** — RSIS3 sub-agent calls and mykb daemon pipelines both rely on bounded retry with backoff for robustness.
 
+- **Jitter** — full jitter (random delay up to the backoff cap) breaks synchronized retry storms better than fixed or exponential-only schedules.
+- **Circuit breaker interaction** — when a circuit breaker has opened, retries must stop until the breaker resets; retrying into an open circuit defeats both mechanisms.
+- **Telemetry** — retry counts, backoff durations, and escalation events are first-class telemetry: a rising retry rate is an early warning of a degrading dependency.
+
+- **Respect server guidance** — honor Retry-After headers and rate-limit signals from the dependency; server-provided backoff beats client-guessed schedules and reduces mutual load.
+
 ## Related
 - [[wiki/agent-systems/exponential-backoff-llm|Exponential Backoff for LLMs]] — backoff for LLM APIs
 - [[wiki/agent-systems/retry-jitter|Retry Jitter]] — jitter to avoid thundering herds

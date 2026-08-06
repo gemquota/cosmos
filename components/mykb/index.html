@@ -967,11 +967,115 @@ body {
 .type-entries.collapsed {
   max-height: 0 !important;
 }
+.area-entries {
+  overflow: hidden;
+  transition: max-height .2s ease;
+}
+.area-entries.collapsed {
+  max-height: 0 !important;
+}
+.subgroup-entries {
+  overflow: hidden;
+  transition: max-height .2s ease;
+}
+.subgroup-entries.collapsed {
+  max-height: 0 !important;
+}
 /* File entry tweaks for tighter display */
 .type-entries .file-entry-wrap { }
 .type-entries .file-entry-main {
   padding: 3px 12px 3px 24px;
 }
+
+/* ── Sidebar filter (live document narrowing) ── */
+#sidebar-filter-wrap {
+  padding: 6px 12px 2px;
+  position: relative;
+  flex-shrink: 0;
+}
+#sidebar-filter {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--search-bg);
+  color: var(--text);
+  outline: none;
+}
+#sidebar-filter:focus { border-color: var(--search-focus); }
+#sidebar-filter::placeholder { color: var(--text-muted); opacity: 0.7; }
+
+/* ── Hierarchical sidebar sections ── */
+.subgroup-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px 2px 24px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s;
+}
+.subgroup-header:hover { color: var(--text); }
+.subgroup-header .sg-arrow {
+  font-size: 8px;
+  width: 10px;
+  text-align: center;
+  color: var(--text-muted);
+  transition: transform 0.15s;
+}
+.subgroup-header .sg-arrow.collapsed { transform: rotate(-90deg); }
+.subgroup-header .sg-count {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+.sidebar-section .type-count { margin-left: auto; }
+
+.more-link {
+  display: block;
+  width: 100%;
+  padding: 3px 14px 3px 38px;
+  font-size: 11px;
+  text-align: left;
+  color: var(--accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.85;
+}
+.more-link:hover { opacity: 1; text-decoration: underline; }
+
+/* Type badges on file entries */
+.type-chip {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0 5px;
+  opacity: 0.75;
+}
+.type-chip.concept { color: #60a5fa; border-color: rgba(96,165,250,0.35); }
+.type-chip.entity { color: #c084fc; border-color: rgba(192,132,252,0.35); }
+.type-chip.index { color: #34d399; border-color: rgba(52,211,153,0.35); }
+.type-chip.decision { color: #fbbf24; border-color: rgba(251,191,36,0.35); }
+.type-chip.question { color: #f472b6; border-color: rgba(244,114,182,0.35); }
+.type-chip.synthesis { color: #f97316; border-color: rgba(249,115,22,0.35); }
+.type-chip.domain { color: #2dd4bf; border-color: rgba(45,212,191,0.35); }
+.type-chip.source { color: #94a3b8; border-color: rgba(148,163,184,0.35); }
+.type-chip.log { color: #94a3b8; border-color: rgba(148,163,184,0.35); }
+.type-chip.plan { color: #a3e635; border-color: rgba(163,230,53,0.35); }
+.type-chip.project { color: #22d3ee; border-color: rgba(34,211,238,0.35); }
+.type-chip.experiment { color: #fb7185; border-color: rgba(251,113,133,0.35); }
 
 @media (max-width: 820px) {
   #sidebar-toggle { display: none; }
@@ -1019,6 +1123,109 @@ body {
   #content { overflow: visible; }
   .markdown-body { max-width: none; padding: 0; }
 }
+
+/* ── Stub review (integrated into mykb) ── */
+.srv-hdr { margin-bottom: 4px; }
+.srv-hdr h1 { font-size: 20px; font-weight: 800; }
+.srv-chip { display:inline-block; font-size:11px; padding:2px 10px; border-radius:10px; border:1px solid var(--border); color:var(--text-soft); }
+.srv-chip.live { color:#34d399; border-color:#34d399; }
+.srv-chip.snap { color:var(--accent); border-color:var(--accent); }
+.srv-progress { display:flex; align-items:center; gap:10px; margin:14px 0 10px; }
+.srv-progress-bar { flex:1; height:8px; background:var(--code-bg); border:1px solid var(--border); border-radius:4px; overflow:hidden; }
+.srv-progress-fill { height:100%; width:0%; background:linear-gradient(90deg,var(--accent),#34d399); transition:width .2s; }
+.srv-progress-label { font-size:12px; color:var(--text-soft); white-space:nowrap; }
+.srv-legend { display:flex; gap:14px; flex-wrap:wrap; font-size:11px; color:var(--text-soft); margin:10px 0 4px; }
+.srv-legend b { margin-right:4px; }
+.srv-filters { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin:10px 0; font-size:12px; color:var(--text-soft); }
+.srv-filters label { display:flex; align-items:center; gap:5px; cursor:pointer; }
+.srv-filters input { accent-color: var(--accent); }
+.srv-controls { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:10px 0; }
+.srv-tabs { display:flex; gap:4px; }
+.srv-tab { padding:4px 12px; font-size:12px; border-radius:6px; border:1px solid var(--border); background:var(--code-bg); color:var(--text-soft); cursor:pointer; }
+.srv-tab.active { background:var(--accent-soft); color:var(--accent); border-color:var(--accent); }
+.srv-btn { padding:5px 12px; font-size:12px; font-weight:600; border-radius:6px; border:1px solid var(--border); background:var(--search-bg); color:var(--text); cursor:pointer; }
+.srv-btn:hover { border-color:var(--accent); }
+.srv-btn.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
+.srv-btn:disabled { opacity:.4; cursor:default; }
+.srv-sort { background:var(--search-bg); color:var(--text); border:1px solid var(--border); border-radius:6px; padding:4px 8px; font-size:12px; }
+.srv-card { background:var(--search-bg); border:1px solid var(--border); border-radius:8px; padding:10px 12px; margin-bottom:8px; }
+.srv-card.classified { opacity:.55; }
+.srv-card .top { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+.srv-card .num { font-size:11px; color:var(--text-muted); }
+.srv-card .title { font-size:14px; font-weight:700; }
+.srv-card .title a { color:var(--accent); text-decoration:none; }
+.srv-card .title a:hover { text-decoration:underline; }
+.srv-card .badge { font-size:10px; color:var(--text-soft); background:var(--code-bg); border:1px solid var(--border); padding:1px 7px; border-radius:10px; }
+.srv-card .badge.warn { color:#ffd166; border-color:rgba(255,209,102,.45); }
+.srv-card .badge.del { color:#f87171; border-color:rgba(248,113,113,.45); }
+.srv-card .desc { font-size:12px; color:var(--text-soft); margin-top:4px; }
+.srv-card .path { font-size:10px; color:var(--text-muted); margin-top:3px; word-break:break-all; }
+.srv-card .snip { font-size:11px; color:var(--text); margin-top:5px; border-top:1px dashed var(--border); padding-top:5px; white-space:pre-wrap; overflow-wrap:anywhere; }
+.srv-card .hint { font-size:11px; color:#c084fc; margin-top:6px; }
+.srv-actions { margin-top:6px; }
+.srv-opt { display:inline-block; padding:3px 10px; font-size:11px; font-weight:700; border-radius:12px; border:1px solid; cursor:pointer; margin:4px 4px 0 0; background:none; }
+.srv-opt:hover { filter:brightness(1.2); }
+.srv-opt.k { color:#34d399; border-color:#34d399; }
+.srv-opt.e { color:#60a5fa; border-color:#60a5fa; }
+.srv-opt.c { color:#c084fc; border-color:#c084fc; }
+.srv-opt.a { color:#fbbf24; border-color:#fbbf24; }
+.srv-opt.d { color:#f87171; border-color:#f87171; }
+.srv-opt.sel { background:currentColor; color:var(--bg); }
+.srv-opt .key { font-size:9px; opacity:.65; margin-right:4px; }
+.srv-picker { margin-top:8px; border:1px solid #c084fc; border-radius:8px; background:var(--search-bg); padding:10px 12px; }
+.srv-picker label { display:block; font-size:11px; color:var(--text-soft); margin:8px 0 4px; }
+.srv-picker select, .srv-picker input { width:100%; padding:6px 8px; font-size:12px; border-radius:6px; border:1px solid var(--border); background:var(--code-bg); color:var(--text); }
+.srv-picker .row { display:flex; gap:8px; flex-wrap:wrap; }
+.srv-picker .row > div { flex:1; min-width:150px; }
+.srv-pager { display:flex; align-items:center; gap:10px; margin:12px 0 4px; }
+.srv-pg-info { font-size:12px; color:var(--text-soft); flex:1; }
+.srv-out { width:100%; min-height:150px; background:var(--code-bg); color:var(--text); border:1px solid var(--border); border-radius:6px; padding:10px; font:11px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace; white-space:pre-wrap; overflow-wrap:anywhere; display:none; margin:8px 0; }
+.srv-flash { font-size:12px; color:var(--text-soft); margin-left:6px; }
+#srv-results-text { box-sizing:border-box; }
+.srv-guidance { display:flex; gap:14px; flex-wrap:wrap; font-size:11px; color:var(--text-soft); margin:10px 0 2px; }
+.srv-guidance b { color:var(--accent); }
+.fb-panel { margin-top:18px; border:1px solid var(--border); border-radius:10px; background:var(--search-bg); padding:12px 14px; }
+.fb-hdr { margin-bottom:8px; }
+.fb-hdr h2 { font-size:14px; font-weight:800; }
+.fb-sub { display:block; font-size:11px; color:var(--text-soft); margin-top:2px; }
+.fb-form { display:flex; flex-direction:column; gap:8px; }
+.fb-row { display:flex; gap:8px; flex-wrap:wrap; }
+.fb-row input { flex:2; min-width:220px; }
+.fb-row select { flex:1; min-width:130px; }
+.fb-form input, .fb-form select, .fb-form textarea { padding:6px 8px; font-size:12px; border:1px solid var(--border); border-radius:6px; background:var(--code-bg); color:var(--text); }
+.fb-form input:focus, .fb-form select:focus, .fb-form textarea:focus { outline:none; border-color:var(--accent); }
+.fb-meta { font-size:11px; color:var(--text-soft); margin:10px 0 6px; }
+.fb-item { display:flex; align-items:flex-start; gap:8px; padding:6px 8px; border:1px solid var(--border); border-radius:6px; margin-bottom:6px; font-size:11px; background:var(--code-bg); }
+.fb-kind { font-size:10px; font-weight:700; text-transform:uppercase; color:#c084fc; border:1px solid rgba(192,132,252,.4); border-radius:8px; padding:1px 6px; flex:none; margin-top:1px; }
+.fb-path { color:var(--accent); word-break:break-all; flex:none; }
+.fb-note { color:var(--text); flex:1; word-break:break-word; }
+.fb-x { padding:1px 8px; font-size:12px; flex:none; color:var(--text-muted); }
+
+/* ── Guidance (direction + research queue) ── */
+.gd-panel { margin:14px 0; border:1px solid var(--border); border-radius:10px; background:var(--search-bg); padding:12px 14px; }
+.gd-hdr { margin-bottom:8px; }
+.gd-hdr h2 { font-size:14px; font-weight:800; }
+.gd-total { font-size:12px; color:var(--text-soft); margin-bottom:8px; }
+.gd-total b { color:var(--accent); }
+.gd-focus { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px; }
+.gd-focus-chip { font-size:11px; border:1px solid var(--border); border-radius:10px; padding:4px 10px; background:var(--code-bg); color:var(--text-soft); }
+.gd-focus-chip b { color:#ffd166; }
+.gd-focus-chip .note { color:var(--text-muted); }
+.gd-table { width:100%; border-collapse:collapse; font-size:12px; }
+.gd-table th { text-align:left; font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--text-muted); padding:4px 8px; border-bottom:1px solid var(--border); }
+.gd-table td { padding:4px 8px; border-bottom:1px solid var(--border); color:var(--text); }
+.gd-table td.num { text-align:right; color:var(--text-soft); }
+.gd-table tr:hover td { background:var(--hover-bg); }
+.gd-table .stub-cell.hot { color:#ffd166; font-weight:700; }
+.gd-section-h { font-size:15px; font-weight:800; margin:22px 0 10px; border-top:1px solid var(--border); padding-top:16px; }
+.stub-entry { display:flex; align-items:center; gap:6px; padding:5px 6px; border-radius:5px; cursor:pointer; font-size:12px; }
+.stub-entry:hover { background:var(--hover-bg); }
+.stub-entry .words { margin-left:auto; font-size:10px; color:var(--text-muted); flex-shrink:0; }
+.stub-dot { width:8px; height:8px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+.stub-entry.classified .stub-dot { background:#34d399; }
+#stubs-filter-wrap { padding:4px 10px 2px; font-size:11px; color:var(--text-soft); }
+#stubs-only { accent-color: var(--accent); }
+
 </style>
 </head>
 <body>
@@ -1056,6 +1263,7 @@ body {
       <button class="sidebar-tab active" data-tab="docs" title="Browse documents">Browse</button>
       <button class="sidebar-tab" data-tab="compositions" title="Instruction sets">Compose</button>
       <button class="sidebar-tab" data-tab="search" title="Search entities">Search</button>
+      <button class="sidebar-tab" data-tab="stubs" title="Guidance — review, feedback &amp; research direction">Guide</button>
       <button class="sidebar-tab" data-tab="actions" title="Health, lint, build">Actions</button>
     </div>
   </div>
@@ -1069,9 +1277,18 @@ body {
   <div class="group-selector" id="group-selector">
     <span class="control-name">Group By</span>
     <div class="seg" role="group" aria-label="Group documents by">
-      <button type="button" class="group-btn active" data-mode="type" id="group-type">Type</button>
-      <button type="button" class="group-btn" data-mode="dir" id="group-dir">Folder</button>
+      <button type="button" class="group-btn active" data-mode="area" id="group-area" title="Top-level wiki areas">Area</button>
+      <button type="button" class="group-btn" data-mode="type" id="group-type" title="Frontmatter type">Type</button>
+      <button type="button" class="group-btn" data-mode="dir" id="group-dir" title="Directory tree">Folder</button>
     </div>
+  </div>
+  <div id="sidebar-filter-wrap">
+    <input id="sidebar-filter" type="text" placeholder="Filter documents&hellip;" spellcheck="false" autocomplete="off">
+  </div>
+  <div id="stubs-filter-wrap">
+    <label title="Only pages whose frontmatter status is stub">
+      <input type="checkbox" id="stubs-only"> Stubs only
+    </label>
   </div>
   <div id="compositions-container" style="display:none;padding:4px;">
     <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;padding:0 4px;">Knowledge compositions — grouped entity patterns</div>
@@ -1080,6 +1297,11 @@ body {
   <div id="search-container" style="display:none;padding:8px;">
     <input id="entity-search-input" type="text" placeholder="Search entities..." style="width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:4px;background:var(--search-bg);color:var(--text);font-size:12px;">
     <div id="entity-search-results" style="margin-top:6px;font-size:12px;"></div>
+  </div>
+
+  <div id="stubs-container" style="display:none;padding:4px 8px;">
+    <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;padding:0 4px;">Guide &mdash; stub triage quick list</div>
+    <div id="stubs-list"></div>
   </div>
 
   <div class="sidebar-section" id="files-section-label">Documents</div>
@@ -1134,13 +1356,122 @@ body {
       
       <h2>Reports</h2>
       <p><a href="stats.html" style="color:var(--accent);font-size:13px;">📈 Stats Hub</a></p>
-      <p><a href="stub-audit.html" style="color:var(--accent);font-size:13px;">🧹 Stub Auditor</a></p>
+      <p><button id="open-stubs-review" style="padding:5px 14px;font-size:12px;font-weight:600;border:1px solid var(--accent);border-radius:6px;background:var(--accent);color:#fff;cursor:pointer;">🧭 Guidance</button> <span style="font-size:11px;color:var(--text-muted);">review, feedback &amp; research direction in-app</span></p>
       <p><a href="ops/reports/audit-report.json" target="_blank" style="color:var(--accent);font-size:13px;">📊 Audit Report (JSON)</a></p>
       <p><a href="ops/reports/semantic_composition.md" target="_blank" style="color:var(--accent);font-size:13px;">🔬 Semantic Composition Report</a></p>
       <p><a href="ops/reports/entity_questionnaire.md" target="_blank" style="color:var(--accent);font-size:13px;">📋 Entity Questionnaire</a></p>
     </div>
   </div>
+
+  <!-- Review & Feedback (integrated into the mykb app) -->
+  <div id="content-stubs" class="content-view" style="display:none;padding:24px;max-width:960px;">
+    <div class="srv-hdr">
+      <h1>Guidance</h1>
+      <div style="font-size:12px;color:var(--text-soft);margin-top:2px;">Guide the research &amp; nature of mykb &mdash; see where coverage is thinnest, queue wanted pages / research directions / open questions, leave page-level feedback, and triage stub articles. <span class="srv-chip" id="srv-chip">snapshot</span></div>
+    </div>
+
+    <!-- Direction: area health + focus ranking -->
+    <div class="gd-panel">
+      <div class="gd-hdr"><h2>&#129302; Direction</h2><span class="fb-sub">Where the next acquisition &amp; enrichment pass should go &mdash; derived from live wiki state.</span></div>
+      <div id="gd-total" class="gd-total"></div>
+      <div id="gd-focus" class="gd-focus"></div>
+      <div id="gd-areas-wrap"><table id="gd-areas" class="gd-table"></table></div>
+    </div>
+
+    <!-- Guidance queue: wanted pages / directions / questions / feedback -->
+    <div class="fb-panel" id="fb-panel">
+      <div class="fb-hdr">
+        <h2>&#129302; Research &amp; Feedback Queue</h2>
+        <span class="fb-sub">Wanted pages, research directions, open questions, and page-level notes that guide the next inference pass. Items save to the daemon queue (<code>guidance-queue.json</code>) and merge into the inference manifest.</span>
+      </div>
+      <div class="fb-form">
+        <div class="fb-row">
+          <select id="fb-kind" title="Guidance kind">
+            <option value="wanted">wanted page</option>
+            <option value="direction">research direction</option>
+            <option value="question">open question</option>
+            <option value="suggestion">suggestion</option>
+            <option value="correction">correction</option>
+            <option value="priority">priority</option>
+            <option value="note">note</option>
+          </select>
+          <select id="fb-prio" title="Priority">
+            <option value="1">P1</option>
+            <option value="2" selected>P2</option>
+            <option value="3">P3</option>
+          </select>
+          <input id="fb-path" list="fb-paths" placeholder="wiki/&hellip; path (optional for wanted/direction)" spellcheck="false" autocomplete="off">
+          <button class="srv-btn primary" id="fb-add">＋ Add</button>
+        </div>
+        <textarea id="fb-note" rows="2" placeholder="What should exist, change, or be researched?"></textarea>
+      </div>
+      <div class="fb-meta">pending: <span id="fb-count">0</span> &middot; <button class="srv-btn" id="gd-save" style="padding:2px 10px;">Save guidance</button> &middot; <button class="srv-btn" id="fb-clear" style="padding:2px 8px;">clear</button></div>
+      <div id="fb-list"></div>
+      <datalist id="fb-paths"></datalist>
+    </div>
+
+    <h2 class="gd-section-h">Stub triage</h2>
+    <div class="srv-progress">
+      <div class="srv-progress-bar"><div class="srv-progress-fill" id="srv-progress-fill"></div></div>
+      <div class="srv-progress-label" id="srv-progress-label">0/0</div>
+    </div>
+    <div class="srv-legend">
+      <span><b style="color:#34d399">Keep</b> fine as-is</span>
+      <span><b style="color:#60a5fa">Enrich</b> expand to full article &mdash; click again for 1&times;/2&times;/3&times; passes</span>
+      <span><b style="color:#c084fc">Categorize</b> move to a domain folder</span>
+      <span><b style="color:#fbbf24">Archive</b> move to raw/archive</span>
+      <span><b style="color:#f87171">Delete</b> remove</span>
+    </div>
+    <div class="srv-filters">
+      <label><input type="checkbox" id="srv-flt-stub" checked> stubs</label>
+      <label><input type="checkbox" id="srv-flt-junk"> junk archive</label>
+      <span style="flex:1"></span>
+      <label>sort:
+        <select id="srv-sort" class="srv-sort">
+          <option value="n">default order</option>
+          <option value="c">oldest first</option>
+          <option value="w">fewest words</option>
+          <option value="l">fewest links</option>
+        </select>
+      </label>
+    </div>
+    <div class="srv-controls">
+      <div class="srv-tabs">
+        <button class="srv-tab active" data-srvf="all">All</button>
+        <button class="srv-tab" data-srvf="remaining">Remaining</button>
+        <button class="srv-tab" data-srvf="classified">Classified</button>
+      </div>
+      <span style="flex:1"></span>
+      <button class="srv-btn" id="srv-save-queue">Save queue</button>
+      <span class="srv-flash" id="srv-queue-flash"></span>
+      <button class="srv-btn" id="srv-results">Results</button>
+      <button class="srv-btn primary" id="srv-copy">Copy</button>
+    </div>
+    <div id="srv-results-panel" style="display:none;margin:10px 0;border:1px solid var(--border);border-radius:8px;background:var(--search-bg);">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid var(--border);font-size:13px;font-weight:600;">Results &mdash; paste into the wiki / run the commands</div>
+      <textarea id="srv-results-text" readonly spellcheck="false"></textarea>
+    </div>
+    <div style="margin:14px 0;border:1px solid var(--border);border-radius:8px;background:var(--search-bg);padding:10px 12px;">
+      <div style="font-size:12px;color:var(--text-soft);margin-bottom:8px;">Queue drain &mdash; plan / apply / rebuild (live daemon runs them; static pages show copyable commands)</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+        <button class="srv-btn" id="srv-drain-plan">Plan (preview)</button>
+        <button class="srv-btn" id="srv-drain-apply">Apply + manifest</button>
+        <button class="srv-btn" id="srv-drain-build">Rebuild data</button>
+      </div>
+      <div id="srv-drain-status" style="font-size:12px;color:var(--text-soft);">loading&hellip;</div>
+      <pre class="srv-out" id="srv-drain-out"></pre>
+    </div>
+    <div class="srv-pager" id="srv-pager">
+      <button class="srv-btn" id="srv-pg-prev">&#8249; Prev</button>
+      <span class="srv-pg-info" id="srv-pg-info"></span>
+      <button class="srv-btn" id="srv-pg-next">Next &#8250;</button>
+    </div>
+    <div id="srv-list"></div>
+    <div style="font-size:11px;color:var(--text-muted);margin-top:10px;">Keys: <b>1</b>=Keep <b>2</b>=Enrich (cycles 1&times;&rarr;2&times;&rarr;3&times;) <b>3</b>=Categorize <b>4</b>=Archive <b>5</b>=Delete &middot; re-click to undo &middot; progress persists in this browser</div>
+  </div>
 </div>
+
+<button id="fb-fab" title="Leave feedback on the current page" style="display:none;position:fixed;right:14px;bottom:14px;z-index:70;padding:9px 14px;font-size:12px;font-weight:700;border:1px solid var(--accent);border-radius:20px;background:var(--accent);color:#fff;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.35);">&#128172; Feedback</button>
 
 <div class="keyhint">Ctrl+K search &middot; Ctrl+B sidebar &middot; T theme &middot; G graph &middot; H health</div>
 
@@ -1606,7 +1937,7 @@ function switchContentView(viewName) {
   // Update sidebar header subtitle
   var sub = document.getElementById('header-subtitle');
   if (sub) {
-    var labels = { doc: 'RSIS3 memory \u00b7 wiki', graph: 'knowledge graph', actions: 'health & actions' };
+    var labels = { doc: 'RSIS3 memory \u00b7 wiki', graph: 'knowledge graph', actions: 'health & actions', stubs: 'guidance' };
     sub.textContent = labels[viewName] || 'RSIS3 memory \u00b7 wiki';
   }
   // If switching to graph, re-draw
@@ -1617,6 +1948,9 @@ function switchContentView(viewName) {
   if (viewName === 'actions') {
     loadStats();
     loadIndexInfo();
+  }
+  if (viewName === 'stubs') {
+    loadStubsReview();
   }
 }
 
@@ -1630,7 +1964,15 @@ var state = {
   accordionExpanded: {},
   dirCollapsed: {},
   typeCollapsed: {},  // collapse state for type groups
-  groupMode: "type",  // "type" or "dir"
+  groupMode: "area",  // "area" | "type" | "dir"
+  sectionCollapsed: {},   // top-level sections, keyed by section id
+  subgroupCollapsed: {},  // nested subgroups, keyed by subgroup id
+  moreOpen: {},           // leaf groups whose "+N more" cap has been expanded
+  userToggled: {},        // section ids the user explicitly collapsed/expanded
+  sidebarFilter: '',      // live sidebar filter query
+  stubsOnly: false,       // browse narrowed to stub pages only
+  stubPaths: null,        // Set of stub paths once stub-index.json loads
+  stubIndex: {},          // path -> stub metadata
 };
 
 // ── Tab switching for sidebar (Docs / Graph / Search) ──
@@ -1649,10 +1991,14 @@ document.addEventListener('DOMContentLoaded', function() {
       if (sc) sc.style.display = tabName === 'search' ? '' : 'none';
       var cc = document.getElementById('compositions-container');
       if (cc) cc.style.display = tabName === 'compositions' ? '' : 'none';
+      var stc = document.getElementById('stubs-container');
+      if (stc) stc.style.display = tabName === 'stubs' ? '' : 'none';
       if (tabName === 'compositions') loadCompositions();
+      if (tabName === 'stubs') history.replaceState(null, '', '#stubs');
       // Switch content view based on tab
       if (tabName === 'docs') switchContentView('doc');
       else if (tabName === 'graph') switchContentView('graph');
+      else if (tabName === 'stubs') { switchContentView('stubs'); loadStubsReview(); }
       else if (tabName === 'actions') switchContentView('actions');
     });
   });
@@ -2013,7 +2359,12 @@ function isMetaFile(f) {
 }
 function visibleFiles() {
   // Binary: content mode shows all content pages, meta mode shows all wiki-meta pages.
-  return state.files.filter(function(f) { return isMetaFile(f) === showMeta; });
+  // Stubs-only mode narrows further to pages with frontmatter status: stub.
+  return state.files.filter(function(f) {
+    if (isMetaFile(f) !== showMeta) return false;
+    if (state.stubsOnly && state.stubPaths) return state.stubPaths.has(f);
+    return true;
+  });
 }
 var showMeta = localStorage.getItem('md-meta') === 'on';
 var metaSeg = document.getElementById('meta-seg');
@@ -2317,7 +2668,7 @@ function renderSidebar() {
   // Home entry
   var home = document.createElement('a');
   home.className = 'file-entry home-entry';
-  home.innerHTML = '<span class="icon">⌂</span> All Documents';
+  home.innerHTML = '<span class="icon">\u2302</span> All Documents';
   home.href = '#';
   home.addEventListener('click', function(e) {
     e.preventDefault();
@@ -2327,20 +2678,37 @@ function renderSidebar() {
   if (!state.currentFile) home.classList.add('active');
   fileList.appendChild(home);
 
-  var count = visibleFiles().length;
-  var modeLabel = showMeta ? 'Meta documents' : 'Documents';
   var sectionLabel = document.getElementById('files-section-label');
+  if (state.stubsOnly && !state.stubPaths) {
+    if (sectionLabel) sectionLabel.textContent = 'Stub documents (loading stub index…)';
+    var ld = document.createElement('div');
+    ld.style.cssText = 'padding:10px 14px;font-size:11px;color:var(--text-muted);';
+    ld.textContent = 'Loading stub index…';
+    fileList.appendChild(ld);
+    return;
+  }
+  var all = visibleFiles();
+  var count = all.length;
+  var modeLabel = showMeta ? 'Meta documents' : (state.stubsOnly ? 'Stub documents' : 'Documents');
 
-  // Limit rendering for performance - max 300 files
-  var MAX_RENDER = 300;
-  if (sectionLabel) sectionLabel.textContent = modeLabel + ' (' + count + ')' + (count > MAX_RENDER ? ' · showing first ' + MAX_RENDER : '');
-  var fileSubset = visibleFiles().slice(0, MAX_RENDER);
+  var query = (state.sidebarFilter || '').trim().toLowerCase();
+  var filtered = query
+    ? all.filter(function(f) { return sidebarMatch(f, query); })
+    : all;
+
+  if (sectionLabel) {
+    if (query) {
+      sectionLabel.textContent = modeLabel + ' (' + count + ' \u00b7 ' + filtered.length + ' match' + (filtered.length === 1 ? '' : 'es') + ')';
+    } else {
+      sectionLabel.textContent = modeLabel + ' (' + count + ')';
+    }
+  }
 
   // Quick entry points: recent documents within the current view
   var recentVisible = [];
   try {
     recentVisible = (localStorage.getItem('md-recent') || '').split(',').filter(function(f) {
-      return f && visibleFiles().indexOf(f) !== -1;
+      return f && filtered.indexOf(f) !== -1;
     }).slice(0, 6);
   } catch (e) {}
   if (recentVisible.length > 0) {
@@ -2348,7 +2716,7 @@ function renderSidebar() {
     recentHeader.className = 'sidebar-section';
     var recentArrow = document.createElement('span');
     recentArrow.className = 'dir-arrow collapsed';
-    recentArrow.textContent = '▼';
+    recentArrow.textContent = '\u25BC';
     recentHeader.appendChild(recentArrow);
     var recentLabel = document.createElement('span');
     recentLabel.textContent = 'Recent';
@@ -2364,81 +2732,275 @@ function renderSidebar() {
     fileList.appendChild(recentWrap);
   }
 
-  // ---- Group By Type ----
-  if (state.groupMode === 'type') {
-    // Build type groups from metadata
-    var typeGroups = {};
-    var noMeta = [];
-    fileSubset.forEach(function(f) {
-      var entry = state.meta[f];
-      var t = (entry && entry.type) || 'other';
-      if (!typeGroups[t]) typeGroups[t] = [];
-      typeGroups[t].push(f);
+  if (state.groupMode === 'area') {
+    renderAreaSidebar(filtered, query);
+  } else if (state.groupMode === 'type') {
+    renderTypeSidebar(filtered, query);
+  } else {
+    renderDirSidebar(filtered);
+  }
+}
+
+// ── Sidebar helpers ────────────────────────────────────────────────────────
+
+// Extract the top-level wiki area for a file:
+//   wiki/<area>/<rest...> -> {area, rest}
+//   raw/<file>            -> {area: 'raw', rest: '<file>'}
+//   <root file>           -> {area: '(root)', rest: '<file>'}
+function sidebarAreaInfo(f) {
+  var segs = String(f).split('/');
+  if (segs.length >= 3) return { area: segs[1], rest: segs.slice(2).join('/') };
+  if (segs.length === 2) return { area: segs[0], rest: segs[1] };
+  return { area: '(root)', rest: f };
+}
+
+// Case-insensitive multi-term filter across path, title, type and tags.
+function sidebarMatch(f, query) {
+  var m = state.meta[f] || {};
+  var hay = String(f).toLowerCase();
+  if (m.title) hay += ' ' + String(m.title).toLowerCase();
+  if (m.type) hay += ' ' + String(m.type).toLowerCase();
+  if (m.tags && m.tags.length) hay += ' ' + m.tags.join(' ').toLowerCase();
+  return query.split(/\s+/).every(function(t) { return hay.indexOf(t) !== -1; });
+}
+
+// Shorten a subgroup path for display: strip the boilerplate "categories"
+// prefix and fold "subcategories/<x>" into "<x>".
+function sidebarSubgroupLabel(dirPath) {
+  var parts = String(dirPath || '').split('/').filter(Boolean);
+  if (parts[0] === 'categories') parts.shift();
+  var out = [];
+  for (var i = 0; i < parts.length; i++) {
+    if (parts[i] === 'subcategories' && i + 1 < parts.length) {
+      out.push(parts[i + 1]);
+      i++;
+    } else {
+      out.push(parts[i]);
+    }
+  }
+  return out.join('/') || dirPath;
+}
+
+// Sort a leaf group: landing pages first, then by filename.
+function sidebarGroupSort(files) {
+  files.sort(function(a, b) {
+    var aName = a.slice(a.lastIndexOf('/') + 1);
+    var bName = b.slice(b.lastIndexOf('/') + 1);
+    var aIdx = (aName === 'index.md' || aName === 'README.md') ? 0 : 1;
+    var bIdx = (bName === 'index.md' || bName === 'README.md') ? 0 : 1;
+    if (aIdx !== bIdx) return aIdx - bIdx;
+    return aName.localeCompare(bName);
+  });
+  return files;
+}
+
+// Render a leaf group, capped at SIDEBAR_MAX_GROUP entries with a "+N more"
+// link (a filter query surfaces every match, no cap).
+var SIDEBAR_MAX_GROUP = 50;
+function appendSidebarEntries(container, files, moreKey, query) {
+  var shown = files;
+  var extra = 0;
+  if (!query && !state.moreOpen[moreKey] && files.length > SIDEBAR_MAX_GROUP) {
+    shown = files.slice(0, SIDEBAR_MAX_GROUP);
+    extra = files.length - shown.length;
+  }
+  shown.forEach(function(f) {
+    container.appendChild(renderFileEntry(f));
+  });
+  if (extra > 0) {
+    var more = document.createElement('button');
+    more.type = 'button';
+    more.className = 'more-link';
+    more.textContent = '+' + extra + ' more';
+    more.addEventListener('click', function() {
+      state.moreOpen[moreKey] = true;
+      renderSidebar();
     });
+    container.appendChild(more);
+  }
+}
 
-    // Sort: largest groups first
-    var sortedTypes = Object.keys(typeGroups).sort(function(a, b) {
-      return typeGroups[b].length - typeGroups[a].length;
-    });
+// ── Group By Area (top-level wiki areas, collapsible, capped) ──────────────
+function renderAreaSidebar(filtered, query) {
+  var groups = {};
+  var areas = [];
+  filtered.forEach(function(f) {
+    var info = sidebarAreaInfo(f);
+    if (!groups[info.area]) {
+      groups[info.area] = { flat: [], subs: {} };
+      areas.push(info.area);
+    }
+    var slash = info.rest.lastIndexOf('/');
+    if (slash === -1) {
+      groups[info.area].flat.push(f);
+    } else {
+      var dp = info.rest.slice(0, slash);
+      if (!groups[info.area].subs[dp]) groups[info.area].subs[dp] = [];
+      groups[info.area].subs[dp].push(f);
+    }
+  });
 
-    sortedTypes.forEach(function(typeName) {
-      var entries = typeGroups[typeName];
-      var typeLabel = typeName.charAt(0).toUpperCase() + typeName.slice(1);
+  areas.sort(function(a, b) {
+    if (a === '(root)') return 1;
+    if (b === '(root)') return -1;
+    return a.localeCompare(b);
+  });
 
-      var section = document.createElement('div');
-      section.className = 'type-section';
+  areas.forEach(function(area) {
+    var g = groups[area];
+    var subPaths = Object.keys(g.subs).sort();
+    var total = g.flat.length;
+    subPaths.forEach(function(dp) { total += g.subs[dp].length; });
 
-      var header = document.createElement('div');
-      header.className = 'type-section-header';
+    var collapsed;
+    if (state.userToggled[area]) collapsed = !!state.sectionCollapsed[area];
+    else collapsed = !query && total > 120;
 
-      var arrow = document.createElement('span');
-      arrow.className = 'type-arrow' + (state.typeCollapsed[typeName] ? ' collapsed' : '');
-      arrow.textContent = '▼';
-      header.appendChild(arrow);
+    var header = document.createElement('div');
+    header.className = 'sidebar-section';
+    var arrow = document.createElement('span');
+    arrow.className = 'dir-arrow' + (collapsed ? ' collapsed' : '');
+    arrow.textContent = '\u25BC';
+    header.appendChild(arrow);
+    var label = document.createElement('span');
+    label.textContent = area;
+    header.appendChild(label);
+    var ec = document.createElement('span');
+    ec.className = 'dir-count';
+    ec.textContent = total;
+    header.appendChild(ec);
+    (function(a) {
+      header.addEventListener('click', function(e) {
+        state.userToggled[a] = true;
+        state.sectionCollapsed[a] = !state.sectionCollapsed[a];
+        renderSidebar();
+      });
+    })(area);
+    fileList.appendChild(header);
 
-      var label = document.createElement('span');
-      label.textContent = typeLabel;
-      header.appendChild(label);
+    var container = document.createElement('div');
+    container.className = 'area-entries' + (collapsed ? ' collapsed' : '');
+    fileList.appendChild(container);
 
-      var ec = document.createElement('span');
-      ec.className = 'type-count';
-      ec.textContent = entries.length;
-      header.appendChild(ec);
+    if (g.flat.length > 0) {
+      appendSidebarEntries(container, sidebarGroupSort(g.flat.slice()), area, query);
+    }
 
-      (function(t) {
-        header.addEventListener('click', function(e) {
-          state.typeCollapsed[t] = !state.typeCollapsed[t];
+    subPaths.forEach(function(dp) {
+      var subFiles = sidebarGroupSort(g.subs[dp].slice());
+      var subKey = area + '::' + dp;
+      var subCollapsed = query ? false : !!state.subgroupCollapsed[subKey];
+
+      var subHeader = document.createElement('div');
+      subHeader.className = 'subgroup-header';
+      var sArrow = document.createElement('span');
+      sArrow.className = 'sg-arrow' + (subCollapsed ? ' collapsed' : '');
+      sArrow.textContent = '\u25B8';
+      subHeader.appendChild(sArrow);
+      var sLabel = document.createElement('span');
+      sLabel.textContent = sidebarSubgroupLabel(dp);
+      subHeader.appendChild(sLabel);
+      var sCount = document.createElement('span');
+      sCount.className = 'sg-count';
+      sCount.textContent = subFiles.length;
+      subHeader.appendChild(sCount);
+      (function(k) {
+        subHeader.addEventListener('click', function(e) {
+          state.subgroupCollapsed[k] = !state.subgroupCollapsed[k];
           renderSidebar();
         });
-      })(typeName);
+      })(subKey);
+      container.appendChild(subHeader);
 
-      section.appendChild(header);
-
-      var container = document.createElement('div');
-      container.className = 'type-entries' + (state.typeCollapsed[typeName] ? ' collapsed' : '');
-      
-      // Sort entries within type: by title if available, else by filename
-      var sorted = entries.slice().sort(function(a, b) {
-        var ta = state.meta[a] && state.meta[a].title;
-        var tb = state.meta[b] && state.meta[b].title;
-        if (ta && tb) return ta.localeCompare(tb);
-        if (ta) return -1;
-        if (tb) return 1;
-        return a.localeCompare(b);
-      });
-
-      sorted.forEach(function(f) {
-        var wrap = renderFileEntry(f);
-        container.appendChild(wrap);
-      });
-
-      section.appendChild(container);
-      fileList.appendChild(section);
+      var subContainer = document.createElement('div');
+      subContainer.className = 'subgroup-entries' + (subCollapsed ? ' collapsed' : '');
+      container.appendChild(subContainer);
+      appendSidebarEntries(subContainer, subFiles, subKey, query);
     });
-    return;
+  });
+}
+
+// ── Group By Type ──────────────────────────────────────────────────────────
+function renderTypeSidebar(filtered, query) {
+  var sectionLabel = document.getElementById('files-section-label');
+  var MAX_RENDER = 300;
+  var fileSubset = query ? filtered : filtered.slice(0, MAX_RENDER);
+  if (sectionLabel && !query && filtered.length > MAX_RENDER) {
+    sectionLabel.textContent = (showMeta ? 'Meta documents' : 'Documents') + ' (' + filtered.length + ' \u00b7 showing first ' + MAX_RENDER + ')';
   }
 
-  // ---- Group By Directory (existing behavior) ----
+  var typeGroups = {};
+  fileSubset.forEach(function(f) {
+    var entry = state.meta[f];
+    var t = (entry && entry.type) || 'other';
+    if (!typeGroups[t]) typeGroups[t] = [];
+    typeGroups[t].push(f);
+  });
+
+  var sortedTypes = Object.keys(typeGroups).sort(function(a, b) {
+    return typeGroups[b].length - typeGroups[a].length;
+  });
+
+  sortedTypes.forEach(function(typeName) {
+    var entries = typeGroups[typeName];
+    var typeLabel = typeName.charAt(0).toUpperCase() + typeName.slice(1);
+
+    var section = document.createElement('div');
+    section.className = 'type-section';
+
+    var header = document.createElement('div');
+    header.className = 'type-section-header';
+
+    var arrow = document.createElement('span');
+    arrow.className = 'type-arrow' + (state.typeCollapsed[typeName] ? ' collapsed' : '');
+    arrow.textContent = '\u25BC';
+    header.appendChild(arrow);
+
+    var label = document.createElement('span');
+    label.textContent = typeLabel;
+    header.appendChild(label);
+
+    var ec = document.createElement('span');
+    ec.className = 'type-count';
+    ec.textContent = entries.length;
+    header.appendChild(ec);
+
+    (function(t) {
+      header.addEventListener('click', function(e) {
+        state.typeCollapsed[t] = !state.typeCollapsed[t];
+        renderSidebar();
+      });
+    })(typeName);
+
+    section.appendChild(header);
+
+    var container = document.createElement('div');
+    container.className = 'type-entries' + (state.typeCollapsed[typeName] ? ' collapsed' : '');
+
+    var sorted = entries.slice().sort(function(a, b) {
+      var ta = state.meta[a] && state.meta[a].title;
+      var tb = state.meta[b] && state.meta[b].title;
+      if (ta && tb) return ta.localeCompare(tb);
+      if (ta) return -1;
+      if (tb) return 1;
+      return a.localeCompare(b);
+    });
+
+    sorted.forEach(function(f) {
+      container.appendChild(renderFileEntry(f));
+    });
+
+    section.appendChild(container);
+    fileList.appendChild(section);
+  });
+}
+
+// ── Group By Folder (directory tree) ───────────────────────────────────────
+function renderDirSidebar(filtered) {
+  var sectionLabel = document.getElementById('files-section-label');
+  var MAX_RENDER = 300;
+  var fileSubset = filtered.length > MAX_RENDER ? filtered.slice(0, MAX_RENDER) : filtered;
+
   var groups = {};
   fileSubset.forEach(function(f) {
     if (f === 'complete.md') return;
@@ -2459,7 +3021,6 @@ function renderSidebar() {
     return a.localeCompare(b);
   });
 
-  // Sort within each dir: landing page (index.md/README.md) first, then by name
   Object.keys(groups).forEach(function(dir) {
     groups[dir].sort(function(a, b) {
       var aIdx = a.name === 'index.md' || a.name === 'README.md' ? 0 : 1;
@@ -2470,9 +3031,12 @@ function renderSidebar() {
   });
 
   if (sectionLabel) {
-    sectionLabel.textContent = dirs.length > 1
-      ? modeLabel + ' (' + count + ' in ' + dirs.length + ' dirs)'
-      : modeLabel + ' (' + count + ')';
+    var base = showMeta ? 'Meta documents' : 'Documents';
+    sectionLabel.textContent = fileSubset.length < filtered.length
+      ? base + ' (' + filtered.length + ' \u00b7 showing first ' + MAX_RENDER + ')'
+      : (dirs.length > 1
+        ? base + ' (' + filtered.length + ' in ' + dirs.length + ' dirs)'
+        : base + ' (' + filtered.length + ')');
   }
 
   dirs.forEach(function(dir) {
@@ -2482,7 +3046,7 @@ function renderSidebar() {
       header.className = 'sidebar-section';
       var arrow = document.createElement('span');
       arrow.className = 'dir-arrow' + (state.dirCollapsed[dir] ? ' collapsed' : '');
-      arrow.textContent = '▼';
+      arrow.textContent = '\u25BC';
       header.appendChild(arrow);
       var label = document.createElement('span');
       label.textContent = dir;
@@ -2503,8 +3067,7 @@ function renderSidebar() {
     entriesContainer.className = 'dir-entries' + (dir !== '' && state.dirCollapsed[dir] ? ' collapsed' : '');
     fileList.appendChild(entriesContainer);
     entries.forEach(function(entry) {
-      var wrap = renderFileEntry(entry.full);
-      entriesContainer.appendChild(wrap);
+      entriesContainer.appendChild(renderFileEntry(entry.full));
     });
   });
 }
@@ -2546,6 +3109,7 @@ function renderFileEntry(filename) {
   })(filename);
 
   var label = document.createElement('span');
+  label.className = 'file-label';
   label.innerHTML = '<span class="icon">' + iconChar + '</span>' + escapeHtml(displayName);
   if (!title && displayName !== cleanName) {
     // Show subtitle if we have a title different from filename
@@ -2557,6 +3121,13 @@ function renderFileEntry(filename) {
 
   main.appendChild(arrow);
   main.appendChild(label);
+  if (meta.type) {
+    var chip = document.createElement('span');
+    chip.className = 'type-chip ' + String(meta.type).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    chip.textContent = meta.type;
+    chip.title = 'Type: ' + meta.type;
+    main.appendChild(chip);
+  }
   main.href = '#' + encodeURIComponent(filename);
 
   (function(fn) {
@@ -2595,24 +3166,100 @@ function renderFileEntry(filename) {
 
   return wrap;
 }
+function resolveDotSegments(p) {
+  var parts = String(p || '').split('/');
+  var out = [];
+  for (var i = 0; i < parts.length; i++) {
+    var seg = parts[i];
+    if (seg === '' || seg === '.') continue;
+    if (seg === '..') { if (out.length) out.pop(); continue; }
+    out.push(seg);
+  }
+  return out.join('/');
+}
+
+function canonicalFile(p) {
+  // Return the canonical path from state.files for a lookup, case-insensitively.
+  if (!p) return null;
+  if (state.files.indexOf(p) !== -1) return p;
+  var lower = p.toLowerCase();
+  for (var i = 0; i < state.files.length; i++) {
+    if (state.files[i].toLowerCase() === lower) return state.files[i];
+  }
+  return null;
+}
+
+function resolveWikiPath(filename) {
+  // Turn any link/hash target into a canonical file path (or null).
+  // Handles ../ relative links (resolved against the current file's directory),
+  // wiki/ prefixes, .md suffixes, wiki/wiki/ double prefixes, and falls back to
+  // a unique basename match so archived/moved pages still resolve.
+  if (!filename) return null;
+  var anchor = null;
+  var raw = String(filename).trim();
+  var hashIdx = raw.indexOf('#');
+  if (hashIdx !== -1) {
+    anchor = raw.slice(hashIdx + 1) || null;
+    raw = raw.slice(0, hashIdx);
+  }
+  raw = raw.replace(/^\.\//, '');
+  if (!raw) return null;
+
+  var candidates = [];
+  function push(c) {
+    c = resolveDotSegments(c);
+    if (c && candidates.indexOf(c) === -1) candidates.push(c);
+  }
+  // Relative to the current file's directory first (../foo.md)
+  if (raw.indexOf('../') !== -1 && state.currentFile) {
+    var curDir = state.currentFile.split('/').slice(0, -1).join('/');
+    push((curDir ? curDir + '/' : '') + raw);
+  }
+  // Root-relative, with legacy ../ segments stripped
+  push(raw.replace(/(?:^|\/)\.\.\//g, ''));
+  // Double wiki/wiki/ prefix
+  push(raw.replace(/^wiki\/wiki\//, 'wiki/'));
+  // Strip or add the wiki/ prefix
+  if (raw.indexOf('wiki/') === 0) push(raw.slice(5));
+  push('wiki/' + raw);
+
+  for (var i = 0; i < candidates.length; i++) {
+    var c = candidates[i];
+    var forms = [c];
+    if (/\.md$/i.test(c)) forms.push(c.replace(/\.md$/i, ''));
+    else forms.push(c + '.md');
+    for (var j = 0; j < forms.length; j++) {
+      var canon = canonicalFile(forms[j]);
+      if (canon) return { path: canon, anchor: anchor };
+    }
+  }
+
+  // Unique-basename fallback (archived/moved pages)
+  var base = raw.split('/').pop().replace(/\.md$/i, '').toLowerCase();
+  if (base.length > 2) {
+    var hits = [];
+    for (var k = 0; k < state.files.length; k++) {
+      var f = state.files[k];
+      if (f.split('/').pop().replace(/\.md$/i, '').toLowerCase() === base) hits.push(f);
+    }
+    if (hits.length === 1) return { path: hits[0], anchor: anchor };
+    if (hits.length > 1) {
+      var wikiHits = hits.filter(function(h) { return h.indexOf('wiki/') === 0; });
+      if (wikiHits.length === 1) return { path: wikiHits[0], anchor: anchor };
+    }
+  }
+  return null;
+}
+
 function navigateTo(filename, anchor) {
   if (!filename) return;
   switchContentView('doc');
 
-  // Resolve parent-relative paths against the wiki root when possible
-  // (../topics/foo.md -> topics/foo.md); the wiki daemon handles real paths.
-  if (filename.indexOf('../') !== -1) {
-    var resolved = filename.replace(/(?:^|\/)\.\.\//g, '');
-    if (state.files.indexOf(resolved) !== -1) filename = resolved;
-  }
-
-  // Normalize: strip .md, then re-add for consistent lookup
-  var bareName = filename.replace(/\.md$/i, '');
-  var mdName = bareName + '.md';
-  if (state.files.indexOf(mdName) !== -1 && filename !== mdName) {
-    filename = mdName;
-  } else if (state.files.indexOf(bareName) !== -1) {
-    filename = bareName;
+  // Resolve the target against the wiki index (relative ../, prefixes, fallbacks)
+  var resolved = resolveWikiPath(filename);
+  if (resolved) {
+    filename = resolved.path;
+    if (!anchor) anchor = resolved.anchor || null;
   }
 
   // If already viewing this file with an anchor, just scroll
@@ -2624,6 +3271,7 @@ function navigateTo(filename, anchor) {
   }
 
   state.currentFile = filename;
+  fbFabUpdate();
   history.replaceState(null, '', '#' + encodeURIComponent(filename) + (anchor ? '#' + anchor : ''));
   recordRecent(filename);
   renderSidebar();
@@ -2664,9 +3312,19 @@ function navigateTo(filename, anchor) {
       afterRender();
     })
     .catch(function() {
-      contentDoc.innerHTML = '<div class="markdown-body"><div class="welcome"><h1>Error</h1><p>Could not load <strong>' + escapeHtml(filename) + '</strong>.</p><p style="font-size:12px;color:var(--text-muted);">Path: ' + escapeHtml(filename) + '</p><p><a href="#" id="err-home" style="color:var(--accent);">← Back to all documents</a></p></div></div>';
+      var base = String(filename).split('/').pop().replace(/\.md$/i, '');
+      var searchLink = '';
+      if (base && base.length > 1) {
+        searchLink = '<p><a href="#" id="err-search" style="color:var(--accent);">Search for &lsquo;' + escapeHtml(base) + '&rsquo;</a></p>';
+      }
+      contentDoc.innerHTML = '<div class="markdown-body"><div class="welcome"><h1>Error</h1><p>Could not load <strong>' + escapeHtml(filename) + '</strong>.</p><p style="font-size:12px;color:var(--text-muted);">Path: ' + escapeHtml(filename) + '</p>' + searchLink + '<p><a href="#" id="err-home" style="color:var(--accent);">← Back to all documents</a></p></div></div>';
       var errHome = contentDoc.querySelector('#err-home');
       if (errHome) errHome.addEventListener('click', function(e) { e.preventDefault(); navigateHome(); });
+      var errSearch = contentDoc.querySelector('#err-search');
+      if (errSearch) errSearch.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (searchInput) { searchInput.value = base; performSearch(); }
+      });
     });
 }
 
@@ -2682,6 +3340,10 @@ function renderContent(filename, md) {
 
 function resolveRoute() {
   var hash = window.location.hash.slice(1);
+  if (hash === 'stubs' || hash === 'review' || hash === 'guidance' || hash === 'guide') {
+    activateStubs();
+    return;
+  }
   if (!hash) {
     var visible = visibleFiles();
     if (visible.length > 0 && !state.currentFile) { navigateTo(visible[0]); }
@@ -2691,9 +3353,11 @@ function resolveRoute() {
   var file = decodeURIComponent(parts[0]);
   var anchor = parts.slice(1).join('#');
 
-  // If the hash is a known file, navigate to it
-  if (state.files.indexOf(file) !== -1) {
-    navigateTo(file, anchor || null);
+  // If the hash is a known file, navigate to it (resolution handles wiki/
+  // prefixes, .md suffixes, ../ relatives and archived basename matches)
+  var resolved = resolveWikiPath(file);
+  if (resolved) {
+    navigateTo(resolved.path, resolved.anchor || anchor || null);
     return;
   }
 
@@ -2834,6 +3498,7 @@ function probeGraphStats() {
 
 function navigateHome() {
   state.currentFile = '';
+  fbFabUpdate();
   history.replaceState(null, '', '#');
   renderSidebar();
   document.title = 'md \u2014 documents';
@@ -3013,14 +3678,17 @@ document.addEventListener('keydown', function(e) {
    Internal heading link handling
    ═══════════════════════════════════════════ */
 
-// Intercept heading anchor clicks and .md links for internal navigation
+// Intercept heading anchor clicks and .md links for internal navigation.
+// stopPropagation keeps the document-level .md interceptor from re-navigating
+// with the unresolved raw href after this handler has already resolved it.
 content.addEventListener('click', function(e) {
   var target = e.target;
   // Wikilink with data-target
   if (target.classList && target.classList.contains('wikilink')) {
     e.preventDefault();
+    e.stopPropagation();
     var t = target.getAttribute('data-target');
-    if (t) navigateTo(t + '.md');
+    if (t) navigateTo(t);
     return;
   }
   if (target.tagName === 'A' && target.getAttribute('href')) {
@@ -3028,6 +3696,7 @@ content.addEventListener('click', function(e) {
     // Internal .md link -> navigate within viewer
     if (href.match(/\.md$/i)) {
       e.preventDefault();
+      e.stopPropagation();
       navigateTo(href);
       return;
     }
@@ -3037,6 +3706,7 @@ content.addEventListener('click', function(e) {
       var el = document.getElementById(id);
       if (el && state.currentFile) {
         e.preventDefault();
+        e.stopPropagation();
         el.scrollIntoView({ behavior: 'smooth' });
         history.replaceState(null, '', '#' + encodeURIComponent(state.currentFile) + '#' + id);
       }
@@ -3067,6 +3737,774 @@ if (groupSelector) {
 /* ═══════════════════════════════════════════
    Init
    ═══════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════
+   Review & Feedback — integrated into the mykb app
+   Two things live here: stub triage (Keep / Enrich 1-3x / Categorize /
+   Archive / Delete for pages with frontmatter status: stub) and free-form
+   human commentary on ANY wiki page that guides the next improvement pass.
+   Decisions and feedback persist in this browser; Save queue writes both to
+   the inference queue. Live data comes from the wiki daemon; static pages
+   fall back to stub-review.json / stub-index.json and print copyable
+   commands.
+   ═══════════════════════════════════════════ */
+var SRV = {
+  items: [],            // normalized review items
+  dirs: [], areas: [],
+  live: false, loaded: false,
+  filter: 'all',
+  sort: 'n',
+  page: 1, pageSize: 50,
+  choices: {},          // path -> decision (persisted under 'stub-audit')
+  depths: {},           // path -> 1|2|3 enrichment passes for 'e' (persisted under 'stub-audit-depth')
+  catTargets: {}        // path -> wiki/<area>/<sub> destination for 'c'
+};
+try { SRV.choices = JSON.parse(localStorage.getItem('stub-audit') || '{}') || {}; } catch (e) { SRV.choices = {}; }
+try { SRV.depths = JSON.parse(localStorage.getItem('stub-audit-depth') || '{}') || {}; } catch (e) { SRV.depths = {}; }
+var FB = { items: [] }; // pending human feedback/commentary on any wiki page
+try { FB.items = JSON.parse(localStorage.getItem('mykb-feedback') || '[]') || []; } catch (e) { FB.items = []; }
+try { state.stubsOnly = localStorage.getItem('md-stubs-only') === 'on'; } catch (e) {}
+
+/* ── Guidance state — research & feedback queue (wanted pages, directions,
+   questions, page-level notes). The working set persists as a draft so
+   unsaved items survive reloads; "Save guidance" POSTs it to the daemon
+   queue (guidance-queue.json) or downloads it when static. ── */
+var GUID = { live: false, loaded: false, total: null, areas: [], focus: [], queue: null, items: [] };
+try { GUID.items = JSON.parse(localStorage.getItem('mykb-guidance-draft') || '[]') || []; } catch (e) { GUID.items = []; }
+function gdPersist() {
+  try { localStorage.setItem('mykb-guidance-draft', JSON.stringify(GUID.items)); } catch (e) {}
+}
+
+function srvPersist() {
+  try {
+    localStorage.setItem('stub-audit', JSON.stringify(SRV.choices));
+    localStorage.setItem('stub-audit-depth', JSON.stringify(SRV.depths));
+  } catch (e) {}
+}
+function fbPersist() {
+  try { localStorage.setItem('mykb-feedback', JSON.stringify(FB.items)); } catch (e) {}
+}
+function srvEsc(x) {
+  return String(x == null ? '' : x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function gdNorm(it) {
+  return {
+    kind: it.kind || it.type || 'note',
+    path: it.path || '',
+    note: it.note || it.text || '',
+    priority: it.priority != null ? it.priority : 2,
+    added: it.added || ''
+  };
+}
+function gdFillPaths() {
+  var dl = document.getElementById('fb-paths');
+  if (!dl) return;
+  dl.innerHTML = '';
+  (state.files || []).slice(0, 400).forEach(function(f) {
+    var p = (typeof f === 'string') ? f : (f.path || '');
+    if (!p) return;
+    var o = document.createElement('option');
+    o.value = p.replace(/\\/g, '/');
+    dl.appendChild(o);
+  });
+}
+function loadGuidance() {
+  if (GUID.loaded) { gdRender(); return; }
+  var draft = GUID.items.length ? GUID.items.slice() : null;
+  function applyData(d, live) {
+    GUID.live = !!live;
+    GUID.loaded = true;
+    GUID.total = d.total || null;
+    GUID.areas = d.areas || [];
+    GUID.focus = d.focus || [];
+    GUID.queue = d.queue || null;
+    var seeded = (d.queue && Array.isArray(d.queue.items) ? d.queue.items : []).map(gdNorm);
+    GUID.items = draft || seeded;
+    gdFillPaths();
+    gdRender();
+  }
+  srvApiReq('/api/v2/guidance')
+    .then(function(d) {
+      if (!d || !Array.isArray(d.areas)) throw new Error('bad payload');
+      applyData(d, true);
+    })
+    .catch(function() {
+      fetch(KB_BASE + 'guidance.json')
+        .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+        .then(function(d) {
+          if (!d || !Array.isArray(d.areas)) throw new Error('bad payload');
+          applyData(d, false);
+        })
+        .catch(function() {
+          GUID.loaded = true; GUID.live = false;
+          GUID.total = null; GUID.areas = []; GUID.focus = []; GUID.queue = null;
+          GUID.items = GUID.items.slice();
+          gdFillPaths();
+          gdRender();
+        });
+    });
+}
+function gdRender() {
+  var tot = document.getElementById('gd-total');
+  if (tot) {
+    if (GUID.total) {
+      tot.innerHTML = '<b>' + GUID.total.pages + '</b> wiki pages &middot; <b>' + GUID.total.stubs + '</b> stubs (' + GUID.total.stub_pct + '%)' +
+        (GUID.live ? ' &middot; <span style="color:#34d399">live</span>' : ' &middot; snapshot');
+    } else {
+      tot.innerHTML = '<span style="color:var(--text-muted)">coverage data unavailable &mdash; run <code>cosmos guidance build</code></span>';
+    }
+  }
+  var foc = document.getElementById('gd-focus');
+  if (foc) {
+    foc.innerHTML = '';
+    (GUID.focus || []).forEach(function(f) {
+      var chip = document.createElement('span');
+      chip.className = 'gd-focus-chip';
+      chip.innerHTML = '<b>' + srvEsc(f.area) + '</b> ' + f.stubs + ' stubs &middot; ' + f.stub_pct + '% <span class="note">&mdash; ' + srvEsc(f.note) + '</span>';
+      foc.appendChild(chip);
+    });
+    if (!(GUID.focus || []).length) foc.innerHTML = '<span style="font-size:12px;color:var(--text-muted)">no focus data</span>';
+  }
+  var tbl = document.getElementById('gd-areas');
+  if (tbl) {
+    var rows = (GUID.areas || []).slice(0, 15);
+    var html = '<tr><th>area</th><th>pages</th><th>stubs</th><th>stub %</th><th>avg words</th></tr>';
+    rows.forEach(function(a) {
+      var hot = a.stub_pct >= 50 ? ' class="stub-cell hot"' : '';
+      html += '<tr><td>' + srvEsc(a.area) + '</td><td class="num">' + a.pages + '</td><td class="num"><span' + hot + '>' + a.stubs + '</span></td><td class="num">' + a.stub_pct + '%</td><td class="num">' + a.avg_words + '</td></tr>';
+    });
+    if (!rows.length) html += '<tr><td colspan="5" style="color:var(--text-muted)">no area data</td></tr>';
+    tbl.innerHTML = html;
+  }
+  gdRenderList();
+}
+function gdRenderList() {
+  var el = document.getElementById('fb-list');
+  if (!el) return;
+  var cnt = document.getElementById('fb-count');
+  var items = GUID.items || [];
+  if (cnt) cnt.textContent = items.length;
+  el.innerHTML = '';
+  items.forEach(function(it, i) {
+    var row = document.createElement('div');
+    row.className = 'fb-item';
+    row.innerHTML =
+      '<span class="fb-kind">' + srvEsc(it.kind) + '</span>' +
+      '<span style="font-size:10px;color:#ffd166;flex:none;">P' + (it.priority || 2) + '</span>' +
+      (it.path ? '<span class="fb-path">' + srvEsc(it.path) + '</span>' : '') +
+      (it.note ? '<span class="fb-note">' + srvEsc(it.note) + '</span>' : '') +
+      '<button class="fb-x" data-i="' + i + '" title="remove">&#10005;</button>';
+    row.querySelector('.fb-x').addEventListener('click', function() {
+      GUID.items.splice(parseInt(this.getAttribute('data-i'), 10), 1);
+      gdPersist();
+      gdRenderList();
+    });
+    el.appendChild(row);
+  });
+  if (!items.length) el.innerHTML = '<div style="font-size:11px;color:var(--text-muted);">No guidance items yet &mdash; add a wanted page, research direction, open question, or page-level note above.</div>';
+}
+function gdNormPath(p) {
+  p = (p || '').trim().replace(/\\/g, '/').replace(/^\/+/, '');
+  if (!p) return '';
+  if (p.indexOf('wiki/') === 0 || p.indexOf('raw/') === 0) return p;
+  if (p.indexOf('.md') === -1) p += '.md';
+  return 'wiki/' + p;
+}
+function gdAdd() {
+  var kind = document.getElementById('fb-kind');
+  var prio = document.getElementById('fb-prio');
+  var path = document.getElementById('fb-path');
+  var note = document.getElementById('fb-note');
+  if (!kind || !prio || !path || !note) return;
+  var p = gdNormPath(path.value);
+  var n = note.value.trim();
+  if (!p && !n) { note.focus(); return; }
+  GUID.items.push({
+    kind: kind.value,
+    path: p,
+    note: n,
+    priority: parseInt(prio.value, 10) || 2,
+    added: new Date().toISOString()
+  });
+  path.value = ''; note.value = '';
+  gdPersist();
+  gdRenderList();
+  srvQueueFlash('added to guidance queue (Save guidance persists it)', true);
+}
+function gdClear() {
+  if (!GUID.items.length) return;
+  GUID.items = [];
+  gdPersist();
+  gdRenderList();
+}
+function gdDownloadQueue(payload) {
+  var blob = new Blob([JSON.stringify(payload, null, 1)], { type: 'application/json' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'guidance-queue.json';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(function() { URL.revokeObjectURL(a.href); }, 1500);
+  srvQueueFlash('downloaded guidance-queue.json (no live server) — place it in .wiki-daemon/buffers/ and run drain_stub_queue.py --apply', false);
+}
+function gdSave() {
+  if (!GUID.items.length) { srvQueueFlash('nothing to save — add at least one guidance item', false); return; }
+  var payload = { source: 'guidance', queued_at: new Date().toISOString(), count: GUID.items.length, items: GUID.items };
+  if (!window.fetch) { gdDownloadQueue(payload); return; }
+  srvApiReq('/api/v2/guidance/queue', { method: 'POST', body: JSON.stringify(payload) })
+    .then(function(j) {
+      if (j.status === 'ok') {
+        srvQueueFlash('guidance saved → ' + j.path + ' ✓', true);
+        try { localStorage.removeItem('mykb-guidance-draft'); } catch (e) {}
+        GUID.loaded = false;
+        GUID.items = [];
+        loadGuidance();
+      } else throw new Error(j.error || 'queue failed');
+    })
+    .catch(function() { gdDownloadQueue(payload); });
+}
+function fbFabUpdate() {
+  var fab = document.getElementById('fb-fab');
+  if (!fab) return;
+  var show = !!state.currentFile && state.currentTab !== 'stubs';
+  fab.style.display = show ? '' : 'none';
+}
+var SRV_API_BASES = ['', 'http://localhost:8765', 'http://127.0.0.1:8765'];
+function srvApiReq(path, opts) {
+  opts = opts || {};
+  var i = 0;
+  return new Promise(function(resolve, reject) {
+    function next() {
+      if (i >= SRV_API_BASES.length) { reject(new Error('no API reachable')); return; }
+      var base = SRV_API_BASES[i++];
+      var ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+      var t = setTimeout(function(){ if (ctrl) ctrl.abort(); }, 20000);
+      fetch(base + path, {
+        method: opts.method || 'GET',
+        headers: { 'Content-Type': 'application/json' },
+        body: opts.body,
+        signal: ctrl ? ctrl.signal : undefined
+      }).then(function(r) {
+        clearTimeout(t);
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      }).then(resolve).catch(function(e) { clearTimeout(t); next(); });
+    }
+    next();
+  });
+}
+function srvNorm(it) {
+  var p = it.p || it.path || '';
+  var junk = it.j ? 1 : 0;
+  if (!junk && p.indexOf('wiki/') !== 0 && p.indexOf('raw/') !== 0) p = 'wiki/' + p;
+  return {
+    path: p,
+    title: it.t || it.title || p.split('/').pop().replace(/\.md$/,'').replace(/-/g, ' '),
+    words: it.w != null ? it.w : (it.words || 0),
+    status: it.s || it.status || 'stub',
+    junk: junk,
+    created: it.c || it.created || '',
+    links: it.l != null ? it.l : (it.links || 0),
+    desc: it.d || it.description || '',
+    snip: it.x || it.snippet || '',
+    n: it.n || 0
+  };
+}
+function srvSetData(items, dirs, areas, live) {
+  SRV.items = items;
+  SRV.dirs = dirs || [];
+  SRV.areas = areas || [];
+  SRV.live = !!live;
+  SRV.loaded = true;
+  // Feed the browse "Stubs only" filter from the same dataset.
+  state.stubPaths = new Set();
+  state.stubIndex = {};
+  items.forEach(function(it) {
+    if (!it.junk) { state.stubPaths.add(it.path); state.stubIndex[it.path] = it; }
+  });
+  if (state.stubsOnly) renderSidebar();
+  var chip = document.getElementById('srv-chip');
+  if (chip) {
+    chip.textContent = live ? 'live data' : 'snapshot';
+    chip.classList.add(live ? 'live' : 'snap');
+  }
+  srvRender();
+  srvDrainStatus();
+}
+function loadStubsReview() {
+  if (SRV.loaded) { srvRender(); srvDrainStatus(); return; }
+  var chip = document.getElementById('srv-chip');
+  if (chip) { chip.textContent = 'scanning…'; chip.classList.remove('live', 'snap'); }
+  srvApiReq('/api/v2/stubs')
+    .then(function(d) {
+      if (!d || !Array.isArray(d.items)) throw new Error('bad payload');
+      srvSetData(d.items.map(srvNorm), d.dirs || [], d.areas || [], true);
+    })
+    .catch(function() {
+      fetch(KB_BASE + 'stub-review.json')
+        .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+        .then(function(d) {
+          if (!d || !Array.isArray(d.items)) throw new Error('bad payload');
+          srvSetData(d.items.map(srvNorm), d.dirs || [], d.areas || [], false);
+        })
+        .catch(function() {
+          fetch(KB_BASE + 'stub-index.json')
+            .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+            .then(function(d) {
+              var items = (d.stubs || []).map(function(ss) {
+                return srvNorm({ path: ss.path, title: ss.title, words: ss.words, status: ss.status, created: ss.created, description: ss.description });
+              });
+              srvSetData(items, [], [], false);
+            })
+            .catch(function() {
+              var el = document.getElementById('srv-list');
+              if (el) el.innerHTML = '<div style="font-size:12px;color:var(--text-soft);">No stub data found — run <code>cosmos stubs build</code> to generate stub-index.json.</div>';
+            });
+        });
+    });
+}
+function ensureStubPaths() {
+  if (state.stubPaths) return Promise.resolve();
+  return fetch(KB_BASE + 'stub-index.json')
+    .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+    .then(function(d) {
+      state.stubPaths = new Set();
+      state.stubIndex = {};
+      (d.stubs || []).forEach(function(ss) { state.stubPaths.add(ss.path); state.stubIndex[ss.path] = ss; });
+    });
+}
+function activateStubs() {
+  state.currentTab = 'stubs';
+  fbFabUpdate();
+  document.querySelectorAll('.sidebar-tab').forEach(function(t) { t.classList.toggle('active', t.getAttribute('data-tab') === 'stubs'); });
+  var fl = document.getElementById('file-list'); if (fl) fl.style.display = 'none';
+  var sc = document.getElementById('search-container'); if (sc) sc.style.display = 'none';
+  var cc = document.getElementById('compositions-container'); if (cc) cc.style.display = 'none';
+  var stc = document.getElementById('stubs-container'); if (stc) stc.style.display = '';
+  switchContentView('stubs');
+  loadStubsReview();
+  loadGuidance();
+}
+function srvVisible() {
+  var fltStub = document.getElementById('srv-flt-stub') ? document.getElementById('srv-flt-stub').checked : true;
+  var fltJunk = document.getElementById('srv-flt-junk') ? document.getElementById('srv-flt-junk').checked : false;
+  var showAll = !fltStub && !fltJunk;
+  return SRV.items.filter(function(it) {
+    if (it.junk) return fltJunk || showAll;
+    return fltStub || showAll;
+  });
+}
+function srvSorted(items) {
+  if (SRV.sort === 'n') return items;
+  return items.slice().sort(function(a, b) {
+    var va = a[SRV.sort], vb = b[SRV.sort];
+    if (SRV.sort === 'c') {
+      if (!va && !vb) return a.n - b.n;
+      if (!va) return 1;
+      if (!vb) return -1;
+    }
+    if (va < vb) return -1;
+    if (va > vb) return 1;
+    return a.n - b.n;
+  });
+}
+function srvSetChoice(path, choice) {
+  if (SRV.choices[path] === choice) delete SRV.choices[path];
+  else SRV.choices[path] = choice;
+  if (choice !== 'c') delete SRV.catTargets[path];
+  srvPersist();
+  srvRender();
+}
+function srvSetCat(path, target) {
+  SRV.choices[path] = 'c';
+  SRV.catTargets[path] = target;
+  srvPersist();
+  srvRender();
+}
+function srvOpenPicker(path) {
+  var box = document.getElementById('cp-' + encodeURIComponent(path).replace(/%/g, '_'));
+  if (!box) return;
+  box.innerHTML = '';
+  var it = SRV.items.filter(function(x) { return x.path === path; })[0] || {};
+  var cur = it.path.split('/').slice(0, -1).join('/');
+  var area = it.path.split('/')[1] || '';
+  var html = '<label>Categorize — choose an area and a destination folder, then press the &#10003; button</label>';
+  html += '<div class="row"><div><label>Area (domain)</label><select id="ca-area-' + path + '">';
+  html += SRV.areas.map(function(a) { return '<option value="' + srvEsc(a) + '"' + (a === area ? ' selected' : '') + '>' + srvEsc(a) + '</option>'; }).join('');
+  html += '</select></div>';
+  html += '<div style="flex:2"><label>Destination folder (existing wiki dirs)</label><input list="srv-dirs" id="ca-path-' + path + '" value="' + srvEsc(cur.replace(/^wiki\//, '')) + '"></div></div>';
+  html += '<div class="row"><div style="flex:1"><button class="srv-btn" id="ca-ok-' + path + '" style="margin-top:8px;background:#c084fc;border-color:#c084fc;color:#0b0d11;font-weight:700;">&#10003; Apply target</button></div></div>';
+  html += '<div class="hint">e.g. wiki/agent-systems/foo.md &#8594; wiki/&lt;area&gt;/&hellip;  Final path is prefixed with wiki/ automatically.</div>';
+  box.innerHTML = html;
+  var ok = document.getElementById('ca-ok-' + path);
+  if (ok && !ok.dataset.listening) {
+    ok.dataset.listening = '1';
+    ok.addEventListener('click', function() {
+      var area = document.getElementById('ca-area-' + path).value;
+      var sub = document.getElementById('ca-path-' + path).value.trim().replace(/^\/+|\/+$/g, '');
+      var target = sub ? area + '/' + sub : area;
+      srvSetCat(path, 'wiki/' + target);
+    });
+  }
+}
+function srvRender() {
+  var items = srvSorted(srvVisible());
+  var total = items.length;
+  var pages = Math.max(1, Math.ceil(total / SRV.pageSize));
+  if (SRV.page > pages) SRV.page = pages;
+  var start = (SRV.page - 1) * SRV.pageSize;
+  var pageItems = items.slice(start, start + SRV.pageSize);
+  var done = SRV.items.filter(function(it) { return SRV.choices[it.path]; }).length;
+  var pct = SRV.items.length ? Math.round(done / SRV.items.length * 100) : 0;
+  var fill = document.getElementById('srv-progress-fill');
+  if (fill) fill.style.width = pct + '%';
+  var pl = document.getElementById('srv-progress-label');
+  if (pl) pl.textContent = done + '/' + SRV.items.length + ' (' + pct + '%)';
+  var pg = document.getElementById('srv-pg-info');
+  if (pg) pg.textContent = 'page ' + SRV.page + ' / ' + pages + ' · ' + SRV.pageSize + ' per page';
+  var prev = document.getElementById('srv-pg-prev');
+  var next = document.getElementById('srv-pg-next');
+  if (prev) prev.disabled = SRV.page <= 1;
+  if (next) next.disabled = SRV.page >= pages;
+
+  var list = document.getElementById('srv-list');
+  if (!list) return;
+  list.innerHTML = '';
+  var frag = document.createDocumentFragment();
+  pageItems.forEach(function(it) {
+    var choice = SRV.choices[it.path] || null;
+    if (SRV.filter === 'remaining' && choice) return;
+    if (SRV.filter === 'classified' && !choice) return;
+    var card = document.createElement('div');
+    card.className = 'srv-card' + (choice ? ' classified' : '');
+    var sel = { k: '', e: '', c: '', a: '', d: '' };
+    if (choice && sel[choice] !== undefined) sel[choice] = ' sel';
+    var target = (choice === 'c' && SRV.catTargets[it.path]) ? '<div class="hint">target: ' + srvEsc(SRV.catTargets[it.path]) + '</div>' : '';
+    var picker = '<div class="srv-picker" id="cp-' + encodeURIComponent(it.path).replace(/%/g, '_') + '" style="display:none;"></div>';
+    var actions = '<div class="srv-actions">' +
+      '<button class="srv-opt k' + sel.k + '" data-c="k"><span class="key">1</span>Keep</button>';
+    if (!it.junk) {
+      actions += '<button class="srv-opt e' + sel.e + '" data-c="e"><span class="key">2</span>Enrich</button>' +
+        '<button class="srv-opt c' + sel.c + '" data-c="c"><span class="key">3</span>Categorize</button>' +
+        '<button class="srv-opt a' + sel.a + '" data-c="a"><span class="key">4</span>Archive</button>';
+    }
+    actions += '<button class="srv-opt d' + sel.d + '" data-c="d"><span class="key">5</span>Delete</button></div>';
+    var badgeCls = it.status === 'stub' ? ' warn' : (it.junk ? ' del' : '');
+    card.innerHTML =
+      '<div class="top"><span class="num">' + it.n + '.</span>' +
+      '<span class="title"><a href="#' + encodeURIComponent(it.path) + '">' + srvEsc(it.title) + '</a></span>' +
+      '<span class="badge">' + it.words + ' words</span>' +
+      '<span class="badge">' + it.links + ' links</span>' +
+      (it.created ? '<span class="badge">created ' + srvEsc(it.created) + '</span>' : '') +
+      '<span class="badge' + badgeCls + '">' + srvEsc(it.status) + '</span></div>' +
+      (it.desc ? '<div class="desc">' + srvEsc(it.desc) + '</div>' : '') +
+      '<div class="path">' + srvEsc(it.path) + '</div>' +
+      (it.snip ? '<div class="snip">' + srvEsc(it.snip) + '…</div>' : '') +
+      target + picker + actions;
+    var path = it.path;
+    card.querySelectorAll('.srv-opt').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var c = btn.getAttribute('data-c');
+        if (c === 'c') { srvSetChoice(path, 'c'); var box = document.getElementById('cp-' + encodeURIComponent(path).replace(/%/g, '_')); if (box) { box.style.display = 'block'; srvOpenPicker(path); } }
+        else srvSetChoice(path, c);
+      });
+    });
+    var link = card.querySelector('.title a');
+    if (link) link.addEventListener('click', function(e) {
+      e.preventDefault();
+      closeSidebar();
+      navigateTo(path);
+    });
+    frag.appendChild(card);
+  });
+  list.appendChild(frag);
+  srvRenderSidebar();
+}
+function srvRenderSidebar() {
+  var el = document.getElementById('stubs-list');
+  if (!el) return;
+  var items = SRV.items.filter(function(it) { return !it.junk; }).slice(0, 40);
+  el.innerHTML = '';
+  items.forEach(function(it) {
+    var row = document.createElement('div');
+    row.className = 'stub-entry' + (SRV.choices[it.path] ? ' classified' : '');
+    row.innerHTML = '<span class="stub-dot"></span><span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + srvEsc(it.title || it.path) + '</span><span class="words">' + it.words + 'w</span>';
+    row.title = it.path;
+    (function(path) {
+      row.addEventListener('click', function() { closeSidebar(); navigateTo(path); });
+    })(it.path);
+    el.appendChild(row);
+  });
+  if (!items.length) el.innerHTML = '<div style="font-size:11px;color:var(--text-muted);padding:4px;">No stubs</div>';
+}
+function srvBuildQueue() {
+  var now = new Date().toISOString();
+  var items = [];
+  SRV.items.forEach(function(it) {
+    var choice = SRV.choices[it.path];
+    if (!choice) return;
+    items.push({
+      path: it.path,
+      title: it.title,
+      decision: choice,
+      target: (choice === 'c' && !it.junk && SRV.catTargets[it.path]) ? SRV.catTargets[it.path] + '/' + it.path.split('/').pop() : null,
+      words: it.words,
+      links: it.links,
+      status: it.status,
+      description: it.desc || '',
+      snippet: it.snip || ''
+    });
+  });
+  return { source: 'stub-audit', queued_at: now, count: items.length, items: items };
+}
+function srvQueueFlash(msg, ok) {
+  var el = document.getElementById('srv-queue-flash');
+  if (!el) return;
+  el.textContent = msg;
+  el.style.color = ok ? '#34d399' : (msg.indexOf('downloaded') === 0 ? 'var(--accent)' : '#f87171');
+  setTimeout(function() { el.textContent = ''; }, 4200);
+}
+function srvDownloadQueue(payload) {
+  var blob = new Blob([JSON.stringify(payload, null, 1)], { type: 'application/json' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'stub-audit-queue.json';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(function() { URL.revokeObjectURL(a.href); }, 1500);
+  srvQueueFlash('downloaded stub-audit-queue.json (no live server) — place it in .wiki-daemon/buffers/ and run drain_stub_queue.py', false);
+}
+function srvSaveQueue() {
+  var payload = srvBuildQueue();
+  if (!payload.count) { srvQueueFlash('nothing queued yet — classify at least one stub first', false); return; }
+  if (!window.fetch) { srvDownloadQueue(payload); return; }
+  srvApiReq('/api/v2/stubs/queue', { method: 'POST', body: JSON.stringify(payload) })
+    .then(function(j) {
+      if (j.status === 'ok') srvQueueFlash('queued ' + j.count + ' answers → ' + j.path + ' ✓', true);
+      else throw new Error(j.error || 'queue failed');
+    })
+    .catch(function() { srvDownloadQueue(payload); });
+}
+function srvDrainStatus() {
+  var el = document.getElementById('srv-drain-status');
+  if (!el) return;
+  el.textContent = 'loading…';
+  srvApiReq('/api/v2/stubs/queue').then(function(d) {
+    var q = d.queue, m = d.manifest, bits = [];
+    if (q && q.items && q.items.length) {
+      var counts = {};
+      q.items.forEach(function(it) { counts[it.decision] = (counts[it.decision] || 0) + 1; });
+      var sum = Object.keys(counts).map(function(k) { return k + '=' + counts[k]; }).join(' ');
+      bits.push('queue: ' + q.items.length + ' items @ ' + (q.queued_at || '?').slice(0, 19) + ' (' + sum + ')');
+    } else bits.push('queue: none');
+    if (m && m.tasks && m.tasks.length) bits.push('inference manifest: ' + m.tasks.length + ' enrich tasks');
+    else bits.push('inference manifest: none');
+    el.textContent = bits.join(' · ');
+  }).catch(function() {
+    el.textContent = 'static mode — live queue ops need the MyKB server (cosmos start mykb); use `cosmos stubs plan / apply / status` in the terminal.';
+  });
+}
+function srvDrainOut(text) {
+  var pre = document.getElementById('srv-drain-out');
+  if (!pre) return;
+  pre.textContent = text;
+  pre.style.display = 'block';
+}
+function srvDrainRun(mode) {
+  var btn = document.getElementById('srv-drain-' + mode);
+  var old = btn ? btn.textContent : '';
+  if (btn) { btn.disabled = true; btn.textContent = 'running…'; }
+  srvApiReq('/api/v2/stubs/queue/' + mode, { method: 'POST' })
+    .then(function(j) {
+      srvDrainOut(j && j.output ? j.output : (j && j.error ? j.error : 'done'));
+      srvDrainStatus();
+    })
+    .catch(function() {
+      srvDrainOut(
+        '# No MyKB daemon reachable (static page). Run the drain locally.\n' +
+        '# First ensure the queue exists: use "Save queue" and place the JSON in .wiki-daemon/buffers/stub-audit-queue.json\n' +
+        'cd components/mykb\n' +
+        'python3 .wiki-daemon/drain_stub_queue.py --' + mode + '\n' +
+        '# or: cosmos stubs ' + mode + '\n' +
+        '# After apply: cosmos stubs build && cosmos stubs status'
+      );
+    })
+    .then(function() { if (btn) { btn.disabled = false; btn.textContent = old; } });
+}
+function srvDrainBuild() {
+  var btn = document.getElementById('srv-drain-build');
+  var old = btn ? btn.textContent : '';
+  if (btn) { btn.disabled = true; btn.textContent = 'building…'; }
+  srvApiReq('/api/v2/stubs/build', { method: 'POST' })
+    .then(function(j) {
+      srvDrainOut(j && j.output ? j.output : (j && j.error ? j.error : 'done'));
+      srvDrainStatus();
+    })
+    .catch(function() {
+      srvDrainOut(
+        '# No MyKB daemon reachable (static page). Rebuild the stub data locally.\n' +
+        'cd components/mykb\n' +
+        'python3 .wiki-daemon/build_stub_index.py && python3 .wiki-daemon/build_stub_audit.py\n' +
+        '# or: cosmos stubs build'
+      );
+    })
+    .then(function() { if (btn) { btn.disabled = false; btn.textContent = old; } });
+}
+function srvBuildResults() {
+  var lines = [];
+  var now = new Date().toISOString().slice(0, 10);
+  lines.push('# Stub Audit Results — ' + now);
+  lines.push('');
+  var classified = SRV.items.filter(function(it) { return SRV.choices[it.path]; }).length;
+  lines.push('Reviewed: ' + classified + '/' + SRV.items.length);
+  lines.push('');
+  var order = [['k', '## Keep', ''], ['e', '## Enrich', ''], ['c', '## Categorize', ''], ['a', '## Archive', ''], ['d', '## Delete', '']];
+  order.forEach(function(g) {
+    var items = SRV.items.filter(function(it) { return SRV.choices[it.path] === g[0]; });
+    lines.push(g[1] + ' (' + items.length + ')');
+    lines.push('');
+    items.forEach(function(it) {
+      var line = '- ' + it.title + ' (' + it.path + ')';
+      if (g[0] === 'c' && SRV.catTargets[it.path]) {
+        var from = it.path;
+        var to = SRV.catTargets[it.path] + '/' + it.path.split('/').pop();
+        line = '- ' + it.title + ' (' + it.path + ' → ' + to + ')';
+        lines.push('git mv ' + from + ' ' + to);
+      } else if (g[0] === 'a') {
+        lines.push('git mv ' + it.path + ' raw/archive/stub-audit-' + now + '/' + it.path);
+      } else if (g[0] === 'd') {
+        lines.push('git rm ' + it.path);
+      }
+      lines.push(line);
+    });
+    lines.push('');
+  });
+  var un = SRV.items.filter(function(it) { return !SRV.choices[it.path]; });
+  if (un.length) {
+    lines.push('## Unreviewed (' + un.length + ')');
+    lines.push('');
+    un.forEach(function(it) { lines.push('- ' + it.title + ' (' + it.path + ')'); });
+    lines.push('');
+  }
+  return lines.join('\n');
+}
+function srvShowResults() {
+  var ta = document.getElementById('srv-results-text');
+  var panel = document.getElementById('srv-results-panel');
+  if (!ta || !panel) return;
+  ta.value = srvBuildResults();
+  panel.style.display = 'block';
+  panel.scrollIntoView({ behavior: 'smooth' });
+}
+function srvFallbackCopy(text, done) {
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { done(document.execCommand('copy')); } catch (e) { done(false); }
+  document.body.removeChild(ta);
+}
+function srvCopyResults() {
+  var ta = document.getElementById('srv-results-text');
+  var text = ta && ta.value ? ta.value : srvBuildResults();
+  function done(ok) {
+    var el = document.getElementById('srv-queue-flash');
+    if (el) { el.textContent = ok ? 'copied ✓' : 'copy failed'; el.style.color = ok ? '#34d399' : '#f87171'; setTimeout(function() { el.textContent = ''; }, 1800); }
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() { done(true); }).catch(function() { srvFallbackCopy(text, done); });
+  } else srvFallbackCopy(text, done);
+}
+/* ── Stub review event wiring ── */
+document.querySelectorAll('.srv-tab').forEach(function(t) {
+  t.addEventListener('click', function() {
+    document.querySelectorAll('.srv-tab').forEach(function(x) { x.classList.remove('active'); });
+    t.classList.add('active');
+    SRV.filter = t.getAttribute('data-srvf');
+    SRV.page = 1;
+    srvRender();
+  });
+});
+['srv-flt-stub', 'srv-flt-junk'].forEach(function(id) {
+  var el = document.getElementById(id);
+  if (el) el.addEventListener('change', function() { SRV.page = 1; srvRender(); });
+});
+var srvSortEl = document.getElementById('srv-sort');
+if (srvSortEl) srvSortEl.addEventListener('change', function() { SRV.sort = this.value; SRV.page = 1; srvRender(); });
+var srvPlanBtn = document.getElementById('srv-drain-plan');
+if (srvPlanBtn) srvPlanBtn.addEventListener('click', function() { srvDrainRun('plan'); });
+var srvApplyBtn = document.getElementById('srv-drain-apply');
+if (srvApplyBtn) srvApplyBtn.addEventListener('click', function() { srvDrainRun('apply'); });
+var srvBuildBtn = document.getElementById('srv-drain-build');
+if (srvBuildBtn) srvBuildBtn.addEventListener('click', srvDrainBuild);
+var srvPrevBtn = document.getElementById('srv-pg-prev');
+if (srvPrevBtn) srvPrevBtn.addEventListener('click', function() { if (SRV.page > 1) { SRV.page--; srvRender(); } });
+var srvNextBtn = document.getElementById('srv-pg-next');
+if (srvNextBtn) srvNextBtn.addEventListener('click', function() { SRV.page++; srvRender(); });
+var srvSaveBtn = document.getElementById('srv-save-queue');
+if (srvSaveBtn) srvSaveBtn.addEventListener('click', srvSaveQueue);
+var srvResultsBtn = document.getElementById('srv-results');
+if (srvResultsBtn) srvResultsBtn.addEventListener('click', srvShowResults);
+var srvCopyBtn = document.getElementById('srv-copy');
+if (srvCopyBtn) srvCopyBtn.addEventListener('click', function() { srvShowResults(); srvCopyResults(); });
+
+/* ── Guidance wiring (research & feedback queue, FAB) ── */
+var fbAddBtn = document.getElementById('fb-add');
+if (fbAddBtn) fbAddBtn.addEventListener('click', gdAdd);
+var fbClearBtn = document.getElementById('fb-clear');
+if (fbClearBtn) fbClearBtn.addEventListener('click', gdClear);
+var gdSaveBtn = document.getElementById('gd-save');
+if (gdSaveBtn) gdSaveBtn.addEventListener('click', gdSave);
+var fbFab = document.getElementById('fb-fab');
+if (fbFab) fbFab.addEventListener('click', function() {
+  var p = state.currentFile || '';
+  activateStubs();
+  if (window.innerWidth < 820) openSidebar();
+  var pathEl = document.getElementById('fb-path');
+  if (pathEl && p) pathEl.value = p;
+  var noteEl = document.getElementById('fb-note');
+  if (noteEl) noteEl.focus();
+});
+fbFabUpdate();
+var SRV_KEY_MAP = { '1': 'k', '2': 'e', '3': 'c', '4': 'a', '5': 'd' };
+document.addEventListener('keydown', function(e) {
+  if (state.currentTab !== 'stubs') return;
+  if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  var key = SRV_KEY_MAP[e.key];
+  if (!key) return;
+  var pool = srvSorted(srvVisible());
+  var first = null;
+  for (var i = 0; i < pool.length; i++) {
+    if (!SRV.choices[pool[i].path]) { first = pool[i]; break; }
+  }
+  if (!first) return;
+  if (first.junk && key !== 'k' && key !== 'd') return;
+  e.preventDefault();
+  if (key === 'c') { srvSetChoice(first.path, 'c'); var box = document.getElementById('cp-' + encodeURIComponent(first.path).replace(/%/g, '_')); if (box) { box.style.display = 'block'; srvOpenPicker(first.path); } }
+  else srvSetChoice(first.path, key);
+  if (SRV.page > 1) SRV.page = 1;
+});
+/* ── Browse filter + actions wiring ── */
+var stubsOnlyCb = document.getElementById('stubs-only');
+if (stubsOnlyCb) {
+  stubsOnlyCb.checked = !!state.stubsOnly;
+  stubsOnlyCb.addEventListener('change', function() {
+    state.stubsOnly = stubsOnlyCb.checked;
+    try { localStorage.setItem('md-stubs-only', state.stubsOnly ? 'on' : 'off'); } catch (e) {}
+    if (state.stubsOnly) {
+      ensureStubPaths().then(function() { renderSidebar(); }).catch(function() { renderSidebar(); });
+    } else {
+      renderSidebar();
+    }
+  });
+}
+var openStubsBtn = document.getElementById('open-stubs-review');
+if (openStubsBtn) openStubsBtn.addEventListener('click', function() {
+  activateStubs();
+  if (window.innerWidth < 820) openSidebar();
+});
+if (state.stubsOnly) {
+  ensureStubPaths().catch(function() {});
+}
 
 loadFileList();
 applySidebarState();

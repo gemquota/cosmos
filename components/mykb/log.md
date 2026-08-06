@@ -5,6 +5,57 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-06 (Guidance UI — from stub auditor to research direction)
+- **Guide tab**: the Stub Auditor is now the mykb **Guidance** surface
+  (`index.html#guidance`; `#stubs` still routes here). The tab gains a
+  **Direction** panel (live area health: pages / stubs / stub % / avg words
+  per area, ranked by stub burden) and a unified **Research & Feedback
+  queue** (wanted page, research direction, open question, suggestion,
+  correction, priority, note; P1–P3 priority; optional page path). The
+  original stub triage (Keep / Enrich 1–3× / Categorize / Archive / Delete,
+  junk archive bucket) remains as a section.
+- **Guidance data**: `build_stub_audit.py` now emits `guidance.json`
+  (coverage rows, focus ranking, guidance-queue snapshot) alongside
+  `stub-review.json`; `GET /api/v2/guidance` and
+  `GET|POST /api/v2/guidance/queue` back it live. The floating Feedback FAB
+  pre-fills the current page path; feedback/queue items persist to
+  `.wiki-daemon/buffers/guidance-queue.json`.
+- **Inference merge**: `drain_stub_queue.py --apply` merges the guidance
+  queue into `stub-audit-inference.json` as `guidance.research` (wanted /
+  direction / question tasks) and `guidance.feedback` (page-level notes), so
+  the enrichment pass seeds new pages and honours human direction.
+- **CLI & dashboard**: `cosmos guidance open|status|build` added (`cosmos
+  stubs` remains an alias); unified dashboard MyKB tab relabelled
+  **MyKB → Guidance** and embeds `index.html#guidance`.
+- **Snapshots**: stub-review (2,433), guidance.json (5,272 pages / 1,493
+  stubs / 45 areas), files.json, graph, ecosystem.
+
+## 2026-08-05 (wiki link resolution + junk-entity audit)
+- **Link resolution overhaul**: `components/mykb/index.html` gains one
+  canonical resolver (`resolveWikiPath`) used by navigation and deep links —
+  `../` links now resolve against the current file's directory (was a broken
+  regex strip), `wiki/` prefixes / `.md` suffixes / `wiki/wiki/` double
+  prefixes normalize, and a unique-basename fallback lands archived pages
+  (`wiki/topics/ast-10` → `raw/archive/session-artifacts-2026-07/topics/ast-10.md`).
+- **Click dedupe**: content link clicks call `stopPropagation()` so the
+  document-level `.md` interceptor can't re-navigate with the raw href (that
+  race produced error pages on relative links). Wikilinks pass the raw target
+  instead of force-appending `.md`; error pages offer a basename search.
+- **Junk-entity audit**: `build_stub_audit.py` now scans
+  `raw/archive/junk-entities-*` (940 files) with `j=1` and full bundle-relative
+  paths; the SPA adds a "junk archive" filter bucket, Keep/Delete-only actions
+  for junk, and `git rm raw/archive/...` results; `drain_stub_queue.py` accepts
+  `raw/` paths. `HhHhetvnPsLG5ydu`-style archived junk is now reviewable.
+- **Audit performance**: category pickers build lazily on open (previously
+  every card rendered a 45-area `<select>` on every keystroke) and cards render
+  via `DocumentFragment` — ~100× faster page renders on the 4,267-item audit.
+- **Dashboard menu**: nav-tab tooltips stay a floating overlay (never inflate
+  the tab bar); touch devices skip tab tooltips (`.tb` + `hover: none`).
+- **Snapshots**: graph (5,398 nodes / 35,520 edges), files.json (6,856),
+  ecosystem, loops, stub-audit.html (4,267 items), stub-index (3,349) —
+  `gen-static-data.py --check: OK`.
+- **Synthesis added**: `wiki/syntheses/wiki-link-resolution-and-junk-audit.md`.
+
 ## 2026-07-19
 - Gemini session import: 162 sessions from 24 projects, 21,087 cross-links
 
@@ -563,3 +614,69 @@ title: "Bundle Log"
   "System guidance") and Content/Meta use 📖/⚙ icons; mobile drawer already
   capped at 58vw. `check: OK (6856 entries, 0 bad)`; graph rebuilt
   (5,397 nodes / 35,514 edges).
+
+## 2026-08-05 (stub auditor — live data + inference queue)
+- **Live data**: `server.py` gains `GET /api/v2/stubs` (reuses
+  `build_stub_audit.scan_stubs()`); the SPA fetches it on load with a snapshot
+  fallback and a live/snapshot source chip. `first_add_dates()` now caches on
+  HEAD (`.wiki-daemon/stub_created_dates.json`) so live scans are ~1s, not a
+  full git-log pass per request.
+- **Queue answers**: new `POST /api/v2/stubs/queue` writes the auditor's
+  decisions to `.wiki-daemon/buffers/stub-audit-queue.json` (atomic tmp+rename);
+  `Save queue` button POSTs when served live and downloads the same JSON when
+  static (GitHub Pages).
+- **Inference pass**: new `.wiki-daemon/drain_stub_queue.py` — `--plan` shows
+  the queue, `--apply` runs categorize/archive/delete via `git mv`/`git rm`
+  (filesystem fallback) and writes `.wiki-daemon/buffers/stub-audit-inference.json`
+  (path + metadata + snippet per `enrich` task) for the LLM expansion pass.
+- **Build fix**: `build_stub_audit.py` main() printed undefined `items`
+  (NameError → exit 1 after writing); fixed to read from the scan dict.
+- **Synthesis added**: `wiki/syntheses/stub-auditor-live-queue.md`.
+
+## 2026-08-05 (dashboard — main menu fix)
+- **Main menu blow-up**: hover/tap on any nav button (`.tb` with `data-tt`)
+  appended an unstyled tooltip *inside* the button, inflating it to ~50-66%
+  width and forcing each tab onto its own row. Tooltip CSS was scoped to
+  `.tooltip-wrap`, so `.tb`/summary cards rendered the raw `<h4>/<p>` in-flow.
+- **Fix**: `style.css` generalizes `.tooltip` to a floating, absolutely
+  positioned overlay (never affects layout); `app.js` skips nav-button
+  tooltips on touch (`hover: none`) so taps just switch tabs.
+
+## 2026-08-06 (stub audit pass — 141 reviewed, 3 archived, 126 queued)
+- **Audit executed**: Stub Auditor review of 141/4267 files — 12 kept, 126
+  queued for enrichment, 3 archived to `raw/archive/stub-audit-2026-08-06/`
+  (honest-signaling, instruction-following, planning-systems).
+- **Links retargeted**: 34 files / 38 wikilinks retargeted to living pages
+  (planning-systems→agent-planning-systems, honest-signaling→signaling-ai,
+  instruction-following→instruction-hierarchy / instruction-following-benchmarks);
+  index entries and a junk `— note` link stripped; 0 dangling links remain.
+- **Queue drained**: rebuilt `stub-audit-queue.json` from the report
+  (SPA schema, live-scan metadata) and ran `drain_stub_queue.py --apply`,
+  writing `stub-audit-inference.json` with 126 enrichment tasks.
+- **Snapshots refreshed**: graph (5,396 nodes / 35,500 edges), files.json
+  (6,856, `--check` OK), stub-index (3,346), stub-audit.html (4,264).
+- **Synthesis added**: `wiki/syntheses/stub-audit-2026-08-06.md` — archive
+  convention, inbound-link policy, pipeline notes.
+- **Enrichment batch (18/126)**: all ai-ml (16) + testing (2) tasks expanded
+  past the 320-word floor (323-370 body words), status bumped to growing,
+  broken stub links replaced with resolvable targets (0 broken links verified);
+  stub index 3,346 → 3,328, auditor 4,264 → 4,246 stubs.
+
+## 2026-08-06 (stub audit completion — 126/126 enriched)
+- **Enrichment completed**: all 126 queued stubs (108 agent-systems, 16 ai-ml,
+  2 testing) expanded past the 320-word floor (320-370 body words), status
+  bumped stub→growing, zero broken wikilinks, zero self-links, zero links to
+  archived pages. Includes full rewrites of 26 agent-systems stubs plus
+  targeted top-ups on 33 growing-but-short pages and the 16 ai-ml / 2 testing
+  tasks from the earlier session.
+- **Link hygiene**: retargeted the `credible-commitments` link to archived
+  `honest-signaling` → `signaling-ai`; removed self-links in
+  `queue-management`, `instruction-hierarchy`, `noticeboards`, `requests-pages`,
+  `review-queues-wiki`, `signaling-ai`, `triage-workflow`,
+  `agent-planning-systems`.
+- **Auditor UI fixed**: `stub_audit_template.html` static-mode fallbacks now
+  print copyable terminal commands instead of dead buttons; live API endpoints
+  verified with curl (queue plan/apply + build). Stub auditor rebuilt.
+- **Snapshots refreshed**: graph (5,397 nodes / 35,540 edges), files.json
+  (6,856, `--check` OK), stub-index 3,348 → 3,220, stub-audit.html
+  4,264 → 4,138 stubs. Synthesis note updated to reflect completion.

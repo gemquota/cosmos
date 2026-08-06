@@ -20,6 +20,12 @@ Iterative self-improvement is the practice of using a system's own outputs — s
 - **Scaling** — self-play and curriculum generation expand experience cheaply but risk distribution collapse.
 - **RSIS3 angle** — acquisition passes like this one are iterative self-improvement of the knowledge graph: each pass is evaluated against the wiki's link and practice checks.
 
+- **Signal requirement** — each cycle needs a trustworthy improvement signal (tests, verified answers, human feedback); without one, the loop optimizes noise and the system degrades while appearing to improve.
+- **Evaluator ceiling** — improvement cannot exceed the evaluator's ability to recognize good output; improving the evaluator is often the highest-leverage cycle.
+- **Diversity guard** — self-generated experience collapses toward what the system already does well; mixing in external data and novel tasks keeps the loop from narrowing.
+- **Failure mode** — self-flattery loops: when the system evaluates its own output too generously, each cycle ratifies the previous one and errors compound quietly.
+- **Deployment shape** — iterative self-improvement in production is staged and gated (improve, verify, roll back on regression), not a single unbroken ascent.
+
 ## Related
 - [[wiki/pulses/recursive-improvement-loops|Recursive Improvement Loops]] — general loop shape
 - [[wiki/agent-systems/self-play|Self-Play]] — generating experience

@@ -21,6 +21,11 @@ Loops repeat agent actions until a success criterion, a budget, or a stop condit
 - **Cost** — each iteration multiplies latency and tokens; loop efficiency is a first-order cost lever.
 - **mykb relevance** — RSIS3's top-3 loops are the canonical example: fixed, tuned loops with explicit stop conditions and checkpoints.
 
+- **Exit conditions** — every loop terminates on one of: success criterion met, budget exhausted, escalation triggered, or human interrupt; loops with no enumerated exit are bugs.
+- **State change requirement** — each iteration must change some state or consume some resource; a loop that repeats with identical state is an infinite loop regardless of its stop condition.
+- **Nested loops** — practical agents nest loops: an inner retry loop per tool call, an outer reflection loop per task, and a supervision loop per session, each with its own budget.
+- **Observability** — per-iteration logs (attempt, outcome, state delta) turn a loop from a black box into a diagnosable artifact when it misbehaves.
+
 ## Related
 - [[wiki/agent-systems/plan-execute-observe|Plan-Execute-Observe]] — the loop around a plan
 - [[wiki/agent-systems/retry-and-backoff-patterns|Retry and Backoff Patterns]] — retry loops

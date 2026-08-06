@@ -24,4 +24,4 @@ The free energy principle (FEP) proposes that adaptive systems act and perceive 
 - [[wiki/concepts/world-models|World Models]] — the model being fitted
 - [[wiki/concepts/bayesian-networks|Bayesian Networks]] — the probabilistic machinery
 - [[wiki/concepts/belief-states|Belief States]] — beliefs that minimize surprise
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — acting to reduce expected surprise
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — acting to reduce expected surprise

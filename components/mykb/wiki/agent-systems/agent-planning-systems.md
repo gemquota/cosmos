@@ -21,9 +21,13 @@ Planning systems turn a high-level goal into a structured sequence of actions or
 - **Failure modes** — overplanning (analysis paralysis), underplanning (missing dependencies), and stale plans after context changes.
 - **mykb relevance** — RSIS3's L3 self-direction layer generates and prioritizes its own goals, making planning the engine of recursion.
 
+- **Validation before execution** — a plan is only as good as its preconditions; validating steps, dependencies, and resource requirements before acting catches errors cheaply.
+- **Contingency planning** — robust plans carry fallback branches for likely failures such as tool errors and missing data, rather than assuming the happy path.
+- **Auditability** — a recorded plan makes agent behavior explainable after the fact: reviewers can check why a sequence of actions was chosen.
+- **Plan representation depth** — the representation determines what can be validated and resumed; a machine-checkable plan supports replanning, while free-text plans only support human review.
 ## Related
 - [[wiki/agent-systems/goal-decomposition|Goal Decomposition]] — breaking goals into subgoals
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — existing planning concepts in mykb
+- [[wiki/agent-systems/plan-execute-observe|Plan-Execute-Observe]] — the loop that executes plans
 - [[wiki/concepts/hierarchical-task-network|Hierarchical Task Network]] — structured planning formalism
 - [[wiki/agent-systems/hierarchical-agents|Hierarchical Agents]] — planners at multiple levels
 - [[wiki/agent-systems/agent-prioritization|Agent Prioritization]] — ordering tasks within a plan

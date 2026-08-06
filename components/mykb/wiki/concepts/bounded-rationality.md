@@ -24,7 +24,7 @@ Bounded rationality describes decision-making under real constraints: limited co
 - [[wiki/concepts/multi-armed-bandit|Multi-Armed Bandit]] — the formal model of explore/exploit
 - [[wiki/concepts/planning-as-search|Planning as Search]] — search under resource limits
 - [[wiki/concepts/risk-literacy|Risk Literacy]] — heuristics in the risk domain
-- [[wiki/agent-systems/planning-systems|Planning Systems]]
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]]
 - [[wiki/concepts/satisficing|Satisficing]]
 - [[wiki/concepts/utility-functions|Utility Functions]]
 - [[wiki/concepts/dual-process-theory|Dual Process Theory]]

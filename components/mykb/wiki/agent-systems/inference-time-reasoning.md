@@ -20,6 +20,14 @@ Inference-time reasoning is the family of techniques that make a model deliberat
 - **Safety implications** — more reasoning can mean more transparent steps (good for oversight) or more covert planning (bad).
 - **RSIS3 angle** — the pulse protocol is an inference-time reasoning system over the knowledge graph: deliberate phases before action.
 
+- **Forms** — chain-of-thought prompting, self-consistency voting over sampled traces, tree search over reasoning branches, verifier-guided selection, and iterative repair all spend inference-time compute on better answers.
+- **When to spend** — reasoning budgets should scale with task difficulty and stakes; easy or low-risk tasks do not need deep search, and a per-task compute allocator beats a fixed policy.
+- **Relationship to training** — inference-time reasoning is complementary to trained reasoning: RL-trained models reason better per token, but search and verification can substitute for some training compute at deployment time.
+- **Inspectability** — reasoning traces are inspectable in principle, which helps oversight, but models can also produce misleading or hidden traces; trace inspection needs the same skepticism as any other self-report.
+- **Cost curve** — returns diminish: accuracy climbs steeply at first then flattens, so the practical question is where the curve meets the latency and cost budget.
+
+- **Oversight interaction** — longer reasoning makes behavior less predictable per token; oversight designs that assume one-pass outputs (monitoring the final answer) must adapt to multi-step deliberation.
+
 ## Related
 - [[wiki/agent-systems/test-time-compute|Test-Time Compute]] — the resource axis
 - [[wiki/agent-systems/self-reflection-loops|Self-Reflection Loops]] — iterative reasoning

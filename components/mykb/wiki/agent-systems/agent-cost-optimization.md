@@ -21,6 +21,9 @@ Agent cost optimization reduces the dominant expense of agent systems — tokens
 - **Tradeoffs** — aggressive optimization raises regression risk; shadow evaluation keeps quality gates on optimized paths.
 - **mykb relevance** — RSIS3's token budgets and model routing rules are the same optimization discipline applied to recursive self-improvement.
 
+- **Caching hierarchy** — prompt caching covers stable prefixes, semantic caching skips identical requests, and result caching reuses completed work; each layer targets a different repeat pattern.
+- **Quality guardrails** — every optimization ships with shadow evaluation: run the optimized path against the old path on a sample and compare quality metrics before switching traffic.
+- **Budget visibility** — surface per-run and per-step token costs in dashboards so cost regressions are visible when they land, not after the bill arrives.
 ## Related
 - [[wiki/agent-systems/model-routing-rules|Model Routing Rules]] — routing to cheaper models
 - [[wiki/testing/cost-per-token-tradeoffs|Cost per Token Tradeoffs]] — unit economics

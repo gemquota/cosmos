@@ -21,6 +21,9 @@ Agent testing validates behavior at multiple levels: prompt/unit tests, tool int
 - **Tooling** — evals harnesses, agent benchmarks like SWE-bench, and simulation environments with injected faults.
 - **mykb relevance** — mykb documents testing agents and offline agent testing; RSIS3 already gates its own changes with full-loop tests.
 
+- **Distribution-aware assertions** — because agents are stochastic, tests assert on distributions: pass rates over N runs, invariant checks, and worst-case bounds rather than a single expected output.
+- **Cost and time budgets** — agent tests are slow and expensive, so suites are tiered: fast unit tests run on every change, full scenario simulations run nightly or before release.
+- **Failure classification** — a failing test should identify whether the defect is in the plan, the tool call, the prompt, or the environment; per-layer fixtures make that diagnosis mechanical.
 ## Related
 - [[wiki/testing/agent-evaluations|Agent Evaluations]] — evaluating agent behavior
 - [[wiki/agent-systems/offline-agent-testing|Offline Agent Testing]] — testing without live services

@@ -21,7 +21,7 @@ An MDP is a tuple of states, actions, transition probabilities, rewards, and dis
 - RSIS3 relevance: each loop pass is an MDP in miniature — the registry and wiki state is the state, the proposed changes are actions, and the metric deltas are rewards; modeling it formally makes the discount (how much to value future passes) and the state design (what the loop must track) explicit.
 
 ## Related
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — planning in MDPs
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — planning in MDPs
 - [[wiki/concepts/partially-observable-mdp|Partially Observable MDP]] — belief over hidden states
 - [[wiki/concepts/q-learning|Q-Learning]] — model-free solving
 - [[wiki/concepts/temporal-difference-learning|Temporal Difference Learning]] — value learning

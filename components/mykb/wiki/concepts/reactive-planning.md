@@ -21,7 +21,7 @@ Reactive planning chooses actions directly from the current situation using rule
 - RSIS3 relevance: the bundle's constraint checks and usage-practice checks are the reactive layer — they fire immediately on violations without a planning step, while the improvement loops provide the deliberation that reactive checks cannot.
 
 ## Related
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — the deliberative counterpart
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — the deliberative counterpart
 - [[wiki/agent-systems/behavior-trees|Behavior Trees]] — a reactive control structure
 - [[wiki/concepts/production-rules|Production Rules]] — condition-action reactivity
 - [[wiki/agent-systems/agent-loop|Agent Loop]] — the loop reactive control drives

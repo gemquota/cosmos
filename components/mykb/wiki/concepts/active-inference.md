@@ -21,7 +21,7 @@ Active inference treats perception and action as two sides of one process: agent
 - RSIS3 relevance: self-improvement loops can be read as active inference. The system holds a prior over what a good improvement looks like, performs epistemic actions (experiments, retrievals) to reduce uncertainty, and updates its synthesis beliefs when evidence contradicts its predictions.
 
 ## Related
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — planning as expected-outcome selection
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — planning as expected-outcome selection
 - [[wiki/concepts/free-energy-principle|Free Energy Principle]] — the theoretical umbrella
 - [[wiki/concepts/belief-states|Belief States]] — what perception updates
 - [[wiki/concepts/world-models|World Models]] — the generative model it assumes

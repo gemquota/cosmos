@@ -20,6 +20,15 @@ A skill acquisition loop is the cycle by which an agent tries a task, learns fro
 - **Failure modes** — brittle skills that overfit their training context, and forgetting (catastrophic interference).
 - **Worked example** — an agent that writes a reflection note after each failed task, then searches those notes before retrying, acquires skills faster than one that retries blind.
 
+- **Distillation** — episodic attempt records are distilled into semantic skill entries (what works, when, why), building a skill library the agent searches before acting.
+- **Transfer** — the loop's payoff is transfer: a skill learned on one task should generalize; measuring transfer scores exposes brittle, overfit skills.
+- **Bottlenecks** — the loop is capped by evaluation signal quality (weak feedback → weak skills) and by forgetting (new skills crowding out old ones).
+- **Retention** — periodic re-exposure and consolidated reference notes protect against catastrophic interference between skills.
+
+- **Worked example** — an agent that writes a reflection note after each failed task and searches those notes before retrying acquires skills measurably faster than one that retries blind; the loop is the difference.
+
+- **Measurement** — the loop is tracked with learning curves (success rate vs attempts) and transfer scores (does the skill help on new tasks), which distinguish real acquisition from task memorization.
+
 ## Related
 - [[wiki/agent-systems/curriculum-self-improvement|Curriculum Self-Improvement]] — ordering acquisition
 - [[wiki/agent-systems/reflection-agents|Reflection Agents]] — the reflection-based loop

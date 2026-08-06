@@ -21,6 +21,11 @@ Delegation is assigning a task to another agent; a handoff is transferring activ
 - **Tooling** — handoff messages, shared blackboards, and tool registries all support context transfer.
 - **mykb relevance** — the handoff protocol is a documented pattern in mykb, and RSIS3 sub-agents use it during code generation.
 
+- **Success criteria transfer** — the handoff includes how success will be judged, so the receiving agent knows when to stop and what to return.
+- **Verification on return** — the delegator checks returned work against the success criteria before accepting; acceptance is the last step of the handoff, not the transfer itself.
+- **Trust and verification** — delegation without verification is abdication; the delegator retains accountability and checks the returned work, so delegation extends capability without dropping responsibility.
+- **Context minimization** — handoffs should carry the minimal context needed: full transcripts breed confusion and cost; a structured summary plus pointers works better.
+- **Handoff records** — every handoff is logged with its payload and outcome so the workflow can be replayed and audited after a failure.
 ## Related
 - [[wiki/agent-systems/sub-agent-delegation|Sub-Agent Delegation]] — delegating work to sub-agents
 - [[wiki/llm-agents/handoff-protocol|Handoff Protocol]] — the structured handoff pattern

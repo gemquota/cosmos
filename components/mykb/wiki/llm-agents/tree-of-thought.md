@@ -22,7 +22,7 @@ Tree-of-thought (ToT) extends chain-of-thought by exploring multiple reasoning b
 - Result reporting: log the tree (branches explored, pruned, chosen) so reviewers can see why the agent committed to its path — search is only auditable with its trace.
 
 ## Related
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — the search paradigm it borrows
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — the search paradigm it borrows
 - [[wiki/concepts/monte-carlo-tree-search|Monte Carlo Tree Search]] — the search algorithm it resembles
 - [[wiki/llm-agents/chain-of-thought|Chain of Thought]] — the linear baseline
 - [[wiki/concepts/planning-as-search|Planning as Search]] — the general framework

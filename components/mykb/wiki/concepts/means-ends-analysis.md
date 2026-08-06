@@ -21,7 +21,7 @@ Means-ends analysis plans by measuring the difference between the current state 
 
 ## Related
 - [[wiki/agent-systems/goal-decomposition|Goal Decomposition]] — differences become subgoals
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — the planning family
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — the planning family
 - [[wiki/concepts/operator-subgoaling|Operator Subgoaling]] — the subgoal mechanism it uses
 - [[wiki/concepts/goal-regression|Goal Regression]] — the backward-looking cousin
 - [[wiki/concepts/planning-as-search|Planning as Search]] — the search framing

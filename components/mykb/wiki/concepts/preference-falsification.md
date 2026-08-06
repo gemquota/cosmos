@@ -21,5 +21,5 @@ Preference falsification is when expressed preferences diverge from true ones �
 ## Related
 - [[wiki/concepts/preference-learning-issues|Preference Learning Issues]] — the umbrella
 - [[wiki/concepts/preference-elicitation|Preference Elicitation]] — the honest-design goal
-- [[wiki/agent-systems/honest-signaling|Honest Signaling]] — the counterpart concept
+- [[wiki/agent-systems/signaling-ai|Signaling in AI]] — the counterpart concept
 - [[wiki/data-storage/data-quality-checks|Data Quality Checks]] — the fix layer

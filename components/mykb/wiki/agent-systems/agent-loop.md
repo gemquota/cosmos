@@ -17,6 +17,8 @@ An agent loop is the repeating control cycle in which an agent interprets a task
 - RSIS3 instantiates this as L1 with telemetry written after every turn, so each loop iteration is auditable from the dashboard.
 - Worked example: a code-generation agent iterates the loop as apply_patch → run tests → observe pass/fail → retry or roll back via git.
 - Design rule: keep the loop pure and log every transition so the run can be replayed deterministically.
+- **Budgeting** — each iteration consumes a step from a bounded budget; when the budget empties, the loop must terminate in a recoverable state rather than spin.
+- **Observability** — every transition is logged so runs can be replayed and audited, which turns loop bugs from mysteries into fixable traces.
 ## Related
 - [[wiki/agent-systems/action-observation-loop|Action-Observation Loop]] — the ReAct-style pattern this loop instantiates
 - [[wiki/agent-systems/tool-use-patterns|Tool Use Patterns]] — how loop actions are expressed as tool calls

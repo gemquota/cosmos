@@ -20,6 +20,15 @@ A satisficing agent accepts any outcome meeting an adequacy threshold instead of
 - **Design question** — who sets the threshold, and how does it adapt without becoming a target?
 - **RSIS3 parallel** — check-practices enforces adequacy (practices pass), not maximal metric scores, in the workspace loop.
 
+- **Threshold setting** — the aspiration level is the key design choice; it can come from policy, risk analysis, or user preference, and it should be explicit and reviewable.
+- **Relation to bounded rationality** — satisficing is the behavioral consequence of bounded rationality: search is expensive, so stopping at good-enough is rational under resource limits.
+- **When it is wrong** — safety-critical or irreversible decisions may require genuine optimization; satisficing is a default for routine work, not a license to skip care.
+- **Practical use** — stop rules in agents ('ship when acceptance criteria pass') are satisficing: they trade marginal quality for throughput, deliberately.
+
+- **Failure mode** — satisficing with a poorly set threshold either ships garbage (threshold too low) or never ships (threshold too high); threshold calibration against real outcomes is part of the design, not an afterthought.
+
+- **Relationship to risk-bounding** — satisficing is the decision rule that risk bounds implement: the bound defines what good-enough means, and the agent stops at the bound instead of optimizing past it.
+
 ## Related
 - [[wiki/concepts/satisficing|Satisficing]] — existing concept
 - [[wiki/concepts/mild-optimization|Mild Optimization]] — restraint family

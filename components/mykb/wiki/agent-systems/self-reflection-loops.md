@@ -20,6 +20,13 @@ A self-reflection loop is an agent architecture where the model produces an outp
 - **Limits** — self-critique without external signal can amplify biases; loop depth has diminishing returns.
 - **RSIS3 parallel** — the pulse protocol's reflection phase is a self-reflection loop: past pulses and checkpoints inform the next planning cycle.
 
+- **Termination** — bound the loop by depth, budget, or convergence (two consecutive revisions with no change); unbounded reflection is a cost bug.
+- **Memory** — the strongest variants persist reflections across sessions (Reflexion), so lessons from one task carry into the next instead of being lost.
+- **Risk** — without an external signal, each reflection pass can amplify an initial error; the loop needs a ground-truth check at least at the end.
+- **Diminishing returns** — most improvement comes in the first one or two revision passes; later passes mostly re-word, so budget accordingly.
+
+- **Variants** — the loop can be internal (model critiques its own draft), tool-grounded (compiler or tests critique), or population-based (critic models review); reliability rises in that order.
+
 ## Related
 - [[wiki/agent-systems/reflection-agents|Reflection Agents]] — the architecture family
 - [[wiki/agent-systems/self-critique|Self-Critique]] — the critique step
