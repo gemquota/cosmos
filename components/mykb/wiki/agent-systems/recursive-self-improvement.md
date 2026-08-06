@@ -31,4 +31,5 @@ Recursive self-improvement (RSI) is the capability of a system to improve the co
 - [[wiki/llm-agents/reflexion|Reflexion]] — verbal self-critique as a lightweight improvement loop
 - [[wiki/concepts/mykb-implementation-report|Mykb Implementation Report]] — how the system was built and hardened
 - [[wiki/ops/gap-report|Gap Analysis Report]] — gaps that improvement cycles target
+- [[wiki/syntheses/recursive-self-improvement-spec-2026-08-06|Recursive Self-Improvement Specification]] — the full SPACE v2 export (67/67 probes) that grounds this page
 - [[wiki/concepts/mykb-research-report|Mykb Research Report]] — research basis for the memory layer of RSI

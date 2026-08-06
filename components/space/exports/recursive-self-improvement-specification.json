@@ -1,1215 +1,1348 @@
 {
-  "export_version": "2.0.0",
-  "exported_at": "2026-07-26T17:00:59.292Z",
-  "session": {
-    "id": "sess_115024d0",
+  "meta": {
     "project_name": "recursive-self-improvement",
-    "completion_pct": 100,
-    "total_time_minutes": 0
+    "framework_version": "2.0.0",
+    "framework_name": "Structured Prompt Creation Framework",
+    "exported_at": "2026-08-06T13:56:03.499Z",
+    "session_status": "completed",
+    "completion_pct": 100
   },
-  "framework": {
-    "name": "Structured Prompt Creation Framework",
-    "version": "2.0.0"
+  "session": {
+    "id": "sess_cdd506e4",
+    "project_id": "recursive-self-improvement",
+    "created_at": "2026-08-06T13:55:54.146Z",
+    "status": "completed"
   },
-  "series": [
-    {
-      "id": 1,
-      "name": "Conceptual Depth",
-      "rounds": [
-        {
-          "round": 1,
-          "focus": "Domain and Audience",
-          "questions": [
-            {
-              "id": "1.1.1",
-              "text": "What is the primary domain or field this prompt or project addresses? Describe its scope, core concerns, and any relevant sub-disciplines.",
-              "answer": {
-                "open_ended": "Auto-generated answer for 1.1.1 based on project context.",
-                "selected_choice": "A single well-established domain (e.g., machine learning, civil engineering)",
-                "selected_choice_id": "1.1.1.a",
-                "answered_at": "2026-07-26T17:00:48.105Z"
-              }
-            },
-            {
-              "id": "1.1.2",
-              "text": "Who is the intended audience for the generated output? What is their baseline familiarity with this domain?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 1.1.2 based on project context.",
-                "selected_choice": "Experts / researchers — people who work in this domain daily",
-                "selected_choice_id": "1.1.2.a",
-                "answered_at": "2026-07-26T17:00:48.107Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 2,
-          "focus": "Assumptions and Abstraction",
-          "questions": [
-            {
-              "id": "1.2.1",
-              "text": "What foundational concepts, theorems, or prior art can the output take for granted? What must be explained from scratch?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 1.2.1 based on project context.",
-                "selected_choice": "Full prerequisites assumed — dive straight into advanced material",
-                "selected_choice_id": "1.2.1.a",
-                "answered_at": "2026-07-26T17:00:48.109Z"
-              }
-            },
-            {
-              "id": "1.2.2",
-              "text": "At what level of abstraction should the output operate? Should it be concrete and example-driven, or formal and general?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 1.2.2 based on project context.",
-                "selected_choice": "Concrete — specific examples, code snippets, case studies",
-                "selected_choice_id": "1.2.2.a",
-                "answered_at": "2026-07-26T17:00:48.110Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 3,
-          "focus": "Terminology and Scaffolding",
-          "questions": [
-            {
-              "id": "1.3.1",
-              "text": "What vocabulary, jargon, or notation should be used or deliberately avoided? Are there established standards the output should follow?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 1.3.1 based on project context.",
-                "selected_choice": "Standard industry terminology — use common terms precisely",
-                "selected_choice_id": "1.3.1.a",
-                "answered_at": "2026-07-26T17:00:48.111Z"
-              }
-            },
-            {
-              "id": "1.3.2",
-              "text": "How should complexity be distributed across the output? Should it start simple and deepen, or maintain a consistent level throughout?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 1.3.2 based on project context.",
-                "selected_choice": "Progressive — scaffold from simple foundations to advanced topics",
-                "selected_choice_id": "1.3.2.a",
-                "answered_at": "2026-07-26T17:00:48.113Z"
-              }
-            }
-          ]
-        }
-      ]
+  "summary": {
+    "total_questions": 67,
+    "total_multi_choice": 259,
+    "answered": 67,
+    "completion_pct": 100
+  },
+  "answers": {
+    "1.1.1": {
+      "question_id": "1.1.1",
+      "series_id": 1,
+      "round": 1,
+      "open_ended_text": "SPACE (Superb Prompt Automatic Creation Engine) is a programmable specification engine that transforms structured elicitation probes into development specifications. It sits at the intersection of prompt engineering, software specification, and developer tooling.",
+      "multi_choice_id": "1.1.1.b",
+      "multi_choice_text": "An interdisciplinary space spanning 2-3 domains",
+      "answered_at": "2026-08-06T13:55:54.252Z",
+      "edit_count": 0
     },
-    {
-      "id": 2,
-      "name": "Ontological Characteristics",
-      "rounds": [
-        {
-          "round": 1,
-          "focus": "Entity Discovery",
-          "questions": [
-            {
-              "id": "2.1.1",
-              "text": "What are the primary entities, objects, concepts, or actors that exist in this domain? List them with brief descriptions.",
-              "answer": {
-                "open_ended": "Auto-generated answer for 2.1.1 based on project context.",
-                "selected_choice": "Fewer than 5 core entities — the domain is compact and well-bounded",
-                "selected_choice_id": "2.1.1.a",
-                "answered_at": "2026-07-26T17:00:48.115Z"
-              }
-            },
-            {
-              "id": "2.1.2",
-              "text": "What attributes, properties, or state define each entity? How do entities differ from one another?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 2.1.2 based on project context.",
-                "selected_choice": "1–2 key attributes per entity — simple identifiers suffice",
-                "selected_choice_id": "2.1.2.a",
-                "answered_at": "2026-07-26T17:00:48.116Z"
-              }
-            },
-            {
-              "id": "2.1.3",
-              "text": "What natural categories, types, or groupings organize these entities? Are there clear taxonomies or classification schemes?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 2.1.3 based on project context.",
-                "selected_choice": "A single flat list — no meaningful sub-groupings",
-                "selected_choice_id": "2.1.3.a",
-                "answered_at": "2026-07-26T17:00:48.117Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 2,
-          "focus": "Classification and Core vs. Peripheral",
-          "questions": [
-            {
-              "id": "2.2.1",
-              "text": "Of the entities listed, which are absolutely essential (core) and which are optional, derivative, or contextual (peripheral)?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 2.2.1 based on project context.",
-                "selected_choice": "Most entities are core — the domain has little extraneous surface area",
-                "selected_choice_id": "2.2.1.a",
-                "answered_at": "2026-07-26T17:00:48.118Z"
-              }
-            },
-            {
-              "id": "2.2.2",
-              "text": "At what level of granularity should entities be modeled? Should fine distinctions be separate entities or attributes of coarser ones?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 2.2.2 based on project context.",
-                "selected_choice": "Coarse-grained — entities are broad; most variation is captured via attributes",
-                "selected_choice_id": "2.2.2.a",
-                "answered_at": "2026-07-26T17:00:48.120Z"
-              }
-            },
-            {
-              "id": "2.2.3",
-              "text": "How do entities relate to each other in terms of sharing, inheriting, or differentiating attributes?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 2.2.3 based on project context.",
-                "selected_choice": "Mostly independent — entities share few attributes beyond common identifiers",
-                "selected_choice_id": "2.2.3.a",
-                "answered_at": "2026-07-26T17:00:48.121Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 3,
-          "focus": "Boundaries and Lifecycles",
-          "questions": [
-            {
-              "id": "2.3.1",
-              "text": "What are the systemic boundaries of this domain? What is explicitly in scope vs. out of scope?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 2.3.1 based on project context.",
-                "selected_choice": "Tightly bounded — scope is narrow and well-defined",
-                "selected_choice_id": "2.3.1.a",
-                "answered_at": "2026-07-26T17:00:48.122Z"
-              }
-            },
-            {
-              "id": "2.3.2",
-              "text": "What external entities, systems, or actors interact with this domain but are not part of it?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 2.3.2 based on project context.",
-                "selected_choice": "No external interactions — fully self-contained domain",
-                "selected_choice_id": "2.3.2.a",
-                "answered_at": "2026-07-26T17:00:48.124Z"
-              }
-            },
-            {
-              "id": "2.3.3",
-              "text": "What is the lifecycle of each entity? How are they created, modified, combined, retired?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 2.3.3 based on project context.",
-                "selected_choice": "Simple lifecycle — create, read, update, delete (CRUD)",
-                "selected_choice_id": "2.3.3.a",
-                "answered_at": "2026-07-26T17:00:48.125Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 4,
-          "focus": "Refinement and Constraints",
-          "questions": [
-            {
-              "id": "2.4.1",
-              "text": "Are there entities that are missing from the model so far? What gaps exist in the current entity list?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 2.4.1 based on project context.",
-                "selected_choice": "No gaps — the current entity list is comprehensive",
-                "selected_choice_id": "2.4.1.a",
-                "answered_at": "2026-07-26T17:00:48.126Z"
-              }
-            },
-            {
-              "id": "2.4.2",
-              "text": "Which entities should be merged, split, or reclassified? Are there boundary cases where entity distinctions break down?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 2.4.2 based on project context.",
-                "selected_choice": "No changes needed — current classification is sound",
-                "selected_choice_id": "2.4.2.a",
-                "answered_at": "2026-07-26T17:00:48.127Z"
-              }
-            },
-            {
-              "id": "2.4.3",
-              "text": "What constraints, invariants, or business rules apply to entity instances? What must always be true?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 2.4.3 based on project context.",
-                "selected_choice": "Minimal constraints — entities have few invariants beyond uniqueness",
-                "selected_choice_id": "2.4.3.a",
-                "answered_at": "2026-07-26T17:00:48.128Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 5,
-          "focus": "Validation and Composition",
-          "questions": [
-            {
-              "id": "2.5.1",
-              "text": "What edge cases, exceptions, or degenerate cases could break the entity model? How should they be handled?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 2.5.1 based on project context.",
-                "selected_choice": "Few edge cases — the model is robust to real-world variation",
-                "selected_choice_id": "2.5.1.a",
-                "answered_at": "2026-07-26T17:00:48.129Z"
-              }
-            },
-            {
-              "id": "2.5.2",
-              "text": "How do entities compose or aggregate into larger structures? Can entities contain or be composed of other entities?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 2.5.2 based on project context.",
-                "selected_choice": "Flat — entities do not compose; all entities are atomic",
-                "selected_choice_id": "2.5.2.a",
-                "answered_at": "2026-07-26T17:00:48.130Z"
-              }
-            },
-            {
-              "id": "2.5.3",
-              "text": "What are the cardinality and multiplicity relationships between entity types? Can an entity have zero, one, or many of another?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 2.5.3 based on project context.",
-                "selected_choice": "Mostly one-to-one — entities pair uniquely",
-                "selected_choice_id": "2.5.3.a",
-                "answered_at": "2026-07-26T17:00:48.131Z"
-              }
-            }
-          ]
-        }
-      ]
+    "1.1.2": {
+      "question_id": "1.1.2",
+      "series_id": 1,
+      "round": 1,
+      "open_ended_text": "The primary audience is software developers and technical leads building LLM-powered applications or complex systems who need structured specifications. They understand TypeScript/Node.js and are comfortable with JSON/YAML.",
+      "multi_choice_id": "1.1.2.a",
+      "multi_choice_text": "Experts / researchers — people who work in this domain daily",
+      "answered_at": "2026-08-06T13:55:54.281Z",
+      "edit_count": 0
     },
-    {
-      "id": 3,
-      "name": "Semantic Relationships",
-      "rounds": [
-        {
-          "round": 1,
-          "focus": "Direct Associations",
-          "questions": [
-            {
-              "id": "3.1.1",
-              "text": "What direct associations exist between entities? Which entities reference, point to, or are linked to which others?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 3.1.1 based on project context.",
-                "selected_choice": "Sparse — fewer associations than entities; most entities are isolated",
-                "selected_choice_id": "3.1.1.a",
-                "answered_at": "2026-07-26T17:00:48.133Z"
-              }
-            },
-            {
-              "id": "3.1.2",
-              "text": "What is the nature or type of each association? Is it a use, creation, ownership, or communication link?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 3.1.2 based on project context.",
-                "selected_choice": "Single type — all associations are of the same nature",
-                "selected_choice_id": "3.1.2.a",
-                "answered_at": "2026-07-26T17:00:48.134Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 2,
-          "focus": "Hierarchical and Containment Relationships",
-          "questions": [
-            {
-              "id": "3.2.1",
-              "text": "What parent-child, containment, or hierarchical relationships exist? Which entities are within, belong to, or are part of others?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 3.2.1 based on project context.",
-                "selected_choice": "No hierarchy — all entities are peers with no containment structure",
-                "selected_choice_id": "3.2.1.a",
-                "answered_at": "2026-07-26T17:00:48.136Z"
-              }
-            },
-            {
-              "id": "3.2.2",
-              "text": "What inheritance, specialization, or generalization relationships exist? Which entities are kinds of other entities?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 3.2.2 based on project context.",
-                "selected_choice": "No inheritance — each entity is unique in its type",
-                "selected_choice_id": "3.2.2.a",
-                "answered_at": "2026-07-26T17:00:48.137Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 3,
-          "focus": "Causal and Dynamic Relationships",
-          "questions": [
-            {
-              "id": "3.3.1",
-              "text": "What causal, temporal, or triggering relationships exist? Which entities cause changes in, or are triggered by, others?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 3.3.1 based on project context.",
-                "selected_choice": "No causal links — entities change independently",
-                "selected_choice_id": "3.3.1.a",
-                "answered_at": "2026-07-26T17:00:48.138Z"
-              }
-            },
-            {
-              "id": "3.3.2",
-              "text": "What dependency chains, prerequisites, or ordering constraints exist? Must some entities exist before others can be created or used?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 3.3.2 based on project context.",
-                "selected_choice": "No ordering constraints — entities are independent",
-                "selected_choice_id": "3.3.2.a",
-                "answered_at": "2026-07-26T17:00:48.139Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 4,
-          "focus": "Composition and Constraints",
-          "questions": [
-            {
-              "id": "3.4.1",
-              "text": "What rules govern how relationships can change? Can associations be created, deleted, or modified at any time, or are there restrictions?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 3.4.1 based on project context.",
-                "selected_choice": "Freely mutable — relationships can change at any time with no restrictions",
-                "selected_choice_id": "3.4.1.a",
-                "answered_at": "2026-07-26T17:00:48.141Z"
-              }
-            },
-            {
-              "id": "3.4.2",
-              "text": "How do relationships compose or chain across entities? Can indirect relationships be inferred from direct ones?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 3.4.2 based on project context.",
-                "selected_choice": "No composition — only direct relationships matter",
-                "selected_choice_id": "3.4.2.a",
-                "answered_at": "2026-07-26T17:00:48.142Z"
-              }
-            }
-          ]
-        }
-      ]
+    "1.2.1": {
+      "question_id": "1.2.1",
+      "series_id": 1,
+      "round": 2,
+      "open_ended_text": "Assumed: CLI tools, npm/Node.js, basic TypeScript, JSON/YAML, REST APIs. Must explain: 7-series elicitation methodology, dependency chains, artifact extraction, and how 326 probes produce a coherent spec.",
+      "multi_choice_id": "1.2.1.b",
+      "multi_choice_text": "Core fundamentals assumed; edge cases and advanced topics explained",
+      "answered_at": "2026-08-06T13:55:54.303Z",
+      "edit_count": 0
     },
-    {
-      "id": 4,
-      "name": "Procedural Breadth",
-      "rounds": [
-        {
-          "round": 1,
-          "focus": "Scope and Step Count",
-          "questions": [
-            {
-              "id": "4.1.1",
-              "text": "What is the overall scope of the procedure or workflow? What does it start from and what is its end state?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 4.1.1 based on project context.",
-                "selected_choice": "Narrow — a single well-defined task with clear boundaries",
-                "selected_choice_id": "4.1.1.a",
-                "answered_at": "2026-07-26T17:00:48.143Z"
-              }
-            },
-            {
-              "id": "4.1.2",
-              "text": "How many distinct steps, stages, or phases should the procedure contain? What is the natural breakdown?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 4.1.2 based on project context.",
-                "selected_choice": "2–4 steps — quick process with few handoffs",
-                "selected_choice_id": "4.1.2.a",
-                "answered_at": "2026-07-26T17:00:48.144Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 2,
-          "focus": "Decision Points and Inputs/Outputs",
-          "questions": [
-            {
-              "id": "4.2.1",
-              "text": "Where are the key decision points, branches, or conditional paths? At which steps must a choice be made that affects the rest of the flow?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 4.2.1 based on project context.",
-                "selected_choice": "No branching — a single linear path from start to finish",
-                "selected_choice_id": "4.2.1.a",
-                "answered_at": "2026-07-26T17:00:48.146Z"
-              }
-            },
-            {
-              "id": "4.2.2",
-              "text": "What are the expected inputs and outputs at each stage? What data or artifacts flow between steps?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 4.2.2 based on project context.",
-                "selected_choice": "Simple I/O — each step takes one input and produces one output",
-                "selected_choice_id": "4.2.2.a",
-                "answered_at": "2026-07-26T17:00:48.148Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 3,
-          "focus": "Error Handling and Granularity",
-          "questions": [
-            {
-              "id": "4.3.1",
-              "text": "What fallback paths, error handling, or recovery procedures should be included for when things go wrong?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 4.3.1 based on project context.",
-                "selected_choice": "Minimal — errors abort the procedure with a clear message",
-                "selected_choice_id": "4.3.1.a",
-                "answered_at": "2026-07-26T17:00:48.149Z"
-              }
-            },
-            {
-              "id": "4.3.2",
-              "text": "How granular should each procedural step be? Should steps be coarse (several actions) or fine (one action per step)?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 4.3.2 based on project context.",
-                "selected_choice": "Coarse — each step is a meaningful phase (2–5 sub-actions per step)",
-                "selected_choice_id": "4.3.2.a",
-                "answered_at": "2026-07-26T17:00:48.151Z"
-              }
-            }
-          ]
-        }
-      ]
+    "1.2.2": {
+      "question_id": "1.2.2",
+      "series_id": 1,
+      "round": 2,
+      "open_ended_text": "Mixed approach — architecture diagrams for the dependency graph, then concrete code examples from the TypeScript engine showing question flow through router, answer recording, artifact extraction, and export.",
+      "multi_choice_id": "1.2.2.b",
+      "multi_choice_text": "Mixed — conceptual frameworks illustrated with examples",
+      "answered_at": "2026-08-06T13:55:54.326Z",
+      "edit_count": 0
     },
-    {
-      "id": 5,
-      "name": "Technical Specifications",
-      "rounds": [
-        {
-          "round": 1,
-          "focus": "Hardware and Infrastructure",
-          "questions": [
-            {
-              "id": "5.1.1",
-              "text": "What hardware platforms or architectures must be supported? (CPU, GPU, mobile, embedded, etc.)",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.1.1 based on project context.",
-                "selected_choice": "Single architecture — x86-64 desktop/server only",
-                "selected_choice_id": "5.1.1.a",
-                "answered_at": "2026-07-26T17:00:48.152Z"
-              }
-            },
-            {
-              "id": "5.1.2",
-              "text": "What are the minimum and recommended hardware specs? (RAM, storage, compute, network)",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.1.2 based on project context.",
-                "selected_choice": "Minimal — <1GB RAM, <100MB storage, single-core sufficient",
-                "selected_choice_id": "5.1.2.a",
-                "answered_at": "2026-07-26T17:00:48.152Z"
-              }
-            },
-            {
-              "id": "5.1.3",
-              "text": "What bandwidth, latency, or networking requirements exist? Is offline operation needed?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.1.3 based on project context.",
-                "selected_choice": "Always-online — requires reliable internet connection",
-                "selected_choice_id": "5.1.3.a",
-                "answered_at": "2026-07-26T17:00:48.153Z"
-              }
-            },
-            {
-              "id": "5.1.4",
-              "text": "What storage infrastructure is needed? (databases, object storage, caching, file systems)",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.1.4 based on project context.",
-                "selected_choice": "Single database — one relational or document store covers all needs",
-                "selected_choice_id": "5.1.4.a",
-                "answered_at": "2026-07-26T17:00:48.154Z"
-              }
-            },
-            {
-              "id": "5.1.5",
-              "text": "What cloud, on-premise, or hybrid infrastructure is targeted? Are there compliance or sovereignty requirements?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.1.5 based on project context.",
-                "selected_choice": "Cloud-native — designed for a specific cloud provider",
-                "selected_choice_id": "5.1.5.a",
-                "answered_at": "2026-07-26T17:00:48.155Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 2,
-          "focus": "Software Stack and Dependencies",
-          "questions": [
-            {
-              "id": "5.2.1",
-              "text": "What programming languages, runtimes, or frameworks are required or preferred?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.2.1 based on project context.",
-                "selected_choice": "Single language — one ecosystem covers everything",
-                "selected_choice_id": "5.2.1.a",
-                "answered_at": "2026-07-26T17:00:48.158Z"
-              }
-            },
-            {
-              "id": "5.2.2",
-              "text": "What operating systems and environments must be supported?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.2.2 based on project context.",
-                "selected_choice": "Linux only",
-                "selected_choice_id": "5.2.2.a",
-                "answered_at": "2026-07-26T17:00:48.159Z"
-              }
-            },
-            {
-              "id": "5.2.3",
-              "text": "What existing libraries, services, APIs, or third-party dependencies should be used or avoided?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.2.3 based on project context.",
-                "selected_choice": "Minimal dependencies — build from standard library where possible",
-                "selected_choice_id": "5.2.3.a",
-                "answered_at": "2026-07-26T17:00:48.161Z"
-              }
-            },
-            {
-              "id": "5.2.4",
-              "text": "What versioning, compatibility, or upgrade policies govern the software stack?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.2.4 based on project context.",
-                "selected_choice": "Latest-stable — always use current versions, update frequently",
-                "selected_choice_id": "5.2.4.a",
-                "answered_at": "2026-07-26T17:00:48.162Z"
-              }
-            },
-            {
-              "id": "5.2.5",
-              "text": "What build systems, CI/CD platforms, and packaging formats are required?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.2.5 based on project context.",
-                "selected_choice": "Simple build — single build tool, manual or script-based deployment",
-                "selected_choice_id": "5.2.5.a",
-                "answered_at": "2026-07-26T17:00:48.163Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 3,
-          "focus": "Performance and Scalability",
-          "questions": [
-            {
-              "id": "5.3.1",
-              "text": "What are the throughput, latency, and concurrency requirements? (requests/sec, response time, simultaneous users)",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.3.1 based on project context.",
-                "selected_choice": "Low traffic — <100 req/s, seconds of latency, single-digit concurrency",
-                "selected_choice_id": "5.3.1.a",
-                "answered_at": "2026-07-26T17:00:48.165Z"
-              }
-            },
-            {
-              "id": "5.3.2",
-              "text": "What data volume and growth rate is expected? (storage size, records, throughput)",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.3.2 based on project context.",
-                "selected_choice": "Small — <10GB data, slow growth, single-node viable",
-                "selected_choice_id": "5.3.2.a",
-                "answered_at": "2026-07-26T17:00:48.166Z"
-              }
-            },
-            {
-              "id": "5.3.3",
-              "text": "What availability, uptime, and disaster recovery targets are required?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.3.3 based on project context.",
-                "selected_choice": "Best-effort — no formal SLA, occasional downtime acceptable",
-                "selected_choice_id": "5.3.3.a",
-                "answered_at": "2026-07-26T17:00:48.167Z"
-              }
-            },
-            {
-              "id": "5.3.4",
-              "text": "What scalability model is required? (vertical, horizontal, elastic, serverless)",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.3.4 based on project context.",
-                "selected_choice": "Vertical — scale up a single node as needed",
-                "selected_choice_id": "5.3.4.a",
-                "answered_at": "2026-07-26T17:00:48.169Z"
-              }
-            },
-            {
-              "id": "5.3.5",
-              "text": "What security and compliance standards must be met? (auth, encryption, audit, regulations)",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.3.5 based on project context.",
-                "selected_choice": "Basic — password auth, TLS, no formal compliance requirements",
-                "selected_choice_id": "5.3.5.a",
-                "answered_at": "2026-07-26T17:00:48.170Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 4,
-          "focus": "Integration and Timeline",
-          "questions": [
-            {
-              "id": "5.4.1",
-              "text": "What external systems, APIs, or services must this system integrate with?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.4.1 based on project context.",
-                "selected_choice": "No integrations — fully standalone system",
-                "selected_choice_id": "5.4.1.a",
-                "answered_at": "2026-07-26T17:00:48.171Z"
-              }
-            },
-            {
-              "id": "5.4.2",
-              "text": "What integration protocols, data formats, or standards must be supported?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.4.2 based on project context.",
-                "selected_choice": "REST/JSON only — simple HTTP-based communication",
-                "selected_choice_id": "5.4.2.a",
-                "answered_at": "2026-07-26T17:00:48.173Z"
-              }
-            },
-            {
-              "id": "5.4.3",
-              "text": "What is the expected timeline, milestones, and delivery cadence?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.4.3 based on project context.",
-                "selected_choice": "Quick — prototype in weeks, production in 1–3 months",
-                "selected_choice_id": "5.4.3.a",
-                "answered_at": "2026-07-26T17:00:48.174Z"
-              }
-            },
-            {
-              "id": "5.4.4",
-              "text": "What testing, staging, and rollout strategy is required?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.4.4 based on project context.",
-                "selected_choice": "Basic — dev + production environments, manual testing",
-                "selected_choice_id": "5.4.4.a",
-                "answered_at": "2026-07-26T17:00:48.175Z"
-              }
-            },
-            {
-              "id": "5.4.5",
-              "text": "What documentation, training, or knowledge transfer outputs are expected alongside the system?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 5.4.5 based on project context.",
-                "selected_choice": "Minimal — inline comments and a README",
-                "selected_choice_id": "5.4.5.a",
-                "answered_at": "2026-07-26T17:00:48.177Z"
-              }
-            }
-          ]
-        }
-      ]
+    "1.3.1": {
+      "question_id": "1.3.1",
+      "series_id": 1,
+      "round": 3,
+      "open_ended_text": "Standard software engineering terms (session, artifact, framework, series, round). SPACE-specific: probe (elicitation question), artifact (extracted data), series (themed rounds), round (batch of questions).",
+      "multi_choice_id": "1.3.1.a",
+      "multi_choice_text": "Standard industry terminology — use common terms precisely",
+      "answered_at": "2026-08-06T13:55:54.351Z",
+      "edit_count": 0
     },
-    {
-      "id": 6,
-      "name": "Development Methodologies",
-      "rounds": [
-        {
-          "round": 1,
-          "focus": "Process and Cadence",
-          "questions": [
-            {
-              "id": "6.1.1",
-              "text": "What development process or methodology best fits this project? How should work be planned and tracked?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 6.1.1 based on project context.",
-                "selected_choice": "Sprint-based agile (Scrum) — fixed-length iterations with formal ceremonies",
-                "selected_choice_id": "6.1.1.a",
-                "answered_at": "2026-07-26T17:00:48.178Z"
-              }
-            },
-            {
-              "id": "6.1.2",
-              "text": "What is the expected team size, composition, and structure?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 6.1.2 based on project context.",
-                "selected_choice": "Solo or pair — 1–2 people, all roles combined",
-                "selected_choice_id": "6.1.2.a",
-                "answered_at": "2026-07-26T17:00:48.179Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 2,
-          "focus": "Quality and Review Practices",
-          "questions": [
-            {
-              "id": "6.2.1",
-              "text": "What code review, testing, and quality assurance practices should be followed?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 6.2.1 based on project context.",
-                "selected_choice": "Light — ad-hoc reviews, manual testing, minimal automation",
-                "selected_choice_id": "6.2.1.a",
-                "answered_at": "2026-07-26T17:00:48.180Z"
-              }
-            },
-            {
-              "id": "6.2.2",
-              "text": "How should the team handle technical debt, refactoring, and code quality?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 6.2.2 based on project context.",
-                "selected_choice": "Opportunistic — clean as you go, no formal tracking",
-                "selected_choice_id": "6.2.2.a",
-                "answered_at": "2026-07-26T17:00:48.181Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 3,
-          "focus": "Communication and Collaboration",
-          "questions": [
-            {
-              "id": "6.3.1",
-              "text": "How should the team communicate, share knowledge, and manage decisions?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 6.3.1 based on project context.",
-                "selected_choice": "Async-first — written docs, Slack/Teams, minimal meetings",
-                "selected_choice_id": "6.3.1.a",
-                "answered_at": "2026-07-26T17:00:48.182Z"
-              }
-            },
-            {
-              "id": "6.3.2",
-              "text": "What is the decision-making and escalation process? How are architectural choices made?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 6.3.2 based on project context.",
-                "selected_choice": "BDFL — one person makes final decisions with input",
-                "selected_choice_id": "6.3.2.a",
-                "answered_at": "2026-07-26T17:00:48.185Z"
-              }
-            }
-          ]
-        }
-      ]
+    "1.3.2": {
+      "question_id": "1.3.2",
+      "series_id": 1,
+      "round": 3,
+      "open_ended_text": "Progressive — start with simple question-asking, layer in dependencies, artifact accumulation, multi-format export, then intelligence layer. Each layer builds on previous.",
+      "multi_choice_id": "1.3.2.b",
+      "multi_choice_text": "Flat — consistent complexity level throughout",
+      "answered_at": "2026-08-06T13:55:54.380Z",
+      "edit_count": 0
     },
-    {
-      "id": 7,
-      "name": "Operational / Functional Preferences",
-      "rounds": [
-        {
-          "round": 1,
-          "focus": "Deployment and Delivery",
-          "questions": [
-            {
-              "id": "7.1.1",
-              "text": "How should the system be deployed, released, and updated in production?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 7.1.1 based on project context.",
-                "selected_choice": "Manual deploy — push artifacts, restart services, update on schedule",
-                "selected_choice_id": "7.1.1.a",
-                "answered_at": "2026-07-26T17:00:48.186Z"
-              }
-            },
-            {
-              "id": "7.1.2",
-              "text": "What environment and release management strategy should be used?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 7.1.2 based on project context.",
-                "selected_choice": "Single environment — production only, with local dev",
-                "selected_choice_id": "7.1.2.a",
-                "answered_at": "2026-07-26T17:00:48.187Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 2,
-          "focus": "Runtime Behavior and Observability",
-          "questions": [
-            {
-              "id": "7.2.1",
-              "text": "What logging, monitoring, alerting, and observability infrastructure is needed?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 7.2.1 based on project context.",
-                "selected_choice": "Minimal — basic logging to stdout, manual check-ins",
-                "selected_choice_id": "7.2.1.a",
-                "answered_at": "2026-07-26T17:00:48.188Z"
-              }
-            },
-            {
-              "id": "7.2.2",
-              "text": "What configuration and feature management approach should be used at runtime?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 7.2.2 based on project context.",
-                "selected_choice": "Static config — environment variables, restart to change",
-                "selected_choice_id": "7.2.2.a",
-                "answered_at": "2026-07-26T17:00:48.190Z"
-              }
-            }
-          ]
-        },
-        {
-          "round": 3,
-          "focus": "Maintenance and Evolution",
-          "questions": [
-            {
-              "id": "7.3.1",
-              "text": "What maintenance schedule, upgrade policy, and lifecycle management is expected?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 7.3.1 based on project context.",
-                "selected_choice": "Firefighting — fix issues as they arise, no scheduled maintenance",
-                "selected_choice_id": "7.3.1.a",
-                "answered_at": "2026-07-26T17:00:48.191Z"
-              }
-            },
-            {
-              "id": "7.3.2",
-              "text": "What is the long-term stewardship plan? Who owns the system after initial delivery?",
-              "answer": {
-                "open_ended": "Auto-generated answer for 7.3.2 based on project context.",
-                "selected_choice": "Hand-off — delivered to a separate operations team",
-                "selected_choice_id": "7.3.2.a",
-                "answered_at": "2026-07-26T17:00:48.192Z"
-              }
-            }
-          ]
-        }
-      ]
+    "2.1.1": {
+      "question_id": "2.1.1",
+      "series_id": 2,
+      "round": 1,
+      "open_ended_text": "Core: Framework (326-probe set), Session (interaction instance), Project (session container), Artifact (extracted data), Series (themed rounds), Round (2 questions + follow-ups), Question (open-ended probe), Export (spec documents), User, Engine (orchestration).",
+      "multi_choice_id": "2.1.1.b",
+      "multi_choice_text": "5–10 entities — moderate complexity with clear boundaries",
+      "answered_at": "2026-08-06T13:55:54.399Z",
+      "edit_count": 0
+    },
+    "2.1.2": {
+      "question_id": "2.1.2",
+      "series_id": 2,
+      "round": 1,
+      "open_ended_text": "3-5 attributes per entity. Framework: version, total_series, dependency_graph. Session: id, status, answers map, artifacts. Artifact: value, source_question_id, confidence. Series: id, name, depends_on, provides.",
+      "multi_choice_id": "2.1.2.b",
+      "multi_choice_text": "3–5 attributes per entity — moderate descriptive richness",
+      "answered_at": "2026-08-06T13:55:54.415Z",
+      "edit_count": 0
+    },
+    "2.1.3": {
+      "question_id": "2.1.3",
+      "series_id": 2,
+      "round": 1,
+      "open_ended_text": "Three categories: (1) Structural (Framework, Series, Round, Question) — probe taxonomy. (2) Runtime (Session, Engine, User) — execution. (3) Output (Artifact, Export) — derived data.",
+      "multi_choice_id": "2.1.3.b",
+      "multi_choice_text": "2–3 broad categories partitioning the entities",
+      "answered_at": "2026-08-06T13:55:54.431Z",
+      "edit_count": 0
+    },
+    "2.2.1": {
+      "question_id": "2.2.1",
+      "series_id": 2,
+      "round": 2,
+      "open_ended_text": "Core: Framework, Session, Question, Artifact, Engine. Peripheral: Project (wrapper), User (implicit), Export (derived). System works with just core set; peripherals add organization and delivery.",
+      "multi_choice_id": "2.2.1.b",
+      "multi_choice_text": "Roughly equal split between core and peripheral entities",
+      "answered_at": "2026-08-06T13:55:54.446Z",
+      "edit_count": 0
+    },
+    "2.2.2": {
+      "question_id": "2.2.2",
+      "series_id": 2,
+      "round": 2,
+      "open_ended_text": "Moderate — Questions fine-grained (326 unique), Rounds/Series moderate groupings, Artifacts fine-grained per-question but aggregate into dictionary. Balance keeps entity count manageable.",
+      "multi_choice_id": "2.2.2.b",
+      "multi_choice_text": "Moderate — key specializations become distinct entities",
+      "answered_at": "2026-08-06T13:55:54.465Z",
+      "edit_count": 0
+    },
+    "2.2.3": {
+      "question_id": "2.2.3",
+      "series_id": 2,
+      "round": 2,
+      "open_ended_text": "Shared attributes by category. Runtime entities share lifecycle pattern. Structural entities share naming convention (dot-separated IDs). Artifacts share interface but content varies by source series.",
+      "multi_choice_id": "2.2.3.b",
+      "multi_choice_text": "Shared attributes grouped by category — entities in same category share a profile",
+      "answered_at": "2026-08-06T13:55:54.478Z",
+      "edit_count": 0
+    },
+    "2.3.1": {
+      "question_id": "2.3.1",
+      "series_id": 2,
+      "round": 3,
+      "open_ended_text": "Tightly bounded — generates specs, does not implement/deploy them. Boundary: input = answers to 326 probes, output = structured spec documents.",
+      "multi_choice_id": "2.3.1.a",
+      "multi_choice_text": "Tightly bounded — scope is narrow and well-defined",
+      "answered_at": "2026-08-06T13:55:54.491Z",
+      "edit_count": 0
+    },
+    "2.3.2": {
+      "question_id": "2.3.2",
+      "series_id": 2,
+      "round": 3,
+      "open_ended_text": "3 actors: (1) Human user — provides domain knowledge. (2) LLM (optional) — auto-answer or refine. (3) File system — persists sessions. System works without external services.",
+      "multi_choice_id": "2.3.2.b",
+      "multi_choice_text": "1–3 external actors (users, upstream data sources, downstream consumers)",
+      "answered_at": "2026-08-06T13:55:54.502Z",
+      "edit_count": 0
+    },
+    "2.3.3": {
+      "question_id": "2.3.3",
+      "series_id": 2,
+      "round": 3,
+      "open_ended_text": "Stateful with versioned artifacts. Sessions: created → in_progress → completed. Questions: locked → available → answered. Supports snapshot/resume.",
+      "multi_choice_id": "2.3.3.b",
+      "multi_choice_text": "Stateful lifecycle — entities pass through defined states with transition rules",
+      "answered_at": "2026-08-06T13:55:54.517Z",
+      "edit_count": 0
+    },
+    "2.4.1": {
+      "question_id": "2.4.1",
+      "series_id": 2,
+      "round": 4,
+      "open_ended_text": "No major gaps. One addition: \"Configuration\" entity for runtime settings (LLM provider, export formats). Currently embedded in Engine config.",
+      "multi_choice_id": "2.4.1.a",
+      "multi_choice_text": "No gaps — the current entity list is comprehensive",
+      "answered_at": "2026-08-06T13:55:54.529Z",
+      "edit_count": 0
+    },
+    "2.4.2": {
+      "question_id": "2.4.2",
+      "series_id": 2,
+      "round": 4,
+      "open_ended_text": "No merges or splits needed. Boundaries are clean. \"User\" could split into Respondent/Consumer but adds complexity without benefit at current scale.",
+      "multi_choice_id": "2.4.2.a",
+      "multi_choice_text": "No changes needed — current classification is sound",
+      "answered_at": "2026-08-06T13:55:54.541Z",
+      "edit_count": 0
+    },
+    "2.4.3": {
+      "question_id": "2.4.3",
+      "series_id": 2,
+      "round": 4,
+      "open_ended_text": "(1) Framework immutable after loading. (2) Answers append-only during session. (3) Artifacts derived, recomputed from answers. (4) Series dependencies strict.",
+      "multi_choice_id": "2.4.3.b",
+      "multi_choice_text": "Moderate constraints — several required fields and validity rules",
+      "answered_at": "2026-08-06T13:55:54.552Z",
+      "edit_count": 0
+    },
+    "2.5.1": {
+      "question_id": "2.5.1",
+      "series_id": 2,
+      "round": 5,
+      "open_ended_text": "Edge cases: empty project, corrupted session JSON (validation on load), missing framework (fallback defaults), concurrent sessions (allowed but uncoordinated), long answers (>10KB accepted).",
+      "multi_choice_id": "2.5.1.b",
+      "multi_choice_text": "Known edge cases — they are well-understood and can be handled explicitly",
+      "answered_at": "2026-08-06T13:55:54.563Z",
+      "edit_count": 0
+    },
+    "2.5.2": {
+      "question_id": "2.5.2",
+      "series_id": 2,
+      "round": 5,
+      "open_ended_text": "Hierarchical composition: Framework→Series→Round→Question. Sessions contain Answers and Artifacts. Projects contain Sessions. Dependency graph creates cross-series composition.",
+      "multi_choice_id": "2.5.2.b",
+      "multi_choice_text": "Containment — some entities serve as containers for others (1-level deep)",
+      "answered_at": "2026-08-06T13:55:54.575Z",
+      "edit_count": 0
+    },
+    "2.5.3": {
+      "question_id": "2.5.3",
+      "series_id": 2,
+      "round": 5,
+      "open_ended_text": "Framework 1:N Series, Series 1:N Rounds (always 2 questions), Project 1:N Sessions, Session N:M Questions via answers, Session 1:N Artifacts, Series N:M via dependency graph.",
+      "multi_choice_id": "2.5.3.b",
+      "multi_choice_text": "One-to-many — common pattern with one parent referencing multiple children",
+      "answered_at": "2026-08-06T13:55:54.586Z",
+      "edit_count": 0
+    },
+    "3.1.1": {
+      "question_id": "3.1.1",
+      "series_id": 3,
+      "round": 1,
+      "open_ended_text": "Framework CONTAINS Series, Series CONTAINS Rounds, Round CONTAINS Questions, Session ANSWERS Questions (many:many), Session EXTRACTS Artifacts, Project OWNS Sessions, Export FROM Session+Artifacts.",
+      "multi_choice_id": "3.1.1.b",
+      "multi_choice_text": "Moderate — roughly one association per entity on average",
+      "answered_at": "2026-08-06T13:55:54.600Z",
+      "edit_count": 0
+    },
+    "3.1.2": {
+      "question_id": "3.1.2",
+      "series_id": 3,
+      "round": 1,
+      "open_ended_text": "Composition dominates — whole-part relationships. Exception: dependency graph between Series (DAG of artifact consumption). Answers map is association table linking Questions to responses.",
+      "multi_choice_id": "3.1.2.b",
+      "multi_choice_text": "2–3 distinct relationship types (e.g., owns, produces, references)",
+      "answered_at": "2026-08-06T13:55:54.614Z",
+      "edit_count": 0
+    },
+    "3.2.1": {
+      "question_id": "3.2.1",
+      "series_id": 3,
+      "round": 2,
+      "open_ended_text": "Hierarchical containment with flat dependency layer. Framework→Series→Round→Question is strict containment. Dependencies are flat (Series reference by ID). Artifacts float across hierarchy.",
+      "multi_choice_id": "3.2.1.a",
+      "multi_choice_text": "No hierarchy — all entities are peers with no containment structure",
+      "answered_at": "2026-08-06T13:55:54.625Z",
+      "edit_count": 0
+    },
+    "3.2.2": {
+      "question_id": "3.2.2",
+      "series_id": 3,
+      "round": 2,
+      "open_ended_text": "Composition primarily — Artifacts composed into Session, not inherited. Exception: Export hierarchy shares interface (content+filename+mime_type) with different serialization strategies.",
+      "multi_choice_id": "3.2.2.a",
+      "multi_choice_text": "No inheritance — each entity is unique in its type",
+      "answered_at": "2026-08-06T13:55:54.637Z",
+      "edit_count": 0
+    },
+    "3.3.1": {
+      "question_id": "3.3.1",
+      "series_id": 3,
+      "round": 3,
+      "open_ended_text": "Sequential causation with parallel-reads. Answering 1.1.1 enables downstream Series. Within Rounds, both Questions can be answered in any order. DAG — no cycles.",
+      "multi_choice_id": "3.3.1.a",
+      "multi_choice_text": "No causal links — entities change independently",
+      "answered_at": "2026-08-06T13:55:54.649Z",
+      "edit_count": 0
+    },
+    "3.3.2": {
+      "question_id": "3.3.2",
+      "series_id": 3,
+      "round": 3,
+      "open_ended_text": "DAG with 7 nodes, ~10 edges. Critical path: S1→S2→S3→S4→S5→S6→S7. Branching where S5 depends on both S1 and S4.",
+      "multi_choice_id": "3.3.2.b",
+      "multi_choice_text": "Simple chain — a linear sequence of prerequisites",
+      "answered_at": "2026-08-06T13:55:54.662Z",
+      "edit_count": 0
+    },
+    "3.4.1": {
+      "question_id": "3.4.1",
+      "series_id": 3,
+      "round": 4,
+      "open_ended_text": "Mostly immutable — answers append-only, editing allowed before completion. Artifacts recomputed from answers. Session status transitions one-way.",
+      "multi_choice_id": "3.4.1.b",
+      "multi_choice_text": "State-gated — relationships can only change when entities are in certain states",
+      "answered_at": "2026-08-06T13:55:54.673Z",
+      "edit_count": 0
+    },
+    "3.4.2": {
+      "question_id": "3.4.2",
+      "series_id": 3,
+      "round": 4,
+      "open_ended_text": "Two junction entities: (1) Answers map — question_id to AnswerEntry with text, choice, timestamps. (2) Artifacts dictionary — artifact keys to ArtifactValue with provenance and confidence.",
+      "multi_choice_id": "3.4.2.b",
+      "multi_choice_text": "Transitive — some relationship types imply transitive chains",
+      "answered_at": "2026-08-06T13:55:54.684Z",
+      "edit_count": 0
+    },
+    "4.1.1": {
+      "question_id": "4.1.1",
+      "series_id": 4,
+      "round": 1,
+      "open_ended_text": "Primary: elicitation session (create project → answer questions → extract artifacts → generate exports). Secondary: save/resume, artifact accumulation, progress tracking.",
+      "multi_choice_id": "4.1.1.a",
+      "multi_choice_text": "Narrow — a single well-defined task with clear boundaries",
+      "answered_at": "2026-08-06T13:55:54.695Z",
+      "edit_count": 0
+    },
+    "4.1.2": {
+      "question_id": "4.1.2",
+      "series_id": 4,
+      "round": 1,
+      "open_ended_text": "5 phases: (1) Init — create project, load framework. (2) Elicitation — 67 questions, 25 rounds. (3) Extraction — 66 artifacts via mapping. (4) Validation — contradictions, gaps. (5) Export — multi-format docs.",
+      "multi_choice_id": "4.1.2.b",
+      "multi_choice_text": "5–8 steps — moderate complexity with clear waypoints",
+      "answered_at": "2026-08-06T13:55:54.706Z",
+      "edit_count": 0
+    },
+    "4.2.1": {
+      "question_id": "4.2.1",
+      "series_id": 4,
+      "round": 2,
+      "open_ended_text": "8-10 steps per question: router selects → display question → user answers → user classifies → validate → record → extract artifacts → check round → check series → advance.",
+      "multi_choice_id": "4.2.1.b",
+      "multi_choice_text": "Few branches — 1–2 decision points with 2–3 choices each",
+      "answered_at": "2026-08-06T13:55:54.718Z",
+      "edit_count": 0
+    },
+    "4.2.2": {
+      "question_id": "4.2.2",
+      "series_id": 4,
+      "round": 2,
+      "open_ended_text": "2-3 sub-actions per step. \"Display\" checks dependencies, formats context, shows progress. \"Submit\" validates text, records timestamp, updates map, recomputes artifacts, checks completion.",
+      "multi_choice_id": "4.2.2.a",
+      "multi_choice_text": "Simple I/O — each step takes one input and produces one output",
+      "answered_at": "2026-08-06T13:55:54.731Z",
+      "edit_count": 0
+    },
+    "4.3.1": {
+      "question_id": "4.3.1",
+      "series_id": 4,
+      "round": 3,
+      "open_ended_text": "Three decision points: (1) Question routing — dependency graph + completion state. (2) Answer validation — non-empty, valid choice. (3) Completion detection — round/series/session.",
+      "multi_choice_id": "4.3.1.a",
+      "multi_choice_text": "Minimal — errors abort the procedure with a clear message",
+      "answered_at": "2026-08-06T13:55:54.748Z",
+      "edit_count": 0
+    },
+    "4.3.2": {
+      "question_id": "4.3.2",
+      "series_id": 4,
+      "round": 3,
+      "open_ended_text": "Main: dependencies met → show question, else → skip. Secondary: valid → record, else → re-prompt. Tertiary: round complete → check series → check session → generate exports.",
+      "multi_choice_id": "4.3.2.b",
+      "multi_choice_text": "Fine — each step is a single atomic action",
+      "answered_at": "2026-08-06T13:55:54.761Z",
+      "edit_count": 0
+    },
+    "5.1.1": {
+      "question_id": "5.1.1",
+      "series_id": 5,
+      "round": 1,
+      "open_ended_text": "TypeScript/Node.js for engine, CLI, storage. Python for web server. Single HTML+Tailwind for web UI. No external runtime dependencies beyond Node.js built-ins.",
+      "multi_choice_id": "5.1.1.b",
+      "multi_choice_text": "Dual architecture — e.g., x86-64 + ARM",
+      "answered_at": "2026-08-06T13:55:54.772Z",
+      "edit_count": 0
+    },
+    "5.1.2": {
+      "question_id": "5.1.2",
+      "series_id": 5,
+      "round": 1,
+      "open_ended_text": "Minimum: Node.js 18+, 512MB RAM, 100MB disk. Recommended: Node.js 20+, 2GB RAM, 1GB disk. ~3500 LOC TypeScript, 36KB HTML UI, ~10KB per session.",
+      "multi_choice_id": "5.1.2.a",
+      "multi_choice_text": "Minimal — <1GB RAM, <100MB storage, single-core sufficient",
+      "answered_at": "2026-08-06T13:55:54.784Z",
+      "edit_count": 0
+    },
+    "5.1.3": {
+      "question_id": "5.1.3",
+      "series_id": 5,
+      "round": 1,
+      "open_ended_text": "Offline-first — zero network access for core. LLM integration optional (needs internet). Web UI served locally. No bandwidth/latency requirements.",
+      "multi_choice_id": "5.1.3.a",
+      "multi_choice_text": "Always-online — requires reliable internet connection",
+      "answered_at": "2026-08-06T13:55:54.795Z",
+      "edit_count": 0
+    },
+    "5.1.4": {
+      "question_id": "5.1.4",
+      "series_id": 5,
+      "round": 1,
+      "open_ended_text": "JSON files on local filesystem. SQLite adapter exists for future scaling but not integrated. No databases, object storage, or caching needed.",
+      "multi_choice_id": "5.1.4.a",
+      "multi_choice_text": "Single database — one relational or document store covers all needs",
+      "answered_at": "2026-08-06T13:55:54.806Z",
+      "edit_count": 0
+    },
+    "5.1.5": {
+      "question_id": "5.1.5",
+      "series_id": 5,
+      "round": 1,
+      "open_ended_text": "Local development only. No cloud/on-premise/hybrid. Runs on developers machine. Web server binds to localhost. CLI installed via npm.",
+      "multi_choice_id": "5.1.5.a",
+      "multi_choice_text": "Cloud-native — designed for a specific cloud provider",
+      "answered_at": "2026-08-06T13:55:54.817Z",
+      "edit_count": 0
+    },
+    "5.2.1": {
+      "question_id": "5.2.1",
+      "series_id": 5,
+      "round": 2,
+      "open_ended_text": "TypeScript for business logic. Python for web server. HTML+Tailwind via CDN for web UI. No frontend build step. Compiles to ES2022 JavaScript.",
+      "multi_choice_id": "5.2.1.b",
+      "multi_choice_text": "Two languages — e.g., backend + frontend split",
+      "answered_at": "2026-08-06T13:55:54.826Z",
+      "edit_count": 0
+    },
+    "5.2.2": {
+      "question_id": "5.2.2",
+      "series_id": 5,
+      "round": 2,
+      "open_ended_text": "Cross-platform: macOS, Linux, Windows. Tested on Node.js 18/20/22. Platform-independent paths. Modern browsers for web UI.",
+      "multi_choice_id": "5.2.2.b",
+      "multi_choice_text": "Linux + macOS (developer-focused)",
+      "answered_at": "2026-08-06T13:55:54.837Z",
+      "edit_count": 0
+    },
+    "5.2.3": {
+      "question_id": "5.2.3",
+      "series_id": 5,
+      "round": 2,
+      "open_ended_text": "Runtime: commander, chalk, inquirer, ora, js-yaml, sql.js. Dev: vitest, tsx, typescript. Optional: openai, anthropic SDKs. No databases, message queues, external services.",
+      "multi_choice_id": "5.2.3.a",
+      "multi_choice_text": "Minimal dependencies — build from standard library where possible",
+      "answered_at": "2026-08-06T13:55:54.848Z",
+      "edit_count": 0
+    },
+    "5.2.4": {
+      "question_id": "5.2.4",
+      "series_id": 5,
+      "round": 2,
+      "open_ended_text": "Semantic versioning (v2.1.0). Framework format versioned separately (v1→v2 migration built in). Backward compatible — old sessions load in new versions.",
+      "multi_choice_id": "5.2.4.a",
+      "multi_choice_text": "Latest-stable — always use current versions, update frequently",
+      "answered_at": "2026-08-06T13:55:54.859Z",
+      "edit_count": 0
+    },
+    "5.2.5": {
+      "question_id": "5.2.5",
+      "series_id": 5,
+      "round": 2,
+      "open_ended_text": "npm for packages/distribution. tsc for build. Vitest for testing. No CI/CD yet — manual builds. prepublishOnly runs build+test. No Docker/K8s/cloud.",
+      "multi_choice_id": "5.2.5.a",
+      "multi_choice_text": "Simple build — single build tool, manual or script-based deployment",
+      "answered_at": "2026-08-06T13:55:54.870Z",
+      "edit_count": 0
+    },
+    "5.3.1": {
+      "question_id": "5.3.1",
+      "series_id": 5,
+      "round": 3,
+      "open_ended_text": "Single-user interactive. Session: <100ms. Routing: <10ms. Submit: <50ms. Extract: <20ms. Export: <500ms. All under 1 second. No concurrency.",
+      "multi_choice_id": "5.3.1.a",
+      "multi_choice_text": "Low traffic — <100 req/s, seconds of latency, single-digit concurrency",
+      "answered_at": "2026-08-06T13:55:54.884Z",
+      "edit_count": 0
+    },
+    "5.3.2": {
+      "question_id": "5.3.2",
+      "series_id": 5,
+      "round": 3,
+      "open_ended_text": "326 questions, ~66 artifacts/session, ~10KB/session file. 5-10 sessions per project. ~500KB total per project. Designed for hundreds of projects.",
+      "multi_choice_id": "5.3.2.a",
+      "multi_choice_text": "Small — <10GB data, slow growth, single-node viable",
+      "answered_at": "2026-08-06T13:55:54.897Z",
+      "edit_count": 0
+    },
+    "5.3.3": {
+      "question_id": "5.3.3",
+      "series_id": 5,
+      "round": 3,
+      "open_ended_text": "Not applicable — local dev tool. No SLA/uptime. Works offline. Completes in <1 second. Data durability via filesystem + optional git.",
+      "multi_choice_id": "5.3.3.a",
+      "multi_choice_text": "Best-effort — no formal SLA, occasional downtime acceptable",
+      "answered_at": "2026-08-06T13:55:54.909Z",
+      "edit_count": 0
+    },
+    "5.3.4": {
+      "question_id": "5.3.4",
+      "series_id": 5,
+      "round": 3,
+      "open_ended_text": "Single-process, single-user. No horizontal scaling. Web server handles one request at a time. No load balancing/caching/CDN.",
+      "multi_choice_id": "5.3.4.a",
+      "multi_choice_text": "Vertical — scale up a single node as needed",
+      "answered_at": "2026-08-06T13:55:54.922Z",
+      "edit_count": 0
+    },
+    "5.3.5": {
+      "question_id": "5.3.5",
+      "series_id": 5,
+      "round": 3,
+      "open_ended_text": "Standard dev tool practices. API keys in env vars. Local JSON files. No encryption/auth/audit logging needed for development tool.",
+      "multi_choice_id": "5.3.5.a",
+      "multi_choice_text": "Basic — password auth, TLS, no formal compliance requirements",
+      "answered_at": "2026-08-06T13:55:54.933Z",
+      "edit_count": 0
+    },
+    "5.4.1": {
+      "question_id": "5.4.1",
+      "series_id": 5,
+      "round": 4,
+      "open_ended_text": "5 LLM providers: OpenAI, Anthropic, Gemini, Mistral, Ollama. Unified LLMProvider interface. File system for storage. npm for distribution. Works without LLM (template provider).",
+      "multi_choice_id": "5.4.1.b",
+      "multi_choice_text": "1–2 integrations — limited surface area for interoperability",
+      "answered_at": "2026-08-06T13:55:54.944Z",
+      "edit_count": 0
+    },
+    "5.4.2": {
+      "question_id": "5.4.2",
+      "series_id": 5,
+      "round": 4,
+      "open_ended_text": "File system API for persistence. LLM providers use native REST APIs via SDK. Web server uses HTTP REST. No gRPC/WebSocket/message queues. All synchronous.",
+      "multi_choice_id": "5.4.2.a",
+      "multi_choice_text": "REST/JSON only — simple HTTP-based communication",
+      "answered_at": "2026-08-06T13:55:54.955Z",
+      "edit_count": 0
+    },
+    "5.4.3": {
+      "question_id": "5.4.3",
+      "series_id": 5,
+      "round": 4,
+      "open_ended_text": "Phase 1 (done): Engine+CLI. Phase 2: Web UI. Phase 3: LLM providers. Phase 4: Export. Phase 5: Persistence. Phase 6: Intelligence. Phase 7: npm publish. ~4 weeks development.",
+      "multi_choice_id": "5.4.3.b",
+      "multi_choice_text": "Standard — phased delivery over 3–9 months",
+      "answered_at": "2026-08-06T13:55:54.965Z",
+      "edit_count": 0
+    },
+    "5.4.4": {
+      "question_id": "5.4.4",
+      "series_id": 5,
+      "round": 4,
+      "open_ended_text": "TDD with 142 tests across 13 files. Phase-specific test files. Integration tests for session flows. Snapshot tests for exports. Manual web UI testing.",
+      "multi_choice_id": "5.4.4.b",
+      "multi_choice_text": "Standard — dev, staging, production with automated test suite",
+      "answered_at": "2026-08-06T13:55:54.975Z",
+      "edit_count": 0
+    },
+    "5.4.5": {
+      "question_id": "5.4.5",
+      "series_id": 5,
+      "round": 4,
+      "open_ended_text": "npm package with README, LICENSE, TypeScript declarations. CLI help for every command. Inline JSDoc. Meta directory with specs/dev plans/audits. Self-documenting web UI.",
+      "multi_choice_id": "5.4.5.b",
+      "multi_choice_text": "Standard — API docs, architecture decision records, setup guide",
+      "answered_at": "2026-08-06T13:55:54.985Z",
+      "edit_count": 0
+    },
+    "6.1.1": {
+      "question_id": "6.1.1",
+      "series_id": 6,
+      "round": 1,
+      "open_ended_text": "Iterative in 7 phases: Foundation → Engine → LLM → Export → UI → Persistence → Intelligence. Each phase independently testable. ~3500 LOC total.",
+      "multi_choice_id": "6.1.1.b",
+      "multi_choice_text": "Continuous flow (Kanban) — pull-based with WIP limits, no fixed iterations",
+      "answered_at": "2026-08-06T13:55:54.994Z",
+      "edit_count": 0
+    },
+    "6.1.2": {
+      "question_id": "6.1.2",
+      "series_id": 6,
+      "round": 1,
+      "open_ended_text": "Solo developer — all roles (architecture, implementation, testing, docs). Small enough for full context. No coordination overhead. Fast decisions.",
+      "multi_choice_id": "6.1.2.a",
+      "multi_choice_text": "Solo or pair — 1–2 people, all roles combined",
+      "answered_at": "2026-08-06T13:55:55.004Z",
+      "edit_count": 0
+    },
+    "6.2.1": {
+      "question_id": "6.2.1",
+      "series_id": 6,
+      "round": 2,
+      "open_ended_text": "TypeScript strict mode. 142 tests/13 files. Snapshot tests for exports. Integration tests for flows. No code review (solo). TypeScript catches type errors.",
+      "multi_choice_id": "6.2.1.b",
+      "multi_choice_text": "Standard — mandatory reviews, unit + integration tests, CI gates",
+      "answered_at": "2026-08-06T13:55:55.014Z",
+      "edit_count": 0
+    },
+    "6.2.2": {
+      "question_id": "6.2.2",
+      "series_id": 6,
+      "round": 2,
+      "open_ended_text": "Boy scout rule — clean while building. Refactor when it helps new features. No dedicated refactoring phases. Main debt: web UI lacks tests, SQLite not integrated.",
+      "multi_choice_id": "6.2.2.a",
+      "multi_choice_text": "Opportunistic — clean as you go, no formal tracking",
+      "answered_at": "2026-08-06T13:55:55.024Z",
+      "edit_count": 0
+    },
+    "6.3.1": {
+      "question_id": "6.3.1",
+      "series_id": 6,
+      "round": 3,
+      "open_ended_text": "Solo dev — self-documentation. Architecture in meta/specs/ markdown. Code is primary docs. TypeScript types self-describing. No meetings/formal comms.",
+      "multi_choice_id": "6.3.1.a",
+      "multi_choice_text": "Async-first — written docs, Slack/Teams, minimal meetings",
+      "answered_at": "2026-08-06T13:55:55.034Z",
+      "edit_count": 0
+    },
+    "6.3.2": {
+      "question_id": "6.3.2",
+      "series_id": 6,
+      "round": 3,
+      "open_ended_text": "BDFL — one person decides. No RFC/ADR reviews. Decisions made quickly, documented after. Framework JSON is source of truth for question taxonomy.",
+      "multi_choice_id": "6.3.2.a",
+      "multi_choice_text": "BDFL — one person makes final decisions with input",
+      "answered_at": "2026-08-06T13:55:55.044Z",
+      "edit_count": 0
+    },
+    "7.1.1": {
+      "question_id": "7.1.1",
+      "series_id": 7,
+      "round": 1,
+      "open_ended_text": "npm publish as space-cli. Global install via npm install -g. Web UI bundled but local — clone repo, run server. No separate distribution.",
+      "multi_choice_id": "7.1.1.b",
+      "multi_choice_text": "Automated CI/CD — merged to main triggers build + deploy pipeline",
+      "answered_at": "2026-08-06T13:55:55.055Z",
+      "edit_count": 0
+    },
+    "7.1.2": {
+      "question_id": "7.1.2",
+      "series_id": 7,
+      "round": 1,
+      "open_ended_text": "npm for distribution, GitHub for source. No Docker — Node.js CLI runs anywhere. Web UI zero-dependency (single HTML + Python server). No cloud deployment.",
+      "multi_choice_id": "7.1.2.b",
+      "multi_choice_text": "Dev / staging / production — standard promotion pipeline",
+      "answered_at": "2026-08-06T13:55:55.065Z",
+      "edit_count": 0
+    },
+    "7.2.1": {
+      "question_id": "7.2.1",
+      "series_id": 7,
+      "round": 2,
+      "open_ended_text": "Not applicable — dev tool, not production service. No logging/monitoring/alerting. Closest: session progress tracking and artifact quality scores.",
+      "multi_choice_id": "7.2.1.a",
+      "multi_choice_text": "Minimal — basic logging to stdout, manual check-ins",
+      "answered_at": "2026-08-06T13:55:55.075Z",
+      "edit_count": 0
+    },
+    "7.2.2": {
+      "question_id": "7.2.2",
+      "series_id": 7,
+      "round": 2,
+      "open_ended_text": "Config via CLI flags and env vars. No feature flags/runtime config. Framework JSON is primary config. LLM settings are env vars. Minimal configuration by design.",
+      "multi_choice_id": "7.2.2.a",
+      "multi_choice_text": "Static config — environment variables, restart to change",
+      "answered_at": "2026-08-06T13:55:55.085Z",
+      "edit_count": 0
+    },
+    "7.3.1": {
+      "question_id": "7.3.1",
+      "series_id": 7,
+      "round": 3,
+      "open_ended_text": "Solo developer handles everything. GitHub issues for tracking. No SLA/response times. Open source, self-service. Updates as npm versions.",
+      "multi_choice_id": "7.3.1.a",
+      "multi_choice_text": "Firefighting — fix issues as they arise, no scheduled maintenance",
+      "answered_at": "2026-08-06T13:55:55.095Z",
+      "edit_count": 0
+    },
+    "7.3.2": {
+      "question_id": "7.3.2",
+      "series_id": 7,
+      "round": 3,
+      "open_ended_text": "Actively maintained by original author. Semantic versioning. Breaking changes require major bump. Framework format versioned separately. Stable tool with feature additions.",
+      "multi_choice_id": "7.3.2.b",
+      "multi_choice_text": "Build-and-run — the same team owns development and operations",
+      "answered_at": "2026-08-06T13:55:55.105Z",
+      "edit_count": 0
     }
-  ],
+  },
   "artifacts": {
     "domain": {
-      "value": "Auto-generated answer for 1.1.1 based on project context.",
-      "source": "1.1.1",
-      "confidence": 1
+      "value": "SPACE (Superb Prompt Automatic Creation Engine) is a programmable specification engine that transforms structured elicitation probes into development specifications. It sits at the intersection of prompt engineering, software specification, and developer tooling.",
+      "source_question_id": "1.1.1",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.252Z",
+      "derived_from": []
     },
     "audience_level": {
       "value": "Experts / researchers — people who work in this domain daily",
-      "source": "1.1.2",
-      "confidence": 1
+      "source_question_id": "1.1.2",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.281Z",
+      "derived_from": []
     },
     "terminology_preferences": {
       "value": "Standard industry terminology — use common terms precisely",
-      "source": "1.3.1",
-      "confidence": 1
+      "source_question_id": "1.3.1",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.351Z",
+      "derived_from": []
     },
     "scaffolding_preference": {
-      "value": "Progressive — scaffold from simple foundations to advanced topics",
-      "source": "1.3.2",
-      "confidence": 1
+      "value": "Flat — consistent complexity level throughout",
+      "source_question_id": "1.3.2",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.380Z",
+      "derived_from": []
     },
     "abstraction_level": {
-      "value": "Concrete — specific examples, code snippets, case studies",
-      "source": "1.2.2",
-      "confidence": 1
+      "value": "Mixed — conceptual frameworks illustrated with examples",
+      "source_question_id": "1.2.2",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.326Z",
+      "derived_from": []
     },
     "assumption_level": {
-      "value": "Full prerequisites assumed — dive straight into advanced material",
-      "source": "1.2.1",
-      "confidence": 1
+      "value": "Core fundamentals assumed; edge cases and advanced topics explained",
+      "source_question_id": "1.2.1",
+      "source_series_id": 1,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.303Z",
+      "derived_from": []
     },
     "entity_list": {
-      "value": "Auto-generated answer for 2.1.1 based on project context.",
-      "source": "2.1.1",
-      "confidence": 1
+      "value": "Core: Framework (326-probe set), Session (interaction instance), Project (session container), Artifact (extracted data), Series (themed rounds), Round (2 questions + follow-ups), Question (open-ended probe), Export (spec documents), User, Engine (orchestration).",
+      "source_question_id": "2.1.1",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.399Z",
+      "derived_from": []
     },
     "entity_attributes": {
-      "value": "Auto-generated answer for 2.1.2 based on project context.",
-      "source": "2.1.2",
-      "confidence": 1
+      "value": "3-5 attributes per entity. Framework: version, total_series, dependency_graph. Session: id, status, answers map, artifacts. Artifact: value, source_question_id, confidence. Series: id, name, depends_on, provides.",
+      "source_question_id": "2.1.2",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.415Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "entity_categories": {
-      "value": "A single flat list — no meaningful sub-groupings",
-      "source": "2.1.3",
-      "confidence": 1
+      "value": "2–3 broad categories partitioning the entities",
+      "source_question_id": "2.1.3",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.431Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "entity_core_peripheral": {
-      "value": "Most entities are core — the domain has little extraneous surface area",
-      "source": "2.2.1",
-      "confidence": 1
+      "value": "Roughly equal split between core and peripheral entities",
+      "source_question_id": "2.2.1",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.446Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "entity_granularity": {
-      "value": "Coarse-grained — entities are broad; most variation is captured via attributes",
-      "source": "2.2.2",
-      "confidence": 1
+      "value": "Moderate — key specializations become distinct entities",
+      "source_question_id": "2.2.2",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.465Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "entity_attribute_sharing": {
-      "value": "Mostly independent — entities share few attributes beyond common identifiers",
-      "source": "2.2.3",
-      "confidence": 1
+      "value": "Shared attributes grouped by category — entities in same category share a profile",
+      "source_question_id": "2.2.3",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.478Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "systemic_boundaries": {
       "value": "Tightly bounded — scope is narrow and well-defined",
-      "source": "2.3.1",
-      "confidence": 1
+      "source_question_id": "2.3.1",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.491Z",
+      "derived_from": []
     },
     "external_actors": {
-      "value": "No external interactions — fully self-contained domain",
-      "source": "2.3.2",
-      "confidence": 1
+      "value": "1–3 external actors (users, upstream data sources, downstream consumers)",
+      "source_question_id": "2.3.2",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.502Z",
+      "derived_from": []
     },
     "entity_lifecycles": {
-      "value": "Simple lifecycle — create, read, update, delete (CRUD)",
-      "source": "2.3.3",
-      "confidence": 1
+      "value": "Stateful lifecycle — entities pass through defined states with transition rules",
+      "source_question_id": "2.3.3",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.517Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "entity_gaps": {
       "value": "No gaps — the current entity list is comprehensive",
-      "source": "2.4.1",
-      "confidence": 1
+      "source_question_id": "2.4.1",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.529Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "entity_reclassification": {
       "value": "No changes needed — current classification is sound",
-      "source": "2.4.2",
-      "confidence": 1
+      "source_question_id": "2.4.2",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.541Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "entity_constraints": {
-      "value": "Minimal constraints — entities have few invariants beyond uniqueness",
-      "source": "2.4.3",
-      "confidence": 1
+      "value": "Moderate constraints — several required fields and validity rules",
+      "source_question_id": "2.4.3",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.552Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "edge_cases": {
-      "value": "Few edge cases — the model is robust to real-world variation",
-      "source": "2.5.1",
-      "confidence": 1
+      "value": "Known edge cases — they are well-understood and can be handled explicitly",
+      "source_question_id": "2.5.1",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.563Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "entity_composition": {
-      "value": "Flat — entities do not compose; all entities are atomic",
-      "source": "2.5.2",
-      "confidence": 1
+      "value": "Containment — some entities serve as containers for others (1-level deep)",
+      "source_question_id": "2.5.2",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.575Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "entity_cardinality": {
-      "value": "Mostly one-to-one — entities pair uniquely",
-      "source": "2.5.3",
-      "confidence": 1
+      "value": "One-to-many — common pattern with one parent referencing multiple children",
+      "source_question_id": "2.5.3",
+      "source_series_id": 2,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.586Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "direct_associations": {
-      "value": "Sparse — fewer associations than entities; most entities are isolated",
-      "source": "3.1.1",
-      "confidence": 1
+      "value": "Moderate — roughly one association per entity on average",
+      "source_question_id": "3.1.1",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.600Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "association_types": {
-      "value": "Single type — all associations are of the same nature",
-      "source": "3.1.2",
-      "confidence": 1
+      "value": "2–3 distinct relationship types (e.g., owns, produces, references)",
+      "source_question_id": "3.1.2",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.614Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "hierarchy_structure": {
       "value": "No hierarchy — all entities are peers with no containment structure",
-      "source": "3.2.1",
-      "confidence": 1
+      "source_question_id": "3.2.1",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.625Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "inheritance_model": {
       "value": "No inheritance — each entity is unique in its type",
-      "source": "3.2.2",
-      "confidence": 1
+      "source_question_id": "3.2.2",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.637Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "causal_relationships": {
       "value": "No causal links — entities change independently",
-      "source": "3.3.1",
-      "confidence": 1
+      "source_question_id": "3.3.1",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.649Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "dependency_chains": {
-      "value": "No ordering constraints — entities are independent",
-      "source": "3.3.2",
-      "confidence": 1
+      "value": "Simple chain — a linear sequence of prerequisites",
+      "source_question_id": "3.3.2",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.662Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "relationship_mutability": {
-      "value": "Freely mutable — relationships can change at any time with no restrictions",
-      "source": "3.4.1",
-      "confidence": 1
+      "value": "State-gated — relationships can only change when entities are in certain states",
+      "source_question_id": "3.4.1",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.673Z",
+      "derived_from": []
     },
     "relationship_composition": {
-      "value": "No composition — only direct relationships matter",
-      "source": "3.4.2",
-      "confidence": 1
+      "value": "Transitive — some relationship types imply transitive chains",
+      "source_question_id": "3.4.2",
+      "source_series_id": 3,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.684Z",
+      "derived_from": []
     },
     "procedure_scope": {
       "value": "Narrow — a single well-defined task with clear boundaries",
-      "source": "4.1.1",
-      "confidence": 1
+      "source_question_id": "4.1.1",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.695Z",
+      "derived_from": [
+        "entity_list",
+        "dependency_chains",
+        "hierarchy_structure"
+      ]
     },
     "procedure_steps": {
-      "value": "2–4 steps — quick process with few handoffs",
-      "source": "4.1.2",
-      "confidence": 1
+      "value": "5–8 steps — moderate complexity with clear waypoints",
+      "source_question_id": "4.1.2",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.706Z",
+      "derived_from": [
+        "entity_list"
+      ]
     },
     "decision_points": {
-      "value": "No branching — a single linear path from start to finish",
-      "source": "4.2.1",
-      "confidence": 1
+      "value": "Few branches — 1–2 decision points with 2–3 choices each",
+      "source_question_id": "4.2.1",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.718Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
     },
     "io_contracts": {
       "value": "Simple I/O — each step takes one input and produces one output",
-      "source": "4.2.2",
-      "confidence": 1
+      "source_question_id": "4.2.2",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.731Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
     },
     "error_handling": {
       "value": "Minimal — errors abort the procedure with a clear message",
-      "source": "4.3.1",
-      "confidence": 1
+      "source_question_id": "4.3.1",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.748Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
     },
     "step_granularity": {
-      "value": "Coarse — each step is a meaningful phase (2–5 sub-actions per step)",
-      "source": "4.3.2",
-      "confidence": 1
+      "value": "Fine — each step is a single atomic action",
+      "source_question_id": "4.3.2",
+      "source_series_id": 4,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.761Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
     },
     "hardware_requirements": {
-      "value": "Single architecture — x86-64 desktop/server only",
-      "source": "5.1.1",
-      "confidence": 1
+      "value": "Dual architecture — e.g., x86-64 + ARM",
+      "source_question_id": "5.1.1",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.772Z",
+      "derived_from": [
+        "domain",
+        "audience_level"
+      ]
     },
     "hardware_specs": {
       "value": "Minimal — <1GB RAM, <100MB storage, single-core sufficient",
-      "source": "5.1.2",
-      "confidence": 1
+      "source_question_id": "5.1.2",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.784Z",
+      "derived_from": [
+        "hardware_requirements"
+      ]
     },
     "network_requirements": {
       "value": "Always-online — requires reliable internet connection",
-      "source": "5.1.3",
-      "confidence": 1
+      "source_question_id": "5.1.3",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.795Z",
+      "derived_from": [
+        "hardware_requirements"
+      ]
     },
     "storage_requirements": {
       "value": "Single database — one relational or document store covers all needs",
-      "source": "5.1.4",
-      "confidence": 1
+      "source_question_id": "5.1.4",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.806Z",
+      "derived_from": [
+        "hardware_requirements"
+      ]
     },
     "infrastructure_target": {
       "value": "Cloud-native — designed for a specific cloud provider",
-      "source": "5.1.5",
-      "confidence": 1
+      "source_question_id": "5.1.5",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.817Z",
+      "derived_from": [
+        "hardware_requirements"
+      ]
     },
     "software_stack": {
-      "value": "Single language — one ecosystem covers everything",
-      "source": "5.2.1",
-      "confidence": 1
+      "value": "Two languages — e.g., backend + frontend split",
+      "source_question_id": "5.2.1",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.826Z",
+      "derived_from": [
+        "domain",
+        "procedure_steps"
+      ]
     },
     "os_requirements": {
-      "value": "Linux only",
-      "source": "5.2.2",
-      "confidence": 1
+      "value": "Linux + macOS (developer-focused)",
+      "source_question_id": "5.2.2",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.837Z",
+      "derived_from": [
+        "software_stack"
+      ]
     },
     "dependency_management": {
       "value": "Minimal dependencies — build from standard library where possible",
-      "source": "5.2.3",
-      "confidence": 1
+      "source_question_id": "5.2.3",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.848Z",
+      "derived_from": [
+        "software_stack"
+      ]
     },
     "versioning_policy": {
       "value": "Latest-stable — always use current versions, update frequently",
-      "source": "5.2.4",
-      "confidence": 1
+      "source_question_id": "5.2.4",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.859Z",
+      "derived_from": [
+        "software_stack"
+      ]
     },
     "build_system": {
       "value": "Simple build — single build tool, manual or script-based deployment",
-      "source": "5.2.5",
-      "confidence": 1
+      "source_question_id": "5.2.5",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.870Z",
+      "derived_from": [
+        "software_stack"
+      ]
     },
     "performance_targets": {
       "value": "Low traffic — <100 req/s, seconds of latency, single-digit concurrency",
-      "source": "5.3.1",
-      "confidence": 1
+      "source_question_id": "5.3.1",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.884Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
     },
     "data_volume": {
       "value": "Small — <10GB data, slow growth, single-node viable",
-      "source": "5.3.2",
-      "confidence": 1
+      "source_question_id": "5.3.2",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.897Z",
+      "derived_from": [
+        "performance_targets"
+      ]
     },
     "availability_targets": {
       "value": "Best-effort — no formal SLA, occasional downtime acceptable",
-      "source": "5.3.3",
-      "confidence": 1
+      "source_question_id": "5.3.3",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.909Z",
+      "derived_from": [
+        "performance_targets"
+      ]
     },
     "scalability_model": {
       "value": "Vertical — scale up a single node as needed",
-      "source": "5.3.4",
-      "confidence": 1
+      "source_question_id": "5.3.4",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.922Z",
+      "derived_from": [
+        "performance_targets"
+      ]
     },
     "security_requirements": {
       "value": "Basic — password auth, TLS, no formal compliance requirements",
-      "source": "5.3.5",
-      "confidence": 1
+      "source_question_id": "5.3.5",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.933Z",
+      "derived_from": [
+        "performance_targets"
+      ]
     },
     "integration_targets": {
-      "value": "No integrations — fully standalone system",
-      "source": "5.4.1",
-      "confidence": 1
+      "value": "1–2 integrations — limited surface area for interoperability",
+      "source_question_id": "5.4.1",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.944Z",
+      "derived_from": [
+        "software_stack"
+      ]
     },
     "integration_protocols": {
       "value": "REST/JSON only — simple HTTP-based communication",
-      "source": "5.4.2",
-      "confidence": 1
+      "source_question_id": "5.4.2",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.955Z",
+      "derived_from": [
+        "integration_targets"
+      ]
     },
     "timeline": {
-      "value": "Quick — prototype in weeks, production in 1–3 months",
-      "source": "5.4.3",
-      "confidence": 1
+      "value": "Standard — phased delivery over 3–9 months",
+      "source_question_id": "5.4.3",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.965Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
     },
     "deployment_strategy": {
-      "value": "Basic — dev + production environments, manual testing",
-      "source": "5.4.4",
-      "confidence": 1
+      "value": "Standard — dev, staging, production with automated test suite",
+      "source_question_id": "5.4.4",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.975Z",
+      "derived_from": [
+        "software_stack"
+      ]
     },
     "documentation_requirements": {
-      "value": "Minimal — inline comments and a README",
-      "source": "5.4.5",
-      "confidence": 1
+      "value": "Standard — API docs, architecture decision records, setup guide",
+      "source_question_id": "5.4.5",
+      "source_series_id": 5,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.985Z",
+      "derived_from": []
     },
     "development_cadence": {
-      "value": "Sprint-based agile (Scrum) — fixed-length iterations with formal ceremonies",
-      "source": "6.1.1",
-      "confidence": 1
+      "value": "Continuous flow (Kanban) — pull-based with WIP limits, no fixed iterations",
+      "source_question_id": "6.1.1",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:54.994Z",
+      "derived_from": [
+        "procedure_steps",
+        "software_stack"
+      ]
     },
     "team_composition": {
       "value": "Solo or pair — 1–2 people, all roles combined",
-      "source": "6.1.2",
-      "confidence": 1
+      "source_question_id": "6.1.2",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:55.004Z",
+      "derived_from": [
+        "procedure_steps"
+      ]
     },
     "quality_practices": {
-      "value": "Light — ad-hoc reviews, manual testing, minimal automation",
-      "source": "6.2.1",
-      "confidence": 1
+      "value": "Standard — mandatory reviews, unit + integration tests, CI gates",
+      "source_question_id": "6.2.1",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:55.014Z",
+      "derived_from": [
+        "software_stack"
+      ]
     },
     "debt_management": {
       "value": "Opportunistic — clean as you go, no formal tracking",
-      "source": "6.2.2",
-      "confidence": 1
+      "source_question_id": "6.2.2",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:55.024Z",
+      "derived_from": [
+        "quality_practices"
+      ]
     },
     "communication_patterns": {
       "value": "Async-first — written docs, Slack/Teams, minimal meetings",
-      "source": "6.3.1",
-      "confidence": 1
+      "source_question_id": "6.3.1",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:55.034Z",
+      "derived_from": [
+        "team_composition"
+      ]
     },
     "decision_making": {
       "value": "BDFL — one person makes final decisions with input",
-      "source": "6.3.2",
-      "confidence": 1
+      "source_question_id": "6.3.2",
+      "source_series_id": 6,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:55.044Z",
+      "derived_from": [
+        "team_composition"
+      ]
     },
     "deployment_process": {
-      "value": "Manual deploy — push artifacts, restart services, update on schedule",
-      "source": "7.1.1",
-      "confidence": 1
+      "value": "Automated CI/CD — merged to main triggers build + deploy pipeline",
+      "source_question_id": "7.1.1",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:55.055Z",
+      "derived_from": [
+        "software_stack",
+        "deployment_strategy"
+      ]
     },
     "environment_management": {
-      "value": "Single environment — production only, with local dev",
-      "source": "7.1.2",
-      "confidence": 1
+      "value": "Dev / staging / production — standard promotion pipeline",
+      "source_question_id": "7.1.2",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:55.065Z",
+      "derived_from": [
+        "deployment_process"
+      ]
     },
     "monitoring_plan": {
       "value": "Minimal — basic logging to stdout, manual check-ins",
-      "source": "7.2.1",
-      "confidence": 1
+      "source_question_id": "7.2.1",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:55.075Z",
+      "derived_from": [
+        "software_stack"
+      ]
     },
     "runtime_configuration": {
       "value": "Static config — environment variables, restart to change",
-      "source": "7.2.2",
-      "confidence": 1
+      "source_question_id": "7.2.2",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:55.085Z",
+      "derived_from": [
+        "software_stack"
+      ]
     },
     "maintenance_policy": {
       "value": "Firefighting — fix issues as they arise, no scheduled maintenance",
-      "source": "7.3.1",
-      "confidence": 1
+      "source_question_id": "7.3.1",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:55.095Z",
+      "derived_from": [
+        "software_stack"
+      ]
     },
     "stewardship_plan": {
-      "value": "Hand-off — delivered to a separate operations team",
-      "source": "7.3.2",
-      "confidence": 1
+      "value": "Build-and-run — the same team owns development and operations",
+      "source_question_id": "7.3.2",
+      "source_series_id": 7,
+      "confidence": 1,
+      "last_updated": "2026-08-06T13:55:55.105Z",
+      "derived_from": [
+        "team_composition"
+      ]
     }
   }
 }
