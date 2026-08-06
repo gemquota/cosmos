@@ -1,8 +1,8 @@
 {
- "built": "2026-08-06T09:59:56+00:00",
+ "built": "2026-08-06T10:29:07+00:00",
  "total": {
-  "pages": 5273,
-  "stubs": 1493,
+  "pages": 5275,
+  "stubs": 1494,
   "stub_pct": 28
  },
  "areas": [
@@ -36,10 +36,10 @@
   },
   {
    "area": "meta-learning",
-   "pages": 163,
-   "stubs": 72,
-   "stub_pct": 44,
-   "avg_words": 205
+   "pages": 164,
+   "stubs": 73,
+   "stub_pct": 45,
+   "avg_words": 204
   },
   {
    "area": "memory",
@@ -148,10 +148,10 @@
   },
   {
    "area": "syntheses",
-   "pages": 54,
+   "pages": 55,
    "stubs": 17,
    "stub_pct": 31,
-   "avg_words": 303
+   "avg_words": 304
   },
   {
    "area": "decisions",
@@ -353,9 +353,9 @@
   },
   {
    "area": "meta-learning",
-   "pages": 163,
-   "stubs": 72,
-   "stub_pct": 44,
+   "pages": 164,
+   "stubs": 73,
+   "stub_pct": 45,
    "note": "stub backlog — next enrichment wave"
   },
   {
@@ -394,5 +394,6 @@
    "note": "highest stub burden — prioritize enrichment"
   }
  ],
+ "wanted_links": [],
  "queue": null
 }

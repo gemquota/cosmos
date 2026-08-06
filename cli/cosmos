@@ -17,7 +17,7 @@ Commands:
   logs [component]        Tail logs for a component
   build [component]       Build a component
   test [component]        Test a component
-  guidance [open|build|status]           Guidance UI: review, feedback & research direction
+  guidance [open|build|plan|apply|status] Guidance UI: review, feedback, scaffold wanted pages
   stubs [open|build|plan|apply|status]   Stub review (part of guidance): open live, drain queue
   update                  Git pull all components
   help                    Show this help
@@ -313,6 +313,14 @@ cmd_guidance() {
       cd "$mykb"
       python3 .wiki-daemon/build_stub_audit.py
       ;;
+    plan)
+      cd "$mykb"
+      python3 .wiki-daemon/drain_guidance.py --plan
+      ;;
+    apply)
+      cd "$mykb"
+      python3 .wiki-daemon/drain_guidance.py --apply
+      ;;
     status)
       local queue="$mykb/.wiki-daemon/buffers/guidance-queue.json"
       if [ -f "$queue" ]; then
@@ -328,6 +336,14 @@ print('  kinds: ' + ' '.join(f"{k}={v}" for k, v in sorted(counts.items())))
 PY
       else
         echo "guidance queue: none (open the Guide tab, add items, then Save guidance)"
+      fi
+      local gman="$mykb/.wiki-daemon/buffers/guidance-inference.json"
+      if [ -f "$gman" ]; then
+        python3 - "$gman" <<'PY'
+import json, sys
+m = json.load(open(sys.argv[1]))
+print(f"research manifest: {len(m.get('created', []))} scaffolded, {len(m.get('research', []))} directions @ {m.get('generated', '?')}")
+PY
       fi
       local stubq="$mykb/.wiki-daemon/buffers/stub-audit-queue.json"
       if [ -f "$stubq" ]; then

@@ -59,6 +59,8 @@ cosmos logs        # Tail service logs
 cosmos guidance open  # Open the Guidance UI (direction, feedback, stub triage)
 cosmos guidance status  # Show guidance + stub queue status
 cosmos guidance build  # Rebuild guidance.json + stub-review.json
+cosmos guidance plan  # Preview scaffolds from the research queue
+cosmos guidance apply # Scaffold wanted/question pages + research manifest
 cosmos stubs open  # Open the Guidance UI (alias of guidance open)
 cosmos stubs plan  # Preview the queued stub decisions
 cosmos stubs apply # Execute the queue + emit the inference manifest

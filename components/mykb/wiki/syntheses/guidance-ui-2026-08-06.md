@@ -44,6 +44,7 @@ direction rather than a mechanical stub backlog.
   `index.html#guidance`.
 
 ## Related
+- [[wiki/syntheses/guidance-execution-loop-2026-08-06|Guidance Execution Loop]] — turns the queue into scaffolds + a research manifest
 - [[wiki/syntheses/stub-auditor-live-queue|Stub Auditor — Live Data & Inference Queue]]
 - [[wiki/syntheses/wiki-self-improvement|Wiki Self-Improvement]] — the umbrella practice
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|Acquisition, Curation & Practices]] — curation loop norms

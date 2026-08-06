@@ -1,7 +1,7 @@
 {
- "generated": "2026-08-06T09:59Z",
+ "generated": "2026-08-06T10:29Z",
  "floor": 320,
- "total": 1493,
+ "total": 1494,
  "stubs": [
   {
    "path": "wiki/agent-systems/commitment-devices-ai.md",
@@ -20527,6 +20527,22 @@
     "volition",
     "self-regulation",
     "intentions"
+   ],
+   "area": "meta-learning",
+   "domain": "",
+   "super": "",
+   "category": "",
+   "sub": ""
+  },
+  {
+   "path": "wiki/meta-learning/wikilinks.md",
+   "title": "Wikilinks",
+   "words": 56,
+   "status": "stub",
+   "type": "concept",
+   "tags": [
+    "meta-learning",
+    "guidance"
    ],
    "area": "meta-learning",
    "domain": "",

@@ -63727,6 +63727,15 @@
   ]
  },
  {
+  "path": "wiki/meta-learning/wikilinks.md",
+  "type": "concept",
+  "title": "Wikilinks",
+  "tags": [
+   "meta-learning",
+   "guidance"
+  ]
+ },
+ {
   "path": "wiki/meta-learning/willpower-research.md",
   "type": "concept",
   "title": "Willpower Research",
@@ -75478,6 +75487,32 @@
   ]
  },
  {
+  "path": "wiki/syntheses/guidance-execution-loop-2026-08-06.md",
+  "type": "synthesis",
+  "title": "Guidance Execution Loop \u2014 Wanted Links, Scaffolds, Research Manifest",
+  "tags": [
+   "guidance",
+   "wanted-pages",
+   "red-links",
+   "scaffolding",
+   "research-manifest",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/guidance-ui-2026-08-06.md",
+  "type": "synthesis",
+  "title": "MyKB Guidance UI \u2014 from Stub Auditor to Research Direction",
+  "tags": [
+   "guidance",
+   "stub-auditor",
+   "curation",
+   "research-direction",
+   "feedback",
+   "mykb"
+  ]
+ },
+ {
   "path": "wiki/syntheses/knowledge-acquisition-workflow.md",
   "type": "synthesis",
   "title": "Knowledge Acquisition Workflow: Open Threads",
@@ -75731,6 +75766,30 @@
   ]
  },
  {
+  "path": "wiki/syntheses/stub-audit-2026-08-06.md",
+  "type": "synthesis",
+  "title": "Stub Audit Pass 2026-08-06 \u2014 141 Reviewed, 3 Archived, 126 Enriched",
+  "tags": [
+   "stub-auditor",
+   "archive",
+   "retarget",
+   "inference-pass",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/stub-auditor-live-queue.md",
+  "type": "synthesis",
+  "title": "Stub Auditor \u2014 Live Data & Inference Queue",
+  "tags": [
+   "stub-auditor",
+   "curation",
+   "inference-pass",
+   "workflow",
+   "mykb"
+  ]
+ },
+ {
   "path": "wiki/syntheses/stub-expansion-pass-500-2026-08.md",
   "type": "synthesis",
   "title": "500-Stub Expansion Pass (2026-08-03)",
@@ -75816,6 +75875,19 @@
    "meta",
    "review",
    "curation"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/wiki-link-resolution-and-junk-audit.md",
+  "type": "synthesis",
+  "title": "Wiki Link Resolution & Junk-Entity Audit",
+  "tags": [
+   "mykb",
+   "wiki-browser",
+   "links",
+   "stub-auditor",
+   "curation",
+   "performance"
   ]
  },
  {
