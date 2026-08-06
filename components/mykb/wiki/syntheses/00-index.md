@@ -2,14 +2,14 @@
 type: "index"
 hub: true
 title: "Syntheses Index"
-description: "Listing of the syntheses/ folder (46 pages)."
+description: "Listing of the syntheses/ folder (47 pages)."
 tags: ["index"]
 timestamp: "2026-08-03T00:00:00Z"
 ---
 
 # Syntheses
 
-Part of [[wiki/index|Wiki Index]]. 46 pages.
+Part of [[wiki/index|Wiki Index]]. 47 pages.
 
 ## Pages
 - [[wiki/syntheses/acquisition-pass-snapshot-ordering|Acquisition Passes & Snapshot Ordering]] — Durable rules for multi-worker acquisition rounds: stage untracked notes before regenerating files.json (it counts tracked files only), generators are idempotent and safe to re-run, and threshold buckets move predictably because fulls are capped at 400 words
@@ -48,6 +48,7 @@ Part of [[wiki/index|Wiki Index]]. 46 pages.
 - [[wiki/syntheses/recursive-self-improvement-spec-2026-08-06|Recursive Self-Improvement Specification — SPACE v2 Export]] — The completed 326-probe SPACE session (67/67 questions, 67 artifacts) that fixes what recursive self-improvement is and how RSIS3 should be built
 - [[wiki/syntheses/responsible-disclosure-ai|Responsible Disclosure for AI]] — Norms for disclosing AI vulnerabilities safely
 - [[wiki/syntheses/restricted-deployment|Restricted Deployment]] — Limiting where or how an AI system can be used
+- [[wiki/syntheses/rsis3-pass-6-2026-08-06|RSIS3 Pass 6 — five full cycles across L1–L9]] — Running 5 full cycles (40 loop executions) under a 99.6%-full disk: RSIS_DISK_USAGE_PCT override for the resource enforcer, module-logger discipline in scheduler callbacks, checkpoint git-add sweep behavior, and the even-telemetry full-cycle cadence
 - [[wiki/syntheses/safety-case-approach|Safety Case Approach]] — Structuring safety justification as explicit cases
 - [[wiki/syntheses/security-advisories-ai|Security Advisories]] — Official notices about AI security vulnerabilities
 - [[wiki/syntheses/third-party-audits|Third-Party Audits]] — Independent external reviews of AI systems
