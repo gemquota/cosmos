@@ -15,9 +15,10 @@ leaves a durable telemetry trace.
 
 ## Commits
 
-- Cosmos: `(pass 9 implementation + consolidation — space_spec, --goal
-  from-space, Guide live panel, PASS-009 docs, batch, snapshots)`
-- Nested rsis3: `(pass 9 runs + space_spec gateway)`
+- Cosmos: `639c689d` — implementation + consolidation (space_spec, `--goal
+  from-space`, Guide live panel, PASS-009 meta docs, ledger/viewer,
+  synthesis, snapshots)
+- Nested rsis3: `5a8d137` — pass 9 runs + space_spec gateway
 
 ## Artifacts
 
