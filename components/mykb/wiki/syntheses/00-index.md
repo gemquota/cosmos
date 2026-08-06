@@ -2,14 +2,14 @@
 type: "index"
 hub: true
 title: "Syntheses Index"
-description: "Listing of the syntheses/ folder (47 pages)."
+description: "Listing of the syntheses/ folder (48 pages)."
 tags: ["index"]
 timestamp: "2026-08-03T00:00:00Z"
 ---
 
 # Syntheses
 
-Part of [[wiki/index|Wiki Index]]. 47 pages.
+Part of [[wiki/index|Wiki Index]]. 48 pages.
 
 ## Pages
 - [[wiki/syntheses/acquisition-pass-snapshot-ordering|Acquisition Passes & Snapshot Ordering]] — Durable rules for multi-worker acquisition rounds: stage untracked notes before regenerating files.json (it counts tracked files only), generators are idempotent and safe to re-run, and threshold buckets move predictably because fulls are capped at 400 words
@@ -49,6 +49,7 @@ Part of [[wiki/index|Wiki Index]]. 47 pages.
 - [[wiki/syntheses/responsible-disclosure-ai|Responsible Disclosure for AI]] — Norms for disclosing AI vulnerabilities safely
 - [[wiki/syntheses/restricted-deployment|Restricted Deployment]] — Limiting where or how an AI system can be used
 - [[wiki/syntheses/rsis3-pass-6-2026-08-06|RSIS3 Pass 6 — five full cycles across L1–L9]] — Running 5 full cycles (40 loop executions) under a 99.6%-full disk: RSIS_DISK_USAGE_PCT override for the resource enforcer, module-logger discipline in scheduler callbacks, checkpoint git-add sweep behavior, and the even-telemetry full-cycle cadence
+- [[wiki/syntheses/rsis3-pass-7-2026-08-06|RSIS3 Pass 7 — ecosystem data contracts, validated at both gates]] — One documented contract per shared shape (OKF, files.json, ecosystem.json, loops.json, telemetry JSONL, SPACE framework) enforced by a stdlib-only validator wired into gen-static-data --check and check-practices; disk-override semantics (RSIS_DISK_USAGE_PCT=100 on full disks) and the freshness-vs-shape split in the deploy gate
 - [[wiki/syntheses/safety-case-approach|Safety Case Approach]] — Structuring safety justification as explicit cases
 - [[wiki/syntheses/security-advisories-ai|Security Advisories]] — Official notices about AI security vulnerabilities
 - [[wiki/syntheses/third-party-audits|Third-Party Audits]] — Independent external reviews of AI systems

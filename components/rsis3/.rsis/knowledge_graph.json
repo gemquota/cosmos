@@ -83,7 +83,7 @@
         "description": "Session session-: 1/1 evaluations passed",
         "session_id": "session-2026-08-06T16:31:55",
         "success_rate": 1.0,
-        "event_count": 14,
+        "event_count": 23,
         "timestamp": "2026-08-06T16:31:55.920632+00:00"
       }
     },
@@ -248,6 +248,231 @@
           "improvement-13"
         ]
       }
+    },
+    {
+      "id": "improvement-15",
+      "attrs": {
+        "type": "improvement",
+        "description": "Stub improvement: self-improve the codebase",
+        "target_files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": "improvement-16",
+      "attrs": {
+        "type": "improvement",
+        "description": "Stub improvement: self-improve the codebase",
+        "target_files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": "redundancy-1-3",
+      "attrs": {
+        "type": "insight",
+        "description": "Redundant patterns in stub.py (Stub improvement: self-improve the codebase, Stub improvement: self-improve the codebase)",
+        "file": "stub.py",
+        "similarity": 1.0,
+        "improvement_ids": [
+          "improvement-15",
+          "improvement-16"
+        ]
+      }
+    },
+    {
+      "id": "improvement-18",
+      "attrs": {
+        "type": "improvement",
+        "description": "Stub improvement: self-improve the codebase",
+        "target_files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": "redundancy-1-4",
+      "attrs": {
+        "type": "insight",
+        "description": "Redundant patterns in stub.py (Stub improvement: self-improve the codebase, Stub improvement: self-improve the codebase)",
+        "file": "stub.py",
+        "similarity": 1.0,
+        "improvement_ids": [
+          "improvement-15",
+          "improvement-18"
+        ]
+      }
+    },
+    {
+      "id": "redundancy-1-5",
+      "attrs": {
+        "type": "insight",
+        "description": "Redundant patterns in stub.py (Stub improvement: self-improve the codebase, Stub improvement: self-improve the codebase)",
+        "file": "stub.py",
+        "similarity": 1.0,
+        "improvement_ids": [
+          "improvement-15",
+          "improvement-21"
+        ]
+      }
+    },
+    {
+      "id": "improvement-21",
+      "attrs": {
+        "type": "improvement",
+        "description": "Stub improvement: self-improve the codebase",
+        "target_files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": "redundancy-1-6",
+      "attrs": {
+        "type": "insight",
+        "description": "Redundant patterns in stub.py (Stub improvement: self-improve the codebase, Stub improvement: self-improve the codebase)",
+        "file": "stub.py",
+        "similarity": 1.0,
+        "improvement_ids": [
+          "improvement-15",
+          "improvement-25"
+        ]
+      }
+    },
+    {
+      "id": "redundancy-1-7",
+      "attrs": {
+        "type": "insight",
+        "description": "Redundant patterns in stub.py (Stub improvement: self-improve the codebase, Stub improvement: self-improve the codebase)",
+        "file": "stub.py",
+        "similarity": 1.0,
+        "improvement_ids": [
+          "improvement-16",
+          "improvement-18"
+        ]
+      }
+    },
+    {
+      "id": "redundancy-1-8",
+      "attrs": {
+        "type": "insight",
+        "description": "Redundant patterns in stub.py (Stub improvement: self-improve the codebase, Stub improvement: self-improve the codebase)",
+        "file": "stub.py",
+        "similarity": 1.0,
+        "improvement_ids": [
+          "improvement-16",
+          "improvement-21"
+        ]
+      }
+    },
+    {
+      "id": "improvement-25",
+      "attrs": {
+        "type": "improvement",
+        "description": "Stub improvement: self-improve the codebase",
+        "target_files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": "redundancy-1-9",
+      "attrs": {
+        "type": "insight",
+        "description": "Redundant patterns in stub.py (Stub improvement: self-improve the codebase, Stub improvement: self-improve the codebase)",
+        "file": "stub.py",
+        "similarity": 1.0,
+        "improvement_ids": [
+          "improvement-16",
+          "improvement-25"
+        ]
+      }
+    },
+    {
+      "id": "redundancy-1-10",
+      "attrs": {
+        "type": "insight",
+        "description": "Redundant patterns in stub.py (Stub improvement: self-improve the codebase, Stub improvement: self-improve the codebase)",
+        "file": "stub.py",
+        "similarity": 1.0,
+        "improvement_ids": [
+          "improvement-18",
+          "improvement-21"
+        ]
+      }
+    },
+    {
+      "id": "redundancy-1-11",
+      "attrs": {
+        "type": "insight",
+        "description": "Redundant patterns in stub.py (Stub improvement: self-improve the codebase, Stub improvement: self-improve the codebase)",
+        "file": "stub.py",
+        "similarity": 1.0,
+        "improvement_ids": [
+          "improvement-18",
+          "improvement-25"
+        ]
+      }
+    },
+    {
+      "id": "redundancy-1-12",
+      "attrs": {
+        "type": "insight",
+        "description": "Redundant patterns in stub.py (Stub improvement: self-improve the codebase, Stub improvement: self-improve the codebase)",
+        "file": "stub.py",
+        "similarity": 1.0,
+        "improvement_ids": [
+          "improvement-21",
+          "improvement-25"
+        ]
+      }
     }
   ],
   "edges": [
@@ -294,6 +519,48 @@
       "attrs": {}
     },
     {
+      "source": "strategy-budget-1",
+      "target": "strategy-budget-1",
+      "key": 6,
+      "rel": "evolves_from",
+      "attrs": {}
+    },
+    {
+      "source": "strategy-budget-1",
+      "target": "strategy-budget-1",
+      "key": 7,
+      "rel": "evolves_from",
+      "attrs": {}
+    },
+    {
+      "source": "strategy-budget-1",
+      "target": "strategy-budget-1",
+      "key": 8,
+      "rel": "evolves_from",
+      "attrs": {}
+    },
+    {
+      "source": "strategy-budget-1",
+      "target": "strategy-budget-1",
+      "key": 9,
+      "rel": "evolves_from",
+      "attrs": {}
+    },
+    {
+      "source": "strategy-budget-1",
+      "target": "strategy-budget-1",
+      "key": 10,
+      "rel": "evolves_from",
+      "attrs": {}
+    },
+    {
+      "source": "strategy-budget-1",
+      "target": "strategy-budget-1",
+      "key": 11,
+      "rel": "evolves_from",
+      "attrs": {}
+    },
+    {
       "source": "redundancy-1-0",
       "target": "improvement-0",
       "key": 0,
@@ -344,6 +611,48 @@
     },
     {
       "source": "redundancy-1-0",
+      "target": "improvement-0",
+      "key": 7,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-0",
+      "key": 8,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-0",
+      "key": 9,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-0",
+      "key": 10,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-0",
+      "key": 11,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-0",
+      "key": 12,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
       "target": "improvement-3",
       "key": 0,
       "rel": "flags_as_redundant",
@@ -392,6 +701,48 @@
       "attrs": {}
     },
     {
+      "source": "redundancy-1-0",
+      "target": "improvement-3",
+      "key": 7,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-3",
+      "key": 8,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-3",
+      "key": 9,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-3",
+      "key": 10,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-3",
+      "key": 11,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-3",
+      "key": 12,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
       "source": "redundancy-1-1",
       "target": "improvement-7",
       "key": 0,
@@ -407,6 +758,48 @@
     },
     {
       "source": "redundancy-1-1",
+      "target": "improvement-7",
+      "key": 2,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
+      "target": "improvement-7",
+      "key": 3,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
+      "target": "improvement-7",
+      "key": 4,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
+      "target": "improvement-7",
+      "key": 5,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
+      "target": "improvement-7",
+      "key": 6,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
+      "target": "improvement-7",
+      "key": 7,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
       "target": "improvement-11",
       "key": 0,
       "rel": "flags_as_redundant",
@@ -416,6 +809,48 @@
       "source": "redundancy-1-1",
       "target": "improvement-11",
       "key": 1,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
+      "target": "improvement-11",
+      "key": 2,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
+      "target": "improvement-11",
+      "key": 3,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
+      "target": "improvement-11",
+      "key": 4,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
+      "target": "improvement-11",
+      "key": 5,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
+      "target": "improvement-11",
+      "key": 6,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
+      "target": "improvement-11",
+      "key": 7,
       "rel": "flags_as_redundant",
       "attrs": {}
     },
@@ -428,7 +863,371 @@
     },
     {
       "source": "redundancy-1-2",
+      "target": "improvement-9",
+      "key": 1,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-2",
+      "target": "improvement-9",
+      "key": 2,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-2",
+      "target": "improvement-9",
+      "key": 3,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-2",
+      "target": "improvement-9",
+      "key": 4,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-2",
+      "target": "improvement-9",
+      "key": 5,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-2",
+      "target": "improvement-9",
+      "key": 6,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-2",
       "target": "improvement-13",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-2",
+      "target": "improvement-13",
+      "key": 1,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-2",
+      "target": "improvement-13",
+      "key": 2,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-2",
+      "target": "improvement-13",
+      "key": 3,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-2",
+      "target": "improvement-13",
+      "key": 4,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-2",
+      "target": "improvement-13",
+      "key": 5,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-2",
+      "target": "improvement-13",
+      "key": 6,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-3",
+      "target": "improvement-15",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-3",
+      "target": "improvement-15",
+      "key": 1,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-3",
+      "target": "improvement-15",
+      "key": 2,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-3",
+      "target": "improvement-15",
+      "key": 3,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-3",
+      "target": "improvement-16",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-3",
+      "target": "improvement-16",
+      "key": 1,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-3",
+      "target": "improvement-16",
+      "key": 2,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-3",
+      "target": "improvement-16",
+      "key": 3,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-4",
+      "target": "improvement-15",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-4",
+      "target": "improvement-15",
+      "key": 1,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-4",
+      "target": "improvement-15",
+      "key": 2,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-4",
+      "target": "improvement-18",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-4",
+      "target": "improvement-18",
+      "key": 1,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-4",
+      "target": "improvement-18",
+      "key": 2,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-5",
+      "target": "improvement-16",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-5",
+      "target": "improvement-18",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-5",
+      "target": "improvement-15",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-5",
+      "target": "improvement-15",
+      "key": 1,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-5",
+      "target": "improvement-21",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-5",
+      "target": "improvement-21",
+      "key": 1,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-6",
+      "target": "improvement-16",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-6",
+      "target": "improvement-18",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-6",
+      "target": "improvement-15",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-6",
+      "target": "improvement-25",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-7",
+      "target": "improvement-16",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-7",
+      "target": "improvement-16",
+      "key": 1,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-7",
+      "target": "improvement-21",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-7",
+      "target": "improvement-18",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-8",
+      "target": "improvement-18",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-8",
+      "target": "improvement-21",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-8",
+      "target": "improvement-21",
+      "key": 1,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-8",
+      "target": "improvement-16",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-9",
+      "target": "improvement-16",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-9",
+      "target": "improvement-25",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-10",
+      "target": "improvement-18",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-10",
+      "target": "improvement-21",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-11",
+      "target": "improvement-18",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-11",
+      "target": "improvement-25",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-12",
+      "target": "improvement-21",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-12",
+      "target": "improvement-25",
       "key": 0,
       "rel": "flags_as_redundant",
       "attrs": {}
