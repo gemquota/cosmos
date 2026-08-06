@@ -22,15 +22,15 @@ RAG reduces hallucinations by forcing the model to answer from provided text, an
 
 The entry sits under Angular UI because sessions encountered RAG while building agent-driven interfaces, and the same retrieval pipeline serves chat, search, and reporting features.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/00-index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/frontend-frameworks/categories/angular-ui/00-index|Angular Ui]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/aim-2|Aim 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/autonomous-iterative-mode-2|Autonomous Iterative Mode 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/avg-age-2|Avg Age 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/avg-energy-2|Avg Energy 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/batch-2|Batch 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/dna-10|Dna 10
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/harmonica-explorer-2|Harmonica Explorer 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/hidpi-2|Hidpi 2
+- [[wiki/frontend-frameworks/categories/angular-ui/aim-2|Aim 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/autonomous-iterative-mode-2|Autonomous Iterative Mode 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/avg-age-2|Avg Age 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/avg-energy-2|Avg Energy 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/batch-2|Batch 2]]
+- `Dna 10`
+- [[wiki/frontend-frameworks/categories/angular-ui/harmonica-explorer-2|Harmonica Explorer 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/hidpi-2|Hidpi 2]]

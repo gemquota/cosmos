@@ -21,15 +21,15 @@ In the sessions that produced this page, MongoDB appeared in an API and mobile c
 
 
 Choosing a document store is a trade-off. The flexible schema speeds up early development, but it moves responsibility for data shape into the application, so validation and migration strategy matter more over time. Teams commonly pair MongoDB with a caching layer, add indexes for hot query patterns, and monitor slow queries and connection pool saturation. These operational concerns are exactly what an API and mobile context emphasizes, where latency and availability are visible to end users.
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Mongodb
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/api-services/categories/api-rest/00-index|Api Clients › Mongodb]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aap-2|Aap 2
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aar|Aar
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aarrr|Aarrr
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/abi|Abi
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/accr-2|Accr 2
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/ace-core|Ace Core
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acid|Acid
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acli|Acli
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aap-2|Aap 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aar|Aar]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aarrr|Aarrr]]
+- [[raw/archive/junk-entities-2026-08c/api-services/categories/api-rest/subcategories/rest-http/abi|Abi]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/accr-2|Accr 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ace-core|Ace Core]]
+- `Acid`
+- [[raw/archive/junk-entities-2026-08c/api-services/categories/api-rest/subcategories/rest-http/acli|Acli]]

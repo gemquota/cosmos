@@ -21,15 +21,15 @@ Related orchestration patterns in this repository, such as supervisor-worker del
 
 Future sessions should note which agents were defined, what tools were attached, and how authorization boundaries were enforced. Recording the agent topology and its permission boundaries in the session log keeps the framework's behavior auditable and reproducible. This is especially true when agents may act on live systems.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Autogen
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/security-auth/categories/auth-security/00-index|Auth Security › Autogen]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied]]
+- [[raw/archive/junk-entities-2026-08c/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig]]

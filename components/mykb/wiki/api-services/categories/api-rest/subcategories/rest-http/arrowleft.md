@@ -21,15 +21,15 @@ In the session context, ArrowLeft appeared alongside API, cloud, and mobile topi
 
 
 Design systems standardize such icons for a reason: when every screen uses the same glyph, orientation, and hit area, users learn the pattern once and apply it everywhere. Teams should also consider the rotation and mirroring rules for right-to-left locales, where back navigation often flips direction. The identifier may equally refer to a keyboard key, a code symbol, or a state in a finite-state machine, and the session tags keep all of these readings open while favoring the UI interpretation recorded here.
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/api-services/categories/api-rest/00-index|Api Clients › Arrowleft
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/api-services/categories/api-rest/00-index|Api Clients › Arrowleft]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aap-2|Aap 2
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aar|Aar
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/aarrr|Aarrr
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/abi|Abi
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/accr-2|Accr 2
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/ace-core|Ace Core
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acid|Acid
-- [[wiki/web-platforms/supercategories/api-services/categories/api-rest/subcategories/rest-api/acli|Acli
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aap-2|Aap 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aar|Aar]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/aarrr|Aarrr]]
+- [[raw/archive/junk-entities-2026-08c/api-services/categories/api-rest/subcategories/rest-http/abi|Abi]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/accr-2|Accr 2]]
+- [[wiki/api-services/categories/api-rest/subcategories/rest-http/ace-core|Ace Core]]
+- `Acid`
+- [[raw/archive/junk-entities-2026-08c/api-services/categories/api-rest/subcategories/rest-http/acli|Acli]]

@@ -23,15 +23,15 @@ Both readings share a theme of trust and verification: Scala's type system verif
 Both readings illustrate how a two-letter acronym can carry unrelated meanings in adjacent domains. The engineering response is context: the topic tags, the neighboring entities, and the session notes decide which reading applies. This page keeps the Scala description from the original body while noting the certificate-authority meaning that the security context suggests, so that future readers can follow whichever thread is relevant to their work.
 **Related topics:** android, api, auth, authentication
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Ca
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/security-auth/categories/auth-security/00-index|Auth Security › Ca]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied]]
+- [[raw/archive/junk-entities-2026-08c/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig]]

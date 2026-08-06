@@ -18,7 +18,7 @@ flow straight into the normal enrichment pipeline. A research manifest
 carries the remaining directions and page feedback to the next session.
 
 ## Details
-- **Red-link scan** — `build_stub_audit.py` resolves every `` [[target]] ``
+- **Red-link scan** — `build_stub_audit.py` resolves every `` `Target`]] ``
   against a full-disk wiki inventory (root-relative paths + unique-basename
   fallback, mirroring the app's `resolveWikiPath`), strips code spans/fences
   first so syntax examples don't count, and ranks survivors by inbound count

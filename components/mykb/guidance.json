@@ -1,7 +1,7 @@
 {
- "built": "2026-08-06T10:29:07+00:00",
+ "built": "2026-08-06T11:46:28+00:00",
  "total": {
-  "pages": 5275,
+  "pages": 5276,
   "stubs": 1494,
   "stub_pct": 28
  },
@@ -148,10 +148,10 @@
   },
   {
    "area": "syntheses",
-   "pages": 55,
+   "pages": 56,
    "stubs": 17,
-   "stub_pct": 31,
-   "avg_words": 304
+   "stub_pct": 30,
+   "avg_words": 305
   },
   {
    "area": "decisions",

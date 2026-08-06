@@ -22,11 +22,11 @@ The entry is filed under AWS Cloud because the sessions that mention it combine 
 
 The manifest entry also defines the activity's parent for navigation, and launch modes such as singleTop and singleTask shape how the system reuses existing instances.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/00-index|Aws Cloud
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/cloud-infra/categories/aws-cloud/00-index|Aws Cloud]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/damp|Damp
-- [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/particle-simulation-2|Particle Simulation 2
-- [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/sysfont|Sysfont
-- [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/memorytrace|Memorytrace
+- [[raw/archive/junk-entities-2026-08/cloud-infra/categories/aws-cloud/damp|Damp]]
+- [[wiki/cloud-infra/categories/aws-cloud/particle-simulation-2|Particle Simulation 2]]
+- [[raw/archive/junk-entities-2026-08/cloud-infra/categories/aws-cloud/sysfont|Sysfont]]
+- [[raw/archive/junk-entities-2026-08/cloud-infra/categories/aws-cloud/memorytrace|Memorytrace]]

@@ -19,7 +19,7 @@ On Android, density groups such as mdpi, hdpi, xhdpi, and xxhdpi correspond to d
 
 Web interfaces face the same problem through the device pixel ratio: a CSS pixel is not the same as a physical pixel on high-density screens, and canvas or image rendering must multiply by the ratio to stay sharp. Responsive images choose different resolutions based on the display, and CSS media queries can vary layout by density as well as by viewport size.
 
-For print and scanning, DPI describes the fidelity of the output or capture, with 300 DPI a common standard for text and 150 DPI for photos. Misunderstanding DPI causes common bugs: oversized downloads, blurry icons, or scaled canvases. The concept connects to the [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/canvastexture|Canvastexture]] entry and the [[wiki/web-platforms/00-index|Android Core]] domain in this knowledge base.
+For print and scanning, DPI describes the fidelity of the output or capture, with 300 DPI a common standard for text and 150 DPI for photos. Misunderstanding DPI causes common bugs: oversized downloads, blurry icons, or scaled canvases. The concept connects to the [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/canvastexture|Canvastexture]] entry and the [[wiki/android-core/00-index|Android Core]] domain in this knowledge base.
 
 Testing on a range of densities, from low-end to high-end devices, catches scaling bugs that are invisible on the developer's own monitor.
 

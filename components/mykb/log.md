@@ -5,6 +5,28 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-06 (Wiki link integrity repair)
+- **Link audit fixed**: `link_check.py` rewritten — resolves `../` against the
+  source file's directory (the old `lstrip('./')` swallowed `../` prefixes),
+  strips frontmatter + fenced code + inline code spans, defaults to `wiki/`
+  scope (`--all` for the bundle), falls back to unique basenames for moved
+  pages, and exits 1 on breakage. Old checker's "30,787 unresolved" was noise;
+  real run: **5,401 wiki files, 0 unresolved links**.
+- **Dead links de-linked**: `wiki/log.md` had 4,594 Markdown links to pages
+  deleted in the junk-entity archive; converted to code-span labels so history
+  stays readable and nothing dangles.
+- **Malformed wikilinks rewired**: 214 generated entity pages had unclosed
+  `]]`, a stale `wiki/web-platforms/supercategories/` prefix, and dead
+  related-entity links — normalized to canonical paths (basename fallback for
+  archived targets, plain labels for gone pages); 1,858 links repaired.
+- **Breadcrumb canonicalization**: 167 entity pages labeled `Android Core` but
+  linked to `wiki/web-platforms/00-index` (Web Platforms Index); retargeted to
+  `wiki/android-core/00-index`, the real Android Core index.
+- **Synthesis added**: `wiki/syntheses/wiki-link-integrity-2026-08-06.md` —
+  checker semantics, de-link/retarget rules, breadcrumb policy; cross-linked to
+  [[wiki-link-resolution-and-junk-audit]] and
+  [[guidance-execution-loop-2026-08-06]].
+
 ## 2026-08-06 (Guidance execution loop — wanted links, scaffolds, manifest)
 - **Wanted links**: `build_stub_audit.py` now scans red links — `[[target]]`
   wikilinks that resolve to no existing page — ranked by inbound count, with

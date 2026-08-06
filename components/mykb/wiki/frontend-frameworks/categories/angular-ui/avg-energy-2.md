@@ -13,7 +13,7 @@ status: "growing"
 
 Avg Energy appears in 2 session(s) categorized as Cloud, Debugging, Frontend, Mobile, Shell. Related topics: android, angular, aws, bash, cli, css, dom.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/00-index|Angular Ui]]
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/web-platforms/00-index|Angular Ui]]
 
 ## Overview
 

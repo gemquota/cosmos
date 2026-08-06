@@ -62,7 +62,7 @@ reindex pipeline, and fixed the auditor's inference UI.
 - **Verification (final)** — manifest check clean for all 126 tasks:
   no sub-320 bodies, no broken wikilinks, no `stub` statuses remaining.
   Bundle-wide link check over all 169 changed wiki files shows only
-  illustrative template links in `log.md` (e.g. `[[wiki/{area}/{page}]]`).
+  illustrative template links in `log.md` (e.g. ``{page}`area}/{page}]]`).
   Graph rebuilt 5,397 nodes / 35,540 edges; `files.json` 6,856 entries
   (`--check` OK); stub index 3,348 → 3,220; auditor lists 4,264 → 4,138 stubs.
 

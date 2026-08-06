@@ -19,7 +19,7 @@ On Android, adaptive icons are defined as foreground and background layers that 
 
 Live icons are constrained by platform policy: launchers control when and how often animations run, battery and performance limits discourage constant redraw, and accessibility guidelines require that motion not interfere with usability. Icon updates should be lightweight, driven by events rather than polling where possible, and should degrade gracefully to a static representation.
 
-Security appears in the same sessions because live icons are sometimes used to draw attention to sensitive notifications, and the underlying capability, updating app identity, must not be spoofable by other apps. The term connects to the [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/canvastexture|Canvastexture]] entry for rendering techniques and the [[wiki/web-platforms/00-index|Android Core]] domain.
+Security appears in the same sessions because live icons are sometimes used to draw attention to sensitive notifications, and the underlying capability, updating app identity, must not be spoofable by other apps. The term connects to the [[wiki/frontend/categories/frontend-frameworks/subcategories/ajax-spa/canvastexture|Canvastexture]] entry for rendering techniques and the [[wiki/android-core/00-index|Android Core]] domain.
 
 Sessions pair live icon work with canvas rendering and notification handling, and the entry records those connections for reuse in future icon and notification features.
 

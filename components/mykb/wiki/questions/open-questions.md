@@ -16,7 +16,7 @@ From the acquisition round, high-value threads to resolve:
   summarization can be automated before quality degrades? (see
   [[wiki/memory/knowledge-curation|knowledge curation]])
 - **Provenance decay** — how should evidence age when a source page is edited
-  or deleted? (see [[wiki/syntheses/evidence-and-provenance|evidence and
+  or deleted? (see [[wiki/syntheses/evidence-and-provenance|evidence and]]
   provenance]])
 - **Retrieval quality** — when does hybrid search beat pure semantic search in
   this corpus? (see [[wiki/data-storage/hybrid-search|hybrid search]])

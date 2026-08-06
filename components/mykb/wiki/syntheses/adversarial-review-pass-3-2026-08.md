@@ -36,7 +36,7 @@ those classes before the next scoring review.
 ## Resolution
 - **Claims**: rewrote ~126 claim sentences across ~145 files to design-intent
   language ("would…", "a documented policy…", "the standing rule is…"),
-  preserving every `[[wikilink]]`, frontmatter field, and adjacent sentence.
+  preserving every ``Wikilink`]]`, frontmatter field, and adjacent sentence.
   Content-description claims (the wiki's pages document X) and generic
   concept statements were deliberately left unchanged. No file dropped below
   the 320-word floor; 13 dipped by link removals were topped back up.

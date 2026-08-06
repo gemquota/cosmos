@@ -65,9 +65,9 @@ Referenced in 10 session(s):
 
 ## Related
 
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/aim-2|Aim 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/autonomous-iterative-mode-2|Autonomous Iterative Mode 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/avg-age-2|Avg Age 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/avg-energy-2|Avg Energy 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/batch-2|Batch 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/harmonica-explorer-2|Harmonica Explorer 2
+- [[wiki/frontend-frameworks/categories/angular-ui/aim-2|Aim 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/autonomous-iterative-mode-2|Autonomous Iterative Mode 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/avg-age-2|Avg Age 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/avg-energy-2|Avg Energy 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/batch-2|Batch 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/harmonica-explorer-2|Harmonica Explorer 2]]
