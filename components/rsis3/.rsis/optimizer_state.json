@@ -1,7 +1,7 @@
 {
   "params": {
-    "l1.max_retries": 3.0,
-    "l1.max_tool_calls": 10.0
+    "l1.max_retries": 8,
+    "l1.max_tool_calls": 15.0
   },
   "history": [
     {
@@ -29,7 +29,72 @@
         "success_rate": 0.9,
         "avg_score": 0.9375
       }
+    },
+    {
+      "cycle": 3,
+      "deltas": {
+        "l1.max_retries": 1,
+        "l1.max_tool_calls": 1
+      },
+      "accepted": true,
+      "stats": {
+        "count": 20,
+        "success_rate": 0.0,
+        "avg_score": 0.0
+      }
+    },
+    {
+      "cycle": 4,
+      "deltas": {
+        "l1.max_retries": 1,
+        "l1.max_tool_calls": 1
+      },
+      "accepted": true,
+      "stats": {
+        "count": 20,
+        "success_rate": 0.0,
+        "avg_score": 0.0
+      }
+    },
+    {
+      "cycle": 5,
+      "deltas": {
+        "l1.max_retries": 1,
+        "l1.max_tool_calls": 1
+      },
+      "accepted": true,
+      "stats": {
+        "count": 20,
+        "success_rate": 0.0,
+        "avg_score": 0.0
+      }
+    },
+    {
+      "cycle": 6,
+      "deltas": {
+        "l1.max_retries": 1,
+        "l1.max_tool_calls": 1
+      },
+      "accepted": true,
+      "stats": {
+        "count": 20,
+        "success_rate": 0.0,
+        "avg_score": 0.0
+      }
+    },
+    {
+      "cycle": 7,
+      "deltas": {
+        "l1.max_retries": 1,
+        "l1.max_tool_calls": 1
+      },
+      "accepted": true,
+      "stats": {
+        "count": 20,
+        "success_rate": 0.0,
+        "avg_score": 0.0
+      }
     }
   ],
-  "cycle": 2
+  "cycle": 7
 }

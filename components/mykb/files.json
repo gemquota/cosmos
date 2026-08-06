@@ -75785,6 +75785,66 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-l3-cycle-1-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 1 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-2-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 2 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-3-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 3 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-4-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 4 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-5-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 5 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-pass-6-2026-08-06.md",
   "type": "synthesis",
   "title": "RSIS3 Pass 6 \u2014 five full cycles across L1\u2013L9",
@@ -75809,6 +75869,21 @@
    "validation",
    "telemetry",
    "ci"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-pass-8-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 8 \u2014 MyKB memory link: loops read and write the wiki",
+  "tags": [
+   "rsis3",
+   "passes",
+   "mykb",
+   "memory",
+   "l3",
+   "consolidation",
+   "gateway",
+   "okf"
   ]
  },
  {

@@ -1,7 +1,7 @@
 # SPACE — Passes Overview
 
-**Updated:** Pass 007 (2026-08-06)
-**Total Documents:** 28 pass docs across 7 passes
+**Updated:** Pass 008 (2026-08-06)
+**Total Documents:** 32 pass docs across 8 passes
 
 ---
 
@@ -16,6 +16,7 @@
 | 005 | Hosting Layer | Testable web server + tests, static fallback, cosmos watch paths, lint 74→24, v2.2.0 | 157 | ✅ Complete |
 | 006 | RSIS3 Loop Batch (executed) | Full L1–L9 batch, 40 executions, +5/loop, disk-override env + logger fix | — | ✅ Complete |
 | 007 | Data Contracts & Validation | 6 documented shapes, stdlib validator wired into `--check` + `check-practices` | — | ✅ Complete |
+| 008 | Memory Link (loops ↔ MyKB) | MyKB gateway: L3 self-writes syntheses + `log.md`, `--goal from-mykb`, +5/loop batch | — | ✅ Complete |
 
 
 ---
@@ -110,5 +111,5 @@ docs (CHANGELOG + README hosting section).
 | 150+ tests across 14 suites | ✅ | Pass 004 |
 ---
 
-> Passes 006–007 are RSIS3 loop passes recorded in this ledger (tests column n/a);
+> Passes 006–008 are RSIS3 loop passes recorded in this ledger (tests column n/a);
 > pass 006 was executed and pushed before the integration arc and is backfilled here.

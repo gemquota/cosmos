@@ -18,6 +18,7 @@ from typing import Optional
 from rsis.config import CONFIG
 from rsis.extrapolation import TelemetryExtrapolator
 from rsis.memory import KnowledgeGraph, MemoryManager
+from rsis.mykb_gateway import MyKBGateway
 from rsis.telemetry import TelemetryCollector, TelemetryEvent
 from rsis.timeout import Budget, TimeoutError
 
@@ -33,6 +34,8 @@ class L3Result:
     strategies_evolved: list[str] = field(default_factory=list)
     redundancies_pruned: int = 0
     trends_detected: list[dict] = field(default_factory=list)
+    mykb_written: bool = False
+    mykb_path: Optional[str] = None
     error: Optional[str] = None
 
 
@@ -43,10 +46,12 @@ class L3EvolutionLoop:
         self,
         telemetry: TelemetryCollector,
         memory: Optional[MemoryManager] = None,
+        mykb: Optional[MyKBGateway] = None,
     ):
         self.config = CONFIG.l3
         self.telemetry = telemetry
         self.memory = memory or MemoryManager(CONFIG.workspace_dir)
+        self.mykb = mykb if mykb is not None else MyKBGateway()
         self.extrapolator = TelemetryExtrapolator()
         self._cycle_count = 0
 
@@ -89,6 +94,10 @@ class L3EvolutionLoop:
             # Persist consolidated memory (KG + vectors)
             self.memory.save()
 
+            # Phase 5: durable MyKB consolidation (memory link)
+            mykb_meta = self._write_mykb_consolidation(
+                insights_added, strategies, redundancies, trends)
+
             logger.info(
                 "L3 cycle complete: %d insights, %d strategies, %d redundancies",
                 insights_added, len(strategies), redundancies,
@@ -111,6 +120,7 @@ class L3EvolutionLoop:
                 "strategies": len(strategies),
                 "redundancies": redundancies,
                 "trends": len(trends),
+                "mykb_written": bool(mykb_meta),
             },
         ))
 
@@ -121,7 +131,104 @@ class L3EvolutionLoop:
             strategies_evolved=strategies,
             redundancies_pruned=redundancies,
             trends_detected=trends,
+            mykb_written=bool(mykb_meta),
+            mykb_path=(mykb_meta or {}).get("path"),
         )
+
+
+    # ── Phase 5: Durable MyKB Consolidation (memory link) ────────────────
+
+    def _write_mykb_consolidation(
+        self,
+        insights_added: int,
+        strategies: list[str],
+        redundancies: int,
+        trends: list[dict],
+    ) -> dict:
+        """Write a durable OKF synthesis + log.md entry for this cycle.
+
+        The MyKB gateway makes L3's consolidation step self-writing: the
+        synthesis note and bundle-log entry are produced by the loop itself,
+        not by a human post-processing step. Failures are logged and reported
+        via telemetry but never fail the evolution cycle.
+        """
+        if not self.mykb.available:
+            logger.info("MyKB gateway unavailable — skipping durable synthesis "
+                        "(root=%s)", self.mykb.root)
+            return {}
+
+        cycle = self._cycle_count
+        # Cycle ordinal is per-process; use the durable sequence of
+        # L3-cycle syntheses already in MyKB so every write gets a
+        # distinct, stable title across separate loop invocations.
+        prior = [p for p in self.mykb.syntheses_dir.glob("rsis3-l3-cycle-*")
+                 if p.name != "00-index.md"]
+        cycle = len(prior) + 1
+        title = f"RSIS3 L3 cycle {cycle} \u2014 cross-session memory consolidation"
+        description = (
+            f"L3 evolution cycle {cycle}: {insights_added} insight(s), "
+            f"{len(strategies)} strategy(ies), {redundancies} redundancy "
+            f"candidate(s), {len(trends)} trend(s) consolidated into MyKB"
+        )
+        tags = ["rsis3", "l3", "memory", "consolidation", "mykb"]
+
+        lines = [
+            f"# {title}",
+            "",
+            f"L3 cycle {cycle} consolidated workspace telemetry into durable "
+            "MyKB memory: session insights, evolved strategies, redundancy "
+            "candidates and detected trends.",
+            "",
+        ]
+        if insights_added:
+            lines.append(f"- **Insights added**: {insights_added} session "
+                         "insight node(s) in the workspace KG.")
+        if strategies:
+            lines.append("- **Strategies evolved**: " + "; ".join(strategies) + ".")
+        if redundancies:
+            lines.append(f"- **Redundancies**: {redundancies} candidate(s) "
+                         "flagged for refinement.")
+        if trends:
+            for t in trends:
+                lines.append(f"- **Trend**: {t['context']} \u2014 {t['trend']} "
+                             f"(slope={t['slope']}).")
+        lines.append("")
+
+        # Context read from MyKB: link the most relevant existing syntheses.
+        related = self.mykb.search_syntheses(
+            " ".join(tags) + " " + " ".join(strategies), limit=3)
+        if related:
+            lines.append("## Related")
+            for hit in related:
+                lines.append(f"- [[{hit['rel'][:-3]}|{hit['title']}]]")
+            lines.append("")
+
+        try:
+            path = self.mykb.write_synthesis(
+                title=title, description=description, tags=tags,
+                body="\n".join(lines),
+            )
+            self.mykb.append_log(
+                title=f"RSIS3 L3 cycle {cycle} \u2014 memory consolidation",
+                bullets=[
+                    f"L3 cycle {cycle} wrote OKF synthesis `{path.name}` "
+                    f"({insights_added} insight(s), {len(strategies)} strategy(ies), "
+                    f"{redundancies} redundancy candidate(s), {len(trends)} trend(s)).",
+                    f"Gateway root: `{self.mykb.root}`.",
+                ],
+            )
+        except Exception as e:
+            logger.warning("MyKB consolidation failed (cycle continues): %s", e)
+            self.telemetry.record(TelemetryEvent(
+                event_type="l3_mykb_error", metadata={"error": str(e)},
+            ))
+            return {}
+        meta = {"path": str(path), "log": str(self.mykb.log_path)}
+        self.telemetry.record(TelemetryEvent(
+            event_type="l3_mykb_write", metadata=meta,
+        ))
+        logger.info("MyKB consolidation written: %s", path)
+        return meta
 
     # ── Phase 1: Trend Detection ───────────────────────────────────
 

@@ -196,6 +196,10 @@ const DOCUMENTS = [
   { file:'PASS-007-ROADMAP.md', title:'Pass 007 Roadmap', group:'Pass 007', icon:'🗺️', cat:'roadmap' },
   { file:'PASS-007-REVIEW.md', title:'Pass 007 Review', group:'Pass 007', icon:'✅', cat:'review' },
   { file:'PASS-007-COMPLETION.md', title:'Pass 007 Completion', group:'Pass 007', icon:'📋', cat:'review' },
+  { file:'PASS-008-AUDIT.md', title:'Pass 008 Audit', group:'Pass 008', icon:'🔍', cat:'audit' },
+  { file:'PASS-008-ROADMAP.md', title:'Pass 008 Roadmap', group:'Pass 008', icon:'🗺️', cat:'roadmap' },
+  { file:'PASS-008-REVIEW.md', title:'Pass 008 Review', group:'Pass 008', icon:'✅', cat:'review' },
+  { file:'PASS-008-COMPLETION.md', title:'Pass 008 Completion', group:'Pass 008', icon:'📋', cat:'review' },
 
   // Dev Docs
   { file:'project-status.md', title:'Project Status', group:'Development', icon:'📊', cat:'dev' },
@@ -277,12 +281,12 @@ function buildSidebar(filter='') {
   for (const d of DOCUMENTS) {
     if (q && !d.title.toLowerCase().includes(q) && !d.group.toLowerCase().includes(q)) continue;
     // Latest mode: only show Pass 004 docs
-    if (filterMode === 'latest' && !d.file.includes('PASS-007')) continue;
+    if (filterMode === 'latest' && !d.file.includes('PASS-008')) continue;
     if (!groups[d.group]) groups[d.group] = [];
     groups[d.group].push(d);
   }
   // Group order: super-section 'Passes' wraps 001-004, then dev, then specs
-  const passGroups = ['Pass 001', 'Pass 002', 'Pass 003', 'Pass 004', 'Pass 005', 'Pass 006', 'Pass 007'].filter(g => groups[g]);
+  const passGroups = ['Pass 001', 'Pass 002', 'Pass 003', 'Pass 004', 'Pass 005', 'Pass 006', 'Pass 007', 'Pass 008'].filter(g => groups[g]);
   const otherGroups = ['Development', 'Specifications'].filter(g => groups[g]);
   let html = '';
   let total = 0;
@@ -440,13 +444,13 @@ if (!loadFromHash()) {
       <h1 style="font-size:24px;margin-bottom:8px">SPACE Meta Documents</h1>
       <p style="color:var(--text-secondary);margin-bottom:20px">Browse phase audit reports, improvement roadmaps, development phase guides, and technical specifications.</p>
       <div style="display:flex;flex-direction:column;gap:8px;text-align:left">
-        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('PASS-007-AUDIT.md','Pass 007 Audit','audit')">
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('PASS-008-AUDIT.md','Pass 008 Audit','audit')">
           <span style="font-size:20px">🔍</span>
-          <div><div style="font-weight:600;font-size:13px">Latest Audit</div><div style="font-size:11px;color:var(--text-muted)">Pass 005 — hosting-layer hardening: testable web server, static fallback, watch paths</div></div>
+          <div><div style="font-weight:600;font-size:13px">Latest Audit</div><div style="font-size:11px;color:var(--text-muted)">Pass 008 — memory link: MyKB gateway, L3 self-consolidation, --goal from-mykb</div></div>
         </div>
-        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('PASS-007-REVIEW.md','Pass 007 Review','review')">
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('PASS-008-REVIEW.md','Pass 008 Review','review')">
           <span style="font-size:20px">✅</span>
-          <div><div style="font-weight:600;font-size:13px">Latest Completion Review</div><div style="font-size:11px;color:var(--text-muted)">Pass 005 — 157 tests, web-server suite, lint 74→24, v2.2.0</div></div>
+          <div><div style="font-weight:600;font-size:13px">Latest Completion Review</div><div style="font-size:11px;color:var(--text-muted)">Pass 008 — 53 tests, +5/loop batch, 5 durable L3 syntheses, 0 broken links</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('specs/01-data-schema.md','01 — Data Schema','spec')">
           <span style="font-size:20px">📐</span>
