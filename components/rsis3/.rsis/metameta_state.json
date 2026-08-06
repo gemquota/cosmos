@@ -1,6 +1,6 @@
 {
   "params": {
-    "l5.mutation_rate": 0.44999999999999996,
+    "l5.mutation_rate": 0.6,
     "l5.population_size": 4
   },
   "history": [
@@ -59,7 +59,31 @@
       },
       "accepted": true,
       "signal": "raise_mutation"
+    },
+    {
+      "cycle": 8,
+      "deltas": {
+        "l5.mutation_rate": 0.05
+      },
+      "accepted": true,
+      "signal": "raise_mutation"
+    },
+    {
+      "cycle": 9,
+      "deltas": {
+        "l5.mutation_rate": 0.05
+      },
+      "accepted": true,
+      "signal": "raise_mutation"
+    },
+    {
+      "cycle": 10,
+      "deltas": {
+        "l5.mutation_rate": 0.05
+      },
+      "accepted": true,
+      "signal": "raise_mutation"
     }
   ],
-  "cycle": 7
+  "cycle": 10
 }
