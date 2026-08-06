@@ -8,7 +8,7 @@
       "serve-meta.mjs",
       "8899"
     ],
-    "cwd": "/data/data/com.termux/files/home/dev/space"
+    "cwd": "/data/data/com.termux/files/home/dev/cosmos/components/space"
   },
   {
     "name": "Web UI",
@@ -16,10 +16,10 @@
     "path": "/",
     "startCmd": "node",
     "startArgs": [
-      "serve-ui.mjs",
+      "web/server.mjs",
       "8888"
     ],
-    "cwd": "/data/data/com.termux/files/home/dev/space"
+    "cwd": "/data/data/com.termux/files/home/dev/cosmos/components/space"
   },
   {
     "name": "mykb Dashboard",
