@@ -52,7 +52,7 @@ export class TemplateProvider implements LLMProvider {
     return JSON.stringify({ summary: artifacts, key_decisions: [] });
   }
 
-  private scoreQuality(prompt: string): string {
+  private scoreQuality(_prompt: string): string {
     return JSON.stringify({ score: 0.7, dimensions: { completeness: 0.7, specificity: 0.7 }, suggestions: [] });
   }
 

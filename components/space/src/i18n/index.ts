@@ -40,16 +40,16 @@ export function getAvailableLocales(): LocaleCode[] {
  */
 export function t(key: string, params?: Record<string, string | number>): string {
   const parts = key.split('.');
-  let msg: any = currentLocale.messages;
+  let msg: unknown = currentLocale.messages;
   for (const part of parts) {
-    if (msg && typeof msg === 'object' && part in msg) {
-      msg = msg[part];
+    if (msg !== null && typeof msg === 'object' && part in msg) {
+      msg = (msg as Record<string, unknown>)[part];
     } else {
       // Fallback to English
       msg = enLocale.messages;
       for (const p of parts) {
-        if (msg && typeof msg === 'object' && p in msg) {
-          msg = msg[p];
+        if (msg !== null && typeof msg === 'object' && p in msg) {
+          msg = (msg as Record<string, unknown>)[p];
         } else {
           return key; // Key not found
         }

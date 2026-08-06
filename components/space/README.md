@@ -72,11 +72,24 @@ space serve -p 8888
 # Open http://localhost:8888
 ```
 
-Or build and serve manually:
+### Hosted web server (Cosmos dashboard embed)
+
+The self-contained SPA at `web/index.html` is served by `web/server.mjs`
+(Node, no build step):
+
 ```bash
-cd ui && npm run build && cd ..
-space serve -p 8888
+node web/server.mjs 8888
+# Open http://localhost:8888
 ```
+
+- The API tries same-origin first, then `localhost:8888`, and finally falls
+  back to bundled static JSON for GETs — so the SPA also renders from static
+  hosting (GitHub Pages) for read-only browsing.
+- CORS preflight is handled, so the SPA can be embedded cross-origin (e.g.
+  the Cosmos dashboard iframe) and still create/answer/export sessions.
+- `node scripts/sync-static-data.mjs` refreshes `web/projects.json` from
+  `~/.space/projects` for the static fallback.
+- Tests: `npx vitest run tests/unit/web-server.test.ts` (isolated temp dir).
 
 ## Development
 

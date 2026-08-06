@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": "proj_ms21mytd",
+    "name": "my-rsi-project",
+    "description": "Recursive Self Improvement spec",
+    "created_at": "2026-07-26T16:59:59.041Z",
+    "updated_at": "2026-07-26T16:59:59.041Z",
+    "session_count": 0,
+    "completed_sessions": 0
+  },
+  {
+    "id": "proj_ms0h1vep",
+    "name": "recursive-self-improvement",
+    "description": "Recursive Self Improvement — a system that uses structured prompt elicitation to iteratively refine and improve its own specifications, strategies, and capabilities through recursive feedback loops",
+    "created_at": "2026-07-25T14:35:56.353Z",
+    "updated_at": "2026-07-25T14:35:56.396Z",
+    "session_count": 2,
+    "completed_sessions": 0
+  }
+]

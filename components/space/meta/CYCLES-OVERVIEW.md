@@ -1,7 +1,7 @@
 # SPACE — Cycles Overview
 
-**Updated:** Cycle 004 (2026-07-29)
-**Total Documents:** 16 cycle docs across 4 cycles
+**Updated:** Cycle 005 (2026-08-06)
+**Total Documents:** 20 cycle docs across 5 cycles
 
 ---
 
@@ -13,6 +13,7 @@
 | 002 | Full Implementation | 7-phase roadmap: engine, CLI, LLM, export, UI, storage, intelligence | 92 | ✅ Complete |
 | 003 | Integration & i18n | Wiring improvements, localization, adaptive router, staleness detection | 142 | ✅ Complete |
 | 004 | Production Readiness | ESLint, Prettier, README, CI/CD, CLI tests, Sentry heartbeat | 150 | ✅ Complete |
+| 005 | Hosting Layer | Testable web server + tests, static fallback, cosmos watch paths, lint 74→24, v2.2.0 | 157 | ✅ Complete |
 
 ---
 
@@ -24,13 +25,14 @@ Cycle 001:  —    (audit only)
 Cycle 002:  92 tests  █████████████████████████████░░░░░░░░░░░░░
 Cycle 003: 142 tests  ██████████████████████████████████████████░░
 Cycle 004: 150 tests  ████████████████████████████████████████████
+Cycle 005: 157 tests  ██████████████████████████████████████████████
 ```
 
 ### Codebase Growth
 | Metric | Cycle 002 | Cycle 003 | Cycle 004 |
 |--------|:---------:|:---------:|:---------:|
-| Source files | ~50 | 62 | ~65 |
-| Test files | 10 | 13 | 14 |
+| Source files | ~50 | 62 | ~65 | 60 |
+| Test files | 10 | 13 | 14 | 15 |
 | CLI commands | 6 | 8 | 8 |
 | LLM providers | — | 7 | 7 |
 | Export formats | — | 6 | 6 |
@@ -58,6 +60,15 @@ Completed 10 wiring improvements: ArtifactTracker integration, config validation
 Shifted from features to production quality: 165-line README, ESLint flat config (0 errors), Prettier, npm rename to `@gemquota/space`, GitHub Actions CI (tsc+lint+test), lint fixes across codebase, dev scripts, 8 new CLI tests, and Sentry heartbeat monitoring infrastructure with reusable Codex skill.
 
 **Key documents:** `CYCLE-004-AUDIT.md`, `CYCLE-004-ROADMAP.md`, `CYCLE-004-REVIEW.md`, `CYCLE-004-COMPLETION.md`
+
+### Cycle 005 — Hosting Layer
+Hardened the cosmos hosting layer: `web/server.mjs` refactored into a
+testable `createApp` factory, 7 new web-server tests (157 total), static
+`projects.json` fallback + sync script, sentry watch paths retargeted to
+cosmos-local mykb, ESLint warnings 74 → 24, Prettier clean, and v2.2.0
+docs (CHANGELOG + README hosting section).
+
+**Key documents:** `CYCLE-005-AUDIT.md`, `CYCLE-005-ROADMAP.md`, `CYCLE-005-REVIEW.md`, `CYCLE-005-COMPLETION.md`
 
 ---
 

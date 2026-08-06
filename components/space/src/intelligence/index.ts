@@ -9,7 +9,6 @@ import { scoreCompleteness } from './completeness-scorer.js';
 import { detectContradictions } from './contradiction-detector.js';
 import { computeSessionMetrics, type SessionMetrics } from './analytics.js';
 import { generateRecommendations } from './recommendations.js';
-import { analyzeRouting, shouldSkipQuestion, type RoutingDecision } from './adaptive-router.js';
 
 export interface IntelligenceReport {
   metrics: SessionMetrics;
