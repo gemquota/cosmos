@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-06T12:42Z",
+ "generated": "2026-08-06T12:54Z",
  "note": "Loop k+3 tunes loop k (L4\u2192L1 \u2026 L9\u2192L6); L7\u2013L9 are untuned fixed points. Live state is injected at startup by load_config(); this is a static snapshot.",
  "loops": [
   {
@@ -13,6 +13,7 @@
    "cycle": 0,
    "history_len": 0,
    "last_signal": null,
+   "runtime": "n/a",
    "params": []
   },
   {
@@ -26,6 +27,7 @@
    "cycle": 0,
    "history_len": 0,
    "last_signal": null,
+   "runtime": "idle",
    "params": []
   },
   {
@@ -39,6 +41,7 @@
    "cycle": 0,
    "history_len": 0,
    "last_signal": null,
+   "runtime": "idle",
    "params": []
   },
   {
@@ -52,6 +55,7 @@
    "cycle": 0,
    "history_len": 0,
    "last_signal": null,
+   "runtime": "idle",
    "params": []
   },
   {
@@ -65,6 +69,7 @@
    "cycle": 2,
    "history_len": 2,
    "last_signal": null,
+   "runtime": "idle",
    "params": [
     {
      "key": "l1.max_retries",
@@ -87,6 +92,7 @@
    "cycle": 0,
    "history_len": 6,
    "last_signal": "evolve",
+   "runtime": "idle",
    "params": [
     {
      "key": "l2.max_attempts",
@@ -113,6 +119,7 @@
    "cycle": 3,
    "history_len": 3,
    "last_signal": "shrink",
+   "runtime": "idle",
    "params": [
     {
      "key": "l3.plateau_timeout_s",
@@ -131,6 +138,7 @@
    "cycle": 1,
    "history_len": 1,
    "last_signal": "widen",
+   "runtime": "idle",
    "params": [
     {
      "key": "l4.outcome_window",
@@ -161,6 +169,7 @@
    "cycle": 1,
    "history_len": 1,
    "last_signal": "shrink_population",
+   "runtime": "idle",
    "params": [
     {
      "key": "l5.mutation_rate",
@@ -183,6 +192,7 @@
    "cycle": 1,
    "history_len": 1,
    "last_signal": "widen",
+   "runtime": "idle",
    "params": [
     {
      "key": "l6.shrink_below",

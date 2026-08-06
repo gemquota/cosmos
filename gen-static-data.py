@@ -158,6 +158,26 @@ for meta in LOOPS:
     last_signal = None
     if history:
         last_signal = history[-1].get('signal')
+    # Runtime state: "implemented" is a code-readiness label, not liveness.
+    # RSIS3 loops run on demand (CLI per session/cadence) — nothing is
+    # continuously active — so the snapshot is honest: RECENT when the loop
+    # ran within the last 24h, IDLE when it ran before that, NEVER if it has
+    # never run, n/a for the substrate row.
+    runtime = 'n/a'
+    if meta['id'] != 'L0':
+        runs = loop_events[meta['id']]['runs']
+        if runs == 0:
+            runtime = 'never'
+        else:
+            runtime = 'idle'
+            last = loop_events[meta['id']]['last_run']
+            try:
+                last_dt = datetime.datetime.fromisoformat(last)
+                age_s = (datetime.datetime.now(datetime.timezone.utc) - last_dt).total_seconds()
+                if 0 <= age_s <= 24 * 3600:
+                    runtime = 'recent'
+            except (TypeError, ValueError):
+                pass
     entry = {
         "id": meta['id'],
         "name": meta['name'],
@@ -169,6 +189,7 @@ for meta in LOOPS:
         "cycle": (state or {}).get('cycle', 0),
         "history_len": len(history),
         "last_signal": last_signal,
+        "runtime": runtime,
         "params": params,
     }
     loops_out.append(entry)
