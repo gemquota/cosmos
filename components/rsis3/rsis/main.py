@@ -25,6 +25,8 @@ import time
 from pathlib import Path
 
 from rsis import __version__
+
+logger = logging.getLogger(__name__)
 from rsis.checkpoint import CheckpointManager
 from rsis.config import CONFIG
 from rsis.evaluator import EvaluatorClient
