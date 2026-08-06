@@ -5,6 +5,21 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-06 (RSIS3 pass 6 — five full cycles, L1–L9)
+- **Cycles run**: 5 full RSIS3 cycles = 40 loop executions (`run` for L1/L2,
+  one-shot `evolve`/`optimize`/`strategies`/`identity`/`metacog`/`metameta`/`mmm`
+  for L3–L9), all completed. Telemetry now L1=11, L2=11, L3=8, L4=8, L5=12,
+  L6=9, L7–L9=7 — exactly +5 net new starts per loop, 0 errors;
+  `check-practices` all PASS.
+- **Fixes**: `RSIS_DISK_USAGE_PCT` env override in `rsis/config.py` so loops
+  run deterministically under disk pressure (device at 99.6% full);
+  module-level `logger` added in `rsis/main.py` throttle callback (runtime
+  NameError).
+- **Synthesis added**: `wiki/syntheses/rsis3-pass-6-2026-08-06.md` —
+  resource-pressure runs, module-logger discipline, checkpoint git-add sweep,
+  even-cadence batching. Syntheses index updated (47 pages).
+
+
 ## 2026-08-06 (SPACE v2 spec import — recursive-self-improvement)
 - **Export updated**: `components/space/exports/recursive-self-improvement-specification.json`
   replaced with the SPACE v2.0.0 export of session `sess_cdd506e4` (67/67
