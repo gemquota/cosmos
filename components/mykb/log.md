@@ -5,6 +5,29 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-06 (Guidance UI overhaul)
+- **Home routing**: empty-hash loads now show the mykb home page (metrics,
+  recents, quick actions) instead of jumping to the first file; the sidebar
+  header title and "All Documents" return home.
+- **Guidance promoted**: Guide is now a dedicated gradient button above the
+  sidebar tabs (`#guidance`/`#stubs`/`#guide` still route to it) with three
+  sub-tabs — Direction, Research queue, Stub triage — so stub auditing is a
+  slice of the guidance surface, not the whole tab.
+- **Article toolbar**: Graph / Edit / Archive / Delete on every open article.
+  Edit saves via `POST /api/v2/file`; Archive git-moves to
+  `raw/archive/stub-audit-<date>/` and Delete git-removes via the daemon
+  (fs fallback for untracked files; static pages copy the git commands).
+- **Knowledge graph fixed**: `drawGraph` referenced undefined `camZoom` and
+  never painted. Switched to `graphCam.zoom`, added an immediate first draw
+  (visible while physics refines), and capped refinement passes on very large
+  graphs — the 5,401-node graph now loads.
+- **Live-mode categories fixed**: daemon `/files.json` now serves the enriched
+  snapshot (path + type + title + tags), so sidebar area/type grouping, counts,
+  and type chips match static mode instead of collapsing into "other".
+- **Sidebar additions**: Graph tab in the tab row; guide promo state follows
+  the active view. Synthesis note added:
+  `wiki/syntheses/mykb-guidance-ui-overhaul-2026-08-06.md`.
+
 ## 2026-08-06 (Wiki link integrity repair)
 - **Link audit fixed**: `link_check.py` rewritten — resolves `../` against the
   source file's directory (the old `lstrip('./')` swallowed `../` prefixes),
