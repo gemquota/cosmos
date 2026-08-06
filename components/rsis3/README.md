@@ -83,6 +83,53 @@ python -m rsis pipeline
 python -m rsis status
 ```
 
+## Drive Loops Until Satisfied
+
+The one-shot commands above run a single cycle. To keep a loop running
+automatically until its completion requirement is met (or until a safety
+budget runs out), use `drive`:
+
+```bash
+# Keep running L2 improvement sessions until one applies a change
+python -m rsis drive --loop l2 --goal "add error handling to utils.py"
+
+# Tune L4 until the observed success rate lands inside its target band
+python -m rsis drive --loop l4 --max-cycles 12
+
+# Evolve L3 until consolidation plateaus (no new insights/focus strategies)
+python -m rsis drive --loop l3 --timeout 86400 --sleep 60
+```
+
+Per-loop completion requirements (all configurable via `rsis/config.py` or
+the tunable state files in `.rsis/`):
+
+| Loop | Completion requirement | Relevant config |
+|---|---|---|
+| L2 | an improvement candidate passes the evaluator and is applied | `l2.max_improvement_attempts`, `l2.session_timeout_s` |
+| L3 | consolidation plateau — no new insights, focus strategies, or pruned redundancies | `l3.plateau_sessions`, `l3.plateau_timeout_s` |
+| L4 | success rate inside `[target_success_low, target_success_high]` (no deltas proposed) | `l4.min_outcomes`, `l4.outcome_window`, `l4.target_success_*` |
+| L5 | best strategy fitness plateaus (no improvement over the previous generation) | `l5.population_size`, `l5.mutation_rate` |
+| L6–L9 | no tuning signal — the target band is stable | `l6..l9` `cycle_timeout_s`, band config |
+
+`drive` exit codes: `0` requirement satisfied · `1` error · `2` time budget
+exhausted · `3` max cycles reached · `4` terminally stuck (e.g. L4 needs
+more outcomes, L2 exhausted its attempts) — so it composes cleanly with
+cron/systemd/shell scripts.
+
+To run unattended until done:
+
+```bash
+# Shell: keep retrying until satisfied (exit 0), cap wall time
+timeout 6h python -m rsis drive --loop l4 --sleep 60   || [ $? -eq 4 ] && echo "stuck — inspect .rsis/optimizer_state.json"
+
+# cron: every 30 min, stop as soon as the requirement is met
+*/30 * * * * cd /path/to/components/rsis3 && \
+  python -m rsis drive --loop l4 --max-cycles 1 --timeout 1200
+```
+
+Every cycle writes `l{N}_start`/`l{N}_complete` telemetry, so the dashboard's
+Loops tab flips from IDLE to RECENT after a drive finishes.
+
 ## Tool Layer (L1 sandbox + approvals)
 
 L1 executes tools through a sandboxed layer (`rsis/tools/`, ported from the

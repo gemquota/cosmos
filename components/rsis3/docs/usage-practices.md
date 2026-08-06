@@ -60,7 +60,34 @@ A workspace with loop state must be a git repo with at least one
 `rsis-checkpoint:` commit (the `CheckpointManager` creates these before every
 mutation). `check-practices` verifies this so rollback is always possible.
 
-## 6. Dashboard & Snapshot Practice
+## 6. Running Loops Until Satisfied
+
+The one-shot commands run a single cycle; `python -m rsis drive` keeps a
+loop running until its completion requirement is met:
+
+- `drive --loop l2 --goal X` — until an improvement is applied
+  (`l2.max_improvement_attempts` attempts per session).
+- `drive --loop l3` — until consolidation plateaus (no new insights, focus
+  strategies, or pruned redundancies).
+- `drive --loop l4` — until success rate is inside
+  `[l4.target_success_low, l4.target_success_high]` (needs
+  `l4.min_outcomes` outcomes first).
+- `drive --loop l5` — until best strategy fitness plateaus.
+- `drive --loop l6..l9` — until the tuned band is stable (no signal).
+
+Guard rails: `--max-cycles`, `--timeout` (wall clock), `--sleep` (pause
+between cycles). Exit codes: `0` satisfied · `1` error · `2` time budget ·
+`3` max cycles · `4` terminal-stuck (e.g. L4 needs more outcomes — run L2
+sessions first, then re-drive).
+
+Automation examples: a cron line or systemd timer invoking
+`drive --loop l4 --max-cycles 1` every N minutes stops itself as soon as
+the requirement is met; a `timeout 6h drive --loop l2 --goal ...` shell
+loop retries a goal across sessions. Drive cycles write normal
+`l{N}_start`/`l{N}_complete` telemetry, so dashboard snapshots stay
+truthful.
+
+## 7. Dashboard & Snapshot Practice
 
 - After a run: commit `.rsis/` state + telemetry, run
   `gen-static-data.py` (regenerates `dashboard/loops.json` +
@@ -70,7 +97,7 @@ mutation). `check-practices` verifies this so rollback is always possible.
 - `check-practices` marks loops that have never run as WARN (never-run is
   allowed; inconsistent state is not).
 
-## 7. Anti-Patterns
+## 8. Anti-Patterns
 
 - Running loops in the repo root instead of a dedicated workspace (pollutes
   tracked state with throwaway runs).
@@ -80,7 +107,7 @@ mutation). `check-practices` verifies this so rollback is always possible.
 - Committing telemetry/state without regenerating the dashboard snapshot
   (the Loops tab goes stale).
 
-## 8. Invariants (unconditional)
+## 9. Invariants (unconditional)
 
 1. Evaluator is immutable.
 2. Checkpoint before every mutation.
