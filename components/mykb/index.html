@@ -1227,6 +1227,54 @@ body {
 .gd-wl-row .add { margin-left:auto; padding:1px 10px; font-size:11px; border:1px solid var(--accent); border-radius:10px; background:none; color:var(--accent); cursor:pointer; }
 .gd-wl-row .add:hover { background:var(--accent-soft); }
 .gd-section-h { font-size:15px; font-weight:800; margin:22px 0 10px; border-top:1px solid var(--border); padding-top:16px; }
+
+/* ── Sidebar Guidance promo ── */
+.sidebar-guide { padding: 8px 12px 2px; }
+.guide-promo {
+  width: 100%; padding: 10px 14px; font-size: 13px; font-weight: 800;
+  border-radius: 10px; border: 1px solid var(--accent);
+  background: linear-gradient(135deg, var(--accent), #7c5cff);
+  color: #fff; cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 8px; letter-spacing: .02em;
+  box-shadow: 0 2px 8px rgba(107,154,255,.25);
+}
+.guide-promo:hover { filter: brightness(1.1); }
+.guide-promo.active { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent); }
+
+/* ── Guide sub-tabs ── */
+.gt-tabs { display: flex; gap: 6px; margin: 14px 0 4px; flex-wrap: wrap; }
+.gt-tab {
+  padding: 7px 16px; font-size: 12.5px; font-weight: 700; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--search-bg);
+  color: var(--text-soft); cursor: pointer;
+}
+.gt-tab:hover { border-color: var(--accent); color: var(--text); }
+.gt-tab.active { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+.gt-section[data-gt="triage"] h2.gd-section-h { margin-top: 6px; }
+
+/* ── Article toolbar ── */
+#content-doc { position: relative; }
+.article-toolbar {
+  position: sticky; top: 0; z-index: 40;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 8px 14px; background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.art-path { font-size: 11px; color: var(--text-muted); flex: 1; min-width: 120px; word-break: break-all; }
+.art-flash { font-size: 11.5px; color: var(--text-soft); }
+.art-btn {
+  padding: 4px 12px; font-size: 11.5px; font-weight: 700; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--search-bg); color: var(--text); cursor: pointer;
+}
+.art-btn:hover { border-color: var(--accent); }
+.art-btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.art-btn.danger { color: #f87171; border-color: rgba(248,113,113,.5); }
+.art-btn.danger:hover { background: rgba(248,113,113,.12); }
+#art-editor-ta {
+  width: 100%; min-height: 46vh; padding: 12px; font: 12.5px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;
+  border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--text); outline: none; resize: vertical;
+}
+#art-editor-ta:focus { border-color: var(--accent); }
 .stub-entry { display:flex; align-items:center; gap:6px; padding:5px 6px; border-radius:5px; cursor:pointer; font-size:12px; }
 .stub-entry:hover { background:var(--hover-bg); }
 .stub-entry .words { margin-left:auto; font-size:10px; color:var(--text-muted); flex-shrink:0; }
@@ -1268,11 +1316,14 @@ body {
         <div class="meta-hint" id="meta-hint">Wiki knowledge</div>
       </div>
     </div>
+    <div class="sidebar-guide">
+      <button type="button" class="guide-promo" id="guide-promo" title="Guidance — review, feedback &amp; research direction">&#129302; Guidance</button>
+    </div>
     <div class="sidebar-tabs" role="tablist" aria-label="Navigate">
       <button class="sidebar-tab active" data-tab="docs" title="Browse documents">Browse</button>
       <button class="sidebar-tab" data-tab="compositions" title="Instruction sets">Compose</button>
       <button class="sidebar-tab" data-tab="search" title="Search entities">Search</button>
-      <button class="sidebar-tab" data-tab="stubs" title="Guidance — review, feedback &amp; research direction">Guide</button>
+      <button class="sidebar-tab" data-tab="graph" title="Knowledge graph">Graph</button>
       <button class="sidebar-tab" data-tab="actions" title="Health, lint, build">Actions</button>
     </div>
   </div>
@@ -1322,7 +1373,23 @@ body {
 <div id="content">
   <!-- Document viewer (default) -->
   <div id="content-doc" class="content-view">
-    <div class="markdown-body">
+    <div id="article-toolbar" class="article-toolbar" style="display:none;">
+      <span class="art-path" id="art-path"></span>
+      <span class="art-flash" id="art-flash"></span>
+      <button type="button" class="art-btn" id="art-graph" title="Open the knowledge graph, focused on this article">&#128302; Graph</button>
+      <button type="button" class="art-btn" id="art-edit" title="Edit this article in-app">&#9998; Edit</button>
+      <button type="button" class="art-btn" id="art-archive" title="Move to raw/archive">&#128230; Archive</button>
+      <button type="button" class="art-btn danger" id="art-delete" title="Delete this article">&#128465; Delete</button>
+    </div>
+    <div id="art-editor" style="display:none;padding:14px 22px;border-bottom:1px solid var(--border);background:var(--code-bg);">
+      <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap;">
+        <strong style="font-size:13px;flex:1;">Editing <span id="art-edit-path" style="color:var(--accent);"></span></strong>
+        <button type="button" class="art-btn primary" id="art-save">&#128190; Save</button>
+        <button type="button" class="art-btn" id="art-cancel">Cancel</button>
+      </div>
+      <textarea id="art-editor-ta" spellcheck="false"></textarea>
+    </div>
+    <div class="markdown-body" id="doc-body">
       <div class="welcome home">
         <h1>mykb</h1>
         <p class="home-tagline">Long-term semantic memory for RSIS3 &mdash; curated knowledge, operational protocols, and agent guidance.</p>
@@ -1379,8 +1446,15 @@ body {
       <div style="font-size:12px;color:var(--text-soft);margin-top:2px;">Guide the research &amp; nature of mykb &mdash; see where coverage is thinnest, queue wanted pages / research directions / open questions, leave page-level feedback, and triage stub articles. <span class="srv-chip" id="srv-chip">snapshot</span></div>
     </div>
 
+    <div class="gt-tabs">
+      <button type="button" class="gt-tab active" data-gt="direction">&#129302; Direction</button>
+      <button type="button" class="gt-tab" data-gt="queue">&#128229; Research queue</button>
+      <button type="button" class="gt-tab" data-gt="triage">&#129523; Stub triage</button>
+    </div>
+
     <!-- Direction: area health + focus ranking -->
-    <div class="gd-panel">
+    <div class="gt-section" data-gt="direction">
+      <div class="gd-panel">
       <div class="gd-hdr"><h2>&#129302; Direction</h2><span class="fb-sub">Where the next acquisition &amp; enrichment pass should go &mdash; derived from live wiki state.</span></div>
       <div id="gd-total" class="gd-total"></div>
       <div id="gd-focus" class="gd-focus"></div>
@@ -1389,10 +1463,12 @@ body {
         <div id="gd-wanted"></div>
       </div>
       <div id="gd-areas-wrap"><table id="gd-areas" class="gd-table"></table></div>
+      </div>
     </div>
 
     <!-- Guidance queue: wanted pages / directions / questions / feedback -->
-    <div class="fb-panel" id="fb-panel">
+    <div class="gt-section" data-gt="queue" style="display:none;">
+      <div class="fb-panel" id="fb-panel">
       <div class="fb-hdr">
         <h2>&#129302; Research &amp; Feedback Queue</h2>
         <span class="fb-sub">Wanted pages, research directions, open questions, and page-level notes that guide the next inference pass. Items save to the daemon queue (<code>guidance-queue.json</code>) and merge into the inference manifest.</span>
@@ -1430,8 +1506,10 @@ body {
         <pre class="srv-out" id="gd-drain-out"></pre>
       </div>
       <datalist id="fb-paths"></datalist>
+      </div>
     </div>
 
+    <div class="gt-section" data-gt="triage" style="display:none;">
     <h2 class="gd-section-h">Stub triage</h2>
     <div class="srv-progress">
       <div class="srv-progress-bar"><div class="srv-progress-fill" id="srv-progress-fill"></div></div>
@@ -1495,6 +1573,7 @@ body {
     </div>
     <div id="srv-list"></div>
     <div style="font-size:11px;color:var(--text-muted);margin-top:10px;">Keys: <b>1</b>=Keep <b>2</b>=Enrich (cycles 1&times;&rarr;2&times;&rarr;3&times;) <b>3</b>=Categorize <b>4</b>=Archive <b>5</b>=Delete &middot; re-click to undo &middot; progress persists in this browser</div>
+    </div>
   </div>
 </div>
 
@@ -2013,6 +2092,8 @@ document.addEventListener('DOMContentLoaded', function() {
       state.currentTab = tabName;
       tabs.forEach(function(t) { t.classList.remove('active'); });
       tab.classList.add('active');
+      var gpTab = document.getElementById('guide-promo');
+      if (gpTab) gpTab.classList.remove('active');
       document.getElementById('file-list').style.display = tabName === 'docs' ? '' : 'none';
       var sc = document.getElementById('search-container');
       if (sc) sc.style.display = tabName === 'search' ? '' : 'none';
@@ -2247,7 +2328,7 @@ function loadGraph() {
           var nodeRadius = Math.max(2, 4 / graphCam.zoom);
           ctx.fillStyle = 'rgba(37,99,235,0.6)';
           ctx.strokeStyle = '#fff';
-          ctx.lineWidth = 0.5 / camZoom;
+          ctx.lineWidth = 0.5 / graphCam.zoom;
           
           nodes.forEach(function(n) {
             var sx = n.x * graphCam.zoom + W/2 + graphCam.x;
@@ -2264,6 +2345,9 @@ function loadGraph() {
           ctx.restore();
         }
         
+        // Draw immediately so the graph is visible while physics refines it.
+        drawGraph();
+
         // Mouse interaction (attached once per page load; draws via graphState.draw)
         graphState = { canvas: canvas, info: info, draw: drawGraph, nodes: nodes, edges: edges };
         if (!graphListenersAttached) {
@@ -2292,8 +2376,9 @@ function loadGraph() {
           }, {passive: false});
         }
         
-        // Run physics in chunks via requestAnimationFrame
-        var totalSteps = cachedLayout ? 15 : 60;
+        // Run physics in chunks via requestAnimationFrame. Very large graphs
+        // get fewer refinement passes so the first render lands quickly.
+        var totalSteps = cachedLayout ? 15 : (nodes.length > 2000 ? 20 : 60);
         var step = 0;
         function runPhysics() {
           if (step >= totalSteps) {
@@ -2335,6 +2420,7 @@ function recordRecent(filename) {
 
 var content = document.getElementById('content');
 var contentDoc = document.getElementById('content-doc');
+var docBody = document.getElementById('doc-body');
 var sidebar = document.getElementById('sidebar');
 var fileList = document.getElementById('file-list');
 var searchInput = document.getElementById('search-input');
@@ -3318,7 +3404,8 @@ function navigateTo(filename, anchor) {
     return;
   }
 
-  contentDoc.innerHTML = '<div class="markdown-body"><div class="loading">Loading&hellip;</div></div>';
+  docBody.innerHTML = '<div class="loading">Loading&hellip;</div>';
+  artHideToolbar();
 
   fetch(KB_BASE + encodeURIComponent(filename))
     .then(function(r) {
@@ -3344,10 +3431,11 @@ function navigateTo(filename, anchor) {
       if (base && base.length > 1) {
         searchLink = '<p><a href="#" id="err-search" style="color:var(--accent);">Search for &lsquo;' + escapeHtml(base) + '&rsquo;</a></p>';
       }
-      contentDoc.innerHTML = '<div class="markdown-body"><div class="welcome"><h1>Error</h1><p>Could not load <strong>' + escapeHtml(filename) + '</strong>.</p><p style="font-size:12px;color:var(--text-muted);">Path: ' + escapeHtml(filename) + '</p>' + searchLink + '<p><a href="#" id="err-home" style="color:var(--accent);">← Back to all documents</a></p></div></div>';
-      var errHome = contentDoc.querySelector('#err-home');
+      docBody.innerHTML = '<div class="welcome"><h1>Error</h1><p>Could not load <strong>' + escapeHtml(filename) + '</strong>.</p><p style="font-size:12px;color:var(--text-muted);">Path: ' + escapeHtml(filename) + '</p>' + searchLink + '<p><a href="#" id="err-home" style="color:var(--accent);">← Back to all documents</a></p></div>';
+      artHideToolbar();
+      var errHome = docBody.querySelector('#err-home');
       if (errHome) errHome.addEventListener('click', function(e) { e.preventDefault(); navigateHome(); });
-      var errSearch = contentDoc.querySelector('#err-search');
+      var errSearch = docBody.querySelector('#err-search');
       if (errSearch) errSearch.addEventListener('click', function(e) {
         e.preventDefault();
         if (searchInput) { searchInput.value = base; performSearch(); }
@@ -3357,7 +3445,8 @@ function navigateTo(filename, anchor) {
 
 function renderContent(filename, md) {
   var result = parseMarkdown(md);
-  contentDoc.innerHTML = '<div class="markdown-body">' + result.html + '</div>';
+  docBody.innerHTML = result.html;
+  artShowToolbar(filename);
   state.fileHeadings[filename] = result.headings;
   renderSidebar();
   document.title = filename.replace(/\.md$/i, '') + ' — md';
@@ -3372,8 +3461,7 @@ function resolveRoute() {
     return;
   }
   if (!hash) {
-    var visible = visibleFiles();
-    if (visible.length > 0 && !state.currentFile) { navigateTo(visible[0]); }
+    navigateHome();
     return;
   }
   var parts = hash.split('#');
@@ -3562,8 +3650,9 @@ function navigateHome() {
     ? 'Open the sidebar to browse the knowledge base.'
     : 'Keyboard \u2014 Ctrl+K search \u00b7 Ctrl+B sidebar \u00b7 G graph \u00b7 H health';
 
-  contentDoc.innerHTML = '' +
-    '<div class="markdown-body"><div class="welcome home">' +
+  artHideToolbar();
+  docBody.innerHTML = '' +
+    '<div class="welcome home">' +
       '<h1>mykb</h1>' +
       '<p class="home-tagline">Long-term semantic memory for RSIS3 \u2014 curated knowledge, operational protocols, and agent guidance.</p>' +
       '<div class="home-metrics">' +
@@ -3585,7 +3674,7 @@ function navigateHome() {
         '<span>Grouped by <strong>' + (state.groupMode === 'dir' ? 'Folder' : 'Type') + '</strong></span>' +
         '<span>' + hint + '</span>' +
       '</div>' +
-    '</div></div>';
+    '</div>';
 
   var docsEl = document.getElementById('metric-docs');
   if (docsEl) {
@@ -4155,11 +4244,15 @@ function ensureStubPaths() {
 function activateStubs() {
   state.currentTab = 'stubs';
   fbFabUpdate();
-  document.querySelectorAll('.sidebar-tab').forEach(function(t) { t.classList.toggle('active', t.getAttribute('data-tab') === 'stubs'); });
-  var fl = document.getElementById('file-list'); if (fl) fl.style.display = 'none';
+  // Guide is a main content view, not a sidebar tab: keep the browse list
+  // visible so guidance and articles can be used side by side.
+  document.querySelectorAll('.sidebar-tab').forEach(function(t) { t.classList.remove('active'); });
+  var gpAct = document.getElementById('guide-promo');
+  if (gpAct) gpAct.classList.add('active');
+  var fl = document.getElementById('file-list'); if (fl) fl.style.display = '';
   var sc = document.getElementById('search-container'); if (sc) sc.style.display = 'none';
   var cc = document.getElementById('compositions-container'); if (cc) cc.style.display = 'none';
-  var stc = document.getElementById('stubs-container'); if (stc) stc.style.display = '';
+  var stc = document.getElementById('stubs-container'); if (stc) stc.style.display = 'none';
   switchContentView('stubs');
   loadStubsReview();
   loadGuidance();
@@ -4641,7 +4734,158 @@ if (state.stubsOnly) {
   ensureStubPaths().catch(function() {});
 }
 
+/* ═══════════════════════════════════════════
+   Article toolbar — Graph / Edit / Archive / Delete
+   ═══════════════════════════════════════════ */
+var artToolbarEl = document.getElementById('article-toolbar');
+var artEditorEl = document.getElementById('art-editor');
+var artEditorTa = document.getElementById('art-editor-ta');
+var artPathEl = document.getElementById('art-path');
+var artEditPathEl = document.getElementById('art-edit-path');
+var artFlashEl = document.getElementById('art-flash');
+
+function artFlash(msg, isErr) {
+  if (!artFlashEl) return;
+  artFlashEl.textContent = msg;
+  artFlashEl.style.color = isErr ? '#f87171' : '#34d399';
+  clearTimeout(artFlash._t);
+  artFlash._t = setTimeout(function() { if (artFlashEl) artFlashEl.textContent = ''; }, 4000);
+}
+function artShowToolbar(filename) {
+  if (!artToolbarEl) return;
+  if (artPathEl) artPathEl.textContent = filename || '';
+  if (artEditorEl) artEditorEl.style.display = 'none';
+  artToolbarEl.style.display = 'flex';
+}
+function artHideToolbar() {
+  if (artToolbarEl) artToolbarEl.style.display = 'none';
+  if (artEditorEl) artEditorEl.style.display = 'none';
+}
+function artOpenEditor() {
+  var path = state.currentFile;
+  if (!path) return;
+  var content = state.fileContents[path];
+  if (content == null) {
+    artFlash('Loading source…');
+    fetch(KB_BASE + encodeURIComponent(path))
+      .then(function(r) { if (!r.ok) throw new Error('Not found'); return r.text(); })
+      .then(function(md) { state.fileContents[path] = md; artOpenEditor(); })
+      .catch(function() { artFlash('Could not load ' + path + ' for editing', true); });
+    return;
+  }
+  if (artEditPathEl) artEditPathEl.textContent = path;
+  if (artEditorTa) { artEditorTa.value = content; artEditorTa.focus(); artEditorTa.scrollTop = 0; }
+  if (artEditorEl) artEditorEl.style.display = '';
+  if (artToolbarEl) artToolbarEl.style.display = 'flex';
+}
+function artCloseEditor() {
+  if (artEditorEl) artEditorEl.style.display = 'none';
+  if (artToolbarEl) artToolbarEl.style.display = 'flex';
+}
+function artSave() {
+  var path = state.currentFile;
+  if (!path || !artEditorTa) return;
+  var content = artEditorTa.value;
+  artFlash('Saving…');
+  fetch(KB_BASE + 'api/v2/file', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ path: path, content: content })
+  }).then(function(r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).then(function(d) {
+    if (d.error) throw new Error(d.error);
+    state.fileContents[path] = content;
+    buildSearchIndex(path, content);
+    artCloseEditor();
+    renderContent(path, content);
+    artFlash('Saved ' + path);
+  }).catch(function(e) {
+    artFlash('Save failed — ' + e.message + '. Static page? Edit the file on disk and rebuild.', true);
+  });
+}
+function artPostFile(endpoint, path) {
+  return fetch(KB_BASE + endpoint, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ path: path })
+  }).then(function(r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  });
+}
+function artStaticFallback(cmd, verb) {
+  var full = 'cd components/mykb && ' + cmd;
+  artFlash(verb + ' failed — no live daemon (command copied to clipboard)', true);
+  try { navigator.clipboard.writeText(full); } catch (e) {}
+  alert(verb + ' needs the live daemon.\nRun in the repo (copied to clipboard):\n\n' + full);
+}
+function artArchive() {
+  var path = state.currentFile;
+  if (!path) return;
+  if (!confirm('Archive "' + path + '" to raw/archive/stub-audit-<date>? It can be restored with git.')) return;
+  artFlash('Archiving…');
+  artPostFile('api/v2/file/archive', path).then(function(d) {
+    if (d.error) throw new Error(d.error);
+    if (d.ok === false) throw new Error(d.output || 'archive failed');
+    delete state.fileContents[path];
+    artFlash('Archived ' + path);
+    navigateHome();
+    loadFileList();
+  }).catch(function(e) {
+    artStaticFallback('git mv "' + path + '" "raw/archive/stub-audit-$(date +%F)/' + path + '"', 'Archive');
+  });
+}
+function artDelete() {
+  var path = state.currentFile;
+  if (!path) return;
+  if (!confirm('Delete "' + path + '"? This runs git rm \u2014 recoverable via git history.')) return;
+  artFlash('Deleting…');
+  artPostFile('api/v2/file/delete', path).then(function(d) {
+    if (d.error) throw new Error(d.error);
+    if (d.ok === false) throw new Error(d.output || 'delete failed');
+    delete state.fileContents[path];
+    artFlash('Deleted ' + path);
+    navigateHome();
+    loadFileList();
+  }).catch(function(e) {
+    artStaticFallback('git rm "' + path + '"', 'Delete');
+  });
+}
+var artGraphBtn = document.getElementById('art-graph');
+if (artGraphBtn) artGraphBtn.addEventListener('click', function() { switchContentView('graph'); });
+var artEditBtn = document.getElementById('art-edit');
+if (artEditBtn) artEditBtn.addEventListener('click', artOpenEditor);
+var artSaveBtn = document.getElementById('art-save');
+if (artSaveBtn) artSaveBtn.addEventListener('click', artSave);
+var artCancelBtn = document.getElementById('art-cancel');
+if (artCancelBtn) artCancelBtn.addEventListener('click', artCloseEditor);
+var artArchiveBtn = document.getElementById('art-archive');
+if (artArchiveBtn) artArchiveBtn.addEventListener('click', artArchive);
+var artDeleteBtn = document.getElementById('art-delete');
+if (artDeleteBtn) artDeleteBtn.addEventListener('click', artDelete);
+
+/* ── Sidebar Guidance promo + Guide sub-tabs ── */
+var guidePromoBtn = document.getElementById('guide-promo');
+if (guidePromoBtn) {
+  guidePromoBtn.addEventListener('click', function() {
+    activateStubs();
+    if (window.innerWidth < 820) closeSidebar();
+  });
+}
+document.querySelectorAll('.gt-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    var gt = tab.getAttribute('data-gt');
+    document.querySelectorAll('.gt-tab').forEach(function(t) { t.classList.toggle('active', t === tab); });
+    document.querySelectorAll('.gt-section').forEach(function(sec) {
+      sec.style.display = sec.getAttribute('data-gt') === gt ? '' : 'none';
+    });
+  });
+});
+
 loadFileList();
+
 applySidebarState();
 
 })();

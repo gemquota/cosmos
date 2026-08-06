@@ -75878,6 +75878,19 @@
   ]
  },
  {
+  "path": "wiki/syntheses/wiki-link-integrity-2026-08-06.md",
+  "type": "synthesis",
+  "title": "Wiki Link Integrity Repair \u2014 De-links, Malformed Wikilinks, Honest Audit",
+  "tags": [
+   "mykb",
+   "wiki-browser",
+   "links",
+   "link-check",
+   "curation",
+   "audit-tooling"
+  ]
+ },
+ {
   "path": "wiki/syntheses/wiki-link-resolution-and-junk-audit.md",
   "type": "synthesis",
   "title": "Wiki Link Resolution & Junk-Entity Audit",
