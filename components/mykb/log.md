@@ -5,6 +5,34 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-06 (RSIS3 pass 9 — spec link: SPACE artifacts feed L2 goals and the live Guide)
+- **Spec → goals**: `rsis/space_spec.py` maps the 67 exported spec artifacts to candidate L2 goals embedding `SPACE spec artifact <id>`; `run`/`drive --goal from-space` sources the goal from a spec artifact (`RSIS_SPACE_SPEC` override, default cosmos export).
+- **Guide live state**: `scan_guidance()` gained a `live` section (RSIS3 loop stack, per-loop telemetry starts, spec-backed L2 goal traces, recent syntheses) served by daemon + static `guidance.json`; Direction tab renders the new “Live loop & memory state” panel.
+- **Verification**: batch `run` cycle 3 used `--goal from-space`; telemetry holds an `l2_start` goal referencing `spec artifact abstraction_level` (series 1, Q1.1.1).
+- **Batch**: 5 cycles × L1–L9 = 40 executions, +5 net starts per loop, 0 errors. Telemetry now L1=26, L2=26, L3=24, L4=24, L5=28, L6=25, L7=23, L8=23, L9=22 (180 files / 602 events / 0 malformed).
+- **Verification**: 57 tests passed (4 new space_spec tests), `check-practices` all PASS, `contracts: OK (0 FAIL)`, wiki link check 5,417 files / 0 unresolved. Pass-9 meta docs + viewer updated (36 docs / 9 passes).
+- **Synthesis added**: `wiki/syntheses/rsis3-pass-9-2026-08-06.md`; syntheses index updated (60 pages).
+
+## 2026-08-06 (RSIS3 L3 cycle 10 — memory consolidation)
+- L3 cycle 10 wrote OKF synthesis `rsis3-l3-cycle-10-cross-session-memory-consolidation-2026-08-06.md` (1 insight(s), 1 strategy(ies), 94 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-06 (RSIS3 L3 cycle 9 — memory consolidation)
+- L3 cycle 9 wrote OKF synthesis `rsis3-l3-cycle-9-cross-session-memory-consolidation-2026-08-06.md` (1 insight(s), 1 strategy(ies), 94 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-06 (RSIS3 L3 cycle 8 — memory consolidation)
+- L3 cycle 8 wrote OKF synthesis `rsis3-l3-cycle-8-cross-session-memory-consolidation-2026-08-06.md` (1 insight(s), 1 strategy(ies), 94 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-06 (RSIS3 L3 cycle 7 — memory consolidation)
+- L3 cycle 7 wrote OKF synthesis `rsis3-l3-cycle-7-cross-session-memory-consolidation-2026-08-06.md` (1 insight(s), 1 strategy(ies), 94 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-06 (RSIS3 L3 cycle 6 — memory consolidation)
+- L3 cycle 6 wrote OKF synthesis `rsis3-l3-cycle-6-cross-session-memory-consolidation-2026-08-06.md` (1 insight(s), 1 strategy(ies), 94 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
 ## 2026-08-06 (RSIS3 pass 8 — MyKB memory link: loops read and write the wiki)
 - **Gateway**: `rsis/mykb_gateway.py` (stdlib-only) — `read_syntheses`/`search_syntheses` for loop context, `write_synthesis`/`append_log` for L3 self-consolidation; root from `RSIS_MYKB_PATH` else `<workspace>/../mykb`; writes failure-isolated.
 - **L3 self-writes**: each evolution cycle now writes an OKF synthesis (`rsis3-l3-cycle-{1..5}-cross-session-memory-consolidation-2026-08-06.md`) + a dated `log.md` entry + `l3_mykb_write` telemetry; cycle ordinals come from the durable synthesis count so separate invocations stay distinct.

@@ -295,6 +295,86 @@ def scan_wanted_links():
     return rows[:60]
 
 
+def scan_live_state():
+    """Cross-component live state for the Guide Direction tab (pass 9).
+
+    Pulls the RSIS3 loop stack (loops.json), per-loop telemetry starts +
+    SPACE-spec goal traces, and recent MyKB syntheses so the Guide renders
+    live loop + memory state instead of static lists only.
+    """
+    rsis3 = os.path.normpath(os.path.join(ROOT, '..', 'rsis3'))
+    live = {
+        'generated': datetime.now(timezone.utc).isoformat(timespec='seconds'),
+        'loops': [],
+        'telemetry': {'files': 0, 'events': 0, 'loops': {}, 'spec_traces': []},
+        'memory': {'syntheses': []},
+    }
+
+    # Loop stack snapshot (dashboard loops.json: L0-L9).
+    loops_data = _load_json(os.path.join(rsis3, 'dashboard', 'loops.json'))
+    if isinstance(loops_data, dict) and isinstance(loops_data.get('loops'), list):
+        for e in loops_data['loops']:
+            if not isinstance(e, dict) or not e.get('id'):
+                continue
+            live['loops'].append({
+                'id': e.get('id'), 'name': e.get('name'),
+                'status': e.get('status'), 'runs': e.get('runs', 0),
+                'last_run': e.get('last_run'),
+                'cycle': e.get('cycle', 0),
+            })
+
+    # Telemetry: per-loop starts + L2 goals that reference a SPACE spec artifact.
+    tel_dir = os.path.join(rsis3, '.rsis', 'telemetry')
+    if os.path.isdir(tel_dir):
+        files = sorted(glob.glob(os.path.join(tel_dir, '*.jsonl')))
+        live['telemetry']['files'] = len(files)
+        traces = []
+        for f in files:
+            for line in open(f, encoding='utf-8', errors='ignore'):
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    ev = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                live['telemetry']['events'] += 1
+                t = ev.get('type', '')
+                m = re.match(r'^l([1-9])_start$', t)
+                if m:
+                    key = 'L' + m.group(1)
+                    live['telemetry']['loops'][key] = (
+                        live['telemetry']['loops'].get(key, 0) + 1)
+                goal = ev.get('goal') or ''
+                if t == 'l2_start' and 'spec artifact' in goal:
+                    traces.append({
+                        'goal': goal[:160],
+                        'timestamp': ev.get('timestamp', ''),
+                    })
+        traces.sort(key=lambda r: r['timestamp'], reverse=True)
+        live['telemetry']['spec_traces'] = traces[:5]
+
+    # Memory: most recent MyKB syntheses (OKF frontmatter timestamps).
+    syn_dir = os.path.join(ROOT, 'wiki', 'syntheses')
+    if os.path.isdir(syn_dir):
+        entries = []
+        for f in sorted(glob.glob(os.path.join(syn_dir, '*.md'))):
+            name = os.path.basename(f)
+            if name == '00-index.md':
+                continue
+            fm = parse_fm(open(f, encoding='utf-8', errors='ignore').read())
+            entries.append({
+                'slug': name[:-3],
+                'title': fm.get('title') or name[:-3].replace('-', ' ').title(),
+                'tags': fm.get('tags') or [],
+                'timestamp': fm.get('timestamp', ''),
+            })
+        entries.sort(key=lambda e: e['timestamp'], reverse=True)
+        live['memory']['syntheses'] = entries[:5]
+
+    return live
+
+
 def scan_guidance():
     """Area coverage + focus ranking + persisted guidance queue.
 
@@ -343,6 +423,7 @@ def scan_guidance():
         ],
         'wanted_links': scan_wanted_links(),
         'queue': _load_json(GUIDANCE_QUEUE),
+        'live': scan_live_state(),
     }
 
 

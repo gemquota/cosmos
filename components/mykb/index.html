@@ -1220,6 +1220,21 @@ body {
 .gd-wanted { margin-top:10px; border-top:1px dashed var(--border); padding-top:8px; }
 .gd-wanted-h { font-size:12px; font-weight:700; margin-bottom:6px; color:var(--text); }
 .gd-wanted-h .fb-sub { display:block; font-weight:400; }
+.gd-live { margin-top:14px; border-top:1px dashed var(--border); padding-top:10px; }
+.gd-live-h { font-size:12px; font-weight:700; margin-bottom:8px; color:var(--text); }
+.gd-live-h .fb-sub { display:block; font-weight:400; }
+.gd-live-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(130px,1fr)); gap:6px; margin-bottom:10px; }
+.gd-live-cell { font-size:11px; border:1px solid var(--border); border-radius:8px; padding:5px 8px; background:var(--code-bg); }
+.gd-live-cell b { color:var(--accent); }
+.gd-live-cell .st { font-size:10px; color:var(--text-muted); }
+.gd-live-cols { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+@media (max-width:720px){ .gd-live-cols { grid-template-columns:1fr; } }
+.gd-live-h2 { font-size:11px; font-weight:700; color:var(--text); margin-bottom:6px; }
+.gd-live-list { font-size:11px; }
+.gd-live-list .row { padding:4px 0; border-bottom:1px dashed var(--border); }
+.gd-live-list .row:last-child { border-bottom:none; }
+.gd-live-list .goal { color:var(--text-soft); }
+.gd-live-list .meta { font-size:10px; color:var(--text-muted); }
 .gd-wl-row { display:flex; align-items:center; gap:8px; padding:3px 6px; border-radius:5px; font-size:12px; }
 .gd-wl-row:hover { background:var(--hover-bg); }
 .gd-wl-row .tgt { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; color:var(--accent); }
@@ -1463,6 +1478,14 @@ body {
         <div id="gd-wanted"></div>
       </div>
       <div id="gd-areas-wrap"><table id="gd-areas" class="gd-table"></table></div>
+      <div class="gd-live">
+        <div class="gd-live-h">&#9889; Live loop &amp; memory state <span class="fb-sub">RSIS3 loop stack, SPACE spec goal traces, and recent MyKB syntheses &mdash; cross-component state riding on the guidance payload.</span></div>
+        <div id="gd-live-loops" class="gd-live-grid"></div>
+        <div class="gd-live-cols">
+          <div><div class="gd-live-h2">&#127919; SPACE spec goal traces</div><div id="gd-live-traces" class="gd-live-list"></div></div>
+          <div><div class="gd-live-h2">&#129504; Recent syntheses</div><div id="gd-live-synths" class="gd-live-list"></div></div>
+        </div>
+      </div>
       </div>
     </div>
 
@@ -3937,6 +3960,7 @@ function loadGuidance() {
     GUID.focus = d.focus || [];
     GUID.wantedLinks = d.wanted_links || [];
     GUID.queue = d.queue || null;
+    GUID.live = d.live || null;
     var seeded = (d.queue && Array.isArray(d.queue.items) ? d.queue.items : []).map(gdNorm);
     GUID.items = draft || seeded;
     gdFillPaths();
@@ -3956,7 +3980,7 @@ function loadGuidance() {
         })
         .catch(function() {
           GUID.loaded = true; GUID.live = false;
-          GUID.total = null; GUID.areas = []; GUID.focus = []; GUID.wantedLinks = []; GUID.queue = null;
+          GUID.total = null; GUID.areas = []; GUID.focus = []; GUID.wantedLinks = []; GUID.queue = null; GUID.live = null;
           GUID.items = GUID.items.slice();
           gdFillPaths();
           gdRender();
@@ -3985,6 +4009,7 @@ function gdRender() {
     if (!(GUID.focus || []).length) foc.innerHTML = '<span style="font-size:12px;color:var(--text-muted)">no focus data</span>';
   }
   gdRenderWanted();
+  gdRenderLive();
   gdPopulateAreas();
   var tbl = document.getElementById('gd-areas');
   if (tbl) {
@@ -3998,6 +4023,61 @@ function gdRender() {
     tbl.innerHTML = html;
   }
   gdRenderList();
+}
+function gdRenderLive() {
+  var live = GUID.live || null;
+  var loopsEl = document.getElementById('gd-live-loops');
+  var tracesEl = document.getElementById('gd-live-traces');
+  var synthsEl = document.getElementById('gd-live-synths');
+  if (!live) {
+    if (loopsEl) loopsEl.innerHTML = '<div style="font-size:11px;color:var(--text-muted)">no live state in guidance payload</div>';
+    return;
+  }
+  if (loopsEl) {
+    loopsEl.innerHTML = '';
+    (live.loops || []).forEach(function(l) {
+      var cell = document.createElement('div');
+      cell.className = 'gd-live-cell';
+      var last = l.last_run ? l.last_run.replace('T', ' ').slice(5, 16) : 'never';
+      cell.innerHTML = '<b>' + srvEsc(l.id) + '</b> ' + srvEsc(l.name) +
+        '<div class="st">' + srvEsc(l.status) + ' &middot; ' + l.runs + ' runs &middot; ' + srvEsc(last) + '</div>';
+      loopsEl.appendChild(cell);
+    });
+    if (!(live.loops || []).length) loopsEl.innerHTML = '<div style="font-size:11px;color:var(--text-muted)">no loop stack</div>';
+  }
+  if (tracesEl) {
+    tracesEl.innerHTML = '';
+    var traces = live.telemetry && live.telemetry.spec_traces ? live.telemetry.spec_traces : [];
+    traces.forEach(function(t) {
+      var row = document.createElement('div');
+      row.className = 'row';
+      row.innerHTML = '<div class="goal">&#127919; ' + srvEsc(t.goal) + '</div>' +
+        '<div class="meta">' + srvEsc((t.timestamp || '').replace('T', ' ').slice(0, 19)) + ' UTC</div>';
+      tracesEl.appendChild(row);
+    });
+    if (!traces.length) tracesEl.innerHTML = '<div class="row" style="color:var(--text-muted)">no spec-backed L2 goals yet &mdash; run <code>rsis run --goal from-space</code></div>';
+  }
+  if (synthsEl) {
+    synthsEl.innerHTML = '';
+    var synths = live.memory && live.memory.syntheses ? live.memory.syntheses : [];
+    synths.forEach(function(s) {
+      var row = document.createElement('div');
+      row.className = 'row';
+      var a = document.createElement('a');
+      a.href = 'wiki/syntheses/' + s.slug + '.md';
+      a.textContent = s.title;
+      a.style.color = 'var(--accent)';
+      row.appendChild(a);
+      if (s.timestamp) {
+        var meta = document.createElement('div');
+        meta.className = 'meta';
+        meta.textContent = (s.timestamp || '').replace('T', ' ').slice(0, 16) + ' UTC';
+        row.appendChild(meta);
+      }
+      synthsEl.appendChild(row);
+    });
+    if (!synths.length) synthsEl.innerHTML = '<div class="row" style="color:var(--text-muted)">no syntheses</div>';
+  }
 }
 function gdRenderWanted() {
   var el = document.getElementById('gd-wanted');

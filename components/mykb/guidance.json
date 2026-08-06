@@ -1,7 +1,7 @@
 {
- "built": "2026-08-06T11:46:28+00:00",
+ "built": "2026-08-06T19:45:01+00:00",
  "total": {
-  "pages": 5276,
+  "pages": 5293,
   "stubs": 1494,
   "stub_pct": 28
  },
@@ -148,10 +148,10 @@
   },
   {
    "area": "syntheses",
-   "pages": 56,
+   "pages": 73,
    "stubs": 17,
-   "stub_pct": 30,
-   "avg_words": 305
+   "stub_pct": 23,
+   "avg_words": 281
   },
   {
    "area": "decisions",
@@ -395,5 +395,182 @@
   }
  ],
  "wanted_links": [],
- "queue": null
+ "queue": null,
+ "live": {
+  "generated": "2026-08-06T19:45:02+00:00",
+  "loops": [
+   {
+    "id": "L0",
+    "name": "Substrate",
+    "status": "n/a",
+    "runs": 0,
+    "last_run": null,
+    "cycle": 0
+   },
+   {
+    "id": "L1",
+    "name": "Execution",
+    "status": "implemented",
+    "runs": 21,
+    "last_run": "2026-08-06T19:09:46.521144+00:00",
+    "cycle": 0
+   },
+   {
+    "id": "L2",
+    "name": "Improvement",
+    "status": "implemented",
+    "runs": 21,
+    "last_run": "2026-08-06T19:09:46.507283+00:00",
+    "cycle": 0
+   },
+   {
+    "id": "L3",
+    "name": "Evolution",
+    "status": "implemented",
+    "runs": 19,
+    "last_run": "2026-08-06T19:10:40.549760+00:00",
+    "cycle": 0
+   },
+   {
+    "id": "L4",
+    "name": "Optimizer",
+    "status": "implemented",
+    "runs": 19,
+    "last_run": "2026-08-06T19:11:33.938506+00:00",
+    "cycle": 7
+   },
+   {
+    "id": "L5",
+    "name": "Evolution",
+    "status": "implemented",
+    "runs": 23,
+    "last_run": "2026-08-06T19:12:27.573905+00:00",
+    "cycle": 0
+   },
+   {
+    "id": "L6",
+    "name": "Identity",
+    "status": "implemented",
+    "runs": 20,
+    "last_run": "2026-08-06T19:13:21.301841+00:00",
+    "cycle": 8
+   },
+   {
+    "id": "L7",
+    "name": "Meta-Cog",
+    "status": "implemented",
+    "runs": 18,
+    "last_run": "2026-08-06T19:14:14.852573+00:00",
+    "cycle": 13
+   },
+   {
+    "id": "L8",
+    "name": "Meta-Meta",
+    "status": "implemented",
+    "runs": 18,
+    "last_run": "2026-08-06T19:15:08.706378+00:00",
+    "cycle": 10
+   },
+   {
+    "id": "L9",
+    "name": "MMM",
+    "status": "implemented",
+    "runs": 17,
+    "last_run": "2026-08-06T19:16:02.466126+00:00",
+    "cycle": 12
+   }
+  ],
+  "telemetry": {
+   "files": 180,
+   "events": 602,
+   "loops": {
+    "L4": 24,
+    "L7": 23,
+    "L8": 23,
+    "L5": 28,
+    "L2": 26,
+    "L1": 26,
+    "L9": 22,
+    "L6": 25,
+    "L3": 24
+   },
+   "spec_traces": [
+    {
+     "goal": "Implement the abstraction_level spec artifact: Mixed — conceptual frameworks illustrated with examples (SPACE spec artifact abstraction_level, series 1, questio",
+     "timestamp": "2026-08-06T19:36:00.255497+00:00"
+    }
+   ]
+  },
+  "memory": {
+   "syntheses": [
+    {
+     "slug": "rsis3-pass-9-2026-08-06",
+     "title": "RSIS3 Pass 9 — spec link: SPACE artifacts feed L2 goals and the live Guide",
+     "tags": [
+      "rsis3",
+      "passes",
+      "space",
+      "spec",
+      "l2",
+      "guidance",
+      "guide",
+      "ideation",
+      "okf"
+     ],
+     "timestamp": "2026-08-06T19:50:00Z"
+    },
+    {
+     "slug": "rsis3-pass-8-2026-08-06",
+     "title": "RSIS3 Pass 8 — MyKB memory link: loops read and write the wiki",
+     "tags": [
+      "rsis3",
+      "passes",
+      "mykb",
+      "memory",
+      "l3",
+      "consolidation",
+      "gateway",
+      "okf"
+     ],
+     "timestamp": "2026-08-06T19:40:00Z"
+    },
+    {
+     "slug": "rsis3-l3-cycle-10-cross-session-memory-consolidation-2026-08-06",
+     "title": "RSIS3 L3 cycle 10 — cross-session memory consolidation",
+     "tags": [
+      "rsis3",
+      "l3",
+      "memory",
+      "consolidation",
+      "mykb"
+     ],
+     "timestamp": "2026-08-06T19:37:23Z"
+    },
+    {
+     "slug": "rsis3-l3-cycle-9-cross-session-memory-consolidation-2026-08-06",
+     "title": "RSIS3 L3 cycle 9 — cross-session memory consolidation",
+     "tags": [
+      "rsis3",
+      "l3",
+      "memory",
+      "consolidation",
+      "mykb"
+     ],
+     "timestamp": "2026-08-06T19:37:11Z"
+    },
+    {
+     "slug": "rsis3-l3-cycle-8-cross-session-memory-consolidation-2026-08-06",
+     "title": "RSIS3 L3 cycle 8 — cross-session memory consolidation",
+     "tags": [
+      "rsis3",
+      "l3",
+      "memory",
+      "consolidation",
+      "mykb"
+     ],
+     "timestamp": "2026-08-06T19:37:00Z"
+    }
+   ]
+  }
+ }
 }

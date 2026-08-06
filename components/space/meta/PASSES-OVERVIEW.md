@@ -1,7 +1,7 @@
 # SPACE — Passes Overview
 
-**Updated:** Pass 008 (2026-08-06)
-**Total Documents:** 32 pass docs across 8 passes
+**Updated:** Pass 009 (2026-08-06)
+**Total Documents:** 36 pass docs across 9 passes
 
 ---
 
@@ -17,6 +17,7 @@
 | 006 | RSIS3 Loop Batch (executed) | Full L1–L9 batch, 40 executions, +5/loop, disk-override env + logger fix | — | ✅ Complete |
 | 007 | Data Contracts & Validation | 6 documented shapes, stdlib validator wired into `--check` + `check-practices` | — | ✅ Complete |
 | 008 | Memory Link (loops ↔ MyKB) | MyKB gateway: L3 self-writes syntheses + `log.md`, `--goal from-mykb`, +5/loop batch | — | ✅ Complete |
+| 009 | Spec Link (loops ↔ SPACE, live Guide) | `--goal from-space` maps spec artifacts to L2 goals; Guide Direction tab renders live loop+memory state | — | ✅ Complete |
 
 
 ---
@@ -111,5 +112,5 @@ docs (CHANGELOG + README hosting section).
 | 150+ tests across 14 suites | ✅ | Pass 004 |
 ---
 
-> Passes 006–008 are RSIS3 loop passes recorded in this ledger (tests column n/a);
+> Passes 006–009 are RSIS3 loop passes recorded in this ledger (tests column n/a);
 > pass 006 was executed and pushed before the integration arc and is backfilled here.
