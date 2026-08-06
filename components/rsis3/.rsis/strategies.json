@@ -1,5 +1,5 @@
 {
-  "generation": 6,
+  "generation": 12,
   "population": [
     {
       "id": "strategy-budget-1",
@@ -8,8 +8,8 @@
         "budget_factor": 1.0,
         "focus": "general"
       },
-      "fitness": 0.272625,
-      "evals": 6
+      "fitness": 0.43257142857142855,
+      "evals": 12
     },
     {
       "id": "strategy-seed-1",
@@ -18,31 +18,11 @@
         "budget_factor": 1.0,
         "focus": "general"
       },
-      "fitness": 0.272625,
-      "evals": 6
+      "fitness": 0.43257142857142855,
+      "evals": 12
     },
     {
-      "id": "strategy-seed-2",
-      "params": {
-        "l2_attempts": 5,
-        "budget_factor": 1.0,
-        "focus": "general"
-      },
-      "fitness": 0.272625,
-      "evals": 6
-    },
-    {
-      "id": "strategy-seed-3",
-      "params": {
-        "l2_attempts": 5,
-        "budget_factor": 1.0,
-        "focus": "general"
-      },
-      "fitness": 0.272625,
-      "evals": 6
-    },
-    {
-      "id": "strategy-g6-cross-252",
+      "id": "strategy-g12-cross-250",
       "params": {
         "l2_attempts": 5,
         "budget_factor": 1.0,
@@ -50,32 +30,10 @@
       },
       "fitness": 0.0,
       "evals": 0,
-      "lineage": "strategy-seed-3xstrategy-budget-1"
+      "lineage": "strategy-budget-1xstrategy-seed-1"
     },
     {
-      "id": "strategy-g6-cross-919",
-      "params": {
-        "l2_attempts": 5,
-        "budget_factor": 1.0,
-        "focus": "general"
-      },
-      "fitness": 0.0,
-      "evals": 0,
-      "lineage": "strategy-seed-2xstrategy-seed-3"
-    },
-    {
-      "id": "strategy-g6-cross-141",
-      "params": {
-        "l2_attempts": 5,
-        "budget_factor": 1.0,
-        "focus": "general"
-      },
-      "fitness": 0.0,
-      "evals": 0,
-      "lineage": "strategy-seed-3xstrategy-seed-1"
-    },
-    {
-      "id": "strategy-g6-3-163",
+      "id": "strategy-g12-1-89",
       "params": {
         "l2_attempts": 4,
         "budget_factor": 1.0,
@@ -83,7 +41,7 @@
       },
       "fitness": 0.0,
       "evals": 0,
-      "lineage": "strategy-seed-3"
+      "lineage": "strategy-budget-1"
     }
   ],
   "history": [
@@ -132,6 +90,54 @@
       "avg_fitness": 0.1772,
       "best_fitness": 0.2726,
       "population": 8,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 7,
+      "avg_fitness": 0.2812,
+      "best_fitness": 0.4326,
+      "population": 8,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 8,
+      "avg_fitness": 0.2951,
+      "best_fitness": 0.454,
+      "population": 6,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 9,
+      "avg_fitness": 0.3059,
+      "best_fitness": 0.4707,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 10,
+      "avg_fitness": 0.3146,
+      "best_fitness": 0.484,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 11,
+      "avg_fitness": 0.2951,
+      "best_fitness": 0.454,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 12,
+      "avg_fitness": 0.2812,
+      "best_fitness": 0.4326,
+      "population": 4,
       "accepted": true,
       "signal": "evolve"
     }

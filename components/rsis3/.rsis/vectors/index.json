@@ -71,6 +71,114 @@
         },
         "goal": "optimize imports"
       }
+    },
+    {
+      "id": 4,
+      "text": "applied: Stub improvement: add a defensive guard in rsis/config.py",
+      "metadata": {
+        "node_id": "improvement-7",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "add a defensive guard in rsis/config.py"
+      }
+    },
+    {
+      "id": 5,
+      "text": "applied: Stub improvement: Add a defensive guard against an empty goals list ",
+      "metadata": {
+        "node_id": "improvement-8",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Add a defensive guard against an empty goals list in rsis/run.py"
+      }
+    },
+    {
+      "id": 6,
+      "text": "applied: Stub improvement: Add a docstring to the timeout module in rsis/time",
+      "metadata": {
+        "node_id": "improvement-9",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Add a docstring to the timeout module in rsis/timeout.py"
+      }
+    },
+    {
+      "id": 7,
+      "text": "applied: Stub improvement: Clarify error handling in rsis/resource_monitor.py",
+      "metadata": {
+        "node_id": "improvement-10",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Clarify error handling in rsis/resource_monitor.py when disk usage cannot be read"
+      }
+    },
+    {
+      "id": 8,
+      "text": "applied: Stub improvement: Add a defensive guard for None result in rsis/eval",
+      "metadata": {
+        "node_id": "improvement-11",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Add a defensive guard for None result in rsis/evaluator.py"
+      }
+    },
+    {
+      "id": 9,
+      "text": "applied: Stub improvement: Add a docstring to the recovery module in rsis/rec",
+      "metadata": {
+        "node_id": "improvement-13",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Add a docstring to the recovery module in rsis/recovery.py"
+      }
     }
   ]
 }

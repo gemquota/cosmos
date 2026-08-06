@@ -81,10 +81,10 @@
       "attrs": {
         "type": "insight",
         "description": "Session session-: 1/1 evaluations passed",
-        "session_id": "session-2026-06-30T23:39:20",
+        "session_id": "session-2026-08-06T16:31:55",
         "success_rate": 1.0,
-        "event_count": 6,
-        "timestamp": "2026-06-30T23:39:20.149842+00:00"
+        "event_count": 14,
+        "timestamp": "2026-08-06T16:31:55.920632+00:00"
       }
     },
     {
@@ -108,9 +108,191 @@
           "improvement-3"
         ]
       }
+    },
+    {
+      "id": "improvement-7",
+      "attrs": {
+        "type": "improvement",
+        "description": "Stub improvement: add a defensive guard in rsis/config.py",
+        "target_files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "add a defensive guard in rsis/config.py"
+      }
+    },
+    {
+      "id": "improvement-8",
+      "attrs": {
+        "type": "improvement",
+        "description": "Stub improvement: Add a defensive guard against an empty goals list ",
+        "target_files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "Add a defensive guard against an empty goals list in rsis/run.py"
+      }
+    },
+    {
+      "id": "improvement-9",
+      "attrs": {
+        "type": "improvement",
+        "description": "Stub improvement: Add a docstring to the timeout module in rsis/time",
+        "target_files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "Add a docstring to the timeout module in rsis/timeout.py"
+      }
+    },
+    {
+      "id": "improvement-10",
+      "attrs": {
+        "type": "improvement",
+        "description": "Stub improvement: Clarify error handling in rsis/resource_monitor.py",
+        "target_files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "Clarify error handling in rsis/resource_monitor.py when disk usage cannot be read"
+      }
+    },
+    {
+      "id": "improvement-11",
+      "attrs": {
+        "type": "improvement",
+        "description": "Stub improvement: Add a defensive guard for None result in rsis/eval",
+        "target_files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "Add a defensive guard for None result in rsis/evaluator.py"
+      }
+    },
+    {
+      "id": "redundancy-1-1",
+      "attrs": {
+        "type": "insight",
+        "description": "Redundant patterns in stub.py (Stub improvement: add a defensive guard in rsis/config.py, Stub improvement: Add a defensive guard for None result in rsis/eval)",
+        "file": "stub.py",
+        "similarity": 0.58,
+        "improvement_ids": [
+          "improvement-7",
+          "improvement-11"
+        ]
+      }
+    },
+    {
+      "id": "improvement-13",
+      "attrs": {
+        "type": "improvement",
+        "description": "Stub improvement: Add a docstring to the recovery module in rsis/rec",
+        "target_files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "Add a docstring to the recovery module in rsis/recovery.py"
+      }
+    },
+    {
+      "id": "redundancy-1-2",
+      "attrs": {
+        "type": "insight",
+        "description": "Redundant patterns in stub.py (Stub improvement: Add a docstring to the timeout module in rsis/time, Stub improvement: Add a docstring to the recovery module in rsis/rec)",
+        "file": "stub.py",
+        "similarity": 0.69,
+        "improvement_ids": [
+          "improvement-9",
+          "improvement-13"
+        ]
+      }
     }
   ],
   "edges": [
+    {
+      "source": "strategy-budget-1",
+      "target": "strategy-budget-1",
+      "key": 0,
+      "rel": "evolves_from",
+      "attrs": {}
+    },
+    {
+      "source": "strategy-budget-1",
+      "target": "strategy-budget-1",
+      "key": 1,
+      "rel": "evolves_from",
+      "attrs": {}
+    },
+    {
+      "source": "strategy-budget-1",
+      "target": "strategy-budget-1",
+      "key": 2,
+      "rel": "evolves_from",
+      "attrs": {}
+    },
+    {
+      "source": "strategy-budget-1",
+      "target": "strategy-budget-1",
+      "key": 3,
+      "rel": "evolves_from",
+      "attrs": {}
+    },
+    {
+      "source": "strategy-budget-1",
+      "target": "strategy-budget-1",
+      "key": 4,
+      "rel": "evolves_from",
+      "attrs": {}
+    },
+    {
+      "source": "strategy-budget-1",
+      "target": "strategy-budget-1",
+      "key": 5,
+      "rel": "evolves_from",
+      "attrs": {}
+    },
     {
       "source": "redundancy-1-0",
       "target": "improvement-0",
@@ -120,7 +302,133 @@
     },
     {
       "source": "redundancy-1-0",
+      "target": "improvement-0",
+      "key": 1,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-0",
+      "key": 2,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-0",
+      "key": 3,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-0",
+      "key": 4,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-0",
+      "key": 5,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-0",
+      "key": 6,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
       "target": "improvement-3",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-3",
+      "key": 1,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-3",
+      "key": 2,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-3",
+      "key": 3,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-3",
+      "key": 4,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-3",
+      "key": 5,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-0",
+      "target": "improvement-3",
+      "key": 6,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
+      "target": "improvement-7",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
+      "target": "improvement-7",
+      "key": 1,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
+      "target": "improvement-11",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-1",
+      "target": "improvement-11",
+      "key": 1,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-2",
+      "target": "improvement-9",
+      "key": 0,
+      "rel": "flags_as_redundant",
+      "attrs": {}
+    },
+    {
+      "source": "redundancy-1-2",
+      "target": "improvement-13",
       "key": 0,
       "rel": "flags_as_redundant",
       "attrs": {}

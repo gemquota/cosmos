@@ -349,6 +349,8 @@ def load_config() -> RSISConfig:
     # Environment overrides
     if "RSIS_WORKSPACE" in os.environ:
         cfg.workspace_dir = os.environ["RSIS_WORKSPACE"]
+    if "RSIS_DISK_USAGE_PCT" in os.environ:
+        cfg.resources.disk_usage_pct = float(os.environ["RSIS_DISK_USAGE_PCT"])
     if "RSIS_LOG_LEVEL" in os.environ:
         cfg.log_level = os.environ["RSIS_LOG_LEVEL"]
     if "RSIS_EVALUATOR_MODEL" in os.environ:

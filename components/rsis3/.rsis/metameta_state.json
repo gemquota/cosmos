@@ -1,7 +1,7 @@
 {
   "params": {
-    "l5.mutation_rate": 0.2,
-    "l5.population_size": 6
+    "l5.mutation_rate": 0.25,
+    "l5.population_size": 4
   },
   "history": [
     {
@@ -11,7 +11,23 @@
       },
       "accepted": true,
       "signal": "shrink_population"
+    },
+    {
+      "cycle": 2,
+      "deltas": {
+        "l5.population_size": -2
+      },
+      "accepted": true,
+      "signal": "shrink_population"
+    },
+    {
+      "cycle": 3,
+      "deltas": {
+        "l5.mutation_rate": 0.05
+      },
+      "accepted": true,
+      "signal": "raise_mutation"
     }
   ],
-  "cycle": 1
+  "cycle": 3
 }
