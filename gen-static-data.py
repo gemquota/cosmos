@@ -222,24 +222,21 @@ print(f'loops.json: {len(loops_out)} loops (runs: '
 
 # Validation mode for CI/deploy: exit non-zero if the snapshot is inconsistent.
 if '--check' in sys.argv:
+    # Ecosystem data contracts (contracts/README.md) — shape + field rules.
+    from contracts import validate as contracts
+    _, contract_fail, _ = contracts.run_checks()
+    # Snapshot freshness: committed files.json matches the current git-tracked
+    # markdown list, and ecosystem counts match what this script would emit.
     on_disk = json.load(open('components/mykb/files.json'))
     on_disk_paths = ([e.get('path', '') for e in on_disk]
                      if on_disk and isinstance(on_disk[0], dict) else on_disk)
     bad = [p for p in on_disk_paths
            if p.startswith('components/') or not os.path.exists('components/mykb/' + p)]
-    ok = on_disk_paths == md and not bad
+    fresh = on_disk_paths == md and not bad
     eco2 = json.load(open(f'{RSIS3}/dashboard/ecosystem.json'))
-    ok = ok and eco2['components']['mykb']['md'] == len(md) and eco2['components']['mykb']['files'] == count('components/mykb')
-    # loops.json: all ten ids present with required keys and consistent statuses
-    try:
-        loops2 = json.load(open(f'{RSIS3}/dashboard/loops.json'))
-        ids = {e['id'] for e in loops2['loops']}
-        required = {'L0', 'L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'L7', 'L8', 'L9'}
-        ok = ok and ids == required and all(
-            all(k in e for k in ('name', 'status', 'target', 'runs', 'params'))
-            for e in loops2['loops']
-        )
-    except Exception:
-        ok = False
-    print('check:', 'OK' if ok else 'FAIL', f'({len(md)} entries, {len(bad)} bad)')
+    fresh = fresh and eco2['components']['mykb']['md'] == len(md) \
+        and eco2['components']['mykb']['files'] == count('components/mykb')
+    ok = fresh and contract_fail == 0
+    print('check:', 'OK' if ok else 'FAIL',
+          f'({len(md)} entries, {len(bad)} bad, {contract_fail} contract FAIL)')
     sys.exit(0 if ok else 1)
