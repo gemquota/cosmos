@@ -1,14 +1,14 @@
-# SPACE — Cycle 005 Improvement Roadmap
+# SPACE — Pass 005 Improvement Roadmap
 
 **Date:** 2026-08-06
-**Based on:** `meta/CYCLE-005-AUDIT.md`
+**Based on:** `meta/PASS-005-AUDIT.md`
 **Status:** In progress
 
 ---
 
 ## Overview
 
-Cycle 005 (Pass 005) hardens the hosting layer that carries SPACE in the
+Pass 005 hardens the hosting layer that carries SPACE in the
 Cosmos dashboard: test the web server, fix its dead code, populate the
 static fallback, retarget sentry watches, pay down lint/format debt, and
 sync versioning/docs with the hosted reality.

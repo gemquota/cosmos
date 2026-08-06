@@ -1,4 +1,4 @@
-# SPACE — Cycle 001 Completion Report
+# SPACE — Pass 001 Completion Report
 
 **Date:** 2026-07-25
 **Status:** ✅ Complete
@@ -7,7 +7,7 @@
 
 ## Executive Summary
 
-Cycle 001 completed the foundational audit of the `prompt-framework` codebase. This was the discovery and analysis phase that mapped the entire 326-probe elicitation methodology, assessed the technology stack, identified architectural risks, and produced the improvement roadmap for all subsequent cycles.
+Pass 001 completed the foundational audit of the `prompt-framework` codebase. This was the discovery and analysis phase that mapped the entire 326-probe elicitation methodology, assessed the technology stack, identified architectural risks, and produced the improvement roadmap for all subsequent passes.
 
 ## What Was Done
 
@@ -30,10 +30,10 @@ Cycle 001 completed the foundational audit of the `prompt-framework` codebase. T
 
 ## Artifacts Produced
 
-- `CYCLE-001-AUDIT.md` — Full audit report
-- `CYCLE-001-ROADMAP.md` — Improvement roadmap
-- `CYCLE-001-REVIEW.md` — Cycle completion review
+- `PASS-001-AUDIT.md` — Full audit report
+- `PASS-001-ROADMAP.md` — Improvement roadmap
+- `PASS-001-REVIEW.md` — Pass completion review
 
 ## Next Steps
 
-Cycle 002 began implementation of all 10 improvement items across 7 development phases.
+Pass 002 began implementation of all 10 improvement items across 7 development phases.

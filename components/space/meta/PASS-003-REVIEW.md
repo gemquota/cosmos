@@ -1,4 +1,4 @@
-# SPACE — RSI Cycle-003 Completion & Review
+# SPACE — RSI Pass-003 Completion & Review
 
 **Project:** Superb Prompt Automatic Creation Engine (SPACE)
 **Completed:** 2026-07-29
@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-RSI Cycle 003 completed all 10 targeted improvements identified in the cycle-003 audit. The focus was on **wiring existing but disconnected components** into the engine, CLI, and export pipeline — and building the **localization/i18n infrastructure** from scratch.
+RSI Pass 003 completed all 10 targeted improvements identified in the pass-003 audit. The focus was on **wiring existing but disconnected components** into the engine, CLI, and export pipeline — and building the **localization/i18n infrastructure** from scratch.
 
 ### What Changed
 
@@ -139,7 +139,7 @@ RSI Cycle 003 completed all 10 targeted improvements identified in the cycle-003
 
 ---
 
-## Remaining Items (Post Cycle-003)
+## Remaining Items (Post Pass-003)
 
 | Item | Priority | Notes |
 |------|:--------:|-------|
@@ -151,9 +151,9 @@ RSI Cycle 003 completed all 10 targeted improvements identified in the cycle-003
 | CLI `space git` command | Low | Git integration needs CLI surface |
 | ESLint + Prettier config | Low | No code formatting standards |
 | Code coverage reporting | Low | No coverage thresholds |
-| ADRs for cycle-003 decisions | Medium | 5 new decisions to document |
+| ADRs for pass-003 decisions | Medium | 5 new decisions to document |
 | npm publish to registry | Low | Package ready but not published |
 
 ---
 
-*Generated: 2026-07-29 | SPACE v2.1.0 — RSI Cycle 003 Complete*
+*Generated: 2026-07-29 | SPACE v2.1.0 — RSI Pass 003 Complete*

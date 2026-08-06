@@ -1,6 +1,6 @@
 # SPACE Project Status
 
-**Updated:** Cycle 005 (2026-08-06)
+**Updated:** Pass 005 (2026-08-06)
 **TypeScript:** Strict | **Tests:** 157 passing (15 suites) | **Lint:** 0 errors, 24 warnings | **Format:** Prettier
 
 ---
@@ -19,39 +19,39 @@
 
 ---
 
-## Cycle Docs
+## Pass Docs
 
-| Cycle | Audit | Roadmap | Review | Completion |
+| Pass | Audit | Roadmap | Review | Completion |
 |:-----:|:-----:|:-------:|:------:|:----------:|
-| 001 | ✅ `CYCLE-001-AUDIT.md` | ✅ `CYCLE-001-ROADMAP.md` | ✅ `CYCLE-001-REVIEW.md` | ✅ `CYCLE-001-COMPLETION.md` |
-| 002 | ✅ `CYCLE-002-AUDIT.md` | ✅ `CYCLE-002-ROADMAP.md` | ✅ `CYCLE-002-REVIEW.md` | ✅ `CYCLE-002-COMPLETION.md` |
-| 003 | ✅ `CYCLE-003-AUDIT.md` | ✅ `CYCLE-003-ROADMAP.md` | ✅ `CYCLE-003-REVIEW.md` | ✅ `CYCLE-003-COMPLETION.md` |
-| 004 | ✅ `CYCLE-004-AUDIT.md` | ✅ `CYCLE-004-ROADMAP.md` | ✅ `CYCLE-004-REVIEW.md` | ✅ `CYCLE-004-COMPLETION.md` |
-| 005 | ✅ `CYCLE-005-AUDIT.md` | ✅ `CYCLE-005-ROADMAP.md` | ✅ `CYCLE-005-REVIEW.md` | ✅ `CYCLE-005-COMPLETION.md` |
+| 001 | ✅ `PASS-001-AUDIT.md` | ✅ `PASS-001-ROADMAP.md` | ✅ `PASS-001-REVIEW.md` | ✅ `PASS-001-COMPLETION.md` |
+| 002 | ✅ `PASS-002-AUDIT.md` | ✅ `PASS-002-ROADMAP.md` | ✅ `PASS-002-REVIEW.md` | ✅ `PASS-002-COMPLETION.md` |
+| 003 | ✅ `PASS-003-AUDIT.md` | ✅ `PASS-003-ROADMAP.md` | ✅ `PASS-003-REVIEW.md` | ✅ `PASS-003-COMPLETION.md` |
+| 004 | ✅ `PASS-004-AUDIT.md` | ✅ `PASS-004-ROADMAP.md` | ✅ `PASS-004-REVIEW.md` | ✅ `PASS-004-COMPLETION.md` |
+| 005 | ✅ `PASS-005-AUDIT.md` | ✅ `PASS-005-ROADMAP.md` | ✅ `PASS-005-REVIEW.md` | ✅ `PASS-005-COMPLETION.md` |
 
 ---
 
-## Cycle History
+## Pass History
 
-### Cycle 001 — Initial Audit
+### Pass 001 — Initial Audit
 - **Scope:** Prompt framework codebase analysis
 - **Outcome:** Comprehensive audit of the original prompt-framework implementation
-- **Docs:** `CYCLE-001-AUDIT.md`, `CYCLE-001-ROADMAP.md`, `CYCLE-001-REVIEW.md`, `CYCLE-001-COMPLETION.md`
+- **Docs:** `PASS-001-AUDIT.md`, `PASS-001-ROADMAP.md`, `PASS-001-REVIEW.md`, `PASS-001-COMPLETION.md`
 
-### Cycle 002 — Full Implementation
+### Pass 002 — Full Implementation
 - **Scope:** Complete 7-phase improvement roadmap execution
 - **Outcome:** Full specification engine with CLI, 6 LLM providers, 6 export formats, storage, intelligence
-- **Docs:** `CYCLE-002-AUDIT.md`, `CYCLE-002-ROADMAP.md`, `CYCLE-002-REVIEW.md`, `CYCLE-002-COMPLETION.md`
+- **Docs:** `PASS-002-AUDIT.md`, `PASS-002-ROADMAP.md`, `PASS-002-REVIEW.md`, `PASS-002-COMPLETION.md`
 
-### Cycle 003 — Integration & i18n
+### Pass 003 — Integration & i18n
 - **Scope:** 10 wiring improvements, i18n infrastructure, adaptive router, session resume
 - **Outcome:** 142 tests, 8 CLI commands, 3 locales, staleness detection, git auto-commit
-- **Docs:** `CYCLE-003-AUDIT.md`, `CYCLE-003-ROADMAP.md`, `CYCLE-003-REVIEW.md`, `CYCLE-003-COMPLETION.md`
+- **Docs:** `PASS-003-AUDIT.md`, `PASS-003-ROADMAP.md`, `PASS-003-REVIEW.md`, `PASS-003-COMPLETION.md`
 
-### Cycle 004 — Production Readiness
+### Pass 004 — Production Readiness
 - **Scope:** ESLint, Prettier, README, npm rename, CI/CD, CLI tests, Sentry heartbeat
 - **Outcome:** 150 tests, 0 lint errors, strict TypeScript, `@gemquota/space`
-- **Docs:** `CYCLE-004-AUDIT.md`, `CYCLE-004-ROADMAP.md`, `CYCLE-004-REVIEW.md`, `CYCLE-004-COMPLETION.md`
+- **Docs:** `PASS-004-AUDIT.md`, `PASS-004-ROADMAP.md`, `PASS-004-REVIEW.md`, `PASS-004-COMPLETION.md`
 
 ---
 

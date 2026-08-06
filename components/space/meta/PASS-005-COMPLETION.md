@@ -1,4 +1,4 @@
-# SPACE — Cycle 005 Completion Report
+# SPACE — Pass 005 Completion Report
 
 **Date:** 2026-08-06
 **Status:** ✅ Complete
@@ -7,7 +7,7 @@
 
 ## Executive Summary
 
-Cycle 005 completed the hosting-layer hardening: a testable web server with
+Pass 005 completed the hosting-layer hardening: a testable web server with
 7 new tests (157 total), a populated static fallback, cosmos-local sentry
 watch paths, lint warnings cut from 74 to 24, and v2.2.0 documentation of
 the hosted architecture.
@@ -21,7 +21,7 @@ the hosted architecture.
 | Static fallback | Web | `scripts/sync-static-data.mjs` + populated `projects.json` |
 | Watch paths | Infra | mykb Dashboard/Graph → cosmos `components/mykb` |
 | Lint debt | Quality | 74 → 24 warnings; Prettier clean |
-| Versioning | Docs | v2.2.0, CHANGELOG Cycle 005, README hosting section |
+| Versioning | Docs | v2.2.0, CHANGELOG Pass 005, README hosting section |
 
 ## Test Results
 
@@ -35,7 +35,7 @@ the hosted architecture.
 
 ## Key Metrics
 
-| Metric | Cycle 004 | Cycle 005 |
+| Metric | Pass 004 | Pass 005 |
 |--------|:---------:|:---------:|
 | Tests passing | 150 | 157 |
 | Test files | 14 | 15 |
@@ -49,8 +49,8 @@ the hosted architecture.
 - **Live services**: `web/server.mjs` on 8888, `serve-meta.mjs` on 8899,
   dashboard embed verified via CORS preflight.
 - **Sentry**: `watches.json` entries for SPACE Web UI + Meta Viewer already
-  cosmos-hosted; mykb entries retargeted this cycle.
+  cosmos-hosted; mykb entries retargeted this pass.
 
 ---
 
-*Generated: 2026-08-06 | @gemquota/space v2.2.0 — RSI Cycle 005 Complete*
+*Generated: 2026-08-06 | @gemquota/space v2.2.0 — RSI Pass 005 Complete*

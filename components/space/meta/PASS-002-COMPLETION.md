@@ -231,9 +231,9 @@ Test Files  10 passed (10)
 - `scripts/consolidate-spec.mjs` — Robust consolidation (Node.js)
 
 ### Documentation (meta/)
-- `meta/CYCLE-001-AUDIT.md` — Original framework audit
-- `meta/CYCLE-002-ROADMAP.md` — Master improvement plan
-- `meta/CYCLE-002-COMPLETION.md` — This document
+- `meta/PASS-001-AUDIT.md` — Original framework audit
+- `meta/PASS-002-ROADMAP.md` — Master improvement plan
+- `meta/PASS-002-COMPLETION.md` — This document
 - `meta/specs/01-09` — 9 specification documents
 - `meta/dev/phase-0 through phase-6` — 7 development guides
 
