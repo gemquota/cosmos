@@ -14,9 +14,10 @@ errors, and the durable MyKB output is visible in the wiki and graph.
 
 ## Commits
 
-- Cosmos: (pass 8 implementation — gateway, L3/main wiring, tests, batch)
-- Cosmos: (pass 8 consolidation — meta docs, ledger, synthesis, snapshots)
-- Nested rsis3: (pass 8 runs + gateway code)
+- Cosmos: `6e04d40d` — implementation + consolidation (gateway, L3/main
+  wiring, tests, batch, PASS-008 meta docs, ledger/viewer, synthesis,
+  snapshots)
+- Nested rsis3: `62f8a2f` — pass 8 runs + gateway code
 
 ## Artifacts
 
