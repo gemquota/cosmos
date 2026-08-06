@@ -1217,6 +1217,15 @@ body {
 .gd-table td.num { text-align:right; color:var(--text-soft); }
 .gd-table tr:hover td { background:var(--hover-bg); }
 .gd-table .stub-cell.hot { color:#ffd166; font-weight:700; }
+.gd-wanted { margin-top:10px; border-top:1px dashed var(--border); padding-top:8px; }
+.gd-wanted-h { font-size:12px; font-weight:700; margin-bottom:6px; color:var(--text); }
+.gd-wanted-h .fb-sub { display:block; font-weight:400; }
+.gd-wl-row { display:flex; align-items:center; gap:8px; padding:3px 6px; border-radius:5px; font-size:12px; }
+.gd-wl-row:hover { background:var(--hover-bg); }
+.gd-wl-row .tgt { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; color:var(--accent); }
+.gd-wl-row .cnt { color:var(--text-muted); font-size:11px; }
+.gd-wl-row .add { margin-left:auto; padding:1px 10px; font-size:11px; border:1px solid var(--accent); border-radius:10px; background:none; color:var(--accent); cursor:pointer; }
+.gd-wl-row .add:hover { background:var(--accent-soft); }
 .gd-section-h { font-size:15px; font-weight:800; margin:22px 0 10px; border-top:1px solid var(--border); padding-top:16px; }
 .stub-entry { display:flex; align-items:center; gap:6px; padding:5px 6px; border-radius:5px; cursor:pointer; font-size:12px; }
 .stub-entry:hover { background:var(--hover-bg); }
@@ -1375,6 +1384,10 @@ body {
       <div class="gd-hdr"><h2>&#129302; Direction</h2><span class="fb-sub">Where the next acquisition &amp; enrichment pass should go &mdash; derived from live wiki state.</span></div>
       <div id="gd-total" class="gd-total"></div>
       <div id="gd-focus" class="gd-focus"></div>
+      <div class="gd-wanted">
+        <div class="gd-wanted-h">&#128279; Wanted links <span class="fb-sub">[[red links]] &mdash; pages the wiki links to that don&rsquo;t exist yet. Add one to the research queue to scaffold it.</span></div>
+        <div id="gd-wanted"></div>
+      </div>
       <div id="gd-areas-wrap"><table id="gd-areas" class="gd-table"></table></div>
     </div>
 
@@ -1407,6 +1420,15 @@ body {
       </div>
       <div class="fb-meta">pending: <span id="fb-count">0</span> &middot; <button class="srv-btn" id="gd-save" style="padding:2px 10px;">Save guidance</button> &middot; <button class="srv-btn" id="fb-clear" style="padding:2px 8px;">clear</button></div>
       <div id="fb-list"></div>
+      <div class="gd-drain" style="margin-top:10px;border-top:1px dashed var(--border);padding-top:10px;">
+        <div style="font-size:12px;color:var(--text-soft);margin-bottom:8px;">Research drain &mdash; scaffold wanted / question pages and write the research manifest (live daemon; static pages show commands)</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+          <button class="srv-btn" id="gd-drain-plan">Plan (preview)</button>
+          <button class="srv-btn" id="gd-drain-apply">Apply (scaffold)</button>
+        </div>
+        <div id="gd-drain-status" style="font-size:12px;color:var(--text-soft);">loading&hellip;</div>
+        <pre class="srv-out" id="gd-drain-out"></pre>
+      </div>
       <datalist id="fb-paths"></datalist>
     </div>
 
@@ -1426,6 +1448,11 @@ body {
       <label><input type="checkbox" id="srv-flt-stub" checked> stubs</label>
       <label><input type="checkbox" id="srv-flt-junk"> junk archive</label>
       <span style="flex:1"></span>
+      <label>area:
+        <select id="srv-area" class="srv-sort">
+          <option value="all">all areas</option>
+        </select>
+      </label>
       <label>sort:
         <select id="srv-sort" class="srv-sort">
           <option value="n">default order</option>
@@ -3755,6 +3782,7 @@ var SRV = {
   filter: 'all',
   sort: 'n',
   page: 1, pageSize: 50,
+  areaFilter: 'all',
   choices: {},          // path -> decision (persisted under 'stub-audit')
   depths: {},           // path -> 1|2|3 enrichment passes for 'e' (persisted under 'stub-audit-depth')
   catTargets: {}        // path -> wiki/<area>/<sub> destination for 'c'
@@ -3769,7 +3797,7 @@ try { state.stubsOnly = localStorage.getItem('md-stubs-only') === 'on'; } catch 
    questions, page-level notes). The working set persists as a draft so
    unsaved items survive reloads; "Save guidance" POSTs it to the daemon
    queue (guidance-queue.json) or downloads it when static. ── */
-var GUID = { live: false, loaded: false, total: null, areas: [], focus: [], queue: null, items: [] };
+var GUID = { live: false, loaded: false, total: null, areas: [], focus: [], wantedLinks: [], queue: null, items: [] };
 try { GUID.items = JSON.parse(localStorage.getItem('mykb-guidance-draft') || '[]') || []; } catch (e) { GUID.items = []; }
 function gdPersist() {
   try { localStorage.setItem('mykb-guidance-draft', JSON.stringify(GUID.items)); } catch (e) {}
@@ -3818,6 +3846,7 @@ function loadGuidance() {
     GUID.total = d.total || null;
     GUID.areas = d.areas || [];
     GUID.focus = d.focus || [];
+    GUID.wantedLinks = d.wanted_links || [];
     GUID.queue = d.queue || null;
     var seeded = (d.queue && Array.isArray(d.queue.items) ? d.queue.items : []).map(gdNorm);
     GUID.items = draft || seeded;
@@ -3838,7 +3867,7 @@ function loadGuidance() {
         })
         .catch(function() {
           GUID.loaded = true; GUID.live = false;
-          GUID.total = null; GUID.areas = []; GUID.focus = []; GUID.queue = null;
+          GUID.total = null; GUID.areas = []; GUID.focus = []; GUID.wantedLinks = []; GUID.queue = null;
           GUID.items = GUID.items.slice();
           gdFillPaths();
           gdRender();
@@ -3866,6 +3895,8 @@ function gdRender() {
     });
     if (!(GUID.focus || []).length) foc.innerHTML = '<span style="font-size:12px;color:var(--text-muted)">no focus data</span>';
   }
+  gdRenderWanted();
+  gdPopulateAreas();
   var tbl = document.getElementById('gd-areas');
   if (tbl) {
     var rows = (GUID.areas || []).slice(0, 15);
@@ -3878,6 +3909,54 @@ function gdRender() {
     tbl.innerHTML = html;
   }
   gdRenderList();
+}
+function gdRenderWanted() {
+  var el = document.getElementById('gd-wanted');
+  if (!el) return;
+  el.innerHTML = '';
+  var rows = GUID.wantedLinks || [];
+  if (!rows.length) {
+    el.innerHTML = '<div style="font-size:11px;color:var(--text-muted);">no red links &mdash; the wiki&rsquo;s link graph is clean</div>';
+    return;
+  }
+  rows.slice(0, 12).forEach(function(r) {
+    var row = document.createElement('div');
+    row.className = 'gd-wl-row';
+    row.innerHTML = '<span class="tgt">[[' + srvEsc(r.target) + ']]</span>' +
+      '<span class="cnt">' + r.links + 'x &middot; ' + srvEsc((r.from || []).join(', ')) + '</span>' +
+      '<button class="add" title="add to research queue">+ queue</button>';
+    row.querySelector('.add').addEventListener('click', function() {
+      gdQueueWanted(r.suggested, r.target, r.links);
+    });
+    el.appendChild(row);
+  });
+  if (rows.length > 12) {
+    var more = document.createElement('div');
+    more.style.cssText = 'font-size:11px;color:var(--text-muted);padding:2px 6px;';
+    more.textContent = '… and ' + (rows.length - 12) + ' more (see guidance.json)';
+    el.appendChild(more);
+  }
+}
+function gdQueueWanted(suggested, target, count) {
+  GUID.items.push({
+    kind: 'wanted',
+    path: suggested || '',
+    note: 'Red link from ' + count + ' wiki page' + (count === 1 ? '' : 's') + ': [[' + target + ']]',
+    priority: count >= 3 ? 1 : 2,
+    added: new Date().toISOString()
+  });
+  gdPersist();
+  gdRenderList();
+  srvQueueFlash('added [[ ' + target + ' ]] to the research queue (Save guidance persists it)', true);
+}
+function gdPopulateAreas() {
+  var sel = document.getElementById('srv-area');
+  if (!sel || !GUID.areas || !GUID.areas.length) return;
+  var cur = sel.value || 'all';
+  sel.innerHTML = '<option value="all">all areas</option>' +
+    GUID.areas.map(function(a) {
+      return '<option value="' + srvEsc(a.area) + '"' + (a.area === cur ? ' selected' : '') + '>' + srvEsc(a.area) + '</option>';
+    }).join('');
 }
 function gdRenderList() {
   var el = document.getElementById('fb-list');
@@ -4091,7 +4170,12 @@ function srvVisible() {
   var showAll = !fltStub && !fltJunk;
   return SRV.items.filter(function(it) {
     if (it.junk) return fltJunk || showAll;
-    return fltStub || showAll;
+    if (!(fltStub || showAll)) return false;
+    if (SRV.areaFilter && SRV.areaFilter !== 'all') {
+      var area = it.path.split('/')[1] || '';
+      if (area !== SRV.areaFilter) return false;
+    }
+    return true;
   });
 }
 function srvSorted(items) {
@@ -4349,6 +4433,51 @@ function srvDrainBuild() {
     })
     .then(function() { if (btn) { btn.disabled = false; btn.textContent = old; } });
 }
+function gdDrainStatus() {
+  var el = document.getElementById('gd-drain-status');
+  if (!el) return;
+  el.textContent = 'loading…';
+  srvApiReq('/api/v2/guidance/queue').then(function(d) {
+    var q = d.queue, m = d.guidance_manifest, bits = [];
+    if (q && q.items && q.items.length) {
+      var counts = {};
+      q.items.forEach(function(it) { var k = it.kind || 'note'; counts[k] = (counts[k] || 0) + 1; });
+      bits.push('queue: ' + q.items.length + ' items @ ' + (q.queued_at || '?').slice(0, 19));
+      bits.push(Object.keys(counts).map(function(k) { return k + '=' + counts[k]; }).join(' '));
+    } else bits.push('queue: none');
+    if (m && m.created) bits.push('manifest: ' + m.created.length + ' scaffolded · ' + (m.research || []).length + ' directions');
+    else bits.push('manifest: none (run Plan / Apply)');
+    el.textContent = bits.join(' · ');
+  }).catch(function() {
+    el.textContent = 'static mode — live research drain needs the MyKB server (cosmos start mykb); use `cosmos guidance plan / apply` in the terminal.';
+  });
+}
+function gdDrainOut(text) {
+  var pre = document.getElementById('gd-drain-out');
+  if (!pre) return;
+  pre.textContent = text;
+  pre.style.display = 'block';
+}
+function gdDrainRun(mode) {
+  var btn = document.getElementById('gd-drain-' + mode);
+  var old = btn ? btn.textContent : '';
+  if (btn) { btn.disabled = true; btn.textContent = 'running…'; }
+  srvApiReq('/api/v2/guidance/' + mode, { method: 'POST' })
+    .then(function(j) {
+      gdDrainOut(j && j.output ? j.output : (j && j.error ? j.error : 'done'));
+      gdDrainStatus();
+    })
+    .catch(function() {
+      gdDrainOut(
+        '# No MyKB daemon reachable (static page). Run the research drain locally.\n' +
+        '# First ensure the guidance queue exists: add items in the Guide tab, then "Save guidance".\n' +
+        'cd components/mykb\n' +
+        'python3 .wiki-daemon/drain_guidance.py --' + mode + '\n' +
+        '# or: cosmos guidance ' + mode
+      );
+    })
+    .then(function() { if (btn) { btn.disabled = false; btn.textContent = old; } });
+}
 function srvBuildResults() {
   var lines = [];
   var now = new Date().toISOString().slice(0, 10);
@@ -4429,6 +4558,8 @@ document.querySelectorAll('.srv-tab').forEach(function(t) {
 });
 var srvSortEl = document.getElementById('srv-sort');
 if (srvSortEl) srvSortEl.addEventListener('change', function() { SRV.sort = this.value; SRV.page = 1; srvRender(); });
+var srvAreaEl = document.getElementById('srv-area');
+if (srvAreaEl) srvAreaEl.addEventListener('change', function() { SRV.areaFilter = this.value; SRV.page = 1; srvRender(); });
 var srvPlanBtn = document.getElementById('srv-drain-plan');
 if (srvPlanBtn) srvPlanBtn.addEventListener('click', function() { srvDrainRun('plan'); });
 var srvApplyBtn = document.getElementById('srv-drain-apply');
@@ -4453,6 +4584,10 @@ var fbClearBtn = document.getElementById('fb-clear');
 if (fbClearBtn) fbClearBtn.addEventListener('click', gdClear);
 var gdSaveBtn = document.getElementById('gd-save');
 if (gdSaveBtn) gdSaveBtn.addEventListener('click', gdSave);
+var gdPlanBtn = document.getElementById('gd-drain-plan');
+if (gdPlanBtn) gdPlanBtn.addEventListener('click', function() { gdDrainRun('plan'); });
+var gdApplyBtn = document.getElementById('gd-drain-apply');
+if (gdApplyBtn) gdApplyBtn.addEventListener('click', function() { gdDrainRun('apply'); });
 var fbFab = document.getElementById('fb-fab');
 if (fbFab) fbFab.addEventListener('click', function() {
   var p = state.currentFile || '';

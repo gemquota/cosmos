@@ -33,6 +33,10 @@ FM_RE = re.compile(r'^---\s*\n(.*?)\n(?:---|\.\.\.)', re.DOTALL)
 KEY_RE = re.compile(r'^(\w+):\s*(.*)$', re.M)
 LIST_RE = re.compile(r'^\[(.*)\]$', re.DOTALL)
 WIKILINK_RE = re.compile(r'\[\[[^\]]+\]\]')
+WIKILINK_TARGET_RE = re.compile(r'\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]+)?\]\]')
+CODE_BLOCK_RE = re.compile(r'```.*?```', re.DOTALL)
+CODE_SPAN_RE = re.compile(r'`{1,3}[^`]*`{1,3}')
+SAFE_TARGET_RE = re.compile(r'^[A-Za-z0-9_./-]+$')
 
 OUT = os.path.join(ROOT, 'stub-review.json')
 GUIDANCE_OUT = os.path.join(ROOT, 'guidance.json')
@@ -201,6 +205,96 @@ def _load_json(path):
         return None
 
 
+def _slugify(s):
+    s = re.sub(r'[^a-z0-9]+', '-', (s or '').lower().strip())
+    return re.sub(r'-+', '-', s).strip('-')
+
+
+def scan_wanted_links():
+    """Find [[wikilinks]] that resolve to no existing wiki page (red links).
+
+    A red link is a standing research signal: pages the wiki itself says are
+    missing. Resolution mirrors the app's resolveWikiPath (root-relative
+    paths plus a unique-basename fallback) so moved/archived pages don't show
+    up as wanted. Returns ranked candidates with link counts, the areas that
+    link to them, and a suggested scaffold path.
+    """
+    pages = {}
+    base_index = {}
+    for p in glob.glob(os.path.join(WIKI, '**', '*.md'), recursive=True):
+        rel = os.path.relpath(p, WIKI).replace(os.sep, '/')
+        pages[rel] = True
+        base_index.setdefault(rel.split('/')[-1][:-3].lower(), []).append(rel)
+
+    def resolves(target):
+        t = target.strip().lstrip('./')
+        if t.endswith('.md'):
+            t = t[:-3]
+        if not t:
+            return False
+        cands = []
+        if '/' in t:
+            cands.append(t)
+            cands.append(t + '.md')
+            if t.startswith('wiki/'):
+                cands.append(t[5:])
+                cands.append(t[5:] + '.md')
+            else:
+                cands.append('wiki/' + t)
+                cands.append('wiki/' + t + '.md')
+            if any(c in pages for c in cands):
+                return True
+        base = t.split('/')[-1].lower()
+        hits = base_index.get(base, [])
+        if len(hits) == 1:
+            return True
+        wiki_hits = [h for h in hits if h.startswith('wiki/')]
+        if len(wiki_hits) == 1:
+            return True
+        return False
+
+    missing = {}
+    for rel, fm, w, text in walk_wiki():
+        area = rel.split('/')[0]
+        text = re.sub(r'^---\s*\n.*?\n(?:---|\.\.\.)', '', text, count=1, flags=re.DOTALL)
+        text = CODE_BLOCK_RE.sub(' ', text)
+        text = CODE_SPAN_RE.sub(' ', text)
+        for m in WIKILINK_TARGET_RE.finditer(text):
+            t = m.group(1).strip()
+            if not t or t.startswith('#') or t.startswith('http') or '#' in t:
+                continue
+            if t.startswith('raw/') or t.startswith('file:'):
+                continue
+            if not SAFE_TARGET_RE.match(t):
+                continue
+            if resolves(t):
+                continue
+            key = t.lower()
+            entry = missing.setdefault(key, {
+                'target': t, 'links': 0, 'from': [],
+            })
+            entry['links'] += 1
+            if area not in entry['from']:
+                entry['from'].append(area)
+
+    rows = []
+    for e in missing.values():
+        e['from'] = sorted(e['from'])[:4]
+        t = e['target'].strip().lstrip('./')
+        if t.endswith('.md'):
+            t = t[:-3]
+        if t.startswith('wiki/'):
+            e['suggested'] = t + '.md'
+        elif '/' in t:
+            e['suggested'] = 'wiki/' + t + '.md'
+        else:
+            e['suggested'] = 'wiki/%s/%s.md' % (e['from'][0] if e['from'] else 'concepts',
+                                                _slugify(t) or 'wanted-page')
+        rows.append(e)
+    rows.sort(key=lambda r: (-r['links'], r['target']))
+    return rows[:60]
+
+
 def scan_guidance():
     """Area coverage + focus ranking + persisted guidance queue.
 
@@ -247,6 +341,7 @@ def scan_guidance():
              'stub_pct': r['stub_pct'], 'note': note_for(r)}
             for r in areas[:10]
         ],
+        'wanted_links': scan_wanted_links(),
         'queue': _load_json(GUIDANCE_QUEUE),
     }
 
@@ -258,7 +353,7 @@ def main():
     json.dump(guidance, open(GUIDANCE_OUT, 'w', encoding='utf-8'),
               ensure_ascii=False, indent=1)
     print(f'stub-review.json written: {len(stubs["items"])} stub files, {len(stubs["areas"])} areas, {len(stubs["dirs"])} dirs')
-    print(f'guidance.json written: {guidance["total"]["pages"]} pages, {guidance["total"]["stubs"]} stubs, {len(guidance["areas"])} areas')
+    print(f'guidance.json written: {guidance["total"]["pages"]} pages, {guidance["total"]["stubs"]} stubs, {len(guidance["areas"])} areas, {len(guidance["wanted_links"])} wanted links')
 
 
 if __name__ == '__main__':

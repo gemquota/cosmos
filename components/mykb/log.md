@@ -5,6 +5,33 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-06 (Guidance execution loop — wanted links, scaffolds, manifest)
+- **Wanted links**: `build_stub_audit.py` now scans red links — `[[target]]`
+  wikilinks that resolve to no existing page — ranked by inbound count, with
+  the linking areas and a suggested scaffold path (`guidance.json →
+  wanted_links`). Code spans are stripped first so syntax examples like
+  `` `[[wikilink]]` `` don't register as missing pages; resolution mirrors
+  the app's `resolveWikiPath` (root-relative paths + unique-basename
+  fallback, full-disk inventory incl. index pages). The Guide tab's
+  Direction panel lists them with a one-click “+ queue” that seeds a wanted
+  item. First real signal: `[[wikilinks]]` from `node2vec.md`.
+- **Research drain**: new `.wiki-daemon/drain_guidance.py` turns the
+  guidance queue into executable direction — `--plan` previews,
+  `--apply` scaffolds `wanted` items into `wiki/<area>/<slug>.md` stubs and
+  `question` items into `wiki/questions/` (frontmatter `status: stub`,
+  `source: ["guidance-queue"]`, never overwrites), and writes a research
+  manifest at `.wiki-daemon/buffers/guidance-inference.json` (created paths,
+  remaining directions, page feedback). Scaffolded pages flow into normal
+  stub triage + enrichment.
+- **Server & UI**: `POST /api/v2/guidance/plan|apply`,
+  `GET /api/v2/guidance/queue` now reports the research manifest; Guide tab
+  gains Plan/Apply buttons + status, and the stub triage gains an area
+  filter fed from the direction data. CLI: `cosmos guidance plan|apply`.
+- **Outcome**: `wiki/meta-learning/wikilinks.md` scaffolded from the red
+  link and committed as a stub for enrichment.
+- **Snapshots**: guidance.json (wanted_links), stub-review (2,434 incl. new
+  stub), stub-index, graph, files.json, ecosystem, loops.
+
 ## 2026-08-06 (Guidance UI — from stub auditor to research direction)
 - **Guide tab**: the Stub Auditor is now the mykb **Guidance** surface
   (`index.html#guidance`; `#stubs` still routes here). The tab gains a

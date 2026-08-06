@@ -346,6 +346,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
             self.send_json({
                 'queue': _load(os.path.join(buffer_dir, 'guidance-queue.json')),
+                'guidance_manifest': _load(os.path.join(buffer_dir, 'guidance-inference.json')),
                 'stub_queue': _load(os.path.join(buffer_dir, 'stub-audit-queue.json')),
                 'manifest': _load(os.path.join(buffer_dir, 'stub-audit-inference.json')),
             })
@@ -435,6 +436,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         if parsed.path == '/api/v2/stubs/build':
             self.send_json(self._run_daemon_script('build_stub_audit.py', []))
+            return
+
+        if parsed.path == '/api/v2/guidance/plan':
+            self.send_json(self._run_daemon_script('drain_guidance.py', ['--plan']))
+            return
+        if parsed.path == '/api/v2/guidance/apply':
+            self.send_json(self._run_daemon_script('drain_guidance.py', ['--apply']))
             return
 
         if parsed.path not in ('/api/v2/stubs/queue', '/api/v2/guidance/queue'):
