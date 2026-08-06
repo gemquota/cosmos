@@ -43,6 +43,7 @@ from rsis.loop_l8 import MetaMetaLoop
 from rsis.loop_l9 import MMMLoop
 from rsis.memory import MemoryManager
 from rsis.mykb_gateway import MyKBGateway
+from rsis.space_spec import SpaceSpec
 from rsis.practices import run_checks as run_practice_checks
 from rsis.pipeline import run_demo as run_pipeline_demo
 from rsis.recovery import FailureInjector, RecoveryManager
@@ -83,25 +84,37 @@ def _init_subsystems() -> tuple:
     return telemetry, checkpoint, memory, evaluator, recovery, enforcer
 
 
-def _resolve_goal(goal: str, gateway: Optional[MyKBGateway] = None) -> str:
-    """Resolve the L2 goal string, pulling from MyKB when asked.
+def _resolve_goal(goal: str, gateway: Optional[MyKBGateway] = None,
+                 spec: Optional[SpaceSpec] = None) -> str:
+    """Resolve the L2 goal string from memory or spec sources.
 
-    `--goal from-mykb` makes the loop *read* durable syntheses for context:
-    the most relevant recent synthesis becomes the improvement goal. Falls
-    back to the default goal when MyKB is unavailable or unhelpful.
+    - `--goal from-mykb` sources the goal from the most relevant MyKB
+      synthesis (durable memory context).
+    - `--goal from-space` / `--goal from-spec` sources the goal from a SPACE
+      spec artifact, so the run's telemetry trace references a spec artifact.
+    Falls back to the default goal when the source is unavailable.
     """
-    if goal != "from-mykb":
-        return goal
-    if gateway is not None and gateway.available:
-        hits = gateway.search_syntheses("improvement guidance", limit=5)
-        if not hits:
-            hits = gateway.read_syntheses(limit=5)
-        if hits:
-            hit = hits[0]
-            print(f"  \u2139 Goal sourced from MyKB: {hit['slug']}")
-            return (f"{hit.get('title') or hit['slug']} \u2014 follow the "
-                    f"durable guidance in synthesis {hit['rel']}")
-    return "self-improve the codebase"
+    if goal == "from-mykb":
+        if gateway is not None and gateway.available:
+            hits = gateway.search_syntheses("improvement guidance", limit=5)
+            if not hits:
+                hits = gateway.read_syntheses(limit=5)
+            if hits:
+                hit = hits[0]
+                print(f"  \u2139 Goal sourced from MyKB: {hit['slug']}")
+                return (f"{hit.get('title') or hit['slug']} \u2014 follow the "
+                        f"durable guidance in synthesis {hit['rel']}")
+        return "self-improve the codebase"
+    if goal in ("from-space", "from-spec"):
+        spec = spec if spec is not None else SpaceSpec()
+        if spec.available:
+            goals = spec.candidate_goals(limit=1)
+            if goals:
+                aid = spec.artifacts()[0]["id"] if spec.artifacts() else "?"
+                print(f"  \u2139 Goal sourced from SPACE spec artifact: {aid}")
+                return goals[0]
+        return "self-improve the codebase"
+    return goal
 
 
 # ── Commands ─────────────────────────────────────────────────────────────
@@ -169,7 +182,7 @@ def cmd_run(args: argparse.Namespace) -> int:
             checkpoint_mgr=checkpoint, recovery=recovery,
         )
 
-        goal = _resolve_goal(args.goal, MyKBGateway())
+        goal = _resolve_goal(args.goal, MyKBGateway(), SpaceSpec())
         budget = Budget(
             max_iterations=CONFIG.l2.max_improvement_attempts,
             max_time_s=CONFIG.l2.session_timeout_s,
@@ -617,7 +630,7 @@ def cmd_drive(args: argparse.Namespace) -> int:
     max_cycles = max(1, args.max_cycles or 10)
     time_budget_s = float(args.timeout or 24 * 3600)
     sleep_s = max(0.0, float(args.sleep or 0))
-    goal = _resolve_goal(args.goal, MyKBGateway())
+    goal = _resolve_goal(args.goal, MyKBGateway(), SpaceSpec())
     holder = {}
     started = time.time()
 
@@ -876,8 +889,9 @@ def main() -> int:
 
     p_run = sub.add_parser("run", help="Run improvement session")
     p_run.add_argument("--goal", "-g", default="self-improve the codebase",
-                       help="Improvement goal, or 'from-mykb' to source it from "
-                            "the MyKB syntheses")
+                       help="Improvement goal, 'from-mykb' to source it from "
+                            "MyKB syntheses, or 'from-space' to source it from "
+                            "a SPACE spec artifact")
     p_run.add_argument("--budget-cap", type=float, default=None,
                        help="Hard LLM cost cap in USD for this session (0=unlimited)")
     p_run.add_argument("--parallel", type=int, default=None,
@@ -913,7 +927,8 @@ def main() -> int:
                          help="Loop to drive: l2..l9 (default: l2)")
     p_drive.add_argument("--goal", "-g", default="self-improve the codebase",
                          help="L2 goal (only used with --loop l2); "
-                              "'from-mykb' sources it from MyKB syntheses")
+                              "'from-mykb' sources it from MyKB syntheses, "
+                              "'from-space' from a SPACE spec artifact")
     p_drive.add_argument("--max-cycles", type=int, default=10,
                          help="Maximum cycles before giving up (default: 10)")
     p_drive.add_argument("--timeout", type=float, default=24 * 3600,

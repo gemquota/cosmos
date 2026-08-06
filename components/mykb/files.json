@@ -75797,6 +75797,18 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-l3-cycle-10-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 10 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-l3-cycle-2-cross-session-memory-consolidation-2026-08-06.md",
   "type": "synthesis",
   "title": "RSIS3 L3 cycle 2 \u2014 cross-session memory consolidation",
@@ -75845,6 +75857,54 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-l3-cycle-6-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 6 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-7-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 7 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-8-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 8 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-9-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 9 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-pass-6-2026-08-06.md",
   "type": "synthesis",
   "title": "RSIS3 Pass 6 \u2014 five full cycles across L1\u2013L9",
@@ -75883,6 +75943,22 @@
    "l3",
    "consolidation",
    "gateway",
+   "okf"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-pass-9-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 9 \u2014 spec link: SPACE artifacts feed L2 goals and the live Guide",
+  "tags": [
+   "rsis3",
+   "passes",
+   "space",
+   "spec",
+   "l2",
+   "guidance",
+   "guide",
+   "ideation",
    "okf"
   ]
  },

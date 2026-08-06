@@ -1,7 +1,7 @@
 {
   "params": {
     "l1.max_retries": 8,
-    "l1.max_tool_calls": 15.0
+    "l1.max_tool_calls": 20.0
   },
   "history": [
     {
@@ -94,7 +94,67 @@
         "success_rate": 0.0,
         "avg_score": 0.0
       }
+    },
+    {
+      "cycle": 8,
+      "deltas": {
+        "l1.max_tool_calls": 1
+      },
+      "accepted": true,
+      "stats": {
+        "count": 20,
+        "success_rate": 0.0,
+        "avg_score": 0.0
+      }
+    },
+    {
+      "cycle": 9,
+      "deltas": {
+        "l1.max_tool_calls": 1
+      },
+      "accepted": true,
+      "stats": {
+        "count": 20,
+        "success_rate": 0.0,
+        "avg_score": 0.0
+      }
+    },
+    {
+      "cycle": 10,
+      "deltas": {
+        "l1.max_tool_calls": 1
+      },
+      "accepted": true,
+      "stats": {
+        "count": 20,
+        "success_rate": 0.0,
+        "avg_score": 0.0
+      }
+    },
+    {
+      "cycle": 11,
+      "deltas": {
+        "l1.max_tool_calls": 1
+      },
+      "accepted": true,
+      "stats": {
+        "count": 20,
+        "success_rate": 0.0,
+        "avg_score": 0.0
+      }
+    },
+    {
+      "cycle": 12,
+      "deltas": {
+        "l1.max_tool_calls": 1
+      },
+      "accepted": true,
+      "stats": {
+        "count": 20,
+        "success_rate": 0.0,
+        "avg_score": 0.0
+      }
     }
   ],
-  "cycle": 7
+  "cycle": 12
 }
