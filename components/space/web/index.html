@@ -141,23 +141,40 @@ const STATIC_API = {
   '/api/projects': 'projects.json',
 };
 
+// API bases tried in order. Same-origin first (served by web/server.mjs);
+// when this page is embedded in the Cosmos dashboard or opened statically,
+// fall back to the local SPACE server so sessions and mutations still work.
+const API_BASES = ['', 'http://localhost:8888', 'http://127.0.0.1:8888'];
+
 async function api(path, opts = {}) {
-  try {
-    const res = await fetch(API + path, {
-      method: opts.method || 'GET',
-      headers: { 'Content-Type': 'application/json' },
-      body: opts.body ? JSON.stringify(opts.body) : undefined,
-    });
-    if (res.ok) return res.json();
-    throw new Error('HTTP ' + res.status);
-  } catch (e) {
+  const method = opts.method || 'GET';
+  const body = opts.body ? JSON.stringify(opts.body) : undefined;
+  let lastErr = null;
+  for (let i = 0; i < API_BASES.length; i++) {
+    try {
+      const res = await fetch(API_BASES[i] + path, {
+        method,
+        headers: { 'Content-Type': 'application/json' },
+        body,
+      });
+      if (res.ok) return res.json();
+      lastErr = new Error('HTTP ' + res.status);
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  // Static fallback: GETs read from bundled JSON; mutations report failure
+  // instead of pretending to succeed.
+  if (method === 'GET') {
     const sp = STATIC_API[path];
     if (sp) {
-      const sr = await fetch(sp);
-      if (sr.ok) return sr.json();
+      try {
+        const sr = await fetch(sp);
+        if (sr.ok) return sr.json();
+      } catch (e) {}
     }
-    return { error: 'offline', path };
   }
+  throw lastErr || new Error('offline');
 }
 
 function offlineNotice(c) {
@@ -308,15 +325,23 @@ async function createProject() {
   const name = document.getElementById('new-project-name').value.trim();
   const desc = document.getElementById('new-project-desc').value.trim();
   if (!name) return;
-  await api('/api/projects', { method: 'POST', body: { name, description: desc } });
-  document.getElementById('create-modal').classList.add('hidden');
-  renderProjects();
+  try {
+    await api('/api/projects', { method: 'POST', body: { name, description: desc } });
+    document.getElementById('create-modal').classList.add('hidden');
+    renderProjects();
+  } catch (e) {
+    alert('Could not create project — start the SPACE server (node web/server.mjs) or check localhost:8888.\n\n' + (e && e.message ? e.message : e));
+  }
 }
 
 async function deleteProject(name) {
   if (!confirm(`Delete project "${name}"?`)) return;
-  await api(`/api/projects/${name}`, { method: 'DELETE' });
-  renderProjects();
+  try {
+    await api(`/api/projects/${name}`, { method: 'DELETE' });
+    renderProjects();
+  } catch (e) {
+    alert('Could not delete project — ' + (e && e.message ? e.message : e));
+  }
 }
 
 async function selectProject(name) {

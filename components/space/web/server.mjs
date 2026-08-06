@@ -60,6 +60,14 @@ let req_method = '';
 
 const server = createServer(async (req, res) => {
   req_method = req.method;
+  // CORS preflight: respond 204 with the allow headers so cross-origin
+  // embeds (e.g. the Cosmos dashboard iframe) can POST/OPTIONS.
+  if (req.method === 'OPTIONS') {
+    cors(res);
+    res.writeHead(204);
+    res.end();
+    return;
+  }
   const url = req.url.split('?')[0];
   
   try {
