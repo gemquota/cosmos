@@ -1,7 +1,7 @@
 {
- "built": "2026-08-07T04:57:35+00:00",
+ "built": "2026-08-07T05:18:48+00:00",
  "total": {
-  "pages": 5300,
+  "pages": 5305,
   "stubs": 1494,
   "stub_pct": 28
  },
@@ -148,10 +148,10 @@
   },
   {
    "area": "syntheses",
-   "pages": 80,
+   "pages": 85,
    "stubs": 17,
-   "stub_pct": 21,
-   "avg_words": 275
+   "stub_pct": 20,
+   "avg_words": 264
   },
   {
    "area": "decisions",
@@ -397,7 +397,7 @@
  "wanted_links": [],
  "queue": null,
  "live": {
-  "generated": "2026-08-07T04:57:36+00:00",
+  "generated": "2026-08-07T05:18:49+00:00",
   "loops": [
    {
     "id": "L0",
@@ -563,20 +563,24 @@
    }
   ],
   "telemetry": {
-   "files": 222,
-   "events": 724,
+   "files": 267,
+   "events": 839,
    "loops": {
-    "L4": 29,
-    "L7": 28,
-    "L8": 28,
-    "L3": 29,
-    "L5": 33,
-    "L2": 31,
-    "L1": 31,
-    "L9": 28,
-    "L6": 30
+    "L5": 38,
+    "L4": 34,
+    "L7": 33,
+    "L8": 33,
+    "L3": 34,
+    "L2": 36,
+    "L1": 36,
+    "L9": 33,
+    "L6": 35
    },
    "spec_traces": [
+    {
+     "goal": "Implement the abstraction_level spec artifact: Mixed — conceptual frameworks illustrated with examples (SPACE spec artifact abstraction_level, series 1, questio",
+     "timestamp": "2026-08-07T05:10:53.672264+00:00"
+    },
     {
      "goal": "Implement the abstraction_level spec artifact: Mixed — conceptual frameworks illustrated with examples (SPACE spec artifact abstraction_level, series 1, questio",
      "timestamp": "2026-08-07T04:46:36.218711+00:00"
@@ -590,25 +594,8 @@
   "memory": {
    "syntheses": [
     {
-     "slug": "rsis3-pass-11-2026-08-07",
-     "title": "RSIS3 Pass 11 — ops + capstone: auto-deploy, scheduled loops, monitoring, full-chain proof",
-     "tags": [
-      "rsis3",
-      "passes",
-      "ops",
-      "ci",
-      "deploy",
-      "github-pages",
-      "monitoring",
-      "capstone",
-      "scheduler",
-      "okf"
-     ],
-     "timestamp": "2026-08-07T04:55:00Z"
-    },
-    {
-     "slug": "rsis3-l3-cycle-15-cross-session-memory-consolidation-2026-08-07",
-     "title": "RSIS3 L3 cycle 15 — cross-session memory consolidation",
+     "slug": "rsis3-l3-cycle-20-cross-session-memory-consolidation-2026-08-07",
+     "title": "RSIS3 L3 cycle 20 — cross-session memory consolidation",
      "tags": [
       "rsis3",
       "l3",
@@ -616,11 +603,11 @@
       "consolidation",
       "mykb"
      ],
-     "timestamp": "2026-08-07T04:52:37Z"
+     "timestamp": "2026-08-07T05:17:35Z"
     },
     {
-     "slug": "rsis3-l3-cycle-14-cross-session-memory-consolidation-2026-08-07",
-     "title": "RSIS3 L3 cycle 14 — cross-session memory consolidation",
+     "slug": "rsis3-l3-cycle-19-cross-session-memory-consolidation-2026-08-07",
+     "title": "RSIS3 L3 cycle 19 — cross-session memory consolidation",
      "tags": [
       "rsis3",
       "l3",
@@ -628,11 +615,11 @@
       "consolidation",
       "mykb"
      ],
-     "timestamp": "2026-08-07T04:51:10Z"
+     "timestamp": "2026-08-07T05:15:53Z"
     },
     {
-     "slug": "rsis3-l3-cycle-13-cross-session-memory-consolidation-2026-08-07",
-     "title": "RSIS3 L3 cycle 13 — cross-session memory consolidation",
+     "slug": "rsis3-l3-cycle-18-cross-session-memory-consolidation-2026-08-07",
+     "title": "RSIS3 L3 cycle 18 — cross-session memory consolidation",
      "tags": [
       "rsis3",
       "l3",
@@ -640,11 +627,11 @@
       "consolidation",
       "mykb"
      ],
-     "timestamp": "2026-08-07T04:49:43Z"
+     "timestamp": "2026-08-07T05:14:18Z"
     },
     {
-     "slug": "rsis3-l3-cycle-12-cross-session-memory-consolidation-2026-08-07",
-     "title": "RSIS3 L3 cycle 12 — cross-session memory consolidation",
+     "slug": "rsis3-l3-cycle-17-cross-session-memory-consolidation-2026-08-07",
+     "title": "RSIS3 L3 cycle 17 — cross-session memory consolidation",
      "tags": [
       "rsis3",
       "l3",
@@ -652,7 +639,19 @@
       "consolidation",
       "mykb"
      ],
-     "timestamp": "2026-08-07T04:48:16Z"
+     "timestamp": "2026-08-07T05:12:43Z"
+    },
+    {
+     "slug": "rsis3-l3-cycle-16-cross-session-memory-consolidation-2026-08-07",
+     "title": "RSIS3 L3 cycle 16 — cross-session memory consolidation",
+     "tags": [
+      "rsis3",
+      "l3",
+      "memory",
+      "consolidation",
+      "mykb"
+     ],
+     "timestamp": "2026-08-07T05:11:12Z"
     }
    ]
   }
