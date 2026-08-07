@@ -20,6 +20,8 @@ the arc's end state: contracts + UX + ops all locked and validated.
   workflows, PASS-011 meta docs, synthesis, snapshots)
 - Nested rsis3: `8a9989e` — capstone batch telemetry (on checkpoint chain
   `323b384…ff40179`)
+- Cosmos: `014620fd` — live scheduled loop batch 2026-08-07T05:18Z (from-space
+  cycle 1), deployed via gh-pages `f50301e5` (deploy workflow auto-synced)
 
 ## Artifacts
 
@@ -28,6 +30,8 @@ the arc's end state: contracts + UX + ops all locked and validated.
 - Monitoring: `infra/heartbeat/heartbeat.mjs`, `infra/heartbeat/watches.json`,
   `infra/health/check.sh`, `.github/workflows/health.yml`
 - Capstone telemetry: 40 executions, +5 per loop (L1=31 … L9=28), 0 errors
+- Scheduled batch (CI): 40 executions, +5 per loop, 0 errors, practices PASS —
+  post-batch telemetry L1=36, L2=36, L3=34, L4=34, L5=38, L6=35, L7–L9=33
 - L3-written syntheses: `rsis3-l3-cycle-{11..15}-cross-session-memory-consolidation-2026-08-07.md`
 - Synthesis: `components/mykb/wiki/syntheses/rsis3-pass-11-2026-08-07.md`
 - Snapshots: `files.json`, `loops.json`, graph 5,424 nodes / 36,913 edges —
