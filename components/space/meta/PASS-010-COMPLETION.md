@@ -19,8 +19,10 @@ and refreshed all snapshots.
 
 ## Commits
 
-- Cosmos: (pass 10 implementation + consolidation + PASS-010 meta docs) —
-  to be recorded after this pass closes.
+- Cosmos: `303c4564` — pass 10 implementation + consolidation (Guide Models
+  tab, KG lazy boot, PASS-010 meta docs, synthesis, snapshots)
+- Nested rsis3: `226b16a` — date-safe mykb gateway tests + refreshed
+  dashboard snapshots
 
 ## Artifacts
 
