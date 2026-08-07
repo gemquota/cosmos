@@ -35,7 +35,9 @@ WT="$DIR/.git/gh-pages-wt"
 if [ -e "$WT" ]; then
   git worktree remove --force "$WT" >/dev/null 2>&1 || true
 fi
-git worktree add --detach "$WT" gh-pages >/dev/null
+# Check out the gh-pages branch itself (not detached) so the deploy commit
+# advances the branch ref and the push actually moves origin/gh-pages.
+git worktree add "$WT" gh-pages >/dev/null
 
 cd "$WT"
 git rm -rf --ignore-unmatch . >/dev/null 2>&1 || true
