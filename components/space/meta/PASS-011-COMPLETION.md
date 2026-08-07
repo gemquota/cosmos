@@ -22,6 +22,10 @@ the arc's end state: contracts + UX + ops all locked and validated.
   `323b384…ff40179`)
 - Cosmos: `014620fd` — live scheduled loop batch 2026-08-07T05:18Z (from-space
   cycle 1), deployed via gh-pages `f50301e5` (deploy workflow auto-synced)
+- Cosmos: `2348c9c7` — fix snapshot staleness: run-batch.sh commits loop
+  results before snapshot regen; regenerated files.json for CI syntheses
+- Cosmos: `b019e9af` — check-practices checkpoint hygiene resolves the
+  enclosing git work tree (failed on CI checkouts without a nested `.git`)
 
 ## Artifacts
 
