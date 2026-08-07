@@ -367,3 +367,45 @@ def test_mirror_malformed_buffer_is_noop(tmp_path):
     for payload in ("[]", "{}", '{"items": 42}', '{"items": [1, 2]}'):
         buffer.write_text(payload, encoding="utf-8")
         assert mirror_to_guidance_queue(tmp_path, GAPS) == 0
+
+
+from rsis.self_assess import enrich_llm
+
+
+def test_enrich_llm_disabled_without_key(monkeypatch):
+    monkeypatch.delenv("RSIS_EVALUATOR_API_KEY", raising=False)
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    assert enrich_llm(make_result()) is None
+
+
+def test_enrich_llm_fail_closed_on_api_error(monkeypatch):
+    monkeypatch.setenv("OPENAI_API_KEY", "test-key")
+    def boom(**kw):
+        raise RuntimeError("api down")
+    fake = type("FakeOpenAI", (), {"OpenAI": boom})
+    monkeypatch.setitem(sys.modules, "openai", fake)
+    assert enrich_llm(make_result()) is None
+
+
+def test_enrich_llm_fail_closed_without_package(monkeypatch):
+    monkeypatch.setenv("OPENAI_API_KEY", "test-key")
+    monkeypatch.setitem(sys.modules, "openai", None)
+    assert enrich_llm(make_result()) is None
+
+
+def test_enrich_llm_ignores_blank_response(monkeypatch):
+    import types
+    monkeypatch.setenv("OPENAI_API_KEY", "test-key")
+    class BlankCompletions:
+        def create(self, **kw):
+            msg = types.SimpleNamespace(content="   \n")
+            return types.SimpleNamespace(choices=[msg])
+    class FakeClient:
+        def __init__(self, **kw):
+            pass
+        @property
+        def chat(self):
+            return types.SimpleNamespace(completions=BlankCompletions())
+    fake = types.SimpleNamespace(OpenAI=FakeClient)
+    monkeypatch.setitem(sys.modules, "openai", fake)
+    assert enrich_llm(make_result()) is None
