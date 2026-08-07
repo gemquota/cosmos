@@ -437,3 +437,76 @@ def write_reflection(root: Path, result: AssessmentResult,
         "timestamp": ts,
         "status": "growing",
     }, "\n".join(body))
+
+
+def file_backlog(root: Path, gaps: list[GapItem],
+                 ts: Optional[str] = None) -> list[Path]:
+    """P5 — create-only backlog notes; existing slugs are skipped.
+
+    ``root`` is the wiki dir (the one containing ``backlog/``).
+    """
+    ts = ts or _now_ts()
+    written: list[Path] = []
+    for gap in gaps:
+        path = root / "backlog" / f"{gap.slug}.md"
+        if path.exists():
+            continue
+        body = "\n".join([
+            f"# {gap.topic}",
+            "",
+            f"- Priority: {gap.priority}",
+            f"- Reason: {gap.reason}",
+            "- Source: self-assess",
+        ])
+        written.append(_write_note(path, {
+            "type": "backlog",
+            "title": gap.topic,
+            "description": gap.reason,
+            "tags": ["backlog", gap.priority],
+            "timestamp": ts,
+            "status": "open",
+            "source": "gap",
+            "priority": gap.priority,
+            "assess_ref": f"assessments/self-assessment-{_date_part(ts)}.md",
+        }, body))
+    return written
+
+
+def mirror_to_guidance_queue(root: Path, gaps: list[GapItem]) -> int:
+    """P5 — mirror open gaps into the guidance-queue buffer (best-effort).
+
+    The buffer is the handoff for drain_guidance.py, which expects the
+    daemon shape ``{"items": [...]}``; items use the ``direction`` kind
+    with title/note. ``root`` is the mykb dir (the one containing
+    ``.wiki-daemon/``). No buffer → no-op.
+    """
+    buffer = root / ".wiki-daemon" / "buffers" / "guidance-queue.json"
+    if not buffer.is_file():
+        return 0
+    try:
+        data = json.loads(buffer.read_text(encoding="utf-8"))
+        if not (isinstance(data, dict)
+                and isinstance(data.get("items"), list)
+                and all(isinstance(item, dict)
+                        for item in data["items"])):
+            return 0
+        items = data["items"]
+        existing = {item.get("title") for item in items}
+        added = 0
+        for gap in gaps:
+            if gap.topic in existing:
+                continue
+            items.append({
+                "title": gap.topic,
+                "kind": "direction",
+                "note": gap.reason,
+                "area": "concepts",
+                "added": _now_ts(),
+            })
+            added += 1
+        if added:
+            buffer.write_text(json.dumps(data, indent=1),
+                              encoding="utf-8")
+        return added
+    except (json.JSONDecodeError, OSError):
+        return 0

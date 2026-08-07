@@ -322,3 +322,48 @@ def test_write_assessment_sanitizes_bad_timestamp(tmp_path):
     assert path.parent.name == "assessments"
     assert path.name.startswith("self-assessment-")
     assert ".." not in str(path)
+
+
+from rsis.self_assess import file_backlog, mirror_to_guidance_queue
+
+
+GAPS = [GapItem(topic="Zebra Migration Routes", priority="high",
+                reason="missing keywords: zebra, migration")]
+
+
+def test_file_backlog_create_only_and_dedupe(tmp_path):
+    first = file_backlog(tmp_path, GAPS, ts="2026-08-07T10:00:00Z")
+    second = file_backlog(tmp_path, GAPS, ts="2026-08-07T11:00:00Z")
+    assert len(first) == 1
+    assert len(second) == 0
+    path = tmp_path / "backlog" / "zebra-migration-routes.md"
+    assert path.is_file()
+    text = path.read_text(encoding="utf-8")
+    assert 'type: "backlog"' in text
+    assert 'status: "open"' in text
+    assert 'source: "gap"' in text
+
+
+def test_mirror_to_guidance_queue_appends_and_dedupes(tmp_path):
+    buffer = tmp_path / ".wiki-daemon" / "buffers" / "guidance-queue.json"
+    buffer.parent.mkdir(parents=True)
+    buffer.write_text(json.dumps({"queued_at": "2026-08-07",
+                                  "items": [{"title": "Existing"}]}),
+                      encoding="utf-8")
+    assert mirror_to_guidance_queue(tmp_path, GAPS) == 1
+    assert mirror_to_guidance_queue(tmp_path, GAPS) == 0
+    data = json.loads(buffer.read_text(encoding="utf-8"))
+    assert len(data["items"]) == 2
+    assert data["items"][1]["kind"] == "direction"
+
+
+def test_mirror_no_buffer_is_noop(tmp_path):
+    assert mirror_to_guidance_queue(tmp_path, GAPS) == 0
+
+
+def test_mirror_malformed_buffer_is_noop(tmp_path):
+    buffer = tmp_path / ".wiki-daemon" / "buffers" / "guidance-queue.json"
+    buffer.parent.mkdir(parents=True)
+    for payload in ("[]", "{}", '{"items": 42}', '{"items": [1, 2]}'):
+        buffer.write_text(payload, encoding="utf-8")
+        assert mirror_to_guidance_queue(tmp_path, GAPS) == 0
