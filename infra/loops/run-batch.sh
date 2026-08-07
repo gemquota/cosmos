@@ -60,10 +60,28 @@ python3 -m rsis check-practices || FAIL=1
 echo ""
 echo "── Snapshot regeneration ─────────────────────────"
 cd "$DIR"
+# gen-static-data.py lists git-tracked files only, so commit the batch's
+# outputs (telemetry, checkpoints, L3-written syntheses) before regenerating
+# snapshots — otherwise --check validates a stale-but-consistent tree and the
+# committed files.json misses the new syntheses (2026-08-07 CI batch).
+git add components/rsis3/.rsis components/rsis3/dashboard components/rsis3/rack \
+        components/mykb/wiki/syntheses components/mykb/log.md components/mykb/log.json \
+        components/mykb/guidance.json
+if ! git diff --cached --quiet; then
+  git -c user.name="RSIS Test" -c user.email="rsis@test.local" \
+      commit -m "rsis: loop batch results — $(date -u +%Y-%m-%dT%H:%MZ)"
+fi
 (cd "$MYKB" && python3 .wiki-daemon/build_stub_audit.py)
 (cd "$MYKB" && python3 .wiki-daemon/build_graph.py)
 python3 "$DIR/gen-static-data.py"
 python3 "$DIR/gen-static-data.py" --check || FAIL=1
+git add components/mykb/files.json components/mykb/catalog.json components/mykb/graph.json \
+        components/mykb/index.json components/mykb/log.json components/mykb/stub-review.json \
+        components/mykb/guidance.json components/rsis3/dashboard
+if ! git diff --cached --quiet; then
+  git -c user.name="RSIS Test" -c user.email="rsis@test.local" \
+      commit -m "rsis: snapshot regeneration — $(date -u +%Y-%m-%dT%H:%MZ)"
+fi
 
 echo ""
 if [ "$FAIL" = "1" ]; then
