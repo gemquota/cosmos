@@ -76058,6 +76058,22 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-pass-12-improvement-engine-2026-08-07.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 12 \u2014 real improvement engine: L2 codegen, batch launcher, stub detection",
+  "tags": [
+   "rsis3",
+   "passes",
+   "l2",
+   "improvement-loop",
+   "launch",
+   "stub-detector",
+   "rrp",
+   "pulse",
+   "okf"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-pass-6-2026-08-06.md",
   "type": "synthesis",
   "title": "RSIS3 Pass 6 \u2014 five full cycles across L1\u2013L9",

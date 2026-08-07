@@ -59,10 +59,31 @@ def _timeout_via_sigalrm(seconds: float) -> None:
 
 
 def _timeout_via_polling(seconds: float) -> None:
-    """Enforce timeout via polling (non-Unix fallback)."""
-    # This is handled by checking time.monotonic() in strategic places
-    # It's less precise but portable.
-    pass
+    """Enforce a deadline via a watchdog thread (non-SIGALRM fallback).
+
+    Arms a daemon thread that raises :class:`TimeoutError` in the calling
+    thread after ``seconds`` using ``PyThreadState_SetAsyncExc``. Less
+    precise than SIGALRM (the exception lands at the next bytecode
+    boundary) but portable to platforms without ``signal.SIGALRM``
+    (e.g. Windows). Used automatically by :func:`deadline` when SIGALRM
+    is unavailable.
+    """
+    import ctypes
+    import threading
+
+    target = threading.get_ident()
+
+    def _raise_timeout() -> None:
+        time.sleep(seconds)
+        res = ctypes.pythonapi.PyThreadState_SetAsyncExc(
+            ctypes.c_ulong(target), ctypes.py_object(TimeoutError))
+        if res != 1:
+            logger.warning(
+                "polling timeout: async exc target not found (res=%d)", res)
+
+    threading.Thread(
+        target=_raise_timeout, daemon=True,
+        name=f"rsis-timeout-{seconds}s").start()
 
 
 class Budget:

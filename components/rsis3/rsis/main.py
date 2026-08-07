@@ -501,6 +501,26 @@ def cmd_mmm(args: argparse.Namespace) -> int:
 
 
 
+def cmd_launch(args: argparse.Namespace) -> int:
+    """Run a full L1\u2013L9 loop batch (N cycles), mirroring run-batch.sh."""
+    from rsis.launch import LOOP_ORDER, plan_batch, run_batch
+
+    plan = plan_batch(args.cycles, args.goal_space_cycle)
+    print(f"\U0001f30c launch: {len(plan)} executions "
+          f"({args.cycles} cycles \u00d7 {len(LOOP_ORDER)} loops)")
+
+    if args.dry_run:
+        for loop, goal in plan:
+            marker = " (SPACE spec)" if goal == "from-space" else ""
+            print(f"  \u25b8 {loop} --goal {goal}{marker}")
+        return 0
+
+    result = run_batch(
+        args.cycles, args.goal_space_cycle, disk_pct=args.disk_pct)
+    print(result["report"])
+    return result["exit_code"]
+
+
 def _drive_cycle(loop_name, goal, telemetry, checkpoint, memory, evaluator,
                  recovery, holder):
     """Run one cycle of `loop_name`; return (done, satisfied, reason).
@@ -920,6 +940,20 @@ def main() -> int:
 
     p_mmm = sub.add_parser("mmm", help="Run L9 MMM loop (tunes L6 params)")
     p_mmm.set_defaults(func=cmd_mmm)
+
+    p_launch = sub.add_parser(
+        "launch", help="Run a full L1\u2013L9 loop batch (N cycles)")
+    p_launch.add_argument("--cycles", type=int, default=5,
+                          help="Number of full L1\u2013L9 cycles (default: 5)")
+    p_launch.add_argument("--goal-space-cycle", type=int, default=1,
+                          help="Cycle that sources its L2 goal from a SPACE "
+                               "spec artifact (default: 1)")
+    p_launch.add_argument("--disk-pct", type=int, default=None,
+                          help="Disk-pressure override (default: "
+                               "RSIS_DISK_USAGE_PCT or 100)")
+    p_launch.add_argument("--dry-run", action="store_true",
+                          help="Print the execution plan without running")
+    p_launch.set_defaults(func=cmd_launch)
 
     p_drive = sub.add_parser("drive",
                              help="Run a loop until its completion requirement is satisfied")
