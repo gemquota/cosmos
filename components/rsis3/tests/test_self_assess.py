@@ -193,3 +193,62 @@ def test_analyze_gaps_no_missing_keywords_fallback(tmp_path):
     gaps = analyze_gaps(syntheses, index)
     assert len(gaps) == 1
     assert "no page contains two keywords together" in gaps[0].reason
+
+
+from datetime import datetime, timedelta, timezone
+
+from rsis.self_assess import detect_trends
+
+
+def make_telemetry(tele_dir: Path, now: datetime):
+    tele_dir.mkdir(parents=True, exist_ok=True)
+    rows = []
+    for i in range(1, 4):
+        rows.append({"type": f"l{i}_start",
+                     "timestamp": (now - timedelta(days=1)).isoformat()})
+        rows.append({"type": f"l{i}_complete",
+                     "timestamp": (now - timedelta(days=1)).isoformat()})
+    for _ in range(3):
+        rows.append({"type": "l2_evaluation", "decision": "FAIL",
+                     "timestamp": now.isoformat()})
+    (tele_dir / "events.jsonl").write_text(
+        "\n".join(json.dumps(r) for r in rows) + "\n", encoding="utf-8")
+
+
+def test_detect_trends_from_telemetry(tmp_path):
+    now = datetime(2026, 8, 7, 12, 0, tzinfo=timezone.utc)
+    make_telemetry(tmp_path, now)
+    trends = detect_trends(tmp_path, window_days=7, now=now)
+    names = {t.name for t in trends}
+    assert "loop-completion" in names
+    evaluator = next(t for t in trends if t.name == "evaluator-fail-rate")
+    assert evaluator.direction == "up"
+    assert evaluator.magnitude == 1.0
+
+
+def test_detect_trends_requires_data_points(tmp_path):
+    now = datetime(2026, 8, 7, 12, 0, tzinfo=timezone.utc)
+    (tmp_path / "events.jsonl").write_text(
+        json.dumps({"type": "l1_start", "timestamp": now.isoformat()}) + "\n",
+        encoding="utf-8")
+    assert detect_trends(tmp_path, window_days=7, now=now) == []
+
+
+def test_detect_trends_git_cadence():
+    commits = [{"subject": "fix: broken link"}, {"subject": "docs: x"},
+               {"subject": "feat: y"}]
+    trends = detect_trends(Path("/nonexistent"), window_days=7,
+                           git_log=lambda: commits)
+    cadence = next(t for t in trends if t.name == "commit-cadence")
+    assert cadence.magnitude == 3.0
+    assert "fix" in cadence.evidence
+
+
+def test_detect_trends_ignores_malformed_events(tmp_path):
+    now = datetime(2026, 8, 7, 12, 0, tzinfo=timezone.utc)
+    (tmp_path / "events.jsonl").write_text(
+        json.dumps({"type": None, "timestamp": now.isoformat()}) + "\n"
+        + "[1, 2, 3]\n"
+        + json.dumps({"type": 42, "timestamp": now.isoformat()}) + "\n",
+        encoding="utf-8")
+    assert detect_trends(tmp_path, window_days=7, now=now) == []
