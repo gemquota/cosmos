@@ -298,6 +298,12 @@ Enforcement of immutability:
 - Configuration is environment-variable driven, not file-driven
 - Digest verification at startup (SHA-256 of evaluator binary)
 
+The gate is deterministic and stdlib-only (path safety, compile, AST
+safety scan, regression, style/efficiency); JSON/config candidates are
+validated for shape, and an optional LLM refinement pass
+(`RSIS_EVALUATOR_API_KEY`) can only downgrade a PASS — it never overturns
+a deterministic hard FAIL.
+
 ### 3.2 Resource Limits
 
 Despite the "no artificial guardrails" stance, practical bounds must exist to prevent host exhaustion:

@@ -53,6 +53,11 @@ a violation. `check-practices` reports the per-loop event matrix.
   checkpoints.
 - The evaluator is immutable — never modify `evaluator/`; the checker does
   not cover this because the digest verification at startup does.
+- The evaluator's gate is deterministic and stdlib-only: target-path
+  safety, compile, AST safety scan, regression, and style/efficiency
+  heuristics. Unsafe or non-compiling candidates fail closed without an
+  API call; an optional LLM refinement (when `RSIS_EVALUATOR_API_KEY` is
+  set) can only downgrade a PASS, never overturn a hard FAIL.
 
 ## 5. Checkpoint Hygiene
 
