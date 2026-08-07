@@ -101,6 +101,10 @@ truthful.
   last signals.
 - `check-practices` marks loops that have never run as WARN (never-run is
   allowed; inconsistent state is not).
+- `python -m rsis self-assess` runs the standing self-assessment (KB
+  health, gaps, trends) and writes `wiki/assessments/`,
+  `wiki/reflections/`, and `wiki/backlog/` notes; commit them and include
+  the new areas when regenerating snapshots.
 
 ## 8. Anti-Patterns
 
