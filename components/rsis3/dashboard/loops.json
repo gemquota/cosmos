@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-07T04:34Z",
+ "generated": "2026-08-07T04:58Z",
  "note": "Loop k+3 tunes loop k (L4\u2192L1 \u2026 L9\u2192L6); L7\u2013L9 are untuned fixed points. Live state is injected at startup by load_config(); this is a static snapshot.",
  "loops": [
   {
@@ -22,8 +22,8 @@
    "status": "implemented",
    "target": "Pure consumer of tuned params (L4\u2192L1)",
    "state_file": null,
-   "runs": 26,
-   "last_run": "2026-08-06T19:36:22.466993+00:00",
+   "runs": 31,
+   "last_run": "2026-08-07T04:52:21.944459+00:00",
    "cycle": 0,
    "history_len": 0,
    "last_signal": null,
@@ -36,8 +36,8 @@
    "status": "implemented",
    "target": "Pure consumer of tuned params (L5\u2192L2)",
    "state_file": null,
-   "runs": 26,
-   "last_run": "2026-08-06T19:36:22.448018+00:00",
+   "runs": 31,
+   "last_run": "2026-08-07T04:52:21.887791+00:00",
    "cycle": 0,
    "history_len": 0,
    "last_signal": null,
@@ -50,8 +50,8 @@
    "status": "implemented",
    "target": "Core stack \u2014 consolidates memory, derives strategies",
    "state_file": null,
-   "runs": 24,
-   "last_run": "2026-08-06T19:37:23.247520+00:00",
+   "runs": 29,
+   "last_run": "2026-08-07T04:52:37.520556+00:00",
    "cycle": 0,
    "history_len": 0,
    "last_signal": null,
@@ -64,10 +64,10 @@
    "status": "implemented",
    "target": "Tunes L1 execution params",
    "state_file": ".rsis/optimizer_state.json",
-   "runs": 24,
-   "last_run": "2026-08-06T19:38:16.479344+00:00",
-   "cycle": 12,
-   "history_len": 12,
+   "runs": 29,
+   "last_run": "2026-08-07T04:52:48.294115+00:00",
+   "cycle": 17,
+   "history_len": 17,
    "last_signal": null,
    "runtime": "recent",
    "params": [
@@ -77,7 +77,7 @@
     },
     {
      "key": "l1.max_tool_calls",
-     "value": 20.0
+     "value": 25
     }
    ]
   },
@@ -87,10 +87,10 @@
    "status": "implemented",
    "target": "Tunes L2 improvement params (population, mutation)",
    "state_file": ".rsis/strategies.json",
-   "runs": 28,
-   "last_run": "2026-08-06T19:39:10.870071+00:00",
+   "runs": 33,
+   "last_run": "2026-08-07T04:52:59.066332+00:00",
    "cycle": 0,
-   "history_len": 28,
+   "history_len": 33,
    "last_signal": "evolve",
    "runtime": "recent",
    "params": [
@@ -114,16 +114,16 @@
    "status": "implemented",
    "target": "Tunes L3 evolution params (plateau timeout)",
    "state_file": ".rsis/identity_state.json",
-   "runs": 25,
-   "last_run": "2026-08-06T19:40:05.130639+00:00",
-   "cycle": 13,
-   "history_len": 13,
+   "runs": 30,
+   "last_run": "2026-08-07T04:53:09.848815+00:00",
+   "cycle": 18,
+   "history_len": 18,
    "last_signal": "shrink",
    "runtime": "recent",
    "params": [
     {
      "key": "l3.plateau_timeout_s",
-     "value": 46800.0
+     "value": 28800.0
     }
    ]
   },
@@ -133,8 +133,8 @@
    "status": "implemented",
    "target": "Tunes L4 optimizer params (window / thresholds)",
    "state_file": ".rsis/metacog_state.json",
-   "runs": 23,
-   "last_run": "2026-08-06T19:40:59.172143+00:00",
+   "runs": 28,
+   "last_run": "2026-08-07T04:53:20.429959+00:00",
    "cycle": 13,
    "history_len": 13,
    "last_signal": "widen",
@@ -164,8 +164,8 @@
    "status": "implemented",
    "target": "Tunes L5 strategy params (population / mutation)",
    "state_file": ".rsis/metameta_state.json",
-   "runs": 23,
-   "last_run": "2026-08-06T19:41:56.228552+00:00",
+   "runs": 28,
+   "last_run": "2026-08-07T04:53:31.189586+00:00",
    "cycle": 10,
    "history_len": 10,
    "last_signal": "raise_mutation",
@@ -187,8 +187,8 @@
    "status": "implemented",
    "target": "Tunes L6 identity params (the recursion guard)",
    "state_file": ".rsis/mmm_state.json",
-   "runs": 22,
-   "last_run": "2026-08-06T19:42:52.887159+00:00",
+   "runs": 28,
+   "last_run": "2026-08-07T04:53:41.943351+00:00",
    "cycle": 12,
    "history_len": 12,
    "last_signal": "widen",

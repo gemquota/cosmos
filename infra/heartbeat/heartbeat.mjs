@@ -28,7 +28,6 @@ try {
       startCmd: s.startCmd || 'node',
       startArgs: s.startArgs || [],
       cwd: s.cwd || PROJECT_DIR,
-      check: (res) => res.statusCode === 200,
     }));
   } else {
     console.error(`⚠️  ${WATCHES_FILE} not found. No services to monitor.`);
@@ -52,9 +51,11 @@ function log(service, status, msg) {
 
 function checkService(service) {
   return new Promise((resolve) => {
-    const req = http.get(`http://localhost:${service.port}${service.path || '/'}`, (res) => {
-      const up = service.check(res);
-      resolve(up);
+    // Port watch (localhost) or URL watch (e.g. the deployed GitHub Pages
+    // site). Both default to HTTP 200 as the up condition.
+    const url = service.url || `http://localhost:${service.port}${service.path || '/'}`;
+    const req = http.get(url, (res) => {
+      resolve(res.statusCode === 200);
       res.resume();
     });
     req.on('error', () => resolve(false));
@@ -132,7 +133,7 @@ console.log(`❤️  SPACE Heartbeat Monitor`);
 console.log(`   Config: ${WATCHES_FILE}`);
 console.log(`   Project: ${PROJECT_DIR}`);
 console.log(`   Interval: ${INTERVAL / 1000}s | Auto-restart: ${SHOULD_RESTART ? 'ON' : 'OFF'}`);
-console.log(`   Services: ${SERVICES.map(s => `${s.name} (:${s.port})`).join(', ') || '(none)'}`);
+console.log(`   Services: ${SERVICES.map(s => s.url ? `${s.name} (${s.url})` : `${s.name} (:${s.port})`).join(', ') || '(none)'}`);
 console.log('');
 
 heartbeat();

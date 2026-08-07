@@ -1,7 +1,7 @@
 # SPACE — Passes Overview
 
-**Updated:** Pass 010 (2026-08-07)
-**Total Documents:** 40 pass docs across 10 passes
+**Updated:** Pass 011 (2026-08-07)
+**Total Documents:** 44 pass docs across 11 passes
 
 ---
 
@@ -19,6 +19,7 @@
 | 008 | Memory Link (loops ↔ MyKB) | MyKB gateway: L3 self-writes syntheses + `log.md`, `--goal from-mykb`, +5/loop batch | — | ✅ Complete |
 | 009 | Spec Link (loops ↔ SPACE, live Guide) | `--goal from-space` maps spec artifacts to L2 goals; Guide Direction tab renders live loop+memory state | — | ✅ Complete |
 | 010 | UX Cohesion (Guide Models, KG lazy boot) | Guide Models tab renders loop-tuning params; KG lazy-loads regenerated payloads; all surfaces browser-verified | 57/157 | ✅ Complete |
+| 011 | Ops + Capstone (auto-deploy, scheduled loops, monitoring) | CI auto-syncs main → gh-pages; nightly loop batch; hourly health gate; capstone run proves spec → goal → cycle → MyKB → dashboard | 57/157 | ✅ Complete |
 
 
 ---
@@ -113,5 +114,5 @@ docs (CHANGELOG + README hosting section).
 | 150+ tests across 14 suites | ✅ | Pass 004 |
 ---
 
-> Passes 006–010 are RSIS3 loop passes recorded in this ledger (tests column n/a);
+> Passes 006–011 are RSIS3 loop passes recorded in this ledger (tests column n/a);
 > pass 006 was executed and pushed before the integration arc and is backfilled here.

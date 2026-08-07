@@ -208,6 +208,10 @@ const DOCUMENTS = [
   { file:'PASS-010-ROADMAP.md', title:'Pass 010 Roadmap', group:'Pass 010', icon:'🗺️', cat:'roadmap' },
   { file:'PASS-010-REVIEW.md', title:'Pass 010 Review', group:'Pass 010', icon:'✅', cat:'review' },
   { file:'PASS-010-COMPLETION.md', title:'Pass 010 Completion', group:'Pass 010', icon:'📋', cat:'review' },
+  { file:'PASS-011-AUDIT.md', title:'Pass 011 Audit', group:'Pass 011', icon:'🔍', cat:'audit' },
+  { file:'PASS-011-ROADMAP.md', title:'Pass 011 Roadmap', group:'Pass 011', icon:'🗺️', cat:'roadmap' },
+  { file:'PASS-011-REVIEW.md', title:'Pass 011 Review', group:'Pass 011', icon:'✅', cat:'review' },
+  { file:'PASS-011-COMPLETION.md', title:'Pass 011 Completion', group:'Pass 011', icon:'📋', cat:'review' },
 
   // Dev Docs
   { file:'project-status.md', title:'Project Status', group:'Development', icon:'📊', cat:'dev' },
@@ -289,12 +293,12 @@ function buildSidebar(filter='') {
   for (const d of DOCUMENTS) {
     if (q && !d.title.toLowerCase().includes(q) && !d.group.toLowerCase().includes(q)) continue;
     // Latest mode: only show Pass 004 docs
-    if (filterMode === 'latest' && !d.file.includes('PASS-010')) continue;
+    if (filterMode === 'latest' && !d.file.includes('PASS-011')) continue;
     if (!groups[d.group]) groups[d.group] = [];
     groups[d.group].push(d);
   }
   // Group order: super-section 'Passes' wraps 001-004, then dev, then specs
-  const passGroups = ['Pass 001', 'Pass 002', 'Pass 003', 'Pass 004', 'Pass 005', 'Pass 006', 'Pass 007', 'Pass 008', 'Pass 009', 'Pass 010'].filter(g => groups[g]);
+  const passGroups = ['Pass 001', 'Pass 002', 'Pass 003', 'Pass 004', 'Pass 005', 'Pass 006', 'Pass 007', 'Pass 008', 'Pass 009', 'Pass 010', 'Pass 011'].filter(g => groups[g]);
   const otherGroups = ['Development', 'Specifications'].filter(g => groups[g]);
   let html = '';
   let total = 0;
@@ -452,13 +456,13 @@ if (!loadFromHash()) {
       <h1 style="font-size:24px;margin-bottom:8px">SPACE Meta Documents</h1>
       <p style="color:var(--text-secondary);margin-bottom:20px">Browse phase audit reports, improvement roadmaps, development phase guides, and technical specifications.</p>
       <div style="display:flex;flex-direction:column;gap:8px;text-align:left">
-        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('PASS-010-AUDIT.md','Pass 010 Audit','audit')">
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('PASS-011-AUDIT.md','Pass 011 Audit','audit')">
           <span style="font-size:20px">🔍</span>
-          <div><div style="font-weight:600;font-size:13px">Latest Audit</div><div style="font-size:11px;color:var(--text-muted)">Pass 010 — UX cohesion: Guide Models tab, KG lazy boot, verified surfaces</div></div>
+          <div><div style="font-weight:600;font-size:13px">Latest Audit</div><div style="font-size:11px;color:var(--text-muted)">Pass 011 — ops + capstone: auto-deploy, scheduled loops, monitoring, full-chain proof</div></div>
         </div>
-        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('PASS-010-REVIEW.md','Pass 010 Review','review')">
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('PASS-011-REVIEW.md','Pass 011 Review','review')">
           <span style="font-size:20px">✅</span>
-          <div><div style="font-weight:600;font-size:13px">Latest Completion Review</div><div style="font-size:11px;color:var(--text-muted)">Pass 010 — 57+157 tests, Models tab verified, KG lazy boot, 0 broken surfaces</div></div>
+          <div><div style="font-weight:600;font-size:13px">Latest Completion Review</div><div style="font-size:11px;color:var(--text-muted)">Pass 011 — 57+157 tests, capstone chain proven, live site 200, 0 broken surfaces</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('specs/01-data-schema.md','01 — Data Schema','spec')">
           <span style="font-size:20px">📐</span>

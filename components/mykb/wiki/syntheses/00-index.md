@@ -2,14 +2,14 @@
 type: "index"
 hub: true
 title: "Syntheses Index"
-description: "Listing of the syntheses/ folder (61 pages)."
+description: "Listing of the syntheses/ folder (62 pages)."
 tags: ["index"]
 timestamp: "2026-08-03T00:00:00Z"
 ---
 
 # Syntheses
 
-Part of [[wiki/index|Wiki Index]]. 61 pages.
+Part of [[wiki/index|Wiki Index]]. 62 pages.
 
 ## Pages
 - [[wiki/syntheses/acquisition-pass-snapshot-ordering|Acquisition Passes & Snapshot Ordering]] — Durable rules for multi-worker acquisition rounds: stage untracked notes before regenerating files.json (it counts tracked files only), generators are idempotent and safe to re-run, and threshold buckets move predictably because fulls are capped at 400 words
@@ -63,6 +63,7 @@ Part of [[wiki/index|Wiki Index]]. 61 pages.
 - [[wiki/syntheses/rsis3-pass-8-2026-08-06|RSIS3 Pass 8 — MyKB memory link: loops read and write the wiki]] — Durable rules from pass 8: L3 consolidation is self-writing through the MyKB gateway, loops read syntheses for context, cycle ordinals from durable counts
 - [[wiki/syntheses/rsis3-pass-9-2026-08-06|RSIS3 Pass 9 — spec link: SPACE artifacts feed L2 goals and the live Guide]] — Durable rules from pass 9: spec exports are a first-class ideation source, Guide surfaces share one payload, cross-component reads degrade gracefully
 - [[wiki/syntheses/rsis3-pass-10-2026-08-07|RSIS3 Pass 10 — UX cohesion: Models tab, KG lazy boot, verified surfaces]] — Durable rules from pass 10: Guide renders loop tuning topology (which loop tunes which params) from one guidance payload, KG pages lazy-load regenerated graph/catalog/index/log payloads instead of embedding copies, and every user-visible surface verifies on live data with graceful static fallbacks
+- [[wiki/syntheses/rsis3-pass-11-2026-08-07|RSIS3 Pass 11 — ops + capstone: auto-deploy, scheduled loops, monitoring, full-chain proof]] — Durable rules from pass 11: the site auto-syncs main → gh-pages via CI, loops run on schedule via one batch script (disk override + practices gate + snapshot regen), monitoring covers the live site hourly, and a capstone run proved spec → goal → cycle → MyKB → dashboard in one batch
 - [[wiki/syntheses/safety-case-approach|Safety Case Approach]] — Structuring safety justification as explicit cases
 - [[wiki/syntheses/security-advisories-ai|Security Advisories]] — Official notices about AI security vulnerabilities
 - [[wiki/syntheses/third-party-audits|Third-Party Audits]] — Independent external reviews of AI systems

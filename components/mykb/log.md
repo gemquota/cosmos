@@ -5,6 +5,34 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-07 (RSIS3 pass 11 — ops + capstone: auto-deploy, scheduled loops, monitoring, full-chain proof)
+- **Deploy auto-sync**: `infra/deploy/sync-gh-pages.sh` + `.github/workflows/deploy.yml` mirror main → gh-pages on push + daily safety net (idempotent, no-op when unchanged).
+- **Scheduled loop runner**: `infra/loops/run-batch.sh` (N cycles × 8 loops, disk override, check-practices gate, snapshot regeneration) + `.github/workflows/loops.yml` nightly batch that commits results to main and deploys.
+- **Monitoring**: heartbeat gained URL watches (live site); `infra/health/check.sh` (site 200, snapshots --check, contracts, links, practices) run hourly by health.yml.
+- **Capstone batch**: 5 cycles × 8 loops = 40 executions, cycle 1 `run --goal from-space` — telemetry +5 per loop (L1=31, L2=31, L3=29, L4=29, L5=33, L6=30, L7=28, L8=28, L9=28; 222 files / 724 events / 0 malformed); `check-practices` all PASS.
+- **Chain proof**: capstone `l2_start` references `spec artifact abstraction_level`; L3 self-wrote `rsis3-l3-cycle-{11..15}-cross-session-memory-consolidation-2026-08-07.md`; Guide live payload lists the spec trace + new syntheses first; graph 5,424 nodes / 36,913 edges.
+- **Synthesis added**: `wiki/syntheses/rsis3-pass-11-2026-08-07.md`; syntheses index updated.
+
+## 2026-08-07 (RSIS3 L3 cycle 15 — memory consolidation)
+- L3 cycle 15 wrote OKF synthesis `rsis3-l3-cycle-15-cross-session-memory-consolidation-2026-08-07.md` (2 insight(s), 1 strategy(ies), 157 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-07 (RSIS3 L3 cycle 14 — memory consolidation)
+- L3 cycle 14 wrote OKF synthesis `rsis3-l3-cycle-14-cross-session-memory-consolidation-2026-08-07.md` (2 insight(s), 1 strategy(ies), 140 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-07 (RSIS3 L3 cycle 13 — memory consolidation)
+- L3 cycle 13 wrote OKF synthesis `rsis3-l3-cycle-13-cross-session-memory-consolidation-2026-08-07.md` (2 insight(s), 1 strategy(ies), 124 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-07 (RSIS3 L3 cycle 12 — memory consolidation)
+- L3 cycle 12 wrote OKF synthesis `rsis3-l3-cycle-12-cross-session-memory-consolidation-2026-08-07.md` (1 insight(s), 1 strategy(ies), 109 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-07 (RSIS3 L3 cycle 11 — memory consolidation)
+- L3 cycle 11 wrote OKF synthesis `rsis3-l3-cycle-11-cross-session-memory-consolidation-2026-08-07.md` (1 insight(s), 1 strategy(ies), 95 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
 ## 2026-08-07 (RSIS3 pass 10 — UX cohesion: Models tab, KG lazy boot, verified surfaces)
 - **Guide Models tab**: `gdRenderModels()` renders per-loop tuned params from the live guidance payload (`live.loops[*].params`, target + key/value) with empty-state fallback; Direction live loop panel shares the same payload.
 - **Per-loop tuning metadata**: `scan_live_state()` now emits `target` + `params` per loop from `dashboard/loops.json` (L4–L9 tuners, 16 params).

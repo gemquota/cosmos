@@ -1,0 +1,63 @@
+name: COSMOS Scheduled Loop Runner
+
+on:
+  schedule:
+    - cron: '30 2 * * *'   # daily: 02:30 UTC — batch before the deploy safety net
+  workflow_dispatch:
+    inputs:
+      cycles:
+        description: 'Number of full L1–L9 cycles'
+        required: false
+        default: '5'
+      spec_cycle:
+        description: 'Cycle that sources its L2 goal from a SPACE spec artifact'
+        required: false
+        default: '1'
+
+permissions:
+  contents: write
+
+jobs:
+  run-loops:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout main
+        run: git checkout main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install --quiet numpy networkx psutil pytest
+
+      - name: Run full L1–L9 batch
+        run: |
+          bash infra/loops/run-batch.sh \
+            --cycles "${{ inputs.cycles || '5' }}" \
+            --goal-space-cycle "${{ inputs.spec_cycle || '1' }}"
+
+      - name: Commit loop results to main
+        run: |
+          git config user.name "RSIS Test"
+          git config user.email "rsis@test.local"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No loop-result changes to commit"
+          else
+            git commit -m "rsis: scheduled loop batch — $(date -u +%Y-%m-%dT%H:%MZ) (from-space cycle ${{ inputs.spec_cycle || '1' }})"
+            git push origin main
+          fi
+
+      - name: Auto-sync main → gh-pages
+        env:
+          REMOTE: origin
+        run: |
+          git config user.name "RSIS Test"
+          git config user.email "rsis@test.local"
+          bash infra/deploy/sync-gh-pages.sh
