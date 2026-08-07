@@ -28,6 +28,7 @@ from rsis.telemetry import TelemetryCollector, TelemetryEvent
 logger = logging.getLogger(__name__)
 
 STUB_FLOOR = 320  # matches .wiki-daemon/build_stub_index.py
+MIN_SIGNIFICANT_TOKEN_LEN = 4  # shared by coverage index and gap analysis
 FM_RE = re.compile(r"^---\s*\n(.*?)\n---", re.S)
 KEY_RE = re.compile(r"^(\w+):\s*(.*)$", re.M)
 WIKILINK_RE = re.compile(r"\[\[([^\]|]+)(?:\|[^\]]+)?\]\]")
@@ -157,3 +158,75 @@ def scan_wiki_health(mykb_root: Path,
         report.notes.append("kb_linter unavailable — link/orphan metrics "
                             "not scanned")
     return report
+
+
+@dataclass
+class GapItem:
+    """P2 — a topic the wiki does not cover (spec §6.3)."""
+    topic: str
+    priority: str
+    reason: str
+    slug: str = ""
+
+    def __post_init__(self) -> None:
+        if not self.slug:
+            slug = re.sub(r"[^a-z0-9]+", "-", self.topic.lower()).strip("-")
+            self.slug = slug or "gap"
+
+
+def build_coverage_index(wiki_root: Path) -> dict[str, set[str]]:
+    """Token → set of page ids containing it (read-only, spec §6.2a)."""
+    index: dict[str, set[str]] = {}
+    if not wiki_root.is_dir():
+        return index
+    for rel in sorted(wiki_root.rglob("*.md")):
+        hidden = any(seg.startswith(".")
+                     for seg in rel.relative_to(wiki_root).parts)
+        if hidden:
+            continue
+        text = rel.read_text(encoding="utf-8", errors="ignore")
+        body = FM_RE.sub("", text, count=1)
+        page_id = str(rel.relative_to(wiki_root))
+        for tok in set(TOKEN_RE.findall(body.lower())):
+            if (tok not in STOPWORDS
+                    and len(tok) >= MIN_SIGNIFICANT_TOKEN_LEN):
+                index.setdefault(tok, set()).add(page_id)
+    return index
+
+
+def analyze_gaps(syntheses: list[dict], index: dict[str, set[str]],
+                 max_gaps: int = 10) -> list[GapItem]:
+    """P2 — topics under-covered by the wiki (spec §6.2a).
+
+    A synthesis topic is covered when at least two of its significant
+    tokens co-occur in some wiki page; otherwise it becomes a gap.
+    """
+    if max_gaps <= 0:
+        return []
+    gaps: list[GapItem] = []
+    for syn in syntheses:
+        text = f"{syn.get('title', '')} {syn.get('description', '')}".lower()
+        tokens = sorted({t for t in TOKEN_RE.findall(text)
+                         if t not in STOPWORDS
+                         and len(t) >= MIN_SIGNIFICANT_TOKEN_LEN})
+        if len(tokens) < 2:
+            continue
+        pairs = [(t1, t2)
+                 for i, t1 in enumerate(tokens) for t2 in tokens[i + 1:]]
+        covered = any(bool(index.get(t1, set()) & index.get(t2, set()))
+                      for t1, t2 in pairs)
+        if covered:
+            continue
+        missing = [t for t in tokens if not index.get(t)]
+        if missing:
+            detail = f"missing keywords: {', '.join(missing[:3])}"
+        else:
+            detail = "no page contains two keywords together"
+        gaps.append(GapItem(
+            topic=syn.get("title", "untitled synthesis"),
+            priority="high",
+            reason=f"under-covered topic; {detail}",
+        ))
+        if len(gaps) >= max_gaps:
+            break
+    return gaps

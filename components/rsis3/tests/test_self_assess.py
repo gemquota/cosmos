@@ -96,3 +96,100 @@ def test_scan_wiki_health_linter_unavailable_is_fail_closed(tmp_path):
     assert report.links_scanned is False
     assert report.score() < 1.0
     assert any("kb_linter unavailable" in n for n in report.notes)
+
+
+from rsis.self_assess import GapItem, analyze_gaps, build_coverage_index
+
+
+def test_coverage_index_maps_tokens_to_pages(tmp_path):
+    wiki = tmp_path / "wiki"
+    wiki.mkdir()
+    (wiki / "page.md").write_text("quantum decoherence notes\n",
+                                  encoding="utf-8")
+    index = build_coverage_index(wiki)
+    assert "quantum" in index
+    assert "decoherence" in index
+    assert index["quantum"] == {"page.md"}
+
+
+def test_analyze_gaps_covered_and_uncovered(tmp_path):
+    wiki = tmp_path / "wiki"
+    wiki.mkdir()
+    (wiki / "page.md").write_text("quantum decoherence entanglement\n",
+                                  encoding="utf-8")
+    index = build_coverage_index(wiki)
+    syntheses = [
+        {"title": "Quantum Decoherence Patterns",
+         "description": "entanglement collapse behavior"},
+        {"title": "Zebra Migration Routes",
+         "description": "seasonal savanna movement"},
+    ]
+    gaps = analyze_gaps(syntheses, index)
+    assert len(gaps) == 1
+    assert gaps[0].topic == "Zebra Migration Routes"
+    assert gaps[0].priority == "high"
+    assert gaps[0].slug == "zebra-migration-routes"
+
+
+def test_gap_slug_fallback():
+    gap = GapItem(topic="!!!", priority="high", reason="x")
+    assert gap.slug == "gap"
+
+
+def test_build_coverage_index_skips_hidden_segments(tmp_path):
+    wiki = tmp_path / "wiki"
+    (wiki / ".obsidian").mkdir(parents=True)
+    (wiki / "page.md").write_text("quantum decoherence\n", encoding="utf-8")
+    (wiki / ".obsidian" / "workspace.md").write_text("quantum notes\n",
+                                                    encoding="utf-8")
+    index = build_coverage_index(wiki)
+    assert index["quantum"] == {"page.md"}
+
+
+def test_build_coverage_index_missing_dir_is_empty(tmp_path):
+    assert build_coverage_index(tmp_path / "nope") == {}
+
+
+def test_analyze_gaps_max_gaps_and_covered(tmp_path):
+    wiki = tmp_path / "wiki"
+    wiki.mkdir()
+    (wiki / "page.md").write_text("quantum decoherence entanglement\n",
+                                  encoding="utf-8")
+    index = build_coverage_index(wiki)
+    syntheses = [
+        {"title": "Quantum Decoherence Patterns",
+         "description": "entanglement collapse behavior"},
+        {"title": "Zebra Migration Routes",
+         "description": "seasonal savanna movement"},
+        {"title": "Orchid Pollination Cycles",
+         "description": "tropical insect mutualism"},
+    ]
+    gaps = analyze_gaps(syntheses, index, max_gaps=1)
+    assert len(gaps) == 1
+    assert gaps[0].topic == "Zebra Migration Routes"
+
+
+def test_analyze_gaps_zero_max_returns_empty(tmp_path):
+    wiki = tmp_path / "wiki"
+    wiki.mkdir()
+    (wiki / "page.md").write_text("quantum notes\n", encoding="utf-8")
+    index = build_coverage_index(wiki)
+    syntheses = [{"title": "Zebra Migration Routes",
+                  "description": "seasonal savanna movement"}]
+    assert analyze_gaps(syntheses, index, max_gaps=0) == []
+    assert analyze_gaps(syntheses, index, max_gaps=-1) == []
+
+
+def test_analyze_gaps_no_missing_keywords_fallback(tmp_path):
+    wiki = tmp_path / "wiki"
+    wiki.mkdir()
+    for i, word in enumerate(["quantum", "decoherence", "patterns",
+                              "entanglement", "collapse", "behavior"]):
+        (wiki / f"p{i}.md").write_text(f"{word} filler\n",
+                                       encoding="utf-8")
+    index = build_coverage_index(wiki)
+    syntheses = [{"title": "Quantum Decoherence Patterns",
+                  "description": "entanglement collapse behavior"}]
+    gaps = analyze_gaps(syntheses, index)
+    assert len(gaps) == 1
+    assert "no page contains two keywords together" in gaps[0].reason
