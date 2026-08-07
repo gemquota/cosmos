@@ -948,3 +948,17 @@ title: "Bundle Log"
 - Tests: rsis3 75 passed (18 new), SPACE 157 passed, check-practices OK,
   contracts 0 FAIL, gen-static-data --check OK.
 - Synthesis: `rsis3-pass-12-improvement-engine-2026-08-07.md`.
+
+## 2026-08-07 (RSIS3 pass 13 — deterministic evaluator gate)
+- Replaced the stub evaluator (always PASS, perfect scores) with a real
+  deterministic gate in `evaluator/evaluator.py`: path safety, compile,
+  AST safety scan, regression, style/efficiency; JSON/config candidates
+  (L8/L9 deltas) skip Python gates; unified-diff fragments are
+  dedent-checked so safety scans still apply.
+- Optional fail-closed LLM refinement via `RSIS_EVALUATOR_API_KEY` — an
+  LLM can only downgrade a PASS, never overturn a deterministic hard FAIL
+  or inflate its scores.
+- Tests: `tests/test_evaluator_gate.py` 45 cases (new); rsis3 suite
+  120 passed, check-practices OK, gen-static-data --check OK; version
+  bumped to 0.4.3 (CHANGELOG entry added).
+- Synthesis: `rsis3-pass-13-deterministic-evaluator-gate-2026-08-07.md`.
