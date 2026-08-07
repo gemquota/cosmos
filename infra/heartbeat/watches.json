@@ -3,8 +3,8 @@
     "name": "COSMOS Dashboard",
     "port": 9000,
     "path": "/",
-    "startCmd": "node",
-    "startArgs": ["serve-dashboard.mjs", "9000"],
+    "startCmd": "python3",
+    "startArgs": ["-m", "http.server", "9000", "--bind", "0.0.0.0"],
     "cwd": "/data/data/com.termux/files/home/dev/cosmos"
   },
   {
@@ -22,5 +22,17 @@
     "startCmd": "node",
     "startArgs": ["serve-ui.mjs", "8888"],
     "cwd": "/data/data/com.termux/files/home/dev/cosmos/components/space"
+  },
+  {
+    "name": "MyKB Wiki Daemon",
+    "port": 8765,
+    "path": "/",
+    "startCmd": "python3",
+    "startArgs": ["server.py", "8765"],
+    "cwd": "/data/data/com.termux/files/home/dev/cosmos/components/mykb"
+  },
+  {
+    "name": "COSMOS Live Site (GitHub Pages)",
+    "url": "https://gemquota.github.io/cosmos/"
   }
 ]

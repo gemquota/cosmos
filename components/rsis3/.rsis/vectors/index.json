@@ -71,6 +71,474 @@
         },
         "goal": "optimize imports"
       }
+    },
+    {
+      "id": 4,
+      "text": "applied: Stub improvement: add a defensive guard in rsis/config.py",
+      "metadata": {
+        "node_id": "improvement-7",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "add a defensive guard in rsis/config.py"
+      }
+    },
+    {
+      "id": 5,
+      "text": "applied: Stub improvement: Add a defensive guard against an empty goals list ",
+      "metadata": {
+        "node_id": "improvement-8",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Add a defensive guard against an empty goals list in rsis/run.py"
+      }
+    },
+    {
+      "id": 6,
+      "text": "applied: Stub improvement: Add a docstring to the timeout module in rsis/time",
+      "metadata": {
+        "node_id": "improvement-9",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Add a docstring to the timeout module in rsis/timeout.py"
+      }
+    },
+    {
+      "id": 7,
+      "text": "applied: Stub improvement: Clarify error handling in rsis/resource_monitor.py",
+      "metadata": {
+        "node_id": "improvement-10",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Clarify error handling in rsis/resource_monitor.py when disk usage cannot be read"
+      }
+    },
+    {
+      "id": 8,
+      "text": "applied: Stub improvement: Add a defensive guard for None result in rsis/eval",
+      "metadata": {
+        "node_id": "improvement-11",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Add a defensive guard for None result in rsis/evaluator.py"
+      }
+    },
+    {
+      "id": 9,
+      "text": "applied: Stub improvement: Add a docstring to the recovery module in rsis/rec",
+      "metadata": {
+        "node_id": "improvement-13",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Add a docstring to the recovery module in rsis/recovery.py"
+      }
+    },
+    {
+      "id": 10,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-15",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 11,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-16",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 12,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-18",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 13,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-21",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 14,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-25",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 15,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-30",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 16,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-31",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 17,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-32",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 18,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-33",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 19,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-34",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 20,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-70",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 21,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-71",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 22,
+      "text": "applied: Stub improvement: Implement the abstraction_level spec artifact: Mix",
+      "metadata": {
+        "node_id": "improvement-72",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Implement the abstraction_level spec artifact: Mixed \u2014 conceptual frameworks illustrated with examples (SPACE spec artifact abstraction_level, series 1, question 1.2.2)"
+      }
+    },
+    {
+      "id": 23,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-73",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 24,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-74",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 25,
+      "text": "applied: Stub improvement: Implement the abstraction_level spec artifact: Mix",
+      "metadata": {
+        "node_id": "improvement-121",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Implement the abstraction_level spec artifact: Mixed \u2014 conceptual frameworks illustrated with examples (SPACE spec artifact abstraction_level, series 1, question 1.2.2)"
+      }
+    },
+    {
+      "id": 26,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-123",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 27,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-138",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 28,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-154",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
+    },
+    {
+      "id": 29,
+      "text": "applied: Stub improvement: self-improve the codebase",
+      "metadata": {
+        "node_id": "improvement-171",
+        "files": [
+          "stub.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "self-improve the codebase"
+      }
     }
   ]
 }

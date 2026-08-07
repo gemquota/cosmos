@@ -1,19 +1,16 @@
 import { createServer } from 'http';
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';
+import { pathToFileURL } from 'url';
 import { fileURLToPath } from 'url';
 import { createSpace } from '../dist/engine/core.js';
 import { exportSession, exportToFiles } from '../dist/export/index.js';
-import { FileSystemStorage } from '../dist/storage/filesystem.js';
 import { DEFAULT_CONFIG } from '../dist/config/defaults.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const PORT = parseInt(process.argv[2] || '8888');
-const PROJECTS_DIR = DEFAULT_CONFIG.projects_dir;
 
-// Initialize engine and storage
+// Initialize engine (in-memory sessions; projects persist under projectsDir)
 const space = createSpace();
-const storage = new FileSystemStorage(PROJECTS_DIR);
 
 // CORS headers
 function cors(res) {
@@ -41,25 +38,17 @@ function readBody(req) {
   });
 }
 
-// Route matching
-function matchRoute(method, url, pattern) {
-  if (req_method !== method) return null;
-  const patternParts = pattern.split('/');
-  const urlParts = url.split('/');
-  if (patternParts.length !== urlParts.length) return null;
-  const params = {};
-  for (let i = 0; i < patternParts.length; i++) {
-    if (patternParts[i].startsWith(':')) {
-      params[patternParts[i].slice(1)] = decodeURIComponent(urlParts[i]);
-    } else if (patternParts[i] !== urlParts[i]) return null;
+export function createApp({ projectsDir, port = 8888 } = {}) {
+  const PROJECTS_DIR = projectsDir || DEFAULT_CONFIG.projects_dir;
+  const server = createServer(async (req, res) => {
+  // CORS preflight: respond 204 with the allow headers so cross-origin
+  // embeds (e.g. the Cosmos dashboard iframe) can POST/OPTIONS.
+  if (req.method === 'OPTIONS') {
+    cors(res);
+    res.writeHead(204);
+    res.end();
+    return;
   }
-  return params;
-}
-
-let req_method = '';
-
-const server = createServer(async (req, res) => {
-  req_method = req.method;
   const url = req.url.split('?')[0];
   
   try {
@@ -377,12 +366,20 @@ const server = createServer(async (req, res) => {
     console.error('Error:', err.message);
     json(res, { error: err.message }, 500);
   }
-});
+  });
+  return server;
+}
 
-server.listen(PORT, () => {
-  console.log(`\n🚀 SPACE Web UI`);
-  console.log(`   http://localhost:${PORT}`);
-  console.log(`   Projects dir: ${PROJECTS_DIR}`);
-  console.log(`   Framework: ${space.framework.meta.name} v${space.framework.meta.version}`);
-  console.log(`   ${space.framework.meta.total_open_ended} questions, ${space.framework.meta.total_series} series\n`);
-});
+
+// Listen only when run directly (tests import createApp instead).
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  const port = parseInt(process.argv[2] || '8888', 10);
+  const server = createApp({ port });
+  server.listen(port, () => {
+    console.log(`\n🚀 SPACE Web UI`);
+    console.log(`   http://localhost:${port}`);
+    console.log(`   Projects dir: ${DEFAULT_CONFIG.projects_dir}`);
+    console.log(`   Framework: ${space.framework.meta.name} v${space.framework.meta.version}`);
+    console.log(`   ${space.framework.meta.total_open_ended} questions, ${space.framework.meta.total_series} series\n`);
+  });
+}

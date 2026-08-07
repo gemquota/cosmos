@@ -2,8 +2,8 @@
   "params": {
     "l4.outcome_window": 20.0,
     "l4.min_outcomes": 5.0,
-    "l4.target_success_low": 0.45,
-    "l4.target_success_high": 0.9
+    "l4.target_success_low": 0.3,
+    "l4.target_success_high": 0.95
   },
   "history": [
     {
@@ -14,7 +14,115 @@
       },
       "accepted": true,
       "signal": "widen"
+    },
+    {
+      "cycle": 2,
+      "deltas": {
+        "l4.target_success_low": -0.04999999999999999,
+        "l4.target_success_high": 0.04999999999999993
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 3,
+      "deltas": {
+        "l4.target_success_low": -0.04999999999999999,
+        "l4.target_success_high": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 4,
+      "deltas": {
+        "l4.target_success_low": -0.04999999999999999,
+        "l4.target_success_high": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 5,
+      "deltas": {
+        "l4.target_success_low": -5.551115123125783e-17,
+        "l4.target_success_high": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 6,
+      "deltas": {
+        "l4.target_success_low": 0.0,
+        "l4.target_success_high": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 7,
+      "deltas": {
+        "l4.target_success_low": 0.0,
+        "l4.target_success_high": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 8,
+      "deltas": {
+        "l4.target_success_low": 0.0,
+        "l4.target_success_high": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 9,
+      "deltas": {
+        "l4.target_success_low": 0.0,
+        "l4.target_success_high": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 10,
+      "deltas": {
+        "l4.target_success_low": 0.0,
+        "l4.target_success_high": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 11,
+      "deltas": {
+        "l4.target_success_low": 0.0,
+        "l4.target_success_high": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 12,
+      "deltas": {
+        "l4.target_success_low": 0.0,
+        "l4.target_success_high": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 13,
+      "deltas": {
+        "l4.target_success_low": 0.0,
+        "l4.target_success_high": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
     }
   ],
-  "cycle": 1
+  "cycle": 13
 }

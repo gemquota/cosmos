@@ -21,7 +21,7 @@ Monte Carlo tree search (MCTS) grows a search tree by repeated cycles of selecti
 - RSIS3 relevance: an improvement pass that simulates candidate changes before committing them is MCTS-style planning over the space of possible passes — the tree is the set of change sequences, and the value is the predicted metric outcome.
 
 ## Related
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — search-based planning family
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — search-based planning family
 - [[wiki/llm-agents/tree-of-thought|Tree of Thought]] — LLM analog of tree search
 - [[wiki/concepts/multi-armed-bandit|Multi-Armed Bandit]] — the selection mechanism
 - [[wiki/concepts/exploration-exploitation|Exploration-Exploitation]] — the balance it implements

@@ -22,11 +22,11 @@ Practical concerns are determinism, fixed timesteps, and performance budgets on 
 
 **Related topics:** android, angular, api, aws, bash, cli, cloud, css
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/00-index|Aws Cloud
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/cloud-infra/categories/aws-cloud/00-index|Aws Cloud]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/damp|Damp
-- [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/mainactivity|Mainactivity
-- [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/sysfont|Sysfont
-- [[wiki/web-platforms/supercategories/cloud-infra/categories/aws-cloud/memorytrace|Memorytrace
+- [[raw/archive/junk-entities-2026-08/cloud-infra/categories/aws-cloud/damp|Damp]]
+- [[wiki/cloud-infra/categories/aws-cloud/mainactivity|Mainactivity]]
+- [[raw/archive/junk-entities-2026-08/cloud-infra/categories/aws-cloud/sysfont|Sysfont]]
+- [[raw/archive/junk-entities-2026-08/cloud-infra/categories/aws-cloud/memorytrace|Memorytrace]]

@@ -132,7 +132,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-title">📄 SPACE Meta</div>
-      <div class="sidebar-sub">Cycle audit reports &amp; docs</div>
+      <div class="sidebar-sub">Pass audit reports &amp; docs</div>
     </div>
     <div class="search-box">
       <span class="search-icon">🔍</span>
@@ -167,23 +167,51 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 <script>
 const DOCUMENTS = [
   // Reports (Audits, Roadmaps, Reviews)
-    { file:'CYCLES-OVERVIEW.md', title:'Cycles Overview', group:'__cycles_overview__', icon:'📊', cat:'overview' },
-  { file:'CYCLE-001-AUDIT.md', title:'Cycle 001 Audit', group:'Cycle 001', icon:'🔍', cat:'audit' },
-  { file:'CYCLE-001-ROADMAP.md', title:'Cycle 001 Roadmap', group:'Cycle 001', icon:'🗺️', cat:'roadmap' },
-  { file:'CYCLE-001-REVIEW.md', title:'Cycle 001 Review', group:'Cycle 001', icon:'✅', cat:'review' },
-  { file:'CYCLE-001-COMPLETION.md', title:'Cycle 001 Completion', group:'Cycle 001', icon:'📋', cat:'review' },
-  { file:'CYCLE-002-AUDIT.md', title:'Cycle 002 Audit', group:'Cycle 002', icon:'🔍', cat:'audit' },
-  { file:'CYCLE-003-AUDIT.md', title:'Cycle 003 Audit', group:'Cycle 003', icon:'🔍', cat:'audit' },
-  { file:'CYCLE-002-ROADMAP.md', title:'Cycle 002 Roadmap', group:'Cycle 002', icon:'🗺️', cat:'roadmap' },
-  { file:'CYCLE-002-REVIEW.md', title:'Cycle 002 Review', group:'Cycle 002', icon:'✅', cat:'review' },
-  { file:'CYCLE-002-COMPLETION.md', title:'Cycle 002 Completion', group:'Cycle 002', icon:'✅', cat:'review' },
-  { file:'CYCLE-003-ROADMAP.md', title:'Cycle 003 Roadmap', group:'Cycle 003', icon:'🗺️', cat:'roadmap' },
-    { file:'CYCLE-003-REVIEW.md', title:'Cycle 003 Review', group:'Cycle 003', icon:'✅', cat:'review' },
-  { file:'CYCLE-003-COMPLETION.md', title:'Cycle 003 Completion', group:'Cycle 003', icon:'📋', cat:'review' },
-    { file:'CYCLE-004-AUDIT.md', title:'Cycle 004 Audit', group:'Cycle 004', icon:'🔍', cat:'audit' },
-  { file:'CYCLE-004-ROADMAP.md', title:'Cycle 004 Roadmap', group:'Cycle 004', icon:'🗺️', cat:'roadmap' },
-    { file:'CYCLE-004-REVIEW.md', title:'Cycle 004 Review', group:'Cycle 004', icon:'✅', cat:'review' },
-  { file:'CYCLE-004-COMPLETION.md', title:'Cycle 004 Completion', group:'Cycle 004', icon:'📋', cat:'review' },
+    { file:'PASSES-OVERVIEW.md', title:'Passes Overview', group:'__passes_overview__', icon:'📊', cat:'overview' },
+  { file:'PASS-001-AUDIT.md', title:'Pass 001 Audit', group:'Pass 001', icon:'🔍', cat:'audit' },
+  { file:'PASS-001-ROADMAP.md', title:'Pass 001 Roadmap', group:'Pass 001', icon:'🗺️', cat:'roadmap' },
+  { file:'PASS-001-REVIEW.md', title:'Pass 001 Review', group:'Pass 001', icon:'✅', cat:'review' },
+  { file:'PASS-001-COMPLETION.md', title:'Pass 001 Completion', group:'Pass 001', icon:'📋', cat:'review' },
+  { file:'PASS-002-AUDIT.md', title:'Pass 002 Audit', group:'Pass 002', icon:'🔍', cat:'audit' },
+  { file:'PASS-003-AUDIT.md', title:'Pass 003 Audit', group:'Pass 003', icon:'🔍', cat:'audit' },
+  { file:'PASS-002-ROADMAP.md', title:'Pass 002 Roadmap', group:'Pass 002', icon:'🗺️', cat:'roadmap' },
+  { file:'PASS-002-REVIEW.md', title:'Pass 002 Review', group:'Pass 002', icon:'✅', cat:'review' },
+  { file:'PASS-002-COMPLETION.md', title:'Pass 002 Completion', group:'Pass 002', icon:'✅', cat:'review' },
+  { file:'PASS-003-ROADMAP.md', title:'Pass 003 Roadmap', group:'Pass 003', icon:'🗺️', cat:'roadmap' },
+    { file:'PASS-003-REVIEW.md', title:'Pass 003 Review', group:'Pass 003', icon:'✅', cat:'review' },
+  { file:'PASS-003-COMPLETION.md', title:'Pass 003 Completion', group:'Pass 003', icon:'📋', cat:'review' },
+    { file:'PASS-004-AUDIT.md', title:'Pass 004 Audit', group:'Pass 004', icon:'🔍', cat:'audit' },
+  { file:'PASS-004-ROADMAP.md', title:'Pass 004 Roadmap', group:'Pass 004', icon:'🗺️', cat:'roadmap' },
+    { file:'PASS-004-REVIEW.md', title:'Pass 004 Review', group:'Pass 004', icon:'✅', cat:'review' },
+  { file:'PASS-004-COMPLETION.md', title:'Pass 004 Completion', group:'Pass 004', icon:'📋', cat:'review' },
+  { file:'PASS-005-AUDIT.md', title:'Pass 005 Audit', group:'Pass 005', icon:'🔍', cat:'audit' },
+  { file:'PASS-005-ROADMAP.md', title:'Pass 005 Roadmap', group:'Pass 005', icon:'🗺️', cat:'roadmap' },
+  { file:'PASS-005-REVIEW.md', title:'Pass 005 Review', group:'Pass 005', icon:'✅', cat:'review' },
+  { file:'PASS-005-COMPLETION.md', title:'Pass 005 Completion', group:'Pass 005', icon:'📋', cat:'review' },
+  { file:'PASS-006-AUDIT.md', title:'Pass 006 Audit', group:'Pass 006', icon:'🔍', cat:'audit' },
+  { file:'PASS-006-ROADMAP.md', title:'Pass 006 Roadmap', group:'Pass 006', icon:'🗺️', cat:'roadmap' },
+  { file:'PASS-006-REVIEW.md', title:'Pass 006 Review', group:'Pass 006', icon:'✅', cat:'review' },
+  { file:'PASS-006-COMPLETION.md', title:'Pass 006 Completion', group:'Pass 006', icon:'📋', cat:'review' },
+  { file:'PASS-007-AUDIT.md', title:'Pass 007 Audit', group:'Pass 007', icon:'🔍', cat:'audit' },
+  { file:'PASS-007-ROADMAP.md', title:'Pass 007 Roadmap', group:'Pass 007', icon:'🗺️', cat:'roadmap' },
+  { file:'PASS-007-REVIEW.md', title:'Pass 007 Review', group:'Pass 007', icon:'✅', cat:'review' },
+  { file:'PASS-007-COMPLETION.md', title:'Pass 007 Completion', group:'Pass 007', icon:'📋', cat:'review' },
+  { file:'PASS-008-AUDIT.md', title:'Pass 008 Audit', group:'Pass 008', icon:'🔍', cat:'audit' },
+  { file:'PASS-008-ROADMAP.md', title:'Pass 008 Roadmap', group:'Pass 008', icon:'🗺️', cat:'roadmap' },
+  { file:'PASS-008-REVIEW.md', title:'Pass 008 Review', group:'Pass 008', icon:'✅', cat:'review' },
+  { file:'PASS-008-COMPLETION.md', title:'Pass 008 Completion', group:'Pass 008', icon:'📋', cat:'review' },
+  { file:'PASS-009-AUDIT.md', title:'Pass 009 Audit', group:'Pass 009', icon:'🔍', cat:'audit' },
+  { file:'PASS-009-ROADMAP.md', title:'Pass 009 Roadmap', group:'Pass 009', icon:'🗺️', cat:'roadmap' },
+  { file:'PASS-009-REVIEW.md', title:'Pass 009 Review', group:'Pass 009', icon:'✅', cat:'review' },
+  { file:'PASS-009-COMPLETION.md', title:'Pass 009 Completion', group:'Pass 009', icon:'📋', cat:'review' },
+  { file:'PASS-010-AUDIT.md', title:'Pass 010 Audit', group:'Pass 010', icon:'🔍', cat:'audit' },
+  { file:'PASS-010-ROADMAP.md', title:'Pass 010 Roadmap', group:'Pass 010', icon:'🗺️', cat:'roadmap' },
+  { file:'PASS-010-REVIEW.md', title:'Pass 010 Review', group:'Pass 010', icon:'✅', cat:'review' },
+  { file:'PASS-010-COMPLETION.md', title:'Pass 010 Completion', group:'Pass 010', icon:'📋', cat:'review' },
+  { file:'PASS-011-AUDIT.md', title:'Pass 011 Audit', group:'Pass 011', icon:'🔍', cat:'audit' },
+  { file:'PASS-011-ROADMAP.md', title:'Pass 011 Roadmap', group:'Pass 011', icon:'🗺️', cat:'roadmap' },
+  { file:'PASS-011-REVIEW.md', title:'Pass 011 Review', group:'Pass 011', icon:'✅', cat:'review' },
+  { file:'PASS-011-COMPLETION.md', title:'Pass 011 Completion', group:'Pass 011', icon:'📋', cat:'review' },
 
   // Dev Docs
   { file:'project-status.md', title:'Project Status', group:'Development', icon:'📊', cat:'dev' },
@@ -264,33 +292,33 @@ function buildSidebar(filter='') {
   const groups = {};
   for (const d of DOCUMENTS) {
     if (q && !d.title.toLowerCase().includes(q) && !d.group.toLowerCase().includes(q)) continue;
-    // Latest mode: only show CYCLE-004 docs
-    if (filterMode === 'latest' && !d.file.includes('CYCLE-004')) continue;
+    // Latest mode: only show Pass 004 docs
+    if (filterMode === 'latest' && !d.file.includes('PASS-011')) continue;
     if (!groups[d.group]) groups[d.group] = [];
     groups[d.group].push(d);
   }
-  // Group order: super-section 'Cycles' wraps 001-004, then dev, then specs
-  const cycleGroups = ['Cycle 001', 'Cycle 002', 'Cycle 003', 'Cycle 004'].filter(g => groups[g]);
+  // Group order: super-section 'Passes' wraps 001-004, then dev, then specs
+  const passGroups = ['Pass 001', 'Pass 002', 'Pass 003', 'Pass 004', 'Pass 005', 'Pass 006', 'Pass 007', 'Pass 008', 'Pass 009', 'Pass 010', 'Pass 011'].filter(g => groups[g]);
   const otherGroups = ['Development', 'Specifications'].filter(g => groups[g]);
   let html = '';
   let total = 0;
-  // Render cycle super-section
-  if (cycleGroups.length > 0) {
-    const cyclesCollapsed = groupCollapse['__cycles__'] === true;
+  // Render passes super-section
+  if (passGroups.length > 0) {
+    const passesCollapsed = groupCollapse['__passes__'] === true;
     html += '<div class="nav-group">';
-    html += `<div class="super-group-header" onclick="toggleGroup('__cycles__')">`;
-    html += `<span class="collapse-icon ${cyclesCollapsed ? 'collapsed' : ''}">\u25bc</span>`;
-    html += `<div class="super-group-title">Cycles</div>`;
+    html += `<div class="super-group-header" onclick="toggleGroup('__passes__')">`;
+    html += `<span class="collapse-icon ${passesCollapsed ? 'collapsed' : ''}">\u25bc</span>`;
+    html += `<div class="super-group-title">Passes</div>`;
     html += '</div>';
-    html += `<div class="super-group-content ${cyclesCollapsed ? 'collapsed' : ''}">`;
-    // Render cycles overview doc at the top if present
-    const overviewDocs = groups['__cycles_overview__'] || [];
+    html += `<div class="super-group-content ${passesCollapsed ? 'collapsed' : ''}">`;
+    // Render passes overview doc at the top if present
+    const overviewDocs = groups['__passes_overview__'] || [];
     for (const d of overviewDocs) {
       const active = currentDoc && currentDoc.file === d.file ? ' active' : '';
       html += `<div class="nav-item${active}" data-file="${d.file}" onclick="loadDoc('${d.file}','${d.title}','${d.cat}')" title="${d.title}"><span class="icon" style="opacity:0.7">${d.icon}</span>${d.title}</div>`;
       total++;
     }
-    for (const group of cycleGroups) {
+    for (const group of passGroups) {
       const docs = groups[group];
       const isCollapsed = groupCollapse[group] === true;
       html += '<div class="nav-group">';
@@ -340,8 +368,8 @@ async function loadDoc(file, title, cat) {
   // Auto-expand group containing this doc
   const doc = DOCUMENTS.find(d => d.file === file);
   if (doc) {
-    if (groupCollapse['__cycles__'] === true) {
-      groupCollapse['__cycles__'] = false;
+    if (groupCollapse['__passes__'] === true) {
+      groupCollapse['__passes__'] = false;
     }
     if (groupCollapse[doc.group] === true) {
       groupCollapse[doc.group] = false;
@@ -426,15 +454,15 @@ if (!loadFromHash()) {
     <div style="text-align:center;padding:60px 20px;max-width:500px;margin:0 auto">
       <div style="font-size:48px;margin-bottom:16px">📖</div>
       <h1 style="font-size:24px;margin-bottom:8px">SPACE Meta Documents</h1>
-      <p style="color:var(--text-secondary);margin-bottom:20px">Browse cycle audit reports, improvement roadmaps, development phase guides, and technical specifications.</p>
+      <p style="color:var(--text-secondary);margin-bottom:20px">Browse phase audit reports, improvement roadmaps, development phase guides, and technical specifications.</p>
       <div style="display:flex;flex-direction:column;gap:8px;text-align:left">
-        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('CYCLE-004-AUDIT.md','Cycle 004 Audit','audit')">
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('PASS-011-AUDIT.md','Pass 011 Audit','audit')">
           <span style="font-size:20px">🔍</span>
-          <div><div style="font-weight:600;font-size:13px">Latest Audit</div><div style="font-size:11px;color:var(--text-muted)">Cycle 004 — 13 production readiness improvements</div></div>
+          <div><div style="font-weight:600;font-size:13px">Latest Audit</div><div style="font-size:11px;color:var(--text-muted)">Pass 011 — ops + capstone: auto-deploy, scheduled loops, monitoring, full-chain proof</div></div>
         </div>
-        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('CYCLE-004-REVIEW.md','Cycle 004 Review','review')">
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('PASS-011-REVIEW.md','Pass 011 Review','review')">
           <span style="font-size:20px">✅</span>
-          <div><div style="font-weight:600;font-size:13px">Latest Completion Review</div><div style="font-size:11px;color:var(--text-muted)">Cycle 004 — 150 tests, ESLint, Prettier, README, CLI tests</div></div>
+          <div><div style="font-weight:600;font-size:13px">Latest Completion Review</div><div style="font-size:11px;color:var(--text-muted)">Pass 011 — 57+157 tests, capstone chain proven, live site 200, 0 broken surfaces</div></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer" onclick="loadDoc('specs/01-data-schema.md','01 — Data Schema','spec')">
           <span style="font-size:20px">📐</span>

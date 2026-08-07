@@ -20,6 +20,14 @@ Reflection agents store and retrieve structured reflections on their own past at
 - **Limits** — reflection quality caps improvement; without external verification, reflections can be confident and wrong.
 - **RSIS3 parallel** — pulse outcomes and decision logs are reflections that inform the next planning phase across the triad.
 
+- **Reflection quality** — structured reflection templates (what was attempted, what failed, why, what to change) produce more usable memories than free-form notes.
+- **Retrieval** — decide which reflections inform the next attempt: most recent, most relevant, or most similar failure; retrieval quality determines whether the memory helps or adds noise.
+- **Grounding** — reflections are most reliable when grounded in external feedback (test results, verified answers) rather than pure self-assessment, mirroring the self-correction evidence.
+
+- **Measurement** — the architecture earns its keep when measured: compare task success with and without reflection memory, and track whether retrieved reflections actually change the next attempt.
+
+- **Failure mode** — reflections written once and never updated grow stale; the memory should be revisable so later experience can correct an earlier wrong lesson.
+
 ## Related
 - [[wiki/agent-systems/self-reflection-loops|Self-Reflection Loops]] — the loop shape
 - [[wiki/agent-systems/self-critique|Self-Critique]] — the critique source

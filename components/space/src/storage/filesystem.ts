@@ -1,6 +1,5 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, rmSync, statSync } from 'fs';
 import { join, dirname } from 'path';
-import { randomUUID } from 'crypto';
 import type { Project, SessionState, SessionSummary, Snapshot, ProjectArchive, ExportResult } from '../types/index.js';
 import type { StorageProvider } from './types.js';
 

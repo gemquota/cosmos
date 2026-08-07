@@ -21,15 +21,15 @@ On mobile, the surface includes exported activities and services, deep links, pe
 
 The standard methodology is to enumerate entry points, rank them by exposure and impact, remove the unnecessary, and monitor the rest. Future sessions should record the enumeration performed and the reductions applied. The outcome of such an exercise is usually a short list: remove what is unnecessary, constrain what remains, and instrument the boundaries that matter most. Regular re-enumeration keeps the list accurate as features change.
 
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/00-index|Auth Security › Attack Surface
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/security-auth/categories/auth-security/00-index|Auth Security › Attack Surface]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2
-- [[wiki/web-platforms/supercategories/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/abuseipdb-2|Abuseipdb 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/ac-2|Ac 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/access-denied|Access Denied]]
+- [[raw/archive/junk-entities-2026-08c/security-auth/categories/auth-security/subcategories/authentication/ach-2|Ach 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/actionnode-2|Actionnode 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/addressfamily|Addressfamily]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/aec-2|Aec 2]]
+- [[wiki/security-auth/categories/auth-security/subcategories/authentication/agentconfig|Agentconfig]]

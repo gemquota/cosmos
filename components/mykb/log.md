@@ -5,6 +5,291 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-07 (RSIS3 pass 11 — ops + capstone: auto-deploy, scheduled loops, monitoring, full-chain proof)
+- **Deploy auto-sync**: `infra/deploy/sync-gh-pages.sh` + `.github/workflows/deploy.yml` mirror main → gh-pages on push + daily safety net (idempotent, no-op when unchanged).
+- **Scheduled loop runner**: `infra/loops/run-batch.sh` (N cycles × 8 loops, disk override, check-practices gate, snapshot regeneration) + `.github/workflows/loops.yml` nightly batch that commits results to main and deploys.
+- **Monitoring**: heartbeat gained URL watches (live site); `infra/health/check.sh` (site 200, snapshots --check, contracts, links, practices) run hourly by health.yml.
+- **Capstone batch**: 5 cycles × 8 loops = 40 executions, cycle 1 `run --goal from-space` — telemetry +5 per loop (L1=31, L2=31, L3=29, L4=29, L5=33, L6=30, L7=28, L8=28, L9=28; 222 files / 724 events / 0 malformed); `check-practices` all PASS.
+- **Chain proof**: capstone `l2_start` references `spec artifact abstraction_level`; L3 self-wrote `rsis3-l3-cycle-{11..15}-cross-session-memory-consolidation-2026-08-07.md`; Guide live payload lists the spec trace + new syntheses first; graph 5,424 nodes / 36,913 edges.
+- **Synthesis added**: `wiki/syntheses/rsis3-pass-11-2026-08-07.md`; syntheses index updated.
+
+## 2026-08-07 (RSIS3 L3 cycle 15 — memory consolidation)
+- L3 cycle 15 wrote OKF synthesis `rsis3-l3-cycle-15-cross-session-memory-consolidation-2026-08-07.md` (2 insight(s), 1 strategy(ies), 157 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-07 (RSIS3 L3 cycle 14 — memory consolidation)
+- L3 cycle 14 wrote OKF synthesis `rsis3-l3-cycle-14-cross-session-memory-consolidation-2026-08-07.md` (2 insight(s), 1 strategy(ies), 140 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-07 (RSIS3 L3 cycle 13 — memory consolidation)
+- L3 cycle 13 wrote OKF synthesis `rsis3-l3-cycle-13-cross-session-memory-consolidation-2026-08-07.md` (2 insight(s), 1 strategy(ies), 124 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-07 (RSIS3 L3 cycle 12 — memory consolidation)
+- L3 cycle 12 wrote OKF synthesis `rsis3-l3-cycle-12-cross-session-memory-consolidation-2026-08-07.md` (1 insight(s), 1 strategy(ies), 109 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-07 (RSIS3 L3 cycle 11 — memory consolidation)
+- L3 cycle 11 wrote OKF synthesis `rsis3-l3-cycle-11-cross-session-memory-consolidation-2026-08-07.md` (1 insight(s), 1 strategy(ies), 95 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-07 (RSIS3 pass 10 — UX cohesion: Models tab, KG lazy boot, verified surfaces)
+- **Guide Models tab**: `gdRenderModels()` renders per-loop tuned params from the live guidance payload (`live.loops[*].params`, target + key/value) with empty-state fallback; Direction live loop panel shares the same payload.
+- **Per-loop tuning metadata**: `scan_live_state()` now emits `target` + `params` per loop from `dashboard/loops.json` (L4–L9 tuners, 16 params).
+- **KG lazy boot**: `okf-graph.html` fetches `graph.json` + catalog instead of embedding copies; concentric fallback >1200 nodes; 5,418 concepts · 36,892 links verified in browser.
+- **Payload refactor**: `build_graph.py` writes graph/catalog/index/log to static + `.wiki-daemon/` (daemon copies gitignored); regenerated + `gen-static-data.py --check` OK.
+- **Date-rollover test fix**: mykb gateway tests freeze the clock via `mock.patch` (57 tests pass).
+- **Verification**: browser walkthrough of dashboard Overview/MyKB/SPACE/KG + Guide tabs + article toolbar + KG + sidebar, no broken surfaces; `check-practices` all PASS, contracts OK (0 FAIL), wiki link check 0 unresolved.
+- **Synthesis added**: `wiki/syntheses/rsis3-pass-10-2026-08-07.md`; syntheses index updated.
+
+## 2026-08-06 (RSIS3 pass 9 — spec link: SPACE artifacts feed L2 goals and the live Guide)
+- **Spec → goals**: `rsis/space_spec.py` maps the 67 exported spec artifacts to candidate L2 goals embedding `SPACE spec artifact <id>`; `run`/`drive --goal from-space` sources the goal from a spec artifact (`RSIS_SPACE_SPEC` override, default cosmos export).
+- **Guide live state**: `scan_guidance()` gained a `live` section (RSIS3 loop stack, per-loop telemetry starts, spec-backed L2 goal traces, recent syntheses) served by daemon + static `guidance.json`; Direction tab renders the new “Live loop & memory state” panel.
+- **Verification**: batch `run` cycle 3 used `--goal from-space`; telemetry holds an `l2_start` goal referencing `spec artifact abstraction_level` (series 1, Q1.1.1).
+- **Batch**: 5 cycles × L1–L9 = 40 executions, +5 net starts per loop, 0 errors. Telemetry now L1=26, L2=26, L3=24, L4=24, L5=28, L6=25, L7=23, L8=23, L9=22 (180 files / 602 events / 0 malformed).
+- **Verification**: 57 tests passed (4 new space_spec tests), `check-practices` all PASS, `contracts: OK (0 FAIL)`, wiki link check 5,417 files / 0 unresolved. Pass-9 meta docs + viewer updated (36 docs / 9 passes).
+- **Synthesis added**: `wiki/syntheses/rsis3-pass-9-2026-08-06.md`; syntheses index updated (60 pages).
+
+## 2026-08-06 (RSIS3 L3 cycle 10 — memory consolidation)
+- L3 cycle 10 wrote OKF synthesis `rsis3-l3-cycle-10-cross-session-memory-consolidation-2026-08-06.md` (1 insight(s), 1 strategy(ies), 94 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-06 (RSIS3 L3 cycle 9 — memory consolidation)
+- L3 cycle 9 wrote OKF synthesis `rsis3-l3-cycle-9-cross-session-memory-consolidation-2026-08-06.md` (1 insight(s), 1 strategy(ies), 94 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-06 (RSIS3 L3 cycle 8 — memory consolidation)
+- L3 cycle 8 wrote OKF synthesis `rsis3-l3-cycle-8-cross-session-memory-consolidation-2026-08-06.md` (1 insight(s), 1 strategy(ies), 94 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-06 (RSIS3 L3 cycle 7 — memory consolidation)
+- L3 cycle 7 wrote OKF synthesis `rsis3-l3-cycle-7-cross-session-memory-consolidation-2026-08-06.md` (1 insight(s), 1 strategy(ies), 94 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-06 (RSIS3 L3 cycle 6 — memory consolidation)
+- L3 cycle 6 wrote OKF synthesis `rsis3-l3-cycle-6-cross-session-memory-consolidation-2026-08-06.md` (1 insight(s), 1 strategy(ies), 94 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-06 (RSIS3 pass 8 — MyKB memory link: loops read and write the wiki)
+- **Gateway**: `rsis/mykb_gateway.py` (stdlib-only) — `read_syntheses`/`search_syntheses` for loop context, `write_synthesis`/`append_log` for L3 self-consolidation; root from `RSIS_MYKB_PATH` else `<workspace>/../mykb`; writes failure-isolated.
+- **L3 self-writes**: each evolution cycle now writes an OKF synthesis (`rsis3-l3-cycle-{1..5}-cross-session-memory-consolidation-2026-08-06.md`) + a dated `log.md` entry + `l3_mykb_write` telemetry; cycle ordinals come from the durable synthesis count so separate invocations stay distinct.
+- **L2 reads MyKB**: `run --goal from-mykb` (and `drive`) sources the goal from the most relevant synthesis and embeds its path for traceability.
+- **Batch**: 5 cycles × L1–L9 = 40 executions, +5 net starts per loop, 0 errors. Telemetry now L1=21, L2=21, L3=19, L4=19, L5=23, L6=20, L7=18, L8=18, L9=17 (140 files / 482 events / 0 malformed).
+- **Verification**: 53 tests passed (4 new gateway tests), `check-practices` all PASS, `contracts: OK (0 FAIL)`, wiki link check 5,411 files / 0 unresolved. Pass-8 meta docs + viewer updated (32 docs / 8 passes).
+- **Synthesis added**: `wiki/syntheses/rsis3-pass-8-2026-08-06.md`; syntheses index updated (54 pages).
+
+## 2026-08-06 (RSIS3 L3 cycle 5 — memory consolidation)
+- L3 cycle 5 wrote OKF synthesis `rsis3-l3-cycle-5-cross-session-memory-consolidation-2026-08-06.md` (2 insight(s), 1 strategy(ies), 48 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-06 (RSIS3 L3 cycle 4 — memory consolidation)
+- L3 cycle 4 wrote OKF synthesis `rsis3-l3-cycle-4-cross-session-memory-consolidation-2026-08-06.md` (2 insight(s), 1 strategy(ies), 48 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-06 (RSIS3 L3 cycle 3 — memory consolidation)
+- L3 cycle 3 wrote OKF synthesis `rsis3-l3-cycle-3-cross-session-memory-consolidation-2026-08-06.md` (2 insight(s), 1 strategy(ies), 48 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-06 (RSIS3 L3 cycle 2 — memory consolidation)
+- L3 cycle 2 wrote OKF synthesis `rsis3-l3-cycle-2-cross-session-memory-consolidation-2026-08-06.md` (2 insight(s), 1 strategy(ies), 48 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-06 (RSIS3 L3 cycle 1 — memory consolidation)
+- L3 cycle 1 wrote OKF synthesis `rsis3-l3-cycle-1-cross-session-memory-consolidation-2026-08-06.md` (2 insight(s), 1 strategy(ies), 48 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-06 (RSIS3 pass 7 — data contracts, validated at both gates)
+- **Contracts**: `contracts/README.md` documents the six shared shapes
+  (OKF frontmatter, files.json, ecosystem.json, loops.json, telemetry JSONL,
+  SPACE framework); `contracts/validate.py` enforces them (stdlib only).
+  Wired into `gen-static-data.py --check` (deploy/CI) and `check-practices`
+  (new `telemetry contract` check mirrors section 5; 100 files / 359 events /
+  0 malformed). `--check` now separates contract FAILs from snapshot staleness
+  (caught the pass-6 synthesis missing from files.json).
+- **Batch**: 5 cycles × L1–L9 = 40 executions, +5 net starts per loop, 0 errors.
+  Telemetry now L1=16, L2=16, L3=14, L4=14, L5=18, L6=15, L7=13, L8=13, L9=12
+  (the +1 on L3–L8 is a partial aborted cycle from a mis-set disk override).
+  Disk rule learned: `RSIS_DISK_USAGE_PCT` replaces the limit, not the measured
+  value — use 100 when the device is ~100% full.
+- **Snapshots**: graph regenerated, files.json 6,867 entries, `--check` OK
+  (0 contract FAIL). Synthesis added: `wiki/syntheses/rsis3-pass-7-2026-08-06.md`;
+  syntheses index updated (48 pages). Design doc:
+  `docs/superpowers/specs/2026-08-06-cosmos-integration-5-passes-design.md`.
+
+## 2026-08-06 (RSIS3 pass 6 — five full cycles, L1–L9)
+- **Cycles run**: 5 full RSIS3 cycles = 40 loop executions (`run` for L1/L2,
+  one-shot `evolve`/`optimize`/`strategies`/`identity`/`metacog`/`metameta`/`mmm`
+  for L3–L9), all completed. Telemetry now L1=11, L2=11, L3=8, L4=8, L5=12,
+  L6=9, L7–L9=7 — exactly +5 net new starts per loop, 0 errors;
+  `check-practices` all PASS.
+- **Fixes**: `RSIS_DISK_USAGE_PCT` env override in `rsis/config.py` so loops
+  run deterministically under disk pressure (device at 99.6% full);
+  module-level `logger` added in `rsis/main.py` throttle callback (runtime
+  NameError).
+- **Synthesis added**: `wiki/syntheses/rsis3-pass-6-2026-08-06.md` —
+  resource-pressure runs, module-logger discipline, checkpoint git-add sweep,
+  even-cadence batching. Syntheses index updated (47 pages).
+
+
+## 2026-08-06 (SPACE v2 spec import — recursive-self-improvement)
+- **Export updated**: `components/space/exports/recursive-self-improvement-specification.json`
+  replaced with the SPACE v2.0.0 export of session `sess_cdd506e4` (67/67
+  questions, 259 multi-choice options, 67 artifacts).
+- **Synthesis added**: `wiki/syntheses/recursive-self-improvement-spec-2026-08-06.md`
+  distills the spec — SPACE's domain identity, 10-entity core model,
+  session mechanics, technical substrate, and ops/process constraints.
+- **Cross-links**: syntheses index updated (46 pages) and
+  `wiki/agent-systems/recursive-self-improvement.md` now links the spec.
+
+## 2026-08-06 (RSIS3 drive — loops until satisfied)
+- **New `python -m rsis drive`**: repeats a loop until its completion
+  requirement is met. Per-loop predicates: L2 applied improvement, L3
+  consolidation plateau, L4 success rate inside the target band, L5 fitness
+  plateau, L6–L9 stable band. Guard rails `--max-cycles` / `--timeout` /
+  `--sleep`; exit codes 0 satisfied · 1 error · 2 time budget · 3 max
+  cycles · 4 terminal-stuck.
+- **Verified**: L3/L5/L6 satisfy immediately in an empty workspace; L4
+  reports terminal-stuck until `l4.min_outcomes` outcomes exist; all 49
+  pytest tests pass.
+- **Docs**: README "Drive Loops Until Satisfied" + usage-practices §6 with
+  cron/shell automation examples. Synthesis:
+  `wiki/syntheses/rsis-drive-until-satisfied-2026-08-06.md`.
+
+## 2026-08-06 (Loops tab honesty fix)
+- **Dashboard no longer lies about loop liveness**: the Loops tab rendered a
+  green ACTIVE badge for any loop whose static status was "implemented" —
+  which only means the code exists, not that anything is running. Since the
+  RSIS3 loops run on demand (CLI per session/cadence), nothing is
+  continuously active.
+- `gen-static-data.py` now derives a per-loop `runtime` field (RECENT = ran
+  within 24h, IDLE = ran before that, NOT RUN = never, n/a for L0) and the
+  dashboard renders that instead: RECENT (green), IDLE (amber), NOT RUN
+  (slate). The snapshot meta line states the freshness window. Regenerated
+  loops.json — all nine loops are IDLE (last run 2026-08-01).
+
+## 2026-08-06 (Guidance UI overhaul)
+- **Home routing**: empty-hash loads now show the mykb home page (metrics,
+  recents, quick actions) instead of jumping to the first file; the sidebar
+  header title and "All Documents" return home.
+- **Guidance promoted**: Guide is now a dedicated gradient button above the
+  sidebar tabs (`#guidance`/`#stubs`/`#guide` still route to it) with three
+  sub-tabs — Direction, Research queue, Stub triage — so stub auditing is a
+  slice of the guidance surface, not the whole tab.
+- **Article toolbar**: Graph / Edit / Archive / Delete on every open article.
+  Edit saves via `POST /api/v2/file`; Archive git-moves to
+  `raw/archive/stub-audit-<date>/` and Delete git-removes via the daemon
+  (fs fallback for untracked files; static pages copy the git commands).
+- **Knowledge graph fixed**: `drawGraph` referenced undefined `camZoom` and
+  never painted. Switched to `graphCam.zoom`, added an immediate first draw
+  (visible while physics refines), and capped refinement passes on very large
+  graphs — the 5,401-node graph now loads.
+- **Live-mode categories fixed**: daemon `/files.json` now serves the enriched
+  snapshot (path + type + title + tags), so sidebar area/type grouping, counts,
+  and type chips match static mode instead of collapsing into "other".
+- **Sidebar additions**: Graph tab in the tab row; guide promo state follows
+  the active view. Synthesis note added:
+  `wiki/syntheses/mykb-guidance-ui-overhaul-2026-08-06.md`.
+
+## 2026-08-06 (Wiki link integrity repair)
+- **Link audit fixed**: `link_check.py` rewritten — resolves `../` against the
+  source file's directory (the old `lstrip('./')` swallowed `../` prefixes),
+  strips frontmatter + fenced code + inline code spans, defaults to `wiki/`
+  scope (`--all` for the bundle), falls back to unique basenames for moved
+  pages, and exits 1 on breakage. Old checker's "30,787 unresolved" was noise;
+  real run: **5,401 wiki files, 0 unresolved links**.
+- **Dead links de-linked**: `wiki/log.md` had 4,594 Markdown links to pages
+  deleted in the junk-entity archive; converted to code-span labels so history
+  stays readable and nothing dangles.
+- **Malformed wikilinks rewired**: 214 generated entity pages had unclosed
+  `]]`, a stale `wiki/web-platforms/supercategories/` prefix, and dead
+  related-entity links — normalized to canonical paths (basename fallback for
+  archived targets, plain labels for gone pages); 1,858 links repaired.
+- **Breadcrumb canonicalization**: 167 entity pages labeled `Android Core` but
+  linked to `wiki/web-platforms/00-index` (Web Platforms Index); retargeted to
+  `wiki/android-core/00-index`, the real Android Core index.
+- **Synthesis added**: `wiki/syntheses/wiki-link-integrity-2026-08-06.md` —
+  checker semantics, de-link/retarget rules, breadcrumb policy; cross-linked to
+  [[wiki-link-resolution-and-junk-audit]] and
+  [[guidance-execution-loop-2026-08-06]].
+
+## 2026-08-06 (Guidance execution loop — wanted links, scaffolds, manifest)
+- **Wanted links**: `build_stub_audit.py` now scans red links — `[[target]]`
+  wikilinks that resolve to no existing page — ranked by inbound count, with
+  the linking areas and a suggested scaffold path (`guidance.json →
+  wanted_links`). Code spans are stripped first so syntax examples like
+  `` `[[wikilink]]` `` don't register as missing pages; resolution mirrors
+  the app's `resolveWikiPath` (root-relative paths + unique-basename
+  fallback, full-disk inventory incl. index pages). The Guide tab's
+  Direction panel lists them with a one-click “+ queue” that seeds a wanted
+  item. First real signal: `[[wikilinks]]` from `node2vec.md`.
+- **Research drain**: new `.wiki-daemon/drain_guidance.py` turns the
+  guidance queue into executable direction — `--plan` previews,
+  `--apply` scaffolds `wanted` items into `wiki/<area>/<slug>.md` stubs and
+  `question` items into `wiki/questions/` (frontmatter `status: stub`,
+  `source: ["guidance-queue"]`, never overwrites), and writes a research
+  manifest at `.wiki-daemon/buffers/guidance-inference.json` (created paths,
+  remaining directions, page feedback). Scaffolded pages flow into normal
+  stub triage + enrichment.
+- **Server & UI**: `POST /api/v2/guidance/plan|apply`,
+  `GET /api/v2/guidance/queue` now reports the research manifest; Guide tab
+  gains Plan/Apply buttons + status, and the stub triage gains an area
+  filter fed from the direction data. CLI: `cosmos guidance plan|apply`.
+- **Outcome**: `wiki/meta-learning/wikilinks.md` scaffolded from the red
+  link and committed as a stub for enrichment.
+- **Snapshots**: guidance.json (wanted_links), stub-review (2,434 incl. new
+  stub), stub-index, graph, files.json, ecosystem, loops.
+
+## 2026-08-06 (Guidance UI — from stub auditor to research direction)
+- **Guide tab**: the Stub Auditor is now the mykb **Guidance** surface
+  (`index.html#guidance`; `#stubs` still routes here). The tab gains a
+  **Direction** panel (live area health: pages / stubs / stub % / avg words
+  per area, ranked by stub burden) and a unified **Research & Feedback
+  queue** (wanted page, research direction, open question, suggestion,
+  correction, priority, note; P1–P3 priority; optional page path). The
+  original stub triage (Keep / Enrich 1–3× / Categorize / Archive / Delete,
+  junk archive bucket) remains as a section.
+- **Guidance data**: `build_stub_audit.py` now emits `guidance.json`
+  (coverage rows, focus ranking, guidance-queue snapshot) alongside
+  `stub-review.json`; `GET /api/v2/guidance` and
+  `GET|POST /api/v2/guidance/queue` back it live. The floating Feedback FAB
+  pre-fills the current page path; feedback/queue items persist to
+  `.wiki-daemon/buffers/guidance-queue.json`.
+- **Inference merge**: `drain_stub_queue.py --apply` merges the guidance
+  queue into `stub-audit-inference.json` as `guidance.research` (wanted /
+  direction / question tasks) and `guidance.feedback` (page-level notes), so
+  the enrichment pass seeds new pages and honours human direction.
+- **CLI & dashboard**: `cosmos guidance open|status|build` added (`cosmos
+  stubs` remains an alias); unified dashboard MyKB tab relabelled
+  **MyKB → Guidance** and embeds `index.html#guidance`.
+- **Snapshots**: stub-review (2,433), guidance.json (5,272 pages / 1,493
+  stubs / 45 areas), files.json, graph, ecosystem.
+
+## 2026-08-05 (wiki link resolution + junk-entity audit)
+- **Link resolution overhaul**: `components/mykb/index.html` gains one
+  canonical resolver (`resolveWikiPath`) used by navigation and deep links —
+  `../` links now resolve against the current file's directory (was a broken
+  regex strip), `wiki/` prefixes / `.md` suffixes / `wiki/wiki/` double
+  prefixes normalize, and a unique-basename fallback lands archived pages
+  (`wiki/topics/ast-10` → `raw/archive/session-artifacts-2026-07/topics/ast-10.md`).
+- **Click dedupe**: content link clicks call `stopPropagation()` so the
+  document-level `.md` interceptor can't re-navigate with the raw href (that
+  race produced error pages on relative links). Wikilinks pass the raw target
+  instead of force-appending `.md`; error pages offer a basename search.
+- **Junk-entity audit**: `build_stub_audit.py` now scans
+  `raw/archive/junk-entities-*` (940 files) with `j=1` and full bundle-relative
+  paths; the SPA adds a "junk archive" filter bucket, Keep/Delete-only actions
+  for junk, and `git rm raw/archive/...` results; `drain_stub_queue.py` accepts
+  `raw/` paths. `HhHhetvnPsLG5ydu`-style archived junk is now reviewable.
+- **Audit performance**: category pickers build lazily on open (previously
+  every card rendered a 45-area `<select>` on every keystroke) and cards render
+  via `DocumentFragment` — ~100× faster page renders on the 4,267-item audit.
+- **Dashboard menu**: nav-tab tooltips stay a floating overlay (never inflate
+  the tab bar); touch devices skip tab tooltips (`.tb` + `hover: none`).
+- **Snapshots**: graph (5,398 nodes / 35,520 edges), files.json (6,856),
+  ecosystem, loops, stub-audit.html (4,267 items), stub-index (3,349) —
+  `gen-static-data.py --check: OK`.
+- **Synthesis added**: `wiki/syntheses/wiki-link-resolution-and-junk-audit.md`.
+
 ## 2026-07-19
 - Gemini session import: 162 sessions from 24 projects, 21,087 cross-links
 
@@ -563,3 +848,69 @@ title: "Bundle Log"
   "System guidance") and Content/Meta use 📖/⚙ icons; mobile drawer already
   capped at 58vw. `check: OK (6856 entries, 0 bad)`; graph rebuilt
   (5,397 nodes / 35,514 edges).
+
+## 2026-08-05 (stub auditor — live data + inference queue)
+- **Live data**: `server.py` gains `GET /api/v2/stubs` (reuses
+  `build_stub_audit.scan_stubs()`); the SPA fetches it on load with a snapshot
+  fallback and a live/snapshot source chip. `first_add_dates()` now caches on
+  HEAD (`.wiki-daemon/stub_created_dates.json`) so live scans are ~1s, not a
+  full git-log pass per request.
+- **Queue answers**: new `POST /api/v2/stubs/queue` writes the auditor's
+  decisions to `.wiki-daemon/buffers/stub-audit-queue.json` (atomic tmp+rename);
+  `Save queue` button POSTs when served live and downloads the same JSON when
+  static (GitHub Pages).
+- **Inference pass**: new `.wiki-daemon/drain_stub_queue.py` — `--plan` shows
+  the queue, `--apply` runs categorize/archive/delete via `git mv`/`git rm`
+  (filesystem fallback) and writes `.wiki-daemon/buffers/stub-audit-inference.json`
+  (path + metadata + snippet per `enrich` task) for the LLM expansion pass.
+- **Build fix**: `build_stub_audit.py` main() printed undefined `items`
+  (NameError → exit 1 after writing); fixed to read from the scan dict.
+- **Synthesis added**: `wiki/syntheses/stub-auditor-live-queue.md`.
+
+## 2026-08-05 (dashboard — main menu fix)
+- **Main menu blow-up**: hover/tap on any nav button (`.tb` with `data-tt`)
+  appended an unstyled tooltip *inside* the button, inflating it to ~50-66%
+  width and forcing each tab onto its own row. Tooltip CSS was scoped to
+  `.tooltip-wrap`, so `.tb`/summary cards rendered the raw `<h4>/<p>` in-flow.
+- **Fix**: `style.css` generalizes `.tooltip` to a floating, absolutely
+  positioned overlay (never affects layout); `app.js` skips nav-button
+  tooltips on touch (`hover: none`) so taps just switch tabs.
+
+## 2026-08-06 (stub audit pass — 141 reviewed, 3 archived, 126 queued)
+- **Audit executed**: Stub Auditor review of 141/4267 files — 12 kept, 126
+  queued for enrichment, 3 archived to `raw/archive/stub-audit-2026-08-06/`
+  (honest-signaling, instruction-following, planning-systems).
+- **Links retargeted**: 34 files / 38 wikilinks retargeted to living pages
+  (planning-systems→agent-planning-systems, honest-signaling→signaling-ai,
+  instruction-following→instruction-hierarchy / instruction-following-benchmarks);
+  index entries and a junk `— note` link stripped; 0 dangling links remain.
+- **Queue drained**: rebuilt `stub-audit-queue.json` from the report
+  (SPA schema, live-scan metadata) and ran `drain_stub_queue.py --apply`,
+  writing `stub-audit-inference.json` with 126 enrichment tasks.
+- **Snapshots refreshed**: graph (5,396 nodes / 35,500 edges), files.json
+  (6,856, `--check` OK), stub-index (3,346), stub-audit.html (4,264).
+- **Synthesis added**: `wiki/syntheses/stub-audit-2026-08-06.md` — archive
+  convention, inbound-link policy, pipeline notes.
+- **Enrichment batch (18/126)**: all ai-ml (16) + testing (2) tasks expanded
+  past the 320-word floor (323-370 body words), status bumped to growing,
+  broken stub links replaced with resolvable targets (0 broken links verified);
+  stub index 3,346 → 3,328, auditor 4,264 → 4,246 stubs.
+
+## 2026-08-06 (stub audit completion — 126/126 enriched)
+- **Enrichment completed**: all 126 queued stubs (108 agent-systems, 16 ai-ml,
+  2 testing) expanded past the 320-word floor (320-370 body words), status
+  bumped stub→growing, zero broken wikilinks, zero self-links, zero links to
+  archived pages. Includes full rewrites of 26 agent-systems stubs plus
+  targeted top-ups on 33 growing-but-short pages and the 16 ai-ml / 2 testing
+  tasks from the earlier session.
+- **Link hygiene**: retargeted the `credible-commitments` link to archived
+  `honest-signaling` → `signaling-ai`; removed self-links in
+  `queue-management`, `instruction-hierarchy`, `noticeboards`, `requests-pages`,
+  `review-queues-wiki`, `signaling-ai`, `triage-workflow`,
+  `agent-planning-systems`.
+- **Auditor UI fixed**: `stub_audit_template.html` static-mode fallbacks now
+  print copyable terminal commands instead of dead buttons; live API endpoints
+  verified with curl (queue plan/apply + build). Stub auditor rebuilt.
+- **Snapshots refreshed**: graph (5,397 nodes / 35,540 edges), files.json
+  (6,856, `--check` OK), stub-index 3,348 → 3,220, stub-audit.html
+  4,264 → 4,138 stubs. Synthesis note updated to reflect completion.

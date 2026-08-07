@@ -21,6 +21,8 @@ An autonomous agent perceives its environment, plans, and acts toward a goal acr
 - **Failure modes** — goal drift, confirmation loops, runaway costs; mitigation combines circuit breakers, budgets, and escalation handling.
 - **mykb relevance** — RSIS3 runs as an autonomous agent on the triad architecture, so its recursion, memory, and recovery patterns map directly onto this design space.
 
+- **Escalation contract** — every autonomous agent defines what triggers human escalation: low confidence, budget exhaustion, out-of-scope requests, or repeated failure; the contract is written before autonomy is granted.
+- **Observability precondition** — autonomy is only raised when runs can be traced and replayed; unobservable autonomy is a liability, not a feature.
 ## Related
 - [[wiki/agent-systems/agent-loop|Agent Loop]] — the loop autonomous agents execute
 - [[wiki/agent-systems/autonomy-levels|Autonomy Levels]] — the spectrum autonomy is measured on

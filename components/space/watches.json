@@ -8,7 +8,7 @@
       "serve-meta.mjs",
       "8899"
     ],
-    "cwd": "/data/data/com.termux/files/home/dev/space"
+    "cwd": "/data/data/com.termux/files/home/dev/cosmos/components/space"
   },
   {
     "name": "Web UI",
@@ -16,10 +16,10 @@
     "path": "/",
     "startCmd": "node",
     "startArgs": [
-      "serve-ui.mjs",
+      "web/server.mjs",
       "8888"
     ],
-    "cwd": "/data/data/com.termux/files/home/dev/space"
+    "cwd": "/data/data/com.termux/files/home/dev/cosmos/components/space"
   },
   {
     "name": "mykb Dashboard",
@@ -30,7 +30,7 @@
       "server.py",
       "8826"
     ],
-    "cwd": "/data/data/com.termux/files/home/dev/codex/mykb"
+    "cwd": "/data/data/com.termux/files/home/dev/cosmos/components/mykb"
   },
   {
     "name": "mykb Graph",
@@ -39,13 +39,13 @@
     "startCmd": "okf",
     "startArgs": [
       "server",
-      "/data/data/com.termux/files/home/dev/codex/mykb",
+      "/data/data/com.termux/files/home/dev/cosmos/components/mykb",
       "-p",
       "8808",
       "--title",
       "mykb"
     ],
-    "cwd": "/data/data/com.termux/files/home/dev/codex/mykb"
+    "cwd": "/data/data/com.termux/files/home/dev/cosmos/components/space"
   },
   {
     "name": "myrsikb",

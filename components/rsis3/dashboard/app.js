@@ -77,14 +77,26 @@ function renderLoops(d){
   var grid = document.getElementById('loops-grid');
   if (!grid) return;
   var meta = document.getElementById('loops-meta');
-  if (meta) meta.textContent = 'static snapshot · ' + (d.generated || 'unknown');
+  if (meta) meta.textContent = 'static snapshot · ' + (d.generated || 'unknown') + ' · RECENT = ran within 24h';
   var html = '';
   for (var i = 0; i < d.loops.length; i++) {
     var l = d.loops[i], meta = LOOPS_META[l.id] || [l.id, l.name, '#64748b'];
     var color = meta[2];
-    var status = l.status === 'implemented'
-      ? '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/25">ACTIVE</span>'
-      : '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-600/20 text-slate-400 border border-slate-500/30">' + esc(l.status) + '</span>';
+    // "implemented" means the loop exists in code — it is not proof it is
+    // running (the loops run on demand; nothing is continuously active).
+    // Liveness comes from the snapshot's runtime field (or, for older
+    // snapshots, from runs + last_run recency).
+    var runtime = l.runtime || (l.status === 'n/a' ? 'n/a' : (l.runs > 0 ? 'idle' : 'never'));
+    var status;
+    if (runtime === 'recent') {
+      status = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/25">RECENT</span>';
+    } else if (runtime === 'idle') {
+      status = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/25">IDLE</span>';
+    } else if (runtime === 'never') {
+      status = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-600/20 text-slate-400 border border-slate-500/30">NOT RUN</span>';
+    } else {
+      status = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-600/20 text-slate-400 border border-slate-500/30">' + esc(runtime.toUpperCase()) + '</span>';
+    }
     var params = (l.params || []).map(function(p){
       return '<div class="flex justify-between text-[11px]"><span class="font-mono text-slate-400">'+esc(p.key)+'</span><span class="font-mono font-semibold" style="color:'+color+'">'+esc(p.value)+'</span></div>';
     }).join('') || '<div class="text-[11px] text-slate-500">—</div>';
@@ -330,6 +342,7 @@ document.addEventListener('mouseover', function(e){
   if(e.target.tagName==='CANVAS') return;
   var t = e.target.closest('[data-tt]');
   if(!t) return;
+  if(t.classList.contains('tb') && window.matchMedia && window.matchMedia('(hover: none)').matches) return;
   var key = t.getAttribute('data-tt');
   var existing = t.querySelector('.tooltip');
   if(existing) { existing.classList.add('show'); return; }
@@ -427,7 +440,7 @@ function getGraphInfo(name){
 }
 
 function getTabInfo(name){
-  var d={overview:'Summary stats, success rate, layer scores.',pulses:'20 pulses with embedded goals, conversations, and evaluation results.',kg:'Interactive knowledge graph.',graphs:'Full chart suite: decisions, trends, durations, constraints, radar.',constraints:'Constraint frequency and lock rate analysis.',loops:'Nine-loop stack: targets, tuned params, last signal, run counts (static snapshot from loops.json).',mykb:'Wiki browser + knowledge graph (lazy-loaded iframes).',space:'SPACE web UI + spec viewer (lazy-loaded iframes).'};
+  var d={overview:'Summary stats, success rate, layer scores.',pulses:'20 pulses with embedded goals, conversations, and evaluation results.',kg:'Interactive knowledge graph.',graphs:'Full chart suite: decisions, trends, durations, constraints, radar.',constraints:'Constraint frequency and lock rate analysis.',loops:'Nine-loop stack: targets, tuned params, last signal, run counts, honest runtime state (RECENT/IDLE/NOT RUN from loops.json).',mykb:'Wiki browser, knowledge graph, stats, guidance (stub review, feedback & research direction).',space:'SPACE web UI + spec viewer (lazy-loaded iframes).'};
   return '<h4>'+name.charAt(0).toUpperCase()+name.slice(1)+' Tab</h4><p>'+(d[name]||'Dashboard tab.')+'</p>';
 }
 

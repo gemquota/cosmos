@@ -24,7 +24,7 @@ Critical instructions are the highest-priority rules in an agent's context: cons
 - **Practical relevance** — critical instructions are the agent equivalent of invariants: cheap to state, costly to violate.
 
 ## Related
-- [[wiki/agent-systems/instruction-following|Instruction Following]] — how agents follow rules
+- [[wiki/agent-systems/instruction-hierarchy|Instruction Hierarchy]] — how agents follow rules
 - [[wiki/agent-systems/instruction-hierarchy|Instruction Hierarchy]] — precedence of rules
 - [[wiki/agent-systems/agent-runtime-security|Agent Runtime Security]] — mechanical enforcement
 - [[wiki/prompt-engineering/agentic-rails|Agentic Rails]] — constraining agent behavior

@@ -1,11 +1,4 @@
-import type {
-  FrameworkDefinition,
-  SeriesDefinition,
-  RoundDefinition,
-  OpenEndedQuestion,
-  QuestionContext,
-  SessionState,
-} from '../types/index.js';
+import type { FrameworkDefinition, SeriesDefinition, QuestionContext, SessionState } from '../types/index.js';
 
 /**
  * Get the current question context for a session

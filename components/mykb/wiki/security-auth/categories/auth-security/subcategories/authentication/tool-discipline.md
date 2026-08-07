@@ -29,5 +29,5 @@ Tool discipline is the practice of tightly controlling which tools an agent can 
 - [[wiki/agent-systems/agent-sandboxing|Agent Sandboxing]] — isolating effects
 - [[wiki/prompt-engineering/function-calling|Function Calling]] — how tools are invoked
 - [[wiki/llm-agents/approval-gates|Approval Gates]] — human checkpoints
-- [[wiki/agent-systems/instruction-following|Instruction Following]] — respecting limits
+- [[wiki/agent-systems/instruction-hierarchy|Instruction Hierarchy]] — respecting limits
 - [[wiki/testing/penetration-testing|Penetration Testing]] — probing tool exposure

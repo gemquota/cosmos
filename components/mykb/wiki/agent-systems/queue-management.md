@@ -4,7 +4,7 @@ title: "Queue Management"
 description: "The discipline of keeping work queues bounded and moving"
 tags: ["queues", "management", "process", "workflow"]
 timestamp: "2026-08-02T00:00:00Z"
-status: "stub"
+status: "growing"
 ---
 
 # Queue Management
@@ -28,7 +28,6 @@ Queue management would keep the wiki's work queues bounded and moving: items hav
 ## Related
 - [[wiki/agent-systems/review-queues-wiki|Review Queues]]
 - [[wiki/agent-systems/triage-workflow|Triage Workflow]]
-- [[wiki/agent-systems/queue-management|Queue Management]]
 - [[wiki/concepts/priority-labels|Priority Labels]]
 - [[wiki/agent-systems/approval-workflows-wiki|Approval Workflows]]
 - [[wiki/concepts/task-lists-wiki|Task Lists]]

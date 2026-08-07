@@ -19,7 +19,7 @@ Instruction robustness is a model's reliable interpretation of instructions desp
 - RSIS3 relevance: worker briefs are instructions; robust parsing of them is tested by pass outcomes.
 
 ## Related
-- [[wiki/agent-systems/instruction-following|Instruction Following]] — the behavior
+- [[wiki/agent-systems/instruction-hierarchy|Instruction Hierarchy]] — the behavior
 - [[wiki/agent-systems/instruction-hierarchy|Instruction Hierarchy]] — the structure
 - [[wiki/concepts/prompt-robustness|Prompt Robustness]] — the general property
 - [[wiki/agent-systems/priority-weights|Priority Weights]] — the precedence mechanism

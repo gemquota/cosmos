@@ -17,6 +17,8 @@ Commands:
   logs [component]        Tail logs for a component
   build [component]       Build a component
   test [component]        Test a component
+  guidance [open|build|plan|apply|status] Guidance UI: review, feedback, scaffold wanted pages
+  stubs [open|build|plan|apply|status]   Stub review (part of guidance): open live, drain queue
   update                  Git pull all components
   help                    Show this help
 
@@ -55,6 +57,52 @@ COMPONENT_TYPE[mykb]="markdown+python"
 COMPONENT_TYPE[rsis3]="python"
 COMPONENT_TYPE[rsisb]="python"
 
+mykb_running() {
+  local pidfile="$COSMOS_DIR/.cosmos-pids/mykb.pid"
+  [ -f "$pidfile" ] || return 1
+  local pid
+  pid=$(cat "$pidfile" 2>/dev/null)
+  [ -n "$pid" ] && kill -0 "$pid" 2>/dev/null
+}
+
+mykb_start() {
+  local dir="$COSMOS_DIR/components/mykb"
+  if mykb_running; then
+    echo "  🟢 MyKB wiki daemon already running → :8765"
+    return
+  fi
+  if [ ! -f "$dir/server.py" ]; then
+    echo "  ⚪ No server to start for mykb"
+    return
+  fi
+  mkdir -p "$COSMOS_DIR/.cosmos-pids"
+  cd "$dir"
+  nohup python3 server.py 8765 > /dev/null 2>&1 &
+  echo $! > "$COSMOS_DIR/.cosmos-pids/mykb.pid"
+  sleep 0.5
+  if mykb_running; then
+    echo "  🟢 MyKB wiki daemon → :8765"
+  else
+    echo "  ❌ MyKB failed to start"
+    rm -f "$COSMOS_DIR/.cosmos-pids/mykb.pid"
+  fi
+  cd "$COSMOS_DIR"
+}
+
+mykb_stop() {
+  local pidfile="$COSMOS_DIR/.cosmos-pids/mykb.pid"
+  if [ ! -f "$pidfile" ]; then
+    echo "  ⚪ MyKB wiki daemon not running"
+    return
+  fi
+  if kill "$(cat "$pidfile")" 2>/dev/null; then
+    echo "  🔴 MyKB wiki daemon"
+  else
+    echo "  ⚪ MyKB wiki daemon not running (stale pid)"
+  fi
+  rm -f "$pidfile"
+}
+
 cmd_dashboard() {
   echo "🌌 Launching COSMOS Dashboard + Services..."
   cd "$COSMOS_DIR"
@@ -78,6 +126,9 @@ cmd_status() {
       local running=0
       if [ "$comp" = "space" ]; then
         pgrep -f "serve-meta.mjs" >/dev/null 2>&1 && running=1
+      fi
+      if [ "$comp" = "mykb" ]; then
+        mykb_running && running=1
       fi
       if [ "$running" = "1" ]; then
         printf "  🟢 %-7s %-12s %-8s %s\n" "$comp" "$type" "running" "$desc"
@@ -124,6 +175,7 @@ cmd_start() {
       node serve-ui.mjs 8888 > /dev/null 2>&1 &
       echo "  🟢 SPACE Web UI → :8888"
     fi
+    mykb_start
     cd "$COSMOS_DIR"
     if [ -f "$COSMOS_DIR/infra/heartbeat/heartbeat.mjs" ]; then
       node "$COSMOS_DIR/infra/heartbeat/heartbeat.mjs" --interval 30 --restart > "$COSMOS_DIR/sentry.log" 2>&1 &
@@ -144,6 +196,9 @@ cmd_start() {
         echo "  🟢 Meta Viewer → :8899"
         node serve-ui.mjs 8888 > /dev/null 2>&1 &
         echo "  🟢 Web UI → :8888"
+        ;;
+      mykb)
+        mykb_start
         ;;
       *)
         echo "  ⚪ No server to start for $target"
@@ -166,6 +221,9 @@ cmd_stop() {
       space)
         pkill -f "serve-meta.mjs" 2>/dev/null && echo "  🔴 Meta Viewer" || true
         pkill -f "serve-ui.mjs" 2>/dev/null && echo "  🔴 Web UI" || true
+        ;;
+      mykb)
+        mykb_stop
         ;;
       *)
         echo "  ⚪ No server to stop for $target"
@@ -232,6 +290,149 @@ cmd_test() {
   cd "$COSMOS_DIR"
 }
 
+cmd_guidance() {
+  local sub="${1:-open}"
+  local mykb="$COSMOS_DIR/components/mykb"
+  case "$sub" in
+    open)
+      if ! mykb_running; then
+        echo "Starting MyKB wiki daemon (live data)..."
+        mykb_start
+      fi
+      local url="http://localhost:8765/index.html#guidance"
+      echo "🧭 Guidance (live): $url"
+      if command -v termux-open-url >/dev/null 2>&1; then
+        termux-open-url "$url" >/dev/null 2>&1 &
+      elif command -v xdg-open >/dev/null 2>&1; then
+        xdg-open "$url" >/dev/null 2>&1 &
+      elif command -v open >/dev/null 2>&1; then
+        open "$url" >/dev/null 2>&1 &
+      fi
+      ;;
+    build)
+      cd "$mykb"
+      python3 .wiki-daemon/build_stub_audit.py
+      ;;
+    plan)
+      cd "$mykb"
+      python3 .wiki-daemon/drain_guidance.py --plan
+      ;;
+    apply)
+      cd "$mykb"
+      python3 .wiki-daemon/drain_guidance.py --apply
+      ;;
+    status)
+      local queue="$mykb/.wiki-daemon/buffers/guidance-queue.json"
+      if [ -f "$queue" ]; then
+        python3 - "$queue" <<'PY'
+import json, sys
+q = json.load(open(sys.argv[1]))
+counts = {}
+for it in q.get('items', []):
+    k = it.get('kind', 'note')
+    counts[k] = counts.get(k, 0) + 1
+print(f"guidance queue: {len(q.get('items', []))} items @ {q.get('queued_at', '?')}")
+print('  kinds: ' + ' '.join(f"{k}={v}" for k, v in sorted(counts.items())))
+PY
+      else
+        echo "guidance queue: none (open the Guide tab, add items, then Save guidance)"
+      fi
+      local gman="$mykb/.wiki-daemon/buffers/guidance-inference.json"
+      if [ -f "$gman" ]; then
+        python3 - "$gman" <<'PY'
+import json, sys
+m = json.load(open(sys.argv[1]))
+print(f"research manifest: {len(m.get('created', []))} scaffolded, {len(m.get('research', []))} directions @ {m.get('generated', '?')}")
+PY
+      fi
+      local stubq="$mykb/.wiki-daemon/buffers/stub-audit-queue.json"
+      if [ -f "$stubq" ]; then
+        python3 - "$stubq" <<'PY'
+import json, sys
+q = json.load(open(sys.argv[1]))
+counts = {}
+for it in q.get('items', []):
+    counts[it.get('decision')] = counts.get(it.get('decision'), 0) + 1
+print(f"stub queue: {len(q.get('items', []))} items @ {q.get('queued_at', '?')}")
+print('  decisions: ' + ' '.join(f"{k}={v}" for k, v in sorted(counts.items())))
+PY
+      fi
+      ;;
+    *)
+      echo "Unknown: cosmos guidance $sub"
+      show_help
+      exit 1
+      ;;
+  esac
+  cd "$COSMOS_DIR"
+}
+
+cmd_stubs() {
+  local sub="${1:-open}"
+  local mykb="$COSMOS_DIR/components/mykb"
+  case "$sub" in
+    open)
+      if ! mykb_running; then
+        echo "Starting MyKB wiki daemon (live data)..."
+        mykb_start
+      fi
+      local url="http://localhost:8765/index.html#guidance"
+      echo "🧭 Guidance (live): $url"
+      if command -v termux-open-url >/dev/null 2>&1; then
+        termux-open-url "$url" >/dev/null 2>&1 &
+      elif command -v xdg-open >/dev/null 2>&1; then
+        xdg-open "$url" >/dev/null 2>&1 &
+      elif command -v open >/dev/null 2>&1; then
+        open "$url" >/dev/null 2>&1 &
+      fi
+      ;;
+    build)
+      cd "$mykb"
+      python3 .wiki-daemon/build_stub_audit.py
+      ;;
+    plan)
+      cd "$mykb"
+      python3 .wiki-daemon/drain_stub_queue.py --plan
+      ;;
+    apply)
+      cd "$mykb"
+      python3 .wiki-daemon/drain_stub_queue.py --apply
+      ;;
+    status)
+      local queue="$mykb/.wiki-daemon/buffers/stub-audit-queue.json"
+      local manifest="$mykb/.wiki-daemon/buffers/stub-audit-inference.json"
+      if [ -f "$queue" ]; then
+        python3 - "$queue" <<'PY'
+import json, sys
+q = json.load(open(sys.argv[1]))
+counts = {}
+for it in q.get('items', []):
+    counts[it.get('decision')] = counts.get(it.get('decision'), 0) + 1
+print(f"queue: {len(q.get('items', []))} items @ {q.get('queued_at', '?')}")
+print('  decisions: ' + ' '.join(f"{k}={v}" for k, v in sorted(counts.items())))
+PY
+      else
+        echo "queue: none (open the auditor, classify, then Save queue)"
+      fi
+      if [ -f "$manifest" ]; then
+        python3 - "$manifest" <<'PY'
+import json, sys
+m = json.load(open(sys.argv[1]))
+print(f"inference manifest: {len(m.get('tasks', []))} enrich tasks @ {m.get('generated', '?')}")
+PY
+      else
+        echo "inference manifest: none (run: cosmos stubs apply)"
+      fi
+      ;;
+    *)
+      echo "Unknown: cosmos stubs $sub"
+      show_help
+      exit 1
+      ;;
+  esac
+  cd "$COSMOS_DIR"
+}
+
 cmd_update() {
   echo "COSMOS components are local copies. To update:"
   echo "  rsync -a ~/dev/space/ components/space/"
@@ -247,6 +448,8 @@ case "${1:-help}" in
   stop) shift; cmd_stop "$@" ;;
   logs) shift; cmd_logs "$@" ;;
   build) shift; cmd_build "$@" ;;
+  guidance|guide) shift; cmd_guidance "$@" ;;
+  stubs|stub-audit|audit) shift; cmd_stubs "$@" ;;
   test) shift; cmd_test "$@" ;;
   update) cmd_update ;;
   help|--help|-h) show_help ;;

@@ -11,25 +11,22 @@ source: ["https://en.wikipedia.org/wiki/Behavior_tree_(artificial_intelligence,_
 # Behavior Trees
 
 ## Summary
-Behavior trees compose behaviors as a tree of nodes — sequences, selectors, conditions, actions — evaluated top-down each tick. They matter because they make reactive control modular, debuggable, and reusable. They originated in games but apply to agent control flow.
+Behavior trees compose behaviors as a tree of nodes — sequences, selectors, conditions, and leaf actions — evaluated top-down on each tick. They make reactive control modular, debuggable, and reusable: subtrees can be recombined, and the tick discipline gives natural interruption and priority. They originated in games and apply to agent control flow.
 
 ## Details
-- Nodes: sequence (all must succeed), selector (try until one succeeds), decorators.
-- Each tick re-evaluates, giving natural interruption and priority.
-- Deterministic and visualizable, unlike ad-hoc conditionals.
-- Open questions: integration with LLM action selection.
-- A behavior tree organizes behaviors as a tree of control nodes (sequence, selector, parallel) and leaf actions/conditions, executing by tick and returning success/failure/running.
-- Trees compose modularly: subtrees can be reused and recombined, which makes them easier to reason about and edit than monolithic finite-state machines.
-- The main costs are the tick discipline (every node re-evaluated each tick) and the risk of deep trees becoming hard to debug without good visualization.
-- **Worked example / comparison** — Worked example — an agent's daily routine as a tree: a selector tries 'review queue' first, falls back to 'write stubs' when the queue is empty, with a condition checking health-dashboard metrics at the root.
-- For mykb, behavior trees describe how curation workflows branch: the same tree of checks (freshness, links, sources) runs against every article batch.
+- **Node types** — sequence nodes run children until one fails; selector nodes run children until one succeeds; decorators modify behavior (invert, retry, limit); leaves are actions or conditions returning success, failure, or running.
+- **Tick discipline** — every node re-evaluates each tick, which gives reactive interruption: a high-priority branch can take over when its condition becomes true.
+- **Composability** — subtrees are reusable modules, so libraries of behaviors (navigation, escalation, fallback) can be assembled per agent; this is easier to reason about than a monolithic finite-state machine.
+- **Costs** — deep trees are hard to debug without visualization, and the tick discipline can waste evaluation on branches that will not run.
+- **Worked example** — an agent's daily routine as a tree: a selector tries review-queue work first, falls back to stub-writing when the queue is empty, with a health-check condition at the root deciding whether to run at all.
+- **LLM integration** — open design question: how tree control structures combine with LLM action selection, typically with the tree choosing policy and the model choosing the concrete action.
+- **For mykb** — curation workflows branch like trees: the same checks (freshness, links, sources) run against every article batch, with conditions routing to repair or promotion paths.
 
+- **Testing** — because trees are deterministic and visualizable, they can be unit-tested branch by branch: each subtree gets scenarios asserting success, failure, and running returns, which catches control bugs before deployment.
 ## Related
-- [[wiki/agent-systems/agent-loop|Agent Loop]]
-- [[wiki/concepts/reactive-planning|Reactive Planning]]
-- [[wiki/concepts/production-rules|Production Rules]]
-- [[wiki/concepts/cognitive-architecture|Cognitive Architecture]]
-- [[wiki/agent-systems/blackboard-architecture|Blackboard Architecture]]
-- [[wiki/concepts/promotion-readiness|Promotion Readiness]]
-- [[wiki/ai-ml/article-health-scores|Article Health Scores]]
-- [[wiki/concepts/decision-guides|Decision Guides]]
+- [[wiki/agent-systems/agent-loop|Agent Loop]] — the loop trees control
+- [[wiki/concepts/reactive-planning|Reactive Planning]] — the no-upfront-plan alternative
+- [[wiki/concepts/production-rules|Production Rules]] — condition-action control
+- [[wiki/agent-systems/blackboard-architecture|Blackboard Architecture]] — shared-state alternative
+- [[wiki/ai-ml/article-health-scores|Article Health Scores]] — checks a curation tree runs
+- [[wiki/agent-systems/agent-state-machines|Agent State Machines]] — state-based alternative

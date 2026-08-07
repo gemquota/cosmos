@@ -21,15 +21,15 @@ The computation itself is simple and stable, which is why the metric appears acr
 
 
 Average age is also useful for debugging because it is easy to compute from logs and timestamps, and it answers questions like how long requests have been in flight or how old the data in a view actually is. When paired with percentiles, it gives a compact picture of a system's freshness and latency. The Cloud, Debugging, and Shell tags on this page reflect exactly these monitoring uses.
-**Domain:** Mobile Platform › [[wiki/web-platforms/00-index|Android Core]] › [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/00-index|Angular Ui
+**Domain:** Mobile Platform › [[wiki/android-core/00-index|Android Core]] › [[wiki/frontend-frameworks/categories/angular-ui/00-index|Angular Ui]]
 
 ## Related Entities
 
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/aim-2|Aim 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/autonomous-iterative-mode-2|Autonomous Iterative Mode 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/avg-energy-2|Avg Energy 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/batch-2|Batch 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/dna-10|Dna 10
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/harmonica-explorer-2|Harmonica Explorer 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/hidpi-2|Hidpi 2
-- [[wiki/web-platforms/supercategories/frontend-frameworks/categories/angular-ui/hud-2|Hud 2
+- [[wiki/frontend-frameworks/categories/angular-ui/aim-2|Aim 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/autonomous-iterative-mode-2|Autonomous Iterative Mode 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/avg-energy-2|Avg Energy 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/batch-2|Batch 2]]
+- `Dna 10`
+- [[wiki/frontend-frameworks/categories/angular-ui/harmonica-explorer-2|Harmonica Explorer 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/hidpi-2|Hidpi 2]]
+- [[wiki/frontend-frameworks/categories/angular-ui/hud-2|Hud 2]]

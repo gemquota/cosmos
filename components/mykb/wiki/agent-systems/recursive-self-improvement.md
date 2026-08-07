@@ -21,6 +21,9 @@ Recursive self-improvement (RSI) is the capability of a system to improve the co
 - Worked example: after a session of failures, L3 writes a synthesis note into the wiki and adjusts the strategy used by the next session.
 - Related protocols: RRP (Recursive Refinement Protocol) drives ideation and theory-crafting for improvement cycles.
 
+- **Gating** — improvement must pass external gates (tests, rollback, human review of strategy changes) before it is accepted; ungated self-modification is how errors become permanent.
+- **Ceiling** — the recursion's ceiling is set by the evaluator's quality and the diversity of experience; improving those raises the ceiling more than adding cycles.
+
 ## Related
 
 - [[wiki/concepts/metacognition|Metacognition]] — the self-observation ability RSI depends on
@@ -28,4 +31,5 @@ Recursive self-improvement (RSI) is the capability of a system to improve the co
 - [[wiki/llm-agents/reflexion|Reflexion]] — verbal self-critique as a lightweight improvement loop
 - [[wiki/concepts/mykb-implementation-report|Mykb Implementation Report]] — how the system was built and hardened
 - [[wiki/ops/gap-report|Gap Analysis Report]] — gaps that improvement cycles target
+- [[wiki/syntheses/recursive-self-improvement-spec-2026-08-06|Recursive Self-Improvement Specification]] — the full SPACE v2 export (67/67 probes) that grounds this page
 - [[wiki/concepts/mykb-research-report|Mykb Research Report]] — research basis for the memory layer of RSI

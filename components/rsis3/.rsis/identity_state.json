@@ -1,6 +1,6 @@
 {
   "params": {
-    "l3.plateau_timeout_s": 82800.0
+    "l3.plateau_timeout_s": 28800.0
   },
   "history": [
     {
@@ -20,7 +20,97 @@
       "delta": -3600,
       "accepted": true,
       "signal": "shrink"
+    },
+    {
+      "cycle": 4,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 5,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 6,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 7,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 8,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 9,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 10,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 11,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 12,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 13,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 14,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 15,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 16,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 17,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 18,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
     }
   ],
-  "cycle": 3
+  "cycle": 18
 }

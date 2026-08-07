@@ -1,4 +1,4 @@
-import type { FrameworkDefinition, SeriesDefinition, DependencyEdge } from '../types/index.js';
+import type { FrameworkDefinition, SeriesDefinition } from '../types/index.js';
 
 export type SeriesStatus = 'locked' | 'available' | 'in_progress' | 'completed';
 

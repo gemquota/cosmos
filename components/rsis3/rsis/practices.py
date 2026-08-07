@@ -17,6 +17,7 @@ Run standalone with `python3 ops/check_practices.py` or through the CLI with
 
 import json
 import logging
+import re
 import subprocess
 from pathlib import Path
 from typing import Optional
@@ -181,6 +182,53 @@ def check_telemetry(workspace: Path) -> list[CheckRow]:
     return rows
 
 
+EVENT_TYPE_RE = re.compile(r"^[a-z][a-z0-9_]*$")
+LOOP_EVENT_RE = re.compile(r"^l[1-9]_[a-z_]+$")
+ISO_TS_RE = re.compile(
+    r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$"
+)
+
+
+def check_telemetry_contract(workspace: Path) -> list[CheckRow]:
+    """Telemetry JSONL shape contract (mirrors contracts/validate.py section 5).
+
+    Every line is one JSON object with a snake_case `type` (loop events
+    must be `l{1..9}_*`) and an ISO-8601 `timestamp`.
+    """
+    rows = []
+    tel = Path(workspace) / CONFIG.telemetry_dir
+    if not tel.exists():
+        rows.append(CheckRow("telemetry contract", "WARN", "no telemetry dir"))
+        return rows
+    files = events = bad = 0
+    for p in tel.glob("*.jsonl"):
+        files += 1
+        for ln, line in enumerate(p.read_text(encoding="utf-8",
+                                              errors="ignore").splitlines()):
+            if not line.strip():
+                continue
+            events += 1
+            try:
+                ev = json.loads(line)
+            except json.JSONDecodeError:
+                bad += 1
+                continue
+            et = ev.get("type", "")
+            if not isinstance(et, str) or not EVENT_TYPE_RE.match(et):
+                bad += 1
+                continue
+            if et.startswith("l") and not LOOP_EVENT_RE.match(et):
+                bad += 1
+                continue
+            ts = ev.get("timestamp", "")
+            if not isinstance(ts, str) or not ISO_TS_RE.match(ts):
+                bad += 1
+    rows.append(CheckRow(
+        "telemetry contract", "PASS" if not bad else "FAIL",
+        f"{files} files / {events} events / {bad} malformed"))
+    return rows
+
+
 def check_checkpoints(workspace: Path) -> list[CheckRow]:
     """Workspaces with loop state must be git repos with rsis checkpoints."""
     rows = []
@@ -208,7 +256,7 @@ def check_workspace(workspace: Optional[Path] = None) -> tuple[list[CheckRow], b
     """Run all practice checks. Returns (rows, all_pass)."""
     workspace = Path(workspace or CONFIG.workspace_dir).resolve()
     rows = check_registry() + check_state_files() + check_checkpoints(workspace)
-    rows += check_telemetry(workspace)
+    rows += check_telemetry(workspace) + check_telemetry_contract(workspace)
     all_pass = all(r.status != "FAIL" for r in rows)
     return rows, all_pass
 

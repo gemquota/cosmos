@@ -107,7 +107,7 @@ async function runSessionLoop(
           if (commit) {
             console.log(chalk.dim(`[git] Committed ${commit.hash}`));
           }
-        } catch (_e) {
+        } catch {
           // Git errors are non-fatal
         }
       }
@@ -120,7 +120,7 @@ async function runSessionLoop(
           if (commit) {
             console.log(chalk.dim(`[git] Committed ${commit.hash}`));
           }
-        } catch (_e) {}
+        } catch {}
       }
     }
     if (result.session_completed) {
@@ -131,7 +131,7 @@ async function runSessionLoop(
           if (commit) {
             console.log(chalk.dim(`[git] Committed ${commit.hash}`));
           }
-        } catch (_e) {}
+        } catch {}
       }
     }
   }
@@ -163,7 +163,7 @@ async function runSessionLoop(
       if (commit) {
         console.log(chalk.dim(`[git] Final commit: ${commit.hash}`));
       }
-    } catch (_e) {}
+    } catch {}
   }
 }
 

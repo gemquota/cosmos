@@ -19677,6 +19677,38 @@
   ]
  },
  {
+  "path": "raw/archive/stub-audit-2026-08-06/agent-systems/honest-signaling.md",
+  "type": "concept",
+  "title": "Honest Signaling",
+  "tags": [
+   "honest",
+   "signaling",
+   "communication"
+  ]
+ },
+ {
+  "path": "raw/archive/stub-audit-2026-08-06/agent-systems/instruction-following.md",
+  "type": "concept",
+  "title": "Instruction Following",
+  "tags": [
+   "instruction-following",
+   "llm",
+   "compliance"
+  ]
+ },
+ {
+  "path": "raw/archive/stub-audit-2026-08-06/agent-systems/planning-systems.md",
+  "type": "concept",
+  "title": "Planning Systems",
+  "tags": [
+   "planning",
+   "architecture",
+   "search",
+   "agents",
+   "llm"
+  ]
+ },
+ {
   "path": "raw/assets/README.md",
   "type": "readme",
   "title": "assets directory",
@@ -20823,16 +20855,6 @@
   ]
  },
  {
-  "path": "wiki/agent-systems/honest-signaling.md",
-  "type": "concept",
-  "title": "Honest Signaling",
-  "tags": [
-   "honest",
-   "signaling",
-   "communication"
-  ]
- },
- {
   "path": "wiki/agent-systems/horizon-length.md",
   "type": "concept",
   "title": "Horizon Length",
@@ -20885,16 +20907,6 @@
    "inference",
    "llm",
    "chain-of-thought"
-  ]
- },
- {
-  "path": "wiki/agent-systems/instruction-following.md",
-  "type": "concept",
-  "title": "Instruction Following",
-  "tags": [
-   "instruction-following",
-   "llm",
-   "compliance"
   ]
  },
  {
@@ -21161,18 +21173,6 @@
    "loop",
    "planning",
    "control"
-  ]
- },
- {
-  "path": "wiki/agent-systems/planning-systems.md",
-  "type": "concept",
-  "title": "Planning Systems",
-  "tags": [
-   "planning",
-   "architecture",
-   "search",
-   "agents",
-   "llm"
   ]
  },
  {
@@ -22012,12 +22012,10 @@
   "type": "entity",
   "title": "AGI",
   "tags": [
-   "acronym",
-   "android",
-   "api",
-   "ast",
-   "auth",
-   "entity"
+   "entity",
+   "agi",
+   "artificial-intelligence",
+   "capability"
   ]
  },
  {
@@ -22025,15 +22023,11 @@
   "type": "entity",
   "title": "AI",
   "tags": [
-   "acronym",
-   "android",
-   "angular",
-   "api",
-   "ast",
-   "auth",
-   "bash",
-   "bug",
-   "entity"
+   "entity",
+   "ai",
+   "artificial-intelligence",
+   "llm",
+   "agents"
   ]
  },
  {
@@ -22634,7 +22628,8 @@
   "tags": [
    "hallucination",
    "benchmarks",
-   "safety"
+   "evaluation",
+   "factuality"
   ]
  },
  {
@@ -63732,6 +63727,15 @@
   ]
  },
  {
+  "path": "wiki/meta-learning/wikilinks.md",
+  "type": "concept",
+  "title": "Wikilinks",
+  "tags": [
+   "meta-learning",
+   "guidance"
+  ]
+ },
+ {
   "path": "wiki/meta-learning/willpower-research.md",
   "type": "concept",
   "title": "Willpower Research",
@@ -75483,6 +75487,32 @@
   ]
  },
  {
+  "path": "wiki/syntheses/guidance-execution-loop-2026-08-06.md",
+  "type": "synthesis",
+  "title": "Guidance Execution Loop \u2014 Wanted Links, Scaffolds, Research Manifest",
+  "tags": [
+   "guidance",
+   "wanted-pages",
+   "red-links",
+   "scaffolding",
+   "research-manifest",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/guidance-ui-2026-08-06.md",
+  "type": "synthesis",
+  "title": "MyKB Guidance UI \u2014 from Stub Auditor to Research Direction",
+  "tags": [
+   "guidance",
+   "stub-auditor",
+   "curation",
+   "research-direction",
+   "feedback",
+   "mykb"
+  ]
+ },
+ {
   "path": "wiki/syntheses/knowledge-acquisition-workflow.md",
   "type": "synthesis",
   "title": "Knowledge Acquisition Workflow: Open Threads",
@@ -75607,6 +75637,19 @@
   ]
  },
  {
+  "path": "wiki/syntheses/mykb-guidance-ui-overhaul-2026-08-06.md",
+  "type": "synthesis",
+  "title": "MyKB Guidance UI Overhaul \u2014 navigation, article tools, graph repair",
+  "tags": [
+   "guidance",
+   "mykb-ui",
+   "knowledge-graph",
+   "navigation",
+   "article-toolbar",
+   "stub-triage"
+  ]
+ },
+ {
   "path": "wiki/syntheses/nested-loop-graph-and-zoom-fix.md",
   "type": "synthesis",
   "title": "Nested-Loop Graph & Zoom Direction Fix",
@@ -75696,6 +75739,19 @@
   ]
  },
  {
+  "path": "wiki/syntheses/recursive-self-improvement-spec-2026-08-06.md",
+  "type": "synthesis",
+  "title": "Recursive Self-Improvement Specification \u2014 SPACE v2 Export",
+  "tags": [
+   "recursive-self-improvement",
+   "space",
+   "specification",
+   "rsis3",
+   "architecture",
+   "export"
+  ]
+ },
+ {
   "path": "wiki/syntheses/responsible-disclosure-ai.md",
   "type": "synthesis",
   "title": "Responsible Disclosure for AI",
@@ -75716,6 +75772,290 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis-drive-until-satisfied-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 drive \u2014 run loops automatically until completion requirements are satisfied",
+  "tags": [
+   "rsis3",
+   "loops",
+   "automation",
+   "drive",
+   "completion-requirements",
+   "scheduling"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-1-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 1 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-10-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 10 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-11-cross-session-memory-consolidation-2026-08-07.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 11 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-12-cross-session-memory-consolidation-2026-08-07.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 12 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-13-cross-session-memory-consolidation-2026-08-07.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 13 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-14-cross-session-memory-consolidation-2026-08-07.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 14 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-15-cross-session-memory-consolidation-2026-08-07.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 15 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-2-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 2 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-3-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 3 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-4-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 4 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-5-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 5 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-6-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 6 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-7-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 7 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-8-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 8 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-9-cross-session-memory-consolidation-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 9 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-pass-10-2026-08-07.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 10 \u2014 UX cohesion: Models tab, KG lazy boot, verified surfaces",
+  "tags": [
+   "rsis3",
+   "passes",
+   "mykb",
+   "guide",
+   "models",
+   "knowledge-graph",
+   "ux",
+   "dashboard",
+   "okf"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-pass-11-2026-08-07.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 11 \u2014 ops + capstone: auto-deploy, scheduled loops, monitoring, full-chain proof",
+  "tags": [
+   "rsis3",
+   "passes",
+   "ops",
+   "ci",
+   "deploy",
+   "github-pages",
+   "monitoring",
+   "capstone",
+   "scheduler",
+   "okf"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-pass-6-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 6 \u2014 five full cycles across L1\u2013L9",
+  "tags": [
+   "rsis3",
+   "passes",
+   "loops",
+   "resource-pressure",
+   "telemetry",
+   "checkpoints"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-pass-7-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 7 \u2014 ecosystem data contracts, validated at both gates",
+  "tags": [
+   "rsis3",
+   "passes",
+   "contracts",
+   "data-shapes",
+   "validation",
+   "telemetry",
+   "ci"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-pass-8-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 8 \u2014 MyKB memory link: loops read and write the wiki",
+  "tags": [
+   "rsis3",
+   "passes",
+   "mykb",
+   "memory",
+   "l3",
+   "consolidation",
+   "gateway",
+   "okf"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-pass-9-2026-08-06.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 9 \u2014 spec link: SPACE artifacts feed L2 goals and the live Guide",
+  "tags": [
+   "rsis3",
+   "passes",
+   "space",
+   "spec",
+   "l2",
+   "guidance",
+   "guide",
+   "ideation",
+   "okf"
+  ]
+ },
+ {
   "path": "wiki/syntheses/safety-case-approach.md",
   "type": "synthesis",
   "title": "Safety Case Approach",
@@ -75733,6 +76073,30 @@
    "advisories",
    "security",
    "communication"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/stub-audit-2026-08-06.md",
+  "type": "synthesis",
+  "title": "Stub Audit Pass 2026-08-06 \u2014 141 Reviewed, 3 Archived, 126 Enriched",
+  "tags": [
+   "stub-auditor",
+   "archive",
+   "retarget",
+   "inference-pass",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/stub-auditor-live-queue.md",
+  "type": "synthesis",
+  "title": "Stub Auditor \u2014 Live Data & Inference Queue",
+  "tags": [
+   "stub-auditor",
+   "curation",
+   "inference-pass",
+   "workflow",
+   "mykb"
   ]
  },
  {
@@ -75821,6 +76185,32 @@
    "meta",
    "review",
    "curation"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/wiki-link-integrity-2026-08-06.md",
+  "type": "synthesis",
+  "title": "Wiki Link Integrity Repair \u2014 De-links, Malformed Wikilinks, Honest Audit",
+  "tags": [
+   "mykb",
+   "wiki-browser",
+   "links",
+   "link-check",
+   "curation",
+   "audit-tooling"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/wiki-link-resolution-and-junk-audit.md",
+  "type": "synthesis",
+  "title": "Wiki Link Resolution & Junk-Entity Audit",
+  "tags": [
+   "mykb",
+   "wiki-browser",
+   "links",
+   "stub-auditor",
+   "curation",
+   "performance"
   ]
  },
  {

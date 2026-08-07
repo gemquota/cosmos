@@ -27,5 +27,6 @@ Post-pass consolidation is the ritual of closing a work pass: verifying outputs,
 - [[wiki/syntheses/knowledge-graph-maintenance|Knowledge Graph Maintenance]] — the maintenance regime
 - [[wiki/syntheses/parallel-agent-acquisition|Parallel Agent Acquisition (5×100) & Writer Reliability]] — prior pass consolidation
 - [[wiki/syntheses/knowledge-synthesis|Knowledge Synthesis]] — synthesis home
+- [[wiki/syntheses/wiki-link-resolution-and-junk-audit|Wiki Link Resolution & Junk-Entity Audit]] — an applied consolidation
 - [[wiki/syntheses/transparency-reports|Transparency Reports]] — reporting outcomes
 - [[wiki/concepts/eval-contamination|Eval Contamination]] — measurement hygiene

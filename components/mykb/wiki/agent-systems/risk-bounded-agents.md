@@ -21,6 +21,11 @@ A risk-bounded agent is one whose freedom to act is deliberately limited by safe
 - RSIS3 layers risk bounds at every loop: L1 tools are gated, L2 changes must pass tests, L3 strategy shifts are logged and reversible.
 - Worked example: a deployment agent may only touch staging, never production, without an explicit approval gate.
 
+- **Risk tiers** — actions are classified into tiers (routine, consequential, irreversible), each with its own controls; tiering is what keeps the approval load proportional to actual risk.
+- **Bound monitoring** — telemetry should check bound adherence continuously: a risk-bounded agent that quietly exceeds its own bounds is not bounded at all.
+- **Bound review** — bounds are versioned artifacts reviewed like policies; stale bounds are either useless (too loose) or crippling (too tight), so they need a review cadence.
+- **Escape hatch** — there must be a deliberate, logged path to raise a bound for a justified case; without one, operators bypass the system informally instead.
+
 ## Related
 
 - [[wiki/llm-agents/permission-model|Permission Model]] — the policy structure behind the bounds

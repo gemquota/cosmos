@@ -20,6 +20,13 @@ Self-correction is an agent's ability to fix its own mistakes — from syntax er
 - **Cost** — each iteration spends test-time compute; scheduling is an optimization problem.
 - **RSIS3 parallel** — check-practices + git rollback is a self-correction loop with a hard external gate (tests must pass).
 
+- **Evidence summary** — LLMs correct code and constraint-satisfying outputs well when given compiler or test feedback, but self-correction of open-ended reasoning without external signal is unreliable.
+- **Architecture** — generate, check with an external verifier (tests, compiler, retrieved ground truth), repair, re-check; terminate on pass, budget exhaustion, or no-progress detection.
+- **Budget discipline** — each repair iteration costs compute; a no-progress detector (same error twice) stops the loop earlier than a fixed iteration cap alone.
+- **Role split** — correction quality improves when the generator and the checker are distinct (different models, or a tool-grounded verifier) rather than the same model judging itself.
+
+- **Safety implication** — an agent that cannot correct its own errors accumulates them; correction capability is therefore a safety property, and its absence should be treated as a deployment risk rather than a quality quirk.
+
 ## Related
 - [[wiki/agent-systems/self-critique|Self-Critique]] — the critique input
 - [[wiki/agent-systems/test-time-compute|Test-Time Compute]] — the resource correction spends

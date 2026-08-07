@@ -21,6 +21,13 @@ Sub-agent delegation is the pattern where a main agent hands a well-scoped subta
 - RSIS3 uses sub-agents for isolated tasks like research sweeps and file-scoped refactors, with results logged for traceability.
 - Worked example: a planner agent delegates dependency upgrades to three sub-agents, one per package, and merges their patches.
 
+- **Result contract** — delegations define a structured result format (status, artifacts, errors), so the main agent can consume outcomes without parsing prose.
+- **Failure isolation** — a sub-agent crash terminates only that sub-agent; the main agent observes the failure, logs it, and can re-spawn with fresh context.
+- **Oversight** — destructive sub-agent actions still pass through the same permission and approval gates; delegation is not an escape hatch from safety controls.
+- **Cost accounting** — each delegation spends its own budget and context; the main agent should track aggregate sub-agent spend to avoid surprise token bills.
+
+- **Measurement** — delegation quality is measured by outcome (did the subtask succeed), isolation (did a failure stay contained), and overhead (tokens and latency spent on the handoff); all three are tracked per delegation.
+
 ## Related
 
 - [[wiki/agent-systems/hierarchical-agents|Hierarchical Agents]] — the tree structure delegation creates

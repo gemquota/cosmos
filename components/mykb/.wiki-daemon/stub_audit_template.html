@@ -12,7 +12,7 @@
   --keep:#34d399; --enrich:#60a5fa; --cat:#c084fc; --archive:#fbbf24; --del:#f87171;
 }
 body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
-.container { max-width:860px; margin:0 auto; padding:20px 16px 140px; }
+.container { max-width:860px; margin:0 auto; padding:20px 16px 150px; }
 h1 { font-size:22px; font-weight:700; }
 .sub { color:var(--muted); font-size:13px; margin-top:4px; }
 .progress-wrap { display:flex; align-items:center; gap:12px; margin:16px 0 8px; }
@@ -35,6 +35,18 @@ h1 { font-size:22px; font-weight:700; }
 .results-head { display:flex; justify-content:space-between; align-items:center; padding:10px 14px; border-bottom:1px solid var(--border); font-size:13px; font-weight:600; }
 #results-text { width:100%; min-height:220px; background:#0b0d11; color:#cfe3c9; border:none; padding:14px; font:12px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace; resize:vertical; outline:none; }
 .copy-flash { color:var(--keep); font-size:12px; margin-left:8px; }
+.src-row { margin:10px 0 2px; }
+.src-chip { display:inline-block; font-size:11px; padding:2px 10px; border-radius:10px; border:1px solid var(--border); color:var(--muted); background:var(--panel); }
+.src-chip.live { color:var(--keep); border-color:var(--keep); }
+.src-chip.snap { color:var(--accent); border-color:var(--accent); }
+.queue-flash { font-size:12px; color:var(--muted); }
+.drain-panel { margin:14px 0; border:1px solid var(--border); border-radius:8px; background:var(--panel); padding:10px 12px; }
+.drain-status { font-size:12px; color:var(--muted); margin-bottom:8px; }
+.drain-actions { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+.drain-out { width:100%; min-height:160px; background:#0b0d11; color:#cfe3c9; border:1px solid var(--border); border-radius:6px; padding:10px; font:11px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace; white-space:pre-wrap; overflow-wrap:anywhere; display:none; margin:0; }
+.pager { display:flex; align-items:center; gap:10px; margin:10px 0 4px; }
+.pager .btn:disabled { opacity:.4; cursor:default; transform:none; }
+.pg-info { font-size:12px; color:var(--muted); flex:1; }
 #list { margin-top:8px; }
 .card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:12px 14px; margin-bottom:8px; }
 .card.classified { opacity:.55; }
@@ -43,6 +55,7 @@ h1 { font-size:22px; font-weight:700; }
 .card .title { font-size:15px; font-weight:700; letter-spacing:.3px; }
 .card .badge { font-size:10.5px; color:var(--muted); background:var(--panel); border:1px solid var(--border); padding:1px 7px; border-radius:10px; }
 .card .badge.warn { color:#ffd166; border-color:#ffd16655; }
+.card .badge.del { color:#f87171; border-color:#f8717155; }
 .card .desc { font-size:12px; color:var(--muted); margin-top:5px; }
 .card .path { font-size:10.5px; color:#5a6270; margin-top:4px; word-break:break-all; }
 .card .snip { font-size:11px; color:#c9d1d9; margin-top:6px; border-top:1px dashed var(--border); padding-top:6px; white-space:pre-wrap; overflow-wrap:anywhere; }
@@ -65,14 +78,54 @@ h1 { font-size:22px; font-weight:700; }
 .cat-picker .hint { font-size:11px; color:var(--muted); margin-top:6px; }
 .legend { display:flex; gap:14px; flex-wrap:wrap; font-size:12px; color:var(--muted); margin:12px 0 4px; }
 .legend span b { margin-right:4px; }
-.footer { position:fixed; bottom:0; left:0; right:0; background:rgba(15,17,21,.92); border-top:1px solid var(--border); padding:10px; text-align:center; font-size:11px; color:var(--muted); backdrop-filter:blur(4px); }
+.hdr { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:16px; }
+.hdr-left { display:flex; align-items:center; gap:8px; }
+.hdr-logo { width:30px; height:30px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--accent),var(--keep)); color:#0b0d11; font-weight:800; border-radius:8px; font-size:14px; }
+.hdr-title { font-size:15px; font-weight:800; }
+.hdr-sub { font-size:12px; color:var(--muted); }
+.hdr-actions { display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
+.hbtn { padding:5px 10px; font-size:12px; font-weight:600; border-radius:6px; border:1px solid var(--border); background:var(--panel); color:var(--text); cursor:pointer; }
+.hbtn:hover { border-color:var(--accent); color:var(--accent); }
+.hbtn.live { background:var(--accent-soft); color:var(--accent); border-color:var(--accent); }
+.hbtn.dots { min-width:32px; padding:5px 8px; }
+.menus-pop { position:fixed; min-width:212px; background:var(--card); border:1px solid var(--border); border-radius:8px; padding:6px; box-shadow:0 10px 28px rgba(0,0,0,.5); display:none; z-index:60; }
+.menus-pop.open { display:block; }
+.menus-pop a, .menus-pop button { display:flex; align-items:center; gap:8px; width:100%; text-align:left; padding:8px 10px; font-size:12px; font-weight:600; color:var(--text); text-decoration:none; background:none; border:none; border-radius:6px; cursor:pointer; }
+.menus-pop a:hover, .menus-pop button:hover { background:var(--accent-soft); color:var(--accent); }
+.menus-pop .sep { height:1px; background:var(--border); margin:5px 0; }
+.view { display:none; }
+.view.active { display:block; }
+.view-head { font-size:12px; font-weight:800; margin:18px 0 8px; color:var(--muted); text-transform:uppercase; letter-spacing:.6px; }
+.view-head:first-child { margin-top:0; }
+.menu-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:8px; }
+.menu-card { display:flex; align-items:center; gap:8px; padding:12px 14px; background:var(--card); border:1px solid var(--border); border-radius:8px; color:var(--text); text-decoration:none; font-size:13px; font-weight:600; }
+.menu-card:hover { border-color:var(--accent); color:var(--accent); }
+.board-group { margin-bottom:12px; }
+.board-head { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:700; margin-bottom:6px; }
+.board-count { font-size:11px; color:var(--muted); border:1px solid var(--border); border-radius:10px; padding:1px 8px; }
+.board-list { display:flex; flex-wrap:wrap; gap:6px; }
+.board-item { font-size:11.5px; background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:3px 10px; color:var(--muted); }
+.stats-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:8px; }
+.stat-card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:12px 14px; }
+.stat-num { font-size:22px; font-weight:800; color:var(--accent); }
+.stat-label { font-size:11px; color:var(--muted); margin-top:2px; }
+.bottom-bar { position:fixed; bottom:0; left:0; right:0; background:rgba(15,17,21,.95); border-top:1px solid var(--border); padding:8px 12px 6px; backdrop-filter:blur(4px); z-index:40; }
+.tabbar { display:flex; gap:4px; max-width:860px; margin:0 auto; }
+.tbtn { flex:1; padding:8px 0; font-size:12px; font-weight:700; border:1px solid var(--border); border-radius:8px; background:var(--panel); color:var(--muted); cursor:pointer; }
+.tbtn.active { background:var(--accent-soft); color:var(--accent); border-color:var(--accent); }
+.bottom-bar .keys { text-align:center; font-size:10px; color:var(--muted); margin-top:5px; }
+.toast { position:fixed; top:12px; left:50%; transform:translateX(-50%); background:var(--card); border:1px solid var(--border); border-radius:8px; padding:8px 14px; font-size:12px; color:var(--text); box-shadow:0 8px 24px rgba(0,0,0,.45); z-index:70; display:none; max-width:92vw; }
+.toast.show { display:block; }
+.toast.ok { border-color:var(--keep); color:var(--keep); }
+.toast.err { border-color:var(--del); color:var(--del); }
 @media (max-width:640px){ .opt { flex-basis:calc(50% - 6px); } }
 </style>
 </head>
 <body>
 <div class="container">
   <h1>Stub Auditor</h1>
-  <div class="sub" id="subtitle">Review stub articles: Keep, Enrich, Categorize, Archive, or Delete. Progress persists in this browser; export the report to apply it.</div>
+  <div class="sub" id="subtitle">Review stub articles: Keep, Enrich, Categorize, Archive, or Delete. Progress persists in this browser; Save Queue writes the answers to a file for the inference pass.</div>
+  <div class="src-row"><span class="src-chip" id="src-chip">snapshot</span></div>
 
   <div class="progress-wrap">
     <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
@@ -91,6 +144,7 @@ h1 { font-size:22px; font-weight:700; }
     <label><input type="checkbox" id="flt-stub" checked> status: stub</label>
     <label><input type="checkbox" id="flt-short" checked> &lt;320 words</label>
     <label><input type="checkbox" id="flt-cat" checked> categories/ subfolders</label>
+    <label><input type="checkbox" id="flt-junk" checked> junk archive</label>
     <span style="flex:1"></span>
     <label>sort:
       <select id="sort-select" class="sort-select">
@@ -109,6 +163,8 @@ h1 { font-size:22px; font-weight:700; }
       <button class="tab" data-filter="classified">Classified</button>
     </div>
     <div style="flex:1"></div>
+    <button class="btn" id="save-queue">Save queue</button>
+    <span id="queue-flash" class="queue-flash"></span>
     <button class="btn" id="show-results">Results</button>
     <button class="btn copy" id="copy-results">Copy to clipboard</button>
   </div>
@@ -118,6 +174,22 @@ h1 { font-size:22px; font-weight:700; }
     <textarea id="results-text" readonly spellcheck="false"></textarea>
   </div>
 
+  <div class="drain-panel">
+    <div class="results-head"><span>Queue drain — plan / apply / rebuild (live daemon runs them; static pages show copyable commands)</span></div>
+    <div class="drain-status" id="drain-status">loading…</div>
+    <div class="drain-actions">
+      <button class="btn" id="drain-plan">Plan (preview)</button>
+      <button class="btn" id="drain-apply">Apply + manifest</button>
+      <button class="btn" id="drain-build">Rebuild static</button>
+    </div>
+    <pre class="drain-out" id="drain-out"></pre>
+  </div>
+
+  <div class="pager" id="pager">
+    <button class="btn" id="pg-prev">‹ Prev</button>
+    <span class="pg-info" id="pg-info"></span>
+    <button class="btn" id="pg-next">Next ›</button>
+  </div>
   <div id="list"></div>
   <div class="footer">Keys: <b>1</b>=Keep <b>2</b>=Enrich <b>3</b>=Categorize <b>4</b>=Archive <b>5</b>=Delete &middot; re-click to undo &middot; progress persists in this browser</div>
 </div>
@@ -127,12 +199,173 @@ var DATA = /*__DATA__*/;
 var ITEMS = DATA.items;
 var DIRS = DATA.dirs;
 var AREAS = DATA.areas;
+var LIVE = false;
 var CHOICES = {};
 try { var saved = JSON.parse(localStorage.getItem('stub-audit') || '{}'); CHOICES = saved; } catch(e) {}
 var filter = 'all';
 var catTargets = {};
 var sortBy = 'n';
+var PAGE_SIZE = 100;
+var page = 1;
 
+var API_BASES = ['', 'http://localhost:8765', 'http://127.0.0.1:8765'];
+function apiReq(path, opts) {
+  opts = opts || {};
+  var i = 0;
+  return new Promise(function(resolve, reject) {
+    function next() {
+      if (i >= API_BASES.length) { reject(new Error('no API reachable')); return; }
+      var base = API_BASES[i++];
+      var ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+      var t = setTimeout(function(){ if (ctrl) ctrl.abort(); }, 20000);
+      fetch(base + path, {
+        method: opts.method || 'GET',
+        headers: { 'Content-Type': 'application/json' },
+        body: opts.body,
+        signal: ctrl ? ctrl.signal : undefined
+      }).then(function(r) {
+        clearTimeout(t);
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      }).then(resolve).catch(function(e) { clearTimeout(t); next(); });
+    }
+    next();
+  });
+}
+function loadLiveData() {
+  if (!window.fetch) return;
+  var chip = document.getElementById('src-chip');
+  if (chip) { chip.textContent = 'scanning\u2026'; chip.classList.remove('live', 'snap'); }
+  apiReq('/api/v2/stubs')
+    .then(function(d) {
+      if (!d || !Array.isArray(d.items)) throw new Error('bad payload');
+      DATA = d; ITEMS = d.items; DIRS = d.dirs || []; AREAS = d.areas || [];
+      LIVE = true;
+      var chip = document.getElementById('src-chip');
+      if (chip) { chip.textContent = 'live data'; chip.classList.add('live'); chip.classList.remove('snap'); }
+      var sub = document.getElementById('subtitle');
+      if (sub) sub.textContent = 'Live scan via /api/v2/stubs — decisions persist in this browser; Save Queue writes the answers to a file for the inference pass.';
+      render();
+    })
+    .catch(function() {
+      var chip = document.getElementById('src-chip');
+      if (chip) {
+        chip.textContent = 'snapshot' + (DATA.built ? ' ' + String(DATA.built).slice(0, 10) : '');
+        chip.classList.add('snap');
+      }
+    });
+}
+function buildQueue() {
+  var now = new Date().toISOString();
+  var items = [];
+  ITEMS.forEach(function(it) {
+    var choice = CHOICES[it.p];
+    if (!choice) return;
+    items.push({
+      path: it.j ? it.p : 'wiki/' + it.p,
+      title: it.t,
+      decision: choice,
+      target: (choice === 'c' && !it.j && catTargets[it.p]) ? catTargets[it.p] + '/' + it.p.split('/').pop() : null,
+      words: it.w,
+      links: it.l,
+      status: it.s,
+      description: it.d || '',
+      snippet: it.x || ''
+    });
+  });
+  return { source: 'stub-audit', queued_at: now, count: items.length, items: items };
+}
+function queueFlash(msg, ok) {
+  var el = document.getElementById('queue-flash');
+  if (!el) return;
+  el.textContent = msg;
+  el.style.color = ok ? 'var(--keep)' : (msg.indexOf('downloaded') === 0 ? 'var(--accent)' : 'var(--del)');
+  setTimeout(function(){ el.textContent = ''; }, 3200);
+}
+function downloadQueue(payload) {
+  var blob = new Blob([JSON.stringify(payload, null, 1)], { type: 'application/json' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'stub-audit-queue.json';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1500);
+  queueFlash('downloaded stub-audit-queue.json (no live server) — place it in .wiki-daemon/buffers/ and run drain_stub_queue.py', false);
+}
+function saveQueue() {
+  var payload = buildQueue();
+  if (!payload.count) { queueFlash('nothing queued yet — classify at least one stub first', false); return; }
+  if (!window.fetch) { downloadQueue(payload); return; }
+  apiReq('/api/v2/stubs/queue', { method: 'POST', body: JSON.stringify(payload) })
+    .then(function(j) {
+      if (j.status === 'ok') queueFlash('queued ' + j.count + ' answers → ' + j.path + ' ✓', true);
+      else throw new Error(j.error || 'queue failed');
+    })
+    .catch(function(){ downloadQueue(payload); });
+}
+function drainStatus() {
+  var el = document.getElementById('drain-status');
+  if (!el) return;
+  el.textContent = 'loading…';
+  apiReq('/api/v2/stubs/queue').then(function(d) {
+    var q = d.queue, m = d.manifest, bits = [];
+    if (q && q.items && q.items.length) {
+      var counts = {};
+      q.items.forEach(function(it){ counts[it.decision] = (counts[it.decision] || 0) + 1; });
+      var sum = Object.keys(counts).map(function(k){ return k + '=' + counts[k]; }).join(' ');
+      bits.push('queue: ' + q.items.length + ' items @ ' + (q.queued_at || '?').slice(0, 19) + ' (' + sum + ')');
+    } else bits.push('queue: none');
+    if (m && m.tasks && m.tasks.length) bits.push('inference manifest: ' + m.tasks.length + ' enrich tasks');
+    else bits.push('inference manifest: none');
+    el.textContent = bits.join(' · ');
+  }).catch(function() {
+    el.textContent = 'static mode — live queue ops need the MyKB server (cosmos start mykb); use `cosmos stubs plan / apply / status` in the terminal.';
+  });
+}
+function drainOut(text) {
+  var pre = document.getElementById('drain-out');
+  pre.textContent = text;
+  pre.style.display = 'block';
+}
+function drainRun(mode) {
+  var btn = document.getElementById('drain-' + mode);
+  var old = btn.textContent;
+  btn.disabled = true; btn.textContent = 'running…';
+  apiReq('/api/v2/stubs/queue/' + mode, { method: 'POST' })
+    .then(function(j) {
+      drainOut(j && j.output ? j.output : (j && j.error ? j.error : 'done'));
+      drainStatus();
+    })
+    .catch(function() {
+      drainOut(
+        '# No MyKB daemon reachable (static page). Run the drain locally.\n' +
+        '# First ensure the queue exists: use "Save queue" and place the JSON in .wiki-daemon/buffers/stub-audit-queue.json\n' +
+        'cd components/mykb\n' +
+        'python3 .wiki-daemon/drain_stub_queue.py --' + mode + '\n' +
+        '# or: cosmos stubs ' + mode + '\n' +
+        '# After apply: cosmos stubs build && cosmos stubs status'
+      );
+    })
+    .then(function() { btn.disabled = false; btn.textContent = old; });
+}
+function drainBuild() {
+  var btn = document.getElementById('drain-build');
+  var old = btn.textContent;
+  btn.disabled = true; btn.textContent = 'building…';
+  apiReq('/api/v2/stubs/build', { method: 'POST' })
+    .then(function(j) {
+      drainOut(j && j.output ? j.output : (j && j.error ? j.error : 'done'));
+      drainStatus();
+    })
+    .catch(function() {
+      drainOut(
+        '# No MyKB daemon reachable (static page). Rebuild the auditor locally.\n' +
+        'cd components/mykb\n' +
+        'python3 .wiki-daemon/build_stub_audit.py\n' +
+        '# or: cosmos stubs build'
+      );
+    })
+    .then(function() { btn.disabled = false; btn.textContent = old; });
+}
 function esc(s) {
   return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
@@ -152,13 +385,20 @@ function visible() {
   var fltStub = document.getElementById('flt-stub').checked;
   var fltShort = document.getElementById('flt-short').checked;
   var fltCat = document.getElementById('flt-cat').checked;
+  var fltJunk = document.getElementById('flt-junk').checked;
+  // The checkboxes are OR buckets; junk is its own bucket. Unchecking the
+  // wiki buckets while leaving "junk archive" on isolates the pre-archived
+  // junk for bulk deletion. The all-items fallback only applies when every
+  // bucket is unchecked.
+  var showAll = !fltStub && !fltShort && !fltJunk;
   return ITEMS.filter(function(it) {
+    if (it.j) return fltJunk || showAll;
     if (fltStub && it.s === 'stub') return true;
     if (fltShort && it.w < 320) return true;
-    if (!fltStub && !fltShort) return true;
+    if (showAll) return true;
     return false;
   }).filter(function(it) {
-    if (fltCat) return true;
+    if (it.j || fltCat) return true;
     return !/\/categories\/|\/subcategories\/|\/entities\//.test(it.p);
   });
 }
@@ -178,15 +418,29 @@ function sorted(items) {
 }
 function render() {
   var items = sorted(visible());
+  var total = items.length;
+  var pages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  if (page > pages) page = pages;
+  var start = (page - 1) * PAGE_SIZE;
+  var pageItems = items.slice(start, start + PAGE_SIZE);
   var done = ITEMS.filter(function(it){ return CHOICES[it.p]; }).length;
   var pct = Math.round(done / ITEMS.length * 100);
   document.getElementById('progress-fill').style.width = pct + '%';
   document.getElementById('progress-label').textContent = done + '/' + ITEMS.length + ' (' + pct + '%)';
-  document.getElementById('subtitle').textContent = items.length + ' stub articles shown · ' + done + ' classified overall';
+  document.getElementById('subtitle').textContent = total + ' articles shown · ' + done + ' classified overall';
+  var junkLbl = document.getElementById('flt-junk');
+  if (junkLbl && junkLbl.parentElement && junkLbl.parentElement.lastChild && junkLbl.parentElement.lastChild.nodeType === 3) {
+    var junkCount = ITEMS.filter(function(it){ return it.j; }).length;
+    junkLbl.parentElement.lastChild.textContent = ' junk archive (' + junkCount + ')';
+  }
+  document.getElementById('pg-info').textContent = 'page ' + page + ' / ' + pages + ' · ' + PAGE_SIZE + ' per page';
+  document.getElementById('pg-prev').disabled = page <= 1;
+  document.getElementById('pg-next').disabled = page >= pages;
 
   var list = document.getElementById('list');
   list.innerHTML = '';
-  items.forEach(function(it) {
+  var frag = document.createDocumentFragment();
+  pageItems.forEach(function(it) {
     var choice = CHOICES[it.p] || null;
     if (filter === 'remaining' && choice) return;
     if (filter === 'classified' && !choice) return;
@@ -195,23 +449,29 @@ function render() {
     var sel = { k:'', e:'', c:'', a:'', d:'' };
     if (choice && sel[choice] !== undefined) sel[choice] = ' sel';
     var target = (choice === 'c' && catTargets[it.p]) ? '<div class="hint" style="color:var(--cat)">target: ' + esc(catTargets[it.p]) + '</div>' : '';
-    var picker = '<div class="cat-picker" id="cp-' + esc(it.p) + '">' + pickerHTML(it) + '</div>';
+    // The categorizer builds its <select> lazily in openPicker() — rendering a
+    // full picker (with every area option) per card on every keystroke was the
+    // main source of pagination lag on large audits.
+    var picker = '<div class="cat-picker" id="cp-' + esc(it.p) + '"></div>';
+    var actions = '<div class="actions">' +
+        '<button class="opt k' + sel.k + '" data-c="k"><span class="key">1</span>Keep</button>';
+    if (!it.j) {
+      actions +=
+        '<button class="opt e' + sel.e + '" data-c="e"><span class="key">2</span>Enrich</button>' +
+        '<button class="opt c' + sel.c + '" data-c="c"><span class="key">3</span>Categorize</button>' +
+        '<button class="opt a' + sel.a + '" data-c="a"><span class="key">4</span>Archive</button>';
+    }
+    actions += '<button class="opt d' + sel.d + '" data-c="d"><span class="key">5</span>Delete</button></div>';
+    var badgeCls = it.s === 'stub' ? ' warn' : (it.j ? ' del' : '');
     card.innerHTML =
       '<div class="top"><span class="num">' + it.n + '.</span><span class="title">' + esc(it.t) + '</span>' +
       '<span class="badge">' + it.w + ' words</span><span class="badge">' + it.l + ' links</span>' +
       (it.c ? '<span class="badge">created ' + esc(it.c) + '</span>' : '') +
-      '<span class="badge' + (it.s === 'stub' ? ' warn' : '') + '">' + esc(it.s) + '</span></div>' +
+      '<span class="badge' + badgeCls + '">' + esc(it.s) + '</span></div>' +
       (it.d ? '<div class="desc">' + esc(it.d) + '</div>' : '') +
       '<div class="path">' + esc(it.p) + '</div>' +
       (it.x ? '<div class="snip">' + esc(it.x) + '…</div>' : '') +
-      target + picker +
-      '<div class="actions">' +
-        '<button class="opt k' + sel.k + '" data-c="k"><span class="key">1</span>Keep</button>' +
-        '<button class="opt e' + sel.e + '" data-c="e"><span class="key">2</span>Enrich</button>' +
-        '<button class="opt c' + sel.c + '" data-c="c"><span class="key">3</span>Categorize</button>' +
-        '<button class="opt a' + sel.a + '" data-c="a"><span class="key">4</span>Archive</button>' +
-        '<button class="opt d' + sel.d + '" data-c="d"><span class="key">5</span>Delete</button>' +
-      '</div>';
+      target + picker + actions;
     var path = it.p;
     card.querySelectorAll('.opt').forEach(function(btn) {
       btn.addEventListener('click', function() {
@@ -220,8 +480,9 @@ function render() {
         else setChoice(path, c);
       });
     });
-    list.appendChild(card);
+    frag.appendChild(card);
   });
+  list.appendChild(frag);
   document.title = 'Stub Auditor ' + done + '/' + ITEMS.length;
 }
 function pickerHTML(it) {
@@ -240,14 +501,23 @@ function pickerHTML(it) {
 function openPicker(path) {
   var el = document.getElementById('cp-' + path);
   if (!el) return;
+  if (!el.dataset.built) {
+    var it = null;
+    for (var i = 0; i < ITEMS.length; i++) { if (ITEMS[i].p === path) { it = ITEMS[i]; break; } }
+    if (it) el.innerHTML = pickerHTML(it);
+    el.dataset.built = '1';
+  }
   el.classList.add('open');
   var ok = document.getElementById('ca-ok-' + path);
-  if (ok) ok.addEventListener('click', function() {
-    var area = document.getElementById('ca-area-' + path).value;
-    var sub = document.getElementById('ca-path-' + path).value.trim().replace(/^\/+|\/+$/g, '');
-    var target = sub ? area + '/' + sub : area;
-    setCat(path, 'wiki/' + target);
-  });
+  if (ok && !ok.dataset.listening) {
+    ok.dataset.listening = '1';
+    ok.addEventListener('click', function() {
+      var area = document.getElementById('ca-area-' + path).value;
+      var sub = document.getElementById('ca-path-' + path).value.trim().replace(/^\/+|\/+$/g, '');
+      var target = sub ? area + '/' + sub : area;
+      setCat(path, 'wiki/' + target);
+    });
+  }
 }
 function buildResults() {
   var lines = [];
@@ -270,10 +540,9 @@ function buildResults() {
         line = '- ' + it.t + ' (' + it.p + ' → ' + to + ')';
         lines.push('git mv ' + from + ' ' + to);
       } else if (g[0] === 'a') {
-        var name = it.p.split('/').pop();
         lines.push('git mv wiki/' + it.p + ' raw/archive/stub-audit-' + now + '/' + it.p);
       } else if (g[0] === 'd') {
-        lines.push('git rm wiki/' + it.p);
+        lines.push('git rm ' + (it.j ? it.p : 'wiki/' + it.p));
       }
       lines.push(line);
     });
@@ -319,16 +588,24 @@ document.querySelectorAll('.tab').forEach(function(t) {
     document.querySelectorAll('.tab').forEach(function(x){ x.classList.remove('active'); });
     t.classList.add('active');
     filter = t.getAttribute('data-filter');
+    page = 1;
     render();
   });
 });
-['flt-stub','flt-short','flt-cat'].forEach(function(id) {
-  document.getElementById(id).addEventListener('change', render);
+['flt-stub','flt-short','flt-cat','flt-junk'].forEach(function(id) {
+  document.getElementById(id).addEventListener('change', function(){ page = 1; render(); });
 });
 document.getElementById('sort-select').addEventListener('change', function() {
   sortBy = this.value;
+  page = 1;
   render();
 });
+document.getElementById('drain-plan').addEventListener('click', function(){ drainRun('plan'); });
+document.getElementById('drain-apply').addEventListener('click', function(){ drainRun('apply'); });
+document.getElementById('drain-build').addEventListener('click', drainBuild);
+document.getElementById('pg-prev').addEventListener('click',  function(){ if (page > 1) { page--; render(); } });
+document.getElementById('pg-next').addEventListener('click', function(){ page++; render(); });
+document.getElementById('save-queue').addEventListener('click', saveQueue);
 document.getElementById('show-results').addEventListener('click', showResults);
 document.getElementById('copy-results').addEventListener('click', function(){ showResults(); copyResults(); });
 document.getElementById('copy-results2').addEventListener('click', copyResults);
@@ -340,6 +617,10 @@ document.addEventListener('keydown', function(e) {
   if (!key) return;
   var first = sorted(ITEMS).find(function(it){ return !CHOICES[it.p]; });
   if (!first) return;
+  if (first.j && key !== 'k' && key !== 'd') return;
+  var all = sorted(visible());
+  var idx = all.indexOf(first);
+  if (idx >= 0) page = Math.floor(idx / PAGE_SIZE) + 1;
   if (key === 'c') { setChoice(first.p, 'c'); openPicker(first.p); }
   else setChoice(first.p, key);
 });
@@ -350,6 +631,8 @@ DIRS.forEach(function(d){ var o = document.createElement('option'); o.value = d;
 document.body.appendChild(dl);
 
 render();
+loadLiveData();
+drainStatus();
 </script>
 </body>
 </html>

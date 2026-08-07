@@ -21,6 +21,10 @@ Agent runtime security isolates what an agent can touch: filesystem, network, cr
 - **Worked example** — a browser agent runs in a container without write access to the host, with network egress allowlisted and credentials injected per session.
 - **mykb relevance** — agent sandboxing and the permission model are existing mykb topics; RSIS3's code generation uses sandboxed execution for the same reason.
 
+- **Defense in depth** — sandbox, tool permissions, secret scoping, and egress controls compose; any single layer can fail, so each layer must be independent.
+- **Audit trail** — every tool invocation, permission decision, and denial is logged; the trail is what makes post-incident analysis possible.
+- **Least privilege by default** — agents start with minimal permissions and escalate only through explicit gates, reversing the default as trust is earned.
+- **Supply chain** — the runtime itself must be verifiable: pinned images, signed tools, and reproducible builds prevent compromise before the agent even starts.
 ## Related
 - [[wiki/agent-systems/agent-sandboxing|Agent Sandboxing]] — sandboxing agents
 - [[wiki/agent-systems/agent-sandboxing-variants|Agent Sandboxing Variants]] — sandbox approaches

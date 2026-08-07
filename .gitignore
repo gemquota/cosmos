@@ -6,3 +6,7 @@ node_modules/
 dist/
 .cosmos-pids/
 .rsirrp/
+
+# Stub auditor runtime artifacts
+components/mykb/.wiki-daemon/buffers/
+components/mykb/.wiki-daemon/stub_created_dates.json

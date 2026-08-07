@@ -20,6 +20,14 @@ Self-critique is the step where a model reviews its own draft output and produce
 - **Variants** — verbal critique, structured rubrics, and multi-model critique committees.
 - **RSIS3 link** — the practice checker critiques the workspace against practices (a fixed rubric), avoiding self-flattery.
 
+- **Prompt design** — targeted critique questions ('what assumption is unsupported? what case breaks this?') outperform generic 'find problems' prompts.
+- **Multi-pass critique** — several critique passes, each focused on a different failure class, find more real defects than one comprehensive pass.
+- **Role separation** — a separate critic model (or a critic prompt with no memory of generation) is more honest than the generator critiquing its own draft.
+- **Arbitration** — when critique and generator disagree, an external verifier should arbitrate; self-critique alone cannot settle whether a flaw is real.
+- **Failure mode** — critique can hallucinate defects, so accepted revisions should be re-checked, not trusted because a critic proposed them.
+
+- **Measurement** — critique quality is measured by precision (are the claimed flaws real?) and recall (were the real flaws found?); both numbers are needed because a critic that invents flaws and one that misses them fail differently.
+
 ## Related
 - [[wiki/agent-systems/self-correction|Self-Correction]] — the revise step that consumes critique
 - [[wiki/agent-systems/reflection-agents|Reflection Agents]] — host architecture

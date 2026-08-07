@@ -10,6 +10,7 @@ syntax highlighting, dark mode, and search.
 import os, sys, json, http.server, socketserver, urllib.parse, re
 import subprocess
 import math
+from datetime import datetime, timezone
 
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8765
 DIR = os.path.dirname(os.path.abspath(__file__))
@@ -308,6 +309,66 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         
 
+        def _load_audit_module():
+            import importlib.util
+            sa_path = os.path.join(DIR, '.wiki-daemon', 'build_stub_audit.py')
+            spec = importlib.util.spec_from_file_location('build_stub_audit', sa_path)
+            sa = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(sa)
+            return sa
+
+        # ── Stub Auditor live data ──
+        if parsed.path == '/api/v2/stubs':
+            try:
+                self.send_json(_load_audit_module().scan_stubs())
+            except Exception as e:
+                self.send_json({'error': str(e)})
+            return
+
+        # ── Guidance live data (coverage + focus + guidance queue) ──
+        if parsed.path == '/api/v2/guidance':
+            try:
+                self.send_json(_load_audit_module().scan_guidance())
+            except Exception as e:
+                self.send_json({'error': str(e)})
+            return
+
+        # ── Guidance queue status ──
+        if parsed.path == '/api/v2/guidance/queue':
+            buffer_dir = os.path.join(DIR, '.wiki-daemon', 'buffers')
+
+            def _load(p):
+                try:
+                    with open(p, encoding='utf-8') as fh:
+                        return json.load(fh)
+                except Exception:
+                    return None
+
+            self.send_json({
+                'queue': _load(os.path.join(buffer_dir, 'guidance-queue.json')),
+                'guidance_manifest': _load(os.path.join(buffer_dir, 'guidance-inference.json')),
+                'stub_queue': _load(os.path.join(buffer_dir, 'stub-audit-queue.json')),
+                'manifest': _load(os.path.join(buffer_dir, 'stub-audit-inference.json')),
+            })
+            return
+
+        # ── Stub Auditor queue status ──
+        if parsed.path == '/api/v2/stubs/queue':
+            buffer_dir = os.path.join(DIR, '.wiki-daemon', 'buffers')
+
+            def _load(p):
+                try:
+                    with open(p, encoding='utf-8') as fh:
+                        return json.load(fh)
+                except Exception:
+                    return None
+
+            self.send_json({
+                'queue': _load(os.path.join(buffer_dir, 'stub-audit-queue.json')),
+                'manifest': _load(os.path.join(buffer_dir, 'stub-audit-inference.json')),
+            })
+            return
+
         # ── Serve individual file content ──
         if parsed.path == '/api/file':
             filepath = params.get('path', [''])[0]
@@ -339,6 +400,18 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
         # ── List all .md files ──
         if self.path == '/files.json':
+            # Serve the enriched files.json (path + type + title + tags) from
+            # disk when present so the app's Type grouping, Content/Meta split
+            # and badges work identically in live and static modes. Fall back
+            # to a plain path list if the enriched snapshot is missing.
+            enriched = os.path.join(DIR, 'files.json')
+            if os.path.isfile(enriched):
+                try:
+                    with open(enriched, encoding='utf-8') as fh:
+                        self.send_json(json.load(fh))
+                    return
+                except Exception:
+                    pass
             # Recursively find all .md files, return relative paths
             md_files = []
             for root, dirs, files in os.walk(DIR):
@@ -353,6 +426,167 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         
         # Fall through to default file server for everything else
         return super().do_GET()
+
+    def _run_daemon_script(self, script, args, timeout=300):
+        path = os.path.join(DIR, '.wiki-daemon', script)
+        try:
+            result = subprocess.run([sys.executable, path] + args,
+                                    capture_output=True, text=True,
+                                    cwd=DIR, timeout=timeout)
+            return {'ok': result.returncode == 0,
+                    'output': (result.stdout or '') + (result.stderr or '')}
+        except Exception as e:
+            return {'ok': False, 'output': str(e)}
+
+    def _safe_md_path(self, raw):
+        """Resolve an API-supplied path to a writable .md file under DIR."""
+        raw = (raw or '').replace('\\', '/').lstrip('/')
+        if not raw.endswith('.md'):
+            raw += '.md'
+        safe = os.path.normpath(os.path.join(DIR, raw))
+        if not safe.startswith(DIR + os.sep) and safe != DIR:
+            return None
+        rel = os.path.relpath(safe, DIR).replace(os.sep, '/')
+        bad = ('/.' in '/' + rel) or rel.startswith('.') or rel.startswith('__pycache__')
+        bad = bad or rel.startswith('.wiki-daemon/') or rel in ('server.py', 'index.html')
+        bad = bad or not os.path.isfile(safe)
+        if bad:
+            return None
+        return safe
+
+    def _run_git(self, args):
+        try:
+            r = subprocess.run(args, capture_output=True, text=True, cwd=DIR, timeout=60)
+            return {'ok': r.returncode == 0, 'output': (r.stdout or '') + (r.stderr or '')}
+        except Exception as e:
+            return {'ok': False, 'output': str(e)}
+
+    def _git_or_fs(self, args, fallback):
+        """git command with plain-filesystem fallback for untracked files."""
+        r = self._run_git(args)
+        if r['ok']:
+            return r
+        try:
+            fallback()
+            return {'ok': True, 'output': 'filesystem operation (untracked file)'}
+        except Exception as e:
+            r['output'] = (r['output'] + '\nfs fallback failed: %s' % e).strip()
+            return r
+
+    def _read_json_body(self):
+        try:
+            length = int(self.headers.get('Content-Length', 0))
+            return json.loads(self.rfile.read(length).decode('utf-8')) if length else {}
+        except Exception as e:
+            self.send_json({'error': 'Invalid JSON body: %s' % e})
+            return None
+
+    def do_POST(self):
+        parsed = urllib.parse.urlparse(self.path)
+        if parsed.path == '/api/v2/stubs/queue/plan':
+            self.send_json(self._run_daemon_script('drain_stub_queue.py', ['--plan']))
+            return
+        if parsed.path == '/api/v2/stubs/queue/apply':
+            self.send_json(self._run_daemon_script('drain_stub_queue.py', ['--apply']))
+            return
+        if parsed.path == '/api/v2/stubs/build':
+            self.send_json(self._run_daemon_script('build_stub_audit.py', []))
+            return
+
+        if parsed.path == '/api/v2/guidance/plan':
+            self.send_json(self._run_daemon_script('drain_guidance.py', ['--plan']))
+            return
+        if parsed.path == '/api/v2/guidance/apply':
+            self.send_json(self._run_daemon_script('drain_guidance.py', ['--apply']))
+            return
+
+        # ── Article tools: edit / archive / delete ──
+        if parsed.path == '/api/v2/file':
+            body = self._read_json_body()
+            if body is None:
+                return
+            safe = self._safe_md_path(body.get('path', ''))
+            if not safe:
+                self.send_json({'error': 'Unwritable or missing path'})
+                return
+            content = body.get('content')
+            if content is None:
+                self.send_json({'error': 'Missing content'})
+                return
+            try:
+                with open(safe, 'w', encoding='utf-8') as fh:
+                    fh.write(content)
+                rel = os.path.relpath(safe, DIR)
+                print(f"   File saved: {rel}")
+                self.send_json({'status': 'ok', 'path': rel})
+            except Exception as e:
+                self.send_json({'error': str(e)})
+            return
+        if parsed.path == '/api/v2/file/archive':
+            body = self._read_json_body()
+            if body is None:
+                return
+            safe = self._safe_md_path(body.get('path', ''))
+            if not safe:
+                self.send_json({'error': 'Unwritable or missing path'})
+                return
+            rel = os.path.relpath(safe, DIR)
+            today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+            dst = os.path.join(DIR, 'raw', 'archive', 'stub-audit-' + today, rel)
+            os.makedirs(os.path.dirname(dst), exist_ok=True)
+            self.send_json(self._git_or_fs(
+                ['git', 'mv', safe, dst],
+                lambda: os.rename(safe, dst)))
+            return
+        if parsed.path == '/api/v2/file/delete':
+            body = self._read_json_body()
+            if body is None:
+                return
+            safe = self._safe_md_path(body.get('path', ''))
+            if not safe:
+                self.send_json({'error': 'Unwritable or missing path'})
+                return
+            self.send_json(self._git_or_fs(
+                ['git', 'rm', '-q', safe],
+                lambda: os.remove(safe)))
+            return
+
+        if parsed.path not in ('/api/v2/stubs/queue', '/api/v2/guidance/queue'):
+            self.send_error(404, 'Not found')
+            return
+
+        try:
+            length = int(self.headers.get('Content-Length', 0))
+            payload = json.loads(self.rfile.read(length).decode('utf-8')) if length else {}
+        except Exception as e:
+            self.send_json({'error': 'Invalid JSON body: %s' % e})
+            return
+        items = payload.get('items', [])
+        if not isinstance(items, list):
+            self.send_json({'error': 'Body must be {"items": [...]}'})
+            return
+
+        def _save_queue(filename, label):
+            try:
+                buffer_dir = os.path.join(DIR, '.wiki-daemon', 'buffers')
+                os.makedirs(buffer_dir, exist_ok=True)
+                queue_path = os.path.join(buffer_dir, filename)
+                payload.setdefault('queued_at', datetime.now(timezone.utc).isoformat(timespec='seconds'))
+                payload['count'] = len(items)
+                tmp = queue_path + '.tmp'
+                with open(tmp, 'w', encoding='utf-8') as fh:
+                    json.dump(payload, fh, indent=1, ensure_ascii=False)
+                os.replace(tmp, queue_path)
+                rel = os.path.relpath(queue_path, DIR)
+                print(f"   {label} saved: {rel} ({len(items)} items)")
+                return {'status': 'ok', 'path': rel, 'count': len(items)}
+            except Exception as e:
+                return {'error': str(e)}
+
+        if parsed.path == '/api/v2/guidance/queue':
+            self.send_json(_save_queue('guidance-queue.json', 'Guidance queue'))
+            return
+        self.send_json(_save_queue('stub-audit-queue.json', 'Stub queue'))
 
     def log_message(self, format, *args):
         print(f"  {args[0]} {args[1]} {args[2]}")

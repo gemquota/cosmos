@@ -21,6 +21,9 @@ Agent memory systems give an agent continuity: what it did, what it learned, and
 - **Tradeoffs** — richer memory improves continuity but raises retrieval latency, cost, and the risk of stale or contradictory entries.
 - **mykb relevance** — mykb is itself the semantic memory layer of the triad, and RSIS3's reflections are episodic memory records.
 
+- **Retrieval quality decides value** — a memory store is only useful if the right memories surface at the right time; indexing, ranking, and forgetting policies matter as much as storage.
+- **Forgetting is a feature** — bounded memory with decay or eviction keeps the store relevant; unbounded accumulation dilutes retrieval and raises cost.
+- **Memory and identity** — a stable memory base is what lets an agent be the same entity across sessions, tying memory systems to identity and continuity.
 ## Related
 - [[wiki/llm-agents/memory-consolidation-agents|Memory Consolidation for Agents]] — turning experience into durable knowledge
 - [[wiki/llm-agents/memory-augmented-agents|Memory-Augmented Agents]] — memory as an agent capability

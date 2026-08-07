@@ -21,6 +21,12 @@ Tool use is the mechanism by which an agent turns model output into side effects
 - RSIS3 pattern: exec_command and apply_patch are the workhorses; every call is logged for traceability.
 - Worked example: a refactor agent calls grep_search to locate symbols, apply_patch to edit, then exec_command to run tests.
 
+- **Tool selection** — the model picks from a registry based on descriptions; description quality is a capability factor, and tool choice should be logged for audit.
+- **Error mapping** — tool failures are observations, not crashes: they feed retry and replan logic, so error schemas should be structured and machine-readable.
+- **Versioning** — tool schemas change; agents trained or prompted against an old schema misbehave after an upgrade, so tool versions should be pinned and migrated deliberately.
+
+- **Testing** — tool calls should be unit-testable against their schemas and mocked in agent tests, so schema drift and argument bugs surface in CI rather than in production runs.
+
 ## Related
 
 - [[wiki/agent-systems/agent-loop|Agent Loop]] — the loop that consumes tool calls

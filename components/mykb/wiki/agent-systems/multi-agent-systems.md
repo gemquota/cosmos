@@ -21,6 +21,11 @@ Multi-agent systems decompose work across specialized agents that share context 
 - **Worked example** — a code team: planner decomposes the issue, coder implements, critic reviews, tester runs checks, and the verifier approves the merge.
 - **mykb relevance** — the triad architecture (RSIS3 + mykb + myrsikb) is itself a multi-agent system with distinct responsibilities per component.
 
+- **Emergence** — multi-agent systems produce behaviors no single agent designed: beneficial (division of labor) and harmful (unintended collusion, conflict spirals); both need monitoring.
+- **Governance** — each agent needs an explicit role, permission set, and authority boundary; ambiguity here is how one agent's failure becomes everyone's.
+- **Observability** — a cross-agent trace with a common request id is the minimum for debugging; without it, blame and diagnosis are guesswork.
+- **Cost control** — agent count multiplies token spend and coordination overhead; the system should justify each additional agent against its marginal contribution.
+
 ## Related
 - [[wiki/agent-systems/agent-consensus|Agent Consensus]] — reaching agreement across agents
 - [[wiki/agent-systems/sub-agent-delegation|Sub-Agent Delegation]] — decomposing work into sub-agents

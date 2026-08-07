@@ -20,11 +20,19 @@ A scaffold is the software around a model — tools, memory, planning, and contr
 - **Safety surface** — scaffolds add attack surface: tool misuse, prompt injection via observations, and permission escalation.
 - **RSIS3 relevance** — the nine-loop stack is a scaffold around Claude-like reasoning: fixed practices, gated actions, and telemetry.
 
+- **Loop anatomy** — the scaffold's control loop runs act (tool call), observe (result), decide (next action), and terminates on success, budget, or escalation.
+- **Security posture** — the scaffold is the security boundary: least-privilege tools, permission checks, and sandboxing live here, so a model error cannot become a system compromise.
+- **Capability compounding** — scaffold improvements (better memory, better tool selection) multiply capability for the same model, making scaffold quality a first-order investment.
+
+- **Evolution** — scaffolds are software: they are versioned, tested, and improved like any other component, and scaffold upgrades are one of the highest-leverage improvements available to a deployed agent system.
+
+- **Failure modes** — scaffold bugs (missing stop conditions, wrong tool permissions, memory corruption) are usually invisible in demos and fatal in production, which is why scaffolds need the same testing discipline as the models they wrap.
+
 ## Related
 - [[wiki/agent-systems/agent-bootstrapping|Agent Bootstrapping]] — scaffolds as seeds
 - [[wiki/agent-systems/tool-use-patterns|Tool Use Patterns]] — tool side of scaffolding
 - [[wiki/pulses/recursive-improvement-loops|Recursive Improvement Loops]] — scaffold that improves itself
 - [[wiki/agent-systems/agent-sandboxing|Agent Sandboxing]] — containment
 - [[wiki/agent-systems/sub-agent-delegation|Sub-Agent Delegation]] — nested scaffolds
-- [[wiki/agent-systems/planning-systems|Planning Systems]] — control flow
+- [[wiki/agent-systems/agent-planning-systems|Agent Planning Systems]] — control flow
 - [[wiki/pulses/self-evaluation-scores|Self-Evaluation Scores]] — self-scored telemetry

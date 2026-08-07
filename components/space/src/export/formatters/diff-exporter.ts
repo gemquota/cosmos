@@ -1,4 +1,4 @@
-import type { SessionState, ExportOptions, FrameworkDefinition } from '../../types/index.js';
+import type { SessionState, FrameworkDefinition } from '../../types/index.js';
 
 export function exportDiff(
   sessionA: SessionState,

@@ -1,4 +1,4 @@
-import type { SessionState, FrameworkDefinition, ArtifactDictionary } from '../types/index.js';
+import type { SessionState, FrameworkDefinition } from '../types/index.js';
 
 export interface RoutingDecision {
   action: 'proceed' | 'skip' | 'clarify' | 'recommend_review';

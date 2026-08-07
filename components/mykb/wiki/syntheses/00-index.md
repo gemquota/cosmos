@@ -2,14 +2,14 @@
 type: "index"
 hub: true
 title: "Syntheses Index"
-description: "Listing of the syntheses/ folder (45 pages)."
+description: "Listing of the syntheses/ folder (62 pages)."
 tags: ["index"]
 timestamp: "2026-08-03T00:00:00Z"
 ---
 
 # Syntheses
 
-Part of [[wiki/index|Wiki Index]]. 45 pages.
+Part of [[wiki/index|Wiki Index]]. 62 pages.
 
 ## Pages
 - [[wiki/syntheses/acquisition-pass-snapshot-ordering|Acquisition Passes & Snapshot Ordering]] — Durable rules for multi-worker acquisition rounds: stage untracked notes before regenerating files.json (it counts tracked files only), generators are idempotent and safe to re-run, and threshold buckets move predictably because fulls are capped at 400 words
@@ -45,8 +45,25 @@ Part of [[wiki/index|Wiki Index]]. 45 pages.
 - [[wiki/syntheses/pass3-integration-depth-wave|Pass 3 — Integration & Depth Wave (8×400)]] — Eight parallel workers deepened and grew mykb by 3,200 files across AI, systems, data, cognition, dev culture, RSI/RSIS3 integration, curation, and frontend clusters — with the goal of making mykb fully integrated into RSIS3's decision-making
 - [[wiki/syntheses/patch-management-ai|Patch Management for AI]] — Processes for fixing vulnerabilities across AI systems
 - [[wiki/syntheses/post-pass-consolidation|Post-Pass Consolidation]] — Settling a work pass into durable structure before the next one
+- [[wiki/syntheses/recursive-self-improvement-spec-2026-08-06|Recursive Self-Improvement Specification — SPACE v2 Export]] — The completed 326-probe SPACE session (67/67 questions, 67 artifacts) that fixes what recursive self-improvement is and how RSIS3 should be built
 - [[wiki/syntheses/responsible-disclosure-ai|Responsible Disclosure for AI]] — Norms for disclosing AI vulnerabilities safely
 - [[wiki/syntheses/restricted-deployment|Restricted Deployment]] — Limiting where or how an AI system can be used
+- [[wiki/syntheses/rsis3-l3-cycle-1-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 1 — cross-session memory consolidation]] — L3 cycle 1 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
+- [[wiki/syntheses/rsis3-l3-cycle-2-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 2 — cross-session memory consolidation]] — L3 cycle 2 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
+- [[wiki/syntheses/rsis3-l3-cycle-3-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 3 — cross-session memory consolidation]] — L3 cycle 3 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
+- [[wiki/syntheses/rsis3-l3-cycle-4-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 4 — cross-session memory consolidation]] — L3 cycle 4 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
+- [[wiki/syntheses/rsis3-l3-cycle-6-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 6 — cross-session memory consolidation]] — L3 cycle 6 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
+- [[wiki/syntheses/rsis3-l3-cycle-7-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 7 — cross-session memory consolidation]] — L3 cycle 7 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
+- [[wiki/syntheses/rsis3-l3-cycle-8-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 8 — cross-session memory consolidation]] — L3 cycle 8 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
+- [[wiki/syntheses/rsis3-l3-cycle-9-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 9 — cross-session memory consolidation]] — L3 cycle 9 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
+- [[wiki/syntheses/rsis3-l3-cycle-10-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 10 — cross-session memory consolidation]] — L3 cycle 10 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
+- [[wiki/syntheses/rsis3-l3-cycle-5-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 5 — cross-session memory consolidation]] — L3 cycle 5 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
+- [[wiki/syntheses/rsis3-pass-6-2026-08-06|RSIS3 Pass 6 — five full cycles across L1–L9]] — Running 5 full cycles (40 loop executions) under a 99.6%-full disk: RSIS_DISK_USAGE_PCT override for the resource enforcer, module-logger discipline in scheduler callbacks, checkpoint git-add sweep behavior, and the even-telemetry full-cycle cadence
+- [[wiki/syntheses/rsis3-pass-7-2026-08-06|RSIS3 Pass 7 — ecosystem data contracts, validated at both gates]] — One documented contract per shared shape (OKF, files.json, ecosystem.json, loops.json, telemetry JSONL, SPACE framework) enforced by a stdlib-only validator wired into gen-static-data --check and check-practices; disk-override semantics (RSIS_DISK_USAGE_PCT=100 on full disks) and the freshness-vs-shape split in the deploy gate
+- [[wiki/syntheses/rsis3-pass-8-2026-08-06|RSIS3 Pass 8 — MyKB memory link: loops read and write the wiki]] — Durable rules from pass 8: L3 consolidation is self-writing through the MyKB gateway, loops read syntheses for context, cycle ordinals from durable counts
+- [[wiki/syntheses/rsis3-pass-9-2026-08-06|RSIS3 Pass 9 — spec link: SPACE artifacts feed L2 goals and the live Guide]] — Durable rules from pass 9: spec exports are a first-class ideation source, Guide surfaces share one payload, cross-component reads degrade gracefully
+- [[wiki/syntheses/rsis3-pass-10-2026-08-07|RSIS3 Pass 10 — UX cohesion: Models tab, KG lazy boot, verified surfaces]] — Durable rules from pass 10: Guide renders loop tuning topology (which loop tunes which params) from one guidance payload, KG pages lazy-load regenerated graph/catalog/index/log payloads instead of embedding copies, and every user-visible surface verifies on live data with graceful static fallbacks
+- [[wiki/syntheses/rsis3-pass-11-2026-08-07|RSIS3 Pass 11 — ops + capstone: auto-deploy, scheduled loops, monitoring, full-chain proof]] — Durable rules from pass 11: the site auto-syncs main → gh-pages via CI, loops run on schedule via one batch script (disk override + practices gate + snapshot regen), monitoring covers the live site hourly, and a capstone run proved spec → goal → cycle → MyKB → dashboard in one batch
 - [[wiki/syntheses/safety-case-approach|Safety Case Approach]] — Structuring safety justification as explicit cases
 - [[wiki/syntheses/security-advisories-ai|Security Advisories]] — Official notices about AI security vulnerabilities
 - [[wiki/syntheses/third-party-audits|Third-Party Audits]] — Independent external reviews of AI systems
@@ -96,6 +113,7 @@ Part of [[wiki/index|Wiki Index]]. 45 pages.
 - [Pass 3 — Integration & Depth Wave (8×400)](pass3-integration-depth-wave.md) — Pass 3 — Integration & Depth Wave (8×400)
 - [Patch Management for AI](patch-management-ai.md) — Patch Management for AI
 - [Post-Pass Consolidation](post-pass-consolidation.md) — Post-Pass Consolidation
+- [Recursive Self-Improvement Specification — SPACE v2 Export](recursive-self-improvement-spec-2026-08-06.md) — Recursive Self-Improvement Specification — SPACE v2 Export
 - [Responsible Disclosure for AI](responsible-disclosure-ai.md) — Responsible Disclosure for AI
 - [Restricted Deployment](restricted-deployment.md) — Restricted Deployment
 - [Safety Case Approach](safety-case-approach.md) — Safety Case Approach

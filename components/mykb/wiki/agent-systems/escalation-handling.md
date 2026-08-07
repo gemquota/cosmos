@@ -21,6 +21,11 @@ Escalation handling defines what happens when an agent cannot complete a task: r
 - **Anti-patterns** — escalating immediately (avoidable cost), or never escalating (silent failure).
 - **mykb relevance** — escalation is a core reliability pattern for autonomous systems like RSIS3, where a stuck loop must hand off cleanly.
 
+- **Escalation budget** — each task carries an escalation budget (max retries, max cost) so escalation is itself bounded and cannot become an infinite ladder.
+- **Post-escalation review** — escalated cases are reviewed to improve the system: if the same task always escalates, it should be automated or the trigger recalibrated.
+- **Structured reports** — the escalation artifact (attempt history, hypotheses, evidence) is what makes the next agent or human productive; an escalation without context just moves the stuck-ness.
+- **Escalation as telemetry** — escalation rates per task type are tracked; rising rates signal a problem worth fixing at the root rather than routing around.
+- **Anti-patterns** — escalating immediately wastes cost on solvable tasks; never escalating produces silent failures; both are tuning failures of the triggers.
 ## Related
 - [[wiki/agent-systems/agent-timeouts|Agent Timeouts]] — timeouts as escalation triggers
 - [[wiki/llm-agents/expert-consultation|Expert Consultation]] — escalating to specialist agents

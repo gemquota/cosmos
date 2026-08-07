@@ -20,6 +20,14 @@ Test-time compute is the budget of inference-time computation an agent spends be
 - **Safety angle** — longer reasoning horizons increase both capability and the surface for hidden reasoning.
 - **RSIS3 relevance** — reflection and refinement phases are test-time-compute decisions made by the pulse loop itself.
 
+- **Compute allocation** — a per-task allocator decides how much reasoning to spend: trivial tasks get one pass, hard tasks get search; allocation policy is a capability lever.
+- **Substitution effect** — search and verification at inference time can substitute for some training-time effort, shifting the cost curve from training to serving.
+- **Stopping** — diminishing returns mean the allocator should stop when marginal accuracy gain falls below cost; fixed compute budgets are simpler but wasteful.
+- **Safety surface** — longer reasoning increases both capability and the opportunity for hidden or misleading reasoning, so compute budgets interact with oversight design.
+- **Measurement** — benchmark accuracy as a function of compute (scaling curves) tells you where your system sits and where the next unit of compute is best spent.
+
+- **Implementation notes** — practical allocators use confidence thresholds, task difficulty estimates, and budget caps; the policy itself should be versioned and evaluated like any other component.
+
 ## Related
 - [[wiki/agent-systems/inference-time-reasoning|Inference-Time Reasoning]] — the capability axis
 - [[wiki/agent-systems/self-correction|Self-Correction]] — a compute-hungry loop

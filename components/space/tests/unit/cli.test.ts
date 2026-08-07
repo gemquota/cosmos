@@ -47,7 +47,6 @@ describe('CLI Configuration', () => {
     delete process.env.SPACE_LLM_PROVIDER;
     delete process.env.SPACE_LOCALE;
   });
-
 });
 
 describe('SpaceInstance API', () => {
