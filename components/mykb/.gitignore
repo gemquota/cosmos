@@ -20,3 +20,6 @@
 __pycache__/
 *.pyc
 .DS_Store
+.wiki-daemon/catalog.json
+.wiki-daemon/index.json
+.wiki-daemon/log.json

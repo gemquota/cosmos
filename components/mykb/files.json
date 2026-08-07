@@ -75905,6 +75905,22 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-pass-10-2026-08-07.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 10 \u2014 UX cohesion: Models tab, KG lazy boot, verified surfaces",
+  "tags": [
+   "rsis3",
+   "passes",
+   "mykb",
+   "guide",
+   "models",
+   "knowledge-graph",
+   "ux",
+   "dashboard",
+   "okf"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-pass-6-2026-08-06.md",
   "type": "synthesis",
   "title": "RSIS3 Pass 6 \u2014 five full cycles across L1\u2013L9",

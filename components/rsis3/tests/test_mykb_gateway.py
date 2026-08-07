@@ -1,6 +1,7 @@
 """Tests for the MyKB gateway (memory link, pass 8)."""
 import tempfile
 from pathlib import Path
+from unittest import mock
 
 from rsis.mykb_gateway import MyKBGateway, _slugify
 
@@ -37,12 +38,15 @@ def test_read_syntheses_and_search():
 
 def test_write_synthesis_okf():
     gw = MyKBGateway(str(_fixture()))
-    path = gw.write_synthesis(
-        title="L3 cycle 1 consolidation",
-        description="insights consolidated",
-        tags=["rsis3", "l3", "mykb"],
-        body="# L3 cycle 1\n\nDurable notes.\n",
-    )
+    with mock.patch("rsis.mykb_gateway.datetime") as dt:
+        dt.now.return_value.strftime.return_value = "2026-08-06T12:00:00Z"
+        dt.now.return_value.strftime.side_effect = lambda f: "2026-08-06" if f == "%Y-%m-%d" else "2026-08-06T12:00:00Z"
+        path = gw.write_synthesis(
+            title="L3 cycle 1 consolidation",
+            description="insights consolidated",
+            tags=["rsis3", "l3", "mykb"],
+            body="# L3 cycle 1\n\nDurable notes.\n",
+        )
     assert path.exists()
     text = path.read_text()
     assert 'type: "synthesis"' in text
@@ -56,7 +60,9 @@ def test_write_synthesis_okf():
 
 def test_append_log_prepends_after_header():
     gw = MyKBGateway(str(_fixture()))
-    gw.append_log("RSIS3 L3 cycle 1", ["wrote a synthesis"])
+    with mock.patch("rsis.mykb_gateway.datetime") as dt:
+        dt.now.return_value.strftime.return_value = "2026-08-06"
+        gw.append_log("RSIS3 L3 cycle 1", ["wrote a synthesis"])
     text = gw.log_path.read_text()
     assert "# Bundle Log\n\n## 2026-08-06 (RSIS3 L3 cycle 1)\n- wrote a synthesis" in text
     assert "- old entry" in text

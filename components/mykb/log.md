@@ -5,6 +5,15 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-07 (RSIS3 pass 10 — UX cohesion: Models tab, KG lazy boot, verified surfaces)
+- **Guide Models tab**: `gdRenderModels()` renders per-loop tuned params from the live guidance payload (`live.loops[*].params`, target + key/value) with empty-state fallback; Direction live loop panel shares the same payload.
+- **Per-loop tuning metadata**: `scan_live_state()` now emits `target` + `params` per loop from `dashboard/loops.json` (L4–L9 tuners, 16 params).
+- **KG lazy boot**: `okf-graph.html` fetches `graph.json` + catalog instead of embedding copies; concentric fallback >1200 nodes; 5,418 concepts · 36,892 links verified in browser.
+- **Payload refactor**: `build_graph.py` writes graph/catalog/index/log to static + `.wiki-daemon/` (daemon copies gitignored); regenerated + `gen-static-data.py --check` OK.
+- **Date-rollover test fix**: mykb gateway tests freeze the clock via `mock.patch` (57 tests pass).
+- **Verification**: browser walkthrough of dashboard Overview/MyKB/SPACE/KG + Guide tabs + article toolbar + KG + sidebar, no broken surfaces; `check-practices` all PASS, contracts OK (0 FAIL), wiki link check 0 unresolved.
+- **Synthesis added**: `wiki/syntheses/rsis3-pass-10-2026-08-07.md`; syntheses index updated.
+
 ## 2026-08-06 (RSIS3 pass 9 — spec link: SPACE artifacts feed L2 goals and the live Guide)
 - **Spec → goals**: `rsis/space_spec.py` maps the 67 exported spec artifacts to candidate L2 goals embedding `SPACE spec artifact <id>`; `run`/`drive --goal from-space` sources the goal from a spec artifact (`RSIS_SPACE_SPEC` override, default cosmos export).
 - **Guide live state**: `scan_guidance()` gained a `live` section (RSIS3 loop stack, per-loop telemetry starts, spec-backed L2 goal traces, recent syntheses) served by daemon + static `guidance.json`; Direction tab renders the new “Live loop & memory state” panel.
