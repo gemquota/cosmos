@@ -1227,6 +1227,11 @@ body {
 .gd-live-cell { font-size:11px; border:1px solid var(--border); border-radius:8px; padding:5px 8px; background:var(--code-bg); }
 .gd-live-cell b { color:var(--accent); }
 .gd-live-cell .st { font-size:10px; color:var(--text-muted); }
+.gd-models-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:6px; margin-bottom:10px; }
+.gd-live-cell .params { margin-top:4px; border-top:1px dashed var(--border); padding-top:4px; }
+.gd-live-cell .p { display:block; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; color:var(--text-soft); line-height:1.7; }
+.gd-live-cell .p code { background:var(--bg); border:1px solid var(--border); border-radius:4px; padding:0 4px; color:var(--text); }
+.gd-live-cell .p .v { color:#ffd166; }
 .gd-live-cols { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
 @media (max-width:720px){ .gd-live-cols { grid-template-columns:1fr; } }
 .gd-live-h2 { font-size:11px; font-weight:700; color:var(--text); margin-bottom:6px; }
@@ -1463,6 +1468,7 @@ body {
 
     <div class="gt-tabs">
       <button type="button" class="gt-tab active" data-gt="direction">&#129302; Direction</button>
+      <button type="button" class="gt-tab" data-gt="models">&#127899; Models</button>
       <button type="button" class="gt-tab" data-gt="queue">&#128229; Research queue</button>
       <button type="button" class="gt-tab" data-gt="triage">&#129523; Stub triage</button>
     </div>
@@ -1486,6 +1492,14 @@ body {
           <div><div class="gd-live-h2">&#129504; Recent syntheses</div><div id="gd-live-synths" class="gd-live-list"></div></div>
         </div>
       </div>
+      </div>
+    </div>
+
+    <!-- Models: tuned loop params -->
+    <div class="gt-section" data-gt="models" style="display:none;">
+      <div class="gd-panel">
+      <div class="gd-hdr"><h2>&#127899; Tuned model params</h2><span class="fb-sub">RSIS3 meta-loop tuning &mdash; which loop tunes which params and their current values, riding on the live guidance payload.</span></div>
+      <div id="gd-models" class="gd-models-grid"></div>
       </div>
     </div>
 
@@ -3909,7 +3923,7 @@ try { state.stubsOnly = localStorage.getItem('md-stubs-only') === 'on'; } catch 
    questions, page-level notes). The working set persists as a draft so
    unsaved items survive reloads; "Save guidance" POSTs it to the daemon
    queue (guidance-queue.json) or downloads it when static. ── */
-var GUID = { live: false, loaded: false, total: null, areas: [], focus: [], wantedLinks: [], queue: null, items: [] };
+var GUID = { live: false, liveState: null, loaded: false, total: null, areas: [], focus: [], wantedLinks: [], queue: null, items: [] };
 try { GUID.items = JSON.parse(localStorage.getItem('mykb-guidance-draft') || '[]') || []; } catch (e) { GUID.items = []; }
 function gdPersist() {
   try { localStorage.setItem('mykb-guidance-draft', JSON.stringify(GUID.items)); } catch (e) {}
@@ -3960,7 +3974,7 @@ function loadGuidance() {
     GUID.focus = d.focus || [];
     GUID.wantedLinks = d.wanted_links || [];
     GUID.queue = d.queue || null;
-    GUID.live = d.live || null;
+    GUID.liveState = d.live || null;
     var seeded = (d.queue && Array.isArray(d.queue.items) ? d.queue.items : []).map(gdNorm);
     GUID.items = draft || seeded;
     gdFillPaths();
@@ -3980,7 +3994,7 @@ function loadGuidance() {
         })
         .catch(function() {
           GUID.loaded = true; GUID.live = false;
-          GUID.total = null; GUID.areas = []; GUID.focus = []; GUID.wantedLinks = []; GUID.queue = null; GUID.live = null;
+          GUID.total = null; GUID.areas = []; GUID.focus = []; GUID.wantedLinks = []; GUID.queue = null; GUID.liveState = null;
           GUID.items = GUID.items.slice();
           gdFillPaths();
           gdRender();
@@ -4010,6 +4024,7 @@ function gdRender() {
   }
   gdRenderWanted();
   gdRenderLive();
+  gdRenderModels();
   gdPopulateAreas();
   var tbl = document.getElementById('gd-areas');
   if (tbl) {
@@ -4025,7 +4040,7 @@ function gdRender() {
   gdRenderList();
 }
 function gdRenderLive() {
-  var live = GUID.live || null;
+  var live = GUID.liveState || null;
   var loopsEl = document.getElementById('gd-live-loops');
   var tracesEl = document.getElementById('gd-live-traces');
   var synthsEl = document.getElementById('gd-live-synths');
@@ -4079,6 +4094,32 @@ function gdRenderLive() {
     if (!synths.length) synthsEl.innerHTML = '<div class="row" style="color:var(--text-muted)">no syntheses</div>';
   }
 }
+function gdRenderModels() {
+  var live = GUID.liveState || null;
+  var el = document.getElementById('gd-models');
+  if (!el) return;
+  var loops = (live && live.loops) || [];
+  var tuners = loops.filter(function(l) { return (l.params || []).length; });
+  if (!tuners.length) {
+    el.innerHTML = '<div style="font-size:11px;color:var(--text-muted);grid-column:1/-1;">no tuned params in live guidance payload &mdash; run the meta loops to populate</div>';
+    return;
+  }
+  el.innerHTML = '';
+  tuners.forEach(function(l) {
+    var cell = document.createElement('div');
+    cell.className = 'gd-live-cell';
+    var html = '<b>' + srvEsc(l.id) + '</b> ' + srvEsc(l.name) +
+      '<div class="st">' + srvEsc(l.target || '') + '</div>' +
+      '<div class="params">';
+    (l.params || []).forEach(function(pm) {
+      html += '<span class="p"><code>' + srvEsc(pm.key) + '</code> = <span class="v">' + srvEsc(pm.value) + '</span></span>';
+    });
+    html += '</div>';
+    cell.innerHTML = html;
+    el.appendChild(cell);
+  });
+}
+
 function gdRenderWanted() {
   var el = document.getElementById('gd-wanted');
   if (!el) return;

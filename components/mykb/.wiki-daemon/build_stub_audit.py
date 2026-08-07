@@ -296,11 +296,11 @@ def scan_wanted_links():
 
 
 def scan_live_state():
-    """Cross-component live state for the Guide Direction tab (pass 9).
+    """Cross-component live state for the Guide (pass 9/10).
 
     Pulls the RSIS3 loop stack (loops.json), per-loop telemetry starts +
-    SPACE-spec goal traces, and recent MyKB syntheses so the Guide renders
-    live loop + memory state instead of static lists only.
+    tuned model params, SPACE-spec goal traces, and recent MyKB syntheses so
+    the Guide renders live loop + memory state instead of static lists only.
     """
     rsis3 = os.path.normpath(os.path.join(ROOT, '..', 'rsis3'))
     live = {
@@ -321,6 +321,8 @@ def scan_live_state():
                 'status': e.get('status'), 'runs': e.get('runs', 0),
                 'last_run': e.get('last_run'),
                 'cycle': e.get('cycle', 0),
+                'target': e.get('target'),
+                'params': e.get('params') or [],
             })
 
     # Telemetry: per-loop starts + L2 goals that reference a SPACE spec artifact.
