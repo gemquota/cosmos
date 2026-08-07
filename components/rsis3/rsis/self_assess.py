@@ -549,3 +549,120 @@ def enrich_llm(result: AssessmentResult) -> Optional[str]:
     except Exception as e:
         logger.warning("LLM enrichment failed: %s", e)
         return None
+
+
+def _load_prev_score(wiki_root: Path) -> Optional[float]:
+    """Read the latest assessment note's health_score, if any.
+
+    ``wiki_root`` is the wiki dir (the one containing ``assessments/``).
+    """
+    assessments = wiki_root / "assessments"
+    if not assessments.is_dir():
+        return None
+
+    def note_key(path: Path):
+        m = re.match(r"self-assessment-(\d{4}-\d{2}-\d{2})"
+                     r"(?:-(\d+))?\.md$", path.name)
+        if not m:
+            return (path.name, 0)
+        return (m.group(1), int(m.group(2) or 0))
+
+    notes = sorted(assessments.glob("self-assessment-*.md"), key=note_key)
+    if not notes:
+        return None
+    try:
+        text = notes[-1].read_text(encoding="utf-8", errors="ignore")
+    except OSError:
+        return None
+    fm = _frontmatter(text)
+    try:
+        return float(fm.get("health_score", ""))
+    except ValueError:
+        return None
+
+
+class SelfAssessment:
+    """Runs the deterministic self-assessment phases (spec §3)."""
+
+    def __init__(self, telemetry: Optional[TelemetryCollector] = None,
+                 mykb: Optional[MyKBGateway] = None,
+                 workspace_dir: Optional[str] = None,
+                 llm: Optional[Callable[[AssessmentResult],
+                                        Optional[str]]] = None):
+        self.telemetry = telemetry
+        self.mykb = mykb or MyKBGateway()
+        self.workspace_dir = Path(workspace_dir or CONFIG.workspace_dir)
+        self._llm = llm or enrich_llm
+
+    def run(self, window_days: int = 7,
+            file_backlog_items: bool = True) -> AssessmentResult:
+        """Run all phases; never raises (errors land in result.error)."""
+        self._record("sa_start", {"window_days": window_days})
+        try:
+            wiki = self.mykb.root / "wiki"
+            health = scan_wiki_health(self.mykb.root)
+            prev = _load_prev_score(wiki)
+            gaps = analyze_gaps(self.mykb.read_syntheses(limit=20),
+                                build_coverage_index(wiki))
+            trends = detect_trends(
+                self.workspace_dir / ".rsis" / "telemetry",
+                window_days=window_days,
+                git_log=self._git_log(window_days),
+            )
+            result = AssessmentResult(
+                health=health, health_score=health.score(),
+                gaps=gaps, trends=trends, window_days=window_days,
+                prev_score=prev,
+            )
+            ts = _now_ts()
+            result.assessment_path = str(write_assessment(wiki, result, ts))
+            result.reflection_path = str(write_reflection(wiki, result, ts))
+            if file_backlog_items:
+                result.backlog_paths = [
+                    str(p) for p in file_backlog(wiki, gaps, ts)]
+                mirror_to_guidance_queue(self.mykb.root, gaps)
+            narrative = None
+            try:
+                narrative = self._llm(result)
+                if narrative and result.assessment_path:
+                    with open(result.assessment_path, "a",
+                              encoding="utf-8") as fh:
+                        fh.write(f"\n## LLM enrichment\n{narrative}\n")
+            except Exception as e:
+                logger.warning("LLM narrative failed: %s", e)
+            self._record("sa_complete", {
+                "health_score": result.health_score,
+                "gaps": len(result.gaps),
+                "trends": len(result.trends),
+                "assessment": result.assessment_path or "",
+            })
+            return result
+        except Exception as e:
+            logger.exception("self-assessment failed")
+            self._record("sa_error", {"error": str(e)})
+            return AssessmentResult(
+                health=HealthReport(), health_score=0.0,
+                gaps=[], trends=[], error=str(e))
+
+    def _git_log(self, window_days: int) -> Callable[[], list[dict]]:
+        def load() -> list[dict]:
+            try:
+                r = subprocess.run(
+                    ["git", "-C", str(self.workspace_dir), "log",
+                     f"--since={window_days} days ago",
+                     "--pretty=format:%s"],
+                    capture_output=True, text=True, timeout=30)
+                return [{"subject": line}
+                        for line in r.stdout.splitlines() if line.strip()]
+            except (subprocess.SubprocessError, OSError):
+                return []
+        return load
+
+    def _record(self, etype: str, metadata: dict) -> None:
+        if self.telemetry is None:
+            return
+        try:
+            self.telemetry.record(TelemetryEvent(
+                event_type=etype, metadata=metadata))
+        except Exception as e:
+            logger.warning("telemetry record failed (%s): %s", etype, e)
