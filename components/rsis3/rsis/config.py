@@ -175,6 +175,19 @@ class EvaluatorConfig:
     read_only_mount: bool = True
 
 
+# ── Self-Assessment Configuration ────────────────────────────────────────
+
+@dataclass
+class SelfAssessConfig:
+    """Self-assessment routine (pass 14)."""
+    window_days: int = 7
+    assessments_dir: str = "wiki/assessments"
+    reflections_dir: str = "wiki/reflections"
+    backlog_dir: str = "wiki/backlog"
+    daemon_timeout_s: int = 60
+    llm_enabled: bool = True
+
+
 # ── Tool Layer (sandbox + allowlists + HITL) ─────────────────────────────
 
 @dataclass
@@ -227,6 +240,7 @@ class RSISConfig:
     memory: MemoryConfig = field(default_factory=MemoryConfig)
     evaluator: EvaluatorConfig = field(default_factory=EvaluatorConfig)
     tools: ToolConfig = field(default_factory=ToolConfig)
+    self_assess: SelfAssessConfig = field(default_factory=SelfAssessConfig)
 
     # Workspace
     workspace_dir: str = "."
