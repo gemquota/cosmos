@@ -34,6 +34,7 @@ fi
 
 git checkout gh-pages >/dev/null 2>&1
 git rm -rf --ignore-unmatch . >/dev/null 2>&1 || true
+git clean -fd --exclude=.git >/dev/null 2>&1 || true   # drop untracked leftovers (e.g. local screenshots)
 git checkout main -- .
 git add -A
 if git diff --cached --quiet; then
