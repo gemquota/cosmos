@@ -239,7 +239,14 @@ def check_checkpoints(workspace: Path) -> list[CheckRow]:
     if not has_state:
         rows.append(CheckRow("checkpoint hygiene", "WARN", "no loop state yet"))
         return rows
-    git_ok = (Path(workspace) / ".git").exists()
+    # Workspace may be its own repo (nested local checkout) or a directory
+    # inside the COSMOS repo (CI) — resolve the enclosing work tree either way.
+    git_ok = False
+    try:
+        r = _git(Path(workspace), "rev-parse", "--is-inside-work-tree")
+        git_ok = r.returncode == 0 and r.stdout.strip() == "true"
+    except Exception:
+        git_ok = False
     if not git_ok:
         rows.append(CheckRow("checkpoint hygiene", "FAIL", "workspace is not a git repo"))
         return rows
