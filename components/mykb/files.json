@@ -76074,6 +76074,21 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-pass-13-deterministic-evaluator-gate-2026-08-07.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 13 \u2014 deterministic evaluator gate: fail-closed quality gating without an API",
+  "tags": [
+   "rsis3",
+   "passes",
+   "evaluator",
+   "quality-gate",
+   "safety",
+   "fail-closed",
+   "llm-agents",
+   "okf"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-pass-6-2026-08-06.md",
   "type": "synthesis",
   "title": "RSIS3 Pass 6 \u2014 five full cycles across L1\u2013L9",
