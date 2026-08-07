@@ -336,6 +336,7 @@ Part of [[wiki/index|Wiki Index]]. 162 pages.
 - [Verbal Persuasion](verbal-persuasion.md) — Verbal Persuasion
 - [Vicarious Experience](vicarious-experience.md) — Vicarious Experience
 - [Volitional Control](volitional-control.md) — Volitional Control
+- [Wikilinks](wikilinks.md) — Wikilinks
 - [Willpower Research](willpower-research.md) — Willpower Research
 - [Word2Vec](word2vec.md) — Word2Vec
 - [Zone of Proximal Development](zone-of-proximal-development.md) — Zone of Proximal Development

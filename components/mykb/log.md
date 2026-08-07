@@ -5,6 +5,18 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-07 (RSIS3 pass 14 — self-assessment routine)
+- Added `python -m rsis self-assess`: deterministic KB health scan (links,
+  orphans, stubs, content depth with weighted score), gap analysis against
+  recent syntheses, telemetry + git trend detection, per-run
+  `wiki/assessments/` + `wiki/reflections/` OKF notes, create-only
+  `wiki/backlog/` filing with guidance-queue mirror, and optional
+  fail-closed LLM enrichment.
+- First real run: health 0.837, 0 gaps, 3 trends (305/305 loop
+  completions, 0/146 evaluator FAILs, 157 commits); version 0.4.4;
+  tests 159 passed; check-practices OK.
+- Synthesis: `rsis3-pass-14-self-assessment-routine-2026-08-07.md`.
+
 ## 2026-08-07 (RSIS3 L3 cycle 20 — memory consolidation)
 - L3 cycle 20 wrote OKF synthesis `rsis3-l3-cycle-20-cross-session-memory-consolidation-2026-08-07.md` (2 insight(s), 1 strategy(ies), 237 redundancy candidate(s), 0 trend(s)).
 - Gateway root: `/home/runner/work/cosmos/cosmos/components/mykb`.

@@ -30858,6 +30858,17 @@
   ]
  },
  {
+  "path": "wiki/assessments/self-assessment-2026-08-07.md",
+  "type": "assessment",
+  "title": "Self-Assessment 2026-08-07",
+  "tags": [
+   "self-assessment",
+   "health",
+   "gaps",
+   "trends"
+  ]
+ },
+ {
   "path": "wiki/cloud-infra/00-index.md",
   "type": "index",
   "title": "Cloud Infra Index",
@@ -68640,6 +68651,15 @@
   ]
  },
  {
+  "path": "wiki/reflections/reflection-2026-08-07.md",
+  "type": "reflection",
+  "title": "Reflection 2026-08-07",
+  "tags": [
+   "reflection",
+   "self-assessment"
+  ]
+ },
+ {
   "path": "wiki/reflections/reflection-post-audit.md",
   "type": "reflection",
   "title": "Reflection \u2014 Post-Audit Assessment",
@@ -76086,6 +76106,21 @@
    "fail-closed",
    "llm-agents",
    "okf"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-pass-14-self-assessment-routine-2026-08-07.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 14 \u2014 self-assessment routine: deterministic-first KB health, gaps, trends",
+  "tags": [
+   "rsis3",
+   "passes",
+   "self-assessment",
+   "knowledge-management",
+   "telemetry",
+   "fail-closed",
+   "okf",
+   "backlog"
   ]
  },
  {
