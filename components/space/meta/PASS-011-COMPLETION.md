@@ -16,10 +16,10 @@ the arc's end state: contracts + UX + ops all locked and validated.
 
 ## Commits
 
-- Cosmos: `(pass 11 implementation + consolidation + PASS-011 meta docs)`
-  — to be recorded after this pass closes.
-- Nested rsis3: checkpoint chain `323b384…ff40179` + pass-11 telemetry
-  commit.
+- Cosmos: `d9fa10a5` — pass 11 implementation + consolidation (ops infra,
+  workflows, PASS-011 meta docs, synthesis, snapshots)
+- Nested rsis3: `8a9989e` — capstone batch telemetry (on checkpoint chain
+  `323b384…ff40179`)
 
 ## Artifacts
 
