@@ -519,3 +519,62 @@ def test_orchestrator_llm_failure_keeps_artifacts(tmp_path, monkeypatch):
     assert result.assessment_path
     types = {e.type for e in telemetry.events}
     assert "sa_complete" in types
+
+
+import argparse
+import subprocess
+
+import rsis.main as main_mod
+from rsis.self_assess import HealthReport
+
+
+class FakeSystems:
+    def __init__(self):
+        self.started = False
+        self.stopped = False
+        self.events = []
+
+    def start(self):
+        self.started = True
+
+    def stop(self):
+        self.stopped = True
+
+    def record(self, event):
+        self.events.append(event)
+
+
+def test_cmd_self_assess_runs(tmp_path, monkeypatch, capsys):
+    mykb = make_mykb(tmp_path)
+    fake = [FakeSystems() for _ in range(6)]
+    monkeypatch.setenv("RSIS_MYKB_PATH", str(mykb.root))
+    monkeypatch.setattr(main_mod, "_init_subsystems", lambda: tuple(fake))
+    monkeypatch.setattr(main_mod.CONFIG, "workspace_dir", str(tmp_path))
+    monkeypatch.setattr("rsis.self_assess.scan_wiki_health",
+                        lambda root, **kw: HealthReport(
+                            total_pages=1, stubs=0, body_words=700))
+    monkeypatch.setattr("rsis.self_assess.enrich_llm",
+                        lambda result: None)
+    code = main_mod.cmd_self_assess(argparse.Namespace(
+        days=1, no_backlog=True, json=True))
+    assert code == 0
+    assert fake[0].started and fake[0].stopped  # telemetry
+    assert fake[5].started and fake[5].stopped  # enforcer
+    assert {e.type for e in fake[0].events} == {"sa_start", "sa_complete"}
+    out = capsys.readouterr().out
+    assert "Self-assessment complete" in out
+    summary = json.loads(out.splitlines()[-1])
+    assert summary["decision"] == "ok"
+    assert "health_score" in summary
+    assert summary["gaps"] == [{"topic": "Zebra Migration Routes",
+                                "priority": "high"}]
+    assert summary["trends"] == []
+
+
+def test_self_assess_parser_registered():
+    r = subprocess.run(
+        [sys.executable, "-m", "rsis", "self-assess", "--help"],
+        capture_output=True, text=True,
+        cwd=str(Path(__file__).parent.parent))
+    assert r.returncode == 0
+    assert "--no-backlog" in r.stdout
