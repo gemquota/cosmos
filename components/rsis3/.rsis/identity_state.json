@@ -1,6 +1,6 @@
 {
   "params": {
-    "l3.plateau_timeout_s": 46800.0
+    "l3.plateau_timeout_s": 28800.0
   },
   "history": [
     {
@@ -80,7 +80,37 @@
       "delta": -3600,
       "accepted": true,
       "signal": "shrink"
+    },
+    {
+      "cycle": 14,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 15,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 16,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 17,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
+    },
+    {
+      "cycle": 18,
+      "delta": -3600,
+      "accepted": true,
+      "signal": "shrink"
     }
   ],
-  "cycle": 13
+  "cycle": 18
 }

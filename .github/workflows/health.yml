@@ -1,0 +1,30 @@
+name: COSMOS Health Check
+
+on:
+  schedule:
+    - cron: '7 * * * *'   # hourly
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install --quiet numpy networkx psutil pytest
+
+      - name: Run health checks
+        run: |
+          bash infra/health/check.sh \
+            --live-url https://gemquota.github.io/cosmos/
