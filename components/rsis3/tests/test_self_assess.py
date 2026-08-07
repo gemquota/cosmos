@@ -252,3 +252,73 @@ def test_detect_trends_ignores_malformed_events(tmp_path):
         + json.dumps({"type": 42, "timestamp": now.isoformat()}) + "\n",
         encoding="utf-8")
     assert detect_trends(tmp_path, window_days=7, now=now) == []
+
+
+from rsis.self_assess import (AssessmentResult, HealthReport, write_assessment,
+                              write_reflection)
+
+
+def make_result():
+    return AssessmentResult(
+        health=HealthReport(total_pages=2, stubs=1, broken_links=1,
+                            body_words=700, below_floor=1),
+        health_score=0.7, gaps=[], trends=[], window_days=7, prev_score=0.5)
+
+
+def test_write_assessment_frontmatter_and_body(tmp_path):
+    result = make_result()
+    path = write_assessment(tmp_path, result, ts="2026-08-07T10:00:00Z")
+    text = path.read_text(encoding="utf-8")
+    assert path.name == "self-assessment-2026-08-07.md"
+    assert 'type: "assessment"' in text
+    assert 'health_score: "0.7"' in text
+    assert "Health score: **0.7** (previous: 0.5)" in text
+    assert "No under-covered topics." in text
+
+
+def test_write_note_suffix_on_collision(tmp_path):
+    result = make_result()
+    first = write_assessment(tmp_path, result, ts="2026-08-07T10:00:00Z")
+    second = write_assessment(tmp_path, result, ts="2026-08-07T11:00:00Z")
+    assert first.name == "self-assessment-2026-08-07.md"
+    assert second.name == "self-assessment-2026-08-07-2.md"
+
+
+def test_write_reflection_links_assessment(tmp_path):
+    result = make_result()
+    path = write_reflection(tmp_path, result, ts="2026-08-07T10:00:00Z")
+    text = path.read_text(encoding="utf-8")
+    assert 'type: "reflection"' in text
+    assert "[[assessments/self-assessment-2026-08-07]]" in text
+
+
+from rsis.self_assess import GapItem, Trend
+
+
+def test_write_assessment_with_gaps_trends_and_notes(tmp_path):
+    result = AssessmentResult(
+        health=HealthReport(total_pages=2, stubs=1, broken_links=1,
+                            body_words=700, below_floor=1,
+                            notes=["wiki root missing"]),
+        health_score=0.6,
+        gaps=[GapItem(topic="Zebra Migration Routes", priority="high",
+                      reason="missing keywords: zebra")],
+        trends=[Trend(name="evaluator-fail-rate", direction="up",
+                      magnitude=0.5, evidence="2/4 evaluator FAILs")],
+        window_days=7, prev_score=0.8)
+    path = write_assessment(tmp_path, result, ts="2026-08-07T10:00:00Z")
+    text = path.read_text(encoding="utf-8")
+    assert "[[backlog/zebra-migration-routes]]" in text
+    assert "evaluator-fail-rate: up" in text
+    assert "- note: wiki root missing" in text
+    reflection = write_reflection(tmp_path, result, ts="2026-08-07T10:00:00Z")
+    rtext = reflection.read_text(encoding="utf-8")
+    assert "Zebra Migration Routes" in rtext
+
+
+def test_write_assessment_sanitizes_bad_timestamp(tmp_path):
+    result = make_result()
+    path = write_assessment(tmp_path, result, ts="../../evil/2026-08-07")
+    assert path.parent.name == "assessments"
+    assert path.name.startswith("self-assessment-")
+    assert ".." not in str(path)

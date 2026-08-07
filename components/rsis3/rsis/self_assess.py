@@ -304,3 +304,136 @@ def detect_trends(telemetry_dir: Path, window_days: int = 7,
                 "commit-cadence", "flat", round(len(commits), 3),
                 f"{len(commits)} commits in window, {fixish} fix/revert"))
     return trends
+
+
+@dataclass
+class AssessmentResult:
+    """Output of one self-assessment run."""
+    health: HealthReport
+    health_score: float
+    gaps: list[GapItem]
+    trends: list[Trend]
+    window_days: int = 7
+    prev_score: Optional[float] = None
+    assessment_path: Optional[str] = None
+    reflection_path: Optional[str] = None
+    backlog_paths: list[str] = field(default_factory=list)
+    error: Optional[str] = None
+
+
+def _now_ts() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _write_note(path: Path, fm: dict, body: str) -> Path:
+    """Create-only OKF note writer; numeric suffix on same-name collision."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    final = path
+    n = 2
+    while final.exists():
+        final = path.with_name(f"{path.stem}-{n}{path.suffix}")
+        n += 1
+    def scalar(value) -> str:
+        s = str(value).replace("\\", "\\\\").replace('"', '\\"')
+        return f'"{s.replace(chr(10), " ")}"'
+
+    lines = ["---"]
+    for k, v in fm.items():
+        if isinstance(v, (list, tuple)):
+            lines.append(f"{k}: [{', '.join(scalar(x) for x in v)}]")
+        else:
+            lines.append(f"{k}: {scalar(v)}")
+    lines.append("---")
+    final.write_text("\n".join(lines) + "\n\n" + body.strip() + "\n",
+                     encoding="utf-8")
+    return final
+
+
+def _date_part(ts: str) -> str:
+    """Safe YYYY-MM-DD from an OKF timestamp; today on malformed input."""
+    m = re.match(r"^(\d{4}-\d{2}-\d{2})", ts or "")
+    if m:
+        return m.group(1)
+    return datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+
+def write_assessment(root: Path, result: AssessmentResult,
+                     ts: Optional[str] = None) -> Path:
+    """P4 — assessment note (spec §6.1)."""
+    ts = ts or _now_ts()
+    date = _date_part(ts)
+    prev = (f" (previous: {result.prev_score})"
+            if result.prev_score is not None else "")
+    body = [
+        f"# Self-Assessment {date}",
+        "",
+        "## Health",
+        f"- Health score: **{result.health_score}**{prev}",
+        f"- Pages: {result.health.total_pages} · "
+        f"Stubs: {result.health.stubs}",
+        f"- Broken links: {result.health.broken_links} · "
+        f"Orphans: {result.health.orphans}",
+        f"- Body words: {result.health.body_words} · "
+        f"Below {STUB_FLOOR}-word floor: {result.health.below_floor}",
+        "",
+        "## Gaps",
+    ]
+    if result.gaps:
+        body += [f"- **[{g.priority}]** {g.topic} — {g.reason} "
+                 f"([[backlog/{g.slug}]])" for g in result.gaps]
+    else:
+        body.append("- No under-covered topics.")
+    body += ["", "## Trends"]
+    if result.trends:
+        body += [f"- {t.name}: {t.direction} (magnitude {t.magnitude}) — "
+                 f"{t.evidence}" for t in result.trends]
+    else:
+        body.append("- No trends in window.")
+    for note in result.health.notes:
+        body.append(f"- note: {note}")
+    return _write_note(root / "assessments" / f"self-assessment-{date}.md", {
+        "type": "assessment",
+        "title": f"Self-Assessment {date}",
+        "description": (f"Health {result.health_score}, "
+                        f"{len(result.gaps)} gaps, "
+                        f"{len(result.trends)} trends"),
+        "tags": ["self-assessment", "health", "gaps", "trends"],
+        "timestamp": ts,
+        "status": "stable",
+        "window_days": result.window_days,
+        "health_score": result.health_score,
+        "prev_note": "",
+    }, "\n".join(body))
+
+
+def write_reflection(root: Path, result: AssessmentResult,
+                     ts: Optional[str] = None) -> Path:
+    """P4 — prose reflection note; grows the reflections area (spec §6.2)."""
+    ts = ts or _now_ts()
+    date = _date_part(ts)
+    top_gap = result.gaps[0].topic if result.gaps else "no open gaps"
+    top_trend = result.trends[0].name if result.trends else "none yet"
+    body = [
+        f"# Reflection {date}",
+        "",
+        "## Surprises",
+        f"- Health came in at {result.health_score} with "
+        f"{result.health.stubs} stubs and "
+        f"{result.health.broken_links} broken links.",
+        "",
+        "## Open questions",
+        f"- What is driving the top gap: {top_gap}?",
+        f"- Which trend should the next pass act on first: {top_trend}?",
+        "",
+        "## Links",
+        f"- Assessment: [[assessments/self-assessment-{date}]]",
+    ]
+    return _write_note(root / "reflections" / f"reflection-{date}.md", {
+        "type": "reflection",
+        "title": f"Reflection {date}",
+        "description": f"Deterministic reflection for the "
+                       f"{date} self-assessment",
+        "tags": ["reflection", "self-assessment"],
+        "timestamp": ts,
+        "status": "growing",
+    }, "\n".join(body))
