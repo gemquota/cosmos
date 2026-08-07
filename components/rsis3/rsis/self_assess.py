@@ -230,3 +230,77 @@ def analyze_gaps(syntheses: list[dict], index: dict[str, set[str]],
         if len(gaps) >= max_gaps:
             break
     return gaps
+
+
+@dataclass
+class Trend:
+    """P3 — a detected pattern with direction and evidence (spec §8)."""
+    name: str
+    direction: str
+    magnitude: float
+    evidence: str
+
+
+def _as_utc(dt: datetime) -> datetime:
+    if dt.tzinfo is None:
+        return dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(timezone.utc)
+
+
+def detect_trends(telemetry_dir: Path, window_days: int = 7,
+                  git_log: Optional[Callable[[], list[dict]]] = None,
+                  now: Optional[datetime] = None) -> list[Trend]:
+    """P3 — trends from telemetry + git (spec §8; ≥3 data points each)."""
+    now = _as_utc(now or datetime.now(timezone.utc))
+    cutoff = now - timedelta(days=window_days)
+    counts: dict[str, int] = {}
+    passes = fails = 0
+    for f in sorted(Path(telemetry_dir).glob("*.jsonl")):
+        text = f.read_text(encoding="utf-8", errors="ignore")
+        for line in text.splitlines():
+            try:
+                ev = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if not isinstance(ev, dict):
+                continue
+            try:
+                ts = _as_utc(datetime.fromisoformat(ev.get("timestamp", "")))
+            except (TypeError, ValueError):
+                continue
+            if ts < cutoff:
+                continue
+            etype = ev.get("type", "")
+            if not isinstance(etype, str):
+                continue
+            counts[etype] = counts.get(etype, 0) + 1
+            if etype.endswith("_evaluation"):
+                if ev.get("decision") == "PASS":
+                    passes += 1
+                else:
+                    fails += 1
+    trends: list[Trend] = []
+    starts = sum(counts.get(f"l{i}_start", 0) for i in range(1, 10))
+    completes = sum(counts.get(f"l{i}_complete", 0) for i in range(1, 10))
+    if starts >= 3:
+        ratio = completes / starts
+        trends.append(Trend(
+            "loop-completion", "down" if ratio < 0.9 else "flat",
+            round(ratio, 3), f"{completes}/{starts} loop completions"))
+    total_evals = passes + fails
+    if total_evals >= 3:
+        fail_rate = fails / total_evals
+        trends.append(Trend(
+            "evaluator-fail-rate",
+            "up" if fail_rate > 0.2 else "flat",
+            round(fail_rate, 3), f"{fails}/{total_evals} evaluator FAILs"))
+    if git_log is not None:
+        commits = git_log() or []
+        if len(commits) >= 3:
+            fixish = sum(1 for c in commits
+                         if re.search(r"\b(revert|fix|hotfix)\b",
+                                      c.get("subject", "").lower()))
+            trends.append(Trend(
+                "commit-cadence", "flat", round(len(commits), 3),
+                f"{len(commits)} commits in window, {fixish} fix/revert"))
+    return trends
