@@ -19,8 +19,16 @@ cd "$DIR"
 MAIN_SHA="$(git rev-parse --short main)"
 MAIN_SUBJECT="$(git log -1 --format=%s main)"
 if ! git show-ref --verify --quiet refs/heads/gh-pages; then
-  echo "Creating gh-pages branch at main $MAIN_SHA..."
-  git branch gh-pages main
+  # Fresh CI checkout has no local gh-pages branch — use the remote-tracking
+  # ref so the sync diffs against the real deployed tree (and pushes a new
+  # commit) instead of no-oping against a branch created at main.
+  if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
+    echo "Basing local gh-pages on origin/gh-pages..."
+    git branch gh-pages origin/gh-pages
+  else
+    echo "Creating gh-pages branch at main $MAIN_SHA..."
+    git branch gh-pages main
+  fi
 fi
 
 WT="$DIR/.git/gh-pages-wt"
