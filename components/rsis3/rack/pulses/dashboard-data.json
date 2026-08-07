@@ -446,6 +446,35 @@
       "implementation_count": 2,
       "telemetry": {},
       "avg_confidence": 0.75
+    },
+    {
+      "id": "21",
+      "ts_start": "2026-08-07T05:53:43.280207+00:00",
+      "ts_end": "2026-08-07T05:53:44.295426+00:00",
+      "goals_count": 2,
+      "approved": 2,
+      "duration": 1.0,
+      "scores": {},
+      "type": "rrp_v2_full",
+      "num_goals": 2,
+      "implementation_count": 2,
+      "telemetry": {
+        "total_questions": 30,
+        "total_rounds": 8,
+        "total_ledger_entries": 10,
+        "total_checkpoints": 0,
+        "avg_quality_index": 0.75,
+        "avg_satisfaction": 0.75,
+        "avg_budget_saturation": 8.6,
+        "all_topics": [
+          "SEC",
+          "ARCH",
+          "DATA",
+          "DEPL",
+          "TEST"
+        ]
+      },
+      "avg_confidence": 0.77
     }
   ],
   "goals": [
@@ -4851,6 +4880,436 @@
       },
       "telemetry": {},
       "contradictions": []
+    },
+    {
+      "p": "21",
+      "d": "Improve _timeout_via_polling in rsis/timeout.py \u2014 address pass-only body",
+      "dec": "PASS",
+      "conf": 0.77,
+      "file": "rsis/timeout.py",
+      "func": "timeout",
+      "type": "improvement",
+      "conversation": [
+        {
+          "round": 1,
+          "phase": "open_ended",
+          "question": "How should we resolve ambiguity in 'edge_case' for this goal? (current: 0.42)",
+          "answer": "Implement with architecture with modular design and clear separation of concerns. Following best practices consistent with existing codebase."
+        },
+        {
+          "round": 1,
+          "phase": "open_ended",
+          "question": "How should we resolve ambiguity in 'requirements' for this goal? (current: 0.38)",
+          "answer": "Implement with secure input validation with proper authentication and authorization. Following best practices consistent with existing codebase."
+        },
+        {
+          "round": 1,
+          "phase": "open_ended",
+          "question": "How should we resolve ambiguity in 'determinism' for this goal? (current: 0.38)",
+          "answer": "Implement with efficient data model with indexed fields and consistent schema. Following best practices consistent with existing codebase."
+        },
+        {
+          "round": 2,
+          "phase": "multi_choice",
+          "question": "Regarding 'Implement with architecture with modular design and clear se...' \u2014 which approach is best?",
+          "options": [
+            "Option A \u2014 conservative",
+            "Option B \u2014 balanced",
+            "Option C \u2014 aggressive"
+          ],
+          "answer": {
+            "error_handling": "LOCKED",
+            "type_safety": "RECOMMENDED",
+            "test_coverage": "LOCKED"
+          }
+        },
+        {
+          "round": 2,
+          "phase": "multi_choice",
+          "question": "Regarding 'Implement with architecture with modular design and clear se...' \u2014 which approach is best?",
+          "options": [
+            "Option A \u2014 conservative",
+            "Option B \u2014 balanced",
+            "Option C \u2014 aggressive"
+          ],
+          "answer": {
+            "type_safety": "LOCKED"
+          }
+        },
+        {
+          "round": 2,
+          "phase": "multi_choice",
+          "question": "Regarding 'Implement with secure input validation with proper authentic...' \u2014 which approach is best?",
+          "options": [
+            "Option A \u2014 conservative",
+            "Option B \u2014 balanced",
+            "Option C \u2014 aggressive"
+          ],
+          "answer": {
+            "test_coverage": "LOCKED"
+          }
+        },
+        {
+          "round": 2,
+          "phase": "multi_choice",
+          "question": "Regarding 'Implement with secure input validation with proper authentic...' \u2014 which approach is best?",
+          "options": [
+            "Option A \u2014 conservative",
+            "Option B \u2014 balanced",
+            "Option C \u2014 aggressive"
+          ],
+          "answer": {
+            "logging": "LOCKED",
+            "type_safety": "RECOMMENDED"
+          }
+        },
+        {
+          "round": 2,
+          "phase": "multi_choice",
+          "question": "Regarding 'Implement with efficient data model with indexed fields and ...' \u2014 which approach is best?",
+          "options": [
+            "Option A \u2014 conservative",
+            "Option B \u2014 balanced",
+            "Option C \u2014 aggressive"
+          ],
+          "answer": {
+            "documentation": "LOCKED"
+          }
+        },
+        {
+          "round": 2,
+          "phase": "multi_choice",
+          "question": "Regarding 'Implement with efficient data model with indexed fields and ...' \u2014 which approach is best?",
+          "options": [
+            "Option A \u2014 conservative",
+            "Option B \u2014 balanced",
+            "Option C \u2014 aggressive"
+          ],
+          "answer": {
+            "security": "LOCKED",
+            "test_coverage": "LOCKED"
+          }
+        },
+        {
+          "round": 2,
+          "phase": "open_ended",
+          "question": "How should we resolve ambiguity in 'edge_case' for this goal? (current: 0.18)",
+          "answer": "Auto-answer: consistent with previously locked constraints."
+        },
+        {
+          "round": 2,
+          "phase": "open_ended",
+          "question": "How should we resolve ambiguity in 'requirements' for this goal? (current: 0.16)",
+          "answer": "Auto-answer: consistent with previously locked constraints."
+        },
+        {
+          "round": 2,
+          "phase": "open_ended",
+          "question": "How should we resolve ambiguity in 'determinism' for this goal? (current: 0.16)",
+          "answer": "Auto-answer: consistent with previously locked constraints."
+        },
+        {
+          "round": 3,
+          "phase": "probing",
+          "question": "Have we adequately considered PERF aspects of this change?",
+          "answer": "All architectural concerns addressed with modular design. No contradictions detected."
+        },
+        {
+          "round": 3,
+          "phase": "probing",
+          "question": "Have we adequately considered SCAL aspects of this change?",
+          "answer": "Security requirements satisfied through input validation and authentication."
+        },
+        {
+          "round": 3,
+          "phase": "probing",
+          "question": "Have we adequately considered UX aspects of this change?",
+          "answer": "Data model properly normalized with appropriate indexes. No contradictions detected."
+        }
+      ],
+      "constraints": {
+        "maintainability": "RECOMMENDED",
+        "security": "LOCKED",
+        "input_validation": "RECOMMENDED",
+        "error_handling": "LOCKED",
+        "type_safety": "RECOMMENDED",
+        "test_coverage": "LOCKED",
+        "logging": "LOCKED",
+        "documentation": "LOCKED"
+      },
+      "telemetry": {
+        "ambiguity": {
+          "requirements": 0.23,
+          "data_model": 0.207,
+          "edge_case": 0.253,
+          "determinism": 0.23,
+          "avg": 0.23,
+          "converged": false
+        },
+        "budget": {
+          "session_limit": 32000,
+          "round_limit": 8000,
+          "session_used": 2763,
+          "round_used": 83,
+          "saturation_pct": 8.6,
+          "alerts": []
+        },
+        "quality_index": {
+          "average": 0.75,
+          "count": 3,
+          "scores": [
+            0.7,
+            0.8,
+            0.75
+          ]
+        },
+        "satisfaction": {
+          "cumulative": 0.75,
+          "trend": "\u2191",
+          "count": 3
+        },
+        "timing": {
+          "round_count": 6,
+          "avg_duration_s": 0.0,
+          "total_duration_s": 0.0,
+          "round_times": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0
+          ]
+        },
+        "topic_coverage": {
+          "bitmask": 103,
+          "topics": [
+            "ARCH",
+            "SEC",
+            "DATA",
+            "TEST",
+            "DEPL"
+          ]
+        },
+        "transaction_count": 5,
+        "checkpoint_count": 0
+      },
+      "contradictions": []
+    },
+    {
+      "p": "21",
+      "d": "Improve log_message in rack/server.py \u2014 address pass-only body",
+      "dec": "PASS",
+      "conf": 0.77,
+      "file": "rack/server.py",
+      "func": "server",
+      "type": "improvement",
+      "conversation": [
+        {
+          "round": 1,
+          "phase": "open_ended",
+          "question": "How should we resolve ambiguity in 'edge_case' for this goal? (current: 0.42)",
+          "answer": "Implement with architecture with modular design and clear separation of concerns. Following best practices consistent with existing codebase."
+        },
+        {
+          "round": 1,
+          "phase": "open_ended",
+          "question": "How should we resolve ambiguity in 'requirements' for this goal? (current: 0.38)",
+          "answer": "Implement with secure input validation with proper authentication and authorization. Following best practices consistent with existing codebase."
+        },
+        {
+          "round": 1,
+          "phase": "open_ended",
+          "question": "How should we resolve ambiguity in 'determinism' for this goal? (current: 0.38)",
+          "answer": "Implement with efficient data model with indexed fields and consistent schema. Following best practices consistent with existing codebase."
+        },
+        {
+          "round": 2,
+          "phase": "multi_choice",
+          "question": "Regarding 'Implement with architecture with modular design and clear se...' \u2014 which approach is best?",
+          "options": [
+            "Option A \u2014 conservative",
+            "Option B \u2014 balanced",
+            "Option C \u2014 aggressive"
+          ],
+          "answer": {
+            "error_handling": "LOCKED",
+            "type_safety": "RECOMMENDED",
+            "test_coverage": "LOCKED"
+          }
+        },
+        {
+          "round": 2,
+          "phase": "multi_choice",
+          "question": "Regarding 'Implement with architecture with modular design and clear se...' \u2014 which approach is best?",
+          "options": [
+            "Option A \u2014 conservative",
+            "Option B \u2014 balanced",
+            "Option C \u2014 aggressive"
+          ],
+          "answer": {
+            "type_safety": "LOCKED"
+          }
+        },
+        {
+          "round": 2,
+          "phase": "multi_choice",
+          "question": "Regarding 'Implement with secure input validation with proper authentic...' \u2014 which approach is best?",
+          "options": [
+            "Option A \u2014 conservative",
+            "Option B \u2014 balanced",
+            "Option C \u2014 aggressive"
+          ],
+          "answer": {
+            "test_coverage": "LOCKED"
+          }
+        },
+        {
+          "round": 2,
+          "phase": "multi_choice",
+          "question": "Regarding 'Implement with secure input validation with proper authentic...' \u2014 which approach is best?",
+          "options": [
+            "Option A \u2014 conservative",
+            "Option B \u2014 balanced",
+            "Option C \u2014 aggressive"
+          ],
+          "answer": {
+            "logging": "LOCKED",
+            "type_safety": "RECOMMENDED"
+          }
+        },
+        {
+          "round": 2,
+          "phase": "multi_choice",
+          "question": "Regarding 'Implement with efficient data model with indexed fields and ...' \u2014 which approach is best?",
+          "options": [
+            "Option A \u2014 conservative",
+            "Option B \u2014 balanced",
+            "Option C \u2014 aggressive"
+          ],
+          "answer": {
+            "documentation": "LOCKED"
+          }
+        },
+        {
+          "round": 2,
+          "phase": "multi_choice",
+          "question": "Regarding 'Implement with efficient data model with indexed fields and ...' \u2014 which approach is best?",
+          "options": [
+            "Option A \u2014 conservative",
+            "Option B \u2014 balanced",
+            "Option C \u2014 aggressive"
+          ],
+          "answer": {
+            "security": "LOCKED",
+            "test_coverage": "LOCKED"
+          }
+        },
+        {
+          "round": 2,
+          "phase": "open_ended",
+          "question": "How should we resolve ambiguity in 'edge_case' for this goal? (current: 0.18)",
+          "answer": "Auto-answer: consistent with previously locked constraints."
+        },
+        {
+          "round": 2,
+          "phase": "open_ended",
+          "question": "How should we resolve ambiguity in 'requirements' for this goal? (current: 0.16)",
+          "answer": "Auto-answer: consistent with previously locked constraints."
+        },
+        {
+          "round": 2,
+          "phase": "open_ended",
+          "question": "How should we resolve ambiguity in 'determinism' for this goal? (current: 0.16)",
+          "answer": "Auto-answer: consistent with previously locked constraints."
+        },
+        {
+          "round": 3,
+          "phase": "probing",
+          "question": "Have we adequately considered PERF aspects of this change?",
+          "answer": "All architectural concerns addressed with modular design. No contradictions detected."
+        },
+        {
+          "round": 3,
+          "phase": "probing",
+          "question": "Have we adequately considered SCAL aspects of this change?",
+          "answer": "Security requirements satisfied through input validation and authentication."
+        },
+        {
+          "round": 3,
+          "phase": "probing",
+          "question": "Have we adequately considered UX aspects of this change?",
+          "answer": "Data model properly normalized with appropriate indexes. No contradictions detected."
+        }
+      ],
+      "constraints": {
+        "maintainability": "RECOMMENDED",
+        "security": "LOCKED",
+        "input_validation": "RECOMMENDED",
+        "error_handling": "LOCKED",
+        "type_safety": "RECOMMENDED",
+        "test_coverage": "LOCKED",
+        "logging": "LOCKED",
+        "documentation": "LOCKED"
+      },
+      "telemetry": {
+        "ambiguity": {
+          "requirements": 0.23,
+          "data_model": 0.207,
+          "edge_case": 0.253,
+          "determinism": 0.23,
+          "avg": 0.23,
+          "converged": false
+        },
+        "budget": {
+          "session_limit": 32000,
+          "round_limit": 8000,
+          "session_used": 2763,
+          "round_used": 83,
+          "saturation_pct": 8.6,
+          "alerts": []
+        },
+        "quality_index": {
+          "average": 0.75,
+          "count": 3,
+          "scores": [
+            0.7,
+            0.8,
+            0.75
+          ]
+        },
+        "satisfaction": {
+          "cumulative": 0.75,
+          "trend": "\u2191",
+          "count": 3
+        },
+        "timing": {
+          "round_count": 6,
+          "avg_duration_s": 0.0,
+          "total_duration_s": 0.0,
+          "round_times": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0
+          ]
+        },
+        "topic_coverage": {
+          "bitmask": 103,
+          "topics": [
+            "ARCH",
+            "SEC",
+            "DATA",
+            "TEST",
+            "DEPL"
+          ]
+        },
+        "transaction_count": 5,
+        "checkpoint_count": 0
+      },
+      "contradictions": []
     }
   ],
   "score_history": {
@@ -5062,43 +5521,59 @@
     "17": {},
     "18": {},
     "19": {},
-    "20": {}
+    "20": {},
+    "021": {
+      "total_questions": 30,
+      "total_rounds": 8,
+      "total_ledger_entries": 10,
+      "total_checkpoints": 0,
+      "avg_quality_index": 0.75,
+      "avg_satisfaction": 0.75,
+      "avg_budget_saturation": 8.6,
+      "all_topics": [
+        "SEC",
+        "ARCH",
+        "DATA",
+        "DEPL",
+        "TEST"
+      ]
+    }
   },
   "summary": {
-    "tot": 77,
-    "pass": 77,
+    "tot": 79,
+    "pass": 79,
     "hold": 0,
     "fail": 0,
-    "impl_count": 37,
-    "ca": 0.666,
-    "pulse_count": 20,
+    "impl_count": 39,
+    "ca": 1.0,
+    "pulse_count": 21,
     "cd": {
       "error_handling": {
-        "freq": 44,
-        "locked": 43
+        "freq": 46,
+        "locked": 45
       },
       "type_safety": {
-        "freq": 37,
+        "freq": 39,
         "locked": 19
       },
       "test_coverage": {
-        "freq": 31,
-        "locked": 29
+        "freq": 33,
+        "locked": 31
       },
       "logging": {
+        "freq": 23,
+        "locked": 21
+      },
+      "documentation": {
         "freq": 21,
         "locked": 19
       },
-      "documentation": {
-        "freq": 19,
-        "locked": 17
-      },
       "security": {
-        "freq": 16,
-        "locked": 14
+        "freq": 18,
+        "locked": 16
       },
       "input_validation": {
-        "freq": 19,
+        "freq": 21,
         "locked": 11
       },
       "code_quality": {
@@ -5106,7 +5581,7 @@
         "locked": 11
       },
       "maintainability": {
-        "freq": 19,
+        "freq": 21,
         "locked": 11
       },
       "performance": {

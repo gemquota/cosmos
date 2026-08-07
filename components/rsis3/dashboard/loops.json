@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-07T05:25Z",
+ "generated": "2026-08-07T06:03Z",
  "note": "Loop k+3 tunes loop k (L4\u2192L1 \u2026 L9\u2192L6); L7\u2013L9 are untuned fixed points. Live state is injected at startup by load_config(); this is a static snapshot.",
  "loops": [
   {
@@ -22,8 +22,8 @@
    "status": "implemented",
    "target": "Pure consumer of tuned params (L4\u2192L1)",
    "state_file": null,
-   "runs": 36,
-   "last_run": "2026-08-07T05:17:04.800413+00:00",
+   "runs": 37,
+   "last_run": "2026-08-07T05:50:45.682631+00:00",
    "cycle": 0,
    "history_len": 0,
    "last_signal": null,
@@ -36,8 +36,8 @@
    "status": "implemented",
    "target": "Pure consumer of tuned params (L5\u2192L2)",
    "state_file": null,
-   "runs": 36,
-   "last_run": "2026-08-07T05:17:04.732410+00:00",
+   "runs": 37,
+   "last_run": "2026-08-07T05:50:45.622631+00:00",
    "cycle": 0,
    "history_len": 0,
    "last_signal": null,
