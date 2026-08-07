@@ -1,4 +1,22 @@
 
+## [0.4.4] — 2026-08-07
+
+### Added
+- Self-assessment routine: `python -m rsis self-assess` — deterministic
+  KB health scan (links, orphans, stubs, content depth with weighted
+  score), gap analysis against recent syntheses (backlog items filed
+  create-only in `wiki/backlog/`), trend detection from telemetry + git,
+  and per-run `wiki/assessments/` + `wiki/reflections/` OKF notes
+- Optional fail-closed LLM enrichment (`RSIS_EVALUATOR_API_KEY`) that can
+  only add narrative, never alter deterministic findings
+- `SelfAssessConfig` (window, artifact dirs, daemon timeout); `sa_start` /
+  `sa_complete` / `sa_error` telemetry; `infra/loops/run-batch.sh` runs
+  the routine after each scheduled batch
+
+### Verified
+- `tests/test_self_assess.py` — 39 cases; full rsis3 suite passes
+- `gen-static-data.py --check` OK after first real run
+
 ## [0.4.3] — 2026-08-07
 
 ### Added
