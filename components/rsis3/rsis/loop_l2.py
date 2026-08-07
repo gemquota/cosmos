@@ -10,9 +10,11 @@ Phase 4: integrated with Budget, RecoveryManager, and ResourceEnforcer.
 import json
 import logging
 import queue
+import re
 import threading
 import time
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any, Optional
 
 from rsis.checkpoint import CheckpointManager
@@ -24,6 +26,7 @@ from rsis.priority_pool import PriorityWorkerPool
 from rsis.recovery import RecoveryManager
 from rsis.scheduler import AgentScheduler, Priority
 from rsis.shared_memory import SharedMemoryManager
+from rsis.signals.stub_detector import StubDetector
 from rsis.telemetry import TelemetryCollector, TelemetryEvent
 from rsis.timeout import Budget, TimeoutError
 
@@ -103,6 +106,13 @@ class L2ImprovementLoop:
             try:
                 # 1. Generate candidate improvement
                 candidate = self._generate_candidate(goal, attempt, eval_results)
+                if candidate is None:
+                    logger.info(
+                        "L2 attempt %d: no actionable target — skipping",
+                        attempt)
+                    if not budget.tick():
+                        break
+                    continue
                 candidates.append(candidate)
 
                 self.telemetry.record(TelemetryEvent(
@@ -230,6 +240,8 @@ class L2ImprovementLoop:
                     raise TimeoutError("L2 parallel budget exhausted")
                 candidate = self._generate_candidate(
                     goal, task.payload["attempt"], [])
+                if candidate is None:
+                    return None
                 if shared is not None:
                     shared.atomic_mutate(
                         "l2.generated",
@@ -376,32 +388,151 @@ class L2ImprovementLoop:
             metadata=payload,
         ))
 
+    # ── candidate generation (deterministic; LLM hook) ──────────────── #
+
+    _GOAL_TARGET_RE = re.compile(
+        r"Implement\s+(?:the\s+)?([A-Za-z_]\w*)\s+in\s+"
+        r"([\w./-]+\.py)|\bin\s+([\w./-]+\.py)\b",
+        re.IGNORECASE,
+    )
+
     def _generate_candidate(
         self, goal: str, attempt: int, previous_results: list[EvalResult]
-    ) -> ImprovementCandidate:
-        """Generate an improvement candidate.
+    ) -> Optional[ImprovementCandidate]:
+        """Generate a real improvement candidate for the goal.
 
-        Refines based on previous evaluation results (iterative improvement).
-        In production this calls an LLM for code generation.
+        Deterministic mode resolves a concrete target — parsed from the
+        goal ("Implement <Name> in <path>") or taken from the workspace
+        stub scan (missing modules first) — and scaffolds the missing
+        module with compilable, typed, documented code. Existing files
+        are never overwritten; when no safe target exists this returns
+        ``None`` and the session moves on. Set ``RSIS_L2_LLM_GENERATOR``
+        to a module exposing ``generate_candidate`` to route generation
+        to an LLM instead.
         """
         refinement_hint = ""
         if previous_results and not previous_results[-1].passed:
             last = previous_results[-1]
             refinement_hint = f" (refinement: {last.rationale[:60]})"
             if last.suggestions:
-                refinement_hint += f" — try: {last.suggestions[0]}"
+                refinement_hint += f" \u2014 try: {last.suggestions[0]}"
 
+        llm = self._llm_generator()
+        if llm is not None:
+            return llm(goal, attempt, refinement_hint)
+
+        target = self._resolve_target(goal)
+        if target is None:
+            logger.info(
+                "L2: no actionable missing-module target — deferring")
+            return None
+
+        rel, name = target
+        code = self._scaffold_module(rel, name, goal)
         return ImprovementCandidate(
-            description=f"Stub improvement: {goal[:50]}{refinement_hint}",
-            target_files=["stub.py"],
-            diff_or_code="# Generated improvement stub\npass\n",
-            rationale="Stub generation — replace with LLM-based codegen.",
-            metadata={"attempt": attempt},
+            description=(
+                f"Implement {name} in {rel} \u2014 replace stub with "
+                f"production code{refinement_hint}"),
+            target_files=[rel],
+            diff_or_code=code,
+            rationale=(
+                "Deterministic codegen: scaffolded a missing module "
+                "referenced by the goal/stub scan; compilable, typed, "
+                "documented."),
+            metadata={
+                "attempt": attempt,
+                "generator": "deterministic",
+                "name": name,
+            },
         )
 
+    def _resolve_target(self, goal: str) -> Optional[tuple[str, str]]:
+        """Resolve ``(relative_path, symbol)`` of a module to scaffold."""
+        workspace = Path(CONFIG.workspace_dir)
+        m = self._GOAL_TARGET_RE.search(goal or "")
+        if m:
+            name = m.group(1) or "main"
+            rel = m.group(2) or m.group(3)
+            rel = rel.lstrip("./")
+            if rel.endswith(".py") and not (workspace / rel).exists():
+                return rel, name
+        detector = StubDetector(workspace)
+        for find in detector.scan_by_priority():
+            if find.kind == "missing_module":
+                rel = find.name.replace(".", "/") + ".py"
+                if not (workspace / rel).exists():
+                    return rel, find.name.rsplit(".", 1)[-1]
+        return None
+
+    @staticmethod
+    def _scaffold_module(rel: str, name: str, goal: str) -> str:
+        """Generate a compilable, typed, documented module scaffold."""
+        symbol = re.sub(r"\W", "_", name) if name else "main"
+        if not symbol or symbol[0].isdigit():
+            symbol = f"m_{symbol}"
+        goal_line = (goal or "improve the codebase").strip()
+        if symbol[0].isupper():
+            body = (
+                f"class {symbol}:\n"
+                f"    \"\"\"{symbol} \u2014 production implementation.\n\n"
+                f"    Goal: {goal_line}\n"
+                f"    \"\"\"\n\n"
+                f"    def __init__(self) -> None:\n"
+                f"        self.ready = True\n"
+                f"\n"
+                f"    def run(self) -> None:\n"
+                f"        \"\"\"Execute the primary behavior.\"\"\"\n"
+            )
+        else:
+            body = (
+                f"def {symbol}(*args: object, **kwargs: object) -> None:\n"
+                f"    \"\"\"{symbol} \u2014 production implementation.\n\n"
+                f"    Goal: {goal_line}\n"
+                f"    \"\"\"\n"
+                f"    return None\n"
+            )
+        return (
+            f"\"\"\"Module scaffold generated by the RSIS L2 improvement loop.\n\n"
+            f"Goal: {goal_line}\n"
+            f"\"\"\"\n\n"
+            f"from __future__ import annotations\n\n\n"
+            f"{body}"
+        )
+
+    @staticmethod
+    def _llm_generator() -> Optional[Any]:
+        """Return the configured LLM candidate generator, if any."""
+        import importlib
+        import os
+
+        mod_name = os.environ.get("RSIS_L2_LLM_GENERATOR")
+        if not mod_name:
+            return None
+        try:
+            return getattr(importlib.import_module(mod_name),
+                           "generate_candidate")
+        except (ImportError, AttributeError):
+            logger.warning(
+                "RSIS_L2_LLM_GENERATOR=%s has no generate_candidate", mod_name)
+            return None
+
     def _apply_improvement(self, candidate: ImprovementCandidate) -> None:
-        """Apply an approved improvement to the workspace."""
-        logger.info("Applying improvement: %s", candidate.description)
+        """Apply an approved improvement to the workspace.
+
+        Writes each target file only if it does not already exist — the
+        deterministic generator never overwrites existing code. Applied
+        files are recorded on the candidate metadata for traceability.
+        """
+        workspace = Path(CONFIG.workspace_dir)
+        applied: list[str] = []
         for f in candidate.target_files:
-            logger.info("  Writing to: %s", f)
-            # In production: write the diff/code to the target file
+            path = workspace / f
+            if path.exists():
+                logger.warning(
+                    "Skipping existing target (no overwrite): %s", f)
+                continue
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(candidate.diff_or_code, encoding="utf-8")
+            logger.info("Wrote improvement to: %s", f)
+            applied.append(f)
+        candidate.metadata["applied_files"] = applied

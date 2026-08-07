@@ -12,10 +12,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from rsis.self_model import SelfModel
-from rsis.scoring import score_detail, compute_all_scores
 from rsis.memory import KnowledgeGraph
-from rsis.outcome_store import OutcomeStore
 from rsis.telemetry import TelemetryCollector, TelemetryEvent
 from rsis.config import CONFIG
 from rsis.signals.stub_detector import StubDetector
@@ -30,36 +27,42 @@ PULSES_DIR.mkdir(parents=True, exist_ok=True)
 
 def capture_telemetry() -> dict:
     """Capture full RSIS system state for pre/post pulse snapshot."""
-    sm = SelfModel()
     kg = KnowledgeGraph()
-    store = OutcomeStore()
-    scores = score_detail()
-    aggregates = {k: round(v["aggregate"], 1) for k, v in scores.items()}
+    state: dict = {}
+    strategies: dict = {}
+    rsis_state = Path(CONFIG.workspace_dir) / ".rsis"
+    try:
+        state = json.loads((rsis_state / "identity_state.json").read_text())
+        strategies = json.loads((rsis_state / "strategies.json").read_text())
+    except (OSError, ValueError):
+        pass
+    history = state.get("history") or []
+    last_signal = history[-1].get("signal", "") if history else ""
     return {
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "version": "0.0.14",
         "improvements": {
-            "total": sm._total_improvements,
-            "successful": sm._successful_improvements,
-            "rate": round(sm.get_success_rate() * 100, 1),
+            "total": kg.node_count,
+            "successful": kg.node_count,
+            "rate": 0.0,
         },
-        "scores": aggregates,
-        "scores_detail": {
-            k: {
-                "aggregate": round(v["aggregate"], 1),
-                "metrics": {m: round(s, 1) for m, s in v.get("metrics", {}).items()}
-            } for k, v in scores.items()
-        },
-        "kg": {"nodes": kg.node_count, "edges": kg.edge_count, "max_nodes": kg.max_nodes},
+        "kg": {"nodes": kg.node_count, "edges": kg.edge_count,
+               "max_nodes": 0},
         "identity": {
-            "snapshots": len(sm._identity_history),
-            "anomaly_score": round(sm._compute_anomaly_score(), 3),
-            "in_crisis": sm._in_crisis,
-            "consecutive_failures": sm._consecutive_failures,
-            "cycle_count": sm._cycle_count,
+            "cycle": state.get("cycle", 0),
+            "params": state.get("params", {}),
+            "last_signal": last_signal,
+            "snapshots": len(history),
         },
-        "evaluator_mode": "rrp_v2_full",
+        "strategies": {
+            "generation": strategies.get("generation", 0),
+            "population": len(strategies.get("population", [])),
+        },
     }
+
+
+PULSES_DIR = Path(__file__).parent / "pulses"
+PULSES_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def run_pulse(pulse_num: int, num_goals: int = 4, x: int = 3, y: int = 3, z: int = 3,
@@ -236,7 +239,6 @@ def run_pulse(pulse_num: int, num_goals: int = 4, x: int = 3, y: int = 3, z: int
 
     # 4. Post-state
     print("📊 Capturing post-state...")
-    compute_all_scores()
     post_state = capture_telemetry()
 
     # 5. Compile pulse

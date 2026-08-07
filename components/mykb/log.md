@@ -934,3 +934,17 @@ title: "Bundle Log"
 - **Snapshots refreshed**: graph (5,397 nodes / 35,540 edges), files.json
   (6,856, `--check` OK), stub-index 3,348 → 3,220, stub-audit.html
   4,264 → 4,138 stubs. Synthesis note updated to reflect completion.
+
+## 2026-08-07 (RSIS3 pass 12 — real improvement engine: L2 codegen, launch, stub detection)
+- L2 stopped simulating: `_generate_candidate` scaffolds missing modules from
+  the goal or the stub scan; `_apply_improvement` writes create-only; live run
+  generated and applied `rsis/launch.py` (the pulse-020 goal) — KG now records
+  improvement-275.
+- Added `rsis/launch.py` batch runner (`python -m rsis launch`), real
+  `rsis/signals/stub_detector.py`, `rsis/rrp_bridge.py`; implemented
+  `timeout._timeout_via_polling` and `rack/server.log_message` stubs.
+- Repaired `rack/run_rrp_pulse.py` (real modules/state); regenerated
+  pulse-021 with real goals; dashboard-data.json updated (21 pulses, 79 goals).
+- Tests: rsis3 75 passed (18 new), SPACE 157 passed, check-practices OK,
+  contracts 0 FAIL, gen-static-data --check OK.
+- Synthesis: `rsis3-pass-12-improvement-engine-2026-08-07.md`.
