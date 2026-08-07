@@ -409,3 +409,113 @@ def test_enrich_llm_ignores_blank_response(monkeypatch):
     fake = types.SimpleNamespace(OpenAI=FakeClient)
     monkeypatch.setitem(sys.modules, "openai", fake)
     assert enrich_llm(make_result()) is None
+
+
+from rsis.mykb_gateway import MyKBGateway
+from rsis.self_assess import SelfAssessment
+
+
+class RecordTelemetry:
+    def __init__(self):
+        self.events = []
+
+    def record(self, event):
+        self.events.append(event)
+
+
+def make_mykb(tmp_path: Path) -> MyKBGateway:
+    root = tmp_path / "mykb"
+    (root / "wiki" / "syntheses").mkdir(parents=True)
+    (root / "wiki" / "concepts").mkdir()
+    (root / "log.md").write_text(
+        "---\ntype: log\ntitle: Bundle Log\n---\n\n# Bundle Log\n",
+        encoding="utf-8")
+    (root / "wiki" / "syntheses" / "s1.md").write_text(
+        "---\ntype: synthesis\ntitle: Zebra Migration Routes\n"
+        "description: seasonal savanna movement\ntags: [zebra]\n---\n\nbody\n",
+        encoding="utf-8")
+    (root / "wiki" / "concepts" / "deep.md").write_text(
+        "word " * 350 + "\n", encoding="utf-8")
+    (root / "stub-index.json").write_text(json.dumps({"total": 0}),
+                                          encoding="utf-8")
+    return MyKBGateway(mykb_root=str(root))
+
+
+def test_orchestrator_writes_all_artifacts(tmp_path, monkeypatch):
+    mykb = make_mykb(tmp_path)
+    telemetry = RecordTelemetry()
+    assessor = SelfAssessment(telemetry=telemetry, mykb=mykb,
+                              workspace_dir=str(tmp_path),
+                              llm=lambda result: None)
+    monkeypatch.setattr("rsis.self_assess.scan_wiki_health",
+                        lambda root, **kw: HealthReport(
+                            total_pages=1, stubs=0, body_words=700))
+    result = assessor.run(window_days=7)
+    assert result.error is None
+    assert result.assessment_path and result.reflection_path
+    assert len(result.backlog_paths) == 1  # Zebra gap
+    assert (mykb.root / "wiki" / "assessments").is_dir()
+    assert (mykb.root / "wiki" / "reflections").is_dir()
+    types = {e.type for e in telemetry.events}
+    assert {"sa_start", "sa_complete"} <= types
+
+
+def test_orchestrator_records_error(tmp_path, monkeypatch):
+    mykb = make_mykb(tmp_path)
+    telemetry = RecordTelemetry()
+
+    def boom(*args, **kw):
+        raise RuntimeError("boom")
+
+    monkeypatch.setattr("rsis.self_assess.scan_wiki_health", boom)
+    assessor = SelfAssessment(telemetry=telemetry, mykb=mykb,
+                              workspace_dir=str(tmp_path),
+                              llm=lambda result: None)
+    result = assessor.run(window_days=7)
+    assert result.error == "boom"
+    assert {e.type for e in telemetry.events} == {"sa_start", "sa_error"}
+
+
+def test_load_prev_score_prefers_latest(tmp_path):
+    from rsis.self_assess import _load_prev_score
+    assessments = tmp_path / "assessments"
+    assessments.mkdir()
+    (assessments / "self-assessment-2026-08-07.md").write_text(
+        "---\ntype: assessment\nhealth_score: \"0.5\"\n---\n\nold\n",
+        encoding="utf-8")
+    (assessments / "self-assessment-2026-08-07-2.md").write_text(
+        "---\ntype: assessment\nhealth_score: \"0.9\"\n---\n\nnew\n",
+        encoding="utf-8")
+    assert _load_prev_score(tmp_path) == 0.9
+
+
+def test_orchestrator_no_backlog(tmp_path, monkeypatch):
+    mykb = make_mykb(tmp_path)
+    assessor = SelfAssessment(mykb=mykb, workspace_dir=str(tmp_path),
+                              llm=lambda result: None)
+    monkeypatch.setattr("rsis.self_assess.scan_wiki_health",
+                        lambda root, **kw: HealthReport(
+                            total_pages=1, stubs=0, body_words=700))
+    result = assessor.run(window_days=7, file_backlog_items=False)
+    assert result.error is None
+    assert result.backlog_paths == []
+    assert not (mykb.root / "wiki" / "backlog").exists()
+
+
+def test_orchestrator_llm_failure_keeps_artifacts(tmp_path, monkeypatch):
+    mykb = make_mykb(tmp_path)
+    telemetry = RecordTelemetry()
+
+    def bad_llm(result):
+        raise RuntimeError("llm boom")
+
+    assessor = SelfAssessment(telemetry=telemetry, mykb=mykb,
+                              workspace_dir=str(tmp_path), llm=bad_llm)
+    monkeypatch.setattr("rsis.self_assess.scan_wiki_health",
+                        lambda root, **kw: HealthReport(
+                            total_pages=1, stubs=0, body_words=700))
+    result = assessor.run(window_days=7)
+    assert result.error is None
+    assert result.assessment_path
+    types = {e.type for e in telemetry.events}
+    assert "sa_complete" in types
