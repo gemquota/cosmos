@@ -1,0 +1,117 @@
+{
+  "params": {
+    "l6.shrink_below": 0.2,
+    "l6.grow_above": 0.95
+  },
+  "history": [
+    {
+      "cycle": 1,
+      "deltas": {
+        "l6.shrink_below": -0.04999999999999999,
+        "l6.grow_above": 0.050000000000000044
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 2,
+      "deltas": {
+        "l6.shrink_below": -0.04999999999999999,
+        "l6.grow_above": 0.050000000000000044
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 3,
+      "deltas": {
+        "l6.shrink_below": -0.04999999999999999,
+        "l6.grow_above": 0.04999999999999982
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 4,
+      "deltas": {
+        "l6.shrink_below": -0.04999999999999999,
+        "l6.grow_above": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 5,
+      "deltas": {
+        "l6.shrink_below": -0.04999999999999999,
+        "l6.grow_above": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 6,
+      "deltas": {
+        "l6.shrink_below": -0.04999999999999999,
+        "l6.grow_above": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 7,
+      "deltas": {
+        "l6.shrink_below": -5.551115123125783e-17,
+        "l6.grow_above": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 8,
+      "deltas": {
+        "l6.shrink_below": 0.0,
+        "l6.grow_above": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 9,
+      "deltas": {
+        "l6.shrink_below": 0.0,
+        "l6.grow_above": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 10,
+      "deltas": {
+        "l6.shrink_below": 0.0,
+        "l6.grow_above": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 11,
+      "deltas": {
+        "l6.shrink_below": 0.0,
+        "l6.grow_above": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    },
+    {
+      "cycle": 12,
+      "deltas": {
+        "l6.shrink_below": 0.0,
+        "l6.grow_above": 0.0
+      },
+      "accepted": true,
+      "signal": "widen"
+    }
+  ],
+  "cycle": 12
+}

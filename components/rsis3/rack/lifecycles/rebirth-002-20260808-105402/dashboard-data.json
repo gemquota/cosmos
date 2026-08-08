@@ -1,0 +1,177 @@
+{
+  "pulses": [
+    {
+      "id": "001",
+      "ts_start": "2026-08-08T03:48:01.492258+00:00",
+      "ts_end": "2026-08-08T03:48:02.658137+00:00",
+      "goals_count": 1,
+      "approved": 1,
+      "duration": 1.2,
+      "scores": {},
+      "type": "rrp_v2_full",
+      "num_goals": 1,
+      "implementation_count": 1,
+      "telemetry": {
+        "total_questions": 15,
+        "total_rounds": 4,
+        "total_ledger_entries": 5,
+        "total_checkpoints": 0,
+        "avg_quality_index": 0.75,
+        "avg_satisfaction": 0.75,
+        "avg_budget_saturation": 8.6,
+        "all_topics": [
+          "SEC",
+          "ARCH",
+          "DEPL",
+          "DATA",
+          "TEST"
+        ]
+      },
+      "avg_confidence": 0.77
+    }
+  ],
+  "goals": [
+    {
+      "p": "001",
+      "d": "Improve Tool in rsis/tools/base.py \u2014 address raises NotImplementedError",
+      "dec": "PASS",
+      "conf": 0.77,
+      "file": "rsis/tools/base.py",
+      "func": "base",
+      "type": "implementation",
+      "conversation": [],
+      "constraints": {
+        "maintainability": "RECOMMENDED",
+        "security": "LOCKED",
+        "input_validation": "RECOMMENDED",
+        "error_handling": "LOCKED",
+        "type_safety": "RECOMMENDED",
+        "test_coverage": "LOCKED",
+        "logging": "LOCKED",
+        "documentation": "LOCKED"
+      },
+      "telemetry": {
+        "ambiguity": {
+          "requirements": 0.23,
+          "data_model": 0.207,
+          "edge_case": 0.253,
+          "determinism": 0.23,
+          "avg": 0.23,
+          "converged": false
+        },
+        "budget": {
+          "session_limit": 32000,
+          "round_limit": 8000,
+          "session_used": 2763,
+          "round_used": 83,
+          "saturation_pct": 8.6,
+          "alerts": []
+        },
+        "quality_index": {
+          "average": 0.75,
+          "count": 3,
+          "scores": [
+            0.7,
+            0.8,
+            0.75
+          ]
+        },
+        "satisfaction": {
+          "cumulative": 0.75,
+          "trend": "\u2191",
+          "count": 3
+        },
+        "timing": {
+          "round_count": 6,
+          "avg_duration_s": 0.0,
+          "total_duration_s": 0.0,
+          "round_times": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0
+          ]
+        },
+        "topic_coverage": {
+          "bitmask": 103,
+          "topics": [
+            "ARCH",
+            "SEC",
+            "DATA",
+            "TEST",
+            "DEPL"
+          ]
+        },
+        "transaction_count": 5,
+        "checkpoint_count": 0
+      },
+      "contradictions": []
+    }
+  ],
+  "score_history": {
+    "001": {}
+  },
+  "telemetry_aggregates": {
+    "001": {
+      "total_questions": 15,
+      "total_rounds": 4,
+      "total_ledger_entries": 5,
+      "total_checkpoints": 0,
+      "avg_quality_index": 0.75,
+      "avg_satisfaction": 0.75,
+      "avg_budget_saturation": 8.6,
+      "all_topics": [
+        "SEC",
+        "ARCH",
+        "DEPL",
+        "DATA",
+        "TEST"
+      ]
+    }
+  },
+  "summary": {
+    "tot": 1,
+    "pass": 1,
+    "hold": 0,
+    "fail": 0,
+    "impl_count": 1,
+    "ca": 1.0,
+    "pulse_count": 1,
+    "cd": {
+      "maintainability": {
+        "freq": 1,
+        "locked": 0
+      },
+      "security": {
+        "freq": 1,
+        "locked": 1
+      },
+      "input_validation": {
+        "freq": 1,
+        "locked": 0
+      },
+      "error_handling": {
+        "freq": 1,
+        "locked": 1
+      },
+      "type_safety": {
+        "freq": 1,
+        "locked": 0
+      },
+      "test_coverage": {
+        "freq": 1,
+        "locked": 1
+      },
+      "logging": {
+        "freq": 1,
+        "locked": 1
+      },
+      "documentation": {
+        "freq": 1,
+        "locked": 1
+      }
+    }
+  }
+}
