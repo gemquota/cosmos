@@ -25,9 +25,26 @@ jobs:
       - name: Checkout main
         run: git checkout main
 
-      - name: Verify snapshots
+      - name: Regenerate snapshots (self-healing)
         run: |
+          (cd components/mykb && python3 .wiki-daemon/build_graph.py)
+          python3 gen-static-data.py
           python3 gen-static-data.py --check
+
+      - name: Commit regenerated snapshots
+        run: |
+          git config user.name "RSIS Test"
+          git config user.email "rsis@test.local"
+          git add components/mykb/files.json components/mykb/catalog.json \
+                  components/mykb/graph.json components/mykb/index.json \
+                  components/mykb/log.json components/mykb/stub-review.json \
+                  components/mykb/guidance.json components/rsis3/dashboard
+          if git diff --cached --quiet; then
+            echo "Snapshots already fresh — nothing to commit"
+          else
+            git commit -m "rsis: snapshot regeneration — $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push origin main
+          fi
 
       - name: Auto-sync main → gh-pages
         env:

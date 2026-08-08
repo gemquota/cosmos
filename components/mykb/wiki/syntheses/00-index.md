@@ -95,6 +95,8 @@ Part of [[wiki/index|Wiki Index]]. 62 pages.
 - [Feedback Integration Loops](feedback-integration-loops.md) — Feedback Integration Loops
 - [Gradual Deployment](gradual-deployment.md) — Gradual Deployment
 - [Graph Health Checks](graph-health-checks.md) — Graph Health Checks
+- [Guidance Execution Loop — Wanted Links, Scaffolds, Research Manifest](guidance-execution-loop-2026-08-06.md) — Guidance Execution Loop — Wanted Links, Scaffolds, Research Manifest
+- [MyKB Guidance UI — from Stub Auditor to Research Direction](guidance-ui-2026-08-06.md) — MyKB Guidance UI — from Stub Auditor to Research Direction
 - [Knowledge Acquisition Workflow: Open Threads](knowledge-acquisition-workflow.md) — Knowledge Acquisition Workflow: Open Threads
 - [Knowledge Graph Maintenance](knowledge-graph-maintenance.md) — Knowledge Graph Maintenance
 - [Knowledge Synthesis Pipelines](knowledge-synthesis-pipelines.md) — Knowledge Synthesis Pipelines
@@ -106,6 +108,7 @@ Part of [[wiki/index|Wiki Index]]. 62 pages.
 - [Model Update Risks](model-updates-risks.md) — Model Update Risks
 - [Monitored Deployment](monitored-deployment.md) — Monitored Deployment
 - [MyKB Acquisition/Curation Pass & RSIS3 Usage-Practice Enforcement](mykb-acquisition-curation-and-practices.md) — MyKB Acquisition/Curation Pass & RSIS3 Usage-Practice Enforcement
+- [MyKB Guidance UI Overhaul — navigation, article tools, graph repair](mykb-guidance-ui-overhaul-2026-08-06.md) — MyKB Guidance UI Overhaul — navigation, article tools, graph repair
 - [Nested-Loop Graph & Zoom Direction Fix](nested-loop-graph-and-zoom-fix.md) — Nested-Loop Graph & Zoom Direction Fix
 - [Nine-Loop Stack Implementation & Dashboard Wiring](nine-loop-stack-implementation.md) — Nine-Loop Stack Implementation & Dashboard Wiring
 - [Orphan Detection](orphan-detection.md) — Orphan Detection
@@ -116,8 +119,40 @@ Part of [[wiki/index|Wiki Index]]. 62 pages.
 - [Recursive Self-Improvement Specification — SPACE v2 Export](recursive-self-improvement-spec-2026-08-06.md) — Recursive Self-Improvement Specification — SPACE v2 Export
 - [Responsible Disclosure for AI](responsible-disclosure-ai.md) — Responsible Disclosure for AI
 - [Restricted Deployment](restricted-deployment.md) — Restricted Deployment
+- [RSIS3 drive — run loops automatically until completion requirements are satisfied](rsis-drive-until-satisfied-2026-08-06.md) — RSIS3 drive — run loops automatically until completion requirements are satisfied
+- [RSIS3 L3 cycle 1 — cross-session memory consolidation](rsis3-l3-cycle-1-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 1 — cross-session memory consolidation
+- [RSIS3 L3 cycle 10 — cross-session memory consolidation](rsis3-l3-cycle-10-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 10 — cross-session memory consolidation
+- [RSIS3 L3 cycle 11 — cross-session memory consolidation](rsis3-l3-cycle-11-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 11 — cross-session memory consolidation
+- [RSIS3 L3 cycle 12 — cross-session memory consolidation](rsis3-l3-cycle-12-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 12 — cross-session memory consolidation
+- [RSIS3 L3 cycle 13 — cross-session memory consolidation](rsis3-l3-cycle-13-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 13 — cross-session memory consolidation
+- [RSIS3 L3 cycle 14 — cross-session memory consolidation](rsis3-l3-cycle-14-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 14 — cross-session memory consolidation
+- [RSIS3 L3 cycle 15 — cross-session memory consolidation](rsis3-l3-cycle-15-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 15 — cross-session memory consolidation
+- [RSIS3 L3 cycle 16 — cross-session memory consolidation](rsis3-l3-cycle-16-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 16 — cross-session memory consolidation
+- [RSIS3 L3 cycle 17 — cross-session memory consolidation](rsis3-l3-cycle-17-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 17 — cross-session memory consolidation
+- [RSIS3 L3 cycle 18 — cross-session memory consolidation](rsis3-l3-cycle-18-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 18 — cross-session memory consolidation
+- [RSIS3 L3 cycle 19 — cross-session memory consolidation](rsis3-l3-cycle-19-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 19 — cross-session memory consolidation
+- [RSIS3 L3 cycle 2 — cross-session memory consolidation](rsis3-l3-cycle-2-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 2 — cross-session memory consolidation
+- [RSIS3 L3 cycle 20 — cross-session memory consolidation](rsis3-l3-cycle-20-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 20 — cross-session memory consolidation
+- [RSIS3 L3 cycle 3 — cross-session memory consolidation](rsis3-l3-cycle-3-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 3 — cross-session memory consolidation
+- [RSIS3 L3 cycle 4 — cross-session memory consolidation](rsis3-l3-cycle-4-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 4 — cross-session memory consolidation
+- [RSIS3 L3 cycle 5 — cross-session memory consolidation](rsis3-l3-cycle-5-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 5 — cross-session memory consolidation
+- [RSIS3 L3 cycle 6 — cross-session memory consolidation](rsis3-l3-cycle-6-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 6 — cross-session memory consolidation
+- [RSIS3 L3 cycle 7 — cross-session memory consolidation](rsis3-l3-cycle-7-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 7 — cross-session memory consolidation
+- [RSIS3 L3 cycle 8 — cross-session memory consolidation](rsis3-l3-cycle-8-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 8 — cross-session memory consolidation
+- [RSIS3 L3 cycle 9 — cross-session memory consolidation](rsis3-l3-cycle-9-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 9 — cross-session memory consolidation
+- [RSIS3 Pass 10 — UX cohesion: Models tab, KG lazy boot, verified surfaces](rsis3-pass-10-2026-08-07.md) — RSIS3 Pass 10 — UX cohesion: Models tab, KG lazy boot, verified surfaces
+- [RSIS3 Pass 11 — ops + capstone: auto-deploy, scheduled loops, monitoring, full-chain proof](rsis3-pass-11-2026-08-07.md) — RSIS3 Pass 11 — ops + capstone: auto-deploy, scheduled loops, monitoring, full-chain proof
+- [RSIS3 Pass 12 — real improvement engine: L2 codegen, batch launcher, stub detection](rsis3-pass-12-improvement-engine-2026-08-07.md) — RSIS3 Pass 12 — real improvement engine: L2 codegen, batch launcher, stub detection
+- [RSIS3 Pass 13 — deterministic evaluator gate: fail-closed quality gating without an API](rsis3-pass-13-deterministic-evaluator-gate-2026-08-07.md) — RSIS3 Pass 13 — deterministic evaluator gate: fail-closed quality gating without an API
+- [RSIS3 Pass 14 — self-assessment routine: deterministic-first KB health, gaps, trends](rsis3-pass-14-self-assessment-routine-2026-08-07.md) — RSIS3 Pass 14 — self-assessment routine: deterministic-first KB health, gaps, trends
+- [RSIS3 Pass 6 — five full cycles across L1–L9](rsis3-pass-6-2026-08-06.md) — RSIS3 Pass 6 — five full cycles across L1–L9
+- [RSIS3 Pass 7 — ecosystem data contracts, validated at both gates](rsis3-pass-7-2026-08-06.md) — RSIS3 Pass 7 — ecosystem data contracts, validated at both gates
+- [RSIS3 Pass 8 — MyKB memory link: loops read and write the wiki](rsis3-pass-8-2026-08-06.md) — RSIS3 Pass 8 — MyKB memory link: loops read and write the wiki
+- [RSIS3 Pass 9 — spec link: SPACE artifacts feed L2 goals and the live Guide](rsis3-pass-9-2026-08-06.md) — RSIS3 Pass 9 — spec link: SPACE artifacts feed L2 goals and the live Guide
 - [Safety Case Approach](safety-case-approach.md) — Safety Case Approach
 - [Security Advisories](security-advisories-ai.md) — Security Advisories
+- [Stub Audit Pass 2026-08-06 — 141 Reviewed, 3 Archived, 126 Enriched](stub-audit-2026-08-06.md) — Stub Audit Pass 2026-08-06 — 141 Reviewed, 3 Archived, 126 Enriched
+- [Stub Auditor — Live Data & Inference Queue](stub-auditor-live-queue.md) — Stub Auditor — Live Data & Inference Queue
 - [500-Stub Expansion Pass (2026-08-03)](stub-expansion-pass-500-2026-08.md) — 500-Stub Expansion Pass (2026-08-03)
 - [Stub Promotion Wave — 1,098 stubs → growing (2026-08)](stub-promotion-wave-2026-08.md) — Stub Promotion Wave — 1,098 stubs → growing (2026-08)
 - [Third-Party Audits](third-party-audits.md) — Third-Party Audits
@@ -126,5 +161,7 @@ Part of [[wiki/index|Wiki Index]]. 62 pages.
 - [Update Regression](update-regression.md) — Update Regression
 - [Vulnerability Reports](vulnerability-reports-ai.md) — Vulnerability Reports
 - [Weekly Review](weekly-review.md) — Weekly Review
+- [Wiki Link Integrity Repair — De-links, Malformed Wikilinks, Honest Audit](wiki-link-integrity-2026-08-06.md) — Wiki Link Integrity Repair — De-links, Malformed Wikilinks, Honest Audit
+- [Wiki Link Resolution & Junk-Entity Audit](wiki-link-resolution-and-junk-audit.md) — Wiki Link Resolution & Junk-Entity Audit
 - [Wiki Self-Improvement](wiki-self-improvement.md) — Wiki Self-Improvement
 - [Wiki Stats Hub Architecture & Snapshot Hygiene](wiki-stats-hub.md) — Wiki Stats Hub Architecture & Snapshot Hygiene

@@ -5,25 +5,29 @@ title: "Bundle Log"
 
 # Bundle Log
 
-## 2026-08-08 (RSIS3 L3 cycle 25 — memory consolidation)
-- L3 cycle 25 wrote OKF synthesis `rsis3-l3-cycle-25-cross-session-memory-consolidation-2026-08-08.md` (2 insight(s), 1 strategy(ies), 237 redundancy candidate(s), 0 trend(s)).
-- Gateway root: `/home/runner/work/cosmos/cosmos/components/mykb`.
-
-## 2026-08-08 (RSIS3 L3 cycle 24 — memory consolidation)
-- L3 cycle 24 wrote OKF synthesis `rsis3-l3-cycle-24-cross-session-memory-consolidation-2026-08-08.md` (2 insight(s), 1 strategy(ies), 237 redundancy candidate(s), 0 trend(s)).
-- Gateway root: `/home/runner/work/cosmos/cosmos/components/mykb`.
-
 ## 2026-08-08 (RSIS3 L3 cycle 23 — memory consolidation)
 - L3 cycle 23 wrote OKF synthesis `rsis3-l3-cycle-23-cross-session-memory-consolidation-2026-08-08.md` (2 insight(s), 1 strategy(ies), 237 redundancy candidate(s), 0 trend(s)).
-- Gateway root: `/home/runner/work/cosmos/cosmos/components/mykb`.
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
 
 ## 2026-08-08 (RSIS3 L3 cycle 22 — memory consolidation)
 - L3 cycle 22 wrote OKF synthesis `rsis3-l3-cycle-22-cross-session-memory-consolidation-2026-08-08.md` (2 insight(s), 1 strategy(ies), 237 redundancy candidate(s), 0 trend(s)).
-- Gateway root: `/home/runner/work/cosmos/cosmos/components/mykb`.
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
 
 ## 2026-08-08 (RSIS3 L3 cycle 21 — memory consolidation)
 - L3 cycle 21 wrote OKF synthesis `rsis3-l3-cycle-21-cross-session-memory-consolidation-2026-08-08.md` (2 insight(s), 1 strategy(ies), 237 redundancy candidate(s), 0 trend(s)).
-- Gateway root: `/home/runner/work/cosmos/cosmos/components/mykb`.
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-07 (RSIS3 pass 14 — self-assessment routine)
+- Added `python -m rsis self-assess`: deterministic KB health scan (links,
+  orphans, stubs, content depth with weighted score), gap analysis against
+  recent syntheses, telemetry + git trend detection, per-run
+  `wiki/assessments/` + `wiki/reflections/` OKF notes, create-only
+  `wiki/backlog/` filing with guidance-queue mirror, and optional
+  fail-closed LLM enrichment.
+- First real run: health 0.837, 0 gaps, 3 trends (305/305 loop
+  completions, 0/146 evaluator FAILs, 157 commits); version 0.4.4;
+  tests 159 passed; check-practices OK.
+- Synthesis: `rsis3-pass-14-self-assessment-routine-2026-08-07.md`.
 
 ## 2026-08-07 (RSIS3 L3 cycle 20 — memory consolidation)
 - L3 cycle 20 wrote OKF synthesis `rsis3-l3-cycle-20-cross-session-memory-consolidation-2026-08-07.md` (2 insight(s), 1 strategy(ies), 237 redundancy candidate(s), 0 trend(s)).
@@ -968,3 +972,28 @@ title: "Bundle Log"
 - Tests: rsis3 75 passed (18 new), SPACE 157 passed, check-practices OK,
   contracts 0 FAIL, gen-static-data --check OK.
 - Synthesis: `rsis3-pass-12-improvement-engine-2026-08-07.md`.
+
+## 2026-08-07 (RSIS3 pass 13 — deterministic evaluator gate)
+- Replaced the stub evaluator (always PASS, perfect scores) with a real
+  deterministic gate in `evaluator/evaluator.py`: path safety, compile,
+  AST safety scan, regression, style/efficiency; JSON/config candidates
+  (L8/L9 deltas) skip Python gates; unified-diff fragments are
+  dedent-checked so safety scans still apply.
+- Optional fail-closed LLM refinement via `RSIS_EVALUATOR_API_KEY` — an
+  LLM can only downgrade a PASS, never overturn a deterministic hard FAIL
+  or inflate its scores.
+- Tests: `tests/test_evaluator_gate.py` 45 cases (new); rsis3 suite
+  120 passed, check-practices OK, gen-static-data --check OK; version
+  bumped to 0.4.3 (CHANGELOG entry added).
+- Synthesis: `rsis3-pass-13-deterministic-evaluator-gate-2026-08-07.md`.
+
+## 2026-08-08 (RSIS3 rebirth #1 + first real L1–L9 cycles)
+- Re-implemented the rebirth mechanic for the file-based workspace:
+  `components/rsis3/rack/rebirth.py` archives pulses + `.rsis` state to
+  `rack/lifecycles/rebirth-001-<ts>/`, resets `rack/pulses/` (next pulse
+  001) and writes `rack/rebirth_manifesto.json` (analytical-only mode).
+- Ran the first real cycles on the fresh start: `launch --cycles 3`
+  (24 executions, 0 failed); cycle 1 L2 goal sourced from SPACE spec.
+  L3 consolidated cycle 23; L5 evolved generation 41; L4/L6–L9 no-ops at
+  bounds. check-practices OK.
+- Synthesis: `rsis3-rebirth-1-first-cycles-2026-08-08.md`.

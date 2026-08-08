@@ -1,4 +1,0 @@
-{"type": "l2_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-08T03:54:55.361416+00:00", "goal": "self-improve the codebase"}
-{"type": "l2_complete", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-08T03:54:56.603938+00:00", "success": false, "attempts": 0}
-{"type": "l1_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-08T03:54:56.604678+00:00", "task": "self-improve the codebase"}
-{"type": "l1_complete", "path": null, "delta": null, "duration_ms": 0, "timestamp": "2026-08-08T03:54:56.604769+00:00", "success": true, "steps": 1}

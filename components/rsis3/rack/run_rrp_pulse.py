@@ -291,6 +291,14 @@ def run_pulse(pulse_num: int, num_goals: int = 4, x: int = 3, y: int = 3, z: int
     with open(latest_path, "w") as f:
         json.dump(pulse, f, indent=2, default=str)
 
+    # Refresh the cumulative dashboard payload (graceful if unavailable).
+    try:
+        from build_dashboard_data import build as _build_dashboard
+        (PULSES_DIR / "dashboard-data.json").write_text(
+            json.dumps(_build_dashboard(), indent=2))
+    except Exception:
+        pass
+
     # Print summary
     agg = pulse["rrp_telemetry_aggregate"]
     print(f"{'='*60}")

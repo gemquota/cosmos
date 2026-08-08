@@ -1,4 +1,50 @@
 
+## [0.4.4] — 2026-08-07
+
+### Added
+- Self-assessment routine: `python -m rsis self-assess` — deterministic
+  KB health scan (links, orphans, stubs, content depth with weighted
+  score), gap analysis against recent syntheses (backlog items filed
+  create-only in `wiki/backlog/`), trend detection from telemetry + git,
+  and per-run `wiki/assessments/` + `wiki/reflections/` OKF notes
+- Optional fail-closed LLM enrichment (`RSIS_EVALUATOR_API_KEY`) that can
+  only add narrative, never alter deterministic findings
+- `SelfAssessConfig` (window, artifact dirs, daemon timeout); `sa_start` /
+  `sa_complete` / `sa_error` telemetry; `infra/loops/run-batch.sh` runs
+  the routine after each scheduled batch
+
+### Verified
+- `tests/test_self_assess.py` — 39 cases; full rsis3 suite passes
+- `gen-static-data.py --check` OK after first real run
+
+## [0.4.3] — 2026-08-07
+
+### Added
+- Deterministic evaluator gate (`evaluator/evaluator.py`): the immutable
+  evaluator now validates candidates instead of always passing — target-path
+  safety (relative workspace paths only; no absolute / `..` / Windows
+  forms), compile check, AST safety scan (dynamic execution, shell=True,
+  destructive process/filesystem calls, out-of-workspace writes),
+  regression scan (removed definitions fail closed), and
+  style/efficiency heuristics
+- Config/data candidate support: JSON payloads (e.g. L8/L9 tuning deltas)
+  skip the Python gates and are validated for shape and destructive shell
+  strings, so meta-tuning loops keep passing without code checks
+- Diff-fragment tolerance: unified-diff added lines are dedent-recompiled
+  and AST-scanned, so partial in-block diffs pass compile without skipping
+  the safety scan
+- Optional fail-closed LLM refinement: with `RSIS_EVALUATOR_API_KEY` or
+  `OPENAI_API_KEY` set, the LLM can only downgrade a PASS or refine scores
+  — a deterministic hard FAIL is final and its scores cannot be inflated
+- `tests/test_evaluator_gate.py` — 45 cases: PASS/FAIL paths, path safety,
+  diff parsing, data candidates, fail-closed LLM merge, `--verify` digest
+
+### Verified
+- rsis3 suite: 120 passed (45 new); evaluator byte-compiles
+- Evaluator smoke via stdin: clean module PASS, `os.system("rm -rf /")`
+  FAIL, syntax error FAIL, JSON delta PASS, unsafe diff fragment FAIL
+- `check-practices` all PASS; `gen-static-data.py --check` OK
+
 ## [0.4.2] — 2026-08-04
 
 ### Added

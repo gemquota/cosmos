@@ -53,6 +53,11 @@ for c in $(seq 1 "$CYCLES"); do
 done
 
 echo ""
+echo "── Self-assessment ──────────────────────────────"
+cd "$RSIS"
+python3 -m rsis self-assess || FAIL=1
+
+echo ""
 echo "── Post-batch gates ──────────────────────────────"
 cd "$RSIS"
 python3 -m rsis check-practices || FAIL=1
@@ -65,7 +70,9 @@ cd "$DIR"
 # snapshots — otherwise --check validates a stale-but-consistent tree and the
 # committed files.json misses the new syntheses (2026-08-07 CI batch).
 git add components/rsis3/.rsis components/rsis3/dashboard components/rsis3/rack \
-        components/mykb/wiki/syntheses components/mykb/log.md components/mykb/log.json \
+        components/mykb/wiki/syntheses components/mykb/wiki/assessments \
+        components/mykb/wiki/reflections components/mykb/wiki/backlog \
+        components/mykb/log.md components/mykb/log.json \
         components/mykb/guidance.json
 if ! git diff --cached --quiet; then
   git -c user.name="RSIS Test" -c user.email="rsis@test.local" \

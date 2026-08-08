@@ -1,0 +1,3 @@
+{"type": "l8_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T16:34:32.165959+00:00", "cycle": 0}
+{"type": "l8_evaluation", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T16:34:32.429250+00:00", "decision": "PASS", "signal": "raise_mutation"}
+{"type": "l8_complete", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T16:34:32.433125+00:00", "changed": true, "signal": "raise_mutation", "deltas": {"l5.mutation_rate": 0.05}}

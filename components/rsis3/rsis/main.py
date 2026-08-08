@@ -19,9 +19,11 @@ Usage:
 """
 
 import argparse
+import json
 import logging
 import sys
 import time
+from dataclasses import asdict
 from pathlib import Path
 
 from rsis import __version__
@@ -32,6 +34,7 @@ from typing import Optional
 from rsis.checkpoint import CheckpointManager
 from rsis.config import CONFIG
 from rsis.evaluator import EvaluatorClient
+from rsis.self_assess import SelfAssessment
 from rsis.loop_l1 import L1ActionLoop
 from rsis.loop_l2 import L2ImprovementLoop
 from rsis.loop_l3 import L3EvolutionLoop
@@ -521,6 +524,43 @@ def cmd_launch(args: argparse.Namespace) -> int:
     return result["exit_code"]
 
 
+def cmd_self_assess(args: argparse.Namespace) -> int:
+    telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
+    enforcer.start()
+    telemetry.start()
+    try:
+        days = max(1, args.days or CONFIG.self_assess.window_days)
+        assessor = SelfAssessment(telemetry=telemetry)
+        result = assessor.run(window_days=days,
+                              file_backlog_items=not args.no_backlog)
+        if result.error:
+            print(f"  \u2717 Self-assessment failed: {result.error}")
+            if args.json:
+                print(json.dumps({"decision": "error",
+                                  "error": result.error}))
+            return 1
+        print(f"  \u2713 Self-assessment complete (health={result.health_score})")
+        print(f"  Gaps: {len(result.gaps)} \u00b7 Trends: {len(result.trends)}")
+        print(f"  Assessment: {result.assessment_path}")
+        if result.reflection_path:
+            print(f"  Reflection: {result.reflection_path}")
+        for gap in result.gaps:
+            print(f"    gap [{gap.priority}]: {gap.topic}")
+        if args.json:
+            print(json.dumps({
+                "decision": "ok",
+                "health_score": result.health_score,
+                "gaps": [{"topic": g.topic, "priority": g.priority}
+                         for g in result.gaps],
+                "trends": [asdict(t) for t in result.trends],
+                "assessment": result.assessment_path,
+            }))
+        return 0
+    finally:
+        telemetry.stop()
+        enforcer.stop()
+
+
 def _drive_cycle(loop_name, goal, telemetry, checkpoint, memory, evaluator,
                  recovery, holder):
     """Run one cycle of `loop_name`; return (done, satisfied, reason).
@@ -954,6 +994,18 @@ def main() -> int:
     p_launch.add_argument("--dry-run", action="store_true",
                           help="Print the execution plan without running")
     p_launch.set_defaults(func=cmd_launch)
+
+    p_self = sub.add_parser(
+        "self-assess",
+        help="Run the self-assessment routine (KB health, gaps, trends)")
+    p_self.add_argument("--days", type=int,
+                        default=CONFIG.self_assess.window_days,
+                        help="Analysis window in days (default: %(default)s)")
+    p_self.add_argument("--no-backlog", action="store_true",
+                        help="Do not file backlog notes")
+    p_self.add_argument("--json", action="store_true",
+                        help="Print machine-readable summary")
+    p_self.set_defaults(func=cmd_self_assess)
 
     p_drive = sub.add_parser("drive",
                              help="Run a loop until its completion requirement is satisfied")

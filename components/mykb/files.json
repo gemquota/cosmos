@@ -30858,6 +30858,17 @@
   ]
  },
  {
+  "path": "wiki/assessments/self-assessment-2026-08-07.md",
+  "type": "assessment",
+  "title": "Self-Assessment 2026-08-07",
+  "tags": [
+   "self-assessment",
+   "health",
+   "gaps",
+   "trends"
+  ]
+ },
+ {
   "path": "wiki/cloud-infra/00-index.md",
   "type": "index",
   "title": "Cloud Infra Index",
@@ -68640,6 +68651,15 @@
   ]
  },
  {
+  "path": "wiki/reflections/reflection-2026-08-07.md",
+  "type": "reflection",
+  "title": "Reflection 2026-08-07",
+  "tags": [
+   "reflection",
+   "self-assessment"
+  ]
+ },
+ {
   "path": "wiki/reflections/reflection-post-audit.md",
   "type": "reflection",
   "title": "Reflection \u2014 Post-Audit Assessment",
@@ -75977,30 +75997,6 @@
   ]
  },
  {
-  "path": "wiki/syntheses/rsis3-l3-cycle-24-cross-session-memory-consolidation-2026-08-08.md",
-  "type": "synthesis",
-  "title": "RSIS3 L3 cycle 24 \u2014 cross-session memory consolidation",
-  "tags": [
-   "rsis3",
-   "l3",
-   "memory",
-   "consolidation",
-   "mykb"
-  ]
- },
- {
-  "path": "wiki/syntheses/rsis3-l3-cycle-25-cross-session-memory-consolidation-2026-08-08.md",
-  "type": "synthesis",
-  "title": "RSIS3 L3 cycle 25 \u2014 cross-session memory consolidation",
-  "tags": [
-   "rsis3",
-   "l3",
-   "memory",
-   "consolidation",
-   "mykb"
-  ]
- },
- {
   "path": "wiki/syntheses/rsis3-l3-cycle-3-cross-session-memory-consolidation-2026-08-06.md",
   "type": "synthesis",
   "title": "RSIS3 L3 cycle 3 \u2014 cross-session memory consolidation",
@@ -76134,6 +76130,36 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-pass-13-deterministic-evaluator-gate-2026-08-07.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 13 \u2014 deterministic evaluator gate: fail-closed quality gating without an API",
+  "tags": [
+   "rsis3",
+   "passes",
+   "evaluator",
+   "quality-gate",
+   "safety",
+   "fail-closed",
+   "llm-agents",
+   "okf"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-pass-14-self-assessment-routine-2026-08-07.md",
+  "type": "synthesis",
+  "title": "RSIS3 Pass 14 \u2014 self-assessment routine: deterministic-first KB health, gaps, trends",
+  "tags": [
+   "rsis3",
+   "passes",
+   "self-assessment",
+   "knowledge-management",
+   "telemetry",
+   "fail-closed",
+   "okf",
+   "backlog"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-pass-6-2026-08-06.md",
   "type": "synthesis",
   "title": "RSIS3 Pass 6 \u2014 five full cycles across L1\u2013L9",
@@ -76189,6 +76215,28 @@
    "guide",
    "ideation",
    "okf"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-rebirth-1-first-cycles-2026-08-08.md",
+  "type": "synthesis",
+  "title": "RSIS3 rebirth #1 + first real L1\u2013L9 cycles",
+  "tags": [
+   "rsis3",
+   "rebirth",
+   "launch",
+   "cycles",
+   "lifecycle",
+   "l1",
+   "l2",
+   "l3",
+   "l4",
+   "l5",
+   "l6",
+   "l7",
+   "l8",
+   "l9",
+   "mykb"
   ]
  },
  {
