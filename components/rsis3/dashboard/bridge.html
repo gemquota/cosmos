@@ -34,6 +34,7 @@
       <span id="st-model" class="text-[10px] font-mono text-slate-400 bg-slate-800/60 border border-slate-700/50 rounded-lg px-2 py-1">—</span>
       <span id="st-kg" class="text-[10px] font-mono text-slate-400 bg-slate-800/60 border border-slate-700/50 rounded-lg px-2 py-1">—</span>
       <span id="st-strat" class="text-[10px] font-mono text-slate-400 bg-slate-800/60 border border-slate-700/50 rounded-lg px-2 py-1">—</span>
+      <span id="st-art" class="text-[10px] font-mono text-slate-400 bg-slate-800/60 border border-slate-700/50 rounded-lg px-2 py-1">📎 —</span>
     </div>
   </div>
 
@@ -46,8 +47,15 @@
   <!-- Suggested prompts -->
   <div id="sugg" class="flex flex-wrap gap-1.5 mb-3"></div>
 
+  <!-- Attached artifacts -->
+  <div id="attachbar" class="flex flex-wrap gap-1.5 mb-2"></div>
+
   <!-- Input row -->
   <form id="form" class="flex items-end gap-2">
+    <label class="flex items-center gap-1.5 text-[10px] sm:text-xs text-slate-400 select-none shrink-0 pb-2 cursor-pointer hover:text-indigo-300 transition" title="Attach files — text is inlined, images are sent to the model">
+      <input id="file" type="file" multiple class="hide" />
+      📎 Attach
+    </label>
     <label class="flex items-center gap-1.5 text-[10px] sm:text-xs text-slate-400 select-none shrink-0 pb-2 cursor-pointer" title="Include the live Cosmos snapshot in the prompt">
       <input id="ctx" type="checkbox" checked class="accent-indigo-500 h-3.5 w-3.5" />
       Cosmos ctx
@@ -62,6 +70,8 @@
 <script>
 var API = '';
 var hist = [];
+var attach = [];
+var ATTACH_BUDGET = 4 * 1024 * 1024; // raw bytes; base64 inflates ~1.33x, server caps POST at 6 MB
 
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function el(tag, cls, html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e;}
@@ -85,7 +95,7 @@ function render(md){
   return out.replace(/\n{3,}/g,'\n\n');
 }
 
-function addMsg(role, text){
+function addMsg(role, text, chips){
   hist.push({role: role, content: text});
   var box = document.getElementById('chat');
   var wrap = el('div', 'flex ' + (role==='user' ? 'justify-end' : 'justify-start'));
@@ -95,10 +105,35 @@ function addMsg(role, text){
   var b = el('div', cls);
   if (role==='assistant') b.innerHTML = render(text);
   else b.textContent = text;
+  if (chips && chips.length){
+    var row = el('div', 'flex flex-wrap gap-1 mt-1.5');
+    chips.forEach(function(n){ row.appendChild(el('span', 'text-[9px] px-1.5 py-0.5 rounded bg-slate-900/70 border border-slate-600/40 text-slate-300', '📎 ' + esc(n))); });
+    b.appendChild(row);
+  }
   wrap.appendChild(b);
   box.appendChild(wrap);
   box.scrollTop = box.scrollHeight;
   return b;
+}
+
+function fmtSize(n){ return n >= 1024*1024 ? (n/1024/1024).toFixed(1)+' MB' : Math.max(1, Math.round(n/1024))+' KB'; }
+
+function attachTotal(){ return attach.reduce(function(s,a){return s+a.size;}, 0); }
+
+function renderAttach(){
+  var bar = document.getElementById('attachbar');
+  bar.innerHTML = '';
+  attach.forEach(function(a, i){
+    var c = el('span', 'inline-flex items-center gap-1 text-[10px] px-2 py-1 rounded-lg bg-slate-800/80 border border-slate-600/40 text-slate-200');
+    c.innerHTML = '📎 ' + esc(a.name) + ' <span class="text-slate-400">' + fmtSize(a.size) + '</span>';
+    var x = el('button', 'text-slate-400 hover:text-rose-400 ml-0.5 cursor-pointer', '✕');
+    x.onclick = function(){ attach.splice(i, 1); renderAttach(); };
+    c.appendChild(x);
+    bar.appendChild(c);
+  });
+  if (attachTotal() > ATTACH_BUDGET){
+    bar.appendChild(el('span', 'text-[10px] text-rose-400', '⚠ ' + fmtSize(attachTotal()) + ' over the ' + fmtSize(ATTACH_BUDGET) + ' bridge budget — remove attachments or send in parts.'));
+  }
 }
 
 function chip(label, fn){
@@ -128,6 +163,7 @@ async function loadCosmos(){
     document.getElementById('st-model').textContent = c.model || '—';
     document.getElementById('st-kg').textContent = 'KG ' + (c.kg ? c.kg.nodes + 'n/' + c.kg.edges + 'e' : '—');
     document.getElementById('st-strat').textContent = 'gen ' + (c.strategies ? c.strategies.generation : '—') + ' · fit ' + (c.strategies && c.strategies.best_fitness != null ? c.strategies.best_fitness : '—');
+    document.getElementById('st-art').textContent = '📎 ' + (c.artifacts ? c.artifacts.length : 0) + ' refs';
     var dr = document.getElementById('drives');
     if (c.drives && c.drives.tiers && c.drives.tiers.length){
       dr.innerHTML = '<div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-2.5 sm:p-3">' +
@@ -154,16 +190,21 @@ async function loadCosmos(){
 async function send(){
   var inp = document.getElementById('inp');
   var q = inp.value.trim();
-  if(!q) return;
+  var total = attachTotal();
+  if(!q && !attach.length) return;
+  if(total > ATTACH_BUDGET){ alert('Attachments exceed the bridge budget (' + fmtSize(ATTACH_BUDGET) + '). Remove some and retry.'); return; }
   inp.value = ''; autosize();
-  addMsg('user', q);
+  addMsg('user', q, attach.map(function(a){return a.name;}));
   var typing = addMsg('assistant', '…');
   typing.innerHTML = '<span class="text-slate-400">thinking…</span>';
+  var payload = { messages: hist, cosmos: document.getElementById('ctx').checked };
+  if (attach.length) payload.artifacts = attach.map(function(a){ return {name: a.name, type: a.type, size: a.size, dataUrl: a.dataUrl}; });
+  attach = []; renderAttach();
   try{
     var r = await fetch(API + '/api/chat', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({ messages: hist, cosmos: document.getElementById('ctx').checked }),
+      body: JSON.stringify(payload),
     });
     var d = await r.json();
     if(!r.ok) throw new Error(d.error || ('HTTP '+r.status));
@@ -177,6 +218,23 @@ async function send(){
 
 document.getElementById('form').addEventListener('submit', function(e){e.preventDefault(); send();});
 document.getElementById('inp').addEventListener('input', autosize);
+document.getElementById('file').addEventListener('change', function(){
+  var files = Array.prototype.slice.call(this.files || []);
+  var pending = attach.slice();
+  files.forEach(function(f){
+    if (f.size > 4*1024*1024){ alert(f.name + ' exceeds the 4 MB per-file limit.'); return; }
+    if (attachTotal() + f.size > ATTACH_BUDGET){ alert(f.name + ' would exceed the bridge budget (' + fmtSize(ATTACH_BUDGET) + '). Remove attachments or send in parts.'); return; }
+    var reader = new FileReader();
+    reader.onload = (function(file){
+      return function(e){
+        attach.push({name: file.name, type: file.type || 'application/octet-stream', size: file.size, dataUrl: e.target.result});
+        renderAttach();
+      };
+    })(f);
+    reader.readAsDataURL(f);
+  });
+  this.value = '';
+});
 document.getElementById('inp').addEventListener('keydown', function(e){
   if(e.key==='Enter' && !e.shiftKey){e.preventDefault(); send();}
 });

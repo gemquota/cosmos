@@ -31067,7 +31067,73 @@
   ]
  },
  {
+  "path": "wiki/assessments/self-assessment-2026-08-08-27.md",
+  "type": "assessment",
+  "title": "Self-Assessment 2026-08-08",
+  "tags": [
+   "self-assessment",
+   "health",
+   "gaps",
+   "trends"
+  ]
+ },
+ {
+  "path": "wiki/assessments/self-assessment-2026-08-08-28.md",
+  "type": "assessment",
+  "title": "Self-Assessment 2026-08-08",
+  "tags": [
+   "self-assessment",
+   "health",
+   "gaps",
+   "trends"
+  ]
+ },
+ {
+  "path": "wiki/assessments/self-assessment-2026-08-08-29.md",
+  "type": "assessment",
+  "title": "Self-Assessment 2026-08-08",
+  "tags": [
+   "self-assessment",
+   "health",
+   "gaps",
+   "trends"
+  ]
+ },
+ {
   "path": "wiki/assessments/self-assessment-2026-08-08-3.md",
+  "type": "assessment",
+  "title": "Self-Assessment 2026-08-08",
+  "tags": [
+   "self-assessment",
+   "health",
+   "gaps",
+   "trends"
+  ]
+ },
+ {
+  "path": "wiki/assessments/self-assessment-2026-08-08-30.md",
+  "type": "assessment",
+  "title": "Self-Assessment 2026-08-08",
+  "tags": [
+   "self-assessment",
+   "health",
+   "gaps",
+   "trends"
+  ]
+ },
+ {
+  "path": "wiki/assessments/self-assessment-2026-08-08-31.md",
+  "type": "assessment",
+  "title": "Self-Assessment 2026-08-08",
+  "tags": [
+   "self-assessment",
+   "health",
+   "gaps",
+   "trends"
+  ]
+ },
+ {
+  "path": "wiki/assessments/self-assessment-2026-08-08-32.md",
   "type": "assessment",
   "title": "Self-Assessment 2026-08-08",
   "tags": [
@@ -69108,7 +69174,61 @@
   ]
  },
  {
+  "path": "wiki/reflections/reflection-2026-08-08-27.md",
+  "type": "reflection",
+  "title": "Reflection 2026-08-08",
+  "tags": [
+   "reflection",
+   "self-assessment"
+  ]
+ },
+ {
+  "path": "wiki/reflections/reflection-2026-08-08-28.md",
+  "type": "reflection",
+  "title": "Reflection 2026-08-08",
+  "tags": [
+   "reflection",
+   "self-assessment"
+  ]
+ },
+ {
+  "path": "wiki/reflections/reflection-2026-08-08-29.md",
+  "type": "reflection",
+  "title": "Reflection 2026-08-08",
+  "tags": [
+   "reflection",
+   "self-assessment"
+  ]
+ },
+ {
   "path": "wiki/reflections/reflection-2026-08-08-3.md",
+  "type": "reflection",
+  "title": "Reflection 2026-08-08",
+  "tags": [
+   "reflection",
+   "self-assessment"
+  ]
+ },
+ {
+  "path": "wiki/reflections/reflection-2026-08-08-30.md",
+  "type": "reflection",
+  "title": "Reflection 2026-08-08",
+  "tags": [
+   "reflection",
+   "self-assessment"
+  ]
+ },
+ {
+  "path": "wiki/reflections/reflection-2026-08-08-31.md",
+  "type": "reflection",
+  "title": "Reflection 2026-08-08",
+  "tags": [
+   "reflection",
+   "self-assessment"
+  ]
+ },
+ {
+  "path": "wiki/reflections/reflection-2026-08-08-32.md",
   "type": "reflection",
   "title": "Reflection 2026-08-08",
   "tags": [
@@ -77058,6 +77178,78 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-l3-cycle-64-cross-session-memory-consolidation-2026-08-08.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 64 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-65-cross-session-memory-consolidation-2026-08-08.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 65 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-66-cross-session-memory-consolidation-2026-08-08.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 66 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-67-cross-session-memory-consolidation-2026-08-08.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 67 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-68-cross-session-memory-consolidation-2026-08-08.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 68 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-69-cross-session-memory-consolidation-2026-08-08.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 69 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-l3-cycle-7-cross-session-memory-consolidation-2026-08-06.md",
   "type": "synthesis",
   "title": "RSIS3 L3 cycle 7 \u2014 cross-session memory consolidation",
@@ -77276,6 +77468,21 @@
    "l8",
    "l9",
    "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-t2-envelope-multiphase-roadmap-2026-08-08.md",
+  "type": "synthesis",
+  "title": "T2 Dense Envelope & Multi-Phase Roadmap for the COSMOS Bridge",
+  "tags": [
+   "synthesis",
+   "rsis3",
+   "bridge",
+   "llm",
+   "envelope",
+   "dashboard",
+   "roadmap",
+   "goals"
   ]
  },
  {
