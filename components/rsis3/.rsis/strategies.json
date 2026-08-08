@@ -1,5 +1,5 @@
 {
-  "generation": 110,
+  "generation": 111,
   "population": [
     {
       "id": "strategy-budget-1",
@@ -9,7 +9,7 @@
         "focus": "general"
       },
       "fitness": 0.244,
-      "evals": 110
+      "evals": 111
     },
     {
       "id": "strategy-seed-1",
@@ -19,10 +19,10 @@
         "focus": "general"
       },
       "fitness": 0.244,
-      "evals": 110
+      "evals": 111
     },
     {
-      "id": "strategy-g110-cross-250",
+      "id": "strategy-g111-cross-250",
       "params": {
         "l2_attempts": 5,
         "budget_factor": 1.0,
@@ -33,7 +33,7 @@
       "lineage": "strategy-budget-1xstrategy-seed-1"
     },
     {
-      "id": "strategy-g110-1-89",
+      "id": "strategy-g111-1-89",
       "params": {
         "l2_attempts": 4,
         "budget_factor": 1.0,
@@ -919,6 +919,14 @@
     },
     {
       "generation": 110,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 111,
       "avg_fitness": 0.1586,
       "best_fitness": 0.244,
       "population": 4,
