@@ -1,7 +1,7 @@
 {
- "built": "2026-08-08T17:26:51+00:00",
+ "built": "2026-08-08T17:29:51+00:00",
  "total": {
-  "pages": 5666,
+  "pages": 5669,
   "stubs": 1494,
   "stub_pct": 26
  },
@@ -148,9 +148,9 @@
   },
   {
    "area": "syntheses",
-   "pages": 226,
+   "pages": 227,
    "stubs": 17,
-   "stub_pct": 8,
+   "stub_pct": 7,
    "avg_words": 157
   },
   {
@@ -260,7 +260,7 @@
   },
   {
    "area": "assessments",
-   "pages": 110,
+   "pages": 111,
    "stubs": 0,
    "stub_pct": 0,
    "avg_words": 69
@@ -316,7 +316,7 @@
   },
   {
    "area": "reflections",
-   "pages": 111,
+   "pages": 112,
    "stubs": 0,
    "stub_pct": 0,
    "avg_words": 48
@@ -404,7 +404,7 @@
  "wanted_links": [],
  "queue": null,
  "live": {
-  "generated": "2026-08-08T17:26:52+00:00",
+  "generated": "2026-08-08T17:29:52+00:00",
   "loops": [
    {
     "id": "L0",
@@ -420,8 +420,8 @@
     "id": "L1",
     "name": "Execution",
     "status": "implemented",
-    "runs": 173,
-    "last_run": "2026-08-08T17:22:18.815177+00:00",
+    "runs": 174,
+    "last_run": "2026-08-08T17:25:18.621293+00:00",
     "cycle": 0,
     "target": "Pure consumer of tuned params (L4→L1)",
     "params": []
@@ -430,8 +430,8 @@
     "id": "L2",
     "name": "Improvement",
     "status": "implemented",
-    "runs": 173,
-    "last_run": "2026-08-08T17:22:18.803136+00:00",
+    "runs": 174,
+    "last_run": "2026-08-08T17:25:18.620149+00:00",
     "cycle": 0,
     "target": "Pure consumer of tuned params (L5→L2)",
     "params": []
@@ -440,8 +440,8 @@
     "id": "L3",
     "name": "Evolution",
     "status": "implemented",
-    "runs": 171,
-    "last_run": "2026-08-08T17:22:27.712273+00:00",
+    "runs": 172,
+    "last_run": "2026-08-08T17:25:27.475469+00:00",
     "cycle": 0,
     "target": "Core stack — consolidates memory, derives strategies",
     "params": []
@@ -450,8 +450,8 @@
     "id": "L4",
     "name": "Optimizer",
     "status": "implemented",
-    "runs": 170,
-    "last_run": "2026-08-08T17:22:37.902957+00:00",
+    "runs": 171,
+    "last_run": "2026-08-08T17:25:37.673240+00:00",
     "cycle": 17,
     "target": "Tunes L1 execution params",
     "params": [
@@ -469,8 +469,8 @@
     "id": "L5",
     "name": "Evolution",
     "status": "implemented",
-    "runs": 174,
-    "last_run": "2026-08-08T17:22:48.690387+00:00",
+    "runs": 175,
+    "last_run": "2026-08-08T17:25:48.079520+00:00",
     "cycle": 0,
     "target": "Tunes L2 improvement params (population, mutation)",
     "params": [
@@ -492,8 +492,8 @@
     "id": "L6",
     "name": "Identity",
     "status": "implemented",
-    "runs": 171,
-    "last_run": "2026-08-08T17:22:58.624431+00:00",
+    "runs": 172,
+    "last_run": "2026-08-08T17:25:58.367272+00:00",
     "cycle": 25,
     "target": "Tunes L3 evolution params (plateau timeout)",
     "params": [
@@ -507,8 +507,8 @@
     "id": "L7",
     "name": "Meta-Cog",
     "status": "implemented",
-    "runs": 169,
-    "last_run": "2026-08-08T17:23:08.877884+00:00",
+    "runs": 170,
+    "last_run": "2026-08-08T17:26:08.618978+00:00",
     "cycle": 13,
     "target": "Tunes L4 optimizer params (window / thresholds)",
     "params": [
@@ -534,8 +534,8 @@
     "id": "L8",
     "name": "Meta-Meta",
     "status": "implemented",
-    "runs": 169,
-    "last_run": "2026-08-08T17:23:19.190777+00:00",
+    "runs": 170,
+    "last_run": "2026-08-08T17:26:18.940706+00:00",
     "cycle": 10,
     "target": "Tunes L5 strategy params (population / mutation)",
     "params": [
@@ -553,8 +553,8 @@
     "id": "L9",
     "name": "MMM",
     "status": "implemented",
-    "runs": 169,
-    "last_run": "2026-08-08T17:23:29.503053+00:00",
+    "runs": 170,
+    "last_run": "2026-08-08T17:26:29.257324+00:00",
     "cycle": 12,
     "target": "Tunes L6 identity params (the recursion guard)",
     "params": [
@@ -570,20 +570,24 @@
    }
   ],
   "telemetry": {
-   "files": 1500,
-   "events": 3810,
+   "files": 1509,
+   "events": 3832,
    "loops": {
-    "L2": 174,
-    "L1": 174,
-    "L6": 172,
-    "L7": 170,
-    "L5": 175,
-    "L4": 171,
-    "L3": 172,
-    "L9": 170,
-    "L8": 170
+    "L2": 175,
+    "L1": 175,
+    "L6": 173,
+    "L7": 171,
+    "L5": 176,
+    "L4": 172,
+    "L3": 173,
+    "L9": 171,
+    "L8": 171
    },
    "spec_traces": [
+    {
+     "goal": "Implement the association_types spec artifact: 2–3 distinct relationship types (e.g., owns, produces, references) (SPACE spec artifact association_types, series",
+     "timestamp": "2026-08-08T17:28:16.806987+00:00"
+    },
     {
      "goal": "Implement the edge_cases spec artifact: Known edge cases — they are well-understood and can be handled explicitly (SPACE spec artifact edge_cases, series 2, que",
      "timestamp": "2026-08-08T17:25:17.035970+00:00"
@@ -599,15 +603,23 @@
     {
      "goal": "Implement the availability_targets spec artifact: Best-effort — no formal SLA, occasional downtime acceptable (SPACE spec artifact availability_targets, series ",
      "timestamp": "2026-08-08T17:16:33.457069+00:00"
-    },
-    {
-     "goal": "Implement the decision_points spec artifact: Few branches — 1–2 decision points with 2–3 choices each (SPACE spec artifact decision_points, series 4, question 4",
-     "timestamp": "2026-08-08T17:13:33.315457+00:00"
     }
    ]
   },
   "memory": {
    "syntheses": [
+    {
+     "slug": "rsis3-l3-cycle-153-cross-session-memory-consolidation-2026-08-08",
+     "title": "RSIS3 L3 cycle 153 — cross-session memory consolidation",
+     "tags": [
+      "rsis3",
+      "l3",
+      "memory",
+      "consolidation",
+      "mykb"
+     ],
+     "timestamp": "2026-08-08T17:28:27Z"
+    },
     {
      "slug": "rsis3-l3-cycle-152-cross-session-memory-consolidation-2026-08-08",
      "title": "RSIS3 L3 cycle 152 — cross-session memory consolidation",
@@ -655,18 +667,6 @@
       "mykb"
      ],
      "timestamp": "2026-08-08T17:16:43Z"
-    },
-    {
-     "slug": "rsis3-l3-cycle-148-cross-session-memory-consolidation-2026-08-08",
-     "title": "RSIS3 L3 cycle 148 — cross-session memory consolidation",
-     "tags": [
-      "rsis3",
-      "l3",
-      "memory",
-      "consolidation",
-      "mykb"
-     ],
-     "timestamp": "2026-08-08T17:13:43Z"
     }
    ]
   }
