@@ -76325,6 +76325,19 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-goal-stack-output-communicate-bridge-2026-08-08.md",
+  "type": "synthesis",
+  "title": "Multitiered goal stack \u2014 Output \u2192 Communicate \u2192 Wrap \u2192 Bridge",
+  "tags": [
+   "rsis3",
+   "goal-stack",
+   "drives",
+   "bridge",
+   "llm",
+   "web-ui"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-l3-cycle-1-cross-session-memory-consolidation-2026-08-06.md",
   "type": "synthesis",
   "title": "RSIS3 L3 cycle 1 \u2014 cross-session memory consolidation",
@@ -77024,6 +77037,18 @@
   "path": "wiki/syntheses/rsis3-l3-cycle-62-cross-session-memory-consolidation-2026-08-08.md",
   "type": "synthesis",
   "title": "RSIS3 L3 cycle 62 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-63-cross-session-memory-consolidation-2026-08-08.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 63 \u2014 cross-session memory consolidation",
   "tags": [
    "rsis3",
    "l3",

@@ -23,6 +23,7 @@
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="loops" data-tt="tab:loops" role="tab" aria-selected="false" onclick="sw('loops')">🧬 Loops</button>
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="mykb" data-tt="tab:mykb" role="tab" aria-selected="false" onclick="sw('mykb')">📚 MyKB</button>
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="space" data-tt="tab:space" role="tab" aria-selected="false" onclick="sw('space')">🚀 SPACE</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="bridge" data-tt="tab:bridge" role="tab" aria-selected="false" onclick="sw('bridge')">💬 Bridge</button>
 </div>
 
 <!-- OVERVIEW TAB -->
@@ -60,6 +61,7 @@
       <div class="bg-slate-800/80 p-2 sm:p-3 rounded-xl border border-slate-700/60 text-center" data-tt="summary:pulse_count"><div id="s-pulses" class="text-base sm:text-lg font-bold text-indigo-400">–</div><div class="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase">Pulses</div></div>
     </div>
   </div>
+  <div id="drives"></div>
   <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-3 sm:p-4 mb-4">
     <div class="flex justify-between mb-1.5"><div class="text-xs sm:text-sm font-semibold text-slate-300">Overall Success Rate</div><div id="srate-txt" class="text-xs sm:text-sm font-bold text-emerald-400">–</div></div>
     <div class="h-2.5 sm:h-3 bg-slate-700 rounded-full overflow-hidden"><div id="srate-bar" class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full" style="width:0%"></div></div>
@@ -189,6 +191,18 @@
   </div>
 </div>
 
+<!-- BRIDGE TAB -->
+<div class="tab-body hide" id="b-bridge">
+  <div id="bridge-off" class="hide mb-3 bg-slate-800/60 border border-slate-700/50 rounded-xl p-3 sm:p-4 text-xs sm:text-sm text-slate-300">
+    <span class="font-semibold text-rose-400">🌉 Bridge offline.</span> The LLM ↔ Cosmos bridge runs locally — start it with:
+    <code class="block mt-1.5 font-mono text-[11px] sm:text-xs bg-slate-900/80 border border-slate-700/60 rounded-lg px-2.5 py-1.5 text-indigo-300">cd components/rsis3 && node rack/bridge/server.mjs</code>
+    <span class="block mt-1.5 text-[11px] text-slate-500">Then reload this tab (server listens on <span id="bridge-url" class="font-mono"></span>).</span>
+  </div>
+  <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
+    <iframe id="bridge-frame" data-src="" title="COSMOS Bridge chat" class="w-full" style="height:calc(100vh - 220px);min-height:520px;border:none;background:#020617"></iframe>
+  </div>
+</div>
+
 <div class="mt-6 text-center text-[10px] text-slate-500" id="dash-footer">loading ecosystem…</div>
 
 </div>
@@ -227,6 +241,24 @@ sw = function(n){
   if (n === 'space') {
     var s = document.getElementById('v-space-web').querySelector('iframe');
     if (s && !s.src && s.getAttribute('data-src')) s.src = s.getAttribute('data-src');
+  }
+  if (n === 'bridge') {
+    var off = document.getElementById('bridge-off');
+    if (off) off.classList.add('hide');
+    var u = document.getElementById('bridge-url');
+    if (u) u.textContent = (typeof BRIDGE_URL !== 'undefined' ? BRIDGE_URL : 'http://localhost:8787');
+    var b = document.getElementById('bridge-frame');
+    var base = (typeof BRIDGE_URL !== 'undefined' ? BRIDGE_URL : 'http://localhost:8787');
+    if (b && b.getAttribute('data-src') === '') {
+      b.setAttribute('data-src', base);
+      b.src = base;
+    }
+    if (off) {
+      fetch(base + '/health')
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(h){ if (!h) off.classList.remove('hide'); })
+        .catch(function(){ off.classList.remove('hide'); });
+    }
   }
 };
 // Deep-linking: #tab or #tab:subview (e.g. #mykb:graph)
