@@ -191,6 +191,12 @@ class KnowledgeGraph:
         for u, v, k, data in self.graph.edges(keys=True, data=True):
             rel = data.get("rel", "")
             attrs = {k2: v2 for k2, v2 in data.items() if k2 != "rel"}
+            if rel == "flags_as_redundant":
+                # Prune stale redundancy flag edges: a flag node may only
+                # reference the improvement pair stored on its own attrs.
+                allowed = dict(self.graph.nodes[u]).get("improvement_ids")
+                if isinstance(allowed, list) and v not in allowed:
+                    continue
             edge_key = (u, v, rel,
                         tuple(sorted((k2, str(v2))
                                      for k2, v2 in attrs.items())))
