@@ -159,12 +159,21 @@ class KnowledgeGraph:
                 # Rebuild graph from serialised data
                 for node in data.get("nodes", []):
                     self.graph.add_node(node["id"], **node.get("attrs", {}))
+                seen_edges: set[tuple] = set()
                 for edge in data.get("edges", []):
+                    attrs = edge.get("attrs", {})
+                    edge_key = (edge["source"], edge["target"],
+                                edge.get("rel", ""),
+                                tuple(sorted((k, str(v))
+                                             for k, v in attrs.items())))
+                    if edge_key in seen_edges:
+                        continue
+                    seen_edges.add(edge_key)
                     self.graph.add_edge(
                         edge["source"], edge["target"],
                         key=edge.get("key"),
                         rel=edge["rel"],
-                        **edge.get("attrs", {}),
+                        **attrs,
                     )
                 logger.info("KG loaded (%d nodes, %d edges)",
                             self.graph.number_of_nodes(),
@@ -178,13 +187,24 @@ class KnowledgeGraph:
             for n in self.graph.nodes
         ]
         edges = []
+        seen: set[tuple] = set()
         for u, v, k, data in self.graph.edges(keys=True, data=True):
+            rel = data.get("rel", "")
+            attrs = {k2: v2 for k2, v2 in data.items() if k2 != "rel"}
+            edge_key = (u, v, rel,
+                        tuple(sorted((k2, str(v2))
+                                     for k2, v2 in attrs.items())))
+            if edge_key in seen:
+                # Collapse identical parallel edges (redundancy flagging
+                # used to duplicate edges every cycle).
+                continue
+            seen.add(edge_key)
             edges.append({
                 "source": u,
                 "target": v,
                 "key": k,
-                "rel": data.get("rel", ""),
-                "attrs": {k2: v2 for k2, v2 in data.items() if k2 != "rel"},
+                "rel": rel,
+                "attrs": attrs,
             })
         data = {"nodes": nodes, "edges": edges}
         self.path.write_text(json.dumps(data, indent=2, default=str))
