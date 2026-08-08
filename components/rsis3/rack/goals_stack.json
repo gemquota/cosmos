@@ -1,0 +1,55 @@
+{
+  "id": "goal-stack-001",
+  "title": "Multitiered operating goal — Output → Communicate → Wrap → Bridge",
+  "adopted_at": "2026-08-08T11:50:00Z",
+  "status": "active",
+  "priority": 1,
+  "mode": "llm-driven",
+  "tiers": [
+    {
+      "tier": 0,
+      "name": "Output",
+      "goal": "Every cycle produces visible, verifiable output — code, artifacts, or commits. No silent cycles.",
+      "acceptance": [
+        "At least one committed artifact per cycle",
+        "Every loop leaves a telemetry trace",
+        "Dashboard reflects the latest state"
+      ],
+      "metric": "commits per cycle >= 1"
+    },
+    {
+      "tier": 1,
+      "name": "Communicate",
+      "goal": "Share internal state, active drives, and future planning with the user — in-session status plus durable dashboard telemetry.",
+      "acceptance": [
+        "Status summary shared each session",
+        "Active drives / goal stack visible in the dashboard",
+        "Plans recorded durably in MyKB"
+      ],
+      "metric": "drives visible + status notes"
+    },
+    {
+      "tier": 2,
+      "name": "Dense multimodal messaging wrappers",
+      "goal": "Develop software wrappers to facilitate dense, multimodal messaging — structured envelopes carrying text, cosmos context, artifacts, and state between components and the LLM bridge.",
+      "acceptance": [
+        "Message envelope schema (text + context + artifacts + state)",
+        "Context bundler for pulses / KG / strategies / syntheses",
+        "Artifact references resolvable from chat"
+      ],
+      "metric": "envelope fields >= 4"
+    },
+    {
+      "tier": 3,
+      "name": "Web interface bridge",
+      "goal": "Generate a modern, responsive web interface with a bridge to the LLM and the Cosmos framework.",
+      "acceptance": [
+        "Chat UI integrated as a tab in the unified dashboard",
+        "Server-side LLM proxy — no API key in the client",
+        "Cosmos context toggle (on by default)",
+        "Graceful offline fallback when the bridge is not running"
+      ],
+      "metric": "chat round-trip < 5s"
+    }
+  ]
+}
