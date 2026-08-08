@@ -83,7 +83,7 @@
         "description": "Session session-: 1/1 evaluations passed",
         "session_id": "session-2026-08-07T04:49:29",
         "success_rate": 1.0,
-        "event_count": 9,
+        "event_count": 11,
         "timestamp": "2026-08-07T04:49:29.535991+00:00"
       }
     },
