@@ -703,6 +703,24 @@
         },
         "goal": "Bound L3 redundancy flagging so the knowledge graph stops growing unboundedly"
       }
+    },
+    {
+      "id": 39,
+      "text": "applied: Prune stale flags_as_redundant edges on KG save (source of truth: improvement_ids attr)",
+      "metadata": {
+        "node_id": "improvement-276",
+        "files": [
+          "rsis/memory.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Keep the knowledge graph bounded and self-consistent across cycles"
+      }
     }
   ]
 }
