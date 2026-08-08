@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-07T16:10Z",
+ "generated": "2026-08-08T03:49Z",
  "components": {
   "mykb": {
    "files": 6942,
@@ -9,16 +9,16 @@
    "files": 322
   },
   "rsis3": {
-   "files": 108
+   "files": 88
   }
  },
  "telemetry": {
-  "pulses": 21,
-  "goals": 79,
-  "passed": 79,
+  "pulses": 1,
+  "goals": 1,
+  "passed": 1,
   "failed": 0,
   "held": 0,
-  "total": 79,
-  "improvements": 39
+  "total": 1,
+  "improvements": 1
  }
 }
