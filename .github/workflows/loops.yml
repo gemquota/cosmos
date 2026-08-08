@@ -1,14 +1,14 @@
-name: COSMOS Scheduled Loop Runner
+name: COSMOS Loop Runner (3-min cadence)
 
 on:
   schedule:
-    - cron: '30 2 * * *'   # daily: 02:30 UTC — batch before the deploy safety net
+    - cron: '0 * * * *'   # hourly: each run covers one cycle every ~3 minutes
   workflow_dispatch:
     inputs:
       cycles:
-        description: 'Number of full L1–L9 cycles'
+        description: 'Cycles to run this hour (one every ~3 min)'
         required: false
-        default: '5'
+        default: '20'
       spec_cycle:
         description: 'Cycle that sources its L2 goal from a SPACE spec artifact'
         required: false
@@ -17,9 +17,19 @@ on:
 permissions:
   contents: write
 
+# GitHub Actions cron has a 5-minute floor, and a 5-min cron would collide
+# with per-run overhead — so the cadence is driven inside one hourly job:
+# each cycle runs back-to-back with a sleep that pads the iteration to a
+# 3-minute rhythm. A new hour cancels the previous run (results are pushed
+# per cycle, so nothing is lost).
+concurrency:
+  group: loops
+  cancel-in-progress: true
+
 jobs:
   run-loops:
     runs-on: ubuntu-latest
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,28 +41,35 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: pip
 
       - name: Install dependencies
-        run: |
-          pip install --quiet numpy networkx psutil pytest
+        run: pip install --quiet numpy networkx psutil
 
-      - name: Run full L1–L9 batch
+      - name: Run cycles on a 3-minute rhythm
         run: |
-          bash infra/loops/run-batch.sh \
-            --cycles "${{ inputs.cycles || '5' }}" \
-            --goal-space-cycle "${{ inputs.spec_cycle || '1' }}"
-
-      - name: Commit loop results to main
-        run: |
+          TOTAL="${{ inputs.cycles || '20' }}"
+          SPEC="${{ inputs.spec_cycle || '1' }}"
           git config user.name "RSIS Test"
           git config user.email "rsis@test.local"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No loop-result changes to commit"
-          else
-            git commit -m "rsis: scheduled loop batch — $(date -u +%Y-%m-%dT%H:%MZ) (from-space cycle ${{ inputs.spec_cycle || '1' }})"
-            git push origin main
-          fi
+          for i in $(seq 1 "$TOTAL"); do
+            ITER_START=$(date +%s)
+            echo ""
+            echo "── Cycle $i/$TOTAL — $(date -u +%H:%M:%SZ) ─────────────────"
+            if ! bash infra/loops/run-batch.sh --cycles 1 --goal-space-cycle "$SPEC"; then
+              echo "  ⚠ cycle $i finished with failures — continuing"
+            fi
+            git add -A
+            if ! git diff --cached --quiet; then
+              git commit -m "rsis: cadence cycle $i — $(date -u +%Y-%m-%dT%H:%MZ)"
+              git push origin main || echo "  ⚠ push failed — next cycle will carry it"
+            fi
+            if [ "$i" -lt "$TOTAL" ]; then
+              ELAPSED=$(( $(date +%s) - ITER_START ))
+              SLEEP=$(( 180 - ELAPSED ))
+              if [ "$SLEEP" -gt 0 ]; then sleep "$SLEEP"; fi
+            fi
+          done
 
       - name: Auto-sync main → gh-pages
         env:
