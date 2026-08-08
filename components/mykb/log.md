@@ -5,6 +5,18 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-08 (RSIS3 L3 cycle 23 — memory consolidation)
+- L3 cycle 23 wrote OKF synthesis `rsis3-l3-cycle-23-cross-session-memory-consolidation-2026-08-08.md` (2 insight(s), 1 strategy(ies), 237 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-08 (RSIS3 L3 cycle 22 — memory consolidation)
+- L3 cycle 22 wrote OKF synthesis `rsis3-l3-cycle-22-cross-session-memory-consolidation-2026-08-08.md` (2 insight(s), 1 strategy(ies), 237 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-08 (RSIS3 L3 cycle 21 — memory consolidation)
+- L3 cycle 21 wrote OKF synthesis `rsis3-l3-cycle-21-cross-session-memory-consolidation-2026-08-08.md` (2 insight(s), 1 strategy(ies), 237 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
 ## 2026-08-07 (RSIS3 pass 14 — self-assessment routine)
 - Added `python -m rsis self-assess`: deterministic KB health scan (links,
   orphans, stubs, content depth with weighted score), gap analysis against
@@ -974,3 +986,14 @@ title: "Bundle Log"
   120 passed, check-practices OK, gen-static-data --check OK; version
   bumped to 0.4.3 (CHANGELOG entry added).
 - Synthesis: `rsis3-pass-13-deterministic-evaluator-gate-2026-08-07.md`.
+
+## 2026-08-08 (RSIS3 rebirth #1 + first real L1–L9 cycles)
+- Re-implemented the rebirth mechanic for the file-based workspace:
+  `components/rsis3/rack/rebirth.py` archives pulses + `.rsis` state to
+  `rack/lifecycles/rebirth-001-<ts>/`, resets `rack/pulses/` (next pulse
+  001) and writes `rack/rebirth_manifesto.json` (analytical-only mode).
+- Ran the first real cycles on the fresh start: `launch --cycles 3`
+  (24 executions, 0 failed); cycle 1 L2 goal sourced from SPACE spec.
+  L3 consolidated cycle 23; L5 evolved generation 41; L4/L6–L9 no-ops at
+  bounds. check-practices OK.
+- Synthesis: `rsis3-rebirth-1-first-cycles-2026-08-08.md`.
