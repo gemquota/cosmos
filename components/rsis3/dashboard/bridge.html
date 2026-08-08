@@ -38,6 +38,22 @@
     </div>
   </div>
 
+  <!-- Live streaming toolbar (Phase 1) -->
+  <div class="flex items-center gap-2 mb-2">
+    <button id="live-btn" onclick="toggleLive()"
+      class="text-[10px] sm:text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 text-slate-300 hover:border-indigo-500/50 hover:text-indigo-300 transition">
+      🟢 <span id="live-label">Show live</span>
+    </button>
+    <span id="st-live" class="text-[9px] font-bold px-2 py-0.5 rounded-full border uppercase bg-slate-600/20 text-slate-400 border-slate-500/30">idle</span>
+    <span id="live-hint" class="text-[10px] text-slate-500">telemetry → events → cards</span>
+  </div>
+
+  <!-- Live panel (collapsible) -->
+  <div id="live" class="hide mb-2 flex flex-col gap-2">
+    <div id="live-cycles" class="flex gap-2 overflow-x-auto pb-1"></div>
+    <div id="live-feed" class="bg-slate-900/50 border border-slate-800 rounded-xl overflow-y-auto text-[10px] font-mono leading-relaxed" style="max-height:24vh"></div>
+  </div>
+
   <!-- Drives strip -->
   <div id="drives" class="mb-3"></div>
 
@@ -154,6 +170,122 @@ function autosize(){
   t.style.height = Math.min(140, t.scrollHeight) + 'px';
 }
 
+// ── Phase 1 live state streaming (SSE) ────────────────────────────────
+var liveOpen = false;
+var cycleIds = {};
+var FEED_MAX = 80;
+
+function fmtDur(ms){
+  if(ms == null) return '—';
+  if(ms < 1000) return ms + 'ms';
+  return (ms/1000).toFixed(1) + 's';
+}
+function fmtTime(iso){
+  var d = iso ? new Date(iso) : new Date();
+  return d.toTimeString().slice(0,8);
+}
+function setLiveDot(state){
+  var b = document.getElementById('st-live');
+  b.textContent = state === 'live' ? '● live' : state === 'connecting' ? '… conn' : 'offline';
+  b.className = 'text-[9px] font-bold px-2 py-0.5 rounded-full border uppercase ' +
+    (state === 'live' ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/25'
+     : state === 'connecting' ? 'bg-amber-500/15 text-amber-400 border-amber-500/25'
+     : 'bg-rose-500/15 text-rose-400 border-rose-500/25');
+}
+function toggleLive(){
+  var panel = document.getElementById('live');
+  liveOpen = !liveOpen;
+  panel.classList.toggle('hide', !liveOpen);
+  document.getElementById('live-label').textContent = liveOpen ? 'Hide live' : 'Show live';
+  document.getElementById('live-hint').textContent = liveOpen ? 'streaming ' + (liveOpen ? '●' : '') : 'telemetry → events → cards';
+}
+
+function cycleCard(c){
+  var kg = c.kg ? c.kg.nodes + 'n/' + c.kg.edges + 'e' : 'KG —';
+  var strat = c.strategies ? 'gen ' + c.strategies.generation + ' · fit ' + (c.strategies.best_fitness != null ? c.strategies.best_fitness : '—') : 'strat —';
+  var l3 = c.l3 ? 'L3 #' + (c.cycle != null ? c.cycle : '?') + ' · ' + (c.l3.insights != null ? c.l3.insights + ' ins' : '') + (c.l3.strategies != null ? ' / ' + c.l3.strategies + ' strat' : '') : 'L3 —';
+  var row = el('div', 'shrink-0 w-52 rounded-xl bg-slate-800/60 border border-slate-700/50 p-2 space-y-0.5');
+  row.innerHTML =
+    '<div class="flex items-center justify-between text-[10px] font-bold">' +
+      '<span class="text-indigo-300">#' + esc(c.id || c.cycle || '?') + '</span>' +
+      '<span class="text-[9px] text-slate-400">' + fmtTime(c.ts) + '</span></div>' +
+    '<div class="text-[9px] text-slate-300">' + esc(l3) + '</div>' +
+    '<div class="text-[9px] text-slate-400">' + esc(kg) + '</div>' +
+    '<div class="text-[9px] text-slate-400">' + esc(strat) + '</div>' +
+    '<div class="flex items-center justify-between text-[9px] text-slate-500">' +
+      '<span>' + fmtDur(c.duration_ms) + ' · rc ' + (c.rc != null ? c.rc : '—') + '</span>' +
+      '<span class="text-emerald-400">●</span></div>';
+  return row;
+}
+function addCycle(c){
+  if(!c || cycleIds[c.id]) return;
+  cycleIds[c.id] = true;
+  var box = document.getElementById('live-cycles');
+  box.insertBefore(cycleCard(c), box.firstChild);
+  while(box.children.length > 8) box.removeChild(box.lastChild);
+}
+function addActivity(rec){
+  if(!rec) return;
+  var feed = document.getElementById('live-feed');
+  var d = rec.data || {};
+  var what = rec.event.replace(/^telemetry\./, '');
+  var extra = '';
+  if(rec.event === 'cycle.complete') extra = ' · L3 #' + (d.cycle != null ? d.cycle : '?') + ' · KG ' + (d.kg ? d.kg.nodes + 'n' : '—');
+  else if(rec.event.indexOf('state.') === 0){
+    var k = rec.event.slice(6);
+    if(k === 'kg') extra = ' · ' + d.nodes + 'n/' + d.edges + 'e';
+    else if(k === 'strategies') extra = ' · gen ' + d.generation + ' · fit ' + d.best_fitness;
+    else if(k === 'goals') extra = ' · ' + (d.status || '');
+    else if(k === 'pulses') extra = ' · #' + d.pulse + ' ' + (d.type || '');
+  } else if(rec.event.indexOf('telemetry.') === 0){
+    if(what === 'l3_complete') extra = ' · cycle ' + d.cycle + ' · ' + (d.insights != null ? d.insights + ' ins' : '');
+    else if(what === 'l5_complete') extra = ' · gen ' + d.generation + ' · fit ' + d.avg_fitness;
+    else if(what === 'sa_complete') extra = ' · health ' + d.health_score;
+    else if(what === 'l2_complete') extra = ' · success=' + d.success;
+    else if(what === 'l1_complete') extra = ' · success=' + d.success;
+  }
+  var line = el('div', 'px-2 py-0.5 border-b border-slate-800/50 flex gap-2');
+  line.innerHTML = '<span class="text-slate-600 shrink-0">' + fmtTime(rec.ts) + '</span>' +
+    '<span class="' + (rec.event.indexOf('cycle.complete') === 0 ? 'text-emerald-400' : rec.event.indexOf('state.') === 0 ? 'text-amber-300' : 'text-indigo-300') + ' shrink-0">' + esc(what) + '</span>' +
+    '<span class="text-slate-400 truncate">' + esc(extra || '') + '</span>';
+  feed.insertBefore(line, feed.firstChild);
+  while(feed.children.length > FEED_MAX) feed.removeChild(feed.lastChild);
+}
+function openSSE(){
+  if(!window.EventSource || !API) return;
+  var es = new EventSource(API + '/api/events');
+  setLiveDot('connecting');
+  es.onopen = function(){ setLiveDot('live'); };
+  es.onerror = function(){ setLiveDot('offline'); };
+  es.onmessage = function(m){
+    try { addActivity(JSON.parse(m.data)); } catch(e){}
+  };
+  ['cycle.complete','state.goals','state.strategies','state.kg','state.pulses'].forEach(function(evt){
+    es.addEventListener(evt, function(m){
+      var rec;
+      try { rec = JSON.parse(m.data); } catch(e){ return; }
+      addActivity(rec);
+      if(evt === 'cycle.complete') addCycle(rec.data);
+      if(evt === 'state.kg'){
+        var d = rec.data || {};
+        document.getElementById('st-kg').textContent = 'KG ' + d.nodes + 'n/' + d.edges + 'e';
+      }
+      if(evt === 'state.strategies'){
+        var d2 = rec.data || {};
+        document.getElementById('st-strat').textContent = 'gen ' + d2.generation + ' · fit ' + (d2.best_fitness != null ? d2.best_fitness : '—');
+      }
+    });
+  });
+}
+async function loadCycles(){
+  try{
+    var r = await fetch(API + '/api/cycles?limit=12');
+    if(!r.ok) return;
+    var d = await r.json();
+    (d.cycles || []).forEach(addCycle);
+  }catch(e){}
+}
+
 async function loadCosmos(){
   try{
     var r = await fetch(API + '/api/cosmos');
@@ -238,6 +370,8 @@ document.getElementById('file').addEventListener('change', function(){
 document.getElementById('inp').addEventListener('keydown', function(e){
   if(e.key==='Enter' && !e.shiftKey){e.preventDefault(); send();}
 });
+loadCycles();
+openSSE();
 loadCosmos().then(function(c){
   if(c && c.llm !== 'connected'){
     addMsg('assistant', 'Bridge is in **offline-fallback** mode (no `GEMINI_API_KEY` on the server). Replies are deterministic cosmos envelopes — start the server with a key for real LLM answers.');
