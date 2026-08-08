@@ -31243,6 +31243,17 @@
   ]
  },
  {
+  "path": "wiki/assessments/self-assessment-2026-08-08-41.md",
+  "type": "assessment",
+  "title": "Self-Assessment 2026-08-08",
+  "tags": [
+   "self-assessment",
+   "health",
+   "gaps",
+   "trends"
+  ]
+ },
+ {
   "path": "wiki/assessments/self-assessment-2026-08-08-5.md",
   "type": "assessment",
   "title": "Self-Assessment 2026-08-08",
@@ -69406,6 +69417,15 @@
   ]
  },
  {
+  "path": "wiki/reflections/reflection-2026-08-08-41.md",
+  "type": "reflection",
+  "title": "Reflection 2026-08-08",
+  "tags": [
+   "reflection",
+   "self-assessment"
+  ]
+ },
+ {
   "path": "wiki/reflections/reflection-2026-08-08-5.md",
   "type": "reflection",
   "title": "Reflection 2026-08-08",
@@ -77593,6 +77613,18 @@
   "path": "wiki/syntheses/rsis3-l3-cycle-83-cross-session-memory-consolidation-2026-08-08.md",
   "type": "synthesis",
   "title": "RSIS3 L3 cycle 83 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-84-cross-session-memory-consolidation-2026-08-08.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 84 \u2014 cross-session memory consolidation",
   "tags": [
    "rsis3",
    "l3",
