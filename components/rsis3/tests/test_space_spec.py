@@ -60,3 +60,24 @@ def test_missing_file_not_available():
     s = SpaceSpec("/nonexistent/spec.json")
     assert not s.available
     assert s.candidate_goals() == []
+
+
+def test_candidate_goals_series_filter():
+    p = _fixture()
+    d = json.loads(p.read_text())
+    d["artifacts"]["deploy_path"] = {
+        "value": "Automated CI/CD",
+        "source_question_id": "7.1.1",
+        "source_series_id": 7,
+        "confidence": 100,
+    }
+    p.write_text(json.dumps(d))
+    s = SpaceSpec(str(p))
+
+    series1 = s.candidate_goals(limit=10, series_id=1)
+    assert series1 and all("series 1" in g for g in series1)
+
+    series7 = s.candidate_goals(limit=10, series_id=7)
+    assert len(series7) == 1
+    assert "series 7" in series7[0]
+    assert "deploy_path" in series7[0]

@@ -97,10 +97,19 @@ class SpaceSpec:
         a = (self._data.get("answers") or {}).get(question_id) or {}
         return (a.get("open_ended_text") or a.get("multi_choice_text") or "").strip()
 
-    def candidate_goals(self, limit: int = 8) -> list[str]:
-        """Ranked L2 goal strings, each referencing a spec artifact."""
+    def candidate_goals(self, limit: int = 8,
+                        series_id: Optional[int] = None) -> list[str]:
+        """Ranked L2 goal strings, each referencing a spec artifact.
+
+        ``series_id`` restricts the pool to one SPACE series (1..7) so goal
+        sourcing can rotate across the whole 326-probe framework instead of
+        always taking the first artifact of the first series.
+        """
+        artifacts = self.artifacts()
+        if series_id is not None:
+            artifacts = [a for a in artifacts if a["series_id"] == series_id]
         goals = []
-        for a in self.artifacts():
+        for a in artifacts:
             value = a["value"]
             if len(value) > 300:
                 value = value[:297] + "..."

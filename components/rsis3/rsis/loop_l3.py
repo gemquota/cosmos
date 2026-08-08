@@ -372,11 +372,10 @@ class L3EvolutionLoop:
                 similarity=c["similarity"],
                 improvement_ids=c["improvement_ids"],
             )
-            for imp_id in c["improvement_ids"]:
-                self.memory.kg.add_edge(
-                    f"redundancy-{self._cycle_count}-{pruned}",
-                    imp_id, rel="flags_as_redundant",
-                )
+            self.memory.kg.add_edges(
+                f"redundancy-{self._cycle_count}-{pruned}",
+                "flags_as_redundant", c["improvement_ids"],
+            )
             pruned += 1
 
         if pruned > 0:

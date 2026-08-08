@@ -37,13 +37,19 @@ def package_root() -> Path:
 
 
 def plan_batch(cycles: int, goal_space_cycle: int = 1) -> list[tuple[str, str]]:
-    """Return the ``(loop, goal)`` plan for a full L1–L9 batch."""
+    """Return the ``(loop, goal)`` plan for a full L1–L9 batch.
+
+    Every cycle's ``run`` sources its L2 goal from a SPACE spec artifact
+    (``from-space``), so a batch covers the whole 326-probe framework via
+    series rotation (1..7). ``goal_space_cycle`` is kept for backward
+    compatibility but every cycle is now space-sourced.
+    """
     cycles = max(1, int(cycles))
-    spec_cycle = max(1, int(goal_space_cycle))
+    max(1, int(goal_space_cycle))  # kept for CLI/API compatibility
     plan: list[tuple[str, str]] = []
     for c in range(1, cycles + 1):
         for loop in LOOP_ORDER:
-            if loop == "run" and c == spec_cycle:
+            if loop == "run":
                 plan.append((loop, FROM_SPACE_GOAL))
             else:
                 plan.append((loop, DEFAULT_GOAL))
@@ -85,7 +91,13 @@ def run_batch(cycles: int, goal_space_cycle: int = 1,
 
     per_loop: dict[str, int] = {}
     failed: list[tuple[str, str]] = []
+    space_runs = 0
     for loop, goal in plan:
+        if loop == "run" and goal == FROM_SPACE_GOAL:
+            space_runs += 1
+            # Rotate goal sourcing across SPACE series 1..7 so a batch
+            # covers the whole 326-probe framework, not just series 1.
+            os.environ["RSIS_SPACE_SERIES"] = str((space_runs - 1) % 7 + 1)
         code = run(loop, goal, disk)
         per_loop[loop] = per_loop.get(loop, 0) + (0 if code == 0 else 1)
         if code != 0:
