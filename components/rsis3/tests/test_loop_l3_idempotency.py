@@ -77,3 +77,27 @@ def test_save_collapses_identical_parallel_edges(tmp_path, monkeypatch):
 
     reloaded = MemoryManager(str(tmp_path))
     assert reloaded.kg.edge_count == 1
+
+
+def test_save_prunes_stale_redundancy_flag_edges(tmp_path, monkeypatch):
+    monkeypatch.setattr(CONFIG.memory, "knowledge_graph_path",
+                        str(tmp_path / "kg.json"))
+    monkeypatch.setattr(CONFIG.memory, "vector_store_path",
+                        str(tmp_path / "vectors"))
+    memory = MemoryManager(str(tmp_path))
+    for i in range(3):
+        memory.kg.add_node(f"imp-{i}", "improvement", description=f"x {i}")
+    memory.kg.add_node(
+        "redundancy-1-0", "insight",
+        description="dup", file="a.py", similarity=0.9,
+        improvement_ids=["imp-0", "imp-1"],
+    )
+    memory.kg.add_edge("redundancy-1-0", "imp-0", rel="flags_as_redundant")
+    memory.kg.add_edge("redundancy-1-0", "imp-1", rel="flags_as_redundant")
+    memory.kg.add_edge("redundancy-1-0", "imp-2", rel="flags_as_redundant")  # stale
+    memory.kg.save()
+    reloaded = MemoryManager(str(tmp_path))
+    flag_edges = [e for e in reloaded.kg.get_edges()
+                  if e["rel"] == "flags_as_redundant"]
+    assert len(flag_edges) == 2
+    assert {e["target"] for e in flag_edges} == {"imp-0", "imp-1"}
