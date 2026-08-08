@@ -49,8 +49,10 @@ for c in $(seq 1 "$CYCLES"); do
   echo "── Cycle $c/$CYCLES ───────────────────────────────"
   for loop in "${LOOPS[@]}"; do
     if [ "$loop" = "run" ] && [ "$c" = "$SPEC_CYCLE" ]; then
-      echo "  ▶ run --goal from-space  (capstone: SPACE spec → L2 goal)"
-      python3 -m rsis run --goal from-space || { echo "  ✗ run failed"; FAIL=1; }
+      SPEC_SERIES="${RSIS_SPACE_SERIES:-$(( (c - 1) % 7 + 1 ))}"
+      echo "  ▶ run --goal from-space  (SPACE series $SPEC_SERIES → L2 goal)"
+      RSIS_SPACE_SERIES="$SPEC_SERIES" python3 -m rsis run --goal from-space \
+        || { echo "  ✗ run failed"; FAIL=1; }
     else
       echo "  ▶ $loop"
       python3 -m rsis "$loop" || { echo "  ✗ $loop failed"; FAIL=1; }

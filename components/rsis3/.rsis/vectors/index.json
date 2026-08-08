@@ -739,6 +739,78 @@
         },
         "goal": "Multitiered goal T3: modern responsive web interface with bridge to LLM and Cosmos framework"
       }
+    },
+    {
+      "id": 41,
+      "text": "applied: Harden KG load against malformed nodes/edges; fix in-edge traversal",
+      "metadata": {
+        "node_id": "improvement-278",
+        "files": [
+          "rsis/memory.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "SPACE series2-edge-cases: Harden KG load against malformed nodes/edges; fix in-edge traversal"
+      }
+    },
+    {
+      "id": 42,
+      "text": "applied: Validate edge relationship types against the known vocabulary",
+      "metadata": {
+        "node_id": "improvement-279",
+        "files": [
+          "rsis/memory.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "SPACE series3-association-types: Validate edge relationship types against the known vocabulary"
+      }
+    },
+    {
+      "id": 43,
+      "text": "applied: Persist the knowledge graph atomically (tmp + replace)",
+      "metadata": {
+        "node_id": "improvement-280",
+        "files": [
+          "rsis/memory.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "SPACE series5-availability: Persist the knowledge graph atomically (tmp + replace)"
+      }
+    },
+    {
+      "id": 44,
+      "text": "applied: Batch same-rel edge writes into a single persistence op",
+      "metadata": {
+        "node_id": "improvement-281",
+        "files": [
+          "rsis/memory.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "SPACE series6-communication: Batch same-rel edge writes into a single persistence op"
+      }
     }
   ]
 }

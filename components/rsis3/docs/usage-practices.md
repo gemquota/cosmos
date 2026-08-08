@@ -125,3 +125,16 @@ truthful.
 5. Memory is hierarchical (git → KG → vectors).
 6. Risk is accepted — no artificial scope limits, only practical resource
    bounds.
+
+## 10. SPACE Series Rotation (goal sourcing)
+
+- Every cycle's L2 `run` sources its goal from a SPACE spec artifact
+  (`--goal from-space`). `candidate_goals(series_id=N)` filters the
+  326-probe framework to one series (1..7).
+- `RSIS_SPACE_SERIES` selects the series for a run; `launch` and
+  `run-batch.sh` rotate series per cycle (`(i-1) % 7 + 1`) so a batch
+  covers all seven series — not just series 1's first artifact.
+- The resolved goal embeds `series <N>` and `question <Q>`, so telemetry
+  (`l2_start.goal`) traces every run to its spec artifact (pass-9 chain).
+- Keep per-series improvements gated by the immutable evaluator and
+  recorded via `record_improvement` so L3 can consolidate them per series.
