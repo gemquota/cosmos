@@ -1159,3 +1159,9 @@ title: "Bundle Log"
   162 tests pass, evaluator PASS 1.0×5. Batch: L3 cycle 42 (0 redundancies,
   ~11s), L5 gen 60 best 0.064, self-assess 0.835, check-practices OK.
 - Synthesis: `rsis3-llm-cycle-1-rebirth-2-kg-bound-2026-08-08.md`.
+- LLM 20-cycle run (rebirth #2): 20 full L1–L9 cycles, L3 #43–62, every
+  cycle rc=0 and committed individually (c43927ea…af799b59). KG flat at
+  1847 edges (idempotency fix holds), then stale flag edges pruned on save
+  → 475 edges total. Fitness plateau 0.064 = converged (no L2 applies).
+  Self-assess 0.834, check-practices OK, 163 tests green.
+- Synthesis: `rsis3-llm-20-cycle-run-rebirth-2-2026-08-08.md`.
