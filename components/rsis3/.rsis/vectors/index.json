@@ -721,6 +721,24 @@
         },
         "goal": "Keep the knowledge graph bounded and self-consistent across cycles"
       }
+    },
+    {
+      "id": 40,
+      "text": "applied: Add COSMOS Bridge: dense context message envelope + server-side LLM proxy with drive-stack system prompt",
+      "metadata": {
+        "node_id": "improvement-277",
+        "files": [
+          "components/rsis3/rack/bridge/server.mjs"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Multitiered goal T3: modern responsive web interface with bridge to LLM and Cosmos framework"
+      }
     }
   ]
 }
