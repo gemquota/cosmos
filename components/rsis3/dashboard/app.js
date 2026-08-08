@@ -153,7 +153,29 @@ function renderLoops(d){
   grid.innerHTML = html;
 }
 
-function renderAll(){ly();rg();rp();rc();rcb();bk();pf();sw('overview');}
+function renderAll(){renderDrives();ly();rg();rp();rc();rcb();bk();pf();sw('overview');}
+
+// Active multitiered goal stack (Output > Communicate > Wrap > Bridge)
+function renderDrives(){
+  var url = (typeof GOALS_FILE !== 'undefined' ? GOALS_FILE : '../rack/goals_stack.json');
+  fetch(url).then(function(r){ return r.ok ? r.json() : null; }).then(function(g){
+    if (!g || !g.tiers || !g.tiers.length) return;
+    var el = document.getElementById('drives');
+    if (!el) return;
+    el.innerHTML =
+      '<div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-3 sm:p-4 mb-4">' +
+      '<div class="flex items-center justify-between gap-2 mb-2">' +
+      '<div class="text-xs sm:text-sm font-semibold text-slate-300">🧭 Active Drives</div>' +
+      '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-400 border border-indigo-500/25 uppercase">' + esc(g.status || 'active') + '</span>' +
+      '</div>' +
+      '<p class="text-[11px] text-slate-400 mb-2">' + esc(g.title || '') + '</p>' +
+      '<div class="flex flex-wrap gap-1.5">' +
+      g.tiers.map(function(t){
+        return '<span class="text-[10px] sm:text-[11px] px-2 py-1 rounded-lg bg-slate-700/40 text-slate-300 border border-slate-600/40" title="' + esc(t.goal || '') + '">T' + t.tier + ' ' + esc(t.name) + '</span>';
+      }).join('') +
+      '</div></div>';
+  }).catch(function(){});
+}
 
 var _chartsInited = false;
 function sw(n){
