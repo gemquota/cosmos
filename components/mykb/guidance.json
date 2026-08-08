@@ -1,7 +1,7 @@
 {
- "built": "2026-08-08T11:22:57+00:00",
+ "built": "2026-08-07T06:03:16+00:00",
  "total": {
-  "pages": 5377,
+  "pages": 5306,
   "stubs": 1494,
   "stub_pct": 28
  },
@@ -148,10 +148,10 @@
   },
   {
    "area": "syntheses",
-   "pages": 115,
+   "pages": 86,
    "stubs": 17,
-   "stub_pct": 15,
-   "avg_words": 228
+   "stub_pct": 20,
+   "avg_words": 266
   },
   {
    "area": "decisions",
@@ -259,13 +259,6 @@
    "avg_words": 303
   },
   {
-   "area": "assessments",
-   "pages": 21,
-   "stubs": 0,
-   "stub_pct": 0,
-   "avg_words": 68
-  },
-  {
    "area": "development",
    "pages": 48,
    "stubs": 0,
@@ -316,10 +309,10 @@
   },
   {
    "area": "reflections",
-   "pages": 22,
+   "pages": 1,
    "stubs": 0,
    "stub_pct": 0,
-   "avg_words": 56
+   "avg_words": 264
   },
   {
    "area": "sources",
@@ -404,7 +397,7 @@
  "wanted_links": [],
  "queue": null,
  "live": {
-  "generated": "2026-08-08T11:22:58+00:00",
+  "generated": "2026-08-07T06:03:17+00:00",
   "loops": [
    {
     "id": "L0",
@@ -420,8 +413,8 @@
     "id": "L1",
     "name": "Execution",
     "status": "implemented",
-    "runs": 61,
-    "last_run": "2026-08-08T11:13:03.828627+00:00",
+    "runs": 36,
+    "last_run": "2026-08-07T05:17:04.800413+00:00",
     "cycle": 0,
     "target": "Pure consumer of tuned params (L4→L1)",
     "params": []
@@ -430,8 +423,8 @@
     "id": "L2",
     "name": "Improvement",
     "status": "implemented",
-    "runs": 61,
-    "last_run": "2026-08-08T11:13:03.827119+00:00",
+    "runs": 36,
+    "last_run": "2026-08-07T05:17:04.732410+00:00",
     "cycle": 0,
     "target": "Pure consumer of tuned params (L5→L2)",
     "params": []
@@ -440,8 +433,8 @@
     "id": "L3",
     "name": "Evolution",
     "status": "implemented",
-    "runs": 58,
-    "last_run": "2026-08-08T11:13:11.899434+00:00",
+    "runs": 34,
+    "last_run": "2026-08-07T05:17:35.910928+00:00",
     "cycle": 0,
     "target": "Core stack — consolidates memory, derives strategies",
     "params": []
@@ -450,8 +443,8 @@
     "id": "L4",
     "name": "Optimizer",
     "status": "implemented",
-    "runs": 58,
-    "last_run": "2026-08-08T11:13:22.548006+00:00",
+    "runs": 34,
+    "last_run": "2026-08-07T05:17:45.398925+00:00",
     "cycle": 17,
     "target": "Tunes L1 execution params",
     "params": [
@@ -469,8 +462,8 @@
     "id": "L5",
     "name": "Evolution",
     "status": "implemented",
-    "runs": 62,
-    "last_run": "2026-08-08T11:13:33.694844+00:00",
+    "runs": 38,
+    "last_run": "2026-08-07T05:17:55.810585+00:00",
     "cycle": 0,
     "target": "Tunes L2 improvement params (population, mutation)",
     "params": [
@@ -492,14 +485,14 @@
     "id": "L6",
     "name": "Identity",
     "status": "implemented",
-    "runs": 59,
-    "last_run": "2026-08-08T11:13:44.168341+00:00",
-    "cycle": 25,
+    "runs": 35,
+    "last_run": "2026-08-07T05:18:06.141589+00:00",
+    "cycle": 23,
     "target": "Tunes L3 evolution params (plateau timeout)",
     "params": [
      {
       "key": "l3.plateau_timeout_s",
-      "value": 3600
+      "value": 10800.0
      }
     ]
    },
@@ -507,8 +500,8 @@
     "id": "L7",
     "name": "Meta-Cog",
     "status": "implemented",
-    "runs": 57,
-    "last_run": "2026-08-08T11:13:54.904905+00:00",
+    "runs": 33,
+    "last_run": "2026-08-07T05:18:16.440059+00:00",
     "cycle": 13,
     "target": "Tunes L4 optimizer params (window / thresholds)",
     "params": [
@@ -534,8 +527,8 @@
     "id": "L8",
     "name": "Meta-Meta",
     "status": "implemented",
-    "runs": 57,
-    "last_run": "2026-08-08T11:14:05.682764+00:00",
+    "runs": 33,
+    "last_run": "2026-08-07T05:18:26.779846+00:00",
     "cycle": 10,
     "target": "Tunes L5 strategy params (population / mutation)",
     "params": [
@@ -553,8 +546,8 @@
     "id": "L9",
     "name": "MMM",
     "status": "implemented",
-    "runs": 57,
-    "last_run": "2026-08-08T11:14:16.466079+00:00",
+    "runs": 33,
+    "last_run": "2026-08-07T05:18:37.125779+00:00",
     "cycle": 12,
     "target": "Tunes L6 identity params (the recursion guard)",
     "params": [
@@ -570,47 +563,55 @@
    }
   ],
   "telemetry": {
-   "files": 512,
-   "events": 1389,
+   "files": 268,
+   "events": 845,
    "loops": {
-    "L6": 60,
-    "L5": 63,
-    "L4": 59,
-    "L7": 58,
-    "L8": 58,
-    "L3": 59,
-    "L2": 62,
-    "L1": 62,
-    "L9": 58
+    "L5": 38,
+    "L4": 34,
+    "L7": 33,
+    "L8": 33,
+    "L3": 34,
+    "L2": 37,
+    "L1": 37,
+    "L9": 33,
+    "L6": 35
    },
    "spec_traces": [
     {
      "goal": "Implement the abstraction_level spec artifact: Mixed — conceptual frameworks illustrated with examples (SPACE spec artifact abstraction_level, series 1, questio",
-     "timestamp": "2026-08-08T11:21:23.229526+00:00"
+     "timestamp": "2026-08-07T05:10:53.672264+00:00"
     },
     {
      "goal": "Implement the abstraction_level spec artifact: Mixed — conceptual frameworks illustrated with examples (SPACE spec artifact abstraction_level, series 1, questio",
-     "timestamp": "2026-08-08T11:13:00.976455+00:00"
+     "timestamp": "2026-08-07T04:46:36.218711+00:00"
     },
     {
      "goal": "Implement the abstraction_level spec artifact: Mixed — conceptual frameworks illustrated with examples (SPACE spec artifact abstraction_level, series 1, questio",
-     "timestamp": "2026-08-08T11:11:33.042115+00:00"
-    },
-    {
-     "goal": "Implement the abstraction_level spec artifact: Mixed — conceptual frameworks illustrated with examples (SPACE spec artifact abstraction_level, series 1, questio",
-     "timestamp": "2026-08-08T10:22:54.984498+00:00"
-    },
-    {
-     "goal": "Implement the abstraction_level spec artifact: Mixed — conceptual frameworks illustrated with examples (SPACE spec artifact abstraction_level, series 1, questio",
-     "timestamp": "2026-08-08T10:17:27.755176+00:00"
+     "timestamp": "2026-08-06T19:36:00.255497+00:00"
     }
    ]
   },
   "memory": {
    "syntheses": [
     {
-     "slug": "rsis3-l3-cycle-45-cross-session-memory-consolidation-2026-08-08",
-     "title": "RSIS3 L3 cycle 45 — cross-session memory consolidation",
+     "slug": "rsis3-pass-12-improvement-engine-2026-08-07",
+     "title": "RSIS3 Pass 12 — real improvement engine: L2 codegen, batch launcher, stub detection",
+     "tags": [
+      "rsis3",
+      "passes",
+      "l2",
+      "improvement-loop",
+      "launch",
+      "stub-detector",
+      "rrp",
+      "pulse",
+      "okf"
+     ],
+     "timestamp": "2026-08-07T06:00:00Z"
+    },
+    {
+     "slug": "rsis3-l3-cycle-20-cross-session-memory-consolidation-2026-08-07",
+     "title": "RSIS3 L3 cycle 20 — cross-session memory consolidation",
      "tags": [
       "rsis3",
       "l3",
@@ -618,11 +619,11 @@
       "consolidation",
       "mykb"
      ],
-     "timestamp": "2026-08-08T11:21:33Z"
+     "timestamp": "2026-08-07T05:17:35Z"
     },
     {
-     "slug": "rsis3-l3-cycle-44-cross-session-memory-consolidation-2026-08-08",
-     "title": "RSIS3 L3 cycle 44 — cross-session memory consolidation",
+     "slug": "rsis3-l3-cycle-19-cross-session-memory-consolidation-2026-08-07",
+     "title": "RSIS3 L3 cycle 19 — cross-session memory consolidation",
      "tags": [
       "rsis3",
       "l3",
@@ -630,11 +631,11 @@
       "consolidation",
       "mykb"
      ],
-     "timestamp": "2026-08-08T11:13:11Z"
+     "timestamp": "2026-08-07T05:15:53Z"
     },
     {
-     "slug": "rsis3-l3-cycle-43-cross-session-memory-consolidation-2026-08-08",
-     "title": "RSIS3 L3 cycle 43 — cross-session memory consolidation",
+     "slug": "rsis3-l3-cycle-18-cross-session-memory-consolidation-2026-08-07",
+     "title": "RSIS3 L3 cycle 18 — cross-session memory consolidation",
      "tags": [
       "rsis3",
       "l3",
@@ -642,24 +643,11 @@
       "consolidation",
       "mykb"
      ],
-     "timestamp": "2026-08-08T11:11:44Z"
+     "timestamp": "2026-08-07T05:14:18Z"
     },
     {
-     "slug": "rsis3-llm-cycle-1-rebirth-2-kg-bound-2026-08-08",
-     "title": "RSIS3 LLM cycle 1 — rebirth #2 + bounded knowledge graph",
-     "tags": [
-      "rsis3",
-      "llm-cycle",
-      "rebirth",
-      "knowledge-graph",
-      "l3",
-      "cadence"
-     ],
-     "timestamp": "2026-08-08T11:00:00Z"
-    },
-    {
-     "slug": "rsis3-l3-cycle-42-cross-session-memory-consolidation-2026-08-08",
-     "title": "RSIS3 L3 cycle 42 — cross-session memory consolidation",
+     "slug": "rsis3-l3-cycle-17-cross-session-memory-consolidation-2026-08-07",
+     "title": "RSIS3 L3 cycle 17 — cross-session memory consolidation",
      "tags": [
       "rsis3",
       "l3",
@@ -667,7 +655,7 @@
       "consolidation",
       "mykb"
      ],
-     "timestamp": "2026-08-08T10:57:24Z"
+     "timestamp": "2026-08-07T05:12:43Z"
     }
    ]
   }
