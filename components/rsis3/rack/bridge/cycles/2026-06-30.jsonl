@@ -1,0 +1,1 @@
+{"id":"5fca2072","file":"5fca2072-5a98-41a4-a0e5-7caed55ae403_1782862787.jsonl","ts":"2026-06-30T23:39:42.619846+00:00","cycle":1,"status":"complete","rc":0,"duration_ms":5,"l1_failures":0,"l2_success":null,"l3":{"insights":4,"strategies":1,"redundancies":1,"trends":0},"l5":null,"sa":null,"kg":{"nodes":282,"edges":475},"strategies":{"generation":90,"best_fitness":0.244}}

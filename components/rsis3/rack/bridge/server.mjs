@@ -6,6 +6,9 @@
  *   GET  /api/cosmos  — dense cosmos context envelope (pulses, KG,
  *                       strategies, syntheses, active drives/goal stack,
  *                       artifact refs)
+ *   GET  /api/events  — SSE live feed: telemetry.* loop events, state.*
+ *                       file changes, cycle.complete summaries (Phase 1)
+ *   GET  /api/cycles  — archived per-cycle summary cards (JSONL archive)
  *   POST /api/chat    — LLM proxy: system prompt = bridge persona + goal
  *                       tiers + cosmos context + attached artifacts
  *                       (text inlined, images sent as inline_data);
@@ -27,6 +30,7 @@ import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as env from './envelope.mjs';
+import * as ev from './events.mjs';
 
 const PORT = Number(process.env.RSIS_BRIDGE_PORT || 8787);
 const MODEL = process.env.RSIS_BRIDGE_MODEL || 'gemini-2.5-flash';
@@ -39,6 +43,7 @@ const DASH = path.join(ROOT, 'dashboard');
 const PULSES = path.join(ROOT, 'rack', 'pulses');
 const RSIS_STATE = path.join(ROOT, '.rsis');
 const MYKB = path.resolve(ROOT, '..', 'mykb');
+const CYCLES_DIR = path.join(ROOT, 'rack', 'bridge', 'cycles');
 
 const json = (s) => { try { return JSON.parse(s); } catch { return null; } };
 const read = async (p, fb = null) => {
@@ -82,6 +87,23 @@ async function cosmosSnapshot() {
     syntheses,
     artifacts,
   };
+}
+
+/** Enrich a derived telemetry summary with live KG + strategy state, then archive it. */
+async function handleCycleComplete(summary) {
+  const [kg, strategies] = await Promise.all([
+    read(path.join(RSIS_STATE, 'knowledge_graph.json'), { nodes: [], edges: [] }),
+    read(path.join(RSIS_STATE, 'strategies.json'), {}),
+  ]);
+  const pop = strategies.population || [];
+  const best = pop.reduce((b, s) => (s.fitness > (b?.fitness ?? -1) ? s : b), null);
+  summary.kg = { nodes: (kg.nodes || []).length, edges: (kg.edges || []).length };
+  summary.strategies = {
+    generation: strategies.generation || 0,
+    best_fitness: best?.fitness ?? null,
+  };
+  await ev.appendCycle(CYCLES_DIR, summary);
+  return summary;
 }
 
 /**
@@ -280,6 +302,13 @@ const server = createServer(async (req, res) => {
     if (req.method === 'GET' && p === '/api/cosmos') {
       return send(res, 200, await cosmosSnapshot());
     }
+    if (req.method === 'GET' && p === '/api/events') {
+      return hub.addClient(req, res);
+    }
+    if (req.method === 'GET' && p === '/api/cycles') {
+      const limit = Math.min(100, Math.max(1, Number(url.searchParams.get('limit') || 20)));
+      return send(res, 200, { cycles: await ev.recentCycles(CYCLES_DIR, limit) });
+    }
     if (req.method === 'POST' && p === '/api/chat') {
       const chunks = [];
       let size = 0;
@@ -325,7 +354,19 @@ const server = createServer(async (req, res) => {
   }
 });
 
+const hub = new ev.EventHub();
+ev.startStateWatchers({ root: ROOT, hub });
+ev.startTelemetryWatcher({
+  dir: path.join(RSIS_STATE, 'telemetry'),
+  hub,
+  onCycleComplete: (summary) => { handleCycleComplete(summary).catch((e) => console.error('[bridge] cycle enrich failed:', e.message)); },
+});
+void ev.recentCycles(CYCLES_DIR, 1).then((r) => {
+  console.log(`   live streaming: ${r.length} archived cycle(s), watchers on ${ev.POLL_MS}ms`);
+}).catch(() => {});
+
 server.listen(PORT, () => {
   console.log(`🌉 COSMOS Bridge listening on http://localhost:${PORT}`);
   console.log(`   model=${MODEL} llm=${KEY ? 'connected' : 'offline-fallback'} root=${ROOT}`);
+  console.log(`   events: GET /api/events (SSE) · GET /api/cycles`);
 });
