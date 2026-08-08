@@ -647,6 +647,62 @@
         },
         "goal": "Implement in rsis/launch.py - replace stub with production code"
       }
+    },
+    {
+      "id": 36,
+      "text": "rejected: Make L3 redundancy flagging idempotent and bounded; dedupe identical parallel KG edges on load/save",
+      "metadata": {
+        "node_id": "improvement-275",
+        "files": [
+          "rsis/config.py",
+          "rsis/loop_l3.py",
+          "rsis/memory.py"
+        ],
+        "scores": {
+          "correctness": 0.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 0.8
+        },
+        "goal": "Bound L3 redundancy flagging so the knowledge graph stops growing unboundedly"
+      }
+    },
+    {
+      "id": 37,
+      "text": "rejected: Make L3 redundancy flagging idempotent and bounded (skip already-flagged pairs, cap new flags per cycle)",
+      "metadata": {
+        "node_id": "improvement-275",
+        "files": [
+          "rsis/loop_l3.py"
+        ],
+        "scores": {
+          "correctness": 0.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Bound L3 redundancy flagging so the knowledge graph stops growing unboundedly"
+      }
+    },
+    {
+      "id": 38,
+      "text": "applied: Add idempotent, bounded redundancy flagging to L3 (skip already-flagged pairs, cap new flags per cycle)",
+      "metadata": {
+        "node_id": "improvement-275",
+        "files": [
+          "rsis/loop_l3.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "goal": "Bound L3 redundancy flagging so the knowledge graph stops growing unboundedly"
+      }
     }
   ]
 }

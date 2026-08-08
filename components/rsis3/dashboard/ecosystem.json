@@ -1,24 +1,24 @@
 {
- "generated": "2026-08-08T10:28Z",
+ "generated": "2026-08-08T11:00Z",
  "components": {
   "mykb": {
-   "files": 7000,
-   "md": 6955
+   "files": 7004,
+   "md": 6959
   },
   "space": {
    "files": 322
   },
   "rsis3": {
-   "files": 393
+   "files": 881
   }
  },
  "telemetry": {
-  "pulses": 1,
-  "goals": 1,
-  "passed": 1,
+  "pulses": 0,
+  "goals": 0,
+  "passed": 0,
   "failed": 0,
   "held": 0,
-  "total": 1,
-  "improvements": 1
+  "total": 0,
+  "improvements": 0
  }
 }

@@ -5,6 +5,14 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-08 (RSIS3 L3 cycle 43 — memory consolidation)
+- L3 cycle 43 wrote OKF synthesis `rsis3-l3-cycle-43-cross-session-memory-consolidation-2026-08-08.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-08 (RSIS3 L3 cycle 42 — memory consolidation)
+- L3 cycle 42 wrote OKF synthesis `rsis3-l3-cycle-42-cross-session-memory-consolidation-2026-08-08.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
 ## 2026-08-08 (RSIS3 L3 cycle 41 — memory consolidation)
 - L3 cycle 41 wrote OKF synthesis `rsis3-l3-cycle-41-cross-session-memory-consolidation-2026-08-08.md` (2 insight(s), 1 strategy(ies), 237 redundancy candidate(s), 0 trend(s)).
 - Gateway root: `/home/runner/work/cosmos/cosmos/components/mykb`.
@@ -1069,3 +1077,9 @@ title: "Bundle Log"
   L3 consolidated cycle 23; L5 evolved generation 41; L4/L6–L9 no-ops at
   bounds. check-practices OK.
 - Synthesis: `rsis3-rebirth-1-first-cycles-2026-08-08.md`.
+- LLM-driven cycle 1 (rebirth #2): inference engine = live LLM session.
+  Authored + gated fix for unbounded L3 redundancy flagging (skip
+  already-flagged pairs, cap 20/cycle) and KG edge dedup (14770→1847);
+  162 tests pass, evaluator PASS 1.0×5. Batch: L3 cycle 42 (0 redundancies,
+  ~11s), L5 gen 60 best 0.064, self-assess 0.835, check-practices OK.
+- Synthesis: `rsis3-llm-cycle-1-rebirth-2-kg-bound-2026-08-08.md`.
