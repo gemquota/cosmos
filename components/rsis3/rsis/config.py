@@ -73,6 +73,7 @@ class L3Config:
     """Cross-Session Evolution Loop."""
     plateau_sessions: int = 20
     plateau_timeout_s: int = 86400  # 24 h
+    max_redundancy_flags_per_cycle: int = 20  # bound per-cycle KG growth
 
 
 @dataclass

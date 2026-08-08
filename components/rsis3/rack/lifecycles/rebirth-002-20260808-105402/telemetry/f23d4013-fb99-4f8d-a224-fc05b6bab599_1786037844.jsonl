@@ -1,0 +1,2 @@
+{"type": "l3_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T17:37:19.047432+00:00", "cycle": 0}
+{"type": "l3_complete", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T17:37:19.067600+00:00", "cycle": 1, "insights": 3, "strategies": 1, "redundancies": 6, "trends": 0}

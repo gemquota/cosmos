@@ -333,11 +333,32 @@ class L3EvolutionLoop:
 
     # ── Phase 4: Redundancy Refinement ──────────────────────────────
 
+    def _flagged_redundancy_pairs(self) -> set[frozenset]:
+        """Return improvement pairs already flagged by prior cycles."""
+        flagged: set[frozenset] = set()
+        for node in self.memory.kg.query(node_type="insight"):
+            ids = node.get("improvement_ids")
+            if isinstance(ids, list) and len(ids) >= 2:
+                flagged.add(frozenset(ids))
+        return flagged
+
     def _refine_redundancies(self) -> int:
         candidates = self.extrapolator.find_redundancy_candidates(self.memory.kg)
+        # Idempotent + bounded: re-flagging the same improvement pairs on
+        # every cycle added two parallel edges per flag and grew the KG
+        # edge list unboundedly, pushing cycle time past budget. Skip pairs
+        # already flagged by an earlier cycle and cap new flags per cycle.
+        already_flagged = self._flagged_redundancy_pairs()
+        candidates.sort(key=lambda c: c.get("similarity", 0.0), reverse=True)
         pruned = 0
 
         for c in candidates:
+            if pruned >= self.config.max_redundancy_flags_per_cycle:
+                break
+            pair = frozenset(c["improvement_ids"])
+            if pair in already_flagged:
+                continue
+            already_flagged.add(pair)
             logger.info(
                 "Redundancy: %s — similarity=%.2f",
                 c["file"], c["similarity"],

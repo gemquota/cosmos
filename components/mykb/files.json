@@ -30968,6 +30968,17 @@
   ]
  },
  {
+  "path": "wiki/assessments/self-assessment-2026-08-08-19.md",
+  "type": "assessment",
+  "title": "Self-Assessment 2026-08-08",
+  "tags": [
+   "self-assessment",
+   "health",
+   "gaps",
+   "trends"
+  ]
+ },
+ {
   "path": "wiki/assessments/self-assessment-2026-08-08-2.md",
   "type": "assessment",
   "title": "Self-Assessment 2026-08-08",
@@ -68939,6 +68950,15 @@
   ]
  },
  {
+  "path": "wiki/reflections/reflection-2026-08-08-19.md",
+  "type": "reflection",
+  "title": "Reflection 2026-08-08",
+  "tags": [
+   "reflection",
+   "self-assessment"
+  ]
+ },
+ {
   "path": "wiki/reflections/reflection-2026-08-08-2.md",
   "type": "reflection",
   "title": "Reflection 2026-08-08",
@@ -76597,6 +76617,18 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-l3-cycle-42-cross-session-memory-consolidation-2026-08-08.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 42 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-l3-cycle-5-cross-session-memory-consolidation-2026-08-06.md",
   "type": "synthesis",
   "title": "RSIS3 L3 cycle 5 \u2014 cross-session memory consolidation",
@@ -76654,6 +76686,19 @@
    "memory",
    "consolidation",
    "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-llm-cycle-1-rebirth-2-kg-bound-2026-08-08.md",
+  "type": "synthesis",
+  "title": "RSIS3 LLM cycle 1 \u2014 rebirth #2 + bounded knowledge graph",
+  "tags": [
+   "rsis3",
+   "llm-cycle",
+   "rebirth",
+   "knowledge-graph",
+   "l3",
+   "cadence"
   ]
  },
  {
