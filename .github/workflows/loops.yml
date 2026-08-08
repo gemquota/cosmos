@@ -62,8 +62,11 @@ jobs:
             git add -A
             if ! git diff --cached --quiet; then
               git commit -m "rsis: cadence cycle $i — $(date -u +%Y-%m-%dT%H:%MZ)"
-              git push origin main || echo "  ⚠ push failed — next cycle will carry it"
             fi
+            # run-batch.sh commits its own batch results + snapshots, so the
+            # outer loop only commits leftovers; push always so those internal
+            # commits reach origin (cycles otherwise complete but never land).
+            git push origin main || echo "  ⚠ push failed — next cycle will carry it"
             if [ "$i" -lt "$TOTAL" ]; then
               ELAPSED=$(( $(date +%s) - ITER_START ))
               SLEEP=$(( 180 - ELAPSED ))
