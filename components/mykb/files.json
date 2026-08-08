@@ -77471,6 +77471,21 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-t2-envelope-multiphase-roadmap-2026-08-08.md",
+  "type": "synthesis",
+  "title": "T2 Dense Envelope & Multi-Phase Roadmap for the COSMOS Bridge",
+  "tags": [
+   "synthesis",
+   "rsis3",
+   "bridge",
+   "llm",
+   "envelope",
+   "dashboard",
+   "roadmap",
+   "goals"
+  ]
+ },
+ {
   "path": "wiki/syntheses/safety-case-approach.md",
   "type": "synthesis",
   "title": "Safety Case Approach",

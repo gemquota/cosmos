@@ -4,9 +4,12 @@
  *
  * Serves the chat UI (dashboard/bridge.html) and two APIs:
  *   GET  /api/cosmos  — dense cosmos context envelope (pulses, KG,
- *                       strategies, syntheses, active drives/goal stack)
+ *                       strategies, syntheses, active drives/goal stack,
+ *                       artifact refs)
  *   POST /api/chat    — LLM proxy: system prompt = bridge persona + goal
- *                       tiers + cosmos context; reply streamed back as JSON
+ *                       tiers + cosmos context + attached artifacts
+ *                       (text inlined, images sent as inline_data);
+ *                       reply streamed back as JSON
  *
  * The API key lives only here (server-side); the client never sees it.
  * If no key is configured (or the provider is unreachable) the bridge
@@ -20,9 +23,10 @@
  *   GEMINI_API_KEY    (optional; enables real LLM replies)
  */
 import { createServer } from 'node:http';
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import * as env from './envelope.mjs';
 
 const PORT = Number(process.env.RSIS_BRIDGE_PORT || 8787);
 const MODEL = process.env.RSIS_BRIDGE_MODEL || 'gemini-2.5-flash';
@@ -61,6 +65,7 @@ async function cosmosSnapshot() {
   } catch { /* mykb not present — omit */ }
   const pop = strategies.population || [];
   const best = pop.reduce((b, s) => (s.fitness > (b?.fitness ?? -1) ? s : b), null);
+  const artifacts = await env.listArtifactRefs({ root: ROOT, mykb: MYKB });
   return {
     ts: new Date().toISOString(),
     model: MODEL,
@@ -75,7 +80,86 @@ async function cosmosSnapshot() {
     kg: { nodes: (kg.nodes || []).length, edges: (kg.edges || []).length },
     strategies: { generation: strategies.generation || 0, best_fitness: best?.fitness ?? null },
     syntheses,
+    artifacts,
   };
+}
+
+/**
+ * Normalize client-supplied artifacts (dataUrl payloads from the UI, or
+ * server-side refs) into envelope artifact refs. Images are returned
+ * separately as base64 for Gemini inline_data.
+ */
+async function processArtifacts(bodyArtifacts) {
+  const roots = [ROOT, MYKB];
+  const processed = [];
+  const images = [];
+  for (const a of bodyArtifacts || []) {
+    if (!a || typeof a !== 'object') continue;
+    const name = String(a.name || a.ref || a.path || '');
+    // 1. client-inlined payload (chat UI file picker)
+    if (typeof a.dataUrl === 'string' && a.dataUrl.startsWith('data:')) {
+      const comma = a.dataUrl.indexOf(',');
+      const meta = a.dataUrl.slice(5, comma < 0 ? a.dataUrl.length : comma);
+      const data = comma >= 0 ? a.dataUrl.slice(comma + 1) : '';
+      const dm = (/^([^;]+)/.exec(meta) || [])[1] || env.mimeOf(name);
+      const buf = Buffer.from(data, 'base64');
+      if (env.isImage(dm)) {
+        images.push({ name, mime: dm, data });
+        processed.push(env.artifactRef({ name, mime: dm, size: buf.length, sha: env.sha256(buf), status: 'image' }));
+      } else {
+        const preview = buf.subarray(0, 8000).toString('utf8');
+        processed.push(env.artifactRef({ name, mime: dm, size: buf.length, sha: env.sha256(buf), inline: true, preview, status: 'inlined' }));
+      }
+      continue;
+    }
+    // 2. server-side ref (path within ROOT or MYKB)
+    const ref = String(a.ref || a.path || '');
+    const abs = env.resolveRef(ref, roots);
+    if (!abs) {
+      processed.push(env.artifactRef({ ref, name, status: 'denied' }));
+      continue;
+    }
+    const mime = env.mimeOf(ref);
+    if (env.isText(mime)) {
+      const t = await env.inlineText(abs);
+      if (t.ok) {
+        processed.push(env.artifactRef({ ref, name, mime, size: t.size, sha: t.sha, inline: true, preview: t.preview, truncated: t.truncated, status: 'inlined' }));
+      } else {
+        processed.push(env.artifactRef({ ref, name, status: 'missing' }));
+      }
+    } else if (env.isImage(mime)) {
+      const img = await env.readImage(abs);
+      if (img.ok) {
+        images.push({ name, mime, data: img.data });
+        processed.push(env.artifactRef({ ref, name, mime, size: img.size, sha: img.sha, status: 'image' }));
+      } else {
+        processed.push(env.artifactRef({ ref, name, mime, status: img.reason === 'too-large' ? 'too-large' : 'missing' }));
+      }
+    } else {
+      const s = await stat(abs).catch(() => null);
+      processed.push(env.artifactRef({ ref, name, mime, size: s ? s.size : null, status: s ? 'attached' : 'missing' }));
+    }
+  }
+  return { processed, images };
+}
+
+/** Render attached artifacts into the user-turn prompt block. */
+function artifactPrompt(processed) {
+  const lines = ['', '[Attached artifacts — cosmos-envelope/1]'];
+  for (const a of processed) {
+    if (a.status === 'missing' || a.status === 'denied') {
+      lines.push(`- ${a.name || a.ref}: ${a.status}`);
+      continue;
+    }
+    lines.push(`- ${a.name} (${a.mime}, ${a.size ?? '?'} B, sha ${(a.sha || '').slice(0, 12) || 'n/a'}) [${a.status}]`);
+    if (a.preview) {
+      lines.push('  ```');
+      lines.push(a.preview.slice(0, 2500));
+      if (a.truncated) lines.push('  …(truncated)');
+      lines.push('  ```');
+    }
+  }
+  return lines.join('\n');
 }
 
 function driveLines(drives) {
@@ -104,16 +188,17 @@ function systemPrompt(ctx) {
 
 // ── LLM call (Gemini REST, stdlib-only) ─────────────────────────────────
 
-async function callGemini(system, messages) {
+async function callGemini(system, messages, images = []) {
   const contents = [];
-  let first = true;
+  const lastUser = [...messages].reverse().find((m) => m.role === 'user' && m.content);
   for (const m of messages) {
     if (!m || !m.content) continue;
-    if (first && m.role === 'user') {
-      contents.push({ role: 'user', parts: [{ text: m.content }] });
-      first = false;
-    } else if (m.role === 'user' || m.role === 'assistant') {
-      contents.push({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.content }] });
+    if (m.role === 'user' || m.role === 'assistant') {
+      const parts = [{ text: m.content }];
+      if (m === lastUser) {
+        for (const img of images) parts.push({ inline_data: { mime_type: img.mime, data: img.data } });
+      }
+      contents.push({ role: m.role === 'user' ? 'user' : 'model', parts });
     }
   }
   const body = {
@@ -141,7 +226,7 @@ async function callGemini(system, messages) {
   return text.trim();
 }
 
-function fallbackReply(ctx, question) {
+function fallbackReply(ctx, question, processed = []) {
   const drives = ctx.drives;
   const lines = [
     `Bridge offline (no LLM key/model configured) — deterministic cosmos reply:`,
@@ -156,6 +241,10 @@ function fallbackReply(ctx, question) {
   if (ctx.syntheses.length) {
     lines.push('');
     lines.push(`Latest syntheses: ${ctx.syntheses.join(', ')}`);
+  }
+  if (processed.length) {
+    lines.push('');
+    lines.push(`Attached artifacts: ${processed.map((a) => `${a.name} [${a.status}]`).join(', ')}`);
   }
   lines.push('');
   lines.push(`Your question: "${question}" — start the bridge with a configured GEMINI_API_KEY for full LLM answers.`);
@@ -196,27 +285,38 @@ const server = createServer(async (req, res) => {
       let size = 0;
       for await (const c of req) {
         size += c.length;
-        if (size > 1_000_000) { return send(res, 413, { error: 'payload too large' }); }
+        if (size > 6_000_000) { return send(res, 413, { error: 'payload too large' }); }
         chunks.push(c);
       }
       const body = json(Buffer.concat(chunks).toString('utf8')) || {};
       const messages = Array.isArray(body.messages) ? body.messages : [];
       const ctx = await cosmosSnapshot();
+      const { processed, images } = await processArtifacts(body.artifacts);
       const system = body.cosmos === false
         ? 'You are the COSMOS Bridge. Answer directly and concisely.'
         : systemPrompt(ctx);
+      if (processed.length) {
+        const last = [...messages].reverse().find((m) => m.role === 'user');
+        if (last) last.content += artifactPrompt(processed);
+      }
       let reply;
       let llm = ctx.llm;
       try {
         if (!KEY) throw new Error('GEMINI_API_KEY not set');
-        reply = await callGemini(system, messages);
+        reply = await callGemini(system, messages, images);
         llm = 'connected';
       } catch (e) {
         console.error(`[bridge] LLM call failed (${e.message}); falling back`);
         const last = messages.filter((m) => m.role === 'user').pop()?.content || '';
-        reply = fallbackReply(ctx, last);
+        reply = fallbackReply(ctx, last, processed);
       }
-      return send(res, 200, { reply, model: MODEL, llm, ts: ctx.ts });
+      return send(res, 200, {
+        reply,
+        model: MODEL,
+        llm,
+        ts: ctx.ts,
+        artifacts: processed.map((a) => ({ kind: a.kind, ref: a.ref, name: a.name, mime: a.mime, size: a.size, sha: a.sha, status: a.status })),
+      });
     }
     return send(res, 404, { error: 'not found' });
   } catch (e) {
