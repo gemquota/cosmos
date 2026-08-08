@@ -81,10 +81,10 @@
       "attrs": {
         "type": "insight",
         "description": "Session session-: 0/0 evaluations passed",
-        "session_id": "session-2026-08-08T13:06:47",
+        "session_id": "session-2026-08-08T21:31:19",
         "success_rate": 0.0,
-        "event_count": 11,
-        "timestamp": "2026-08-08T13:06:47.088322+00:00"
+        "event_count": 8,
+        "timestamp": "2026-08-08T21:31:19.060725+00:00"
       }
     },
     {
