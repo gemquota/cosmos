@@ -44,6 +44,42 @@ function up(){
   set('hdr-stats', (sm.pulse_count || pu.length) + ' pulses · ' + tot + ' goals · ' + (sm.impl_count || 0) + ' improvements');
 }
 
+function loadLiveEcosystem(){
+  // Client-side live counts from the public GitHub API (public repo). The
+  // committed ecosystem.json values stay as the instant fallback; when the
+  // tree loads, counts are refreshed and the footer marks the data LIVE.
+  // Cached per session (10 min) to respect unauthenticated API limits.
+  var KEY = 'cosmos-live-tree';
+  var cached = null;
+  try { cached = JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch (e) {}
+  var apply = function(tree){
+    if (!tree || !tree.tree) return;
+    var visible = function(pth){ return !pth.split('/').some(function(s){ return s.indexOf('.') === 0; }); };
+    var count = function(prefix, mdOnly){
+      return tree.tree.filter(function(n){
+        return n.type === 'blob' && n.path.indexOf(prefix) === 0 && visible(n.path) &&
+               (!mdOnly || n.path.slice(-3) === '.md');
+      }).length;
+    };
+    var set = function(id, v){ var el = document.getElementById(id); if (el) el.textContent = v; };
+    set('ec-mykb', count('components/mykb/', true));
+    set('ec-space', count('components/space/', false));
+    set('ec-rsis3', count('components/rsis3/', false));
+    var f = document.getElementById('dash-footer');
+    if (f) f.textContent = '\u25cf LIVE \u2014 counts from GitHub (main); snapshot generated ' +
+      ((AD && AD.generated) || 'unknown') + ' \u00b7 run `cosmos` locally for full live data';
+  };
+  if (cached && Date.now() - cached.at < 10 * 60 * 1000) { apply(cached.tree); return; }
+  fetch('https://api.github.com/repos/gemquota/cosmos/git/trees/main?recursive=1')
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(tree){
+      if (!tree) return;
+      try { sessionStorage.setItem(KEY, JSON.stringify({at: Date.now(), tree: tree})); } catch (e) {}
+      apply(tree);
+    })
+    .catch(function(){});
+}
+
 function loadEcosystem(){
   fetch('ecosystem.json')
     .then(function(r){ return r.ok ? r.json() : null; })
