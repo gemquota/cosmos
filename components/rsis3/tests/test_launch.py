@@ -14,11 +14,10 @@ def test_plan_shape():
     assert plan[1] == ("evolve", "self-improve the codebase")
 
 
-def test_plan_space_cycle():
-    plan = plan_batch(3, goal_space_cycle=2)
+def test_plan_space_sources_every_cycle():
+    plan = plan_batch(3, goal_space_cycle=1)
     runs = [g for loop, g in plan if loop == "run"]
-    assert runs == ["self-improve the codebase", "from-space",
-                    "self-improve the codebase"]
+    assert runs == ["from-space", "from-space", "from-space"]
 
 
 def test_plan_clamps_inputs():
@@ -49,3 +48,18 @@ def test_run_batch_all_ok():
                        executor=lambda loop, goal, disk: 0)
     assert result["exit_code"] == 0
     assert all(v == 0 for v in result["per_loop_failures"].values())
+
+
+def test_run_batch_rotates_space_series(monkeypatch):
+    import os
+    env_seen = []
+
+    def fake_executor(loop, goal, disk_pct):
+        if loop == "run":
+            env_seen.append(os.environ.get("RSIS_SPACE_SERIES"))
+        return 0
+
+    result = run_batch(8, 1, executor=fake_executor)
+    assert result["exit_code"] == 0
+    runs = [e for e in env_seen if e is not None]
+    assert runs == ["1", "2", "3", "4", "5", "6", "7", "1"]

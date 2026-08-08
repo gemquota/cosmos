@@ -59,7 +59,7 @@ def test_flagging_is_capped(tmp_path, monkeypatch):
             description=f"Add retry with backoff to rsis/batch.py {i}",
             target_files=["rsis/batch.py"],
         )
-    loop.config.max_redundancy_flags_per_cycle = 2
+    monkeypatch.setattr(loop.config, "max_redundancy_flags_per_cycle", 2)
     assert loop._refine_redundancies() == 2
 
 

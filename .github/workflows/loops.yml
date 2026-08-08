@@ -54,6 +54,7 @@ jobs:
           git config user.email "rsis@test.local"
           for i in $(seq 1 "$TOTAL"); do
             ITER_START=$(date +%s)
+            export RSIS_SPACE_SERIES=$(( (i - 1) % 7 + 1 ))
             echo ""
             echo "── Cycle $i/$TOTAL — $(date -u +%H:%M:%SZ) ─────────────────"
             if ! bash infra/loops/run-batch.sh --cycles 1 --goal-space-cycle "$SPEC"; then

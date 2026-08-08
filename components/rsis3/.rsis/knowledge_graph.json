@@ -80,11 +80,11 @@
       "id": "session-session-",
       "attrs": {
         "type": "insight",
-        "description": "Session session-: 1/1 evaluations passed",
-        "session_id": "session-2026-08-07T04:49:29",
-        "success_rate": 1.0,
-        "event_count": 15,
-        "timestamp": "2026-08-07T04:49:29.535991+00:00"
+        "description": "Session session-: 0/0 evaluations passed",
+        "session_id": "session-2026-08-08T13:06:47",
+        "success_rate": 0.0,
+        "event_count": 7,
+        "timestamp": "2026-08-08T13:06:47.088322+00:00"
       }
     },
     {
@@ -3840,6 +3840,82 @@
         },
         "outcome": "applied",
         "goal": "Multitiered goal T3: modern responsive web interface with bridge to LLM and Cosmos framework"
+      }
+    },
+    {
+      "id": "improvement-278",
+      "attrs": {
+        "type": "improvement",
+        "description": "Harden KG load against malformed nodes/edges; fix in-edge traversal",
+        "target_files": [
+          "rsis/memory.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "SPACE series2-edge-cases: Harden KG load against malformed nodes/edges; fix in-edge traversal"
+      }
+    },
+    {
+      "id": "improvement-279",
+      "attrs": {
+        "type": "improvement",
+        "description": "Validate edge relationship types against the known vocabulary",
+        "target_files": [
+          "rsis/memory.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "SPACE series3-association-types: Validate edge relationship types against the known vocabulary"
+      }
+    },
+    {
+      "id": "improvement-280",
+      "attrs": {
+        "type": "improvement",
+        "description": "Persist the knowledge graph atomically (tmp + replace)",
+        "target_files": [
+          "rsis/memory.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "SPACE series5-availability: Persist the knowledge graph atomically (tmp + replace)"
+      }
+    },
+    {
+      "id": "improvement-281",
+      "attrs": {
+        "type": "improvement",
+        "description": "Batch same-rel edge writes into a single persistence op",
+        "target_files": [
+          "rsis/memory.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "SPACE series6-communication: Batch same-rel edge writes into a single persistence op"
       }
     }
   ],

@@ -21,6 +21,7 @@ Usage:
 import argparse
 import json
 import logging
+import os
 import sys
 import time
 from dataclasses import asdict
@@ -111,10 +112,13 @@ def _resolve_goal(goal: str, gateway: Optional[MyKBGateway] = None,
     if goal in ("from-space", "from-spec"):
         spec = spec if spec is not None else SpaceSpec()
         if spec.available:
-            goals = spec.candidate_goals(limit=1)
+            series = os.environ.get("RSIS_SPACE_SERIES", "")
+            series_id = int(series) if series.isdigit() else None
+            goals = spec.candidate_goals(limit=1, series_id=series_id)
             if goals:
                 aid = spec.artifacts()[0]["id"] if spec.artifacts() else "?"
-                print(f"  \u2139 Goal sourced from SPACE spec artifact: {aid}")
+                print(f"  \u2139 Goal sourced from SPACE spec artifact: {aid} "
+                      f"(series {series_id or 'any'})")
                 return goals[0]
         return "self-improve the codebase"
     return goal

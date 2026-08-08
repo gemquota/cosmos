@@ -11,6 +11,7 @@ for vector similarity search.
 import json
 import logging
 import math
+import os
 import re
 from collections import Counter
 from pathlib import Path
@@ -145,6 +146,10 @@ class KnowledgeGraph:
     """
 
     NODE_TYPES = ("improvement", "insight", "strategy", "pattern", "failure")
+    KNOWN_RELS = frozenset({
+        "led_to", "contradicts", "improves",
+        "exhibits_trend", "flags_as_redundant", "evolves_from",
+    })
 
     def __init__(self, path: Optional[str] = None):
         self.path = Path(path or CONFIG.memory.knowledge_graph_path)
@@ -158,9 +163,17 @@ class KnowledgeGraph:
                 data = json.loads(self.path.read_text())
                 # Rebuild graph from serialised data
                 for node in data.get("nodes", []):
+                    if not isinstance(node, dict) or not node.get("id"):
+                        logger.warning("Skipping malformed KG node: %s", node)
+                        continue
                     self.graph.add_node(node["id"], **node.get("attrs", {}))
                 seen_edges: set[tuple] = set()
                 for edge in data.get("edges", []):
+                    if (not isinstance(edge, dict)
+                            or "source" not in edge or "target" not in edge
+                            or "rel" not in edge):
+                        logger.warning("Skipping malformed KG edge: %s", edge)
+                        continue
                     attrs = edge.get("attrs", {})
                     edge_key = (edge["source"], edge["target"],
                                 edge.get("rel", ""),
@@ -213,7 +226,11 @@ class KnowledgeGraph:
                 "attrs": attrs,
             })
         data = {"nodes": nodes, "edges": edges}
-        self.path.write_text(json.dumps(data, indent=2, default=str))
+        # Atomic write: replace in place so a crash mid-save never leaves a
+        # truncated KG (best-effort availability contract).
+        tmp = self.path.with_name(self.path.name + ".tmp")
+        tmp.write_text(json.dumps(data, indent=2, default=str))
+        os.replace(str(tmp), str(self.path))
         logger.debug("KG saved (%d nodes, %d edges)",
                      len(nodes), len(edges))
 
@@ -251,13 +268,22 @@ class KnowledgeGraph:
     # ── Edge operations ─────────────────────────────────────────────
 
     def add_edge(self, source: str, target: str, rel: str, **attrs) -> None:
+        if rel not in self.KNOWN_RELS:
+            logger.warning("Unknown relationship type: %s", rel)
         self.graph.add_edge(source, target, rel=rel, **attrs)
+        self.save()
+
+    def add_edges(self, source: str, rel: str,
+                  targets: list[str], **attrs) -> None:
+        """Add multiple same-rel edges from one source in a single save."""
+        for target in targets:
+            self.graph.add_edge(source, target, rel=rel, **attrs)
         self.save()
 
     def get_edges(self, node_id: Optional[str] = None) -> list[dict]:
         if node_id:
             edges = list(self.graph.edges(node_id, keys=True, data=True))
-            edges += list(self.graph.edges(None, node_id, keys=True, data=True))
+            edges += list(self.graph.in_edges(node_id, keys=True, data=True))
         else:
             edges = list(self.graph.edges(keys=True, data=True))
 
