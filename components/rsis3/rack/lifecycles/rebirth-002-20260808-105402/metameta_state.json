@@ -1,0 +1,89 @@
+{
+  "params": {
+    "l5.mutation_rate": 0.6,
+    "l5.population_size": 4
+  },
+  "history": [
+    {
+      "cycle": 1,
+      "deltas": {
+        "l5.population_size": -2
+      },
+      "accepted": true,
+      "signal": "shrink_population"
+    },
+    {
+      "cycle": 2,
+      "deltas": {
+        "l5.population_size": -2
+      },
+      "accepted": true,
+      "signal": "shrink_population"
+    },
+    {
+      "cycle": 3,
+      "deltas": {
+        "l5.mutation_rate": 0.05
+      },
+      "accepted": true,
+      "signal": "raise_mutation"
+    },
+    {
+      "cycle": 4,
+      "deltas": {
+        "l5.mutation_rate": 0.05
+      },
+      "accepted": true,
+      "signal": "raise_mutation"
+    },
+    {
+      "cycle": 5,
+      "deltas": {
+        "l5.mutation_rate": 0.05
+      },
+      "accepted": true,
+      "signal": "raise_mutation"
+    },
+    {
+      "cycle": 6,
+      "deltas": {
+        "l5.mutation_rate": 0.05
+      },
+      "accepted": true,
+      "signal": "raise_mutation"
+    },
+    {
+      "cycle": 7,
+      "deltas": {
+        "l5.mutation_rate": 0.05
+      },
+      "accepted": true,
+      "signal": "raise_mutation"
+    },
+    {
+      "cycle": 8,
+      "deltas": {
+        "l5.mutation_rate": 0.05
+      },
+      "accepted": true,
+      "signal": "raise_mutation"
+    },
+    {
+      "cycle": 9,
+      "deltas": {
+        "l5.mutation_rate": 0.05
+      },
+      "accepted": true,
+      "signal": "raise_mutation"
+    },
+    {
+      "cycle": 10,
+      "deltas": {
+        "l5.mutation_rate": 0.05
+      },
+      "accepted": true,
+      "signal": "raise_mutation"
+    }
+  ],
+  "cycle": 10
+}
