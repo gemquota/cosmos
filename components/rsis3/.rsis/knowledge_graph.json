@@ -83,7 +83,7 @@
         "description": "Session session-: 1/1 evaluations passed",
         "session_id": "session-2026-08-07T04:49:29",
         "success_rate": 1.0,
-        "event_count": 11,
+        "event_count": 13,
         "timestamp": "2026-08-07T04:49:29.535991+00:00"
       }
     },
@@ -3821,6 +3821,25 @@
         },
         "outcome": "applied",
         "goal": "Keep the knowledge graph bounded and self-consistent across cycles"
+      }
+    },
+    {
+      "id": "improvement-277",
+      "attrs": {
+        "type": "improvement",
+        "description": "Add COSMOS Bridge: dense context message envelope + server-side LLM proxy with drive-stack system prompt",
+        "target_files": [
+          "components/rsis3/rack/bridge/server.mjs"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0,
+          "style": 1.0,
+          "regression": 1.0
+        },
+        "outcome": "applied",
+        "goal": "Multitiered goal T3: modern responsive web interface with bridge to LLM and Cosmos framework"
       }
     }
   ],
