@@ -66,6 +66,8 @@ jobs:
             # run-batch.sh commits its own batch results + snapshots, so the
             # outer loop only commits leftovers; push always so those internal
             # commits reach origin (cycles otherwise complete but never land).
+            git pull --rebase origin main \
+              || echo "  ⚠ pull/rebase failed — next cycle will carry it"
             git push origin main || echo "  ⚠ push failed — next cycle will carry it"
             if [ "$i" -lt "$TOTAL" ]; then
               ELAPSED=$(( $(date +%s) - ITER_START ))
