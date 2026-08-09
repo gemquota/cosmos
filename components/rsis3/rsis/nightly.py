@@ -18,6 +18,9 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional
 
+from rsis.forecast import predict as forecast_predict
+from rsis.forecast import quality as forecast_quality
+
 logger = logging.getLogger(__name__)
 
 LOOP_LABELS = ("l1", "l2", "l3", "l4", "l5", "l6", "l7", "l8", "l9")
@@ -106,8 +109,17 @@ def summarize_day(workspace: Path, mykb: Path,
         "kg": {"nodes": len(kg.get("nodes") or []), "edges": len(kg.get("edges") or [])},
         "costs": costs,
         "commits": git_summary,
+        "forecast": _day_forecast(workspace),
     }
     return summary
+
+
+def _day_forecast(workspace: Path) -> dict:
+    """Phase 10: self-model prediction for the day's summary."""
+    fc = forecast_predict(workspace)
+    if fc.get("available"):
+        fc["quality"] = forecast_quality(workspace)
+    return fc
 
 
 def _ts(raw) -> Optional[datetime]:
@@ -195,6 +207,21 @@ def write_nightly_note(mykb: Path, summary: dict, ts: Optional[str] = None) -> O
     if summary["commits"]["sample"]:
         body += "\n\nLatest commits:\n\n" + "\n".join(
             f"- `{c}`" for c in summary["commits"]["sample"])
+    if summary.get("forecast"):
+        fc = summary["forecast"]
+        if fc.get("available"):
+            f = fc["fitness"]
+            body += (f"\n\nForecast (self-model):\n"
+                     f"- Next-cycle best fitness {f['predicted']} "
+                     f"(band ±{f['band']}, {f['low']}..{f['high']}) — "
+                     f"{fc['trend']}\n"
+                     f"- Success rate {fc['success_rate']}, "
+                     f"daily cost ${fc['cost_usd']}\n")
+        if fc.get("quality"):
+            q = fc["quality"]
+            body += (f"- Forecast quality: {q['verified']} verified, "
+                     f"coverage {q['coverage']} "
+                     f"(hits {q['hits']}, misses {q['misses']})\n")
     if path.exists():
         return path
     front = {

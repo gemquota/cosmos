@@ -553,6 +553,64 @@ def cmd_convergence(args: argparse.Namespace) -> int:
                      apply=args.apply, json_out=args.json)
 
 
+def cmd_verify_server(args: argparse.Namespace) -> int:
+    """Phase 7: verification mesh over HTTP (evaluator + contracts + ledger)."""
+    from rsis.verify import main as verify_main
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    return verify_main(port=args.port, workspace=root)
+
+
+def cmd_anomalies(args: argparse.Namespace) -> int:
+    """Phase 8: scan telemetry for regressions; optionally prune old data."""
+    from rsis.anomalies import main as anomalies_main
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    mykb = root.parent / "mykb"
+    return anomalies_main(root, mykb, prune_days=args.prune_days,
+                          file_backlogs=not args.no_backlog,
+                          json_out=args.json)
+
+
+def cmd_forecast(args: argparse.Namespace) -> int:
+    """Phase 10: self-model forecast — predict next-cycle fitness/cost, verify quality."""
+    from rsis.forecast import main as forecast_main
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    return forecast_main(root, do_verify=args.verify, json_out=args.json)
+
+
+def cmd_policy(args: argparse.Namespace) -> int:
+    """Phase 9: policy check — staged approvals + unauthorized-write scan."""
+    from rsis.policy import main as policy_main
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    return policy_main(root, json_out=args.json)
+
+
+def cmd_approve(args: argparse.Namespace) -> int:
+    """Phase 9: approve or reject a staged policy-gated candidate."""
+    from rsis.policy import approve, reject
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    actor = args.actor or os.environ.get("RSIS_ACTOR", "approver")
+    ok = reject(root, args.id, actor=actor) if args.reject \
+        else approve(root, args.id, actor=actor)
+    print(f"  {'✓' if ok else '✗'} approval {args.id}: "
+          f"{'rejected' if args.reject else 'applied' if ok else 'not found'}")
+    return 0 if ok else 1
+
+
+def cmd_audit(args: argparse.Namespace) -> int:
+    """Phase 9: replay the audit trail."""
+    from rsis.audit import main as audit_main
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    return audit_main(root, since=args.since, json_out=args.json)
+
+
+def cmd_rollback(args: argparse.Namespace) -> int:
+    """Phase 9: roll back an applied candidate to its pre-apply state."""
+    from rsis.rollback import main as rollback_main
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    mykb = root.parent / "mykb"
+    return rollback_main(root, mykb, args.candidate_id)
+
+
 def cmd_nightly(args: argparse.Namespace) -> int:
     """Aggregate the day into a MyKB daily-summary synthesis note."""
     from rsis.nightly import main as nightly_main
@@ -1075,6 +1133,62 @@ def main() -> int:
     p_conv.add_argument("--json", action="store_true",
                         help="Print machine-readable report")
     p_conv.set_defaults(func=cmd_convergence)
+
+    p_verify = sub.add_parser(
+        "verify-server",
+        help="Phase 7 verification mesh: evaluator + contracts + ledger over HTTP")
+    p_verify.add_argument(
+        "--port", type=int,
+        default=int(os.environ.get("RSIS_VERIFY_PORT") or "8788"),
+        help="Listen port (default: %(default)s)")
+    p_verify.set_defaults(func=cmd_verify_server)
+
+    p_anom = sub.add_parser(
+        "anomalies",
+        help="Phase 8: scan telemetry for regressions and file backlog items")
+    p_anom.add_argument("--prune-days", type=int, default=0,
+                        help="Archive telemetry older than N days (0 = off)")
+    p_anom.add_argument("--no-backlog", action="store_true",
+                        help="Do not file MyKB backlog notes")
+    p_anom.add_argument("--json", action="store_true")
+    p_anom.set_defaults(func=cmd_anomalies)
+
+    p_forecast = sub.add_parser(
+        "forecast",
+        help="Phase 10: predict next-cycle fitness/success/cost; verify forecast quality")
+    p_forecast.add_argument("--verify", action="store_true",
+                            help="Score past forecasts (coverage/hits)")
+    p_forecast.add_argument("--json", action="store_true")
+    p_forecast.set_defaults(func=cmd_forecast)
+
+    p_policy = sub.add_parser(
+        "policy-check",
+        help="Phase 9: verify rack/policy.json, staged approvals, unauthorized writes")
+    p_policy.add_argument("--json", action="store_true")
+    p_policy.set_defaults(func=cmd_policy)
+
+    p_approve = sub.add_parser(
+        "approve",
+        help="Phase 9: apply a staged policy-gated candidate (--reject discards)")
+    p_approve.add_argument("id", help="Staged approval id")
+    p_approve.add_argument("--reject", action="store_true")
+    p_approve.add_argument("--actor", default=None,
+                           help="Acting user (default: $RSIS_ACTOR or approver)")
+    p_approve.set_defaults(func=cmd_approve)
+
+    p_audit = sub.add_parser(
+        "audit",
+        help="Phase 9: replay the attributable audit trail")
+    p_audit.add_argument("--since", default=None,
+                         help="Only entries at/after this ISO timestamp")
+    p_audit.add_argument("--json", action="store_true")
+    p_audit.set_defaults(func=cmd_audit)
+
+    p_rollback = sub.add_parser(
+        "rollback",
+        help="Phase 9: restore a candidate/approval to its pre-apply state")
+    p_rollback.add_argument("candidate_id", help="Approval id or candidate sha")
+    p_rollback.set_defaults(func=cmd_rollback)
 
     p_night = sub.add_parser(
         "nightly-summary",

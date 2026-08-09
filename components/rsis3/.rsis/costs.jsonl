@@ -222,3 +222,16 @@
 {"kind": "llm", "trace_id": "66e87b234842", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.115, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786291438.4901934}
 {"kind": "llm", "trace_id": "afcc2ec8ce48", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.118, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786291716.2568674}
 {"kind": "llm", "trace_id": "87f685aa0200", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.095, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786291802.2466953}
+{"kind": "llm", "trace_id": "46daa0fc9de2", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.094, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786292268.2217314}
+{"kind": "llm", "trace_id": "b42dd0427a82", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.087, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786292536.08012}
+{"kind": "llm", "trace_id": "2c2d094f2dcc", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.097, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786292803.6892054}
+{"kind": "llm", "trace_id": "db38d5930313", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.091, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786293072.352662}
+{"kind": "llm", "trace_id": "149eb40c99b5", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.094, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786293341.0423706}
+{"kind": "llm", "trace_id": "7a0023cfc718", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.096, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786293610.287015}
+{"kind": "llm", "trace_id": "2e642497a0c5", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.153, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786293878.7722309}
+{"kind": "llm", "trace_id": "c0514601d08a", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.09, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786294150.063901}
+{"kind": "llm", "trace_id": "6500f73d3633", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.102, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786294418.2999086}
+{"kind": "llm", "trace_id": "14c4d8bce633", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.093, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786294688.3677218}
+{"kind": "llm", "trace_id": "5954659a8130", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.097, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786294961.3109796}
+{"kind": "llm", "trace_id": "1c097fa83610", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.105, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786295230.6981933}
+{"kind": "llm", "trace_id": "0edf0462286c", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.096, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786295499.542262}

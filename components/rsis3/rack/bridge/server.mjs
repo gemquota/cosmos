@@ -114,6 +114,8 @@ async function costSummary(hours = 24) {
   let tokensIn = 0;
   let tokensOut = 0;
   let traces = 0;
+  const byAgent = {};
+  const byDay = {};
   try {
     const cutoff = Date.now() - hours * 3600 * 1000;
     for (const line of (await readFile(file, 'utf8')).split(/\r?\n/)) {
@@ -122,18 +124,42 @@ async function costSummary(hours = 24) {
       if (!rec) continue;
       const ts = Number(rec.ts || 0) * 1000;
       if (!ts || ts < cutoff) continue;
-      total += Number(rec.cost || 0);
+      const cost = Number(rec.cost || 0);
+      total += cost;
       tokensIn += Number(rec.tokens_in || 0);
       tokensOut += Number(rec.tokens_out || 0);
       traces += 1;
+      const agent = rec.agent || 'unknown';
+      byAgent[agent] = (byAgent[agent] || 0) + cost;
+      const day = new Date(ts).toISOString().slice(0, 10);
+      byDay[day] = (byDay[day] || 0) + cost;
     }
   } catch { /* no cost ledger yet */ }
+  const agentRows = Object.entries(byAgent)
+    .map(([agent, cost]) => ({ agent, cost: Math.round(cost * 1e6) / 1e6 }))
+    .sort((a, b) => b.cost - a.cost);
+  const trend = Object.entries(byDay)
+    .map(([day, cost]) => ({ day, cost: Math.round(cost * 1e6) / 1e6 }))
+    .sort((a, b) => a.day.localeCompare(b.day));
+  let budget = null;
+  try {
+    const budgets = json(await readFile(path.join(RSIS_STATE, 'budgets.json'), 'utf8'));
+    if (budgets && budgets.ceiling_usd) {
+      budget = {
+        ceiling: Number(budgets.ceiling_usd),
+        remaining: Math.round((Number(budgets.ceiling_usd) - total) * 1e6) / 1e6,
+      };
+    }
+  } catch { /* no budgets.json yet */ }
   return {
     traces,
     tokens_in: tokensIn,
     tokens_out: tokensOut,
     cost: Math.round(total * 1e6) / 1e6,
     window_hours: hours,
+    by_agent: agentRows,
+    trend_7d: trend,
+    budget,
   };
 }
 

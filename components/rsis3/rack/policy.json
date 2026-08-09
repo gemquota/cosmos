@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "allowed_loop_families": [
+    "l2",
+    "l3",
+    "l4",
+    "l5",
+    "l6",
+    "l7",
+    "l8",
+    "l9"
+  ],
+  "apply_rules": {
+    "blocked_paths": [],
+    "allowlist": []
+  },
+  "approval_required": {
+    "paths": [
+      "rack/policy.json",
+      "rack/bridge/server.mjs",
+      "rack/approvals/",
+      "rsis/policy.py"
+    ],
+    "patterns": []
+  },
+  "budget_ceilings": {}
+}

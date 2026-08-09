@@ -1,5 +1,5 @@
 {
-  "generation": 120,
+  "generation": 133,
   "population": [
     {
       "id": "strategy-budget-1",
@@ -8,8 +8,8 @@
         "budget_factor": 1.0,
         "focus": "general"
       },
-      "fitness": 0.244,
-      "evals": 120
+      "fitness": 0.304,
+      "evals": 133
     },
     {
       "id": "strategy-seed-1",
@@ -18,11 +18,11 @@
         "budget_factor": 1.0,
         "focus": "general"
       },
-      "fitness": 0.244,
-      "evals": 120
+      "fitness": 0.304,
+      "evals": 133
     },
     {
-      "id": "strategy-g120-cross-250",
+      "id": "strategy-g133-cross-250",
       "params": {
         "l2_attempts": 5,
         "budget_factor": 1.0,
@@ -33,7 +33,7 @@
       "lineage": "strategy-budget-1xstrategy-seed-1"
     },
     {
-      "id": "strategy-g120-1-89",
+      "id": "strategy-g133-1-89",
       "params": {
         "l2_attempts": 4,
         "budget_factor": 1.0,
@@ -1001,6 +1001,110 @@
       "generation": 120,
       "avg_fitness": 0.1586,
       "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 121,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 122,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 123,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 124,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 125,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 126,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 127,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 128,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 129,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 130,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 131,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 132,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 133,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
       "population": 4,
       "accepted": true,
       "signal": "evolve"

@@ -480,6 +480,9 @@ def cmd_serve():
     if not index_data:
         print("No index found. Run 'build-index' first.")
         return
+    from memory_api import list_notes, search_notes, sessions, write_note
+    from pathlib import Path as _Path
+    _wiki_root = _Path(BUNDLE)
     
     port = int(sys.argv[3]) if len(sys.argv) > 3 else 8850
     
@@ -492,11 +495,36 @@ def cmd_serve():
             except:
                 params = {}
             
+            parsed = urllib.parse.urlparse(self.path)
+            if parsed.path == '/api/notes':
+                rel = params.get('path') or params.get('rel')
+                content = params.get('content', '')
+                session_id = params.get('session_id')
+                create_only = bool(params.get('create_only', True))
+                if not rel or not content:
+                    self.send_response(400)
+                    self.end_headers()
+                    self.wfile.write(b'{"error":"path and content required"}')
+                    return
+                try:
+                    write_note(_wiki_root, rel=str(rel).lstrip('/'),
+                               content=content, session_id=session_id,
+                               create_only=create_only)
+                    self.send_response(201)
+                    self.send_header('Content-Type', 'application/json')
+                    self.send_header('Access-Control-Allow-Origin', '*')
+                    self.end_headers()
+                    self.wfile.write(json.dumps({'ok': True, 'path': rel}).encode())
+                except (FileExistsError, ValueError) as e:
+                    self.send_response(409)
+                    self.send_header('Content-Type', 'application/json')
+                    self.end_headers()
+                    self.wfile.write(json.dumps({'error': str(e)}).encode())
+                return
+            # default: POST / (search)
             q = params.get('q', params.get('query', ''))
             top_n = int(params.get('top_n', 30))
-            
             results = search_query(index_data, q, top_n=top_n) if q else []
-            
             self.send_response(200)
             self.send_header('Content-Type', 'application/json')
             self.send_header('Access-Control-Allow-Origin', '*')
@@ -538,6 +566,34 @@ def cmd_serve():
                 self.end_headers()
                 self.wfile.write(json.dumps({'query': q, 'results': results,
                                              'total': len(results)}).encode())
+            elif parsed.path == '/api/search':
+                q = params.get('q', [''])[0]
+                top_n = int(params.get('top_n', [10])[0])
+                results = search_notes(_wiki_root, q, top_n=top_n)
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({'query': q, 'results': results,
+                                             'total': len(results)}).encode())
+            elif parsed.path == '/api/notes':
+                session_id = params.get('session_id', [None])[0]
+                limit = int(params.get('limit', [200])[0])
+                results = list_notes(_wiki_root, session_id=session_id,
+                                     limit=limit)
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({'notes': results,
+                                             'total': len(results)}).encode())
+            elif parsed.path == '/api/sessions':
+                results = sessions(_wiki_root)
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({'sessions': results}).encode())
             else:
                 self.send_response(404)
                 self.end_headers()

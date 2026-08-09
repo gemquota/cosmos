@@ -1,0 +1,1 @@
+{"available": true, "ts": "2026-08-09T17:08:53Z", "horizon": "next-cycle", "trend": "plateau", "fitness": {"predicted": 0.304, "band": 0.0456, "low": 0.2584, "high": 0.3496}, "success_rate": 1.0, "cost_usd": 0.00722, "window": 10}

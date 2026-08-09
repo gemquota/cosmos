@@ -237,7 +237,9 @@ def run_forever(*, interval_s: int, cycles: int, goal_space_cycle: int,
 
             if once:
                 return 0 if ok else 1
-            time.sleep(interval_s)
+            # Phase 10: adaptive cadence from the self-model forecast.
+            from rsis.forecast import adaptive_interval
+            time.sleep(adaptive_interval(workspace, interval_s))
     finally:
         lock.release()
         print("  🔓 lock released")
