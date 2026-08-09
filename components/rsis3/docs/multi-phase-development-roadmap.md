@@ -8,6 +8,19 @@ current bridge-and-chat baseline to a production-grade surface. Each phase
 names the tier(s) it completes, concrete deliverables, and an exit criterion
 so progress is measurable per the Output tier (T0: no silent phases).
 
+## Cross-roadmap invariant
+
+> **Autonomy is cumulative but never unconditional.** Every expansion of
+> capability must inherit the memory, verification, cost, policy,
+> provenance and observability controls established by preceding phases.
+
+That is what the sequencing already does: Phase 5 autonomy requires
+Phase 4 telemetry; Phase 10 prediction requires Phases 6–8 memory,
+verification and cost history; Phase 13 federation requires Phase 6
+provenance and Phase 9 trust/policy; Phase 15 long-horizon autonomy
+requires Phases 8–10 and 14. A phase may build on prior controls; none
+may silently relax them.
+
 ## Baseline (delivered 2026-08-08)
 
 - **T0 Output** — `rack/goals_stack.json` active; every cycle commits ≥1
@@ -119,10 +132,14 @@ Goal: cycles run sustainably in the background with CI guarding regressions.
   intervention, all cycles rc=0, CI green on every commit, and a nightly
   summary note in MyKB.
 
-## Phase 5 — Autonomy & Durable Ops
+## Phase 5 — Autonomy & Durable Ops (Bounded Autonomy)
 
 Goal: the system keeps itself running, retuned, and documented — zero
-manual intervention beyond the standing cadence.
+manual intervention beyond the standing cadence. This is *bounded*
+autonomy: self-maintenance (retune, heal, document, expose cost) within
+ledgered, policy-visible limits. Phase 15 later extends the same
+discipline into a persistent lifecycle — it does not introduce new
+autonomy.
 
 - **Auto-retuning**: `cycle-daemon --auto-retune` consumes convergence
   proposals and applies the proposed identity/meta loop itself, bounded by
@@ -161,12 +178,25 @@ manual intervention beyond the standing cadence.
 | Phase 2 — Envelope hardening | T2 | ✅ delivered |
 | Phase 3 — Product surface | T3 | ✅ delivered |
 | Phase 4 — Ops maturity | ops | ✅ delivered |
-| Phase 5 — Autonomy & durable ops | ops | ✅ delivered (exit: 7-day live validation) |
+| Phase 5 — Autonomy & durable ops (bounded) | ops | ✅ delivered (implementation) · ⏳ 7-day live validation pending |
+
+Implementation status reflects shipped code and workflows; exit-criterion
+status reflects operational demonstration. Phase 5's implementation is
+delivered; its 7-day unattended exit validation completes when the live
+daemon cadence has run the full window.
 
 ## Sequels
 
 The original 5-phase roadmap is complete. Future work continues in two
 sequel roadmaps, each another five phases, cumulative on everything above:
+read as one 15-phase program across three maturity arcs.
+
+- **Phases 1–5 — Operational Autonomy**: build → communicate → secure →
+  persist → observe → operate → self-retune.
+- **Phases 6–10 — Governed Intelligence**: remember collectively → verify →
+  measure economics → govern → predict.
+- **Phases 11–15 — Distributed Autonomy**: generalize → collaborate →
+  federate → attest → persist.
 
 - **Sequel II — Horizons (Phases 6–10)**: distributed memory &
   multi-session coordination, verification mesh, observability & cost

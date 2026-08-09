@@ -3,6 +3,8 @@
 Adopted: 2026-08-09 · Status: active · Mode: llm-driven
 Continues: [`multi-phase-development-roadmap.md`](multi-phase-development-roadmap.md) (Phases 1–5 ✅)
 Linked goal stack: `rack/goals_stack.json` (goal-stack-001, T0–T3)
+Maturity arc: Phases 6–10 — **Governed Intelligence** (remember
+collectively → verify → measure economics → govern → predict).
 
 The first roadmap took Cosmos from baseline to a production-grade surface
 (T0–T3) and into sustained, self-maintaining operation (Phases 4–5).
@@ -51,6 +53,11 @@ Goal: every applied change ships with verified evidence, not just a gate.
   can be replayed and re-verified.
 - **Contract gating**: contracts (`contracts/validate.py`) run as a step of
   the apply pipeline, not only CI; a contract FAIL blocks the commit.
+- **Evidence substrate**: the regression ledger accumulates replayable
+  records of *why* an autonomous change was allowed (candidate sha, gates,
+  scores, artifacts). Phase 7 establishes the verification/evidence
+  substrate that Phase 14 later extends into continual invariant
+  attestation.
 - **Exit criterion**: 100% of applied L2 candidates in a 24h window carry
   a replayable verification record; a deliberate regression injection is
   caught by the mesh before reaching main.
@@ -81,7 +88,9 @@ per cycle, per dollar.
 ## Phase 9 — Human-in-the-Loop Governance
 
 Goal: the system's autonomy is bounded by policy, auditable, and
-reversible.
+reversible. The human is one enforcement mechanism within the policy
+architecture — internally this is *policy-controlled autonomy*, with
+approval gates as one of several policy instruments.
 
 - **Policy file**: `rack/policy.json` (env-templated) declares what the
   system may do autonomously — allowed loop families, apply rules, budget
@@ -120,9 +129,14 @@ forecast, not habit.
 - **Self-model registry**: forecasts and their hits/misses are stored
   (`rack/forecasts/`) and summarized in the nightly note, making the
   model itself a monitored subsystem.
+- **Calibration & uncertainty**: forecast quality is tracked as
+  first-class metrics — accuracy, calibration (confidence vs. realized hit
+  rate), uncertainty width, systematic bias, and degradation over time —
+  not just raw coverage.
 - **Exit criterion**: over 7 days, the forecaster's best-fitness band
   covers ≥80% of realized values; cadence adapts on an injected
-  improvement event; forecast quality appears in every nightly summary.
+  improvement event; forecast quality — coverage, calibration, bias,
+  degradation — appears in every nightly summary.
 
 ## Sequencing notes (Sequel II)
 

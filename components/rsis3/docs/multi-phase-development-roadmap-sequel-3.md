@@ -3,6 +3,8 @@
 Adopted: 2026-08-09 · Status: active · Mode: llm-driven
 Continues: [`multi-phase-development-roadmap-sequel-2.md`](multi-phase-development-roadmap-sequel-2.md) (Phases 6–10)
 Linked goal stack: `rack/goals_stack.json` (goal-stack-001, T0–T3)
+Maturity arc: Phases 11–15 — **Distributed Autonomy** (generalize →
+collaborate → federate → attest → persist).
 
 Sequel II made the system a governed, self-modeling organization. Sequel
 III pushes beyond a single repo: the loop stack generalizes to other
@@ -38,7 +40,11 @@ the system safely.
 - **Multi-user auth**: bridge and dashboard move from a shared
   `RSIS_BRIDGE_TOKEN` to per-user sessions (OAuth2/OIDC or a stdlib
   signed-token scheme), with role levels: observer, contributor,
-  approver (Phase 9 gates keyed to roles).
+  approver (Phase 9 gates keyed to roles). Authorization is scoped by
+  project membership and policy-defined capability, not role alone:
+  User → Identity → Role → Project membership → Policy → Capability →
+  Action — an approver may not approve every project or every class of
+  operation.
 - **Proposal review UI**: staged approvals (Phase 9) render in the
   dashboard with diff views and approve/reject actions; activity is
   attributed to the acting user.
@@ -60,8 +66,10 @@ losing their identity or creating conflicts.
 
 - **Synthesis exchange**: instances publish distilled syntheses
   (subsets, tagged by project/domain) to a federation endpoint or repo;
-  subscribers adopt foreign syntheses with an `origin` field, never
-  silently overwriting local notes.
+  subscribers adopt foreign syntheses carrying explicit provenance —
+  origin, source, project, session, producer, verification state,
+  confidence, transformations and federation history — never silently
+  overwriting local notes.
 - **Consensus rules**: conflicting durable rules from two instances
   resolve deterministically (newest-by-timestamp for facts, policy wins
   for behavior), and conflicts are logged as federation backlog items.
@@ -89,7 +97,8 @@ release time.
   promoted to the registry).
 - **Attestation**: every applied candidate and every nightly summary
   carries a signed (sha256) attestation of the invariant set it passed;
-  CI fails on any drift.
+  CI fails on any drift. This extends the Phase 7 regression ledger and
+  verification mesh into a per-cycle attestation layer.
 - **Drift repair**: a failed invariant files a backlog note and, for
   self-repairable ones (e.g., stale flag edges — already proven
   fixable), the system repairs and re-attests.
@@ -100,6 +109,10 @@ release time.
 ## Phase 15 — Long-Horizon Autonomy
 
 Goal: the system runs itself over months; humans review, not drive.
+Phase 15 does not introduce autonomy — it extends Phase 5's *bounded*
+autonomy into a persistent lifecycle: seasonal goal rotation,
+energy-aware scheduling, configuration self-repair, and human approval
+only at the policy-revision boundary.
 
 - **Seasonal goal rotation**: the goal stack rotates through
   domain/tier seasons on a policy-defined cadence, so L2 keeps finding
