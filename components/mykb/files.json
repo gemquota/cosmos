@@ -31232,6 +31232,15 @@
   ]
  },
  {
+  "path": "wiki/backlog/convergence-2026-08-08.md",
+  "type": "backlog",
+  "title": "Convergence \u2014 fitness plateau",
+  "tags": [
+   "backlog",
+   "convergence"
+  ]
+ },
+ {
   "path": "wiki/cloud-infra/00-index.md",
   "type": "index",
   "title": "Cloud Infra Index",
@@ -76465,6 +76474,16 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-daily-summary-2026-08-08.md",
+  "type": "synthesis",
+  "title": "RSIS3 daily summary \u2014 2026-08-08",
+  "tags": [
+   "rsis3",
+   "daily-summary",
+   "ops"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-goal-stack-output-communicate-bridge-2026-08-08.md",
   "type": "synthesis",
   "title": "Multitiered goal stack \u2014 Output \u2192 Communicate \u2192 Wrap \u2192 Bridge",
@@ -77578,6 +77597,52 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-phase-2-envelope-hardening-2026-08-08.md",
+  "type": "synthesis",
+  "title": "RSIS3 Phase 2 \u2014 envelope hardening (cosmos-envelope/1 v1.1)",
+  "tags": [
+   "rsis3",
+   "bridge",
+   "envelope",
+   "t2",
+   "phase-2",
+   "multimodal",
+   "security",
+   "streaming"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-phase-3-product-surface-2026-08-08.md",
+  "type": "synthesis",
+  "title": "RSIS3 Phase 3 \u2014 product surface (bridge sessions, memory loop, native embed)",
+  "tags": [
+   "rsis3",
+   "bridge",
+   "phase-3",
+   "t3",
+   "sessions",
+   "chat-memory",
+   "embed",
+   "auth"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-phase-4-5-ops-autonomy-2026-08-08.md",
+  "type": "synthesis",
+  "title": "RSIS3 Phases 4\u20135 \u2014 ops maturity + autonomy (daemon, convergence, nightly)",
+  "tags": [
+   "rsis3",
+   "phase-4",
+   "phase-5",
+   "ops",
+   "daemon",
+   "convergence",
+   "ci",
+   "autonomy",
+   "nightly"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-rebirth-1-first-cycles-2026-08-08.md",
   "type": "synthesis",
   "title": "RSIS3 rebirth #1 + first real L1\u2013L9 cycles",
@@ -77597,6 +77662,20 @@
    "l8",
    "l9",
    "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-roadmap-sequels-2-3-2026-08-09.md",
+  "type": "synthesis",
+  "title": "RSIS3 roadmap sequels II\u2013III (Phases 6\u201315) \u2014 durable structure and ordering rules",
+  "tags": [
+   "rsis3",
+   "roadmap",
+   "sequel",
+   "planning",
+   "phase-6",
+   "phase-11",
+   "architecture"
   ]
  },
  {

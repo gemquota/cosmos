@@ -14,3 +14,8 @@ components/mykb/.wiki-daemon/stub_created_dates.json
 # Stray root-level KG render exports (not repo artifacts)
 /kg-1.png
 /kg-2.png
+
+# Cycle daemon runtime artifacts
+.cosmos-cycle-daemon.pid
+components/rsis3/.cosmos-cycle-daemon.pid
+components/rsis3/rack/cycle-daemon.lock

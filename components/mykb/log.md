@@ -5,6 +5,19 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-09 (RSIS3 L3 cycle 78 — memory consolidation)
+- L3 cycle 78 wrote OKF synthesis `rsis3-l3-cycle-78-cross-session-memory-consolidation-2026-08-09.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-09 (CODEBASE.md generator)
+- Added `gen-codebase-md.py` + regenerable `CODEBASE.md` (361 files,
+  ~2.6 MB): header + inclusion rules + ASCII tree + anchor TOC +
+  per-file sections grouped by top-level dir. Rules: source/config/
+  docs extensions, selected `.md` roots, extensionless scripts
+  (`cli/cosmos`), `.github/` workflows; excludes runtime/data/
+  snapshots/images/audit reports; 250 KB cap.
+- Synthesis: `cosmos-codebase-md-generator-2026-08-09.md`.
+
 ## 2026-08-09 (RSIS3 roadmap sequels II–III — Phases 6–15)
 - Generated Sequel II — Horizons (Phases 6–10: distributed memory,
   verification mesh, cost governance, HITL governance, self-modeling)

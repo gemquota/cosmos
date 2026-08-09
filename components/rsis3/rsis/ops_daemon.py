@@ -220,9 +220,9 @@ def run_forever(*, interval_s: int, cycles: int, goal_space_cycle: int,
                     maybe_auto_retune(workspace, mykb, package_root,
                                       int(os.environ.get("RSIS_RETUNE_MIN_INTERVAL_S", "21600")))
                 if snapshots:
-                    _regen_snapshots(package_root)
+                    _regen_snapshots(repo_root(package_root))
                 if commit:
-                    _commit_cycle(package_root.parent, commit=True,
+                    _commit_cycle(repo_root(package_root), commit=True,
                                   push=push, label="cadence cycle")
                 print(f"  ✓ cycle ok (rc=0) in {time.time() - started:.1f}s")
             else:
@@ -242,8 +242,16 @@ def run_forever(*, interval_s: int, cycles: int, goal_space_cycle: int,
         print("  🔓 lock released")
 
 
-def _regen_snapshots(package_root: Path) -> None:
-    repo = package_root.parent
+def repo_root(package_root: Path) -> Path:
+    """Repo root = the ancestor of ``package_root`` holding gen-static-data.py."""
+    p = Path(package_root).resolve()
+    for cand in (p, *p.parents):
+        if (cand / "gen-static-data.py").is_file():
+            return cand
+    return p.parent
+
+
+def _regen_snapshots(repo: Path) -> None:
     try:
         subprocess.run(
             [sys.executable, str(repo / "gen-static-data.py")],
