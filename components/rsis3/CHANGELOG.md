@@ -1,3 +1,34 @@
+## [0.5.0] — 2026-08-08
+
+### Added — Phase 2 envelope hardening (cosmos-envelope/1 · v1.1)
+- Typed structured artifacts: JSON/YAML/TOML parsed to machine-readable
+  schema blocks (`parsed` + `schema {keys, types, depth}`) instead of raw
+  strings; echoed in chat prompts as compact schema JSON
+- Multimodal expansion: audio passed as Gemini `inline_data`, PDF text
+  extraction (FlateDecode + raw stream fallback), video frames rejected
+  with an explicit `unsupported` status
+- Server-side per-type caps: text preview 8 KB, media 4 MB, request body
+  6 MB (413 beyond cap) — enforced in the bridge, not just the UI
+- Explicit ref allowlist: `rack/bridge/allowlist.json` (roots +
+  root-relative deny prefixes) replaces the hardcoded traversal guard;
+  defaults to root+mykb containment
+- In-memory rate limit on `/api/chat` (20 req/min default,
+  `RSIS_BRIDGE_RATE_LIMIT`) with `Retry-After` on 429
+- Origin guard: non-localhost origins refused (403) unless
+  `RSIS_BRIDGE_ALLOW_ORIGIN` is set
+- NDJSON streaming replies: `POST /api/chat` with
+  `Accept: application/x-ndjson` streams `meta`/`delta`/`done` frames from
+  Gemini `:streamGenerateContent?alt=sse`; legacy JSON reply unchanged;
+  chat UI renders tokens incrementally
+- `tests/test_bridge.py` — 15-case HTTP matrix (traversal, allowlist deny,
+  oversized media, 413 body cap, missing file, structured schema, text+
+  image round-trip, NDJSON streaming, audio/PDF/video, origin guard, rate
+  limit); `tests/bridge-envelope.test.mjs` — 8 envelope unit cases
+
+### Verified
+- `python3 -m pytest tests/` — 184 passing (169 pre-existing + 15 new)
+- `node --test tests/bridge-envelope.test.mjs` — 8 passing
+- Live NDJSON round-trip against Gemini (meta → delta → done)
 
 ## [0.4.4] — 2026-08-07
 

@@ -3,7 +3,8 @@ var AD, PD, g, pu, sh, ch = {};
 
 function loadData() {
   var url = (typeof DATA_DIR !== 'undefined' ? DATA_DIR : '') + (typeof DATA_FILE !== 'undefined' ? DATA_FILE : 'dashboard-data.json');
-  // Also try without leading ./ if needed
+  // Static dashboard-data.json is the cache (Phase 4); when the bridge is
+  // up, /api/cosmos overlays live telemetry on top of it.
   fetch(url)
     .then(function(r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -18,10 +19,36 @@ function loadData() {
       document.getElementById('load').style.display = 'none';
       document.getElementById('app').style.display = 'block';
       renderAll();
+      maybeLiveOverlay();
     })
     .catch(function(e) {
       document.getElementById('load').innerHTML = '<div class="text-red-400 text-center mt-10">Error loading data: ' + e.message + '<br><br><button onclick="location.reload()" style="background:#6366f1;color:white;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;font-size:14px">Retry</button></div>';
     });
+}
+
+// Phase 4 — dynamic snapshot: read /api/cosmos when the bridge is up and
+// overlay live values; the static files remain the GitHub Pages cache.
+function maybeLiveOverlay() {
+  if (typeof BRIDGE_URL === 'undefined' || !BRIDGE_URL) return;
+  fetch(BRIDGE_URL + '/api/cosmos', { headers: { 'Accept': 'application/json' } })
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(c) {
+      if (!c) return;
+      AD.live = c;
+      var badge = document.getElementById('live-dash');
+      if (badge) {
+        badge.classList.remove('hide');
+        badge.textContent = '● live ' + (c.kg ? c.kg.nodes + 'n/' + c.kg.edges + 'e' : '') +
+          ' · gen ' + (c.strategies ? c.strategies.generation : '—') +
+          ' · fit ' + (c.strategies && c.strategies.best_fitness != null ? c.strategies.best_fitness : '—') +
+          (c.costs ? ' · $' + c.costs.cost + '/24h' : '');
+      }
+      var sp = document.getElementById('s-pulses');
+      if (sp && typeof c.pulses === 'number') sp.textContent = c.pulses;
+      var liveUrl = document.getElementById('live-url');
+      if (liveUrl) liveUrl.href = BRIDGE_URL;
+    })
+    .catch(function() { /* bridge down — static cache stands */ });
 }
 
 function esc(s){

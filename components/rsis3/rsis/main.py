@@ -16,6 +16,9 @@ Usage:
     python -m rsis status            # System overview
     python -m rsis check             # Check resource limits
     python -m rsis recovery-test     # Test recovery mechanisms
+    python -m rsis cycle-daemon       # 3-min cadence daemon (lockfile+backoff)
+    python -m rsis convergence        # Plateau/no-op detection + retune proposals
+    python -m rsis nightly-summary    # Daily MyKB summary note
 """
 
 import argparse
@@ -528,6 +531,36 @@ def cmd_launch(args: argparse.Namespace) -> int:
     return result["exit_code"]
 
 
+def cmd_cycle_daemon(args: argparse.Namespace) -> int:
+    """Run the standing 3-minute cycle cadence as a background daemon."""
+    from rsis.ops_daemon import main as daemon_main
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    mykb = root.parent / "mykb"
+    args.workspace = root
+    args.mykb = mykb
+    args.package_root = root
+    return daemon_main(args)
+
+
+def cmd_convergence(args: argparse.Namespace) -> int:
+    """Detect fitness plateaus / L4\u2013L9 bound no-ops; propose retuning."""
+    from rsis.convergence import main as conv_main
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    mykb = root.parent / "mykb"
+    return conv_main(root, mykb, root, plateau_window=args.window,
+                     noop_window=args.noop_window,
+                     noop_threshold=args.noop_threshold,
+                     apply=args.apply, json_out=args.json)
+
+
+def cmd_nightly(args: argparse.Namespace) -> int:
+    """Aggregate the day into a MyKB daily-summary synthesis note."""
+    from rsis.nightly import main as nightly_main
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    mykb = root.parent / "mykb"
+    return nightly_main(root, mykb, day=args.date, json_out=args.json)
+
+
 def cmd_self_assess(args: argparse.Namespace) -> int:
     telemetry, checkpoint, memory, evaluator, recovery, enforcer = _init_subsystems()
     enforcer.start()
@@ -998,6 +1031,58 @@ def main() -> int:
     p_launch.add_argument("--dry-run", action="store_true",
                           help="Print the execution plan without running")
     p_launch.set_defaults(func=cmd_launch)
+
+    p_daemon = sub.add_parser(
+        "cycle-daemon",
+        help="3-minute cycle cadence daemon (lockfile, backoff, healthcheck)")
+    p_daemon.add_argument("--once", action="store_true",
+                          help="Run a single cycle then exit")
+    p_daemon.add_argument("--interval", type=int, default=180,
+                          help="Cadence in seconds (default: 180)")
+    p_daemon.add_argument("--cycles", type=int, default=1,
+                          help="Cycles per tick (default: 1)")
+    p_daemon.add_argument("--goal-space-cycle", type=int, default=1)
+    p_daemon.add_argument("--disk-pct", type=int, default=None)
+    p_daemon.add_argument("--bridge-url", default=None,
+                          help="Bridge base URL to healthcheck each tick")
+    p_daemon.add_argument("--supervise-bridge", action="store_true",
+                          help="Restart the Node bridge when its port is down")
+    p_daemon.add_argument("--auto-retune", action="store_true",
+                          help="Apply convergence proposals (bounded)")
+    p_daemon.add_argument("--no-snapshots", action="store_true",
+                          help="Skip gen-static-data.py after each cycle")
+    p_daemon.add_argument("--commit", action="store_true",
+                          help="Commit each cycle's artifacts (T0)")
+    p_daemon.add_argument("--push", action="store_true",
+                          help="pull --rebase + push after each commit")
+    p_daemon.add_argument("--lockfile", type=Path,
+                          default=Path("rack/cycle-daemon.lock"))
+    p_daemon.add_argument("--dry-run", action="store_true",
+                          help="Print the plan and exit")
+    p_daemon.set_defaults(func=cmd_cycle_daemon)
+
+    p_conv = sub.add_parser(
+        "convergence",
+        help="Detect fitness plateaus / bound no-ops; propose retuning")
+    p_conv.add_argument("--window", type=int, default=5,
+                        help="Plateau window in generations (default: 5)")
+    p_conv.add_argument("--noop-window", type=int, default=10,
+                        help="Telemetry window for no-op counting")
+    p_conv.add_argument("--noop-threshold", type=int, default=8,
+                        help="No-op count that counts as a bound")
+    p_conv.add_argument("--apply", action="store_true",
+                        help="Run the proposed retune loop once")
+    p_conv.add_argument("--json", action="store_true",
+                        help="Print machine-readable report")
+    p_conv.set_defaults(func=cmd_convergence)
+
+    p_night = sub.add_parser(
+        "nightly-summary",
+        help="Write the day's MyKB daily-summary synthesis note")
+    p_night.add_argument("--date", default=None,
+                         help="UTC day YYYY-MM-DD (default: today)")
+    p_night.add_argument("--json", action="store_true")
+    p_night.set_defaults(func=cmd_nightly)
 
     p_self = sub.add_parser(
         "self-assess",

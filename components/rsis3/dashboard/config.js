@@ -6,5 +6,6 @@ var DATA_FILE = 'dashboard-data.json';
 
 // COSMOS Bridge (LLM x framework chat) — served by rack/bridge/server.mjs
 var BRIDGE_URL = 'http://localhost:8787';
+var BRIDGE_TOKEN = ''; // optional bearer token for non-localhost bridge deployments
 // Active multitiered goal stack (Output > Communicate > Wrap > Bridge)
 var GOALS_FILE = '../rack/goals_stack.json';

@@ -47,9 +47,10 @@
   </div>
   <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 bg-slate-800/60 border border-slate-700/50 rounded-2xl p-4 sm:p-5 mb-4">
     <div>
-      <div class="flex items-center gap-2 mb-0.5">
+      <div class="flex items-center gap-2 mb-0.5 flex-wrap">
         <span class="px-2 py-0.5 bg-indigo-500/15 text-indigo-400 text-[10px] sm:text-xs font-bold rounded-full uppercase border border-indigo-500/25">RSIS</span>
         <h1 class="text-lg sm:text-2xl font-bold">Telemetry Dashboard</h1>
+        <a id="live-dash" class="hide text-[10px] font-mono font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/25 rounded-lg px-2 py-1" href="#" target="_blank" rel="noopener" title="Live bridge telemetry">● live</a>
       </div>
       <p class="text-xs sm:text-sm text-slate-400/80" id="hdr-stats">loading…</p>
     </div>
@@ -199,7 +200,7 @@
     <span class="block mt-1.5 text-[11px] text-slate-500">Then reload this tab (server listens on <span id="bridge-url" class="font-mono"></span>).</span>
   </div>
   <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
-    <iframe id="bridge-frame" data-src="" title="COSMOS Bridge chat" class="w-full" style="height:calc(100vh - 220px);min-height:520px;border:none;background:#020617"></iframe>
+    <div id="bridge-app" title="COSMOS Bridge chat" class="w-full p-3 sm:p-4" style="height:calc(100vh - 220px);min-height:520px;background:#020617"></div>
   </div>
 </div>
 
@@ -209,6 +210,7 @@
 
 
 <script src="app.js"></script>
+<script src="bridge.js"></script>
 <script>
 // COSMOS component tab views (MyKB + SPACE)
 function cs(comp, view) {
@@ -246,12 +248,14 @@ sw = function(n){
     var off = document.getElementById('bridge-off');
     if (off) off.classList.add('hide');
     var u = document.getElementById('bridge-url');
-    if (u) u.textContent = (typeof BRIDGE_URL !== 'undefined' ? BRIDGE_URL : 'http://localhost:8787');
-    var b = document.getElementById('bridge-frame');
     var base = (typeof BRIDGE_URL !== 'undefined' ? BRIDGE_URL : 'http://localhost:8787');
-    if (b && b.getAttribute('data-src') === '') {
-      b.setAttribute('data-src', base);
-      b.src = base;
+    if (u) u.textContent = base;
+    if (window.initCosmosBridge && !window.__bridgeMounted) {
+      window.__bridgeMounted = true;
+      window.initCosmosBridge(document.getElementById('bridge-app'), {
+        api: base,
+        token: (typeof BRIDGE_TOKEN !== 'undefined' ? BRIDGE_TOKEN : '')
+      });
     }
     if (off) {
       fetch(base + '/health')

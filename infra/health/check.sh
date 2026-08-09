@@ -42,6 +42,9 @@ echo "── Wiki links ──────────────────�
 echo "── Practices (loop pipeline gate) ────────────────"
 (cd "$DIR/components/rsis3" && python3 -m rsis check-practices >/dev/null) || FAIL=1
 
+echo "── Bridge smoke (offline fallback) ───────────────"
+bash "$DIR/infra/health/bridge_smoke.sh" || FAIL=1
+
 if [ "$FAIL" = "1" ]; then
   echo "❌ Health check FAILED"
   exit 1

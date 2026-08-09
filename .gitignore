@@ -10,3 +10,7 @@ dist/
 # Stub auditor runtime artifacts
 components/mykb/.wiki-daemon/buffers/
 components/mykb/.wiki-daemon/stub_created_dates.json
+
+# Stray root-level KG render exports (not repo artifacts)
+/kg-1.png
+/kg-2.png

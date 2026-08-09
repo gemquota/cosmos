@@ -5,6 +5,46 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-09 (RSIS3 roadmap sequels II–III — Phases 6–15)
+- Generated Sequel II — Horizons (Phases 6–10: distributed memory,
+  verification mesh, cost governance, HITL governance, self-modeling)
+  and Sequel III — Frontiers (Phases 11–15: cross-project, collaboration,
+  federation, invariants, long-horizon autonomy); main roadmap links both.
+- Synthesis: `rsis3-roadmap-sequels-2-3-2026-08-09.md`.
+
+## 2026-08-08 (RSIS3 Phases 4–5 — ops maturity + autonomy)
+- Delivered `python -m rsis cycle-daemon` (3-min cadence, fcntl lockfile,
+  5/15/30 min backoff, bridge healthcheck, --auto-retune, --supervise-
+  bridge), `convergence` (plateau + bound no-op detection → create-only
+  proposals + backlog), `nightly-summary` (OKF daily note + log entry),
+  dynamic dashboard overlay, CI guard + bridge smoke. Convergence live
+  run detected gen-94 plateau (best 0.244, L4/L6–L9 no-ops ×10) →
+  identity retune proposal; nightly note written (63 cycles, 1311
+  events). 205 pytest + 8 node --test green.
+- Synthesis: `rsis3-phase-4-5-ops-autonomy-2026-08-08.md`.
+
+## 2026-08-08 (RSIS3 Phase 3 — product surface, completes T3)
+- Bridge is now a web product: conversations persist to
+  `rack/bridge/sessions/<id>.jsonl` and resume via `/api/sessions`; the
+  chat memory loop distills sessions (RSIS_BRIDGE_MEMORY_N) into MyKB
+  syntheses; chat surface extracted to shared `dashboard/bridge.js`
+  (unified dashboard embeds natively, no iframe); optional
+  `RSIS_BRIDGE_TOKEN` auth; hosting documented in vercel-deploy/README.
+  191 pytest + 8 node --test green; live smoke: token-gated streaming
+  chat → session archived → resumed.
+- Synthesis: `rsis3-phase-3-product-surface-2026-08-08.md`.
+
+
+## 2026-08-08 (RSIS3 Phase 2 — envelope hardening, cosmos-envelope/1 v1.1)
+- Completed Phase 2 of the multi-phase roadmap (tier T2): typed structured
+  artifacts (schema blocks), audio inline / PDF text-extraction / video
+  rejection, server-side caps (8 KB / 4 MB / 6 MB), explicit ref allowlist
+  `rack/bridge/allowlist.json`, /api/chat rate limit (20 req/min +
+  Retry-After), origin guard, NDJSON streaming replies. 184 pytest + 8
+  node --test green; live Gemini stream verified (meta→delta→done).
+- Synthesis: `rsis3-phase-2-envelope-hardening-2026-08-08.md`.
+
+
 ## 2026-08-08 (RSIS3 L3 cycle 77 — memory consolidation)
 - L3 cycle 77 wrote OKF synthesis `rsis3-l3-cycle-77-cross-session-memory-consolidation-2026-08-08.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
 - Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
@@ -1250,3 +1290,7 @@ title: "Bundle Log"
   rel vocabulary (S3), atomic KG save (S5), batched add_edges + docs (S6),
   loops.yml rotation (S7). 169 tests, evaluator PASS ×4, health 0.833.
 - Synthesis: `rsis3-multi-series-7-cycle-run-2026-08-08.md`.
+
+## 2026-08-08 (RSIS3 nightly summary — automatic)
+- 63 cycle(s), 1311 telemetry events, gen 94 (best 0.244), KG 282n/475e, $0.012953 llm cost, 93 commits.
+- Synthesis: `rsis3-daily-summary-2026-08-08.md`.

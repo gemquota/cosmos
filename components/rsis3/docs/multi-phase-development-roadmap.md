@@ -119,6 +119,28 @@ Goal: cycles run sustainably in the background with CI guarding regressions.
   intervention, all cycles rc=0, CI green on every commit, and a nightly
   summary note in MyKB.
 
+## Phase 5 — Autonomy & Durable Ops
+
+Goal: the system keeps itself running, retuned, and documented — zero
+manual intervention beyond the standing cadence.
+
+- **Auto-retuning**: `cycle-daemon --auto-retune` consumes convergence
+  proposals and applies the proposed identity/meta loop itself, bounded by
+  `RSIS_RETUNE_MIN_INTERVAL_S` (default 6 h) with an `applied.jsonl`
+  ledger — plateaus and bound no-ops are never silent.
+- **Nightly summary automation**: `python -m rsis nightly-summary` writes
+  an OKF daily-summary synthesis note + `log.md` entry;
+  `.github/workflows/nightly.yml` runs it daily and pushes it.
+- **Bridge self-heal**: `--supervise-bridge` restarts the Node bridge when
+  `/health` fails and the port is free; the daemon logs the recovery.
+- **Cost visibility**: `/api/cosmos` carries a 24 h cost ledger
+  (traces/tokens/cost from `.rsis/costs.jsonl`); the dashboard shows a
+  live overlay badge when the bridge is up.
+- **Exit criterion**: 7 days unattended — daemon cycles every 3 min under
+  the lockfile, one bounded auto-retune per convergence episode, one daily
+  summary note per day, bridge heals within 2 cycles, CI green on every
+  commit.
+
 ## Sequencing notes
 
 - Phases are cumulative: each completes the acceptance criteria of its tier
@@ -135,7 +157,22 @@ Goal: cycles run sustainably in the background with CI guarding regressions.
 | Phase | Tier(s) | Status |
 |-------|---------|--------|
 | Baseline | T0–T3 first pass + ops seed | ✅ delivered |
-| Phase 1 — Live state streaming | T1 | ⏳ next |
-| Phase 2 — Envelope hardening | T2 | ⏳ queued |
-| Phase 3 — Product surface | T3 | ⏳ queued |
-| Phase 4 — Ops maturity | ops | ⏳ queued |
+| Phase 1 — Live state streaming | T1 | ✅ delivered |
+| Phase 2 — Envelope hardening | T2 | ✅ delivered |
+| Phase 3 — Product surface | T3 | ✅ delivered |
+| Phase 4 — Ops maturity | ops | ✅ delivered |
+| Phase 5 — Autonomy & durable ops | ops | ✅ delivered (exit: 7-day live validation) |
+
+## Sequels
+
+The original 5-phase roadmap is complete. Future work continues in two
+sequel roadmaps, each another five phases, cumulative on everything above:
+
+- **Sequel II — Horizons (Phases 6–10)**: distributed memory &
+  multi-session coordination, verification mesh, observability & cost
+  governance, human-in-the-loop governance, self-modeling & prediction —
+  [`multi-phase-development-roadmap-sequel-2.md`](multi-phase-development-roadmap-sequel-2.md)
+- **Sequel III — Frontiers (Phases 11–15)**: cross-project generalization,
+  collaborative & community ops, federated memory, continual verification
+  & invariant attestation, long-horizon autonomy —
+  [`multi-phase-development-roadmap-sequel-3.md`](multi-phase-development-roadmap-sequel-3.md)
