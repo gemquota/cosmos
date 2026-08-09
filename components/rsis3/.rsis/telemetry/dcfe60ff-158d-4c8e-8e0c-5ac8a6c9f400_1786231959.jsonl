@@ -1,0 +1,4 @@
+{"type": "l2_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-08T23:32:34.080881+00:00", "goal": "Implement the availability_targets spec artifact: Best-effort \u2014 no formal SLA, occasional downtime acceptable (SPACE spec artifact availability_targets, series 5, question 5.3.3)"}
+{"type": "l2_complete", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-08T23:32:35.661036+00:00", "success": false, "attempts": 0}
+{"type": "l1_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-08T23:32:35.661895+00:00", "task": "Implement the availability_targets spec artifact: Best-effort \u2014 no formal SLA, occasional downtime acceptable (SPACE spec artifact availability_targets, series 5, question 5.3.3)"}
+{"type": "l1_complete", "path": null, "delta": null, "duration_ms": 0, "timestamp": "2026-08-08T23:32:35.662078+00:00", "success": true, "steps": 1}

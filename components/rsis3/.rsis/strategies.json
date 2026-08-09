@@ -1,5 +1,5 @@
 {
-  "generation": 284,
+  "generation": 304,
   "population": [
     {
       "id": "strategy-budget-1",
@@ -9,7 +9,7 @@
         "focus": "general"
       },
       "fitness": 0.244,
-      "evals": 284
+      "evals": 304
     },
     {
       "id": "strategy-seed-1",
@@ -19,10 +19,10 @@
         "focus": "general"
       },
       "fitness": 0.244,
-      "evals": 284
+      "evals": 304
     },
     {
-      "id": "strategy-g284-cross-250",
+      "id": "strategy-g304-cross-250",
       "params": {
         "l2_attempts": 5,
         "budget_factor": 1.0,
@@ -33,7 +33,7 @@
       "lineage": "strategy-budget-1xstrategy-seed-1"
     },
     {
-      "id": "strategy-g284-1-89",
+      "id": "strategy-g304-1-89",
       "params": {
         "l2_attempts": 4,
         "budget_factor": 1.0,
@@ -2311,6 +2311,166 @@
     },
     {
       "generation": 284,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 285,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 286,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 287,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 288,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 289,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 290,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 291,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 292,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 293,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 294,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 295,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 296,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 297,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 298,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 299,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 300,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 301,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 302,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 303,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 304,
       "avg_fitness": 0.1586,
       "best_fitness": 0.244,
       "population": 4,
