@@ -130,6 +130,11 @@ def _resolve_goal(goal: str, gateway: Optional[MyKBGateway] = None,
 # ── Commands ─────────────────────────────────────────────────────────────
 
 def cmd_init(args: argparse.Namespace) -> int:
+    if getattr(args, "project", None):
+        from rsis.projects import main as projects_main
+        root = Path(CONFIG.workspace_dir or ".").resolve()
+        mykb = root.parent / "mykb"
+        return projects_main(root, mykb, repo=args.project, name=args.name)
     print(f"RSIS v{__version__} — Initialising workspace...")
     print(f"  Workspace: {CONFIG.workspace_dir}")
 
@@ -150,6 +155,53 @@ def cmd_init(args: argparse.Namespace) -> int:
 
     print("  RSIS workspace ready.")
     return 0
+
+
+def cmd_projects(args: argparse.Namespace) -> int:
+    """Phase 11: list scaffolded project profiles."""
+    from rsis.projects import main as projects_main
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    mykb = root.parent / "mykb"
+    return projects_main(root, mykb, list_only=True, json_out=args.json)
+
+
+def cmd_federation(args: argparse.Namespace) -> int:
+    """Phase 13: publish/pull/status for federated memory."""
+    from rsis.federation import main as fed_main
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    mykb = root.parent / "mykb"
+    return fed_main(root, mykb, args.action, note_rel=args.note,
+                    envelope_file=args.envelope, producer=args.producer,
+                    json_out=args.json)
+
+
+def cmd_seasons(args: argparse.Namespace) -> int:
+    """Phase 15: seasonal goals, energy-aware scheduling, self-repair, review."""
+    from rsis.seasons import main as seasons_main
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    mykb = root.parent / "mykb"
+    return seasons_main(root, mykb, action=args.action, force=args.force,
+                        json_out=args.json)
+
+
+def cmd_invariants(args: argparse.Namespace) -> int:
+    """Phase 14: run the executable invariant registry; optionally repair."""
+    from rsis.invariants import main as invariants_main
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    mykb = root.parent / "mykb"
+    return invariants_main(root, mykb=mykb, do_repair=args.repair,
+                           json_out=args.json)
+
+
+def cmd_users(args: argparse.Namespace) -> int:
+    """Phase 12: manage per-user identities, tokens, and authz checks."""
+    from rsis.users import main as users_main
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    return users_main(
+        root, args.action, user_id=args.user_id, name=args.name,
+        role=args.role, projects=args.projects,
+        token=args.token, check_action=args.check_action,
+        project=args.project, json_out=args.json)
 
 
 def cmd_run(args: argparse.Namespace) -> int:
@@ -515,7 +567,8 @@ def cmd_launch(args: argparse.Namespace) -> int:
     """Run a full L1\u2013L9 loop batch (N cycles), mirroring run-batch.sh."""
     from rsis.launch import LOOP_ORDER, plan_batch, run_batch
 
-    plan = plan_batch(args.cycles, args.goal_space_cycle)
+    project_goal = _project_goal(args)
+    plan = plan_batch(args.cycles, args.goal_space_cycle, goal=project_goal)
     print(f"\U0001f30c launch: {len(plan)} executions "
           f"({args.cycles} cycles \u00d7 {len(LOOP_ORDER)} loops)")
 
@@ -526,7 +579,8 @@ def cmd_launch(args: argparse.Namespace) -> int:
         return 0
 
     result = run_batch(
-        args.cycles, args.goal_space_cycle, disk_pct=args.disk_pct)
+        args.cycles, args.goal_space_cycle, disk_pct=args.disk_pct,
+        goal=project_goal)
     print(result["report"])
     return result["exit_code"]
 
@@ -539,7 +593,22 @@ def cmd_cycle_daemon(args: argparse.Namespace) -> int:
     args.workspace = root
     args.mykb = mykb
     args.package_root = root
+    args.project_goal = _project_goal(args)
     return daemon_main(args)
+
+
+def _project_goal(args) -> Optional[str]:
+    """Phase 11: resolve the first goal from a project profile, if requested."""
+    project = getattr(args, "project", None)
+    if not project:
+        return None
+    from rsis.projects import default_profile, goal_sources, load_project
+    root = Path(CONFIG.workspace_dir or ".").resolve()
+    mykb = root.parent / "mykb"
+    profile = load_project(root, project) or default_profile(root)
+    goals = goal_sources(profile, root, mykb, limit=1)
+    print(f"  \u2139 Project goal ({project}): {goals[0][:90]}")
+    return goals[0]
 
 
 def cmd_convergence(args: argparse.Namespace) -> int:
@@ -1040,7 +1109,74 @@ def main() -> int:
     sub = parser.add_subparsers(dest="command")
 
     p_init = sub.add_parser("init", help="Initialise workspace")
+    p_init.add_argument("--project", default=None,
+                        help="Phase 11: scaffold a project profile for an "
+                             "external repo instead of the host workspace")
+    p_init.add_argument("--name", default=None,
+                        help="Profile name (default: repo basename)")
     p_init.set_defaults(func=cmd_init)
+
+    p_projects = sub.add_parser(
+        "projects",
+        help="Phase 11: list scaffolded cross-project profiles")
+    p_projects.add_argument("--json", action="store_true")
+    p_projects.set_defaults(func=cmd_projects)
+
+    p_users = sub.add_parser(
+        "users",
+        help="Phase 12: per-user identities, signed tokens, capability authz")
+    p_users.add_argument(
+        "action", choices=["list", "add", "token", "check"],
+        help="list users · add a user · issue a token · check an action")
+    p_users.add_argument("--user-id", default=None)
+    p_users.add_argument("--name", default=None)
+    p_users.add_argument("--role", default="observer",
+                         choices=["observer", "contributor", "approver"])
+    p_users.add_argument("--project", default="cosmos",
+                         help="Project for membership/authz checks")
+    p_users.add_argument("--projects", nargs="*", default=None,
+                         help='Project memberships for --action add '
+                              '(star = all projects)')
+    p_users.add_argument("--token", default=None,
+                         help="Signed token for --action check")
+    p_users.add_argument("--check-action", default="read",
+                         choices=["read", "propose", "approve", "rollback",
+                                  "manage"])
+    p_users.add_argument("--json", action="store_true")
+    p_users.set_defaults(func=cmd_users)
+
+    p_inv = sub.add_parser(
+        "invariants",
+        help="Phase 14: executable invariant registry + sha256 attestation")
+    p_inv.add_argument("--repair", action="store_true",
+                       help="Attempt self-repair of repairable invariants")
+    p_inv.add_argument("--json", action="store_true")
+    p_inv.set_defaults(func=cmd_invariants)
+
+    p_seasons = sub.add_parser(
+        "seasons",
+        help="Phase 15: long-horizon autonomy — seasons, energy, self-repair")
+    p_seasons.add_argument(
+        "action", choices=["status", "rotate", "repair", "review"],
+        help="status · rotate season · self-repair stack · quarterly review")
+    p_seasons.add_argument("--force", action="store_true",
+                           help="Rotate regardless of cadence")
+    p_seasons.add_argument("--json", action="store_true")
+    p_seasons.set_defaults(func=cmd_seasons)
+
+    p_fed = sub.add_parser(
+        "federation",
+        help="Phase 13: federated memory — publish/pull syntheses, status")
+    p_fed.add_argument("action", choices=["publish", "pull", "status"],
+                       help="publish a note · pull an envelope · status")
+    p_fed.add_argument("--note", default=None,
+                       help="MyKB note rel (wiki/syntheses/<name>.md) to publish")
+    p_fed.add_argument("--envelope", default=None,
+                       help="Inbox envelope JSON file to pull")
+    p_fed.add_argument("--producer", default="system",
+                       help="Producing identity for the envelope")
+    p_fed.add_argument("--json", action="store_true")
+    p_fed.set_defaults(func=cmd_federation)
 
     p_run = sub.add_parser("run", help="Run improvement session")
     p_run.add_argument("--goal", "-g", default="self-improve the codebase",
@@ -1083,6 +1219,9 @@ def main() -> int:
     p_launch.add_argument("--goal-space-cycle", type=int, default=1,
                           help="Cycle that sources its L2 goal from a SPACE "
                                "spec artifact (default: 1)")
+    p_launch.add_argument("--project", default=None,
+                          help="Phase 11: run against a project profile "
+                               "(sources L2 goals from that project)")
     p_launch.add_argument("--disk-pct", type=int, default=None,
                           help="Disk-pressure override (default: "
                                "RSIS_DISK_USAGE_PCT or 100)")
@@ -1100,6 +1239,8 @@ def main() -> int:
     p_daemon.add_argument("--cycles", type=int, default=1,
                           help="Cycles per tick (default: 1)")
     p_daemon.add_argument("--goal-space-cycle", type=int, default=1)
+    p_daemon.add_argument("--project", default=None,
+                          help="Phase 11: route cycles to a project profile")
     p_daemon.add_argument("--disk-pct", type=int, default=None)
     p_daemon.add_argument("--bridge-url", default=None,
                           help="Bridge base URL to healthcheck each tick")

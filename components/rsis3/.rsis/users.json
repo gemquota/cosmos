@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "ttl_s": 43200,
+  "users": [
+    {
+      "id": "alice",
+      "name": "Alice",
+      "role": "observer",
+      "projects": [
+        "cosmos"
+      ],
+      "capabilities": []
+    },
+    {
+      "id": "carol",
+      "name": "Carol",
+      "role": "approver",
+      "projects": [
+        "cosmos",
+        "external-demo-repo"
+      ],
+      "capabilities": []
+    }
+  ]
+}

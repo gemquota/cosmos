@@ -147,8 +147,8 @@ only at the policy-revision boundary.
 
 | Phase | Area | Status |
 |-------|------|--------|
-| Phase 11 — Cross-project generalization | engine | ⏳ queued |
-| Phase 12 — Collaborative & community ops | governance | ⏳ queued |
-| Phase 13 — Federated memory | memory | ⏳ queued |
-| Phase 14 — Continual verification & invariants | verification | ⏳ queued |
-| Phase 15 — Long-horizon autonomy | autonomy | ⏳ queued |
+| Phase 11 — Cross-project generalization | engine | ✅ delivered (implementation) · ⏳ 2-repo week-long live validation pending |
+| Phase 12 — Collaborative & community ops | governance | ✅ delivered (implementation) · ⏳ multi-user live validation pending |
+| Phase 13 — Federated memory | memory | ✅ delivered (implementation) · ⏳ 2-instance exchange live validation pending |
+| Phase 14 — Continual verification & invariants | verification | ✅ delivered (implementation) · ⏳ 30-cycle zero-drift live validation pending |
+| Phase 15 — Long-horizon autonomy | autonomy | ✅ delivered (implementation) · ⏳ 30-day unattended live validation pending |

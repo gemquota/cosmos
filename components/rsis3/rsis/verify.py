@@ -211,6 +211,15 @@ def record_verification(workspace: Path, candidate, eval_result,
         "pre_commit": pre_commit,
     }
     append_verification(ws, record)
+    # Phase 14: every applied candidate also carries a sha256 attestation
+    # of the invariant set it passed (extends the Phase 7 ledger).
+    if contract_ok and record.get("decision") == "approve":
+        try:
+            from rsis.invariants import attest, run_invariants
+            attest(ws, f"candidate:{record['candidate_sha']}",
+                   run_invariants(ws), actor="l2")
+        except Exception as e:
+            logger.warning("attestation failed: %s", e)
     return record
 
 

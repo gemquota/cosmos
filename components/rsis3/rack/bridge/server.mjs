@@ -53,7 +53,7 @@
  */
 import { createServer } from 'node:http';
 import { appendFile, mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises';
-import { randomBytes } from 'node:crypto';
+import { randomBytes, createHmac, timingSafeEqual as tse } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as env from './envelope.mjs';
@@ -78,6 +78,8 @@ const MYKB = path.resolve(ROOT, '..', 'mykb');
 const CYCLES_DIR = path.join(ROOT, 'rack', 'bridge', 'cycles');
 const ALLOWLIST_FILE = path.join(ROOT, 'rack', 'bridge', 'allowlist.json');
 const TOKEN = process.env.RSIS_BRIDGE_TOKEN || '';
+const USERS_FILE = process.env.RSIS_USERS_FILE || path.join(RSIS_STATE, 'users.json');
+const USERS_SECRET = process.env.RSIS_USERS_SECRET || '';
 const SESSIONS_DIR = process.env.RSIS_BRIDGE_SESSIONS_DIR || path.join(ROOT, 'rack', 'bridge', 'sessions');
 const MEMORY_DIR = process.env.RSIS_BRIDGE_MEMORY_DIR || path.join(MYKB, 'wiki', 'syntheses');
 const MEMORY_N = Number(process.env.RSIS_BRIDGE_MEMORY_N || 6);
@@ -165,12 +167,15 @@ async function costSummary(hours = 24) {
 
 // ── cosmos context envelope (tier 2: dense messaging wrapper) ───────────
 
-async function cosmosSnapshot() {
-  const [dd, goals, strategies, kg] = await Promise.all([
+async function cosmosSnapshot(projectName) {
+  const [dd, goals, strategies, kg, profile] = await Promise.all([
     read(path.join(PULSES, 'dashboard-data.json'), {}),
     read(path.join(ROOT, 'rack', 'goals_stack.json'), null),
     read(path.join(RSIS_STATE, 'strategies.json'), {}),
     read(path.join(RSIS_STATE, 'knowledge_graph.json'), { nodes: [], edges: [] }),
+    projectName && projectName !== 'cosmos'
+      ? read(path.join(ROOT, 'rack', 'projects', projectName + '.json'), null)
+      : Promise.resolve(null),
   ]);
   let syntheses = [];
   try {
@@ -189,6 +194,7 @@ async function cosmosSnapshot() {
     ts: new Date().toISOString(),
     model: MODEL,
     llm: KEY ? 'connected' : 'offline-fallback',
+    project: profile ? { name: profile.name, repo: profile.repo, goals: profile.goals } : (projectName || 'cosmos'),
     costs,
     drives: goals ? {
       id: goals.id,
@@ -680,13 +686,72 @@ const server = createServer(async (req, res) => {
 
   if (req.method === 'OPTIONS') { res.writeHead(204, cors); return res.end(); }
 
-  // Phase 3 token auth: when RSIS_BRIDGE_TOKEN is set, /api/* requires
-  // `Authorization: Bearer <token>` (or `?token=` for SSE/EventSource).
-  if (p.startsWith('/api/') && TOKEN) {
+  // ── Phase 12 auth ─────────────────────────────────────────────────────
+  // Legacy mode: RSIS_BRIDGE_TOKEN guards every /api/* call.
+  // Users mode: RSIS_USERS_SECRET enables per-user signed tokens; identity
+  // is validated, then role+membership+policy gate each action
+  // (observer read · contributor propose · approver approve).
+  // Share links (/api/sessions/:id/share) stay read-only and public.
+  const ROLE_CAPS = { observer: ['read'], contributor: ['read', 'propose'], approver: ['read', 'propose', 'approve', 'rollback'] };
+  const b64url = (buf) => Buffer.from(buf).toString('base64url');
+  const b64urlDecode = (s) => Buffer.from(s, 'base64url');
+  const pad64 = (s) => s + '='.repeat((4 - (s.length % 4)) % 4);
+  const hmac = (key, data) => createHmac('sha256', key).update(data).digest();
+  async function loadUsers() {
+    const raw = await read(USERS_FILE, null);
+    if (raw && Array.isArray(raw.users)) return raw.users;
+    return [];
+  }
+  function verifyUserToken(token) {
+    if (!USERS_SECRET) return null;
+    const parts = String(token || '').split('.');
+    if (parts.length !== 2) return null;
+    let payload, sig;
+    try {
+      payload = b64urlDecode(pad64(parts[0]));
+      sig = b64urlDecode(pad64(parts[1]));
+    } catch { return null; }
+    const expect = hmac(USERS_SECRET, payload);
+    if (sig.length !== expect.length || !tse(sig, expect)) return null;
+    const text = payload.toString('utf8');
+    const dot = text.lastIndexOf('.');
+    if (dot < 0) return null;
+    const uid = text.slice(0, dot);
+    const exp = Number(text.slice(dot + 1));
+    if (!exp || Date.now() / 1000 >= exp) return null;
+    return uid;
+  }
+  async function currentUser(req, url) {
     const auth = req.headers.authorization || '';
-    if (auth !== 'Bearer ' + TOKEN && url.searchParams.get('token') !== TOKEN) {
+    const raw = auth.startsWith('Bearer ') ? auth.slice(7)
+      : (url.searchParams.get('token') || '');
+    if (USERS_SECRET) {
+      const uid = verifyUserToken(raw);
+      if (!uid) return null;
+      const users = await loadUsers();
+      return users.find((u) => u.id === uid) || null;
+    }
+    if (TOKEN && raw === TOKEN) return { id: 'owner', role: 'approver', projects: ['*'] };
+    return null;
+  }
+  function can(user, action, project) {
+    if (!user) return false;
+    const caps = ROLE_CAPS[user.role] || [];
+    if (!caps.includes(action)) return false;
+    const projects = user.projects || [];
+    if (!projects.includes('*') && !projects.includes(project)) return false;
+    return true;
+  }
+  const usersMode = Boolean(USERS_SECRET);
+  if (p.startsWith('/api/') && !p.endsWith('/share') && (TOKEN || usersMode)) {
+    const user = await currentUser(req, url);
+    if (!user) {
       return send(res, 401, { error: 'unauthorized' }, 'application/json', cors);
     }
+    req.user = user;
+  } else if (p.startsWith('/api/') && !p.endsWith('/share')) {
+    // Public mode (no token configured): implicit owner, all actions allowed.
+    req.user = { id: 'public', role: 'approver', projects: ['*'] };
   }
 
   try {
@@ -701,27 +766,75 @@ const server = createServer(async (req, res) => {
     if (req.method === 'GET' && p === '/health') {
       return send(res, 200, { ok: true, model: MODEL, llm: KEY ? 'connected' : 'offline-fallback' }, 'application/json', cors);
     }
+    const project = url.searchParams.get('project') || 'cosmos';
     if (req.method === 'GET' && p === '/api/cosmos') {
-      return send(res, 200, await cosmosSnapshot(), 'application/json', cors);
+      if (!can(req.user, 'read', project)) return send(res, 403, { error: 'forbidden: read on ' + project }, 'application/json', cors);
+      return send(res, 200, await cosmosSnapshot(project), 'application/json', cors);
     }
     if (req.method === 'GET' && p === '/api/events') {
+      if (!can(req.user, 'read', project)) return send(res, 403, { error: 'forbidden' }, 'application/json', cors);
       return hub.addClient(req, res);
     }
     if (req.method === 'GET' && p === '/api/cycles') {
+      if (!can(req.user, 'read', project)) return send(res, 403, { error: 'forbidden' }, 'application/json', cors);
       const limit = Math.min(100, Math.max(1, Number(url.searchParams.get('limit') || 20)));
       return send(res, 200, { cycles: await ev.recentCycles(CYCLES_DIR, limit) }, 'application/json', cors);
     }
     if (req.method === 'GET' && p === '/api/sessions') {
+      if (!can(req.user, 'read', project)) return send(res, 403, { error: 'forbidden' }, 'application/json', cors);
       const limit = Math.min(100, Math.max(1, Number(url.searchParams.get('limit') || 20)));
       return send(res, 200, { sessions: await listSessions(limit) }, 'application/json', cors);
     }
+    if (req.method === 'GET' && p.startsWith('/api/sessions/') && p.endsWith('/share')) {
+      const id = decodeURIComponent(p.slice('/api/sessions/'.length, -'/share'.length));
+      const sess = await readSession(id);
+      if (!sess) return send(res, 404, { error: 'session not found' }, 'application/json', cors);
+      // Read-only public view: no artifacts/private fields, token guard
+      // retained for writes.
+      return send(res, 200, {
+        id: sess.id, created: sess.created, updated: sess.updated,
+        count: sess.count, preview: true,
+        messages: (sess.messages || []).map((m) => ({ role: m.role, content: m.content })),
+      }, 'application/json', cors);
+    }
     if (req.method === 'GET' && p.startsWith('/api/sessions/')) {
+      if (!can(req.user, 'read', project)) return send(res, 403, { error: 'forbidden' }, 'application/json', cors);
       const id = decodeURIComponent(p.slice('/api/sessions/'.length));
       const sess = await readSession(id);
       if (!sess) return send(res, 404, { error: 'session not found' }, 'application/json', cors);
       return send(res, 200, sess, 'application/json', cors);
     }
+    if (req.method === 'GET' && p === '/api/approvals') {
+      if (!can(req.user, 'read', project)) return send(res, 403, { error: 'forbidden' }, 'application/json', cors);
+      const dir = path.join(ROOT, 'rack', 'approvals');
+      let ids = [];
+      try { ids = (await readdir(dir)).filter((f) => f.endsWith('.json')).sort(); } catch { /* none */ }
+      const approvals = [];
+      for (const f of ids.slice(-20)) {
+        const rec = await read(path.join(dir, f), null);
+        if (rec) approvals.push({
+          id: rec.id, status: rec.status, actor: rec.actor, ts: rec.ts,
+          reason: rec.reason, description: rec.description,
+          goal: rec.goal, target_files: rec.target_files,
+          diff: String(rec.diff || '').slice(0, 2000),
+        });
+      }
+      return send(res, 200, { approvals }, 'application/json', cors);
+    }
+    if ((req.method === 'POST') && p.startsWith('/api/approvals/') && (p.endsWith('/approve') || p.endsWith('/reject'))) {
+      if (!can(req.user, 'approve', project)) return send(res, 403, { error: 'forbidden: approve on ' + project }, 'application/json', cors);
+      const id = decodeURIComponent(p.split('/')[3]);
+      const action = p.endsWith('/approve') ? 'approve' : 'reject';
+      const { execFileSync } = await import('node:child_process');
+      try {
+        const out = execFileSync(process.execPath, ['-m', 'rsis', 'approve', id, ...(action === 'reject' ? ['--reject'] : []), '--actor', req.user.id], { cwd: ROOT, encoding: 'utf8', timeout: 60000 });
+        return send(res, 200, { ok: true, action, actor: req.user.id, output: String(out).trim() }, 'application/json', cors);
+      } catch (e) {
+        return send(res, 400, { error: 'approval action failed', detail: String(e.stderr || e.message).trim() }, 'application/json', cors);
+      }
+    }
     if (req.method === 'POST' && p === '/api/chat') {
+      if (!can(req.user, 'propose', project)) return send(res, 403, { error: 'forbidden: propose on ' + project }, 'application/json', cors);
       const rl = rate.check(clientKey(req));
       if (!rl.allowed) {
         return send(res, 429, { error: 'rate limit exceeded', retry_after: rl.retryAfter }, 'application/json', { ...cors, 'Retry-After': String(rl.retryAfter) });

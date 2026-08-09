@@ -129,11 +129,11 @@ def try_start_bridge(port: int, bridge_dir: Path) -> Optional[subprocess.Popen]:
 
 
 def run_one_cycle(cycles: int, goal_space_cycle: int, disk_pct: Optional[int],
-                  package_root: Path,
+                  package_root: Path, project_goal: Optional[str] = None,
                   executor: Optional[Callable] = None) -> dict:
     from rsis.launch import run_batch
     return run_batch(cycles, goal_space_cycle, disk_pct=disk_pct,
-                     executor=executor, cwd=package_root)
+                     executor=executor, cwd=package_root, goal=project_goal)
 
 
 def maybe_auto_retune(workspace: Path, mykb: Path, package_root: Path,
@@ -188,6 +188,7 @@ def run_forever(*, interval_s: int, cycles: int, goal_space_cycle: int,
                 supervise_bridge: bool = False, auto_retune: bool = False,
                 snapshots: bool = True, commit: bool = False,
                 push: bool = False, once: bool = False,
+                project_goal: Optional[str] = None,
                 executor: Optional[Callable] = None) -> int:
     """Main daemon loop. Returns process exit code."""
     lock = CycleLock(lockfile)
@@ -212,7 +213,8 @@ def run_forever(*, interval_s: int, cycles: int, goal_space_cycle: int,
 
             print(f"  ▶ cycle at {_now_ts()} — launch --cycles {cycles}")
             result = run_one_cycle(cycles, goal_space_cycle, disk_pct,
-                                   package_root, executor=executor)
+                                   package_root, project_goal=project_goal,
+                                   executor=executor)
             ok = result.get("exit_code") == 0
             if ok:
                 consecutive = 0
@@ -237,9 +239,16 @@ def run_forever(*, interval_s: int, cycles: int, goal_space_cycle: int,
 
             if once:
                 return 0 if ok else 1
-            # Phase 10: adaptive cadence from the self-model forecast.
-            from rsis.forecast import adaptive_interval
-            time.sleep(adaptive_interval(workspace, interval_s))
+            # Phase 10/15: adaptive cadence from the self-model forecast,
+            # modulated by energy mode (sprint/coast/idle/pause).
+            from rsis.seasons import adaptive_sleep, rotate, self_repair
+            rotate(workspace)  # policy-cadence season rotation (cheap no-op)
+            if not ok:
+                repaired = self_repair(workspace, mykb)
+                if repaired:
+                    print(f"  🔧 self-repair: {len(repaired)} incident(s) "
+                          f"({[i['kind'] for i in repaired]})")
+            time.sleep(adaptive_sleep(workspace, interval_s))
     finally:
         lock.release()
         print("  🔓 lock released")
@@ -292,4 +301,4 @@ def main(args) -> int:
         package_root=args.package_root, bridge_url=args.bridge_url,
         supervise_bridge=args.supervise_bridge, auto_retune=auto_retune,
         snapshots=not args.no_snapshots, commit=commit, push=push,
-        once=args.once)
+        once=args.once, project_goal=getattr(args, "project_goal", None))

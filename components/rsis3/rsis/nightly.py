@@ -110,6 +110,9 @@ def summarize_day(workspace: Path, mykb: Path,
         "costs": costs,
         "commits": git_summary,
         "forecast": _day_forecast(workspace),
+        "attestation": _day_attestation(workspace),
+        "federation": _federation_summary(workspace),
+        "incidents": _incident_summary(workspace),
     }
     return summary
 
@@ -120,6 +123,60 @@ def _day_forecast(workspace: Path) -> dict:
     if fc.get("available"):
         fc["quality"] = forecast_quality(workspace)
     return fc
+
+
+def _day_attestation(workspace: Path) -> dict:
+    """Phase 14: attest the day's summary against the invariant set."""
+    try:
+        from rsis.invariants import attest, run_invariants
+        rows = run_invariants(workspace)
+        rec = attest(workspace, f"nightly:{datetime.now(timezone.utc).strftime('%Y-%m-%d')}",
+                     rows, actor="nightly")
+        return {"sha256": rec["sha256"],
+                "passed": len([r for r in rows if r["ok"]]),
+                "total": len(rows)}
+    except Exception as e:
+        return {"error": str(e), "passed": 0, "total": 0}
+
+
+def _federation_summary(workspace: Path) -> dict:
+    """Phase 13: today's federation publishes/pulls/merges."""
+    path = Path(workspace) / "rack" / "federation" / "ledger.jsonl"
+    ops: dict[str, int] = {}
+    if not path.is_file():
+        return {"ops": ops}
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    try:
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            rec = json.loads(line)
+            if str(rec.get("ts", "")).startswith(today):
+                op = rec.get("op", "?")
+                ops[op] = ops.get(op, 0) + 1
+    except (OSError, json.JSONDecodeError):
+        pass
+    return {"ops": ops}
+
+
+def _incident_summary(workspace: Path) -> dict:
+    """Phase 15: today's self-repair incidents."""
+    path = Path(workspace) / "rack" / "incidents.jsonl"
+    kinds: dict[str, int] = {}
+    if not path.is_file():
+        return {"kinds": kinds}
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    try:
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            rec = json.loads(line)
+            if str(rec.get("ts", "")).startswith(today):
+                k = rec.get("kind", "?")
+                kinds[k] = kinds.get(k, 0) + 1
+    except (OSError, json.JSONDecodeError):
+        pass
+    return {"kinds": kinds}
 
 
 def _ts(raw) -> Optional[datetime]:
@@ -222,6 +279,18 @@ def write_nightly_note(mykb: Path, summary: dict, ts: Optional[str] = None) -> O
             body += (f"- Forecast quality: {q['verified']} verified, "
                      f"coverage {q['coverage']} "
                      f"(hits {q['hits']}, misses {q['misses']})\n")
+    att = summary.get("attestation")
+    if att and att.get("sha256"):
+        body += (f"\nAttestation: {att['passed']}/{att['total']} invariants "
+                 f"passed, sha256 {att['sha256'][:16]}...\n")
+    fed = summary.get("federation")
+    if fed and fed.get("ops"):
+        body += (f"\nFederation: {json.dumps(fed['ops'])} "
+                 f"publish/pull/merge op(s) today\n")
+    inc = summary.get("incidents")
+    if inc and inc.get("kinds"):
+        body += (f"\nIncidents (self-recovered): "
+                 f"{json.dumps(inc['kinds'])}\n")
     if path.exists():
         return path
     front = {
