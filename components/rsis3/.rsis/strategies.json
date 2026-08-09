@@ -1,5 +1,5 @@
 {
-  "generation": 552,
+  "generation": 609,
   "population": [
     {
       "id": "strategy-budget-1",
@@ -9,7 +9,7 @@
         "focus": "general"
       },
       "fitness": 0.244,
-      "evals": 552
+      "evals": 609
     },
     {
       "id": "strategy-seed-1",
@@ -19,10 +19,10 @@
         "focus": "general"
       },
       "fitness": 0.244,
-      "evals": 552
+      "evals": 609
     },
     {
-      "id": "strategy-g552-cross-250",
+      "id": "strategy-g609-cross-250",
       "params": {
         "l2_attempts": 5,
         "budget_factor": 1.0,
@@ -33,7 +33,7 @@
       "lineage": "strategy-budget-1xstrategy-seed-1"
     },
     {
-      "id": "strategy-g552-1-89",
+      "id": "strategy-g609-1-89",
       "params": {
         "l2_attempts": 4,
         "budget_factor": 1.0,
@@ -4455,6 +4455,462 @@
     },
     {
       "generation": 552,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 553,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 554,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 555,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 556,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 557,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 558,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 559,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 560,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 561,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 562,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 563,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 564,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 565,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 566,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 567,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 568,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 569,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 570,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 571,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 572,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 573,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 574,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 575,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 576,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 577,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 578,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 579,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 580,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 581,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 582,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 583,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 584,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 585,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 586,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 587,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 588,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 589,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 590,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 591,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 592,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 593,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 594,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 595,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 596,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 597,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 598,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 599,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 600,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 601,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 602,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 603,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 604,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 605,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 606,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 607,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 608,
+      "avg_fitness": 0.1586,
+      "best_fitness": 0.244,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 609,
       "avg_fitness": 0.1586,
       "best_fitness": 0.244,
       "population": 4,

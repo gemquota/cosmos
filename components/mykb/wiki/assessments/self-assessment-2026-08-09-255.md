@@ -1,9 +1,9 @@
 ---
 type: "assessment"
 title: "Self-Assessment 2026-08-09"
-description: "Health 0.793, 0 gaps, 2 trends"
+description: "Health 0.793, 0 gaps, 3 trends"
 tags: ["self-assessment", "health", "gaps", "trends"]
-timestamp: "2026-08-09T17:25:12Z"
+timestamp: "2026-08-09T17:22:54Z"
 status: "stable"
 window_days: "7"
 health_score: "0.793"
@@ -24,3 +24,4 @@ prev_note: ""
 ## Trends
 - loop-completion: flat (magnitude 1.0) — 4969/4969 loop completions
 - evaluator-fail-rate: flat (magnitude 0.0) — 0/653 evaluator FAILs
+- commit-cadence: flat (magnitude 20) — 20 commits in window, 0 fix/revert
