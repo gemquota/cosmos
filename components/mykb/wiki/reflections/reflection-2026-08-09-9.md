@@ -1,0 +1,20 @@
+---
+type: "reflection"
+title: "Reflection 2026-08-09"
+description: "Deterministic reflection for the 2026-08-09 self-assessment"
+tags: ["reflection", "self-assessment"]
+timestamp: "2026-08-09T01:08:51Z"
+status: "growing"
+---
+
+# Reflection 2026-08-09
+
+## Surprises
+- Health came in at 0.812 with 1494 stubs and 5204 broken links.
+
+## Open questions
+- What is driving the top gap: no open gaps?
+- Which trend should the next pass act on first: loop-completion?
+
+## Links
+- Assessment: [[assessments/self-assessment-2026-08-09]]
