@@ -3917,6 +3917,42 @@
         "outcome": "applied",
         "goal": "SPACE series6-communication: Batch same-rel edge writes into a single persistence op"
       }
+    },
+    {
+      "id": "improvement-282",
+      "attrs": {
+        "type": "improvement",
+        "description": "entity_lifecycles: rsis/entity_states.py lifecycle registry (session/proposal/candidate/checkpoint/strategy) with allowed transitions; wired into convergence proposal path (proposed -> applied, duplicate-apply prevention)",
+        "target_files": [
+          "rsis/entity_states.py",
+          "rsis/convergence.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0
+        },
+        "outcome": "applied",
+        "goal": "Implement the entity_lifecycles spec artifact: Stateful lifecycle -- entities pass through defined states with transition rules (SPACE spec artifact entity_lifecycles, series 2, question 2.3.3)"
+      }
+    },
+    {
+      "id": "improvement-283",
+      "attrs": {
+        "type": "improvement",
+        "description": "entity_constraints: validate_record enforces required fields + validity rules for session/proposal/candidate/checkpoint/strategy records; applied-record shape checks",
+        "target_files": [
+          "rsis/entity_states.py",
+          "rsis/convergence.py"
+        ],
+        "scores": {
+          "correctness": 1.0,
+          "safety": 1.0,
+          "efficiency": 1.0
+        },
+        "outcome": "applied",
+        "goal": "Implement the entity_constraints spec artifact: Moderate constraints -- several required fields and validity rules (SPACE spec artifact entity_constraints, series 2, question 2.4.3)"
+      }
     }
   ],
   "edges": [

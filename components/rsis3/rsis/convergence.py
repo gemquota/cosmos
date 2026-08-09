@@ -21,6 +21,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
+from rsis.entity_states import EntityStateError, transition, validate_record
+
 logger = logging.getLogger(__name__)
 
 # loop key -> command that retunes it (the "existing identity/meta loops")
@@ -128,7 +130,15 @@ def write_proposal(workspace: Path, report: dict,
         return path
     payload = dict(report)
     payload["type"] = "convergence-proposal"
-    payload["applied"] = False
+    try:
+        # Series 2 entity_constraints: proposals carry required fields and
+        # start in the "proposed" lifecycle state.
+        validate_record("proposal", payload)
+        payload["applied"] = False
+        payload["state"] = "proposed"
+    except EntityStateError as e:
+        logger.warning("proposal record invalid: %s", e)
+        payload["applied"] = False
     path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
     return path
 
@@ -190,12 +200,32 @@ def _mark_applied(workspace: Path, report: dict, ts: Optional[str] = None) -> No
     out = proposals_dir(workspace)
     out.mkdir(parents=True, exist_ok=True)
     applied = out / "applied.jsonl"
+    record = {
+        "ts": ts,
+        "loop": report.get("proposed_loop"),
+        "generation": report.get("generation"),
+    }
+    try:
+        # Series 2 entity_lifecycles: only a "proposed" retune may become
+        # "applied", and each proposal applies at most once.
+        validate_record("proposal", record)
+        transition("proposal", "proposed", "applied")
+    except EntityStateError as e:
+        logger.warning("skipping invalid application record: %s", e)
+        return
+    if applied.is_file():
+        for line in applied.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            prior = json.loads(line)
+            if (prior.get("loop") == record["loop"]
+                    and prior.get("generation") == record["generation"]):
+                logger.warning(
+                    "retune %s gen %s already applied — skipping duplicate",
+                    record["loop"], record["generation"])
+                return
     with applied.open("a", encoding="utf-8") as fh:
-        fh.write(json.dumps({
-            "ts": ts,
-            "loop": report.get("proposed_loop"),
-            "generation": report.get("generation"),
-        }) + "\n")
+        fh.write(json.dumps(record) + "\n")
 
 
 def last_applied(workspace: Path) -> Optional[dict]:
