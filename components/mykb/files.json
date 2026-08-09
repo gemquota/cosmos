@@ -31241,6 +31241,15 @@
   ]
  },
  {
+  "path": "wiki/backlog/convergence-2026-08-09.md",
+  "type": "backlog",
+  "title": "Convergence \u2014 fitness plateau",
+  "tags": [
+   "backlog",
+   "convergence"
+  ]
+ },
+ {
   "path": "wiki/cloud-infra/00-index.md",
   "type": "index",
   "title": "Cloud Infra Index",
@@ -76079,6 +76088,18 @@
   ]
  },
  {
+  "path": "wiki/syntheses/cosmos-codebase-md-generator-2026-08-09.md",
+  "type": "synthesis",
+  "title": "CODEBASE.md \u2014 regenerable hierarchical codebase concatenation for context injection",
+  "tags": [
+   "tooling",
+   "codebase",
+   "documentation",
+   "generator",
+   "context-injection"
+  ]
+ },
+ {
   "path": "wiki/syntheses/cosmos-dashboard-mykb-integration.md",
   "type": "synthesis",
   "title": "Cosmos Dashboard & MyKB Integration Patterns",
@@ -77397,9 +77418,57 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-l3-cycle-78-cross-session-memory-consolidation-2026-08-09.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 78 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-79-cross-session-memory-consolidation-2026-08-09.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 79 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-l3-cycle-8-cross-session-memory-consolidation-2026-08-06.md",
   "type": "synthesis",
   "title": "RSIS3 L3 cycle 8 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-80-cross-session-memory-consolidation-2026-08-09.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 80 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-81-cross-session-memory-consolidation-2026-08-09.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 81 \u2014 cross-session memory consolidation",
   "tags": [
    "rsis3",
    "l3",

@@ -220,6 +220,7 @@ def run_forever(*, interval_s: int, cycles: int, goal_space_cycle: int,
                     maybe_auto_retune(workspace, mykb, package_root,
                                       int(os.environ.get("RSIS_RETUNE_MIN_INTERVAL_S", "21600")))
                 if snapshots:
+                    _stage_all(repo_root(package_root))
                     _regen_snapshots(repo_root(package_root))
                 if commit:
                     _commit_cycle(repo_root(package_root), commit=True,
@@ -249,6 +250,14 @@ def repo_root(package_root: Path) -> Path:
         if (cand / "gen-static-data.py").is_file():
             return cand
     return p.parent
+
+
+def _stage_all(repo: Path) -> None:
+    """Stage everything so gen-static-data.py sees new files in git ls-files."""
+    proc = subprocess.run(["git", "add", "-A"], cwd=str(repo),
+                          capture_output=True, text=True, timeout=120)
+    if proc.returncode != 0:
+        logger.warning("daemon git add failed: %s", proc.stderr.strip())
 
 
 def _regen_snapshots(repo: Path) -> None:
