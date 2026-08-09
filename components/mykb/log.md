@@ -5,6 +5,20 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-09 (RSIS3 roadmap precision pass — Phases 6–15)
+- Kept the 6–15 sequencing; tightened cross-phase invariants in the
+  three roadmap docs: cross-roadmap autonomy invariant, maturity arcs,
+  Phase 5 = bounded autonomy vs Phase 15 = persistent lifecycle,
+  Phase 7 verification ledger → Phase 14 attestation, Phase 9 =
+  policy-controlled autonomy, Phase 12 capability-scoped authorization,
+  Phase 13 explicit provenance fields, Phase 10 calibration metrics.
+- Docs: `components/rsis3/docs/multi-phase-development-roadmap*.md`.
+- Synthesis: `rsis3-roadmap-sequels-2-3-2026-08-09.md` (updated).
+
+## 2026-08-09 (RSIS3 L3 cycle 85 — memory consolidation)
+- L3 cycle 85 wrote OKF synthesis `rsis3-l3-cycle-85-cross-session-memory-consolidation-2026-08-09.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
 ## 2026-08-09 (RSIS3 L3 cycle 84 — memory consolidation)
 - L3 cycle 84 wrote OKF synthesis `rsis3-l3-cycle-84-cross-session-memory-consolidation-2026-08-09.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
 - Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.

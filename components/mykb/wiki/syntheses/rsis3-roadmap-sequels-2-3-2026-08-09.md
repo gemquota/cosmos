@@ -45,6 +45,33 @@ future sessions must respect.
 - Every phase — in any roadmap — ends with a MyKB synthesis + snapshot
   regeneration per the standing L3 memory-consolidation practice.
 
+## Precision pass (2026-08-09)
+
+The 6–15 sequencing is kept as-is; a precision pass tightened the
+invariants and cross-phase dependencies. Durable deltas:
+
+- **Cross-roadmap invariant**: autonomy is cumulative but never
+  unconditional — every capability expansion inherits the memory,
+  verification, cost, policy, provenance and observability controls of
+  preceding phases. Recorded at the top of the main roadmap.
+- **Maturity arcs**: Phases 1–5 Operational Autonomy; 6–10 Governed
+  Intelligence; 11–15 Distributed Autonomy.
+- **Phase 5 vs 15**: Phase 5 = bounded autonomy (implementation
+  delivered; 7-day live exit validation pending); Phase 15 extends it
+  into a persistent lifecycle — it does not introduce new autonomy.
+- **Phase 7 → 14**: the regression ledger is the evidence substrate
+  Phase 14 extends into per-cycle invariant attestation.
+- **Phase 9**: policy-controlled autonomy — the human is one
+  enforcement mechanism among several policy instruments.
+- **Phase 12**: authorization is capability- and project-scoped
+  (User → Identity → Role → Project membership → Policy → Capability →
+  Action); an approver role alone grants no blanket authority.
+- **Phase 13**: federation provenance is explicit — origin, source,
+  project, session, producer, verification state, confidence,
+  transformations, federation history.
+- **Phase 10**: forecast quality tracks calibration, uncertainty, bias
+  and degradation as first-class metrics, not only ≥80% coverage.
+
 ## Related
 
 - [[wiki/syntheses/rsis3-phase-4-5-ops-autonomy-2026-08-08|RSIS3 Phases 4–5 — ops maturity + autonomy]]
