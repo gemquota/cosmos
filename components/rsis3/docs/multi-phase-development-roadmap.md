@@ -187,9 +187,9 @@ daemon cadence has run the full window.
 
 ## Sequels
 
-The original 5-phase roadmap is complete. Future work continues in two
+The original 5-phase roadmap is complete. Future work continues in six
 sequel roadmaps, each another five phases, cumulative on everything above:
-read as one 15-phase program across three maturity arcs.
+read as one 30-phase program across six maturity arcs.
 
 - **Phases 1–5 — Operational Autonomy**: build → communicate → secure →
   persist → observe → operate → self-retune.
@@ -197,6 +197,12 @@ read as one 15-phase program across three maturity arcs.
   measure economics → govern → predict.
 - **Phases 11–15 — Distributed Autonomy**: generalize → collaborate →
   federate → attest → persist.
+- **Phases 16–20 — Open Autonomy**: audit → standardize → port → probe →
+  open.
+- **Phases 21–25 — Ecosystem Autonomy**: identify → exchange → coordinate
+  → govern → survive.
+- **Phases 26–30 — Sovereign Autonomy**: meta-govern → sustain →
+  self-direct → steward → endure.
 
 - **Sequel II — Horizons (Phases 6–10)**: distributed memory &
   multi-session coordination, verification mesh, observability & cost
@@ -206,3 +212,16 @@ read as one 15-phase program across three maturity arcs.
   collaborative & community ops, federated memory, continual verification
   & invariant attestation, long-horizon autonomy —
   [`multi-phase-development-roadmap-sequel-3.md`](multi-phase-development-roadmap-sequel-3.md)
+- **Sequel IV — Open Autonomy (Phases 16–20)**: public attestation &
+  external audit, open interop protocol, portable instances &
+  reproducible workspaces, external evaluation & red-teaming, public API
+  surface —
+  [`multi-phase-development-roadmap-sequel-4.md`](multi-phase-development-roadmap-sequel-4.md)
+- **Sequel V — Ecosystem Autonomy (Phases 21–25)**: instance identity &
+  trust graph, knowledge economy & exchange at scale, swarm coordination &
+  distributed cycles, population governance, ecosystem resilience —
+  [`multi-phase-development-roadmap-sequel-5.md`](multi-phase-development-roadmap-sequel-5.md)
+- **Sequel VI — Sovereign Autonomy (Phases 26–30)**: meta-governance,
+  resource sovereignty & sustainability, self-directed learning goals,
+  autonomous stewardship, enduring autonomy —
+  [`multi-phase-development-roadmap-sequel-6.md`](multi-phase-development-roadmap-sequel-6.md)
