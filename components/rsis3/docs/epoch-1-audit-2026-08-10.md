@@ -129,6 +129,43 @@ Audit of all 50 phases of Epoch 1 (Sequels I–X) against the roadmap docs, impl
 
 **F8 — Exit criteria all unproven (Info).** None of the operational exit criteria (7-day cadence, 30-cycle zero-drift, 30-day unattended, 2-repo week, 90-day forecast tolerance, etc.) have been demonstrated; the docs’ `⏳ live validation pending` wording is accurate and should stay until each is evidenced in `rack/` state.
 
+## Addendum — findings resolution (2026-08-10, same day as the audit)
+
+All 8 findings were addressed after the audit pass above:
+
+- **F1 (P7 ledger) — addressed.** The gen-210 convergence retune proposal
+  (`rack/proposals/convergence-2026-08-10-022442Z.json`) was verified
+  through the live verify-server (`POST /verify`): decision PASS,
+  evaluator + contracts gates green, 0 contract FAIL. Ledger:
+  `rack/verification/2026-08-10.jsonl` (1 record). `attestations replay
+  --candidate-sha <sha>` reproduces it (contracts 0 fail re-run).
+- **F2 (P8 budgets) — addressed.** `.rsis/budgets.json` materialized
+  (evaluator $0.05/day, default $0.02, ceiling $0.50 — today's spend
+  $0.0084). `python -m rsis budgets drill` (new CLI: `status` + `drill`)
+  ran an isolated breach: fail-closed, `cost.budget_hit` recorded, and
+  `cost_budget_drill` telemetry persisted.
+- **F3 (P3 sessions) — addressed.** A throwaway bridge instance exercised
+  `POST /api/chat`; `rack/bridge/sessions/epoch1-audit-f3-session.jsonl`
+  persists envelope-shaped user/assistant exchanges (LLM connected).
+- **F4 (P19 traversal) — addressed.** `requires_approval` now
+  canonicalizes target paths (`_canonical`): absolute paths, `..` segments
+  and escape-to-outside paths are always approval-gated; the same
+  canonical match applies in `check_unauthorized_writes`. New traversal
+  test in `tests/test_policy.py`; live `redteam run --ci` → 0 findings,
+  0 untriaged, exit 0.
+- **F5 (test failures) — addressed.** Root cause was date-coupled tests
+  (hardcoded 2026-08-09 timestamps vs. day-scoped budget checks). Tests
+  now use the current UTC day; `test_budgets.py` + `test_seasons.py` all
+  green.
+- **F6 (protocol conformance) — addressed during the audit.** See above.
+- **F7 (identity key) — addressed (info → covered).** Portable export
+  exclusion verified by new `test_export_excludes_identity_key`; rotation
+  procedure documented in `docs/epoch-1-exit-criteria.md`.
+- **F8 (exit criteria) — addressed (info → tracked).** New
+  `docs/epoch-1-exit-criteria.md` tracks all 50 criteria with validation
+  procedures and evidence locations; the 7-day cadence validation
+  procedure is documented there.
+
 ## Exit-criteria status
 
 Implementation is delivered for all 50 phases. The following operational validations remain (per sequel docs status tables):

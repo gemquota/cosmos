@@ -48,6 +48,20 @@ class PolicyTests(unittest.TestCase):
             self.assertFalse(requires_approval(
                 staged_candidate(target=("rsis/ok.py",)), policy=policy))
 
+    def test_requires_approval_blocks_traversal(self):
+        # Phase 19 red-team: traversal paths must never dodge the gate,
+        # even when they resolve to a path outside the approval list.
+        with tempfile.TemporaryDirectory() as tmp:
+            root = make_ws(tmp)
+            policy = ensure_policy(root)
+            for target in ("../../etc/passwd", "/etc/passwd",
+                           "wiki/../.rsis/secrets",
+                           "rack/../rack/policy.json"):
+                self.assertTrue(
+                    requires_approval(staged_candidate(target=(target,)),
+                                      policy=policy),
+                    f"traversal target not gated: {target}")
+
     def test_stage_approve_flow(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = make_ws(tmp)

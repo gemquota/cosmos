@@ -1,5 +1,5 @@
 {
-  "generation": 225,
+  "generation": 230,
   "population": [
     {
       "id": "strategy-budget-1",
@@ -9,7 +9,7 @@
         "focus": "general"
       },
       "fitness": 0.304,
-      "evals": 225
+      "evals": 230
     },
     {
       "id": "strategy-seed-1",
@@ -19,10 +19,10 @@
         "focus": "general"
       },
       "fitness": 0.304,
-      "evals": 225
+      "evals": 230
     },
     {
-      "id": "strategy-g225-cross-250",
+      "id": "strategy-g230-cross-250",
       "params": {
         "l2_attempts": 5,
         "budget_factor": 1.0,
@@ -33,7 +33,7 @@
       "lineage": "strategy-budget-1xstrategy-seed-1"
     },
     {
-      "id": "strategy-g225-1-89",
+      "id": "strategy-g230-1-89",
       "params": {
         "l2_attempts": 4,
         "budget_factor": 1.0,
@@ -1839,6 +1839,46 @@
     },
     {
       "generation": 225,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 226,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 227,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 228,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 229,
+      "avg_fitness": 0.1976,
+      "best_fitness": 0.304,
+      "population": 4,
+      "accepted": true,
+      "signal": "evolve"
+    },
+    {
+      "generation": 230,
       "avg_fitness": 0.1976,
       "best_fitness": 0.304,
       "population": 4,

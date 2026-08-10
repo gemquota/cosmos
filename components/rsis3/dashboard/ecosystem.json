@@ -1,15 +1,15 @@
 {
- "generated": "2026-08-10T03:54Z",
+ "generated": "2026-08-10T04:24Z",
  "components": {
   "mykb": {
-   "files": 7221,
-   "md": 7176
+   "files": 7228,
+   "md": 7183
   },
   "space": {
    "files": 322
   },
   "rsis3": {
-   "files": 1063
+   "files": 1067
   }
  },
  "telemetry": {
@@ -22,7 +22,7 @@
   "improvements": 0
  },
  "epoch1": {
-  "events": 95,
+  "events": 97,
   "sequels": {
    "IV": 0,
    "V": 0,
@@ -32,11 +32,11 @@
    "IX": 0,
    "X": 0
   },
-  "other": 95,
+  "other": 97,
   "by_type": {
    "attestation_appended": 8,
    "capacity_degraded": 4,
-   "redteam_probe": 2,
+   "redteam_probe": 3,
    "exchange_confidence": 2,
    "resilience_peer_joined": 2,
    "goals_proposed": 2,

@@ -2,7 +2,14 @@
 import json
 import tempfile
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
+
+# Midday UTC of the current day — budget checks operate on *today*'s spend,
+# so fixed historical timestamps would rot the suite on the next UTC day.
+_TODAY_TS = int(datetime.now(timezone.utc).replace(
+    hour=12, minute=0, second=0, microsecond=0).timestamp())
+_TODAY = datetime.fromtimestamp(_TODAY_TS, tz=timezone.utc).strftime("%Y-%m-%d")
 
 from rsis.budgets import (
     budget_status, check_budget, daily_limit, ensure_budgets,
@@ -10,9 +17,9 @@ from rsis.budgets import (
 )
 
 
-def ws_with_costs(tmp: str, costs=((1786291200, "evaluator", 0.01),
-                                   (1786291200, "identity", 0.005))):
-    """1786291200 = 2026-08-09 UTC day boundary."""
+def ws_with_costs(tmp: str, costs=((_TODAY_TS, "evaluator", 0.01),
+                                   (_TODAY_TS, "identity", 0.005))):
+    """Costs land on the current UTC day (budget checks are day-scoped)."""
     root = Path(tmp)
     rsis = root / ".rsis"
     rsis.mkdir(parents=True)
@@ -35,7 +42,7 @@ class BudgetTests(unittest.TestCase):
     def test_spend_by_agent(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = ws_with_costs(tmp)
-            spend = spend_by_agent(root, day="2026-08-09")
+            spend = spend_by_agent(root, day=_TODAY)
             self.assertAlmostEqual(spend["evaluator"], 0.01)
             self.assertAlmostEqual(spend["identity"], 0.005)
 
@@ -50,7 +57,7 @@ class BudgetTests(unittest.TestCase):
 
     def test_check_budget_blocks_when_over(self):
         with tempfile.TemporaryDirectory() as tmp:
-            root = ws_with_costs(tmp, costs=((1786291200, "evaluator", 0.03),))
+            root = ws_with_costs(tmp, costs=((_TODAY_TS, "evaluator", 0.03),))
             save_budgets(root, {"per_loop": {"evaluator": {"daily_usd": 0.02}},
                                 "default_daily_usd": 0.02,
                                 "ceiling_usd": 0.5})
@@ -65,7 +72,7 @@ class BudgetTests(unittest.TestCase):
 
     def test_check_budget_allows_under_limit(self):
         with tempfile.TemporaryDirectory() as tmp:
-            root = ws_with_costs(tmp, costs=((1786291200, "evaluator", 0.005),))
+            root = ws_with_costs(tmp, costs=((_TODAY_TS, "evaluator", 0.005),))
             save_budgets(root, {"per_loop": {}, "default_daily_usd": 0.02,
                                 "ceiling_usd": 0.5})
             self.assertTrue(check_budget(root, "evaluator")["allowed"])

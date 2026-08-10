@@ -2,7 +2,12 @@
 import json
 import tempfile
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
+
+# Midday UTC of the current day — energy_mode reads today's budget spend.
+_TODAY_TS = int(datetime.now(timezone.utc).replace(
+    hour=12, minute=0, second=0, microsecond=0).timestamp())
 
 from rsis.seasons import (
     adaptive_sleep, current_season, energy_mode, ensure_seasons, incident,
@@ -74,9 +79,9 @@ class SeasonsTest(unittest.TestCase):
             "per_loop": {}}))
         with (self.ws / ".rsis" / "costs.jsonl").open("w") as fh:
             fh.write(json.dumps({"kind": "llm", "agent": "evaluator",
-                                 "cost": 0.04, "ts": 1786291200}) + "\n")
+                                 "cost": 0.04, "ts": _TODAY_TS}) + "\n")
             fh.write(json.dumps({"kind": "llm", "agent": "evaluator",
-                                 "cost": 0.04, "ts": 1786291200}) + "\n")
+                                 "cost": 0.04, "ts": _TODAY_TS}) + "\n")
         self.assertEqual(energy_mode(self.ws), "pause")
 
     def test_adaptive_sleep_factors(self):

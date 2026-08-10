@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "per_loop": {
+    "evaluator": {
+      "daily_usd": 0.05
+    }
+  },
+  "default_daily_usd": 0.02,
+  "ceiling_usd": 0.50
+}

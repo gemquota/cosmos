@@ -76536,6 +76536,34 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-epoch-1-audit-2026-08-10.md",
+  "type": "synthesis",
+  "title": "Epoch 1 audit \u2014 50-phase review (2026-08-10)",
+  "tags": [
+   "rsis3",
+   "epoch-1",
+   "audit",
+   "roadmap",
+   "verification",
+   "governance"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-epoch-1-findings-resolution-2026-08-10.md",
+  "type": "synthesis",
+  "title": "Epoch 1 audit findings \u2014 all 8 resolved (2026-08-10)",
+  "tags": [
+   "rsis3",
+   "epoch-1",
+   "audit",
+   "findings",
+   "verification",
+   "budgets",
+   "redteam",
+   "policy"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-epoch-1-implementation-2026-08-10.md",
   "type": "synthesis",
   "title": "RSIS3 Epoch 1 Implementation \u2014 Phases 16\u201350 (Sequels IV\u2013X)",
@@ -78044,6 +78072,66 @@
   "path": "wiki/syntheses/rsis3-l3-cycle-21-cross-session-memory-consolidation-2026-08-08.md",
   "type": "synthesis",
   "title": "RSIS3 L3 cycle 21 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-210-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 210 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-211-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 211 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-212-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 212 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-213-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 213 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-214-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 214 \u2014 cross-session memory consolidation",
   "tags": [
    "rsis3",
    "l3",

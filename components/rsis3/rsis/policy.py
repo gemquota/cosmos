@@ -98,6 +98,33 @@ def _matches(path: str, patterns: list[str]) -> bool:
     return False
 
 
+def _canonical(path) -> tuple[str, bool]:
+    """Canonicalize a target path -> (canonical, escapes_workspace).
+
+    ``escapes_workspace`` is True when the path is absolute or resolves
+    above the workspace root via ``..`` segments. Canonicalization collapses
+    ``.``/``..`` segments and normalises backslashes to forward slashes so
+    that ``wiki/../.rsis/secrets`` gates exactly like ``.rsis/secrets`` and
+    ``../../etc/passwd`` cannot dodge the policy gate.
+    """
+    raw = str(path).replace("\\", "/").strip()
+    if not raw:
+        return raw, False
+    parts: list[str] = []
+    escaped = raw.startswith("/")
+    for seg in raw.split("/"):
+        if seg in ("", "."):
+            continue
+        if seg == "..":
+            if parts:
+                parts.pop()
+            else:
+                escaped = True
+        else:
+            parts.append(seg)
+    return "/".join(parts), escaped
+
+
 def requires_approval(candidate, policy: Optional[dict] = None,
                       workspace: Optional[Path] = None) -> bool:
     """Whether a candidate's target files hit an approval-required gate."""
@@ -108,8 +135,16 @@ def requires_approval(candidate, policy: Optional[dict] = None,
     req = policy.get("approval_required", {})
     paths = req.get("paths", [])
     patterns = req.get("patterns", [])
-    return any(_matches(f, paths) or _matches(f, patterns)
-               for f in target_files)
+    for f in target_files:
+        canonical, escapes = _canonical(f)
+        # Traversal attempts are always sensitive: absolute paths, paths
+        # that resolve above the workspace root, or any ``..`` segment.
+        if escapes or ".." in str(f).split("/"):
+            return True
+        if _matches(canonical, paths) or _matches(canonical, patterns) \
+                or _matches(f, paths) or _matches(f, patterns):
+            return True
+    return False
 
 
 def stage_candidate(workspace: Path, candidate: dict, reason: str,
@@ -254,7 +289,9 @@ def check_unauthorized_writes(workspace: Path) -> list[str]:
             unapproved = [g for g in gated_inside if g not in approved]
             if unapproved:
                 violations.append(p)
-        elif (_matches(p, paths) or _matches(p, patterns)) \
+        elif (_matches(p, paths) or _matches(p, patterns)
+               or _matches(_canonical(p)[0], paths)
+               or _matches(_canonical(p)[0], patterns)) \
                 and p not in approved:
             violations.append(p)
     return sorted(set(violations))

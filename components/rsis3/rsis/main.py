@@ -1146,6 +1146,13 @@ def cmd_redteam(args: argparse.Namespace) -> int:
                  ci=args.ci, json_out=args.json)
 
 
+def cmd_budgets(args: argparse.Namespace) -> int:
+    """Phase 8: cost budgets — status + isolated fail-close breach drill."""
+    from rsis.budgets import main as bmain
+    return bmain(_epoch_root(), action=args.action, agent=args.agent,
+                 drill_limit=args.drill_limit, json_out=args.json)
+
+
 def cmd_apps(args: argparse.Namespace) -> int:
     """Phase 20: public API surface — machine identities + quotas."""
     from rsis.apps import main as amain
@@ -2141,6 +2148,15 @@ def main() -> int:
                       help="exit non-zero while any finding is untriaged")
     p_rt.add_argument("--json", action="store_true")
     p_rt.set_defaults(func=cmd_redteam)
+
+    p_budgets = sub.add_parser(
+        "budgets", help="Phase 8: cost budgets — status + breach drill")
+    p_budgets.add_argument("action", choices=["status", "drill"])
+    p_budgets.add_argument("--agent", default="evaluator")
+    p_budgets.add_argument("--drill-limit", type=float, default=None,
+                           help="daily_usd limit for the drill workspace")
+    p_budgets.add_argument("--json", action="store_true")
+    p_budgets.set_defaults(func=cmd_budgets)
 
     p_apps = sub.add_parser("apps", help="Phase 20: machine identities + quotas")
     p_apps.add_argument("action", choices=["list", "add", "token"])

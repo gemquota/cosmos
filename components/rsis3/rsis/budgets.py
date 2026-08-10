@@ -171,3 +171,66 @@ def budget_status(workspace: Path) -> dict:
         "remaining": (float("inf") if ceiling <= 0
                       else round(ceiling - total, 6)),
     }
+
+
+def main(workspace: Path, action: str = "status", agent: str = "evaluator",
+         drill_limit: Optional[float] = None, json_out: bool = False) -> int:
+    """Phase 8 CLI: ``status`` prints the budget posture; ``drill`` runs an
+    isolated fail-close breach drill and records ``cost_budget_drill``
+    telemetry when the fail-closed event fires as expected."""
+    ws = Path(workspace)
+    if action == "status":
+        ensure_budgets(ws)
+        st = budget_status(ws)
+        if json_out:
+            print(json.dumps(st))
+            return 0
+        rem = st["remaining"]
+        print(f"  budgets: {budgets_path(ws)}")
+        print(f"  day {st['day']}: total ${st['total']:.6f} / "
+              f"ceiling ${st['ceiling']:.2f} / "
+              f"remaining ${'inf' if rem == float('inf') else round(rem, 6)}")
+        for name, row in (st.get("per_loop") or {}).items():
+            print(f"    {name}: spend ${row['spend']:.6f} / "
+                  f"limit ${row['limit']:.4f} hit={row['hit']}")
+        return 0
+
+    if action == "drill":
+        import tempfile
+        limit = float(drill_limit or 0.01)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "ws"
+            (root / ".rsis").mkdir(parents=True)
+            ts = datetime.now(timezone.utc).replace(
+                hour=12, minute=0, second=0, microsecond=0).timestamp()
+            (root / ".rsis" / "costs.jsonl").write_text(
+                json.dumps({"kind": "llm", "agent": agent,
+                            "cost": round(limit * 2, 6), "ts": ts}) + "\n",
+                encoding="utf-8")
+            save_budgets(root, {"per_loop": {agent: {"daily_usd": limit}},
+                                "default_daily_usd": limit,
+                                "ceiling_usd": 0.5})
+            res = check_budget(root, agent)
+            hits_path = root / ".rsis" / "budget_hits.jsonl"
+            hits = [json.loads(l) for l in
+                    hits_path.read_text(encoding="utf-8").splitlines()
+                    if l.strip()] if hits_path.is_file() else []
+            fail_closed = (not res["allowed"]) and len(hits) == 1
+        from rsis.epoch1 import emit
+        emit(ws, "cost_budget_drill",
+             fail_closed=fail_closed, agent=agent,
+             spend_usd=round(res["spend"], 6),
+             limit_usd=round(res["limit"], 6))
+        if json_out:
+            print(json.dumps({"fail_closed": fail_closed, "agent": agent,
+                              "spend": res["spend"], "limit": res["limit"],
+                              "event": "cost_budget_hit"}))
+            return 0 if fail_closed else 1
+        print(f"  drill: agent={agent} spend=${res['spend']:.6f} "
+              f"limit=${res['limit']:.4f} "
+              f"fail-closed={fail_closed} "
+              f"event={'cost.budget_hit recorded' if fail_closed else 'MISSING'}")
+        return 0 if fail_closed else 1
+
+    print(f"  budgets: unknown action {action!r} (status|drill)")
+    return 2

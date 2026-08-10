@@ -78,6 +78,22 @@ class PortableTests(unittest.TestCase):
             ok, state = continuity_check(ws)
             self.assertIn("invariants_ok", state)
 
+    def test_export_excludes_identity_key(self):
+        # F7: the dev instance key must never travel in a portable bundle.
+        import tarfile
+        with tempfile.TemporaryDirectory() as tmp:
+            ws = make_ws(tmp)
+            (ws / ".rsis" / "identity").mkdir(parents=True)
+            (ws / ".rsis" / "identity" / "instance.key").write_text(
+                "secret-key-material\n")
+            (ws / ".rsis" / "identity" / "instance.pub").write_text(
+                "public-fingerprint\n")
+            bundle = export_instance(ws)
+            with tarfile.open(bundle, "r:gz") as tar:
+                names = tar.getnames()
+            self.assertNotIn(".rsis/identity/instance.key", names)
+            self.assertIn(".rsis/identity/instance.pub", names)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -93,3 +93,5 @@
 {"checks": "meta_invariant,invariants,budget,energy_ladder,redteam", "ok": true, "timestamp": "2026-08-10T02:52:03Z", "type": "endurance_guardrails"}
 {"ok": true, "timestamp": "2026-08-10T02:52:03Z", "type": "epoch_enduring"}
 {"findings": 3, "timestamp": "2026-08-10T03:50:11Z", "type": "redteam_probe"}
+{"findings": 0, "timestamp": "2026-08-10T04:15:21Z", "type": "redteam_probe"}
+{"agent": "evaluator", "fail_closed": true, "limit_usd": 0.01, "spend_usd": 0.02, "timestamp": "2026-08-10T04:19:44Z", "type": "cost_budget_drill"}
