@@ -1,3 +1,0 @@
-{"type": "l7_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T16:28:27.883979+00:00", "cycle": 0}
-{"type": "l7_evaluation", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T16:28:28.109923+00:00", "decision": "PASS", "signal": "widen"}
-{"type": "l7_complete", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T16:28:28.111616+00:00", "changed": true, "signal": "widen", "deltas": {"l4.target_success_low": -0.04999999999999999, "l4.target_success_high": 0.0}}

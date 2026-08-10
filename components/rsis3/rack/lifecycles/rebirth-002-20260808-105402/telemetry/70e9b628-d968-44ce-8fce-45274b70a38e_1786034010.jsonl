@@ -1,6 +1,0 @@
-{"type": "l2_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T16:33:25.311883+00:00", "goal": "Add a docstring to the recovery module in rsis/recovery.py"}
-{"type": "l2_candidate", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T16:33:25.312217+00:00", "attempt": 1, "target_files": ["stub.py"], "description": "Stub improvement: Add a docstring to the recovery module in rsis/rec"}
-{"type": "l2_evaluation", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T16:33:25.504207+00:00", "attempt": 1, "decision": "PASS", "score_avg": 1.0}
-{"type": "l2_complete", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T16:33:25.593355+00:00", "success": true, "attempts": 1}
-{"type": "l1_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T16:33:25.612547+00:00", "task": "Add a docstring to the recovery module in rsis/recovery.py"}
-{"type": "l1_complete", "path": null, "delta": null, "duration_ms": 0, "timestamp": "2026-08-06T16:33:25.612868+00:00", "success": true, "steps": 1}

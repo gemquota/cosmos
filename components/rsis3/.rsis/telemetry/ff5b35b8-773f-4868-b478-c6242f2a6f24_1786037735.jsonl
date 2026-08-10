@@ -1,3 +1,0 @@
-{"type": "l9_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T17:35:30.973677+00:00", "cycle": 0}
-{"type": "l9_evaluation", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T17:35:31.162449+00:00", "decision": "PASS", "signal": "widen"}
-{"type": "l9_complete", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T17:35:31.176596+00:00", "changed": true, "signal": "widen", "deltas": {"l6.shrink_below": 0.0, "l6.grow_above": 0.0}}

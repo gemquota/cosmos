@@ -36,4 +36,3 @@ Audited all 50 phases of Epoch 1 (Sequels I–X) against roadmap docs, implement
 
 ## Related
 - [[wiki/syntheses/rsis3-epoch-1-implementation-2026-08-10|RSIS3 Epoch 1 implementation — phases 16–50]]
-- [[wiki/syntheses/rsis3-l3-cycle-209-cross-session-memory-consolidation-2026-08-09|RSIS3 L3 cycle 209 — cross-session memory consolidation]]

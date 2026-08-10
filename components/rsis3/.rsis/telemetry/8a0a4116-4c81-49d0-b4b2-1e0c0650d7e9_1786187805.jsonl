@@ -1,2 +1,0 @@
-{"type": "l6_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-08T11:16:40.319157+00:00", "cycle": 0}
-{"type": "l6_complete", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-08T11:16:40.363154+00:00", "changed": false, "count": 20, "success_rate": 0.1, "avg_score": 1.0}

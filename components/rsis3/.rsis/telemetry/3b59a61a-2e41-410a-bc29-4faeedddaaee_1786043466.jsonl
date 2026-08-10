@@ -1,3 +1,0 @@
-{"type": "l4_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T19:11:01.576369+00:00", "cycle": 0}
-{"type": "l4_evaluation", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T19:11:01.781239+00:00", "decision": "PASS", "score_avg": 1.0, "deltas": {"l1.max_retries": 1, "l1.max_tool_calls": 1}}
-{"type": "l4_complete", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T19:11:01.784522+00:00", "changed": true, "deltas": {"l1.max_retries": 1, "l1.max_tool_calls": 1}, "count": 20, "success_rate": 0.0, "avg_score": 0.0}

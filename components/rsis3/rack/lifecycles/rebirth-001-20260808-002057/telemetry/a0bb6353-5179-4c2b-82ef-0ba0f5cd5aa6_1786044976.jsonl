@@ -1,6 +1,0 @@
-{"type": "l2_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T19:36:11.119081+00:00", "goal": "self-improve the codebase"}
-{"type": "l2_candidate", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T19:36:11.119225+00:00", "attempt": 1, "target_files": ["stub.py"], "description": "Stub improvement: self-improve the codebase"}
-{"type": "l2_evaluation", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T19:36:11.320439+00:00", "attempt": 1, "decision": "PASS", "score_avg": 1.0}
-{"type": "l2_complete", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T19:36:11.416494+00:00", "success": true, "attempts": 1}
-{"type": "l1_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-06T19:36:11.444392+00:00", "task": "self-improve the codebase"}
-{"type": "l1_complete", "path": null, "delta": null, "duration_ms": 0, "timestamp": "2026-08-06T19:36:11.444641+00:00", "success": true, "steps": 1}

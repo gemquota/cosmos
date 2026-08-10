@@ -63,4 +63,3 @@ future bridge work — not session trivia.
 
 - [[wiki/syntheses/rsis3-goal-stack-output-communicate-bridge-2026-08-08|RSIS3 goal stack — Output → Communicate → Wrap → Bridge]]
 - [[wiki/syntheses/rsis3-multi-series-7-cycle-run-2026-08-08|RSIS3 multi-series 7-cycle run]]
-- [[wiki/syntheses/rsis3-l3-cycle-77-cross-session-memory-consolidation-2026-08-08|RSIS3 L3 cycle 77 — cross-session memory consolidation]]

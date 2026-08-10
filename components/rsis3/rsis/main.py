@@ -1973,8 +1973,10 @@ def main() -> int:
                           help="Restart the Node bridge when its port is down")
     p_daemon.add_argument("--auto-retune", action="store_true",
                           help="Apply convergence proposals (bounded)")
-    p_daemon.add_argument("--no-snapshots", action="store_true",
-                          help="Skip gen-static-data.py after each cycle")
+    p_daemon.add_argument("--snapshots", action="store_true",
+                          help="Regenerate gen-static-data.py snapshots after "
+                               "each cycle (default: off — CI regenerates on "
+                               "push/daily)")
     p_daemon.add_argument("--commit", action="store_true",
                           help="Commit each cycle's artifacts (T0)")
     p_daemon.add_argument("--push", action="store_true",

@@ -10,8 +10,8 @@ proposals.
 Usage:
     python -m rsis cycle-daemon [--once] [--interval 180] [--cycles 1]
         [--backoff 300,900,1800] [--bridge-url http://localhost:8787]
-        [--supervise-bridge] [--auto-retune] [--commit] [--push]
-        [--dry-run]
+        [--supervise-bridge] [--auto-retune] [--snapshots] [--commit]
+        [--push] [--dry-run]
 
 Env:
     RSIS_CYCLE_INTERVAL_S   cadence in seconds (default 180)
@@ -19,6 +19,8 @@ Env:
     RSIS_CYCLE_AUTO_RETUNE  "1" enables auto-retuning
     RSIS_CYCLE_COMMIT       "1" commits each cycle's artifacts (T0)
     RSIS_CYCLE_PUSH         "1" pulls --rebase + pushes after each commit
+    RSIS_CYCLE_SNAPSHOTS    "1" regenerates snapshots after each cycle
+                            (default: off — CI regenerates on push/daily)
     RSIS_RETUNE_MIN_INTERVAL_S minimum seconds between auto-retunes (default 21600)
 """
 
@@ -159,14 +161,76 @@ def maybe_auto_retune(workspace: Path, mykb: Path, package_root: Path,
     return True
 
 
-def _commit_cycle(repo: Path, commit: bool, push: bool, label: str) -> None:
-    """Commit cycle artifacts (T0: every cycle leaves a committed artifact)."""
+def _daemon_artifacts(package_root: Path, mykb: Path, repo: Path,
+                      snapshots: bool) -> list:
+    """Repo-relative paths the daemon may commit: its own cycle outputs.
+
+    Deliberately not ``git add -A`` — cadence commits must carry new cycle
+    artifacts (telemetry, state, syntheses, bridge cycles) and never churn
+    regenerated snapshots or sweep unrelated in-progress edits. Paths the
+    repo ignores (runtime state, generated artifacts) are dropped so
+    ``git add`` never refuses to run. Snapshot files are only staged when
+    this cycle regenerated them (``--snapshots``).
+    """
+    rel = lambda p: os.path.relpath(p, repo)  # noqa: E731
+    paths = [
+        rel(package_root / ".rsis"),
+        rel(package_root / "rack" / "bridge" / "cycles"),
+        rel(mykb / "wiki" / "syntheses"),
+        rel(mykb / "log.md"),
+        rel(mykb / "log.json"),
+    ]
+    if snapshots:
+        paths += [
+            rel(package_root / "rack" / "pulses" / "dashboard-data.json"),
+            rel(package_root / "dashboard"),
+        ]
+    out = [p for p in dict.fromkeys(paths) if (repo / p).exists()]
+    return [p for p in out if not _is_ignored(repo, p)]
+
+
+def _is_ignored(repo: Path, path: str) -> bool:
+    """True when git ignores ``path`` (``git add`` would refuse to stage it)."""
+    proc = subprocess.run(
+        ["git", "-C", str(repo), "check-ignore", "-q", "--", path],
+        capture_output=True, text=True, timeout=30)
+    return proc.returncode == 0
+
+
+def _commit_cycle(repo: Path, commit: bool, push: bool, label: str,
+                  add_paths: Optional[list] = None) -> None:
+    """Commit cycle artifacts (T0: every cycle leaves a committed artifact).
+
+    Stages only the daemon's own artifacts (``add_paths``), never the whole
+    worktree, and skips the commit entirely when nothing new was produced.
+    Regenerated snapshots are only included when ``add_paths`` lists them,
+    so cadence commits carry new cycle output without churning snapshots
+    or sweeping unrelated in-progress edits.
+    """
     if not commit:
         return
-    proc = subprocess.run(["git", "add", "-A"], cwd=str(repo),
+    if not add_paths:
+        logger.info("daemon: no cycle artifacts to commit")
+        return
+    proc = subprocess.run(["git", "add", "--", *add_paths], cwd=str(repo),
                           capture_output=True, text=True, timeout=120)
     if proc.returncode != 0:
         logger.warning("daemon git add failed: %s", proc.stderr.strip())
+        return
+    proc = subprocess.run(["git", "diff", "--cached", "--quiet"],
+                          cwd=str(repo), capture_output=True, text=True,
+                          timeout=120)
+    if proc.returncode == 0:
+        print("  ⏭ no new cycle artifacts — skipping commit")
+        return
+    if proc.returncode not in (0, 1):
+        logger.warning("daemon git diff failed: %s", proc.stderr.strip())
+        return
+    names = subprocess.run(["git", "diff", "--cached", "--name-only"],
+                           cwd=str(repo), capture_output=True, text=True,
+                           timeout=120)
+    count = len(names.stdout.splitlines()) if names.returncode == 0 else 0
+    print(f"  📦 committing {count} cycle artifact(s)")
     proc = subprocess.run(
         ["git", "commit", "-m", f"rsis: {label} — {_now_ts()}"],
         cwd=str(repo), capture_output=True, text=True, timeout=120)
@@ -186,7 +250,7 @@ def run_forever(*, interval_s: int, cycles: int, goal_space_cycle: int,
                 lockfile: Path, workspace: Path, mykb: Path,
                 package_root: Path, bridge_url: Optional[str] = None,
                 supervise_bridge: bool = False, auto_retune: bool = False,
-                snapshots: bool = True, commit: bool = False,
+                snapshots: bool = False, commit: bool = False,
                 push: bool = False, once: bool = False,
                 project_goal: Optional[str] = None,
                 executor: Optional[Callable] = None) -> int:
@@ -221,12 +285,15 @@ def run_forever(*, interval_s: int, cycles: int, goal_space_cycle: int,
                 if auto_retune:
                     maybe_auto_retune(workspace, mykb, package_root,
                                       int(os.environ.get("RSIS_RETUNE_MIN_INTERVAL_S", "21600")))
+                repo = repo_root(package_root)
                 if snapshots:
-                    _stage_all(repo_root(package_root))
-                    _regen_snapshots(repo_root(package_root))
+                    _regen_snapshots(repo)
                 if commit:
-                    _commit_cycle(repo_root(package_root), commit=True,
-                                  push=push, label="cadence cycle")
+                    _commit_cycle(repo, commit=True, push=push,
+                                  label="cadence cycle",
+                                  add_paths=_daemon_artifacts(
+                                      package_root, mykb, repo,
+                                      snapshots=snapshots))
                 print(f"  ✓ cycle ok (rc=0) in {time.time() - started:.1f}s")
             else:
                 consecutive += 1
@@ -263,14 +330,6 @@ def repo_root(package_root: Path) -> Path:
     return p.parent
 
 
-def _stage_all(repo: Path) -> None:
-    """Stage everything so gen-static-data.py sees new files in git ls-files."""
-    proc = subprocess.run(["git", "add", "-A"], cwd=str(repo),
-                          capture_output=True, text=True, timeout=120)
-    if proc.returncode != 0:
-        logger.warning("daemon git add failed: %s", proc.stderr.strip())
-
-
 def _regen_snapshots(repo: Path) -> None:
     try:
         subprocess.run(
@@ -288,10 +347,11 @@ def main(args) -> int:
     auto_retune = args.auto_retune or os.environ.get("RSIS_CYCLE_AUTO_RETUNE") == "1"
     commit = args.commit or os.environ.get("RSIS_CYCLE_COMMIT") == "1"
     push = args.push or os.environ.get("RSIS_CYCLE_PUSH") == "1"
+    snapshots = args.snapshots or os.environ.get("RSIS_CYCLE_SNAPSHOTS") == "1"
     if args.dry_run:
         print("cycle-daemon plan:")
         print(f"  interval: {interval}s · cycles: {args.cycles} · backoff: {backoff}")
-        print(f"  bridge-url: {args.bridge_url or 'none'} · supervise: {args.supervise_bridge} · auto-retune: {auto_retune} · commit: {commit} · push: {push}")
+        print(f"  bridge-url: {args.bridge_url or 'none'} · supervise: {args.supervise_bridge} · auto-retune: {auto_retune} · snapshots: {snapshots} · commit: {commit} · push: {push}")
         return 0
     return run_forever(
         interval_s=interval, cycles=args.cycles,
@@ -300,5 +360,5 @@ def main(args) -> int:
         workspace=args.workspace, mykb=args.mykb,
         package_root=args.package_root, bridge_url=args.bridge_url,
         supervise_bridge=args.supervise_bridge, auto_retune=auto_retune,
-        snapshots=not args.no_snapshots, commit=commit, push=push,
+        snapshots=snapshots, commit=commit, push=push,
         once=args.once, project_goal=getattr(args, "project_goal", None))

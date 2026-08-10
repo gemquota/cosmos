@@ -194,11 +194,26 @@ class BridgeFunctionalTest(BridgeCase):
         self.assertEqual(self.artifacts_of(data)[0]['status'], 'denied')
 
     def test_allowlisted_ref_ok(self):
-        status, _, data = self.server.chat([{'ref': '.rsis/strategies.json'}])
-        self.assertEqual(status, 200)
-        arts = self.artifacts_of(data)
-        self.assertNotEqual(arts[0]['status'], 'denied')
-        self.assertNotEqual(arts[0]['status'], 'missing')
+        # Fixture: the allowlisted ref must exist on disk (the bridge
+        # resolves refs against the live workspace). `.rsis/` is runtime
+        # state, not tracked in the repo, so create a minimal file and
+        # remove it afterwards to keep the workspace clean.
+        target = os.path.join(RSIS3, '.rsis', 'strategies.json')
+        created = False
+        if not os.path.exists(target):
+            os.makedirs(os.path.dirname(target), exist_ok=True)
+            with open(target, 'w') as fh:
+                json.dump({'population': [], 'generation': 0}, fh)
+            created = True
+        try:
+            status, _, data = self.server.chat([{'ref': '.rsis/strategies.json'}])
+            self.assertEqual(status, 200)
+            arts = self.artifacts_of(data)
+            self.assertNotEqual(arts[0]['status'], 'denied')
+            self.assertNotEqual(arts[0]['status'], 'missing')
+        finally:
+            if created:
+                os.remove(target)
 
     def test_missing_file(self):
         status, _, data = self.server.chat([{'ref': 'rack/no-such-file.json'}])

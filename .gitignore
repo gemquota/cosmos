@@ -19,3 +19,14 @@ components/mykb/.wiki-daemon/stub_created_dates.json
 .cosmos-cycle-daemon.pid
 components/rsis3/.cosmos-cycle-daemon.pid
 components/rsis3/rack/cycle-daemon.lock
+
+# Runtime state / generated artifacts (CODEBASE.md exclusions) — never commit
+.rsis/
+components/rsis3/.rsis/
+components/rsis3/rack/lifecycles/
+components/rsis3/rack/bridge/cycles/
+components/rsis3/rack/bridge/sessions/
+components/rsis3/rack/bridge/bridge.pid
+components/rsis3/rack/.dashboard.pid
+components/rsis3/rack/verify-server.pid
+components/rsis3/rack/portable/

@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from rsis.ops_daemon import CycleLock, next_backoff, run_forever
+from rsis.ops_daemon import CycleLock, _daemon_artifacts, next_backoff, run_forever
 
 
 class BackoffTest(unittest.TestCase):
@@ -30,33 +30,121 @@ class LockTest(unittest.TestCase):
 
 
 class CommitTest(unittest.TestCase):
+    def _seed(self, root, pkg, mykb):
+        import subprocess as sp
+        pkg.mkdir()
+        mykb.mkdir()
+        sp.run(["git", "init", "-q"], cwd=root, check=True)
+        sp.run(["git", "config", "user.email", "t@t"], cwd=root, check=True)
+        sp.run(["git", "config", "user.name", "t"], cwd=root, check=True)
+        (root / "seed.txt").write_text("x")
+        sp.run(["git", "add", "-A"], cwd=root, check=True)
+        sp.run(["git", "commit", "-qm", "seed"], cwd=root, check=True)
+
+    def _run_once(self, root, pkg, mykb, fake):
+        return run_forever(
+            interval_s=1, cycles=1, goal_space_cycle=1, disk_pct=None,
+            backoff=(1, 2, 3), lockfile=pkg / "rack" / "cycle.lock",
+            workspace=pkg, mykb=mykb, package_root=pkg,
+            bridge_url=None, snapshots=False, commit=True, push=False,
+            once=True, executor=fake)
+
     def test_cycle_committed(self):
         import subprocess as sp
         with tempfile.TemporaryDirectory() as d:
-            root = Path(d)                     # git repo root
-            pkg = root / "rsis3"; pkg.mkdir()  # package root (workspace)
-            mykb = root / "mykb"; mykb.mkdir()
-            sp.run(["git", "init", "-q"], cwd=root, check=True)
-            sp.run(["git", "config", "user.email", "t@t"], cwd=root, check=True)
-            sp.run(["git", "config", "user.name", "t"], cwd=root, check=True)
-            (root / "seed.txt").write_text("x")
-            sp.run(["git", "add", "-A"], cwd=root, check=True)
-            sp.run(["git", "commit", "-qm", "seed"], cwd=root, check=True)
+            root = Path(d)
+            pkg = root / "rsis3"
+            mykb = root / "mykb"
+            self._seed(root, pkg, mykb)
 
             def fake(loop, goal, disk):
-                (pkg / "artifact.txt").write_text(loop + goal)
+                (mykb / "log.md").write_text("cycle log\n")
                 return 0
 
-            rc = run_forever(
-                interval_s=1, cycles=1, goal_space_cycle=1, disk_pct=None,
-                backoff=(1, 2, 3), lockfile=pkg / "rack" / "cycle.lock",
-                workspace=pkg, mykb=mykb, package_root=pkg,
-                bridge_url=None, snapshots=False, commit=True, push=False,
-                once=True, executor=fake)
+            rc = self._run_once(root, pkg, mykb, fake)
             self.assertEqual(rc, 0)
             log = sp.run(["git", "log", "--oneline", "-2"], cwd=root,
                          capture_output=True, text=True, check=True).stdout
             self.assertIn("rsis: cadence cycle", log)
+            tracked = sp.run(["git", "ls-files"], cwd=root,
+                             capture_output=True, text=True,
+                             check=True).stdout
+            self.assertIn("mykb/log.md", tracked)
+
+    def test_stray_file_not_swept(self):
+        import subprocess as sp
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            pkg = root / "rsis3"
+            mykb = root / "mykb"
+            self._seed(root, pkg, mykb)
+
+            def fake(loop, goal, disk):
+                (pkg / "stray.txt").write_text("unrelated edit")
+                return 0
+
+            rc = self._run_once(root, pkg, mykb, fake)
+            self.assertEqual(rc, 0)
+            log = sp.run(["git", "log", "--oneline"], cwd=root,
+                         capture_output=True, text=True, check=True).stdout
+            self.assertNotIn("rsis: cadence cycle", log)
+            tracked = sp.run(["git", "ls-files"], cwd=root,
+                             capture_output=True, text=True,
+                             check=True).stdout
+            self.assertNotIn("stray.txt", tracked)
+            self.assertTrue((pkg / "stray.txt").exists())
+
+    def test_noop_cycle_skips_commit(self):
+        import subprocess as sp
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            pkg = root / "rsis3"
+            mykb = root / "mykb"
+            self._seed(root, pkg, mykb)
+            rc = self._run_once(root, pkg, mykb,
+                                fake=lambda loop, goal, disk: 0)
+            self.assertEqual(rc, 0)
+            log = sp.run(["git", "log", "--oneline"], cwd=root,
+                         capture_output=True, text=True, check=True).stdout
+            self.assertEqual(len(log.splitlines()), 1)  # seed only
+
+
+class DaemonArtifactsTest(unittest.TestCase):
+    def test_owned_paths_only(self):
+        with tempfile.TemporaryDirectory() as d:
+            repo = Path(d)
+            pkg = repo / "rsis3"
+            mykb = repo / "mykb"
+            for p in (pkg / ".rsis", pkg / "rack" / "bridge" / "cycles",
+                      mykb / "wiki" / "syntheses"):
+                p.mkdir(parents=True)
+            (mykb / "log.md").write_text("x")
+            paths = _daemon_artifacts(pkg, mykb, repo, snapshots=False)
+            self.assertEqual(paths, [
+                "rsis3/.rsis", "rsis3/rack/bridge/cycles",
+                "mykb/wiki/syntheses", "mykb/log.md"])
+            self.assertNotIn("rsis3/rack/pulses/dashboard-data.json", paths)
+            # snapshot paths appear only when the files actually exist
+            (repo / "rsis3" / "rack" / "pulses").mkdir(parents=True)
+            (repo / "rsis3" / "rack" / "pulses"
+             / "dashboard-data.json").write_text("{}")
+            paths_snap = _daemon_artifacts(pkg, mykb, repo, snapshots=True)
+            self.assertIn("rsis3/rack/pulses/dashboard-data.json", paths_snap)
+
+    def test_ignored_paths_dropped(self):
+        import subprocess as sp
+        with tempfile.TemporaryDirectory() as d:
+            repo = Path(d)
+            pkg = repo / "rsis3"
+            mykb = repo / "mykb"
+            (pkg / ".rsis").mkdir(parents=True)
+            (mykb / "wiki" / "syntheses").mkdir(parents=True)
+            (mykb / "log.md").write_text("x")
+            (repo / ".gitignore").write_text("rsis3/.rsis/\n")
+            sp.run(["git", "init", "-q"], cwd=repo, check=True)
+            paths = _daemon_artifacts(pkg, mykb, repo, snapshots=False)
+            self.assertNotIn("rsis3/.rsis", paths)
+            self.assertIn("mykb/wiki/syntheses", paths)
 
 
 class RunForeverTest(unittest.TestCase):

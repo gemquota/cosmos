@@ -1,2 +1,0 @@
-{"ts": 1785846805.3110487, "agent": "l1", "tool": "run_code", "args": "{\"code\": \"do something\"}", "risk": "write", "status": "error", "output": "SyntaxError: (\"Line 1: SyntaxError: invalid syntax at statement: 'do something'\",)", "latency_s": 0.046}
-{"kind": "approval.applied", "actor": "system", "candidate_id": "36a7c1ddb0f3", "detail": "applied 1 file(s): rack/bridge/server.mjs", "digests": {"rack/bridge/server.mjs": "0579d09a5d7d86d448a0cc8f651dd9138d516c9b2f20fd3430fa59bebff22fa6"}, "ts": "2026-08-09T18:23:32Z"}

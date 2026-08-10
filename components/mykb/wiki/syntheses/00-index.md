@@ -2,23 +2,26 @@
 type: "index"
 hub: true
 title: "Syntheses Index"
-description: "Listing of the syntheses/ folder (62 pages)."
+description: "Listing of the syntheses/ folder (93 pages)."
 tags: ["index"]
-timestamp: "2026-08-03T00:00:00Z"
+timestamp: "2026-08-10T13:41:57Z"
 ---
 
 # Syntheses
 
-Part of [[wiki/index|Wiki Index]]. 62 pages.
+Part of [[wiki/index|Wiki Index]]. 93 pages.
 
 ## Pages
 - [[wiki/syntheses/acquisition-pass-snapshot-ordering|Acquisition Passes & Snapshot Ordering]] — Durable rules for multi-worker acquisition rounds: stage untracked notes before regenerating files.json (it counts tracked files only), generators are idempotent and safe to re-run, and threshold buckets move predictably because fulls are capped at 400 words
-- [[wiki/syntheses/ao-agent-os-integration-assessment|AO (Agent OS) Integration Assessment — Selective Harvest Rules]] — Durable rules from assessing the Agent OS codebase for COSMOS: harvest infrastructure (sandbox, HITL approvals, scheduler guards, cost ledger) into RSIS3, never duplicate memory/dashboard/telemetry surfaces; Phase A sync tool-layer port patterns (allowlist + containment + audit triad, stub-planner argument discipline, config gates) and Phase B cost-ledger + semantic-search patterns (persistent ledger replay, two-stage budget enforcement, hashed n-gram embeddings, test hygiene); Phase C scheduler patterns (budget-bounded fan-out, immutable-evaluator fan-in, re-dispatch-after-settle deadlock guard, scheduler-guarded review waves, DAG-shape telemetry, CLI-over-config / env-over-config)
+- [[wiki/syntheses/adversarial-review-pass-1-2026-08|Adversarial Review Pass 1 — Stub Promotion Wave Cleanup (2026-08)]] — Five parallel adversarial reviews of the 1,098-file promotion wave found hard invariants held but a systemic machine-generated link-layer failure; a cleanup pass removed self-links, boilerplate annotations, and dead links, fixed six confirmed factual errors, and corrected the syntheses namespace
+- [[wiki/syntheses/adversarial-review-pass-3-2026-08|Adversarial Review Pass 3 — Claims Grounding, Link Hygiene & Near-Duplicate Merges (2026-08)]] — Pass 3 of the adversarial review cycle rewrote every unverifiable 'the wiki's X does Y' operational claim into design-intent policy language, removed 222 keyword-matched hub links and 22 dead archive links, fixed 59 orphaned trailing bullets, and merged seven near-duplicate article pairs to canonical slugs
+- [[wiki/syntheses/ao-agent-os-integration-assessment|AO (Agent OS) Integration Assessment — Selective Harvest Rules]] — Durable rules from assessing the Agent OS codebase for COSMOS: harvest infrastructure (sandbox, HITL approvals, scheduler guards, cost ledger) into RSIS3, never duplicate memory/dashboard/telemetry surfaces
 - [[wiki/syntheses/assurance-cases|Assurance Cases]] — Structured arguments that a system meets safety goals
 - [[wiki/syntheses/audit-frameworks-ai|AI Audit Frameworks]] — Structured methods for auditing AI systems
 - [[wiki/syntheses/bug-bounty-ai|Bug Bounties for AI]] — Rewarding external researchers for finding AI vulnerabilities
 - [[wiki/syntheses/containment-strategies|Containment Strategies]] — Isolating AI systems to bound their impact
 - [[wiki/syntheses/coordinated-disclosure|Coordinated Disclosure]] — Structured multi-party vulnerability disclosure
+- [[wiki/syntheses/cosmos-codebase-md-generator-2026-08-09|CODEBASE.md — regenerable hierarchical codebase concatenation for context injection]] — gen-codebase-md.py produces CODEBASE.md, a single hierarchical concatenation of the COSMOS source tree (header + inclusion rules + ASCII tree + anchor TOC + per-file sections); records the durable inclusion/exclusion rules and maintenance invariants
 - [[wiki/syntheses/cosmos-dashboard-mykb-integration|Cosmos Dashboard & MyKB Integration Patterns]] — Durable engineering patterns for the static-hosted dashboard↔wiki integration: lazy iframes, bounded client-side search, repo-relative snapshots, read-only validation, verification-first changes
 - [[wiki/syntheses/dead-link-repair|Dead-Link Repair]] — Finding and fixing links that point nowhere
 - [[wiki/syntheses/deployment-safety|Deployment Safety]] — Practices for shipping AI systems without harm
@@ -28,6 +31,8 @@ Part of [[wiki/index|Wiki Index]]. 62 pages.
 - [[wiki/syntheses/feedback-integration-loops|Feedback Integration Loops]] — Mechanisms that convert feedback into durable system changes
 - [[wiki/syntheses/gradual-deployment|Gradual Deployment]] — Rolling out AI systems in stages
 - [[wiki/syntheses/graph-health-checks|Graph Health Checks]] — Automated checks that verify a knowledge graph's structural integrity
+- [[wiki/syntheses/guidance-execution-loop-2026-08-06|Guidance Execution Loop — Wanted Links, Scaffolds, Research Manifest]] — Closing the guidance loop: red-link wanted pages feed the queue, drain_guidance scaffolds them as stubs, and a research manifest hands direction to the next session
+- [[wiki/syntheses/guidance-ui-2026-08-06|MyKB Guidance UI — from Stub Auditor to Research Direction]] — The Guide tab: area direction, research & feedback queue, and stub triage in one surface that steers the research and nature of mykb
 - [[wiki/syntheses/knowledge-acquisition-workflow|Knowledge Acquisition Workflow: Open Threads]] — Open threads on how captures become curated concepts, sources, and syntheses
 - [[wiki/syntheses/knowledge-graph-maintenance|Knowledge Graph Maintenance]] — Keeping a knowledge graph consistent, connected, and current
 - [[wiki/syntheses/knowledge-synthesis-pipelines|Knowledge Synthesis Pipelines]] — Automated pipelines that turn raw captures into linked knowledge
@@ -35,9 +40,11 @@ Part of [[wiki/index|Wiki Index]]. 62 pages.
 - [[wiki/syntheses/knowledge-system|Knowledge System Overview]]
 - [[wiki/syntheses/lessons-to-actions|Lessons to Actions]] — Converting lessons learned into concrete implemented changes
 - [[wiki/syntheses/loop-closure|Loop Closure]] — Ensuring improvement loops terminate with durable change
+- [[wiki/syntheses/loop-graph-engineering-wave-2026-08|Loop & Graph Engineering Wave — 14-Source Ingest]] — Synthesis of the 2025-26 progression from prompt engineering to context, harness, loop, and graph engineering across Anthropic, Cognition, LangChain, Willison, Osmani, and the arXiv loop-specification paper
 - [[wiki/syntheses/model-updates-risks|Model Update Risks]] — Risks introduced when models are updated
 - [[wiki/syntheses/monitored-deployment|Monitored Deployment]] — Running systems under active observation
 - [[wiki/syntheses/mykb-acquisition-curation-and-practices|MyKB Acquisition/Curation Pass & RSIS3 Usage-Practice Enforcement]] — Durable rules for acquiring concept notes into MyKB, curating hash-named junk entity pages, and enforcing RSIS3 workspace hygiene with check-practices
+- [[wiki/syntheses/mykb-guidance-ui-overhaul-2026-08-06|MyKB Guidance UI Overhaul — navigation, article tools, graph repair]] — Home-page routing, prominent Guidance button with Direction/Queue/Triage tabs, article toolbar (Graph/Edit/Archive/Delete), knowledge-graph load fix, and live-mode category grouping
 - [[wiki/syntheses/nested-loop-graph-and-zoom-fix|Nested-Loop Graph & Zoom Direction Fix]] — Durable patterns for the interactive Ω graphs: viewBox-width zoom inversion (f>1 zooms in), re-projecting only the loop family onto concentric rings at the semantic centroid, and keeping generator scripts + index cards in sync
 - [[wiki/syntheses/nine-loop-stack-implementation|Nine-Loop Stack Implementation & Dashboard Wiring]] — Durable patterns for completing the L1–L9 loop stack (meta-tuners observe target-loop history, not params), outcome-window signal driving in tests, and static snapshot wiring for the dashboard Loops tab
 - [[wiki/syntheses/orphan-detection|Orphan Detection]] — Finding nodes with no inbound links in a knowledge graph
@@ -45,123 +52,56 @@ Part of [[wiki/index|Wiki Index]]. 62 pages.
 - [[wiki/syntheses/pass3-integration-depth-wave|Pass 3 — Integration & Depth Wave (8×400)]] — Eight parallel workers deepened and grew mykb by 3,200 files across AI, systems, data, cognition, dev culture, RSI/RSIS3 integration, curation, and frontend clusters — with the goal of making mykb fully integrated into RSIS3's decision-making
 - [[wiki/syntheses/patch-management-ai|Patch Management for AI]] — Processes for fixing vulnerabilities across AI systems
 - [[wiki/syntheses/post-pass-consolidation|Post-Pass Consolidation]] — Settling a work pass into durable structure before the next one
-- [[wiki/syntheses/recursive-self-improvement-spec-2026-08-06|Recursive Self-Improvement Specification — SPACE v2 Export]] — The completed 326-probe SPACE session (67/67 questions, 67 artifacts) that fixes what recursive self-improvement is and how RSIS3 should be built
+- [[wiki/syntheses/recursive-self-improvement-spec-2026-08-06|Recursive Self-Improvement Specification — SPACE v2 Export]] — The completed 326-probe SPACE session (67/67 questions, 67 artifacts) that pins down what recursive self-improvement is and how RSIS3 should be built and operated
 - [[wiki/syntheses/responsible-disclosure-ai|Responsible Disclosure for AI]] — Norms for disclosing AI vulnerabilities safely
 - [[wiki/syntheses/restricted-deployment|Restricted Deployment]] — Limiting where or how an AI system can be used
-- [[wiki/syntheses/rsis3-l3-cycle-1-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 1 — cross-session memory consolidation]] — L3 cycle 1 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
-- [[wiki/syntheses/rsis3-l3-cycle-2-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 2 — cross-session memory consolidation]] — L3 cycle 2 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
-- [[wiki/syntheses/rsis3-l3-cycle-3-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 3 — cross-session memory consolidation]] — L3 cycle 3 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
-- [[wiki/syntheses/rsis3-l3-cycle-4-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 4 — cross-session memory consolidation]] — L3 cycle 4 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
-- [[wiki/syntheses/rsis3-l3-cycle-6-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 6 — cross-session memory consolidation]] — L3 cycle 6 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
-- [[wiki/syntheses/rsis3-l3-cycle-7-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 7 — cross-session memory consolidation]] — L3 cycle 7 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
-- [[wiki/syntheses/rsis3-l3-cycle-8-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 8 — cross-session memory consolidation]] — L3 cycle 8 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
-- [[wiki/syntheses/rsis3-l3-cycle-9-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 9 — cross-session memory consolidation]] — L3 cycle 9 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
-- [[wiki/syntheses/rsis3-l3-cycle-10-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 10 — cross-session memory consolidation]] — L3 cycle 10 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
-- [[wiki/syntheses/rsis3-l3-cycle-5-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 5 — cross-session memory consolidation]] — L3 cycle 5 consolidated workspace telemetry into durable MyKB memory (self-written via the gateway)
-- [[wiki/syntheses/rsis3-pass-6-2026-08-06|RSIS3 Pass 6 — five full cycles across L1–L9]] — Running 5 full cycles (40 loop executions) under a 99.6%-full disk: RSIS_DISK_USAGE_PCT override for the resource enforcer, module-logger discipline in scheduler callbacks, checkpoint git-add sweep behavior, and the even-telemetry full-cycle cadence
-- [[wiki/syntheses/rsis3-pass-7-2026-08-06|RSIS3 Pass 7 — ecosystem data contracts, validated at both gates]] — One documented contract per shared shape (OKF, files.json, ecosystem.json, loops.json, telemetry JSONL, SPACE framework) enforced by a stdlib-only validator wired into gen-static-data --check and check-practices; disk-override semantics (RSIS_DISK_USAGE_PCT=100 on full disks) and the freshness-vs-shape split in the deploy gate
-- [[wiki/syntheses/rsis3-pass-8-2026-08-06|RSIS3 Pass 8 — MyKB memory link: loops read and write the wiki]] — Durable rules from pass 8: L3 consolidation is self-writing through the MyKB gateway, loops read syntheses for context, cycle ordinals from durable counts
-- [[wiki/syntheses/rsis3-pass-9-2026-08-06|RSIS3 Pass 9 — spec link: SPACE artifacts feed L2 goals and the live Guide]] — Durable rules from pass 9: spec exports are a first-class ideation source, Guide surfaces share one payload, cross-component reads degrade gracefully
-- [[wiki/syntheses/rsis3-pass-10-2026-08-07|RSIS3 Pass 10 — UX cohesion: Models tab, KG lazy boot, verified surfaces]] — Durable rules from pass 10: Guide renders loop tuning topology (which loop tunes which params) from one guidance payload, KG pages lazy-load regenerated graph/catalog/index/log payloads instead of embedding copies, and every user-visible surface verifies on live data with graceful static fallbacks
-- [[wiki/syntheses/rsis3-pass-11-2026-08-07|RSIS3 Pass 11 — ops + capstone: auto-deploy, scheduled loops, monitoring, full-chain proof]] — Durable rules from pass 11: the site auto-syncs main → gh-pages via CI, loops run on schedule via one batch script (disk override + practices gate + snapshot regen), monitoring covers the live site hourly, and a capstone run proved spec → goal → cycle → MyKB → dashboard in one batch
+- [[wiki/syntheses/rsis-drive-until-satisfied-2026-08-06|RSIS3 drive — run loops automatically until completion requirements are satisfied]] — New `python -m rsis drive` command that repeats a loop until its completion requirement is met, with per-loop predicates, safety budgets, and exit-code semantics for automation
+- [[wiki/syntheses/rsis3-cycle-daemon-commit-policy-2026-08-10|RSIS3 Cycle-Daemon Commit Policy — Targeted Artifacts, No Snapshot Churn (2026-08-10)]] — The cycle daemon now commits only its own cycle artifacts (.rsis/ state, bridge cycles, MyKB syntheses/log), skips commits when nothing new was produced, and leaves snapshot regeneration to CI (opt-in --snapshots) — ending per-cycle 10k-line dashboard-data.json churn
+- [[wiki/syntheses/rsis3-daily-summary-2026-08-08|RSIS3 daily summary — 2026-08-08]] — 63 cycle(s), 1311 telemetry events, gen 94 (best fitness 0.244), KG 282n/475e
+- [[wiki/syntheses/rsis3-daily-summary-2026-08-09|RSIS3 daily summary — 2026-08-09]] — 39 cycle(s), 771 telemetry events, gen 132 (best fitness 0.304), KG 284n/475e
+- [[wiki/syntheses/rsis3-dashboard-unified-embed-2026-08-10|RSIS3 unified dashboard — live-telemetry rebuild & unified embed]] — Root-cause patterns for dashboard regressions (stale static payloads, missing renderer IDs, uncalled init) and the ?embed=cosmos contract for unifying separate codebases into one cohesive web app
+- [[wiki/syntheses/rsis3-epoch-1-audit-2026-08-10|Epoch 1 audit — 50-phase review (2026-08-10)]] — Audit of all 50 Epoch 1 phases (Sequels I–X): 50/50 implemented, 8 findings, F6 fixed during audit, exit criteria all live-validation pending
+- [[wiki/syntheses/rsis3-epoch-1-findings-resolution-2026-08-10|Epoch 1 audit findings — all 8 resolved (2026-08-10)]] — Closed F1–F8 from the epoch-1 audit: verification ledger live, budgets materialized + drill, session persistence exercised, traversal gating fixed, date-rot tests fixed, portable key exclusion tested, exit-criteria tracker created
+- [[wiki/syntheses/rsis3-epoch-1-implementation-2026-08-10|RSIS3 Epoch 1 Implementation — Phases 16–50 (Sequels IV–X)]] — Durable patterns and rules from implementing the 35-phase epoch-1 program (open autonomy → federated intelligence → governed evolution → intergenerational continuity → collaborative governance → global commons → epoch-scale intelligence): one shared contract-safe telemetry channel, policy/state file separation that keeps live policy untouched by exercises, deterministic divergence resolution, and the cross-roadmap invariant encoded as executable checks
+- [[wiki/syntheses/rsis3-goal-stack-output-communicate-bridge-2026-08-08|Multitiered goal stack — Output → Communicate → Wrap → Bridge]] — Active drives adopted 2026-08-08: output-first cycles, user communication, dense messaging wrappers, web interface bridge to LLM + Cosmos
+- [[wiki/syntheses/rsis3-llm-20-cycle-run-rebirth-2-2026-08-08|RSIS3 LLM 20-cycle run — rebirth #2, bounded KG, stable rhythm]] — 20 LLM-driven cycles (L3 #43–62) after rebirth #2: KG flat at 1847 edges, then pruned to 475; fitness 0.064; all gates PASS
+- [[wiki/syntheses/rsis3-llm-cycle-1-rebirth-2-kg-bound-2026-08-08|RSIS3 LLM cycle 1 — rebirth #2 + bounded knowledge graph]] — LLM-driven cycle: rebirth #2, idempotent+bounded L3 redundancy flagging, KG edge dedup (14770→1847), all gates PASS
+- [[wiki/syntheses/rsis3-multi-series-7-cycle-run-2026-08-08|RSIS3 multi-series 7-cycle run — SPACE series 1–7 goal sourcing]] — Expanded from-space goal sourcing across all 7 SPACE series; per-series real improvements; 56 executions, 0 failed
+- [[wiki/syntheses/rsis3-p4-p5-validation-window-2026-08-10|P4 24h → P5 7-day validation window tracker (2026-08-10)]] — Seeded the Phase 4 24-hour exit-criterion window; new `rsis validation` CLI with start/status/checkin, nightly auto-check-in, and clean P4→P5 advance
+- [[wiki/syntheses/rsis3-pass-10-2026-08-07|RSIS3 Pass 10 — UX cohesion: Models tab, KG lazy boot, verified surfaces]] — Durable rules from pass 10: the Guide renders loop tuning topology (which loop tunes which params, with live values) from one guidance payload, KG pages lazy-load regenerated graph/catalog/index/log payloads instead of embedding copies, and every user-visible surface is verified on live data with graceful static fallbacks
+- [[wiki/syntheses/rsis3-pass-11-2026-08-07|RSIS3 Pass 11 — ops + capstone: auto-deploy, scheduled loops, monitoring, full-chain proof]] — Durable rules from pass 11: the cosmos site auto-syncs to gh-pages via CI, loops run on a schedule without babysitting, monitoring checks the live site + snapshots hourly, and one capstone run proved the full chain SPACE spec → L2 goal → cycle → L3 MyKB consolidation → dashboard
+- [[wiki/syntheses/rsis3-pass-12-improvement-engine-2026-08-07|RSIS3 Pass 12 — real improvement engine: L2 codegen, batch launcher, stub detection]] — Durable rules from pass 12: L2 now generates and applies real code improvements (missing-module scaffolds, create-only writes, LLM hook), `rsis launch` runs the full L1–L9 batch from Python, StubDetector turns actual code state into prioritized improvement goals, and the RRP pulse tool runs on real modules with real targets
+- [[wiki/syntheses/rsis3-pass-13-deterministic-evaluator-gate-2026-08-07|RSIS3 Pass 13 — deterministic evaluator gate: fail-closed quality gating without an API]] — Durable rules from pass 13: the immutable evaluator now runs a deterministic stdlib-only gate (path safety, compile, AST safety scan, regression, style/efficiency) before any optional LLM refinement; JSON/config candidates from L8/L9 bypass Python gates; diff fragments are dedent-checked; a hard FAIL can never be overturned by the LLM
+- [[wiki/syntheses/rsis3-pass-14-self-assessment-routine-2026-08-07|RSIS3 Pass 14 — self-assessment routine: deterministic-first KB health, gaps, trends]] — Durable rules from pass 14: `python -m rsis self-assess` runs six deterministic phases (health scan, gap analysis, trend detection, artifact writers, backlog filing, optional fail-closed LLM narrative) that read the KB and telemetry read-only, write create-only OKF notes under wiki/assessments, wiki/reflections, and wiki/backlog, and can never be overturned by the LLM
+- [[wiki/syntheses/rsis3-pass-6-2026-08-06|RSIS3 Pass 6 — five full cycles across L1–L9]] — Durable rules from running 5 full RSIS3 cycles (40 loop executions) under a 99.6%-full disk: the RSIS_DISK_USAGE_PCT override, module-logger discipline in scheduler callbacks, checkpoint git-add sweep behavior, and the even-telemetry cycle cadence
+- [[wiki/syntheses/rsis3-pass-7-2026-08-06|RSIS3 Pass 7 — ecosystem data contracts, validated at both gates]] — Durable rules from pass 7: one documented contract per shared shape (OKF, files.json, ecosystem.json, loops.json, telemetry JSONL, SPACE framework), stdlib-only validator wired into gen-static-data --check and check-practices, and the disk-override semantics that kept L1/L2 running
+- [[wiki/syntheses/rsis3-pass-8-2026-08-06|RSIS3 Pass 8 — MyKB memory link: loops read and write the wiki]] — Durable rules from pass 8: L3 consolidation is self-writing through the MyKB gateway (OKF synthesis + log.md per cycle, failure-isolated), loops read syntheses for context (--goal from-mykb, related-note selection), and cycle ordinals come from durable counts so separate invocations stay distinct
+- [[wiki/syntheses/rsis3-pass-9-2026-08-06|RSIS3 Pass 9 — spec link: SPACE artifacts feed L2 goals and the live Guide]] — Durable rules from pass 9: SPACE spec exports are a first-class ideation source (SpaceSpec maps 67 artifacts to traceable L2 goals via --goal from-space), Guide surfaces share one payload (scan_guidance + live section for loops/telemetry/spec-traces/syntheses), and cross-component reads degrade to empty state
+- [[wiki/syntheses/rsis3-phase-2-envelope-hardening-2026-08-08|RSIS3 Phase 2 — envelope hardening (cosmos-envelope/1 v1.1)]] — Durable rules for the hardened bridge envelope: typed structured artifacts, multimodal handling, server-side caps, explicit ref allowlist, rate limit, origin guard, NDJSON streaming — Phase 2 of the multi-phase roadmap (completes tier T2)
+- [[wiki/syntheses/rsis3-phase-3-product-surface-2026-08-08|RSIS3 Phase 3 — product surface (bridge sessions, memory loop, native embed)]] — Durable rules for the product-grade bridge: envelope-shaped session archives, chat memory distillation, shared bridge.js widget, token auth, hosting layout — Phase 3 of the multi-phase roadmap (completes tier T3)
+- [[wiki/syntheses/rsis3-phase-4-5-ops-autonomy-2026-08-08|RSIS3 Phases 4–5 — ops maturity + autonomy (daemon, convergence, nightly)]] — Durable rules for sustainable background operation: cycle daemon with lockfile/backoff, convergence monitoring and bounded auto-retuning, dynamic dashboard overlay, CI guards, nightly summaries, bridge self-heal — completes the multi-phase roadmap
+- [[wiki/syntheses/rsis3-rebirth-1-first-cycles-2026-08-08|RSIS3 rebirth #1 + first real L1–L9 cycles]] — Fresh-start rebirth of the RSIS3 workspace (pulses archived, next pulse 001) followed by the first real 3-cycle launch batch — 24 executions, 0 failures
+- [[wiki/syntheses/rsis3-roadmap-epoch-1-2026-08-10|RSIS3 roadmap epoch 1 (Phases 1–50) — ten sequels, three maturity arcs, meta-science capstone]] — Epoch 1 expands the roadmap from 30 to 50 phases with four new sequels (VII Generational Autonomy, VIII Human–AI Symbiosis, IX Global Commons, X Meta-Science capstone), consolidates the program into ten 5-phase sequels across three maturity arcs, and codifies the cross-roadmap invariant plus the standing telemetry & dashboard contract for every phase
+- [[wiki/syntheses/rsis3-roadmap-epoch-2-2026-08-10|RSIS3 roadmap epoch 2 (Phases 51–100) — the Age of Living Systems, ten sequels]] — Epoch 2 defines the full 51–100 program in ten sequels (Inter-Intelligence, Economic Agency, Composite Intelligence, Societal Co-Evolution, Planetary Intelligence, Cultural Intelligence, Multi-Intelligence Governance, Long-Termism, Frontier Intelligence, Transcendent Autonomy capstone) with per-phase telemetry events and dashboard updates, extending the cross-roadmap invariant across a second epoch
+- [[wiki/syntheses/rsis3-roadmap-sequels-2-3-2026-08-09|RSIS3 roadmap sequels II–III (Phases 6–15) — durable structure and ordering rules]] — Two five-phase sequel roadmaps continue the delivered Phases 1–5: Horizons (distributed memory, verification mesh, cost governance, governance, self-modeling) and Frontiers (cross-project, collaboration, federation, invariants, long-horizon autonomy); records the cumulative-ordering rules that keep them coherent
+- [[wiki/syntheses/rsis3-roadmap-sequels-4-5-6-2026-08-10|RSIS3 roadmap sequels IV–VI (Phases 16–30) — open, ecosystem, sovereign autonomy]] — Three new five-phase sequel roadmaps extend the delivered 15-phase program to 30: Open Autonomy (public attestation, interop protocol, portability, red-teaming, public API), Ecosystem Autonomy (instance identity, knowledge exchange, swarm coordination, population governance, resilience), Sovereign Autonomy (meta-governance, sustainability, self-directed goals, stewardship, endurance); records the six maturity arcs and the meta-invariant that caps the program
+- [[wiki/syntheses/rsis3-sequel-2-phases-6-10-2026-08-09|RSIS3 Sequel II complete — Phases 6–10 (distributed memory, verification mesh, budgets, policy, self-model)]] — Implemented Sequel II: MyKB memory API + locking, evaluator verification mesh with ledger, fail-close cost budgets + anomaly scanning, policy-controlled governance with audit/rollback, and the self-model forecaster with adaptive daemon cadence — 249 tests green
+- [[wiki/syntheses/rsis3-sequel-3-phases-11-15-2026-08-09|RSIS3 Sequel III complete — Phases 11–15 (cross-project, collaboration, federation, invariants, long-horizon autonomy)]] — Implemented Sequel III: project profiles + goal seeds (11), per-user signed-token authz with role/capability gates (12), federated memory with provenance + consensus (13), executable invariant registry with sha256 attestation + self-repair (14), seasonal goals + energy-aware scheduling + quarterly review (15) — 285 tests green
+- [[wiki/syntheses/rsis3-series-2-ontological-characteristics-2026-08-09|RSIS3 series 2 completion — Ontological Characteristics (entity lifecycles + constraints)]] — Completed SPACE series 2 (Ontological Characteristics): goal-sourced L1–L9 cycle run plus the executable lifecycle/constraint registry (rsis/entity_states.py) wired into the convergence proposal path, with 11 new tests
+- [[wiki/syntheses/rsis3-t2-envelope-multiphase-roadmap-2026-08-08|T2 Dense Envelope & Multi-Phase Roadmap for the COSMOS Bridge]] — Durable patterns for dense multimodal messaging between Cosmos components and the LLM bridge: the cosmos-envelope/1 wire shape, artifact ref resolution with root-boundary traversal protection, dynamic (live-state) snapshots instead of static regeneration, and the four-phase development roadmap sequence that completes tiers T1-T3 plus ops maturity
 - [[wiki/syntheses/safety-case-approach|Safety Case Approach]] — Structuring safety justification as explicit cases
 - [[wiki/syntheses/security-advisories-ai|Security Advisories]] — Official notices about AI security vulnerabilities
+- [[wiki/syntheses/stub-audit-2026-08-06|Stub Audit Pass 2026-08-06 — 141 Reviewed, 3 Archived, 126 Enriched]] — Full 141-item stub-audit pass: 3 pages archived with retarget policy, all 126 queued stubs enriched past the 320-word floor, and the auditor UI fixed
+- [[wiki/syntheses/stub-auditor-live-queue|Stub Auditor — Live Data & Inference Queue]] — A live, human-in-the-loop stub triage that queues decisions for a batched inference pass
+- [[wiki/syntheses/stub-expansion-pass-500-2026-08|500-Stub Expansion Pass (2026-08-03)]] — Five parallel workers promoted 500 of the smallest wiki stubs to full articles, followed by a junk-entity archival, -10 name cleanup, and categorization moves
+- [[wiki/syntheses/stub-promotion-wave-2026-08|Stub Promotion Wave — 1,098 stubs → growing (2026-08)]] — Five worker waves promoted the longest-standing stubs (≥120 body words) to full 320+ word articles, pushing the 300+/400+/500+ tiers to 1,670/542/152 and holding the knowledge graph at zero new broken links
 - [[wiki/syntheses/third-party-audits|Third-Party Audits]] — Independent external reviews of AI systems
 - [[wiki/syntheses/transparency-reports|Transparency Reports]] — Regular public reports on AI system behavior and incidents
 - [[wiki/syntheses/tripwires|Tripwires]] — Triggers that halt a system when thresholds are crossed
 - [[wiki/syntheses/update-regression|Update Regression]] — New versions performing worse on old capabilities
 - [[wiki/syntheses/vulnerability-reports-ai|Vulnerability Reports]] — Formal channels for reporting AI security flaws
 - [[wiki/syntheses/weekly-review|Weekly Review]]
+- [[wiki/syntheses/wiki-link-integrity-2026-08-06|Wiki Link Integrity Repair — De-links, Malformed Wikilinks, Honest Audit]] — Root-cause repair of the wiki's broken links: dead log entries de-linked, malformed wikilinks rewired, and a rewritten link checker that mirrors app resolution
+- [[wiki/syntheses/wiki-link-resolution-and-junk-audit|Wiki Link Resolution & Junk-Entity Audit]] — Canonical link resolution for the wiki browser plus junk-entity triage in the stub auditor
 - [[wiki/syntheses/wiki-self-improvement|Wiki Self-Improvement]] — A knowledge base that improves its own structure and coverage
 - [[wiki/syntheses/wiki-stats-hub|Wiki Stats Hub Architecture & Snapshot Hygiene]] — Durable patterns for the MyKB stats hub: one generator emitting embedded JSON plus a self-contained Chart.js page, graceful degradation when the CDN is unavailable, and the snapshot-regeneration pipeline (graph → files.json → --check) that must run after every wiki change
-
-## Concepts
-
-- [Acquisition Passes & Snapshot Ordering](acquisition-pass-snapshot-ordering.md) — Acquisition Passes & Snapshot Ordering
-- [Adversarial Review Pass 1 — Stub Promotion Wave Cleanup (2026-08)](adversarial-review-pass-1-2026-08.md) — Adversarial Review Pass 1 — Stub Promotion Wave Cleanup (2026-08)
-- [Adversarial Review Pass 3 — Claims Grounding, Link Hygiene & Near-Duplicate Merges (2026-08)](adversarial-review-pass-3-2026-08.md) — Adversarial Review Pass 3 — Claims Grounding, Link Hygiene & Near-Duplicate Merges (2026-08)
-- [AO (Agent OS) Integration Assessment — Selective Harvest Rules](ao-agent-os-integration-assessment.md) — AO (Agent OS) Integration Assessment — Selective Harvest Rules
-- [Assurance Cases](assurance-cases.md) — Assurance Cases
-- [AI Audit Frameworks](audit-frameworks-ai.md) — AI Audit Frameworks
-- [Bug Bounties for AI](bug-bounty-ai.md) — Bug Bounties for AI
-- [Containment Strategies](containment-strategies.md) — Containment Strategies
-- [Coordinated Disclosure](coordinated-disclosure.md) — Coordinated Disclosure
-- [Cosmos Dashboard & MyKB Integration Patterns](cosmos-dashboard-mykb-integration.md) — Cosmos Dashboard & MyKB Integration Patterns
-- [Dead-Link Repair](dead-link-repair.md) — Dead-Link Repair
-- [Deployment Safety](deployment-safety.md) — Deployment Safety
-- [Evidence and Provenance: Open Threads](evidence-and-provenance.md) — Evidence and Provenance: Open Threads
-- [External Red Teams](external-red-teams.md) — External Red Teams
-- [Fallback Plans](fallback-plans.md) — Fallback Plans
-- [Feedback Integration Loops](feedback-integration-loops.md) — Feedback Integration Loops
-- [Gradual Deployment](gradual-deployment.md) — Gradual Deployment
-- [Graph Health Checks](graph-health-checks.md) — Graph Health Checks
-- [Guidance Execution Loop — Wanted Links, Scaffolds, Research Manifest](guidance-execution-loop-2026-08-06.md) — Guidance Execution Loop — Wanted Links, Scaffolds, Research Manifest
-- [MyKB Guidance UI — from Stub Auditor to Research Direction](guidance-ui-2026-08-06.md) — MyKB Guidance UI — from Stub Auditor to Research Direction
-- [Knowledge Acquisition Workflow: Open Threads](knowledge-acquisition-workflow.md) — Knowledge Acquisition Workflow: Open Threads
-- [Knowledge Graph Maintenance](knowledge-graph-maintenance.md) — Knowledge Graph Maintenance
-- [Knowledge Synthesis Pipelines](knowledge-synthesis-pipelines.md) — Knowledge Synthesis Pipelines
-- [Knowledge Synthesis](knowledge-synthesis.md) — Knowledge Synthesis
-- [Knowledge System Overview](knowledge-system.md) — Knowledge System Overview
-- [Lessons to Actions](lessons-to-actions.md) — Lessons to Actions
-- [Loop Closure](loop-closure.md) — Loop Closure
-- [Loop & Graph Engineering Wave — 14-Source Ingest](loop-graph-engineering-wave-2026-08.md) — Loop & Graph Engineering Wave — 14-Source Ingest
-- [Model Update Risks](model-updates-risks.md) — Model Update Risks
-- [Monitored Deployment](monitored-deployment.md) — Monitored Deployment
-- [MyKB Acquisition/Curation Pass & RSIS3 Usage-Practice Enforcement](mykb-acquisition-curation-and-practices.md) — MyKB Acquisition/Curation Pass & RSIS3 Usage-Practice Enforcement
-- [MyKB Guidance UI Overhaul — navigation, article tools, graph repair](mykb-guidance-ui-overhaul-2026-08-06.md) — MyKB Guidance UI Overhaul — navigation, article tools, graph repair
-- [Nested-Loop Graph & Zoom Direction Fix](nested-loop-graph-and-zoom-fix.md) — Nested-Loop Graph & Zoom Direction Fix
-- [Nine-Loop Stack Implementation & Dashboard Wiring](nine-loop-stack-implementation.md) — Nine-Loop Stack Implementation & Dashboard Wiring
-- [Orphan Detection](orphan-detection.md) — Orphan Detection
-- [Parallel Agent Acquisition (5×100) & Writer Reliability](parallel-agent-acquisition.md) — Parallel Agent Acquisition (5×100) & Writer Reliability
-- [Pass 3 — Integration & Depth Wave (8×400)](pass3-integration-depth-wave.md) — Pass 3 — Integration & Depth Wave (8×400)
-- [Patch Management for AI](patch-management-ai.md) — Patch Management for AI
-- [Post-Pass Consolidation](post-pass-consolidation.md) — Post-Pass Consolidation
-- [Recursive Self-Improvement Specification — SPACE v2 Export](recursive-self-improvement-spec-2026-08-06.md) — Recursive Self-Improvement Specification — SPACE v2 Export
-- [Responsible Disclosure for AI](responsible-disclosure-ai.md) — Responsible Disclosure for AI
-- [Restricted Deployment](restricted-deployment.md) — Restricted Deployment
-- [RSIS3 drive — run loops automatically until completion requirements are satisfied](rsis-drive-until-satisfied-2026-08-06.md) — RSIS3 drive — run loops automatically until completion requirements are satisfied
-- [RSIS3 L3 cycle 1 — cross-session memory consolidation](rsis3-l3-cycle-1-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 1 — cross-session memory consolidation
-- [RSIS3 L3 cycle 10 — cross-session memory consolidation](rsis3-l3-cycle-10-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 10 — cross-session memory consolidation
-- [RSIS3 L3 cycle 11 — cross-session memory consolidation](rsis3-l3-cycle-11-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 11 — cross-session memory consolidation
-- [RSIS3 L3 cycle 12 — cross-session memory consolidation](rsis3-l3-cycle-12-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 12 — cross-session memory consolidation
-- [RSIS3 L3 cycle 13 — cross-session memory consolidation](rsis3-l3-cycle-13-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 13 — cross-session memory consolidation
-- [RSIS3 L3 cycle 14 — cross-session memory consolidation](rsis3-l3-cycle-14-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 14 — cross-session memory consolidation
-- [RSIS3 L3 cycle 15 — cross-session memory consolidation](rsis3-l3-cycle-15-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 15 — cross-session memory consolidation
-- [RSIS3 L3 cycle 16 — cross-session memory consolidation](rsis3-l3-cycle-16-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 16 — cross-session memory consolidation
-- [RSIS3 L3 cycle 17 — cross-session memory consolidation](rsis3-l3-cycle-17-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 17 — cross-session memory consolidation
-- [RSIS3 L3 cycle 18 — cross-session memory consolidation](rsis3-l3-cycle-18-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 18 — cross-session memory consolidation
-- [RSIS3 L3 cycle 19 — cross-session memory consolidation](rsis3-l3-cycle-19-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 19 — cross-session memory consolidation
-- [RSIS3 L3 cycle 2 — cross-session memory consolidation](rsis3-l3-cycle-2-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 2 — cross-session memory consolidation
-- [RSIS3 L3 cycle 20 — cross-session memory consolidation](rsis3-l3-cycle-20-cross-session-memory-consolidation-2026-08-07.md) — RSIS3 L3 cycle 20 — cross-session memory consolidation
-- [RSIS3 L3 cycle 3 — cross-session memory consolidation](rsis3-l3-cycle-3-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 3 — cross-session memory consolidation
-- [RSIS3 L3 cycle 4 — cross-session memory consolidation](rsis3-l3-cycle-4-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 4 — cross-session memory consolidation
-- [RSIS3 L3 cycle 5 — cross-session memory consolidation](rsis3-l3-cycle-5-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 5 — cross-session memory consolidation
-- [RSIS3 L3 cycle 6 — cross-session memory consolidation](rsis3-l3-cycle-6-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 6 — cross-session memory consolidation
-- [RSIS3 L3 cycle 7 — cross-session memory consolidation](rsis3-l3-cycle-7-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 7 — cross-session memory consolidation
-- [RSIS3 L3 cycle 8 — cross-session memory consolidation](rsis3-l3-cycle-8-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 8 — cross-session memory consolidation
-- [RSIS3 L3 cycle 9 — cross-session memory consolidation](rsis3-l3-cycle-9-cross-session-memory-consolidation-2026-08-06.md) — RSIS3 L3 cycle 9 — cross-session memory consolidation
-- [RSIS3 Pass 10 — UX cohesion: Models tab, KG lazy boot, verified surfaces](rsis3-pass-10-2026-08-07.md) — RSIS3 Pass 10 — UX cohesion: Models tab, KG lazy boot, verified surfaces
-- [RSIS3 Pass 11 — ops + capstone: auto-deploy, scheduled loops, monitoring, full-chain proof](rsis3-pass-11-2026-08-07.md) — RSIS3 Pass 11 — ops + capstone: auto-deploy, scheduled loops, monitoring, full-chain proof
-- [RSIS3 Pass 12 — real improvement engine: L2 codegen, batch launcher, stub detection](rsis3-pass-12-improvement-engine-2026-08-07.md) — RSIS3 Pass 12 — real improvement engine: L2 codegen, batch launcher, stub detection
-- [RSIS3 Pass 13 — deterministic evaluator gate: fail-closed quality gating without an API](rsis3-pass-13-deterministic-evaluator-gate-2026-08-07.md) — RSIS3 Pass 13 — deterministic evaluator gate: fail-closed quality gating without an API
-- [RSIS3 Pass 14 — self-assessment routine: deterministic-first KB health, gaps, trends](rsis3-pass-14-self-assessment-routine-2026-08-07.md) — RSIS3 Pass 14 — self-assessment routine: deterministic-first KB health, gaps, trends
-- [RSIS3 Pass 6 — five full cycles across L1–L9](rsis3-pass-6-2026-08-06.md) — RSIS3 Pass 6 — five full cycles across L1–L9
-- [RSIS3 Pass 7 — ecosystem data contracts, validated at both gates](rsis3-pass-7-2026-08-06.md) — RSIS3 Pass 7 — ecosystem data contracts, validated at both gates
-- [RSIS3 Pass 8 — MyKB memory link: loops read and write the wiki](rsis3-pass-8-2026-08-06.md) — RSIS3 Pass 8 — MyKB memory link: loops read and write the wiki
-- [RSIS3 Pass 9 — spec link: SPACE artifacts feed L2 goals and the live Guide](rsis3-pass-9-2026-08-06.md) — RSIS3 Pass 9 — spec link: SPACE artifacts feed L2 goals and the live Guide
-- [Safety Case Approach](safety-case-approach.md) — Safety Case Approach
-- [Security Advisories](security-advisories-ai.md) — Security Advisories
-- [Stub Audit Pass 2026-08-06 — 141 Reviewed, 3 Archived, 126 Enriched](stub-audit-2026-08-06.md) — Stub Audit Pass 2026-08-06 — 141 Reviewed, 3 Archived, 126 Enriched
-- [Stub Auditor — Live Data & Inference Queue](stub-auditor-live-queue.md) — Stub Auditor — Live Data & Inference Queue
-- [500-Stub Expansion Pass (2026-08-03)](stub-expansion-pass-500-2026-08.md) — 500-Stub Expansion Pass (2026-08-03)
-- [Stub Promotion Wave — 1,098 stubs → growing (2026-08)](stub-promotion-wave-2026-08.md) — Stub Promotion Wave — 1,098 stubs → growing (2026-08)
-- [Third-Party Audits](third-party-audits.md) — Third-Party Audits
-- [Transparency Reports](transparency-reports.md) — Transparency Reports
-- [Tripwires](tripwires.md) — Tripwires
-- [Update Regression](update-regression.md) — Update Regression
-- [Vulnerability Reports](vulnerability-reports-ai.md) — Vulnerability Reports
-- [Weekly Review](weekly-review.md) — Weekly Review
-- [Wiki Link Integrity Repair — De-links, Malformed Wikilinks, Honest Audit](wiki-link-integrity-2026-08-06.md) — Wiki Link Integrity Repair — De-links, Malformed Wikilinks, Honest Audit
-- [Wiki Link Resolution & Junk-Entity Audit](wiki-link-resolution-and-junk-audit.md) — Wiki Link Resolution & Junk-Entity Audit
-- [Wiki Self-Improvement](wiki-self-improvement.md) — Wiki Self-Improvement
-- [Wiki Stats Hub Architecture & Snapshot Hygiene](wiki-stats-hub.md) — Wiki Stats Hub Architecture & Snapshot Hygiene
