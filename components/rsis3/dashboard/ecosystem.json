@@ -1,9 +1,9 @@
 {
- "generated": "2026-08-10T05:07Z",
+ "generated": "2026-08-10T07:58Z",
  "components": {
   "mykb": {
-   "files": 7235,
-   "md": 7190
+   "files": 7264,
+   "md": 7219
   },
   "space": {
    "files": 322
@@ -13,13 +13,13 @@
   }
  },
  "telemetry": {
-  "pulses": 0,
-  "goals": 0,
-  "passed": 0,
-  "failed": 0,
-  "held": 0,
-  "total": 0,
-  "improvements": 0
+  "pulses": 2279,
+  "goals": 273,
+  "passed": 37,
+  "failed": 156,
+  "held": 80,
+  "total": 273,
+  "improvements": 271
  },
  "epoch1": {
   "events": 100,

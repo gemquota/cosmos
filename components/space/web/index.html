@@ -98,8 +98,10 @@ let framework = null;
 let projects = [];
 
 // ── Theme ──
-if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+var embedCosmos = location.search.indexOf('embed=cosmos') > -1;
+if (embedCosmos || localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   document.documentElement.classList.add('dark');
+  if (embedCosmos) localStorage.setItem('theme', 'dark');
 }
 function toggleTheme() {
   document.documentElement.classList.toggle('dark');

@@ -1,0 +1,2 @@
+{"type": "l4_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-10T07:41:00.120448+00:00", "cycle": 0}
+{"type": "l4_complete", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-10T07:41:00.121382+00:00", "changed": false, "count": 20, "success_rate": 0.5, "avg_score": 1.0}

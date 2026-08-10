@@ -255,7 +255,7 @@ function renderRoadmap(d){
   tbody.innerHTML = rows;
 }
 
-function renderAll(){renderDrives();ly();rg();rp();rc();rcb();bk();pf();sw('overview');}
+function renderAll(){up();renderDrives();ly();rg();rp();rc();rcb();bk();pf();sw('overview');}
 
 // Active multitiered goal stack (Output > Communicate > Wrap > Bridge)
 function renderDrives(){
@@ -437,6 +437,8 @@ function rcb(){
       '<div class="flex justify-between mb-1"><span class="text-xs sm:text-sm font-bold text-slate-200">'+n+'</span><span class="text-xs font-mono">'+d.locked+'/'+d.freq+' ('+lr+'%)</span></div>'+
       '<div class="h-2 bg-slate-700 rounded-full"><div class="h-full bg-gradient-to-r from-amber-500 to-rose-400 rounded-full" style="width:'+lr+'%"></div></div></div>';
   }
+  var em=document.getElementById('constraints-empty');
+  if(em){em.classList.toggle('hide', Object.keys(cd).length>0);}
 }
 
 var kn=[];
@@ -600,7 +602,7 @@ function getGraphInfo(name){
 }
 
 function getTabInfo(name){
-  var d={overview:'Summary stats, success rate, layer scores.',pulses:'20 pulses with embedded goals, conversations, and evaluation results.',kg:'Interactive knowledge graph.',graphs:'Full chart suite: decisions, trends, durations, constraints, radar.',constraints:'Constraint frequency and lock rate analysis.',loops:'Nine-loop stack: targets, tuned params, last signal, run counts, honest runtime state (RECENT/IDLE/NOT RUN from loops.json).',mykb:'Wiki browser, knowledge graph, stats, guidance (stub review, feedback & research direction).',space:'SPACE web UI + spec viewer (lazy-loaded iframes).',roadmap:'100-phase program: two epochs, ten sequels each, arc map and phase status rollup from roadmap.json.'};
+  var d={overview:'Summary stats, success rate, layer scores.',pulses:'20 pulses with embedded goals, conversations, and evaluation results.',kg:'Interactive knowledge graph.',graphs:'Full chart suite: decisions, trends, durations, constraints, radar.',constraints:'Constraint frequency and lock rate analysis.',loops:'Nine-loop stack: targets, tuned params, last signal, run counts, honest runtime state (RECENT/IDLE/NOT RUN from loops.json).',mykb:'Wiki browser, knowledge graph, stats, guidance — unified theme.',space:'SPACE web UI + spec viewer — unified theme.',roadmap:'100-phase program: two epochs, ten sequels each, arc map and phase status rollup from roadmap.json.'};
   return '<h4>'+name.charAt(0).toUpperCase()+name.slice(1)+' Tab</h4><p>'+(d[name]||'Dashboard tab.')+'</p>';
 }
 

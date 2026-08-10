@@ -25,6 +25,121 @@ def tracked(prefix=None):
 def visible(path):
     return not any(seg.startswith('.') for seg in path.split('/'))
 
+def build_dashboard_payload(rsis3):
+    """Rebuild rack/pulses/dashboard-data.json from live loop telemetry.
+
+    The RRP v2 pulse pipeline (``rack/pulses/pulse-*.json``) is no longer
+    the source of truth — the nine loops write ``.rsis/telemetry/*.jsonl``
+    instead. This derives the legacy dashboard schema (pulses / goals /
+    score_history / summary) from that telemetry:
+
+    - one *pulse* per telemetry session file,
+    - *goals* from l2_start/l2_complete pairs (goal text + PASS/FAIL),
+    - *score_history* = per-UTC-day L1–L9 activity (0–100, normalized),
+    - *summary* = pass/fail/hold counts + implementations (l5 PASS).
+    """
+    tel_dir = Path(rsis3) / '.rsis' / 'telemetry'
+    goals, pulses, day_counts, pd = [], [], {}, {}
+    idx = 0
+    for f in sorted(tel_dir.glob('*.jsonl')):
+        evs = []
+        try:
+            evs = [json.loads(l) for l in f.read_text().splitlines()
+                   if l.strip()]
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not evs:
+            continue
+        idx += 1
+        pid = '%03d' % idx
+        first_ts = last_ts = None
+        open_goal = None
+        g_n = approved = impl = 0
+        confs = []
+        for ev in evs:
+            et = ev.get('type', '')
+            ts = ev.get('timestamp')
+            if ts:
+                first_ts = ts if first_ts is None else min(first_ts, ts)
+                last_ts = ts if last_ts is None else max(last_ts, ts)
+            m = re.match(r'l([1-9])_complete$', et)
+            if m and ts:
+                lk = 'L' + m.group(1)
+                day_counts.setdefault(ts[:10], {}).setdefault(lk, 0)
+                day_counts[ts[:10]][lk] += 1
+            if et == 'l2_start':
+                open_goal = {'p': pid,
+                             'd': ev.get('goal') or '(l2 goal)',
+                             'dec': 'HOLD', 'type': 'improvement',
+                             'constraints': {}, 'conversation': [],
+                             'conf': '', 'file': '', 'func': ''}
+            elif et == 'l2_complete':
+                if open_goal:
+                    ok = bool(ev.get('success'))
+                    open_goal['dec'] = 'PASS' if ok else 'FAIL'
+                    goals.append(open_goal)
+                    g_n += 1
+                    if ok:
+                        approved += 1
+                    open_goal = None
+            elif et == 'l5_evaluation':
+                if ev.get('decision') == 'PASS':
+                    impl += 1
+                sa = ev.get('score_avg')
+                if sa is not None:
+                    try:
+                        confs.append(float(sa))
+                    except (TypeError, ValueError):
+                        pass
+        if open_goal:  # started but never completed -> HOLD
+            goals.append(open_goal)
+            g_n += 1
+        duration = 0.0
+        if first_ts and last_ts:
+            try:
+                fdt = datetime.datetime.fromisoformat(
+                    str(first_ts).replace('Z', '+00:00'))
+                ldt = datetime.datetime.fromisoformat(
+                    str(last_ts).replace('Z', '+00:00'))
+                duration = (ldt - fdt).total_seconds()
+            except ValueError:
+                duration = 0.0
+        pulses.append({
+            'id': idx, 'type': 'telemetry-run',
+            'ts_start': str(first_ts or '')[:19].replace('T', ' '),
+            'duration': round(duration, 1),
+            'goals_count': g_n, 'approved': approved,
+            'implementation_count': impl,
+            'avg_confidence': (round(sum(confs) / len(confs), 3)
+                               if confs else 0.0),
+        })
+        pd[pid] = {'pre_state': {'telemetry_events': len(evs),
+                                 'goals': g_n, 'loops': 9}}
+    score_history = {}
+    for day, counts in sorted(day_counts.items()):
+        mx = max(counts.values()) or 1
+        score_history[day] = {
+            'L%d' % i: round(counts.get('L%d' % i, 0) / mx * 100, 1)
+            for i in range(1, 10)}
+    tot = len(goals)
+    pass_n = sum(1 for gx in goals if gx['dec'] == 'PASS')
+    fail_n = sum(1 for gx in goals if gx['dec'] == 'FAIL')
+    hold_n = sum(1 for gx in goals if gx['dec'] == 'HOLD')
+    return {
+        'pulses': pulses, 'goals': goals, 'pulse_data': pd,
+        'score_history': score_history, 'telemetry_aggregates': {},
+        'generated': datetime.datetime.now(
+            datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+        'summary': {
+            'tot': tot, 'pass': pass_n, 'hold': hold_n, 'fail': fail_n,
+            'impl_count': sum(p['implementation_count'] for p in pulses),
+            'pulse_count': len(pulses),
+            'ca': round(pass_n / tot, 3) if tot else 0.0,
+            'cd': {},
+        },
+    }
+
+
 prefix = 'components/mykb/'
 md = sorted((p[len(prefix):] if p.startswith(prefix) else p)
             for p in tracked('components/mykb')
@@ -49,14 +164,24 @@ def count(prefix):
 def md_count(prefix):
     return len([p for p in allf if p.startswith(prefix + '/') and p.endswith('.md')])
 
+# Dashboard payload (Overview/Pulses/KG/Graphs/Constraints) — rebuilt
+# from live loop telemetry when writing; validated as-committed in --check.
+dash_path = Path(RSIS3) / 'rack' / 'pulses' / 'dashboard-data.json'
 telemetry = {}
 try:
-    d = json.load(open('components/rsis3/rack/pulses/dashboard-data.json'))
-    sm = d.get('summary', {})
+    if write:
+        payload = build_dashboard_payload(RSIS3)
+        dash_path.parent.mkdir(parents=True, exist_ok=True)
+        json.dump(payload, open(dash_path, 'w'), indent=1)
+    else:
+        payload = json.load(open(dash_path))
+    sm = payload.get('summary', {})
     telemetry = {
-        'pulses': len(d.get('pulses', [])), 'goals': len(d.get('goals', [])),
-        'passed': sm.get('pass', 0), 'failed': sm.get('fail', 0), 'held': sm.get('hold', 0),
-        'total': sm.get('tot', 0), 'improvements': sm.get('impl_count', 0),
+        'pulses': len(payload.get('pulses', [])),
+        'goals': len(payload.get('goals', [])),
+        'passed': sm.get('pass', 0), 'failed': sm.get('fail', 0),
+        'held': sm.get('hold', 0), 'total': sm.get('tot', 0),
+        'improvements': sm.get('impl_count', 0),
     }
 except Exception:
     pass

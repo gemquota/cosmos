@@ -75,7 +75,38 @@
 </div>
 
 <!-- PULSES TAB -->
-<div class="tab-body hide" id="b-pulses"><div id="pl" class="space-y-2"></div></div>
+<div class="tab-body hide" id="b-pulses">
+  <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 mb-4">
+    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+      <h3 class="text-xs font-bold text-slate-400 uppercase">Goals</h3>
+      <div class="flex flex-wrap gap-2">
+        <input id="gs" placeholder="Search goals…" class="text-xs bg-slate-900/80 border border-slate-700/60 rounded-lg px-2.5 py-1.5 text-slate-200 placeholder-slate-500 w-48" oninput="fl()">
+        <select id="gf" class="text-xs bg-slate-900/80 border border-slate-700/60 rounded-lg px-2 py-1.5 text-slate-300" onchange="fl()">
+          <option value="">All decisions</option>
+          <option>PASS</option>
+          <option>FAIL</option>
+          <option>HOLD</option>
+        </select>
+      </div>
+    </div>
+    <div class="text-[10px] text-slate-500 mb-2"><span id="gc">0 goals</span></div>
+    <div id="gl" class="space-y-2"></div>
+  </div>
+  <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 mb-4">
+    <h3 class="text-xs font-bold text-slate-400 uppercase mb-3">Pulses</h3>
+    <div id="pl" class="space-y-2"></div>
+  </div>
+  <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4">
+    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+      <h3 class="text-xs font-bold text-slate-400 uppercase">RRP Conversations</h3>
+      <select id="cpf" class="text-xs bg-slate-900/80 border border-slate-700/60 rounded-lg px-2 py-1.5 text-slate-300" onchange="rc()">
+        <option value="">All pulses</option>
+      </select>
+    </div>
+    <div class="text-[10px] text-slate-500 mb-2"><span id="cc">0 conversations</span></div>
+    <div id="cl" class="space-y-2"></div>
+  </div>
+</div>
 
 <!-- KG TAB -->
 <div class="tab-body hide" id="b-kg">
@@ -114,6 +145,7 @@
   <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 mb-4">
     <h3 class="text-xs font-bold text-slate-400 uppercase mb-3">Constraint Frequency & Lock Rate</h3>
     <div id="cbd" class="space-y-3"></div>
+    <p id="constraints-empty" class="hide text-[11px] text-slate-500">No RRP constraint telemetry in the current pipeline — L2 goals are evaluated directly. Constraint frequency/lock charts return when RRP v2 pulses resume.</p>
   </div>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
     <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 tooltip-wrap" data-tt="graph:c9"><h3 class="text-xs font-bold text-slate-400 uppercase mb-3">Constraint Dist</h3><canvas id="c9"></canvas></div>
@@ -172,12 +204,12 @@
   </div>
   <div id="v-mykb-wiki" class="cst">
     <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
-      <iframe data-src="../../mykb/index.html" title="MyKB wiki browser" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#fefcf5"></iframe>
+      <iframe data-src="../../mykb/index.html?embed=cosmos" title="MyKB wiki browser" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#0f172a"></iframe>
     </div>
   </div>
   <div id="v-mykb-graph" class="cst hide">
     <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
-      <iframe data-src="../../mykb/okf-graph.html" title="MyKB knowledge graph" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#0b1120"></iframe>
+      <iframe data-src="../../mykb/okf-graph.html?embed=cosmos" title="MyKB knowledge graph" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#0b1120"></iframe>
     </div>
   </div>
   <div id="v-mykb-stats" class="cst hide">
@@ -187,7 +219,7 @@
   </div>
   <div id="v-mykb-stubs" class="cst hide">
     <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
-      <iframe data-src="../../mykb/index.html#guidance" title="MyKB guidance" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#0b1120"></iframe>
+      <iframe data-src="../../mykb/index.html?embed=cosmos#guidance" title="MyKB guidance" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#0b1120"></iframe>
     </div>
   </div>
 </div>
@@ -204,7 +236,7 @@
   </div>
   <div id="v-space-web" class="cst">
     <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl overflow-hidden">
-      <iframe data-src="../../space/web/index.html" title="SPACE web UI" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#f9fafb"></iframe>
+      <iframe data-src="../../space/web/index.html?embed=cosmos" title="SPACE web UI" class="w-full" style="height:calc(100vh - 220px);min-height:480px;border:none;background:#0f172a"></iframe>
     </div>
   </div>
   <div id="v-space-specs" class="cst hide">

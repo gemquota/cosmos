@@ -5,6 +5,122 @@ title: "Bundle Log"
 
 # Bundle Log
 
+## 2026-08-10 (RSIS3 L3 cycle 250 — memory consolidation)
+- L3 cycle 250 wrote OKF synthesis `rsis3-l3-cycle-250-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 249 — memory consolidation)
+- L3 cycle 249 wrote OKF synthesis `rsis3-l3-cycle-249-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 248 — memory consolidation)
+- L3 cycle 248 wrote OKF synthesis `rsis3-l3-cycle-248-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 247 — memory consolidation)
+- L3 cycle 247 wrote OKF synthesis `rsis3-l3-cycle-247-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 246 — memory consolidation)
+- L3 cycle 246 wrote OKF synthesis `rsis3-l3-cycle-246-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 245 — memory consolidation)
+- L3 cycle 245 wrote OKF synthesis `rsis3-l3-cycle-245-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 244 — memory consolidation)
+- L3 cycle 244 wrote OKF synthesis `rsis3-l3-cycle-244-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 243 — memory consolidation)
+- L3 cycle 243 wrote OKF synthesis `rsis3-l3-cycle-243-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 242 — memory consolidation)
+- L3 cycle 242 wrote OKF synthesis `rsis3-l3-cycle-242-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 241 — memory consolidation)
+- L3 cycle 241 wrote OKF synthesis `rsis3-l3-cycle-241-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 240 — memory consolidation)
+- L3 cycle 240 wrote OKF synthesis `rsis3-l3-cycle-240-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 239 — memory consolidation)
+- L3 cycle 239 wrote OKF synthesis `rsis3-l3-cycle-239-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 238 — memory consolidation)
+- L3 cycle 238 wrote OKF synthesis `rsis3-l3-cycle-238-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 237 — memory consolidation)
+- L3 cycle 237 wrote OKF synthesis `rsis3-l3-cycle-237-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 236 — memory consolidation)
+- L3 cycle 236 wrote OKF synthesis `rsis3-l3-cycle-236-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 235 — memory consolidation)
+- L3 cycle 235 wrote OKF synthesis `rsis3-l3-cycle-235-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 234 — memory consolidation)
+- L3 cycle 234 wrote OKF synthesis `rsis3-l3-cycle-234-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 233 — memory consolidation)
+- L3 cycle 233 wrote OKF synthesis `rsis3-l3-cycle-233-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 232 — memory consolidation)
+- L3 cycle 232 wrote OKF synthesis `rsis3-l3-cycle-232-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 231 — memory consolidation)
+- L3 cycle 231 wrote OKF synthesis `rsis3-l3-cycle-231-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 230 — memory consolidation)
+- L3 cycle 230 wrote OKF synthesis `rsis3-l3-cycle-230-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 229 — memory consolidation)
+- L3 cycle 229 wrote OKF synthesis `rsis3-l3-cycle-229-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 228 — memory consolidation)
+- L3 cycle 228 wrote OKF synthesis `rsis3-l3-cycle-228-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 227 — memory consolidation)
+- L3 cycle 227 wrote OKF synthesis `rsis3-l3-cycle-227-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 226 — memory consolidation)
+- L3 cycle 226 wrote OKF synthesis `rsis3-l3-cycle-226-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 225 — memory consolidation)
+- L3 cycle 225 wrote OKF synthesis `rsis3-l3-cycle-225-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 224 — memory consolidation)
+- L3 cycle 224 wrote OKF synthesis `rsis3-l3-cycle-224-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 223 — memory consolidation)
+- L3 cycle 223 wrote OKF synthesis `rsis3-l3-cycle-223-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
+## 2026-08-10 (RSIS3 L3 cycle 222 — memory consolidation)
+- L3 cycle 222 wrote OKF synthesis `rsis3-l3-cycle-222-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
+- Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
+
 ## 2026-08-10 (RSIS3 L3 cycle 221 — memory consolidation)
 - L3 cycle 221 wrote OKF synthesis `rsis3-l3-cycle-221-cross-session-memory-consolidation-2026-08-10.md` (2 insight(s), 1 strategy(ies), 0 redundancy candidate(s), 0 trend(s)).
 - Gateway root: `/data/data/com.termux/files/home/dev/cosmos/components/mykb`.
@@ -1939,3 +2055,8 @@ title: "Bundle Log"
 ## 2026-08-10 (P4 → P5 validation window)
 - Seeded Phase 4 24h exit-criterion window (`rsis validation` CLI + nightly auto-check-in); P5 7-day window will start at P4 completion.
 - Synthesis: `rsis3-p4-p5-validation-window-2026-08-10.md`.
+
+## 2026-08-10 (dashboard regression fix + unified embed)
+- Fixed dashboard regressions: rebuilt `rack/pulses/dashboard-data.json` from live telemetry (2231 pulses, 268 goals), restored missing renderer IDs, wired `up()` into `renderAll()`; all tabs verified in browser.
+- Unified MyKB/SPACE into dashboard via `?embed=cosmos` theme hooks (separate codebases, one visual system).
+- Synthesis: `rsis3-dashboard-unified-embed-2026-08-10.md`.
