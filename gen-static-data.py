@@ -6,7 +6,7 @@ exists on the deployed site. Run from the repo root, then commit.
 
     python3 gen-static-data.py
 """
-import json, os, subprocess, sys, datetime
+import json, os, re, subprocess, sys, datetime
 from pathlib import Path
 
 # Shared OKF frontmatter parser (enriched files.json entries).
@@ -203,6 +203,72 @@ loops = {
 if write:
     json.dump(loops, open(f'{RSIS3}/dashboard/loops.json', 'w'), indent=1)
 
+# ── Roadmap snapshot (drives the dashboard "Roadmap" tab) ───────────────
+# Parses the status tables in the main roadmap + sequel docs so the program
+# registry (100 phases / 2 epochs) stays in sync with the source documents.
+ROMAN = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII', 8: 'VIII',
+         9: 'IX', 10: 'X', 11: 'XI', 12: 'XII', 13: 'XIII', 14: 'XIV', 15: 'XV',
+         16: 'XVI', 17: 'XVII', 18: 'XVIII', 19: 'XIX', 20: 'XX'}
+roadmap_phases, roadmap_arcs = [], []
+for num in range(1, 21):
+    rom = ROMAN[num]
+    fname = 'multi-phase-development-roadmap.md' if num == 1 \
+        else f'multi-phase-development-roadmap-sequel-{num}.md'
+    path = os.path.join(RSIS3, 'docs', fname)
+    if not os.path.exists(path):
+        continue
+    text = open(path, encoding='utf-8', errors='ignore').read()
+    if num == 1:
+        title, arc = 'Operational Autonomy', \
+            'build → communicate → secure → persist → observe → operate → self-retune'
+    else:
+        m = re.search(r'Maturity arc: Phases [^—]+— \*\*(.+?)\*\*', text, re.S)
+        title = m.group(1).strip() if m else f'Sequel {rom}'
+        arc = ''
+        m = re.search(r'Maturity arc: Phases [^—]+— \*\*(.+?)\*\*\s*\((.+?)\)', text, re.S)
+        if m:
+            arc = ' '.join(m.group(2).split())
+    for row in text.split('## Status', 1)[-1].splitlines():
+        m = re.match(r'\|\s*Phase (\d+)\s*—\s*(.+?)\s*\|\s*([^|]+?)\s*\|\s*(.+?)\s*\|', row)
+        if not m:
+            continue
+        n = int(m.group(1))
+        status_raw = m.group(4).strip()
+        if '✅ delivered' in status_raw:
+            status = 'validation' if '⏳' in status_raw else 'delivered'
+        else:
+            status = 'queued'
+        roadmap_phases.append({
+            'n': n, 'name': m.group(2).strip(), 'area': m.group(3).strip(),
+            'status': status, 'status_raw': status_raw,
+            'epoch': 1 if n <= 50 else 2, 'sequel': rom, 'doc': fname,
+        })
+    roadmap_arcs.append({
+        'sequel': rom, 'phases': f'Phases {num * 5 - 4}–{num * 5}',
+        'title': title, 'arc': arc, 'epoch': 1 if num <= 10 else 2, 'doc': fname,
+    })
+roadmap_phases.sort(key=lambda p: p['n'])
+roadmap_counts = {
+    'total': len(roadmap_phases),
+    'delivered': sum(1 for p in roadmap_phases if p['status'] == 'delivered'),
+    'validation': sum(1 for p in roadmap_phases if p['status'] == 'validation'),
+    'queued': sum(1 for p in roadmap_phases if p['status'] == 'queued'),
+}
+roadmap = {
+    'generated': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%MZ'),
+    'note': 'Parsed from the main roadmap + sequel docs status tables; '
+            'autonomy is cumulative but never unconditional.',
+    'epochs': [
+        {'id': 1, 'phases': '1–50', 'sequels': 'I–X', 'title': 'Epoch 1 — one lineage to decade-scale maturity'},
+        {'id': 2, 'phases': '51–100', 'sequels': 'XI–XX', 'title': 'Epoch 2 — the Age of Living Systems'},
+    ],
+    'arcs': roadmap_arcs,
+    'phases': roadmap_phases,
+    'counts': roadmap_counts,
+}
+if write:
+    json.dump(roadmap, open(f'{RSIS3}/dashboard/roadmap.json', 'w'), indent=1)
+
 eco = {
     'generated': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%MZ'),
     'components': {
@@ -211,6 +277,14 @@ eco = {
         'rsis3': {'files': count('components/rsis3')},
     },
     'telemetry': telemetry,
+    'roadmaps': {
+        'epochs': len(roadmap['epochs']),
+        'sequels': len(roadmap_arcs),
+        'phases': roadmap_counts['total'],
+        'delivered': roadmap_counts['delivered'],
+        'validation_pending': roadmap_counts['validation'],
+        'queued': roadmap_counts['queued'],
+    },
 }
 if write:
     json.dump(eco, open(f'{RSIS3}/dashboard/ecosystem.json', 'w'), indent=1)
@@ -219,6 +293,9 @@ print(f'files.json: {len(md)} md files')
 print(f'ecosystem.json: {json.dumps(eco["components"])}')
 print(f'loops.json: {len(loops_out)} loops (runs: '
       + ', '.join(f"{e['id']}={e['runs']}" for e in loops_out if e['runs']) + ')')
+print(f'roadmap.json: {roadmap_counts["total"]} phases, '
+      + f"{roadmap_counts['delivered']} delivered, {roadmap_counts['validation']} validation pending, "
+      + f"{roadmap_counts['queued']} queued)")
 
 # Validation mode for CI/deploy: exit non-zero if the snapshot is inconsistent.
 if '--check' in sys.argv:
@@ -236,6 +313,10 @@ if '--check' in sys.argv:
     eco2 = json.load(open(f'{RSIS3}/dashboard/ecosystem.json'))
     fresh = fresh and eco2['components']['mykb']['md'] == len(md) \
         and eco2['components']['mykb']['files'] == count('components/mykb')
+    rm2 = json.load(open(f'{RSIS3}/dashboard/roadmap.json'))
+    fresh = fresh and rm2['counts']['total'] == len(roadmap_phases) \
+        and [p['n'] for p in rm2['phases']] == [p['n'] for p in roadmap_phases] \
+        and eco2.get('roadmaps', {}).get('phases') == roadmap_counts['total']
     ok = fresh and contract_fail == 0
     print('check:', 'OK' if ok else 'FAIL',
           f'({len(md)} entries, {len(bad)} bad, {contract_fail} contract FAIL)')

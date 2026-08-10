@@ -187,9 +187,26 @@ daemon cadence has run the full window.
 
 ## Sequels
 
-The original 5-phase roadmap is complete. Future work continues in six
-sequel roadmaps, each another five phases, cumulative on everything above:
-read as one 30-phase program across six maturity arcs.
+The original 5-phase roadmap is complete. Future work continues in ten
+sequel roadmaps per epoch, each another five phases, cumulative on
+everything before — read as one 50-phase program per epoch across ten
+maturity arcs. Epoch 1 covers Phases 1–50; Epoch 2 (the Age of Living
+Systems) covers Phases 51–100.
+
+- **Epoch 1 — Phases 1–50**: Operational → Governed → Distributed →
+  Open → Ecosystem → Sovereign → Generational → Symbiotic → Global →
+  Meta-Science Autonomy — [`roadmap-epoch-1.md`](roadmap-epoch-1.md)
+- **Epoch 2 — Phases 51–100**: Inter-Intelligence → Economic Agency →
+  Composite → Societal Co-Evolution → Planetary → Cultural →
+  Multi-Intelligence Governance → Long-Termism → Frontier →
+  Transcendent Autonomy — [`roadmap-epoch-2.md`](roadmap-epoch-2.md)
+
+The cross-roadmap invariant for both epochs: *autonomy is cumulative but
+never unconditional — every expansion of capability inherits the memory,
+verification, cost, policy, provenance and observability controls
+established by preceding phases.*
+
+Epoch 1 arcs, summarized per sequel:
 
 - **Phases 1–5 — Operational Autonomy**: build → communicate → secure →
   persist → observe → operate → self-retune.
@@ -203,6 +220,40 @@ read as one 30-phase program across six maturity arcs.
   → govern → survive.
 - **Phases 26–30 — Sovereign Autonomy**: meta-govern → sustain →
   self-direct → steward → endure.
+- **Phases 31–35 — Generational Autonomy**: inherit → archive → succeed →
+  migrate → endure.
+- **Phases 36–40 — Human–AI Symbiosis**: explain → delegate → co-design →
+  calibrate → collaborate.
+- **Phases 41–45 — Global Commons**: standardize → federate → steward →
+  respond → cooperate.
+- **Phases 46–50 — Meta-Science (Epoch 1 Capstone)**: measure → hypothesize
+  → experiment → prove → transcend.
+
+Epoch 2 arcs, summarized per sequel:
+
+- **Phases 51–55 — Inter-Intelligence**: interoperate → coordinate →
+  coexist → negotiate → integrate.
+- **Phases 56–60 — Economic Agency**: contract → transact → market →
+  fund → account.
+- **Phases 61–65 — Composite Intelligence**: compose → delegate →
+  specialize → superorganize → unify.
+- **Phases 66–70 — Societal Co-Evolution**: interface → norm → participate
+  → work → strengthen.
+- **Phases 71–75 — Planetary Intelligence**: sense → model → steward →
+  restore → harmonize.
+- **Phases 76–80 — Cultural Intelligence**: record → transmit → translate
+  → adapt → flourish.
+- **Phases 81–85 — Multi-Intelligence Governance**: law → rights →
+  jurisdiction → dispute → constitution.
+- **Phases 86–90 — Long-Termism & Intergenerational Stewardship**: horizon
+  → equity → preserve → hand off → endure.
+- **Phases 91–95 — Frontier Intelligence**: explore → adapt → endure →
+  discover → pioneer.
+- **Phases 96–100 — Transcendent Autonomy (Epoch 2 Capstone)**: reflect →
+  unify → ascend → transcend → endure.
+
+Sequel documents (each details its five phases, telemetry and dashboard
+updates, and exit criteria):
 
 - **Sequel II — Horizons (Phases 6–10)**: distributed memory &
   multi-session coordination, verification mesh, observability & cost
@@ -212,16 +263,6 @@ read as one 30-phase program across six maturity arcs.
   collaborative & community ops, federated memory, continual verification
   & invariant attestation, long-horizon autonomy —
   [`multi-phase-development-roadmap-sequel-3.md`](multi-phase-development-roadmap-sequel-3.md)
-- **Sequel IV — Open Autonomy (Phases 16–20)**: public attestation &
-  external audit, open interop protocol, portable instances &
-  reproducible workspaces, external evaluation & red-teaming, public API
-  surface —
-  [`multi-phase-development-roadmap-sequel-4.md`](multi-phase-development-roadmap-sequel-4.md)
-- **Sequel V — Ecosystem Autonomy (Phases 21–25)**: instance identity &
-  trust graph, knowledge economy & exchange at scale, swarm coordination &
-  distributed cycles, population governance, ecosystem resilience —
-  [`multi-phase-development-roadmap-sequel-5.md`](multi-phase-development-roadmap-sequel-5.md)
-- **Sequel VI — Sovereign Autonomy (Phases 26–30)**: meta-governance,
-  resource sovereignty & sustainability, self-directed learning goals,
-  autonomous stewardship, enduring autonomy —
-  [`multi-phase-development-roadmap-sequel-6.md`](multi-phase-development-roadmap-sequel-6.md)
+- **Sequels IV–XX (Phases 16–100)**: see the two epoch indexes above —
+  [`roadmap-epoch-1.md`](roadmap-epoch-1.md) and
+  [`roadmap-epoch-2.md`](roadmap-epoch-2.md)

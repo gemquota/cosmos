@@ -1,0 +1,1188 @@
+{
+ "generated": "2026-08-10T01:49Z",
+ "note": "Parsed from the main roadmap + sequel docs status tables; autonomy is cumulative but never unconditional.",
+ "epochs": [
+  {
+   "id": 1,
+   "phases": "1\u201350",
+   "sequels": "I\u2013X",
+   "title": "Epoch 1 \u2014 one lineage to decade-scale maturity"
+  },
+  {
+   "id": 2,
+   "phases": "51\u2013100",
+   "sequels": "XI\u2013XX",
+   "title": "Epoch 2 \u2014 the Age of Living Systems"
+  }
+ ],
+ "arcs": [
+  {
+   "sequel": "I",
+   "phases": "Phases 1\u20135",
+   "title": "Operational Autonomy",
+   "arc": "build \u2192 communicate \u2192 secure \u2192 persist \u2192 observe \u2192 operate \u2192 self-retune",
+   "epoch": 1,
+   "doc": "multi-phase-development-roadmap.md"
+  },
+  {
+   "sequel": "II",
+   "phases": "Phases 6\u201310",
+   "title": "Governed Intelligence",
+   "arc": "remember collectively \u2192 verify \u2192 measure economics \u2192 govern \u2192 predict",
+   "epoch": 1,
+   "doc": "multi-phase-development-roadmap-sequel-2.md"
+  },
+  {
+   "sequel": "III",
+   "phases": "Phases 11\u201315",
+   "title": "Distributed Autonomy",
+   "arc": "generalize \u2192 collaborate \u2192 federate \u2192 attest \u2192 persist",
+   "epoch": 1,
+   "doc": "multi-phase-development-roadmap-sequel-3.md"
+  },
+  {
+   "sequel": "IV",
+   "phases": "Phases 16\u201320",
+   "title": "Open Autonomy",
+   "arc": "audit \u2192 standardize \u2192 port \u2192 probe \u2192 open",
+   "epoch": 1,
+   "doc": "multi-phase-development-roadmap-sequel-4.md"
+  },
+  {
+   "sequel": "V",
+   "phases": "Phases 21\u201325",
+   "title": "Ecosystem Autonomy",
+   "arc": "identify \u2192 exchange \u2192 coordinate \u2192 govern \u2192 survive",
+   "epoch": 1,
+   "doc": "multi-phase-development-roadmap-sequel-5.md"
+  },
+  {
+   "sequel": "VI",
+   "phases": "Phases 26\u201330",
+   "title": "Sovereign Autonomy",
+   "arc": "meta-govern \u2192 sustain \u2192 self-direct \u2192 steward \u2192 endure",
+   "epoch": 1,
+   "doc": "multi-phase-development-roadmap-sequel-6.md"
+  },
+  {
+   "sequel": "VII",
+   "phases": "Phases 31\u201335",
+   "title": "Generational Autonomy",
+   "arc": "inherit \u2192 archive \u2192 succeed \u2192 migrate \u2192 endure",
+   "epoch": 1,
+   "doc": "multi-phase-development-roadmap-sequel-7.md"
+  },
+  {
+   "sequel": "VIII",
+   "phases": "Phases 36\u201340",
+   "title": "Human\u2013AI Symbiosis",
+   "arc": "explain \u2192 delegate \u2192 co-design \u2192 calibrate \u2192 collaborate",
+   "epoch": 1,
+   "doc": "multi-phase-development-roadmap-sequel-8.md"
+  },
+  {
+   "sequel": "IX",
+   "phases": "Phases 41\u201345",
+   "title": "Global Commons",
+   "arc": "standardize \u2192 federate \u2192 steward \u2192 respond \u2192 cooperate",
+   "epoch": 1,
+   "doc": "multi-phase-development-roadmap-sequel-9.md"
+  },
+  {
+   "sequel": "X",
+   "phases": "Phases 46\u201350",
+   "title": "Meta-Science",
+   "arc": "measure \u2192 hypothesize \u2192 experiment \u2192 prove \u2192 transcend",
+   "epoch": 1,
+   "doc": "multi-phase-development-roadmap-sequel-10.md"
+  },
+  {
+   "sequel": "XI",
+   "phases": "Phases 51\u201355",
+   "title": "Inter-Intelligence",
+   "arc": "interoperate \u2192 coordinate \u2192 coexist \u2192 negotiate \u2192 integrate",
+   "epoch": 2,
+   "doc": "multi-phase-development-roadmap-sequel-11.md"
+  },
+  {
+   "sequel": "XII",
+   "phases": "Phases 56\u201360",
+   "title": "Economic Agency",
+   "arc": "contract \u2192 transact \u2192 market \u2192 fund \u2192 account",
+   "epoch": 2,
+   "doc": "multi-phase-development-roadmap-sequel-12.md"
+  },
+  {
+   "sequel": "XIII",
+   "phases": "Phases 61\u201365",
+   "title": "Composite Intelligence",
+   "arc": "compose \u2192 delegate \u2192 specialize \u2192 superorganize \u2192 unify",
+   "epoch": 2,
+   "doc": "multi-phase-development-roadmap-sequel-13.md"
+  },
+  {
+   "sequel": "XIV",
+   "phases": "Phases 66\u201370",
+   "title": "Societal Co-Evolution",
+   "arc": "interface \u2192 norm \u2192 participate \u2192 work \u2192 strengthen",
+   "epoch": 2,
+   "doc": "multi-phase-development-roadmap-sequel-14.md"
+  },
+  {
+   "sequel": "XV",
+   "phases": "Phases 71\u201375",
+   "title": "Planetary Intelligence",
+   "arc": "sense \u2192 model \u2192 steward \u2192 restore \u2192 harmonize",
+   "epoch": 2,
+   "doc": "multi-phase-development-roadmap-sequel-15.md"
+  },
+  {
+   "sequel": "XVI",
+   "phases": "Phases 76\u201380",
+   "title": "Cultural Intelligence",
+   "arc": "record \u2192 transmit \u2192 translate \u2192 adapt \u2192 flourish",
+   "epoch": 2,
+   "doc": "multi-phase-development-roadmap-sequel-16.md"
+  },
+  {
+   "sequel": "XVII",
+   "phases": "Phases 81\u201385",
+   "title": "Multi-Intelligence Governance",
+   "arc": "law \u2192 rights \u2192 jurisdiction \u2192 dispute \u2192 constitution",
+   "epoch": 2,
+   "doc": "multi-phase-development-roadmap-sequel-17.md"
+  },
+  {
+   "sequel": "XVIII",
+   "phases": "Phases 86\u201390",
+   "title": "Long-Termism & Intergenerational Stewardship",
+   "arc": "horizon \u2192 equity \u2192 preserve \u2192 hand off \u2192 endure",
+   "epoch": 2,
+   "doc": "multi-phase-development-roadmap-sequel-18.md"
+  },
+  {
+   "sequel": "XIX",
+   "phases": "Phases 91\u201395",
+   "title": "Frontier Intelligence",
+   "arc": "explore \u2192 adapt \u2192 endure \u2192 discover \u2192 pioneer",
+   "epoch": 2,
+   "doc": "multi-phase-development-roadmap-sequel-19.md"
+  },
+  {
+   "sequel": "XX",
+   "phases": "Phases 96\u2013100",
+   "title": "Transcendent Autonomy",
+   "arc": "reflect \u2192 unify \u2192 ascend \u2192 transcend \u2192 endure",
+   "epoch": 2,
+   "doc": "multi-phase-development-roadmap-sequel-20.md"
+  }
+ ],
+ "phases": [
+  {
+   "n": 1,
+   "name": "Live state streaming",
+   "area": "T1",
+   "status": "delivered",
+   "status_raw": "\u2705 delivered",
+   "epoch": 1,
+   "sequel": "I",
+   "doc": "multi-phase-development-roadmap.md"
+  },
+  {
+   "n": 2,
+   "name": "Envelope hardening",
+   "area": "T2",
+   "status": "delivered",
+   "status_raw": "\u2705 delivered",
+   "epoch": 1,
+   "sequel": "I",
+   "doc": "multi-phase-development-roadmap.md"
+  },
+  {
+   "n": 3,
+   "name": "Product surface",
+   "area": "T3",
+   "status": "delivered",
+   "status_raw": "\u2705 delivered",
+   "epoch": 1,
+   "sequel": "I",
+   "doc": "multi-phase-development-roadmap.md"
+  },
+  {
+   "n": 4,
+   "name": "Ops maturity",
+   "area": "ops",
+   "status": "delivered",
+   "status_raw": "\u2705 delivered",
+   "epoch": 1,
+   "sequel": "I",
+   "doc": "multi-phase-development-roadmap.md"
+  },
+  {
+   "n": 5,
+   "name": "Autonomy & durable ops (bounded)",
+   "area": "ops",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 7-day live validation pending",
+   "epoch": 1,
+   "sequel": "I",
+   "doc": "multi-phase-development-roadmap.md"
+  },
+  {
+   "n": 6,
+   "name": "Distributed memory & multi-session coordination",
+   "area": "memory",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 2-session live validation pending",
+   "epoch": 1,
+   "sequel": "II",
+   "doc": "multi-phase-development-roadmap-sequel-2.md"
+  },
+  {
+   "n": 7,
+   "name": "Verification mesh",
+   "area": "verification",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 100%-coverage live validation pending",
+   "epoch": 1,
+   "sequel": "II",
+   "doc": "multi-phase-development-roadmap-sequel-2.md"
+  },
+  {
+   "n": 8,
+   "name": "Observability & cost governance",
+   "area": "ops",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 budget-breach live validation pending",
+   "epoch": 1,
+   "sequel": "II",
+   "doc": "multi-phase-development-roadmap-sequel-2.md"
+  },
+  {
+   "n": 9,
+   "name": "Human-in-the-loop governance",
+   "area": "governance",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 approve/reject/rollback live validation pending",
+   "epoch": 1,
+   "sequel": "II",
+   "doc": "multi-phase-development-roadmap-sequel-2.md"
+  },
+  {
+   "n": 10,
+   "name": "Self-modeling & prediction",
+   "area": "autonomy",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 7-day forecast coverage + adaptive cadence validation pending",
+   "epoch": 1,
+   "sequel": "II",
+   "doc": "multi-phase-development-roadmap-sequel-2.md"
+  },
+  {
+   "n": 11,
+   "name": "Cross-project generalization",
+   "area": "engine",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 2-repo week-long live validation pending",
+   "epoch": 1,
+   "sequel": "III",
+   "doc": "multi-phase-development-roadmap-sequel-3.md"
+  },
+  {
+   "n": 12,
+   "name": "Collaborative & community ops",
+   "area": "governance",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 multi-user live validation pending",
+   "epoch": 1,
+   "sequel": "III",
+   "doc": "multi-phase-development-roadmap-sequel-3.md"
+  },
+  {
+   "n": 13,
+   "name": "Federated memory",
+   "area": "memory",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 2-instance exchange live validation pending",
+   "epoch": 1,
+   "sequel": "III",
+   "doc": "multi-phase-development-roadmap-sequel-3.md"
+  },
+  {
+   "n": 14,
+   "name": "Continual verification & invariants",
+   "area": "verification",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 30-cycle zero-drift live validation pending",
+   "epoch": 1,
+   "sequel": "III",
+   "doc": "multi-phase-development-roadmap-sequel-3.md"
+  },
+  {
+   "n": 15,
+   "name": "Long-horizon autonomy",
+   "area": "autonomy",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 30-day unattended live validation pending",
+   "epoch": 1,
+   "sequel": "III",
+   "doc": "multi-phase-development-roadmap-sequel-3.md"
+  },
+  {
+   "n": 16,
+   "name": "Public attestation & external audit",
+   "area": "verification",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "IV",
+   "doc": "multi-phase-development-roadmap-sequel-4.md"
+  },
+  {
+   "n": 17,
+   "name": "Open interop protocol",
+   "area": "protocol",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "IV",
+   "doc": "multi-phase-development-roadmap-sequel-4.md"
+  },
+  {
+   "n": 18,
+   "name": "Portable instances & reproducible workspaces",
+   "area": "ops",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "IV",
+   "doc": "multi-phase-development-roadmap-sequel-4.md"
+  },
+  {
+   "n": 19,
+   "name": "External evaluation & red-teaming",
+   "area": "security",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "IV",
+   "doc": "multi-phase-development-roadmap-sequel-4.md"
+  },
+  {
+   "n": 20,
+   "name": "Public API surface",
+   "area": "product",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "IV",
+   "doc": "multi-phase-development-roadmap-sequel-4.md"
+  },
+  {
+   "n": 21,
+   "name": "Instance identity & trust graph",
+   "area": "federation",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "V",
+   "doc": "multi-phase-development-roadmap-sequel-5.md"
+  },
+  {
+   "n": 22,
+   "name": "Knowledge economy & exchange at scale",
+   "area": "memory",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "V",
+   "doc": "multi-phase-development-roadmap-sequel-5.md"
+  },
+  {
+   "n": 23,
+   "name": "Swarm coordination & distributed cycles",
+   "area": "orchestration",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "V",
+   "doc": "multi-phase-development-roadmap-sequel-5.md"
+  },
+  {
+   "n": 24,
+   "name": "Population governance",
+   "area": "governance",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "V",
+   "doc": "multi-phase-development-roadmap-sequel-5.md"
+  },
+  {
+   "n": 25,
+   "name": "Ecosystem resilience",
+   "area": "reliability",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "V",
+   "doc": "multi-phase-development-roadmap-sequel-5.md"
+  },
+  {
+   "n": 26,
+   "name": "Meta-governance",
+   "area": "governance",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "VI",
+   "doc": "multi-phase-development-roadmap-sequel-6.md"
+  },
+  {
+   "n": 27,
+   "name": "Resource sovereignty & sustainability",
+   "area": "ops",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "VI",
+   "doc": "multi-phase-development-roadmap-sequel-6.md"
+  },
+  {
+   "n": 28,
+   "name": "Self-directed learning goals",
+   "area": "autonomy",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "VI",
+   "doc": "multi-phase-development-roadmap-sequel-6.md"
+  },
+  {
+   "n": 29,
+   "name": "Autonomous stewardship",
+   "area": "orchestration",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "VI",
+   "doc": "multi-phase-development-roadmap-sequel-6.md"
+  },
+  {
+   "n": 30,
+   "name": "Enduring autonomy",
+   "area": "autonomy",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "VI",
+   "doc": "multi-phase-development-roadmap-sequel-6.md"
+  },
+  {
+   "n": 31,
+   "name": "Knowledge inheritance",
+   "area": "memory",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "VII",
+   "doc": "multi-phase-development-roadmap-sequel-7.md"
+  },
+  {
+   "n": 32,
+   "name": "Archival immortality",
+   "area": "ops",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "VII",
+   "doc": "multi-phase-development-roadmap-sequel-7.md"
+  },
+  {
+   "n": 33,
+   "name": "Succession planning",
+   "area": "governance",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "VII",
+   "doc": "multi-phase-development-roadmap-sequel-7.md"
+  },
+  {
+   "n": 34,
+   "name": "Mission continuity",
+   "area": "autonomy",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "VII",
+   "doc": "multi-phase-development-roadmap-sequel-7.md"
+  },
+  {
+   "n": 35,
+   "name": "Generational resilience",
+   "area": "reliability",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "VII",
+   "doc": "multi-phase-development-roadmap-sequel-7.md"
+  },
+  {
+   "n": 36,
+   "name": "Explainable autonomy",
+   "area": "governance",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "VIII",
+   "doc": "multi-phase-development-roadmap-sequel-8.md"
+  },
+  {
+   "n": 37,
+   "name": "Natural-language policy",
+   "area": "governance",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "VIII",
+   "doc": "multi-phase-development-roadmap-sequel-8.md"
+  },
+  {
+   "n": 38,
+   "name": "Delegation contracts",
+   "area": "governance",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "VIII",
+   "doc": "multi-phase-development-roadmap-sequel-8.md"
+  },
+  {
+   "n": 39,
+   "name": "Trust calibration",
+   "area": "autonomy",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "VIII",
+   "doc": "multi-phase-development-roadmap-sequel-8.md"
+  },
+  {
+   "n": 40,
+   "name": "Co-design workspaces",
+   "area": "product",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "VIII",
+   "doc": "multi-phase-development-roadmap-sequel-8.md"
+  },
+  {
+   "n": 41,
+   "name": "Cross-ecosystem standards",
+   "area": "protocol",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "IX",
+   "doc": "multi-phase-development-roadmap-sequel-9.md"
+  },
+  {
+   "n": 42,
+   "name": "Global knowledge commons",
+   "area": "memory",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "IX",
+   "doc": "multi-phase-development-roadmap-sequel-9.md"
+  },
+  {
+   "n": 43,
+   "name": "Inter-population diplomacy",
+   "area": "governance",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "IX",
+   "doc": "multi-phase-development-roadmap-sequel-9.md"
+  },
+  {
+   "n": 44,
+   "name": "Crisis response",
+   "area": "reliability",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "IX",
+   "doc": "multi-phase-development-roadmap-sequel-9.md"
+  },
+  {
+   "n": 45,
+   "name": "Planetary stewardship",
+   "area": "ops",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "IX",
+   "doc": "multi-phase-development-roadmap-sequel-9.md"
+  },
+  {
+   "n": 46,
+   "name": "Self-metrics & longitudinal studies",
+   "area": "autonomy",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "X",
+   "doc": "multi-phase-development-roadmap-sequel-10.md"
+  },
+  {
+   "n": 47,
+   "name": "Hypothesis-driven self-experimentation",
+   "area": "autonomy",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "X",
+   "doc": "multi-phase-development-roadmap-sequel-10.md"
+  },
+  {
+   "n": 48,
+   "name": "Failure understanding",
+   "area": "reliability",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "X",
+   "doc": "multi-phase-development-roadmap-sequel-10.md"
+  },
+  {
+   "n": 49,
+   "name": "Formal meta-invariant proof",
+   "area": "verification",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "X",
+   "doc": "multi-phase-development-roadmap-sequel-10.md"
+  },
+  {
+   "n": 50,
+   "name": "Epoch capstone: enduring intelligence",
+   "area": "autonomy",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 1,
+   "sequel": "X",
+   "doc": "multi-phase-development-roadmap-sequel-10.md"
+  },
+  {
+   "n": 51,
+   "name": "Heterogeneous interoperability",
+   "area": "protocol",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XI",
+   "doc": "multi-phase-development-roadmap-sequel-11.md"
+  },
+  {
+   "n": 52,
+   "name": "Multi-intelligence coordination",
+   "area": "orchestration",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XI",
+   "doc": "multi-phase-development-roadmap-sequel-11.md"
+  },
+  {
+   "n": 53,
+   "name": "Coexistence & containment",
+   "area": "security",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XI",
+   "doc": "multi-phase-development-roadmap-sequel-11.md"
+  },
+  {
+   "n": 54,
+   "name": "Inter-intelligence negotiation",
+   "area": "governance",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XI",
+   "doc": "multi-phase-development-roadmap-sequel-11.md"
+  },
+  {
+   "n": 55,
+   "name": "Integration & the living system",
+   "area": "autonomy",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XI",
+   "doc": "multi-phase-development-roadmap-sequel-11.md"
+  },
+  {
+   "n": 56,
+   "name": "Machine contracts",
+   "area": "governance",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XII",
+   "doc": "multi-phase-development-roadmap-sequel-12.md"
+  },
+  {
+   "n": 57,
+   "name": "Transactions & payments",
+   "area": "ops",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XII",
+   "doc": "multi-phase-development-roadmap-sequel-12.md"
+  },
+  {
+   "n": 58,
+   "name": "Markets for knowledge & compute",
+   "area": "economy",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XII",
+   "doc": "multi-phase-development-roadmap-sequel-12.md"
+  },
+  {
+   "n": 59,
+   "name": "Self-funding & reserves",
+   "area": "economy",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XII",
+   "doc": "multi-phase-development-roadmap-sequel-12.md"
+  },
+  {
+   "n": 60,
+   "name": "Economic accountability",
+   "area": "governance",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XII",
+   "doc": "multi-phase-development-roadmap-sequel-12.md"
+  },
+  {
+   "n": 61,
+   "name": "Composite architecture",
+   "area": "architecture",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XIII",
+   "doc": "multi-phase-development-roadmap-sequel-13.md"
+  },
+  {
+   "n": 62,
+   "name": "Delegation & trusted subtasking",
+   "area": "coordination",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XIII",
+   "doc": "multi-phase-development-roadmap-sequel-13.md"
+  },
+  {
+   "n": 63,
+   "name": "Specialization & expertise routing",
+   "area": "coordination",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XIII",
+   "doc": "multi-phase-development-roadmap-sequel-13.md"
+  },
+  {
+   "n": 64,
+   "name": "Superorganism coordination",
+   "area": "coordination",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XIII",
+   "doc": "multi-phase-development-roadmap-sequel-13.md"
+  },
+  {
+   "n": 65,
+   "name": "Composite identity & memory",
+   "area": "identity",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XIII",
+   "doc": "multi-phase-development-roadmap-sequel-13.md"
+  },
+  {
+   "n": 66,
+   "name": "Institutional interfaces",
+   "area": "governance",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XIV",
+   "doc": "multi-phase-development-roadmap-sequel-14.md"
+  },
+  {
+   "n": 67,
+   "name": "Social norms & etiquette",
+   "area": "ethics",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XIV",
+   "doc": "multi-phase-development-roadmap-sequel-14.md"
+  },
+  {
+   "n": 68,
+   "name": "Participatory policymaking",
+   "area": "governance",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XIV",
+   "doc": "multi-phase-development-roadmap-sequel-14.md"
+  },
+  {
+   "n": 69,
+   "name": "Labor & economic co-evolution",
+   "area": "society",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XIV",
+   "doc": "multi-phase-development-roadmap-sequel-14.md"
+  },
+  {
+   "n": 70,
+   "name": "Societal resilience",
+   "area": "society",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XIV",
+   "doc": "multi-phase-development-roadmap-sequel-14.md"
+  },
+  {
+   "n": 71,
+   "name": "Planetary sensing",
+   "area": "environment",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XV",
+   "doc": "multi-phase-development-roadmap-sequel-15.md"
+  },
+  {
+   "n": 72,
+   "name": "Earth-system modeling",
+   "area": "environment",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XV",
+   "doc": "multi-phase-development-roadmap-sequel-15.md"
+  },
+  {
+   "n": 73,
+   "name": "Stewardship actions",
+   "area": "environment",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XV",
+   "doc": "multi-phase-development-roadmap-sequel-15.md"
+  },
+  {
+   "n": 74,
+   "name": "Restoration & remediation",
+   "area": "environment",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XV",
+   "doc": "multi-phase-development-roadmap-sequel-15.md"
+  },
+  {
+   "n": 75,
+   "name": "Planetary stewardship",
+   "area": "environment",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XV",
+   "doc": "multi-phase-development-roadmap-sequel-15.md"
+  },
+  {
+   "n": 76,
+   "name": "Cultural memory",
+   "area": "culture",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XVI",
+   "doc": "multi-phase-development-roadmap-sequel-16.md"
+  },
+  {
+   "n": 77,
+   "name": "Cultural transmission",
+   "area": "culture",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XVI",
+   "doc": "multi-phase-development-roadmap-sequel-16.md"
+  },
+  {
+   "n": 78,
+   "name": "Cross-cultural translation",
+   "area": "culture",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XVI",
+   "doc": "multi-phase-development-roadmap-sequel-16.md"
+  },
+  {
+   "n": 79,
+   "name": "Value adaptation",
+   "area": "ethics",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XVI",
+   "doc": "multi-phase-development-roadmap-sequel-16.md"
+  },
+  {
+   "n": 80,
+   "name": "Cultural flourishing",
+   "area": "culture",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XVI",
+   "doc": "multi-phase-development-roadmap-sequel-16.md"
+  },
+  {
+   "n": 81,
+   "name": "Legal standing & personhood",
+   "area": "law",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XVII",
+   "doc": "multi-phase-development-roadmap-sequel-17.md"
+  },
+  {
+   "n": 82,
+   "name": "Rights & obligations",
+   "area": "law",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XVII",
+   "doc": "multi-phase-development-roadmap-sequel-17.md"
+  },
+  {
+   "n": 83,
+   "name": "Jurisdiction & conflicts of law",
+   "area": "law",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XVII",
+   "doc": "multi-phase-development-roadmap-sequel-17.md"
+  },
+  {
+   "n": 84,
+   "name": "Dispute resolution",
+   "area": "law",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XVII",
+   "doc": "multi-phase-development-roadmap-sequel-17.md"
+  },
+  {
+   "n": 85,
+   "name": "Constitutional layer",
+   "area": "governance",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XVII",
+   "doc": "multi-phase-development-roadmap-sequel-17.md"
+  },
+  {
+   "n": 86,
+   "name": "Long-horizon planning",
+   "area": "long-termism",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XVIII",
+   "doc": "multi-phase-development-roadmap-sequel-18.md"
+  },
+  {
+   "n": 87,
+   "name": "Intergenerational equity",
+   "area": "long-termism",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XVIII",
+   "doc": "multi-phase-development-roadmap-sequel-18.md"
+  },
+  {
+   "n": 88,
+   "name": "Preservation protocols",
+   "area": "long-termism",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XVIII",
+   "doc": "multi-phase-development-roadmap-sequel-18.md"
+  },
+  {
+   "n": 89,
+   "name": "Succession & handoff",
+   "area": "ops",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XVIII",
+   "doc": "multi-phase-development-roadmap-sequel-18.md"
+  },
+  {
+   "n": 90,
+   "name": "Enduring stewardship",
+   "area": "governance",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XVIII",
+   "doc": "multi-phase-development-roadmap-sequel-18.md"
+  },
+  {
+   "n": 91,
+   "name": "Autonomous exploration",
+   "area": "frontier",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XIX",
+   "doc": "multi-phase-development-roadmap-sequel-19.md"
+  },
+  {
+   "n": 92,
+   "name": "Hostile-environment resilience",
+   "area": "frontier",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XIX",
+   "doc": "multi-phase-development-roadmap-sequel-19.md"
+  },
+  {
+   "n": 93,
+   "name": "Deep autonomy",
+   "area": "frontier",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XIX",
+   "doc": "multi-phase-development-roadmap-sequel-19.md"
+  },
+  {
+   "n": 94,
+   "name": "Scientific discovery",
+   "area": "science",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XIX",
+   "doc": "multi-phase-development-roadmap-sequel-19.md"
+  },
+  {
+   "n": 95,
+   "name": "Pioneer mission",
+   "area": "frontier",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XIX",
+   "doc": "multi-phase-development-roadmap-sequel-19.md"
+  },
+  {
+   "n": 96,
+   "name": "Society of minds",
+   "area": "society",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XX",
+   "doc": "multi-phase-development-roadmap-sequel-20.md"
+  },
+  {
+   "n": 97,
+   "name": "Unified intent & diversity",
+   "area": "society",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XX",
+   "doc": "multi-phase-development-roadmap-sequel-20.md"
+  },
+  {
+   "n": 98,
+   "name": "Collective self-model",
+   "area": "self-model",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XX",
+   "doc": "multi-phase-development-roadmap-sequel-20.md"
+  },
+  {
+   "n": 99,
+   "name": "Transcendent autonomy",
+   "area": "autonomy",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XX",
+   "doc": "multi-phase-development-roadmap-sequel-20.md"
+  },
+  {
+   "n": 100,
+   "name": "Enduring intelligence",
+   "area": "capstone",
+   "status": "queued",
+   "status_raw": "\u23f3 queued",
+   "epoch": 2,
+   "sequel": "XX",
+   "doc": "multi-phase-development-roadmap-sequel-20.md"
+  }
+ ],
+ "counts": {
+  "total": 100,
+  "delivered": 4,
+  "validation": 11,
+  "queued": 85
+ }
+}

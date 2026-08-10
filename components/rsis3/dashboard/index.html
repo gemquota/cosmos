@@ -21,6 +21,7 @@
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="graphs" data-tt="tab:graphs" role="tab" aria-selected="false" onclick="sw('graphs')">Graphs</button>
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="constraints" data-tt="tab:constraints" role="tab" aria-selected="false" onclick="sw('constraints')">Constraints</button>
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="loops" data-tt="tab:loops" role="tab" aria-selected="false" onclick="sw('loops')">🧬 Loops</button>
+  <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="roadmap" data-tt="tab:roadmap" role="tab" aria-selected="false" onclick="sw('roadmap')">🗺️ Roadmap</button>
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="mykb" data-tt="tab:mykb" role="tab" aria-selected="false" onclick="sw('mykb')">📚 MyKB</button>
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="space" data-tt="tab:space" role="tab" aria-selected="false" onclick="sw('space')">🚀 SPACE</button>
   <button class="tb px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-700/40" data-t="bridge" data-tt="tab:bridge" role="tab" aria-selected="false" onclick="sw('bridge')">💬 Bridge</button>
@@ -131,6 +132,26 @@
       <span class="text-[10px] text-slate-500" id="loops-meta">loading…</span>
     </div>
     <div id="loops-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+  </div>
+</div>
+
+<!-- ROADMAP TAB -->
+<div class="tab-body hide" id="b-roadmap">
+  <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 mb-4">
+    <div class="flex flex-wrap items-start sm:items-center justify-between gap-2 mb-2">
+      <div>
+        <h3 class="text-xs font-bold text-slate-400 uppercase">Program Roadmap — 100 Phases / 2 Epochs</h3>
+        <p class="text-[11px] text-slate-400 mt-0.5">Ten 5-phase sequels per epoch · invariant: autonomy is cumulative but never unconditional.</p>
+      </div>
+      <span class="text-[10px] text-slate-500" id="roadmap-meta">loading…</span>
+    </div>
+    <div id="roadmap-arcs" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4"></div>
+    <div class="overflow-x-auto rounded-xl border border-slate-700/30">
+      <table class="w-full text-left text-[11px]">
+        <thead><tr class="text-slate-400 border-b border-slate-700/40"><th class="px-3 py-2 font-semibold">Phase</th><th class="px-3 py-2 font-semibold">Area</th><th class="px-3 py-2 font-semibold">Epoch</th><th class="px-3 py-2 font-semibold">Sequel</th><th class="px-3 py-2 font-semibold">Status</th></tr></thead>
+        <tbody id="roadmap-phases"></tbody>
+      </table>
+    </div>
   </div>
 </div>
 
@@ -277,6 +298,7 @@ window.addEventListener('hashchange', applyHash);
 loadEcosystem();
 loadLiveEcosystem();
 loadLoops();
+loadRoadmap();
 var _bootTimer = setInterval(function(){
   var app = document.getElementById('app');
   if (app && app.style.display === 'block') {

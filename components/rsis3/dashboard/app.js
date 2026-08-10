@@ -180,6 +180,53 @@ function renderLoops(d){
   grid.innerHTML = html;
 }
 
+function loadRoadmap(){
+  fetch('roadmap.json')
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){ if (d) renderRoadmap(d); })
+    .catch(function(){});
+}
+function renderRoadmap(d){
+  var meta = document.getElementById('roadmap-meta');
+  if (meta) meta.textContent = 'static snapshot · ' + (d.generated || 'unknown') +
+    ' · ' + (d.counts ? (d.counts.total + ' phases · ' + d.counts.delivered + ' delivered · ' + d.counts.validation + ' validation pending') : '');
+  var arcs = document.getElementById('roadmap-arcs');
+  if (arcs && d.arcs) {
+    var html = '';
+    for (var i = 0; i < d.arcs.length; i++) {
+      var a = d.arcs[i];
+      html += '<div class="bg-slate-900/40 rounded-xl p-3 border border-slate-700/30">' +
+        '<div class="flex items-center justify-between mb-1">' +
+        '<span class="text-xs font-bold text-slate-200">Sequel ' + esc(a.sequel) + ' · ' + esc(a.phases) + '</span>' +
+        '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-400 border border-indigo-500/25">E' + esc(a.epoch) + '</span></div>' +
+        '<p class="text-[10px] text-slate-300 font-semibold mb-1">' + esc(a.title) + '</p>' +
+        '<p class="text-[10px] text-slate-500 leading-relaxed">' + esc(a.arc) + '</p></div>';
+    }
+    arcs.innerHTML = html;
+  }
+  var tbody = document.getElementById('roadmap-phases');
+  if (!tbody || !d.phases) return;
+  var rows = '';
+  for (var j = 0; j < d.phases.length; j++) {
+    var p = d.phases[j];
+    var badge;
+    if (p.status === 'delivered') {
+      badge = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/25">DELIVERED</span>';
+    } else if (p.status === 'validation') {
+      badge = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/25">VALIDATION PENDING</span>';
+    } else {
+      badge = '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-600/20 text-slate-400 border border-slate-500/30">QUEUED</span>';
+    }
+    rows += '<tr class="border-b border-slate-800/60 hover:bg-slate-800/20">' +
+      '<td class="px-3 py-1.5"><span class="font-mono text-slate-300">P' + p.n + '</span> <span class="text-slate-200">' + esc(p.name) + '</span></td>' +
+      '<td class="px-3 py-1.5 text-slate-400">' + esc(p.area) + '</td>' +
+      '<td class="px-3 py-1.5 text-slate-400">' + p.epoch + '</td>' +
+      '<td class="px-3 py-1.5 text-slate-400">' + esc(p.sequel) + '</td>' +
+      '<td class="px-3 py-1.5">' + badge + '</td></tr>';
+  }
+  tbody.innerHTML = rows;
+}
+
 function renderAll(){renderDrives();ly();rg();rp();rc();rcb();bk();pf();sw('overview');}
 
 // Active multitiered goal stack (Output > Communicate > Wrap > Bridge)
@@ -525,7 +572,7 @@ function getGraphInfo(name){
 }
 
 function getTabInfo(name){
-  var d={overview:'Summary stats, success rate, layer scores.',pulses:'20 pulses with embedded goals, conversations, and evaluation results.',kg:'Interactive knowledge graph.',graphs:'Full chart suite: decisions, trends, durations, constraints, radar.',constraints:'Constraint frequency and lock rate analysis.',loops:'Nine-loop stack: targets, tuned params, last signal, run counts, honest runtime state (RECENT/IDLE/NOT RUN from loops.json).',mykb:'Wiki browser, knowledge graph, stats, guidance (stub review, feedback & research direction).',space:'SPACE web UI + spec viewer (lazy-loaded iframes).'};
+  var d={overview:'Summary stats, success rate, layer scores.',pulses:'20 pulses with embedded goals, conversations, and evaluation results.',kg:'Interactive knowledge graph.',graphs:'Full chart suite: decisions, trends, durations, constraints, radar.',constraints:'Constraint frequency and lock rate analysis.',loops:'Nine-loop stack: targets, tuned params, last signal, run counts, honest runtime state (RECENT/IDLE/NOT RUN from loops.json).',mykb:'Wiki browser, knowledge graph, stats, guidance (stub review, feedback & research direction).',space:'SPACE web UI + spec viewer (lazy-loaded iframes).',roadmap:'100-phase program: two epochs, ten sequels each, arc map and phase status rollup from roadmap.json.'};
   return '<h4>'+name.charAt(0).toUpperCase()+name.slice(1)+' Tab</h4><p>'+(d[name]||'Dashboard tab.')+'</p>';
 }
 
