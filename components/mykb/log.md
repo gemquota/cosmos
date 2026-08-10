@@ -1069,3 +1069,7 @@ title: "Bundle Log"
 - Fixed dashboard regressions: rebuilt `rack/pulses/dashboard-data.json` from live telemetry (2231 pulses, 268 goals), restored missing renderer IDs, wired `up()` into `renderAll()`; all tabs verified in browser.
 - Unified MyKB/SPACE into dashboard via `?embed=cosmos` theme hooks (separate codebases, one visual system).
 - Synthesis: `rsis3-dashboard-unified-embed-2026-08-10.md`.
+
+## 2026-08-10 (RSIS3 nightly summary — automatic)
+- 0 cycle(s), 0 telemetry events, gen 0 (best None), KG 0n/0e, $0.0 llm cost, 11 commits.
+- Synthesis: `rsis3-daily-summary-2026-08-10.md`.
