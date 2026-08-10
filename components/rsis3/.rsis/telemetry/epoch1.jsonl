@@ -95,3 +95,6 @@
 {"findings": 3, "timestamp": "2026-08-10T03:50:11Z", "type": "redteam_probe"}
 {"findings": 0, "timestamp": "2026-08-10T04:15:21Z", "type": "redteam_probe"}
 {"agent": "evaluator", "fail_closed": true, "limit_usd": 0.01, "spend_usd": 0.02, "timestamp": "2026-08-10T04:19:44Z", "type": "cost_budget_drill"}
+{"ends_at": "2026-08-11T05:02:51Z", "hours": 24, "kind": "p4-24h", "timestamp": "2026-08-10T05:02:51Z", "type": "validation_window_started"}
+{"all_pass": false, "elapsed_h": 0.0, "id": "p4-24h-20260810T050251Z", "kind": "p4-24h", "timestamp": "2026-08-10T05:02:55Z", "type": "validation_checkin"}
+{"all_pass": false, "elapsed_h": 0.006, "id": "p4-24h-20260810T050251Z", "kind": "p4-24h", "timestamp": "2026-08-10T05:03:15Z", "type": "validation_checkin"}

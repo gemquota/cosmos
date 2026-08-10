@@ -333,3 +333,10 @@
 {"kind": "llm", "trace_id": "be242815d3a3", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.463, "tokens_in": 444, "tokens_out": 200, "cost": 0.000187, "error": false, "ts": 1786335376.544307}
 {"kind": "llm", "trace_id": "a29a62da5cbf", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.277, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786335444.5516677}
 {"kind": "llm", "trace_id": "a41e4513077e", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.119, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786335806.4468021}
+{"kind": "llm", "trace_id": "3ecb349af903", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.107, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786336157.0901284}
+{"kind": "llm", "trace_id": "040359daf2c3", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.099, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786336513.628784}
+{"kind": "llm", "trace_id": "923373289366", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.102, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786336866.304673}
+{"kind": "llm", "trace_id": "6b6a6085f77d", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.1, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786337219.2060657}
+{"kind": "llm", "trace_id": "81dd97c05b28", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.092, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786337571.3668106}
+{"kind": "llm", "trace_id": "a80daf9ae5bf", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.106, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786337926.7965035}
+{"kind": "llm", "trace_id": "8ff25c57d6fc", "agent": "evaluator", "model": "gpt-4o-mini", "latency_s": 0.355, "tokens_in": 464, "tokens_out": 200, "cost": 0.00019, "error": false, "ts": 1786338288.241468}

@@ -7,6 +7,23 @@ yet** — each row below becomes `✅ demonstrated` only when its evidence
 appears in the listed location. This file is the single source of truth
 for the `⏳ live validation pending` wording used in the roadmap docs.
 
+## Validation tracker (machine-readable)
+
+Exit criteria are tracked as **validation windows** in
+`rack/validation/windows.json`:
+
+- `python -m rsis validation start --kind p4-24h` — seeds the Phase 4
+  24 h window with a start timestamp and expected end.
+- `python -m rsis validation checkin` — evaluates the running window
+  against live evidence (cycle cards, lockfile, costs, daily summaries,
+  retunes, incidents, contracts gate) and appends a dated check-in.
+- `python -m rsis validation status` — elapsed/remaining per window.
+- When P4's window ends with all criteria passing, P5's 7-day window
+  auto-starts with the P4 completion timestamp as its clean start point.
+- The nightly summary (`nightly-summary`) runs a check-in automatically
+  every day; telemetry events `validation_window_started`,
+  `validation_checkin`, `validation_window_completed` record the lifecycle.
+
 ## The 7-day cadence validation (Phase 5)
 
 Phase 5's exit criterion is the first long-horizon operational gate in the

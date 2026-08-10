@@ -327,6 +327,11 @@ def _append_log(mykb: Path, day: str, note_name: str, summary: dict) -> None:
 def main(workspace: Path, mykb: Path, day: Optional[str] = None,
          json_out: bool = False) -> int:
     summary = summarize_day(workspace, mykb, day)
+    try:
+        from rsis.validation import auto_checkin
+        auto_checkin(workspace)  # daily exit-criterion check-in
+    except Exception:
+        pass
     path = write_nightly_note(mykb, summary)
     print(f"  ✓ nightly summary for {summary['day']}: "
           f"{summary['cycles']} cycles, {summary['events']} events, "

@@ -1153,6 +1153,13 @@ def cmd_budgets(args: argparse.Namespace) -> int:
                  drill_limit=args.drill_limit, json_out=args.json)
 
 
+def cmd_validation(args: argparse.Namespace) -> int:
+    """Exit-criterion validation windows: seed P4 24h, daily check-ins, P5."""
+    from rsis.validation import main as vmain
+    return vmain(_epoch_root(), action=args.action, kind=args.kind,
+                 json_out=args.json)
+
+
 def cmd_apps(args: argparse.Namespace) -> int:
     """Phase 20: public API surface — machine identities + quotas."""
     from rsis.apps import main as amain
@@ -2157,6 +2164,15 @@ def main() -> int:
                            help="daily_usd limit for the drill workspace")
     p_budgets.add_argument("--json", action="store_true")
     p_budgets.set_defaults(func=cmd_budgets)
+
+    p_validation = sub.add_parser(
+        "validation",
+        help="Exit-criterion validation windows (P4 24h -> P5 7-day)")
+    p_validation.add_argument("action", choices=["start", "status", "checkin"])
+    p_validation.add_argument("--kind", default="p4-24h",
+                              choices=["p4-24h", "p5-7d"])
+    p_validation.add_argument("--json", action="store_true")
+    p_validation.set_defaults(func=cmd_validation)
 
     p_apps = sub.add_parser("apps", help="Phase 20: machine identities + quotas")
     p_apps.add_argument("action", choices=["list", "add", "token"])
