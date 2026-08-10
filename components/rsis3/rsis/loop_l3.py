@@ -156,6 +156,9 @@ class L3EvolutionLoop:
             logger.info("MyKB gateway unavailable — skipping durable synthesis "
                         "(root=%s)", self.mykb.root)
             return {}
+        if not insights_added and not strategies and not redundancies and not trends:
+            logger.info("L3: no new consolidation content — skipping synthesis write")
+            return {}
 
         cycle = self._cycle_count
         # Cycle ordinal is per-process; use the durable sequence of

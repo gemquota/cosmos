@@ -1,0 +1,20 @@
+{
+  "ts": "2026-08-08T17:08:05Z",
+  "generation": 94,
+  "plateau": {
+    "generations": 5,
+    "best_fitness": 0.244
+  },
+  "noops": {
+    "l4": 10,
+    "l6": 10,
+    "l7": 10,
+    "l8": 10,
+    "l9": 10
+  },
+  "proposed_loop": "identity",
+  "command": "python -m rsis identity",
+  "detected": true,
+  "type": "convergence-proposal",
+  "applied": false
+}

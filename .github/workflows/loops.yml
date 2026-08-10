@@ -60,13 +60,9 @@ jobs:
             if ! bash infra/loops/run-batch.sh --cycles 1 --goal-space-cycle "$SPEC"; then
               echo "  ⚠ cycle $i finished with failures — continuing"
             fi
-            git add -A
-            if ! git diff --cached --quiet; then
-              git commit -m "rsis: cadence cycle $i — $(date -u +%Y-%m-%dT%H:%MZ)"
-            fi
-            # run-batch.sh commits its own batch results + snapshots, so the
-            # outer loop only commits leftovers; push always so those internal
-            # commits reach origin (cycles otherwise complete but never land).
+            # run-batch.sh commits the batch's durable artifacts itself;
+            # the outer loop only syncs those commits to origin (never
+            # git add -A — that sweeps regenerated snapshots into churn).
             git pull --rebase origin main \
               || echo "  ⚠ pull/rebase failed — next cycle will carry it"
             git push origin main || echo "  ⚠ push failed — next cycle will carry it"

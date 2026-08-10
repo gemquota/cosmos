@@ -1,0 +1,29 @@
+{
+ "checks": {
+  "budget": {
+   "ceiling": 0.5,
+   "ok": true,
+   "total": 0.00532
+  },
+  "energy_ladder": {
+   "always_on": [
+    "policy-critical"
+   ],
+   "ok": true
+  },
+  "invariants": {
+   "issues": [],
+   "ok": true
+  },
+  "meta_invariant": {
+   "issues": [],
+   "ok": true
+  },
+  "redteam": {
+   "ok": true,
+   "untriaged": 0
+  }
+ },
+ "ok": true,
+ "ts": "2026-08-10T02:52:03Z"
+}

@@ -1,0 +1,41 @@
+{
+ "artifacts": [
+  {
+   "author": "human",
+   "id": "a0",
+   "kind": "proposal",
+   "sha": "d9e83a19744a1a2a0408d877dbda4265b1a356913361f4403b5647df33e59d04",
+   "text": "line one",
+   "ts": "2026-08-10T02:52:02Z"
+  },
+  {
+   "author": "system",
+   "id": "a1",
+   "kind": "proposal",
+   "sha": "fd5e386761dd2ffb740d925d62107d7d96dfee5af824c180a88f97be376d6f02",
+   "text": "line two",
+   "ts": "2026-08-10T02:52:02Z"
+  }
+ ],
+ "created": "2026-08-10T02:52:02Z",
+ "merged": [
+  {
+   "id": "m0",
+   "lines": [
+    {
+     "author": "human",
+     "line": "line one"
+    },
+    {
+     "author": "system",
+     "line": "line two"
+    }
+   ],
+   "merged_by": "human",
+   "title": "Joint plan",
+   "ts": "2026-08-10T02:52:02Z"
+  }
+ ],
+ "project": "demo-project",
+ "title": "Demo canvas"
+}

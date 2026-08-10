@@ -8,6 +8,19 @@ current bridge-and-chat baseline to a production-grade surface. Each phase
 names the tier(s) it completes, concrete deliverables, and an exit criterion
 so progress is measurable per the Output tier (T0: no silent phases).
 
+## Cross-roadmap invariant
+
+> **Autonomy is cumulative but never unconditional.** Every expansion of
+> capability must inherit the memory, verification, cost, policy,
+> provenance and observability controls established by preceding phases.
+
+That is what the sequencing already does: Phase 5 autonomy requires
+Phase 4 telemetry; Phase 10 prediction requires Phases 6–8 memory,
+verification and cost history; Phase 13 federation requires Phase 6
+provenance and Phase 9 trust/policy; Phase 15 long-horizon autonomy
+requires Phases 8–10 and 14. A phase may build on prior controls; none
+may silently relax them.
+
 ## Baseline (delivered 2026-08-08)
 
 - **T0 Output** — `rack/goals_stack.json` active; every cycle commits ≥1
@@ -119,6 +132,32 @@ Goal: cycles run sustainably in the background with CI guarding regressions.
   intervention, all cycles rc=0, CI green on every commit, and a nightly
   summary note in MyKB.
 
+## Phase 5 — Autonomy & Durable Ops (Bounded Autonomy)
+
+Goal: the system keeps itself running, retuned, and documented — zero
+manual intervention beyond the standing cadence. This is *bounded*
+autonomy: self-maintenance (retune, heal, document, expose cost) within
+ledgered, policy-visible limits. Phase 15 later extends the same
+discipline into a persistent lifecycle — it does not introduce new
+autonomy.
+
+- **Auto-retuning**: `cycle-daemon --auto-retune` consumes convergence
+  proposals and applies the proposed identity/meta loop itself, bounded by
+  `RSIS_RETUNE_MIN_INTERVAL_S` (default 6 h) with an `applied.jsonl`
+  ledger — plateaus and bound no-ops are never silent.
+- **Nightly summary automation**: `python -m rsis nightly-summary` writes
+  an OKF daily-summary synthesis note + `log.md` entry;
+  `.github/workflows/nightly.yml` runs it daily and pushes it.
+- **Bridge self-heal**: `--supervise-bridge` restarts the Node bridge when
+  `/health` fails and the port is free; the daemon logs the recovery.
+- **Cost visibility**: `/api/cosmos` carries a 24 h cost ledger
+  (traces/tokens/cost from `.rsis/costs.jsonl`); the dashboard shows a
+  live overlay badge when the bridge is up.
+- **Exit criterion**: 7 days unattended — daemon cycles every 3 min under
+  the lockfile, one bounded auto-retune per convergence episode, one daily
+  summary note per day, bridge heals within 2 cycles, CI green on every
+  commit.
+
 ## Sequencing notes
 
 - Phases are cumulative: each completes the acceptance criteria of its tier
@@ -135,7 +174,95 @@ Goal: cycles run sustainably in the background with CI guarding regressions.
 | Phase | Tier(s) | Status |
 |-------|---------|--------|
 | Baseline | T0–T3 first pass + ops seed | ✅ delivered |
-| Phase 1 — Live state streaming | T1 | ⏳ next |
-| Phase 2 — Envelope hardening | T2 | ⏳ queued |
-| Phase 3 — Product surface | T3 | ⏳ queued |
-| Phase 4 — Ops maturity | ops | ⏳ queued |
+| Phase 1 — Live state streaming | T1 | ✅ delivered |
+| Phase 2 — Envelope hardening | T2 | ✅ delivered |
+| Phase 3 — Product surface | T3 | ✅ delivered |
+| Phase 4 — Ops maturity | ops | ✅ delivered |
+| Phase 5 — Autonomy & durable ops (bounded) | ops | ✅ delivered (implementation) · ⏳ 7-day live validation pending |
+
+Implementation status reflects shipped code and workflows; exit-criterion
+status reflects operational demonstration. Phase 5's implementation is
+delivered; its 7-day unattended exit validation completes when the live
+daemon cadence has run the full window.
+
+## Sequels
+
+The original 5-phase roadmap is complete. Future work continues in ten
+sequel roadmaps per epoch, each another five phases, cumulative on
+everything before — read as one 50-phase program per epoch across ten
+maturity arcs. Epoch 1 covers Phases 1–50; Epoch 2 (the Age of Living
+Systems) covers Phases 51–100.
+
+- **Epoch 1 — Phases 1–50**: Operational → Governed → Distributed →
+  Open → Ecosystem → Sovereign → Generational → Symbiotic → Global →
+  Meta-Science Autonomy — [`roadmap-epoch-1.md`](roadmap-epoch-1.md)
+- **Epoch 2 — Phases 51–100**: Inter-Intelligence → Economic Agency →
+  Composite → Societal Co-Evolution → Planetary → Cultural →
+  Multi-Intelligence Governance → Long-Termism → Frontier →
+  Transcendent Autonomy — [`roadmap-epoch-2.md`](roadmap-epoch-2.md)
+
+The cross-roadmap invariant for both epochs: *autonomy is cumulative but
+never unconditional — every expansion of capability inherits the memory,
+verification, cost, policy, provenance and observability controls
+established by preceding phases.*
+
+Epoch 1 arcs, summarized per sequel:
+
+- **Phases 1–5 — Operational Autonomy**: build → communicate → secure →
+  persist → observe → operate → self-retune.
+- **Phases 6–10 — Governed Intelligence**: remember collectively → verify →
+  measure economics → govern → predict.
+- **Phases 11–15 — Distributed Autonomy**: generalize → collaborate →
+  federate → attest → persist.
+- **Phases 16–20 — Open Autonomy**: audit → standardize → port → probe →
+  open.
+- **Phases 21–25 — Ecosystem Autonomy**: identify → exchange → coordinate
+  → govern → survive.
+- **Phases 26–30 — Sovereign Autonomy**: meta-govern → sustain →
+  self-direct → steward → endure.
+- **Phases 31–35 — Generational Autonomy**: inherit → archive → succeed →
+  migrate → endure.
+- **Phases 36–40 — Human–AI Symbiosis**: explain → delegate → co-design →
+  calibrate → collaborate.
+- **Phases 41–45 — Global Commons**: standardize → federate → steward →
+  respond → cooperate.
+- **Phases 46–50 — Meta-Science (Epoch 1 Capstone)**: measure → hypothesize
+  → experiment → prove → transcend.
+
+Epoch 2 arcs, summarized per sequel:
+
+- **Phases 51–55 — Inter-Intelligence**: interoperate → coordinate →
+  coexist → negotiate → integrate.
+- **Phases 56–60 — Economic Agency**: contract → transact → market →
+  fund → account.
+- **Phases 61–65 — Composite Intelligence**: compose → delegate →
+  specialize → superorganize → unify.
+- **Phases 66–70 — Societal Co-Evolution**: interface → norm → participate
+  → work → strengthen.
+- **Phases 71–75 — Planetary Intelligence**: sense → model → steward →
+  restore → harmonize.
+- **Phases 76–80 — Cultural Intelligence**: record → transmit → translate
+  → adapt → flourish.
+- **Phases 81–85 — Multi-Intelligence Governance**: law → rights →
+  jurisdiction → dispute → constitution.
+- **Phases 86–90 — Long-Termism & Intergenerational Stewardship**: horizon
+  → equity → preserve → hand off → endure.
+- **Phases 91–95 — Frontier Intelligence**: explore → adapt → endure →
+  discover → pioneer.
+- **Phases 96–100 — Transcendent Autonomy (Epoch 2 Capstone)**: reflect →
+  unify → ascend → transcend → endure.
+
+Sequel documents (each details its five phases, telemetry and dashboard
+updates, and exit criteria):
+
+- **Sequel II — Horizons (Phases 6–10)**: distributed memory &
+  multi-session coordination, verification mesh, observability & cost
+  governance, human-in-the-loop governance, self-modeling & prediction —
+  [`multi-phase-development-roadmap-sequel-2.md`](multi-phase-development-roadmap-sequel-2.md)
+- **Sequel III — Frontiers (Phases 11–15)**: cross-project generalization,
+  collaborative & community ops, federated memory, continual verification
+  & invariant attestation, long-horizon autonomy —
+  [`multi-phase-development-roadmap-sequel-3.md`](multi-phase-development-roadmap-sequel-3.md)
+- **Sequels IV–XX (Phases 16–100)**: see the two epoch indexes above —
+  [`roadmap-epoch-1.md`](roadmap-epoch-1.md) and
+  [`roadmap-epoch-2.md`](roadmap-epoch-2.md)

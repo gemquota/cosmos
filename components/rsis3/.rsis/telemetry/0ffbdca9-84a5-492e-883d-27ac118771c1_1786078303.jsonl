@@ -1,3 +1,0 @@
-{"type": "l6_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-07T04:51:38.586459+00:00", "cycle": 0}
-{"type": "l6_evaluation", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-07T04:51:38.819903+00:00", "decision": "PASS", "signal": "shrink"}
-{"type": "l6_complete", "path": null, "delta": -3600, "duration_ms": null, "timestamp": "2026-08-07T04:51:38.820457+00:00", "changed": true, "signal": "shrink", "count": 20, "success_rate": 0.05, "avg_score": 1.0}

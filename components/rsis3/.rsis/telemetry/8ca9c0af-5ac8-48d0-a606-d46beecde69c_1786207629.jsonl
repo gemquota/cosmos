@@ -1,3 +1,0 @@
-{"type": "l5_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-08T16:47:04.578219+00:00", "cycle": 0}
-{"type": "l5_evaluation", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-08T16:47:04.664329+00:00", "decision": "PASS", "score_avg": 1.0}
-{"type": "l5_complete", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-08T16:47:04.665584+00:00", "generation": 156, "population": 4, "elites": 2, "avg_fitness": 0.159, "best": "strategy-budget-1"}

@@ -1,2 +1,0 @@
-{"type": "sa_start", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-08T16:08:32.005871+00:00", "window_days": 7}
-{"type": "sa_complete", "path": null, "delta": null, "duration_ms": null, "timestamp": "2026-08-08T16:08:34.662410+00:00", "health_score": 0.828, "gaps": 0, "trends": 3, "assessment": "/home/runner/work/cosmos/cosmos/components/mykb/wiki/assessments/self-assessment-2026-08-08-83.md"}

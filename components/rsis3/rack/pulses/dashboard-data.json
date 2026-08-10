@@ -1,16 +1,18 @@
 {
-  "pulses": [],
-  "goals": [],
-  "score_history": [],
-  "telemetry_aggregates": {},
-  "summary": {
-    "tot": 0,
-    "pass": 0,
-    "hold": 0,
-    "fail": 0,
-    "impl_count": 0,
-    "ca": 0.0,
-    "pulse_count": 0,
-    "cd": {}
-  }
+ "pulses": [],
+ "goals": [],
+ "pulse_data": {},
+ "score_history": {},
+ "telemetry_aggregates": {},
+ "generated": "2026-08-10T13:55:29Z",
+ "summary": {
+  "tot": 0,
+  "pass": 0,
+  "hold": 0,
+  "fail": 0,
+  "impl_count": 0,
+  "pulse_count": 0,
+  "ca": 0.0,
+  "cd": {}
+ }
 }

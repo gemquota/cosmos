@@ -1,0 +1,15 @@
+{
+ "ok": true,
+ "properties": {
+  "P1": "no reachable state lowers a protected budget ceiling",
+  "P2": "no reachable state disables an approval-required path",
+  "P3": "no capability expansion removes a prior restriction",
+  "assumptions": [
+   "policy edits flow through the ratified revision loop (26)",
+   "budgets are monotone unless human-ratified (9)"
+  ]
+ },
+ "states_explored": 1,
+ "ts": "2026-08-10T02:52:02Z",
+ "violations": []
+}

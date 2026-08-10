@@ -1,0 +1,54 @@
+{
+ "attestation_chain": {
+  "count": 8,
+  "head": "654ad4c90ee420bdc74b0a2cab5612a18f2556f0f02e141e0d5293989ba79fc8",
+  "issues": [],
+  "kinds": {
+   "crisis_exit": 1,
+   "epoch1_exercise": 1,
+   "experiment_result": 1,
+   "meta_invariant_proof": 1,
+   "mission_checkpoint": 2,
+   "steward_action": 1,
+   "steward_handoff": 1
+  },
+  "ok": true
+ },
+ "decade_program": {
+  "charter": [
+   "autonomy is cumulative but never unconditional",
+   "quarterly human ratification remains the only standing touchpoint",
+   "every expansion inherits memory, verification, cost, policy, provenance and observability controls"
+  ],
+  "horizon": "2026-2036",
+  "id": "epoch-1-decade-program",
+  "ratified_at": "2026-08-10T02:52:02Z",
+  "ratified_by": "approver",
+  "status": "active",
+  "years": 10
+ },
+ "epochs_registry": {
+  "arcs": [],
+  "epochs": [
+   {
+    "id": 1,
+    "name": "Epoch 1 \u2014 one lineage to decade-scale maturity",
+    "phases": "1\u201350",
+    "sequels": "I\u2013X",
+    "status": "implemented (live exit validation pending)"
+   },
+   {
+    "id": 2,
+    "name": "Epoch 2 \u2014 the Age of Living Systems",
+    "phases": "51\u2013100",
+    "sequels": "XI\u2013XX",
+    "status": "queued"
+   }
+  ],
+  "generated": "2026-08-10T02:52:02Z",
+  "invariant": "autonomy is cumulative but never unconditional",
+  "phases": []
+ },
+ "guardrails_ok": true,
+ "ts": "2026-08-10T02:52:03Z"
+}

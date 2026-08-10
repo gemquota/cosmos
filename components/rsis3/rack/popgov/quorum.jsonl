@@ -1,0 +1,1 @@
+{"approval_id": "qa-demo", "approves": 1, "decision": true, "quorum": 1, "resolved": true, "ts": "2026-08-10T02:51:59Z", "votes": {"peer-a": {"decision": "approve", "ts": "2026-08-10T02:51:59Z"}}}

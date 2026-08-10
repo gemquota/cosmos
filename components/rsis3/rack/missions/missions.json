@@ -1,0 +1,15 @@
+{
+ "missions": {
+  "mission-demo": {
+   "constraints": [],
+   "id": "mission-demo",
+   "next_actions": [],
+   "objective": "keep epoch-1 invariants green",
+   "progress": 0.25,
+   "started": "2026-08-10T02:52:02Z",
+   "status": "active",
+   "steward": "heir-demo"
+  }
+ },
+ "version": 1
+}

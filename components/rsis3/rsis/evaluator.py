@@ -16,6 +16,7 @@ from typing import Optional
 
 from rsis.config import CONFIG
 from rsis.telemetry import CostLedger, default_ledger
+from rsis.budgets import check_budget
 
 logger = logging.getLogger(__name__)
 
@@ -74,6 +75,20 @@ class EvaluatorClient:
             return EvalResult(
                 decision="FAIL",
                 rationale="LLM budget cap exceeded — evaluator call refused")
+
+        # Phase 8: per-loop daily budget — fail-close when the ledger exists.
+        ws = Path(CONFIG.workspace_dir)
+        if (ws / ".rsis" / "budgets.json").is_file():
+            budget = check_budget(ws, "evaluator")
+            if not budget["allowed"]:
+                logger.error(
+                    "Evaluator call refused: daily budget fail-close "
+                    "($%.4f of $%.4f)", budget["spend"], budget["limit"])
+                return EvalResult(
+                    decision="FAIL",
+                    rationale=(f"daily budget fail-close for evaluator "
+                               f"(${budget['spend']:.4f} of "
+                               f"${budget['limit']:.4f})"))
 
         try:
             started = time.monotonic()

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "spec": "cosmos-envelope/1",
+  "note": "Explicit ref-traversal allowlist for bridge artifact resolution (Phase 2, envelope 1.1). 'roots' are relative to the repo root; refs must resolve inside one root. 'deny' entries are prefix-matched against the ref itself (root-relative) and the repo-relative resolved path — a match rejects the ref for every root. When this file is absent the server defaults to root+mykb containment.",
+  "roots": ["components/rsis3", "components/mykb"],
+  "deny": [
+    ".git",
+    ".rsis/telemetry",
+    "rack/bridge/cycles",
+    "rack/bridge/sessions",
+    ".wiki-daemon/buffers"
+  ]
+}

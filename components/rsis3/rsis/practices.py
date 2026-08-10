@@ -264,8 +264,41 @@ def check_workspace(workspace: Optional[Path] = None) -> tuple[list[CheckRow], b
     workspace = Path(workspace or CONFIG.workspace_dir).resolve()
     rows = check_registry() + check_state_files() + check_checkpoints(workspace)
     rows += check_telemetry(workspace) + check_telemetry_contract(workspace)
+    rows += check_policy(workspace)
+    rows += check_invariants(workspace)
     all_pass = all(r.status != "FAIL" for r in rows)
     return rows, all_pass
+
+
+def check_policy(workspace: Path) -> list[CheckRow]:
+    """Phase 9: staged approvals are not applied; no unauthorized writes."""
+    from rsis.policy import check_unauthorized_writes, list_staged
+
+    rows = []
+    staged = list_staged(workspace)
+    rows.append(CheckRow(
+        "policy approvals",
+        "WARN" if staged else "PASS",
+        f"{len(staged)} staged approval(s) pending" if staged else "none pending"))
+    violations = check_unauthorized_writes(workspace)
+    rows.append(CheckRow(
+        "policy unauthorized writes",
+        "FAIL" if violations else "PASS",
+        ", ".join(violations) if violations else "no direct writes to gated paths"))
+    return rows
+
+
+def check_invariants(workspace: Path) -> list[CheckRow]:
+    """Phase 14: executable invariant registry runs every cycle."""
+    from rsis.invariants import run_invariants
+
+    rows = []
+    for r in run_invariants(workspace):
+        rows.append(CheckRow(
+            f"invariant {r['id']}",
+            "PASS" if r["ok"] else "FAIL",
+            r["detail"]))
+    return rows
 
 
 def run_checks(workspace: Optional[Path] = None) -> int:

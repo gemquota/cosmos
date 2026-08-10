@@ -1,0 +1,1 @@
+{"capabilities": ["read", "propose", "dispatch"], "id": "t0", "level": "peers", "population": "pop-demo", "sha": "ec4cc927e6fb8e20ea5f2282c9fcee9a8434aad7a7c0c47afe5132fed30e0c54", "signed_by": null, "status": "active", "terms": {"read": true}, "ts": "2026-08-10T02:52:02Z"}

@@ -1,0 +1,30 @@
+{
+ "change_process": [
+  "proposal",
+  "conformance-test",
+  "review",
+  "deprecation-window",
+  "sunset"
+ ],
+ "standards": [
+  {
+   "conformance": "tests/test_protocol.py",
+   "id": "cosmos-protocol",
+   "status": "deprecated",
+   "sunset": "2030-01-01",
+   "versions": [
+    "1",
+    "2"
+   ]
+  }
+ ],
+ "sunset_calendar": [
+  {
+   "standard": "cosmos-protocol",
+   "sunset": "2030-01-01",
+   "ts": "2026-08-10T02:52:02Z",
+   "version": "1"
+  }
+ ],
+ "version": 1
+}

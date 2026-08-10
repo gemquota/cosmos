@@ -29,6 +29,7 @@ from rsis.shared_memory import SharedMemoryManager
 from rsis.signals.stub_detector import StubDetector
 from rsis.telemetry import TelemetryCollector, TelemetryEvent
 from rsis.timeout import Budget, TimeoutError
+from rsis.verify import contracts_gate, record_verification, repo_root
 
 logger = logging.getLogger(__name__)
 
@@ -125,8 +126,10 @@ class L2ImprovementLoop:
                 ))
 
                 # 2. Checkpoint before submitting to evaluator
+                pre_commit = None
                 if CONFIG.checkpoint_before_mutation:
-                    self.checkpoint.checkpoint(f"l2-candidate-{attempt}")
+                    pre_commit = self.checkpoint.checkpoint(
+                        f"l2-candidate-{attempt}")
 
                 # 3. Submit to evaluator
                 eval_result = self.evaluator.evaluate({
@@ -152,10 +155,25 @@ class L2ImprovementLoop:
                 if eval_result.passed:
                     logger.info("L2 candidate approved on attempt %d", attempt)
                     try:
+                        # Phase 7: contract gate blocks the apply pipeline.
+                        contract_ok, contract_fail = contracts_gate(
+                            repo_root(Path(CONFIG.workspace_dir).resolve()))
+                        if not contract_ok:
+                            logger.warning(
+                                "contract gate FAIL (%d) — blocking apply",
+                                contract_fail)
+                            record_verification(
+                                CONFIG.workspace_dir, candidate, eval_result,
+                                pre_commit=pre_commit, contract_ok=False,
+                                contract_fail=contract_fail)
+                            break
                         self._apply_improvement(candidate)
                         self.checkpoint.checkpoint(
                             f"l2-applied-{attempt}-{candidate.description[:30]}"
                         )
+                        record_verification(
+                            CONFIG.workspace_dir, candidate, eval_result,
+                            pre_commit=pre_commit, contract_ok=True)
                         applied = candidate
                         self.recovery.reset_failure_count()
                     except Exception as e:

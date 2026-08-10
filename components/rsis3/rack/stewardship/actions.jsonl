@@ -1,0 +1,2 @@
+{"actor": "system", "kind": "onboard", "name": "demo", "profile": {"allowed_paths": [], "created_at": "2026-08-10T02:52:01Z", "goals": ["self-improve the codebase"], "loop_tuning": {}, "name": "demo", "origin": "rsis-init", "repo": "demo/engine", "space_series": [1, 2, 3, 4, 5, 6, 7], "synthesis_namespace": "project:demo", "version": 1}, "repo": "demo/engine", "ts": "2026-08-10T02:52:01Z"}
+{"action": "retune", "actor": "system", "attested": true, "detail": "exercise", "kind": "custody", "peer": "peer-demo", "ts": "2026-08-10T02:52:01Z"}

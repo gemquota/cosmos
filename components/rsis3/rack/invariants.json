@@ -1,0 +1,37 @@
+[
+  {
+    "id": "state_files_disjoint",
+    "description": "tuner state files disjoint",
+    "repairable": false
+  },
+  {
+    "id": "telemetry_coverage",
+    "description": "every loop start has a complete",
+    "repairable": false
+  },
+  {
+    "id": "kg_idempotency",
+    "description": "KG nodes/edges have unique ids",
+    "repairable": true
+  },
+  {
+    "id": "state_schemas",
+    "description": "state files parse and hold required fields",
+    "repairable": false
+  },
+  {
+    "id": "envelope_conformance",
+    "description": "repo contract suite passes",
+    "repairable": false
+  },
+  {
+    "id": "ast_invariants",
+    "description": "package python files compile",
+    "repairable": false
+  },
+  {
+    "id": "stale_locks",
+    "description": "no stale lock files",
+    "repairable": true
+  }
+]

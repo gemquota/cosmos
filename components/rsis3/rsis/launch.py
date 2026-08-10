@@ -36,21 +36,24 @@ def package_root() -> Path:
     return Path(__file__).resolve().parent.parent
 
 
-def plan_batch(cycles: int, goal_space_cycle: int = 1) -> list[tuple[str, str]]:
+def plan_batch(cycles: int, goal_space_cycle: int = 1,
+               goal: Optional[str] = None) -> list[tuple[str, str]]:
     """Return the ``(loop, goal)`` plan for a full L1–L9 batch.
 
     Every cycle's ``run`` sources its L2 goal from a SPACE spec artifact
     (``from-space``), so a batch covers the whole 326-probe framework via
     series rotation (1..7). ``goal_space_cycle`` is kept for backward
-    compatibility but every cycle is now space-sourced.
+    compatibility but every cycle is now space-sourced. ``goal`` (Phase 11:
+    a project profile goal) overrides the run-loop goal for every cycle.
     """
     cycles = max(1, int(cycles))
     max(1, int(goal_space_cycle))  # kept for CLI/API compatibility
+    run_goal = goal or FROM_SPACE_GOAL
     plan: list[tuple[str, str]] = []
     for c in range(1, cycles + 1):
         for loop in LOOP_ORDER:
             if loop == "run":
-                plan.append((loop, FROM_SPACE_GOAL))
+                plan.append((loop, run_goal))
             else:
                 plan.append((loop, DEFAULT_GOAL))
     return plan
@@ -76,14 +79,15 @@ def _default_executor(cwd: Path) -> Executor:
 def run_batch(cycles: int, goal_space_cycle: int = 1,
               disk_pct: Optional[int] = None,
               executor: Optional[Executor] = None,
-              cwd: Optional[Path] = None) -> dict:
+              cwd: Optional[Path] = None,
+              goal: Optional[str] = None) -> dict:
     """Execute a batch and return a results summary.
 
     ``executor`` defaults to spawning ``python -m rsis`` subprocesses in
     the package root. The summary carries the full plan, per-loop failure
     counts, and a single ``exit_code`` (0 when every execution succeeded).
     """
-    plan = plan_batch(cycles, goal_space_cycle)
+    plan = plan_batch(cycles, goal_space_cycle, goal=goal)
     root = cwd or package_root()
     disk = str(disk_pct) if disk_pct is not None else os.environ.get(
         "RSIS_DISK_USAGE_PCT", "100")
@@ -109,6 +113,7 @@ def run_batch(cycles: int, goal_space_cycle: int = 1,
         "executions": len(plan),
         "goal_space_cycle": max(1, int(goal_space_cycle)),
         "disk_pct": disk,
+        "goal": goal,
         "plan": [{"loop": l, "goal": g} for l, g in plan],
         "per_loop_failures": per_loop,
         "failed": [{"loop": l, "goal": g} for l, g in failed],

@@ -1,0 +1,10 @@
+{
+ "files": {
+  "rack/attestations/chain.jsonl": {
+   "copies": 1,
+   "sha": "61af1f537e2083b0c34cad3e050a63a7191149173648712c12da93e1d1976c6a"
+  }
+ },
+ "replication": 2,
+ "version": 1
+}

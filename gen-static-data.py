@@ -6,7 +6,7 @@ exists on the deployed site. Run from the repo root, then commit.
 
     python3 gen-static-data.py
 """
-import json, os, subprocess, sys, datetime
+import json, os, re, subprocess, sys, datetime
 from pathlib import Path
 
 # Shared OKF frontmatter parser (enriched files.json entries).
@@ -24,6 +24,121 @@ def tracked(prefix=None):
 
 def visible(path):
     return not any(seg.startswith('.') for seg in path.split('/'))
+
+def build_dashboard_payload(rsis3):
+    """Rebuild rack/pulses/dashboard-data.json from live loop telemetry.
+
+    The RRP v2 pulse pipeline (``rack/pulses/pulse-*.json``) is no longer
+    the source of truth — the nine loops write ``.rsis/telemetry/*.jsonl``
+    instead. This derives the legacy dashboard schema (pulses / goals /
+    score_history / summary) from that telemetry:
+
+    - one *pulse* per telemetry session file,
+    - *goals* from l2_start/l2_complete pairs (goal text + PASS/FAIL),
+    - *score_history* = per-UTC-day L1–L9 activity (0–100, normalized),
+    - *summary* = pass/fail/hold counts + implementations (l5 PASS).
+    """
+    tel_dir = Path(rsis3) / '.rsis' / 'telemetry'
+    goals, pulses, day_counts, pd = [], [], {}, {}
+    idx = 0
+    for f in sorted(tel_dir.glob('*.jsonl')):
+        evs = []
+        try:
+            evs = [json.loads(l) for l in f.read_text().splitlines()
+                   if l.strip()]
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not evs:
+            continue
+        idx += 1
+        pid = '%03d' % idx
+        first_ts = last_ts = None
+        open_goal = None
+        g_n = approved = impl = 0
+        confs = []
+        for ev in evs:
+            et = ev.get('type', '')
+            ts = ev.get('timestamp')
+            if ts:
+                first_ts = ts if first_ts is None else min(first_ts, ts)
+                last_ts = ts if last_ts is None else max(last_ts, ts)
+            m = re.match(r'l([1-9])_complete$', et)
+            if m and ts:
+                lk = 'L' + m.group(1)
+                day_counts.setdefault(ts[:10], {}).setdefault(lk, 0)
+                day_counts[ts[:10]][lk] += 1
+            if et == 'l2_start':
+                open_goal = {'p': pid,
+                             'd': ev.get('goal') or '(l2 goal)',
+                             'dec': 'HOLD', 'type': 'improvement',
+                             'constraints': {}, 'conversation': [],
+                             'conf': '', 'file': '', 'func': ''}
+            elif et == 'l2_complete':
+                if open_goal:
+                    ok = bool(ev.get('success'))
+                    open_goal['dec'] = 'PASS' if ok else 'FAIL'
+                    goals.append(open_goal)
+                    g_n += 1
+                    if ok:
+                        approved += 1
+                    open_goal = None
+            elif et == 'l5_evaluation':
+                if ev.get('decision') == 'PASS':
+                    impl += 1
+                sa = ev.get('score_avg')
+                if sa is not None:
+                    try:
+                        confs.append(float(sa))
+                    except (TypeError, ValueError):
+                        pass
+        if open_goal:  # started but never completed -> HOLD
+            goals.append(open_goal)
+            g_n += 1
+        duration = 0.0
+        if first_ts and last_ts:
+            try:
+                fdt = datetime.datetime.fromisoformat(
+                    str(first_ts).replace('Z', '+00:00'))
+                ldt = datetime.datetime.fromisoformat(
+                    str(last_ts).replace('Z', '+00:00'))
+                duration = (ldt - fdt).total_seconds()
+            except ValueError:
+                duration = 0.0
+        pulses.append({
+            'id': idx, 'type': 'telemetry-run',
+            'ts_start': str(first_ts or '')[:19].replace('T', ' '),
+            'duration': round(duration, 1),
+            'goals_count': g_n, 'approved': approved,
+            'implementation_count': impl,
+            'avg_confidence': (round(sum(confs) / len(confs), 3)
+                               if confs else 0.0),
+        })
+        pd[pid] = {'pre_state': {'telemetry_events': len(evs),
+                                 'goals': g_n, 'loops': 9}}
+    score_history = {}
+    for day, counts in sorted(day_counts.items()):
+        mx = max(counts.values()) or 1
+        score_history[day] = {
+            'L%d' % i: round(counts.get('L%d' % i, 0) / mx * 100, 1)
+            for i in range(1, 10)}
+    tot = len(goals)
+    pass_n = sum(1 for gx in goals if gx['dec'] == 'PASS')
+    fail_n = sum(1 for gx in goals if gx['dec'] == 'FAIL')
+    hold_n = sum(1 for gx in goals if gx['dec'] == 'HOLD')
+    return {
+        'pulses': pulses, 'goals': goals, 'pulse_data': pd,
+        'score_history': score_history, 'telemetry_aggregates': {},
+        'generated': datetime.datetime.now(
+            datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+        'summary': {
+            'tot': tot, 'pass': pass_n, 'hold': hold_n, 'fail': fail_n,
+            'impl_count': sum(p['implementation_count'] for p in pulses),
+            'pulse_count': len(pulses),
+            'ca': round(pass_n / tot, 3) if tot else 0.0,
+            'cd': {},
+        },
+    }
+
 
 prefix = 'components/mykb/'
 md = sorted((p[len(prefix):] if p.startswith(prefix) else p)
@@ -49,14 +164,24 @@ def count(prefix):
 def md_count(prefix):
     return len([p for p in allf if p.startswith(prefix + '/') and p.endswith('.md')])
 
+# Dashboard payload (Overview/Pulses/KG/Graphs/Constraints) — rebuilt
+# from live loop telemetry when writing; validated as-committed in --check.
+dash_path = Path(RSIS3) / 'rack' / 'pulses' / 'dashboard-data.json'
 telemetry = {}
 try:
-    d = json.load(open('components/rsis3/rack/pulses/dashboard-data.json'))
-    sm = d.get('summary', {})
+    if write:
+        payload = build_dashboard_payload(RSIS3)
+        dash_path.parent.mkdir(parents=True, exist_ok=True)
+        json.dump(payload, open(dash_path, 'w'), indent=1)
+    else:
+        payload = json.load(open(dash_path))
+    sm = payload.get('summary', {})
     telemetry = {
-        'pulses': len(d.get('pulses', [])), 'goals': len(d.get('goals', [])),
-        'passed': sm.get('pass', 0), 'failed': sm.get('fail', 0), 'held': sm.get('hold', 0),
-        'total': sm.get('tot', 0), 'improvements': sm.get('impl_count', 0),
+        'pulses': len(payload.get('pulses', [])),
+        'goals': len(payload.get('goals', [])),
+        'passed': sm.get('pass', 0), 'failed': sm.get('fail', 0),
+        'held': sm.get('hold', 0), 'total': sm.get('tot', 0),
+        'improvements': sm.get('impl_count', 0),
     }
 except Exception:
     pass
@@ -203,6 +328,123 @@ loops = {
 if write:
     json.dump(loops, open(f'{RSIS3}/dashboard/loops.json', 'w'), indent=1)
 
+# ── Epoch-1 telemetry snapshot (Roadmap tab "Epoch 1" strip) ───────────────
+# Parses .rsis/telemetry/epoch1.jsonl (the shared append-only channel used by
+# all phases 16–50) so the dashboard can show per-sequel event counts without
+# each phase shipping its own pipeline. Event type prefixes map to sequels.
+EPOCH1_SEQUEL_PREFIX = {
+    'IV': ('attestation', 'portable', 'redteam', 'apps'),
+    'V': ('identity', 'exchange', 'swarm', 'popgov', 'resilience'),
+    'VI': ('metagov', 'capacity', 'goals', 'steward', 'endurance'),
+    'VII': ('inheritance', 'archive', 'succession', 'mission', 'generation'),
+    'VIII': ('decision', 'policy', 'delegation', 'trust', 'codesign'),
+    'IX': ('standard', 'commons', 'treaty', 'crisis'),
+    'X': ('study', 'experiment', 'failure', 'nearmiss', 'meta-invariant', 'epoch'),
+}
+EPOCH1_SEQUELS = ['IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X']
+
+
+def epoch1_telemetry(rsis3_dir):
+    """Count epoch-1 telemetry events from the workspace log."""
+    path = Path(rsis3_dir) / '.rsis' / 'telemetry' / 'epoch1.jsonl'
+    by_type = {}
+    if path.is_file():
+        for line in path.read_text(encoding='utf-8', errors='ignore').splitlines():
+            if not line.strip():
+                continue
+            try:
+                ev = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            t = ev.get('type') or ''
+            if t:
+                by_type[t] = by_type.get(t, 0) + 1
+    sequels = {r: 0 for r in EPOCH1_SEQUELS}
+    other = 0
+    for t, n in by_type.items():
+        prefix = t.split('.', 1)[0]
+        placed = False
+        for rom, prefixes in EPOCH1_SEQUEL_PREFIX.items():
+            if prefix in prefixes:
+                sequels[rom] += n
+                placed = True
+                break
+        if not placed:
+            other += n
+    return {
+        'events': sum(by_type.values()),
+        'sequels': sequels,
+        'other': other,
+        'by_type': dict(sorted(by_type.items(), key=lambda kv: -kv[1])[:12]),
+    }
+
+
+# ── Roadmap snapshot (drives the dashboard "Roadmap" tab) ───────────────
+# Parses the status tables in the main roadmap + sequel docs so the program
+# registry (100 phases / 2 epochs) stays in sync with the source documents.
+ROMAN = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII', 8: 'VIII',
+         9: 'IX', 10: 'X', 11: 'XI', 12: 'XII', 13: 'XIII', 14: 'XIV', 15: 'XV',
+         16: 'XVI', 17: 'XVII', 18: 'XVIII', 19: 'XIX', 20: 'XX'}
+roadmap_phases, roadmap_arcs = [], []
+for num in range(1, 21):
+    rom = ROMAN[num]
+    fname = 'multi-phase-development-roadmap.md' if num == 1 \
+        else f'multi-phase-development-roadmap-sequel-{num}.md'
+    path = os.path.join(RSIS3, 'docs', fname)
+    if not os.path.exists(path):
+        continue
+    text = open(path, encoding='utf-8', errors='ignore').read()
+    if num == 1:
+        title, arc = 'Operational Autonomy', \
+            'build → communicate → secure → persist → observe → operate → self-retune'
+    else:
+        m = re.search(r'Maturity arc: Phases [^—]+— \*\*(.+?)\*\*', text, re.S)
+        title = m.group(1).strip() if m else f'Sequel {rom}'
+        arc = ''
+        m = re.search(r'Maturity arc: Phases [^—]+— \*\*(.+?)\*\*\s*\((.+?)\)', text, re.S)
+        if m:
+            arc = ' '.join(m.group(2).split())
+    for row in text.split('## Status', 1)[-1].splitlines():
+        m = re.match(r'\|\s*Phase (\d+)\s*—\s*(.+?)\s*\|\s*([^|]+?)\s*\|\s*(.+?)\s*\|', row)
+        if not m:
+            continue
+        n = int(m.group(1))
+        status_raw = m.group(4).strip()
+        if '✅ delivered' in status_raw:
+            status = 'validation' if '⏳' in status_raw else 'delivered'
+        else:
+            status = 'queued'
+        roadmap_phases.append({
+            'n': n, 'name': m.group(2).strip(), 'area': m.group(3).strip(),
+            'status': status, 'status_raw': status_raw,
+            'epoch': 1 if n <= 50 else 2, 'sequel': rom, 'doc': fname,
+        })
+    roadmap_arcs.append({
+        'sequel': rom, 'phases': f'Phases {num * 5 - 4}–{num * 5}',
+        'title': title, 'arc': arc, 'epoch': 1 if num <= 10 else 2, 'doc': fname,
+    })
+roadmap_phases.sort(key=lambda p: p['n'])
+roadmap_counts = {
+    'total': len(roadmap_phases),
+    'delivered': sum(1 for p in roadmap_phases if p['status'] == 'delivered'),
+    'validation': sum(1 for p in roadmap_phases if p['status'] == 'validation'),
+    'queued': sum(1 for p in roadmap_phases if p['status'] == 'queued'),
+}
+roadmap = {
+    'generated': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%MZ'),
+    'note': 'Parsed from the main roadmap + sequel docs status tables; '
+            'autonomy is cumulative but never unconditional.',
+    'epochs': [
+        {'id': 1, 'phases': '1–50', 'sequels': 'I–X', 'title': 'Epoch 1 — one lineage to decade-scale maturity'},
+        {'id': 2, 'phases': '51–100', 'sequels': 'XI–XX', 'title': 'Epoch 2 — the Age of Living Systems'},
+    ],
+    'arcs': roadmap_arcs,
+    'phases': roadmap_phases,
+    'counts': roadmap_counts,
+}
+if write:
+    json.dump(roadmap, open(f'{RSIS3}/dashboard/roadmap.json', 'w'), indent=1)
+
 eco = {
     'generated': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%MZ'),
     'components': {
@@ -211,6 +453,15 @@ eco = {
         'rsis3': {'files': count('components/rsis3')},
     },
     'telemetry': telemetry,
+    'epoch1': epoch1_telemetry(RSIS3),
+    'roadmaps': {
+        'epochs': len(roadmap['epochs']),
+        'sequels': len(roadmap_arcs),
+        'phases': roadmap_counts['total'],
+        'delivered': roadmap_counts['delivered'],
+        'validation_pending': roadmap_counts['validation'],
+        'queued': roadmap_counts['queued'],
+    },
 }
 if write:
     json.dump(eco, open(f'{RSIS3}/dashboard/ecosystem.json', 'w'), indent=1)
@@ -219,6 +470,9 @@ print(f'files.json: {len(md)} md files')
 print(f'ecosystem.json: {json.dumps(eco["components"])}')
 print(f'loops.json: {len(loops_out)} loops (runs: '
       + ', '.join(f"{e['id']}={e['runs']}" for e in loops_out if e['runs']) + ')')
+print(f'roadmap.json: {roadmap_counts["total"]} phases, '
+      + f"{roadmap_counts['delivered']} delivered, {roadmap_counts['validation']} validation pending, "
+      + f"{roadmap_counts['queued']} queued)")
 
 # Validation mode for CI/deploy: exit non-zero if the snapshot is inconsistent.
 if '--check' in sys.argv:
@@ -236,6 +490,11 @@ if '--check' in sys.argv:
     eco2 = json.load(open(f'{RSIS3}/dashboard/ecosystem.json'))
     fresh = fresh and eco2['components']['mykb']['md'] == len(md) \
         and eco2['components']['mykb']['files'] == count('components/mykb')
+    rm2 = json.load(open(f'{RSIS3}/dashboard/roadmap.json'))
+    fresh = fresh and rm2['counts']['total'] == len(roadmap_phases) \
+        and [p['n'] for p in rm2['phases']] == [p['n'] for p in roadmap_phases] \
+        and eco2.get('roadmaps', {}).get('phases') == roadmap_counts['total'] \
+        and eco2.get('epoch1', {}).get('events') == epoch1_telemetry(RSIS3)['events']
     ok = fresh and contract_fail == 0
     print('check:', 'OK' if ok else 'FAIL',
           f'({len(md)} entries, {len(bad)} bad, {contract_fail} contract FAIL)')

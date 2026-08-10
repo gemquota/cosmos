@@ -1,0 +1,2 @@
+{"expected_value": "unspecified", "fitness": null, "id": "g0", "proposer": "system", "ratified_by": null, "rationale": "live validation pass", "source": "epoch1-exercise", "status": "proposed", "title": "Exercise epoch-1 stack", "ts": "2026-08-10T02:52:01Z"}
+{"expected_value": "co-designed", "fitness": null, "id": "g1", "proposer": "human", "ratified_by": null, "rationale": "line one line two", "source": "codesign:demo-project", "status": "proposed", "title": "Joint plan", "ts": "2026-08-10T02:52:02Z"}

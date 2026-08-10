@@ -1,0 +1,122 @@
+{
+ "windows": [
+  {
+   "checkins": [
+    {
+     "all_pass": false,
+     "criteria": [
+      {
+       "detail": "0 cycle cards (\u2265 1 expected)",
+       "id": "cadence",
+       "pass": false
+      },
+      {
+       "detail": "cycle-daemon.lock missing or stale",
+       "id": "lockfile",
+       "pass": false
+      },
+      {
+       "detail": "0 cost record(s) since start",
+       "id": "costs",
+       "pass": false
+      },
+      {
+       "detail": "0 summary day(s) (\u2265 1 expected)",
+       "id": "daily_summary",
+       "pass": false
+      },
+      {
+       "detail": "0 applied retune(s) (one per convergence episode)",
+       "id": "auto_retune",
+       "pass": true
+      },
+      {
+       "detail": "0 incident(s) \u2014 supervision/self-heal logged when they occur",
+       "id": "bridge_heal",
+       "pass": true
+      },
+      {
+       "detail": "contracts validate 0 FAIL",
+       "id": "gates",
+       "pass": true
+      }
+     ],
+     "elapsed_h": 0.0,
+     "evidence": {
+      "auto_retunes": 0,
+      "contracts_green": true,
+      "cost_records": 0,
+      "cycle_cards": 0,
+      "daily_summaries": 0,
+      "elapsed_h": 0.0,
+      "incidents": 0,
+      "lock_held": false
+     },
+     "ts": "2026-08-10T05:02:55Z",
+     "window_ended": false
+    },
+    {
+     "all_pass": false,
+     "criteria": [
+      {
+       "detail": "0 cycle cards (\u2265 1 expected)",
+       "id": "cadence",
+       "pass": false
+      },
+      {
+       "detail": "cycle-daemon.lock fresh",
+       "id": "lockfile",
+       "pass": true
+      },
+      {
+       "detail": "0 cost record(s) since start",
+       "id": "costs",
+       "pass": false
+      },
+      {
+       "detail": "0 summary day(s) (\u2265 1 expected)",
+       "id": "daily_summary",
+       "pass": false
+      },
+      {
+       "detail": "0 applied retune(s) (one per convergence episode)",
+       "id": "auto_retune",
+       "pass": true
+      },
+      {
+       "detail": "0 incident(s) \u2014 supervision/self-heal logged when they occur",
+       "id": "bridge_heal",
+       "pass": true
+      },
+      {
+       "detail": "contracts validate 0 FAIL",
+       "id": "gates",
+       "pass": true
+      }
+     ],
+     "elapsed_h": 0.006,
+     "evidence": {
+      "auto_retunes": 0,
+      "contracts_green": true,
+      "cost_records": 0,
+      "cycle_cards": 0,
+      "daily_summaries": 0,
+      "elapsed_h": 0.006,
+      "incidents": 0,
+      "lock_held": true
+     },
+     "ts": "2026-08-10T05:03:15Z",
+     "window_ended": false
+    }
+   ],
+   "completed_at": null,
+   "ends_at": "2026-08-11T05:02:51Z",
+   "hours": 24,
+   "id": "p4-24h-20260810T050251Z",
+   "kind": "p4-24h",
+   "started_at": "2026-08-10T05:02:51Z",
+   "status": "running",
+   "title": "Phase 4 \u2014 24h unattended 3-min cadence"
+  }
+ ]
+}

@@ -45,6 +45,4 @@ status: "growing"
   above the 80% resource limit.
 
 ## Related
-- [[wiki/syntheses/rsis3-l3-cycle-23-cross-session-memory-consolidation-2026-08-08|RSIS3 L3 cycle 23 — cross-session memory consolidation]]
 - [[wiki/syntheses/rsis3-pass-13-deterministic-evaluator-gate-2026-08-07|RSIS3 pass 13 — deterministic evaluator gate]]
-- [[wiki/syntheses/rsis3-l3-cycle-3-cross-session-memory-consolidation-2026-08-06|RSIS3 L3 cycle 3 — cross-session memory consolidation]]

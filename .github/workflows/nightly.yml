@@ -1,0 +1,45 @@
+name: COSMOS Nightly Summary (Phase 5)
+
+on:
+  schedule:
+    - cron: '23 23 * * *'   # once a day, near end of UTC day
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  nightly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install --quiet numpy networkx psutil
+
+      - name: Write daily summary note
+        run: |
+          cd components/rsis3
+          git config user.name "RSIS Test"
+          git config user.email "rsis@test.local"
+          python3 -m rsis nightly-summary --json
+          cd "$GITHUB_WORKSPACE"
+          git add components/mykb/wiki/syntheses/rsis3-daily-summary-*.md components/mykb/log.md
+          if ! git diff --cached --quiet; then
+            git commit -m "rsis: nightly summary — $(date -u +%Y-%m-%d)"
+          fi
+          python3 gen-static-data.py
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "rsis: snapshot regeneration — $(date -u +%Y-%m-%dT%H:%MZ)"
+          fi
+          git pull --rebase origin main || true
+          git push origin main

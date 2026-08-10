@@ -58,6 +58,35 @@
   --selection: #1a3a6a;
   --search-bg: #0a0a0a;
   --search-border: #222222;
+/* Unified COSMOS embed — match the RSIS3 dashboard palette exactly. */
+html.cosmos-embed[data-theme="amoled"] {
+  --bg: #0f172a;
+  --sidebar-bg: #0b1120;
+  --text: #e2e8f0;
+  --text-soft: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+  --accent-soft: #1e1b4b;
+  --meta-accent: #a78bfa;
+  --meta-accent-soft: #241a4a;
+  --border: #1e293b;
+  --code-bg: #0b1120;
+  --code-text: #cbd5e1;
+  --hover-bg: #111827;
+  --active-bg: #1e293b;
+  --quote-border: #1e293b;
+  --quote-bg: #0b1120;
+  --hr-color: #1e293b;
+  --selection: #1a3a6a;
+  --search-bg: #0b1120;
+  --search-border: #1e293b;
+  --search-focus: #6366f1;
+  --toggle-bg: #1e293b;
+  --toggle-knob: #94a3b8;
+  --overlay-bg: rgba(2, 6, 23, 0.6);
+}
+
   --search-focus: #6b9aff;
   --toggle-bg: #222222;
   --toggle-knob: #e0e0e0;
@@ -2474,6 +2503,13 @@ var sidebarHeaderTitle = document.getElementById('sidebar-header-title');
    ═══════════════════════════════════════════ */
 
 var currentTheme = localStorage.getItem('md-theme') || 'light';
+// Unified COSMOS embed: the dashboard embeds this wiki as part of one
+// cohesive web app — force the amoled palette (dashboard-matching overrides
+// below) and stop theme cycling from the toggle.
+if (location.search.indexOf('embed=cosmos') > -1) {
+  currentTheme = 'amoled';
+  document.documentElement.classList.add('cosmos-embed');
+}
 document.documentElement.setAttribute('data-theme', currentTheme);
 updateThemeLabel();
 

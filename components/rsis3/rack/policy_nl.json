@@ -1,0 +1,25 @@
+{
+ "compiled": [
+  {
+   "compiled": true,
+   "kind": "budget",
+   "policy_key": "per_loop",
+   "sentence": "never spend more than $0.05 per day on evaluator",
+   "value": {
+    "evaluator": {
+     "daily_usd": 0.05
+    }
+   }
+  },
+  {
+   "compiled": true,
+   "kind": "budget",
+   "policy_key": "default_daily_usd",
+   "sentence": "spend at most $0.10 per day",
+   "value": 0.1
+  }
+ ],
+ "conflicts": [],
+ "rejected": [],
+ "ts": "2026-08-10T02:52:02Z"
+}

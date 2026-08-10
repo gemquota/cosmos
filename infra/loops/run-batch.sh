@@ -73,12 +73,12 @@ python3 -m rsis check-practices || FAIL=1
 echo ""
 echo "── Snapshot regeneration ─────────────────────────"
 cd "$DIR"
-# gen-static-data.py lists git-tracked files only, so commit the batch's
-# outputs (telemetry, checkpoints, L3-written syntheses) before regenerating
-# snapshots — otherwise --check validates a stale-but-consistent tree and the
-# committed files.json misses the new syntheses (2026-08-07 CI batch).
-add_existing components/rsis3/.rsis components/rsis3/dashboard \
-        components/rsis3/rack components/mykb/wiki/syntheses \
+# Stage only the batch's durable MyKB artifacts before regenerating
+# snapshots. Runtime state (.rsis/) is gitignored and snapshots are
+# regenerated in the commit below — never sweep either into a results
+# commit. gen-static-data.py lists tracked files only, so the syntheses
+# must land first or files.json misses them (2026-08-07 CI batch).
+add_existing components/mykb/wiki/syntheses \
         components/mykb/wiki/assessments components/mykb/wiki/reflections \
         components/mykb/wiki/backlog components/mykb/log.md \
         components/mykb/log.json components/mykb/guidance.json

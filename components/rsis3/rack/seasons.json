@@ -1,0 +1,16 @@
+{
+  "season_id": 1,
+  "name": "communication",
+  "started_at": "2026-08-09T18:25:52Z",
+  "rotations": 1,
+  "domains": [
+    "output",
+    "communication",
+    "envelopes",
+    "bridge",
+    "memory",
+    "verification",
+    "governance"
+  ],
+  "rotation_days": 7
+}

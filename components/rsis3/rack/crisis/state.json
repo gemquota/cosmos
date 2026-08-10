@@ -1,0 +1,13 @@
+{
+ "active": false,
+ "entered_at": "2026-08-10T02:52:02Z",
+ "entered_by": "system",
+ "exited_at": "2026-08-10T02:52:02Z",
+ "exited_by": "system",
+ "mode": {
+  "budget_divert": "policy-critical",
+  "reads": "open",
+  "writes": "fail-closed"
+ },
+ "profile": "default"
+}

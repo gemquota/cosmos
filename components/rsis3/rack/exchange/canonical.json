@@ -1,0 +1,12 @@
+{
+ "items": {
+  "cbff7812bba02424451c7f6bc7f558aa860d4d5a95dbedde3ace58c8b690f73d": {
+   "adopted": "2026-08-10T02:51:59Z",
+   "content": "always verify before applying",
+   "duplicate_of": null,
+   "origin": "demo",
+   "title": "Durable rule"
+  }
+ },
+ "version": 1
+}
