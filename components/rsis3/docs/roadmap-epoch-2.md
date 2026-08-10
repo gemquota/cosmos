@@ -109,7 +109,7 @@ registry, each with its arc, area and status.
 
 ## Epoch registry
 
-Both epochs are recorded in `rack/epochs.json` (delivered with Phase 50's
-capstone work and extended by Phase 100): epoch identifiers, phase
+Both epochs are recorded in `rack/epochs.json` (introduced with Phase 50
+and extended by Phase 100): epoch identifiers, phase
 ranges, arc maps and per-phase status. The registry is the machine-
 readable source of truth that the dashboard Roadmap tab renders.

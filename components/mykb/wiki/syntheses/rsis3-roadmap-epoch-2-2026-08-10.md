@@ -11,8 +11,8 @@ status: "growing"
 
 Epoch 2 — the Age of Living Systems — moves from one lineage of
 intelligence to a society of them. It is documented in
-`components/rsis3/docs/roadmap-epoch-2.md`; both epochs are recorded in
-`rack/epochs.json` (delivered with Phase 50 and extended by Phase 100).
+`components/rsis3/docs/roadmap-epoch-2.md`; both epochs will be recorded in
+`rack/epochs.json` (introduced with Phase 50 and extended by Phase 100).
 
 ## Sequels (XI–XX)
 
