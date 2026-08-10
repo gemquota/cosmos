@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "name": "demo",
+  "repo": "demo/engine",
+  "goals": [
+    "self-improve the codebase"
+  ],
+  "allowed_paths": [],
+  "loop_tuning": {},
+  "space_series": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "synthesis_namespace": "project:demo",
+  "created_at": "2026-08-10T02:52:01Z",
+  "origin": "rsis-init"
+}

@@ -1,0 +1,17 @@
+{
+ "studies": {
+  "epoch1-demo": {
+   "cohorts": [
+    "all"
+   ],
+   "defined": "2026-08-10T02:52:02Z",
+   "hypothesis": "fitness holds",
+   "id": "epoch1-demo",
+   "metrics": [
+    "fitness"
+   ],
+   "window_days": 90
+  }
+ },
+ "version": 1
+}

@@ -1,0 +1,2 @@
+{"context": "parallel", "fix": "atomic", "incident_id": "inc-demo-1", "root_cause": "lock contention", "trigger": "flock", "ts": "2026-08-10T02:52:02Z", "verification": "verified"}
+{"context": "overlap", "fix": "serialize", "incident_id": "inc-demo-2", "root_cause": "lock contention", "trigger": "flock", "ts": "2026-08-10T02:52:02Z", "verification": "verified"}

@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-10T01:49Z",
+ "generated": "2026-08-10T03:54Z",
  "note": "Parsed from the main roadmap + sequel docs status tables; autonomy is cumulative but never unconditional.",
  "epochs": [
   {
@@ -332,8 +332,8 @@
    "n": 16,
    "name": "Public attestation & external audit",
    "area": "verification",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 an external verifier replays a recorded candidate live validation pending",
    "epoch": 1,
    "sequel": "IV",
    "doc": "multi-phase-development-roadmap-sequel-4.md"
@@ -342,8 +342,8 @@
    "n": 17,
    "name": "Open interop protocol",
    "area": "protocol",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a non-Cosmos client implements the spec from the live validation pending",
    "epoch": 1,
    "sequel": "IV",
    "doc": "multi-phase-development-roadmap-sequel-4.md"
@@ -352,8 +352,8 @@
    "n": 18,
    "name": "Portable instances & reproducible workspaces",
    "area": "ops",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 an instance exported from host A cold-starts on host live validation pending",
    "epoch": 1,
    "sequel": "IV",
    "doc": "multi-phase-development-roadmap-sequel-4.md"
@@ -362,8 +362,8 @@
    "n": 19,
    "name": "External evaluation & red-teaming",
    "area": "security",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 the harness runs in CI with zero un-triaged live validation pending",
    "epoch": 1,
    "sequel": "IV",
    "doc": "multi-phase-development-roadmap-sequel-4.md"
@@ -372,8 +372,8 @@
    "n": 20,
    "name": "Public API surface",
    "area": "product",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 an external app submits a candidate through the live validation pending",
    "epoch": 1,
    "sequel": "IV",
    "doc": "multi-phase-development-roadmap-sequel-4.md"
@@ -382,8 +382,8 @@
    "n": 21,
    "name": "Instance identity & trust graph",
    "area": "federation",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 two instances exchange a signed synthesis and each live validation pending",
    "epoch": 1,
    "sequel": "V",
    "doc": "multi-phase-development-roadmap-sequel-5.md"
@@ -392,8 +392,8 @@
    "n": 22,
    "name": "Knowledge economy & exchange at scale",
    "area": "memory",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 one synthesis propagates through three instances live validation pending",
    "epoch": 1,
    "sequel": "V",
    "doc": "multi-phase-development-roadmap-sequel-5.md"
@@ -402,8 +402,8 @@
    "n": 23,
    "name": "Swarm coordination & distributed cycles",
    "area": "orchestration",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a cross-instance cycle produces a candidate verified live validation pending",
    "epoch": 1,
    "sequel": "V",
    "doc": "multi-phase-development-roadmap-sequel-5.md"
@@ -412,8 +412,8 @@
    "n": 24,
    "name": "Population governance",
    "area": "governance",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a policy change propagates to a three-instance live validation pending",
    "epoch": 1,
    "sequel": "V",
    "doc": "multi-phase-development-roadmap-sequel-5.md"
@@ -422,8 +422,8 @@
    "n": 25,
    "name": "Ecosystem resilience",
    "area": "reliability",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 killing one of three instances mid-cycle leaves the live validation pending",
    "epoch": 1,
    "sequel": "V",
    "doc": "multi-phase-development-roadmap-sequel-5.md"
@@ -432,8 +432,8 @@
    "n": 26,
    "name": "Meta-governance",
    "area": "governance",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 one full season where every policy change was live validation pending",
    "epoch": 1,
    "sequel": "VI",
    "doc": "multi-phase-development-roadmap-sequel-6.md"
@@ -442,8 +442,8 @@
    "n": 27,
    "name": "Resource sovereignty & sustainability",
    "area": "ops",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a 90-day budget forecast holds within tolerance; the live validation pending",
    "epoch": 1,
    "sequel": "VI",
    "doc": "multi-phase-development-roadmap-sequel-6.md"
@@ -452,8 +452,8 @@
    "n": 28,
    "name": "Self-directed learning goals",
    "area": "autonomy",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 one full season where L2 goals were system-proposed live validation pending",
    "epoch": 1,
    "sequel": "VI",
    "doc": "multi-phase-development-roadmap-sequel-6.md"
@@ -462,8 +462,8 @@
    "n": 29,
    "name": "Autonomous stewardship",
    "area": "orchestration",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 the engine autonomously maintains two peer instances live validation pending",
    "epoch": 1,
    "sequel": "VI",
    "doc": "multi-phase-development-roadmap-sequel-6.md"
@@ -472,8 +472,8 @@
    "n": 30,
    "name": "Enduring autonomy",
    "area": "autonomy",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 365 days unattended except quarterly policy live validation pending",
    "epoch": 1,
    "sequel": "VI",
    "doc": "multi-phase-development-roadmap-sequel-6.md"
@@ -482,8 +482,8 @@
    "n": 31,
    "name": "Knowledge inheritance",
    "area": "memory",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a successor instance cold-starts from an inheritance live validation pending",
    "epoch": 1,
    "sequel": "VII",
    "doc": "multi-phase-development-roadmap-sequel-7.md"
@@ -492,8 +492,8 @@
    "n": 32,
    "name": "Archival immortality",
    "area": "ops",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a simulated media failure corrupts one copy and the live validation pending",
    "epoch": 1,
    "sequel": "VII",
    "doc": "multi-phase-development-roadmap-sequel-7.md"
@@ -502,8 +502,8 @@
    "n": 33,
    "name": "Succession planning",
    "area": "governance",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a full custody transfer completes with overlap live validation pending",
    "epoch": 1,
    "sequel": "VII",
    "doc": "multi-phase-development-roadmap-sequel-7.md"
@@ -512,8 +512,8 @@
    "n": 34,
    "name": "Mission continuity",
    "area": "autonomy",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a mission started under one generation is resumed by live validation pending",
    "epoch": 1,
    "sequel": "VII",
    "doc": "multi-phase-development-roadmap-sequel-7.md"
@@ -522,8 +522,8 @@
    "n": 35,
    "name": "Generational resilience",
    "area": "reliability",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a simulated decade of dependency and format churn is live validation pending",
    "epoch": 1,
    "sequel": "VII",
    "doc": "multi-phase-development-roadmap-sequel-7.md"
@@ -532,8 +532,8 @@
    "n": 36,
    "name": "Explainable autonomy",
    "area": "governance",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a non-expert panel answers \"why did it do that?\" live validation pending",
    "epoch": 1,
    "sequel": "VIII",
    "doc": "multi-phase-development-roadmap-sequel-8.md"
@@ -542,8 +542,8 @@
    "n": 37,
    "name": "Natural-language policy",
    "area": "governance",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a non-technical user authors three rules in plain live validation pending",
    "epoch": 1,
    "sequel": "VIII",
    "doc": "multi-phase-development-roadmap-sequel-8.md"
@@ -552,8 +552,8 @@
    "n": 38,
    "name": "Delegation contracts",
    "area": "governance",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a human delegates a bounded task, the system live validation pending",
    "epoch": 1,
    "sequel": "VIII",
    "doc": "multi-phase-development-roadmap-sequel-8.md"
@@ -562,8 +562,8 @@
    "n": 39,
    "name": "Trust calibration",
    "area": "autonomy",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 over- and under-trust rates each drop below a live validation pending",
    "epoch": 1,
    "sequel": "VIII",
    "doc": "multi-phase-development-roadmap-sequel-8.md"
@@ -572,8 +572,8 @@
    "n": 40,
    "name": "Co-design workspaces",
    "area": "product",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a human and the system jointly produce a goal and live validation pending",
    "epoch": 1,
    "sequel": "VIII",
    "doc": "multi-phase-development-roadmap-sequel-8.md"
@@ -582,8 +582,8 @@
    "n": 41,
    "name": "Cross-ecosystem standards",
    "area": "protocol",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 an external ecosystem implements the standard from live validation pending",
    "epoch": 1,
    "sequel": "IX",
    "doc": "multi-phase-development-roadmap-sequel-9.md"
@@ -592,8 +592,8 @@
    "n": 42,
    "name": "Global knowledge commons",
    "area": "memory",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 one synthesis is published to the commons, adopted live validation pending",
    "epoch": 1,
    "sequel": "IX",
    "doc": "multi-phase-development-roadmap-sequel-9.md"
@@ -602,8 +602,8 @@
    "n": 43,
    "name": "Inter-population diplomacy",
    "area": "governance",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 two populations sign a reciprocity treaty, a live validation pending",
    "epoch": 1,
    "sequel": "IX",
    "doc": "multi-phase-development-roadmap-sequel-9.md"
@@ -612,8 +612,8 @@
    "n": 44,
    "name": "Crisis response",
    "area": "reliability",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a crisis drill flips the system into degraded mode live validation pending",
    "epoch": 1,
    "sequel": "IX",
    "doc": "multi-phase-development-roadmap-sequel-9.md"
@@ -622,8 +622,8 @@
    "n": 45,
    "name": "Planetary stewardship",
    "area": "ops",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 three independent ecosystems coordinate a shared live validation pending",
    "epoch": 1,
    "sequel": "IX",
    "doc": "multi-phase-development-roadmap-sequel-9.md"
@@ -632,8 +632,8 @@
    "n": 46,
    "name": "Self-metrics & longitudinal studies",
    "area": "autonomy",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a 90-day longitudinal study is defined, runs live validation pending",
    "epoch": 1,
    "sequel": "X",
    "doc": "multi-phase-development-roadmap-sequel-10.md"
@@ -642,8 +642,8 @@
    "n": 47,
    "name": "Hypothesis-driven self-experimentation",
    "area": "autonomy",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a real behavior change ships as an A/B experiment live validation pending",
    "epoch": 1,
    "sequel": "X",
    "doc": "multi-phase-development-roadmap-sequel-10.md"
@@ -652,8 +652,8 @@
    "n": 48,
    "name": "Failure understanding",
    "area": "reliability",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 the failure corpus spans all known incidents; a live validation pending",
    "epoch": 1,
    "sequel": "X",
    "doc": "multi-phase-development-roadmap-sequel-10.md"
@@ -662,8 +662,8 @@
    "n": 49,
    "name": "Formal meta-invariant proof",
    "area": "verification",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 the invariant's machine-checkable encoding is live validation pending",
    "epoch": 1,
    "sequel": "X",
    "doc": "multi-phase-development-roadmap-sequel-10.md"
@@ -672,8 +672,8 @@
    "n": 50,
    "name": "Epoch capstone: enduring intelligence",
    "area": "autonomy",
-   "status": "queued",
-   "status_raw": "\u23f3 queued",
+   "status": "validation",
+   "status_raw": "\u2705 delivered (implementation) \u00b7 \u23f3 a 10-year program is committed, the meta-invariant live validation pending",
    "epoch": 1,
    "sequel": "X",
    "doc": "multi-phase-development-roadmap-sequel-10.md"
@@ -1182,7 +1182,7 @@
  "counts": {
   "total": 100,
   "delivered": 4,
-  "validation": 11,
-  "queued": 85
+  "validation": 46,
+  "queued": 50
  }
 }

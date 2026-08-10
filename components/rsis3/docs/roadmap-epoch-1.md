@@ -68,41 +68,41 @@ preceding phases it depends on; none may skip them.
 | Phase 13 — Federated memory | memory | ✅ delivered (implementation) · ⏳ 2-instance exchange live validation pending |
 | Phase 14 — Continual verification & invariants | verification | ✅ delivered (implementation) · ⏳ 30-cycle zero-drift live validation pending |
 | Phase 15 — Long-horizon autonomy | autonomy | ✅ delivered (implementation) · ⏳ 30-day unattended live validation pending |
-| Phase 16 — Public attestation & external audit | verification | ⏳ queued |
-| Phase 17 — Open interop protocol | protocol | ⏳ queued |
-| Phase 18 — Portable instances & reproducible workspaces | ops | ⏳ queued |
-| Phase 19 — External evaluation & red-teaming | security | ⏳ queued |
-| Phase 20 — Public API surface | product | ⏳ queued |
-| Phase 21 — Instance identity & trust graph | federation | ⏳ queued |
-| Phase 22 — Knowledge economy & exchange at scale | memory | ⏳ queued |
-| Phase 23 — Swarm coordination & distributed cycles | orchestration | ⏳ queued |
-| Phase 24 — Population governance | governance | ⏳ queued |
-| Phase 25 — Ecosystem resilience | reliability | ⏳ queued |
-| Phase 26 — Meta-governance | governance | ⏳ queued |
-| Phase 27 — Resource sovereignty & sustainability | ops | ⏳ queued |
-| Phase 28 — Self-directed learning goals | autonomy | ⏳ queued |
-| Phase 29 — Autonomous stewardship | orchestration | ⏳ queued |
-| Phase 30 — Enduring autonomy | autonomy | ⏳ queued |
-| Phase 31 — Knowledge inheritance | memory | ⏳ queued |
-| Phase 32 — Archival immortality | ops | ⏳ queued |
-| Phase 33 — Succession planning | governance | ⏳ queued |
-| Phase 34 — Mission continuity | autonomy | ⏳ queued |
-| Phase 35 — Generational resilience | reliability | ⏳ queued |
-| Phase 36 — Explainable autonomy | governance | ⏳ queued |
-| Phase 37 — Natural-language policy | governance | ⏳ queued |
-| Phase 38 — Delegation contracts | governance | ⏳ queued |
-| Phase 39 — Trust calibration | autonomy | ⏳ queued |
-| Phase 40 — Co-design workspaces | product | ⏳ queued |
-| Phase 41 — Cross-ecosystem standards | protocol | ⏳ queued |
-| Phase 42 — Global knowledge commons | memory | ⏳ queued |
-| Phase 43 — Inter-population diplomacy | governance | ⏳ queued |
-| Phase 44 — Crisis response | reliability | ⏳ queued |
-| Phase 45 — Planetary stewardship | ops | ⏳ queued |
-| Phase 46 — Self-metrics & longitudinal studies | autonomy | ⏳ queued |
-| Phase 47 — Hypothesis-driven self-experimentation | autonomy | ⏳ queued |
-| Phase 48 — Failure understanding | reliability | ⏳ queued |
-| Phase 49 — Formal meta-invariant proof | verification | ⏳ queued |
-| Phase 50 — Epoch capstone: enduring intelligence | autonomy | ⏳ queued |
+| Phase 16 — Public attestation & external audit | verification | ✅ delivered (implementation) · ⏳ an external verifier replays a recorded candidate live validation pending |
+| Phase 17 — Open interop protocol | protocol | ✅ delivered (implementation) · ⏳ a non-Cosmos client implements the spec from the live validation pending |
+| Phase 18 — Portable instances & reproducible workspaces | ops | ✅ delivered (implementation) · ⏳ an instance exported from host A cold-starts on host live validation pending |
+| Phase 19 — External evaluation & red-teaming | security | ✅ delivered (implementation) · ⏳ the harness runs in CI with zero un-triaged live validation pending |
+| Phase 20 — Public API surface | product | ✅ delivered (implementation) · ⏳ an external app submits a candidate through the live validation pending |
+| Phase 21 — Instance identity & trust graph | federation | ✅ delivered (implementation) · ⏳ two instances exchange a signed synthesis and each live validation pending |
+| Phase 22 — Knowledge economy & exchange at scale | memory | ✅ delivered (implementation) · ⏳ one synthesis propagates through three instances live validation pending |
+| Phase 23 — Swarm coordination & distributed cycles | orchestration | ✅ delivered (implementation) · ⏳ a cross-instance cycle produces a candidate verified live validation pending |
+| Phase 24 — Population governance | governance | ✅ delivered (implementation) · ⏳ a policy change propagates to a three-instance live validation pending |
+| Phase 25 — Ecosystem resilience | reliability | ✅ delivered (implementation) · ⏳ killing one of three instances mid-cycle leaves the live validation pending |
+| Phase 26 — Meta-governance | governance | ✅ delivered (implementation) · ⏳ one full season where every policy change was live validation pending |
+| Phase 27 — Resource sovereignty & sustainability | ops | ✅ delivered (implementation) · ⏳ a 90-day budget forecast holds within tolerance; the live validation pending |
+| Phase 28 — Self-directed learning goals | autonomy | ✅ delivered (implementation) · ⏳ one full season where L2 goals were system-proposed live validation pending |
+| Phase 29 — Autonomous stewardship | orchestration | ✅ delivered (implementation) · ⏳ the engine autonomously maintains two peer instances live validation pending |
+| Phase 30 — Enduring autonomy | autonomy | ✅ delivered (implementation) · ⏳ 365 days unattended except quarterly policy live validation pending |
+| Phase 31 — Knowledge inheritance | memory | ✅ delivered (implementation) · ⏳ a successor instance cold-starts from an inheritance live validation pending |
+| Phase 32 — Archival immortality | ops | ✅ delivered (implementation) · ⏳ a simulated media failure corrupts one copy and the live validation pending |
+| Phase 33 — Succession planning | governance | ✅ delivered (implementation) · ⏳ a full custody transfer completes with overlap live validation pending |
+| Phase 34 — Mission continuity | autonomy | ✅ delivered (implementation) · ⏳ a mission started under one generation is resumed by live validation pending |
+| Phase 35 — Generational resilience | reliability | ✅ delivered (implementation) · ⏳ a simulated decade of dependency and format churn is live validation pending |
+| Phase 36 — Explainable autonomy | governance | ✅ delivered (implementation) · ⏳ a non-expert panel answers "why did it do that?" live validation pending |
+| Phase 37 — Natural-language policy | governance | ✅ delivered (implementation) · ⏳ a non-technical user authors three rules in plain live validation pending |
+| Phase 38 — Delegation contracts | governance | ✅ delivered (implementation) · ⏳ a human delegates a bounded task, the system live validation pending |
+| Phase 39 — Trust calibration | autonomy | ✅ delivered (implementation) · ⏳ over- and under-trust rates each drop below a live validation pending |
+| Phase 40 — Co-design workspaces | product | ✅ delivered (implementation) · ⏳ a human and the system jointly produce a goal and live validation pending |
+| Phase 41 — Cross-ecosystem standards | protocol | ✅ delivered (implementation) · ⏳ an external ecosystem implements the standard from live validation pending |
+| Phase 42 — Global knowledge commons | memory | ✅ delivered (implementation) · ⏳ one synthesis is published to the commons, adopted live validation pending |
+| Phase 43 — Inter-population diplomacy | governance | ✅ delivered (implementation) · ⏳ two populations sign a reciprocity treaty, a live validation pending |
+| Phase 44 — Crisis response | reliability | ✅ delivered (implementation) · ⏳ a crisis drill flips the system into degraded mode live validation pending |
+| Phase 45 — Planetary stewardship | ops | ✅ delivered (implementation) · ⏳ three independent ecosystems coordinate a shared live validation pending |
+| Phase 46 — Self-metrics & longitudinal studies | autonomy | ✅ delivered (implementation) · ⏳ a 90-day longitudinal study is defined, runs live validation pending |
+| Phase 47 — Hypothesis-driven self-experimentation | autonomy | ✅ delivered (implementation) · ⏳ a real behavior change ships as an A/B experiment live validation pending |
+| Phase 48 — Failure understanding | reliability | ✅ delivered (implementation) · ⏳ the failure corpus spans all known incidents; a live validation pending |
+| Phase 49 — Formal meta-invariant proof | verification | ✅ delivered (implementation) · ⏳ the invariant's machine-checkable encoding is live validation pending |
+| Phase 50 — Epoch capstone: enduring intelligence | autonomy | ✅ delivered (implementation) · ⏳ a 10-year program is committed, the meta-invariant live validation pending |
 
 ## Telemetry & dashboard contract
 

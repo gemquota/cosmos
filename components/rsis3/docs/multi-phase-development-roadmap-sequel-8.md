@@ -143,8 +143,8 @@ Goal: humans and the system design goals, plans and artifacts together.
 
 | Phase | Area | Status |
 |-------|------|--------|
-| Phase 36 — Explainable autonomy | governance | ⏳ queued |
-| Phase 37 — Natural-language policy | governance | ⏳ queued |
-| Phase 38 — Delegation contracts | governance | ⏳ queued |
-| Phase 39 — Trust calibration | autonomy | ⏳ queued |
-| Phase 40 — Co-design workspaces | product | ⏳ queued |
+| Phase 36 — Explainable autonomy | governance | ✅ delivered (implementation) · ⏳ a non-expert panel answers "why did it do that?" live validation pending |
+| Phase 37 — Natural-language policy | governance | ✅ delivered (implementation) · ⏳ a non-technical user authors three rules in plain live validation pending |
+| Phase 38 — Delegation contracts | governance | ✅ delivered (implementation) · ⏳ a human delegates a bounded task, the system live validation pending |
+| Phase 39 — Trust calibration | autonomy | ✅ delivered (implementation) · ⏳ over- and under-trust rates each drop below a live validation pending |
+| Phase 40 — Co-design workspaces | product | ✅ delivered (implementation) · ⏳ a human and the system jointly produce a goal and live validation pending |

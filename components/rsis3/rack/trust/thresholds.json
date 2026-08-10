@@ -1,0 +1,7 @@
+{
+ "ask_threshold": 0.5,
+ "by_human": {
+  "alice": 0.55
+ },
+ "version": 1
+}

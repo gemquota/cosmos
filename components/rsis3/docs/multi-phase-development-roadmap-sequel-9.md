@@ -141,8 +141,8 @@ Goal: the commons operates as coordinated global infrastructure.
 
 | Phase | Area | Status |
 |-------|------|--------|
-| Phase 41 — Cross-ecosystem standards | protocol | ⏳ queued |
-| Phase 42 — Global knowledge commons | memory | ⏳ queued |
-| Phase 43 — Inter-population diplomacy | governance | ⏳ queued |
-| Phase 44 — Crisis response | reliability | ⏳ queued |
-| Phase 45 — Planetary stewardship | ops | ⏳ queued |
+| Phase 41 — Cross-ecosystem standards | protocol | ✅ delivered (implementation) · ⏳ an external ecosystem implements the standard from live validation pending |
+| Phase 42 — Global knowledge commons | memory | ✅ delivered (implementation) · ⏳ one synthesis is published to the commons, adopted live validation pending |
+| Phase 43 — Inter-population diplomacy | governance | ✅ delivered (implementation) · ⏳ two populations sign a reciprocity treaty, a live validation pending |
+| Phase 44 — Crisis response | reliability | ✅ delivered (implementation) · ⏳ a crisis drill flips the system into degraded mode live validation pending |
+| Phase 45 — Planetary stewardship | ops | ✅ delivered (implementation) · ⏳ three independent ecosystems coordinate a shared live validation pending |

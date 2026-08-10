@@ -1,15 +1,15 @@
 {
- "generated": "2026-08-10T01:49Z",
+ "generated": "2026-08-10T03:54Z",
  "components": {
   "mykb": {
-   "files": 7198,
-   "md": 7153
+   "files": 7221,
+   "md": 7176
   },
   "space": {
    "files": 322
   },
   "rsis3": {
-   "files": 967
+   "files": 1063
   }
  },
  "telemetry": {
@@ -21,12 +21,39 @@
   "total": 0,
   "improvements": 0
  },
+ "epoch1": {
+  "events": 95,
+  "sequels": {
+   "IV": 0,
+   "V": 0,
+   "VI": 0,
+   "VII": 0,
+   "VIII": 0,
+   "IX": 0,
+   "X": 0
+  },
+  "other": 95,
+  "by_type": {
+   "attestation_appended": 8,
+   "capacity_degraded": 4,
+   "redteam_probe": 2,
+   "exchange_confidence": 2,
+   "resilience_peer_joined": 2,
+   "goals_proposed": 2,
+   "endurance_guardrails": 2,
+   "mission_progress": 2,
+   "generation_drift": 2,
+   "codesign_proposed": 2,
+   "commons_published": 2,
+   "crisis_entered": 2
+  }
+ },
  "roadmaps": {
   "epochs": 2,
   "sequels": 20,
   "phases": 100,
   "delivered": 4,
-  "validation_pending": 11,
-  "queued": 85
+  "validation_pending": 46,
+  "queued": 50
  }
 }

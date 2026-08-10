@@ -121,8 +121,8 @@ without data loss.
 
 | Phase | Area | Status |
 |-------|------|--------|
-| Phase 21 — Instance identity & trust graph | federation | ⏳ queued |
-| Phase 22 — Knowledge economy & exchange at scale | memory | ⏳ queued |
-| Phase 23 — Swarm coordination & distributed cycles | orchestration | ⏳ queued |
-| Phase 24 — Population governance | governance | ⏳ queued |
-| Phase 25 — Ecosystem resilience | reliability | ⏳ queued |
+| Phase 21 — Instance identity & trust graph | federation | ✅ delivered (implementation) · ⏳ two instances exchange a signed synthesis and each live validation pending |
+| Phase 22 — Knowledge economy & exchange at scale | memory | ✅ delivered (implementation) · ⏳ one synthesis propagates through three instances live validation pending |
+| Phase 23 — Swarm coordination & distributed cycles | orchestration | ✅ delivered (implementation) · ⏳ a cross-instance cycle produces a candidate verified live validation pending |
+| Phase 24 — Population governance | governance | ✅ delivered (implementation) · ⏳ a policy change propagates to a three-instance live validation pending |
+| Phase 25 — Ecosystem resilience | reliability | ✅ delivered (implementation) · ⏳ killing one of three instances mid-cycle leaves the live validation pending |

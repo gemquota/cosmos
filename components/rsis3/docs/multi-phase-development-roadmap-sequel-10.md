@@ -144,8 +144,8 @@ Goal: the system commits to a decade-scale horizon and closes Epoch 1.
 
 | Phase | Area | Status |
 |-------|------|--------|
-| Phase 46 — Self-metrics & longitudinal studies | autonomy | ⏳ queued |
-| Phase 47 — Hypothesis-driven self-experimentation | autonomy | ⏳ queued |
-| Phase 48 — Failure understanding | reliability | ⏳ queued |
-| Phase 49 — Formal meta-invariant proof | verification | ⏳ queued |
-| Phase 50 — Epoch capstone: enduring intelligence | autonomy | ⏳ queued |
+| Phase 46 — Self-metrics & longitudinal studies | autonomy | ✅ delivered (implementation) · ⏳ a 90-day longitudinal study is defined, runs live validation pending |
+| Phase 47 — Hypothesis-driven self-experimentation | autonomy | ✅ delivered (implementation) · ⏳ a real behavior change ships as an A/B experiment live validation pending |
+| Phase 48 — Failure understanding | reliability | ✅ delivered (implementation) · ⏳ the failure corpus spans all known incidents; a live validation pending |
+| Phase 49 — Formal meta-invariant proof | verification | ✅ delivered (implementation) · ⏳ the invariant's machine-checkable encoding is live validation pending |
+| Phase 50 — Epoch capstone: enduring intelligence | autonomy | ✅ delivered (implementation) · ⏳ a 10-year program is committed, the meta-invariant live validation pending |

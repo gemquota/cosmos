@@ -1,0 +1,22 @@
+{
+ "arcs": [],
+ "epochs": [
+  {
+   "id": 1,
+   "name": "Epoch 1 \u2014 one lineage to decade-scale maturity",
+   "phases": "1\u201350",
+   "sequels": "I\u2013X",
+   "status": "implemented (live exit validation pending)"
+  },
+  {
+   "id": 2,
+   "name": "Epoch 2 \u2014 the Age of Living Systems",
+   "phases": "51\u2013100",
+   "sequels": "XI\u2013XX",
+   "status": "queued"
+  }
+ ],
+ "generated": "2026-08-10T02:52:02Z",
+ "invariant": "autonomy is cumulative but never unconditional",
+ "phases": []
+}

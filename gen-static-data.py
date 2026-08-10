@@ -203,6 +203,57 @@ loops = {
 if write:
     json.dump(loops, open(f'{RSIS3}/dashboard/loops.json', 'w'), indent=1)
 
+# ── Epoch-1 telemetry snapshot (Roadmap tab "Epoch 1" strip) ───────────────
+# Parses .rsis/telemetry/epoch1.jsonl (the shared append-only channel used by
+# all phases 16–50) so the dashboard can show per-sequel event counts without
+# each phase shipping its own pipeline. Event type prefixes map to sequels.
+EPOCH1_SEQUEL_PREFIX = {
+    'IV': ('attestation', 'portable', 'redteam', 'apps'),
+    'V': ('identity', 'exchange', 'swarm', 'popgov', 'resilience'),
+    'VI': ('metagov', 'capacity', 'goals', 'steward', 'endurance'),
+    'VII': ('inheritance', 'archive', 'succession', 'mission', 'generation'),
+    'VIII': ('decision', 'policy', 'delegation', 'trust', 'codesign'),
+    'IX': ('standard', 'commons', 'treaty', 'crisis'),
+    'X': ('study', 'experiment', 'failure', 'nearmiss', 'meta-invariant', 'epoch'),
+}
+EPOCH1_SEQUELS = ['IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X']
+
+
+def epoch1_telemetry(rsis3_dir):
+    """Count epoch-1 telemetry events from the workspace log."""
+    path = Path(rsis3_dir) / '.rsis' / 'telemetry' / 'epoch1.jsonl'
+    by_type = {}
+    if path.is_file():
+        for line in path.read_text(encoding='utf-8', errors='ignore').splitlines():
+            if not line.strip():
+                continue
+            try:
+                ev = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            t = ev.get('type') or ''
+            if t:
+                by_type[t] = by_type.get(t, 0) + 1
+    sequels = {r: 0 for r in EPOCH1_SEQUELS}
+    other = 0
+    for t, n in by_type.items():
+        prefix = t.split('.', 1)[0]
+        placed = False
+        for rom, prefixes in EPOCH1_SEQUEL_PREFIX.items():
+            if prefix in prefixes:
+                sequels[rom] += n
+                placed = True
+                break
+        if not placed:
+            other += n
+    return {
+        'events': sum(by_type.values()),
+        'sequels': sequels,
+        'other': other,
+        'by_type': dict(sorted(by_type.items(), key=lambda kv: -kv[1])[:12]),
+    }
+
+
 # ── Roadmap snapshot (drives the dashboard "Roadmap" tab) ───────────────
 # Parses the status tables in the main roadmap + sequel docs so the program
 # registry (100 phases / 2 epochs) stays in sync with the source documents.
@@ -277,6 +328,7 @@ eco = {
         'rsis3': {'files': count('components/rsis3')},
     },
     'telemetry': telemetry,
+    'epoch1': epoch1_telemetry(RSIS3),
     'roadmaps': {
         'epochs': len(roadmap['epochs']),
         'sequels': len(roadmap_arcs),
@@ -316,7 +368,8 @@ if '--check' in sys.argv:
     rm2 = json.load(open(f'{RSIS3}/dashboard/roadmap.json'))
     fresh = fresh and rm2['counts']['total'] == len(roadmap_phases) \
         and [p['n'] for p in rm2['phases']] == [p['n'] for p in roadmap_phases] \
-        and eco2.get('roadmaps', {}).get('phases') == roadmap_counts['total']
+        and eco2.get('roadmaps', {}).get('phases') == roadmap_counts['total'] \
+        and eco2.get('epoch1', {}).get('events') == epoch1_telemetry(RSIS3)['events']
     ok = fresh and contract_fail == 0
     print('check:', 'OK' if ok else 'FAIL',
           f'({len(md)} entries, {len(bad)} bad, {contract_fail} contract FAIL)')

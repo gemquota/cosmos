@@ -1,3 +1,61 @@
+## [0.6.0] — 2026-08-10
+
+### Added — Epoch 1 implementation (Phases 16–50, Sequels IV–X)
+
+One phase module per phase, all wired into `python -m rsis` with a shared
+contract-safe telemetry channel (`.rsis/telemetry/epoch1.jsonl`):
+
+- **Sequel IV — Open Autonomy (16–20)**: `attestations` (hash-chained
+  transparency log, standalone verifier bundles, replay), `protocol`
+  (`cosmos-protocol/1` handshake + `/version`), `portable` (export/import
+  with checksums + continuity, engine travels, keys never), `redteam`
+  (probe harness + CI mode), `apps` (machine identities, quotas, public
+  API on :8790).
+- **Sequel V — Federated Intelligence (21–25)**: `identity` (Ed25519
+  keys, peers, rotation with verify-only retirement), `exchange`
+  (confidence propagation, canonicalization, provenance hops),
+  `swarm` (dispatch/corroborate/reconcile), `popgov` (shared rules,
+  local-policy-wins, quorum), `resilience` (churn/partition/fork/drill).
+- **Sequel VI — Governed Evolution (26–30)**: `metagov` (evidence-backed,
+  human-ratified policy revision + executable meta-invariant), `capacity`
+  (90-day plan, sustainability, degradation ladder), `goals`
+  (system-proposed, human-ratified), `steward` (monitor/onboard/custody/
+  handoff), `endurance` (guardrail battery + continuity).
+- **Sequel VII — Intergenerational Continuity (31–35)**: `inheritance`
+  (curriculum bundles, parity ≥ 0.98), `archival` (patrol, replica
+  rebuild, migration), `succession` (heir plans, dual-running transfer),
+  `missions` (attestable contiguous checkpoints), `generations`
+  (dependency/staleness/drift scans).
+- **Sequel VIII — Collaborative Governance (36–40)**: `explain`
+  (three-depth rationales + counterfactuals), `nlpolicy` (plain-language
+  rules → executable policy with conflict flags), `delegation` (bounded
+  contracts, instant revocation), `trust` (ask-vs-act calibration),
+  `codesign` (human/system co-design canvases with authorship).
+- **Sequel IX — Global Commons (41–45)**: `standards` (version registry,
+  deprecation windows), `commons` (attributed shared pool), `diplomacy`
+  (treaties, trust levels, disputes), `crisis` (fail-closed profiles,
+  drills keep policy-critical on), `planetary` (shared resource plans,
+  commons health).
+- **Sequel X — Epoch-Scale Intelligence (46–50)**: `longitudinal`
+  (append-only self-metrics, declarative studies), `experiments` (A/B
+  guardrails), `failures` (root-cause corpus, clustering, near-misses),
+  `metainvariant` (P1–P3 model-checking + attested proofs), `epoch`
+  (decade program, epochs registry, capstone).
+
+### Also
+- Dashboard Roadmap tab gained an Epoch 1 telemetry panel
+  (`gen-static-data.py` parses `epoch1.jsonl` into `ecosystem.json`);
+  sequels IV–X docs + epoch-1 rollup statuses moved to
+  `✅ delivered (implementation)`.
+- `tests/test_epoch1_sequel{4..10}.py` — 71 new tests (353 total);
+  `docs/protocol.md` (cosmos-protocol/1).
+
+### Verified
+- `python3 -m pytest tests/` — 353 passing (3 pre-existing failures in
+  `test_budgets.py` / `test_seasons.py`, unrelated to this change)
+- `python3 contracts/validate.py` — 0 FAIL
+- `python3 gen-static-data.py --check` — OK
+
 ## [0.5.0] — 2026-08-08
 
 ### Added — Phase 2 envelope hardening (cosmos-envelope/1 · v1.1)

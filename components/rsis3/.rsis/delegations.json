@@ -1,0 +1,23 @@
+{
+ "delegations": {
+  "dlg0": {
+   "actions": [
+    "read"
+   ],
+   "budget": 0.1,
+   "delegate": "agent-demo",
+   "expiry_ts": 1786333922,
+   "granter": "approver",
+   "id": "dlg0",
+   "issued": "2026-08-10T02:52:02Z",
+   "projects": [
+    "cosmos"
+   ],
+   "revoked": true,
+   "revoked_at": "2026-08-10T02:52:02Z",
+   "revoked_by": "approver",
+   "spent": 0.01
+  }
+ },
+ "version": 1
+}

@@ -124,8 +124,8 @@ Goal: third-party applications interact with the system safely at scale.
 
 | Phase | Area | Status |
 |-------|------|--------|
-| Phase 16 — Public attestation & external audit | verification | ⏳ queued |
-| Phase 17 — Open interop protocol | protocol | ⏳ queued |
-| Phase 18 — Portable instances & reproducible workspaces | ops | ⏳ queued |
-| Phase 19 — External evaluation & red-teaming | security | ⏳ queued |
-| Phase 20 — Public API surface | product | ⏳ queued |
+| Phase 16 — Public attestation & external audit | verification | ✅ delivered (implementation) · ⏳ an external verifier replays a recorded candidate live validation pending |
+| Phase 17 — Open interop protocol | protocol | ✅ delivered (implementation) · ⏳ a non-Cosmos client implements the spec from the live validation pending |
+| Phase 18 — Portable instances & reproducible workspaces | ops | ✅ delivered (implementation) · ⏳ an instance exported from host A cold-starts on host live validation pending |
+| Phase 19 — External evaluation & red-teaming | security | ✅ delivered (implementation) · ⏳ the harness runs in CI with zero un-triaged live validation pending |
+| Phase 20 — Public API surface | product | ✅ delivered (implementation) · ⏳ an external app submits a candidate through the live validation pending |

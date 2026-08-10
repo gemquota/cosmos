@@ -1,0 +1,12 @@
+{
+ "checks": {
+  "attribution": true,
+  "replication": true,
+  "trust": true
+ },
+ "commons_items": 1,
+ "health_ok": true,
+ "replication_min": 2,
+ "treaties": 1,
+ "ts": "2026-08-10T02:52:02Z"
+}

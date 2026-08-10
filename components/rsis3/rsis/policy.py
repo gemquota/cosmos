@@ -65,6 +65,15 @@ def load_policy(workspace: Path) -> dict:
     return dict(DEFAULT_POLICY)
 
 
+def save_policy(workspace: Path, policy: dict) -> None:
+    """Persist a policy dict to rack/policy.json."""
+    path = policy_path(workspace)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as fh:
+        json.dump(policy, fh, indent=2, sort_keys=True)
+        fh.write("\n")
+
+
 def ensure_policy(workspace: Path) -> dict:
     path = policy_path(workspace)
     if not path.is_file():

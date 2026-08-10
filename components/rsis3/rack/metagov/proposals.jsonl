@@ -1,0 +1,1 @@
+{"evidence": ["forecast"], "id": "m0", "policy_delta": {"ceiling_usd": 0.25}, "proposer": "system", "rationale": "tighten ceiling", "score": {"controls_touched": ["ceiling_usd"], "invariant_issues": [], "invariants_ok": true, "ts": "2026-08-10T02:52:01Z", "verdict": "ok", "violations": []}, "status": "scored", "ts": "2026-08-10T02:51:59Z"}

@@ -261,7 +261,11 @@ def serve(port: int = DEFAULT_PORT, workspace: Optional[Path] = None,
         def do_GET(self):
             parsed = __import__("urllib.parse", fromlist=["urlparse"]).urlparse(self.path)
             params = __import__("urllib.parse", fromlist=["parse_qs"]).parse_qs(parsed.query)
-            if parsed.path == "/health":
+            if parsed.path == "/version":
+                # Phase 17: cosmos-protocol/1 capability handshake.
+                from rsis.protocol import capabilities
+                self._json(200, capabilities())
+            elif parsed.path == "/health":
                 self._json(200, {"ok": True})
             elif parsed.path == "/ledger":
                 day = params.get("date", [None])[0]

@@ -126,8 +126,8 @@ ratification is the only human touchpoint.
 
 | Phase | Area | Status |
 |-------|------|--------|
-| Phase 26 — Meta-governance | governance | ⏳ queued |
-| Phase 27 — Resource sovereignty & sustainability | ops | ⏳ queued |
-| Phase 28 — Self-directed learning goals | autonomy | ⏳ queued |
-| Phase 29 — Autonomous stewardship | orchestration | ⏳ queued |
-| Phase 30 — Enduring autonomy | autonomy | ⏳ queued |
+| Phase 26 — Meta-governance | governance | ✅ delivered (implementation) · ⏳ one full season where every policy change was live validation pending |
+| Phase 27 — Resource sovereignty & sustainability | ops | ✅ delivered (implementation) · ⏳ a 90-day budget forecast holds within tolerance; the live validation pending |
+| Phase 28 — Self-directed learning goals | autonomy | ✅ delivered (implementation) · ⏳ one full season where L2 goals were system-proposed live validation pending |
+| Phase 29 — Autonomous stewardship | orchestration | ✅ delivered (implementation) · ⏳ the engine autonomously maintains two peer instances live validation pending |
+| Phase 30 — Enduring autonomy | autonomy | ✅ delivered (implementation) · ⏳ 365 days unattended except quarterly policy live validation pending |

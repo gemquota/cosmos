@@ -1,0 +1,14 @@
+{
+ "peers": [
+  {
+   "added": "2026-08-10T02:51:59Z",
+   "added_by": "system",
+   "fingerprint": "11111111111111111111111111111111",
+   "id": "peer-demo",
+   "last_seen": "2026-08-10T02:51:59Z",
+   "trust": "quarantined"
+  }
+ ],
+ "rotation_days": 90,
+ "version": 1
+}

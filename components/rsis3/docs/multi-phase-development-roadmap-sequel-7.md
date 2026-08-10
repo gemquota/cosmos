@@ -140,8 +140,8 @@ Goal: the system remains sound across decades, not just months.
 
 | Phase | Area | Status |
 |-------|------|--------|
-| Phase 31 — Knowledge inheritance | memory | ⏳ queued |
-| Phase 32 — Archival immortality | ops | ⏳ queued |
-| Phase 33 — Succession planning | governance | ⏳ queued |
-| Phase 34 — Mission continuity | autonomy | ⏳ queued |
-| Phase 35 — Generational resilience | reliability | ⏳ queued |
+| Phase 31 — Knowledge inheritance | memory | ✅ delivered (implementation) · ⏳ a successor instance cold-starts from an inheritance live validation pending |
+| Phase 32 — Archival immortality | ops | ✅ delivered (implementation) · ⏳ a simulated media failure corrupts one copy and the live validation pending |
+| Phase 33 — Succession planning | governance | ✅ delivered (implementation) · ⏳ a full custody transfer completes with overlap live validation pending |
+| Phase 34 — Mission continuity | autonomy | ✅ delivered (implementation) · ⏳ a mission started under one generation is resumed by live validation pending |
+| Phase 35 — Generational resilience | reliability | ✅ delivered (implementation) · ⏳ a simulated decade of dependency and format churn is live validation pending |

@@ -1,0 +1,16 @@
+{
+ "actor": "system",
+ "candidate_sha": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+ "decision": "pass",
+ "one_line": "Applied after 0/0 gates passed.",
+ "paragraph": "Decision pass for candidate dddddddddddd: 0/0 gates passed; contracts=n/a. Evidence in the Phase 7 ledger; attestation in the chain.",
+ "trace": {
+  "artifacts": [],
+  "candidate_sha": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "decision": "pass",
+  "gates": [],
+  "pre_digests": {},
+  "scores": {}
+ },
+ "ts": "2026-08-10T02:52:02Z"
+}

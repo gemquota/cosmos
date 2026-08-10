@@ -31250,6 +31250,15 @@
   ]
  },
  {
+  "path": "wiki/backlog/convergence-2026-08-10.md",
+  "type": "backlog",
+  "title": "Convergence \u2014 fitness plateau",
+  "tags": [
+   "backlog",
+   "convergence"
+  ]
+ },
+ {
   "path": "wiki/cloud-infra/00-index.md",
   "type": "index",
   "title": "Cloud Infra Index",
@@ -76527,6 +76536,22 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-epoch-1-implementation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 Epoch 1 Implementation \u2014 Phases 16\u201350 (Sequels IV\u2013X)",
+  "tags": [
+   "synthesis",
+   "rsis3",
+   "epoch-1",
+   "telemetry",
+   "governance",
+   "federation",
+   "attestation",
+   "dashboard",
+   "roadmap"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-goal-stack-output-communicate-bridge-2026-08-08.md",
   "type": "synthesis",
   "title": "Multitiered goal stack \u2014 Output \u2192 Communicate \u2192 Wrap \u2192 Bridge",
@@ -77728,9 +77753,141 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-l3-cycle-189-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 189 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-l3-cycle-19-cross-session-memory-consolidation-2026-08-07.md",
   "type": "synthesis",
   "title": "RSIS3 L3 cycle 19 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-190-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 190 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-191-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 191 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-192-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 192 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-193-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 193 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-194-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 194 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-195-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 195 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-196-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 196 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-197-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 197 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-198-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 198 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-199-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 199 \u2014 cross-session memory consolidation",
   "tags": [
    "rsis3",
    "l3",
@@ -77755,6 +77912,126 @@
   "path": "wiki/syntheses/rsis3-l3-cycle-20-cross-session-memory-consolidation-2026-08-07.md",
   "type": "synthesis",
   "title": "RSIS3 L3 cycle 20 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-200-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 200 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-201-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 201 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-202-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 202 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-203-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 203 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-204-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 204 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-205-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 205 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-206-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 206 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-207-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 207 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-208-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 208 \u2014 cross-session memory consolidation",
+  "tags": [
+   "rsis3",
+   "l3",
+   "memory",
+   "consolidation",
+   "mykb"
+  ]
+ },
+ {
+  "path": "wiki/syntheses/rsis3-l3-cycle-209-cross-session-memory-consolidation-2026-08-10.md",
+  "type": "synthesis",
+  "title": "RSIS3 L3 cycle 209 \u2014 cross-session memory consolidation",
   "tags": [
    "rsis3",
    "l3",

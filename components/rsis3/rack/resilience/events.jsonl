@@ -1,0 +1,7 @@
+{"kind": "peer_joined", "peer": "p1", "ts": "2026-08-10T02:51:59Z"}
+{"kind": "peer_joined", "peer": "p2", "ts": "2026-08-10T02:51:59Z"}
+{"degraded_to": "coast", "kind": "partition_entered", "peers": ["p2"], "ts": "2026-08-10T02:51:59Z"}
+{"divergent_merged": 0, "kind": "partition_reconciled", "peers": ["p2"], "ts": "2026-08-10T02:51:59Z"}
+{"kill": ["p2"], "kind": "drill_started", "leader": "p1", "ts": "2026-08-10T02:51:59Z"}
+{"kind": "drill_kill", "peer": "p2", "ts": "2026-08-10T02:51:59Z"}
+{"kind": "drill_completed", "ok": true, "stuck": 0, "ts": "2026-08-10T02:51:59Z"}

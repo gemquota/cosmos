@@ -1,0 +1,7 @@
+{
+ "clusters": 1,
+ "recurring": 1,
+ "recurring_ids": [
+  "inc-demo-1"
+ ]
+}

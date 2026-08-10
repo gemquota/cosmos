@@ -1,0 +1,29 @@
+{
+ "items": {
+  "7da37abf1d7131678ae75303420d9afc544d42ce25253363c10a28b4ae210e0f": {
+   "adopted_by": [],
+   "confidence": 0.5,
+   "content": "{\n \"ok\": true,\n \"states\": 1,\n \"properties\": {\n  \"P1\": \"no reachable state lowers a protected budget ceiling\",\n  \"P2\": \"no reachable state disables an approval-required path\",\n  \"P3\": \"no capability expansion removes a prior restriction\",\n  \"assumptions\": [\n   \"policy edits flow through the ratified revision loop (26)\",\n   \"budgets are monotone unless human-ratified (9)\"\n  ]\n }\n}",
+   "contributor": "system",
+   "license": "cc-by-4.0",
+   "origin": "self",
+   "published": "2026-08-10T02:52:02Z",
+   "sha": "7da37abf1d7131678ae75303420d9afc544d42ce25253363c10a28b4ae210e0f",
+   "title": "Meta-invariant proof 2026-08-10"
+  },
+  "844ebc358fb95d059491079d5af80938f006db25bf840d59b5499c701f473b3a": {
+   "adopted_by": [
+    "peer-demo"
+   ],
+   "confidence": 0.5,
+   "content": "durable rule",
+   "contributor": "system",
+   "license": "cc-by-4.0",
+   "origin": "demo",
+   "published": "2026-08-10T02:52:02Z",
+   "sha": "844ebc358fb95d059491079d5af80938f006db25bf840d59b5499c701f473b3a",
+   "title": "Epoch-1 synthesis demo"
+  }
+ },
+ "version": 1
+}
