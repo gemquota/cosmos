@@ -25,6 +25,97 @@ def tracked(prefix=None):
 def visible(path):
     return not any(seg.startswith('.') for seg in path.split('/'))
 
+def _legacy_pulse_payload(rsis3):
+    """Map legacy RRP v2 pipeline pulses (rack/pulses/pulse-*.json) into the
+    dashboard schema when live .rsis/telemetry/*.jsonl is absent (CI/fresh
+    checkout) — prevents regen from blanking the dashboard payload."""
+    pulses_dir = Path(rsis3) / 'rack' / 'pulses'
+    goals, pulses, pd, tel = [], [], {}, {}
+    for f in sorted(pulses_dir.glob('pulse-*.json')):
+        try:
+            pf = json.loads(f.read_text())
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not isinstance(pf, dict) or not pf.get('pulse'):
+            continue
+        pid = str(pf['pulse']).zfill(3)
+        pgoals = pf.get('goals') or []
+        confs = []
+        for gi, g in enumerate(pgoals):
+            ev = g.get('rrp_evaluation') or {}
+            conf = ev.get('confidence', ev.get('score_avg'))
+            if conf is not None:
+                try:
+                    confs.append(float(conf))
+                except (TypeError, ValueError):
+                    pass
+            goals.append({
+                'p': pid,
+                'd': g.get('description') or '(goal %d)' % gi,
+                'dec': ev.get('decision', 'HOLD'),
+                'conf': ev.get('confidence', ''),
+                'file': g.get('file', ''),
+                'func': g.get('function', ''),
+                'type': g.get('type', 'implementation'),
+                'conversation': ev.get('conversation', []),
+                'constraints': (g.get('rrp_refinement') or {}).get(
+                    'constraints', {}),
+                'telemetry': ev.get('rrp_telemetry', {}),
+            })
+        approved = sum(1 for g in pgoals
+                       if (g.get('rrp_evaluation') or {}).get(
+                           'decision') == 'PASS')
+        psum = pf.get('summary') or {}
+        duration = psum.get('duration_seconds')
+        if duration is None:
+            duration = 0.0
+            try:
+                s = datetime.datetime.fromisoformat(
+                    str(pf.get('timestamp_start', '')).replace('Z', '+00:00'))
+                e = datetime.datetime.fromisoformat(
+                    str(pf.get('timestamp_end', '')).replace('Z', '+00:00'))
+                duration = (e - s).total_seconds()
+            except ValueError:
+                pass
+        agg = pf.get('rrp_telemetry_aggregate') or {}
+        pulses.append({
+            'id': pid,
+            'ts_start': pf.get('timestamp_start', ''),
+            'ts_end': pf.get('timestamp_end', ''),
+            'goals_count': len(pgoals),
+            'approved': approved,
+            'duration': round(duration, 1),
+            'scores': {},
+            'type': pf.get('type', 'rrp_v2_full'),
+            'num_goals': len(pgoals),
+            'implementation_count': sum(1 for g in pgoals
+                                        if g.get('type') == 'implementation'),
+            'telemetry': agg,
+            'avg_confidence': (round(sum(confs) / len(confs), 3)
+                               if confs else 0.0),
+        })
+        pd[pid] = {'pre_state': pf.get('pre_state', {})}
+        tel[pid] = agg
+    tot = len(goals)
+    pass_n = sum(1 for gx in goals if gx['dec'] == 'PASS')
+    fail_n = sum(1 for gx in goals if gx['dec'] == 'FAIL')
+    hold_n = sum(1 for gx in goals if gx['dec'] == 'HOLD')
+    return {
+        'pulses': pulses, 'goals': goals,
+        'pulse_data': pd,
+        'score_history': {p['id']: {} for p in pulses},
+        'telemetry_aggregates': tel,
+        'generated': datetime.datetime.now(
+            datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+        'summary': {
+            'tot': tot, 'pass': pass_n, 'hold': hold_n, 'fail': fail_n,
+            'impl_count': sum(p['implementation_count'] for p in pulses),
+            'pulse_count': len(pulses),
+            'ca': round(pass_n / tot, 3) if tot else 0.0,
+            'cd': {},
+        },
+    }
+
 def build_dashboard_payload(rsis3):
     """Rebuild rack/pulses/dashboard-data.json from live loop telemetry.
 
@@ -115,6 +206,10 @@ def build_dashboard_payload(rsis3):
         })
         pd[pid] = {'pre_state': {'telemetry_events': len(evs),
                                  'goals': g_n, 'loops': 9}}
+    if not pulses and not goals:
+        # No live .rsis/telemetry (CI/fresh checkout) — fall back to the
+        # legacy RRP v2 pulse files so regen never blanks the dashboard.
+        return _legacy_pulse_payload(rsis3)
     score_history = {}
     for day, counts in sorted(day_counts.items()):
         mx = max(counts.values()) or 1
@@ -163,6 +258,69 @@ def count(prefix):
 
 def md_count(prefix):
     return len([p for p in allf if p.startswith(prefix + '/') and p.endswith('.md')])
+
+# ── Lite knowledge graph (fast default render for the KG viewport) ──────
+# graph.json (4+ MB, ~5.5k nodes / ~37k edges) is too heavy for a snappy
+# first paint on mobile. Derive a hub-focused lite graph: keep the top-N
+# concepts by degree plus every edge between kept nodes, plus a per-area
+# cluster rollup. okf-graph.html renders the lite payload by default and
+# keeps the full graph one click away. Compact separators keep the file
+# small enough to parse instantly.
+LITE_HUBS = 420
+
+def build_lite_graph(graph):
+    nodes = graph.get('nodes', []) or []
+    edges = graph.get('edges', []) or []
+    deg = {}
+    for e in edges:
+        deg[e.get('source', '')] = deg.get(e.get('source', ''), 0) + 1
+        deg[e.get('target', '')] = deg.get(e.get('target', ''), 0) + 1
+    by_deg = sorted(nodes, key=lambda n: -deg.get(n.get('id', ''), 0))
+    keep = {n['id'] for n in by_deg[:LITE_HUBS]}
+    kept_edges = [e for e in edges
+                  if e.get('source') in keep and e.get('target') in keep]
+    areas = {}
+    for n in nodes:
+        a = n['id'].split('/')[0] if '/' in n.get('id', '') else '(root)'
+        areas[a] = areas.get(a, 0) + 1
+    return {
+        'meta': {
+            'total_nodes': len(nodes),
+            'total_edges': len(edges),
+            'lite_nodes': len(keep),
+            'lite_edges': len(kept_edges),
+            'areas': areas,
+        },
+        'nodes': [n for n in nodes if n['id'] in keep],
+        'edges': kept_edges,
+    }
+
+def build_lite_catalog(catalog, lite_ids):
+    out = []
+    for c in catalog or []:
+        if c and c.get('id') in lite_ids:
+            out.append(c)
+    return out
+
+graph_path = Path('components/mykb/graph.json')
+catalog_path = Path('components/mykb/catalog.json')
+if write and graph_path.exists():
+    try:
+        g = json.load(open(graph_path))
+        lite = build_lite_graph(g)
+        json.dump(lite, open('components/mykb/graph.lite.json', 'w'),
+                  separators=(',', ':'))
+        if catalog_path.exists():
+            catalog = json.load(open(catalog_path))
+            lite_ids = {n['id'] for n in lite['nodes']}
+            json.dump(build_lite_catalog(catalog, lite_ids),
+                      open('components/mykb/catalog.lite.json', 'w'),
+                      separators=(',', ':'))
+        print(f'graph.lite.json: {lite["meta"]["lite_nodes"]} of '
+              f'{lite["meta"]["total_nodes"]} nodes, '
+              f'{lite["meta"]["lite_edges"]} of {lite["meta"]["total_edges"]} edges')
+    except (OSError, ValueError) as e:
+        print(f'graph.lite.json: skipped ({e})')
 
 # Dashboard payload (Overview/Pulses/KG/Graphs/Constraints) — rebuilt
 # from live loop telemetry when writing; validated as-committed in --check.

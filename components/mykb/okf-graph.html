@@ -20,7 +20,7 @@
 <meta name="twitter:image:alt" content="An interactive Open Knowledge Format knowledge graph.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%231a1a1a'/><polygon points='38,44 62,44 50,82' fill='%237a0a1e'/><polygon points='18,44 38,44 50,82' fill='%23a8112c'/><polygon points='62,44 82,44 50,82' fill='%23a8112c'/><polygon points='35,28 18,44 38,44' fill='%23dc1e3c'/><polygon points='65,28 82,44 62,44' fill='%23dc1e3c'/><polygon points='35,28 65,28 62,44 38,44' fill='%23f43f5e'/><polygon points='36,29 49,29 42,42' fill='%23fff' opacity='.38'/><polygon points='35,28 65,28 82,44 50,82 18,44' fill='none' stroke='%23ff6b7f' stroke-width='2' stroke-linejoin='round'/></svg>">
 <script>/* Resolve theme before first paint so there is no flash. */
-(function(){try{var t=localStorage.getItem('okf-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(location.search.indexOf('embed=cosmos')>-1)t='dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+(function(){try{var t=localStorage.getItem('okf-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(location.search.indexOf('embed=cosmos')>-1)t='dark';document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('data-cosmos',location.search.indexOf('embed=cosmos')>-1?'1':'0');}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
@@ -41,6 +41,23 @@
   --rail:#0d0e11; --rail-ink:#868c98; --rail-ink-hi:#e2e5ea;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px rgba(0,0,0,.42);
  }
+ /* Unified COSMOS embed — one theme across MyKB / SPACE / RSIS3. MyKB's
+    accent is violet; the shell chrome (dashboard) carries the rest. */
+ :root[data-cosmos="1"]{
+  --bg:#0b0e17; --panel:#121726; --panel-2:#171d2e; --canvas:#0b0e17; --ink:#e8ecf4; --ink-soft:#c6cde0;
+  --muted:#8b94ad; --faint:#5c6478; --line:#1e2740; --line-2:#1a2136;
+  --accent:#a855f7; --accent-ink:#c084fc; --accent-soft:#2b1b4d; --edge:#2a3552; --ok:#34d399;
+  --rail:#0d0e11; --rail-ink:#868c98; --rail-ink-hi:#e2e5ea;
+ }
+ :root[data-cosmos="1"] body{background:var(--bg)}
+ /* Cosmos nav strip (only when embedded in the unified dashboard) */
+ .cosmos-nav{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:6px;
+  padding:6px 8px;border-radius:999px;background:rgba(13,14,17,.85);border:1px solid rgba(255,255,255,.09);
+  backdrop-filter:blur(8px);box-shadow:0 6px 20px rgba(0,0,0,.45);font:600 11px/1 Poppins,system-ui,sans-serif}
+ .cosmos-nav a{color:#8b94ad;text-decoration:none;padding:5px 9px;border-radius:999px;transition:color .15s,background .15s}
+ .cosmos-nav a:hover{color:#fff;background:rgba(255,255,255,.08)}
+ .cosmos-nav a.on{color:#fff;background:var(--accent);}
+ .cosmos-nav a .n{opacity:.7;font-weight:500}
  @media (prefers-color-scheme:dark){:root:not([data-theme=light]){
   --bg:#17191e; --panel:#1d2026; --panel-2:#232833; --canvas:#111318; --ink:#eceef1; --ink-soft:#d7dae0;
   --muted:#9aa0aa; --faint:#6b7178; --line:#2a2e36; --line-2:#232830;
@@ -516,7 +533,7 @@
   <header id="topbar">
    <button class="btn" id="btn-menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="rail">
     <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="menudot" hidden></span></button>
-   <span class="ident">components/mykb<span class="muted">5418 concepts · 36892 links</span></span>
+   <span class="ident">components/mykb<span class="muted" id="ident-meta">5418 concepts · 36892 links</span></span>
    <div id="bar-tools">
    <div id="search-wrap"><label class="search"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
     <input id="search" class="field" placeholder="search concepts…" autocomplete="off" aria-label="Search"></label></div>
@@ -526,6 +543,8 @@
    </div>
    <div id="graph-controls">
     <button class="btn text" id="btn-filters" type="button" aria-label="Filters"><svg viewBox="0 0 24 24"><path d="M3 5h18l-7 8v6l-4-2v-4Z"/></svg>Filters<span class="fbadge">0</span></button>
+    <button class="btn text" id="btn-fullgraph" type="button" aria-label="Load the full knowledge graph" title="Render the complete 5.5k-concept graph (heavier)">
+     <svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/><circle cx="12" cy="12" r="3"/></svg>Full graph</button>
     <span class="selwrap"><select id="layout" class="field" aria-label="Layout">
      <optgroup label="built-in">
       <option value="cose">force</option><option value="concentric">concentric</option>
@@ -692,6 +711,7 @@
 
 <script>
 const NODES=[], EDGES=[], TYPES={}, TAGS={};
+let OKF_LITE_MODE=false;
 /* Pass 10: data now loads lazily from graph.json / catalog.json next to
    this page instead of being baked in (the old 43 MB embed would not
    parse on mobile). TYPES/TAGS are rebuilt from the catalog so node
@@ -699,7 +719,7 @@ const NODES=[], EDGES=[], TYPES={}, TAGS={};
 let OKF_CATALOG=null;
 function okfCatalogFetch(){
   if(OKF_CATALOG)return Promise.resolve(OKF_CATALOG);
-  return fetch('catalog.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():[];}).then(function(d){
+  return fetch(OKF_LITE_MODE?'catalog.lite.json':'catalog.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():[];}).then(function(d){
     var list=Array.isArray(d)?d:(d&&Array.isArray(d.concepts)?d.concepts:[]);
     OKF_CATALOG=list;
     for(var i=0;i<list.length;i++){var c=list[i];if(!c||c.id==null)continue;
@@ -758,7 +778,7 @@ function styleSheet(){const ink=cvar('--ink'),halo=cvar('--canvas'),edge=cvar('-
   {selector:'node',style:{'background-color':'data(c)','label':'data(title)','color':ink,'font-family':'Poppins,sans-serif',
    'font-size':10,'font-weight':500,'text-wrap':'wrap','text-max-width':120,'text-valign':'bottom','text-margin-y':5,
    'text-outline-width':2.5,'text-outline-color':halo,'min-zoomed-font-size':7,'border-width':0,'width':'data(sz)','height':'data(sz)'}},
-  {selector:'edge',style:{'width':1.2,'line-color':edge,'target-arrow-color':edge,'target-arrow-shape':'triangle','arrow-scale':.8,'curve-style':'bezier','opacity':.8}},
+  {selector:'edge',style:{'width':1.2,'line-color':edge,'target-arrow-color':edge,'target-arrow-shape':EDGES.length>9000?'none':'triangle','arrow-scale':.8,'curve-style':EDGES.length>9000?'haystack':'bezier','opacity':EDGES.length>18000?.5:.8}},
   {selector:'.dim',style:{'opacity':.1}},
   {selector:'.hl',style:{'border-width':3,'border-color':cvar('--accent')}},
   {selector:'node.dir',style:{'shape':'round-rectangle','background-color':cvar('--faint'),'background-opacity':.85,
@@ -774,6 +794,9 @@ function styleSheet(){const ink=cvar('--ink'),halo=cvar('--canvas'),edge=cvar('-
    button included. relaxZoom() lowers it to follow anything bigger. */
 const MIN_ZOOM=.2;
 const cy=cytoscape({container:document.getElementById('cy'),minZoom:MIN_ZOOM,maxZoom:1.6,wheelSensitivity:.2,
+ /* Performance for big graphs: rasterise during pan/zoom, no motion blur,
+    capped pixel ratio (dense canvases are the main mobile lag source). */
+ hideEdgesOnViewport:true,textureOnViewport:true,motionBlur:false,pixelRatio:window.devicePixelRatio>=2?1.25:1,
  elements:[...NODES.map(n=>({data:{id:n.id,title:n.title,c:color[typeOf[n.id]||'Untyped']||'#64748b',sz:szOf(n.id)}})),...EDGES.map(e=>({data:e}))],
  style:styleSheet(),layout:{name:'concentric',animate:false,minNodeSpacing:30,padding:40,avoidOverlap:true,spacingFactor:1.2,nodeDimensionsIncludeLabels:true}});
 function applyCyTheme(){cy.style(styleSheet());}
@@ -1723,10 +1746,12 @@ try{console.log('%cokf%c — knowledge as code. '+NODES.length+' concepts, one g
 
 /* ── lazy boot (pass 10): fetch the graph payload, then run the app ── */
 (function(){
+  var FULL = new URLSearchParams(location.search).get('full') === '1';
+  OKF_LITE_MODE = !FULL;
   var st=document.createElement('div');
   st.id='kg-status';
   st.style.cssText='position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:99;padding:12px 18px;border-radius:10px;background:rgba(20,24,33,.92);color:#e2e5ea;font:600 13px Poppins,system-ui,sans-serif;box-shadow:0 8px 28px rgba(0,0,0,.4);';
-  st.textContent='Loading knowledge graph…';
+  st.textContent=OKF_LITE_MODE?'Loading hub graph…':'Loading full graph…';
   document.body.appendChild(st);
   function fail(err){
     console.error('[okf] graph load failed:', err);
@@ -1735,17 +1760,80 @@ try{console.log('%cokf%c — knowledge as code. '+NODES.length+' concepts, one g
     var appEl=document.getElementById('app');
     if(appEl)appEl.style.opacity='0.45';
   }
-  Promise.all([
-    fetch('graph.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error('graph.json unavailable ('+r.status+')');return r.json();})
-      .then(function(g){if(!g||!Array.isArray(g.nodes))throw new Error('graph.json has no nodes');
-        for(var i=0;i<g.nodes.length;i++)NODES.push(g.nodes[i]);
-        for(var i=0;i<(g.edges||[]).length;i++)EDGES.push(g.edges[i]);}),
-    okfCatalogFetch()
-  ]).then(function(){
-    st.textContent='✓ ' + NODES.length + ' concepts loaded';
+  var loadGraph = function(src){
+    return fetch(src,{cache:'no-cache'}).then(function(r){
+      if(!r.ok)throw new Error(src+' unavailable ('+r.status+')');
+      return r.json();
+    }).then(function(g){
+      if(!g||!Array.isArray(g.nodes))throw new Error(src+' has no nodes');
+      return g;
+    });
+  };
+  Promise.resolve()
+    .then(function(){
+      if(!OKF_LITE_MODE)return loadGraph('graph.json');
+      return loadGraph('graph.lite.json').catch(function(err){
+        console.warn('[okf] lite graph unavailable, falling back to full graph', err);
+        OKF_LITE_MODE=false;
+        return loadGraph('graph.json');
+      });
+    })
+    .then(function(g){
+      for(var i=0;i<g.nodes.length;i++)NODES.push(g.nodes[i]);
+      for(var i=0;i<(g.edges||[]).length;i++)EDGES.push(g.edges[i]);
+      var meta = OKF_LITE_MODE ? (g.meta||null) : null;
+      var idm = document.getElementById('ident-meta');
+      if(idm) idm.textContent = meta
+        ? (NODES.length+' hub concepts · '+EDGES.length+' links (of '+meta.total_nodes+' / '+meta.total_edges+')')
+        : (NODES.length+' concepts · '+EDGES.length+' links');
+      st.textContent = OKF_LITE_MODE
+        ? ('✓ '+NODES.length+' hub concepts — full graph has '+(meta?meta.total_nodes:'?')+', open via “Full graph”')
+        : ('✓ '+NODES.length+' concepts loaded');
+      return okfCatalogFetch();
+    })
+    .then(function(){
     st.style.color='#34d399';
     setTimeout(function(){st.style.opacity='0';setTimeout(function(){if(st.parentNode)st.parentNode.removeChild(st);},250);},600);
     okfBoot();
+    var bf=document.getElementById('btn-fullgraph');
+    if(bf){
+      if(OKF_LITE_MODE){
+        bf.onclick=function(){var h=location.hash;location.href=location.pathname+'?full=1'+h;};
+      } else {
+        bf.style.display='none';
+      }
+    }
   }).catch(fail);
+})();
+
+/* ── Unified COSMOS: cross-component nav + edge swipes when embedded ── */
+(function(){
+  if(location.search.indexOf('embed=cosmos')===-1)return;
+  var nav=document.createElement('div');
+  nav.className='cosmos-nav';
+  nav.innerHTML='<a data-c="space"><span class="n">🚀</span> SPACE</a>'+
+    '<a data-c="mykb"><span class="n">📚</span> MyKB</a>'+
+    '<a data-c="rsis3"><span class="n">🧬</span> RSIS3</a>'+
+    '<a data-c="fusion"><span class="n">✦</span> Fusion</a>';
+  var cur=nav.querySelector('[data-c="mykb"]');
+  if(cur)cur.classList.add('on');
+  document.body.appendChild(nav);
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(ev){
+      ev.preventDefault();
+      parent.postMessage({cosmos:'goto',tab:a.getAttribute('data-c')},'*');
+    });
+  });
+  var sx=null;
+  document.addEventListener('touchstart',function(e){
+    if(e.touches.length!==1)return;
+    var x=e.touches[0].clientX;
+    sx=(x<30||x>innerWidth-30)?x:null;
+  },{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(sx==null)return;
+    var dx=e.changedTouches[0].clientX-sx;sx=null;
+    if(Math.abs(dx)>56)parent.postMessage({cosmos:'swipe',dir:dx<0?'next':'prev'},'*');
+  },{passive:true});
 })();
 </script></body></html>

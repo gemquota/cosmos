@@ -1333,6 +1333,16 @@ body {
 #stubs-only { accent-color: var(--accent); }
 
 </style>
+<style>
+/* Unified COSMOS cross-component nav strip (embedded mode) */
+.cosmos-nav{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:6px;
+ padding:6px 8px;border-radius:999px;background:rgba(13,14,17,.85);border:1px solid rgba(255,255,255,.09);
+ backdrop-filter:blur(8px);box-shadow:0 6px 20px rgba(0,0,0,.45);font:600 11px/1 Poppins,system-ui,sans-serif}
+.cosmos-nav a{color:#8b94ad;text-decoration:none;padding:5px 9px;border-radius:999px;transition:color .15s,background .15s;cursor:pointer}
+.cosmos-nav a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.cosmos-nav a.on{color:#fff;background:var(--accent,#6366f1)}
+.cosmos-nav a .n{opacity:.7;font-weight:500}
+</style>
 </head>
 <body>
 
@@ -1455,6 +1465,7 @@ body {
       <input id="topology-depth" type="number" value="2" min="1" max="5" style="width:50px;padding:3px 6px;font-size:11px;border:1px solid var(--border);border-radius:3px;background:var(--search-bg);color:var(--text);">
       <button id="topology-go" style="padding:3px 10px;font-size:11px;border:1px solid var(--accent);border-radius:3px;background:var(--accent);color:#fff;cursor:pointer;">Filter</button>
       <button id="graph-rerender" style="padding:3px 10px;font-size:11px;border:1px solid var(--border);border-radius:3px;background:var(--bg);color:var(--text);cursor:pointer;display:none;">↻ Re-layout</button>
+      <button id="graph-lite-toggle" title="Toggle between the fast lite graph (420 core nodes) and the full graph (5.5k nodes)" style="padding:3px 10px;font-size:11px;border:1px solid var(--border);border-radius:3px;background:var(--bg);color:var(--text);cursor:pointer;">◐ Lite graph</button>
     </div>
     <canvas id="graph-canvas" style="display:block;position:absolute;top:40px;left:0;right:0;bottom:0;width:100%;background:var(--sidebar-bg);cursor:grab;"></canvas>
   </div>
@@ -2253,6 +2264,7 @@ function entitySearch(q) {
 }
 
 var graphListenersAttached = false;
+var graphMode = "lite"; // "lite" = graph.lite.json (fast), "full" = graph.json (heavy)
 var graphState = null;
 var graphStats = null;
 var graphCam = { x: 0, y: 0, zoom: 1 };
@@ -2264,8 +2276,16 @@ function loadGraph() {
   if (!canvas || !info) return;
   // Re-render on every tab switch, but attach canvas/window listeners only once.
   
-  info.textContent = 'Loading graph data...';
-  fetch(KB_BASE + 'graph.json')
+  info.textContent = 'Loading graph data (' + (graphMode === 'full' ? 'full' : 'lite') + ')...';
+  var toggleBtn = document.getElementById('graph-lite-toggle');
+  if (toggleBtn) {
+    toggleBtn.textContent = graphMode === 'full' ? '◐ Switch to lite (fast)' : '◐ Switch to full graph';
+    toggleBtn.onclick = function() {
+      graphMode = (graphMode === 'full') ? 'lite' : 'full';
+      loadGraph();
+    };
+  }
+  fetch(KB_BASE + (graphMode === 'full' ? 'graph.json' : 'graph.lite.json'))
     .then(function(r) { return r.json(); })
     .then(function(g) {
       if (!g || !g.nodes) { info.textContent = 'No graph data'; return; }
@@ -2455,7 +2475,7 @@ function loadGraph() {
               nodes.forEach(function(n) { layoutOut[n.id] = { x: Math.round(n.x*10)/10, y: Math.round(n.y*10)/10 }; });
               sessionStorage.setItem(layoutKey, JSON.stringify(layoutOut));
             } catch(e) {}
-            info.textContent = nodes.length + ' nodes, ' + edges.length + ' edges — drag to pan, scroll to zoom';
+            info.textContent = (graphMode === 'full' ? 'full' : 'lite') + ' · ' + nodes.length + ' nodes, ' + edges.length + ' edges — drag to pan, scroll to zoom';
             var rbtn = document.getElementById('graph-rerender');
             if (rbtn) { rbtn.style.display = ''; rbtn.onclick = function() { sessionStorage.removeItem(layoutKey); location.reload(); }; }
             return;
@@ -3531,6 +3551,12 @@ function resolveRoute() {
   var hash = window.location.hash.slice(1);
   if (hash === 'stubs' || hash === 'review' || hash === 'guidance' || hash === 'guide') {
     activateStubs();
+    return;
+  }
+  // Unified COSMOS subview: #graph / #kg deep-link straight into the graph tab
+  if (hash === 'graph' || hash === 'kg') {
+    var graphTab = document.querySelector('.sidebar-tab[data-tab="graph"]');
+    if (graphTab) graphTab.click();
     return;
   }
   if (!hash) {
@@ -5045,6 +5071,38 @@ loadFileList();
 
 applySidebarState();
 
+})();
+</script>
+<script>
+/* ── Unified COSMOS: cross-component nav + edge swipes when embedded ── */
+(function(){
+  if(location.search.indexOf('embed=cosmos')===-1)return;
+  var nav=document.createElement('div');
+  nav.className='cosmos-nav';
+  nav.innerHTML='<a data-c="space"><span class="n">🚀</span> SPACE</a>'+
+    '<a data-c="mykb"><span class="n">📚</span> MyKB</a>'+
+    '<a data-c="rsis3"><span class="n">🧬</span> RSIS3</a>'+
+    '<a data-c="fusion"><span class="n">✦</span> Fusion</a>';
+  var cur=nav.querySelector('[data-c="mykb"]');
+  if(cur)cur.classList.add('on');
+  document.body.appendChild(nav);
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(ev){
+      ev.preventDefault();
+      parent.postMessage({cosmos:'goto',tab:a.getAttribute('data-c')},'*');
+    });
+  });
+  var sx=null;
+  document.addEventListener('touchstart',function(e){
+    if(e.touches.length!==1)return;
+    var x=e.touches[0].clientX;
+    sx=(x<30||x>innerWidth-30)?x:null;
+  },{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(sx==null)return;
+    var dx=e.changedTouches[0].clientX-sx;sx=null;
+    if(Math.abs(dx)>56)parent.postMessage({cosmos:'swipe',dir:dx<0?'next':'prev'},'*');
+  },{passive:true});
 })();
 </script>
 </body>
