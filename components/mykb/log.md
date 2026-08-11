@@ -1080,3 +1080,9 @@ title: "Bundle Log"
 - Added lite knowledge-graph mode: `graph.lite.json` (420/5510 nodes, 1965/36984 edges) default in `okf-graph.html` and MyKB inline viewer with full/lite toggle; full-scale KG no longer lags.
 - Unified the cosmos palette across all three components via `?embed=cosmos`; added swipe postMessage (`cosmos:'swipe'`/`cosmos:'goto'`) so SPACE/MyKB/RSIS3 panes cross-navigate the shell.
 - Synthesis: `cosmos-dashboard-tab-unification-2026-08-11.md`.
+
+## 2026-08-11 (dashboard snapshot fallback — root-cause fix)
+- Found the root cause of the recurring empty RSIS3 tabs: `gen-static-data.py` rebuilt `dashboard-data.json` only from untracked `.rsis/telemetry/*.jsonl`, so CI/fresh-checkout regen blanked the payload (571-byte regression) and manual fixes were ephemeral.
+- Added `_legacy_pulse_payload()` fallback in `gen-static-data.py`: when telemetry is absent, map the tracked RRP v2 pipeline files `rack/pulses/pulse-*.json` into the dashboard schema; deploy/CI regen now keeps the payload populated.
+- Rule recorded: generated snapshots need a git-tracked source of truth (or fallback); `--check` validates contracts but not payload depth — spot-check `pulses`/`goals` after regen.
+- Synthesis: `cosmos-dashboard-snapshot-fallback-2026-08-11.md`.
