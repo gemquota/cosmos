@@ -76135,6 +76135,21 @@
   ]
  },
  {
+  "path": "wiki/syntheses/cosmos-dashboard-snapshot-fallback-2026-08-11.md",
+  "type": "synthesis",
+  "title": "Dashboard snapshot fallback \u2014 never regen from an environment-dependent source",
+  "tags": [
+   "synthesis",
+   "dashboard",
+   "rsis3",
+   "snapshots",
+   "regression",
+   "ci",
+   "gen-static-data",
+   "pulses"
+  ]
+ },
+ {
   "path": "wiki/syntheses/cosmos-dashboard-tab-unification-2026-08-11.md",
   "type": "synthesis",
   "title": "Cosmos dashboard tab unification \u2014 SPACE/MyKB/RSIS3 shell + KG lite mode",

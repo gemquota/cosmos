@@ -56,6 +56,7 @@ knowledge graph usable at full scale.
   view — the pattern for deeper multi-component data generation surfaces.
 
 ## Related
+- [[wiki/syntheses/cosmos-dashboard-snapshot-fallback-2026-08-11|Dashboard Snapshot Fallback — never regen from an environment-dependent source]]
 - [[wiki/syntheses/rsis3-dashboard-unified-embed-2026-08-10|RSIS3 unified dashboard — live-telemetry rebuild & unified embed]]
 - [[wiki/syntheses/cosmos-dashboard-mykb-integration|Cosmos Dashboard & MyKB Integration Patterns]]
 - [[wiki/syntheses/knowledge-graph-maintenance|Knowledge Graph Maintenance]]

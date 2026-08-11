@@ -2,14 +2,14 @@
 type: "index"
 hub: true
 title: "Syntheses Index"
-description: "Listing of the syntheses/ folder (94 pages)."
+description: "Listing of the syntheses/ folder (95 pages)."
 tags: ["index"]
 timestamp: "2026-08-10T13:41:57Z"
 ---
 
 # Syntheses
 
-Part of [[wiki/index|Wiki Index]]. 94 pages.
+Part of [[wiki/index|Wiki Index]]. 95 pages.
 
 ## Pages
 - [[wiki/syntheses/acquisition-pass-snapshot-ordering|Acquisition Passes & Snapshot Ordering]] — Durable rules for multi-worker acquisition rounds: stage untracked notes before regenerating files.json (it counts tracked files only), generators are idempotent and safe to re-run, and threshold buckets move predictably because fulls are capped at 400 words
@@ -24,6 +24,7 @@ Part of [[wiki/index|Wiki Index]]. 94 pages.
 - [[wiki/syntheses/cosmos-codebase-md-generator-2026-08-09|CODEBASE.md — regenerable hierarchical codebase concatenation for context injection]] — gen-codebase-md.py produces CODEBASE.md, a single hierarchical concatenation of the COSMOS source tree (header + inclusion rules + ASCII tree + anchor TOC + per-file sections); records the durable inclusion/exclusion rules and maintenance invariants
 - [[wiki/syntheses/cosmos-dashboard-mykb-integration|Cosmos Dashboard & MyKB Integration Patterns]] — Durable engineering patterns for the static-hosted dashboard↔wiki integration: lazy iframes, bounded client-side search, repo-relative snapshots, read-only validation, verification-first changes
 - [[wiki/syntheses/cosmos-dashboard-tab-unification-2026-08-11|Cosmos Dashboard Tab Unification — SPACE/MyKB/RSIS3 shell + KG lite mode]] — One four-tab shell (SPACE | MyKB | RSIS3 | Fusion) with lazy iframes, swipe/keyboard/edge-arrow nav, deep links, and a standalone telemetry-only RSIS3 page; KG lite mode (420/5510 nodes) makes the full-scale graph interactive
+- [[wiki/syntheses/cosmos-dashboard-snapshot-fallback-2026-08-11|Dashboard Snapshot Fallback — never regen from an environment-dependent source]] — Root cause of the recurring empty RSIS3 tabs: dashboard-data.json was rebuilt only from untracked .rsis/telemetry, so CI regen blanked it; generated snapshots need a git-tracked fallback source
 - [[wiki/syntheses/dead-link-repair|Dead-Link Repair]] — Finding and fixing links that point nowhere
 - [[wiki/syntheses/deployment-safety|Deployment Safety]] — Practices for shipping AI systems without harm
 - [[wiki/syntheses/evidence-and-provenance|Evidence and Provenance: Open Threads]] — Open threads on claims, sources, and version history so syntheses stay auditable
