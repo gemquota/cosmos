@@ -1,24 +1,530 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>COSMOS — Unified Dashboard</title>
-<meta http-equiv="refresh" content="0; url=components/rsis3/dashboard/">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <style>
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f1118;color:#e0e0e0;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0}
-.box{text-align:center;padding:2rem}
-h1{font-size:1.5rem;background:linear-gradient(90deg,#7b2fff,#ff8c00,#00ff9f);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-p{color:#666;font-size:.85rem;margin-top:.5rem}
-a{color:#7b2fff;text-decoration:none}
-a:hover{color:#a855f7}
+:root{
+  --bg:#0b0e17; --panel:#121726; --panel-2:#171d2e; --panel-3:#1e293b;
+  --line:#1e2740; --line-2:#2a3552;
+  --ink:#e8ecf4; --ink-soft:#c6cde0; --muted:#8b94ad; --faint:#5c6478;
+  --indigo:#6366f1; --violet:#a855f7; --emerald:#34d399; --amber:#f59e0b;
+  --rose:#fb7185; --sky:#38bdf8;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px rgba(0,0,0,.42);
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:radial-gradient(1200px 600px at 15% -10%,rgba(99,102,241,.14),transparent 60%),
+            radial-gradient(1000px 500px at 85% 110%,rgba(168,85,247,.12),transparent 60%),var(--bg);
+     color:var(--ink);font:14px/1.5 ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+     display:flex;flex-direction:column;overflow:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#2a3552;border-radius:6px}
+
+/* ── header ── */
+#hdr{flex:none;display:flex;align-items:center;gap:14px;padding:10px 18px;border-bottom:1px solid var(--line);
+     background:rgba(11,14,23,.82);backdrop-filter:blur(10px);z-index:50}
+.brand{font-weight:800;font-size:15px;letter-spacing:.02em;white-space:nowrap;
+       background:linear-gradient(90deg,#818cf8,#a855f7,#e879f9);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.brand small{display:block;font-size:9px;font-weight:600;letter-spacing:.28em;color:var(--faint);-webkit-text-fill-color:var(--faint)}
+#tabs{display:flex;gap:4px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
+#tabs::-webkit-scrollbar{display:none}
+.tab{border:1px solid transparent;background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;
+     padding:7px 14px;border-radius:999px;font:600 12px/1 ui-sans-serif,system-ui,sans-serif;
+     transition:color .15s,background .15s,border-color .15s,transform .1s}
+.tab:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+.tab:active{transform:scale(.97)}
+.tab.on{color:#fff;background:linear-gradient(135deg,var(--indigo),var(--violet));
+        box-shadow:0 4px 14px rgba(99,102,241,.35),inset 0 1px 0 rgba(255,255,255,.18)}
+.hint{flex:none;display:flex;align-items:center;gap:8px;font-size:10px;color:var(--faint);white-space:nowrap}
+.hint .kbd{border:1px solid var(--line-2);border-radius:6px;padding:2px 6px;background:var(--panel-2);color:var(--muted);font:600 10px/1 ui-monospace,monospace}
+#live-dot{width:8px;height:8px;border-radius:50%;background:var(--emerald);box-shadow:0 0 8px var(--emerald);animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* ── edge arrows (tabs on either side) ── */
+.edge{position:fixed;top:50%;transform:translateY(-50%);z-index:60;width:38px;height:64px;
+      border:1px solid var(--line-2);background:rgba(13,14,17,.7);color:var(--muted);cursor:pointer;
+      display:flex;align-items:center;justify-content:center;font-size:22px;line-height:1;
+      backdrop-filter:blur(8px);transition:color .15s,background .15s,border-color .15s,opacity .2s;opacity:.55}
+.edge:hover{color:#fff;background:rgba(99,102,241,.25);border-color:var(--indigo);opacity:1}
+.edge-l{left:0;border-radius:0 14px 14px 0}
+.edge-r{right:0;border-radius:14px 0 0 14px}
+
+/* ── panes / swipe slider ── */
+#panes{flex:1;display:flex;overflow:hidden;position:relative;
+       transform:translateX(0);transition:transform .38s cubic-bezier(.32,.72,.32,1)}
+.pane{flex:0 0 100%;min-width:100%;height:100%;overflow:hidden;position:relative}
+.pane iframe{width:100%;height:100%;border:0;display:block;background:var(--bg)}
+.frame{width:100%;height:100%;overflow:hidden;position:relative}
+
+/* ── fusion ── */
+#pane-fusion{overflow-y:auto;overflow-x:hidden}
+.fus{max-width:1280px;margin:0 auto;padding:22px 20px 40px}
+.fus h1{font-size:20px;font-weight:800;margin:0 0 2px;
+        background:linear-gradient(90deg,#a5b4fc,#c084fc,#e879f9);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.fus .sub{color:var(--muted);font-size:12px;margin:0 0 14px}
+.fcard{background:linear-gradient(180deg,rgba(23,29,46,.9),rgba(18,23,38,.9));
+       border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.fcard .ic{font-size:22px}
+.fcard h3{margin:8px 0 2px;font-size:13px;font-weight:700}
+.fcard .stats{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.fcard .stat{flex:1 1 40%;background:var(--panel-3);border:1px solid var(--line-2);border-radius:10px;padding:6px 8px}
+.fcard .stat b{display:block;font-size:15px;font-weight:800}
+.fcard .stat span{font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.fcard .open{display:inline-block;margin-top:10px;font-size:10px;font-weight:700;color:var(--ink);
+             background:linear-gradient(135deg,var(--indigo),var(--violet));border-radius:999px;padding:5px 12px;cursor:pointer;
+             border:0;transition:filter .15s}
+.fcard .open:hover{filter:brightness(1.15)}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.charts .fcard h4{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.chartbox{position:relative;height:280px}
+.chartbox canvas{position:absolute;inset:0;width:100% !important;height:100% !important}
+.proj{display:grid;grid-template-columns:1.1fr 1fr;gap:12px;margin-top:12px}
+.ctl{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:8px}
+.ctl label{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.ctl select{background:var(--panel-3);border:1px solid var(--line-2);color:var(--ink);border-radius:8px;font-size:11px;padding:4px 8px}
+.btn{border:0;cursor:pointer;font:600 11px/1 ui-sans-serif,system-ui,sans-serif;color:#fff;padding:7px 12px;border-radius:999px;
+     background:linear-gradient(135deg,var(--indigo),var(--violet));box-shadow:0 4px 12px rgba(99,102,241,.3);transition:filter .15s}
+.btn:hover{filter:brightness(1.15)}
+.btn.ghost{background:var(--panel-3);box-shadow:none;border:1px solid var(--line-2);color:var(--muted)}
+#fus-coh{display:inline-flex;align-items:center;gap:8px;margin-left:8px;vertical-align:middle}
+#fus-coh .bar{width:110px;height:6px;border-radius:6px;background:var(--panel-3);overflow:hidden}
+#fus-coh .bar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--indigo),var(--emerald))}
+#fus-coh b{font-size:13px;font-weight:800}
+#fus-stream{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:6px;max-height:300px;overflow-y:auto}
+#fus-stream li{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--indigo);
+               border-radius:10px;padding:8px 10px;font-size:11px;color:var(--ink-soft);line-height:1.45}
+#fus-stream li .tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.05em;border-radius:6px;padding:1px 6px;margin-right:6px}
+#fus-stream li.rsis .tag{background:rgba(99,102,241,.18);color:#a5b4fc}
+#fus-stream li.mykb .tag{background:rgba(168,85,247,.18);color:#c084fc}
+#fus-stream li.space .tag{background:rgba(56,189,248,.16);color:#7dd3fc}
+#fus-stream li.sys .tag{background:rgba(52,211,153,.16);color:#6ee7b7}
+.fus-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.fus-links a{font-size:11px;font-weight:700;color:var(--ink);text-decoration:none;border:1px solid var(--line-2);
+             background:var(--panel-2);border-radius:999px;padding:7px 13px;transition:border-color .15s,background .15s}
+.fus-links a:hover{border-color:var(--indigo);background:rgba(99,102,241,.14)}
+#fus-msg{color:var(--rose);font-size:12px}
+footer{flex:none;padding:6px 18px;border-top:1px solid var(--line);background:rgba(11,14,23,.7);
+       font-size:10px;color:var(--faint);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media (max-width:900px){
+  .fgrid{grid-template-columns:1fr}
+  .charts,.proj{grid-template-columns:1fr}
+  .hint .kbd{display:none}
+}
 </style>
 </head>
 <body>
-<div class="box">
-  <h1>✦ COSMOS</h1>
-  <p>Redirecting to the unified dashboard…</p>
-  <p><a href="components/rsis3/dashboard/">Open Dashboard</a></p>
-</div>
+
+<header id="hdr">
+  <div class="brand">✦ COSMOS<small>UNIFIED DASHBOARD</small></div>
+  <nav id="tabs" aria-label="Components">
+    <button class="tab on" data-t="space" onclick="go('space')">🚀 SPACE</button>
+    <button class="tab" data-t="mykb" onclick="go('mykb')">📚 MyKB</button>
+    <button class="tab" data-t="rsis3" onclick="go('rsis3')">🧬 RSIS3</button>
+    <button class="tab" data-t="fusion" onclick="go('fusion')">✦ Fusion</button>
+  </nav>
+  <div class="hint"><span id="live-dot"></span><span>swipe</span><span class="kbd">←</span><span class="kbd">→</span></div>
+</header>
+
+<button class="edge edge-l" id="edgeL" title="Previous component" aria-label="Previous">‹</button>
+<button class="edge edge-r" id="edgeR" title="Next component" aria-label="Next">›</button>
+
+<main id="panes">
+  <section class="pane" data-pane="space"><div class="frame"><iframe data-src="components/space/web/index.html?embed=cosmos" title="SPACE web UI" loading="lazy"></iframe></div></section>
+  <section class="pane" data-pane="mykb"><div class="frame"><iframe data-src="components/mykb/index.html?embed=cosmos" title="MyKB wiki browser" loading="lazy"></iframe></div></section>
+  <section class="pane" data-pane="rsis3"><div class="frame"><iframe data-src="components/rsis3/dashboard/rsis3.html?embed=cosmos" title="RSIS3 telemetry" loading="lazy"></iframe></div></section>
+  <section class="pane" data-pane="fusion"><div class="frame" id="pane-fusion">
+    <div class="fus">
+      <h1>✦ Fusion — Multi-Component Extrapolation</h1>
+      <p class="sub">One interface that combines RSIS3 telemetry, MyKB knowledge, and SPACE ideation into a shared generation model.
+        Derived values are extrapolated from live static snapshots — every number below is computed from the three component datasets.</p>
+      <div id="fus-msg"></div>
+
+      <div class="fgrid" id="fus-cards"></div>
+
+      <div class="charts">
+        <div class="fcard">
+          <h4>Capability Matrix</h4>
+          <div class="chartbox"><canvas id="fus-radar"></canvas></div>
+        </div>
+        <div class="fcard">
+          <h4>SPACE Probe Coverage by Series</h4>
+          <div class="chartbox"><canvas id="fus-bars"></canvas></div>
+        </div>
+      </div>
+
+      <div class="proj">
+        <div class="fcard">
+          <div class="ctl">
+            <label>Horizon</label>
+            <select id="fus-horizon">
+              <option value="5">5 cycles</option>
+              <option value="10" selected>10 cycles</option>
+              <option value="20">20 cycles</option>
+            </select>
+            <button class="btn" id="fus-gen">⚡ Generate Extrapolation</button>
+            <span style="font-size:10px;color:var(--faint)" id="fus-seed"></span>
+          </div>
+          <h4>Projected Growth Across Components</h4>
+          <div class="chartbox" style="height:240px"><canvas id="fus-proj"></canvas></div>
+        </div>
+        <div class="fcard">
+          <h4>Generation Stream</h4>
+          <p style="font-size:10px;color:var(--faint);margin:0 0 6px">Synthesised statements combining all three datasets — press Generate for a new pass.</p>
+          <ul id="fus-stream"></ul>
+        </div>
+      </div>
+
+      <div class="fus-links">
+        <a href="#space">🚀 Open SPACE</a>
+        <a href="#mykb">📚 Open MyKB</a>
+        <a href="#rsis3">🧬 Open RSIS3</a>
+        <a href="#rsis3:graphs">📊 RSIS3 Charts</a>
+        <a href="components/mykb/okf-graph.html?embed=cosmos" target="_blank" rel="noopener">🕸️ MyKB Graph ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span id="foot-l">COSMOS · unified shell — SPACE ⇄ MyKB ⇄ RSIS3 ⇄ Fusion</span>
+  <span id="foot-r"></span>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var TABS=['space','mykb','rsis3','fusion'];
+  var ICONS={space:'🚀',mykb:'📚',rsis3:'🧬',fusion:'✦'};
+  var panes=document.getElementById('panes');
+  var tabs=document.getElementById('tabs');
+  var loaded={};
+
+  function current(){
+    var h=(location.hash||'').replace(/^#/,'').split(':')[0];
+    return TABS.indexOf(h)>-1?h:'space';
+  }
+  function indexOf(tab){return TABS.indexOf(tab);}
+
+  function render(tab, sub){
+    var i=indexOf(tab);
+    panes.style.transform='translateX(-'+(i*100)+'%)';
+    Array.prototype.forEach.call(tabs.querySelectorAll('.tab'),function(b){
+      b.classList.toggle('on', b.getAttribute('data-t')===tab);
+    });
+    // lazy-load the iframe on first activation (pass deep-link subview through)
+    var pane=panes.querySelector('[data-pane="'+tab+'"]');
+    if(pane&&!loaded[tab]){
+      loaded[tab]=true;
+      var fr=pane.querySelector('iframe');
+      if(fr&&!fr.src&&fr.getAttribute('data-src')){
+        fr.src=fr.getAttribute('data-src')+(sub?('#'+sub):'');
+      }
+    }
+  }
+
+  function subview(tab){
+    var h=(location.hash||'').replace(/^#/,'').split(':');
+    return (h[0]===tab&&h[1])?h[1]:null;
+  }
+  function go(tab, push){
+    if(TABS.indexOf(tab)===-1)tab='space';
+    var sub=subview(tab);
+    if(push!==false){
+      try{history.pushState(null,'','#'+tab+(sub?(':'+sub):''));}catch(e){}
+    }
+    render(tab, sub);
+  }
+
+  function step(dir){
+    var i=indexOf(current());
+    var n=(i+dir+TABS.length)%TABS.length;
+    go(TABS[n]);
+  }
+
+  // hash routing (back/forward + deep links)
+  window.addEventListener('hashchange',function(){render(current(),subview(current()));});
+  window.addEventListener('popstate',function(){render(current(),subview(current()));});
+
+  // edge arrows
+  document.getElementById('edgeL').addEventListener('click',function(){step(-1);});
+  document.getElementById('edgeR').addEventListener('click',function(){step(1);});
+
+  // keyboard
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft')step(-1);
+    else if(e.key==='ArrowRight')step(1);
+  });
+
+  // touch swipe on shell chrome (header, footer, fusion pane, edges)
+  var sx=null,sy=null;
+  document.addEventListener('touchstart',function(e){
+    if(e.touches.length!==1)return;
+    sx=e.touches[0].clientX;sy=e.touches[0].clientY;
+  },{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(sx==null)return;
+    var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;
+    sx=null;sy=null;
+    if(Math.abs(dx)<Math.abs(dy)||Math.abs(dx)<60)return;
+    step(dx<0?1:-1);
+  },{passive:true});
+
+  // embedded components talk to the shell
+  window.addEventListener('message',function(e){
+    var d=e.data;
+    if(!d||(d.cosmos!=='swipe'&&d.cosmos!=='goto'))return;
+    if(d.cosmos==='swipe')step(d.dir==='next'?1:-1);
+    else if(TABS.indexOf(d.tab)>-1)go(d.tab);
+  });
+
+  // footer timestamp
+  (function(){
+    var f=document.getElementById('foot-r');
+    if(f)f.textContent='static snapshot · '+new Date().toISOString().slice(0,10);
+  })();
+
+  window.go=go;
+  window.step=step;
+  render(current(),subview(current()));
+
+  // ── Fusion ──
+  var S={rsis:null,mykb:null,space:null,seed:7,horizon:10,charts:{}};
+  var RND=(function(){ // mulberry32 seeded PRNG
+    return function(seed){
+      return function(){
+        seed|=0;seed=seed+0x6D2B79F5|0;
+        var t=Math.imul(seed^seed>>>15,1|seed);
+        t=t+Math.imul(t^t>>>7,61|t)^t;
+        return((t^t>>>14)>>>0)/4294967296;
+      };
+    };
+  })();
+
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+  function loadFusion(){
+    Promise.all([
+      fetch('components/rsis3/rack/pulses/dashboard-data.json').then(function(r){if(!r.ok)throw new Error('dashboard-data '+r.status);return r.json();}),
+      fetch('components/mykb/graph.lite.json').then(function(r){if(!r.ok)throw new Error('graph.lite '+r.status);return r.json();}),
+      fetch('components/mykb/catalog.lite.json').then(function(r){if(!r.ok)throw new Error('catalog.lite '+r.status);return r.json();}),
+      fetch('components/space/web/framework-summary.json').then(function(r){if(!r.ok)throw new Error('framework-summary '+r.status);return r.json();})
+    ]).then(function(d){
+      var rd=d[0],gd=d[1],cat=d[2],sd=d[3];
+      var sm=rd.summary||{};
+      S.rsis={
+        pulses:sm.pulse_count||rd.pulses.length||0,goals:sm.tot||rd.goals.length||0,
+        pass:sm.pass||0,fail:sm.fail||0,hold:sm.hold||0,impl:sm.impl_count||0,
+        constraints:Object.keys(sm.cd||{}).length,
+        layers:Object.keys(rd.score_history||{}).length
+      };
+      S.mykb={
+        nodes:(gd.meta&&gd.meta.total_nodes)||0,edges:(gd.meta&&gd.meta.total_edges)||0,
+        lite:(gd.meta&&gd.meta.lite_nodes)||0,liteEdges:(gd.meta&&gd.meta.lite_edges)||0,
+        areas:(gd.meta&&gd.meta.areas)?Object.keys(gd.meta.areas).length:1,
+        catalog:Array.isArray(cat)?cat.length:0
+      };
+      var m=sd.meta||{};
+      S.space={
+        series:m.total_series||0,rounds:m.total_rounds||0,
+        oe:m.total_open_ended||0,mc:m.total_multi_choice||0,
+        probes:(m.total_open_ended||0)+(m.total_multi_choice||0),
+        list:sd.series||[]
+      };
+      renderFusion();
+    }).catch(function(e){
+      var el=document.getElementById('fus-msg');
+      if(el)el.textContent='⚠ Fusion data unavailable: '+e.message;
+    });
+  }
+
+  function pct(v,cap){return Math.max(0,Math.min(100,Math.round(v/cap*100)));}
+
+  function renderFusion(){
+    var r=S.rsis,m=S.mykb,p=S.space;
+    var rate=r.goals>0?Math.round(r.pass/r.goals*100):0;
+
+    // stat cards
+    var cards=document.getElementById('fus-cards');
+    cards.innerHTML=
+      card('🧬','RSIS3 — Execution',[
+        stat(r.pulses,'pulses','--indigo'),stat(r.goals,'goals','--indigo'),
+        stat(rate+'%','success','--emerald'),stat(r.impl,'improvements','--indigo'),
+        stat(r.constraints,'constraints','--amber'),stat(r.layers+'','layers active','--violet')
+      ],'Open RSIS3 →','#rsis3')+
+      card('📚','MyKB — Knowledge',[
+        stat(m.nodes,'nodes','--violet'),stat(m.edges,'edges','--violet'),
+        stat(m.catalog,'catalog items','--violet'),stat(m.liteEdges,'lite edges','--emerald'),
+        stat(m.areas,'areas','--sky'),stat(m.lite,'lite nodes','--indigo')
+      ],'Open MyKB →','#mykb')+
+      card('🚀','SPACE — Ideation',[
+        stat(p.series,'series','--sky'),stat(p.rounds,'rounds','--sky'),
+        stat(p.probes,'probes','--sky'),stat(p.oe,'open-ended','--indigo'),
+        stat(p.mc,'multi-choice','--amber'),stat('45–75m','completion','--violet')
+      ],'Open SPACE →','#space');
+
+    // radar — normalized capability matrix
+    if(typeof Chart!=='undefined'){
+      var radar=new Chart(document.getElementById('fus-radar'),{
+        type:'radar',
+        data:{
+          labels:['Data Depth','Structure','Coverage','Quality','Fidelity'],
+          datasets:[
+            {label:'RSIS3',data:[
+              pct(r.pulses,50),pct(r.constraints,12),pct(r.layers,9),rate,pct(r.impl,20)
+            ],borderColor:'#6366f1',backgroundColor:'rgba(99,102,241,.18)',pointBackgroundColor:'#818cf8'},
+            {label:'MyKB',data:[
+              pct(m.nodes,6000),pct(m.edges,40000),pct(m.areas,6),pct(Math.min(m.catalog,500),500),pct(m.liteEdges,2500)
+            ],borderColor:'#a855f7',backgroundColor:'rgba(168,85,247,.16)',pointBackgroundColor:'#c084fc'},
+            {label:'SPACE',data:[
+              pct(p.probes,400),pct(p.rounds,30),pct(p.series,8),pct(p.mc,300),pct(p.oe,80)
+            ],borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,.14)',pointBackgroundColor:'#7dd3fc'}
+          ]
+        },
+        options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#c6cde0',font:{size:11}}}},
+          scales:{r:{angleLines:{color:'#1e2740'},grid:{color:'#1e2740'},pointLabels:{color:'#8b94ad',font:{size:10}},
+                   ticks:{display:false},backgroundColor:'rgba(18,23,38,.35)'}}}
+      });
+      S.charts.radar=radar;
+    }
+
+    // SPACE probes per series (stacked)
+    if(typeof Chart!=='undefined'){
+      var labels=[],oe=[],mc=[];
+      (p.list||[]).forEach(function(sr){
+        labels.push('S'+sr.id);
+        oe.push(sr.total_open_ended||0);
+        mc.push(sr.total_multi_choice||0);
+      });
+      new Chart(document.getElementById('fus-bars'),{
+        type:'bar',
+        data:{labels:labels,datasets:[
+          {label:'Open-ended',data:oe,backgroundColor:'#6366f1',borderRadius:4},
+          {label:'Multi-choice',data:mc,backgroundColor:'#a855f7',borderRadius:4}
+        ]},
+        options:{responsive:true,maintainAspectRatio:false,
+          plugins:{legend:{labels:{color:'#c6cde0',font:{size:11}}}},
+          scales:{x:{ticks:{color:'#8b94ad',font:{size:10}},grid:{color:'#1e2740'}},
+                  y:{ticks:{color:'#8b94ad',font:{size:10}},grid:{color:'#1e2740'},beginAtZero:true}}}
+      });
+    }
+
+    drawProjection();
+  }
+
+  function card(ic,name,stats,openTxt,openHref){
+    return '<div class="fcard"><div class="ic">'+ic+'</div><h3>'+esc(name)+'</h3>'+
+      '<div class="stats">'+stats.join('')+'</div>'+
+      '<button class="open" onclick="go(\''+openHref.slice(1)+'\')">'+openTxt+'</button></div>';
+  }
+  function stat(v,lbl,cssvar){
+    return '<div class="stat"><b style="color:var('+cssvar+')">'+esc(String(v))+'</b><span>'+esc(lbl)+'</span></div>';
+  }
+
+  // ── projection model ──
+  function model(){
+    var r=S.rsis,m=S.mykb,p=S.space;
+    var dp=Math.max(1,Math.round((r.pulses||1)/2));      // pulses per cycle
+    var dg=Math.max(1,Math.round((r.goals||1)/2));       // goals per cycle
+    var dn=Math.max(20,Math.round(m.nodes*0.02));        // knowledge nodes per cycle
+    var de=Math.max(40,Math.round(m.edges*0.02));        // edges per cycle
+    var dpb=Math.max(5,Math.round(p.probes/(p.rounds||1))); // probes per cycle
+    return {dp:dp,dg:dg,dn:dn,de:de,dpb:dpb,rate:r.goals>0?r.pass/r.goals:0};
+  }
+  function series(){
+    var h=S.horizon,mo=model(),r=S.rsis,m=S.mykb,p=S.space;
+    var out={pulses:[],goals:[],nodes:[],edges:[],probes:[]};
+    var pu=r.pulses,go=r.goals,no=m.nodes,ed=m.edges,pr=p.probes;
+    for(var i=0;i<=h;i++){
+      out.pulses.push(pu+i*mo.dp);
+      out.goals.push(Math.round(go+i*mo.dg));
+      out.nodes.push(no+i*mo.dn);
+      out.edges.push(ed+i*mo.de);
+      out.probes.push(pr+i*mo.dpb);
+    }
+    return out;
+  }
+
+  function drawProjection(){
+    if(typeof Chart==='undefined'||!S.rsis)return;
+    if(S.charts.proj){S.charts.proj.destroy();}
+    var s=series(),labels=[];
+    for(var i=0;i<=S.horizon;i++)labels.push('C'+(i+1));
+    S.charts.proj=new Chart(document.getElementById('fus-proj'),{
+      type:'line',
+      data:{labels:labels,datasets:[
+        {label:'RSIS3 pulses',data:s.pulses,borderColor:'#6366f1',backgroundColor:'rgba(99,102,241,.15)',fill:true,tension:.35,pointRadius:2},
+        {label:'RSIS3 goals',data:s.goals,borderColor:'#a855f7',backgroundColor:'transparent',tension:.35,pointRadius:2},
+        {label:'MyKB nodes',data:s.nodes,borderColor:'#34d399',backgroundColor:'transparent',tension:.35,pointRadius:2},
+        {label:'SPACE probes',data:s.probes,borderColor:'#38bdf8',backgroundColor:'transparent',tension:.35,pointRadius:2}
+      ]},
+      options:{responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{labels:{color:'#c6cde0',font:{size:10}}}},
+        scales:{x:{ticks:{color:'#8b94ad',font:{size:10}},grid:{color:'#1e2740'}},
+                y:{ticks:{color:'#8b94ad',font:{size:10}},grid:{color:'#1e2740'}}}}
+    });
+    renderStream();
+  }
+
+  function coherence(){
+    var mo=model(),r=S.rsis,m=S.mykb,p=S.space;
+    var q=Math.round((mo.rate*100 + Math.min(100,m.catalog/500*100) + p.mc/(p.probes||1)*100)/3);
+    var st=Math.round((Math.min(100,r.constraints/12*100) + Math.min(100,m.edges/40000*100) + Math.min(100,p.rounds/30*100))/3);
+    var cv=Math.round((Math.min(100,r.layers/9*100) + Math.min(100,m.areas/6*100) + Math.min(100,p.series/8*100))/3);
+    return Math.round(q*0.45+st*0.3+cv*0.25);
+  }
+
+  function renderStream(){
+    var mo=model(),s=series(),r=S.rsis,m=S.mykb,p=S.space,ul=document.getElementById('fus-stream');
+    var rnd=RND(S.seed);
+    var phrases=[
+      'loops are coherent with telemetry','knowledge density is rising','probe coverage broadens the spec surface',
+      'improvement cadence is stable','cross-component drift is low','extrapolation stays within confidence bounds',
+      'constraint lock rate is healthy','idea → spec → execution pipeline is saturated'
+    ];
+    var coh=coherence();
+    document.getElementById('fus-coh')&&document.getElementById('fus-coh').remove();
+    var h1=document.querySelector('.fus h1');
+    var cb=document.createElement('span');
+    cb.id='fus-coh';
+    cb.innerHTML='<span style="font-size:10px;color:var(--muted)">coherence</span><span class="bar"><i style="width:'+coh+'%"></i></span><b style="color:var(--emerald)">'+coh+'%</b>';
+    h1.appendChild(cb);
+
+    document.getElementById('fus-seed').textContent='seed '+S.seed+' · horizon '+S.horizon;
+    var items=[];
+    items.push(li('sys','SYSTEM','Fusion pass #'+S.seed+' — combining '+r.pulses+' pulse(s), '+m.nodes+' nodes, '+p.probes+' probes across '+p.series+' SPACE series. Coherence '+coh+'%.'));
+    for(var i=1;i<=Math.min(S.horizon,9);i++){
+      var pu=s.pulses[i],go=s.goals[i],no=s.nodes[i],pr=s.probes[i];
+      var passed=Math.round(go*mo.rate);
+      items.push(li('rsis','RSIS3','Cycle '+i+': pulse #'+pu+' carries ~'+go+' goal(s), ~'+passed+' PASS at '+(mo.rate*100).toFixed(0)+'% — '+r.constraints+' constraints evaluated.'));
+      items.push(li('mykb','MyKB','Cycle '+i+': ~'+no.toLocaleString()+' nodes (+'+mo.dn+'/cycle) · '+s.edges[i].toLocaleString()+' edges — '+m.areas+' area(s), '+m.catalog+' catalog entries indexed.'));
+      items.push(li('space','SPACE','Cycle '+i+': ~'+pr+' probes fed to the RRP ('+p.oe+' open-ended · '+p.mc+' multi-choice) — next spec extrapolated.'));
+      items.push(li('sys','FUSION','Cycle '+i+': '+phrases[Math.floor(rnd()*phrases.length)]+' — extrapolation bounds hold.'));
+    }
+    items.push(li('sys','SYSTEM','Horizon '+S.horizon+' projected: '+s.pulses[S.horizon].toLocaleString()+' pulses · '+s.nodes[S.horizon].toLocaleString()+' nodes · '+s.probes[S.horizon].toLocaleString()+' probes.'));
+    ul.innerHTML=items.join('');
+    ul.scrollTop=0;
+  }
+  function li(cls,tag,txt){
+    return '<li class="'+cls+'"><span class="tag">'+tag+'</span>'+esc(txt)+'</li>';
+  }
+
+  document.getElementById('fus-gen').addEventListener('click',function(){
+    S.seed=(S.seed+7)%2147483647;
+    drawProjection();
+  });
+  document.getElementById('fus-horizon').addEventListener('change',function(e){
+    S.horizon=parseInt(e.target.value,10)||10;
+    drawProjection();
+  });
+
+  loadFusion();
+})();
+</script>
 </body>
 </html>

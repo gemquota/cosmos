@@ -164,6 +164,69 @@ def count(prefix):
 def md_count(prefix):
     return len([p for p in allf if p.startswith(prefix + '/') and p.endswith('.md')])
 
+# ── Lite knowledge graph (fast default render for the KG viewport) ──────
+# graph.json (4+ MB, ~5.5k nodes / ~37k edges) is too heavy for a snappy
+# first paint on mobile. Derive a hub-focused lite graph: keep the top-N
+# concepts by degree plus every edge between kept nodes, plus a per-area
+# cluster rollup. okf-graph.html renders the lite payload by default and
+# keeps the full graph one click away. Compact separators keep the file
+# small enough to parse instantly.
+LITE_HUBS = 420
+
+def build_lite_graph(graph):
+    nodes = graph.get('nodes', []) or []
+    edges = graph.get('edges', []) or []
+    deg = {}
+    for e in edges:
+        deg[e.get('source', '')] = deg.get(e.get('source', ''), 0) + 1
+        deg[e.get('target', '')] = deg.get(e.get('target', ''), 0) + 1
+    by_deg = sorted(nodes, key=lambda n: -deg.get(n.get('id', ''), 0))
+    keep = {n['id'] for n in by_deg[:LITE_HUBS]}
+    kept_edges = [e for e in edges
+                  if e.get('source') in keep and e.get('target') in keep]
+    areas = {}
+    for n in nodes:
+        a = n['id'].split('/')[0] if '/' in n.get('id', '') else '(root)'
+        areas[a] = areas.get(a, 0) + 1
+    return {
+        'meta': {
+            'total_nodes': len(nodes),
+            'total_edges': len(edges),
+            'lite_nodes': len(keep),
+            'lite_edges': len(kept_edges),
+            'areas': areas,
+        },
+        'nodes': [n for n in nodes if n['id'] in keep],
+        'edges': kept_edges,
+    }
+
+def build_lite_catalog(catalog, lite_ids):
+    out = []
+    for c in catalog or []:
+        if c and c.get('id') in lite_ids:
+            out.append(c)
+    return out
+
+graph_path = Path('components/mykb/graph.json')
+catalog_path = Path('components/mykb/catalog.json')
+if write and graph_path.exists():
+    try:
+        g = json.load(open(graph_path))
+        lite = build_lite_graph(g)
+        json.dump(lite, open('components/mykb/graph.lite.json', 'w'),
+                  separators=(',', ':'))
+        if catalog_path.exists():
+            catalog = json.load(open(catalog_path))
+            lite_ids = {n['id'] for n in lite['nodes']}
+            json.dump(build_lite_catalog(catalog, lite_ids),
+                      open('components/mykb/catalog.lite.json', 'w'),
+                      separators=(',', ':'))
+        print(f'graph.lite.json: {lite["meta"]["lite_nodes"]} of '
+              f'{lite["meta"]["total_nodes"]} nodes, '
+              f'{lite["meta"]["lite_edges"]} of {lite["meta"]["total_edges"]} edges')
+    except (OSError, ValueError) as e:
+        print(f'graph.lite.json: skipped ({e})')
+
 # Dashboard payload (Overview/Pulses/KG/Graphs/Constraints) — rebuilt
 # from live loop telemetry when writing; validated as-committed in --check.
 dash_path = Path(RSIS3) / 'rack' / 'pulses' / 'dashboard-data.json'

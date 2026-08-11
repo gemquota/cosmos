@@ -33,3 +33,4 @@ Separate codebases, one visual system:
 ## Related
 - [[wiki/syntheses/cosmos-dashboard-mykb-integration|Cosmos Dashboard & MyKB Integration Patterns]]
 - [[wiki/syntheses/rsis3-epoch-1-findings-resolution-2026-08-10|Epoch 1 findings resolution]]
+- [[wiki/syntheses/cosmos-dashboard-tab-unification-2026-08-11|Cosmos dashboard tab unification — SPACE/MyKB/RSIS3 shell + KG lite mode]]

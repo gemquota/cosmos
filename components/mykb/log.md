@@ -1073,3 +1073,10 @@ title: "Bundle Log"
 ## 2026-08-10 (RSIS3 nightly summary — automatic)
 - 0 cycle(s), 0 telemetry events, gen 0 (best None), KG 0n/0e, $0.0 llm cost, 11 commits.
 - Synthesis: `rsis3-daily-summary-2026-08-10.md`.
+
+## 2026-08-11 (dashboard tab unification + KG lite mode)
+- Rebuilt the unified dashboard: root `index.html` is now a four-tab shell (SPACE | MyKB | RSIS3 | Fusion) with lazy iframes, edge arrows, keyboard + swipe navigation, deep links (`#rsis3:graphs`, `#mykb:graph`), and `window.go`/`window.step` APIs.
+- Converted RSIS3 tabs to a standalone telemetry page (`components/rsis3/dashboard/rsis3.html`, `?embed=cosmos`); old dashboard `index.html` redirects there. Fixed regression-prone empty tabs.
+- Added lite knowledge-graph mode: `graph.lite.json` (420/5510 nodes, 1965/36984 edges) default in `okf-graph.html` and MyKB inline viewer with full/lite toggle; full-scale KG no longer lags.
+- Unified the cosmos palette across all three components via `?embed=cosmos`; added swipe postMessage (`cosmos:'swipe'`/`cosmos:'goto'`) so SPACE/MyKB/RSIS3 panes cross-navigate the shell.
+- Synthesis: `cosmos-dashboard-tab-unification-2026-08-11.md`.
