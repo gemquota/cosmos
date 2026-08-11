@@ -25,6 +25,97 @@ def tracked(prefix=None):
 def visible(path):
     return not any(seg.startswith('.') for seg in path.split('/'))
 
+def _legacy_pulse_payload(rsis3):
+    """Map legacy RRP v2 pipeline pulses (rack/pulses/pulse-*.json) into the
+    dashboard schema when live .rsis/telemetry/*.jsonl is absent (CI/fresh
+    checkout) — prevents regen from blanking the dashboard payload."""
+    pulses_dir = Path(rsis3) / 'rack' / 'pulses'
+    goals, pulses, pd, tel = [], [], {}, {}
+    for f in sorted(pulses_dir.glob('pulse-*.json')):
+        try:
+            pf = json.loads(f.read_text())
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not isinstance(pf, dict) or not pf.get('pulse'):
+            continue
+        pid = str(pf['pulse']).zfill(3)
+        pgoals = pf.get('goals') or []
+        confs = []
+        for gi, g in enumerate(pgoals):
+            ev = g.get('rrp_evaluation') or {}
+            conf = ev.get('confidence', ev.get('score_avg'))
+            if conf is not None:
+                try:
+                    confs.append(float(conf))
+                except (TypeError, ValueError):
+                    pass
+            goals.append({
+                'p': pid,
+                'd': g.get('description') or '(goal %d)' % gi,
+                'dec': ev.get('decision', 'HOLD'),
+                'conf': ev.get('confidence', ''),
+                'file': g.get('file', ''),
+                'func': g.get('function', ''),
+                'type': g.get('type', 'implementation'),
+                'conversation': ev.get('conversation', []),
+                'constraints': (g.get('rrp_refinement') or {}).get(
+                    'constraints', {}),
+                'telemetry': ev.get('rrp_telemetry', {}),
+            })
+        approved = sum(1 for g in pgoals
+                       if (g.get('rrp_evaluation') or {}).get(
+                           'decision') == 'PASS')
+        psum = pf.get('summary') or {}
+        duration = psum.get('duration_seconds')
+        if duration is None:
+            duration = 0.0
+            try:
+                s = datetime.datetime.fromisoformat(
+                    str(pf.get('timestamp_start', '')).replace('Z', '+00:00'))
+                e = datetime.datetime.fromisoformat(
+                    str(pf.get('timestamp_end', '')).replace('Z', '+00:00'))
+                duration = (e - s).total_seconds()
+            except ValueError:
+                pass
+        agg = pf.get('rrp_telemetry_aggregate') or {}
+        pulses.append({
+            'id': pid,
+            'ts_start': pf.get('timestamp_start', ''),
+            'ts_end': pf.get('timestamp_end', ''),
+            'goals_count': len(pgoals),
+            'approved': approved,
+            'duration': round(duration, 1),
+            'scores': {},
+            'type': pf.get('type', 'rrp_v2_full'),
+            'num_goals': len(pgoals),
+            'implementation_count': sum(1 for g in pgoals
+                                        if g.get('type') == 'implementation'),
+            'telemetry': agg,
+            'avg_confidence': (round(sum(confs) / len(confs), 3)
+                               if confs else 0.0),
+        })
+        pd[pid] = {'pre_state': pf.get('pre_state', {})}
+        tel[pid] = agg
+    tot = len(goals)
+    pass_n = sum(1 for gx in goals if gx['dec'] == 'PASS')
+    fail_n = sum(1 for gx in goals if gx['dec'] == 'FAIL')
+    hold_n = sum(1 for gx in goals if gx['dec'] == 'HOLD')
+    return {
+        'pulses': pulses, 'goals': goals,
+        'pulse_data': pd,
+        'score_history': {p['id']: {} for p in pulses},
+        'telemetry_aggregates': tel,
+        'generated': datetime.datetime.now(
+            datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+        'summary': {
+            'tot': tot, 'pass': pass_n, 'hold': hold_n, 'fail': fail_n,
+            'impl_count': sum(p['implementation_count'] for p in pulses),
+            'pulse_count': len(pulses),
+            'ca': round(pass_n / tot, 3) if tot else 0.0,
+            'cd': {},
+        },
+    }
+
 def build_dashboard_payload(rsis3):
     """Rebuild rack/pulses/dashboard-data.json from live loop telemetry.
 
@@ -115,6 +206,10 @@ def build_dashboard_payload(rsis3):
         })
         pd[pid] = {'pre_state': {'telemetry_events': len(evs),
                                  'goals': g_n, 'loops': 9}}
+    if not pulses and not goals:
+        # No live .rsis/telemetry (CI/fresh checkout) — fall back to the
+        # legacy RRP v2 pulse files so regen never blanks the dashboard.
+        return _legacy_pulse_payload(rsis3)
     score_history = {}
     for day, counts in sorted(day_counts.items()):
         mx = max(counts.values()) or 1
