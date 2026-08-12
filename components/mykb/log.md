@@ -1086,3 +1086,7 @@ title: "Bundle Log"
 - Added `_legacy_pulse_payload()` fallback in `gen-static-data.py`: when telemetry is absent, map the tracked RRP v2 pipeline files `rack/pulses/pulse-*.json` into the dashboard schema; deploy/CI regen now keeps the payload populated.
 - Rule recorded: generated snapshots need a git-tracked source of truth (or fallback); `--check` validates contracts but not payload depth — spot-check `pulses`/`goals` after regen.
 - Synthesis: `cosmos-dashboard-snapshot-fallback-2026-08-11.md`.
+
+## 2026-08-12 (RSIS3 nightly summary — automatic)
+- 0 cycle(s), 0 telemetry events, gen 0 (best None), KG 0n/0e, $0.0 llm cost, 0 commits.
+- Synthesis: `rsis3-daily-summary-2026-08-12.md`.
