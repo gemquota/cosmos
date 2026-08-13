@@ -4,6 +4,9 @@
 # Optional: resource monitoring
 psutil>=5.9.0
 
+# Core: L6 identity loop — ed25519 keypair management (rsis/identity.py)
+cryptography>=41.0.0
+
 # Optional: vector store (Phase 2+)
 # chromadb>=0.4.0
 

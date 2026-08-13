@@ -27,7 +27,7 @@ jobs:
           node-version: '22'
 
       - name: Install dependencies
-        run: pip install --quiet numpy networkx psutil pytest
+        run: pip install --quiet numpy networkx psutil pytest -r components/rsis3/requirements.txt
 
       - name: Usage practices
         run: cd components/rsis3 && python3 -m rsis check-practices
