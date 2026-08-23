@@ -796,6 +796,59 @@
      },
      "ts": "2026-08-22T23:41:03Z",
      "window_ended": true
+    },
+    {
+     "all_pass": false,
+     "criteria": [
+      {
+       "detail": "0 cycle cards (\u2265 384 expected)",
+       "id": "cadence",
+       "pass": false
+      },
+      {
+       "detail": "cycle-daemon.lock missing or stale",
+       "id": "lockfile",
+       "pass": false
+      },
+      {
+       "detail": "0 cost record(s) since start",
+       "id": "costs",
+       "pass": false
+      },
+      {
+       "detail": "12 summary day(s) (\u2265 14 expected)",
+       "id": "daily_summary",
+       "pass": false
+      },
+      {
+       "detail": "1 applied retune(s) (one per convergence episode)",
+       "id": "auto_retune",
+       "pass": true
+      },
+      {
+       "detail": "0 incident(s) \u2014 supervision/self-heal logged when they occur",
+       "id": "bridge_heal",
+       "pass": true
+      },
+      {
+       "detail": "contracts validate 0 FAIL",
+       "id": "gates",
+       "pass": true
+      }
+     ],
+     "elapsed_h": 330.639,
+     "evidence": {
+      "auto_retunes": 1,
+      "contracts_green": true,
+      "cost_records": 0,
+      "cycle_cards": 0,
+      "daily_summaries": 12,
+      "elapsed_h": 330.639,
+      "incidents": 0,
+      "lock_held": false
+     },
+     "ts": "2026-08-23T23:41:11Z",
+     "window_ended": true
     }
    ],
    "completed_at": null,
