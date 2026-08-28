@@ -6,6 +6,7 @@ defined in the RSIS spec.
 """
 
 import logging
+import os
 import signal
 import time
 from contextlib import contextmanager
@@ -33,11 +34,15 @@ def deadline(seconds: float, label: str = "operation") -> Generator[None, None, 
     if seconds <= 0:
         raise TimeoutError(f"Deadline must be positive, got {seconds}")
 
-    # Try SIGALRM (Unix)
-    if hasattr(signal, "SIGALRM"):
-        _timeout_via_sigalrm(seconds)
-    else:
+    # SIGALRM is the most reliable mechanism on Linux/macOS — it interrupts
+    # blocking C calls (time.sleep, subprocess) that the threading fallback
+    # cannot.  However, SIGALRM is process-global and cannot nest: two
+    # overlapping ``deadline`` blocks will clobber each other's handler.
+    # Set RSIS_USE_THREADING=1 to force the safe (portable) fallback.
+    if os.environ.get("RSIS_USE_THREADING") or not hasattr(signal, "SIGALRM"):
         _timeout_via_polling(seconds)
+    else:
+        _timeout_via_sigalrm(seconds)
 
     yield
 

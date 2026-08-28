@@ -15,6 +15,16 @@ from datetime import datetime, timezone
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8765
 DIR = os.path.dirname(os.path.abspath(__file__))
 
+# ── Session token auth (O5: protect mutating endpoints) ──────────────
+# A random token is generated at server start.  Clients must pass it via
+# ``Authorization: Bearer <token>`` on POST/PUT/DELETE endpoints.
+# GET endpoints remain unauthenticated (read-only).
+import secrets
+import hashlib
+SESSION_TOKEN = secrets.token_hex(32)
+SESSION_TOKEN_HASH = hashlib.sha256(SESSION_TOKEN.encode()).hexdigest()[:16]
+print(f"   Session token: {SESSION_TOKEN_HASH} (use Authorization: Bearer <token>)")
+
 # Load search index at startup
 SEARCH_INDEX = None
 SEARCH_DIR = os.path.join(DIR, '.wiki-daemon')
@@ -481,8 +491,22 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json({'error': 'Invalid JSON body: %s' % e})
             return None
 
+    def _check_auth(self) -> bool:
+        """Verify the Authorization header matches the session token."""
+        auth = self.headers.get('Authorization', '')
+        if not auth.startswith('Bearer '):
+            return False
+        return secrets.compare_digest(auth[7:], SESSION_TOKEN)
+
     def do_POST(self):
         parsed = urllib.parse.urlparse(self.path)
+        # All POST endpoints require auth (mutating operations)
+        if not self._check_auth():
+            self.send_response(401)
+            self.send_header('Content-Type', 'application/json')
+            self.end_headers()
+            self.wfile.write(b'{"error": "Missing or invalid Authorization header"}')
+            return
         if parsed.path == '/api/v2/stubs/queue/plan':
             self.send_json(self._run_daemon_script('drain_stub_queue.py', ['--plan']))
             return

@@ -95,8 +95,11 @@ class Sandbox:
     def _child_limits(self):
         """Resource limits + privilege drop, applied inside the child.
 
-        NOTE: `preexec_fn` runs after fork; keep it minimal.  If the
-        parent is heavily multithreaded, prefer the Docker backend.
+        NOTE: `preexec_fn` runs after fork and is unsafe in heavily
+        multithreaded parents — only the calling thread's signal masks are
+        preserved.  The ToolManager runs tools in a ThreadPoolExecutor, so
+        this may not work reliably on all platforms.  The Docker backend is
+        the safest option for hard isolation.
         """
         def setup() -> None:
             if resource is not None:

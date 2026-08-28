@@ -9,6 +9,7 @@ Phase 4: integrated with Budget, RecoveryManager, and ResourceEnforcer.
 
 import json
 import logging
+import os
 import queue
 import re
 import threading
@@ -114,6 +115,8 @@ class L2ImprovementLoop:
                     if not budget.tick():
                         break
                     continue
+                # O4: persist candidate for post-hoc analysis
+                self._persist_candidate(candidate, attempt, goal)
                 candidates.append(candidate)
 
                 self.telemetry.record(TelemetryEvent(
@@ -518,11 +521,30 @@ class L2ImprovementLoop:
         )
 
     @staticmethod
+    def _persist_candidate(candidate: "ImprovementCandidate", attempt: int,
+                            goal: str) -> None:
+        """Write candidate details to .rsis/candidates.jsonl for post-hoc analysis."""
+        try:
+            path = Path(CONFIG.workspace_dir) / ".rsis" / "candidates.jsonl"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            record = {
+                "attempt": attempt,
+                "description": candidate.description,
+                "target_files": candidate.target_files,
+                "rationale": candidate.rationale,
+                "goal": goal,
+                "generator": candidate.metadata.get("generator", "unknown"),
+                "timestamp": time.time(),
+            }
+            with path.open("a", encoding="utf-8") as fh:
+                fh.write(json.dumps(record, default=str) + "\n")
+        except Exception as e:
+            logger.debug("Failed to persist candidate: %s", e)
+
+    @staticmethod
     def _llm_generator() -> Optional[Any]:
         """Return the configured LLM candidate generator, if any."""
         import importlib
-        import os
-
         mod_name = os.environ.get("RSIS_L2_LLM_GENERATOR")
         if not mod_name:
             return None

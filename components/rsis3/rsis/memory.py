@@ -87,18 +87,29 @@ class VectorStore:
             try:
                 data = json.loads(index_file.read_text())
                 self._documents = data.get("documents", [])
-                # Recompute embeddings
-                for doc in self._documents:
-                    emb = self.vectorizer.embed(doc.get("text", ""))
-                    self._embeddings.append(emb)
-                logger.info("Vector store loaded (%d documents)", len(self._documents))
-            except (json.JSONDecodeError, OSError) as e:
+                cached_embeddings = data.get("embeddings")
+                if cached_embeddings and len(cached_embeddings) == len(self._documents):
+                    # Use cached embeddings (avoids recomputation)
+                    self._embeddings = [np.array(e, dtype=np.float32) for e in cached_embeddings]
+                    logger.info("Vector store loaded (%d documents, cached embeddings)",
+                                len(self._documents))
+                else:
+                    # Recompute when cache is missing or stale
+                    for doc in self._documents:
+                        emb = self.vectorizer.embed(doc.get("text", ""))
+                        self._embeddings.append(emb)
+                    logger.info("Vector store loaded (%d documents, recomputed embeddings)",
+                                len(self._documents))
+            except (json.JSONDecodeError, OSError, ValueError) as e:
                 logger.warning("Failed to load vector store: %s", e)
 
     def save(self) -> None:
         index_file = self.path / "index.json"
-        # Store documents without embeddings (recomputed on load)
-        data = {"documents": self._documents}
+        # Persist documents WITH cached embeddings to avoid recomputation on load
+        data = {
+            "documents": self._documents,
+            "embeddings": [e.tolist() for e in self._embeddings],
+        }
         index_file.write_text(json.dumps(data, indent=2, default=str))
         logger.debug("Vector store saved (%d documents)", len(self._documents))
 
@@ -143,6 +154,10 @@ class KnowledgeGraph:
 
     Nodes represent improvements, patterns, strategies, and outcomes.
     Edges capture relationships like 'led_to', 'contradicts', 'improves'.
+
+    Mutation methods (add_node, add_edge, add_edges, remove_node) mark the
+    graph dirty but do NOT persist immediately.  Call ``save()`` once at the
+    end of each cycle/phase to batch all mutations into a single write.
     """
 
     NODE_TYPES = ("improvement", "insight", "strategy", "pattern", "failure")
@@ -155,6 +170,7 @@ class KnowledgeGraph:
         self.path = Path(path or CONFIG.memory.knowledge_graph_path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.graph = nx.MultiDiGraph()
+        self._dirty = False
         self._load()
 
     def _load(self) -> None:
@@ -237,11 +253,11 @@ class KnowledgeGraph:
     # ── Node operations ─────────────────────────────────────────────
 
     def add_node(self, node_id: str, node_type: str, **attrs) -> str:
-        """Add a node. node_type must be one of NODE_TYPES."""
+        """Add a node (batched — call save() at cycle end)."""
         if node_type not in self.NODE_TYPES:
             logger.warning("Unknown node type: %s", node_type)
         self.graph.add_node(node_id, type=node_type, **attrs)
-        self.save()
+        self._dirty = True
         return node_id
 
     def get_node(self, node_id: str) -> Optional[dict]:
@@ -261,7 +277,7 @@ class KnowledgeGraph:
     def remove_node(self, node_id: str) -> bool:
         if node_id in self.graph:
             self.graph.remove_node(node_id)
-            self.save()
+            self._dirty = True
             return True
         return False
 
@@ -271,14 +287,14 @@ class KnowledgeGraph:
         if rel not in self.KNOWN_RELS:
             logger.warning("Unknown relationship type: %s", rel)
         self.graph.add_edge(source, target, rel=rel, **attrs)
-        self.save()
+        self._dirty = True
 
     def add_edges(self, source: str, rel: str,
                   targets: list[str], **attrs) -> None:
-        """Add multiple same-rel edges from one source in a single save."""
+        """Add multiple same-rel edges from one source (batched)."""
         for target in targets:
             self.graph.add_edge(source, target, rel=rel, **attrs)
-        self.save()
+        self._dirty = True
 
     def get_edges(self, node_id: Optional[str] = None) -> list[dict]:
         if node_id:

@@ -1,6 +1,6 @@
 # 🌌 COSMOS
 
-**C**ognitive **O**rchestration **S**ystem for **M**eta-cognitive **O**rchestration & **S**ynthesis
+**C**ognitive **O**rchestration **S**ystem for **M**eta-cognitive **O**ptimization & **S**ynthesis
 
 RSIS3 (core) + MyKB (memory) + SPACE (ideation) — unified under one dashboard.
 
