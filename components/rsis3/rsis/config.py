@@ -271,7 +271,7 @@ def _apply_tuned_state(cfg: RSISConfig) -> RSISConfig:
 
     Single injection point: the tuned values reach every loop because they
     read CONFIG at construction time. Corrupt/missing state files fall back
-    to defaults.
+    to defaults with a logged warning.
     """
     cfg_lookup = {}
     for reg in (L1_TUNABLES, L2_TUNABLES, L3_TUNABLES, L4_TUNABLES,

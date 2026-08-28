@@ -168,7 +168,7 @@ class MyKBGateway:
             'type: "synthesis"',
             f'title: "{title}"',
             f'description: "{description}"',
-            f"tags: [{', '.join('"%s"' % t for t in tag_list)}]",
+            'tags: [' + ', '.join('"' + t + '"' for t in tag_list) + ']',
             f'timestamp: "{ts}"',
             f'status: "{status}"',
             "---",

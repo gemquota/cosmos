@@ -53,6 +53,8 @@ def test_save_is_atomic(tmp_path, monkeypatch):
     mem.kg.add_node("a", "insight", description="x")
     mem.kg.add_node("b", "improvement", description="y")
     mem.kg.add_edge("a", "b", rel="led_to")
+    # Mutation methods now batch (O1) — save() is explicit
+    mem.kg.save()
     assert not (tmp_path / "kg.json.tmp").exists()
     data = json.loads((tmp_path / "kg.json").read_text())
     assert len(data["edges"]) == 1
