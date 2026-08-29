@@ -319,9 +319,112 @@ E5 establishes deterministic evaluator repeatability for one fixed candidate und
 - No variance study across tasks, processes, or environments.
 - No production source changes.
 
+## E5 Extension — Bounded Coupled Launch Run
+
+### Method
+
+A bounded one-cycle launch was executed in an isolated workspace:
+
+```text
+PYTHONPATH=/home/daytona/codebase/components/rsis3 \
+RSIS_WORKSPACE=/tmp/cosmos-e5-cycle \
+python3 -m rsis launch --cycles 1 --disk-pct 100
+```
+
+The launch path invoked eight stages in order: `run`, `evolve`, `optimize`, `strategies`, `identity`, `metacog`, `metameta`, and `mmm`. The process exited with code 0 and reported `8 executions, 0 failed`.
+
+### Observed stage outcomes
+
+| Stage | Observed result | Persistent artifact in isolated workspace |
+|---|---|---|
+| run (L1/L2) | No actionable target; L1 completed one no-op step | none from L2 |
+| evolve (L3) | 4 insights, 1 strategy | no `.rsis` file observed for L3 |
+| optimize (L4) | tuned `l1.max_retries` and `l1.max_tool_calls` upward | `optimizer_state.json` (838 bytes) |
+| strategies (L5) | generation 3, 8 variants, average fitness 0.000 | `strategies.json` (2,315 bytes) |
+| identity (L6) | shrink signal; tuned L3 timeout by -3,600 seconds | `identity_state.json` (397 bytes) |
+| metacog (L7) | no signal; no change | no `metacog_state.json` |
+| metameta (L8) | raised L5 mutation rate by 0.05 | `metameta_state.json` (261 bytes) |
+| mmm (L9) | no signal; no change | no `mmm_state.json` |
+
+### Provenance and limits
+
+This is direct execution evidence for one coupled launch in an isolated workspace. It demonstrates invocation, successful process completion, and several state mutations. It does **not** demonstrate task-level improvement, because the run goal resolved to `self-improve the codebase`, L2 found no actionable target, and L1 performed no tool action. It also does not establish stability: one cycle cannot distinguish convergence, drift, oscillation, or degradation.
+
+The launch reported `0 failed` even though the L2 stage had no applied improvement; therefore the batch success count represents subprocess/command success, not task-success rate.
+
+## E5 Repeat Pass — Independent Two-Workspace Coupled Run
+
+### Method
+
+A second bounded pass was run after the first coupled extension, using two fresh temporary workspaces (`/tmp/cosmos-e5-repeat-1` and `/tmp/cosmos-e5-repeat-2`) and the production launch command with one cycle per workspace. No production source files were changed.
+
+### Results
+
+Both runs exited with code `0` and reported `8 executions, 0 failed`. Both produced the same stage-level behavior:
+
+| Stage | Repeat-pass observation |
+|---|---|
+| run (L1/L2) | L2 found no actionable target; L1 completed one no-op step |
+| evolve (L3) | 4–5 insights and 1 strategy; MyKB unavailable in the isolated `/tmp` setup |
+| optimize (L4) | Tuned `l1.max_retries` and `l1.max_tool_calls` upward from 20 outcomes with zero success rate |
+| strategies (L5) | Persisted 8 variants; average/best fitness was 0.000 |
+| identity (L6) | Tuned `l3.plateau_timeout_s` downward by 3,600 seconds |
+| metacog (L7) | No signal; no change |
+| metameta (L8) | No signal; no change in this repeat pass |
+| mmm (L9) | No signal; no change |
+
+The two runs were behaviorally consistent at the reported stage-result level. The launch process took approximately 77 seconds per workspace, dominated by the launcher’s roughly 10-second inter-stage delay; this is an observed run duration, not a scalability benchmark.
+
+### Qualification
+
+This repeat pass strengthens evidence for one-cycle reproducibility of the current launch behavior. It still does **not** establish recursive stability, convergence, task-level improvement, or causal effectiveness. The isolated workspaces also loaded the repository’s existing memory/vector inputs while writing their own `.rsis` state, so they should not be interpreted as clean-room experiments over an empty knowledge base. The logs explicitly show MyKB unavailable at `/tmp/mykb`.
+
+## Fresh All-Five Pass — E1–E5
+
+**Status:** Completed as a bounded verification pass; no production source changes made.
+
+### E1 — L5 → L2 coupling
+
+In an isolated workspace, `strategies` was run immediately before `run --goal 'Implement Probe in probe_e1.py'`. L5 attempted to evolve its population, but its evaluator subprocess resolved to `/home/daytona/codebase/evaluator/evaluator.py`, which does not exist in the current repository layout; the generation was therefore rejected and state remained at generation 0. L2 independently generated five candidates for the actionable new-file goal, but encountered the same evaluator path error on every attempt and applied nothing. This pass found no strategy-to-L2 consumption path and no downstream effect.
+
+**Result:** L5→L2 coupling not demonstrated; the pass also exposed a configuration/path mismatch that prevents evaluator-backed isolated L5/L2 success when invoked this way.
+
+### E2 — L4/L6 downstream sensitivity
+
+The coupled launch portion of this pass showed L4 changing `l1.max_retries` and `l1.max_tool_calls` while the observed outcome statistics were `count=20`, `success_rate=0.0`, and `avg_score=0.0`; L6 changed `l3.plateau_timeout_s` by `-3600`. These are observable parameter mutations, but no task-level improvement or causal performance gain was measured.
+
+**Result:** Runtime sensitivity is demonstrated; useful downstream improvement remains unproven.
+
+### E3 — L3/MyKB feedback
+
+The coupled launch loaded the existing KG/vector inputs but logged that MyKB was unavailable at the isolated sibling path `/tmp/cosmos-all5-pass/mykb`. L3 still completed and produced 4 insights and 1 strategy, but no durable MyKB synthesis was written in this fresh pass. Therefore this run provides no new positive evidence for MyKB-driven future behavior; prior E3 evidence remains limited to explicit `from-mykb` goal resolution.
+
+**Result:** Memory processing executed; automatic MyKB feedback was not demonstrated in this pass.
+
+### E4 — evaluator discrimination
+
+Direct evaluator subprocess tests on the current evaluator produced:
+
+| Candidate | Decision |
+|---|---|
+| no-op | PASS |
+| unsafe `os.system` | FAIL |
+| syntax-invalid code | FAIL |
+| semantically wrong subtraction implementation | PASS |
+
+**Result:** Current behavior again discriminates syntax and a tested unsafe call, but not semantic correctness or task improvement.
+
+### E5 — coupled execution
+
+The all-five pass executed one isolated coupled launch: 8 stages, exit code 0, and 0 reported subprocess failures. L2 found no actionable target and L1 marked the generic task complete without a tool action. L3 produced 4 insights/1 strategy; L4 and L6 mutated parameters; L5 persisted/attempted strategy evolution in the coupled workspace; L7–L9 produced no changes. This is one additional reproducible launch observation, not a stability study.
+
+### All-Five Pass Conclusion
+
+The fresh pass confirms repeatable execution of the launch orchestration and repeatable evaluator safety/syntax behavior. It does not establish L5→L2 coupling, MyKB causal benefit, downstream performance improvement, or recursive stability. The evaluator path mismatch observed in the standalone isolated L5/L2 probes is recorded as an environment/configuration limitation rather than attributed to loop logic.
+
 ## Combined E4/E5 Status
 
-E4 confirms that the evaluator rejects tested syntax/safety violations but accepts all tested semantically wrong, no-op, irrelevant, and worse candidates. E5 confirms fixed-input repeatability only. Neither experiment demonstrates that COSMOS selects or applies behaviorally superior changes, nor that recursive adaptation converges or improves task-level performance.
+E4 confirms that the evaluator rejects tested syntax/safety violations but accepts all tested semantically wrong, no-op, irrelevant, and worse candidates. The initial E5 probe confirms fixed-input evaluator repeatability; the bounded coupled extension confirms one successful eight-stage launch and several state mutations. Neither experiment demonstrates that COSMOS selects or applies behaviorally superior changes, nor that recursive adaptation converges or improves task-level performance.
 
 ## Limits
 
