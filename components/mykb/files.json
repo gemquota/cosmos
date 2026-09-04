@@ -76812,6 +76812,16 @@
   ]
  },
  {
+  "path": "wiki/syntheses/rsis3-daily-summary-2026-09-04.md",
+  "type": "synthesis",
+  "title": "RSIS3 daily summary \u2014 2026-09-04",
+  "tags": [
+   "rsis3",
+   "daily-summary",
+   "ops"
+  ]
+ },
+ {
   "path": "wiki/syntheses/rsis3-dashboard-unified-embed-2026-08-10.md",
   "type": "synthesis",
   "title": "RSIS3 unified dashboard \u2014 live-telemetry rebuild & unified embed",
