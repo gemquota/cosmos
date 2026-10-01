@@ -1,0 +1,1 @@
+{"ts": "2026-10-01T02:13:58Z", "artifact": "nightly:2026-10-01", "actor": "nightly", "invariants_passed": ["state_files_disjoint", "telemetry_coverage", "kg_idempotency", "state_schemas", "envelope_conformance", "ast_invariants", "stale_locks"], "invariant_count": 7, "sha256": "2ea8a488af268e9474f472dc80d114c4037c3736dd48c44a3bac66b8e84a0d3d"}
