@@ -1486,3 +1486,7 @@ title: "Bundle Log"
 ## 2026-11-20 (RSIS3 nightly summary — automatic)
 - 0 cycle(s), 0 telemetry events, gen 0 (best None), KG 0n/0e, $0.0 llm cost, 0 commits.
 - Synthesis: `rsis3-daily-summary-2026-11-20.md`.
+
+## 2026-11-21 (RSIS3 nightly summary — automatic)
+- 0 cycle(s), 0 telemetry events, gen 0 (best None), KG 0n/0e, $0.0 llm cost, 0 commits.
+- Synthesis: `rsis3-daily-summary-2026-11-21.md`.
